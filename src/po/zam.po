@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 15:53-0700\n"
+"POT-Creation-Date: 2009-10-03 22:47-0700\n"
 "PO-Revision-Date: 2009-09-10 17:34-0600\n"
 "Last-Translator: Rodrigo Perez <rodpera@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -304,126 +304,132 @@ msgid "An octagon has eight equal sides."
 msgstr "Diíf octágono güe nuú shoón laad igual taá naak."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:56
+#: ../titles.h:57
 msgid "Tools"
 msgstr "Koó queél sihiín"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:59
+#: ../titles.h:60
 msgid "Colors"
 msgstr "Saá niey"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:62
+#: ../titles.h:63
 msgid "Brushes"
 msgstr "Koó kuúmen"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:65
+#: ../titles.h:66
 msgid "Erasers"
 msgstr "Paár te doót men naá"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:68
+#: ../titles.h:69
 msgid "Stamps"
 msgstr "Paár queé men lo yeésh"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:69
+#: ../titles.h:72 ../tools.h:70
 msgid "Shapes"
 msgstr "Reé muún"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:74
+#: ../titles.h:75
 msgid "Letters"
 msgstr "Reé letr"
 
+#. Title of font selector (buttons down the right for label tool)
+#. Label tool
+#: ../titles.h:78 ../tools.h:79
+msgid "Label"
+msgstr ""
+
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:75
+#: ../titles.h:81 ../tools.h:76
 msgid "Magic"
 msgstr "Chaán bruj"
 
 #. Freehand painting tool
-#: ../tools.h:60
+#: ../tools.h:61
 msgid "Paint"
 msgstr "Ku Kua"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:63
+#: ../tools.h:64
 msgid "Stamp"
 msgstr "Sey"
 
 #. Line drawing tool
-#: ../tools.h:66
+#: ../tools.h:67
 msgid "Lines"
 msgstr "diíf ray"
 
 #. Text tool
-#: ../tools.h:72
+#: ../tools.h:73
 msgid "Text"
 msgstr "keé leetr"
 
 #. Undo last action
-#: ../tools.h:78
+#: ../tools.h:82
 msgid "Undo"
 msgstr "¡Vereé!"
 
 #. Redo undone action
-#: ../tools.h:81
+#: ../tools.h:85
 msgid "Redo"
 msgstr "¡Teeneer!"
 
 #. Eraser tool
-#: ../tools.h:84
+#: ../tools.h:88
 msgid "Eraser"
 msgstr "Te doón naá"
 
 #. Start a new picture
-#: ../tools.h:87
+#: ../tools.h:91
 msgid "New"
 msgstr "Ko kuúb"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:8005
+#: ../tools.h:94 ../tuxpaint.c:8565
 msgid "Open"
 msgstr "Sha al men"
 
 #. Save the current picture
-#: ../tools.h:93
+#: ../tools.h:97
 msgid "Save"
 msgstr "lo sohogaá"
 
 #. Print the current picture
-#: ../tools.h:96
+#: ../tools.h:100
 msgid "Print"
 msgstr "Keéy lo yehes"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:99
+#: ../tools.h:103
 msgid "Quit"
 msgstr "Ruú meén"
 
 #. Paint tool instructions
-#: ../tools.h:107
+#: ../tools.h:111
 msgid "Pick a color and a brush shape to draw with."
 msgstr "toob diíf color ner bshien diíf broch paár kuúl."
 
 #. Stamp tool instructions
-#: ../tools.h:110
+#: ../tools.h:114
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Toob diif sello ner toob va  loo ko deliíl "
 
 #. Line tool instructions
-#: ../tools.h:113
+#: ../tools.h:117
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Gaás kue, keéy, ner toó leé, será tuub vaa keey."
 
 #. Shape tool instructions
-#: ../tools.h:116
+#: ../tools.h:120
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -433,259 +439,270 @@ msgstr ""
 "dibujarla."
 
 #. Text tool instructions
-#: ../tools.h:119
+#: ../tools.h:123
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Elige un estilo de texto. Haz clic en tu dibujo y comienza a escribir."
 
 #. Magic tool instruction
-#: ../tools.h:122
+#: ../tools.h:126
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "¡tood diif efecto mágico ner keey loo koo deliil !"
 
+#. Label tool instructions
+#: ../tools.h:129
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Click on the wheel to rotate the text. Click on the edit button and select a "
+"label to edit."
+msgstr "Elige un estilo de texto. Haz clic en tu dibujo y comienza a escribir."
+
 #. Response to 'undo' action
-#: ../tools.h:125
+#: ../tools.h:132
 msgid "Undo!"
 msgstr "¡Vereé!"
 
 #. Response to 'redo' action
-#: ../tools.h:128
+#: ../tools.h:135
 msgid "Redo!"
 msgstr "¡Teneer !"
 
 #. Eraser tool
-#: ../tools.h:131
+#: ../tools.h:138
 msgid "Eraser!"
 msgstr "¡Te doót naá!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:134
+#: ../tools.h:141
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Kuan diif color o diif moon ner tete kuú."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:137
+#: ../tools.h:144
 msgid "Open…"
 msgstr "Shaala..."
 
 #. Response to 'save' action
-#: ../tools.h:140
+#: ../tools.h:147
 msgid "Your image has been saved!"
 msgstr "¡Moón naá luúu goóshog laá!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:143
+#: ../tools.h:150
 msgid "Printing…"
 msgstr "Deé queéy loó yehes..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:146
+#: ../tools.h:153
 msgid "Bye bye!"
 msgstr "¡Maál naáp!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Let go of the button to complete the line."
 msgstr "Laá diíin saha tee loo kue."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Hold the button to stretch the shape."
 msgstr "Sheen kue, saá taak tiíl mach ha."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:156
+#: ../tools.h:163
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mueve el ratón para rotar la figura. Haz clic para dibujarla."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:159
+#: ../tools.h:166
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Vesta daal.. ¡kuún naal kue!"
 
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:1931 ../tuxpaint.c:2661
+#, fuzzy
+#| msgid "Please wait..."
+msgid "Please wait…"
+msgstr "Leé luút, Teés kiss luú..."
+
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1989
 msgid "Do you really want to quit?"
 msgstr "¿Gua lií kaa lash luu ruul gaá?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1992
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "¡ah, bliíl naay!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1891
+#: ../tuxpaint.c:1995 ../tuxpaint.c:2022
 msgid "No, take me back!"
 msgstr "¡Yeet taá, naá last naá vereén!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1999
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "¡This rul, tee guaán luu koo bliíl! ¿lash luú koo shog luy gaá?"
 
-#: ../tuxpaint.c:1869 ../tuxpaint.c:1874
+#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
 msgid "Yes, save it!"
 msgstr "¡ah, loó sobbaá!"
 
-#: ../tuxpaint.c:1870 ../tuxpaint.c:1875
+#: ../tuxpaint.c:2001 ../tuxpaint.c:2006
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "¡yeénta, naá last naá loó soobluy!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:2004
 msgid "Save your picture first?"
 msgstr "¿Loó sog luú retrat antes gaá?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:2009
 msgid "Can’t open that picture!"
 msgstr "¡Naá gaad schial dibug reé!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1881 ../tuxpaint.c:1886 ../tuxpaint.c:1895 ../tuxpaint.c:1902
-#: ../tuxpaint.c:1911
+#: ../tuxpaint.c:2012 ../tuxpaint.c:2017 ../tuxpaint.c:2026 ../tuxpaint.c:2033
+#: ../tuxpaint.c:2042
 msgid "OK"
 msgstr "ah"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:2016
 msgid "There are no saved files!"
 msgstr "¡Yent kuan bloo sohog luú!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:2020
 msgid "Print your picture now?"
 msgstr "¿Lahaás luú keley loó yehes naál yaá?"
 
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:2021
 msgid "Yes, print it!"
 msgstr "¡Ah, toob vaá loó yehes!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1894
+#: ../tuxpaint.c:2025
 msgid "Your picture has been printed!"
 msgstr "¡Mon naá luú duúl loó yehes!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1898
+#: ../tuxpaint.c:2029
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "¡Mon naá luú duúl loó yehes!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:2032
 msgid "You can’t print yet!"
 msgstr "¡Na gaád toob luy loó yehes nal!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1905
+#: ../tuxpaint.c:2036
 msgid "Erase this picture?"
 msgstr "¿Teé doót dibuj reé gaá?"
 
-#: ../tuxpaint.c:1906
+#: ../tuxpaint.c:2037
 msgid "Yes, erase it!"
 msgstr "¡Ah, Te doót naá!"
 
-#: ../tuxpaint.c:1907
+#: ../tuxpaint.c:2038
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "¡Yee´nta, naá doót naá!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1910
+#: ../tuxpaint.c:2041
 msgid "Remember to use the left mouse button!"
 msgstr "¡Recuerda usar el botón izquierdo del ratón!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2039
+#: ../tuxpaint.c:2170
 msgid "Sound muted."
 msgstr "Toóg saá  beés ha."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2044
+#: ../tuxpaint.c:2175
 msgid "Sound unmuted."
 msgstr "Saál saá beés ha."
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2511
-#, fuzzy
-#| msgid "Please wait..."
-msgid "Please wait…"
-msgstr "Leé luút, Teés kiss luú..."
-
-#: ../tuxpaint.c:7228
+#: ../tuxpaint.c:7764
 msgid "Pick a color."
 msgstr "kuan saa niey "
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8008
+#: ../tuxpaint.c:8568
 msgid "Erase"
 msgstr "Te doót naá"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8011
+#: ../tuxpaint.c:8571
 msgid "Slides"
 msgstr "Güi saá niey"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8014
+#: ../tuxpaint.c:8574
 msgid "Back"
 msgstr "Veré"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8017
+#: ../tuxpaint.c:8577
 msgid "Next"
 msgstr "Teneer ra"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8020
+#: ../tuxpaint.c:8580
 msgid "Play"
 msgstr "Toob kiíy"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:9291
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11670
+#: ../tuxpaint.c:12375
 msgid "Yes"
 msgstr "haá"
 
-#: ../tuxpaint.c:11674
+#: ../tuxpaint.c:12379
 msgid "No"
 msgstr "Yee´nta"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12669
+#: ../tuxpaint.c:13374
 msgid "Replace the picture with your changes?"
 msgstr "¿Seé eh dibug naá antes kon koó kuub gaá?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12673
+#: ../tuxpaint.c:13378
 msgid "Yes, replace the old one!"
 msgstr "¡ah, seéhell!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12677
+#: ../tuxpaint.c:13382
 msgid "No, save a new file!"
 msgstr "¡Yeént ta, loó soógga leét diíf archiv kuúb!"
 
-#: ../tuxpaint.c:13440
+#: ../tuxpaint.c:14234
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kuan koo lash luú, será toob \"Sahal laa\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14427 ../tuxpaint.c:14741
+#: ../tuxpaint.c:15239 ../tuxpaint.c:15553
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Kuan koo lash luú, será toob \"kee kiiy\"."
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Greek Translation v1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 18:32-0700\n"
+"POT-Creation-Date: 2009-10-03 22:47-0700\n"
 "PO-Revision-Date: 2009-08-19 13:40+0200\n"
 "Last-Translator: Κυριακή Σεραφείμ <pse04178@rhodes.aegean.gr>\n"
 "Language-Team: ltee.org\n"
@@ -316,129 +316,135 @@ msgid "An octagon has eight equal sides."
 msgstr "Ένα κανονικό οκτάγωνο έχει οκτώ ίσες πλευρές."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:56
+#: ../titles.h:57
 msgid "Tools"
 msgstr "Εργαλεία"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:59
+#: ../titles.h:60
 msgid "Colors"
 msgstr "Χρώματα"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:62
+#: ../titles.h:63
 msgid "Brushes"
 msgstr "Πινέλα"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:65
+#: ../titles.h:66
 msgid "Erasers"
 msgstr "Σβηστήρες"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:68
+#: ../titles.h:69
 msgid "Stamps"
 msgstr "Σφραγίδες"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:69
+#: ../titles.h:72 ../tools.h:70
 msgid "Shapes"
 msgstr "Σχήματα"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:74
+#: ../titles.h:75
 msgid "Letters"
 msgstr "Γράμματα"
 
+#. Title of font selector (buttons down the right for label tool)
+#. Label tool
+#: ../titles.h:78 ../tools.h:79
+msgid "Label"
+msgstr ""
+
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:75
+#: ../titles.h:81 ../tools.h:76
 msgid "Magic"
 msgstr "Μαγικά"
 
 #. Freehand painting tool
-#: ../tools.h:60
+#: ../tools.h:61
 msgid "Paint"
 msgstr "Ζωγραφιά"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:63
+#: ../tools.h:64
 msgid "Stamp"
 msgstr "Σφραγίδα"
 
 #. Line drawing tool
-#: ../tools.h:66
+#: ../tools.h:67
 msgid "Lines"
 msgstr "Γραμμές"
 
 #. Text tool
-#: ../tools.h:72
+#: ../tools.h:73
 msgid "Text"
 msgstr "Κείμενο"
 
 #. Undo last action
-#: ../tools.h:78
+#: ../tools.h:82
 msgid "Undo"
 msgstr "Αναίρεση"
 
 #. Redo undone action
-#: ../tools.h:81
+#: ../tools.h:85
 msgid "Redo"
 msgstr "Επανάληψη"
 
 #. Eraser tool
-#: ../tools.h:84
+#: ../tools.h:88
 msgid "Eraser"
 msgstr "Σβήστρα"
 
 #. Start a new picture
-#: ../tools.h:87
+#: ../tools.h:91
 msgid "New"
 msgstr "Νέο"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:8005
+#: ../tools.h:94 ../tuxpaint.c:8565
 msgid "Open"
 msgstr "Άνοιγμα"
 
 #. Save the current picture
-#: ../tools.h:93
+#: ../tools.h:97
 msgid "Save"
 msgstr "Φύλαξη"
 
 #. Print the current picture
-#: ../tools.h:96
+#: ../tools.h:100
 msgid "Print"
 msgstr "Εκτύπωση"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:99
+#: ../tools.h:103
 msgid "Quit"
 msgstr "Έξοδος"
 
 #. Paint tool instructions
-#: ../tools.h:107
+#: ../tools.h:111
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Διάλεξε  χρώμα και μορφή πινέλου για να ζωγραφίσεις."
 
 #. Stamp tool instructions
-#: ../tools.h:110
+#: ../tools.h:114
 msgid "Pick a picture to stamp around your drawing."
 msgstr ""
 "Διάλεξε μία στάμπα για να την τοποθετήσεις σε διάφορα σημεία του σχεδίου σου."
 
 #. Line tool instructions
-#: ../tools.h:113
+#: ../tools.h:117
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Κάνε κλικ για να αρχίσεις να ζωγραφίζεις μία γραμμή. Άφησε το πλήκτρο του "
 "ποντικιού όταν έχεις ολοκληρώσει τη γραμμή."
 
 #. Shape tool instructions
-#: ../tools.h:116
+#: ../tools.h:120
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -449,251 +455,263 @@ msgstr ""
 "ζωγραφιστεί."
 
 #. Text tool instructions
-#: ../tools.h:119
+#: ../tools.h:123
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Διάλεξε στυλ κειμένου. Κάνε κλικ στη ζωγραφιά σου και άρχισε να γράφεις."
 
 #. Magic tool instruction
-#: ../tools.h:122
+#: ../tools.h:126
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Διάλεξε ένα μαγικό εφφέ για να χρησιμοποιήσεις στο σχέδιό σου!"
 
+#. Label tool instructions
+#: ../tools.h:129
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Click on the wheel to rotate the text. Click on the edit button and select a "
+"label to edit."
+msgstr ""
+"Διάλεξε στυλ κειμένου. Κάνε κλικ στη ζωγραφιά σου και άρχισε να γράφεις."
+
 #. Response to 'undo' action
-#: ../tools.h:125
+#: ../tools.h:132
 msgid "Undo!"
 msgstr "Αναίρεση!"
 
 #. Response to 'redo' action
-#: ../tools.h:128
+#: ../tools.h:135
 msgid "Redo!"
 msgstr "Επανάληψη!"
 
 #. Eraser tool
-#: ../tools.h:131
+#: ../tools.h:138
 msgid "Eraser!"
 msgstr "Σβηστήρα!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:134
+#: ../tools.h:141
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Διάλεξε ένα χρώμα ή μία εικόνα για να ξεκινήσεις ένα νέο σχέδιο."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:137
+#: ../tools.h:144
 msgid "Open…"
 msgstr "Άνοιγμα…"
 
 #. Response to 'save' action
-#: ../tools.h:140
+#: ../tools.h:147
 msgid "Your image has been saved!"
 msgstr "Η εικόνα σου αποθηκεύθηκε!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:143
+#: ../tools.h:150
 msgid "Printing…"
 msgstr "Εκτύπωση…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:146
+#: ../tools.h:153
 msgid "Bye bye!"
 msgstr "Γειά χαρά!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Let go of the button to complete the line."
 msgstr "Άφησε το πλήκτρο του ποντικιού για να ολοκληρωθεί η γραμμή."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Hold the button to stretch the shape."
 msgstr "Κράτησε πατημένο το πλήκτρο του ποντικιού για να τεντώσεις το σχήμα."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:156
+#: ../tools.h:163
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "Κίνησε το ποντίκι για να περιστρέψεις το σχήμα. Κάνε κλικ για να σχεδιαστεί."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:159
+#: ../tools.h:166
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Εντάξει λοιπόν… Ας συνεχίσουμε τη σχεδίαση του ίδιου!"
 
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:1931 ../tuxpaint.c:2661
+msgid "Please wait…"
+msgstr "Παρακαλώ περιμένετε..."
+
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1989
 msgid "Do you really want to quit?"
 msgstr "Σίγουρα θέλεις να βγεις από το πρόγραμμα;"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1992
 msgid "Yes, I’m done!"
 msgstr "Ναι, τελείωσα!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1891
+#: ../tuxpaint.c:1995 ../tuxpaint.c:2022
 msgid "No, take me back!"
 msgstr "Όχι δεν έχω τελειώσει ακόμα!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1999
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να αποθηκευτεί;"
 
-#: ../tuxpaint.c:1869 ../tuxpaint.c:1874
+#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
 msgid "Yes, save it!"
 msgstr "Ναι, αποθήκευσέ την!"
 
-#: ../tuxpaint.c:1870 ../tuxpaint.c:1875
+#: ../tuxpaint.c:2001 ../tuxpaint.c:2006
 msgid "No, don’t bother saving!"
 msgstr "Όχι, μην ασχοληθείς με την αποθήκευση!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:2004
 msgid "Save your picture first?"
 msgstr "Να αποθηκευτεί η εικόνα σου πρώτα;"
 
 #. Error opening picture
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:2009
 msgid "Can’t open that picture!"
 msgstr "Δεν μπορώ να ανοίξω αυτή τη ζωγραφιά!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1881 ../tuxpaint.c:1886 ../tuxpaint.c:1895 ../tuxpaint.c:1902
-#: ../tuxpaint.c:1911
+#: ../tuxpaint.c:2012 ../tuxpaint.c:2017 ../tuxpaint.c:2026 ../tuxpaint.c:2033
+#: ../tuxpaint.c:2042
 msgid "OK"
 msgstr "Εντάξει"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:2016
 msgid "There are no saved files!"
 msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:2020
 msgid "Print your picture now?"
 msgstr "Να εκτυπώσω τη ζωγραφιά σου;"
 
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:2021
 msgid "Yes, print it!"
 msgstr "Ναι, εκτύπωσέ την!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1894
+#: ../tuxpaint.c:2025
 msgid "Your picture has been printed!"
 msgstr "Η εικόνα σου εκτυπώθηκε!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1898
+#: ../tuxpaint.c:2029
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Λυπάμαι! Δεν ήταν δυνατή η εκτύπωση της ζωγραφιάς σου!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:2032
 msgid "You can’t print yet!"
 msgstr "Δεν μπορείς να εκτυπώσεις ακόμη!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1905
+#: ../tuxpaint.c:2036
 msgid "Erase this picture?"
 msgstr "Να διαγραψω αυτήν την εικόνα;"
 
-#: ../tuxpaint.c:1906
+#: ../tuxpaint.c:2037
 msgid "Yes, erase it!"
 msgstr "Ναι, διάγραψέ την!"
 
-#: ../tuxpaint.c:1907
+#: ../tuxpaint.c:2038
 msgid "No, don’t erase it!"
 msgstr "Όχι, μην τη διαγράφεις!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1910
+#: ../tuxpaint.c:2041
 msgid "Remember to use the left mouse button!"
 msgstr "Προσοχή, πρέπει να χρησιμοποιείς το αριστερό πλήκτρο του ποντικιού!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2039
+#: ../tuxpaint.c:2170
 msgid "Sound muted."
 msgstr "Χωρίς ήχο."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2044
+#: ../tuxpaint.c:2175
 msgid "Sound unmuted."
 msgstr "Με ήχο."
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2511
-msgid "Please wait…"
-msgstr "Παρακαλώ περιμένετε..."
-
-#: ../tuxpaint.c:7228
+#: ../tuxpaint.c:7764
 msgid "Pick a color."
 msgstr "Δάλεξε ένα χρώμα."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8008
+#: ../tuxpaint.c:8568
 msgid "Erase"
 msgstr "Διαγραφή"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8011
+#: ../tuxpaint.c:8571
 msgid "Slides"
 msgstr "Προβολή διαφανειών."
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8014
+#: ../tuxpaint.c:8574
 msgid "Back"
 msgstr "Προηγούμενο"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8017
+#: ../tuxpaint.c:8577
 msgid "Next"
 msgstr "Επόμενο"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8020
+#: ../tuxpaint.c:8580
 msgid "Play"
 msgstr "Αναπαραγωγή"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:9291
 msgid "Aa"
 msgstr "Αα"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11670
+#: ../tuxpaint.c:12375
 msgid "Yes"
 msgstr "Ναι"
 
-#: ../tuxpaint.c:11674
+#: ../tuxpaint.c:12379
 msgid "No"
 msgstr "Όχι"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12669
+#: ../tuxpaint.c:13374
 msgid "Replace the picture with your changes?"
 msgstr "Να αντικαταστήσω τη ζωγραφιά με τις αλλαγές που έκανες;"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12673
+#: ../tuxpaint.c:13378
 msgid "Yes, replace the old one!"
 msgstr "Ναι, αντικατάστησε την παλιά ζωγραφιά!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12677
+#: ../tuxpaint.c:13382
 msgid "No, save a new file!"
 msgstr "Όχι, κάνε αποθήκευση σε νέο αρχείο!"
 
-#: ../tuxpaint.c:13440
+#: ../tuxpaint.c:14234
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε “Άνοιγμα”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14427 ../tuxpaint.c:14741
+#: ../tuxpaint.c:15239 ../tuxpaint.c:15553
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε \"Αναπαραγωγή”."
 

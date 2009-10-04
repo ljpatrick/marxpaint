@@ -8,7 +8,15 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.October.2 (0.9.22)
+2009.October.3 (0.9.22)
+  * New Tools:
+    ----------
+    * Label - A tool to add text to a drawing, which can be modified or
+      moved later.
+      By Bruno Dilly <bruno.dilly@gmail.com> (GSOC 2008)
+      With modifications and integration by
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.

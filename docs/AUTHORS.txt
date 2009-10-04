@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - September 23, 2009
+June 17, 2002 - October 3, 2009
 
 $Id$
 
@@ -55,6 +55,12 @@ $Id$
   Tint ('Brush' mode), Noise, Rain and Mosaic Magic Tools.
   Jigsaw 3x3 and Jigsaw 5x5 starter images.
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
+  Contributed as part of Google Summer of Code, 2008.
+
+  Label tool.
+  by Bruno Dilly <bruno.dilly@gmail.com>
+  with modifications and integration by
+  Pere Pujal i Carabantes <pere@fornol.no-ip.org>
   Contributed as part of Google Summer of Code, 2008.
 
   Confetti, Fisheye, TV, Rosette, Picasso and Wavelets Magic Tools.

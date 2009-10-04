@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 18:32-0700\n"
+"POT-Creation-Date: 2009-10-03 22:47-0700\n"
 "PO-Revision-Date: 2009-10-02 15:14+0300\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -144,7 +144,6 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
@@ -230,480 +229,473 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Kvadrāts"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Taisnstūris"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Riņķis"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Elipse"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Trīsstūris"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Pentagons"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Rombs"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Astoņstūris"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kvadrāts ir figūra ar četrām vienādām malām."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Taisnstūrim visi četri leņķi ir taisni."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Riņķis ir aplis kuram visi punkti atrodas vienādā attālumā no centra."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Elipse ir izstiepts riņķis."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Trīsstūrim ir trīs malas."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Pentagonam ir piecas malas."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rombam ir četrasvienādas malas un pretējās malas ir paralēlas."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Astoņstūrim ir astoņas vienādas malas."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:56
+#: ../titles.h:57
 msgid "Tools"
 msgstr "Rīki"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:59
+#: ../titles.h:60
 msgid "Colors"
 msgstr "krāsas"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:62
+#: ../titles.h:63
 msgid "Brushes"
 msgstr "Otas"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:65
+#: ../titles.h:66
 msgid "Erasers"
 msgstr "Dzēšgumija"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:68
+#: ../titles.h:69
 msgid "Stamps"
 msgstr "Uzlīmes"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71
-#: ../tools.h:69
+#: ../titles.h:72 ../tools.h:70
 msgid "Shapes"
 msgstr "Formas"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:74
+#: ../titles.h:75
 msgid "Letters"
 msgstr "Burti"
 
+#. Title of font selector (buttons down the right for label tool)
+#. Label tool
+#: ../titles.h:78 ../tools.h:79
+msgid "Label"
+msgstr ""
+
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77
-#: ../tools.h:75
+#: ../titles.h:81 ../tools.h:76
 msgid "Magic"
 msgstr "Maģija"
 
 #. Freehand painting tool
-#: ../tools.h:60
+#: ../tools.h:61
 msgid "Paint"
 msgstr "Krāsas"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:63
+#: ../tools.h:64
 msgid "Stamp"
 msgstr "Uzlīmes"
 
 #. Line drawing tool
-#: ../tools.h:66
+#: ../tools.h:67
 msgid "Lines"
 msgstr "Līnijas"
 
 #. Text tool
-#: ../tools.h:72
+#: ../tools.h:73
 msgid "Text"
 msgstr "Teksts"
 
 #. Undo last action
-#: ../tools.h:78
+#: ../tools.h:82
 msgid "Undo"
 msgstr "<--"
 
 #. Redo undone action
-#: ../tools.h:81
+#: ../tools.h:85
 msgid "Redo"
 msgstr "-->"
 
 #. Eraser tool
-#: ../tools.h:84
+#: ../tools.h:88
 msgid "Eraser"
 msgstr "Dzēšgumija"
 
 #. Start a new picture
-#: ../tools.h:87
+#: ../tools.h:91
 msgid "New"
 msgstr "Jauns"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90
-#: ../tuxpaint.c:8005
+#: ../tools.h:94 ../tuxpaint.c:8565
 msgid "Open"
 msgstr "Atvērt"
 
 #. Save the current picture
-#: ../tools.h:93
+#: ../tools.h:97
 msgid "Save"
 msgstr "Saglabāt"
 
 #. Print the current picture
-#: ../tools.h:96
+#: ../tools.h:100
 msgid "Print"
 msgstr "Printēt"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:99
+#: ../tools.h:103
 msgid "Quit"
 msgstr "Iziet"
 
 #. Paint tool instructions
-#: ../tools.h:107
+#: ../tools.h:111
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Paņem krāsu un otas formu lai zīmētu."
 
 #. Stamp tool instructions
-#: ../tools.h:110
+#: ../tools.h:114
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Izvēlies uzlīmi ar ko aplīmēsi savu zīmējumu."
 
 #. Line tool instructions
-#: ../tools.h:113
+#: ../tools.h:117
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nospied peli lai sāktu zīmēt līniju. Atlaid vaļā lai to pabeigtu"
 
 #. Shape tool instructions
-#: ../tools.h:116
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Izvēlies formu. Nospied peli lai paņemtu centru, velc, tad laid vaļā kad zīmējums ir izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un nopsied peli lai to uzzīmetu."
+#: ../tools.h:120
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Izvēlies formu. Nospied peli lai paņemtu centru, velc, tad laid vaļā kad "
+"zīmējums ir izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un "
+"nopsied peli lai to uzzīmetu."
 
 #. Text tool instructions
-#: ../tools.h:119
+#: ../tools.h:123
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Izvēlies teksta stilu. Nospied ar peli uz zīmējumu."
 
 #. Magic tool instruction
-#: ../tools.h:122
+#: ../tools.h:126
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Paņem maģisko effektu, lai tu vari burties!"
 
+#. Label tool instructions
+#: ../tools.h:129
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Click on the wheel to rotate the text. Click on the edit button and select a "
+"label to edit."
+msgstr "Izvēlies teksta stilu. Nospied ar peli uz zīmējumu."
+
 #. Response to 'undo' action
-#: ../tools.h:125
+#: ../tools.h:132
 msgid "Undo!"
 msgstr "Atsaukt!"
 
 #. Response to 'redo' action
-#: ../tools.h:128
+#: ../tools.h:135
 msgid "Redo!"
 msgstr "Atatsaukt!"
 
 #. Eraser tool
-#: ../tools.h:131
+#: ../tools.h:138
 msgid "Eraser!"
 msgstr "Dzēšgumija!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:134
+#: ../tools.h:141
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Izvēlies krāsu vai bildu ar kuru sāksi zīmēt."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:137
+#: ../tools.h:144
 msgid "Open…"
 msgstr "Atvērt…"
 
 #. Response to 'save' action
-#: ../tools.h:140
+#: ../tools.h:147
 msgid "Your image has been saved!"
 msgstr "Tava bilde tika saglabāta!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:143
+#: ../tools.h:150
 msgid "Printing…"
 msgstr "Printēju…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:146
+#: ../tools.h:153
 msgid "Bye bye!"
 msgstr "Atā atā!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Let go of the button to complete the line."
 msgstr "Atlaid peles pogu, lai beigtu zīmēt līniju."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Hold the button to stretch the shape."
 msgstr "Pieturi peles pogu lai izstieptu formu."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:156
+#: ../tools.h:163
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Kustini peli lai zīmējumu pagrieztu. Nospied peles pogu lai uzzīmētu."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:159
+#: ../tools.h:166
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Labi tad… turpinam zīmēt šo zīmējumu!"
 
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:1931 ../tuxpaint.c:2661
+msgid "Please wait…"
+msgstr "Lūdzu uzgaidi..."
+
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1989
 msgid "Do you really want to quit?"
 msgstr "Vai tu tiešām gribi ziet :( ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1861
-#| msgid "Yes, I'm done!"
+#: ../tuxpaint.c:1992
 msgid "Yes, I’m done!"
 msgstr "Jā, pabeidzu!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1864
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1995 ../tuxpaint.c:2022
 msgid "No, take me back!"
 msgstr "Nē, es gribu atpakaļ!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1999
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ja tu izies, un nesaglabāsi zīmējumu tu zaudēsi to! Vai saglabāt?"
 
-#: ../tuxpaint.c:1869
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
 msgid "Yes, save it!"
 msgstr "Ja, saglabāt!"
 
-#: ../tuxpaint.c:1870
-#: ../tuxpaint.c:1875
-#| msgid "No, don't bother saving!"
+#: ../tuxpaint.c:2001 ../tuxpaint.c:2006
 msgid "No, don’t bother saving!"
 msgstr "Nē, nesaglabāšu!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:2004
 msgid "Save your picture first?"
 msgstr "Vai vispirms saglabāt tavu bildi?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:2009
 msgid "Can’t open that picture!"
 msgstr "Nu nevaru es to bildi atvērt!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1881
-#: ../tuxpaint.c:1886
-#: ../tuxpaint.c:1895
-#: ../tuxpaint.c:1902
-#: ../tuxpaint.c:1911
+#: ../tuxpaint.c:2012 ../tuxpaint.c:2017 ../tuxpaint.c:2026 ../tuxpaint.c:2033
+#: ../tuxpaint.c:2042
 msgid "OK"
 msgstr "Labi"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:2016
 msgid "There are no saved files!"
 msgstr "Tev nav neviena saglabāta zīmējuma!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:2020
 msgid "Print your picture now?"
 msgstr "Printēt tavu bildi?"
 
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:2021
 msgid "Yes, print it!"
 msgstr "Jā, printē!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1894
+#: ../tuxpaint.c:2025
 msgid "Your picture has been printed!"
 msgstr "Tava bilde ir izprintēta!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1898
-#| msgid "Your picture has been printed!"
+#: ../tuxpaint.c:2029
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Atvaino! Nevarēju izprintēt tavu bildi!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:2032
 msgid "You can’t print yet!"
 msgstr "Tu vēl nevari izprintēt!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1905
+#: ../tuxpaint.c:2036
 msgid "Erase this picture?"
 msgstr "Dzēst šo zīmējumu?"
 
-#: ../tuxpaint.c:1906
+#: ../tuxpaint.c:2037
 msgid "Yes, erase it!"
 msgstr "Jā, dzēs to!"
 
-#: ../tuxpaint.c:1907
-#| msgid "No, don't erase it!"
+#: ../tuxpaint.c:2038
 msgid "No, don’t erase it!"
 msgstr "Nē, nedzēs!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1910
+#: ../tuxpaint.c:2041
 msgid "Remember to use the left mouse button!"
 msgstr "Atceries, lieto kreiso peles pogu!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2039
+#: ../tuxpaint.c:2170
 msgid "Sound muted."
 msgstr "Skaņa izslēgta"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2044
+#: ../tuxpaint.c:2175
 msgid "Sound unmuted."
 msgstr "Skaņa ieslēgta"
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2511
-msgid "Please wait…"
-msgstr "Lūdzu uzgaidi..."
-
-#: ../tuxpaint.c:7228
+#: ../tuxpaint.c:7764
 msgid "Pick a color."
 msgstr "Izvēlies krāsu."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8008
+#: ../tuxpaint.c:8568
 msgid "Erase"
 msgstr "Dzēst"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8011
+#: ../tuxpaint.c:8571
 msgid "Slides"
 msgstr "Slaids"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8014
+#: ../tuxpaint.c:8574
 msgid "Back"
 msgstr "Atpakaļ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8017
+#: ../tuxpaint.c:8577
 msgid "Next"
 msgstr "Tālāk"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8020
+#: ../tuxpaint.c:8580
 msgid "Play"
 msgstr "Spēlēt"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:9291
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11670
+#: ../tuxpaint.c:12375
 msgid "Yes"
 msgstr "Jā"
 
-#: ../tuxpaint.c:11674
+#: ../tuxpaint.c:12379
 msgid "No"
 msgstr "Nē"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12669
+#: ../tuxpaint.c:13374
 msgid "Replace the picture with your changes?"
 msgstr "Aizstāt zīmejumu ar tavām izmaiņām?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12673
+#: ../tuxpaint.c:13378
 msgid "Yes, replace the old one!"
 msgstr "Jā, aizstā to veco zīmējumu!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12677
+#: ../tuxpaint.c:13382
 msgid "No, save a new file!"
 msgstr "Nē, glabā jaunā failā!"
 
-#: ../tuxpaint.c:13440
+#: ../tuxpaint.c:14234
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izvēlies bildi ko gribi atvērt un spied pogu “Atvērt“."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14427
-#: ../tuxpaint.c:14741
+#: ../tuxpaint.c:15239 ../tuxpaint.c:15553
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Izvēlies bildi kuru tu gribi un spied pogu “Spēlēt”."
 
@@ -736,8 +728,12 @@ msgid "Blind"
 msgstr "Akls"
 
 #: ../../magic/src/blind.c:97
-msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
-msgstr "Klikšķini savas bildes stūrī lai ievietotu loga žalūzijas.Kustini peli perpendikulāri lai atvērt vai aizvērtu žalūzijas."
+msgid ""
+"Click towards the edge of your picture to pull window blinds over it. Move "
+"perpendicularly to open or close the blinds."
+msgstr ""
+"Klikšķini savas bildes stūrī lai ievietotu loga žalūzijas.Kustini peli "
+"perpendikulāri lai atvērt vai aizvērtu žalūzijas."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -756,8 +752,11 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Nospied, pieturi peles pogu un velc peli lai bilde būtu klucīši."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu zīmētu"
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu "
+"zīmētu"
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
@@ -769,7 +768,8 @@ msgstr "Migla"
 
 #: ../../magic/src/blur.c:60
 msgid "Click and move the mouse around to blur the image."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
 
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
@@ -802,7 +802,8 @@ msgstr "Multene"
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
@@ -838,7 +839,8 @@ msgstr "Tumsinātājs"
 
 #: ../../magic/src/fade_darken.c:132
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai daļu bildes padarītu gaišāku."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai daļu bildes padarītu gaišāku."
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click to lighten your entire picture."
@@ -846,7 +848,8 @@ msgstr "Noklikšķini peli lai visu bildi padarītu gaišāku."
 
 #: ../../magic/src/fade_darken.c:139
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai daļu bildes padarītu tumšāku."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai daļu bildes padarītu tumšāku."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click to darken your entire picture."
@@ -875,7 +878,9 @@ msgstr "Puķe"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Nospied peli un velc to lai uzzīmētu puķes. Atlaid peli lai beigtu zīmēt puķes."
+msgstr ""
+"Nospied peli un velc to lai uzzīmētu puķes. Atlaid peli lai beigtu zīmēt "
+"puķes."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -883,15 +888,19 @@ msgstr "Putas"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar putojošiem burbuļiem."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar putojošiem "
+"burbuļiem."
 
 #: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "Locīt"
 
 #: ../../magic/src/fold.c:86
-msgid "Choose a background color and click to turn the corner of the page over."
-msgstr "Izvēlies fona krāsu un nospied pelespogu lai lapas stūri apmest otrādi."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
+msgstr ""
+"Izvēlies fona krāsu un nospied pelespogu lai lapas stūri apmest otrādi."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -899,7 +908,9 @@ msgstr "Stikla rūtis"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar stikla mozaīku."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar stikla "
+"mozaīku."
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
@@ -911,15 +922,20 @@ msgstr "Zāle"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti pievienot dubļus!"
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti "
+"pievienot dubļus!"
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Kaleidoskops"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu četrassimetriskas bildes vienlaikus (kaleidoskops)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmētu četrassimetriskas bildes "
+"vienlaikus (kaleidoskops)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -935,7 +951,8 @@ msgstr "Metāla krāsa"
 
 #: ../../magic/src/metalpaint.c:83
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Nospied, pieturi peles pogu un velc peli lai krāsotu ar metālisku krāsu."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai krāsotu ar metālisku krāsu."
 
 #: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
@@ -958,15 +975,16 @@ msgid "Mosaic"
 msgstr "Mozaīka"
 
 #: ../../magic/src/mosaic.c:78
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar mozaīku."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar mozaīku."
 
 #: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Nospied peli uz zīmējumu lai visu bildi pārklātu ar mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:134
-#| msgid "Square"
 msgid "Square Mosaic"
 msgstr "Kvadrāta Mozaīka"
 
@@ -979,7 +997,8 @@ msgid "Irregular Mosaic"
 msgstr "Neregulāra mozaīka"
 
 #: ../../magic/src/mosaic_shaped.c:141
-msgid "Click and move the mouse to add a square mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Nospied un velc peli lai bildi pārklātu ar kvadrāta mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:142
@@ -987,7 +1006,8 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Nospied peli lai visu bildi pārklātu ar kvadrāta mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:144
-msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Nospied un velc peli lai bildi pārklātu ar seštūra mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:145
@@ -995,7 +1015,8 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Nospied peli lai visu bildi pārklātu ar seštūra mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:147
-msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Nospied un velc peli lai bildi pārklātu ar neregulāru mozaīku."
 
 #: ../../magic/src/mosaic_shaped.c:148
@@ -1007,9 +1028,10 @@ msgid "Negative"
 msgstr "Negatīvs"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu ar pretējām krāsām."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu ar pretējām "
+"krāsām."
 
 #: ../../magic/src/negative.c:83
 msgid "Click to turn your painting into its negative."
@@ -1021,7 +1043,8 @@ msgstr "Kņada"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar troksni."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi pārklātu ar troksni."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
@@ -1037,11 +1060,15 @@ msgstr "Palielināt"
 
 #: ../../magic/src/perspective.c:151
 msgid "Click on the corners and drag where you want to stretch the picture."
-msgstr "Noklikšķini uz bildes stūriem un velc peli uz to virzienu, uz kuru gribi izstiept bildi."
+msgstr ""
+"Noklikšķini uz bildes stūriem un velc peli uz to virzienu, uz kuru gribi "
+"izstiept bildi."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "Noklikšķini un velc peli uz augšu lai tuvinātu vai velc uz leju lai tālinātu bildi."
+msgstr ""
+"Noklikšķini un velc peli uz augšu lai tuvinātu vai velc uz leju lai tālinātu "
+"bildi."
 
 #: ../../magic/src/puzzle.c:79
 msgid "Puzzle"
@@ -1084,18 +1111,20 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Noklikšķini lai pārklātu visu bildi ar lietus pilieniem."
 
 #: ../../magic/src/realrainbow.c:86
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Īsta Varavīksne"
 
 #: ../../magic/src/realrainbow.c:88
-#| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "SODZZIV Varavīksne"
 
 #: ../../magic/src/realrainbow.c:93
-msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
-msgstr "Noklikšķini kur gribi sākt zīmēt varavīksni, un velc peli līdz vietai kur gribi lai varavīksne beidzās, un beigās atlaid peles pogu!"
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
+"Noklikšķini kur gribi sākt zīmēt varavīksni, un velc peli līdz vietai kur "
+"gribi lai varavīksne beidzās, un beigās atlaid peles pogu!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1202,8 +1231,13 @@ msgid "String 'V'"
 msgstr "Aukla 'V'"
 
 #: ../../magic/src/string.c:134
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
-msgstr "Nospied un velc peli, lai zīmētu auklas mākslu. Velc no augšas līdz lejai lai zīmētu mazāk vai vairāk līnijas, pa labi, pa kreisi lai būtu lielāki caurumi!"
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, left or right to make a bigger hole."
+msgstr ""
+"Nospied un velc peli, lai zīmētu auklas mākslu. Velc no augšas līdz lejai "
+"lai zīmētu mazāk vai vairāk līnijas, pa labi, pa kreisi lai būtu lielāki "
+"caurumi!"
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
@@ -1222,20 +1256,28 @@ msgid "Color & White"
 msgstr "Krāsa & Balta"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Noklikšķini un velc peli apkārt bildei, lai daļai no bildes mainītu krāsas."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
+msgstr ""
+"Noklikšķini un velc peli apkārt bildei, lai daļai no bildes mainītu krāsas."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
 msgstr "Noklikšķini lai mainītu krāsu visai bildei."
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "Noklikšķini un velc peli apkārt bildei, lai daļu no bildes pārvērstu baltā un citā krāsā, kuru tu izvēlies."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"Noklikšķini un velc peli apkārt bildei, lai daļu no bildes pārvērstu baltā "
+"un citā krāsā, kuru tu izvēlies."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Noklikšķini lai daļu no bildes pārvērstu baltā un citā krāsā, kuru tu izvēlies."
+msgstr ""
+"Noklikšķini lai daļu no bildes pārvērstu baltā un citā krāsā, kuru tu "
+"izvēlies."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1258,8 +1300,12 @@ msgid "TV"
 msgstr "Televizors"
 
 #: ../../magic/src/tv.c:79
-msgid "Click and drag to make parts of your picture look like they are on television."
-msgstr "Noklikšķini un velc peli lai daļa tavas bildes, iszskatītos it kā būtu televizorā."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr ""
+"Noklikšķini un velc peli lai daļa tavas bildes, iszskatītos it kā būtu "
+"televizorā."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
@@ -1274,12 +1320,24 @@ msgid "Wavelets"
 msgstr "Viļņains"
 
 #: ../../magic/src/waves.c:88
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Nospied peles pogu lai horizontāli bildi padarītu viļnaināku. Klikšķini vairāk bildes augšā lai viļņi būtu īsāki, bildes apakšā lai būtu garāki viļņi, kreisajā pusē lai butu mazāki viļņi un labajā pusē lielākiem viļņiem!"
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Nospied peles pogu lai horizontāli bildi padarītu viļnaināku. Klikšķini "
+"vairāk bildes augšā lai viļņi būtu īsāki, bildes apakšā lai būtu garāki "
+"viļņi, kreisajā pusē lai butu mazāki viļņi un labajā pusē lielākiem viļņiem!"
 
 #: ../../magic/src/waves.c:89
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Nospied peles pogu lai vertikāli bildi padarītu viļnaināku. Klikšķini vairāk bildes augšā lai viļņi būtu īsāki, bildes apakšā lai būtu garāki viļņi, kreisajā pusē lai butu mazāki viļņi un labajā pusē lielākiem viļņiem!"
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"Nospied peles pogu lai vertikāli bildi padarītu viļnaināku. Klikšķini vairāk "
+"bildes augšā lai viļņi būtu īsāki, bildes apakšā lai būtu garāki viļņi, "
+"kreisajā pusē lai butu mazāki viļņi un labajā pusē lielākiem viļņiem!"
 
 #, fuzzy
 #~ msgid ""
@@ -1314,8 +1372,10 @@ msgstr "Nospied peles pogu lai vertikāli bildi padarītu viļnaināku. Klikšķ
 #, fuzzy
 #~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
 #~ msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
 #~ msgid "qy"
 #~ msgstr "qy"
+
 #~ msgid "QY"
 #~ msgstr "QY"
 
@@ -1386,18 +1446,24 @@ msgstr "Nospied peles pogu lai vertikāli bildi padarītu viļnaināku. Klikšķ
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Migla"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Nospied, pieturi peles pogu un velc peli lai balinātu krāsu."
+
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
+
 #~ msgid "Sparkles"
 #~ msgstr "Spīdeklīši"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Tev tagad ir balta lapa uz kuras tu vari zīmēt!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Zīmēsi jaunu zīmējumu?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Jā, sāksim zīmēt!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."
-

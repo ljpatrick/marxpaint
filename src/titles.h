@@ -42,6 +42,7 @@ enum
   TITLE_STAMPS,
   TITLE_SHAPES,
   TITLE_LETTERS,
+  TITLE_LABEL,
   TITLE_MAGIC,
   NUM_TITLES
 };
@@ -72,6 +73,9 @@ const char *const title_names[NUM_TITLES] = {
 
   // Title of font selector (buttons down the right for text tool)
   gettext_noop("Letters"),
+
+  // Title of font selector (buttons down the right for label tool)
+  gettext_noop("Label"),
 
   // Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
   gettext_noop("Magic")

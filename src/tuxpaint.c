@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 1, 2009
+  June 14, 2002 - October 3, 2009
   $Id$
 */
 
@@ -92,6 +92,13 @@
 #define COLORSEL_REFRESH 4	/* redraw the colors, either on or off */
 #define COLORSEL_CLOBBER_WIPE 8 /* draw the (greyed out) colors, but don't disable */
 #define COLORSEL_FORCE_REDRAW 16 /* enable, and force redraw (to make color picker work) */
+
+/* Setting the amask value based on endianness*/
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+#define TPAINT_AMASK 0xff000000
+#else
+#define TPAINT_AMASK 0x000000ff
+#endif
 
 static unsigned draw_colors(unsigned action);
 
@@ -506,6 +513,20 @@ enum
   STARTER_SCENE
 };
 
+enum
+{
+  LABEL_OFF,
+  LABEL_LABEL,
+  LABEL_SELECT //,
+//  LABEL_ROTATE
+};
+
+enum
+{
+  SELECT_OFF,
+  SELECT_ON
+};
+
 /* Color globals (copied from colors.h, if no colors specified by user) */
 
 int NUM_COLORS;
@@ -562,6 +583,7 @@ static SDL_Rect r_ttools;	/* was 96x40 @ 0,0  (title for tools, "Tools") */
 static SDL_Rect r_tcolors;	/* was 96x48 @ 0,376 (title for colors, "Colors") */
 static SDL_Rect r_ttoolopt;	/* was 96x40 @ 544,0 (title for tool options) */
 static SDL_Rect r_tuxarea;	/* was 640x56 */
+static SDL_Rect r_label;
 
 static int button_w;		/* was 48 */
 static int button_h;		/* was 48 */
@@ -643,6 +665,8 @@ static void setup_normal_screen_layout(void)
 
   r_canvas.h = r_ttoolopt.h + buttons_tall * button_h;
 
+  r_label = r_canvas;
+
   r_colors.y = r_canvas.h + r_canvas.y;
   r_tcolors.y = r_canvas.h + r_canvas.y;
 
@@ -719,6 +743,8 @@ static void setup_screen_layout(void)
 
 static SDL_Surface *screen;
 static SDL_Surface *canvas;
+static SDL_Surface *label;
+static SDL_Surface *save_canvas;
 static SDL_Surface *img_starter, *img_starter_bkgd;
 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
@@ -826,6 +852,10 @@ static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y,
 /* test an SDL_Rect r for a grid location, based on a grid_dims gd */
 #define GRIDHIT_GD(r,gd) grid_hit_gd(&(r), event.button.x, event.button.y, &(gd))
 
+/* One global variable defined here so that update_canvas() need not be moved below */
+
+static int disable_label;
+
 /* Update the screen with the new canvas: */
 static void update_canvas(int x1, int y1, int x2, int y2)
 {
@@ -850,6 +880,12 @@ static void update_canvas(int x1, int y1, int x2, int y2)
   }
 
   SDL_BlitSurface(canvas, NULL, screen, &r_canvas);
+
+  /* If label is not disabled, cover canvas with label layer */
+
+  if(!disable_label)
+      SDL_BlitSurface(label, NULL, screen, &r_label);
+
   update_screen(x1 + 96, y1, x2 + 96, y2);
 }
 
@@ -888,6 +924,64 @@ Uint8 * touched;
 
 int shape_radius;
 
+/* Text label tool struct to hold information about text on the label layer */
+typedef struct label_node {
+	unsigned int save_texttool_len;
+	wchar_t save_texttool_str[256];
+	unsigned save_color;
+	int save_width;
+	int save_height;
+	Uint16 save_x;
+	Uint16 save_y;
+	int save_cur_font;
+  char * save_font_type;
+        int save_text_state;
+        unsigned save_text_size;
+        int save_undoid;
+        int is_enabled;
+        struct label_node* disables;
+	struct label_node* next_to_up_label_node;
+	struct label_node* next_to_down_label_node;
+        SDL_Surface* label_node_surface;
+} label_node;
+
+
+static struct label_node* start_label_node;
+static struct label_node* current_label_node;
+static struct label_node* first_label_node_in_redo_stack;
+static struct label_node* label_node_to_edit;
+
+static unsigned int select_texttool_len;
+static wchar_t select_texttool_str[256];
+static unsigned select_color;
+static int select_width;
+static int select_height;
+static Uint16 select_x;
+static Uint16 select_y;
+static int select_cur_font;
+static int select_text_state;
+static unsigned select_text_size;
+static int coming_from_undo_or_redo = FALSE;
+
+
+void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Surface* label_node_surface);
+void load_info_about_label_surface(char[1024]);
+
+struct label_node* search_label_list(struct label_node**, Uint16, Uint16);
+
+void do_undo_label_node(void);
+void do_redo_label_node(void);
+void rec_undo_label(void);
+
+void render_all_nodes_starting_at(struct label_node**);
+void simply_render_node(struct label_node*);
+
+void derender_node(struct label_node**);
+
+void delete_label_list(struct label_node**);
+
+static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, 
+		   SDL_Surface * dest_surf, SDL_Rect * dest_rect);
 
 /* Magic tools API and tool handles: */
 
@@ -989,6 +1083,8 @@ enum
 static SDL_Surface *undo_bufs[NUM_UNDO_BUFS];
 static int undo_starters[NUM_UNDO_BUFS];
 static int cur_undo, oldest_undo, newest_undo;
+static int text_undo[NUM_UNDO_BUFS];
+static int have_to_rec_label_node;
 
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
@@ -1010,6 +1106,7 @@ static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_bold, *img_italic;
+static SDL_Surface *img_label, *img_label_select;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell;
 int color_picker_x, color_picker_y;
 
@@ -1340,12 +1437,13 @@ static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	/* canvas-relative */
+static int cur_label, cur_select;
 static int been_saved;
 static char file_id[NAME_MAX];
 static char starter_id[NAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
-static int font_scroll, magic_scroll;
+static int font_scroll, magic_scroll, tool_scroll;
 static int eraser_scroll, shape_scroll;	/* dummy variables for now */
 
 static int eraser_sound;
@@ -1788,6 +1886,8 @@ int main(int argc, char *argv[])
   cur_magic = 0;
   cur_font = 0;
   cur_eraser = 0;
+  cur_label = LABEL_LABEL;
+  cur_select = 0;
   cursor_left = -1;
   cursor_x = -1;
   cursor_y = -1;
@@ -1813,9 +1913,38 @@ int main(int argc, char *argv[])
   stamp_group = 0;  /* reset! */
   font_scroll = 0;
   magic_scroll = 0;
-
+  tool_scroll = 0;
 
   reset_avail_tools();
+
+  /* Load fonts */
+
+  if (!font_thread_done)
+  {
+    draw_colors(COLORSEL_DISABLE);
+    draw_none();
+    update_screen_rect(&r_toolopt);
+    update_screen_rect(&r_ttoolopt);
+    do_setcursor(cursor_watch);
+
+    // Wait while Text tool finishes loading fonts
+    draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
+
+    waiting_for_fonts = 1;
+#ifdef FORKED_FONTS
+    receive_some_font_info(screen);
+#else
+    while (!font_thread_done && !font_thread_aborted)
+    {
+      // FIXME: should have a read-depends memory barrier around here
+      show_progress_bar(screen);
+      SDL_Delay(20);
+    }
+    // FIXME: should kill this in any case
+    SDL_WaitThread(font_thread, NULL);
+#endif
+    do_setcursor(cursor_arrow);
+  }
 
 
   /* Load current image (if any): */
@@ -1832,7 +1961,7 @@ int main(int argc, char *argv[])
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
   draw_toolbar();
-  draw_colors(COLORSEL_REFRESH);
+draw_colors(COLORSEL_FORCE_REDRAW);
   draw_brushes();
   update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 
@@ -2115,7 +2244,7 @@ static void mainloop(void)
 
 	  if (do_open() == 0)
           {
-            if (cur_tool == TOOL_TEXT)
+            if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	      do_render_cur_text(0);
           }
 
@@ -2131,7 +2260,7 @@ static void mainloop(void)
 	    draw_magic();
 	  else if (cur_tool == TOOL_STAMP)
 	    draw_stamps();
-	  else if (cur_tool == TOOL_TEXT)
+	  else if (cur_tool == TOOL_TEXT ||cur_tool == TOOL_LABEL)
 	    draw_fonts();
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
@@ -2163,7 +2292,7 @@ static void mainloop(void)
           {
 	    draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
 	    
-            if (cur_tool == TOOL_TEXT)
+            if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	      do_render_cur_text(0);
 	  }
 
@@ -2179,7 +2308,7 @@ static void mainloop(void)
 	    draw_magic();
 	  else if (cur_tool == TOOL_STAMP)
 	    draw_stamps();
-	  else if (cur_tool == TOOL_TEXT)
+	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    draw_fonts();
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
@@ -2224,7 +2353,7 @@ static void mainloop(void)
       if (!disable_print)
       {
         /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-        if (cur_tool == TOOL_TEXT && texttool_len > 0)
+        if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && texttool_len > 0)
         {
           rec_undo_buffer();
           do_render_cur_text(1);
@@ -2241,12 +2370,17 @@ static void mainloop(void)
 	else
 	{
 	  /* Handle key in text tool: */
-
-	  if (cur_tool == TOOL_TEXT && cursor_x != -1 && cursor_y != -1)
-	  {
-	    static int redraw = 0;
-	    wchar_t* im_cp = im_data.s;
-
+          if( cur_select == SELECT_OFF && cur_label == LABEL_SELECT && cur_tool == TOOL_LABEL)
+          {
+            /*Select tool has been selected but no text has been selected to edit*/
+          }
+          else
+	    //{FIXAM
+	    if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && cursor_x != -1 && cursor_y != -1)
+	    {
+	      static int redraw = 0;
+	      wchar_t* im_cp = im_data.s;
+  
 #ifdef DEBUG
 	    key_down = key;
 	    key_unicode = event.key.keysym.unicode;
@@ -2406,7 +2540,7 @@ static void mainloop(void)
 				PROMPT_TIP_LEFTCLICK_YES,
 				"", img_mouse, img_mouse_click, NULL, 1,
 				event.button.x, event.button.y);
-          if (cur_tool == TOOL_TEXT)
+          if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    do_render_cur_text(0);
           draw_tux_text(TUX_BORED, "", 0);
 	}
@@ -2416,12 +2550,22 @@ static void mainloop(void)
 	       event.button.button <= 3)
       {
 	if (HIT(r_tools))
+	  {
+	    SDL_Rect real_r_tools = r_tools;
+
+	  if  (NUM_TOOLS > 14 + TOOLOFFSET)
+	  {
+	    real_r_tools.h = r_tools.h - button_h;
+	    real_r_tools.y = r_tools.y + button_h/2;
+	    
+	  }
+	  if (HIT(real_r_tools))
 	{
 	  /* A tool on the left has been pressed! */
 
           magic_switchout(canvas);
 
-	  which = GRIDHIT_GD(r_tools, gd_tools);
+	  which = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 
 	  if (which < NUM_TOOLS && tool_avail[which] &&
 	      (valid_click(event.button.button) || which == TOOL_PRINT))
@@ -2432,10 +2576,14 @@ static void mainloop(void)
 	    /* Render any current text, if switching to a different
                drawing tool: */
 
-	    if (cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
+	    if ((cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
                 which != TOOL_NEW && which != TOOL_OPEN &&
                 which != TOOL_SAVE && which != TOOL_PRINT &&
-                which != TOOL_QUIT)
+                which != TOOL_QUIT) ||
+	       (cur_tool == TOOL_LABEL && which != TOOL_LABEL &&
+                which != TOOL_NEW && which != TOOL_OPEN &&
+                which != TOOL_SAVE && which != TOOL_PRINT &&
+                which != TOOL_QUIT))
 	    {
 	      if (cursor_x != -1 && cursor_y != -1)
 	      {
@@ -2499,7 +2647,7 @@ static void mainloop(void)
 	      draw_colors(COLORSEL_ENABLE);
 	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 	    }
-	    else if (cur_tool == TOOL_TEXT)
+	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    {
 	      if (!font_thread_done)
 	      {
@@ -2536,6 +2684,11 @@ static void mainloop(void)
 		thing_scroll = &font_scroll;
 		draw_fonts();
 		draw_colors(COLORSEL_ENABLE);
+		if (cur_tool == TOOL_LABEL)
+		  {
+                      //cur_label = LABEL_LABEL;
+                      cur_select = SELECT_OFF;
+		  }
 	      }
 	      else
 	      {
@@ -2612,7 +2765,7 @@ static void mainloop(void)
 
 	      if (do_open() == 0)
               {
-                if (old_tool == TOOL_TEXT)
+                if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
 	          do_render_cur_text(0);
               }
 
@@ -2632,7 +2785,7 @@ static void mainloop(void)
 		draw_magic();
 	      else if (cur_tool == TOOL_STAMP)
 		draw_stamps();
-	      else if (cur_tool == TOOL_TEXT)
+	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 		draw_fonts();
 	      else if (cur_tool == TOOL_SHAPES)
 		draw_shapes();
@@ -2666,7 +2819,7 @@ static void mainloop(void)
 
 		draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
           
-                if (cur_tool == TOOL_TEXT)
+                if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                   do_render_cur_text(0);
 	      }
 
@@ -2684,7 +2837,7 @@ static void mainloop(void)
                 draw_magic();
               else if (cur_tool == TOOL_STAMP)
                 draw_stamps();
-              else if (cur_tool == TOOL_TEXT)
+              else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                 draw_fonts();
               else if (cur_tool == TOOL_SHAPES)
                 draw_shapes();
@@ -2694,7 +2847,7 @@ static void mainloop(void)
 	    else if (cur_tool == TOOL_PRINT)
 	    {
               /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-              if (old_tool == TOOL_TEXT && texttool_len > 0)
+              if ((old_tool == TOOL_TEXT || old_tool == TOOL_LABEL) && texttool_len > 0)
               {
                 rec_undo_buffer();
                 do_render_cur_text(1);
@@ -2724,6 +2877,28 @@ static void mainloop(void)
           if (!done)
             magic_switchin(canvas);
 	}
+	  else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
+	{
+	tool_scroll -= gd_tools.cols;
+                playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                    SNDDIST_NEAR);
+
+	draw_toolbar();
+	      update_screen_rect(&r_tools);
+
+	}
+	  else if((event.button.y > real_r_tools.y + real_r_tools.h) && (tool_scroll < NUM_TOOLS - 12 - TOOLOFFSET))
+	{
+	tool_scroll += gd_tools.cols;
+	draw_toolbar();
+                playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                    SNDDIST_NEAR);
+
+	      update_screen_rect(&r_tools);
+
+	}
+	}
+
 	else if (HIT(r_toolopt) && valid_click(event.button.button))
 	{
 	  /* Options on the right
@@ -2733,13 +2908,14 @@ static void mainloop(void)
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
-	      cur_tool == TOOL_ERASER)
+	      cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
 	  {
 	    int num_rows_needed;
 	    SDL_Rect r_controls;
 	    SDL_Rect r_notcontrols;
 	    SDL_Rect r_items;	/* = r_notcontrols; */
 	    int toolopt_changed;
+            int select_changed = 0;
 
 	    grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
 	    grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
@@ -2765,6 +2941,14 @@ static void mainloop(void)
 	      {
 	      2, 2};
 	    }
+	    else if (cur_tool == TOOL_LABEL)
+	      {
+		if (!disable_stamp_controls)
+		  gd_controls = (grid_dims) { 3 , 2 };
+		else
+		  gd_controls = (grid_dims) { 1 , 2};
+	      }
+
             else if (cur_tool == TOOL_MAGIC)
             {
               if (!disable_magic_controls)
@@ -3019,6 +3203,146 @@ static void mainloop(void)
 		  }
 		  toolopt_changed = 1;
 		}
+		if (control_sound != -1)
+		{
+		  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
+			    SNDDIST_NEAR);
+
+
+		  if (cur_tool == TOOL_TEXT)	/* Huh? It had better be! */
+		  {
+		    /* need to invalidate all the cached user fonts, causing reload on demand */
+
+		    int i;
+		    for (i = 0; i < num_font_families; i++)
+		    {
+		      if (user_font_families[i]
+			  && user_font_families[i]->handle)
+		      {
+			TuxPaint_Font_CloseFont(user_font_families[i]->handle);
+			user_font_families[i]->handle = NULL;
+		      }
+		    }
+		    draw_fonts();
+		    update_screen_rect(&r_toolopt);
+		  }
+		}
+	      }
+
+		/* Label controls! */
+	      else if(cur_tool == TOOL_LABEL)
+          {
+              int control_sound = -1;
+
+            if (which & 4)
+	    {
+		  /* One of the bottom buttons: */
+		  if (which & 1)
+		  {
+		    /* Bottom right button: Grow: */
+		    if (text_size < MAX_TEXT_SIZE)
+		    {
+		      text_size++;
+		      control_sound = SND_GROW;
+		      toolopt_changed = 1;
+		    }
+		  }
+		  else
+		  {
+		    /* Bottom left button: Shrink: */
+		    if (text_size > MIN_TEXT_SIZE)
+		    {
+		      text_size--;
+		      control_sound = SND_SHRINK;
+		      toolopt_changed = 1;
+		    }
+		  }
+		}
+		else
+		{
+		    if (which & 2)
+		    {
+                /* One of the middle buttons: */
+                if ( which & 1)
+                {
+                  /*  right button: Italic: */
+		    if (text_state & TTF_STYLE_ITALIC)
+		    {
+		      text_state &= ~TTF_STYLE_ITALIC;
+		      control_sound = SND_ITALIC_ON;
+		    }
+		    else
+		    {
+		      text_state |= TTF_STYLE_ITALIC;
+		      control_sound = SND_ITALIC_OFF;
+		    }
+		  }
+		  else
+		  {
+		        /* middle left button: Bold: */
+		    if (text_state & TTF_STYLE_BOLD)
+		    {
+		      text_state &= ~TTF_STYLE_BOLD;
+		      control_sound = SND_THIN;
+		    }
+		    else
+		    {
+		      text_state |= TTF_STYLE_BOLD;
+		      control_sound = SND_THICK;
+		    }
+		  }
+		  toolopt_changed = 1;
+		}
+		
+              else
+              {
+                /* One of the top buttons: */
+                if (which & 1)
+                {
+                  /* Select button: */
+                  if (cur_label == LABEL_SELECT)
+                  {
+                    cur_label = LABEL_LABEL;
+                    if (cur_select == SELECT_ON)
+                    {
+                      select_changed = 1;
+                    }
+                    else
+                    {
+                      select_changed = 0;
+                    }
+                  }
+                  else
+                  {
+                    cur_label = LABEL_SELECT;
+                  }
+                  toolopt_changed = 1;
+                }
+                /* else */
+                /* { */
+                /*   /\* Rotate button: *\/ */
+                /*   if (cur_label == LABEL_ROTATE) */
+                /*   { */
+                /*     cur_label = LABEL_LABEL; */
+                /*   } */
+                /*   else */
+                /*   { */
+                /*     if(cur_label == LABEL_SELECT && cur_select == SELECT_ON) */
+                /*     { */
+                /*       select_changed = 1; */
+                /*     } */
+                /*     else */
+                /*     { */
+                /*       select_changed = 0; */
+                /*     } */
+                /*     cur_label = LABEL_LABEL; */
+                /*   } */
+                /* } */
+              }
+            }
+          
+	    
+          
 
 
 		if (control_sound != -1)
@@ -3027,7 +3351,7 @@ static void mainloop(void)
 			    SNDDIST_NEAR);
 
 
-		  if (cur_tool == TOOL_TEXT)	/* Huh? It had better be! */
+		  if (cur_tool == TOOL_LABEL)	/* Huh? It had better be! */
 		  {
 		    /* need to invalidate all the cached user fonts, causing reload on demand */
 
@@ -3120,7 +3444,7 @@ static void mainloop(void)
 	      if (do_draw)
 		draw_erasers();
 	    }
-	    else if (cur_tool == TOOL_TEXT)
+	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    {
 	      /* FIXME */ /* char font_tux_text[512]; */
 
@@ -3139,8 +3463,19 @@ static void mainloop(void)
 
 
 	      /* Only rerender when picking a different font */
-	      if (toolopt_changed)
-		do_render_cur_text(0);
+	     if (toolopt_changed)
+             {
+              draw_fonts();
+              if(select_changed)
+              {
+                do_render_cur_text(1);
+                texttool_len = 0;
+              }
+              else
+              {
+                do_render_cur_text(0);
+              }
+             }
 	    }
 	    else if (cur_tool == TOOL_STAMP)
 	    {
@@ -3276,7 +3611,7 @@ static void mainloop(void)
 		draw_magic();
 	      else if (cur_tool == TOOL_STAMP)
 		draw_stamps();
-	      else if (cur_tool == TOOL_TEXT)
+	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 		draw_fonts();
 	      else if (cur_tool == TOOL_SHAPES)
 		draw_shapes();
@@ -3297,7 +3632,7 @@ static void mainloop(void)
 	    render_brush();
 	    
 
-	    if (cur_tool == TOOL_TEXT)
+	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	      do_render_cur_text(0);
             else if (cur_tool == TOOL_MAGIC)
               magic_funcs[magics[cur_magic].handle_idx].set_color(
@@ -3452,10 +3787,55 @@ static void mainloop(void)
 
 	    do_eraser(old_x, old_y);
 	  }
-	  else if (cur_tool == TOOL_TEXT)
+	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	  {
-	    /* Text Tool! */
+	    /* Text and Label Tools! */
 
+            if(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
+            {
+              if(cur_select == SELECT_OFF)
+              {
+		label_node_to_edit=search_label_list(&current_label_node, old_x, old_y);
+                if(label_node_to_edit)
+		  {
+                      cur_thing=label_node_to_edit->save_cur_font;
+		  do_setcursor(cursor_insertion);
+                  cur_select = SELECT_ON;
+                  unsigned int i = 0;
+
+                  texttool_len = select_texttool_len;
+                  while(i < texttool_len)
+                  {
+                    texttool_str[i] = select_texttool_str[i];
+                    i = i+1;
+                  }
+                  texttool_str[i] = L'\0';
+                  cur_color = select_color;
+                  old_x = select_x;
+                  old_y = select_y;
+                  cur_font = select_cur_font;
+                  text_state = select_text_state;
+                  text_size = select_text_size;
+                      
+                  int j;
+		  for (j = 0; j < num_font_families; j++)
+		  {
+		    if (user_font_families[j]
+		        && user_font_families[j]->handle)
+		    {
+		      TuxPaint_Font_CloseFont(user_font_families[j]->handle);
+		      user_font_families[j]->handle = NULL;
+                    }
+		  }
+		  draw_fonts();
+		  update_screen_rect(&r_toolopt);
+
+                  do_render_cur_text(0);
+                  draw_colors(COLORSEL_REFRESH);
+                  draw_fonts();
+                }
+              }
+            }
 	    if (cursor_x != -1 && cursor_y != -1)
 	    {
 	      /*
@@ -3507,6 +3887,7 @@ static void mainloop(void)
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       wheely && event.button.button >= 4 && event.button.button <= 5)
       {
+	int most = 14;
 	int num_rows_needed;
 	SDL_Rect r_controls;
 	SDL_Rect r_notcontrols;
@@ -3519,8 +3900,61 @@ static void mainloop(void)
 	if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	    cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	    cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
-	    cur_tool == TOOL_ERASER)
+	    cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
 	{
+
+	  /* Left tools scroll */
+	  if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
+	    {
+	      int is_upper = (event.button.button == 4);
+	      if (is_upper && tool_scroll > 0)
+		{
+		  tool_scroll -= gd_tools.cols;
+		  playsound(screen, 1, SND_SCROLL, 1, event.button.x,
+			    SNDDIST_NEAR);
+		  draw_toolbar();
+		}
+	      else if (!is_upper && tool_scroll <  NUM_TOOLS - 12 - TOOLOFFSET)
+		{
+		  tool_scroll += gd_tools.cols;
+		  playsound(screen, 1, SND_SCROLL, 1, event.button.x,
+			    SNDDIST_NEAR);
+		  draw_toolbar();
+		}
+
+	      if (event.button.y < r_tools.y + button_h / 2) // cursor on the upper button
+		{
+		  if (tool_scroll == 0)
+		    do_setcursor(cursor_arrow);
+		  else
+		    do_setcursor(cursor_up);
+		}
+	      
+	      else if (event.button.y > r_tools.y + r_tools.h - button_h / 2) // cursor on the lower button
+		{
+		  if (tool_scroll < NUM_TOOLS - 12 - TOOLOFFSET)
+		    do_setcursor(cursor_down);
+		  else
+		    do_setcursor(cursor_arrow);
+		}
+
+	      else if (tool_avail[((event.button.x - r_tools.x) / button_w) +
+				  ((event.button.y -
+				    r_tools.y - button_h / 2) / button_h) * gd_tools.cols +
+				  tool_scroll])
+		{
+		  do_setcursor(cursor_hand);
+		}
+	      else
+		{
+		  do_setcursor(cursor_arrow);
+		}
+	      update_screen_rect(&r_tools);
+	    }
+
+	  /* Right tool options scroll */
+	  else
+	      {
 	  grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
 	  grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
 
@@ -3545,6 +3979,13 @@ static void mainloop(void)
 	    {
 	    2, 2};
 	  }
+          else if(cur_tool == TOOL_LABEL)
+	      {
+	    if (!disable_stamp_controls)
+	      gd_controls = (grid_dims){ 3 , 2 };
+	    else
+                gd_controls = (grid_dims) { 1 , 2};
+            }
           else if (cur_tool == TOOL_MAGIC)
           {
             if (!disable_magic_controls)
@@ -3616,7 +4057,7 @@ static void mainloop(void)
 	    if (do_draw)
 	      draw_erasers();
 	  }
-	  else if (cur_tool == TOOL_TEXT)
+	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	  {
 	    if (do_draw)
 	      draw_fonts();
@@ -3640,6 +4081,8 @@ static void mainloop(void)
 	  /* Update the screen: */
 	  if (do_draw)
 	    update_screen_rect(&r_toolopt);
+	    
+	    }
 	}
       }
       else if (event.type == SDL_USEREVENT)
@@ -3827,17 +4270,51 @@ static void mainloop(void)
 	if (HIT(r_tools))
 	{
 	  /* Tools: */
+	  int most = 14;
+	  if (NUM_TOOLS > most + TOOLOFFSET)
+	    {
 
-	  if (tool_avail[((event.button.x - r_tools.x) / button_w) +
+	      if (event.button.y < r_tools.y + button_h / 2)
+		{
+		  if (tool_scroll > 0)
+		    do_setcursor(cursor_up);
+		  else
+		    do_setcursor(cursor_arrow);
+		}
+	  else if(event.button.y > r_tools.y + r_tools.h - button_h / 2)
+		{
+		  if (tool_scroll < NUM_TOOLS - 12 - TOOLOFFSET)
+		    do_setcursor(cursor_down);
+		  else
+		    do_setcursor(cursor_arrow);
+		}
+
+	  else if (tool_avail[((event.button.x - r_tools.x) / button_w) +
+			     ((event.button.y -
+			       r_tools.y - button_h / 2) / button_h) * gd_tools.cols +
+		               tool_scroll])
+		{
+		  do_setcursor(cursor_hand);
+		}
+	  else
+	    {
+	      do_setcursor(cursor_arrow);
+	    }
+	    }
+
+	  else
+	    {
+	      if (tool_avail[((event.button.x - r_tools.x) / button_w) +
 			 ((event.button.y -
 			   r_tools.y) / button_h) * gd_tools.cols])
-	  {
-	    do_setcursor(cursor_hand);
-	  }
-	  else
-	  {
-	    do_setcursor(cursor_arrow);
-	  }
+		{
+		  do_setcursor(cursor_hand);
+		}
+	      else
+		{
+		  do_setcursor(cursor_arrow);
+		}
+	    }
 	}
 	else if (HIT(r_sfx))
 	{
@@ -3877,14 +4354,21 @@ static void mainloop(void)
 	  if (cur_tool == TOOL_STAMP)
 	  {
 	  }
-	  else if (cur_tool == TOOL_TEXT)
+	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	  {
 	  }
 
 	  max = 14;
 	  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 	    max = 8; /* was 10 before left/right group buttons -bjk 2007.05.03 */
-	  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
+       if(cur_tool == TOOL_LABEL)
+       {
+            max = 12;
+          if (!disable_stamp_controls)
+	       		max = 8;
+       }
+       
+       if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 	    max = 10;
           if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
             max = 12;
@@ -3960,6 +4444,20 @@ static void mainloop(void)
 	  }
 	  else if (cur_tool == TOOL_TEXT)
 	    do_setcursor(cursor_insertion);
+          else if (cur_tool == TOOL_LABEL)
+              {
+                  if (cur_label == LABEL_LABEL)
+                      do_setcursor(cursor_insertion);
+                  else if (cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
+                      do_setcursor(cursor_arrow);
+                  else if (cur_label == LABEL_SELECT && cur_select == SELECT_ON)
+                      do_setcursor(cursor_insertion);
+                  /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_OFF) */
+                  /*     do_setcursor(cursor_arrow); */
+                  /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_ON) */
+                  /*     do_setcursor(cursor_rotate); */
+              }
+
 	  else if (cur_tool == TOOL_MAGIC)
 	    do_setcursor(cursor_wand);
 	  else if (cur_tool == TOOL_ERASER)
@@ -4157,18 +4655,18 @@ static void mainloop(void)
       }
     }
 
+    if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
+        {
+            SDL_Delay(10);
+            cur_cursor_blink = SDL_GetTicks();
 
-    SDL_Delay(10);
-
-    cur_cursor_blink = SDL_GetTicks();
-
-
-    if (cur_tool == TOOL_TEXT && cursor_x != -1 && cursor_y != -1 &&
-	cur_cursor_blink > last_cursor_blink + CURSOR_BLINK_SPEED)
-    {
-      last_cursor_blink = SDL_GetTicks();
-      draw_blinking_cursor();
-    }
+            if( cursor_x != -1 && cursor_y != -1 &&
+                cur_cursor_blink > last_cursor_blink + CURSOR_BLINK_SPEED)
+                {
+                    last_cursor_blink = SDL_GetTicks();
+                    draw_blinking_cursor();
+                }
+        }
   }
   while (!done);
 }
@@ -4901,7 +5399,7 @@ static void stamp_draw(int x, int y)
 }
 
 
-/* Store canvas into undo buffer: */
+/* Store canvas or label into undo buffer: */
 
 static void rec_undo_buffer(void)
 {
@@ -4909,6 +5407,7 @@ static void rec_undo_buffer(void)
 
   wanna_update_toolbar = 0;
 
+  rec_undo_label();
 
   SDL_BlitSurface(canvas, NULL, undo_bufs[cur_undo], NULL);
   undo_starters[cur_undo] = UNDO_STARTER_NONE;
@@ -5404,7 +5903,6 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     upper = (upper + lower) / 2;
     lower = upper;
   }
-
 
   mid = default_stamp_size;
   if (ratio != 1.0)
@@ -6130,13 +6628,6 @@ static void loadstamp_callback(SDL_Surface * screen,
 	     dotext - files[i].str + 1 + dirlen);
       stamp_data[stamp_group][num_stamps[stamp_group]]->stampname[dotext - files[i].str +
                                                      1 + dirlen] = '\0';
-
-      if (strcmp(ext, ".svg") == 0) {
-          stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 1;
-      } else {
-          stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 0;
-      }
-
       num_stamps[stamp_group]++;
     }
     free(files[i].str);
@@ -6299,6 +6790,11 @@ static void setup(int argc, char *argv[])
   mirrorstamps = 0;
   disable_stamp_controls = 0;
   disable_magic_controls = 0;
+  if(VIDEO_BPP != 32)
+    disable_label = 1;
+  else
+    disable_label = 0;
+
 
 #ifndef WINDOW_WIDTH
   WINDOW_WIDTH = 800;
@@ -6491,12 +6987,20 @@ static void setup(int argc, char *argv[])
       disable_stamp_controls = 0;
     }
     else if (strcmp(argv[i], "--nomagiccontrols") == 0)
+      {
+	disable_magic_controls = 1;
+      }
+    else if (strcmp(argv[i], "--nolabel") == 0)
     {
-      disable_magic_controls = 1;
+      disable_label = 1;
     }
     else if (strcmp(argv[i], "--magiccontrols") == 0)
-    {
+      {
       disable_magic_controls = 0;
+      }
+    else if (strcmp(argv[i], "--label") == 0)
+    {
+      disable_label = 1;
     }
     else if (strcmp(argv[i], "--noshortcuts") == 0)
     {
@@ -7547,6 +8051,15 @@ static void setup(int argc, char *argv[])
 				screen->format->Gmask,
 				screen->format->Bmask, 0);
 
+    save_canvas = SDL_CreateRGBSurface(screen->flags,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, 0);
+
+
   img_starter = NULL;
   img_starter_bkgd = NULL;
   starter_mirrored = 0;
@@ -7578,6 +8091,18 @@ static void setup(int argc, char *argv[])
 
   SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
 
+  /* Creating the label surface: */
+
+  label = SDL_CreateRGBSurface(screen->flags,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, TPAINT_AMASK);
+
+  /* making the label layer transparent */
+  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
 
   /* Create undo buffer space: */
 
@@ -7683,6 +8208,9 @@ static void setup(int argc, char *argv[])
 
   img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
+
+  img_label = loadimage(DATA_PREFIX "images/tools/label.png");
+  img_label_select = loadimage(DATA_PREFIX "images/tools/label_select.png");
 
   show_progress_bar(screen);
 
@@ -8226,31 +8754,77 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
 static void draw_toolbar(void)
 {
-  int i;
+  int i, off_y, max, most, tool;
   SDL_Rect dest;
 
-
+  most = 14;
+  off_y = 0;
   /* FIXME: Only allow print if we have something to print! */
 
 
   draw_image_title(TITLE_TOOLS, r_ttools);
 
-  for (i = 0; i < NUM_TOOLS + TOOLOFFSET; i++)
+
+
+ /* Do we need scrollbars? */
+    if (NUM_TOOLS > most + TOOLOFFSET)
+    {
+    off_y = 24;
+ max = most - 2 + TOOLOFFSET;
+ gd_tools.rows = max / 2;
+ 
+    dest.x = 0;
+    dest.y = 40;
+
+    if (tool_scroll > 0)
+    {
+      SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+    }
+
+    dest.x = 0;
+    dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+    
+
+
+    if (tool_scroll < NUM_TOOLS - (most - 2) - TOOLOFFSET)
+    {
+      SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+    }
+  }
+    else
+      {
+	off_y = 0;
+	max = 14 + TOOLOFFSET;
+      }
+  
+
+
+
+  for (tool = tool_scroll; tool < tool_scroll + max; tool++)
   {
+    i = tool - tool_scroll;
     dest.x = ((i % 2) * 48);
-    dest.y = ((i / 2) * 48) + 40;
+    dest.y = ((i / 2) * 48) + 40 + off_y;
 
 
-    if (i < NUM_TOOLS)
+    if (tool < NUM_TOOLS)
     {
       SDL_Surface *button_color;
       SDL_Surface *button_body;
-      if (i == cur_tool)
+      if (tool_scroll + i == cur_tool)
       {
 	button_body = img_btn_down;
 	button_color = img_black;
       }
-      else if (tool_avail[i])
+      else if (tool_avail[tool])
       {
 	button_body = img_btn_up;
 	button_color = img_black;
@@ -8261,19 +8835,19 @@ static void draw_toolbar(void)
 	button_color = img_grey;
       }
       SDL_BlitSurface(button_body, NULL, screen, &dest);
-      SDL_BlitSurface(button_color, NULL, img_tools[i], NULL);
-      SDL_BlitSurface(button_color, NULL, img_tool_names[i], NULL);
+      SDL_BlitSurface(button_color, NULL, img_tools[tool], NULL);
+      SDL_BlitSurface(button_color, NULL, img_tool_names[tool], NULL);
 
       dest.x = ((i % 2) * 48) + 4;
-      dest.y = ((i / 2) * 48) + 40 + 2;
+      dest.y = ((i / 2) * 48) + 40 + 2 + off_y;
 
-      SDL_BlitSurface(img_tools[i], NULL, screen, &dest);
+      SDL_BlitSurface(img_tools[tool], NULL, screen, &dest);
 
 
-      dest.x = ((i % 2) * 48) + 4 + (40 - img_tool_names[i]->w) / 2;
-      dest.y = ((i / 2) * 48) + 40 + 2 + (44 + button_label_y_nudge - img_tool_names[i]->h);
+      dest.x = ((i % 2) * 48) + 4 + (40 - img_tool_names[tool]->w) / 2;
+      dest.y = ((i / 2) * 48) + 40 + 2 + (44 + button_label_y_nudge - img_tool_names[tool]->h) + off_y;
 
-      SDL_BlitSurface(img_tool_names[i], NULL, screen, &dest);
+      SDL_BlitSurface(img_tool_names[tool], NULL, screen, &dest);
     }
     else
     {
@@ -8614,14 +9188,25 @@ static void draw_fonts(void)
   SDL_Color black = { 0, 0, 0, 0 };
 
   /* Draw the title: */
-  draw_image_title(TITLE_LETTERS, r_ttoolopt);
-
+  if (cur_tool == TOOL_TEXT)
+    draw_image_title(TITLE_LETTERS, r_ttoolopt);
+  else
+    draw_image_title(TITLE_LABEL, r_ttoolopt);
 
   /* How many can we show? */
 
-  most = 10;
-  if (disable_stamp_controls)
-    most = 14;
+  if(cur_tool == TOOL_LABEL)
+  {
+    most = 8;
+      if (disable_stamp_controls)
+        most = 12;
+  }
+  else
+  {
+    most = 10;
+      if (disable_stamp_controls)
+        most = 14;
+  }
 
 #ifdef DEBUG
   printf("there are %d font families\n", num_font_families);
@@ -8648,7 +9233,10 @@ static void draw_fonts(void)
     }
 
     dest.x = WINDOW_WIDTH - 96;
-    dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+    if (cur_tool == TOOL_LABEL)
+      dest.y = 40 + 24 + ((5 + TOOLOFFSET / 2) * 48);
+    else
+      dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
 
     if (!disable_stamp_controls)
       dest.y = dest.y - (48 * 2);
@@ -8669,6 +9257,10 @@ static void draw_fonts(void)
   }
 
   /* Draw each of the shown fonts: */
+  if (!num_font_families % 2)
+    font_scroll = min(font_scroll, max(0, num_font_families - max)); /*     FIXAM COMENTARI */
+  else
+    font_scroll = min(font_scroll, max(0, num_font_families + 1 - max)); /*     FIXAM COMENTARI */
 
   for (font = font_scroll; font < font_scroll + max; font++)
   {
@@ -8751,6 +9343,38 @@ static void draw_fonts(void)
     SDL_Surface *button_color;
     SDL_Surface *button_body;
 
+    if (cur_tool == TOOL_LABEL)
+    {
+
+      /* disabling rotation as I am not sure how this should be implemented */
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+      /* if(cur_label == LABEL_ROTATE) */
+      /*   SDL_BlitSurface(img_btn_down, NULL, screen, &dest); */
+      /* else */
+      /*   SDL_BlitSurface(img_btn_up, NULL, screen, &dest); */
+
+      /* dest.x = WINDOW_WIDTH - 96 + (48 - img_label->w) / 2; */
+      /* dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_label->h) / 2); */
+
+      /* SDL_BlitSurface(img_label, NULL, screen, &dest); */
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+
+      if(cur_label == LABEL_SELECT)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_label_select->w) / 2;
+      dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_label_select->h) / 2);
+
+      SDL_BlitSurface(img_label_select, NULL, screen, &dest);
+    }
+
     /* Show bold button: */
 
     dest.x = WINDOW_WIDTH - 96;
@@ -8829,6 +9453,31 @@ static void draw_fonts(void)
 
     SDL_BlitSurface(button_color, NULL, img_grow, NULL);
     SDL_BlitSurface(img_grow, NULL, screen, &dest);
+  }
+  else
+  {
+    if (cur_tool == TOOL_LABEL)
+    {
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_label->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_label->h) / 2);
+
+      SDL_BlitSurface(img_label, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_label_select->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_label_select->h) / 2);
+
+      SDL_BlitSurface(img_label_select, NULL, screen, &dest);
+    }
   }
 }
 
@@ -9708,6 +10357,8 @@ static void do_undo(void)
   {
     cur_undo--;
 
+	do_undo_label_node();
+
     if (cur_undo < 0)
       cur_undo = NUM_UNDO_BUFS - 1;
 
@@ -9787,6 +10438,7 @@ static void do_redo(void)
 #ifdef DEBUG
     printf("BLITTING: %d\n", cur_undo);
 #endif
+    do_redo_label_node();
     SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
 
     update_canvas(0, 0, (WINDOW_WIDTH - 96), (48 * 7) + 40 + HEIGHTOFFSET);
@@ -10202,6 +10854,7 @@ static void reset_avail_tools(void)
 #ifdef NOKIA_770
   /* There is no way for the user to enter text, so just disable this. */
   tool_avail[TOOL_TEXT] = 0;
+  tool_avail[TOOL_LABEL] = 0;
 #endif
 }
 
@@ -11490,9 +12143,9 @@ static void load_starter(char *img_id)
 static void load_current(void)
 {
   SDL_Surface *tmp;
-  char *fname;
-  char ftmp[1024];
-  FILE *fi;
+  char *fname, *label_fname;
+  char ftmp[1024], lfname[1024];
+  FILE *fi, *lfi;
 
   /* Determine the current picture's ID: */
 
@@ -11526,7 +12179,27 @@ static void load_current(void)
 
   if (file_id[0] != '\0')
   {
+
+  start_label_node=NULL;
+  current_label_node=NULL;
+  first_label_node_in_redo_stack=NULL;
+
+  /* Check the existence of the label stuff and load by default */
+  snprintf(ftmp, sizeof(ftmp), "saved/.label/%s%s",
+	   file_id, FNAME_EXTENSION);
+  fname = get_fname(ftmp, DIR_SAVE);
+  lfi = fopen(fname, "r");
+
+  if (lfi == NULL)
     snprintf(ftmp, sizeof(ftmp), "saved/%s%s", file_id, FNAME_EXTENSION);
+  else
+    {
+      /* Load info about the label surface */
+      snprintf(lfname, sizeof(lfname), "saved/.label/%s.dat", file_id);
+      label_fname = get_fname(lfname, DIR_SAVE);
+      load_info_about_label_surface(label_fname);
+      fclose(lfi);
+    }
 
     fname = get_fname(ftmp, DIR_SAVE);
 
@@ -12717,7 +13390,12 @@ static int do_save(int tool, int dont_show_success_results)
   char tmp[1024];
   SDL_Surface *thm;
   FILE *fi;
-
+  struct label_node* current_node;
+  unsigned i = 0;
+  int list_ctr = 0;
+  int x, y, pix, size_pix;
+  SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
+  SDL_BlitSurface(label, NULL, save_canvas, NULL);   /* FIXAM Should we first check for disble_save? */
 
   /* Was saving completely disabled? */
 
@@ -12750,7 +13428,7 @@ static int do_save(int tool, int dont_show_success_results)
 
 	get_new_file_id();
       }
-      if (tool == TOOL_TEXT)
+      if (tool == TOOL_TEXT || tool == TOOL_LABEL)
         do_render_cur_text(0);
     }
     else
@@ -12805,6 +13483,15 @@ static int do_save(int tool, int dont_show_success_results)
 
   show_progress_bar(screen);
 
+  /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
+
+  if (!make_directory("saved/.label", "Can't create label information directory"))
+  {
+    fprintf(stderr, "Cannot save label information! SORRY!\n\n");
+    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
+    return 0;
+  }
+
 
   /* Save the file: */
 
@@ -12825,6 +13512,20 @@ static int do_save(int tool, int dont_show_success_results)
   }
   else
   {
+    if (!do_png_save(fi, fname, save_canvas))
+    {
+      free(fname);
+      return 0;
+    }
+
+    free(fname);
+
+    snprintf(tmp, sizeof(tmp), "saved/.label/%s%s", file_id, FNAME_EXTENSION);
+    fname = get_fname(tmp, DIR_SAVE);
+    debug(fname);
+
+    fi = fopen(fname, "wb");
+
     if (!do_png_save(fi, fname, canvas))
     {
       free(fname);
@@ -12832,6 +13533,67 @@ static int do_save(int tool, int dont_show_success_results)
     }
   }
 
+  free(fname);
+
+  /* saving information about text on label layer */
+
+  snprintf(tmp, sizeof(tmp), "saved/.label/%s.dat", file_id);
+  fname = get_fname(tmp, DIR_SAVE);
+
+  fi = fopen(fname, "wb");
+
+  current_node =  current_label_node;
+  while(current_node != NULL)
+  {
+    if (current_node->is_enabled)
+      list_ctr = list_ctr+1;
+    current_node = current_node->next_to_down_label_node;
+  }
+
+  fprintf(fi, "%d\n", list_ctr);
+  fprintf(fi, "%d\n", r_canvas.w);
+  fprintf(fi, "%d\n\n", r_canvas.h);
+
+  current_node =  start_label_node;
+  while(current_node !=first_label_node_in_redo_stack)
+    {
+      if (current_node->is_enabled == TRUE)
+	{
+
+	  fprintf(fi, "%u\n", current_node->save_texttool_len);
+
+
+
+	  for(i=0; i < current_node->save_texttool_len; i++)
+	    {
+	      fprintf(fi, "%c", current_node->save_texttool_str[i]);
+	    }
+
+	  fprintf(fi, "\n");
+
+
+	  fprintf(fi, "%u\n", current_node->save_color);
+	  fprintf(fi, "%d\n", current_node->save_width);
+	  fprintf(fi, "%d\n", current_node->save_height);
+	  fprintf(fi, "%u\n", current_node->save_x);
+	  fprintf(fi, "%u\n", current_node->save_y);
+	  fprintf(fi, "%d\n", current_node->save_cur_font);
+	  fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font)); 
+	  fprintf(fi, "%d\n", current_node->save_text_state);
+	  fprintf(fi, "%u\n", current_node->save_text_size);
+	  for (x=0;x<current_node->save_width; x++)
+	    for (y=0; y<current_node->save_height; y++)
+	      {
+	      pix= getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
+	      size_pix=current_node->label_node_surface->format->BytesPerPixel;
+	      fwrite(&pix, size_pix, 1, fi);
+	      }
+	  fprintf(fi, "\n\n");
+	}
+      current_node = current_node->next_to_up_label_node;
+      printf("cur %i, red %i\n",current_node, first_label_node_in_redo_stack); //FIXAM
+    }
+  fclose(fi);
   free(fname);
 
   show_progress_bar(screen);
@@ -12860,7 +13622,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   debug(fname);
 
-  thm = thumbnail(canvas, THUMB_W - 20, THUMB_H - 20, 0);
+  thm = thumbnail(save_canvas, THUMB_W - 20, THUMB_H - 20, 0);
 
   fi = fopen(fname, "wb");
   if (fi == NULL)
@@ -13092,7 +13854,7 @@ static int do_quit(int tool)
   }
   else
   {
-    if (tool == TOOL_TEXT)
+    if (tool == TOOL_TEXT || tool == TOOL_LABEL)
       do_render_cur_text(0);
 
     /* Bring back stamp sound effects and speak buttons, if we were in
@@ -13134,8 +13896,8 @@ int do_open(void)
   char *rfname;
   char **d_names = NULL, **d_exts = NULL;
   int *d_places;
-  FILE *fi;
-  char fname[1024];
+  FILE *fi, *lfi;
+  char fname[1024], lfname[1024];
   int num_files, i, done, slideshow, update_list, want_erase, cur, which,
     num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
@@ -14071,11 +14833,29 @@ int do_open(void)
             }
           }
 
+	  /* Clean the label stuff */
+	  delete_label_list(&start_label_node);
+	  start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
+	  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
 
           /* Figure out filename: */
 
-          snprintf(fname, sizeof(fname), "%s/%s%s",
-              dirname[d_places[which]], d_names[which], d_exts[which]);
+            snprintf(fname, sizeof(fname), "%s/.label/%s%s",
+                dirname[d_places[which]], d_names[which], d_exts[which]);
+	    
+	    lfi = fopen(fname, "r");
+
+	    if (lfi == NULL)
+	      snprintf(fname, sizeof(fname), "%s/%s%s",
+		       dirname[d_places[which]], d_names[which], d_exts[which]);
+	    else   /* Load info about the label surface */
+	      {
+		fclose(lfi);
+		snprintf(lfname, sizeof(lfname), "%s/.label/%s.dat",
+                      dirname[d_places[which]], d_names[which]);
+
+		load_info_about_label_surface(lfname);
+	      }
 
           img = myIMG_Load(fname);
 
@@ -15587,10 +16367,10 @@ static void do_render_cur_text(int do_blit)
     color_hexes[cur_color][2],
     0
   };
-  SDL_Surface *tmp_surf;
+  SDL_Surface *tmp_surf, *tmp_label;
   SDL_Rect dest, src;
   wchar_t *str;
-
+  Uint8 rect_red, rect_green, rect_blue;
   hide_blinking_cursor();
 
   /* Keep cursor on the screen! */
@@ -15643,17 +16423,68 @@ static void do_render_cur_text(int do_blit)
     h = tmp_surf->h;
 
     cursor_textwidth = w;
-
-    free(str);
   }
   else
   {
+    if(cur_select != SELECT_ON)
+        {
+      //  cur_select = SELECT_OFF;
+    
     /* FIXME: Do something different! */
 
-    update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-    cursor_textwidth = 0;
-    return;
+            update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+            cursor_textwidth = 0;
+            return;
+        }
+
+    else
+        {
+            //rec_undo_buffer();
+            dest.w = label_node_to_edit->save_width + 4;
+            dest.h = TuxPaint_Font_FontHeight(getfonthandle(cur_font)) + 4;
+            dest.x = cursor_x - 2;
+            dest.y = cursor_y - 2 ;
+            printf("delete %i \n", HEIGHTOFFSET);
+            
+            printf("%i %i %i %i\n", dest.x, dest.y, dest.w, dest.h);
+            SDL_FillRect(label, &dest, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+            //           add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+            //derender_node(&label_node_to_edit);
+            
+            //cur_select = SELECT_OFF;
+            //have_to_rec_label_node = TRUE;
+            //do_setcursor(cursor_arrow);
+
+    /* FIXME: Only delete what's changed! */
+
+
+            update_canvas(dest.x, dest.y, dest.x + dest.w, dest.y + dest.h);
+
+            return;
+        } 
   }
+   tmp_label = SDL_CreateRGBSurface(tmp_surf->flags,
+  //     tmp_label = SDL_CreateRGBSurface(0,
+                                    tmp_surf->w, tmp_surf->h, 
+                                    tmp_surf->format->BitsPerPixel,
+                                    tmp_surf->format->Rmask, tmp_surf->format->Gmask, tmp_surf->format->Bmask, 0);
+
+  if(color_hexes[cur_color][0] < 123)
+    rect_red = color_hexes[cur_color][0]+5;
+  else
+    rect_red = color_hexes[cur_color][0]-5;	
+
+  if(color_hexes[cur_color][1] < 123)
+    rect_green = color_hexes[cur_color][1]+5;
+  else
+    rect_green = color_hexes[cur_color][1]-5;
+
+  if(color_hexes[cur_color][2] < 123)
+    rect_blue = color_hexes[cur_color][2]+5;
+  else
+    rect_blue = color_hexes[cur_color][2]-5;
+
+  SDL_FillRect(tmp_label, NULL, SDL_MapRGB(tmp_label->format, rect_red, rect_green, rect_blue));
 
 
   if (!do_blit)
@@ -15725,7 +16556,30 @@ static void do_render_cur_text(int do_blit)
 
     if (do_blit)
     {
-      SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+
+      if(cur_select == SELECT_ON)
+      {
+	have_to_rec_label_node=TRUE;
+	add_label_node(src.w, src.h, dest.x, dest.y, &label_node_to_edit, tmp_surf);
+        derender_node(&label_node_to_edit); // Derendering a node also reblits others.
+        
+        cur_select = SELECT_OFF;
+	do_setcursor(cursor_arrow);
+
+      }
+      else if(cur_label == LABEL_LABEL)
+      {
+          myblit(tmp_surf, &src, label, &dest);
+          
+	have_to_rec_label_node=TRUE;
+	add_label_node(src.w, src.h, dest.x, dest.y, NULL, tmp_surf);
+
+	if (start_label_node == NULL) start_label_node = current_label_node;
+      }
+      else
+      {
+        SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+      }
       update_canvas(dest.x, dest.y, dest.x + tmp_surf->w,
 		    dest.y + tmp_surf->h);
     }
@@ -15733,17 +16587,20 @@ static void do_render_cur_text(int do_blit)
     {
       dest.x = dest.x + 96;
       SDL_BlitSurface(tmp_surf, &src, screen, &dest);
-    }
+                printf("%i %i %i %i\n", dest.x, dest.y, dest.w, dest.h);
+}
   }
 
 
   /* FIXME: Only update what's changed! */
 
   SDL_Flip(screen);
-
+  free(str);
 
   if (tmp_surf != NULL)
     SDL_FreeSurface(tmp_surf);
+  if (tmp_label != NULL)
+    SDL_FreeSurface(tmp_label);
 }
 
 
@@ -18671,7 +19528,14 @@ int do_new_dialog(void)
       }
     }
 
+    /* Clear label surface */
 
+    SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
+    /* Clear all info related to label surface */
+
+    delete_label_list(&start_label_node);
+    start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
     if (which >= first_starter)
     {
       /* Load a starter: */
@@ -19358,5 +20222,597 @@ int magic_modeint(int mode)
     return 1;
   else
     return 0;
+}
+
+void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_to_disable, SDL_Surface* label_node_surface)
+{
+  struct label_node* new_node = malloc(sizeof(struct label_node));
+  struct label_node* aux_node;
+
+  unsigned int i = 0;
+      new_node->save_texttool_len = texttool_len;
+      while(i < texttool_len)
+	{
+	  new_node->save_texttool_str[i] = texttool_str[i];
+	  i = i+1;
+	}
+      new_node->save_color = cur_color;
+      new_node->save_width = w;
+      new_node->save_height = h;
+      new_node->save_x = x;
+      new_node->save_y = y;
+      new_node->save_cur_font =  cur_font;
+      new_node->save_text_state = text_state;
+      new_node->save_text_size = text_size;
+      new_node->save_undoid = 255;
+      new_node->is_enabled=TRUE;
+
+      if (node_to_disable != NULL)
+	{
+	  aux_node= *node_to_disable;
+	  aux_node->is_enabled=FALSE;
+	  new_node->disables = *node_to_disable;
+	}
+      else
+	new_node->disables = NULL;
+
+      if (label_node_surface != NULL)
+	{
+	  new_node->label_node_surface = label_node_surface;
+	  new_node->label_node_surface->refcount++;
+	}
+      else new_node->label_node_surface = NULL;
+
+
+      new_node->next_to_up_label_node=0;
+	
+      new_node->next_to_down_label_node = current_label_node;
+      if (current_label_node)
+	{
+	  aux_node=current_label_node;
+	  aux_node->next_to_up_label_node = new_node;
+	}
+      
+      current_label_node = new_node;
+//      render_all_nodes_starting_at(&start_label_node);
+}
+
+
+struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uint16 y)
+{
+  struct label_node* current_node;
+  struct label_node* tmp_node = NULL;
+  SDL_Rect r_tmp_select;
+  unsigned i;
+  int done = FALSE;
+
+  Uint8 r, g, b, a;
+  current_node =  *ref_head;
+  
+  while((current_node != NULL) && (done != TRUE))
+    {
+      if(x >= current_node->save_x)
+	{
+	  if(y >= current_node->save_y)
+	    {
+	      if(x <= (current_node->save_x)+(current_node->save_width))
+		{
+		  if(y <= (current_node->save_y)+(current_node->save_height))
+		    {
+		      if (current_node->is_enabled == TRUE)
+			{
+			  if (tmp_node == NULL)     /* Preselecting the top label at x,y position*/
+			    tmp_node = current_node;
+			  SDL_GetRGBA(getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x - current_node->save_x, y - current_node->save_y),
+				      current_node->label_node_surface->format, &r, &g, &b, &a);
+			  if (a != SDL_ALPHA_TRANSPARENT)
+			    {
+			      tmp_node=current_node;
+			      done = TRUE;
+			    }
+			}
+		    }
+		}
+	    }
+	}
+      current_node = current_node->next_to_down_label_node;
+    }
+  if (tmp_node != NULL)
+    {
+			      select_texttool_len = tmp_node->save_texttool_len;
+
+			      i = 0;
+			      while(i < select_texttool_len)
+				{
+				  select_texttool_str[i] = tmp_node->save_texttool_str[i];
+				  i = i+1;
+				}
+
+			      select_color = tmp_node->save_color;
+			      select_width = tmp_node->save_width;
+			      select_height = tmp_node->save_height;
+			      select_x = tmp_node->save_x;
+			      select_y = tmp_node->save_y;
+			      select_cur_font = tmp_node->save_cur_font;
+			      select_text_state = tmp_node->save_text_state;
+			      select_text_size = tmp_node->save_text_size;
+
+			      r_tmp_select.w = tmp_node->save_width;
+			      r_tmp_select.h = tmp_node->save_height;
+			      r_tmp_select.x = tmp_node->save_x;
+			      r_tmp_select.y = tmp_node->save_y;
+
+			      SDL_FillRect(label, &r_tmp_select, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
+			      return tmp_node;
+    }
+  
+  return NULL;
+}
+
+void rec_undo_label(void)
+{
+  printf("rec\n");
+  if (first_label_node_in_redo_stack != NULL)
+    {
+        delete_label_list(&first_label_node_in_redo_stack);
+        first_label_node_in_redo_stack = NULL;
+    }
+
+  if(coming_from_undo_or_redo) // yet recorded, avoiding to write text_undo
+    {
+      coming_from_undo_or_redo=FALSE;
+      return;
+    }
+
+  if (have_to_rec_label_node)
+    {
+      current_label_node->save_undoid = cur_undo;
+      text_undo[cur_undo] = 1;
+      have_to_rec_label_node = FALSE;
+    }
+  else
+    text_undo[cur_undo] = 0;
+}
+
+void do_undo_label_node()
+{
+  if (text_undo[(cur_undo + 1) % NUM_UNDO_BUFS] == 1)
+    if (current_label_node != NULL)
+      {
+	if (current_label_node->save_undoid == (cur_undo + 1) % NUM_UNDO_BUFS)
+	  {
+	    if (current_label_node->disables != NULL)  /* If current node is an editing of an older one, reenable it. */
+	      current_label_node->disables->is_enabled = TRUE;
+
+	    first_label_node_in_redo_stack = current_label_node;
+	    current_label_node = current_label_node->next_to_down_label_node;
+
+	    if (current_label_node == NULL)
+	      start_label_node = current_label_node;
+
+	    derender_node(&first_label_node_in_redo_stack);
+	    coming_from_undo_or_redo=TRUE;
+	  }
+      }
+}
+
+void do_redo_label_node()
+{
+  if ( (text_undo[cur_undo] == 1) &&
+       (first_label_node_in_redo_stack != NULL) )
+    {
+      if (first_label_node_in_redo_stack->save_undoid == cur_undo)
+	{
+	  current_label_node=first_label_node_in_redo_stack;
+	  first_label_node_in_redo_stack=current_label_node->next_to_up_label_node;
+      
+	  if (start_label_node == NULL)
+	    start_label_node = current_label_node;
+	  if (current_label_node->disables != NULL) /* If this is a redo of an editing, redisable the old node.*/
+	    {	
+	      current_label_node->disables->is_enabled = FALSE;
+	      derender_node(&current_label_node->disables);
+	    }
+	  else  
+	    simply_render_node(current_label_node);
+
+	  coming_from_undo_or_redo=TRUE;
+	}
+    }
+}
+
+
+void simply_render_node(struct label_node* node)
+{
+
+  SDL_Surface *tmp_surf;
+  SDL_Rect dest, src;
+  wchar_t *str;
+  wchar_t tmp_str[256];
+  int w,h;
+  unsigned i;
+  printf("simply_render_node\n");
+  
+  if (node->label_node_surface == NULL)
+    {
+      /* Render the text: */
+        
+      SDL_Color color = { color_hexes[node->save_color][0],
+        color_hexes[node->save_color][1],
+        color_hexes[node->save_color][2], 0};
+
+      text_state = node->save_text_state;
+      text_size = node->save_text_size;
+
+      i = 0;
+      while(i < node->save_texttool_len)
+      {
+        tmp_str[i] = node->save_texttool_str[i];
+        i = i+1;
+      }
+      tmp_str[i] = L'\0';
+
+      str = uppercase_w(tmp_str);
+
+      text_state = node->save_text_state;
+      text_size = node->save_text_size;
+
+      int j;
+      for (j = 0; j < num_font_families; j++)
+      {
+        if (user_font_families[j]
+            && user_font_families[j]->handle)
+        {
+          TuxPaint_Font_CloseFont(user_font_families[j]->handle);
+          user_font_families[j]->handle = NULL;
+        }
+      }
+
+      tmp_surf = render_text_w(getfonthandle(node->save_cur_font), str, color);
+     if (tmp_surf != NULL)
+       
+	 node->label_node_surface = tmp_surf;
+    }
+
+ if (node->label_node_surface != NULL)
+   {
+	 w = node->label_node_surface->w;
+	 h = node->label_node_surface->h;
+
+	 cursor_textwidth = w;
+     /* Draw the text itself! */
+
+	 //      if (node->label_node_surface != NULL)
+	 //{
+        dest.x = node->save_x;
+        dest.y = node->save_y;
+
+        src.x = 0;
+        src.y = 0;
+        src.w = node->label_node_surface->w;
+        src.h = node->label_node_surface->h;
+
+        if (dest.x + src.w > WINDOW_WIDTH - 96 - 96)
+          src.w = WINDOW_WIDTH - 96 - 96 - dest.x;
+        if (dest.y + src.h > (48 * 7 + 40 + HEIGHTOFFSET))
+          src.h = (48 * 7 + 40 + HEIGHTOFFSET) - dest.y;
+
+	myblit(node->label_node_surface, &src, label, &dest);
+        
+        update_canvas(dest.x, dest.y, dest.x + node->label_node_surface->w,
+		    dest.y + node->label_node_surface->h);
+
+	/* Setting the sizes correctly */
+	node->save_width = node->label_node_surface->w;
+	node->save_height = node->label_node_surface->h;
+	//}
+   }
+}
+
+void render_all_nodes_starting_at(struct label_node** node)
+{
+  struct label_node* current_node;
+  if (*node!=NULL)
+    {
+      current_node=*node;
+      while (current_node!=first_label_node_in_redo_stack)
+	{
+	  if (current_node->is_enabled==TRUE)
+	    {
+	      simply_render_node(current_node);
+	    }
+	  if (current_node->next_to_up_label_node == NULL)
+	    return;
+	  current_node=current_node->next_to_up_label_node;
+	}
+    }
+}
+
+/* FIXME: This should search for the top-down of the overlaping labels and only re-render from it */
+void derender_node(struct label_node** ref_head)
+{
+  struct label_node* current_node;
+  SDL_Rect r_tmp_derender;
+  current_node =  *ref_head;
+  r_tmp_derender.w = label->w;
+  r_tmp_derender.h = label->h;
+  r_tmp_derender.x = 0;
+  r_tmp_derender.y = 0;
+
+  SDL_FillRect(label, &r_tmp_derender, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
+  render_all_nodes_starting_at(&start_label_node);
+}
+
+void delete_label_list(struct label_node** ref_head)
+{
+  struct label_node* current = *ref_head;
+  struct label_node* next;
+
+  while(current != NULL)
+    {
+        printf("%x current\n", current); //FIXAM
+        
+      next = current->next_to_up_label_node;
+      free(current);
+      current = next;
+    }
+
+  *ref_head = NULL;
+}
+
+/* A custom bliter that allows to put two transparent layers toghether without having to deal with colorkeys or SDL_SRCALPHA 
+   I am always reinventing the wheel. Hope this one is not squared. Pere */
+static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, 
+		   SDL_Surface * dest_surf, SDL_Rect * dest_rect)
+{
+  int x, y;
+  Uint8 src_r, src_g, src_b, src_a;
+  Uint8 dest_r, dest_g, dest_b, dest_a;
+  printf("myblit\n");
+  
+  for (x = src_rect->x; x<src_rect->w + src_rect->x; x++)
+    for (y = src_rect->y; y<src_rect->h + src_rect->y; y++)
+      {
+	SDL_GetRGBA(getpixels[src_surf->format->BytesPerPixel](src_surf, x - src_rect->x, y - src_rect->y),
+		    src_surf->format, &src_r, &src_g, &src_b, &src_a);
+	if (src_a != SDL_ALPHA_TRANSPARENT)
+	  {
+	    if (src_a == SDL_ALPHA_OPAQUE)
+	      putpixels[dest_surf->format->BytesPerPixel](dest_surf, x + dest_rect->x, y + dest_rect->y,
+							  SDL_MapRGBA(dest_surf->format, src_r, src_g, src_b, src_a));
+	    else
+	      {	
+		SDL_GetRGBA(getpixels[dest_surf->format->BytesPerPixel](dest_surf, x + dest_rect->x, y + dest_rect->y),
+			    src_surf->format, &dest_r, &dest_g, &dest_b, &dest_a);
+		if (dest_a == SDL_ALPHA_TRANSPARENT)
+		  putpixels[dest_surf->format->BytesPerPixel](dest_surf, x + dest_rect->x, y + dest_rect->y,
+							      SDL_MapRGBA(dest_surf->format, src_r, src_g, src_b, src_a));
+		else
+		  {
+		    dest_r=src_r*src_a/255 + dest_r*dest_a * (255-src_a)/255/255;
+		    dest_g=src_g*src_a/255 + dest_g*dest_a * (255-src_a)/255/255;
+		    dest_b=src_b*src_a/255 + dest_b*dest_a * (255-src_a)/255/255;
+		    dest_a=src_a + dest_a*(255-src_a)/255;
+		    putpixels[dest_surf->format->BytesPerPixel](dest_surf, x + dest_rect->x, y + dest_rect->y,
+								SDL_MapRGBA(dest_surf->format, dest_r, dest_g, dest_b, dest_a));
+		  }
+	      }
+	  }
+      }
+} 
+
+void load_info_about_label_surface(char lfname[1024])
+{
+    struct label_node* new_node;
+    int list_ctr;
+    int tmp_scale_w;
+    int tmp_scale_h;
+    FILE *lfi;
+    SDL_Surface *label_node_surface, *label_node_surface_aux;
+    float new_text_size;
+
+    int k;
+    unsigned l;
+    unsigned tmp_pos;
+    char tmp_char;
+    int old_width;
+    int old_height;
+    int new_width;
+    int new_height;
+    float new_ratio;
+    float old_ratio;
+    float new_to_old_ratio;
+    int old_pos;
+    int new_pos;
+    int x, y, pix, pix_size;
+
+  
+    /* Clear label surface */
+
+    SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
+    /* Clear all info related to label surface */
+
+    delete_label_list(&start_label_node);
+    start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
+    have_to_rec_label_node = FALSE;
+
+
+
+    lfi = fopen(lfname, "r");
+    if (lfi == NULL) 
+        return;
+    fscanf(lfi, "%d\n", &list_ctr);
+    fscanf(lfi, "%d\n", &tmp_scale_w);
+    fscanf(lfi, "%d\n\n", &tmp_scale_h);
+
+    old_width = tmp_scale_w;
+    old_height = tmp_scale_h;
+    new_width = r_canvas.w;
+    new_height = r_canvas.h;
+    new_ratio = (float)new_width/new_height;
+    old_ratio = (float)old_width/old_height;
+    if (new_ratio < old_ratio)
+        new_to_old_ratio = (float)new_width / old_width;
+    else
+        new_to_old_ratio = (float)new_height / old_height;
+
+    for(k = 0; k < list_ctr; k++)
+        {
+            new_node = malloc(sizeof(struct label_node));
+
+            fscanf(lfi , "%u\n", &new_node->save_texttool_len);
+            for(l = 0; l < new_node->save_texttool_len; l++)
+                {
+                    fscanf(lfi, "%c", &tmp_char);
+                    new_node->save_texttool_str[l] = tmp_char;
+                }
+            fscanf(lfi, "\n");
+            fscanf(lfi, "%u\n", &new_node->save_color);
+            fscanf(lfi, "%d\n", &new_node->save_width);
+            fscanf(lfi, "%d\n", &new_node->save_height);
+            fscanf(lfi, "%d\n", &tmp_pos);
+            old_pos = (int)tmp_pos;
+
+            if (new_ratio < old_ratio)
+                {
+                    new_pos = (old_pos * new_to_old_ratio);
+                    tmp_pos = new_pos;
+                    new_node->save_x = tmp_pos;
+                    fscanf(lfi, "%d\n", &tmp_pos);
+                    old_pos = (int)tmp_pos;
+                    new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
+                    tmp_pos = new_pos;
+                    new_node->save_y = tmp_pos;
+                }
+            else
+                {
+                    new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
+                    tmp_pos = new_pos;
+                    new_node->save_x = tmp_pos;
+                    fscanf(lfi, "%d\n", &tmp_pos);
+                    old_pos = (int) tmp_pos;
+                    new_pos = (old_pos * new_to_old_ratio);
+                    tmp_pos = new_pos;
+                    new_node->save_y = tmp_pos;
+                }
+
+            printf("%ix%i\n", new_node->save_x, new_node->save_y);
+              
+            fscanf(lfi, "%d\n", &new_node->save_cur_font);
+            new_node->save_cur_font = 0;
+              
+            char * font_type = NULL;
+            char * ttffont;
+              
+            size_t max_text = 64;
+            getline(&font_type, &max_text, lfi);
+
+
+            int i;
+            for( i = 0; i < num_font_families; i++ )
+		{
+                    Uint32 c;
+                    /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end 
+                       of the returned string.  Should investigate why, and when corrected,
+                       remove the code that deals whith the ending "\n"s in ttffont*/
+                    ttffont = TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font);
+                    for (c = 0; c < strlen(ttffont); c++)
+                        if (ttffont[c] == '\n')
+                            ttffont[c] = '\0';
+                    for (c = 0; c < strlen(font_type); c++)
+                        if (font_type[c] == '\n')
+                            font_type[c] = '\0';
+
+#ifdef DEBUG
+                    printf("ttffont A%sA\n",ttffont);
+                    printf("font_type B%sB\n", font_type);
+#endif
+
+                    if (strcmp(font_type, ttffont) == 0)
+
+                        {
+#ifdef DEBUG
+                            printf("Font matched %s !!!\n", ttffont);
+#endif
+                            new_node->save_cur_font = i;
+                            break;
+                        }
+                    else
+//		if (strstr(TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font), font_type))
+                        if (strstr(ttffont, font_type) || strstr(font_type, ttffont))
+                            {
+#ifdef DEBUG
+                                printf("setting %s as replacement",TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font) );
+#endif
+                                new_node->save_cur_font = i;
+                            }
+		}
+
+
+            if (new_node->save_cur_font > num_font_families) /* This should never happens, setting default font. */
+		new_node->save_cur_font = 0;
+            fscanf(lfi, "%d\n", &new_node->save_text_state);
+            fscanf(lfi, "%u\n", &new_node->save_text_size);
+              
+            label_node_surface = SDL_CreateRGBSurface(screen->flags,
+                                                      new_node->save_width,
+                                                      new_node->save_height,
+                                                      screen->format->BitsPerPixel,
+                                                      screen->format->Rmask,
+                                                      screen->format->Gmask,
+                                                      screen->format->Bmask, TPAINT_AMASK);
+
+            pix_size=label->format->BytesPerPixel;
+            for (x=0;x<new_node->save_width;x++)
+		for (y=0;y<new_node->save_height;y++)
+                    {
+                        fread(&pix, pix_size, 1, lfi);
+                        putpixels[label_node_surface->format->BytesPerPixel](label_node_surface, x, y, pix);
+                        //		    putpixels(label, x, y, pix);
+                    }
+	      
+            new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+            label_node_surface_aux = zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
+            SDL_FreeSurface(label_node_surface);
+            new_node->label_node_surface = label_node_surface_aux;
+            new_node->label_node_surface->refcount++;
+            SDL_FreeSurface(label_node_surface_aux);
+
+            if ((unsigned)new_text_size > MAX_TEXT_SIZE)  /* Here we reach the limits when scaling the font size */
+                new_node->save_text_size = MAX_TEXT_SIZE;
+            else
+                if ((unsigned)new_text_size > MIN_TEXT_SIZE)
+                    new_node->save_text_size=floor(new_text_size + 0.5);
+                else
+                    new_node->save_text_size = MIN_TEXT_SIZE;
+
+
+            new_node->save_undoid = 255; /* A value that cur_undo will likely never reach */
+            new_node->is_enabled=TRUE;
+            new_node->disables=NULL;
+            new_node->next_to_down_label_node = NULL;
+            new_node->next_to_up_label_node = NULL;
+            fscanf(lfi, "\n");
+
+            if (current_label_node==NULL)
+		{
+                    current_label_node=new_node;
+                    start_label_node=current_label_node;
+		}
+            else
+		{
+                    new_node->next_to_down_label_node=current_label_node;
+                    current_label_node->next_to_up_label_node=new_node;
+		    current_label_node=new_node;
+		}
+
+            simply_render_node(current_label_node);
+
+        }
+    first_label_node_in_redo_stack = NULL;
+    fclose(lfi);
 }
 

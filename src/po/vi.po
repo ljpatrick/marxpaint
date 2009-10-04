@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 18:32-0700\n"
+"POT-Creation-Date: 2009-10-03 22:47-0700\n"
 "PO-Revision-Date: 2009-09-27 17:47+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -17,92 +17,91 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.8\n"
 
-#: ../colors.h:86
 #. Response to Black (0, 0, 0) color selected
+#: ../colors.h:86
 msgid "Black!"
 msgstr "Đen !"
 
-#: ../colors.h:89
 #. Response to Dark grey (128, 128, 128) color selected
+#: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Xám tối !"
 
-#: ../colors.h:92
 #. Response to Light grey (192, 192, 192) color selected
+#: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Xám nhạt !"
 
-#: ../colors.h:95
 #. Response to White (255, 255, 255) color selected
+#: ../colors.h:95
 msgid "White!"
 msgstr "Trắng !"
 
-#: ../colors.h:98
 #. Response to Red (255, 0, 0) color selected
+#: ../colors.h:98
 msgid "Red!"
 msgstr "Đỏ !"
 
-#: ../colors.h:101
 #. Response to Orange (255, 128, 0) color selected
+#: ../colors.h:101
 msgid "Orange!"
 msgstr "Cam !"
 
-#: ../colors.h:104
 #. Response to Yellow (255, 255, 0) color selected
+#: ../colors.h:104
 msgid "Yellow!"
 msgstr "Vàng !"
 
-#: ../colors.h:107
 #. Response to Light green (160, 228, 128) color selected
+#: ../colors.h:107
 msgid "Light green!"
 msgstr "Xanh lá mạ !"
 
-#: ../colors.h:110
 #. Response to Dark green (33, 148, 70) color selected
+#: ../colors.h:110
 msgid "Dark green!"
 msgstr "Xanh lá cây thẫm !"
 
-#: ../colors.h:113
 #. Response to "Sky" blue (138, 168, 205) color selected
+#: ../colors.h:113
 msgid "Sky blue!"
 msgstr "Xanh da trời !"
 
-#: ../colors.h:116
 #. Response to Blue (50, 100, 255) color selected
+#: ../colors.h:116
 msgid "Blue!"
 msgstr "Xanh dương !"
 
-#: ../colors.h:119
 #. Response to Lavender (186, 157, 255) color selected
+#: ../colors.h:119
 msgid "Lavender!"
 msgstr "Hoa oải hương !"
 
-#: ../colors.h:122
 #. Response to Purple (128, 0, 128) color selected
+#: ../colors.h:122
 msgid "Purple!"
 msgstr "Tím !"
 
-#: ../colors.h:125
 #. Response to Pink (255, 165, 211) color selected
+#: ../colors.h:125
 msgid "Pink!"
 msgstr "Hồng !"
 
-#: ../colors.h:128
 #. Response to Brown (128, 80, 0) color selected
+#: ../colors.h:128
 msgid "Brown!"
 msgstr "Nâu !"
 
-#: ../colors.h:131
 #. Response to Tan (226, 189, 166) color selected
+#: ../colors.h:131
 msgid "Tan!"
 msgstr "Vỏ dà !"
 
-#: ../colors.h:134
 #. Response to Beige (247, 228, 219) color selected
+#: ../colors.h:134
 msgid "Beige!"
 msgstr "Be !"
 
-#: ../dirwalk.c:164
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
@@ -122,6 +121,7 @@ msgstr "Be !"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
+#: ../dirwalk.c:164
 msgid "qx"
 msgstr "qxàảãáạăằẳẵắặâầẩẫấậèẻẽéẹêềểễếệìỉĩíịòỏõóọôồổỗốộùủũúụưừửữứựơờởỡớợỳỷỹýỵđ₫"
 
@@ -129,39 +129,38 @@ msgstr "qxàảãáạăằẳẵắặâầẩẫấậèẻẽéẹêềểễ
 msgid "QX"
 msgstr "QXÀẢÃÁẠĂẰẲẴẮẶÂẦẨẪẤẬÈẺẼÉẸÊỀỂỄẾỆÌỈĨÍỊÒỎÕÓỌÔỒỔỖỐỘÙỦŨÚỤƯỪỬỮỨỰƠỜỞỠỚỢỲỶỸÝỴĐ"
 
-#: ../dirwalk.c:191
 #. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+#: ../dirwalk.c:191
 msgid "oO"
 msgstr "oOơƠôÔồổỗốộuUưƯaAăĂâÂâeEêÊyYỵỴdDđĐ₫"
 
-#: ../dirwalk.c:194
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:194
 msgid ",.?!"
 msgstr ",.?!«»"
 
-#: ../dirwalk.c:197
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#| msgid "`\\%_@$~#{}<>^&*"
+#: ../dirwalk.c:197
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*đ"
 
-#: ../dirwalk.c:200
 #. digits (e.g., '0', '1' and '7')
+#: ../dirwalk.c:200
 msgid "017"
 msgstr "017"
 
-#: ../dirwalk.c:203
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+#: ../dirwalk.c:203
 msgid "O0"
 msgstr "O0oôơ"
 
-#: ../dirwalk.c:206
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+#: ../dirwalk.c:206
 msgid "1Il|"
 msgstr "1Il|ìỉĩíị"
 
@@ -181,536 +180,528 @@ msgstr "<9>phụ_tùng-9a"
 msgid "<9>spare-9b"
 msgstr "<9>phụ_tùng-9b"
 
-#: ../great.h:37
 #. Congratulations #1
+#: ../great.h:37
 msgid "Great!"
 msgstr "Hay quá !"
 
-#: ../great.h:40
 #. Congratulations #2
+#: ../great.h:40
 msgid "Cool!"
 msgstr "Tuyệt diệu !"
 
-#: ../great.h:43
 #. Congratulations #3
+#: ../great.h:43
 msgid "Keep it up!"
 msgstr "Cứ vẽ đẹp !"
 
-#: ../great.h:46
 #. Congratulations #4
+#: ../great.h:46
 msgid "Good job!"
 msgstr "Tốt rồi !"
 
-#: ../im.c:75
 #. Input Method: English mode
+#: ../im.c:75
 msgid "English"
 msgstr "Tiếng Anh"
 
-#: ../im.c:78
 #. Input Method: Japanese Romanized Hiragana mode
+#: ../im.c:78
 msgid "Hiragana"
 msgstr "Hiragana"
 
-#: ../im.c:81
 #. Input Method: Japanese Romanized Katakana mode
+#: ../im.c:81
 msgid "Katakana"
 msgstr "Katakana"
 
-#: ../im.c:84
 #. Input Method: Korean Hangul 2-Bul mode
+#: ../im.c:84
 msgid "Hangul"
 msgstr "Hangul"
 
-#: ../im.c:87
 #. Input Method: Thai mode
+#: ../im.c:87
 msgid "Thai"
 msgstr "Tiếng Thái"
 
-#: ../im.c:90
 #. Input Method: Traditional Chinese mode
+#: ../im.c:90
 msgid "ZH_TW"
 msgstr "Tiếng Trung ở Đài Loan"
 
-#: ../shapes.h:171
-#: ../shapes.h:172
 #. Square shape tool (4 equally-lengthed sides at right angles)
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Vuông"
 
-#: ../shapes.h:175
-#: ../shapes.h:176
 #. Rectangle shape tool (4 sides at right angles)
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Chữ nhật"
 
-#: ../shapes.h:179
-#: ../shapes.h:180
 #. Circle shape tool (X radius and Y radius are the same)
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Tròn"
 
-#: ../shapes.h:183
-#: ../shapes.h:184
 #. Ellipse shape tool (X radius and Y radius may differ)
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Bầu dục"
 
-#: ../shapes.h:187
-#: ../shapes.h:188
 #. Triangle shape tool (3 sides)
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Tam giác"
 
-#: ../shapes.h:191
-#: ../shapes.h:192
 #. Pentagone shape tool (5 sides)
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Ngữ giác"
 
-#: ../shapes.h:195
-#: ../shapes.h:196
 #. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Thoi"
 
-#: ../shapes.h:199
-#: ../shapes.h:200
 #. Octagon shape tool (8 sides)
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Bát giác"
 
-#: ../shapes.h:208
-#: ../shapes.h:209
 #. Description of a square
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Hình vuông là hình chữ nhật có bốn cạnh trùng nhau."
 
-#: ../shapes.h:212
-#: ../shapes.h:213
 #. Description of a rectangle
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Hình chữ nhật có bốn cạnh và bốn góc vuông."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
+#: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Hình tròn là một đường cong có mọi điểm cùng một cách tâm vòng."
 
-#: ../shapes.h:222
-#: ../shapes.h:223
 #. Description of an ellipse
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Hình bầu dục là hình quả trứng."
 
-#: ../shapes.h:226
-#: ../shapes.h:227
 #. Description of a triangle
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Hình tam giác có ba cạnh."
 
-#: ../shapes.h:230
-#: ../shapes.h:231
 #. Description of a pentagon
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Hình ngữ giác có năm cạnh."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Hình thoi có bốn cạnh trùng nhau, mỗi cặp cạnh đối diện cũng là song song."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Hình bát giác có tám canh trùng."
 
-#: ../titles.h:56
 #. Title of tool selector (buttons down the left)
+#: ../titles.h:57
 msgid "Tools"
 msgstr "Công cụ"
 
-#: ../titles.h:59
 #. Title of color palette (buttons across the bottom)
+#: ../titles.h:60
 msgid "Colors"
 msgstr "Màu"
 
-#: ../titles.h:62
 #. Title of brush selector (buttons down the right for paint and line tools)
+#: ../titles.h:63
 msgid "Brushes"
 msgstr "Chổi"
 
-#: ../titles.h:65
 #. Title of eraser selector (buttons down the right for eraser tool)
+#: ../titles.h:66
 msgid "Erasers"
 msgstr "Xoá"
 
-#: ../titles.h:68
 #. Title of stamp selector (buttons down the right for stamps tool)
+#: ../titles.h:69
 msgid "Stamps"
 msgstr "Dấu"
 
-#: ../titles.h:71
-#: ../tools.h:69
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
+#: ../titles.h:72 ../tools.h:70
 msgid "Shapes"
 msgstr "Hình"
 
-#: ../titles.h:74
 #. Title of font selector (buttons down the right for text tool)
+#: ../titles.h:75
 msgid "Letters"
 msgstr "Chữ"
 
-#: ../titles.h:77
-#: ../tools.h:75
+#. Title of font selector (buttons down the right for label tool)
+#. Label tool
+#: ../titles.h:78 ../tools.h:79
+msgid "Label"
+msgstr ""
+
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
+#: ../titles.h:81 ../tools.h:76
 msgid "Magic"
 msgstr "Ma thuật"
 
-#: ../tools.h:60
 #. Freehand painting tool
+#: ../tools.h:61
 msgid "Paint"
 msgstr "Sơn"
 
-#: ../tools.h:63
 #. Stamp tool (aka Rubber Stamps)
+#: ../tools.h:64
 msgid "Stamp"
 msgstr "Dấu"
 
-#: ../tools.h:66
 #. Line drawing tool
+#: ../tools.h:67
 msgid "Lines"
 msgstr "Đường"
 
-#: ../tools.h:72
 #. Text tool
+#: ../tools.h:73
 msgid "Text"
 msgstr "Văn bản"
 
-#: ../tools.h:78
 #. Undo last action
+#: ../tools.h:82
 msgid "Undo"
 msgstr "Hoàn tác"
 
-#: ../tools.h:81
 #. Redo undone action
+#: ../tools.h:85
 msgid "Redo"
 msgstr "Làm lại"
 
-#: ../tools.h:84
 #. Eraser tool
+#: ../tools.h:88
 msgid "Eraser"
 msgstr "Xoá"
 
-#: ../tools.h:87
 #. Start a new picture
+#: ../tools.h:91
 msgid "New"
 msgstr "Mới"
 
-#: ../tools.h:90
-#: ../tuxpaint.c:8005
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
+#: ../tools.h:94 ../tuxpaint.c:8565
 msgid "Open"
 msgstr "Mở"
 
-#: ../tools.h:93
 #. Save the current picture
+#: ../tools.h:97
 msgid "Save"
 msgstr "Lưu"
 
-#: ../tools.h:96
 #. Print the current picture
+#: ../tools.h:100
 msgid "Print"
 msgstr "In"
 
-#: ../tools.h:99
 #. Quit/exit Tux Paint application
+#: ../tools.h:103
 msgid "Quit"
 msgstr "Thoát"
 
-#: ../tools.h:107
 #. Paint tool instructions
+#: ../tools.h:111
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Chọn một màu và một kiểu chổi để vẽ."
 
-#: ../tools.h:110
 #. Stamp tool instructions
+#: ../tools.h:114
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Chọn một hình ảnh để đánh dấu vòng quanh bản vẽ của cháu."
 
-#: ../tools.h:113
 #. Line tool instructions
+#: ../tools.h:117
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Ấn nút chuột để bắt đầu vẽ một đường thẳng. Nhả nút chuột để vẽ nốt."
 
-#: ../tools.h:116
 #. Shape tool instructions
+#: ../tools.h:120
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Hãy chọn một hình. Ấn chuột để đặt tâm, sau đó kéo đến kích cỡ dự định, vào lúc đó chỉ buông nút. Di chuyển chung quanh để xoay, và ấn để vẽ."
+"Hãy chọn một hình. Ấn chuột để đặt tâm, sau đó kéo đến kích cỡ dự định, vào "
+"lúc đó chỉ buông nút. Di chuyển chung quanh để xoay, và ấn để vẽ."
 
-#: ../tools.h:119
 #. Text tool instructions
+#: ../tools.h:123
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Hãy chọn một kiểu dáng văn bản. Ấn chuột vào bản vẽ, sau đó cháu có thể gõ chữ."
+msgstr ""
+"Hãy chọn một kiểu dáng văn bản. Ấn chuột vào bản vẽ, sau đó cháu có thể gõ "
+"chữ."
 
-#: ../tools.h:122
 #. Magic tool instruction
+#: ../tools.h:126
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Chọn một phép ma thuật để dùng với bản vẽ."
 
-#: ../tools.h:125
+#. Label tool instructions
+#: ../tools.h:129
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Click on the wheel to rotate the text. Click on the edit button and select a "
+"label to edit."
+msgstr ""
+"Hãy chọn một kiểu dáng văn bản. Ấn chuột vào bản vẽ, sau đó cháu có thể gõ "
+"chữ."
+
 #. Response to 'undo' action
+#: ../tools.h:132
 msgid "Undo!"
 msgstr "Hoàn tác !"
 
-#: ../tools.h:128
 #. Response to 'redo' action
+#: ../tools.h:135
 msgid "Redo!"
 msgstr "Làm lại !"
 
-#: ../tools.h:131
 #. Eraser tool
+#: ../tools.h:138
 msgid "Eraser!"
 msgstr "Xoá !"
 
-#: ../tools.h:134
 #. Response to 'start a new image' action
+#: ../tools.h:141
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Hãy chọn một màu hay hình ảnh để bắt đầu một bản vẽ mới."
 
-#: ../tools.h:137
 #. Response to 'open' action (while file dialog is being constructed)
+#: ../tools.h:144
 msgid "Open…"
 msgstr "Mở..."
 
-#: ../tools.h:140
 #. Response to 'save' action
+#: ../tools.h:147
 msgid "Your image has been saved!"
 msgstr "Ảnh của cháu đã được lưu!"
 
-#: ../tools.h:143
 #. Response to 'print' action (while printing, or print dialog is being used)
+#: ../tools.h:150
 msgid "Printing…"
 msgstr "Dang in..."
 
-#: ../tools.h:146
 #. Response to 'quit' (exit) action
+#: ../tools.h:153
 msgid "Bye bye!"
 msgstr "Tạm biệt !"
 
-#: ../tools.h:150
 #. Instruction while using Line tool (after click, before release)
+#: ../tools.h:157
 msgid "Let go of the button to complete the line."
 msgstr "Buông nút chuột để vẽ xong đường."
 
-#: ../tools.h:153
 #. Instruction while using Shape tool (after first click, before release)
+#: ../tools.h:160
 msgid "Hold the button to stretch the shape."
 msgstr "Ấn giữ nút chuột để kéo giãn hình."
 
-#: ../tools.h:156
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
+#: ../tools.h:163
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Di chuyển chuột để xoay hình. Nhấn vào để vẽ nó."
 
-#: ../tools.h:159
 #. Notification that 'New' action was aborted (current image would have been lost)
+#: ../tools.h:166
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Vậy... Hãy cứ vẽ ở đây !"
 
-#: ../tuxpaint.c:1858
-#. Prompt to confirm user wishes to quit
-msgid "Do you really want to quit?"
-msgstr "Cháu có thực sư muốn thoát không?"
-
-#: ../tuxpaint.c:1861
-#. Quit prompt positive response (quit)
-#| msgid "Yes, I'm done!"
-msgid "Yes, I’m done!"
-msgstr "Rồi thì có !"
-
-#: ../tuxpaint.c:1864
-#: ../tuxpaint.c:1891
-#. Quit prompt negative response (don't quit)
-msgid "No, take me back!"
-msgstr "Chưa, lùi lại đi."
-
-#: ../tuxpaint.c:1868
-#. Current picture is not saved; user is quitting
-msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Nếu thoát thì ảnh của cháu bị mất ! Có lưu không?"
-
-#: ../tuxpaint.c:1869
-#: ../tuxpaint.c:1874
-msgid "Yes, save it!"
-msgstr "Lưu đi."
-
-#: ../tuxpaint.c:1870
-#: ../tuxpaint.c:1875
-#| msgid "No, don't bother saving!"
-msgid "No, don’t bother saving!"
-msgstr "Không lưu."
-
-#: ../tuxpaint.c:1873
-#. Current picture is not saved; user is opening another picture
-msgid "Save your picture first?"
-msgstr "Trước tiên nên lưu hình ảnh này ?"
-
-#: ../tuxpaint.c:1878
-#. Error opening picture
-msgid "Can’t open that picture!"
-msgstr "Không mở được ảnh đó !"
-
-#: ../tuxpaint.c:1881
-#: ../tuxpaint.c:1886
-#: ../tuxpaint.c:1895
-#: ../tuxpaint.c:1902
-#: ../tuxpaint.c:1911
-#. Generic dialog dismissal
-msgid "OK"
-msgstr "OK"
-
-#: ../tuxpaint.c:1885
-#. Notification that 'Open' dialog has nothing to show
-msgid "There are no saved files!"
-msgstr "Không có tập tin nào được lưu."
-
-#: ../tuxpaint.c:1889
-#. Verification of print action
-msgid "Print your picture now?"
-msgstr "In ấn hình ảnh này ngày bây giờ ?"
-
-#: ../tuxpaint.c:1890
-msgid "Yes, print it!"
-msgstr "In đi."
-
-#: ../tuxpaint.c:1894
-#. Confirmation of successful (we hope) printing
-msgid "Your picture has been printed!"
-msgstr "Ảnh của cháu đã được in ra !"
-
-#: ../tuxpaint.c:1898
-#. We got an error printing
-#| msgid "Your picture has been printed!"
-msgid "Sorry! Your picture could not be printed!"
-msgstr "Tiếc là không thể in ấn hình ảnh này."
-
-#: ../tuxpaint.c:1901
-#. Notification that it's too soon to print again (--printdelay option is in effect)
-msgid "You can’t print yet!"
-msgstr "Cháu chưa có thể in !"
-
-#: ../tuxpaint.c:1905
-#. Prompt to confirm erasing a picture in the Open dialog
-msgid "Erase this picture?"
-msgstr "Xoá ảnh này ?"
-
-#: ../tuxpaint.c:1906
-msgid "Yes, erase it!"
-msgstr "Xoá đi."
-
-#: ../tuxpaint.c:1907
-#| msgid "No, don't erase it!"
-msgid "No, don’t erase it!"
-msgstr "Không xoá."
-
-#: ../tuxpaint.c:1910
-#. Reminder that Mouse Button 1 is the button to use in Tux Paint
-msgid "Remember to use the left mouse button!"
-msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
-
-#: ../tuxpaint.c:2039
-#. Sound has been muted (silenced) via keyboard shortcut
-msgid "Sound muted."
-msgstr "Âm câm."
-
-#: ../tuxpaint.c:2044
-#. Sound has been unmuted (unsilenced) via keyboard shortcut
-msgid "Sound unmuted."
-msgstr "Âm bỏ cấm."
-
-#: ../tuxpaint.c:2511
 #. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:1931 ../tuxpaint.c:2661
 msgid "Please wait…"
 msgstr "Hãy đợi..."
 
-#: ../tuxpaint.c:7228
+#. Prompt to confirm user wishes to quit
+#: ../tuxpaint.c:1989
+msgid "Do you really want to quit?"
+msgstr "Cháu có thực sư muốn thoát không?"
+
+#. Quit prompt positive response (quit)
+#: ../tuxpaint.c:1992
+msgid "Yes, I’m done!"
+msgstr "Rồi thì có !"
+
+#. Quit prompt negative response (don't quit)
+#: ../tuxpaint.c:1995 ../tuxpaint.c:2022
+msgid "No, take me back!"
+msgstr "Chưa, lùi lại đi."
+
+#. Current picture is not saved; user is quitting
+#: ../tuxpaint.c:1999
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Nếu thoát thì ảnh của cháu bị mất ! Có lưu không?"
+
+#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
+msgid "Yes, save it!"
+msgstr "Lưu đi."
+
+#: ../tuxpaint.c:2001 ../tuxpaint.c:2006
+msgid "No, don’t bother saving!"
+msgstr "Không lưu."
+
+#. Current picture is not saved; user is opening another picture
+#: ../tuxpaint.c:2004
+msgid "Save your picture first?"
+msgstr "Trước tiên nên lưu hình ảnh này ?"
+
+#. Error opening picture
+#: ../tuxpaint.c:2009
+msgid "Can’t open that picture!"
+msgstr "Không mở được ảnh đó !"
+
+#. Generic dialog dismissal
+#: ../tuxpaint.c:2012 ../tuxpaint.c:2017 ../tuxpaint.c:2026 ../tuxpaint.c:2033
+#: ../tuxpaint.c:2042
+msgid "OK"
+msgstr "OK"
+
+#. Notification that 'Open' dialog has nothing to show
+#: ../tuxpaint.c:2016
+msgid "There are no saved files!"
+msgstr "Không có tập tin nào được lưu."
+
+#. Verification of print action
+#: ../tuxpaint.c:2020
+msgid "Print your picture now?"
+msgstr "In ấn hình ảnh này ngày bây giờ ?"
+
+#: ../tuxpaint.c:2021
+msgid "Yes, print it!"
+msgstr "In đi."
+
+#. Confirmation of successful (we hope) printing
+#: ../tuxpaint.c:2025
+msgid "Your picture has been printed!"
+msgstr "Ảnh của cháu đã được in ra !"
+
+#. We got an error printing
+#: ../tuxpaint.c:2029
+msgid "Sorry! Your picture could not be printed!"
+msgstr "Tiếc là không thể in ấn hình ảnh này."
+
+#. Notification that it's too soon to print again (--printdelay option is in effect)
+#: ../tuxpaint.c:2032
+msgid "You can’t print yet!"
+msgstr "Cháu chưa có thể in !"
+
+#. Prompt to confirm erasing a picture in the Open dialog
+#: ../tuxpaint.c:2036
+msgid "Erase this picture?"
+msgstr "Xoá ảnh này ?"
+
+#: ../tuxpaint.c:2037
+msgid "Yes, erase it!"
+msgstr "Xoá đi."
+
+#: ../tuxpaint.c:2038
+msgid "No, don’t erase it!"
+msgstr "Không xoá."
+
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
+#: ../tuxpaint.c:2041
+msgid "Remember to use the left mouse button!"
+msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
+
+#. Sound has been muted (silenced) via keyboard shortcut
+#: ../tuxpaint.c:2170
+msgid "Sound muted."
+msgstr "Âm câm."
+
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
+#: ../tuxpaint.c:2175
+msgid "Sound unmuted."
+msgstr "Âm bỏ cấm."
+
+#: ../tuxpaint.c:7764
 msgid "Pick a color."
 msgstr "Kén một màu."
 
-#: ../tuxpaint.c:8008
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
+#: ../tuxpaint.c:8568
 msgid "Erase"
 msgstr "Xoá"
 
-#: ../tuxpaint.c:8011
 #. Open dialog: 'Slides' button, to switch to slide show mode
+#: ../tuxpaint.c:8571
 msgid "Slides"
 msgstr "Ảnh chiếu"
 
-#: ../tuxpaint.c:8014
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+#: ../tuxpaint.c:8574
 msgid "Back"
 msgstr "Lùi"
 
-#: ../tuxpaint.c:8017
 #. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:8577
 msgid "Next"
 msgstr "Tiếp"
 
-#: ../tuxpaint.c:8020
 #. Slideshow: 'Play' button, to begin a slideshow sequence
+#: ../tuxpaint.c:8580
 msgid "Play"
 msgstr "Chạy"
 
-#: ../tuxpaint.c:8667
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+#: ../tuxpaint.c:9291
 msgid "Aa"
 msgstr "Aa"
 
-#: ../tuxpaint.c:11670
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+#: ../tuxpaint.c:12375
 msgid "Yes"
 msgstr "Có"
 
-#: ../tuxpaint.c:11674
+#: ../tuxpaint.c:12379
 msgid "No"
 msgstr "Không"
 
-#: ../tuxpaint.c:12669
 #. Prompt to ask whether user wishes to save over old version of their file
+#: ../tuxpaint.c:13374
 msgid "Replace the picture with your changes?"
 msgstr "Thay hình ảnh bằng các thay đổi của cháu không?"
 
-#: ../tuxpaint.c:12673
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
+#: ../tuxpaint.c:13378
 msgid "Yes, replace the old one!"
 msgstr "Thay thế cái cũ !"
 
-#: ../tuxpaint.c:12677
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
+#: ../tuxpaint.c:13382
 msgid "No, save a new file!"
 msgstr "Không, lưu một tập tin mới."
 
-#: ../tuxpaint.c:13440
+#: ../tuxpaint.c:14234
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn hình ảnh mà cháu muốn, sau đó bấm nút « Mở »."
 
-#: ../tuxpaint.c:14427
-#: ../tuxpaint.c:14741
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
+#: ../tuxpaint.c:15239 ../tuxpaint.c:15553
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Chọn những hình ảnh đã muốn, sau đó bấm nút « Chạy »."
 
@@ -746,7 +737,9 @@ msgstr "Mành"
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
-msgstr "Ấn chuột gần cạnh của hình ảnh để kéo cái mành qua nó. Di chuyển vuông gốc để mở hay đóng cái mành."
+msgstr ""
+"Ấn chuột gần cạnh của hình ảnh để kéo cái mành qua nó. Di chuyển vuông gốc "
+"để mở hay đóng cái mành."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -762,16 +755,19 @@ msgstr "Nhỏ giọt"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh có hiệu ứng khối."
+msgstr ""
+"Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh có hiệu ứng khối."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh là bản vẽ phấn."
+msgstr ""
+"Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh là bản vẽ phấn."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh chạy nhỏ giọt."
+msgstr ""
+"Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh chạy nhỏ giọt."
 
 #: ../../magic/src/blur.c:57
 msgid "Blur"
@@ -785,8 +781,8 @@ msgstr "Ấn chuột và di chuyển nó chung quanh để làm mờ hình ảnh
 msgid "Click to blur the entire image."
 msgstr "Ấn để làm mờ toàn bộ hình ảnh."
 
-#: ../../magic/src/bricks.c:104
 #. Both are named "Bricks", at the moment:
+#: ../../magic/src/bricks.c:104
 msgid "Bricks"
 msgstr "Gạch"
 
@@ -804,7 +800,8 @@ msgstr "Chữ viết đẹp"
 
 #: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Ấn chuột và di chuyển nó chung quanh để vẽ theo kiểu dáng chữ viết đẹp."
+msgstr ""
+"Ấn chuột và di chuyển nó chung quanh để vẽ theo kiểu dáng chữ viết đẹp."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
@@ -812,7 +809,9 @@ msgstr "Hoạt hình"
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Ấn chuột và di chuyển nó chung quanh để chuyển đổi hình ảnh sang một ảnh hoạt hình."
+msgstr ""
+"Ấn chuột và di chuyển nó chung quanh để chuyển đổi hình ảnh sang một ảnh "
+"hoạt hình."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
@@ -874,8 +873,8 @@ msgstr "Nhấn vào hình ảnh để tô đầy vùng đó bằng màu."
 msgid "Fisheye"
 msgstr "Mắt cá"
 
-#: ../../magic/src/fisheye.c:80
 #. Needs better name
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Nhấn vào phần của hình ảnh để tạo một hiệu ứng mắt cá."
 
@@ -979,7 +978,6 @@ msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Nhấn vào để thêm một hiệu ứng khảm vào toàn bộ hình ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:134
-#| msgid "Square"
 msgid "Square Mosaic"
 msgstr "Khảm vuông"
 
@@ -994,7 +992,8 @@ msgstr "Khảm không đều"
 #: ../../magic/src/mosaic_shaped.c:141
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
-msgstr "Ấn và di chuyển chuột để thêm một mẫu khảm hình vuông vào phần của hình ảnh."
+msgstr ""
+"Ấn và di chuyển chuột để thêm một mẫu khảm hình vuông vào phần của hình ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Click to add a square mosaic to your entire picture."
@@ -1003,7 +1002,9 @@ msgstr "Nhấn vào để thêm một mẫu khảm hình vuông vào toàn bộ 
 #: ../../magic/src/mosaic_shaped.c:144
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr "Ấn và di chuyển chuột để thêm một mẫu khảm hình sáu cạnh vào phần của hình ảnh."
+msgstr ""
+"Ấn và di chuyển chuột để thêm một mẫu khảm hình sáu cạnh vào phần của hình "
+"ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:145
 msgid "Click to add a hexagonal mosaic to your entire picture."
@@ -1012,7 +1013,8 @@ msgstr " Nhấn vào để thêm một mẫu khảm hình sáu cạnh vào toàn
 #: ../../magic/src/mosaic_shaped.c:147
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr "Ấn và di chuyển chuột để thêm một mẫu khảm thất thường vào phần của hình ảnh."
+msgstr ""
+"Ấn và di chuyển chuột để thêm một mẫu khảm thất thường vào phần của hình ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:148
 msgid "Click to add an irregular mosaic to your entire picture."
@@ -1023,9 +1025,9 @@ msgid "Negative"
 msgstr "Âm"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "Ấn và di chuyển chuột chung quanh để làm cho hình ảnh có hiệu ứng bản âm."
+msgstr ""
+"Ấn và di chuyển chuột chung quanh để làm cho hình ảnh có hiệu ứng bản âm."
 
 #: ../../magic/src/negative.c:83
 msgid "Click to turn your painting into its negative."
@@ -1100,12 +1102,10 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Nhấn vào để trải ra hình ảnh dùng giọt mưa."
 
 #: ../../magic/src/realrainbow.c:86
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Cầu vồng thật"
 
 #: ../../magic/src/realrainbow.c:88
-#| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "Cầu vồng theo phổ"
 
@@ -1113,7 +1113,9 @@ msgstr "Cầu vồng theo phổ"
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
-msgstr "Nhấn vào vị trí cần bắt đầu cầu vồng, kéo đến vị trí kết thúc, sau đó buông nút để vẽ một cầu vồng."
+msgstr ""
+"Nhấn vào vị trí cần bắt đầu cầu vồng, kéo đến vị trí kết thúc, sau đó buông "
+"nút để vẽ một cầu vồng."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1223,7 +1225,9 @@ msgstr "V dây"
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
-msgstr "Ấn và kéo chuột để vẽ theo kiểu dây. Kéo từ trên xuống dưới để vẽ nhiều hoặc ít đường hơn, kéo từ trái qua phải để tạo một hố lớn hơn."
+msgstr ""
+"Ấn và kéo chuột để vẽ theo kiểu dây. Kéo từ trên xuống dưới để vẽ nhiều hoặc "
+"ít đường hơn, kéo từ trái qua phải để tạo một hố lớn hơn."
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
@@ -1244,7 +1248,8 @@ msgstr "Màu sắc và Trắng"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Ấn và di chuyển chuột chung quanh để thay đổi màu của phần của hình ảnh."
+msgstr ""
+"Ấn và di chuyển chuột chung quanh để thay đổi màu của phần của hình ảnh."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
@@ -1254,11 +1259,14 @@ msgstr "Nhấn vào để thay đổi màu của toàn bộ hình ảnh."
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
-msgstr "Ấn và di chuyển chuột chung quanh để chuyển đổi đổi phần của hình ảnh sang một màu được chọn."
+msgstr ""
+"Ấn và di chuyển chuột chung quanh để chuyển đổi đổi phần của hình ảnh sang "
+"một màu được chọn."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Nhấn vào để chuyển đổi toàn bộ hình ảnh sang màu trắng và một màu được chọn."
+msgstr ""
+"Nhấn vào để chuyển đổi toàn bộ hình ảnh sang màu trắng và một màu được chọn."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1303,11 +1311,17 @@ msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr "Nhấn vào để làm cho hình ảnh có sáng theo chiều ngang. Ấn chuột gần đầu để tạo sóng ngắn hơn, gần dưới cho sóng cao hơn, gần bên trái cho sóng nhỏ, và gần bên phải cho sóng dài."
+msgstr ""
+"Nhấn vào để làm cho hình ảnh có sáng theo chiều ngang. Ấn chuột gần đầu để "
+"tạo sóng ngắn hơn, gần dưới cho sóng cao hơn, gần bên trái cho sóng nhỏ, và "
+"gần bên phải cho sóng dài."
 
 #: ../../magic/src/waves.c:89
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr "Nhấn vào để làm cho hình ảnh có sáng theo chiều dọc. Ấn chuột gần đầu để tạo sóng ngắn hơn, gần dưới cho sóng cao hơn, gần bên trái cho sóng nhỏ, và gần bên phải cho sóng dài."
+msgstr ""
+"Nhấn vào để làm cho hình ảnh có sáng theo chiều dọc. Ấn chuột gần đầu để tạo "
+"sóng ngắn hơn, gần dưới cho sóng cao hơn, gần bên trái cho sóng nhỏ, và gần "
+"bên phải cho sóng dài."

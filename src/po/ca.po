@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 18:32-0700\n"
+"POT-Creation-Date: 2009-10-03 22:47-0700\n"
 "PO-Revision-Date: 2009-06-21 15:23+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -348,128 +348,134 @@ msgid "An octagon has eight equal sides."
 msgstr "Un octàgon té vuit cares."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:56
+#: ../titles.h:57
 msgid "Tools"
 msgstr "Eines"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:59
+#: ../titles.h:60
 msgid "Colors"
 msgstr "Colors"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:62
+#: ../titles.h:63
 msgid "Brushes"
 msgstr "Pinzells"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:65
+#: ../titles.h:66
 msgid "Erasers"
 msgstr "Gomes"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:68
+#: ../titles.h:69
 msgid "Stamps"
 msgstr "Segells"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:69
+#: ../titles.h:72 ../tools.h:70
 msgid "Shapes"
 msgstr "Formes"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:74
+#: ../titles.h:75
 msgid "Letters"
 msgstr "Lletres"
 
+#. Title of font selector (buttons down the right for label tool)
+#. Label tool
+#: ../titles.h:78 ../tools.h:79
+msgid "Label"
+msgstr ""
+
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:75
+#: ../titles.h:81 ../tools.h:76
 msgid "Magic"
 msgstr "Màgic"
 
 #. Freehand painting tool
-#: ../tools.h:60
+#: ../tools.h:61
 msgid "Paint"
 msgstr "Pinta"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:63
+#: ../tools.h:64
 msgid "Stamp"
 msgstr "Estampa"
 
 #. Line drawing tool
-#: ../tools.h:66
+#: ../tools.h:67
 msgid "Lines"
 msgstr "Línies"
 
 #. Text tool
-#: ../tools.h:72
+#: ../tools.h:73
 msgid "Text"
 msgstr "Texte"
 
 #. Undo last action
-#: ../tools.h:78
+#: ../tools.h:82
 msgid "Undo"
 msgstr "Desfés"
 
 #. Redo undone action
-#: ../tools.h:81
+#: ../tools.h:85
 msgid "Redo"
 msgstr "Refés"
 
 #. Eraser tool
-#: ../tools.h:84
+#: ../tools.h:88
 msgid "Eraser"
 msgstr "Esborra"
 
 #. Start a new picture
-#: ../tools.h:87
+#: ../tools.h:91
 msgid "New"
 msgstr "Nou"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:8005
+#: ../tools.h:94 ../tuxpaint.c:8565
 msgid "Open"
 msgstr "Obre"
 
 #. Save the current picture
-#: ../tools.h:93
+#: ../tools.h:97
 msgid "Save"
 msgstr "Desa"
 
 #. Print the current picture
-#: ../tools.h:96
+#: ../tools.h:100
 msgid "Print"
 msgstr "Imprimeix"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:99
+#: ../tools.h:103
 msgid "Quit"
 msgstr "Surt"
 
 #. Paint tool instructions
-#: ../tools.h:107
+#: ../tools.h:111
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Trieu un color i el patró d'un pinzell per dibuixar-hi."
 
 #. Stamp tool instructions
-#: ../tools.h:110
+#: ../tools.h:114
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Trieu un segell per imprimir-lo sobre el vostre dibuix."
 
 #. Line tool instructions
-#: ../tools.h:113
+#: ../tools.h:117
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Feu clic per començar a dibuixar una línia. Deixeu anar el botó per acabar-"
 "la."
 
 #. Shape tool instructions
-#: ../tools.h:116
+#: ../tools.h:120
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -479,251 +485,264 @@ msgstr ""
 "girar-la i feu clic per dibuixar-la."
 
 #. Text tool instructions
-#: ../tools.h:119
+#: ../tools.h:123
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Trieu un estil de texte. Feu clic en el vostre dibuix i ja podeu començar a "
 "escriure."
 
 #. Magic tool instruction
-#: ../tools.h:122
+#: ../tools.h:126
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Trieu l'efecte màgic que voleu pel vostre dibuix!"
 
+#. Label tool instructions
+#: ../tools.h:129
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Click on the wheel to rotate the text. Click on the edit button and select a "
+"label to edit."
+msgstr ""
+"Trieu un estil de texte. Feu clic en el vostre dibuix i ja podeu començar a "
+"escriure."
+
 #. Response to 'undo' action
-#: ../tools.h:125
+#: ../tools.h:132
 msgid "Undo!"
 msgstr "Desfés!"
 
 #. Response to 'redo' action
-#: ../tools.h:128
+#: ../tools.h:135
 msgid "Redo!"
 msgstr "Refés!"
 
 #. Eraser tool
-#: ../tools.h:131
+#: ../tools.h:138
 msgid "Eraser!"
 msgstr "Esborra!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:134
+#: ../tools.h:141
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Trieu un color o dibuix per començar de nou."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:137
+#: ../tools.h:144
 msgid "Open…"
 msgstr "Obrir…"
 
 #. Response to 'save' action
-#: ../tools.h:140
+#: ../tools.h:147
 msgid "Your image has been saved!"
 msgstr "El vostre dibuix s'ha desat!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:143
+#: ../tools.h:150
 msgid "Printing…"
 msgstr "S'està imprimint…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:146
+#: ../tools.h:153
 msgid "Bye bye!"
 msgstr "Adéu!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Let go of the button to complete the line."
 msgstr "Deixeu anar el botó per acabar la línia."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Hold the button to stretch the shape."
 msgstr "Manteniu el botó premut per estirar la figura."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:156
+#: ../tools.h:163
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:159
+#: ../tools.h:166
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "D'acord, llavors… Seguirem dibuixant en aquest!"
 
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:1931 ../tuxpaint.c:2661
+msgid "Please wait…"
+msgstr "Espereu, si us plau…"
+
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1989
 msgid "Do you really want to quit?"
 msgstr "De veres voleu sortir?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1992
 msgid "Yes, I’m done!"
 msgstr "Sí, ja he acabat!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1891
+#: ../tuxpaint.c:1995 ../tuxpaint.c:2022
 msgid "No, take me back!"
 msgstr "No, tornem-hi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1999
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si sortiu perdreu el vostre dibuix! El voleu desar?"
 
-#: ../tuxpaint.c:1869 ../tuxpaint.c:1874
+#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
 msgid "Yes, save it!"
 msgstr "Sí, desa'l!"
 
-#: ../tuxpaint.c:1870 ../tuxpaint.c:1875
+#: ../tuxpaint.c:2001 ../tuxpaint.c:2006
 msgid "No, don’t bother saving!"
 msgstr "No, no cal que el desis!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:2004
 msgid "Save your picture first?"
 msgstr "Deso el vostre dibuix abans?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:2009
 msgid "Can’t open that picture!"
 msgstr "No puc obrir aquest dibuix!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1881 ../tuxpaint.c:1886 ../tuxpaint.c:1895 ../tuxpaint.c:1902
-#: ../tuxpaint.c:1911
+#: ../tuxpaint.c:2012 ../tuxpaint.c:2017 ../tuxpaint.c:2026 ../tuxpaint.c:2033
+#: ../tuxpaint.c:2042
 msgid "OK"
 msgstr "D'acord"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:2016
 msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:2020
 msgid "Print your picture now?"
 msgstr "Imprimeixo ara el vostre dibuix?"
 
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:2021
 msgid "Yes, print it!"
 msgstr "Sí, imprimeix-lo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1894
+#: ../tuxpaint.c:2025
 msgid "Your picture has been printed!"
 msgstr "El vostre dibuix s'ha imprés!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1898
+#: ../tuxpaint.c:2029
 msgid "Sorry! Your picture could not be printed!"
 msgstr "El vostre dibuix no s'ha pogut imprimir!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:2032
 msgid "You can’t print yet!"
 msgstr "Encara no podeu imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1905
+#: ../tuxpaint.c:2036
 msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
-#: ../tuxpaint.c:1906
+#: ../tuxpaint.c:2037
 msgid "Yes, erase it!"
 msgstr "Sí, esborra'l!"
 
-#: ../tuxpaint.c:1907
+#: ../tuxpaint.c:2038
 msgid "No, don’t erase it!"
 msgstr "No, no l'esborris!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1910
+#: ../tuxpaint.c:2041
 msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2039
+#: ../tuxpaint.c:2170
 msgid "Sound muted."
 msgstr "S'ha desactivat el so."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2044
+#: ../tuxpaint.c:2175
 msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2511
-msgid "Please wait…"
-msgstr "Espereu, si us plau…"
-
-#: ../tuxpaint.c:7228
+#: ../tuxpaint.c:7764
 msgid "Pick a color."
 msgstr "Trieu un color."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8008
+#: ../tuxpaint.c:8568
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8011
+#: ../tuxpaint.c:8571
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8014
+#: ../tuxpaint.c:8574
 msgid "Back"
 msgstr "Endarrera"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8017
+#: ../tuxpaint.c:8577
 msgid "Next"
 msgstr "Següent"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8020
+#: ../tuxpaint.c:8580
 msgid "Play"
 msgstr "Reproduïr"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:9291
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11670
+#: ../tuxpaint.c:12375
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11674
+#: ../tuxpaint.c:12379
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12669
+#: ../tuxpaint.c:13374
 msgid "Replace the picture with your changes?"
 msgstr "Reemplaço el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12673
+#: ../tuxpaint.c:13378
 msgid "Yes, replace the old one!"
 msgstr "Sí, reemplaça l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12677
+#: ../tuxpaint.c:13382
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:13440
+#: ../tuxpaint.c:14234
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14427 ../tuxpaint.c:14741
+#: ../tuxpaint.c:15239 ../tuxpaint.c:15553
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Trieu els dibuixos que voleu, llavors feu clic en «Reproduïr»."
 
