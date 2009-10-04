@@ -19,11 +19,11 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Copyright (c) 2002-2007 by Bill Kendrick
+  Copyright (c) 2002-2009 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
-  June 14, 2002 - July 17, 2007
+  June 14, 2002 - October 4, 2009
   $Id$
 */
 
@@ -40,8 +40,8 @@ enum
   TOOL_LINES,
   TOOL_SHAPES,
   TOOL_TEXT,
-  TOOL_MAGIC,
   TOOL_LABEL,
+  TOOL_MAGIC,
   TOOL_UNDO,
   TOOL_REDO,
   TOOL_ERASER,
@@ -72,11 +72,11 @@ const char *const tool_names[NUM_TOOLS] = {
   // Text tool
   gettext_noop("Text"),
 
-  // "Magic" effects tools (blur, flip image, etc.)
-  gettext_noop("Magic"),
-
   // Label tool
   gettext_noop("Label"),
+
+  // "Magic" effects tools (blur, flip image, etc.)
+  gettext_noop("Magic"),
 
   // Undo last action
   gettext_noop("Undo"),
@@ -122,11 +122,11 @@ const char *const tool_tips[NUM_TOOLS] = {
   // Text tool instructions
   gettext_noop("Choose a style of text. Click on your drawing and you can start typing."),
 
-  // Magic tool instruction
-  gettext_noop("Pick a magical effect to use on your drawing!"),
-
   // Label tool instructions
   gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Click on the wheel to rotate the text. Click on the edit button and select a label to edit."),
+
+  // Magic tool instruction
+  gettext_noop("Pick a magical effect to use on your drawing!"),
 
   // Response to 'undo' action
   gettext_noop("Undo!"),
@@ -174,8 +174,8 @@ const char *const tool_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/tools/lines.png",
   DATA_PREFIX "images/tools/shapes.png",
   DATA_PREFIX "images/tools/text.png",
-  DATA_PREFIX "images/tools/magic.png",
   DATA_PREFIX "images/tools/label.png",
+  DATA_PREFIX "images/tools/magic.png",
   DATA_PREFIX "images/tools/undo.png",
   DATA_PREFIX "images/tools/redo.png",
   DATA_PREFIX "images/tools/eraser.png",

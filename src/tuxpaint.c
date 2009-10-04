@@ -10830,6 +10830,12 @@ static void reset_avail_tools(void)
     tool_avail[TOOL_QUIT] = 0;
 
 
+  /* Disable Label? */
+
+  if (disable_label)
+    tool_avail[TOOL_LABEL] = 0;
+
+
   /* Disable save? */
 
   if (disable_save)
