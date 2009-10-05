@@ -20381,7 +20381,7 @@ void rec_undo_label(void)
       return;
     }
 
-  if (have_to_rec_label_node)
+  if (have_to_rec_label_node && current_label_node != NULL) /* FIXME: Bill added the "current_label_node != NULL" test to avoid crashing in the following situation: (1) use label tool, (2) start new drawing, (3) change to paint tool & try to draw.  Is this test correct, or is the crash here an artifact of a different bug? -bjk 2009.10.05 */
     {
       current_label_node->save_undoid = cur_undo;
       text_undo[cur_undo] = 1;
@@ -20569,6 +20569,7 @@ void delete_label_list(struct label_node** ref_head)
   while(current != NULL)
     {
         printf("%x current\n", current); //FIXAM
+fflush(stdout);
         
       next = current->next_to_up_label_node;
       free(current);
