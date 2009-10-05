@@ -13573,7 +13573,7 @@ static int do_save(int tool, int dont_show_success_results)
 
 	  for(i=0; i < current_node->save_texttool_len; i++)
 	    {
-	      fprintf(fi, "%c", current_node->save_texttool_str[i]);
+	      fprintf(fi, "%lc", current_node->save_texttool_str[i]);
 	    }
 
 	  fprintf(fi, "\n");
@@ -20632,7 +20632,7 @@ void load_info_about_label_surface(char lfname[1024])
     int k;
     unsigned l;
     unsigned tmp_pos;
-    char tmp_char;
+    wchar_t tmp_char;
     int old_width;
     int old_height;
     int new_width;
@@ -20682,7 +20682,7 @@ void load_info_about_label_surface(char lfname[1024])
             fscanf(lfi , "%u\n", &new_node->save_texttool_len);
             for(l = 0; l < new_node->save_texttool_len; l++)
                 {
-                    fscanf(lfi, "%c", &tmp_char);
+                    fscanf(lfi, "%lc", &tmp_char);
                     new_node->save_texttool_str[l] = tmp_char;
                 }
             fscanf(lfi, "\n");
