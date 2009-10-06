@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 3, 2009
+  June 14, 2002 - October 6, 2009
   $Id$
 */
 
@@ -13427,14 +13427,14 @@ static int do_save(int tool, int dont_show_success_results)
   unsigned i = 0;
   int list_ctr = 0;
   int x, y, pix, size_pix;
-  SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
-  SDL_BlitSurface(label, NULL, save_canvas, NULL);   /* FIXAM Should we first check for disble_save? */
 
   /* Was saving completely disabled? */
 
   if (disable_save)
     return 0;
 
+  SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
+  SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
   if (promptless_save == SAVE_OVER_NO)
   {
@@ -16319,6 +16319,10 @@ static void print_image(void)
 
 void do_print(void)
 {
+  /* Assemble drawing plus any labels: */
+  SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
+  SDL_BlitSurface(label, NULL, save_canvas, NULL);
+
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
   char *pcmd;
   FILE *pi;
@@ -16339,13 +16343,13 @@ void do_print(void)
   else
   {
 #ifdef PRINTMETHOD_PNG_PNM_PS
-    if (do_png_save(pi, pcmd, canvas))
+    if (do_png_save(pi, pcmd, save_canvas))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
 		    screen->w / 2, screen->h / 2);
 #elif defined(PRINTMETHOD_PNM_PS)
     /* nothing here */
 #elif defined(PRINTMETHOD_PS)
-    if (do_ps_save(pi, pcmd, canvas, papersize, 1))
+    if (do_ps_save(pi, pcmd, save_canvas, papersize, 1))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
 		    screen->w / 2, screen->h / 2);
     else
@@ -16366,7 +16370,7 @@ void do_print(void)
 
   {
     const char *error =
-      SurfacePrint(canvas, use_print_config ? f : NULL, show);
+      SurfacePrint(save_canvas, use_print_config ? f : NULL, show);
 
     if (error)
       fprintf(stderr, "%s\n", error);
@@ -16374,12 +16378,12 @@ void do_print(void)
 #elif defined(__BEOS__)
   /* BeOS */
 
-  SurfacePrint(canvas);
+  SurfacePrint(save_canvas);
 #elif defined(__APPLE__)
   /* Mac OS X */
   int show = ( ( want_alt_printcommand || macosx.menuAction ) && !fullscreen);
 
-  const char *error = SurfacePrint(canvas, show);
+  const char *error = SurfacePrint(save_canvas, show);
 
   if (error)
   {
