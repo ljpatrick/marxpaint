@@ -2442,6 +2442,19 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 	        }
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT &&
+                         cur_select == SELECT_ON)
+                    {
+                        cur_select = SELECT_OFF;
+                        do_setcursor(cursor_arrow);
+                        rec_undo_buffer();
+                        have_to_rec_label_node = TRUE;
+                        add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                        derender_node(&label_node_to_edit);
+//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+                    }
+
 	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
 
 	        cursor_x = cursor_left;
@@ -2466,6 +2479,19 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 	        }
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT &&
+                         cur_select == SELECT_ON)
+                    {
+                        cur_select = SELECT_OFF;
+                        do_setcursor(cursor_arrow);
+                        rec_undo_buffer();
+                        have_to_rec_label_node = TRUE;
+                        add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                        derender_node(&label_node_to_edit);
+//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+                    }
+                
 #ifdef SPEECH
 #ifdef __APPLE__
             if (use_sound)
@@ -20570,7 +20596,7 @@ void delete_label_list(struct label_node** ref_head)
     {
         printf("%x current\n", current); //FIXAM
 fflush(stdout);
-        
+
       next = current->next_to_up_label_node;
       free(current);
       current = next;
