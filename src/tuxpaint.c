@@ -13609,7 +13609,7 @@ static int do_save(int tool, int dont_show_success_results)
   current_node =  current_label_node;
   while(current_node != NULL)
   {
-    if (current_node->is_enabled)
+    if (current_node->is_enabled && current_node->save_texttool_len > 0)
       list_ctr = list_ctr+1;
     current_node = current_node->next_to_down_label_node;
   }
@@ -13621,7 +13621,7 @@ static int do_save(int tool, int dont_show_success_results)
   current_node =  start_label_node;
   while(current_node !=first_label_node_in_redo_stack)
     {
-      if (current_node->is_enabled == TRUE)
+      if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
 	{
 
 	  fprintf(fi, "%u\n", current_node->save_texttool_len);
