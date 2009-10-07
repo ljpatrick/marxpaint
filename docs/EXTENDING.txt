@@ -501,6 +501,11 @@ Fonts
        transparency, white will be converted to transparent when the Starter
        is opened.
 
+       Note: Previous to Tux Paint 0.9.22, Starters had to be in PNG or JPEG
+       (backgrounds only) format. As of 0.9.22, they may be in SVG (vector
+       graphics) or KPX (templates from Kid Pix, another childrens' drawing
+       program; they are special files which simply contain a JPEG within).
+
      Scene-Style
 
        Along with the 'coloring-book' style overlay, you can also provide a

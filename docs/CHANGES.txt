@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.October.3 (0.9.22)
+2009.October.7 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -34,8 +34,13 @@ $Id$
 
   * Other Improvements:
     -------------------
-    * Starter images can be in SVG format.
+    * Starter images can be in SVG (Scalable Vector Graphics) format.
       (Avoids loading PNG if SVG with the same name exists.)
+
+    * Starter images can be in KPX (Kid Pix Template) format.
+      (These appear to simply be JPEG with 60 byte's worth of Mac OS
+      resource fork header at the beginning.)
+      (Thanks to Sarah Curry for sharing some example templates to test.)
 
     * When a default size was not specified, SVG-based Stamps would default
       to the largest, which was canvas-sized.  Now defaulting to a more

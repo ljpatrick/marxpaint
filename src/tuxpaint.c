@@ -1683,14 +1683,13 @@ static char *debug_gettext(const char *str);
 static int charsize(Uint16 c);
 #endif
 
+SDL_Surface * load_kpx(char * file);
 #ifndef NOSVG
 SDL_Surface * load_svg(char * file);
-SDL_Surface * myIMG_Load(char * file);
 float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h);
-#else
-#define myIMG_Load IMG_Load
 #endif
+SDL_Surface * myIMG_Load(char * file);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -12070,6 +12069,14 @@ static void load_starter(char *img_id)
   }
 #endif
 
+  if (tmp_surf == NULL)
+  {
+    /* Try loading a KPX */
+    snprintf(fname, sizeof(fname), "%s/%s.kpx", dirname, img_id);
+    tmp_surf = myIMG_Load(fname);
+  }
+    
+
   if (tmp_surf != NULL)
   {
     img_starter = SDL_DisplayFormatAlpha(tmp_surf);
@@ -18034,18 +18041,6 @@ SDL_Surface * load_svg(char * file)
 #endif
 
 
-
-/* Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
-   if we notice it's an SVG file,
-   otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
-SDL_Surface * myIMG_Load(char * file)
-{
-  if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0)
-    return(load_svg(file));
-  else
-    return(IMG_Load(file));
-}
-
 float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h)
 {
@@ -18129,6 +18124,48 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
 #endif
 
+/* Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
+   if we notice it's an SVG file (if available!);
+   call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
+   otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
+SDL_Surface * myIMG_Load(char * file)
+{
+  if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
+    return(load_kpx(file));
+#ifndef NOSVG
+  else if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0)
+    return(load_svg(file));
+#endif
+  else
+    return(IMG_Load(file));
+}
+
+SDL_Surface * load_kpx(char * file)
+{
+  SDL_RWops * data;
+  FILE * fi;
+  SDL_Surface * surf;
+  int i;
+
+  fi = fopen(file, "r");
+  if (fi == NULL)
+    return NULL;
+
+  /* Skip header */
+  for (i = 0; i < 60; i++)
+    fgetc(fi);
+
+  data = SDL_RWFromFP(fi, 1); /* 1 = Close when we're done */
+
+  if (data == NULL)
+    return(NULL);
+
+  surf = IMG_Load_RW(data, 1); /* 1 = Free when we're done */
+  if (surf == NULL)
+    return(NULL);
+
+  return(surf);
+}
 
 
 void load_magic_plugins(void)
@@ -18941,6 +18978,8 @@ int do_new_dialog(void)
         if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
             /* Support legacy BMP files for load: */
             || strcasestr(f->d_name, ".bmp") != NULL
+            /* Support for KPX (Kid Pix templates; just a JPEG with resource fork header): */
+            || strcasestr(f->d_name, ".kpx") != NULL
 #ifndef NOSVG
             || strcasestr(f->d_name, ".svg") != NULL
 #endif
@@ -18975,10 +19014,18 @@ int do_new_dialog(void)
             d_exts[num_files] = strdup(".bmp");
           }
 
+#ifndef NOSVG
           if (strcasestr(fname, ".svg") != NULL)
           {
             strcpy((char *) strcasestr(fname, ".svg"), "");
             d_exts[num_files] = strdup(".svg");
+          }
+#endif
+
+          if (strcasestr(fname, ".kpx") != NULL)
+          {
+            strcpy((char *) strcasestr(fname, ".kpx"), "");
+            d_exts[num_files] = strdup(".kpx");
           }
 
           d_names[num_files] = strdup(fname);
