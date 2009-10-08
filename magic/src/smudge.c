@@ -70,7 +70,7 @@ SDL_Surface * smudge_get_icon(magic_api * api, int which)
     snprintf(fname, sizeof(fname), "%s/images/magic/smudge.png",
 	     api->data_directory);
   else /* if (which == 1) */
-    snprintf(fname, sizeof(fname), "%s/images/magic/smudge.png", /* FIXME */
+    snprintf(fname, sizeof(fname), "%s/images/magic/wetpaint.png",
 	     api->data_directory);
 
   return(IMG_Load(fname));
