@@ -4,9 +4,10 @@
   Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  by Albert Cahalan <albert@users.sf.net>
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
-  bill@newbreedsoftware.com
+  Smudge by Albert Cahalan <albert@users.sf.net>
+  Wet Paint addition by Bill Kendrick <bill@newbreedsoftware.com>
+
+  Copyright (c) 2002-2009
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -24,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: Oconter 8, 2009
   $Id$
 */
 
@@ -37,7 +38,7 @@
 /* Our globals: */
 
 static Mix_Chunk * smudge_snd;
-
+static Uint8 smudge_r, smudge_g, smudge_b;
 
 
 // No setup required:
@@ -57,7 +58,7 @@ Uint32 smudge_api_version(void) { return(TP_MAGIC_API_VERSION); }
 // We have multiple tools:
 int smudge_get_tool_count(magic_api * api)
 {
-  return(1);
+  return(2);
 }
 
 // Load our icons:
@@ -65,8 +66,12 @@ SDL_Surface * smudge_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/smudge.png",
-	   api->data_directory);
+  if (which == 0)
+    snprintf(fname, sizeof(fname), "%s/images/magic/smudge.png",
+	     api->data_directory);
+  else /* if (which == 1) */
+    snprintf(fname, sizeof(fname), "%s/images/magic/smudge.png", /* FIXME */
+	     api->data_directory);
 
   return(IMG_Load(fname));
 }
@@ -74,14 +79,19 @@ SDL_Surface * smudge_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * smudge_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext_noop("Smudge")));
+  if (which == 0)
+    return(strdup(gettext_noop("Smudge")));
+  else /* if (which == 1) */
+    return(strdup(gettext_noop("Wet Paint")));
 }
 
 // Return our descriptions, localized:
 char * smudge_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop(
-"Click and move the mouse around to smudge the picture.")));
+  if (which == 0)
+    return(strdup(gettext_noop("Click and move the mouse around to smudge the picture.")));
+  else /* if (which == 1) */
+    return(strdup(gettext_noop("Click and move the mouse around to draw with wet, smudgy paint.")));
 }
 
 // Do the effect:
@@ -94,6 +104,24 @@ static void do_smudge(void * ptr, int which, SDL_Surface * canvas, SDL_Surface *
   unsigned i = 32 * 32;
   double rate = api->button_down() ? 0.5 : 0.0;
   Uint8 r, g, b;
+  int xx, yy, strength;
+
+  if (which == 1)
+  {
+    /* Wet paint */
+    for (yy = -8; yy < 8; yy++)
+      for (xx = -8; xx < 8; xx++)
+        if (api->in_circle(xx, yy, 8))
+        {
+          SDL_GetRGB(api->getpixel(last, x + xx, y + yy),
+                     last->format, &r, &g, &b);
+          strength = (abs(xx * yy) / 8) + 6;
+          api->putpixel(canvas, x + xx, y +yy, SDL_MapRGB(canvas->format,
+                                                          (smudge_r + r * strength) / (strength + 1),
+                                                          (smudge_g + g * strength) / (strength + 1),
+                                                          (smudge_b + b * strength) / (strength + 1)));
+        }
+  }
 
   while (i--)
   {
@@ -164,12 +192,18 @@ void smudge_shutdown(magic_api * api)
 // Record the color from Tux Paint:
 void smudge_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
+  smudge_r = r;
+  smudge_g = g;
+  smudge_b = b;
 }
 
 // Use colors:
 int smudge_requires_colors(magic_api * api, int which)
 {
-  return 0;
+  if (which == 0)
+    return 0;
+  else /* if (which == 1) */
+    return 1;
 }
 
 void smudge_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)

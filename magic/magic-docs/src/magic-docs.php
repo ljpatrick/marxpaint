@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* 2009.08.31 */
+/* 2009.10.08 */
 
 
 /* Authors of the Magic tools: */
@@ -272,7 +272,7 @@ $tools = array(
   array('name'=>'Smudge',
    'desc'=>'This pushes the colors around under the mouse, like finger painting with wet paint.',
    'author'=>$AUTHOR_ALBERT,
-   'see'=>'Blur'),
+   'see'=>array('Blur', 'Wet Paint')),
 
   array('name'=>'Snow Ball',
    'desc'=>'Fill the picture with snowballs.',
@@ -323,6 +323,11 @@ $tools = array(
    'desc'=>'Click to make the entire picture wavy, up-and-down.  Drag the mouse up and down to change the height of the ripples, and left and right to change the width.  Release the mouse button when it looks the way you like it.',
    'author'=>array($AUTHOR_KENDRICK, $AUTHOR_ADAMR),
    'see'=>'Waves'),
+
+  array('name'=>'Wet Paint',
+   'desc'=>'This draws a light, smudgy coat of paint on the picture.',
+   'author'=>array($AUTHOR_ALBERT, $AUTHOR_KENDRICK),
+   'see'=>'Smudge'),
 
   array('name'=>'Zoom',
    'desc'=>'Click and drag up to zoom in, or down to zoom out.',
