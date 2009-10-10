@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 6, 2009
+  June 14, 2002 - October 9, 2009
   $Id$
 */
 
@@ -4713,7 +4713,6 @@ static void mainloop(void)
 
     if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
         {
-            SDL_Delay(10);
             cur_cursor_blink = SDL_GetTicks();
 
             if( cursor_x != -1 && cursor_y != -1 &&
@@ -4723,6 +4722,7 @@ static void mainloop(void)
                     draw_blinking_cursor();
                 }
         }
+    SDL_Delay(10);
   }
   while (!done);
 }
