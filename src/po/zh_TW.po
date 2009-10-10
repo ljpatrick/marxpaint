@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-08 10:18-0700\n"
+"POT-Creation-Date: 2009-10-09 23:37-0700\n"
 "PO-Revision-Date: 2009-07-02 09:54+0800\n"
 "Last-Translator: Song Huang <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -384,31 +384,31 @@ msgstr "八角形有八個相等的邊。"
 
 #  Title of tool selector (buttons down the left)
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:57
+#: ../titles.h:56
 msgid "Tools"
 msgstr "工具"
 
 #  Title of color palette (buttons across the bottom)
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:60
+#: ../titles.h:59
 msgid "Colors"
 msgstr "顏色"
 
 #  Title of brush selector (buttons down the right for paint and line tools)
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:63
+#: ../titles.h:62
 msgid "Brushes"
 msgstr "刷子"
 
 #  Title of eraser selector (buttons down the right for eraser tool)
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:66
+#: ../titles.h:65
 msgid "Erasers"
 msgstr "橡皮擦"
 
 #  Title of stamp selector (buttons down the right for stamps tool)
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:69
+#: ../titles.h:68
 msgid "Stamps"
 msgstr "圖章"
 
@@ -416,27 +416,21 @@ msgstr "圖章"
 #  Shape creation tool (square, circle, etc.)
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:72 ../tools.h:70
+#: ../titles.h:71 ../tools.h:70
 msgid "Shapes"
 msgstr "形狀"
 
 #  Title of font selector (buttons down the right for text tool)
-#. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:75
+#. Title of font selector (buttons down the right for text and label tools)
+#: ../titles.h:74
 msgid "Letters"
 msgstr "字體"
-
-#. Title of font selector (buttons down the right for label tool)
-#. Label tool
-#: ../titles.h:78 ../tools.h:76
-msgid "Label"
-msgstr ""
 
 #  Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #  "Magic" effects tools (blur, flip image, etc.)
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:81 ../tools.h:79
+#: ../titles.h:77 ../tools.h:79
 msgid "Magic"
 msgstr "魔法"
 
@@ -463,6 +457,11 @@ msgstr "畫線"
 #: ../tools.h:73
 msgid "Text"
 msgstr "文字"
+
+#. Label tool
+#: ../tools.h:76
+msgid "Label"
+msgstr ""
 
 #  Undo last action
 #. Undo last action
@@ -549,7 +548,12 @@ msgstr ""
 #  Text tool instructions
 #. Text tool instructions
 #: ../tools.h:123
-msgid "Choose a style of text. Click on your drawing and you can start typing."
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
 
 #  Text tool instructions
@@ -560,8 +564,9 @@ msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
 #| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
-"Click on the wheel to rotate the text. Click on the edit button and select a "
-"label to edit."
+"Press [Enter] or [Tab] to complete the text. By using the selector button "
+"and clicking an exist label, you can move it, edit it and change its text "
+"style."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
 
 #  Magic tool instruction
@@ -811,7 +816,7 @@ msgstr "播放"
 
 #  Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9348
+#: ../tuxpaint.c:9345
 msgid "Aa"
 msgstr "A中"
 
@@ -819,17 +824,17 @@ msgstr "A中"
 #  positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12446
+#: ../tuxpaint.c:12444
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:12450
+#: ../tuxpaint.c:12448
 msgid "No"
 msgstr "不"
 
 #  Prompt to ask whether user wishes to save over old version of their file
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13445
+#: ../tuxpaint.c:13443
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
@@ -837,7 +842,7 @@ msgstr "用你所做的改變來取代圖畫嗎?"
 #  (like a 'File:Save' action in other applications)
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13449
+#: ../tuxpaint.c:13447
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
@@ -845,11 +850,11 @@ msgstr "好，取代舊的!"
 #  (like a 'File:Save As...' action in other applications)
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13453
+#: ../tuxpaint.c:13451
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:14305
+#: ../tuxpaint.c:14303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
@@ -857,7 +862,7 @@ msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 #  Instructions for Slideshow file dialog (FIXME: Make a #define)
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15310 ../tuxpaint.c:15624
+#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 

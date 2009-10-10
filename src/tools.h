@@ -23,7 +23,7 @@
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
-  June 14, 2002 - October 4, 2009
+  June 14, 2002 - October 9, 2009
   $Id$
 */
 
@@ -120,10 +120,10 @@ const char *const tool_tips[NUM_TOOLS] = {
   gettext_noop("Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."),
 
   // Text tool instructions
-  gettext_noop("Choose a style of text. Click on your drawing and you can start typing."),
+  gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."),
 
   // Label tool instructions
-  gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Click on the wheel to rotate the text. Click on the edit button and select a label to edit."),
+  gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."),
 
   // Magic tool instruction
   gettext_noop("Pick a magical effect to use on your drawing!"),

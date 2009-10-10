@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-08 10:18-0700\n"
+"POT-Creation-Date: 2009-10-09 23:37-0700\n"
 "PO-Revision-Date: 2008-01-03 00:41+0200\n"
 "Last-Translator: Jorma Karvonen <karvjorm@users.sf.net>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -319,51 +319,45 @@ msgid "An octagon has eight equal sides."
 msgstr "Viisikulmiossa on viisi sivua."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:57
+#: ../titles.h:56
 msgid "Tools"
 msgstr "Työkalut"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:60
+#: ../titles.h:59
 msgid "Colors"
 msgstr "Värit"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:63
+#: ../titles.h:62
 msgid "Brushes"
 msgstr "Siveltimet"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:66
+#: ../titles.h:65
 msgid "Erasers"
 msgstr "Pyyhekumit"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:69
+#: ../titles.h:68
 msgid "Stamps"
 msgstr "Leimat"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:72 ../tools.h:70
+#: ../titles.h:71 ../tools.h:70
 msgid "Shapes"
 msgstr "Muodot"
 
 #  Amerikanenglannissa sana "letters" tarkoittaa myös aakkosia.
-#. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:75
+#. Title of font selector (buttons down the right for text and label tools)
+#: ../titles.h:74
 msgid "Letters"
 msgstr "Kirjaimet"
 
-#. Title of font selector (buttons down the right for label tool)
-#. Label tool
-#: ../titles.h:78 ../tools.h:76
-msgid "Label"
-msgstr ""
-
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:81 ../tools.h:79
+#: ../titles.h:77 ../tools.h:79
 msgid "Magic"
 msgstr "Taiat"
 
@@ -386,6 +380,11 @@ msgstr "Viivat"
 #: ../tools.h:73
 msgid "Text"
 msgstr "Teksti"
+
+#. Label tool
+#: ../tools.h:76
+msgid "Label"
+msgstr ""
 
 #. Undo last action
 #: ../tools.h:82
@@ -458,7 +457,12 @@ msgstr ""
 
 #. Text tool instructions
 #: ../tools.h:123
-msgid "Choose a style of text. Click on your drawing and you can start typing."
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text."
 msgstr ""
 "Valitse tekstityyli.  Napsauta maalaustasi, niin voit aloittaa "
 "kirjoittamisen."
@@ -470,8 +474,9 @@ msgstr ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
-"Click on the wheel to rotate the text. Click on the edit button and select a "
-"label to edit."
+"Press [Enter] or [Tab] to complete the text. By using the selector button "
+"and clicking an exist label, you can move it, edit it and change its text "
+"style."
 msgstr ""
 "Valitse tekstityyli.  Napsauta maalaustasi, niin voit aloittaa "
 "kirjoittamisen."
@@ -688,45 +693,45 @@ msgid "Play"
 msgstr "Näytä"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9348
+#: ../tuxpaint.c:9345
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12446
+#: ../tuxpaint.c:12444
 msgid "Yes"
 msgstr "Kyllä"
 
-#: ../tuxpaint.c:12450
+#: ../tuxpaint.c:12448
 msgid "No"
 msgstr "Ei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13445
+#: ../tuxpaint.c:13443
 msgid "Replace the picture with your changes?"
 msgstr "Korvataanko maalaus sinun muutoksillasi?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13449
+#: ../tuxpaint.c:13447
 msgid "Yes, replace the old one!"
 msgstr "Kyllä, korvaa vanha maalaus!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13453
+#: ../tuxpaint.c:13451
 msgid "No, save a new file!"
 msgstr "Ei, tallenna uusi maalaus!"
 
-#: ../tuxpaint.c:14305
+#: ../tuxpaint.c:14303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Valikoi haluamasi maalaus ja valitse “Avaa”."
 
 #  Pilkku ennen ja-sanaa tarvitaan estämään fuzzy-määrite
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15310 ../tuxpaint.c:15624
+#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Valikoi haluamasi maalaukset, ja valitse “Näytä“."
 
