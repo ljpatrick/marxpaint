@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 17, 2007
+  June 14, 2002 - October 9, 2009
   $Id$
 */
 
@@ -42,7 +42,6 @@ enum
   TITLE_STAMPS,
   TITLE_SHAPES,
   TITLE_LETTERS,
-  TITLE_LABEL,
   TITLE_MAGIC,
   NUM_TITLES
 };
@@ -71,11 +70,8 @@ const char *const title_names[NUM_TITLES] = {
   // Title of shape selector (buttons down the right for shapes tool)
   gettext_noop("Shapes"),
 
-  // Title of font selector (buttons down the right for text tool)
+  // Title of font selector (buttons down the right for text and label tools)
   gettext_noop("Letters"),
-
-  // Title of font selector (buttons down the right for label tool)
-  gettext_noop("Label"),
 
   // Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
   gettext_noop("Magic")

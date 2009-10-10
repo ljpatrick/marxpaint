@@ -9245,10 +9245,7 @@ static void draw_fonts(void)
   SDL_Color black = { 0, 0, 0, 0 };
 
   /* Draw the title: */
-  if (cur_tool == TOOL_TEXT)
-    draw_image_title(TITLE_LETTERS, r_ttoolopt);
-  else
-    draw_image_title(TITLE_LABEL, r_ttoolopt);
+  draw_image_title(TITLE_LETTERS, r_ttoolopt);
 
   /* How many can we show? */
 
@@ -10916,6 +10913,7 @@ static void reset_avail_tools(void)
 
 #ifdef NOKIA_770
   /* There is no way for the user to enter text, so just disable this. */
+  /* FIXME: Some Maemo devices have built-in keyboards now, don't they!? -bjk 2009.10.09 */
   tool_avail[TOOL_TEXT] = 0;
   tool_avail[TOOL_LABEL] = 0;
 #endif
@@ -16539,7 +16537,6 @@ static void do_render_cur_text(int do_blit)
         } 
   }
    tmp_label = SDL_CreateRGBSurface(tmp_surf->flags,
-  //     tmp_label = SDL_CreateRGBSurface(0,
                                     tmp_surf->w, tmp_surf->h, 
                                     tmp_surf->format->BitsPerPixel,
                                     tmp_surf->format->Rmask, tmp_surf->format->Gmask, tmp_surf->format->Bmask, 0);
@@ -16632,7 +16629,7 @@ static void do_render_cur_text(int do_blit)
     if (do_blit)
     {
 
-      if(cur_select == SELECT_ON)
+      if(cur_tool == TOOL_LABEL && cur_select == SELECT_ON)
       {
 	have_to_rec_label_node=TRUE;
 	add_label_node(src.w, src.h, dest.x, dest.y, &label_node_to_edit, tmp_surf);
@@ -16642,7 +16639,7 @@ static void do_render_cur_text(int do_blit)
 	do_setcursor(cursor_arrow);
 
       }
-      else if(cur_label == LABEL_LABEL)
+      else if(cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL)
       {
           myblit(tmp_surf, &src, label, &dest);
           
