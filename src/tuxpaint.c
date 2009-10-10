@@ -10889,6 +10889,11 @@ static void reset_avail_tools(void)
     tool_avail[TOOL_LABEL] = 0;
 
 
+  /* TBD... */
+
+  tool_avail[TOOL_NA] = 0;
+
+
   /* Disable save? */
 
   if (disable_save)
