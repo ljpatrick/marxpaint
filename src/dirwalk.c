@@ -254,7 +254,7 @@ int compare_ftw_str(const void *v1, const void *v2)
 {
   const char *restrict const s1 = ((tp_ftw_str *) v1)->str;
   const char *restrict const s2 = ((tp_ftw_str *) v2)->str;
-  return -strcmp(s1, s2);
+  return -strcmp(s1, s2); /* FIXME: Should we try strcasecmp, to group things together despite uppercase/lowercase in filenames (e.g., Jigsaw* vs jigsaw* Starters)??? -bjk 2009.10.11 */
 }
 
 void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,

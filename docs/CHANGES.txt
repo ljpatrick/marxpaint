@@ -40,6 +40,12 @@ $Id$
     * Starter images can be in SVG (Scalable Vector Graphics) format.
       (Avoids loading PNG if SVG with the same name exists.)
 
+    * When scaling/smearing a picture or Starter, to fit the current canvas
+      size, it was not drawing on the far right or bottom edges, causing
+      Fill tool to 'spill'.  (Example: fill one of the puzzle pieces on the
+      right or bottom of the 5x5 jigsaw Starter, and all pieces on the right
+      and bottom would get filled, too.)
+
     * Starter images can be in KPX (Kid Pix Template) format.
       (These appear to simply be JPEG with 60 byte's worth of Mac OS
       resource fork header at the beginning.)

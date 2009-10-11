@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 9, 2009
+  June 14, 2002 - October 11, 2009
   $Id$
 */
 
@@ -11890,9 +11890,10 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect,
   }
   if (srcw < 1 || srch < 1)
     return -1;			/* no idea what to return if nothing done */
+  srch++; /* "++" is a tweak to get to edges -bjk 2009.10.11 */
   while (srch--)
   {
-    int i = srcw;
+    int i = srcw + 1; /* "+ 1" is a tweak to get to edges -bjk 2009.10.11 */
     while (i--)
     {
       putpixel(dst, i + dstx, srch + dsty,
