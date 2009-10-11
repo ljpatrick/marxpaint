@@ -40,6 +40,9 @@ $Id$
     * Starter images can be in SVG (Scalable Vector Graphics) format.
       (Avoids loading PNG if SVG with the same name exists.)
 
+    * Removed white artifacts from some Starters, and reduced file size
+      of some Starters.
+
     * When scaling/smearing a picture or Starter, to fit the current canvas
       size, it was not drawing on the far right or bottom edges, causing
       Fill tool to 'spill'.  (Example: fill one of the puzzle pieces on the
