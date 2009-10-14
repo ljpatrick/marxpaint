@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 11, 2009
+  June 14, 2002 - October 13, 2009
   $Id$
 */
 
@@ -20319,10 +20319,13 @@ Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 void magic_switchout(SDL_Surface * last)
 {
   if (cur_tool == TOOL_MAGIC)
+  {
     magic_funcs[magics[cur_magic].handle_idx].switchout(magic_api_struct,
 					                magics[cur_magic].idx,
 					                magics[cur_magic].mode,
 					                canvas, last);
+    update_canvas(0, 0, canvas->w, canvas->h);
+  }
 }
 
 void magic_switchin(SDL_Surface * last)
@@ -20338,6 +20341,8 @@ void magic_switchin(SDL_Surface * last)
        let's put the old Tux text back: */
 
     redraw_tux_text();
+
+    update_canvas(0, 0, canvas->w, canvas->h);
   }
 }
 

@@ -37,6 +37,8 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * After switching into, or out of, a magic tool, the canvas is updated.
+
     * Starter images can be in SVG (Scalable Vector Graphics) format.
       (Avoids loading PNG if SVG with the same name exists.)
 
