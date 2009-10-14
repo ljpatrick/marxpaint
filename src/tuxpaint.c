@@ -2351,6 +2351,8 @@ static void mainloop(void)
 
       if (!disable_print)
       {
+        magic_switchout(canvas);
+
         /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
         if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && texttool_len > 0)
         {
@@ -2371,9 +2373,12 @@ static void mainloop(void)
             }
 
         print_image(); 
+
+        magic_switchin(canvas);
+
         draw_toolbar();
         draw_tux_text(TUX_BORED, "", 0);
-        update_screen_rect(&r_tools);        
+        update_screen_rect(&r_tools);
       }
     }
 	else
@@ -3806,7 +3811,9 @@ static void mainloop(void)
 
 	    /* Start doing magic! */
 
+            magic_switchout(canvas); /* <-- FIXME: I dislike this -bjk 2009.10.13 */
 	    rec_undo_buffer();
+            magic_switchin(canvas); /* <-- FIXME: I dislike this -bjk 2009.10.13 */
 
             if (cur_undo > 0)
               undo_ctr = cur_undo - 1;
