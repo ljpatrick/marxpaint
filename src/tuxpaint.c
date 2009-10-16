@@ -919,6 +919,7 @@ static int
   disable_magic_controls;
 
 static int starter_mirrored, starter_flipped, starter_personal;
+static int template_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 Uint8 * touched;
 
@@ -1441,6 +1442,7 @@ static int cur_label, cur_select;
 static int been_saved;
 static char file_id[NAME_MAX];
 static char starter_id[NAME_MAX];
+static char template_id[NAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll, tool_scroll;
@@ -1648,6 +1650,7 @@ static void anti_carriage_return(int left, int right, int cur_top,
 #endif
 static void load_starter_id(char *saved_id);
 static void load_starter(char *img_id);
+static void load_template(char *img_id);
 static SDL_Surface *duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
@@ -12001,6 +12004,7 @@ static void load_starter_id(char *saved_id)
   rname = get_fname(fname, DIR_SAVE);
 
   starter_id[0] = '\0';
+  template_id[0] = '\0';
 
   fi = fopen(rname, "r");
   if (fi != NULL)
@@ -12033,6 +12037,20 @@ static void load_starter_id(char *saved_id)
       canvas_color_r = 255;
       canvas_color_g = 255;
       canvas_color_b = 255;
+    }
+
+    do
+    {
+      color_tag = fgetc(fi);
+    }
+    while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
+
+    if (!feof(fi) && color_tag == 'T')
+    { 
+      fgets(template_id, sizeof(template_id), fi);
+      template_id[strlen(template_id) - 1] = '\0';
+      fscanf(fi, "%d", &template_personal);
+      printf("template = %s\n (Personal=%d)", template_id, template_personal);
     }
 
     fclose(fi);
@@ -12096,11 +12114,15 @@ static void load_starter(char *img_id)
 
   /* Try to load the a background image: */
 
-  /* FIXME: Also support .jpg extension? -bjk 2007.03.22 */
-
   /* (JPEG first) */
   snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
   tmp_surf = IMG_Load(fname);
+  if (tmp_surf == NULL)
+  {
+    /* (Then just JPG) */
+    snprintf(fname, sizeof(fname), "%s/%s-back.jpg", dirname, img_id);
+    tmp_surf = IMG_Load(fname);
+  }
 
   /* (Failed? Try PNG next) */
   if (tmp_surf == NULL)
@@ -12220,6 +12242,84 @@ static void load_starter(char *img_id)
 }
 
 
+static void load_template(char *img_id)
+{
+  char *dirname;
+  char fname[256];
+  SDL_Surface *tmp_surf;
+
+  /* Determine path to starter files: */
+
+  if (template_personal == 0)
+    dirname = strdup(DATA_PREFIX "templates");
+  else
+    dirname = get_fname("templates", DIR_DATA);
+
+  /* Clear them to NULL first: */
+  img_starter = NULL;
+  img_starter_bkgd = NULL;
+
+  /* (Try loading a KPX) */
+  snprintf(fname, sizeof(fname), "%s/%s.kpx", dirname, img_id);
+  tmp_surf = myIMG_Load(fname);
+
+  /* (JPEG) */
+  if (tmp_surf == NULL) 
+  {
+    snprintf(fname, sizeof(fname), "%s/%s.jpeg", dirname, img_id);
+    tmp_surf = IMG_Load(fname);
+  }
+  if (tmp_surf == NULL)
+  {
+    /* (Then just JPG) */
+    snprintf(fname, sizeof(fname), "%s/%s.jpg", dirname, img_id);
+    tmp_surf = IMG_Load(fname);
+  }
+
+  /* (Failed? Try PNG next) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
+    tmp_surf = IMG_Load(fname);
+  }
+
+#ifndef NOSVG
+  /* (Failed? Try SVG next) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s.svg", dirname, img_id);
+    tmp_surf = load_svg(fname);
+  }
+#endif
+
+  if (tmp_surf != NULL)
+  {
+    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
+  }
+
+
+  /* Scale if needed... */
+
+  if (img_starter_bkgd != NULL &&
+      (img_starter_bkgd->w != canvas->w || img_starter_bkgd->h != canvas->h))
+  {
+    tmp_surf = img_starter_bkgd;
+
+    img_starter_bkgd = SDL_CreateRGBSurface(SDL_SWSURFACE,
+					    canvas->w, canvas->h,
+					    canvas->format->BitsPerPixel,
+					    canvas->format->Rmask,
+					    canvas->format->Gmask,
+					    canvas->format->Bmask, 0);
+
+    autoscale_copy_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface);
+  }
+
+  free(dirname);
+}
+
+
 /* Load current (if any) image: */
 
 static void load_current(void)
@@ -12243,6 +12343,7 @@ static void load_current(void)
 	    "%s\n\n", fname, strerror(errno));
     file_id[0] = '\0';
     starter_id[0] = '\0';
+    template_id[0] = '\0';
   }
   else
   {
@@ -12297,6 +12398,7 @@ static void load_current(void)
 
       file_id[0] = '\0';
       starter_id[0] = '\0';
+      template_id[0] = '\0';
     }
     else
     {
@@ -12311,6 +12413,10 @@ static void load_current(void)
   
         if (starter_flipped)
   	  flip_starter();
+      }
+      else if (template_id[0] != '\0')
+      {
+        load_template(template_id);
       }
     }
 
@@ -13726,6 +13832,7 @@ static int do_save(int tool, int dont_show_success_results)
   /* Write 'starter' and/or canvas color info, if it's useful to: */
 
   if (starter_id[0] != '\0' ||
+      template_id[0] != '\0' ||
       canvas_color_r != 255 ||
       canvas_color_g != 255 ||
       canvas_color_b != 255)
@@ -13742,6 +13849,8 @@ static int do_save(int tool, int dont_show_success_results)
 	      canvas_color_r,
 	      canvas_color_g,
 	      canvas_color_b);
+      fprintf(fi, "T%s\n", template_id);
+      fprintf(fi, "%d\n", template_personal);
       fclose(fi);
     }
 
@@ -13959,7 +14068,9 @@ static int do_quit(int tool)
 #define PLACE_SAVED_DIR 0
 #define PLACE_PERSONAL_STARTERS_DIR 1
 #define PLACE_STARTERS_DIR 2
-#define NUM_PLACES_TO_LOOK 3
+#define PLACE_PERSONAL_TEMPLATES_DIR 3
+#define PLACE_TEMPLATES_DIR 4
+#define NUM_PLACES_TO_LOOK 5
 
 
 /* FIXME: This, do_slideshow() and do_new_dialog() should be combined
@@ -14017,20 +14128,31 @@ int do_open(void)
     {
       if (places_to_look == PLACE_SAVED_DIR)
       {
-        /* First, check for saved-images: */
+        /* Saved-images: */
 
         dirname[places_to_look] = get_fname("saved", DIR_SAVE);
       }
       else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
       {
+        /* Starters handled by New dialog... */
         dirname[places_to_look] = NULL;
 	continue;
       }
       else if (places_to_look == PLACE_STARTERS_DIR)
       {
-        /* Finally, check for system-wide coloring-book style
-           'starter' images: */
-
+        /* Starters handled by New dialog... */
+        dirname[places_to_look] = NULL;
+	continue;
+      }
+      else if (places_to_look == PLACE_PERSONAL_TEMPLATES_DIR)
+      {
+        /* Templates handled by New dialog... */
+        dirname[places_to_look] = NULL;
+	continue;
+      }
+      else if (places_to_look == PLACE_TEMPLATES_DIR)
+      {
+        /* Templates handled by New dialog... */
         dirname[places_to_look] = NULL;
 	continue;
       }
@@ -14972,6 +15094,7 @@ int do_open(void)
 
             strcpy(file_id, d_names[which]);
             starter_id[0] = '\0';
+            template_id[0] = '\0';
 
 
             /* See if this saved image was based on a 'starter' */
@@ -14988,6 +15111,8 @@ int do_open(void)
               if (starter_flipped)
                 flip_starter();
             }
+            else if (template_id[0] != '\0')
+              load_template(template_id);
 
             reset_avail_tools();
 
@@ -15794,7 +15919,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 {
   int i, which, next, done;
   SDL_Surface * img;
-  char * tmp_starter_id, * tmp_file_id;
+  char * tmp_starter_id, * tmp_template_id, * tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
   char fname[1024];
   SDL_Event event;
@@ -15807,6 +15932,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
      clobbered below! */
 
   tmp_starter_id = strdup(starter_id);
+  tmp_template_id = strdup(template_id);
   tmp_file_id = strdup(file_id);
   tmp_starter_mirrored = starter_mirrored;
   tmp_starter_flipped = starter_flipped;
@@ -15839,6 +15965,8 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 	strcpy(file_id, d_names[which]);
 
 
+/* FIXME: is the starter even used??? -bjk 2009.10.16 */
+
 	/* See if this saved image was based on a 'starter' */
 
 	load_starter_id(d_names[which]);
@@ -15853,6 +15981,8 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 	  if (starter_flipped)
 	    flip_starter();
 	}
+        else
+          load_template(template_id);
       }
 
       /* "Back" button: */
@@ -15993,6 +16123,9 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 
   strcpy(starter_id, tmp_starter_id);
   free(tmp_starter_id);
+
+  strcpy(template_id, tmp_template_id);
+  free(tmp_template_id);
 
   strcpy(file_id, tmp_file_id);
   free(tmp_file_id);
@@ -18789,7 +18922,7 @@ int do_new_dialog(void)
   DIR *d;
   struct dirent *f;
   struct dirent2 *fs;
-  int place;
+  int place, oldplace;
   char *dirname[NUM_PLACES_TO_LOOK];
   char **d_names = NULL, **d_exts = NULL;
   int *d_places;
@@ -18804,7 +18937,7 @@ int do_new_dialog(void)
   int last_click_which, last_click_button;
   int places_to_look;
   int tot;
-  int first_starter;
+  int first_starter, first_template;
   int added;
   Uint8 r, g, b;
   int white_in_palette;
@@ -18847,6 +18980,18 @@ int do_new_dialog(void)
          'starter' images: */
 
       dirname[places_to_look] = strdup(DATA_PREFIX "starters");
+    }
+    else if (places_to_look == PLACE_PERSONAL_TEMPLATES_DIR)
+    {
+      /* Check for 'template' images in our folder: */
+
+      dirname[places_to_look] = get_fname("templates", DIR_DATA);
+    }
+    else if (places_to_look == PLACE_TEMPLATES_DIR)
+    {
+      /* Finally, check for system-wide 'template' images: */
+
+      dirname[places_to_look] = strdup(DATA_PREFIX "templates");
     }
 
 
@@ -18967,14 +19112,23 @@ int do_new_dialog(void)
   }
 
   first_starter = num_files;
+  first_template = -1; /* In case there are none... */
 
 
   /* Read directory of images and build thumbnails: */
+
+  oldplace = -1;
 
   for (j = 0; j < num_files_in_dirs; j++)
   {
     f = &(fs[j].f);
     place = fs[j].place;
+
+    if (place == PLACE_PERSONAL_TEMPLATES_DIR && oldplace != place)
+      first_template = num_files;
+
+    oldplace = place;
+
 
     show_progress_bar(screen);
 
@@ -18990,6 +19144,7 @@ int do_new_dialog(void)
             || strcasestr(f->d_name, ".bmp") != NULL
             /* Support for KPX (Kid Pix templates; just a JPEG with resource fork header): */
             || strcasestr(f->d_name, ".kpx") != NULL
+            || strcasestr(f->d_name, ".jpg") != NULL
 #ifndef NOSVG
             || strcasestr(f->d_name, ".svg") != NULL
 #endif
@@ -19036,6 +19191,12 @@ int do_new_dialog(void)
           {
             strcpy((char *) strcasestr(fname, ".kpx"), "");
             d_exts[num_files] = strdup(".kpx");
+          }
+
+          if (strcasestr(fname, ".jpg") != NULL)
+          {
+            strcpy((char *) strcasestr(fname, ".jpg"), "");
+            d_exts[num_files] = strdup(".jpg");
           }
 
           d_names[num_files] = strdup(fname);
@@ -19141,7 +19302,6 @@ int do_new_dialog(void)
 #endif
             }
 
-
             if (img == NULL)
             {
               /* Didn't load a starter background (or didn't try!),
@@ -19194,7 +19354,7 @@ int do_new_dialog(void)
               /* Let's save this thumbnail, so we don't have to
                  create it again next time 'Open' is called: */
 
-              if (d_places[num_files] == PLACE_SAVED_DIR)
+              if (d_places[num_files] == PLACE_SAVED_DIR) /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
               {
                 debug("Saving thumbnail for this one!");
 
@@ -19670,7 +19830,7 @@ int do_new_dialog(void)
 
     delete_label_list(&start_label_node);
     start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
-    if (which >= first_starter)
+    if (which >= first_starter && (first_template == -1 || which < first_template))
     {
       /* Load a starter: */
 
@@ -19713,6 +19873,7 @@ int do_new_dialog(void)
 
         file_id[0] = '\0';
         strcpy(starter_id, d_names[which]);
+        template_id[0] = '\0';
 
         if (d_places[which] == PLACE_PERSONAL_STARTERS_DIR)
           starter_personal = 1;
@@ -19729,6 +19890,65 @@ int do_new_dialog(void)
                      SDL_MapRGB(canvas->format, 255, 255, 255));
         SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
         SDL_BlitSurface(img_starter, NULL, canvas, NULL);
+      }
+    }
+    else if (which >= first_template)
+    {
+      /* Load a template: */
+
+      /* Figure out filename: */
+
+      snprintf(fname, sizeof(fname), "%s/%s%s",
+            dirname[d_places[which]], d_names[which], d_exts[which]);
+
+      img = myIMG_Load(fname);
+
+      if (img == NULL)
+      {
+        fprintf(stderr,
+            "\nWarning: Couldn't load the saved image!\n"
+            "%s\n"
+            "The Simple DirectMedia Layer error that occurred "
+            "was:\n" "%s\n\n", fname, SDL_GetError());
+
+        do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
+            PROMPT_OPEN_UNOPENABLE_YES, "", 0 ,0);
+      }
+      else
+      {
+        free_surface(&img_starter);
+        free_surface(&img_starter_bkgd);
+        template_personal = 0;
+
+        autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
+
+        cur_undo = 0;
+        oldest_undo = 0;
+        newest_undo = 0;
+
+        /* Immutable 'template' image;
+           we'll need to save a new image when saving...: */
+
+        been_saved = 1;
+
+        file_id[0] = '\0';
+        strcpy(template_id, d_names[which]);
+        starter_id[0] = '\0';
+
+        if (d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR)
+          template_personal = 1;
+        else
+          template_personal = 0;
+
+        load_template(template_id);
+
+        canvas_color_r = 255;
+        canvas_color_g = 255;
+        canvas_color_b = 255;
+
+        SDL_FillRect(canvas, NULL,
+                     SDL_MapRGB(canvas->format, 255, 255, 255));
+        SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
       }
     }
     else
@@ -20710,7 +20930,6 @@ static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect,
   int x, y;
   Uint8 src_r, src_g, src_b, src_a;
   Uint8 dest_r, dest_g, dest_b, dest_a;
-  printf("myblit\n");
   
   for (x = src_rect->x; x<src_rect->w + src_rect->x; x++)
     for (y = src_rect->y; y<src_rect->h + src_rect->y; y++)

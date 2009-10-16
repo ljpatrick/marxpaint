@@ -37,6 +37,14 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Template images are now supported.  Similar to Starters, they are
+      pre-drawn pictures to begin a new drawing with, accessed via the
+      "New" dialog.  The "Eraser" tool will erase back to the original
+      picture (rather than a solid color).
+
+      Unlike Starters, they do not involve an immutable "layer" above the
+      drawing.  They may be drawn over in their entirety.
+
     * After switching into, or out of, a magic tool, the canvas is updated.
 
     * Starter images can be in SVG (Scalable Vector Graphics) format.
