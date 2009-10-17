@@ -6695,6 +6695,13 @@ static void loadstamp_callback(SDL_Surface * screen,
 	     dotext - files[i].str + 1 + dirlen);
       stamp_data[stamp_group][num_stamps[stamp_group]]->stampname[dotext - files[i].str +
                                                      1 + dirlen] = '\0';
+
+       if (strcmp(ext, ".svg") == 0) {
+         stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 1;
+       } else {
+         stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 0;
+       }
+
       num_stamps[stamp_group]++;
     }
     free(files[i].str);
