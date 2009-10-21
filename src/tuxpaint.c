@@ -1433,7 +1433,7 @@ static int brush_counter, brush_frame;
 
 
 static unsigned cur_color;
-static int cur_tool, cur_brush, old_tool;
+static int cur_tool, cur_brush;
 static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
@@ -2062,7 +2062,7 @@ static void mainloop(void)
     old_stamp_group;
   int num_things;
   int *thing_scroll;
-  int cur_thing, do_draw, max;
+  int cur_thing, do_draw, old_tool, max;
   int ignoring_motion;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
@@ -16792,8 +16792,7 @@ static void do_render_cur_text(int do_blit)
 	do_setcursor(cursor_arrow);
 
       }
-      else if((cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL) ||
-              (cur_tool == TOOL_PRINT && old_tool == TOOL_LABEL && cur_label == LABEL_LABEL))
+      else if(cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL)
       {
           myblit(tmp_surf, &src, label, &dest);
           
@@ -19900,7 +19899,7 @@ int do_new_dialog(void)
         SDL_BlitSurface(img_starter, NULL, canvas, NULL);
       }
     }
-    else if (which >= first_template)
+else if (first_template != -1 && which >= first_template)
     {
       /* Load a template: */
 
