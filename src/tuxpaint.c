@@ -1433,7 +1433,7 @@ static int brush_counter, brush_frame;
 
 
 static unsigned cur_color;
-static int cur_tool, cur_brush;
+static int cur_tool, cur_brush, old_tool;
 static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
@@ -2062,7 +2062,7 @@ static void mainloop(void)
     old_stamp_group;
   int num_things;
   int *thing_scroll;
-  int cur_thing, do_draw, old_tool, max;
+  int cur_thing, do_draw, max;
   int ignoring_motion;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
@@ -2391,9 +2391,8 @@ static void mainloop(void)
           {
             /*Select tool has been selected but no text has been selected to edit*/
           }
-          else
-	    //{FIXAM
-	    if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && cursor_x != -1 && cursor_y != -1)
+          else if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && 
+                   cursor_x != -1 && cursor_y != -1)
 	    {
 	      static int redraw = 0;
 	      wchar_t* im_cp = im_data.s;
@@ -2445,6 +2444,18 @@ static void mainloop(void)
 	          	  SNDDIST_NEAR);
 
 	          do_render_cur_text(0);
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
+
 	        }
 	      }
 	      else if (*im_cp == L'\r')
@@ -2458,6 +2469,17 @@ static void mainloop(void)
 	          do_render_cur_text(1);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
 	        }
                 else if (cur_tool == TOOL_LABEL &&
                          cur_label == LABEL_SELECT &&
@@ -2470,6 +2492,17 @@ static void mainloop(void)
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
                         derender_node(&label_node_to_edit);
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+
+                        if (been_saved)
+                            {
+                                been_saved = 0;
+
+                                if (!disable_save)
+                                    tool_avail[TOOL_SAVE] = 1;
+
+                                draw_toolbar();
+                                update_screen_rect(&r_tools);
+                            }
                     }
 
 	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
@@ -2495,6 +2528,17 @@ static void mainloop(void)
 	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
 	        }
                 else if (cur_tool == TOOL_LABEL &&
                          cur_label == LABEL_SELECT &&
@@ -2507,6 +2551,17 @@ static void mainloop(void)
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
                         derender_node(&label_node_to_edit);
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+
+                        if (been_saved)
+                            {
+                                been_saved = 0;
+
+                                if (!disable_save)
+                                    tool_avail[TOOL_SAVE] = 1;
+
+                                draw_toolbar();
+                                update_screen_rect(&r_tools);
+                            }
                     }
                 
 #ifdef SPEECH
@@ -2531,6 +2586,17 @@ static void mainloop(void)
 	          texttool_str[texttool_len] = 0;
 
 	          do_render_cur_text(0);
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
 
 
 	          if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
@@ -13595,6 +13661,15 @@ static int do_save(int tool, int dont_show_success_results)
   if (disable_save)
     return 0;
 
+  printf("%i, %i\n",TOOL_LABEL, tool);
+  if ((tool == TOOL_TEXT || tool == TOOL_LABEL) ||
+      (tool==TOOL_OPEN && (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)) ||
+      (tool == TOOL_NEW && (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)) )
+      {
+          do_render_cur_text(1);
+      }
+  
+
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
@@ -16792,7 +16867,8 @@ static void do_render_cur_text(int do_blit)
 	do_setcursor(cursor_arrow);
 
       }
-      else if(cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL)
+      else if((cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL) ||
+              (cur_tool == TOOL_PRINT && old_tool == TOOL_LABEL && cur_label == LABEL_LABEL))
       {
           myblit(tmp_surf, &src, label, &dest);
           
@@ -19899,7 +19975,7 @@ int do_new_dialog(void)
         SDL_BlitSurface(img_starter, NULL, canvas, NULL);
       }
     }
-else if (first_template != -1 && which >= first_template)
+    else if (first_template != -1 && which >= first_template)
     {
       /* Load a template: */
 
@@ -19907,7 +19983,6 @@ else if (first_template != -1 && which >= first_template)
 
       snprintf(fname, sizeof(fname), "%s/%s%s",
             dirname[d_places[which]], d_names[which], d_exts[which]);
-
       img = myIMG_Load(fname);
 
       if (img == NULL)
