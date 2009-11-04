@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.October.8 (0.9.22)
+2009.November.4 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -181,6 +181,9 @@ $Id$
     * Shape tool would only resize a shape if you dragged down or right,
       not up or left.
       (SF.net Bug #2834320)
+
+    * tuxpaint-import tool uses BASHisms, so changed shebang to #!/bin/bash
+      (instead of #!/bin/sh).
 
 
 2009.June.28 (0.9.21)
