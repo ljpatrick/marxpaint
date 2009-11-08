@@ -18842,11 +18842,6 @@ static void parse_one_option(const char *str, const char *arg)
     native_screensize = boolval;
   }
 
-  else if (!strcmp(str, "fullscreen"))
-  {
-    fullscreen = boolval;
-  }
-
   else if (!strcmp(str, "windowed"))
   {
     fullscreen = !boolval;
@@ -19282,9 +19277,10 @@ static void parse_one_option(const char *str, const char *arg)
     exit(0);
   }
 
-  else if (!strcmp(str, "nosysconfig"))
+  else if (!strcmp(str, "sysconfig"))
   {
     debug("Not using system config.");
+    // FIXME: need to use boolval here
   }
 
 //  else
