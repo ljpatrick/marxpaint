@@ -18785,8 +18785,12 @@ void load_info_about_label_surface(char lfname[1024])
 
 /////////////////////////////////////////////////////////////////////////////
 
-static void parse_options(FILE * fi)
+static void parse_options(char *filename)
 {
+  FILE *fi = fopen(filename, "r");
+  if(!fi)
+    return;
+
   char str[256];
 
   do
@@ -19240,6 +19244,7 @@ static void parse_options(FILE * fi)
     }
   }
   while (!feof(fi));
+  fclose(fi);
 }
 
 
@@ -19442,14 +19447,7 @@ static void setup(int argc, char *argv[])
     strcpy(str, "tuxpaint.cfg");
 #endif
 
-    fi = fopen(str, "r");
-    if (fi != NULL)
-    {
-      parse_options(fi);
-      fclose(fi);
-    }
-    else
-      debug(str);
+    parse_options(str);
   }
 
 
@@ -19487,15 +19485,7 @@ static void setup(int argc, char *argv[])
   }
 #endif
 
-
-  fi = fopen(str, "r");
-  if (fi != NULL)
-  {
-    parse_options(fi);
-    fclose(fi);
-  }
-  else
-    debug(str);
+  parse_options(str);
 
 
   /* Handle command-line arguments: */
