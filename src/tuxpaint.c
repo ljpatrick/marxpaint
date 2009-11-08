@@ -1934,7 +1934,7 @@ int main(int argc, char *argv[])
 
     waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
-    receive_some_font_info(screen);
+    receive_some_font_info(screen); // FIXME: this MUST NOT be called until the text tool runs!
 #else
     while (!font_thread_done && !font_thread_aborted)
     {
