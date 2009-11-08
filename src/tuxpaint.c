@@ -1635,7 +1635,6 @@ static void create_button_labels(void);
 static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
-static void parse_options(FILE * fi);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
@@ -15068,462 +15067,6 @@ static Uint32 drawtext_callback(Uint32 interval, void *param)
 }
 
 
-static void parse_options(FILE * fi)
-{
-  char str[256];
-
-  do
-  {
-    fgets(str, sizeof(str), fi);
-
-    strip_trailing_whitespace(str);
-
-    if (!feof(fi))
-    {
-      debug(str);
-
-
-      /* FIXME: This should be handled better! */
-      /* (e.g., complain on illegal lines, support comments, blanks, etc.) */
-
-      if (strcmp(str, "fullscreen=yes") == 0)
-      {
-	fullscreen = 1;
-      }
-      else if (strcmp(str, "fullscreen=native") == 0)
-      {
-        fullscreen = 1;
-        native_screensize = 1;
-      }
-      else if (strcmp(str, "disablescreensaver=yes") == 0)
-      {
-        disable_screensaver = 1;
-      }
-      else if (strcmp(str, "disablescreensaver=no") == 0 ||
-               strcmp(str, "allowscreensaver=yes") == 0)
-      {
-        disable_screensaver = 0;
-      }
-      else if (strcmp(str, "native=yes") == 0)
-      {
-        native_screensize = 1;
-      }
-      else if (strcmp(str, "native=no") == 0)
-      {
-        native_screensize = 0;
-      }
-      else if (strcmp(str, "fullscreen=no") == 0 ||
-	       strcmp(str, "windowed=yes") == 0)
-      {
-	fullscreen = 0;
-      }
-      else if (strcmp(str, "startblank=yes") == 0)
-      {
-	start_blank = 1;
-      }
-      else if (strcmp(str, "startblank=no") == 0 ||
-	       strcmp(str, "startlast=yes") == 0)
-      {
-	start_blank = 0;
-      }
-      else if (strcmp(str, "nostampcontrols=yes") == 0)
-      {
-	disable_stamp_controls = 1;
-      }
-      else if (strcmp(str, "nostampcontrols=no") == 0 ||
-	       strcmp(str, "stampcontrols=yes") == 0)
-      {
-	disable_stamp_controls = 0;
-      }
-      else if (strcmp(str, "alllocalefonts=yes") == 0)
-      {
-        all_locale_fonts = 1;
-      }
-      else if (strcmp(str, "alllocalefonts=no") == 0 ||
-               strcmp(str, "currentlocalefont=yes") == 0)
-      {
-        all_locale_fonts = 0;
-      }
-      else if (strcmp(str, "nomagiccontrols=yes") == 0)
-      {
-	disable_magic_controls = 1;
-      }
-      else if (strcmp(str, "nomagiccontrols=no") == 0 ||
-	       strcmp(str, "magiccontrols=yes") == 0)
-      {
-	disable_magic_controls = 0;
-      }
-      else if (strcmp(str, "nolabel=yes") == 0)
-      {
-	disable_label = 1;
-      }
-      else if (strcmp(str, "nolabel=no") == 0 ||
-	       strcmp(str, "label=yes") == 0)
-      {
-	disable_label = 0;
-      }
-      else if (strcmp(str, "mirrorstamps=yes") == 0)
-      {
-	mirrorstamps = 1;
-      }
-      else if (strcmp(str, "mirrorstamps=no") == 0 ||
-	       strcmp(str, "dontmirrorstamps=yes") == 0)
-      {
-	mirrorstamps = 0;
-      }
-      else if (strcmp(str, "stampsize=default") == 0)
-      {
-        stamp_size_override = -1;
-      }
-      else if (strstr(str, "stampsize=") == str)
-      {
-        stamp_size_override = atoi(str + 10);
-        if (stamp_size_override > 10)
-	  stamp_size_override = 10;
-      }
-      else if (strcmp(str, "noshortcuts=yes") == 0)
-      {
-	noshortcuts = 1;
-      }
-      else if (strcmp(str, "noshortcuts=no") == 0 ||
-	       strcmp(str, "shortcuts=yes") == 0)
-      {
-	noshortcuts = 0;
-      }
-      else if (!memcmp("windowsize=", str, 11))
-      {
-	char *endp1;
-	char *endp2;
-	int w, h;
-	w = strtoul(str + 11, &endp1, 10);
-	h = strtoul(endp1 + 1, &endp2, 10);
-	/* sanity check it */
-	if (str + 11 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x' || *endp2
-	    || w < 500 || h < 480 || h > w * 3 || w > h * 4)
-	{
-	  /* Oddly, config files have no error checking. */
-	  /* show_usage(stderr, (char *) getfilename(argv[0])); */
-	  /* exit(1); */
-	}
-	else
-	{
-	  WINDOW_WIDTH = w;
-	  WINDOW_HEIGHT = h;
-	}
-      }
-      else if (strcmp(str, "800x600=yes") == 0 ||
-	       strcmp(str, "windowsize=800x600") == 0)
-      {
-        /* to handle old config files */
-	WINDOW_WIDTH = 800;
-	WINDOW_HEIGHT = 600;
-      }
-      else if (strcmp(str, "800x600=no") == 0 ||
-	       strcmp(str, "640x480=yes") == 0 ||
-	       strcmp(str, "windowsize=640x480") == 0)
-      {
-        /* also for old config files */
-	WINDOW_WIDTH = 640;
-	WINDOW_HEIGHT = 480;
-      }
-      else if (strcmp(str, "nooutlines=yes") == 0)
-      {
-	dont_do_xor = 1;
-      }
-      else if (strcmp(str, "nooutlines=no") == 0 ||
-	       strcmp(str, "outlines=yes") == 0)
-      {
-	dont_do_xor = 0;
-      }
-      else if (strcmp(str, "keyboard=yes") == 0)
-      {
-	keymouse = 1;
-      }
-      else if (strcmp(str, "keyboard=no") == 0 ||
-	       strcmp(str, "mouse=yes") == 0)
-      {
-	keymouse = 0;
-      }
-      else if (strcmp(str, "nowheelmouse=yes") == 0)
-      {
-	wheely = 0;
-      }
-      else if (strcmp(str, "nowheelmouse=no") == 0 ||
-	       strcmp(str, "wheelmouse=yes") == 0)
-      {
-	wheely = 1;
-      }
-      else if (strcmp(str, "grab=yes") == 0)
-      {
-	grab_input = 1;
-      }
-      else if (strcmp(str, "grab=no") == 0 || strcmp(str, "nograb=yes") == 0)
-      {
-	grab_input = 0;
-      }
-      else if (strcmp(str, "nofancycursors=yes") == 0)
-      {
-	no_fancy_cursors = 1;
-      }
-      else if (strcmp(str, "nofancycursors=no") == 0 ||
-	       strcmp(str, "fancycursors=yes") == 0)
-      {
-	no_fancy_cursors = 0;
-      }
-      else if (strcmp(str, "hidecursor=yes") == 0)
-      {
-	hide_cursor = 1;
-      }
-      else if (strcmp(str, "hidecursor=no") == 0 ||
-	       strcmp(str, "showcursor=yes") == 0)
-      {
-	hide_cursor = 0;
-      }
-      else if (strcmp(str, "uppercase=yes") == 0)
-      {
-	only_uppercase = 1;
-      }
-      else if (strcmp(str, "uppercase=no") == 0 ||
-	       strcmp(str, "mixedcase=yes") == 0)
-      {
-	only_uppercase = 0;
-      }
-      else if (strcmp(str, "noquit=yes") == 0)
-      {
-	disable_quit = 1;
-      }
-      else if (strcmp(str, "noquit=no") == 0 || strcmp(str, "quit=yes") == 0)
-      {
-	disable_quit = 0;
-      }
-      else if (strcmp(str, "nosave=yes") == 0)
-      {
-	disable_save = 1;
-      }
-      else if (strcmp(str, "nosave=no") == 0 || strcmp(str, "save=yes") == 0)
-      {
-	disable_save = 0;
-      }
-      else if (strcmp(str, "noprint=yes") == 0)
-      {
-	disable_print = 1;
-      }
-      else if (strcmp(str, "noprint=no") == 0 ||
-	       strcmp(str, "print=yes") == 0)
-      {
-	disable_print = 0;
-      }
-      else if (strcmp(str, "nostamps=yes") == 0)
-      {
-	dont_load_stamps = 1;
-      }
-      else if (strcmp(str, "nostamps=no") == 0 ||
-	       strcmp(str, "stamps=yes") == 0)
-      {
-	dont_load_stamps = 0;
-      }
-      else if (strcmp(str, "nosysfonts=yes") == 0 ||
-	       strcmp(str, "sysfonts=no") == 0)
-      {
-	no_system_fonts = 1;
-      }
-      else if (strcmp(str, "nosysfonts=no") == 0 ||
-	       strcmp(str, "sysfonts=yes") == 0)
-      {
-	no_system_fonts = 0;
-      }
-      else if (strcmp(str, "nobuttondistinction=yes") == 0)
-      {
-	no_button_distinction = 1;
-      }
-      else if (strcmp(str, "nobuttondistinction=no") == 0 ||
-	       strcmp(str, "buttondistinction=yes") == 0)
-      {
-	no_button_distinction = 0;
-      }
-      else if (strcmp(str, "nosound=yes") == 0)
-      {
-	use_sound = 0;
-      }
-      else if (strcmp(str, "nosound=no") == 0 ||
-	       strcmp(str, "sound=yes") == 0)
-      {
-	use_sound = 1;
-      }
-      else if (strcmp(str, "simpleshapes=yes") == 0)
-      {
-	simple_shapes = 1;
-      }
-      else if (strcmp(str, "simpleshapes=no") == 0 ||
-	       strcmp(str, "complexshapes=yes") == 0)
-      {
-	simple_shapes = 1;
-      }
-      /* Should "locale=" be here as well??? */
-      /* Comments welcome ... bill@newbreedsoftware.com */
-      else if (strstr(str, "lang=") == str)
-      {
-	set_langstr(str + 5);
-      }
-      else if (strstr(str, "colorfile=") == str)
-      {
-	strcpy(colorfile, str + 10);
-      }
-      else if (strstr(str, "printdelay=") == str)
-      {
-	sscanf(str + 11, "%d", &print_delay);
-#ifdef DEBUG
-	printf("Print delay set to %d seconds\n", print_delay);
-#endif
-      }
-      else if (strcmp(str, "printcfg=yes") == 0)
-      {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-	use_print_config = 1;
-      }
-      else if (strcmp(str, "printcfg=no") == 0 ||
-	       strcmp(str, "noprintcfg=yes") == 0)
-      {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-	use_print_config = 0;
-      }
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-      else if (strstr(str, "printcommand=") == str)
-      {
-/* FIXME: This would need to be done one argument (space-delim'd) at a time */
-/*
-#ifdef __linux__
-        wordexp_t result;
-        char * dir = strdup(str + 13);
-
-        wordexp(dir, &result, 0);
-        free(dir);
-
-        printcommand = strdup(result.we_wordv[0]);
-        wordfree(&result);
-#else
-*/
-        printcommand = strdup(str + 13);
-/*
-#endif
-*/
-      }
-      else if (strstr(str, "altprintcommand=") == str)
-      {
-/* FIXME: This would need to be done one argument (space-delim'd) at a time */
-/*
-#ifdef __linux__
-        wordexp_t result;
-        char * dir = strdup(str + 16);
-
-        wordexp(dir, &result, 0);
-        free(dir);
-
-        altprintcommand = strdup(result.we_wordv[0]);
-        wordfree(&result);
-#else
-*/
-        altprintcommand = strdup(str + 16);
-/*
-#endif
-*/
-      }
-#endif
-      else if (strcmp(str, "saveover=yes") == 0)
-      {
-	promptless_save = SAVE_OVER_ALWAYS;
-      }
-      else if (strcmp(str, "saveover=ask") == 0)
-      {
-	/* (Default) */
-
-	promptless_save = SAVE_OVER_PROMPT;
-      }
-      else if (strcmp(str, "saveover=new") == 0)
-      {
-	promptless_save = SAVE_OVER_NO;
-      }
-      else if (strcmp(str, "autosave=yes") == 0)
-      {
-        autosave_on_quit = 1;
-      }
-      else if (strcmp(str, "autosave=no") == 0)
-      {
-        autosave_on_quit = 0;
-      }
-      else if (strcmp(str, "altprint=always") == 0)
-      {
-	alt_print_command_default = ALTPRINT_ALWAYS;
-      }
-      else if (strcmp(str, "altprint=mod") == 0)
-      {
-	/* (Default) */
-
-	alt_print_command_default = ALTPRINT_MOD;
-      }
-      else if (strcmp(str, "altprint=never") == 0)
-      {
-	alt_print_command_default = ALTPRINT_NEVER;
-      }
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-      else if (strstr(str, "papersize=") == str)
-      {
-        papersize = strdup(str + strlen("papersize="));
-      }
-#endif
-      else if (strstr(str, "savedir=") == str)
-      {
-#ifdef __linux__
-        wordexp_t result;
-        char * dir = strdup(str + 8);
-
-        wordexp(dir, &result, 0);
-        free(dir);
-
-        savedir = strdup(result.we_wordv[0]);
-        wordfree(&result);
-#else
-        savedir = strdup(str + 8);
-#endif
-        remove_slash(savedir);
-
-#ifdef DEBUG
-	printf("savedir set to: %s\n", savedir);
-#endif
-      }
-      else if (strstr(str, "datadir=") == str)
-      {
-#ifdef __linux__
-        wordexp_t result;
-        char * dir = strdup(str + 8);
-
-        wordexp(dir, &result, 0);
-        free(dir);
-
-        datadir = strdup(result.we_wordv[0]);
-        wordfree(&result);
-#else
-        datadir = strdup(str + 8);
-#endif
-        remove_slash(datadir);
-
-#ifdef DEBUG
-	printf("datadir set to: %s\n", datadir);
-#endif
-      }
-      else if (strcmp(str, "nolockfile=yes") == 0 ||
-	       strcmp(str, "lockfile=no") == 0)
-      {
-	ok_to_use_lockfile = 0;
-      }
-    }
-  }
-  while (!feof(fi));
-}
 
 
 #ifdef DEBUG
@@ -19242,7 +18785,467 @@ void load_info_about_label_surface(char lfname[1024])
 
 /////////////////////////////////////////////////////////////////////////////
 
+static void parse_options(FILE * fi)
+{
+  char str[256];
 
+  do
+  {
+    fgets(str, sizeof(str), fi);
+
+    strip_trailing_whitespace(str);
+
+    if (!feof(fi))
+    {
+      debug(str);
+
+
+      /* FIXME: This should be handled better! */
+      /* (e.g., complain on illegal lines, support comments, blanks, etc.) */
+
+      if (strcmp(str, "fullscreen=yes") == 0)
+      {
+	fullscreen = 1;
+      }
+      else if (strcmp(str, "fullscreen=native") == 0)
+      {
+        fullscreen = 1;
+        native_screensize = 1;
+      }
+      else if (strcmp(str, "disablescreensaver=yes") == 0)
+      {
+        disable_screensaver = 1;
+      }
+      else if (strcmp(str, "disablescreensaver=no") == 0 ||
+               strcmp(str, "allowscreensaver=yes") == 0)
+      {
+        disable_screensaver = 0;
+      }
+      else if (strcmp(str, "native=yes") == 0)
+      {
+        native_screensize = 1;
+      }
+      else if (strcmp(str, "native=no") == 0)
+      {
+        native_screensize = 0;
+      }
+      else if (strcmp(str, "fullscreen=no") == 0 ||
+	       strcmp(str, "windowed=yes") == 0)
+      {
+	fullscreen = 0;
+      }
+      else if (strcmp(str, "startblank=yes") == 0)
+      {
+	start_blank = 1;
+      }
+      else if (strcmp(str, "startblank=no") == 0 ||
+	       strcmp(str, "startlast=yes") == 0)
+      {
+	start_blank = 0;
+      }
+      else if (strcmp(str, "nostampcontrols=yes") == 0)
+      {
+	disable_stamp_controls = 1;
+      }
+      else if (strcmp(str, "nostampcontrols=no") == 0 ||
+	       strcmp(str, "stampcontrols=yes") == 0)
+      {
+	disable_stamp_controls = 0;
+      }
+      else if (strcmp(str, "alllocalefonts=yes") == 0)
+      {
+        all_locale_fonts = 1;
+      }
+      else if (strcmp(str, "alllocalefonts=no") == 0 ||
+               strcmp(str, "currentlocalefont=yes") == 0)
+      {
+        all_locale_fonts = 0;
+      }
+      else if (strcmp(str, "nomagiccontrols=yes") == 0)
+      {
+	disable_magic_controls = 1;
+      }
+      else if (strcmp(str, "nomagiccontrols=no") == 0 ||
+	       strcmp(str, "magiccontrols=yes") == 0)
+      {
+	disable_magic_controls = 0;
+      }
+      else if (strcmp(str, "nolabel=yes") == 0)
+      {
+	disable_label = 1;
+      }
+      else if (strcmp(str, "nolabel=no") == 0 ||
+	       strcmp(str, "label=yes") == 0)
+      {
+	disable_label = 0;
+      }
+      else if (strcmp(str, "mirrorstamps=yes") == 0)
+      {
+	mirrorstamps = 1;
+      }
+      else if (strcmp(str, "mirrorstamps=no") == 0 ||
+	       strcmp(str, "dontmirrorstamps=yes") == 0)
+      {
+	mirrorstamps = 0;
+      }
+      else if (strcmp(str, "stampsize=default") == 0)
+      {
+        stamp_size_override = -1;
+      }
+      else if (strstr(str, "stampsize=") == str)
+      {
+        stamp_size_override = atoi(str + 10);
+        if (stamp_size_override > 10)
+	  stamp_size_override = 10;
+      }
+      else if (strcmp(str, "noshortcuts=yes") == 0)
+      {
+	noshortcuts = 1;
+      }
+      else if (strcmp(str, "noshortcuts=no") == 0 ||
+	       strcmp(str, "shortcuts=yes") == 0)
+      {
+	noshortcuts = 0;
+      }
+      else if (!memcmp("windowsize=", str, 11))
+      {
+	char *endp1;
+	char *endp2;
+	int w, h;
+	w = strtoul(str + 11, &endp1, 10);
+	h = strtoul(endp1 + 1, &endp2, 10);
+	/* sanity check it */
+	if (str + 11 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x' || *endp2
+	    || w < 500 || h < 480 || h > w * 3 || w > h * 4)
+	{
+	  /* Oddly, config files have no error checking. */
+	  /* show_usage(stderr, (char *) getfilename(argv[0])); */
+	  /* exit(1); */
+	}
+	else
+	{
+	  WINDOW_WIDTH = w;
+	  WINDOW_HEIGHT = h;
+	}
+      }
+      else if (strcmp(str, "800x600=yes") == 0 ||
+	       strcmp(str, "windowsize=800x600") == 0)
+      {
+        /* to handle old config files */
+	WINDOW_WIDTH = 800;
+	WINDOW_HEIGHT = 600;
+      }
+      else if (strcmp(str, "800x600=no") == 0 ||
+	       strcmp(str, "640x480=yes") == 0 ||
+	       strcmp(str, "windowsize=640x480") == 0)
+      {
+        /* also for old config files */
+	WINDOW_WIDTH = 640;
+	WINDOW_HEIGHT = 480;
+      }
+      else if (strcmp(str, "nooutlines=yes") == 0)
+      {
+	dont_do_xor = 1;
+      }
+      else if (strcmp(str, "nooutlines=no") == 0 ||
+	       strcmp(str, "outlines=yes") == 0)
+      {
+	dont_do_xor = 0;
+      }
+      else if (strcmp(str, "keyboard=yes") == 0)
+      {
+	keymouse = 1;
+      }
+      else if (strcmp(str, "keyboard=no") == 0 ||
+	       strcmp(str, "mouse=yes") == 0)
+      {
+	keymouse = 0;
+      }
+      else if (strcmp(str, "nowheelmouse=yes") == 0)
+      {
+	wheely = 0;
+      }
+      else if (strcmp(str, "nowheelmouse=no") == 0 ||
+	       strcmp(str, "wheelmouse=yes") == 0)
+      {
+	wheely = 1;
+      }
+      else if (strcmp(str, "grab=yes") == 0)
+      {
+	grab_input = 1;
+      }
+      else if (strcmp(str, "grab=no") == 0 || strcmp(str, "nograb=yes") == 0)
+      {
+	grab_input = 0;
+      }
+      else if (strcmp(str, "nofancycursors=yes") == 0)
+      {
+	no_fancy_cursors = 1;
+      }
+      else if (strcmp(str, "nofancycursors=no") == 0 ||
+	       strcmp(str, "fancycursors=yes") == 0)
+      {
+	no_fancy_cursors = 0;
+      }
+      else if (strcmp(str, "hidecursor=yes") == 0)
+      {
+	hide_cursor = 1;
+      }
+      else if (strcmp(str, "hidecursor=no") == 0 ||
+	       strcmp(str, "showcursor=yes") == 0)
+      {
+	hide_cursor = 0;
+      }
+      else if (strcmp(str, "uppercase=yes") == 0)
+      {
+	only_uppercase = 1;
+      }
+      else if (strcmp(str, "uppercase=no") == 0 ||
+	       strcmp(str, "mixedcase=yes") == 0)
+      {
+	only_uppercase = 0;
+      }
+      else if (strcmp(str, "noquit=yes") == 0)
+      {
+	disable_quit = 1;
+      }
+      else if (strcmp(str, "noquit=no") == 0 || strcmp(str, "quit=yes") == 0)
+      {
+	disable_quit = 0;
+      }
+      else if (strcmp(str, "nosave=yes") == 0)
+      {
+	disable_save = 1;
+      }
+      else if (strcmp(str, "nosave=no") == 0 || strcmp(str, "save=yes") == 0)
+      {
+	disable_save = 0;
+      }
+      else if (strcmp(str, "noprint=yes") == 0)
+      {
+	disable_print = 1;
+      }
+      else if (strcmp(str, "noprint=no") == 0 ||
+	       strcmp(str, "print=yes") == 0)
+      {
+	disable_print = 0;
+      }
+      else if (strcmp(str, "nostamps=yes") == 0)
+      {
+	dont_load_stamps = 1;
+      }
+      else if (strcmp(str, "nostamps=no") == 0 ||
+	       strcmp(str, "stamps=yes") == 0)
+      {
+	dont_load_stamps = 0;
+      }
+      else if (strcmp(str, "nosysfonts=yes") == 0 ||
+	       strcmp(str, "sysfonts=no") == 0)
+      {
+	no_system_fonts = 1;
+      }
+      else if (strcmp(str, "nosysfonts=no") == 0 ||
+	       strcmp(str, "sysfonts=yes") == 0)
+      {
+	no_system_fonts = 0;
+      }
+      else if (strcmp(str, "nobuttondistinction=yes") == 0)
+      {
+	no_button_distinction = 1;
+      }
+      else if (strcmp(str, "nobuttondistinction=no") == 0 ||
+	       strcmp(str, "buttondistinction=yes") == 0)
+      {
+	no_button_distinction = 0;
+      }
+      else if (strcmp(str, "nosound=yes") == 0)
+      {
+	use_sound = 0;
+      }
+      else if (strcmp(str, "nosound=no") == 0 ||
+	       strcmp(str, "sound=yes") == 0)
+      {
+	use_sound = 1;
+      }
+      else if (strcmp(str, "simpleshapes=yes") == 0)
+      {
+	simple_shapes = 1;
+      }
+      else if (strcmp(str, "simpleshapes=no") == 0 ||
+	       strcmp(str, "complexshapes=yes") == 0)
+      {
+	simple_shapes = 1;
+      }
+      /* Should "locale=" be here as well??? */
+      /* Comments welcome ... bill@newbreedsoftware.com */
+      else if (strstr(str, "lang=") == str)
+      {
+	set_langstr(str + 5);
+      }
+      else if (strstr(str, "colorfile=") == str)
+      {
+	strcpy(colorfile, str + 10);
+      }
+      else if (strstr(str, "printdelay=") == str)
+      {
+	sscanf(str + 11, "%d", &print_delay);
+#ifdef DEBUG
+	printf("Print delay set to %d seconds\n", print_delay);
+#endif
+      }
+      else if (strcmp(str, "printcfg=yes") == 0)
+      {
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
+#endif
+	use_print_config = 1;
+      }
+      else if (strcmp(str, "printcfg=no") == 0 ||
+	       strcmp(str, "noprintcfg=yes") == 0)
+      {
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
+#endif
+	use_print_config = 0;
+      }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+      else if (strstr(str, "printcommand=") == str)
+      {
+/* FIXME: This would need to be done one argument (space-delim'd) at a time */
+/*
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 13);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        printcommand = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+*/
+        printcommand = strdup(str + 13);
+/*
+#endif
+*/
+      }
+      else if (strstr(str, "altprintcommand=") == str)
+      {
+/* FIXME: This would need to be done one argument (space-delim'd) at a time */
+/*
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 16);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        altprintcommand = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+*/
+        altprintcommand = strdup(str + 16);
+/*
+#endif
+*/
+      }
+#endif
+      else if (strcmp(str, "saveover=yes") == 0)
+      {
+	promptless_save = SAVE_OVER_ALWAYS;
+      }
+      else if (strcmp(str, "saveover=ask") == 0)
+      {
+	/* (Default) */
+
+	promptless_save = SAVE_OVER_PROMPT;
+      }
+      else if (strcmp(str, "saveover=new") == 0)
+      {
+	promptless_save = SAVE_OVER_NO;
+      }
+      else if (strcmp(str, "autosave=yes") == 0)
+      {
+        autosave_on_quit = 1;
+      }
+      else if (strcmp(str, "autosave=no") == 0)
+      {
+        autosave_on_quit = 0;
+      }
+      else if (strcmp(str, "altprint=always") == 0)
+      {
+	alt_print_command_default = ALTPRINT_ALWAYS;
+      }
+      else if (strcmp(str, "altprint=mod") == 0)
+      {
+	/* (Default) */
+
+	alt_print_command_default = ALTPRINT_MOD;
+      }
+      else if (strcmp(str, "altprint=never") == 0)
+      {
+	alt_print_command_default = ALTPRINT_NEVER;
+      }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+      else if (strstr(str, "papersize=") == str)
+      {
+        papersize = strdup(str + strlen("papersize="));
+      }
+#endif
+      else if (strstr(str, "savedir=") == str)
+      {
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 8);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        savedir = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        savedir = strdup(str + 8);
+#endif
+        remove_slash(savedir);
+
+#ifdef DEBUG
+	printf("savedir set to: %s\n", savedir);
+#endif
+      }
+      else if (strstr(str, "datadir=") == str)
+      {
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 8);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        datadir = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        datadir = strdup(str + 8);
+#endif
+        remove_slash(datadir);
+
+#ifdef DEBUG
+	printf("datadir set to: %s\n", datadir);
+#endif
+      }
+      else if (strcmp(str, "nolockfile=yes") == 0 ||
+	       strcmp(str, "lockfile=no") == 0)
+      {
+	ok_to_use_lockfile = 0;
+      }
+    }
+  }
+  while (!feof(fi));
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
 static void setup(int argc, char *argv[])
 {
   int i, j, ok_to_use_sysconfig;
@@ -19968,6 +19971,9 @@ static void setup(int argc, char *argv[])
       exit(1);
     }
   }
+
+
+
 
 #ifdef _WIN32
   if (fullscreen)
@@ -21234,7 +21240,7 @@ static int old_main(int argc, char *argv[])
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
   draw_toolbar();
-draw_colors(COLORSEL_FORCE_REDRAW);
+  draw_colors(COLORSEL_FORCE_REDRAW);
   draw_brushes();
   update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 
