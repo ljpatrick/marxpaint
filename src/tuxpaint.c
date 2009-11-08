@@ -1502,7 +1502,6 @@ static void show_usage(FILE * f, char *prg);
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 void show_available_papersizes(FILE * fi, char * prg);
 #endif
-static void setup(int argc, char *argv[]);
 void signal_handler(int sig);
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
 			      unsigned int w, unsigned int h,
@@ -1795,195 +1794,6 @@ static void eat_sdl_events(void)
   }
 }
 #endif
-
-
-/* --- MAIN --- */
-
-int main(int argc, char *argv[])
-{
-  CLOCK_TYPE time1;
-  CLOCK_TYPE time2;
-  SDL_Rect dest;
-  SDL_Rect src;
-  int i;
-
-  CLOCK_ASM(time1);
-
-  /* Set up locale support */
-  setlocale(LC_ALL, "");
-  ctype_utf8();
-
-
-  /* NOTE: Moved run_font_scanner() call from here, to right after
-     setup_language(), so that the gettext() calls used while testing fonts
-     actually DO something (per tuxpaint-devel discussion, April 2007)
-     -bjk 2007.06.05 */
-
-
-  /* Set up! */
-  setup(argc, argv);
-
-
-
-#if 0
-  while (!font_thread_done)
-  {
-    /* FIXME: should respond to quit events
-       FIXME: should have a read-depends memory barrier around here */
-    show_progress_bar();
-    SDL_Delay(20);
-  }
-  SDL_WaitThread(font_thread, NULL);
-#endif
-
-  CLOCK_ASM(time2);
-
-#ifdef DEBUG
-  printf("Start-up time: %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
-#endif
-
-  /* Let the user know we're (nearly) ready now */
-
-  dest.x = 0;
-  dest.y = WINDOW_HEIGHT - img_progress->h;
-  dest.h = img_progress->h;
-  dest.w = WINDOW_WIDTH;
-  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
-  src.h = img_progress->h;
-  src.w = img_title->w;
-  src.x = 0;
-  src.y = img_title->h - img_progress->h;
-  dest.x =
-    ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) +
-    (img_title_tuxpaint->w / 2) + 20;
-  SDL_BlitSurface(img_title, &src, screen, &dest);
-
-  SDL_FreeSurface(img_title);
-  SDL_FreeSurface(img_title_credits);
-  SDL_FreeSurface(img_title_tuxpaint);
-
-  dest.x = 0;
-  dest.w = WINDOW_WIDTH;	/* SDL mangles this! So, do repairs. */
-  update_screen_rect(&dest);
-
-  do_setcursor(cursor_arrow);
-  playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-  do_wait(50);			/* about 5 seconds */
-
-
-  /* Set defaults! */
-
-  cur_undo = 0;
-  oldest_undo = 0;
-  newest_undo = 0;
-
-  cur_tool = TOOL_BRUSH;
-  cur_color = COLOR_BLACK;
-  colors_are_selectable = 1;
-  cur_brush = 0;
-  for (i = 0; i < MAX_STAMP_GROUPS; i++)
-    cur_stamp[i] = 0;
-  cur_shape = SHAPE_SQUARE;
-  cur_magic = 0;
-  cur_font = 0;
-  cur_eraser = 0;
-  cur_label = LABEL_LABEL;
-  cur_select = 0;
-  cursor_left = -1;
-  cursor_x = -1;
-  cursor_y = -1;
-  cursor_textwidth = 0;
-
-  mouse_x = WINDOW_WIDTH / 2;
-  mouse_y = WINDOW_HEIGHT / 2;
-  SDL_WarpMouse(mouse_x, mouse_y);
-
-  mousekey_up = SDL_KEYUP;
-  mousekey_down = SDL_KEYUP;
-  mousekey_left = SDL_KEYUP;
-  mousekey_right = SDL_KEYUP;
-
-  eraser_sound = 0;
-
-  img_cur_brush = NULL;
-  render_brush();
-
-  brush_scroll = 0;
-  for (i = 0; i < MAX_STAMP_GROUPS; i++)
-    stamp_scroll[i] = 0;
-  stamp_group = 0;  /* reset! */
-  font_scroll = 0;
-  magic_scroll = 0;
-  tool_scroll = 0;
-
-  reset_avail_tools();
-
-  /* Load fonts */
-
-  if (!font_thread_done)
-  {
-    draw_colors(COLORSEL_DISABLE);
-    draw_none();
-    update_screen_rect(&r_toolopt);
-    update_screen_rect(&r_ttoolopt);
-    do_setcursor(cursor_watch);
-
-    // Wait while Text tool finishes loading fonts
-    draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
-
-    waiting_for_fonts = 1;
-#ifdef FORKED_FONTS
-    receive_some_font_info(screen); // FIXME: this MUST NOT be called until the text tool runs!
-#else
-    while (!font_thread_done && !font_thread_aborted)
-    {
-      // FIXME: should have a read-depends memory barrier around here
-      show_progress_bar(screen);
-      SDL_Delay(20);
-    }
-    // FIXME: should kill this in any case
-    SDL_WaitThread(font_thread, NULL);
-#endif
-    do_setcursor(cursor_arrow);
-  }
-
-
-  /* Load current image (if any): */
-
-  if (start_blank == 0)
-    load_current();
-
-  been_saved = 1;
-  tool_avail[TOOL_SAVE] = 0;
-
-
-  /* Draw the screen! */
-
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  draw_toolbar();
-draw_colors(COLORSEL_FORCE_REDRAW);
-  draw_brushes();
-  update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-
-  SDL_Flip(screen);
-
-  draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-
-  /* Main loop! */
-  mainloop();
-
-  /* Close and quit! */
-
-  save_current();
-
-  wait_for_sfx();
-
-
-  cleanup();
-
-  return 0;
-}
 
 
 /* Prompt to confirm user wishes to quit */
@@ -6826,1832 +6636,6 @@ static int load_user_fonts_stub(void *vp)
 #define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
 		    ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
 		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
-
-/* Setup: */
-
-static void setup(int argc, char *argv[])
-{
-  int i, j, ok_to_use_sysconfig;
-  char str[128];
-  char *upstr;
-  SDL_Color black = { 0, 0, 0, 0 };
-  char *homedirdir;
-  FILE *fi;
-  SDL_Surface *tmp_surf;
-  SDL_Rect dest;
-  int scale;
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-  int x, y;
-  SDL_Surface *tmp_btn_up;
-  SDL_Surface *tmp_btn_down;
-  Uint8 r, g, b;
-#endif
-  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
-  Uint32 init_flags;
-  char tmp_str[128];
-  SDL_Surface *img1;
-  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
-  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
-  int big_title;
-
-
-
-#if defined(__BEOS__) || defined(WIN32)
-  /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
-     find path from which binary was run and change dir to it
-     so all files will be local :) */
-  /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
-     so this code wouldn't be needed if SDL was init before anything else,
-     (just basic init, window shouldn't be needed). */
-  /* UPDATE (2005 July 19): Enable and make work on Windows. Makes testing
-     with MINGW/MSYS easier */
-
-  if (argc && argv[0])
-  {
-    char *app_path = strdup(argv[0]);
-    char *slash = strrchr(app_path, '/');
-
-    if (!slash)
-    {
-      slash = strrchr(app_path, '\\');
-    }
-    if (slash)
-    {
-      *(slash + 1) = '\0';
-      chdir(app_path);
-    }
-    free(app_path);
-  }
-#endif
-
-
-  /* Set default options: */
-
-  use_sound = 1;
-  mute = 0;
-#ifdef NOKIA_770
-  fullscreen = 1;
-#else
-  fullscreen = 0;
-#endif
-  disable_screensaver = 0;
-  native_screensize = 0;
-  rotate_orientation = 0;
-  noshortcuts = 0;
-  dont_do_xor = 0;
-  keymouse = 0;
-  wheely = 1;
-  no_button_distinction = 0;
-  grab_input = 0;
-#ifdef NOKIA_770
-  simple_shapes = 1;
-  no_fancy_cursors = 1;
-  hide_cursor = 1;
-#else
-  simple_shapes = 0;
-  no_fancy_cursors = 0;
-  hide_cursor = 0;
-#endif
-  stamp_size_override = -1;
-  only_uppercase = 0;
-  alt_print_command_default = ALTPRINT_MOD;
-  print_delay = 0;
-  use_print_config = 1;
-  disable_print = 0;
-  disable_quit = 0;
-  disable_save = 0;
-  promptless_save = SAVE_OVER_PROMPT;
-  autosave_on_quit = 0;
-  dont_load_stamps = 0;
-  no_system_fonts = 1;
-  all_locale_fonts = 0;
-  mirrorstamps = 0;
-  disable_stamp_controls = 0;
-  disable_magic_controls = 0;
-  if(VIDEO_BPP != 32)
-    disable_label = 1;
-  else
-    disable_label = 0;
-
-
-#ifndef WINDOW_WIDTH
-  WINDOW_WIDTH = 800;
-  WINDOW_HEIGHT = 600;
-#endif
-
-#ifdef NOKIA_770
-  WINDOW_WIDTH = 800;
-  WINDOW_HEIGHT = 480;
-#endif
-
-#ifdef OLPC_XO
-  /* ideally we'd support rotation and 2x scaling */
-  WINDOW_WIDTH = 1200;
-  WINDOW_HEIGHT = 900;
-#endif
-  ok_to_use_lockfile = 1;
-  start_blank = 0;
-  colorfile[0] = '\0';
-
-
-#ifdef __BEOS__
-  /* Fancy cursors on BeOS are buggy in SDL */
-
-  no_fancy_cursors = 1;
-#endif
-
-
-#ifdef WIN32
-  /* Windows */
-
-  savedir = GetDefaultSaveDir("TuxPaint");
-  datadir = GetDefaultSaveDir("TuxPaint");
-#elif __BEOS__
-  /* BeOS */
-
-  savedir = strdup("./userdata");
-  datadir = strdup("./userdata");
-#elif __APPLE__
-  /* Mac OS X */
-  
-  savedir = strdup(macosx.preferencesPath);
-  datadir = strdup(macosx.preferencesPath);
-#else
-  /* Linux */
-
-  if (getenv("HOME") != NULL)
-  {
-    char tmp[MAX_PATH];
-
-    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"), ".tuxpaint");
-
-    savedir = strdup(tmp);
-    datadir = strdup(tmp);
-  }
-  else
-  {
-    /* Woah, don't know where $HOME is? */
-
-    fprintf(stderr, "Error: You have no $HOME environment variable!\n");
-    exit(1);
-  }
-#endif
-
-
-  /* Load options from global config file: */
-
-
-  /* Check to see if it's ok first: */
-
-  ok_to_use_sysconfig = 1;
-
-  for (i = 1; i < argc; i++)
-  {
-    if (strcmp(argv[i], "--nosysconfig") == 0)
-    {
-      ok_to_use_sysconfig = 0;
-      i = argc;			/* aka break; */
-    }
-  }
-
-
-  if (ok_to_use_sysconfig)
-  {
-#ifndef WIN32
-    snprintf(str, sizeof(str), "%s/tuxpaint.conf", CONFDIR);
-#else
-    /* Global config file in the application directory on Windows */
-    strcpy(str, "tuxpaint.cfg");
-#endif
-
-    fi = fopen(str, "r");
-    if (fi != NULL)
-    {
-      parse_options(fi);
-      fclose(fi);
-    }
-    else
-      debug(str);
-  }
-
-
-
-  /* Load options from user's own configuration (".rc" / ".cfg") file: */
-
-#if defined(WIN32)
-  /* Default local config file in users savedir directory on Windows */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir); /* FIXME */
-#elif defined(__BEOS__)
-  /* BeOS: Use a "tuxpaint.cfg" file: */
-
-  strcpy(str, "tuxpaint.cfg");
-
-#elif defined(__APPLE__)
-  /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
-
-#else
-  /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
-
-  if (getenv("HOME") != NULL)
-  {
-    /* Should it be "~/.tuxpaint/tuxpaintrc" instead???
-       Comments welcome ... bill@newbreedsoftware.com */
-
-    snprintf(str, sizeof(str), "%s/.tuxpaintrc", getenv("HOME"));
-  }
-  else
-  {
-    /* WOAH! We don't know what our home directory is!? Last resort,
-       do it Windows/BeOS way: */
-
-    strcpy(str, "tuxpaint.cfg");
-  }
-#endif
-
-
-  fi = fopen(str, "r");
-  if (fi != NULL)
-  {
-    parse_options(fi);
-    fclose(fi);
-  }
-  else
-    debug(str);
-
-
-  /* Handle command-line arguments: */
-
-  for (i = 1; i < argc; i++)
-  {
-    if (strcmp(argv[i], "--fullscreen") == 0 || strcmp(argv[i], "-f") == 0)
-    {
-      fullscreen = 1;
-    }
-    else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
-    {
-      fullscreen = 0;
-    }
-    else if (strcmp(argv[i], "--disablescreensaver") == 0)
-    {
-      disable_screensaver = 1;
-    }
-    else if (strcmp(argv[i], "--allowscreensaver") == 0)
-    {
-      disable_screensaver = 0;
-    }
-    else if (strcmp(argv[i], "--startblank") == 0 || strcmp(argv[i], "-b") == 0)
-    {
-      start_blank = 1;
-    }
-    else if (strcmp(argv[i], "--startlast") == 0)
-    {
-      start_blank = 0;
-    }
-    else if (strcmp(argv[i], "--mirrorstamps") == 0)
-    {
-      mirrorstamps = 1;
-    }
-    else if (strcmp(argv[i], "--dontmirrorstamps") == 0)
-    {
-      mirrorstamps = 0;
-    }
-    else if (strcmp(argv[i], "--nostampcontrols") == 0)
-    {
-      disable_stamp_controls = 1;
-    }
-    else if (strcmp(argv[i], "--stampcontrols") == 0)
-    {
-      disable_stamp_controls = 0;
-    }
-    else if (strcmp(argv[i], "--nomagiccontrols") == 0)
-      {
-	disable_magic_controls = 1;
-      }
-    else if (strcmp(argv[i], "--nolabel") == 0)
-    {
-      disable_label = 1;
-    }
-    else if (strcmp(argv[i], "--magiccontrols") == 0)
-      {
-      disable_magic_controls = 0;
-      }
-    else if (strcmp(argv[i], "--label") == 0)
-    {
-      disable_label = 0;
-    }
-    else if (strcmp(argv[i], "--noshortcuts") == 0)
-    {
-      noshortcuts = 1;
-    }
-    else if (strcmp(argv[i], "--shortcuts") == 0)
-    {
-      noshortcuts = 0;
-    }
-    else if (strcmp(argv[i], "--colorfile") == 0)
-    {
-      if (i < argc - 1)
-      {
-        strcpy(colorfile, argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the file name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] >= '1'
-	     && argv[i][2] <= '9')
-    {
-      char *endp1;
-      char *endp2;
-      int w, h;
-      w = strtoul(argv[i] + 2, &endp1, 10);
-      h = strtoul(endp1 + 1, &endp2, 10);
-      /* sanity check it */
-      if (argv[i] + 2 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x'
-	  || *endp2 || w < 500 || h < 480 || h > w * 3 || w > h * 4)
-      {
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-      WINDOW_WIDTH = w;
-      WINDOW_HEIGHT = h;
-    }
-    else if (strcmp(argv[i], "--native") == 0)
-    {
-      native_screensize = 1;
-    }
-    else if (strcmp(argv[i], "--orient=portrait") == 0)
-    {
-      rotate_orientation = 1;
-    }
-    else if (strcmp(argv[i], "--orient=landscape") == 0)
-    {
-      rotate_orientation = 0;
-    }
-    else if (strcmp(argv[i], "--nooutlines") == 0)
-    {
-      dont_do_xor = 1;
-    }
-    else if (strcmp(argv[i], "--outlines") == 0)
-    {
-      dont_do_xor = 0;
-    }
-    else if (strcmp(argv[i], "--keyboard") == 0)
-    {
-      keymouse = 1;
-    }
-    else if (strcmp(argv[i], "--mouse") == 0)
-    {
-      keymouse = 0;
-    }
-    else if (strcmp(argv[i], "--nowheelmouse") == 0)
-    {
-      wheely = 0;
-    }
-    else if (strcmp(argv[i], "--wheelmouse") == 0)
-    {
-      wheely = 1;
-    }
-    else if (strcmp(argv[i], "--grab") == 0)
-    {
-      grab_input = 1;
-    }
-    else if (strcmp(argv[i], "--dontgrab") == 0)
-    {
-      grab_input = 0;
-    }
-    else if (strcmp(argv[i], "--nofancycursors") == 0)
-    {
-      no_fancy_cursors = 1;
-    }
-    else if (strcmp(argv[i], "--fancycursors") == 0)
-    {
-      no_fancy_cursors = 0;
-    }
-    else if (strcmp(argv[i], "--hidecursor") == 0)
-    {
-      hide_cursor = 1;
-    }
-    else if (strcmp(argv[i], "--showcursor") == 0)
-    {
-      hide_cursor = 0;
-    }
-    else if (strcmp(argv[i], "--saveover") == 0)
-    {
-      promptless_save = SAVE_OVER_ALWAYS;
-    }
-    else if (strcmp(argv[i], "--saveoverask") == 0)
-    {
-      promptless_save = SAVE_OVER_PROMPT;
-    }
-    else if (strcmp(argv[i], "--saveovernew") == 0)
-    {
-      promptless_save = SAVE_OVER_NO;
-    }
-    else if (strcmp(argv[i], "--autosave") == 0)
-    {
-      autosave_on_quit = 1;
-    }
-    else if (strcmp(argv[i], "--noautosave") == 0)
-    {
-      autosave_on_quit = 0;
-    }
-    else if (strcmp(argv[i], "--altprintnever") == 0)
-    {
-      alt_print_command_default = ALTPRINT_NEVER;
-    }
-    else if (strcmp(argv[i], "--altprintalways") == 0)
-    {
-      alt_print_command_default = ALTPRINT_ALWAYS;
-    }
-    else if (strcmp(argv[i], "--altprintmod") == 0)
-    {
-      alt_print_command_default = ALTPRINT_MOD;
-    }
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-    else if (strstr(argv[i], "--papersize=") == argv[i])
-    {
-      papersize = strdup(argv[i] + strlen("--papersize="));
-    }
-    else if (strcmp(argv[i], "--papersize") == 0)
-    {
-      if (i + 1 < argc)
-      {
-        i++;
-        if (strcmp(argv[i], "help") == 0)
-        {
-          show_available_papersizes(stdout, argv[0]);
-          exit(0);
-        }
-        else
-          papersize = strdup(argv[i]);
-      }
-      else
-      {
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-        show_available_papersizes(stderr, argv[0]);
-        exit(1);
-      }
-    }
-#endif
-    else if (strcmp(argv[i], "--uppercase") == 0
-	     || strcmp(argv[i], "-u") == 0)
-    {
-      only_uppercase = 1;
-    }
-    else if (strcmp(argv[i], "--mixedcase") == 0
-	     || strcmp(argv[i], "-m") == 0)
-    {
-      only_uppercase = 0;
-    }
-    else if (strcmp(argv[i], "--simpleshapes") == 0 ||
-	     strcmp(argv[i], "-s") == 0)
-    {
-      simple_shapes = 1;
-    }
-    else if (strcmp(argv[i], "--complexshapes") == 0)
-    {
-      simple_shapes = 0;
-    }
-    else if (strcmp(argv[i], "--noquit") == 0 || strcmp(argv[i], "-x") == 0)
-    {
-      disable_quit = 1;
-    }
-    else if (strcmp(argv[i], "--quit") == 0)
-    {
-      disable_quit = 0;
-    }
-    else if (strcmp(argv[i], "--nosave") == 0)
-    {
-      disable_save = 1;
-    }
-    else if (strcmp(argv[i], "--save") == 0)
-    {
-      disable_save = 0;
-    }
-    else if (strcmp(argv[i], "--nostamps") == 0)
-    {
-      dont_load_stamps = 1;
-    }
-    else if (strcmp(argv[i], "--stamps") == 0)
-    {
-      dont_load_stamps = 0;
-    }
-    else if (strcmp(argv[i], "--nosysfonts") == 0)
-    {
-      no_system_fonts = 1;
-    }
-    else if (strcmp(argv[i], "--nobuttondistinction") == 0)
-    {
-      no_button_distinction = 1;
-    }
-    else if (strcmp(argv[i], "--buttondistinction") == 0)
-    {
-      no_button_distinction = 0;
-    }
-    else if (strcmp(argv[i], "--sysfonts") == 0)
-    {
-      no_system_fonts = 0;
-    }
-    else if (strcmp(argv[i], "--alllocalefonts") == 0)
-    {
-      all_locale_fonts = 1;
-    }
-    else if (strcmp(argv[i], "--currentlocalefont") == 0)
-    {
-      all_locale_fonts = 0;
-    }
-    else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
-    {
-      disable_print = 1;
-    }
-    else if (strcmp(argv[i], "--print") == 0)
-    {
-      disable_print = 0;
-    }
-    else if (strcmp(argv[i], "--noprintcfg") == 0)
-    {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-      use_print_config = 0;
-    }
-    else if (strcmp(argv[i], "--printcfg") == 0)
-    {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-      use_print_config = 1;
-    }
-    else if (strstr(argv[i], "--printdelay=") == argv[i])
-    {
-      sscanf(strstr(argv[i], "--printdelay=") + 13, "%d", &print_delay);
-#ifdef DEBUG
-      printf("Print delay set to %d seconds\n", print_delay);
-#endif
-    }
-    else if (strcmp(argv[i], "--nosound") == 0 || strcmp(argv[i], "-q") == 0)
-    {
-      use_sound = 0;
-    }
-    else if (strcmp(argv[i], "--sound") == 0)
-    {
-      use_sound = 1;
-    }
-    else if (strcmp(argv[i], "--locale") == 0 || strcmp(argv[i], "-L") == 0)
-    {
-      if (i < argc - 1)
-      {
-	do_locale_option(argv[++i]);
-      }
-      else
-      {
-	/* Forgot to specify the language (locale)! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_locale_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strstr(argv[i], "--lang=") == argv[i])
-    {
-      set_langstr(argv[i] + 7);
-    }
-    else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
-    {
-      if (i < argc - 1)
-      {
-	set_langstr(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the language! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_lang_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--savedir") == 0)
-    {
-      if (i < argc - 1)
-      {
-	if (savedir != NULL)
-	  free(savedir);
-
-	savedir = strdup(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the directory name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--datadir") == 0)
-    {
-      if (i < argc - 1)
-      {
-	if (datadir != NULL)
-	  free(datadir);
-
-	datadir = strdup(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the directory name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--stampsize=default") == 0)
-    {
-      stamp_size_override = -1;
-    }
-    else if (strstr(argv[i], "--stampsize=") == argv[i])
-    {
-      stamp_size_override = atoi(argv[i] + 12);
-      if (stamp_size_override > 10)
-	stamp_size_override = 10;
-    }
-    else if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0)
-    {
-      show_version(0);
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--verbose-version") == 0 ||
-             strcmp(argv[i], "-vv") == 0)
-    {
-      show_version(1);
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--copying") == 0 || strcmp(argv[i], "-c") == 0)
-    {
-      show_version(0);
-      printf("\n"
-	     "This program is free software; you can redistribute it\n"
-	     "and/or modify it under the terms of the GNU General Public\n"
-	     "License as published by the Free Software Foundation;\n"
-	     "either version 2 of the License, or (at your option) any\n"
-	     "later version.\n"
-	     "\n"
-	     "This program is distributed in the hope that it will be\n"
-	     "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
-	     "even the implied warranty of MERCHANTABILITY or FITNESS\n"
-	     "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
-	     "License for more details.\n"
-	     "\n"
-	     "You should have received a copy of the GNU General Public\n"
-	     "License along with this program; if not, write to the Free\n"
-	     "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
-	     "Boston, MA  02111-1307  USA\n" "\n");
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
-    {
-      show_version(0);
-      show_usage(stdout, (char *) getfilename(argv[0]));
-
-      printf("See: " DOC_PREFIX "README.txt\n" "\n");
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--usage") == 0 || strcmp(argv[i], "-u") == 0)
-    {
-      show_usage(stdout, (char *) getfilename(argv[0]));
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--nosysconfig") == 0)
-    {
-      debug("Not using system config.");
-    }
-    else if (strcmp(argv[i], "--nolockfile") == 0)
-    {
-      debug("Not using lockfile");
-      ok_to_use_lockfile = 0;
-    }
-    else if (strcmp(argv[i], "--lockfile") == 0)
-    {
-      debug("Using lockfile");
-      ok_to_use_lockfile = 1;
-    }
-    else
-    {
-      show_usage(stderr, (char *) getfilename(argv[0]));
-      exit(1);
-    }
-  }
-
-#ifdef _WIN32
-  if (fullscreen)
-  {
-    InstallKeyboardHook();
-    SetActivationState(1);
-  }
-#endif
-
-  
-  setup_language(getfilename(argv[0]), &button_label_y_nudge);
-/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
-
-  im_init(&im_data, get_current_language());
-
-#ifndef NO_SDLPANGO
-  SDLPango_Init();
-#endif
-
-  
-  /* NOTE: Moved run_font_scanner() call from main(), to here,
-     so that the gettext() calls used while testing fonts
-     actually DO something (per tuxpaint-devel discussion, April 2007)
-     -bjk 2007.06.05 */
-
-#ifdef FORKED_FONTS
-  run_font_scanner(screen, lang_prefixes[get_current_language()]);
-#endif
-
-
-#ifndef WIN32
-  putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
-#endif
-
-  if (disable_screensaver == 0)
-  {
-    putenv((char *) "SDL_VIDEO_ALLOW_SCREENSAVER=1");
-    if (SDL_MAJOR_VERSION < 1 ||
-        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
-        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
-    {
-      fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
-    }
-  }
-
-  /* Test for lockfile, if we're using one: */
-
-  if (ok_to_use_lockfile)
-  {
-    char *lock_fname;
-    time_t time_lock, time_now;
-    char *homedirdir;
-
-
-    /* Get the current time: */
-
-    time_now = time(NULL);
-
-
-    /* Look for the lockfile... */
-
-#ifndef WIN32
-    lock_fname = get_fname("lockfile.dat", DIR_SAVE);
-#else
-    lock_fname = get_temp_fname("lockfile.dat");
-#endif
-
-    fi = fopen(lock_fname, "r");
-    if (fi != NULL)
-    {
-      /* If it exists, read its contents: */
-
-      if (fread(&time_lock, sizeof(time_t), 1, fi) > 0)
-      {
-	/* Has it not been 30 seconds yet? */
-
-	if (time_now < time_lock + 30)
-	{
-	  /* FIXME: Wrap in gettext() */
-	  printf
-	    ("You have already started tuxpaint less than 30 seconds ago.\n"
-	     "To prevent multiple executions by mistake, TuxPaint will not run\n"
-	     "before 30 seconds have elapsed since it was last started.\n"
-	     "\n"
-	     "You can also use the --nolockfile argument, see tuxpaint(1).\n\n");
-
-	  free(lock_fname);
-
-	  fclose(fi);
-	  exit(0);
-	}
-      }
-
-      fclose(fi);
-    }
-
-
-    /* Okay to run; create/update the lockfile */
-
-    /* (Make sure the directory exists, first!) */
-    homedirdir = get_fname("", DIR_SAVE);
-    mkdir(homedirdir, 0755);
-    free(homedirdir);
-
-
-    fi = fopen(lock_fname, "w");
-    if (fi != NULL)
-    {
-      /* If we can write to it, do so! */
-
-      fwrite(&time_now, sizeof(time_t), 1, fi);
-      fclose(fi);
-    }
-    else
-    {
-      fprintf(stderr,
-	      "\nWarning: I couldn't create the lockfile (%s)\n"
-	      "The error that occurred was:\n"
-	      "%s\n\n", lock_fname, strerror(errno));
-    }
-
-    free(lock_fname);
-  }
-
-
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER;
-  if (use_sound)
-    init_flags |= SDL_INIT_AUDIO;
-  if (!fullscreen)
-    init_flags |= SDL_INIT_NOPARACHUTE;	/* allow debugger to catch crash */
-
-  /* Init SDL */
-  if (SDL_Init(init_flags) < 0)
-  {
-#ifndef NOSOUND
-    char *olderr = strdup(SDL_GetError());
-    use_sound = 0;
-    init_flags &= ~SDL_INIT_AUDIO;
-    if (SDL_Init(init_flags) >= 0)
-    {
-      /* worked, w/o sound */
-      fprintf(stderr,
-	      "\nWarning: I could not initialize audio!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", olderr);
-      free(olderr);
-    }
-    else
-#endif
-    {
-      fprintf(stderr,
-	      "\nError: I could not initialize video and/or the timer!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-      exit(1);
-    }
-  }
-
-
-#ifndef NOSOUND
-#ifndef WIN32
-  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
-#else
-  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048) < 0)
-#endif
-  {
-    fprintf(stderr,
-	    "\nWarning: I could not set up audio for 44100 Hz "
-	    "16-bit stereo.\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-    use_sound = 0;
-  }
-
-  i = NUM_SOUNDS;
-  while (use_sound && i--)
-  {
-    sounds[i] = Mix_LoadWAV(sound_fnames[i]);
-
-    if (sounds[i] == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning: I couldn't open a sound file:\n%s\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", sound_fnames[i], SDL_GetError());
-      use_sound = 0;
-    }
-  }
-#endif
-
-
-  /* Set-up Key-Repeat: */
-  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
-
-  /* Init TTF stuff: */
-  if (TTF_Init() < 0)
-  {
-    fprintf(stderr,
-	    "\nError: I could not initialize the font (TTF) library!\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    SDL_Quit();
-    exit(1);
-  }
-
-
-  /* Load colors, or use default ones: */
-
-  if (colorfile[0] != '\0')
-  {
-    fi = fopen(colorfile, "r");
-    if (fi == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning, could not open color file. Using defaults.\n");
-      perror(colorfile);
-      colorfile[0] = '\0';
-    }
-    else
-    {
-      int max = 0, per = 5;
-      char str[80], tmp_str[80];
-      int count;
-
-      NUM_COLORS = 0;
-
-      do
-      {
-	fgets(str, sizeof(str), fi);
-
-	if (!feof(fi))
-	{
-	  if (NUM_COLORS + 1 > max)
-	  {
-	    color_hexes = realloc(color_hexes, sizeof(Uint8 *) * (max + per));
-	    color_names = realloc(color_names, sizeof(char *) * (max + per));
-
-	    for (i = max; i < max + per; i++)
-	      color_hexes[i] = malloc(sizeof(Uint8) * 3);
-
-	    max = max + per;
-	  }
-
-	  while (str[strlen(str) - 1] == '\n' ||
-	         str[strlen(str) - 1] == '\r')
-	    str[strlen(str) - 1] = '\0';
-
-	  if (str[0] == '#')
-	  {
-	    /* Hex form */
-
-	    sscanf(str + 1, "%s %n", tmp_str, &count);
-
-	    if (strlen(tmp_str) == 6)
-	    {
-	      /* Byte (#rrggbb) form */
-
-	      color_hexes[NUM_COLORS][0] =
-		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
-	      color_hexes[NUM_COLORS][1] =
-		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
-	      color_hexes[NUM_COLORS][2] =
-		      (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
-
-	      color_names[NUM_COLORS] = strdup(str + count);
-	      NUM_COLORS++;
-	    }
-	    else if (strlen(tmp_str) == 3)
-	    {
-	      /* Nybble (#rgb) form */
-
-	      color_hexes[NUM_COLORS][0] =
-		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
-	      color_hexes[NUM_COLORS][1] =
-		      (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
-	      color_hexes[NUM_COLORS][2] =
-		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
-
-	      color_names[NUM_COLORS] = strdup(str + count);
-	      NUM_COLORS++;
-	    }
-	  }
-	  else
-	  {
-	    /* Assume int form */
-
-            if (sscanf(str, "%hu %hu %hu %n",
-		   (short unsigned int *) &(color_hexes[NUM_COLORS][0]),
-		   (short unsigned int *) &(color_hexes[NUM_COLORS][1]),
-		   (short unsigned int *) &(color_hexes[NUM_COLORS][2]),
-		   &count) >= 3)
-	    {
-	      color_names[NUM_COLORS] = strdup(str + count);
-	      NUM_COLORS++;
-	    }
-	  }
-	}
-      }
-      while (!feof(fi));
-
-      if (NUM_COLORS < 2)
-      {
-	fprintf(stderr,
-		"\nWarning, not enough colors in color file. Using defaults.\n");
-	fprintf(stderr, "%s\n", colorfile);
-	colorfile[0] = '\0';
-
-	for (i = 0; i < NUM_COLORS; i++)
-	{
-	  free(color_names[i]);
-	  free(color_hexes[i]);
-	}
-
-	free(color_names);
-	free(color_hexes);
-      }
-    }
-  }
-
-  /* Use default, if no file specified (or trouble opening it) */
-
-  if (colorfile[0] == '\0')
-  {
-    NUM_COLORS = NUM_DEFAULT_COLORS;
-
-    color_hexes = malloc(sizeof(Uint8 *) * NUM_COLORS);
-    color_names = malloc(sizeof(char *) * NUM_COLORS);
-
-    for (i = 0; i < NUM_COLORS; i++)
-    {
-      color_hexes[i] = malloc(sizeof(Uint8 *) * 3);
-
-      for (j = 0; j < 3; j++)
-	color_hexes[i][j] = default_color_hexes[i][j];
-
-      color_names[i] = strdup(default_color_names[i]);
-    }
-  }
-
-
-  /* Add "Color Picker" color: */
-
-  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
-
-  color_names = (char **) realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
-  color_names[NUM_COLORS] = strdup(gettext("Pick a color."));
-  color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
-  color_hexes[NUM_COLORS][0] = 0;
-  color_hexes[NUM_COLORS][1] = 0;
-  color_hexes[NUM_COLORS][2] = 0;
-  color_picker_x = 0;
-  color_picker_y = 0;
-  NUM_COLORS++;
-
-
-  /* Set window icon and caption: */
-
-#ifndef __APPLE__
-  seticon();
-#endif
-  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
-
-  if (hide_cursor)
-    SDL_ShowCursor (SDL_DISABLE);
-
-
-  /* Deal with orientation rotation option */
-
-  if (rotate_orientation)
-  {
-    if (native_screensize && fullscreen)
-    {
-      fprintf(stderr, "Warning: Asking for native screen size overrides request to rotate orientation.\n");
-    }
-    else
-    {
-      int tmp;
-      tmp = WINDOW_WIDTH;
-      WINDOW_WIDTH = WINDOW_HEIGHT;
-      WINDOW_HEIGHT = tmp;
-    }
-  }
-
-  /* Deal with 'native' screen size option */
-
-  if (native_screensize)
-  {
-    if (!fullscreen)
-    {
-      fprintf(stderr, "Warning: Asking for native screensize in a window. Ignoring.\n");
-    }
-    else
-    {
-      WINDOW_WIDTH = 0;
-      WINDOW_HEIGHT = 0;
-    }
-  }
-
-
-  /* Open Window: */
-
-  if (fullscreen)
-  {
-#ifdef USE_HWSURFACE
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);
-#else
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);
-#endif
-
-    if (screen == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning: I could not open the display in fullscreen mode.\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-
-      fullscreen = 0;
-    }
-    else
-    {
-      /* Get resolution if we asked for native: */
-
-      if (native_screensize)
-      {
-        WINDOW_WIDTH = screen->w;
-        WINDOW_HEIGHT = screen->h;
-      }
-    }
-  }
-
-
-  if (!fullscreen)
-  {
-    putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
-
-#ifdef USE_HWSURFACE
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_HWSURFACE);
-#else
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_SWSURFACE);
-#endif
-
-    putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
-  }
-
-  if (screen == NULL)
-  {
-    fprintf(stderr,
-	    "\nError: I could not open the display.\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-
-  /* (Need to do this after native screen resolution is handled) */
-
-  setup_screen_layout();
-
-
-  /* quickly: title image, version, progress bar, and watch cursor */
-
-  img_title = loadimage(DATA_PREFIX "images/title.png");
-  img_title_credits = loadimage(DATA_PREFIX "images/title-credits.png");
-  img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
-
-  if (screen->w - img_title->w >= 410 && screen->h - img_progress->h - img_title_credits->h - 40) /* FIXME: Font */
-    big_title = 1;
-  else
-    big_title = 0;
-
-
-  if (big_title)
-    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint-2x.png");
-  else
-    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint.png");
-
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  dest.x =
-    ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) +
-    (img_title_tuxpaint->w / 2) + 20;
-  dest.y = (WINDOW_HEIGHT - img_title->h);
-
-  SDL_BlitSurface(img_title, NULL, screen, &dest);
-
-  dest.x = 10;
-  if (big_title)
-    dest.y = WINDOW_HEIGHT - img_title_tuxpaint->h - img_progress->h - 40;
-  else
-    dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8 + 7;
-
-  SDL_BlitSurface(img_title_tuxpaint, NULL, screen, &dest);
-
-  dest.x = 10;
-  dest.y = 5;
-
-  SDL_BlitSurface(img_title_credits, NULL, screen, &dest);
-
-  prog_bar_ctr = 0;
-  show_progress_bar(screen);
-
-  SDL_Flip(screen);
-
-  medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-					DATA_PREFIX "fonts/default_font.ttf",
-			    		18 - (only_uppercase * 3));
-
-  if (medium_font == NULL)
-  {
-    fprintf(stderr,
-	    "\nError: Can't load font file: "
-	    DATA_PREFIX "fonts/default_font.ttf\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-  snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s", VER_VERSION,
-	   VER_DATE);
-
-  tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 10;
-  dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
-  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
-  SDL_FreeSurface(tmp_surf);
-
-#ifdef DEBUG
-  printf("%s\n", tmp_str);
-#endif
-
-  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2009 Bill Kendrick et al.");
-  tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 10;
-  dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
-  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
-  SDL_FreeSurface(tmp_surf);
-
-  SDL_Flip(screen);
-
-
-#if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
-  if (fullscreen && no_fancy_cursors == 0)
-  {
-    fprintf(stderr, "Warning: An SDL bug causes the fancy cursors to leave\n"
-	    "trails in fullscreen mode.  Disabling fancy cursors.\n"
-	    "(You can do this yourself with 'nofancycursors' option,\n"
-	    "to avoid this warning in the future.)\n");
-    no_fancy_cursors = 1;
-  }
-#endif
-
-
-  /* Create cursors: */
-
-  scale = 1;
-
-#ifdef SMALL_CURSOR_SHAPES
-  scale = 2;
-#endif
-  
-#ifdef __APPLE__
-  cursor_arrow = SDL_GetCursor();		/* use standard system cursor */
-#endif
-
-  /* this one first, because we need it yesterday */
-  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
-			    watch_width, watch_height,
-			    14 / scale, 14 / scale);
-
-  do_setcursor(cursor_watch);
-  show_progress_bar(screen);
-
-#ifdef FORKED_FONTS
-  reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
-#else
-  font_thread = SDL_CreateThread(load_user_fonts_stub, NULL);
-#endif
-
-  /* continuing on with the rest of the cursors... */
-
-
-#ifndef __APPLE__
-  cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
-							arrow_width, arrow_height, 0, 0);
-#endif
-  
-  cursor_hand = get_cursor(hand_bits, hand_mask_bits,
-			   hand_width, hand_height, 12 / scale, 1 / scale);
-
-  cursor_wand = get_cursor(wand_bits, wand_mask_bits,
-			   wand_width, wand_height, 4 / scale, 4 / scale);
-
-  cursor_insertion = get_cursor(insertion_bits, insertion_mask_bits,
-				insertion_width, insertion_height,
-				7 / scale, 4 / scale);
-
-  cursor_brush = get_cursor(brush_bits, brush_mask_bits,
-			    brush_width, brush_height, 4 / scale, 28 / scale);
-
-  cursor_crosshair = get_cursor(crosshair_bits, crosshair_mask_bits,
-				crosshair_width, crosshair_height,
-				15 / scale, 15 / scale);
-
-  cursor_rotate = get_cursor(rotate_bits, rotate_mask_bits,
-			     rotate_width, rotate_height,
-			     15 / scale, 15 / scale);
-  
-  cursor_up = get_cursor(up_bits, up_mask_bits,
-			 up_width, up_height, 15 / scale, 1 / scale);
-
-  cursor_down = get_cursor(down_bits, down_mask_bits,
-			   down_width, down_height, 15 / scale, 30 / scale);
-
-  cursor_tiny = get_cursor(tiny_bits, tiny_mask_bits, tiny_width, tiny_height, 3, 3);	/* Exactly the same in SMALL (16x16) size! */
-
-
-
-  /* Create drawing canvas: */
-
-  canvas = SDL_CreateRGBSurface(screen->flags,
-				WINDOW_WIDTH - (96 * 2),
-				(48 * 7) + 40 + HEIGHTOFFSET,
-				screen->format->BitsPerPixel,
-				screen->format->Rmask,
-				screen->format->Gmask,
-				screen->format->Bmask, 0);
-
-    save_canvas = SDL_CreateRGBSurface(screen->flags,
-				WINDOW_WIDTH - (96 * 2),
-				(48 * 7) + 40 + HEIGHTOFFSET,
-				screen->format->BitsPerPixel,
-				screen->format->Rmask,
-				screen->format->Gmask,
-				screen->format->Bmask, 0);
-
-
-  img_starter = NULL;
-  img_starter_bkgd = NULL;
-  starter_mirrored = 0;
-  starter_flipped = 0;
-  starter_personal = 0;
-
-  if (canvas == NULL)
-  {
-    fprintf(stderr, "\nError: Can't build drawing canvas!\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-  touched = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
-  if (touched == NULL)
-  {
-    fprintf(stderr, "\nError: Can't build drawing touch mask!\n");
-
-    cleanup();
-    exit(1);
-  }
-
-  canvas_color_r = 255;
-  canvas_color_g = 255;
-  canvas_color_b = 255;
-
-  SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
-
-  /* Creating the label surface: */
-
-  label = SDL_CreateRGBSurface(screen->flags,
-				WINDOW_WIDTH - (96 * 2),
-				(48 * 7) + 40 + HEIGHTOFFSET,
-				screen->format->BitsPerPixel,
-				screen->format->Rmask,
-				screen->format->Gmask,
-				screen->format->Bmask, TPAINT_AMASK);
-
-  /* making the label layer transparent */
-  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
-
-  /* Create undo buffer space: */
-
-  for (i = 0; i < NUM_UNDO_BUFS; i++)
-  {
-    undo_bufs[i] = SDL_CreateRGBSurface(screen->flags,
-					WINDOW_WIDTH - (96 * 2),
-					(48 * 7) + 40 + HEIGHTOFFSET,
-					screen->format->BitsPerPixel,
-					screen->format->Rmask,
-					screen->format->Gmask,
-					screen->format->Bmask, 0);
-
-
-    if (undo_bufs[i] == NULL)
-    {
-      fprintf(stderr, "\nError: Can't build undo buffer! (%d of %d)\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", i + 1, NUM_UNDO_BUFS, SDL_GetError());
-
-      cleanup();
-      exit(1);
-    }
-
-    undo_starters[i] = UNDO_STARTER_NONE;
-  }
-
-
-
-  /* Load other images: */
-
-  for (i = 0; i < NUM_TOOLS; i++)
-    img_tools[i] = loadimage(tool_img_fnames[i]);
-
-  img_title_on = loadimage(DATA_PREFIX "images/ui/title.png");
-  img_title_large_on = loadimage(DATA_PREFIX "images/ui/title_large.png");
-  img_title_off = loadimage(DATA_PREFIX "images/ui/no_title.png");
-  img_title_large_off = loadimage(DATA_PREFIX "images/ui/no_title_large.png");
-
-  img_btn_up = loadimage(DATA_PREFIX "images/ui/btn_up.png");
-  img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
-  img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
-
-  img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
-  img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
-
-  img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
-  img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
-
-  img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
-				   img_btn_off->w, img_btn_off->h,
-				   img_btn_off->format->BitsPerPixel,
-				   img_btn_off->format->Rmask,
-				   img_btn_off->format->Gmask,
-				   img_btn_off->format->Bmask,
-				   img_btn_off->format->Amask);
-  SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
-
-  img_grey = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
-				  img_btn_off->w, img_btn_off->h,
-				  img_btn_off->format->BitsPerPixel,
-				  img_btn_off->format->Rmask,
-				  img_btn_off->format->Gmask,
-				  img_btn_off->format->Bmask,
-				  img_btn_off->format->Amask);
-  SDL_FillRect(img_grey, NULL,
-	       SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
-
-  show_progress_bar(screen);
-
-  img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
-  img_no = loadimage(DATA_PREFIX "images/ui/no.png");
-
-  img_prev = loadimage(DATA_PREFIX "images/ui/prev.png");
-  img_next = loadimage(DATA_PREFIX "images/ui/next.png");
-
-  img_mirror = loadimage(DATA_PREFIX "images/ui/mirror.png");
-  img_flip = loadimage(DATA_PREFIX "images/ui/flip.png");
-
-  img_open = loadimage(DATA_PREFIX "images/ui/open.png");
-  img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
-  img_back = loadimage(DATA_PREFIX "images/ui/back.png");
-  img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
-
-  img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
-  img_play = loadimage(DATA_PREFIX "images/ui/play.png");
-  img_select_digits = loadimage(DATA_PREFIX "images/ui/select_digits.png");
-
-  img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
-
-  img_dead40x40 = loadimage(DATA_PREFIX "images/ui/dead40x40.png");
-
-  img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
-  img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
-
-  img_save_over = loadimage(DATA_PREFIX "images/ui/save_over.png");
-
-  img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
-  img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
-
-  img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
-  img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
-
-  img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
-  img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
-
-  img_label = loadimage(DATA_PREFIX "images/tools/label.png");
-  img_label_select = loadimage(DATA_PREFIX "images/tools/label_select.png");
-
-  show_progress_bar(screen);
-
-  tmp_imgcurup = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
-  tmp_imgcurdown = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
-  img_cursor_up = thumbnail(tmp_imgcurup, THUMB_W, THUMB_H, 0);
-  img_cursor_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
-
-  tmp_imgcurup = loadimage(DATA_PREFIX "images/ui/cursor_starter_up.png");
-  tmp_imgcurdown = loadimage(DATA_PREFIX "images/ui/cursor_starter_down.png");
-  img_cursor_starter_up = thumbnail(tmp_imgcurup, THUMB_W, THUMB_H, 0);
-  img_cursor_starter_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
-  SDL_FreeSurface(tmp_imgcurup);
-  SDL_FreeSurface(tmp_imgcurdown);
-
-  show_progress_bar(screen);
-
-  img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
-  img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
-
-  img_scroll_up_off = loadimage(DATA_PREFIX "images/ui/scroll_up_off.png");
-  img_scroll_down_off =
-    loadimage(DATA_PREFIX "images/ui/scroll_down_off.png");
-
-#ifdef LOW_QUALITY_COLOR_SELECTOR
-  img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
-#endif
-
-  show_progress_bar(screen);
-
-
-  /* Load brushes: */
-  load_brush_dir(screen, DATA_PREFIX "brushes");
-  homedirdir = get_fname("brushes", DIR_DATA);
-  load_brush_dir(screen, homedirdir);
-#ifdef WIN32
-  free(homedirdir);
-  homedirdir = get_fname("data/brushes", DIR_DATA);
-  load_brush_dir(screen, homedirdir);
-#endif
-
-  if (num_brushes == 0)
-  {
-    fprintf(stderr,
-	    "\nError: No brushes found in " DATA_PREFIX "brushes/\n"
-	    "or %s\n\n", homedirdir);
-    cleanup();
-    exit(1);
-  }
-
-  free(homedirdir);
-
-
-  /* Load system fonts: */
-
-  large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-				      DATA_PREFIX "fonts/default_font.ttf",
-			               30 - (only_uppercase * 3));
-
-  if (large_font == NULL)
-  {
-    fprintf(stderr,
-	    "\nError: Can't load font file: "
-	    DATA_PREFIX "fonts/default_font.ttf\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-
-  small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-			    DATA_PREFIX "fonts/default_font.ttf",
-#ifdef __APPLE__
-			    12 - (only_uppercase * 2));
-#else
-			    13 - (only_uppercase * 2));
-#endif
-
-  if (small_font == NULL)
-  {
-    fprintf(stderr,
-	    "\nError: Can't load font file: "
-	    DATA_PREFIX "fonts/default_font.ttf\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-
-  locale_font = load_locale_font(medium_font, 18);
-
-
-
-#if 0
-  /* put elsewhere for THREADED_FONTS */
-  /* Load user fonts, for the text tool */
-  load_user_fonts();
-#endif
-
-  if (!dont_load_stamps)
-    load_stamps(screen);
-
-
-  /* Load magic tool plugins: */
-
-  load_magic_plugins();
-
-  show_progress_bar(screen);
-
-  /* Load shape icons: */
-  for (i = 0; i < NUM_SHAPES; i++)
-    img_shapes[i] = loadimage(shape_img_fnames[i]);
-
-  show_progress_bar(screen);
-
-  /* Load tip tux images: */
-  for (i = 0; i < NUM_TIP_TUX; i++)
-    img_tux[i] = loadimage(tux_img_fnames[i]);
-
-  show_progress_bar(screen);
-
-  img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
-  img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
-
-  show_progress_bar(screen);
-
-  img_color_picker = loadimage(DATA_PREFIX "images/ui/color_picker.png");
-
-  /* Create toolbox and selector labels: */
-
-  for (i = 0; i < NUM_TITLES; i++)
-  {
-    if (strlen(title_names[i]) > 0)
-    {
-      TuxPaint_Font *myfont = large_font;
-      char *td_str = textdir(gettext(title_names[i]));
-
-      if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
-	myfont = locale_font;
-      upstr = uppercase(td_str);
-      free(td_str);
-      tmp_surf = render_text(myfont, upstr, black);
-      free(upstr);
-      img_title_names[i] =
-	thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
-      SDL_FreeSurface(tmp_surf);
-    }
-    else
-    {
-      img_title_names[i] = NULL;
-    }
-  }
-
-
-
-  /* Generate color selection buttons: */
-
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-
-  /* Create appropriately-shaped buttons: */
-  img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
-  img_paintwell = thumbnail(img1, color_button_w, color_button_h, 0);
-  tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
-  tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
-  img_color_btn_off =
-    thumbnail(img_btn_off, color_button_w, color_button_h, 0);
-  SDL_FreeSurface(img1);
-
-  img_color_picker_thumb = thumbnail(img_color_picker,
-				     color_button_w, color_button_h, 0);
-
-  /* Create surfaces to draw them into: */
-
-  img_color_btns = malloc(sizeof(SDL_Surface *) * NUM_COLORS * 2);
-
-  for (i = 0; i < NUM_COLORS * 2; i++)
-  {
-    img_color_btns[i] = SDL_CreateRGBSurface(screen->flags,
-					     /* (WINDOW_WIDTH - 96) / NUM_COLORS, 48, */
-					     tmp_btn_up->w, tmp_btn_up->h,
-					     screen->format->BitsPerPixel,
-					     screen->format->Rmask,
-					     screen->format->Gmask,
-					     screen->format->Bmask, 0);
-
-    if (img_color_btns[i] == NULL)
-    {
-      fprintf(stderr, "\nError: Can't build color button!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-
-      cleanup();
-      exit(1);
-    }
-
-    SDL_LockSurface(img_color_btns[i]);
-  }
-
-
-  /* Generate the buttons based on the thumbnails: */
-
-  SDL_LockSurface(tmp_btn_down);
-  SDL_LockSurface(tmp_btn_up);
-
-  getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
-  getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
-  getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
-
-
-  for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
-  {
-    for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */ ;
-	 x++)
-    {
-      double ru, gu, bu, rd, gd, bd, aa;
-      Uint8 a;
-
-      SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format,
-		 &r, &g, &b);
-
-      ru = sRGB_to_linear_table[r];
-      gu = sRGB_to_linear_table[g];
-      bu = sRGB_to_linear_table[b];
-      SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y),
-		 tmp_btn_down->format, &r, &g, &b);
-      rd = sRGB_to_linear_table[r];
-      gd = sRGB_to_linear_table[g];
-      bd = sRGB_to_linear_table[b];
-      SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
-      aa = a / 255.0;
-
-      for (i = 0; i < NUM_COLORS; i++)
-      {
-	double rh = sRGB_to_linear_table[color_hexes[i][0]];
-	double gh = sRGB_to_linear_table[color_hexes[i][1]];
-	double bh = sRGB_to_linear_table[color_hexes[i][2]];
-
-	if (i == NUM_COLORS - 1)
-	{
-          putpixels[img_color_btns[i]->format->BytesPerPixel]
-            (img_color_btns[i], x, y,
-             getpixels[img_color_picker_thumb->format->BytesPerPixel]
-               (img_color_picker_thumb, x, y));
-          putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
-            (img_color_btns[i + NUM_COLORS], x, y,
-             getpixels[img_color_picker_thumb->format->BytesPerPixel]
-               (img_color_picker_thumb, x, y));
-        }
-
-        if (i < NUM_COLORS - 1 || a == 255)
-        {
-	  putpixels[img_color_btns[i]->format->BytesPerPixel]
-	      (img_color_btns[i], x, y,
-	       SDL_MapRGB(img_color_btns[i]->format,
-		        linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-		        linear_to_sRGB(gh * aa + gu * (1.0 - aa)),
-		        linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-	  putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
-	      (img_color_btns[i + NUM_COLORS], x, y,
-	       SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
-		        linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
-		        linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
-		        linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
-	}
-      }
-    }
-  }
-
-  for (i = 0; i < NUM_COLORS * 2; i++)
-    SDL_UnlockSurface(img_color_btns[i]);
-
-  SDL_UnlockSurface(tmp_btn_up);
-  SDL_UnlockSurface(tmp_btn_down);
-  SDL_FreeSurface(tmp_btn_up);
-  SDL_FreeSurface(tmp_btn_down);
-
-#endif
-
-  create_button_labels();
-
-
-  /* Seed random-number generator: */
-
-  srand(SDL_GetTicks());
-
-
-  /* Enable Unicode support in SDL: */
-
-  SDL_EnableUNICODE(1);
-
-#ifndef WIN32
-  /* Set up signal handler for SIGPIPE (in case printer command dies;
-     e.g., altprintcommand=kprinter, but 'Cancel' is clicked,
-     instead of 'Ok') */
-
-  signal(SIGPIPE, signal_handler);
-#endif
-}
 
 #ifndef WIN32
 void signal_handler(int sig)
@@ -21256,3 +19240,2026 @@ void load_info_about_label_surface(char lfname[1024])
     fclose(lfi);
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
+
+static void setup(int argc, char *argv[])
+{
+  int i, j, ok_to_use_sysconfig;
+  char str[128];
+  char *upstr;
+  SDL_Color black = { 0, 0, 0, 0 };
+  char *homedirdir;
+  FILE *fi;
+  SDL_Surface *tmp_surf;
+  SDL_Rect dest;
+  int scale;
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+  int x, y;
+  SDL_Surface *tmp_btn_up;
+  SDL_Surface *tmp_btn_down;
+  Uint8 r, g, b;
+#endif
+  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
+  Uint32 init_flags;
+  char tmp_str[128];
+  SDL_Surface *img1;
+  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
+  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+  int big_title;
+
+
+
+#if defined(__BEOS__) || defined(WIN32)
+  /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
+     find path from which binary was run and change dir to it
+     so all files will be local :) */
+  /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
+     so this code wouldn't be needed if SDL was init before anything else,
+     (just basic init, window shouldn't be needed). */
+  /* UPDATE (2005 July 19): Enable and make work on Windows. Makes testing
+     with MINGW/MSYS easier */
+
+  if (argc && argv[0])
+  {
+    char *app_path = strdup(argv[0]);
+    char *slash = strrchr(app_path, '/');
+
+    if (!slash)
+    {
+      slash = strrchr(app_path, '\\');
+    }
+    if (slash)
+    {
+      *(slash + 1) = '\0';
+      chdir(app_path);
+    }
+    free(app_path);
+  }
+#endif
+
+
+  /* Set default options: */
+
+  use_sound = 1;
+  mute = 0;
+#ifdef NOKIA_770
+  fullscreen = 1;
+#else
+  fullscreen = 0;
+#endif
+  disable_screensaver = 0;
+  native_screensize = 0;
+  rotate_orientation = 0;
+  noshortcuts = 0;
+  dont_do_xor = 0;
+  keymouse = 0;
+  wheely = 1;
+  no_button_distinction = 0;
+  grab_input = 0;
+#ifdef NOKIA_770
+  simple_shapes = 1;
+  no_fancy_cursors = 1;
+  hide_cursor = 1;
+#else
+  simple_shapes = 0;
+  no_fancy_cursors = 0;
+  hide_cursor = 0;
+#endif
+  stamp_size_override = -1;
+  only_uppercase = 0;
+  alt_print_command_default = ALTPRINT_MOD;
+  print_delay = 0;
+  use_print_config = 1;
+  disable_print = 0;
+  disable_quit = 0;
+  disable_save = 0;
+  promptless_save = SAVE_OVER_PROMPT;
+  autosave_on_quit = 0;
+  dont_load_stamps = 0;
+  no_system_fonts = 1;
+  all_locale_fonts = 0;
+  mirrorstamps = 0;
+  disable_stamp_controls = 0;
+  disable_magic_controls = 0;
+  if(VIDEO_BPP != 32)
+    disable_label = 1;
+  else
+    disable_label = 0;
+
+
+#ifndef WINDOW_WIDTH
+  WINDOW_WIDTH = 800;
+  WINDOW_HEIGHT = 600;
+#endif
+
+#ifdef NOKIA_770
+  WINDOW_WIDTH = 800;
+  WINDOW_HEIGHT = 480;
+#endif
+
+#ifdef OLPC_XO
+  /* ideally we'd support rotation and 2x scaling */
+  WINDOW_WIDTH = 1200;
+  WINDOW_HEIGHT = 900;
+#endif
+  ok_to_use_lockfile = 1;
+  start_blank = 0;
+  colorfile[0] = '\0';
+
+
+#ifdef __BEOS__
+  /* Fancy cursors on BeOS are buggy in SDL */
+
+  no_fancy_cursors = 1;
+#endif
+
+
+#ifdef WIN32
+  /* Windows */
+
+  savedir = GetDefaultSaveDir("TuxPaint");
+  datadir = GetDefaultSaveDir("TuxPaint");
+#elif __BEOS__
+  /* BeOS */
+
+  savedir = strdup("./userdata");
+  datadir = strdup("./userdata");
+#elif __APPLE__
+  /* Mac OS X */
+  
+  savedir = strdup(macosx.preferencesPath);
+  datadir = strdup(macosx.preferencesPath);
+#else
+  /* Linux */
+
+  if (getenv("HOME") != NULL)
+  {
+    char tmp[MAX_PATH];
+
+    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"), ".tuxpaint");
+
+    savedir = strdup(tmp);
+    datadir = strdup(tmp);
+  }
+  else
+  {
+    /* Woah, don't know where $HOME is? */
+
+    fprintf(stderr, "Error: You have no $HOME environment variable!\n");
+    exit(1);
+  }
+#endif
+
+
+  /* Load options from global config file: */
+
+
+  /* Check to see if it's ok first: */
+
+  ok_to_use_sysconfig = 1;
+
+  for (i = 1; i < argc; i++)
+  {
+    if (strcmp(argv[i], "--nosysconfig") == 0)
+    {
+      ok_to_use_sysconfig = 0;
+      i = argc;			/* aka break; */
+    }
+  }
+
+
+  if (ok_to_use_sysconfig)
+  {
+#ifndef WIN32
+    snprintf(str, sizeof(str), "%s/tuxpaint.conf", CONFDIR);
+#else
+    /* Global config file in the application directory on Windows */
+    strcpy(str, "tuxpaint.cfg");
+#endif
+
+    fi = fopen(str, "r");
+    if (fi != NULL)
+    {
+      parse_options(fi);
+      fclose(fi);
+    }
+    else
+      debug(str);
+  }
+
+
+
+  /* Load options from user's own configuration (".rc" / ".cfg") file: */
+
+#if defined(WIN32)
+  /* Default local config file in users savedir directory on Windows */
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir); /* FIXME */
+#elif defined(__BEOS__)
+  /* BeOS: Use a "tuxpaint.cfg" file: */
+
+  strcpy(str, "tuxpaint.cfg");
+
+#elif defined(__APPLE__)
+  /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
+
+#else
+  /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
+
+  if (getenv("HOME") != NULL)
+  {
+    /* Should it be "~/.tuxpaint/tuxpaintrc" instead???
+       Comments welcome ... bill@newbreedsoftware.com */
+
+    snprintf(str, sizeof(str), "%s/.tuxpaintrc", getenv("HOME"));
+  }
+  else
+  {
+    /* WOAH! We don't know what our home directory is!? Last resort,
+       do it Windows/BeOS way: */
+
+    strcpy(str, "tuxpaint.cfg");
+  }
+#endif
+
+
+  fi = fopen(str, "r");
+  if (fi != NULL)
+  {
+    parse_options(fi);
+    fclose(fi);
+  }
+  else
+    debug(str);
+
+
+  /* Handle command-line arguments: */
+
+  for (i = 1; i < argc; i++)
+  {
+    if (strcmp(argv[i], "--fullscreen") == 0 || strcmp(argv[i], "-f") == 0)
+    {
+      fullscreen = 1;
+    }
+    else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
+    {
+      fullscreen = 0;
+    }
+    else if (strcmp(argv[i], "--disablescreensaver") == 0)
+    {
+      disable_screensaver = 1;
+    }
+    else if (strcmp(argv[i], "--allowscreensaver") == 0)
+    {
+      disable_screensaver = 0;
+    }
+    else if (strcmp(argv[i], "--startblank") == 0 || strcmp(argv[i], "-b") == 0)
+    {
+      start_blank = 1;
+    }
+    else if (strcmp(argv[i], "--startlast") == 0)
+    {
+      start_blank = 0;
+    }
+    else if (strcmp(argv[i], "--mirrorstamps") == 0)
+    {
+      mirrorstamps = 1;
+    }
+    else if (strcmp(argv[i], "--dontmirrorstamps") == 0)
+    {
+      mirrorstamps = 0;
+    }
+    else if (strcmp(argv[i], "--nostampcontrols") == 0)
+    {
+      disable_stamp_controls = 1;
+    }
+    else if (strcmp(argv[i], "--stampcontrols") == 0)
+    {
+      disable_stamp_controls = 0;
+    }
+    else if (strcmp(argv[i], "--nomagiccontrols") == 0)
+      {
+	disable_magic_controls = 1;
+      }
+    else if (strcmp(argv[i], "--nolabel") == 0)
+    {
+      disable_label = 1;
+    }
+    else if (strcmp(argv[i], "--magiccontrols") == 0)
+      {
+      disable_magic_controls = 0;
+      }
+    else if (strcmp(argv[i], "--label") == 0)
+    {
+      disable_label = 0;
+    }
+    else if (strcmp(argv[i], "--noshortcuts") == 0)
+    {
+      noshortcuts = 1;
+    }
+    else if (strcmp(argv[i], "--shortcuts") == 0)
+    {
+      noshortcuts = 0;
+    }
+    else if (strcmp(argv[i], "--colorfile") == 0)
+    {
+      if (i < argc - 1)
+      {
+        strcpy(colorfile, argv[i + 1]);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the file name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] >= '1'
+	     && argv[i][2] <= '9')
+    {
+      char *endp1;
+      char *endp2;
+      int w, h;
+      w = strtoul(argv[i] + 2, &endp1, 10);
+      h = strtoul(endp1 + 1, &endp2, 10);
+      /* sanity check it */
+      if (argv[i] + 2 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x'
+	  || *endp2 || w < 500 || h < 480 || h > w * 3 || w > h * 4)
+      {
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+      WINDOW_WIDTH = w;
+      WINDOW_HEIGHT = h;
+    }
+    else if (strcmp(argv[i], "--native") == 0)
+    {
+      native_screensize = 1;
+    }
+    else if (strcmp(argv[i], "--orient=portrait") == 0)
+    {
+      rotate_orientation = 1;
+    }
+    else if (strcmp(argv[i], "--orient=landscape") == 0)
+    {
+      rotate_orientation = 0;
+    }
+    else if (strcmp(argv[i], "--nooutlines") == 0)
+    {
+      dont_do_xor = 1;
+    }
+    else if (strcmp(argv[i], "--outlines") == 0)
+    {
+      dont_do_xor = 0;
+    }
+    else if (strcmp(argv[i], "--keyboard") == 0)
+    {
+      keymouse = 1;
+    }
+    else if (strcmp(argv[i], "--mouse") == 0)
+    {
+      keymouse = 0;
+    }
+    else if (strcmp(argv[i], "--nowheelmouse") == 0)
+    {
+      wheely = 0;
+    }
+    else if (strcmp(argv[i], "--wheelmouse") == 0)
+    {
+      wheely = 1;
+    }
+    else if (strcmp(argv[i], "--grab") == 0)
+    {
+      grab_input = 1;
+    }
+    else if (strcmp(argv[i], "--dontgrab") == 0)
+    {
+      grab_input = 0;
+    }
+    else if (strcmp(argv[i], "--nofancycursors") == 0)
+    {
+      no_fancy_cursors = 1;
+    }
+    else if (strcmp(argv[i], "--fancycursors") == 0)
+    {
+      no_fancy_cursors = 0;
+    }
+    else if (strcmp(argv[i], "--hidecursor") == 0)
+    {
+      hide_cursor = 1;
+    }
+    else if (strcmp(argv[i], "--showcursor") == 0)
+    {
+      hide_cursor = 0;
+    }
+    else if (strcmp(argv[i], "--saveover") == 0)
+    {
+      promptless_save = SAVE_OVER_ALWAYS;
+    }
+    else if (strcmp(argv[i], "--saveoverask") == 0)
+    {
+      promptless_save = SAVE_OVER_PROMPT;
+    }
+    else if (strcmp(argv[i], "--saveovernew") == 0)
+    {
+      promptless_save = SAVE_OVER_NO;
+    }
+    else if (strcmp(argv[i], "--autosave") == 0)
+    {
+      autosave_on_quit = 1;
+    }
+    else if (strcmp(argv[i], "--noautosave") == 0)
+    {
+      autosave_on_quit = 0;
+    }
+    else if (strcmp(argv[i], "--altprintnever") == 0)
+    {
+      alt_print_command_default = ALTPRINT_NEVER;
+    }
+    else if (strcmp(argv[i], "--altprintalways") == 0)
+    {
+      alt_print_command_default = ALTPRINT_ALWAYS;
+    }
+    else if (strcmp(argv[i], "--altprintmod") == 0)
+    {
+      alt_print_command_default = ALTPRINT_MOD;
+    }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+    else if (strstr(argv[i], "--papersize=") == argv[i])
+    {
+      papersize = strdup(argv[i] + strlen("--papersize="));
+    }
+    else if (strcmp(argv[i], "--papersize") == 0)
+    {
+      if (i + 1 < argc)
+      {
+        i++;
+        if (strcmp(argv[i], "help") == 0)
+        {
+          show_available_papersizes(stdout, argv[0]);
+          exit(0);
+        }
+        else
+          papersize = strdup(argv[i]);
+      }
+      else
+      {
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+        show_available_papersizes(stderr, argv[0]);
+        exit(1);
+      }
+    }
+#endif
+    else if (strcmp(argv[i], "--uppercase") == 0
+	     || strcmp(argv[i], "-u") == 0)
+    {
+      only_uppercase = 1;
+    }
+    else if (strcmp(argv[i], "--mixedcase") == 0
+	     || strcmp(argv[i], "-m") == 0)
+    {
+      only_uppercase = 0;
+    }
+    else if (strcmp(argv[i], "--simpleshapes") == 0 ||
+	     strcmp(argv[i], "-s") == 0)
+    {
+      simple_shapes = 1;
+    }
+    else if (strcmp(argv[i], "--complexshapes") == 0)
+    {
+      simple_shapes = 0;
+    }
+    else if (strcmp(argv[i], "--noquit") == 0 || strcmp(argv[i], "-x") == 0)
+    {
+      disable_quit = 1;
+    }
+    else if (strcmp(argv[i], "--quit") == 0)
+    {
+      disable_quit = 0;
+    }
+    else if (strcmp(argv[i], "--nosave") == 0)
+    {
+      disable_save = 1;
+    }
+    else if (strcmp(argv[i], "--save") == 0)
+    {
+      disable_save = 0;
+    }
+    else if (strcmp(argv[i], "--nostamps") == 0)
+    {
+      dont_load_stamps = 1;
+    }
+    else if (strcmp(argv[i], "--stamps") == 0)
+    {
+      dont_load_stamps = 0;
+    }
+    else if (strcmp(argv[i], "--nosysfonts") == 0)
+    {
+      no_system_fonts = 1;
+    }
+    else if (strcmp(argv[i], "--nobuttondistinction") == 0)
+    {
+      no_button_distinction = 1;
+    }
+    else if (strcmp(argv[i], "--buttondistinction") == 0)
+    {
+      no_button_distinction = 0;
+    }
+    else if (strcmp(argv[i], "--sysfonts") == 0)
+    {
+      no_system_fonts = 0;
+    }
+    else if (strcmp(argv[i], "--alllocalefonts") == 0)
+    {
+      all_locale_fonts = 1;
+    }
+    else if (strcmp(argv[i], "--currentlocalefont") == 0)
+    {
+      all_locale_fonts = 0;
+    }
+    else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
+    {
+      disable_print = 1;
+    }
+    else if (strcmp(argv[i], "--print") == 0)
+    {
+      disable_print = 0;
+    }
+    else if (strcmp(argv[i], "--noprintcfg") == 0)
+    {
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
+#endif
+      use_print_config = 0;
+    }
+    else if (strcmp(argv[i], "--printcfg") == 0)
+    {
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
+#endif
+      use_print_config = 1;
+    }
+    else if (strstr(argv[i], "--printdelay=") == argv[i])
+    {
+      sscanf(strstr(argv[i], "--printdelay=") + 13, "%d", &print_delay);
+#ifdef DEBUG
+      printf("Print delay set to %d seconds\n", print_delay);
+#endif
+    }
+    else if (strcmp(argv[i], "--nosound") == 0 || strcmp(argv[i], "-q") == 0)
+    {
+      use_sound = 0;
+    }
+    else if (strcmp(argv[i], "--sound") == 0)
+    {
+      use_sound = 1;
+    }
+    else if (strcmp(argv[i], "--locale") == 0 || strcmp(argv[i], "-L") == 0)
+    {
+      if (i < argc - 1)
+      {
+	do_locale_option(argv[++i]);
+      }
+      else
+      {
+	/* Forgot to specify the language (locale)! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_locale_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strstr(argv[i], "--lang=") == argv[i])
+    {
+      set_langstr(argv[i] + 7);
+    }
+    else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
+    {
+      if (i < argc - 1)
+      {
+	set_langstr(argv[i + 1]);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the language! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_lang_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strcmp(argv[i], "--savedir") == 0)
+    {
+      if (i < argc - 1)
+      {
+	if (savedir != NULL)
+	  free(savedir);
+
+	savedir = strdup(argv[i + 1]);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the directory name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strcmp(argv[i], "--datadir") == 0)
+    {
+      if (i < argc - 1)
+      {
+	if (datadir != NULL)
+	  free(datadir);
+
+	datadir = strdup(argv[i + 1]);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the directory name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strcmp(argv[i], "--stampsize=default") == 0)
+    {
+      stamp_size_override = -1;
+    }
+    else if (strstr(argv[i], "--stampsize=") == argv[i])
+    {
+      stamp_size_override = atoi(argv[i] + 12);
+      if (stamp_size_override > 10)
+	stamp_size_override = 10;
+    }
+    else if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0)
+    {
+      show_version(0);
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--verbose-version") == 0 ||
+             strcmp(argv[i], "-vv") == 0)
+    {
+      show_version(1);
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--copying") == 0 || strcmp(argv[i], "-c") == 0)
+    {
+      show_version(0);
+      printf("\n"
+	     "This program is free software; you can redistribute it\n"
+	     "and/or modify it under the terms of the GNU General Public\n"
+	     "License as published by the Free Software Foundation;\n"
+	     "either version 2 of the License, or (at your option) any\n"
+	     "later version.\n"
+	     "\n"
+	     "This program is distributed in the hope that it will be\n"
+	     "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
+	     "even the implied warranty of MERCHANTABILITY or FITNESS\n"
+	     "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
+	     "License for more details.\n"
+	     "\n"
+	     "You should have received a copy of the GNU General Public\n"
+	     "License along with this program; if not, write to the Free\n"
+	     "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
+	     "Boston, MA  02111-1307  USA\n" "\n");
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
+    {
+      show_version(0);
+      show_usage(stdout, (char *) getfilename(argv[0]));
+
+      printf("See: " DOC_PREFIX "README.txt\n" "\n");
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--usage") == 0 || strcmp(argv[i], "-u") == 0)
+    {
+      show_usage(stdout, (char *) getfilename(argv[0]));
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--nosysconfig") == 0)
+    {
+      debug("Not using system config.");
+    }
+    else if (strcmp(argv[i], "--nolockfile") == 0)
+    {
+      debug("Not using lockfile");
+      ok_to_use_lockfile = 0;
+    }
+    else if (strcmp(argv[i], "--lockfile") == 0)
+    {
+      debug("Using lockfile");
+      ok_to_use_lockfile = 1;
+    }
+    else
+    {
+      show_usage(stderr, (char *) getfilename(argv[0]));
+      exit(1);
+    }
+  }
+
+#ifdef _WIN32
+  if (fullscreen)
+  {
+    InstallKeyboardHook();
+    SetActivationState(1);
+  }
+#endif
+
+  
+  setup_language(getfilename(argv[0]), &button_label_y_nudge);
+/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
+
+  im_init(&im_data, get_current_language());
+
+#ifndef NO_SDLPANGO
+  SDLPango_Init();
+#endif
+
+  
+  /* NOTE: Moved run_font_scanner() call from main(), to here,
+     so that the gettext() calls used while testing fonts
+     actually DO something (per tuxpaint-devel discussion, April 2007)
+     -bjk 2007.06.05 */
+
+#ifdef FORKED_FONTS
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+#endif
+
+
+#ifndef WIN32
+  putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
+#endif
+
+  if (disable_screensaver == 0)
+  {
+    putenv((char *) "SDL_VIDEO_ALLOW_SCREENSAVER=1");
+    if (SDL_MAJOR_VERSION < 1 ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
+    {
+      fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
+    }
+  }
+
+  /* Test for lockfile, if we're using one: */
+
+  if (ok_to_use_lockfile)
+  {
+    char *lock_fname;
+    time_t time_lock, time_now;
+    char *homedirdir;
+
+
+    /* Get the current time: */
+
+    time_now = time(NULL);
+
+
+    /* Look for the lockfile... */
+
+#ifndef WIN32
+    lock_fname = get_fname("lockfile.dat", DIR_SAVE);
+#else
+    lock_fname = get_temp_fname("lockfile.dat");
+#endif
+
+    fi = fopen(lock_fname, "r");
+    if (fi != NULL)
+    {
+      /* If it exists, read its contents: */
+
+      if (fread(&time_lock, sizeof(time_t), 1, fi) > 0)
+      {
+	/* Has it not been 30 seconds yet? */
+
+	if (time_now < time_lock + 30)
+	{
+	  /* FIXME: Wrap in gettext() */
+	  printf
+	    ("You have already started tuxpaint less than 30 seconds ago.\n"
+	     "To prevent multiple executions by mistake, TuxPaint will not run\n"
+	     "before 30 seconds have elapsed since it was last started.\n"
+	     "\n"
+	     "You can also use the --nolockfile argument, see tuxpaint(1).\n\n");
+
+	  free(lock_fname);
+
+	  fclose(fi);
+	  exit(0);
+	}
+      }
+
+      fclose(fi);
+    }
+
+
+    /* Okay to run; create/update the lockfile */
+
+    /* (Make sure the directory exists, first!) */
+    homedirdir = get_fname("", DIR_SAVE);
+    mkdir(homedirdir, 0755);
+    free(homedirdir);
+
+
+    fi = fopen(lock_fname, "w");
+    if (fi != NULL)
+    {
+      /* If we can write to it, do so! */
+
+      fwrite(&time_now, sizeof(time_t), 1, fi);
+      fclose(fi);
+    }
+    else
+    {
+      fprintf(stderr,
+	      "\nWarning: I couldn't create the lockfile (%s)\n"
+	      "The error that occurred was:\n"
+	      "%s\n\n", lock_fname, strerror(errno));
+    }
+
+    free(lock_fname);
+  }
+
+
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER;
+  if (use_sound)
+    init_flags |= SDL_INIT_AUDIO;
+  if (!fullscreen)
+    init_flags |= SDL_INIT_NOPARACHUTE;	/* allow debugger to catch crash */
+
+  /* Init SDL */
+  if (SDL_Init(init_flags) < 0)
+  {
+#ifndef NOSOUND
+    char *olderr = strdup(SDL_GetError());
+    use_sound = 0;
+    init_flags &= ~SDL_INIT_AUDIO;
+    if (SDL_Init(init_flags) >= 0)
+    {
+      /* worked, w/o sound */
+      fprintf(stderr,
+	      "\nWarning: I could not initialize audio!\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", olderr);
+      free(olderr);
+    }
+    else
+#endif
+    {
+      fprintf(stderr,
+	      "\nError: I could not initialize video and/or the timer!\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+      exit(1);
+    }
+  }
+
+
+#ifndef NOSOUND
+#ifndef WIN32
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
+#else
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048) < 0)
+#endif
+  {
+    fprintf(stderr,
+	    "\nWarning: I could not set up audio for 44100 Hz "
+	    "16-bit stereo.\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+    use_sound = 0;
+  }
+
+  i = NUM_SOUNDS;
+  while (use_sound && i--)
+  {
+    sounds[i] = Mix_LoadWAV(sound_fnames[i]);
+
+    if (sounds[i] == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning: I couldn't open a sound file:\n%s\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", sound_fnames[i], SDL_GetError());
+      use_sound = 0;
+    }
+  }
+#endif
+
+
+  /* Set-up Key-Repeat: */
+  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+
+  /* Init TTF stuff: */
+  if (TTF_Init() < 0)
+  {
+    fprintf(stderr,
+	    "\nError: I could not initialize the font (TTF) library!\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    SDL_Quit();
+    exit(1);
+  }
+
+
+  /* Load colors, or use default ones: */
+
+  if (colorfile[0] != '\0')
+  {
+    fi = fopen(colorfile, "r");
+    if (fi == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning, could not open color file. Using defaults.\n");
+      perror(colorfile);
+      colorfile[0] = '\0';
+    }
+    else
+    {
+      int max = 0, per = 5;
+      char str[80], tmp_str[80];
+      int count;
+
+      NUM_COLORS = 0;
+
+      do
+      {
+	fgets(str, sizeof(str), fi);
+
+	if (!feof(fi))
+	{
+	  if (NUM_COLORS + 1 > max)
+	  {
+	    color_hexes = realloc(color_hexes, sizeof(Uint8 *) * (max + per));
+	    color_names = realloc(color_names, sizeof(char *) * (max + per));
+
+	    for (i = max; i < max + per; i++)
+	      color_hexes[i] = malloc(sizeof(Uint8) * 3);
+
+	    max = max + per;
+	  }
+
+	  while (str[strlen(str) - 1] == '\n' ||
+	         str[strlen(str) - 1] == '\r')
+	    str[strlen(str) - 1] = '\0';
+
+	  if (str[0] == '#')
+	  {
+	    /* Hex form */
+
+	    sscanf(str + 1, "%s %n", tmp_str, &count);
+
+	    if (strlen(tmp_str) == 6)
+	    {
+	      /* Byte (#rrggbb) form */
+
+	      color_hexes[NUM_COLORS][0] =
+		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
+	      color_hexes[NUM_COLORS][1] =
+		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
+	      color_hexes[NUM_COLORS][2] =
+		      (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
+
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	    else if (strlen(tmp_str) == 3)
+	    {
+	      /* Nybble (#rgb) form */
+
+	      color_hexes[NUM_COLORS][0] =
+		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
+	      color_hexes[NUM_COLORS][1] =
+		      (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
+	      color_hexes[NUM_COLORS][2] =
+		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
+
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	  }
+	  else
+	  {
+	    /* Assume int form */
+
+            if (sscanf(str, "%hu %hu %hu %n",
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][0]),
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][1]),
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][2]),
+		   &count) >= 3)
+	    {
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	  }
+	}
+      }
+      while (!feof(fi));
+
+      if (NUM_COLORS < 2)
+      {
+	fprintf(stderr,
+		"\nWarning, not enough colors in color file. Using defaults.\n");
+	fprintf(stderr, "%s\n", colorfile);
+	colorfile[0] = '\0';
+
+	for (i = 0; i < NUM_COLORS; i++)
+	{
+	  free(color_names[i]);
+	  free(color_hexes[i]);
+	}
+
+	free(color_names);
+	free(color_hexes);
+      }
+    }
+  }
+
+  /* Use default, if no file specified (or trouble opening it) */
+
+  if (colorfile[0] == '\0')
+  {
+    NUM_COLORS = NUM_DEFAULT_COLORS;
+
+    color_hexes = malloc(sizeof(Uint8 *) * NUM_COLORS);
+    color_names = malloc(sizeof(char *) * NUM_COLORS);
+
+    for (i = 0; i < NUM_COLORS; i++)
+    {
+      color_hexes[i] = malloc(sizeof(Uint8 *) * 3);
+
+      for (j = 0; j < 3; j++)
+	color_hexes[i][j] = default_color_hexes[i][j];
+
+      color_names[i] = strdup(default_color_names[i]);
+    }
+  }
+
+
+  /* Add "Color Picker" color: */
+
+  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
+
+  color_names = (char **) realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
+  color_names[NUM_COLORS] = strdup(gettext("Pick a color."));
+  color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
+  color_hexes[NUM_COLORS][0] = 0;
+  color_hexes[NUM_COLORS][1] = 0;
+  color_hexes[NUM_COLORS][2] = 0;
+  color_picker_x = 0;
+  color_picker_y = 0;
+  NUM_COLORS++;
+
+
+  /* Set window icon and caption: */
+
+#ifndef __APPLE__
+  seticon();
+#endif
+  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
+
+  if (hide_cursor)
+    SDL_ShowCursor (SDL_DISABLE);
+
+
+  /* Deal with orientation rotation option */
+
+  if (rotate_orientation)
+  {
+    if (native_screensize && fullscreen)
+    {
+      fprintf(stderr, "Warning: Asking for native screen size overrides request to rotate orientation.\n");
+    }
+    else
+    {
+      int tmp;
+      tmp = WINDOW_WIDTH;
+      WINDOW_WIDTH = WINDOW_HEIGHT;
+      WINDOW_HEIGHT = tmp;
+    }
+  }
+
+  /* Deal with 'native' screen size option */
+
+  if (native_screensize)
+  {
+    if (!fullscreen)
+    {
+      fprintf(stderr, "Warning: Asking for native screensize in a window. Ignoring.\n");
+    }
+    else
+    {
+      WINDOW_WIDTH = 0;
+      WINDOW_HEIGHT = 0;
+    }
+  }
+
+
+  /* Open Window: */
+
+  if (fullscreen)
+  {
+#ifdef USE_HWSURFACE
+    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+			      VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);
+#else
+    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+			      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);
+#endif
+
+    if (screen == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning: I could not open the display in fullscreen mode.\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+
+      fullscreen = 0;
+    }
+    else
+    {
+      /* Get resolution if we asked for native: */
+
+      if (native_screensize)
+      {
+        WINDOW_WIDTH = screen->w;
+        WINDOW_HEIGHT = screen->h;
+      }
+    }
+  }
+
+
+  if (!fullscreen)
+  {
+    putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
+
+#ifdef USE_HWSURFACE
+    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+			      VIDEO_BPP, SDL_HWSURFACE);
+#else
+    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+			      VIDEO_BPP, SDL_SWSURFACE);
+#endif
+
+    putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
+  }
+
+  if (screen == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: I could not open the display.\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+
+  /* (Need to do this after native screen resolution is handled) */
+
+  setup_screen_layout();
+
+
+  /* quickly: title image, version, progress bar, and watch cursor */
+
+  img_title = loadimage(DATA_PREFIX "images/title.png");
+  img_title_credits = loadimage(DATA_PREFIX "images/title-credits.png");
+  img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
+
+  if (screen->w - img_title->w >= 410 && screen->h - img_progress->h - img_title_credits->h - 40) /* FIXME: Font */
+    big_title = 1;
+  else
+    big_title = 0;
+
+
+  if (big_title)
+    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint-2x.png");
+  else
+    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint.png");
+
+  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  dest.x =
+    ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) +
+    (img_title_tuxpaint->w / 2) + 20;
+  dest.y = (WINDOW_HEIGHT - img_title->h);
+
+  SDL_BlitSurface(img_title, NULL, screen, &dest);
+
+  dest.x = 10;
+  if (big_title)
+    dest.y = WINDOW_HEIGHT - img_title_tuxpaint->h - img_progress->h - 40;
+  else
+    dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8 + 7;
+
+  SDL_BlitSurface(img_title_tuxpaint, NULL, screen, &dest);
+
+  dest.x = 10;
+  dest.y = 5;
+
+  SDL_BlitSurface(img_title_credits, NULL, screen, &dest);
+
+  prog_bar_ctr = 0;
+  show_progress_bar(screen);
+
+  SDL_Flip(screen);
+
+  medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+					DATA_PREFIX "fonts/default_font.ttf",
+			    		18 - (only_uppercase * 3));
+
+  if (medium_font == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: Can't load font file: "
+	    DATA_PREFIX "fonts/default_font.ttf\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+  snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s", VER_VERSION,
+	   VER_DATE);
+
+  tmp_surf = render_text(medium_font, tmp_str, black);
+  dest.x = 10;
+  dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+#ifdef DEBUG
+  printf("%s\n", tmp_str);
+#endif
+
+  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2009 Bill Kendrick et al.");
+  tmp_surf = render_text(medium_font, tmp_str, black);
+  dest.x = 10;
+  dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+  SDL_Flip(screen);
+
+
+#if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
+  if (fullscreen && no_fancy_cursors == 0)
+  {
+    fprintf(stderr, "Warning: An SDL bug causes the fancy cursors to leave\n"
+	    "trails in fullscreen mode.  Disabling fancy cursors.\n"
+	    "(You can do this yourself with 'nofancycursors' option,\n"
+	    "to avoid this warning in the future.)\n");
+    no_fancy_cursors = 1;
+  }
+#endif
+
+
+  /* Create cursors: */
+
+  scale = 1;
+
+#ifdef SMALL_CURSOR_SHAPES
+  scale = 2;
+#endif
+  
+#ifdef __APPLE__
+  cursor_arrow = SDL_GetCursor();		/* use standard system cursor */
+#endif
+
+  /* this one first, because we need it yesterday */
+  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
+			    watch_width, watch_height,
+			    14 / scale, 14 / scale);
+
+  do_setcursor(cursor_watch);
+  show_progress_bar(screen);
+
+#ifdef FORKED_FONTS
+  reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
+#else
+  font_thread = SDL_CreateThread(load_user_fonts_stub, NULL);
+#endif
+
+  /* continuing on with the rest of the cursors... */
+
+
+#ifndef __APPLE__
+  cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
+							arrow_width, arrow_height, 0, 0);
+#endif
+  
+  cursor_hand = get_cursor(hand_bits, hand_mask_bits,
+			   hand_width, hand_height, 12 / scale, 1 / scale);
+
+  cursor_wand = get_cursor(wand_bits, wand_mask_bits,
+			   wand_width, wand_height, 4 / scale, 4 / scale);
+
+  cursor_insertion = get_cursor(insertion_bits, insertion_mask_bits,
+				insertion_width, insertion_height,
+				7 / scale, 4 / scale);
+
+  cursor_brush = get_cursor(brush_bits, brush_mask_bits,
+			    brush_width, brush_height, 4 / scale, 28 / scale);
+
+  cursor_crosshair = get_cursor(crosshair_bits, crosshair_mask_bits,
+				crosshair_width, crosshair_height,
+				15 / scale, 15 / scale);
+
+  cursor_rotate = get_cursor(rotate_bits, rotate_mask_bits,
+			     rotate_width, rotate_height,
+			     15 / scale, 15 / scale);
+  
+  cursor_up = get_cursor(up_bits, up_mask_bits,
+			 up_width, up_height, 15 / scale, 1 / scale);
+
+  cursor_down = get_cursor(down_bits, down_mask_bits,
+			   down_width, down_height, 15 / scale, 30 / scale);
+
+  cursor_tiny = get_cursor(tiny_bits, tiny_mask_bits, tiny_width, tiny_height, 3, 3);	/* Exactly the same in SMALL (16x16) size! */
+
+
+
+  /* Create drawing canvas: */
+
+  canvas = SDL_CreateRGBSurface(screen->flags,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, 0);
+
+    save_canvas = SDL_CreateRGBSurface(screen->flags,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, 0);
+
+
+  img_starter = NULL;
+  img_starter_bkgd = NULL;
+  starter_mirrored = 0;
+  starter_flipped = 0;
+  starter_personal = 0;
+
+  if (canvas == NULL)
+  {
+    fprintf(stderr, "\nError: Can't build drawing canvas!\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+  touched = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
+  if (touched == NULL)
+  {
+    fprintf(stderr, "\nError: Can't build drawing touch mask!\n");
+
+    cleanup();
+    exit(1);
+  }
+
+  canvas_color_r = 255;
+  canvas_color_g = 255;
+  canvas_color_b = 255;
+
+  SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
+
+  /* Creating the label surface: */
+
+  label = SDL_CreateRGBSurface(screen->flags,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, TPAINT_AMASK);
+
+  /* making the label layer transparent */
+  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
+  /* Create undo buffer space: */
+
+  for (i = 0; i < NUM_UNDO_BUFS; i++)
+  {
+    undo_bufs[i] = SDL_CreateRGBSurface(screen->flags,
+					WINDOW_WIDTH - (96 * 2),
+					(48 * 7) + 40 + HEIGHTOFFSET,
+					screen->format->BitsPerPixel,
+					screen->format->Rmask,
+					screen->format->Gmask,
+					screen->format->Bmask, 0);
+
+
+    if (undo_bufs[i] == NULL)
+    {
+      fprintf(stderr, "\nError: Can't build undo buffer! (%d of %d)\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", i + 1, NUM_UNDO_BUFS, SDL_GetError());
+
+      cleanup();
+      exit(1);
+    }
+
+    undo_starters[i] = UNDO_STARTER_NONE;
+  }
+
+
+
+  /* Load other images: */
+
+  for (i = 0; i < NUM_TOOLS; i++)
+    img_tools[i] = loadimage(tool_img_fnames[i]);
+
+  img_title_on = loadimage(DATA_PREFIX "images/ui/title.png");
+  img_title_large_on = loadimage(DATA_PREFIX "images/ui/title_large.png");
+  img_title_off = loadimage(DATA_PREFIX "images/ui/no_title.png");
+  img_title_large_off = loadimage(DATA_PREFIX "images/ui/no_title_large.png");
+
+  img_btn_up = loadimage(DATA_PREFIX "images/ui/btn_up.png");
+  img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
+  img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
+
+  img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
+  img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
+
+  img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
+  img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
+
+  img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
+				   img_btn_off->w, img_btn_off->h,
+				   img_btn_off->format->BitsPerPixel,
+				   img_btn_off->format->Rmask,
+				   img_btn_off->format->Gmask,
+				   img_btn_off->format->Bmask,
+				   img_btn_off->format->Amask);
+  SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
+
+  img_grey = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
+				  img_btn_off->w, img_btn_off->h,
+				  img_btn_off->format->BitsPerPixel,
+				  img_btn_off->format->Rmask,
+				  img_btn_off->format->Gmask,
+				  img_btn_off->format->Bmask,
+				  img_btn_off->format->Amask);
+  SDL_FillRect(img_grey, NULL,
+	       SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
+
+  show_progress_bar(screen);
+
+  img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
+  img_no = loadimage(DATA_PREFIX "images/ui/no.png");
+
+  img_prev = loadimage(DATA_PREFIX "images/ui/prev.png");
+  img_next = loadimage(DATA_PREFIX "images/ui/next.png");
+
+  img_mirror = loadimage(DATA_PREFIX "images/ui/mirror.png");
+  img_flip = loadimage(DATA_PREFIX "images/ui/flip.png");
+
+  img_open = loadimage(DATA_PREFIX "images/ui/open.png");
+  img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
+  img_back = loadimage(DATA_PREFIX "images/ui/back.png");
+  img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
+
+  img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
+  img_play = loadimage(DATA_PREFIX "images/ui/play.png");
+  img_select_digits = loadimage(DATA_PREFIX "images/ui/select_digits.png");
+
+  img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
+
+  img_dead40x40 = loadimage(DATA_PREFIX "images/ui/dead40x40.png");
+
+  img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
+  img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
+
+  img_save_over = loadimage(DATA_PREFIX "images/ui/save_over.png");
+
+  img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
+  img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
+
+  img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
+  img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
+
+  img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
+  img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
+
+  img_label = loadimage(DATA_PREFIX "images/tools/label.png");
+  img_label_select = loadimage(DATA_PREFIX "images/tools/label_select.png");
+
+  show_progress_bar(screen);
+
+  tmp_imgcurup = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
+  tmp_imgcurdown = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
+  img_cursor_up = thumbnail(tmp_imgcurup, THUMB_W, THUMB_H, 0);
+  img_cursor_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
+
+  tmp_imgcurup = loadimage(DATA_PREFIX "images/ui/cursor_starter_up.png");
+  tmp_imgcurdown = loadimage(DATA_PREFIX "images/ui/cursor_starter_down.png");
+  img_cursor_starter_up = thumbnail(tmp_imgcurup, THUMB_W, THUMB_H, 0);
+  img_cursor_starter_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
+  SDL_FreeSurface(tmp_imgcurup);
+  SDL_FreeSurface(tmp_imgcurdown);
+
+  show_progress_bar(screen);
+
+  img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
+  img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
+
+  img_scroll_up_off = loadimage(DATA_PREFIX "images/ui/scroll_up_off.png");
+  img_scroll_down_off =
+    loadimage(DATA_PREFIX "images/ui/scroll_down_off.png");
+
+#ifdef LOW_QUALITY_COLOR_SELECTOR
+  img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
+#endif
+
+  show_progress_bar(screen);
+
+
+  /* Load brushes: */
+  load_brush_dir(screen, DATA_PREFIX "brushes");
+  homedirdir = get_fname("brushes", DIR_DATA);
+  load_brush_dir(screen, homedirdir);
+#ifdef WIN32
+  free(homedirdir);
+  homedirdir = get_fname("data/brushes", DIR_DATA);
+  load_brush_dir(screen, homedirdir);
+#endif
+
+  if (num_brushes == 0)
+  {
+    fprintf(stderr,
+	    "\nError: No brushes found in " DATA_PREFIX "brushes/\n"
+	    "or %s\n\n", homedirdir);
+    cleanup();
+    exit(1);
+  }
+
+  free(homedirdir);
+
+
+  /* Load system fonts: */
+
+  large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+				      DATA_PREFIX "fonts/default_font.ttf",
+			               30 - (only_uppercase * 3));
+
+  if (large_font == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: Can't load font file: "
+	    DATA_PREFIX "fonts/default_font.ttf\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+
+  small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+			    DATA_PREFIX "fonts/default_font.ttf",
+#ifdef __APPLE__
+			    12 - (only_uppercase * 2));
+#else
+			    13 - (only_uppercase * 2));
+#endif
+
+  if (small_font == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: Can't load font file: "
+	    DATA_PREFIX "fonts/default_font.ttf\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+
+  locale_font = load_locale_font(medium_font, 18);
+
+
+
+#if 0
+  /* put elsewhere for THREADED_FONTS */
+  /* Load user fonts, for the text tool */
+  load_user_fonts();
+#endif
+
+  if (!dont_load_stamps)
+    load_stamps(screen);
+
+
+  /* Load magic tool plugins: */
+
+  load_magic_plugins();
+
+  show_progress_bar(screen);
+
+  /* Load shape icons: */
+  for (i = 0; i < NUM_SHAPES; i++)
+    img_shapes[i] = loadimage(shape_img_fnames[i]);
+
+  show_progress_bar(screen);
+
+  /* Load tip tux images: */
+  for (i = 0; i < NUM_TIP_TUX; i++)
+    img_tux[i] = loadimage(tux_img_fnames[i]);
+
+  show_progress_bar(screen);
+
+  img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
+  img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
+
+  show_progress_bar(screen);
+
+  img_color_picker = loadimage(DATA_PREFIX "images/ui/color_picker.png");
+
+  /* Create toolbox and selector labels: */
+
+  for (i = 0; i < NUM_TITLES; i++)
+  {
+    if (strlen(title_names[i]) > 0)
+    {
+      TuxPaint_Font *myfont = large_font;
+      char *td_str = textdir(gettext(title_names[i]));
+
+      if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
+	myfont = locale_font;
+      upstr = uppercase(td_str);
+      free(td_str);
+      tmp_surf = render_text(myfont, upstr, black);
+      free(upstr);
+      img_title_names[i] =
+	thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
+      SDL_FreeSurface(tmp_surf);
+    }
+    else
+    {
+      img_title_names[i] = NULL;
+    }
+  }
+
+
+
+  /* Generate color selection buttons: */
+
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+
+  /* Create appropriately-shaped buttons: */
+  img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
+  img_paintwell = thumbnail(img1, color_button_w, color_button_h, 0);
+  tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
+  tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
+  img_color_btn_off =
+    thumbnail(img_btn_off, color_button_w, color_button_h, 0);
+  SDL_FreeSurface(img1);
+
+  img_color_picker_thumb = thumbnail(img_color_picker,
+				     color_button_w, color_button_h, 0);
+
+  /* Create surfaces to draw them into: */
+
+  img_color_btns = malloc(sizeof(SDL_Surface *) * NUM_COLORS * 2);
+
+  for (i = 0; i < NUM_COLORS * 2; i++)
+  {
+    img_color_btns[i] = SDL_CreateRGBSurface(screen->flags,
+					     /* (WINDOW_WIDTH - 96) / NUM_COLORS, 48, */
+					     tmp_btn_up->w, tmp_btn_up->h,
+					     screen->format->BitsPerPixel,
+					     screen->format->Rmask,
+					     screen->format->Gmask,
+					     screen->format->Bmask, 0);
+
+    if (img_color_btns[i] == NULL)
+    {
+      fprintf(stderr, "\nError: Can't build color button!\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+
+      cleanup();
+      exit(1);
+    }
+
+    SDL_LockSurface(img_color_btns[i]);
+  }
+
+
+  /* Generate the buttons based on the thumbnails: */
+
+  SDL_LockSurface(tmp_btn_down);
+  SDL_LockSurface(tmp_btn_up);
+
+  getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
+  getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
+  getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
+
+
+  for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
+  {
+    for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */ ;
+	 x++)
+    {
+      double ru, gu, bu, rd, gd, bd, aa;
+      Uint8 a;
+
+      SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format,
+		 &r, &g, &b);
+
+      ru = sRGB_to_linear_table[r];
+      gu = sRGB_to_linear_table[g];
+      bu = sRGB_to_linear_table[b];
+      SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y),
+		 tmp_btn_down->format, &r, &g, &b);
+      rd = sRGB_to_linear_table[r];
+      gd = sRGB_to_linear_table[g];
+      bd = sRGB_to_linear_table[b];
+      SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
+      aa = a / 255.0;
+
+      for (i = 0; i < NUM_COLORS; i++)
+      {
+	double rh = sRGB_to_linear_table[color_hexes[i][0]];
+	double gh = sRGB_to_linear_table[color_hexes[i][1]];
+	double bh = sRGB_to_linear_table[color_hexes[i][2]];
+
+	if (i == NUM_COLORS - 1)
+	{
+          putpixels[img_color_btns[i]->format->BytesPerPixel]
+            (img_color_btns[i], x, y,
+             getpixels[img_color_picker_thumb->format->BytesPerPixel]
+               (img_color_picker_thumb, x, y));
+          putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
+            (img_color_btns[i + NUM_COLORS], x, y,
+             getpixels[img_color_picker_thumb->format->BytesPerPixel]
+               (img_color_picker_thumb, x, y));
+        }
+
+        if (i < NUM_COLORS - 1 || a == 255)
+        {
+	  putpixels[img_color_btns[i]->format->BytesPerPixel]
+	      (img_color_btns[i], x, y,
+	       SDL_MapRGB(img_color_btns[i]->format,
+		        linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gu * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
+	  putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
+	      (img_color_btns[i + NUM_COLORS], x, y,
+	       SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+		        linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
+	}
+      }
+    }
+  }
+
+  for (i = 0; i < NUM_COLORS * 2; i++)
+    SDL_UnlockSurface(img_color_btns[i]);
+
+  SDL_UnlockSurface(tmp_btn_up);
+  SDL_UnlockSurface(tmp_btn_down);
+  SDL_FreeSurface(tmp_btn_up);
+  SDL_FreeSurface(tmp_btn_down);
+
+#endif
+
+  create_button_labels();
+
+
+  /* Seed random-number generator: */
+
+  srand(SDL_GetTicks());
+
+
+  /* Enable Unicode support in SDL: */
+
+  SDL_EnableUNICODE(1);
+
+#ifndef WIN32
+  /* Set up signal handler for SIGPIPE (in case printer command dies;
+     e.g., altprintcommand=kprinter, but 'Cancel' is clicked,
+     instead of 'Ok') */
+
+  signal(SIGPIPE, signal_handler);
+#endif
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+static int old_main(int argc, char *argv[])
+{
+  CLOCK_TYPE time1;
+  CLOCK_TYPE time2;
+  SDL_Rect dest;
+  SDL_Rect src;
+  int i;
+
+  CLOCK_ASM(time1);
+
+  /* Set up locale support */
+  setlocale(LC_ALL, "");
+  ctype_utf8();
+
+
+  /* NOTE: Moved run_font_scanner() call from here, to right after
+     setup_language(), so that the gettext() calls used while testing fonts
+     actually DO something (per tuxpaint-devel discussion, April 2007)
+     -bjk 2007.06.05 */
+
+
+  /* Set up! */
+  setup(argc, argv);
+
+
+
+#if 0
+  while (!font_thread_done)
+  {
+    /* FIXME: should respond to quit events
+       FIXME: should have a read-depends memory barrier around here */
+    show_progress_bar();
+    SDL_Delay(20);
+  }
+  SDL_WaitThread(font_thread, NULL);
+#endif
+
+  CLOCK_ASM(time2);
+
+#ifdef DEBUG
+  printf("Start-up time: %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
+#endif
+
+  /* Let the user know we're (nearly) ready now */
+
+  dest.x = 0;
+  dest.y = WINDOW_HEIGHT - img_progress->h;
+  dest.h = img_progress->h;
+  dest.w = WINDOW_WIDTH;
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+  src.h = img_progress->h;
+  src.w = img_title->w;
+  src.x = 0;
+  src.y = img_title->h - img_progress->h;
+  dest.x =
+    ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) +
+    (img_title_tuxpaint->w / 2) + 20;
+  SDL_BlitSurface(img_title, &src, screen, &dest);
+
+  SDL_FreeSurface(img_title);
+  SDL_FreeSurface(img_title_credits);
+  SDL_FreeSurface(img_title_tuxpaint);
+
+  dest.x = 0;
+  dest.w = WINDOW_WIDTH;	/* SDL mangles this! So, do repairs. */
+  update_screen_rect(&dest);
+
+  do_setcursor(cursor_arrow);
+  playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+  do_wait(50);			/* about 5 seconds */
+
+
+  /* Set defaults! */
+
+  cur_undo = 0;
+  oldest_undo = 0;
+  newest_undo = 0;
+
+  cur_tool = TOOL_BRUSH;
+  cur_color = COLOR_BLACK;
+  colors_are_selectable = 1;
+  cur_brush = 0;
+  for (i = 0; i < MAX_STAMP_GROUPS; i++)
+    cur_stamp[i] = 0;
+  cur_shape = SHAPE_SQUARE;
+  cur_magic = 0;
+  cur_font = 0;
+  cur_eraser = 0;
+  cur_label = LABEL_LABEL;
+  cur_select = 0;
+  cursor_left = -1;
+  cursor_x = -1;
+  cursor_y = -1;
+  cursor_textwidth = 0;
+
+  mouse_x = WINDOW_WIDTH / 2;
+  mouse_y = WINDOW_HEIGHT / 2;
+  SDL_WarpMouse(mouse_x, mouse_y);
+
+  mousekey_up = SDL_KEYUP;
+  mousekey_down = SDL_KEYUP;
+  mousekey_left = SDL_KEYUP;
+  mousekey_right = SDL_KEYUP;
+
+  eraser_sound = 0;
+
+  img_cur_brush = NULL;
+  render_brush();
+
+  brush_scroll = 0;
+  for (i = 0; i < MAX_STAMP_GROUPS; i++)
+    stamp_scroll[i] = 0;
+  stamp_group = 0;  /* reset! */
+  font_scroll = 0;
+  magic_scroll = 0;
+  tool_scroll = 0;
+
+  reset_avail_tools();
+
+  /* Load fonts */
+
+  if (!font_thread_done)
+  {
+    draw_colors(COLORSEL_DISABLE);
+    draw_none();
+    update_screen_rect(&r_toolopt);
+    update_screen_rect(&r_ttoolopt);
+    do_setcursor(cursor_watch);
+
+    // Wait while Text tool finishes loading fonts
+    draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
+
+    waiting_for_fonts = 1;
+#ifdef FORKED_FONTS
+    receive_some_font_info(screen); // FIXME: this MUST NOT be called until the text tool runs!
+#else
+    while (!font_thread_done && !font_thread_aborted)
+    {
+      // FIXME: should have a read-depends memory barrier around here
+      show_progress_bar(screen);
+      SDL_Delay(20);
+    }
+    // FIXME: should kill this in any case
+    SDL_WaitThread(font_thread, NULL);
+#endif
+    do_setcursor(cursor_arrow);
+  }
+
+
+  /* Load current image (if any): */
+
+  if (start_blank == 0)
+    load_current();
+
+  been_saved = 1;
+  tool_avail[TOOL_SAVE] = 0;
+
+
+  /* Draw the screen! */
+
+  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  draw_toolbar();
+draw_colors(COLORSEL_FORCE_REDRAW);
+  draw_brushes();
+  update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+
+  SDL_Flip(screen);
+
+  draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+
+  /* Main loop! */
+  mainloop();
+
+  /* Close and quit! */
+
+  save_current();
+
+  wait_for_sfx();
+
+
+  cleanup();
+
+  return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+int main(int argc, char *argv[])
+{
+  return old_main(argc,argv);
+}
