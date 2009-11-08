@@ -18898,6 +18898,7 @@ static void parse_options(char *filename)
       }
       else if (strstr(str, "stampsize=") == str)
       {
+        // FIXME: needs to be a scaling factor
         stamp_size_override = atoi(str + 10);
         if (stamp_size_override > 10)
 	  stamp_size_override = 10;
