@@ -1499,9 +1499,6 @@ static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char *prg);
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-void show_available_papersizes(FILE * fi, char * prg);
-#endif
 void signal_handler(int sig);
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
 			      unsigned int w, unsigned int h,
@@ -17648,38 +17645,6 @@ int do_new_dialog(void)
   return(which != -1);
 }
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-void show_available_papersizes(FILE * fi, char * prg)
-{
-  const struct paper * ppr;
-  int cnt;
-
-  fprintf(fi, "Usage: %s [--papersize PAPERSIZE]\n", prg);
-  fprintf(fi, "\n");
-  fprintf(fi, "PAPERSIZE may be one of:\n");
-
-  ppr = paperfirst();
-  cnt = 0;
-
-  while (ppr != NULL)
-  {
-    fprintf(fi, "\t%s", papername(ppr));
-    cnt++;
-    if (cnt == 5)
-    {
-      cnt = 0;
-      fprintf(fi, "\n");
-    }
-
-    ppr = papernext(ppr);
-  }
-
-  fprintf(fi, "\n");
-  if (cnt != 0)
-    fprintf(fi, "\n");
-}
-#endif
-
 /* FIXME: Use a bitmask! */
 
 void reset_touched(void)
@@ -18785,14 +18750,50 @@ void load_info_about_label_surface(char lfname[1024])
 
 /////////////////////////////////////////////////////////////////////////////
 
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+static void show_available_papersizes(FILE * fi, const char * prg)
+{
+  const struct paper * ppr;
+  int cnt;
+
+  fprintf(fi, "Usage: %s [--papersize PAPERSIZE]\n", prg);
+  fprintf(fi, "\n");
+  fprintf(fi, "PAPERSIZE may be one of:\n");
+
+  ppr = paperfirst();
+  cnt = 0;
+
+  while (ppr != NULL)
+  {
+    fprintf(fi, "\t%s", papername(ppr));
+    cnt++;
+    if (cnt == 5)
+    {
+      cnt = 0;
+      fprintf(fi, "\n");
+    }
+
+    ppr = papernext(ppr);
+  }
+
+  fprintf(fi, "\n");
+  if (cnt != 0)
+    fprintf(fi, "\n");
+}
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+
 static void parse_one_option(const char *str, const char *arg)
 {
+  //printf("\nold: <%s> <%s>\n",str,arg);
+
   // canonicalize the option
-  if(!strcmp(arg,"yes"))
+  if(arg && !strcmp(arg,"yes"))
     arg=NULL;
   if(isdigit(*str))
   {
-    if(!strcmp(arg,"no"))
+    if(arg && !strcmp(arg,"no"))
         str = "640x480";
     arg = str;
     str = "windowsize";
@@ -18814,6 +18815,8 @@ static void parse_one_option(const char *str, const char *arg)
   int boolval = 1;
   if(arg && !strcmp(arg,"no"))
     boolval = 0;
+
+  //printf("new: <%s> <%s>\n",str,arg);
 
 
 
@@ -18958,6 +18961,11 @@ static void parse_one_option(const char *str, const char *arg)
     grab_input = boolval;
   }
 
+  else if (!strcmp(str, "dontgrab"))
+  {
+    grab_input = !boolval;
+  }
+
   else if (!strcmp(str, "fancycursors"))
   {
     no_fancy_cursors = !boolval;
@@ -18998,6 +19006,12 @@ static void parse_one_option(const char *str, const char *arg)
     dont_load_stamps = !boolval;
   }
 
+  else if (!strcmp(str, "orient"))
+  {
+    // alternative should be "landscape"
+    rotate_orientation = !strcmp(arg, "portrait");
+  }
+
   else if (!strcmp(str, "sysfonts"))
   {
     no_system_fonts = !boolval;
@@ -19022,12 +19036,28 @@ static void parse_one_option(const char *str, const char *arg)
     simple_shapes = !boolval;
   }
 
-  /* Should "locale=" be here as well??? */
-  /* Comments welcome ... bill@newbreedsoftware.com */
   else if (!strcmp(str, "lang"))
   {
     if(arg)
       set_langstr(arg);
+    else
+    {
+      fprintf(stderr, "lang takes an argument\n");
+      show_lang_usage(stderr, "tuxpaint");
+      exit(1);
+    }
+  }
+
+  else if (!strcmp(str, "locale"))
+  {
+    if(arg)
+      do_locale_option(arg);
+    else
+    {
+      fprintf(stderr, "locale takes an argument\n");
+      show_locale_usage(stderr, "tuxpaint");
+      exit(1);
+    }
   }
 
   else if (!strcmp(str, "colorfile"))
@@ -19091,7 +19121,7 @@ static void parse_one_option(const char *str, const char *arg)
 
   else if (!strcmp(str, "saveover"))
   {
-    if (!strcmp(arg, "yes"))
+    if (!arg || !strcmp(arg, "yes"))
       promptless_save = SAVE_OVER_ALWAYS;
     else if (!strcmp(arg, "ask"))
       promptless_save = SAVE_OVER_PROMPT; // default
@@ -19099,6 +19129,16 @@ static void parse_one_option(const char *str, const char *arg)
       promptless_save = SAVE_OVER_NO;
     else if (!strcmp(arg, "no"))
       printf("saveover can not have value 'no'\n");
+  }
+
+  else if (!strcmp(str, "saveoverask"))
+  {
+    promptless_save = SAVE_OVER_PROMPT;
+  }
+
+  else if (!strcmp(str, "saveovernew"))
+  {
+    promptless_save = SAVE_OVER_NO;
   }
 
   else if (!strcmp(str, "autosave"))
@@ -19117,9 +19157,30 @@ static void parse_one_option(const char *str, const char *arg)
   }
 
 
+  else if (!strcmp(str, "altprintnever"))
+  {
+    alt_print_command_default = ALTPRINT_NEVER;
+  }
+
+  else if (!strcmp(str, "altprintalways"))
+  {
+    alt_print_command_default = ALTPRINT_ALWAYS;
+  }
+
+  else if (!strcmp(str, "altprintmod"))
+  {
+    alt_print_command_default = ALTPRINT_MOD;
+  }
+
+
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
   else if (!strcmp(str, "papersize"))
   {
+    if(!strcmp(arg,"help"))
+    {
+      show_available_papersizes(stdout, "tuxpaint");
+      exit(0);
+    }
     papersize = strdup(arg);
   }
 #endif
@@ -19170,6 +19231,67 @@ static void parse_one_option(const char *str, const char *arg)
   {
     ok_to_use_lockfile = boolval;
   }
+
+  else if (!strcmp(str, "version"))
+  {
+    show_version(0);
+    exit(0);
+  }
+
+  else if (!strcmp(str, "verbose-version"))
+  {
+    show_version(1);
+    exit(0);
+  }
+
+  else if (!strcmp(str, "copying"))
+  {
+    show_version(0);
+    printf("\n"
+           "This program is free software; you can redistribute it\n"
+           "and/or modify it under the terms of the GNU General Public\n"
+           "License as published by the Free Software Foundation;\n"
+           "either version 2 of the License, or (at your option) any\n"
+           "later version.\n"
+           "\n"
+           "This program is distributed in the hope that it will be\n"
+           "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
+           "even the implied warranty of MERCHANTABILITY or FITNESS\n"
+           "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
+           "License for more details.\n"
+           "\n"
+           "You should have received a copy of the GNU General Public\n"
+           "License along with this program; if not, write to the Free\n"
+           "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
+           "Boston, MA  02111-1307  USA\n" "\n");
+    exit(0);
+  }
+
+  else if (!strcmp(str, "help"))
+  {
+    show_version(0);
+    show_usage(stdout, "tuxpaint");
+
+    printf("See: " DOC_PREFIX "README.txt\n" "\n");
+    exit(0);
+  }
+
+  else if (!strcmp(str, "usage"))
+  {
+    show_usage(stdout, "tuxpaint");
+    exit(0);
+  }
+
+  else if (!strcmp(str, "nosysconfig"))
+  {
+    debug("Not using system config.");
+  }
+
+//  else
+//  {
+//    show_usage(stderr, "tuxpaint");
+//    exit(1);
+//  }
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -19194,6 +19316,30 @@ static void parse_file_options(char *filename)
     parse_one_option(str,arg);
   }
   fclose(fi);
+}
+
+static void parse_argv_options(char *argv[])
+{
+  char *progname = argv[0];
+  char *str;
+
+  while(( str = *++argv ))
+  {
+    if(str[0]=='-' && str[1]=='-' && str[2])
+    {
+      str += 2;
+      char *arg = strchr(str,'=');
+      if(arg)
+        *arg++ = '\0';
+      else if(argv[1] && argv[1][0]!='-')
+        arg = *++argv;
+      parse_one_option(str,arg);
+      continue;
+    }
+    fprintf(stderr, "%s is not understood\n", *argv);
+    show_usage(stderr, (char *) getfilename(progname));
+    exit(1);
+  }
 }
 
 
@@ -19433,486 +19579,8 @@ static void setup(int argc, char *argv[])
   }
 #endif
 
-
   parse_file_options(str);
-
-
-  /* Handle command-line arguments: */
-
-  for (i = 1; i < argc; i++)
-  {
-    if (strcmp(argv[i], "--fullscreen") == 0 || strcmp(argv[i], "-f") == 0)
-    {
-      fullscreen = 1;
-    }
-    else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
-    {
-      fullscreen = 0;
-    }
-    else if (strcmp(argv[i], "--disablescreensaver") == 0)
-    {
-      disable_screensaver = 1;
-    }
-    else if (strcmp(argv[i], "--allowscreensaver") == 0)
-    {
-      disable_screensaver = 0;
-    }
-    else if (strcmp(argv[i], "--startblank") == 0 || strcmp(argv[i], "-b") == 0)
-    {
-      start_blank = 1;
-    }
-    else if (strcmp(argv[i], "--startlast") == 0)
-    {
-      start_blank = 0;
-    }
-    else if (strcmp(argv[i], "--mirrorstamps") == 0)
-    {
-      mirrorstamps = 1;
-    }
-    else if (strcmp(argv[i], "--dontmirrorstamps") == 0)
-    {
-      mirrorstamps = 0;
-    }
-    else if (strcmp(argv[i], "--nostampcontrols") == 0)
-    {
-      disable_stamp_controls = 1;
-    }
-    else if (strcmp(argv[i], "--stampcontrols") == 0)
-    {
-      disable_stamp_controls = 0;
-    }
-    else if (strcmp(argv[i], "--nomagiccontrols") == 0)
-      {
-	disable_magic_controls = 1;
-      }
-    else if (strcmp(argv[i], "--nolabel") == 0)
-    {
-      disable_label = 1;
-    }
-    else if (strcmp(argv[i], "--magiccontrols") == 0)
-      {
-      disable_magic_controls = 0;
-      }
-    else if (strcmp(argv[i], "--label") == 0)
-    {
-      disable_label = 0;
-    }
-    else if (strcmp(argv[i], "--noshortcuts") == 0)
-    {
-      noshortcuts = 1;
-    }
-    else if (strcmp(argv[i], "--shortcuts") == 0)
-    {
-      noshortcuts = 0;
-    }
-    else if (strcmp(argv[i], "--colorfile") == 0)
-    {
-      if (i < argc - 1)
-      {
-        strcpy(colorfile, argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the file name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] >= '1'
-	     && argv[i][2] <= '9')
-    {
-      char *endp1;
-      char *endp2;
-      int w, h;
-      w = strtoul(argv[i] + 2, &endp1, 10);
-      h = strtoul(endp1 + 1, &endp2, 10);
-      /* sanity check it */
-      if (argv[i] + 2 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x'
-	  || *endp2 || w < 500 || h < 480 || h > w * 3 || w > h * 4)
-      {
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-      WINDOW_WIDTH = w;
-      WINDOW_HEIGHT = h;
-    }
-    else if (strcmp(argv[i], "--native") == 0)
-    {
-      native_screensize = 1;
-    }
-    else if (strcmp(argv[i], "--orient=portrait") == 0)
-    {
-      rotate_orientation = 1;
-    }
-    else if (strcmp(argv[i], "--orient=landscape") == 0)
-    {
-      rotate_orientation = 0;
-    }
-    else if (strcmp(argv[i], "--nooutlines") == 0)
-    {
-      dont_do_xor = 1;
-    }
-    else if (strcmp(argv[i], "--outlines") == 0)
-    {
-      dont_do_xor = 0;
-    }
-    else if (strcmp(argv[i], "--keyboard") == 0)
-    {
-      keymouse = 1;
-    }
-    else if (strcmp(argv[i], "--mouse") == 0)
-    {
-      keymouse = 0;
-    }
-    else if (strcmp(argv[i], "--nowheelmouse") == 0)
-    {
-      wheely = 0;
-    }
-    else if (strcmp(argv[i], "--wheelmouse") == 0)
-    {
-      wheely = 1;
-    }
-    else if (strcmp(argv[i], "--grab") == 0)
-    {
-      grab_input = 1;
-    }
-    else if (strcmp(argv[i], "--dontgrab") == 0)
-    {
-      grab_input = 0;
-    }
-    else if (strcmp(argv[i], "--nofancycursors") == 0)
-    {
-      no_fancy_cursors = 1;
-    }
-    else if (strcmp(argv[i], "--fancycursors") == 0)
-    {
-      no_fancy_cursors = 0;
-    }
-    else if (strcmp(argv[i], "--hidecursor") == 0)
-    {
-      hide_cursor = 1;
-    }
-    else if (strcmp(argv[i], "--showcursor") == 0)
-    {
-      hide_cursor = 0;
-    }
-    else if (strcmp(argv[i], "--saveover") == 0)
-    {
-      promptless_save = SAVE_OVER_ALWAYS;
-    }
-    else if (strcmp(argv[i], "--saveoverask") == 0)
-    {
-      promptless_save = SAVE_OVER_PROMPT;
-    }
-    else if (strcmp(argv[i], "--saveovernew") == 0)
-    {
-      promptless_save = SAVE_OVER_NO;
-    }
-    else if (strcmp(argv[i], "--autosave") == 0)
-    {
-      autosave_on_quit = 1;
-    }
-    else if (strcmp(argv[i], "--noautosave") == 0)
-    {
-      autosave_on_quit = 0;
-    }
-    else if (strcmp(argv[i], "--altprintnever") == 0)
-    {
-      alt_print_command_default = ALTPRINT_NEVER;
-    }
-    else if (strcmp(argv[i], "--altprintalways") == 0)
-    {
-      alt_print_command_default = ALTPRINT_ALWAYS;
-    }
-    else if (strcmp(argv[i], "--altprintmod") == 0)
-    {
-      alt_print_command_default = ALTPRINT_MOD;
-    }
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-    else if (strstr(argv[i], "--papersize=") == argv[i])
-    {
-      papersize = strdup(argv[i] + strlen("--papersize="));
-    }
-    else if (strcmp(argv[i], "--papersize") == 0)
-    {
-      if (i + 1 < argc)
-      {
-        i++;
-        if (strcmp(argv[i], "help") == 0)
-        {
-          show_available_papersizes(stdout, argv[0]);
-          exit(0);
-        }
-        else
-          papersize = strdup(argv[i]);
-      }
-      else
-      {
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-        show_available_papersizes(stderr, argv[0]);
-        exit(1);
-      }
-    }
-#endif
-    else if (strcmp(argv[i], "--uppercase") == 0
-	     || strcmp(argv[i], "-u") == 0)
-    {
-      only_uppercase = 1;
-    }
-    else if (strcmp(argv[i], "--mixedcase") == 0
-	     || strcmp(argv[i], "-m") == 0)
-    {
-      only_uppercase = 0;
-    }
-    else if (strcmp(argv[i], "--simpleshapes") == 0 ||
-	     strcmp(argv[i], "-s") == 0)
-    {
-      simple_shapes = 1;
-    }
-    else if (strcmp(argv[i], "--complexshapes") == 0)
-    {
-      simple_shapes = 0;
-    }
-    else if (strcmp(argv[i], "--noquit") == 0 || strcmp(argv[i], "-x") == 0)
-    {
-      disable_quit = 1;
-    }
-    else if (strcmp(argv[i], "--quit") == 0)
-    {
-      disable_quit = 0;
-    }
-    else if (strcmp(argv[i], "--nosave") == 0)
-    {
-      disable_save = 1;
-    }
-    else if (strcmp(argv[i], "--save") == 0)
-    {
-      disable_save = 0;
-    }
-    else if (strcmp(argv[i], "--nostamps") == 0)
-    {
-      dont_load_stamps = 1;
-    }
-    else if (strcmp(argv[i], "--stamps") == 0)
-    {
-      dont_load_stamps = 0;
-    }
-    else if (strcmp(argv[i], "--nosysfonts") == 0)
-    {
-      no_system_fonts = 1;
-    }
-    else if (strcmp(argv[i], "--nobuttondistinction") == 0)
-    {
-      no_button_distinction = 1;
-    }
-    else if (strcmp(argv[i], "--buttondistinction") == 0)
-    {
-      no_button_distinction = 0;
-    }
-    else if (strcmp(argv[i], "--sysfonts") == 0)
-    {
-      no_system_fonts = 0;
-    }
-    else if (strcmp(argv[i], "--alllocalefonts") == 0)
-    {
-      all_locale_fonts = 1;
-    }
-    else if (strcmp(argv[i], "--currentlocalefont") == 0)
-    {
-      all_locale_fonts = 0;
-    }
-    else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
-    {
-      disable_print = 1;
-    }
-    else if (strcmp(argv[i], "--print") == 0)
-    {
-      disable_print = 0;
-    }
-    else if (strcmp(argv[i], "--noprintcfg") == 0)
-    {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-      use_print_config = 0;
-    }
-    else if (strcmp(argv[i], "--printcfg") == 0)
-    {
-#if !defined(WIN32) && !defined(__APPLE__)
-      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-      use_print_config = 1;
-    }
-    else if (strstr(argv[i], "--printdelay=") == argv[i])
-    {
-      sscanf(strstr(argv[i], "--printdelay=") + 13, "%d", &print_delay);
-#ifdef DEBUG
-      printf("Print delay set to %d seconds\n", print_delay);
-#endif
-    }
-    else if (strcmp(argv[i], "--nosound") == 0 || strcmp(argv[i], "-q") == 0)
-    {
-      use_sound = 0;
-    }
-    else if (strcmp(argv[i], "--sound") == 0)
-    {
-      use_sound = 1;
-    }
-    else if (strcmp(argv[i], "--locale") == 0 || strcmp(argv[i], "-L") == 0)
-    {
-      if (i < argc - 1)
-      {
-	do_locale_option(argv[++i]);
-      }
-      else
-      {
-	/* Forgot to specify the language (locale)! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_locale_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strstr(argv[i], "--lang=") == argv[i])
-    {
-      set_langstr(argv[i] + 7);
-    }
-    else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
-    {
-      if (i < argc - 1)
-      {
-	set_langstr(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the language! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_lang_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--savedir") == 0)
-    {
-      if (i < argc - 1)
-      {
-	if (savedir != NULL)
-	  free(savedir);
-
-	savedir = strdup(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the directory name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--datadir") == 0)
-    {
-      if (i < argc - 1)
-      {
-	if (datadir != NULL)
-	  free(datadir);
-
-	datadir = strdup(argv[i + 1]);
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the directory name! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
-    }
-    else if (strcmp(argv[i], "--stampsize=default") == 0)
-    {
-      stamp_size_override = -1;
-    }
-    else if (strstr(argv[i], "--stampsize=") == argv[i])
-    {
-      stamp_size_override = atoi(argv[i] + 12);
-      if (stamp_size_override > 10)
-	stamp_size_override = 10;
-    }
-    else if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0)
-    {
-      show_version(0);
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--verbose-version") == 0 ||
-             strcmp(argv[i], "-vv") == 0)
-    {
-      show_version(1);
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--copying") == 0 || strcmp(argv[i], "-c") == 0)
-    {
-      show_version(0);
-      printf("\n"
-	     "This program is free software; you can redistribute it\n"
-	     "and/or modify it under the terms of the GNU General Public\n"
-	     "License as published by the Free Software Foundation;\n"
-	     "either version 2 of the License, or (at your option) any\n"
-	     "later version.\n"
-	     "\n"
-	     "This program is distributed in the hope that it will be\n"
-	     "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
-	     "even the implied warranty of MERCHANTABILITY or FITNESS\n"
-	     "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
-	     "License for more details.\n"
-	     "\n"
-	     "You should have received a copy of the GNU General Public\n"
-	     "License along with this program; if not, write to the Free\n"
-	     "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
-	     "Boston, MA  02111-1307  USA\n" "\n");
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
-    {
-      show_version(0);
-      show_usage(stdout, (char *) getfilename(argv[0]));
-
-      printf("See: " DOC_PREFIX "README.txt\n" "\n");
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--usage") == 0 || strcmp(argv[i], "-u") == 0)
-    {
-      show_usage(stdout, (char *) getfilename(argv[0]));
-      exit(0);
-    }
-    else if (strcmp(argv[i], "--nosysconfig") == 0)
-    {
-      debug("Not using system config.");
-    }
-    else if (strcmp(argv[i], "--nolockfile") == 0)
-    {
-      debug("Not using lockfile");
-      ok_to_use_lockfile = 0;
-    }
-    else if (strcmp(argv[i], "--lockfile") == 0)
-    {
-      debug("Using lockfile");
-      ok_to_use_lockfile = 1;
-    }
-    else
-    {
-      show_usage(stderr, (char *) getfilename(argv[0]));
-      exit(1);
-    }
-  }
-
-
-
+  parse_argv_options(argv);
 
 #ifdef _WIN32
   if (fullscreen)
