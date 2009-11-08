@@ -19534,7 +19534,7 @@ static void setup(int argc, char *argv[])
 
   if (ok_to_use_sysconfig)
   {
-#ifdef WIN32
+#ifdef _WIN32
     // global config file in the application directory
     parse_file_options("tuxpaint.cfg");
 #else
