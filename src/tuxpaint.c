@@ -19534,14 +19534,13 @@ static void setup(int argc, char *argv[])
 
   if (ok_to_use_sysconfig)
   {
-#ifndef WIN32
-    snprintf(str, sizeof(str), "%s/tuxpaint.conf", CONFDIR);
+#ifdef WIN32
+    // global config file in the application directory
+    parse_file_options("tuxpaint.cfg");
 #else
-    /* Global config file in the application directory on Windows */
-    strcpy(str, "tuxpaint.cfg");
+    // normally /etc/tuxpaint/tuxpaint.conf
+    parse_file_options(CONFDIR "tuxpaint.conf");
 #endif
-
-    parse_file_options(str);
   }
 
 
