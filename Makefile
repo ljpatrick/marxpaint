@@ -282,12 +282,14 @@ release: releasedir
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
 # "make olpc" builds the program for an OLPC XO:
+MAGIC_GOOD:=blur blocks_chalk_drip bricks calligraphy fade_darken\
+            fill flower foam grass mirror_flip shift smudge snow tint
 .PHONY: olpc
 olpc:
 	@echo
 	@echo "Building for an OLPC XO"
 	@echo
-	make PREFIX:=. OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
+	make PREFIX:=. MAGIC_C:=$(patsubst %,magic/src/%.c,$(MAGIC_GOOD)) OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
 
 # "make nokia770" builds the program for the Nokia 770.
 .PHONY: nokia770

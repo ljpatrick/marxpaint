@@ -13836,7 +13836,7 @@ static int do_save(int tool, int dont_show_success_results)
 
 	  for(i=0; i < current_node->save_texttool_len; i++)
 	    {
-	      fprintf(fi, "%lc", current_node->save_texttool_str[i]);
+	      fprintf(fi, "%lc", (wint_t)current_node->save_texttool_str[i]);
 	    }
 
 	  fprintf(fi, "\n");
@@ -13861,7 +13861,7 @@ static int do_save(int tool, int dont_show_success_results)
 	  fprintf(fi, "\n\n");
 	}
       current_node = current_node->next_to_up_label_node;
-      printf("cur %i, red %i\n",current_node, first_label_node_in_redo_stack); //FIXAM
+      printf("cur %p, red %p\n",current_node, first_label_node_in_redo_stack); //FIXAM
     }
   fclose(fi);
   free(fname);
@@ -20993,8 +20993,8 @@ void delete_label_list(struct label_node** ref_head)
 
   while(current != NULL)
     {
-        printf("%x current\n", current); //FIXAM
-fflush(stdout);
+      printf("%p current\n", current); //FIXAM
+      fflush(stdout);
 
       next = current->next_to_up_label_node;
       free(current);
