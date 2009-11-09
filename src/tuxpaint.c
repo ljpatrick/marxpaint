@@ -18304,7 +18304,11 @@ void rec_undo_label(void)
       have_to_rec_label_node = FALSE;
     }
   else
-    text_undo[cur_undo] = 0;
+      {
+          text_undo[cur_undo] = 0;
+          if (current_label_node != NULL && current_label_node->save_undoid == (cur_undo + 1) % NUM_UNDO_BUFS)
+              current_label_node->save_undoid = 255;
+      }
 }
 
 void do_undo_label_node()
