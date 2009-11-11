@@ -983,6 +983,8 @@ void delete_label_list(struct label_node**);
 static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, 
 		   SDL_Surface * dest_surf, SDL_Rect * dest_rect);
 
+void set_label_fonts(void);
+
 /* Magic tools API and tool handles: */
 
 #include "tp_magic_api.h"
@@ -2597,6 +2599,7 @@ static void mainloop(void)
 		/* FIXME: should kill this in any case */
 		SDL_WaitThread(font_thread, NULL);
 #endif
+                set_label_fonts();
 		do_setcursor(cursor_arrow);
 	      }
 	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
@@ -18306,6 +18309,8 @@ void rec_undo_label(void)
   else
       {
           text_undo[cur_undo] = 0;
+
+          /* Have we cycled around NUM_UNDO_BUFS? */
           if (current_label_node != NULL && current_label_node->save_undoid == (cur_undo + 1) % NUM_UNDO_BUFS)
               current_label_node->save_undoid = 255;
       }
@@ -18640,56 +18645,12 @@ void load_info_about_label_surface(char lfname[1024])
             fscanf(lfi, "%d\n", &new_node->save_cur_font);
             new_node->save_cur_font = 0;
               
-            char * font_type = NULL;
-            char * ttffont;
-              
             size_t max_text = 64;
-            getline(&font_type, &max_text, lfi);
+            new_node->save_font_type = NULL;
+            
+            getline(&new_node->save_font_type, &max_text, lfi);
 
 
-            int i;
-            for( i = 0; i < num_font_families; i++ )
-		{
-                    Uint32 c;
-                    /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end 
-                       of the returned string.  Should investigate why, and when corrected,
-                       remove the code that deals whith the ending "\n"s in ttffont*/
-                    ttffont = TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font);
-                    for (c = 0; c < strlen(ttffont); c++)
-                        if (ttffont[c] == '\n')
-                            ttffont[c] = '\0';
-                    for (c = 0; c < strlen(font_type); c++)
-                        if (font_type[c] == '\n')
-                            font_type[c] = '\0';
-
-#ifdef DEBUG
-                    printf("ttffont A%sA\n",ttffont);
-                    printf("font_type B%sB\n", font_type);
-#endif
-
-                    if (strcmp(font_type, ttffont) == 0)
-
-                        {
-#ifdef DEBUG
-                            printf("Font matched %s !!!\n", ttffont);
-#endif
-                            new_node->save_cur_font = i;
-                            break;
-                        }
-                    else
-//		if (strstr(TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font), font_type))
-                        if (strstr(ttffont, font_type) || strstr(font_type, ttffont))
-                            {
-#ifdef DEBUG
-                                printf("setting %s as replacement",TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font) );
-#endif
-                                new_node->save_cur_font = i;
-                            }
-		}
-
-
-            if (new_node->save_cur_font > num_font_families) /* This should never happens, setting default font. */
-		new_node->save_cur_font = 0;
             fscanf(lfi, "%d\n", &new_node->save_text_state);
             fscanf(lfi, "%u\n", &new_node->save_text_size);
               
@@ -18750,6 +18711,67 @@ void load_info_about_label_surface(char lfname[1024])
         }
     first_label_node_in_redo_stack = NULL;
     fclose(lfi);
+
+    if (font_thread_done)
+        set_label_fonts();
+}
+
+void set_label_fonts()
+{
+    struct label_node* node;    
+    int i;
+    char * ttffont;
+    
+    node = current_label_node;    
+    while (node != NULL)
+
+        {
+            for( i = 0; i < num_font_families; i++ )
+                {
+                    Uint32 c;
+                    /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end 
+                       of the returned string.  Should investigate why, and when corrected,
+                       remove the code that deals whith the ending "\n"s in ttffont*/
+                    ttffont = TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font);
+                    for (c = 0; c < strlen(ttffont); c++)
+                        if (ttffont[c] == '\n')
+                            ttffont[c] = '\0';
+                    for (c = 0; c < strlen(node->save_font_type); c++)
+                        if (node->save_font_type[c] == '\n')
+                            node->save_font_type[c] = '\0';
+
+#ifdef DEBUG
+                    printf("ttffont A%sA\n",ttffont);
+                    printf("font_type B%sB\n", node->save_font_type);
+#endif
+
+                    if (strcmp(node->save_font_type, ttffont) == 0)
+
+                        {
+#ifdef DEBUG
+                            printf("Font matched %s !!!\n", ttffont);
+#endif
+                            node->save_cur_font = i;
+                            break;
+                        }
+                    else
+                        if (strstr(ttffont, node->save_font_type) || strstr(node->save_font_type, ttffont))
+                            {
+#ifdef DEBUG
+                                printf("setting %s as replacement",TTF_FontFaceFamilyName( getfonthandle(i)->ttf_font) );
+#endif
+                                node->save_cur_font = i;
+                            }
+		}
+
+            if (node->save_cur_font > num_font_families) /* This should never happens, setting default font. */
+		node->save_cur_font = 0;
+
+            free(node->save_font_type); /* Not needed anymore */
+
+            node = node->next_to_down_label_node;
+            
+        }
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -20801,35 +20823,6 @@ static int old_main(int argc, char *argv[])
   tool_scroll = 0;
 
   reset_avail_tools();
-
-  /* Load fonts */
-
-  if (!font_thread_done)
-  {
-    draw_colors(COLORSEL_DISABLE);
-    draw_none();
-    update_screen_rect(&r_toolopt);
-    update_screen_rect(&r_ttoolopt);
-    do_setcursor(cursor_watch);
-
-    // Wait while Text tool finishes loading fonts
-    draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
-
-    waiting_for_fonts = 1;
-#ifdef FORKED_FONTS
-    receive_some_font_info(screen); // FIXME: this MUST NOT be called until the text tool runs!
-#else
-    while (!font_thread_done && !font_thread_aborted)
-    {
-      // FIXME: should have a read-depends memory barrier around here
-      show_progress_bar(screen);
-      SDL_Delay(20);
-    }
-    // FIXME: should kill this in any case
-    SDL_WaitThread(font_thread, NULL);
-#endif
-    do_setcursor(cursor_arrow);
-  }
 
 
   /* Load current image (if any): */
