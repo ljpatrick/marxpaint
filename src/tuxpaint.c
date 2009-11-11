@@ -19345,6 +19345,26 @@ static void parse_argv_options(char *argv[])
   char *progname = argv[0];
   char *str;
 
+  /* FIXME: Bring back support for single-dash options:
+    -b (--startblank)
+    -c (--copying)
+    -f (--fullscreen)
+    -h (--help)
+    -l (--lang)
+    -L (--locale)
+    -m (--mixedcase)
+    -p (--noprint)
+    -q (--nosound)
+    -s (--simpleshapes)
+    -u (--usage)
+    -v (--version)
+    -vv (--version-verbose)
+    -w (--windowed)
+    -x (--noquit)
+
+    Especially the ones I use a lot:  -w -q -f -x -v -h -l  -bjk 2009.11.11
+  */
+
   while(( str = *++argv ))
   {
     if(str[0]=='-' && str[1]=='-' && str[2])
