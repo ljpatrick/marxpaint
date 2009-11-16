@@ -19312,6 +19312,7 @@ static void setup_colors(void){
 
 static void do_lock_file(void)
 {
+  FILE *fi;
   /* Test for lockfile, if we're using one: */
 
   if (!ok_to_use_lockfile)
@@ -19399,7 +19400,6 @@ static void setup(void)
   char *upstr;
   SDL_Color black = { 0, 0, 0, 0 };
   char *homedirdir;
-  FILE *fi;
   SDL_Surface *tmp_surf;
   SDL_Rect dest;
   int scale;
