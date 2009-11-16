@@ -19184,6 +19184,12 @@ static void setup(char *argv[])
 
 
 
+  setup_language(getfilename(argv[0]), &button_label_y_nudge);
+/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
+
+#ifdef FORKED_FONTS
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+#endif
 
 
 #ifdef _WIN32
@@ -19194,26 +19200,11 @@ static void setup(char *argv[])
   }
 #endif
 
-  
-  setup_language(getfilename(argv[0]), &button_label_y_nudge);
-/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
-
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
   SDLPango_Init();
 #endif
-
-  
-  /* NOTE: Moved run_font_scanner() call from main(), to here,
-     so that the gettext() calls used while testing fonts
-     actually DO something (per tuxpaint-devel discussion, April 2007)
-     -bjk 2007.06.05 */
-
-#ifdef FORKED_FONTS
-  run_font_scanner(screen, lang_prefixes[get_current_language()]);
-#endif
-
 
 #ifndef WIN32
   putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");

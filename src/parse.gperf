@@ -6,7 +6,7 @@
 
 %{
 
-#include "parse.h"
+#include "../src/parse.h"
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -37,23 +37,52 @@ struct cfg
 
 static void imm_version(void)
 {
+//  show_version(0);
 }
 
 static void imm_verbose_version(void)
 {
+//  show_version(1);
 }
 
 static void imm_usage(void)
 {
+//  show_usage(stdout,"tuxpaint");
 }
 
 static void imm_help(void)
 {
+//  show_version(0);
+//  show_usage(stdout,"tuxpaint");
 }
 
 static void imm_copying(void)
 {
+//  show_version(0);
+  printf("\n"
+         "This program is free software; you can redistribute it\n"
+         "and/or modify it under the terms of the GNU General Public\n"
+         "License as published by the Free Software Foundation;\n"
+         "either version 2 of the License, or (at your option) any\n"
+         "later version.\n"
+         "\n"
+         "This program is distributed in the hope that it will be\n"
+         "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
+         "even the implied warranty of MERCHANTABILITY or FITNESS\n"
+         "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
+         "License for more details.\n"
+         "\n"
+         "You should have received a copy of the GNU General Public\n"
+         "License along with this program; if not, write to the Free\n"
+         "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
+         "Boston, MA  02111-1307  USA\n" "\n");
 }
+
+// We get this from gperf:
+//__inline static             unsigned int hash (register const char *str, register unsigned int len)
+//__inline __attribute__((__gnu_inline__)) const struct cfg *in_word_set (register const char *str, register unsigned int len);
+//
+// We use sed (see Makefile) to make those functions static.
 
 %}
 

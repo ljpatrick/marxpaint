@@ -108,12 +108,12 @@ int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
 
 TuxPaint_Font *try_alternate_font(int size);
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
-int load_user_fonts(SDL_Surface * screen, void *vp, char * locale);
+int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict locale);
 
 #ifdef FORKED_FONTS
 void reliable_write(int fd, const void *buf, size_t count);
 void reliable_read(int fd, void *buf, size_t count);
-void run_font_scanner(SDL_Surface * screen, char * locale);
+void run_font_scanner(SDL_Surface * screen, const char *restrict locale);
 void receive_some_font_info(SDL_Surface * screen);
 #endif
 

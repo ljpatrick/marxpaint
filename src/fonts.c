@@ -140,7 +140,7 @@ int text_state = 0;
 unsigned text_size = 4;		// initial text size
 
 
-void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, char * locale);
+static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale);
 
 
 /* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
@@ -440,7 +440,7 @@ void reliable_read(int fd, void *buf, size_t count)
 }
 
 
-void run_font_scanner(SDL_Surface * screen, char * locale)
+void run_font_scanner(SDL_Surface * screen, const char *restrict locale)
 {
   int sv[2];
   int size, i;
@@ -459,6 +459,8 @@ void run_font_scanner(SDL_Surface * screen, char * locale)
   nice(42);			// be nice, letting the main thread get the CPU
   sched_yield();		// try to let the parent run right now
   prctl(PR_SET_PDEATHSIG, 9);	// get killed if parent exits
+  if(getppid()==1)
+    _exit(99);                  // parent is already init, and won't be dying :-)
   font_socket_fd = sv[1];
   close(sv[0]);
   progress_bar_disabled = 1;
@@ -681,7 +683,7 @@ void receive_some_font_info(SDL_Surface * screen)
 #endif
 
 
-int load_user_fonts(SDL_Surface * screen, void *vp, char * locale)
+int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict locale)
 {
   char *homedirdir;
 
@@ -1393,7 +1395,7 @@ void loadfonts(SDL_Surface * screen, const char *const dir)
   loadfonts_locale_filter(screen, dir, NULL);
 }
 
-void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, char * locale)
+void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
