@@ -6639,8 +6639,9 @@ static int load_user_fonts_stub(void *vp)
 		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
-static void signal_handler(int)
+static void signal_handler(int sig)
 {
+  (void)sig;
   // It is not legal to call printf or most other functions here!
 }
 #endif
@@ -19152,7 +19153,7 @@ static void chdir_to_binary(char *argv0)
 }
 
 /////////////////////////////////////////////////////////////////////////////
-static void setup(char *argv[])
+static void setup(void)
 {
   int i, j;
   char *upstr;
@@ -19178,13 +19179,6 @@ static void setup(char *argv[])
   int big_title;
 
 
-
-  setup_language(getfilename(argv[0]), &button_label_y_nudge);
-/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
-
-#ifdef FORKED_FONTS
-  run_font_scanner(screen, lang_prefixes[get_current_language()]);
-#endif
 
 
 #ifdef _WIN32
@@ -20274,53 +20268,11 @@ static void setup(char *argv[])
 /////////////////////////////////////////////////////////////////////////////
 
 
-static int old_main(int argc, char *argv[])
+static void claim_to_be_ready(void)
 {
-  CLOCK_TYPE time1;
-  CLOCK_TYPE time2;
   SDL_Rect dest;
   SDL_Rect src;
   int i;
-
-  (void)argc;
-
-  CLOCK_ASM(time1);
-
-  /* Set up locale support */
-  setlocale(LC_ALL, "");
-  ctype_utf8();
-
-
-  /* NOTE: Moved run_font_scanner() call from here, to right after
-     setup_language(), so that the gettext() calls used while testing fonts
-     actually DO something (per tuxpaint-devel discussion, April 2007)
-     -bjk 2007.06.05 */
-
-
-  chdir_to_binary(argv[0]);
-  setup_config(argv);
-
-  /* Set up! */
-  setup(argv);
-
-
-
-#if 0
-  while (!font_thread_done)
-  {
-    /* FIXME: should respond to quit events
-       FIXME: should have a read-depends memory barrier around here */
-    show_progress_bar();
-    SDL_Delay(20);
-  }
-  SDL_WaitThread(font_thread, NULL);
-#endif
-
-  CLOCK_ASM(time2);
-
-#ifdef DEBUG
-  printf("Start-up time: %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
-#endif
 
   /* Let the user know we're (nearly) ready now */
 
@@ -20420,25 +20372,51 @@ static int old_main(int argc, char *argv[])
   SDL_Flip(screen);
 
   draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-
-  /* Main loop! */
-  mainloop();
-
-  /* Close and quit! */
-
-  save_current();
-
-  wait_for_sfx();
-
-
-  cleanup();
-
-  return 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char *argv[])
 {
-  return old_main(argc,argv);
+  CLOCK_TYPE time1;
+  CLOCK_TYPE time2;
+  CLOCK_TYPE time3;
+
+  (void)argc;
+
+  CLOCK_ASM(time1);
+
+  // do not add code (slowness) here unless required for scanning fonts
+  chdir_to_binary(argv[0]);
+  setup_config(argv);
+  setup_language(getfilename(argv[0]), &button_label_y_nudge);
+/*  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);  */
+
+  CLOCK_ASM(time2);
+#ifdef FORKED_FONTS
+  // must start ASAP, but depends on locale which in turn needs the config
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+#endif
+
+  /* Set up! */
+  setup();
+
+  CLOCK_ASM(time3);
+
+#ifdef DEBUG
+  printf("Seconds in early start-up: %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
+  printf("Seconds in late start-up:  %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
+#endif
+
+
+
+  claim_to_be_ready();
+
+  mainloop();
+
+  /* Close and quit! */
+  save_current();
+  wait_for_sfx();
+  cleanup();
+  return 0;
 }
