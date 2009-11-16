@@ -18950,7 +18950,6 @@ static void setup_config(char *argv[])
 
   /* Set default options: */
 
-  mute = 0;
   use_sound = 1;
 #ifdef NOKIA_770
   fullscreen = 1;
