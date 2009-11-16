@@ -452,6 +452,7 @@ extern WrapperData macosx;
 #include "malloc.c"
 #endif
 
+#include "parse.h"
 
 #include "compiler.h"
 
@@ -5634,7 +5635,8 @@ static void loadbrush_callback(SDL_Surface * screen,
   char buf[64];
   int want_rand;
 
-  dirlen = dirlen;
+  (void)dirlen;
+  (void)locale;
 
 
   qsort(files, i, sizeof *files, compare_ftw_str);
@@ -6461,6 +6463,7 @@ static void loadstamp_callback(SDL_Surface * screen,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i, char * locale)
 {
+  (void)locale;
 #ifdef DEBUG
   printf("loadstamp_callback: %s\n", dir);
 #endif
@@ -18810,516 +18813,7 @@ static void show_available_papersizes(FILE * fi, const char * prg)
 
 /////////////////////////////////////////////////////////////////////////////
 
-static void parse_one_option(const char *str, const char *arg)
-{
-  //printf("\nold: <%s> <%s>\n",str,arg);
-
-  // canonicalize the option
-  if(arg && !strcmp(arg,"yes"))
-    arg=NULL;
-  if(isdigit(*str))
-  {
-    if(arg && !strcmp(arg,"no"))
-        str = "640x480";
-    arg = str;
-    str = "windowsize";
-  }
-  if(str[0]=='n' && str[1]=='o')
-  {
-    str += 2;
-    if(!arg)
-      arg="no";
-    else if(!strcmp(arg,"no"))
-      arg=NULL;
-    else
-    {
-      printf("could not parse option '%s' with arg '%s'\n",str-2,arg);
-      return;
-    }
-  }
-
-  int boolval = 1;
-  if(arg && !strcmp(arg,"no"))
-    boolval = 0;
-
-  //printf("new: <%s> <%s>\n",str,arg);
-
-
-
-  if (!strcmp(str, "fullscreen"))
-  {
-    fullscreen = boolval;
-    if (!strcmp(arg, "native"))
-      native_screensize = 1;
-  }
-
-  else if (!strcmp(str, "disablescreensaver"))
-  {
-    disable_screensaver = boolval;
-  }
-
-  else if (!strcmp(str, "allowscreensaver"))
-  {
-    disable_screensaver = !boolval;
-  }
-
-  else if (!strcmp(str, "native"))
-  {
-    native_screensize = boolval;
-  }
-
-  else if (!strcmp(str, "windowed"))
-  {
-    fullscreen = !boolval;
-  }
-
-  else if (!strcmp(str, "startblank"))
-  {
-    start_blank = boolval;
-  }
-
-  else if (!strcmp(str, "startlast"))
-  {
-    start_blank = !boolval;
-  }
-
-  else if (!strcmp(str, "stampcontrols"))
-  {
-    disable_stamp_controls = !boolval;
-  }
-
-  else if (!strcmp(str, "alllocalefonts"))
-  {
-    all_locale_fonts = boolval;
-  }
-
-  else if (!strcmp(str, "currentlocalefont"))
-  {
-    all_locale_fonts = !boolval;
-  }
-
-  else if (!strcmp(str, "magiccontrols"))
-  {
-    disable_magic_controls = !boolval;
-  }
-
-  else if (!strcmp(str, "label"))
-  {
-    disable_label = !boolval;
-  }
-
-  else if (!strcmp(str, "mirrorstamps"))
-  {
-    mirrorstamps = boolval;
-  }
-  else if (!strcmp(str, "dontmirrorstamps"))
-  {
-    mirrorstamps = !boolval;
-  }
-
-  else if (!strcmp(str, "stampsize"))
-  {
-    if (!strcmp(arg, "default"))
-      stamp_size_override = -1;
-    else
-    {
-      // FIXME: needs to be a scaling factor
-      stamp_size_override = atoi(arg);
-      if (stamp_size_override > 10)
-        stamp_size_override = 10;
-    }
-  }
-
-  else if (!strcmp(str, "shortcuts"))
-  {
-    noshortcuts = !boolval;
-  }
-
-  else if (!strcmp(str, "windowsize"))
-  {
-    char *endp1;
-    char *endp2;
-    int w, h;
-    w = strtoul(arg, &endp1, 10);
-    h = strtoul(endp1 + 1, &endp2, 10);
-    /* sanity check it */
-    if (arg == endp1 || endp1 + 1 == endp2 || *endp1 != 'x' || *endp2
-        || w < 500 || h < 480 || h > w * 3 || w > h * 4)
-    {
-      /* Oddly, config files have no error checking. */
-      /* show_usage(stderr, (char *) getfilename(argv[0])); */
-      /* exit(1); */
-    }
-    else
-    {
-      WINDOW_WIDTH = w;
-      WINDOW_HEIGHT = h;
-    }
-  }
-
-  else if (!strcmp(str, "outlines"))
-  {
-    dont_do_xor = !boolval;
-  }
-
-  else if (!strcmp(str, "keyboard"))
-  {
-    keymouse = boolval;
-  }
-
-  else if (!strcmp(str, "mouse"))
-  {
-    keymouse = !boolval;
-  }
-
-  else if (!strcmp(str, "wheelmouse"))
-  {
-    wheely = boolval;
-  }
-
-  else if (!strcmp(str, "grab"))
-  {
-    grab_input = boolval;
-  }
-
-  else if (!strcmp(str, "dontgrab"))
-  {
-    grab_input = !boolval;
-  }
-
-  else if (!strcmp(str, "fancycursors"))
-  {
-    no_fancy_cursors = !boolval;
-  }
-
-  else if (!strcmp(str, "hidecursor"))
-  {
-    hide_cursor = boolval;
-  }
-
-  else if (!strcmp(str, "uppercase"))
-  {
-    only_uppercase = boolval;
-  }
-
-  else if (!strcmp(str, "mixedcase"))
-  {
-    only_uppercase = !boolval;
-  }
-
-  else if (!strcmp(str, "quit"))
-  {
-    disable_quit = !boolval;
-  }
-
-  else if (!strcmp(str, "save"))
-  {
-    disable_save = !boolval;
-  }
-
-  else if (!strcmp(str, "print"))
-  {
-    disable_print = !boolval;
-  }
-
-  else if (!strcmp(str, "stamps"))
-  {
-    dont_load_stamps = !boolval;
-  }
-
-  else if (!strcmp(str, "orient"))
-  {
-    // alternative should be "landscape"
-    rotate_orientation = !strcmp(arg, "portrait");
-  }
-
-  else if (!strcmp(str, "sysfonts"))
-  {
-    no_system_fonts = !boolval;
-  }
-
-  else if (!strcmp(str, "buttondistinction"))
-  {
-    no_button_distinction = !boolval;
-  }
-
-  else if (!strcmp(str, "sound"))
-  {
-    use_sound = boolval;
-  }
-
-  else if (!strcmp(str, "simpleshapes"))
-  {
-    simple_shapes = boolval;
-  }
-  else if (!strcmp(str, "complexshapes"))
-  {
-    simple_shapes = !boolval;
-  }
-
-  else if (!strcmp(str, "lang"))
-  {
-    if(arg)
-      set_langstr(arg);
-    else
-    {
-      fprintf(stderr, "lang takes an argument\n");
-      show_lang_usage(stderr, "tuxpaint");
-      exit(1);
-    }
-  }
-
-  else if (!strcmp(str, "locale"))
-  {
-    if(arg)
-      do_locale_option(arg);
-    else
-    {
-      fprintf(stderr, "locale takes an argument\n");
-      show_locale_usage(stderr, "tuxpaint");
-      exit(1);
-    }
-  }
-
-  else if (!strcmp(str, "colorfile"))
-  {
-    strcpy(colorfile, arg); // FIXME can overflow
-  }
-
-  else if (!strcmp(str, "printdelay"))
-  {
-    sscanf(arg, "%d", &print_delay);
-#ifdef DEBUG
-    printf("Print delay set to %d seconds\n", print_delay);
-#endif
-  }
-
-  else if (!strcmp(str, "printcfg"))
-  {
-#if !defined(WIN32) && !defined(__APPLE__)
-  fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
-#endif
-    use_print_config = boolval;
-  }
-
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-  else if (!strcmp(str, "printcommand"))
-  {
-// FIXME: This would need to be done one argument (space-delim'd) at a time */
-#if 0 && defined(__linux__)
-    wordexp_t result;
-    char * dir = strdup(arg);
-
-    wordexp(dir, &result, 0);
-    free(dir);
-
-    printcommand = strdup(result.we_wordv[0]);
-    wordfree(&result);
-#else
-    printcommand = strdup(arg);
-#endif
-  }
-#endif
-
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-  else if (!strcmp(str, "altprintcommand"))
-  {
-// FIXME: This would need to be done one argument (space-delim'd) at a time
-#if 0 && defined(__linux__)
-    wordexp_t result;
-    char * dir = strdup(arg);
-
-    wordexp(dir, &result, 0);
-    free(dir);
-
-    altprintcommand = strdup(result.we_wordv[0]);
-    wordfree(&result);
-#else
-    altprintcommand = strdup(arg);
-#endif
-  }
-#endif
-
-  else if (!strcmp(str, "saveover"))
-  {
-    if (!arg || !strcmp(arg, "yes"))
-      promptless_save = SAVE_OVER_ALWAYS;
-    else if (!strcmp(arg, "ask"))
-      promptless_save = SAVE_OVER_PROMPT; // default
-    else if (!strcmp(arg, "new"))
-      promptless_save = SAVE_OVER_NO;
-    else if (!strcmp(arg, "no"))
-      printf("saveover can not have value 'no'\n");
-  }
-
-  else if (!strcmp(str, "saveoverask"))
-  {
-    promptless_save = SAVE_OVER_PROMPT;
-  }
-
-  else if (!strcmp(str, "saveovernew"))
-  {
-    promptless_save = SAVE_OVER_NO;
-  }
-
-  else if (!strcmp(str, "autosave"))
-  {
-    autosave_on_quit = boolval;
-  }
-
-  else if (!strcmp(str, "altprint"))
-  {
-    if (!strcmp(arg, "always"))
-      alt_print_command_default = ALTPRINT_ALWAYS;
-    else if (!strcmp(arg, "mod"))
-      alt_print_command_default = ALTPRINT_MOD; // default
-    else if (!strcmp(arg, "never"))
-      alt_print_command_default = ALTPRINT_NEVER;
-  }
-
-
-  else if (!strcmp(str, "altprintnever"))
-  {
-    alt_print_command_default = ALTPRINT_NEVER;
-  }
-
-  else if (!strcmp(str, "altprintalways"))
-  {
-    alt_print_command_default = ALTPRINT_ALWAYS;
-  }
-
-  else if (!strcmp(str, "altprintmod"))
-  {
-    alt_print_command_default = ALTPRINT_MOD;
-  }
-
-
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-  else if (!strcmp(str, "papersize"))
-  {
-    if(!strcmp(arg,"help"))
-    {
-      show_available_papersizes(stdout, "tuxpaint");
-      exit(0);
-    }
-    papersize = strdup(arg);
-  }
-#endif
-
-  else if (!strcmp(str, "savedir"))
-  {
-#ifdef __linux__
-    wordexp_t result;
-    char * dir = strdup(arg);
-
-    wordexp(dir, &result, 0);
-    free(dir);
-
-    savedir = strdup(result.we_wordv[0]);
-    wordfree(&result);
-#else
-    savedir = strdup(arg);
-#endif
-    remove_slash(savedir);
-
-#ifdef DEBUG
-    printf("savedir set to: %s\n", savedir);
-#endif
-  }
-
-  else if (!strcmp(str, "datadir"))
-  {
-#ifdef __linux__
-    wordexp_t result;
-    char * dir = strdup(arg);
-
-    wordexp(dir, &result, 0);
-    free(dir);
-
-    datadir = strdup(result.we_wordv[0]);
-    wordfree(&result);
-#else
-    datadir = strdup(arg);
-#endif
-    remove_slash(datadir);
-
-#ifdef DEBUG
-    printf("datadir set to: %s\n", datadir);
-#endif
-  }
-
-  else if (!strcmp(str, "lockfile"))
-  {
-    ok_to_use_lockfile = boolval;
-  }
-
-  else if (!strcmp(str, "version"))
-  {
-    show_version(0);
-    exit(0);
-  }
-
-  else if (!strcmp(str, "verbose-version"))
-  {
-    show_version(1);
-    exit(0);
-  }
-
-  else if (!strcmp(str, "copying"))
-  {
-    show_version(0);
-    printf("\n"
-           "This program is free software; you can redistribute it\n"
-           "and/or modify it under the terms of the GNU General Public\n"
-           "License as published by the Free Software Foundation;\n"
-           "either version 2 of the License, or (at your option) any\n"
-           "later version.\n"
-           "\n"
-           "This program is distributed in the hope that it will be\n"
-           "useful and entertaining, but WITHOUT ANY WARRANTY; without\n"
-           "even the implied warranty of MERCHANTABILITY or FITNESS\n"
-           "FOR A PARTICULAR PURPOSE.  See the GNU General Public\n"
-           "License for more details.\n"
-           "\n"
-           "You should have received a copy of the GNU General Public\n"
-           "License along with this program; if not, write to the Free\n"
-           "Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
-           "Boston, MA  02111-1307  USA\n" "\n");
-    exit(0);
-  }
-
-  else if (!strcmp(str, "help"))
-  {
-    show_version(0);
-    show_usage(stdout, "tuxpaint");
-
-    printf("See: " DOC_PREFIX "README.txt\n" "\n");
-    exit(0);
-  }
-
-  else if (!strcmp(str, "usage"))
-  {
-    show_usage(stdout, "tuxpaint");
-    exit(0);
-  }
-
-  else if (!strcmp(str, "sysconfig"))
-  {
-    debug("Not using system config.");
-    // FIXME: need to use boolval here
-  }
-
-//  else
-//  {
-//    show_usage(stderr, "tuxpaint");
-//    exit(1);
-//  }
-}
-
-/////////////////////////////////////////////////////////////////////
-
-
-static void parse_file_options(char *filename)
+static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *filename)
 {
   FILE *fi = fopen(filename, "r");
   if(!fi)
@@ -19335,30 +18829,32 @@ static void parse_file_options(char *filename)
     char *arg = strchr(str,'=');
     if(arg)
       *arg++ = '\0';
-    parse_one_option(str,arg);
+    parse_one_option(tmpcfg,str,arg,filename);
   }
   fclose(fi);
 }
 
-static void parse_argv_options(char *argv[])
+static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
-  char *progname = argv[0];
+  const char *progname = argv[0];
   char *str;
 
   /* FIXME: Bring back support for single-dash options:
-    -b (--startblank)
     -c (--copying)
-    -f (--fullscreen)
     -h (--help)
+    -u (--usage)
+    -v (--version)
+    -vv (--version-verbose)
+
     -l (--lang)
     -L (--locale)
+
+    -b (--startblank)
+    -f (--fullscreen)
     -m (--mixedcase)
     -p (--noprint)
     -q (--nosound)
     -s (--simpleshapes)
-    -u (--usage)
-    -v (--version)
-    -vv (--version-verbose)
     -w (--windowed)
     -x (--noquit)
 
@@ -19375,7 +18871,7 @@ static void parse_argv_options(char *argv[])
         *arg++ = '\0';
       else if(argv[1] && argv[1][0]!='-')
         arg = *++argv;
-      parse_one_option(str,arg);
+      parse_one_option(tmpcfg,str,arg,NULL);
       continue;
     }
     fprintf(stderr, "%s is not understood\n", *argv);
@@ -19384,109 +18880,121 @@ static void parse_argv_options(char *argv[])
   }
 }
 
-
-
-/////////////////////////////////////////////////////////////////////////////
-static void setup(int argc, char *argv[])
+// merge two configs, with the winner taking priority
+static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 {
-  int i, j, ok_to_use_sysconfig;
-  char str[128];
-  char *upstr;
-  SDL_Color black = { 0, 0, 0, 0 };
-  char *homedirdir;
-  FILE *fi;
-  SDL_Surface *tmp_surf;
-  SDL_Rect dest;
-  int scale;
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-  int x, y;
-  SDL_Surface *tmp_btn_up;
-  SDL_Surface *tmp_btn_down;
-  Uint8 r, g, b;
-#endif
-  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
-  Uint32 init_flags;
-  char tmp_str[128];
-  SDL_Surface *img1;
-  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
-  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
-  int big_title;
-
-
-
-#if defined(__BEOS__) || defined(WIN32)
-  /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
-     find path from which binary was run and change dir to it
-     so all files will be local :) */
-  /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
-     so this code wouldn't be needed if SDL was init before anything else,
-     (just basic init, window shouldn't be needed). */
-  /* UPDATE (2005 July 19): Enable and make work on Windows. Makes testing
-     with MINGW/MSYS easier */
-
-  if (argc && argv[0])
+  int i = CFGINFO_MAXOFFSET / sizeof(char*);
+  while(i--)
   {
-    char *app_path = strdup(argv[0]);
-    char *slash = strrchr(app_path, '/');
-
-    if (!slash)
-    {
-      slash = strrchr(app_path, '\\');
-    }
-    if (slash)
-    {
-      *(slash + 1) = '\0';
-      chdir(app_path);
-    }
-    free(app_path);
+    const char *cfgitem;
+    memcpy(&cfgitem, i*sizeof(const char*)+(const char*)winner, sizeof cfgitem);
+    if(!cfgitem)
+      continue;
+    memcpy(i*sizeof(const char*)+(char*)loser, &cfgitem, sizeof cfgitem);
   }
-#endif
+}
 
+static void setup_config(char *argv[])
+{
+  char str[128];
+
+  struct cfginfo tmpcfg_usr;
+  memset(&tmpcfg_usr, '\0', sizeof tmpcfg_usr);
+
+  struct cfginfo tmpcfg_cmd;
+  memset(&tmpcfg_cmd, '\0', sizeof tmpcfg_cmd);
+
+  struct cfginfo tmpcfg =
+  {
+    .all_locale_fonts            = "",
+    .alt_print_command_default   = "",
+    .altprintcommand             = "",
+    .autosave_on_quit            = "",
+    .colorfile                   = "",
+    .datadir                     = "",
+    .disable_label               = "",
+    .disable_magic_controls      = PARSE_NO,
+    .disable_print               = PARSE_NO,
+    .disable_quit                = PARSE_NO,
+    .disable_save                = PARSE_NO,
+    .disable_screensaver         = PARSE_NO,
+    .disable_stamp_controls      = "",
+    .dont_do_xor                 = PARSE_NO,
+    .dont_load_stamps            = PARSE_NO,
+    .fullscreen                  = PARSE_NO,
+    .grab_input                  = "",
+    .hide_cursor                 = "",
+    .keymouse                    = "",
+    .mirrorstamps                = "",
+    .native_screensize           = "",
+    .no_button_distinction       = "",
+    .no_fancy_cursors            = "",
+    .no_system_fonts             = "",
+    .noshortcuts                 = "",
+    .ok_to_use_lockfile          = "",
+    .only_uppercase              = "",
+    .papersize                   = "",
+    .parsertmp_fullscreen_native = "",
+    .parsertmp_lang              = "",
+    .parsertmp_locale            = "",
+    .parsertmp_sysconfig         = "",
+    .parsertmp_windowsize        = "",
+    .print_delay                 = "",
+    .printcommand                = "",
+    .promptless_save             = "",
+    .rotate_orientation          = "",
+    .savedir                     = "",
+    .simple_shapes               = "",
+    .stamp_size_override         = "",
+    .start_blank                 = "",
+    .use_print_config            = "",
+    .use_sound                   = PARSE_YES,
+    .wheely                      = "",
+  };
 
   /* Set default options: */
 
-  use_sound = 1;
   mute = 0;
+  use_sound = 1;
 #ifdef NOKIA_770
   fullscreen = 1;
 #else
   fullscreen = 0;
 #endif
   disable_screensaver = 0;
-  native_screensize = 0;
-  rotate_orientation = 0;
-  noshortcuts = 0;
   dont_do_xor = 0;
-  keymouse = 0;
-  wheely = 1;
-  no_button_distinction = 0;
   grab_input = 0;
+  keymouse = 0;
+  native_screensize = 0;
+  no_button_distinction = 0;
+  noshortcuts = 0;
+  rotate_orientation = 0;
+  wheely = 1;
 #ifdef NOKIA_770
-  simple_shapes = 1;
-  no_fancy_cursors = 1;
   hide_cursor = 1;
+  no_fancy_cursors = 1;
+  simple_shapes = 1;
 #else
-  simple_shapes = 0;
-  no_fancy_cursors = 0;
   hide_cursor = 0;
+  no_fancy_cursors = 0;
+  simple_shapes = 0;
 #endif
-  stamp_size_override = -1;
-  only_uppercase = 0;
+  all_locale_fonts = 0;
   alt_print_command_default = ALTPRINT_MOD;
-  print_delay = 0;
-  use_print_config = 1;
+  autosave_on_quit = 0;
+  disable_magic_controls = 0;
   disable_print = 0;
   disable_quit = 0;
   disable_save = 0;
-  promptless_save = SAVE_OVER_PROMPT;
-  autosave_on_quit = 0;
-  dont_load_stamps = 0;
-  no_system_fonts = 1;
-  all_locale_fonts = 0;
-  mirrorstamps = 0;
   disable_stamp_controls = 0;
-  disable_magic_controls = 0;
+  dont_load_stamps = 0;
+  mirrorstamps = 0;
+  no_system_fonts = 1;
+  only_uppercase = 0;
+  print_delay = 0;
+  promptless_save = SAVE_OVER_PROMPT;
+  stamp_size_override = -1;
+  use_print_config = 1;
   if(VIDEO_BPP != 32)
     disable_label = 1;
   else
@@ -19508,31 +19016,27 @@ static void setup(int argc, char *argv[])
   WINDOW_WIDTH = 1200;
   WINDOW_HEIGHT = 900;
 #endif
+  colorfile[0] = '\0';
   ok_to_use_lockfile = 1;
   start_blank = 0;
-  colorfile[0] = '\0';
 
 
 #ifdef __BEOS__
   /* Fancy cursors on BeOS are buggy in SDL */
-
   no_fancy_cursors = 1;
 #endif
 
 
 #ifdef WIN32
   /* Windows */
-
   savedir = GetDefaultSaveDir("TuxPaint");
   datadir = GetDefaultSaveDir("TuxPaint");
 #elif __BEOS__
   /* BeOS */
-
   savedir = strdup("./userdata");
   datadir = strdup("./userdata");
 #elif __APPLE__
   /* Mac OS X */
-  
   savedir = strdup(macosx.preferencesPath);
   datadir = strdup(macosx.preferencesPath);
 #else
@@ -19557,34 +19061,7 @@ static void setup(int argc, char *argv[])
 #endif
 
 
-  /* Load options from global config file: */
-
-
-  /* Check to see if it's ok first: */
-
-  ok_to_use_sysconfig = 1;
-
-  for (i = 1; i < argc; i++)
-  {
-    if (strcmp(argv[i], "--nosysconfig") == 0)
-    {
-      ok_to_use_sysconfig = 0;
-      i = argc;			/* aka break; */
-    }
-  }
-
-
-  if (ok_to_use_sysconfig)
-  {
-#ifdef _WIN32
-    // global config file in the application directory
-    parse_file_options("tuxpaint.cfg");
-#else
-    // normally /etc/tuxpaint/tuxpaint.conf
-    parse_file_options(CONFDIR "tuxpaint.conf");
-#endif
-  }
-
+  parse_argv_options(&tmpcfg_cmd, argv);
 
 
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
@@ -19619,9 +19096,95 @@ static void setup(int argc, char *argv[])
     strcpy(str, "tuxpaint.cfg");
   }
 #endif
+  parse_file_options(&tmpcfg_usr, str);
 
-  parse_file_options(str);
-  parse_argv_options(argv);
+
+
+  tmpcfg_merge(&tmpcfg_usr, &tmpcfg_cmd);
+
+
+
+  if (tmpcfg_usr.parsertmp_sysconfig != PARSE_NO)
+  {
+    struct cfginfo tmpcfg_sys;
+    memset(&tmpcfg_sys, '\0', sizeof tmpcfg_sys);
+#ifdef _WIN32
+    // global config file in the application directory
+    parse_file_options(&tmpcfg_sys, "tuxpaint.cfg");
+#else
+    // normally /etc/tuxpaint/tuxpaint.conf
+    parse_file_options(&tmpcfg_sys, CONFDIR "tuxpaint.conf");
+#endif
+    tmpcfg_merge(&tmpcfg, &tmpcfg_sys);
+  }
+  tmpcfg_merge(&tmpcfg, &tmpcfg_usr);
+
+
+
+}
+
+static void chdir_to_binary(char *argv0)
+{
+#if defined(__BEOS__) || defined(WIN32)
+  /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
+     find path from which binary was run and change dir to it
+     so all files will be local :) */
+  /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
+     so this code wouldn't be needed if SDL was init before anything else,
+     (just basic init, window shouldn't be needed). */
+  /* UPDATE (2005 July 19): Enable and make work on Windows. Makes testing
+     with MINGW/MSYS easier */
+
+  if (argv0)
+  {
+    char *app_path = strdup(argv0);
+    char *slash = strrchr(app_path, '/');
+
+    if (!slash)
+    {
+      slash = strrchr(app_path, '\\');
+    }
+    if (slash)
+    {
+      *(slash + 1) = '\0';
+      chdir(app_path);
+    }
+    free(app_path);
+  }
+#else
+  (void)argv0;
+#endif
+}
+
+/////////////////////////////////////////////////////////////////////////////
+static void setup(char *argv[])
+{
+  int i, j;
+  char *upstr;
+  SDL_Color black = { 0, 0, 0, 0 };
+  char *homedirdir;
+  FILE *fi;
+  SDL_Surface *tmp_surf;
+  SDL_Rect dest;
+  int scale;
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+  int x, y;
+  SDL_Surface *tmp_btn_up;
+  SDL_Surface *tmp_btn_down;
+  Uint8 r, g, b;
+#endif
+  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
+  Uint32 init_flags;
+  char tmp_str[128];
+  SDL_Surface *img1;
+  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
+  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+  int big_title;
+
+
+
+
 
 #ifdef _WIN32
   if (fullscreen)
@@ -20733,6 +20296,8 @@ static int old_main(int argc, char *argv[])
   SDL_Rect src;
   int i;
 
+  (void)argc;
+
   CLOCK_ASM(time1);
 
   /* Set up locale support */
@@ -20746,8 +20311,11 @@ static int old_main(int argc, char *argv[])
      -bjk 2007.06.05 */
 
 
+  chdir_to_binary(argv[0]);
+  setup_config(argv);
+
   /* Set up! */
-  setup(argc, argv);
+  setup(argv);
 
 
 
