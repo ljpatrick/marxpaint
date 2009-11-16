@@ -19152,225 +19152,11 @@ static void chdir_to_binary(char *argv0)
 #endif
 }
 
-/////////////////////////////////////////////////////////////////////////////
-static void setup(void)
-{
-  int i, j;
-  char *upstr;
-  SDL_Color black = { 0, 0, 0, 0 };
-  char *homedirdir;
+/////////////////////////////////////////////////////////////////////
+
+static void setup_colors(void){
   FILE *fi;
-  SDL_Surface *tmp_surf;
-  SDL_Rect dest;
-  int scale;
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-  int x, y;
-  SDL_Surface *tmp_btn_up;
-  SDL_Surface *tmp_btn_down;
-  Uint8 r, g, b;
-#endif
-  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
-  Uint32 init_flags;
-  char tmp_str[128];
-  SDL_Surface *img1;
-  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
-  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
-  int big_title;
-
-
-
-
-#ifdef _WIN32
-  if (fullscreen)
-  {
-    InstallKeyboardHook();
-    SetActivationState(1);
-  }
-#endif
-
-  im_init(&im_data, get_current_language());
-
-#ifndef NO_SDLPANGO
-  SDLPango_Init();
-#endif
-
-#ifndef WIN32
-  putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
-#endif
-
-  if (disable_screensaver == 0)
-  {
-    putenv((char *) "SDL_VIDEO_ALLOW_SCREENSAVER=1");
-    if (SDL_MAJOR_VERSION < 1 ||
-        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
-        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
-    {
-      fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
-    }
-  }
-
-  /* Test for lockfile, if we're using one: */
-
-  if (ok_to_use_lockfile)
-  {
-    char *lock_fname;
-    time_t time_lock, time_now;
-    char *homedirdir;
-
-
-    /* Get the current time: */
-
-    time_now = time(NULL);
-
-
-    /* Look for the lockfile... */
-
-#ifndef WIN32
-    lock_fname = get_fname("lockfile.dat", DIR_SAVE);
-#else
-    lock_fname = get_temp_fname("lockfile.dat");
-#endif
-
-    fi = fopen(lock_fname, "r");
-    if (fi != NULL)
-    {
-      /* If it exists, read its contents: */
-
-      if (fread(&time_lock, sizeof(time_t), 1, fi) > 0)
-      {
-	/* Has it not been 30 seconds yet? */
-
-	if (time_now < time_lock + 30)
-	{
-	  /* FIXME: Wrap in gettext() */
-	  printf
-	    ("You have already started tuxpaint less than 30 seconds ago.\n"
-	     "To prevent multiple executions by mistake, TuxPaint will not run\n"
-	     "before 30 seconds have elapsed since it was last started.\n"
-	     "\n"
-	     "You can also use the --nolockfile argument, see tuxpaint(1).\n\n");
-
-	  free(lock_fname);
-
-	  fclose(fi);
-	  exit(0);
-	}
-      }
-
-      fclose(fi);
-    }
-
-
-    /* Okay to run; create/update the lockfile */
-
-    /* (Make sure the directory exists, first!) */
-    homedirdir = get_fname("", DIR_SAVE);
-    mkdir(homedirdir, 0755);
-    free(homedirdir);
-
-
-    fi = fopen(lock_fname, "w");
-    if (fi != NULL)
-    {
-      /* If we can write to it, do so! */
-
-      fwrite(&time_now, sizeof(time_t), 1, fi);
-      fclose(fi);
-    }
-    else
-    {
-      fprintf(stderr,
-	      "\nWarning: I couldn't create the lockfile (%s)\n"
-	      "The error that occurred was:\n"
-	      "%s\n\n", lock_fname, strerror(errno));
-    }
-
-    free(lock_fname);
-  }
-
-
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER;
-  if (use_sound)
-    init_flags |= SDL_INIT_AUDIO;
-  if (!fullscreen)
-    init_flags |= SDL_INIT_NOPARACHUTE;	/* allow debugger to catch crash */
-
-  /* Init SDL */
-  if (SDL_Init(init_flags) < 0)
-  {
-#ifndef NOSOUND
-    char *olderr = strdup(SDL_GetError());
-    use_sound = 0;
-    init_flags &= ~SDL_INIT_AUDIO;
-    if (SDL_Init(init_flags) >= 0)
-    {
-      /* worked, w/o sound */
-      fprintf(stderr,
-	      "\nWarning: I could not initialize audio!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", olderr);
-      free(olderr);
-    }
-    else
-#endif
-    {
-      fprintf(stderr,
-	      "\nError: I could not initialize video and/or the timer!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-      exit(1);
-    }
-  }
-
-
-#ifndef NOSOUND
-#ifndef WIN32
-  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
-#else
-  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048) < 0)
-#endif
-  {
-    fprintf(stderr,
-	    "\nWarning: I could not set up audio for 44100 Hz "
-	    "16-bit stereo.\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-    use_sound = 0;
-  }
-
-  i = NUM_SOUNDS;
-  while (use_sound && i--)
-  {
-    sounds[i] = Mix_LoadWAV(sound_fnames[i]);
-
-    if (sounds[i] == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning: I couldn't open a sound file:\n%s\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", sound_fnames[i], SDL_GetError());
-      use_sound = 0;
-    }
-  }
-#endif
-
-
-  /* Set-up Key-Repeat: */
-  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
-
-  /* Init TTF stuff: */
-  if (TTF_Init() < 0)
-  {
-    fprintf(stderr,
-	    "\nError: I could not initialize the font (TTF) library!\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    SDL_Quit();
-    exit(1);
-  }
-
+  int i, j;
 
   /* Load colors, or use default ones: */
 
@@ -19520,6 +19306,237 @@ static void setup(void)
   color_picker_y = 0;
   NUM_COLORS++;
 
+}
+
+//////////////////////////////////////////////////////////////////
+
+static void do_lock_file(void)
+{
+  /* Test for lockfile, if we're using one: */
+
+  if (!ok_to_use_lockfile)
+    return;
+
+  char *lock_fname;
+  time_t time_lock, time_now;
+  char *homedirdir;
+
+
+  /* Get the current time: */
+
+  time_now = time(NULL);
+
+
+  /* Look for the lockfile... */
+
+#ifndef WIN32
+  lock_fname = get_fname("lockfile.dat", DIR_SAVE);
+#else
+  lock_fname = get_temp_fname("lockfile.dat");
+#endif
+
+  fi = fopen(lock_fname, "r");
+  if (fi != NULL)
+  {
+    /* If it exists, read its contents: */
+
+    if (fread(&time_lock, sizeof(time_t), 1, fi) > 0)
+    {
+      /* Has it not been 30 seconds yet? */
+
+      if (time_now < time_lock + 30)
+      {
+        /* FIXME: Wrap in gettext() */
+        printf
+          ("You have already started tuxpaint less than 30 seconds ago.\n"
+           "To prevent multiple executions by mistake, TuxPaint will not run\n"
+           "before 30 seconds have elapsed since it was last started.\n"
+           "\n"
+           "You can also use the --nolockfile argument, see tuxpaint(1).\n\n");
+
+        free(lock_fname);
+
+        fclose(fi);
+        exit(0);
+      }
+    }
+
+    fclose(fi);
+  }
+
+
+  /* Okay to run; create/update the lockfile */
+
+  /* (Make sure the directory exists, first!) */
+  homedirdir = get_fname("", DIR_SAVE);
+  mkdir(homedirdir, 0755);
+  free(homedirdir);
+
+
+  fi = fopen(lock_fname, "w");
+  if (fi != NULL)
+  {
+    /* If we can write to it, do so! */
+
+    fwrite(&time_now, sizeof(time_t), 1, fi);
+    fclose(fi);
+  }
+  else
+  {
+    fprintf(stderr,
+            "\nWarning: I couldn't create the lockfile (%s)\n"
+            "The error that occurred was:\n"
+            "%s\n\n", lock_fname, strerror(errno));
+  }
+
+  free(lock_fname);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+static void setup(void)
+{
+  int i;
+  char *upstr;
+  SDL_Color black = { 0, 0, 0, 0 };
+  char *homedirdir;
+  FILE *fi;
+  SDL_Surface *tmp_surf;
+  SDL_Rect dest;
+  int scale;
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+  int x, y;
+  SDL_Surface *tmp_btn_up;
+  SDL_Surface *tmp_btn_down;
+  Uint8 r, g, b;
+#endif
+  SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
+  Uint32 init_flags;
+  char tmp_str[128];
+  SDL_Surface *img1;
+  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
+  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+  int big_title;
+
+
+
+
+#ifdef _WIN32
+  if (fullscreen)
+  {
+    InstallKeyboardHook();
+    SetActivationState(1);
+  }
+#endif
+
+  im_init(&im_data, get_current_language());
+
+#ifndef NO_SDLPANGO
+  SDLPango_Init();
+#endif
+
+#ifndef WIN32
+  putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
+#endif
+
+  if (disable_screensaver == 0)
+  {
+    putenv((char *) "SDL_VIDEO_ALLOW_SCREENSAVER=1");
+    if (SDL_MAJOR_VERSION < 1 ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
+    {
+      fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
+    }
+  }
+
+
+
+  do_lock_file();
+
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER;
+  if (use_sound)
+    init_flags |= SDL_INIT_AUDIO;
+  if (!fullscreen)
+    init_flags |= SDL_INIT_NOPARACHUTE;	/* allow debugger to catch crash */
+
+  /* Init SDL */
+  if (SDL_Init(init_flags) < 0)
+  {
+#ifndef NOSOUND
+    char *olderr = strdup(SDL_GetError());
+    use_sound = 0;
+    init_flags &= ~SDL_INIT_AUDIO;
+    if (SDL_Init(init_flags) >= 0)
+    {
+      /* worked, w/o sound */
+      fprintf(stderr,
+	      "\nWarning: I could not initialize audio!\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", olderr);
+      free(olderr);
+    }
+    else
+#endif
+    {
+      fprintf(stderr,
+	      "\nError: I could not initialize video and/or the timer!\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+      exit(1);
+    }
+  }
+
+
+#ifndef NOSOUND
+#ifndef WIN32
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
+#else
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048) < 0)
+#endif
+  {
+    fprintf(stderr,
+	    "\nWarning: I could not set up audio for 44100 Hz "
+	    "16-bit stereo.\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+    use_sound = 0;
+  }
+
+  i = NUM_SOUNDS;
+  while (use_sound && i--)
+  {
+    sounds[i] = Mix_LoadWAV(sound_fnames[i]);
+
+    if (sounds[i] == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning: I couldn't open a sound file:\n%s\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", sound_fnames[i], SDL_GetError());
+      use_sound = 0;
+    }
+  }
+#endif
+
+
+  /* Set-up Key-Repeat: */
+  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+
+  /* Init TTF stuff: */
+  if (TTF_Init() < 0)
+  {
+    fprintf(stderr,
+	    "\nError: I could not initialize the font (TTF) library!\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    SDL_Quit();
+    exit(1);
+  }
+
+
+  setup_colors();
 
   /* Set window icon and caption: */
 
