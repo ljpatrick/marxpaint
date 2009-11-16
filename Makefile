@@ -844,7 +844,7 @@ install-man:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
-		obj/rgblinear.o obj/playsound.o obj/fonts.o \
+		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
 		$(ARCH_LIBS)
 	@echo
@@ -865,7 +865,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/sounds.h src/tip_tux.h src/great.h \
-		src/tp_magic_api.h \
+		src/tp_magic_api.h src/parse.h \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
 		src/$(MOUSEDIR)/insertion.xbm \
@@ -885,6 +885,17 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 	@echo "...Compiling Tux Paint from source..."
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
+
+obj/parse.c:	src/parse.gperf
+	@echo
+	@echo "...Generating the command-line and config file parser..."
+	@gperf src/parse.gperf | sed -r -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' > obj/parse.c
+
+obj/parse.o:	obj/parse.c src/parse.h src/compiler.h
+	@echo
+	@echo "...Compiling the command-line and config file parser..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+		-c obj/parse.c -o obj/parse.o
 
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
 	@echo
