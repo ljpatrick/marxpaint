@@ -1,0 +1,201 @@
+%struct-type
+%language=ANSI-C
+%7bit
+%readonly-tables
+%define initializer-suffix ,0
+
+%{
+
+#include "parse.h"
+#include <string.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <stdint.h>
+
+const char PARSE_YES[] = "yes";
+const char PARSE_NO[]  = "no";
+
+struct cfg
+{
+  const char *name;
+  void (*val)(void);
+};
+
+#define MULTIVAL   0x00000000
+#define POS        0x00000001
+#define NEG        0x00000002
+#define BOOL       (POS|NEG)
+#define BITS       2 // if this grows past 2, must shift the offset
+#define FLAGMASK   ((1<<BITS)-1)
+
+#define MULTI(x)   (void*)(offsetof(struct cfginfo,x)|MULTIVAL)
+#define POSBOOL(x) (void*)(offsetof(struct cfginfo,x)|POS|BOOL)
+#define NEGBOOL(x) (void*)(offsetof(struct cfginfo,x)|NEG|BOOL)
+#define IMM(x)     imm_##x
+
+static void imm_version(void)
+{
+}
+
+static void imm_verbose_version(void)
+{
+}
+
+static void imm_usage(void)
+{
+}
+
+static void imm_help(void)
+{
+}
+
+static void imm_copying(void)
+{
+}
+
+%}
+
+struct cfg
+
+%%
+alllocalefonts,     POSBOOL(all_locale_fonts)
+allowscreensaver,   NEGBOOL(disable_screensaver)
+altprint,           MULTI(alt_print_command_default)
+altprintalways,     MULTI(alt_print_command_default)
+altprintcommand,    MULTI(altprintcommand)
+altprintmod,        MULTI(alt_print_command_default)
+altprintnever,      MULTI(alt_print_command_default)
+autosave,           POSBOOL(autosave_on_quit)
+buttondistinction,  NEGBOOL(no_button_distinction)
+colorfile,          MULTI(colorfile)
+complexshapes,      NEGBOOL(simple_shapes)
+copying,            IMM(copying)
+currentlocalefont,  NEGBOOL(all_locale_fonts)
+datadir,            MULTI(datadir)
+disablescreensaver, POSBOOL(disable_screensaver)
+dontgrab,           NEGBOOL(grab_input)
+dontmirrorstamps,   NEGBOOL(mirrorstamps)
+fancycursors,       NEGBOOL(no_fancy_cursors)
+fullscreen,         MULTI(parsertmp_fullscreen_native)
+grab,               POSBOOL(grab_input)
+help,               IMM(help)
+hidecursor,         POSBOOL(hide_cursor)
+keyboard,           POSBOOL(keymouse)
+label,              NEGBOOL(disable_label)
+lang,               MULTI(parsertmp_lang)
+locale,             MULTI(parsertmp_locale)
+lockfile,           POSBOOL(ok_to_use_lockfile)
+magiccontrols,      NEGBOOL(disable_magic_controls)
+mirrorstamps,       POSBOOL(mirrorstamps)
+mixedcase,          NEGBOOL(only_uppercase)
+mouse,              NEGBOOL(keymouse)
+native,             POSBOOL(native_screensize)
+orient,             MULTI(rotate_orientation)
+outlines,           NEGBOOL(dont_do_xor)
+papersize,          MULTI(papersize)
+print,              NEGBOOL(disable_print)
+printcfg,           POSBOOL(use_print_config)
+printcommand,       MULTI(printcommand)
+printdelay,         MULTI(print_delay)
+quit,               NEGBOOL(disable_quit)
+save,               NEGBOOL(disable_save)
+savedir,            MULTI(savedir)
+saveover,           MULTI(promptless_save)
+saveoverask,        MULTI(promptless_save)
+saveovernew,        MULTI(promptless_save)
+shortcuts,          NEGBOOL(noshortcuts)
+showcursor,         NEGBOOL(hide_cursor)
+simpleshapes,       POSBOOL(simple_shapes)
+sound,              POSBOOL(use_sound)
+stampcontrols,      NEGBOOL(disable_stamp_controls)
+stamps,             NEGBOOL(dont_load_stamps)
+stampsize,          MULTI(stamp_size_override)
+startblank,         POSBOOL(start_blank)
+startlast,          NEGBOOL(start_blank)
+sysconfig,          POSBOOL(parsertmp_sysconfig)
+sysfonts,           NEGBOOL(no_system_fonts)
+uppercase,          POSBOOL(only_uppercase)
+usage,              IMM(usage)
+verbose-version,    IMM(verbose_version)
+version,            IMM(version)
+wheelmouse,         POSBOOL(wheely)
+windowed,           NEGBOOL(fullscreen)
+windowsize,         MULTI(parsertmp_windowsize)
+%%
+
+void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const char *opt, const char *restrict src)
+{
+  //printf("parsing: <%s> <%s>\n",str,arg);
+
+  if(isdigit(*str))
+  {
+    if(opt && !strcmp(opt,"no"))
+        str = "640x480";
+    opt = str;
+    str = "windowsize";
+  }
+
+  int noflag = 2*(str[0]=='n' && str[1]=='o' && str[2]);
+  const struct cfg *cfg = in_word_set(str+noflag, strlen(str+noflag));
+
+  uintptr_t uintptr = cfg ? (uintptr_t)cfg->val : 0;
+  unsigned flags = (uintptr<CFGINFO_MAXOFFSET) ? (uintptr & FLAGMASK) : 0;
+
+  if(!cfg || (!(flags & BOOL) && noflag) )
+  {
+    if(src)
+      printf("Unknown option '%s' in config file '%s'\n",str,src);
+    else
+      printf("Unknown command line option '--%s'\n",str);
+    exit(47);
+  }
+
+  if(unlikely(uintptr >= CFGINFO_MAXOFFSET))
+  {
+    if(src)
+    {
+      // immediate options are only for the command line
+      printf("Unknown option '%s' in config file '%s'\n",str,src);
+      exit(49);
+    }
+    if(opt)
+    {
+      printf("Command line option '--%s' doesn't take a value.\n",str);
+      exit(50);
+    }
+    cfg->val();
+    exit(0);
+  }
+
+  if(flags & BOOL)
+  {
+    int flip = !!noflag ^ !!(flags & NEG);
+    if(!opt)
+      opt = flip ? PARSE_NO : PARSE_YES;
+    else if(!strcmp("yes",opt))
+      opt = flip ? PARSE_NO : PARSE_YES;
+    else if(!strcmp("no",opt))
+      opt = flip ? PARSE_YES : PARSE_NO;
+    else
+    {
+      if(src)
+        printf("Option '%s' in config file '%s' is yes/no only, but got '%s'\n",str,src,opt);
+      else
+        printf("Command line option '--%s' is yes/no only, but got '%s'\n",str,opt);
+      exit(51);
+    }
+  }
+  else if(!opt)
+  {
+      if(src)
+        printf("Option '%s' in config file '%s' needs a value\n",str,src);
+      else
+        printf("Command line option '--%s' needs a value\n",str);
+      exit(52);
+  }
+
+  unsigned offset = uintptr &~ FLAGMASK;
+  memcpy(offset+(char*)tmpcfg, &opt, sizeof(char*));
+}
