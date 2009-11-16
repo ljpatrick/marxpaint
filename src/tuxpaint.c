@@ -1502,7 +1502,6 @@ static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char *prg);
-void signal_handler(int sig);
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
 			      unsigned int w, unsigned int h,
 			      unsigned int x, unsigned int y);
@@ -6640,13 +6639,9 @@ static int load_user_fonts_stub(void *vp)
 		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
-void signal_handler(int sig)
+static void signal_handler(int)
 {
-  sig = sig;
-  /*
-     if (sig == SIGPIPE)
-     fprintf(stderr, "SIGPIPE!\n");
-   */
+  // It is not legal to call printf or most other functions here!
 }
 #endif
 
@@ -20266,7 +20261,7 @@ static void setup(char *argv[])
 
   SDL_EnableUNICODE(1);
 
-#ifndef WIN32
+#ifndef _WIN32
   /* Set up signal handler for SIGPIPE (in case printer command dies;
      e.g., altprintcommand=kprinter, but 'Cancel' is clicked,
      instead of 'Ok') */
