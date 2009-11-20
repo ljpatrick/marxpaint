@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 9, 2009
+# June 14, 2002 - November 20, 2009
 
 
 # The version number, for release:
@@ -886,10 +886,16 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
-obj/parse.c:	src/parse.gperf
+# Broke gperf|sed up into two steps so that it will fail properly if gperf is not installed; there's probably a more elegant solution -bjk 2009.11.20
+obj/parse.c:	obj/parse_step1.c
 	@echo
-	@echo "...Generating the command-line and config file parser..."
-	@gperf src/parse.gperf | sed -r -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' > obj/parse.c
+	@echo "...Generating the command-line and config file parser (STEP 2)..."
+	sed -r -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' > obj/parse.c
+	
+obj/parse_step1.c:	src/parse.gperf
+	@echo
+	@echo "...Generating the command-line and config file parser (STEP 1)..."
+	@gperf src/parse.gperf > obj/parse_step1.c
 
 obj/parse.o:	obj/parse.c src/parse.h src/compiler.h
 	@echo
