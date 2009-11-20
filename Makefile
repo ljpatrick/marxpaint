@@ -507,6 +507,7 @@ clean:
 	@-rm -f magic/*.$(SO_TYPE)
 	@-rm -f tuxpaint
 	@-rm -f obj/*.o
+	@-rm -f obj/parse.c obj/parse_step1.c
 	@-rm -f dummy.o
 	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
@@ -890,7 +891,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 obj/parse.c:	obj/parse_step1.c
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 2)..."
-	sed -r -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' > obj/parse.c
+	sed -r -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' obj/parse_step1.c > obj/parse.c
 	
 obj/parse_step1.c:	src/parse.gperf
 	@echo
