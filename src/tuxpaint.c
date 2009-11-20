@@ -745,6 +745,7 @@ static SDL_Surface *screen;
 static SDL_Surface *canvas;
 static SDL_Surface *label;
 static SDL_Surface *save_canvas;
+static SDL_Surface *canvas_back;
 static SDL_Surface *img_starter, *img_starter_bkgd;
 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
@@ -985,6 +986,10 @@ static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect,
 		   SDL_Surface * dest_surf, SDL_Rect * dest_rect);
 
 void set_label_fonts(void);
+
+void tmp_apply_uncommited_text(void);
+void undo_tmp_applied_text(void);
+
 
 /* Magic tools API and tool handles: */
 
@@ -2131,8 +2136,8 @@ static void mainloop(void)
 	  /* Ctrl-S - Save */
 
           magic_switchout(canvas);
-
 	  hide_blinking_cursor();
+
 	  if (do_save(cur_tool, 0))
 	  {
 	    /* Only think it's been saved if it HAS been saved :^) */
@@ -2141,7 +2146,6 @@ static void mainloop(void)
 	    tool_avail[TOOL_SAVE] = 0;
 	  }
 
-	  /* cur_tool = old_tool; */
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
           
@@ -2164,26 +2168,10 @@ static void mainloop(void)
         magic_switchout(canvas);
 
         /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-        if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && texttool_len > 0)
-        {
-          rec_undo_buffer();
-          do_render_cur_text(1);
-          texttool_len = 0;
-          cursor_textwidth = 0;
-        }
-        else if(cur_tool == TOOL_LABEL &&
-                cur_label == LABEL_SELECT &&
-                cur_select == SELECT_ON)
-            {
-                cur_select = SELECT_OFF;
-                rec_undo_buffer();
-                have_to_rec_label_node = TRUE;
-                add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
-                derender_node(&label_node_to_edit);
-            }
 
+        tmp_apply_uncommited_text();
         print_image(); 
-
+        undo_tmp_applied_text();
         magic_switchin(canvas);
 
         draw_toolbar();
@@ -2276,6 +2264,7 @@ static void mainloop(void)
 	          do_render_cur_text(1);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
+                  cur_select = SELECT_OFF;
 
                   if (been_saved)
                       {
@@ -2335,6 +2324,7 @@ static void mainloop(void)
 	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
+                  cur_select = SELECT_OFF;
 
                   if (been_saved)
                       {
@@ -2774,28 +2764,11 @@ static void mainloop(void)
 	    else if (cur_tool == TOOL_PRINT)
 	    {
               /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-              if ((old_tool == TOOL_TEXT || old_tool == TOOL_LABEL) && texttool_len > 0)
-              {
-                rec_undo_buffer();
-                do_render_cur_text(1);
-                texttool_len = 0;
-                cursor_textwidth = 0;
-              }
-              else if(old_tool == TOOL_LABEL &&
-                      cur_label == LABEL_SELECT &&
-                      cur_select == SELECT_ON)
-                  {
-                      cur_select = SELECT_OFF;
-                      rec_undo_buffer();
-                      have_to_rec_label_node = TRUE;
-                      add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
-                      derender_node(&label_node_to_edit);
-                  }
-
-
+          tmp_apply_uncommited_text();
           /* original print code was here */
           print_image();
-            
+          undo_tmp_applied_text();
+
           cur_tool = old_tool;
           draw_toolbar();
           draw_tux_text(TUX_BORED, "", 0);
@@ -3742,6 +3715,8 @@ static void mainloop(void)
 		  do_setcursor(cursor_insertion);
                   cur_select = SELECT_ON;
                   unsigned int i = 0;
+                  label_node_to_edit->is_enabled = FALSE;
+                  derender_node(&label_node_to_edit);
 
                   texttool_len = select_texttool_len;
                   while(i < texttool_len)
@@ -11642,14 +11617,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (disable_save)
     return 0;
 
-  printf("%i, %i\n",TOOL_LABEL, tool);
-  if ((tool == TOOL_TEXT || tool == TOOL_LABEL) ||
-      (tool==TOOL_OPEN && (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)) ||
-      (tool == TOOL_NEW && (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)) )
-      {
-          do_render_cur_text(1);
-      }
-  
+  tmp_apply_uncommited_text();
 
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
@@ -11931,6 +11899,8 @@ static int do_save(int tool, int dont_show_success_results)
     do_setcursor(cursor_arrow);
   }
 
+  undo_tmp_applied_text();
+  
   return 1;
 }
 
@@ -14837,19 +14807,25 @@ static void do_render_cur_text(int do_blit)
 
     if (do_blit)
     {
-
-      if(cur_tool == TOOL_LABEL && cur_select == SELECT_ON)
+        if ((cur_tool == TOOL_LABEL && cur_select == SELECT_ON) ||
+            ((old_tool == TOOL_LABEL && cur_select == SELECT_ON) &&
+             (cur_tool == TOOL_PRINT ||
+              cur_tool == TOOL_SAVE ||
+              cur_tool == TOOL_OPEN ||
+              cur_tool == TOOL_NEW)))
       {
 	have_to_rec_label_node=TRUE;
 	add_label_node(src.w, src.h, dest.x, dest.y, &label_node_to_edit, tmp_surf);
         derender_node(&label_node_to_edit); // Derendering a node also reblits others.
-        
-        cur_select = SELECT_OFF;
-	do_setcursor(cursor_arrow);
 
+	do_setcursor(cursor_arrow);
       }
-      else if((cur_tool == TOOL_LABEL && cur_label == LABEL_LABEL) ||
-              (cur_tool == TOOL_PRINT && old_tool == TOOL_LABEL && cur_label == LABEL_LABEL))
+        else if (cur_tool == TOOL_LABEL ||
+                 (old_tool == TOOL_LABEL &&
+                  (cur_tool == TOOL_PRINT ||
+                   cur_tool == TOOL_SAVE ||
+                   cur_tool == TOOL_OPEN ||
+                   cur_tool == TOOL_NEW)))
       {
           myblit(tmp_surf, &src, label, &dest);
           
@@ -18276,8 +18252,6 @@ struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uin
 			      r_tmp_select.x = tmp_node->save_x;
 			      r_tmp_select.y = tmp_node->save_y;
 
-			      SDL_FillRect(label, &r_tmp_select, SDL_MapRGBA(label->format, 0, 0, 0, 0));
-
 			      return tmp_node;
     }
   
@@ -18770,6 +18744,87 @@ void set_label_fonts()
 
             node = node->next_to_down_label_node;
             
+        }
+}
+
+
+void tmp_apply_uncommited_text()
+{
+    if (texttool_len > 0)
+        {
+            if (cur_tool == TOOL_TEXT ||
+                         (old_tool == TOOL_TEXT &&
+                          (cur_tool == TOOL_PRINT ||
+                           cur_tool == TOOL_SAVE ||
+                           cur_tool == TOOL_OPEN ||
+                           cur_tool == TOOL_NEW)))                {
+                    canvas_back = SDL_CreateRGBSurface(canvas->flags,
+                                                       canvas->w,
+                                                       canvas->h,
+                                                       canvas->format->BitsPerPixel,
+                                                       canvas->format->Rmask,
+                                                       canvas->format->Gmask,
+                                                       canvas->format->Bmask, 0);
+                    SDL_BlitSurface(canvas, NULL, canvas_back, NULL);
+                    do_render_cur_text(1);
+                }
+        
+            else if (cur_tool == TOOL_LABEL ||
+                         (old_tool == TOOL_LABEL &&
+                          (cur_tool == TOOL_PRINT ||
+                           cur_tool == TOOL_SAVE ||
+                           cur_tool == TOOL_OPEN ||
+                           cur_tool == TOOL_NEW)))
+                {
+                    do_render_cur_text(1);
+                    current_label_node->save_undoid = 253;
+                }
+        }
+    else if ((cur_tool == TOOL_LABEL && cur_select == SELECT_ON) ||
+             ((old_tool == TOOL_LABEL && cur_select == SELECT_ON) &&
+              (cur_tool == TOOL_PRINT ||
+               cur_tool == TOOL_SAVE ||
+               cur_tool == TOOL_OPEN ||
+               cur_tool == TOOL_NEW)))
+            {
+                add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                current_label_node->is_enabled = FALSE;
+                current_label_node->save_undoid = 253;
+                
+                derender_node(&label_node_to_edit);
+            }
+}
+
+void undo_tmp_applied_text()
+{
+    struct label_node* aux_label_node;
+
+    if (texttool_len > 0)
+        {
+            if (cur_tool == TOOL_TEXT ||
+                (cur_tool == TOOL_PRINT && old_tool == TOOL_TEXT) ||
+                (cur_tool == TOOL_SAVE && old_tool == TOOL_TEXT) ||
+                (cur_tool == TOOL_OPEN && old_tool == TOOL_TEXT) ||
+                (cur_tool == TOOL_NEW && old_tool == TOOL_TEXT))
+                {
+                    SDL_BlitSurface(canvas_back, NULL, canvas, NULL);
+                    SDL_FreeSurface(canvas_back);
+                    do_render_cur_text(0);
+                }
+        }
+    if (current_label_node != NULL && current_label_node->save_undoid == 253)
+        {
+            aux_label_node = current_label_node;
+            current_label_node = current_label_node->next_to_down_label_node;
+
+            if (current_label_node == NULL)
+                start_label_node = NULL;
+            else
+                current_label_node->next_to_up_label_node = first_label_node_in_redo_stack;
+
+            derender_node(&aux_label_node);
+            delete_label_list(&aux_label_node);
+            do_render_cur_text(0);
         }
 }
 
