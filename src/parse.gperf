@@ -47,13 +47,13 @@ static void imm_verbose_version(void)
 
 static void imm_usage(void)
 {
-//  show_usage(stdout,"tuxpaint");
+//  show_usage(0);
 }
 
 static void imm_help(void)
 {
 //  show_version(0);
-//  show_usage(stdout,"tuxpaint");
+//  show_usage(0);
 }
 
 static void imm_copying(void)

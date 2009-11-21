@@ -1506,7 +1506,10 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
-static void show_usage(FILE * f, char *prg);
+
+static void show_usage(int exitcode);
+static char *progname;
+
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
 			      unsigned int w, unsigned int h,
 			      unsigned int x, unsigned int y);
@@ -5491,12 +5494,13 @@ static void show_version(int details)
 
 /* Show usage display: */
 
-static void show_usage(FILE * f, char *prg)
+static void show_usage(int exitcode)
 {
+  FILE *f = exitcode ? stderr : stdout;
   char *blank;
   unsigned i;
 
-  blank = strdup(prg);
+  blank = strdup(progname);
 
   for (i = 0; i < strlen(blank); i++)
     blank[i] = ' ';
@@ -5548,7 +5552,7 @@ static void show_usage(FILE * f, char *prg)
           "  %s [--nolockfile]\n"
 	  "  %s [--colorfile FILE]\n"
 	  "\n",
-	  prg, prg,
+	  progname, progname,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
@@ -18926,8 +18930,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
       continue;
     }
     fprintf(stderr, "%s is not understood\n", *argv);
-    show_usage(stderr, (char *) getfilename(progname));
-    exit(1);
+    show_usage(63);
   }
 }
 
@@ -20458,6 +20461,7 @@ int main(int argc, char *argv[])
   CLOCK_ASM(time1);
 
   // do not add code (slowness) here unless required for scanning fonts
+  progname = argv[0];
   chdir_to_binary(argv[0]);
   setup_config(argv);
   setup_language(getfilename(argv[0]), &button_label_y_nudge);
