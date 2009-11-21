@@ -177,6 +177,7 @@ extern style_info **user_font_styles;
 extern int num_font_styles;
 extern int num_font_styles_max;
 
+extern int button_label_y_nudge;
 
 int compar_fontgroup(const void *v1, const void *v2);
 int compar_fontkiller(const void *v1, const void *v2);

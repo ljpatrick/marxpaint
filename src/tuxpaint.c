@@ -1167,8 +1167,6 @@ static SDL_Surface *img_title_on, *img_title_off,
 static SDL_Surface *img_title_names[NUM_TITLES];
 static SDL_Surface *img_tools[NUM_TOOLS], *img_tool_names[NUM_TOOLS];
 
-static int button_label_y_nudge;
-
 static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y,
 			      int keep_aspect);
 static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
@@ -19077,7 +19075,7 @@ static void setup_config(char *argv[])
 
   datadir = tmpcfg.datadir ? tmpcfg.datadir : savedir;
 
-  setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &button_label_y_nudge);
+  button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale);
 
 #if 0
 

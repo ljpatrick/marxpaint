@@ -147,7 +147,7 @@ extern const char *lang_prefix, *short_lang_prefix;
 /* Function prototypes: */
 
 int get_current_language(void);
-void setup_i18n(const char *restrict lang, const char *restrict locale, int *button_label_y_nudge);
-void smash_i18n(void);
+int setup_i18n(const char *restrict lang, const char *restrict locale) MUST_CHECK;
+int smash_i18n(void) MUST_CHECK;
 
 #endif

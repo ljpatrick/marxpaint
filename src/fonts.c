@@ -143,6 +143,7 @@ int num_font_styles_max = 0;
 int text_state = 0;
 unsigned text_size = 4;		// initial text size
 
+int button_label_y_nudge;
 
 static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale);
 
@@ -259,7 +260,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
           str,
           SDL_GetError()
         );
-        smash_i18n();
+        button_label_y_nudge = smash_i18n();
       }
     }
 

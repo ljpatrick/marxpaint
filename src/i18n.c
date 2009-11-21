@@ -346,15 +346,15 @@ static void ctype_utf8(void)
 #endif
 }
 
+
 /* Determine the current language/locale, and set the language string: */
 
+static int set_current_language(void) MUST_CHECK;
 static int set_current_language(void)
 {
   char *loc, *baseloc;
   int i, found;
-  int y_nudge;
-
-  y_nudge = 0;
+  int y_nudge = 0;
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -368,18 +368,13 @@ static int set_current_language(void)
   langint = LANG_EN;
 
 
-#ifndef WIN32
+#ifndef _WIN32
   loc = setlocale(LC_MESSAGES, NULL); // NULL: Used to direct setlocale() to query the current internationalised environment and return the name of the locale().
 
   // FIXME: I'm getting back en_US.UTF-8 even after LC_ALL has been putenv()'d...?? -bjk 2008.02.19
 
-  if (loc != NULL)
-  {
-    if (strstr(loc, "LC_MESSAGES") != NULL)
-    {
-      loc = getenv("LANG");
-    }
-  }
+  if (loc && strstr(loc, "LC_MESSAGES"))
+    loc = getenv("LANG");
 #else
   bind_textdomain_codeset("tuxpaint", "UTF-8");
   loc = getenv("LANGUAGE");
@@ -400,10 +395,10 @@ static int set_current_language(void)
 
   //debug(loc);
 
-  if (loc != NULL)
+  if (loc)
   {
     baseloc = strdup(loc);
-    if (strchr(baseloc, '.') != NULL)
+    if (strchr(baseloc, '.'))
       strcpy(strchr(baseloc, '.'), "\0");
 
 
@@ -464,7 +459,7 @@ static int set_current_language(void)
   fflush(stderr);
 #endif
 
-  return(y_nudge);
+  return y_nudge;
 }
 
 
@@ -665,9 +660,10 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "\n", prg);
 }
 
-static void setup_language(const char *const prg, int * y_nudge)
+static int setup_language(const char *const prg) MUST_CHECK;
+static int setup_language(const char *const prg)
 {
-  if (langstr != NULL)
+  if (langstr)
   {
     int i =
       sizeof language_to_locale_array / sizeof language_to_locale_array[0];
@@ -720,13 +716,18 @@ static void setup_language(const char *const prg, int * y_nudge)
     langstr = NULL;
   }
 
-  *y_nudge = set_current_language();
+  return set_current_language();
 }
 
 
 // handle --locale arg
 static void do_locale_option(const char *const arg)
 {
+  if(!strcmp(arg,"help"))
+  {
+    show_locale_usage(stdout,"tuxpaint");
+    exit(0);
+  }
   int len = strlen(arg) + 6;
   char *str = malloc(len);
   snprintf(str, len, "LANG=%s", arg);
@@ -738,22 +739,23 @@ static void do_locale_option(const char *const arg)
   ctype_utf8();
 }
 
-void setup_i18n(const char *restrict lang, const char *restrict locale, int *button_label_y_nudge)
+int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
   printf("lang \"%s\", locale \"%s\"\n", lang, locale);
   if(lang)
     set_langstr(lang);
   if(locale)
     do_locale_option(locale);
-  setup_language("tuxpaint", button_label_y_nudge);
+  int y_nudge = setup_language("tuxpaint");
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
+  return y_nudge;
 }
 
-void smash_i18n(void)
+int smash_i18n(void)
 {
   putenv((char *) "LANG=C");
   putenv((char *) "OUTPUT_CHARSET=C");
   setlocale(LC_ALL, "C");
   ctype_utf8();
-  set_current_language();
+  return set_current_language();
 }

@@ -118,6 +118,12 @@
 #define expected(x,y)   (x)
 #endif
 
+#if __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)
+#define MUST_CHECK __attribute__((warn_unused_result))
+#else
+#define MUST_CHECK
+#endif
+
 
 #ifdef __powerpc__
 // Ticks at 1/4  the memory bus clock (24.907667 MHz on Albert's Mac Cube)
