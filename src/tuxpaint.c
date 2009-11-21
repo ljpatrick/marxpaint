@@ -18319,7 +18319,19 @@ void rec_undo_label(void)
       return;
     }
 
-  if (have_to_rec_label_node && current_label_node != NULL) /* FIXME: Bill added the "current_label_node != NULL" test to avoid crashing in the following situation: (1) use label tool, (2) start new drawing, (3) change to paint tool & try to draw.  Is this test correct, or is the crash here an artifact of a different bug? -bjk 2009.10.05 */
+  // FIXME: Bill added the "current_label_node != NULL" test to avoid
+  // crashing in the following situation: (1) use label tool, (2) start new
+  // drawing, (3) change to paint tool & try to draw.  Is this test correct,
+  // or is the crash here an artifact of a different bug?  -bjk 2009.10.05
+  //
+  // It's all wrong to have a separate undo stack anyway. We need a way
+  // for arbitrary code to supply callback functions and parameters when
+  // creating an undo entry. One obvious function is a destructor for the
+  // private data, for when it drops off the far end of the stack or gets
+  // wiped out by an undo,draw combo. Others might be for when the level
+  // stops being current or for when the level becomes current again.
+
+  if (have_to_rec_label_node && current_label_node != NULL)
     {
       current_label_node->save_undoid = cur_undo;
       text_undo[cur_undo] = 1;
@@ -18926,7 +18938,11 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     char *arg = strchr(str,'=');
     if(arg)
       *arg++ = '\0';
-    parse_one_option(tmpcfg,str,arg,filename);
+    // FIXME: leaking mem here, but the trouble is that these
+    // strings get mixed in with ones from .data and .rodata
+    // and free() isn't smart about the situation -- also some
+    // of the strings end up being kept around
+    parse_one_option(tmpcfg,str,strdup(arg),filename);
   }
   fclose(fi);
 }

@@ -741,6 +741,7 @@ static void do_locale_option(const char *const arg)
 
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
+  printf("lang %p, locale %p\n", lang, locale);
   printf("lang \"%s\", locale \"%s\"\n", lang, locale);
   if(lang)
     set_langstr(lang);
