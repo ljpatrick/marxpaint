@@ -216,7 +216,7 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
       exit(51);
     }
   }
-  else if(!opt)
+  else if(!opt || !*opt)
   {
       if(src)
         printf("Option '%s' in config file '%s' needs a value\n",str,src);
