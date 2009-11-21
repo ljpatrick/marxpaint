@@ -607,7 +607,17 @@ static grid_dims gd_colors;	/* was 17x1 */
 #define THUMB_W ((WINDOW_WIDTH - 96 - 96) / 4)
 #define THUMB_H (((48 * 7 + 40 + HEIGHTOFFSET) - 72) / 4)
 
-static int WINDOW_WIDTH, WINDOW_HEIGHT;
+#ifdef NOKIA_770
+static int WINDOW_WIDTH = 800;
+static int WINDOW_HEIGHT = 480;
+#elif defined(OLPC_XO)
+// ideally we'd support rotation and 2x scaling
+static int WINDOW_WIDTH = 1200;
+static int WINDOW_HEIGHT = 900;
+#else
+static int WINDOW_WIDTH = 800;
+static int WINDOW_HEIGHT = 600;
+#endif
 
 void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
 Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
@@ -855,7 +865,11 @@ static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y,
 
 /* One global variable defined here so that update_canvas() need not be moved below */
 
+#if VIDEO_BPP != 32
+static int disable_label = 1;
+#else
 static int disable_label;
+#endif
 
 /* Update the screen with the new canvas: */
 static void update_canvas(int x1, int y1, int x2, int y2)
@@ -893,58 +907,88 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Globals: */
 
-static int
-  disable_screensaver, fullscreen, native_screensize, grab_input,
-  rotate_orientation,
+static int disable_screensaver;
+#ifdef NOKIA_770
+static int fullscreen = 1;
+#else
+static int fullscreen;
+#endif
+static int native_screensize;
+static int grab_input;
+static int rotate_orientation;
 
-  disable_print, print_delay, use_print_config, alt_print_command_default,
-  want_alt_printcommand,
+static int disable_print;
+static int print_delay;
+static int use_print_config = 1;
+static int alt_print_command_default = ALTPRINT_MOD;
+static int want_alt_printcommand;
 
-  wheely, keymouse, mouse_x, mouse_y,
-  no_button_distinction,
-  mousekey_up, mousekey_down, mousekey_left, mousekey_right,
-  button_down,
-  scrolling,
+static int wheely = 1;
+static int keymouse;
+static int mouse_x;
+static int mouse_y;
+static int no_button_distinction;
+static int mousekey_up;
+static int mousekey_down;
+static int mousekey_left;
+static int mousekey_right;
+static int button_down;
+static int scrolling;
 
-  promptless_save, disable_quit,
+static int promptless_save = SAVE_OVER_PROMPT;
+static int disable_quit;
 
-  noshortcuts,
-  disable_save, ok_to_use_lockfile,
-  start_blank, autosave_on_quit,
+static int noshortcuts;
+static int disable_save;
+static int ok_to_use_lockfile = 1;
+static int start_blank;
+static int autosave_on_quit;
 
-  dont_do_xor, dont_load_stamps, mirrorstamps, disable_stamp_controls,
-  stamp_size_override,
+static int dont_do_xor;
+static int dont_load_stamps;
+static int mirrorstamps;
+static int disable_stamp_controls;
+static int stamp_size_override = -1;
 
-  simple_shapes, only_uppercase,
+#ifdef NOKIA_770
+static int simple_shapes = 1;
+#else
+static int simple_shapes;
+#endif
+static int only_uppercase;
 
-  disable_magic_controls;
+static int disable_magic_controls;
 
-static int starter_mirrored, starter_flipped, starter_personal;
+static int starter_mirrored;
+static int starter_flipped;
+static int starter_personal;
 static int template_personal;
+
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 Uint8 * touched;
 
 int shape_radius;
 
 /* Text label tool struct to hold information about text on the label layer */
-typedef struct label_node {
-	unsigned int save_texttool_len;
-	wchar_t save_texttool_str[256];
-	unsigned save_color;
-	int save_width;
-	int save_height;
-	Uint16 save_x;
-	Uint16 save_y;
-	int save_cur_font;
+typedef struct label_node
+{
+  unsigned int save_texttool_len;
+  wchar_t save_texttool_str[256];
+  unsigned save_color;
+  int save_width;
+  int save_height;
+  Uint16 save_x;
+  Uint16 save_y;
+  int save_cur_font;
   char * save_font_type;
-        int save_text_state;
-        unsigned save_text_size;
-        int save_undoid;
-        int is_enabled;
-        struct label_node* disables;
-	struct label_node* next_to_up_label_node;
-	struct label_node* next_to_down_label_node;
-        SDL_Surface* label_node_surface;
+  int save_text_state;
+  unsigned save_text_size;
+  int save_undoid;
+  int is_enabled;
+  struct label_node* disables;
+  struct label_node* next_to_up_label_node;
+  struct label_node* next_to_down_label_node;
+  SDL_Surface* label_node_surface;
 } label_node;
 
 
@@ -18891,7 +18935,6 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
-  const char *progname = argv[0];
   char *str;
 
   /* FIXME: Bring back support for single-dash options:
@@ -18958,204 +19001,58 @@ static void setup_config(char *argv[])
   struct cfginfo tmpcfg_cmd;
   memset(&tmpcfg_cmd, '\0', sizeof tmpcfg_cmd);
 
-  struct cfginfo tmpcfg =
-  {
-    .all_locale_fonts            = "",
-    .alt_print_command_default   = "",
-    .altprintcommand             = "",
-    .autosave_on_quit            = "",
-    .colorfile                   = "",
-    .datadir                     = "",
-    .disable_label               = "",
-    .disable_magic_controls      = PARSE_NO,
-    .disable_print               = PARSE_NO,
-    .disable_quit                = PARSE_NO,
-    .disable_save                = PARSE_NO,
-    .disable_screensaver         = PARSE_NO,
-    .disable_stamp_controls      = "",
-    .dont_do_xor                 = PARSE_NO,
-    .dont_load_stamps            = PARSE_NO,
-    .fullscreen                  = PARSE_NO,
-    .grab_input                  = "",
-    .hide_cursor                 = "",
-    .keymouse                    = "",
-    .mirrorstamps                = "",
-    .native_screensize           = "",
-    .no_button_distinction       = "",
-    .no_fancy_cursors            = "",
-    .no_system_fonts             = "",
-    .noshortcuts                 = "",
-    .ok_to_use_lockfile          = "",
-    .only_uppercase              = "",
-    .papersize                   = "",
-    .parsertmp_fullscreen_native = "",
-    .parsertmp_lang              = "",
-    .parsertmp_locale            = "",
-    .parsertmp_sysconfig         = "",
-    .parsertmp_windowsize        = "",
-    .print_delay                 = "",
-    .printcommand                = "",
-    .promptless_save             = "",
-    .rotate_orientation          = "",
-    .savedir                     = "",
-    .simple_shapes               = "",
-    .stamp_size_override         = "",
-    .start_blank                 = "",
-    .use_print_config            = "",
-    .use_sound                   = PARSE_YES,
-    .wheely                      = "",
-  };
-
-  /* Set default options: */
-
-  use_sound = 1;
-#ifdef NOKIA_770
-  fullscreen = 1;
-#else
-  fullscreen = 0;
-#endif
-  disable_screensaver = 0;
-  dont_do_xor = 0;
-  grab_input = 0;
-  keymouse = 0;
-  native_screensize = 0;
-  no_button_distinction = 0;
-  noshortcuts = 0;
-  rotate_orientation = 0;
-  wheely = 1;
-#ifdef NOKIA_770
-  hide_cursor = 1;
-  no_fancy_cursors = 1;
-  simple_shapes = 1;
-#else
-  hide_cursor = 0;
-  no_fancy_cursors = 0;
-  simple_shapes = 0;
-#endif
-  all_locale_fonts = 0;
-  alt_print_command_default = ALTPRINT_MOD;
-  autosave_on_quit = 0;
-  disable_magic_controls = 0;
-  disable_print = 0;
-  disable_quit = 0;
-  disable_save = 0;
-  disable_stamp_controls = 0;
-  dont_load_stamps = 0;
-  mirrorstamps = 0;
-  no_system_fonts = 1;
-  only_uppercase = 0;
-  print_delay = 0;
-  promptless_save = SAVE_OVER_PROMPT;
-  stamp_size_override = -1;
-  use_print_config = 1;
-  if(VIDEO_BPP != 32)
-    disable_label = 1;
-  else
-    disable_label = 0;
-
-
-#ifndef WINDOW_WIDTH
-  WINDOW_WIDTH = 800;
-  WINDOW_HEIGHT = 600;
-#endif
-
-#ifdef NOKIA_770
-  WINDOW_WIDTH = 800;
-  WINDOW_HEIGHT = 480;
-#endif
-
-#ifdef OLPC_XO
-  /* ideally we'd support rotation and 2x scaling */
-  WINDOW_WIDTH = 1200;
-  WINDOW_HEIGHT = 900;
-#endif
-  colorfile[0] = '\0';
-  ok_to_use_lockfile = 1;
-  start_blank = 0;
-
-
-#ifdef __BEOS__
-  /* Fancy cursors on BeOS are buggy in SDL */
-  no_fancy_cursors = 1;
-#endif
-
-
-#ifdef WIN32
-  /* Windows */
-  savedir = GetDefaultSaveDir("TuxPaint");
-  datadir = GetDefaultSaveDir("TuxPaint");
-#elif __BEOS__
-  /* BeOS */
-  savedir = strdup("./userdata");
-  datadir = strdup("./userdata");
-#elif __APPLE__
-  /* Mac OS X */
-  savedir = strdup(macosx.preferencesPath);
-  datadir = strdup(macosx.preferencesPath);
-#else
-  /* Linux */
-
-  if (getenv("HOME") != NULL)
-  {
-    char tmp[MAX_PATH];
-
-    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"), ".tuxpaint");
-
-    savedir = strdup(tmp);
-    datadir = strdup(tmp);
-  }
-  else
-  {
-    /* Woah, don't know where $HOME is? */
-
-    fprintf(stderr, "Error: You have no $HOME environment variable!\n");
-    exit(1);
-  }
-#endif
-
+  struct cfginfo tmpcfg;
+  memset(&tmpcfg, '\0', sizeof tmpcfg);
 
   parse_argv_options(&tmpcfg_cmd, argv);
 
+  /* Set default options: */
+
+  const char *home = getenv("HOME");
+  if(!home)
+  {
+    /* Woah, don't know where $HOME is? */
+    fprintf(stderr, "Error: You have no $HOME environment variable!\n");
+    exit(1);
+  }
+
+  if(tmpcfg_cmd.savedir)
+    savedir = strdup(tmpcfg_cmd.savedir);
+  else
+  {
+#ifdef _WIN32
+    savedir = GetDefaultSaveDir("TuxPaint");
+#elif __BEOS__
+    savedir = strdup("./userdata");
+#elif __APPLE__
+    savedir = strdup(macosx.preferencesPath);
+#else
+    asprintf(&savedir, "%s/%s", home, ".tuxpaint");
+#endif
+  }
 
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
-#if defined(WIN32)
+#if defined(_WIN32)
   /* Default local config file in users savedir directory on Windows */
   snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir); /* FIXME */
 #elif defined(__BEOS__)
   /* BeOS: Use a "tuxpaint.cfg" file: */
-
   strcpy(str, "tuxpaint.cfg");
-
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
   snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
 
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
-
-  if (getenv("HOME") != NULL)
-  {
-    /* Should it be "~/.tuxpaint/tuxpaintrc" instead???
-       Comments welcome ... bill@newbreedsoftware.com */
-
-    snprintf(str, sizeof(str), "%s/.tuxpaintrc", getenv("HOME"));
-  }
-  else
-  {
-    /* WOAH! We don't know what our home directory is!? Last resort,
-       do it Windows/BeOS way: */
-
-    strcpy(str, "tuxpaint.cfg");
-  }
+  // it should it be "~/.tuxpaint/tuxpaintrc" instead, but too late now
+  snprintf(str, sizeof(str), "%s/.tuxpaintrc", home);
 #endif
   parse_file_options(&tmpcfg_usr, str);
 
 
 
   tmpcfg_merge(&tmpcfg_usr, &tmpcfg_cmd);
-
-
 
   if (tmpcfg_usr.parsertmp_sysconfig != PARSE_NO)
   {
@@ -19172,8 +19069,29 @@ static void setup_config(char *argv[])
   }
   tmpcfg_merge(&tmpcfg, &tmpcfg_usr);
 
+  if(tmpcfg.savedir)
+  {
+    free(savedir);
+    savedir = tmpcfg.savedir;
+  }
 
+  datadir = tmpcfg.datadir ? tmpcfg.datadir : savedir;
 
+  if(tmpcfg.parsertmp_lang)
+    set_langstr(tmpcfg.parsertmp_lang);
+  if(tmpcfg.parsertmp_locale)
+    do_locale_option(tmpcfg.parsertmp_locale);
+
+#if 0
+all_locale_fonts
+no_system_fonts
+
+parsertmp_windowsize
+parsertmp_fullscreen_native
+
+  if(tmpcfg_cmd.papersize && !strcmp(tmpcfg_cmd.papersize, "help"))
+    show_available_papersizes(0);
+#endif
 }
 
 static void chdir_to_binary(char *argv0)

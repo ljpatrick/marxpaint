@@ -36,7 +36,18 @@ SDL_Cursor *cursor_hand, *cursor_arrow, *cursor_watch,
   *cursor_up, *cursor_down, *cursor_tiny, *cursor_crosshair,
   *cursor_brush, *cursor_wand, *cursor_insertion, *cursor_rotate;
 
-int no_fancy_cursors, hide_cursor;
+#ifdef NOKIA_770
+int hide_cursor = 1;
+#else
+int hide_cursor;
+#endif
+
+#if defined(NOKIA_770) || defined(__BEOS__)
+// Fancy cursors on BeOS are buggy in SDL
+int no_fancy_cursors = 1;
+#else
+int no_fancy_cursors;
+#endif
 
 void do_setcursor(SDL_Cursor * c)
 {

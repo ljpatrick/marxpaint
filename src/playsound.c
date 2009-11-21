@@ -29,7 +29,8 @@
 Mix_Chunk *sounds[NUM_SOUNDS];
 #endif
 
-int mute, use_sound;
+int mute;
+int use_sound = 1;
 int old_sound[4] = { -1, -1, -1, -1 };
 
 void playsound(SDL_Surface * screen, int chan, int s, int override, int x,

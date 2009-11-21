@@ -119,7 +119,11 @@ SDL_Thread *font_thread;
 #endif
 
 
+#ifdef FORKED_FONTS
 int no_system_fonts;
+#else
+int no_system_fonts = 1;
+#endif
 int all_locale_fonts;
 volatile long font_thread_done = 0, font_thread_aborted = 0;
 volatile long waiting_for_fonts = 0;
