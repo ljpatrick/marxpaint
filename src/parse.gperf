@@ -226,5 +226,17 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
   }
 
   unsigned offset = uintptr &~ FLAGMASK;
+
+  char *dupecheck;
+  memcpy(&dupecheck, offset+(char*)tmpcfg, sizeof(char*));
+  if(dupecheck)
+  {
+    if(src)
+      printf("Option '%s' in config file '%s' sets '%s' again.\n",str,src,cfg->name);
+    else
+      printf("Command line option '--%s' sets '%s' again.\n",str,cfg->name);
+    exit(53);
+  }
+
   memcpy(offset+(char*)tmpcfg, &opt, sizeof(char*));
 }
