@@ -176,7 +176,6 @@ static int lang_y_nudge[][2] = {
 };
 
 
-static char *langstr;
 int need_own_font;
 int need_right_to_left;
 int need_right_to_left_word;
@@ -325,13 +324,6 @@ static int search_int_array(int l, int *array)
   }
 
   return 0;
-}
-
-static void set_langstr(const char *s)
-{
-  if (langstr)
-    free(langstr);
-  langstr = strdup(s);
 }
 
 // This is to ensure that iswprint() works beyond ASCII,
@@ -660,63 +652,56 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "\n", prg);
 }
 
-static int setup_language(const char *const prg) MUST_CHECK;
-static int setup_language(const char *const prg)
+static int setup_language(const char *const prg, const char *langstr)
 {
-  if (langstr)
+  if (!langstr)
+    return;
+
+  int i = sizeof language_to_locale_array / sizeof language_to_locale_array[0];
+  const char *locale = NULL;
+
+  while (i--)
   {
-    int i =
-      sizeof language_to_locale_array / sizeof language_to_locale_array[0];
-    const char *locale = NULL;
-
-    while (i--)
-    {
-      if (strcmp(langstr, language_to_locale_array[i].language))
-	continue;
-      locale = language_to_locale_array[i].locale;
-      break;
-    }
-
-    if (!locale)
-    {
-      if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
-      {
-	show_lang_usage(stdout, prg);
-	//free(langstr);  // pointless
-	exit(0);
-      }
-      else
-      {
-	fprintf(stderr, "%s is an invalid language\n", langstr);
-	show_lang_usage(stderr, prg);
-	//free(langstr);  // pointless
-	exit(1);
-      }
-    }
-
-    {
-      char *s;
-      ssize_t len;
-
-      len = strlen("LANGUAGE=") + strlen(locale) + 1;
-      s = malloc(len);
-      snprintf(s, len, "LANGUAGE=%s", locale);
-      putenv(s);
-
-      len = strlen("LC_ALL=") + strlen(locale) + 1;
-      s = malloc(len);
-      snprintf(s, len, "LC_ALL=%s", locale);
-      putenv(s);
-    }
-
-    setlocale(LC_ALL, ""); // Specifies an implementation-dependent native environment. For XSI-conformant systems, this corresponds to the value of the associated environment variables, LC_* and LANG
-
-    ctype_utf8();
-    free(langstr);
-    langstr = NULL;
+    if (strcmp(langstr, language_to_locale_array[i].language))
+      continue;
+    locale = language_to_locale_array[i].locale;
+    break;
   }
 
-  return set_current_language();
+  if (!locale)
+  {
+    if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
+    {
+      show_lang_usage(stdout, prg);
+      exit(0);
+    }
+    else
+    {
+      fprintf(stderr, "%s is an invalid language\n", langstr);
+      show_lang_usage(stderr, prg);
+      exit(1);
+    }
+  }
+
+  {
+    char *s;
+    ssize_t len;
+
+    len = strlen("LANGUAGE=") + strlen(locale) + 1;
+    s = malloc(len);
+    snprintf(s, len, "LANGUAGE=%s", locale);
+    putenv(s);
+
+    len = strlen("LC_ALL=") + strlen(locale) + 1;
+    s = malloc(len);
+    snprintf(s, len, "LC_ALL=%s", locale);
+    putenv(s);
+  }
+
+  // Specifies an implementation-dependent native environment.
+  // For XSI-conformant systems, this corresponds to the value
+  // of the associated environment variables, LC_* and LANG
+  setlocale(LC_ALL, "");
 }
 
 
@@ -736,18 +721,17 @@ static void do_locale_option(const char *const arg)
   // of the environment. If it were local, the environment would
   // get corrupted.
   setlocale(LC_ALL, "");	/* use arg ? */
-  ctype_utf8();
 }
 
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
   printf("lang %p, locale %p\n", lang, locale);
   printf("lang \"%s\", locale \"%s\"\n", lang, locale);
-  if(lang)
-    set_langstr(lang);
   if(locale)
     do_locale_option(locale);
-  int y_nudge = setup_language("tuxpaint");
+  setup_language("tuxpaint", lang);
+  ctype_utf8();
+  int y_nudge = set_current_language();
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
   return y_nudge;
 }
