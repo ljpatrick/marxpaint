@@ -33,7 +33,7 @@
 #define I18N_H
 
 #include <stdio.h>
-
+#include "compiler.h"
 
 /* Possible languages: */
 
@@ -139,22 +139,14 @@ typedef struct language_to_locale_struct
 /* Globals: */
 
 extern const char *lang_prefixes[NUM_LANGS];
-extern int lang_use_own_font[];
-extern int lang_use_right_to_left[];
-extern char *langstr;
 extern int need_own_font;
 extern int need_right_to_left; // Right-justify
 extern int need_right_to_left_word; // Words need to be reversed, too! (e.g., Hebrew, but not Arabic)
 extern const char *lang_prefix, *short_lang_prefix;
-extern const language_to_locale_struct language_to_locale_array[];
-
-
 
 /* Function prototypes: */
 
 int get_current_language(void);
-void show_lang_usage(FILE * f, const char *const prg);
-void show_locale_usage(FILE * f, const char *const prg);
 void setup_i18n(const char *restrict lang, const char *restrict locale, int *button_label_y_nudge);
 void smash_i18n(void);
 

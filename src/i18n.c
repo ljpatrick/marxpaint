@@ -141,7 +141,7 @@ const char *lang_prefixes[NUM_LANGS] = {
 
 
 // languages which don't use the default font
-int lang_use_own_font[] = {
+static int lang_use_own_font[] = {
   LANG_AR,
   LANG_BO,
   LANG_GU,
@@ -157,26 +157,26 @@ int lang_use_own_font[] = {
   -1
 };
 
-int lang_use_right_to_left[] = {
+static int lang_use_right_to_left[] = {
   LANG_AR,
   LANG_HE,
   -1
 };
 
-int lang_use_right_to_left_word[] = {
+static int lang_use_right_to_left_word[] = {
 #ifdef NO_SDLPANGO
   LANG_HE,
 #endif
   -1
 };
 
-int lang_y_nudge[][2] = {
+static int lang_y_nudge[][2] = {
   {LANG_KM, 4},
   {-1, -1}
 };
 
 
-char *langstr;
+static char *langstr;
 int need_own_font;
 int need_right_to_left;
 int need_right_to_left_word;
@@ -740,15 +740,13 @@ static void do_locale_option(const char *const arg)
 
 void setup_i18n(const char *restrict lang, const char *restrict locale, int *button_label_y_nudge)
 {
+  printf("lang \"%s\", locale \"%s\"\n", lang, locale);
   if(lang)
     set_langstr(lang);
   if(locale)
     do_locale_option(locale);
   setup_language("tuxpaint", button_label_y_nudge);
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
-
-// ctype_utf8 set_current_language
-
 }
 
 void smash_i18n(void)

@@ -19080,18 +19080,6 @@ static void setup_config(char *argv[])
   setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &button_label_y_nudge);
 
 #if 0
-  if(tmpcfg.parsertmp_lang)
-    set_langstr(tmpcfg.parsertmp_lang);
-  if(tmpcfg.parsertmp_locale)
-    do_locale_option(tmpcfg.parsertmp_locale);
-  setup_language(getfilename(argv[0]), &button_label_y_nudge);
-/*  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);  */
-
-ctype_utf8 set_current_language
-
-#endif
-
-#if 0
 
 all_locale_fonts
 no_system_fonts
