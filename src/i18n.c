@@ -182,7 +182,7 @@ int need_right_to_left;
 int need_right_to_left_word;
 const char *lang_prefix, *short_lang_prefix;
 
-const language_to_locale_struct language_to_locale_array[] = {
+static const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
   {"arabic", "ar_SA.UTF-8"},
@@ -327,7 +327,7 @@ static int search_int_array(int l, int *array)
   return 0;
 }
 
-void set_langstr(const char *s)
+static void set_langstr(const char *s)
 {
   if (langstr)
     free(langstr);
@@ -336,7 +336,7 @@ void set_langstr(const char *s)
 
 // This is to ensure that iswprint() works beyond ASCII,
 // even if the locale wouldn't normally support that.
-void ctype_utf8(void)
+static void ctype_utf8(void)
 {
 #ifndef _WIN32
   const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
@@ -348,7 +348,7 @@ void ctype_utf8(void)
 
 /* Determine the current language/locale, and set the language string: */
 
-int set_current_language(void)
+static int set_current_language(void)
 {
   char *loc, *baseloc;
   int i, found;
@@ -476,7 +476,7 @@ int get_current_language(void)
 
 /* FIXME: All this should REALLY be array-based!!! */
 /* Show available languages: */
-void show_lang_usage(FILE * f, const char *const prg)
+static void show_lang_usage(FILE * f, const char *const prg)
 {
   fprintf(f,
 	  "\n"
@@ -572,7 +572,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 
 /* FIXME: Add accented characters to the descriptions */
 /* Show available locales: */
-void show_locale_usage(FILE * f, const char *const prg)
+static void show_locale_usage(FILE * f, const char *const prg)
 {
   fprintf(f,
 	  "\n"
@@ -665,7 +665,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "\n", prg);
 }
 
-void setup_language(const char *const prg, int * y_nudge)
+static void setup_language(const char *const prg, int * y_nudge)
 {
   if (langstr != NULL)
   {
@@ -725,7 +725,7 @@ void setup_language(const char *const prg, int * y_nudge)
 
 
 // handle --locale arg
-void do_locale_option(const char *const arg)
+static void do_locale_option(const char *const arg)
 {
   int len = strlen(arg) + 6;
   char *str = malloc(len);
@@ -736,4 +736,26 @@ void do_locale_option(const char *const arg)
   // get corrupted.
   setlocale(LC_ALL, "");	/* use arg ? */
   ctype_utf8();
+}
+
+void setup_i18n(const char *restrict lang, const char *restrict locale, int *button_label_y_nudge)
+{
+  if(lang)
+    set_langstr(lang);
+  if(locale)
+    do_locale_option(locale);
+  setup_language("tuxpaint", button_label_y_nudge);
+  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
+
+// ctype_utf8 set_current_language
+
+}
+
+void smash_i18n(void)
+{
+  putenv((char *) "LANG=C");
+  putenv((char *) "OUTPUT_CHARSET=C");
+  setlocale(LC_ALL, "C");
+  ctype_utf8();
+  set_current_language();
 }

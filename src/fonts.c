@@ -249,23 +249,17 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
       ret = try_alternate_font(size);
       if (ret == NULL)
       {
-	fprintf(stderr,
-		"\nWarning: Can't load font for this locale:\n"
-		"%s\n"
-		"The Simple DirectMedia Layer error that occurred was:\n"
-		"%s\n\n"
-		"Will use default (American English) instead.\n\n",
-		str, SDL_GetError());
-
-
-	/* Revert to default: */
-
-	putenv((char *) "LANG=C");
-	putenv((char *) "OUTPUT_CHARSET=C");
-	setlocale(LC_ALL, "C");
-	ctype_utf8();
-
-	set_current_language();
+	fprintf(
+	  stderr,
+          "\nWarning: Can't load font for this locale:\n"
+          "%s\n"
+          "The Simple DirectMedia Layer error that occurred was:\n"
+          "%s\n\n"
+          "Will use default (American English) instead.\n\n",
+          str,
+          SDL_GetError()
+        );
+        smash_i18n();
       }
     }
 

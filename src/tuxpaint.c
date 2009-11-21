@@ -19077,12 +19077,22 @@ static void setup_config(char *argv[])
 
   datadir = tmpcfg.datadir ? tmpcfg.datadir : savedir;
 
+  setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &button_label_y_nudge);
+
+#if 0
   if(tmpcfg.parsertmp_lang)
     set_langstr(tmpcfg.parsertmp_lang);
   if(tmpcfg.parsertmp_locale)
     do_locale_option(tmpcfg.parsertmp_locale);
+  setup_language(getfilename(argv[0]), &button_label_y_nudge);
+/*  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);  */
+
+ctype_utf8 set_current_language
+
+#endif
 
 #if 0
+
 all_locale_fonts
 no_system_fonts
 
@@ -20382,8 +20392,6 @@ int main(int argc, char *argv[])
   progname = argv[0];
   chdir_to_binary(argv[0]);
   setup_config(argv);
-  setup_language(getfilename(argv[0]), &button_label_y_nudge);
-/*  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);  */
 
   CLOCK_ASM(time2);
 #ifdef FORKED_FONTS
