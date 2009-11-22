@@ -636,42 +636,6 @@ static int set_current_language(void)
     loc = getenv("LANG");
 #endif
 
-  //debug(loc);
-
-  if (loc)
-  {
-    char *baseloc = strdup(loc);
-    
-    char *dot = strchr(baseloc, '.');
-    if(dot)
-      *dot = '\0';
-
-    /* Which, if any, of the locales is it? */
-
-    int found = 0;
-
-    for (i = 0; i < NUM_LANGS && found == 0; i++)
-    {
-      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
-      if (strlen(baseloc) == strlen(lang_prefixes[i]) &&
-          strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-      {
-	langint = i;
-	found = 1;
-      }
-    }
-
-    for (i = 0; i < NUM_LANGS && found == 0; i++)
-    {
-      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
-      if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-      {
-	langint = i;
-	found = 1;
-      }
-    }
-  }
-
   set_langint_from_locale_string(loc);
 
   lang_prefix = lang_prefixes[langint];
