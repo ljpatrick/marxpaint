@@ -314,8 +314,10 @@ static const language_to_locale_struct language_to_locale_array[] = {
 
 /* FIXME: All this should REALLY be array-based!!! */
 /* Show available languages: */
-static void show_lang_usage(FILE * f, const char *const prg)
+static void show_lang_usage(int exitcode)
 {
+  FILE * f = exitcode ? stderr : stdout;
+  const char *const prg = "tuxpaint"
   fprintf(f,
 	  "\n"
 	  "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
@@ -405,6 +407,7 @@ static void show_lang_usage(FILE * f, const char *const prg)
 /* xh */ "  xhosa\n"
 /* zam */"  zapotec      miahuatlan-zapotec\n"
 	  "\n", prg);
+  exit(exitcode);
 }
 
 
@@ -542,44 +545,18 @@ static void ctype_utf8(void)
 }
 
 
-static void setup_language(const char *const prg, const char *langstr)
+static const char *language_to_locale(const char *langstr)
 {
-  if (!langstr)
-    return;
-
   int i = sizeof language_to_locale_array / sizeof language_to_locale_array[0];
-  const char *locale = NULL;
-
   while (i--)
   {
-    if (strcmp(langstr, language_to_locale_array[i].language))
-      continue;
-    locale = language_to_locale_array[i].locale;
-    break;
+    if (!strcmp(langstr, language_to_locale_array[i].language))
+      return language_to_locale_array[i].locale;
   }
-
-  if (!locale)
-  {
-    if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
-    {
-      show_lang_usage(stdout, prg);
-      exit(0);
-    }
-    else
-    {
-      fprintf(stderr, "%s is an invalid language\n", langstr);
-      show_lang_usage(stderr, prg);
-      exit(1);
-    }
-  }
-
-  abuse_env("LANGUAGE",locale);
-  abuse_env("LC_ALL",locale);
-
-  // Specifies an implementation-dependent native environment.
-  // For XSI-conformant systems, this corresponds to the value
-  // of the associated environment variables, LC_* and LANG
-  setlocale(LC_ALL, "");
+  if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
+    show_lang_usage(0);
+  fprintf(stderr, "%s is an invalid language\n", langstr);
+  show_lang_usage(59);
 }
 
 
@@ -611,8 +588,6 @@ static int set_current_language(void)
   // internationalised environment and return the name of the locale().
   loc = setlocale(LC_MESSAGES, NULL);
 
-  // FIXME: I'm getting back en_US.UTF-8 even after LC_ALL has been putenv()'d...?? -bjk 2008.02.19
-
   if (loc && strstr(loc, "LC_MESSAGES"))
     loc = getenv("LANG");
 #endif
@@ -622,9 +597,9 @@ static int set_current_language(void)
   if (loc)
   {
     baseloc = strdup(loc);
-    if (strchr(baseloc, '.'))
-      strcpy(strchr(baseloc, '.'), "\0");
-
+    char *dot = strchr(baseloc, '.');
+    if(dot)
+      *dot = '\0';
 
     /* Which, if any, of the locales is it? */
 
@@ -651,8 +626,6 @@ static int set_current_language(void)
       }
     }
   }
-
-  /* FIXME: These don't work because we have the wrong langint...!? -bjk 2008.02.19 */
 
   lang_prefix = lang_prefixes[langint];
 
@@ -702,7 +675,18 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
     abuse_env("LANG",locale);
     setlocale(LC_ALL, "");	/* use arg ? */
   }
-  setup_language("tuxpaint", lang);
+  if(lang)
+  {
+    const char *newlocale = language_to_locale(lang);
+
+    abuse_env("LANGUAGE",newlocale);
+    abuse_env("LC_ALL",newlocale);
+
+    // Specifies an implementation-dependent native environment.
+    // For XSI-conformant systems, this corresponds to the value
+    // of the associated environment variables, LC_* and LANG
+    setlocale(LC_ALL, "");
+  }
   ctype_utf8();
   int y_nudge = set_current_language();
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
