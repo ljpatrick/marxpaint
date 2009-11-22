@@ -312,155 +312,6 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"khmer", "km_KH.UTF-8"}
 };
 
-
-static int search_int_array(int l, int *array)
-{
-  int i;
-
-  for (i = 0; array[i] != -1; i++)
-  {
-    if (array[i] == l)
-      return 1;
-  }
-
-  return 0;
-}
-
-// This is to ensure that iswprint() works beyond ASCII,
-// even if the locale wouldn't normally support that.
-static void ctype_utf8(void)
-{
-#ifndef _WIN32
-  const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
-  int i = sizeof(names)/sizeof(names[0]);
-  while(i && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[--i]))
-    ;
-#endif
-}
-
-
-/* Determine the current language/locale, and set the language string: */
-
-static int set_current_language(void) MUST_CHECK;
-static int set_current_language(void)
-{
-  char *loc, *baseloc;
-  int i, found;
-  int y_nudge = 0;
-
-  bindtextdomain("tuxpaint", LOCALEDIR);
-  /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || __APPLE__
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-#endif
-  textdomain("tuxpaint");
-
-  /* Default... */
-
-  langint = LANG_EN;
-
-
-#ifndef _WIN32
-  loc = setlocale(LC_MESSAGES, NULL); // NULL: Used to direct setlocale() to query the current internationalised environment and return the name of the locale().
-
-  // FIXME: I'm getting back en_US.UTF-8 even after LC_ALL has been putenv()'d...?? -bjk 2008.02.19
-
-  if (loc && strstr(loc, "LC_MESSAGES"))
-    loc = getenv("LANG");
-#else
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-  loc = getenv("LANGUAGE");
-  if (!loc)
-  {
-    loc = _nl_locale_name(LC_MESSAGES, "");
-    if (loc)
-    {
-      char *s;
-      int len;
-      len = strlen("LANGUAGE=") + strlen(loc) + 1;
-      s = malloc(len);
-      snprintf(s, len, "LANGUAGE=%s", loc);
-      putenv(s);
-    }
-  }
-#endif
-
-  //debug(loc);
-
-  if (loc)
-  {
-    baseloc = strdup(loc);
-    if (strchr(baseloc, '.'))
-      strcpy(strchr(baseloc, '.'), "\0");
-
-
-    /* Which, if any, of the locales is it? */
-
-    found = 0;
-
-    for (i = 0; i < NUM_LANGS && found == 0; i++)
-    {
-      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
-      if (strlen(baseloc) == strlen(lang_prefixes[i]) &&
-          strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-      {
-	langint = i;
-	found = 1;
-      }
-    }
-
-    for (i = 0; i < NUM_LANGS && found == 0; i++)
-    {
-      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
-      if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-      {
-	langint = i;
-	found = 1;
-      }
-    }
-  }
-
-  /* FIXME: These don't work because we have the wrong langint...!? -bjk 2008.02.19 */
-
-  lang_prefix = lang_prefixes[langint];
-
-  short_lang_prefix = strdup(lang_prefix);
-  /* When in doubt, cut off country code */
-  if (strchr(short_lang_prefix, '_') != NULL)
-    strcpy(strchr(short_lang_prefix, '_'), "\0");
-
-  need_own_font = search_int_array(langint, lang_use_own_font);
-  need_right_to_left = search_int_array(langint, lang_use_right_to_left);
-  need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
-
-  for (i = 0; lang_y_nudge[i][0] != -1; i++)
-  {
-    // printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
-    if (lang_y_nudge[i][0] == langint)
-    {
-      y_nudge = lang_y_nudge[i][1];
-      //printf("y_nudge = %d\n", y_nudge);
-    }
-  }
-
-#ifdef DEBUG
-  fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
-	  lang_prefix, langint,
-	  need_right_to_left ? "(RTL)" : "",
-	  need_right_to_left_word ? "(RTL words)" : "");
-  fflush(stderr);
-#endif
-
-  return y_nudge;
-}
-
-
-int get_current_language(void)
-{
-  return langint;
-}
-
-
 /* FIXME: All this should REALLY be array-based!!! */
 /* Show available languages: */
 static void show_lang_usage(FILE * f, const char *const prg)
@@ -652,7 +503,46 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "\n", prg);
 }
 
-static int setup_language(const char *const prg, const char *langstr)
+
+int get_current_language(void)
+{
+  return langint;
+}
+
+static void abuse_env(const char *restrict name, const char *restrict value)
+{
+  char s[40];
+  snprintf(s, sizeof s, "%s=%s", name, value);
+  putenv(strdup(s));
+}
+
+static int search_int_array(int l, int *array)
+{
+  int i;
+
+  for (i = 0; array[i] != -1; i++)
+  {
+    if (array[i] == l)
+      return 1;
+  }
+
+  return 0;
+}
+
+// This is to ensure that iswprint() works beyond ASCII,
+// even if the locale wouldn't normally support that.
+static void ctype_utf8(void)
+{
+#ifndef _WIN32
+  const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
+  int i = sizeof(names)/sizeof(names[0]);
+  while(i && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[--i]))
+    ;
+#endif
+}
+
+
+static void setup_language(const char *const prg, const char *langstr)
 {
   if (!langstr)
     return;
@@ -683,20 +573,8 @@ static int setup_language(const char *const prg, const char *langstr)
     }
   }
 
-  {
-    char *s;
-    ssize_t len;
-
-    len = strlen("LANGUAGE=") + strlen(locale) + 1;
-    s = malloc(len);
-    snprintf(s, len, "LANGUAGE=%s", locale);
-    putenv(s);
-
-    len = strlen("LC_ALL=") + strlen(locale) + 1;
-    s = malloc(len);
-    snprintf(s, len, "LC_ALL=%s", locale);
-    putenv(s);
-  }
+  abuse_env("LANGUAGE",locale);
+  abuse_env("LC_ALL",locale);
 
   // Specifies an implementation-dependent native environment.
   // For XSI-conformant systems, this corresponds to the value
@@ -705,30 +583,125 @@ static int setup_language(const char *const prg, const char *langstr)
 }
 
 
-// handle --locale arg
-static void do_locale_option(const char *const arg)
+static int set_current_language(void) MUST_CHECK;
+static int set_current_language(void)
 {
-  if(!strcmp(arg,"help"))
+  char *loc, *baseloc;
+  int i, found;
+  int y_nudge = 0;
+
+  bindtextdomain("tuxpaint", LOCALEDIR);
+  /* Old version of glibc does not have bind_textdomain_codeset() */
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || __APPLE__
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
+#endif
+  textdomain("tuxpaint");
+
+#ifdef _WIN32
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
+  loc = getenv("LANGUAGE");
+  if (!loc)
   {
-    show_locale_usage(stdout,"tuxpaint");
-    exit(0);
+    loc = _nl_locale_name(LC_MESSAGES, "");
+    if (loc)
+      abuse_env("LANGUAGE",loc);
   }
-  int len = strlen(arg) + 6;
-  char *str = malloc(len);
-  snprintf(str, len, "LANG=%s", arg);
-  putenv(str);
-  // We leak "str" because it can not be freed. It is now part
-  // of the environment. If it were local, the environment would
-  // get corrupted.
-  setlocale(LC_ALL, "");	/* use arg ? */
+#else
+  // NULL: Used to direct setlocale() to query the current
+  // internationalised environment and return the name of the locale().
+  loc = setlocale(LC_MESSAGES, NULL);
+
+  // FIXME: I'm getting back en_US.UTF-8 even after LC_ALL has been putenv()'d...?? -bjk 2008.02.19
+
+  if (loc && strstr(loc, "LC_MESSAGES"))
+    loc = getenv("LANG");
+#endif
+
+  //debug(loc);
+
+  if (loc)
+  {
+    baseloc = strdup(loc);
+    if (strchr(baseloc, '.'))
+      strcpy(strchr(baseloc, '.'), "\0");
+
+
+    /* Which, if any, of the locales is it? */
+
+    found = 0;
+
+    for (i = 0; i < NUM_LANGS && found == 0; i++)
+    {
+      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+      if (strlen(baseloc) == strlen(lang_prefixes[i]) &&
+          strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+      {
+	langint = i;
+	found = 1;
+      }
+    }
+
+    for (i = 0; i < NUM_LANGS && found == 0; i++)
+    {
+      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+      if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+      {
+	langint = i;
+	found = 1;
+      }
+    }
+  }
+
+  /* FIXME: These don't work because we have the wrong langint...!? -bjk 2008.02.19 */
+
+  lang_prefix = lang_prefixes[langint];
+
+  short_lang_prefix = strdup(lang_prefix);
+  /* When in doubt, cut off country code */
+  if (strchr(short_lang_prefix, '_') != NULL)
+    strcpy(strchr(short_lang_prefix, '_'), "\0");
+
+  need_own_font = search_int_array(langint, lang_use_own_font);
+  need_right_to_left = search_int_array(langint, lang_use_right_to_left);
+  need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
+
+  for (i = 0; lang_y_nudge[i][0] != -1; i++)
+  {
+    // printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
+    if (lang_y_nudge[i][0] == langint)
+    {
+      y_nudge = lang_y_nudge[i][1];
+      //printf("y_nudge = %d\n", y_nudge);
+      break;
+    }
+  }
+
+#ifdef DEBUG
+  fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
+	  lang_prefix, langint,
+	  need_right_to_left ? "(RTL)" : "",
+	  need_right_to_left_word ? "(RTL words)" : "");
+  fflush(stderr);
+#endif
+
+  return y_nudge;
 }
+
 
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
   printf("lang %p, locale %p\n", lang, locale);
   printf("lang \"%s\", locale \"%s\"\n", lang, locale);
   if(locale)
-    do_locale_option(locale);
+  {
+    if(!strcmp(locale,"help"))
+    {
+      show_locale_usage(stdout,"tuxpaint");
+      exit(0);
+    }
+    abuse_env("LANG",locale);
+    setlocale(LC_ALL, "");	/* use arg ? */
+  }
   setup_language("tuxpaint", lang);
   ctype_utf8();
   int y_nudge = set_current_language();
