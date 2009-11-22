@@ -18945,6 +18945,20 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     parse_one_option(tmpcfg,str,strdup(arg),filename);
   }
   fclose(fi);
+
+  // These interact in horrid ways.
+  if(tmpcfg->parsertmp_lang && tmpcfg->parsertmp_locale)
+    fprintf(
+      stderr,
+      "Warning: option 'lang=%s' overrides option 'locale=%s' in '%s'\n",
+      tmpcfg->parsertmp_lang,
+      tmpcfg->parsertmp_locale,
+      filename
+    );
+  if(tmpcfg->parsertmp_lang)
+    tmpcfg->parsertmp_locale = PARSE_CLOBBER;
+  else if(tmpcfg->parsertmp_locale)
+    tmpcfg->parsertmp_lang = PARSE_CLOBBER;
 }
 
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
@@ -18989,6 +19003,22 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     fprintf(stderr, "%s is not understood\n", *argv);
     show_usage(63);
   }
+
+  // These interact in horrid ways.
+  if(tmpcfg->parsertmp_lang && tmpcfg->parsertmp_locale)
+  {
+    fprintf(
+      stderr,
+      "Error: command line option '--lang=%s' overrides option '--locale=%s'\n",
+      tmpcfg->parsertmp_lang,
+      tmpcfg->parsertmp_locale
+    );
+    exit(92);
+  }
+  if(tmpcfg->parsertmp_lang)
+    tmpcfg->parsertmp_locale = PARSE_CLOBBER;
+  else if(tmpcfg->parsertmp_locale)
+    tmpcfg->parsertmp_lang = PARSE_CLOBBER;
 }
 
 // merge two configs, with the winner taking priority
@@ -19091,6 +19121,10 @@ static void setup_config(char *argv[])
 
   datadir = tmpcfg.datadir ? tmpcfg.datadir : savedir;
 
+  if(tmpcfg.parsertmp_lang == PARSE_CLOBBER)
+    tmpcfg.parsertmp_lang = NULL;
+  if(tmpcfg.parsertmp_locale == PARSE_CLOBBER)
+    tmpcfg.parsertmp_locale = NULL;
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale);
 
 #if 0

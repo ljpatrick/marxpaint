@@ -517,12 +517,14 @@ int get_current_language(void)
   return langint;
 }
 
+#ifdef ABUSE_ENV
 static void abuse_env(const char *restrict name, const char *restrict value)
 {
   char s[40];
   snprintf(s, sizeof s, "%s=%s", name, value);
   putenv(strdup(s));
 }
+#endif
 
 static int search_int_array(int l, int *array)
 {
@@ -564,7 +566,7 @@ static const char *language_to_locale(const char *langstr)
   show_lang_usage(59);
 }
 
-void set_langint_from_locale_string(const char *restrict loc)
+static void set_langint_from_locale_string(const char *restrict loc)
 {
   if (!loc)
     return;
@@ -604,12 +606,14 @@ void set_langint_from_locale_string(const char *restrict loc)
   }
 }
 
-static int set_current_language(void) MUST_CHECK;
-static int set_current_language(void)
+static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
+static int set_current_language(const char *restrict loc)
 {
-  char *loc;
   int i;
   int y_nudge = 0;
+
+  setlocale(LC_ALL, loc);
+  ctype_utf8();
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -620,20 +624,28 @@ static int set_current_language(void)
 
 #ifdef _WIN32
   bind_textdomain_codeset("tuxpaint", "UTF-8");
+#ifdef ABUSE_ENV
   loc = getenv("LANGUAGE");
   if (!loc)
+#else
+  if (!*loc)
+#endif
   {
     loc = _nl_locale_name(LC_MESSAGES, "");
+#ifdef ABUSE_ENV
     if (loc)
       abuse_env("LANGUAGE",loc);
+#endif
   }
 #else
   // NULL: Used to direct setlocale() to query the current
   // internationalised environment and return the name of the locale().
   loc = setlocale(LC_MESSAGES, NULL);
 
+#ifdef ABUSE_ENV
   if (loc && strstr(loc, "LC_MESSAGES"))
     loc = getenv("LANG");
+#endif
 #endif
 
   set_langint_from_locale_string(loc);
@@ -642,8 +654,8 @@ static int set_current_language(void)
 
   short_lang_prefix = strdup(lang_prefix);
   /* When in doubt, cut off country code */
-  if (strchr(short_lang_prefix, '_') != NULL)
-    strcpy(strchr(short_lang_prefix, '_'), "\0");
+  if (strchr(short_lang_prefix, '_'))
+    *strchr(short_lang_prefix, '_') = '\0';
 
   need_own_font = search_int_array(langint, lang_use_own_font);
   need_right_to_left = search_int_array(langint, lang_use_right_to_left);
@@ -672,7 +684,7 @@ static int set_current_language(void)
   return y_nudge;
 }
 
-
+#ifdef ABUSE_ENV
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
   printf("lang %p, locale %p\n", lang, locale);
@@ -685,7 +697,6 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
       exit(0);
     }
     abuse_env("LANG",locale);
-    setlocale(LC_ALL, "");	/* use arg ? */
   }
   if(lang)
   {
@@ -693,21 +704,42 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 
     abuse_env("LANGUAGE",newlocale);
     abuse_env("LC_ALL",newlocale);
-
-    // Specifies an implementation-dependent native environment.
-    // For XSI-conformant systems, this corresponds to the value
-    // of the associated environment variables, LC_* and LANG
-    setlocale(LC_ALL, "");
   }
-  ctype_utf8();
-  return set_current_language();
+  // The "" is being passed to setlocale.
+  // It specifies an implementation-dependent native environment.
+  // For XSI-conformant systems, this corresponds to the value
+  // of the associated environment variables, LC_* and LANG
+  return set_current_language("");
 }
+#else
+int setup_i18n(const char *restrict lang, const char *restrict locale)
+{
+  printf("lang %p, locale %p\n", lang, locale);
+  printf("lang \"%s\", locale \"%s\"\n", lang, locale);
+
+  if(locale)
+  {
+    if(!strcmp(locale,"help"))
+    {
+      show_locale_usage(stdout,"tuxpaint");
+      exit(0);
+    }
+  }
+  else
+    locale = "";
+
+  if(lang)
+    locale = language_to_locale(lang);
+
+  return set_current_language(locale);
+}
+#endif
 
 int smash_i18n(void)
 {
+#ifdef ABUSE_ENV
   putenv((char *) "LANG=C");
   putenv((char *) "OUTPUT_CHARSET=C");
-  setlocale(LC_ALL, "C");
-  ctype_utf8();
-  return set_current_language();
+#endif
+  return set_current_language("C");
 }
