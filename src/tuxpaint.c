@@ -1013,7 +1013,7 @@ static int coming_from_undo_or_redo = FALSE;
 void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Surface* label_node_surface);
 void load_info_about_label_surface(char[1024]);
 
-struct label_node* search_label_list(struct label_node**, Uint16, Uint16);
+struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
 
 void do_undo_label_node(void);
 void do_redo_label_node(void);
@@ -3753,7 +3753,7 @@ static void mainloop(void)
             {
               if(cur_select == SELECT_OFF)
               {
-		label_node_to_edit=search_label_list(&current_label_node, old_x, old_y);
+                  label_node_to_edit=search_label_list(&current_label_node, old_x, old_y, 0);
                 if(label_node_to_edit)
 		  {
                       cur_thing=label_node_to_edit->save_cur_font;
@@ -4409,7 +4409,12 @@ static void mainloop(void)
                   if (cur_label == LABEL_LABEL)
                       do_setcursor(cursor_insertion);
                   else if (cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
-                      do_setcursor(cursor_arrow);
+                      {
+                          if (search_label_list(&current_label_node, event.button.x - 96, event.button.y, 1))
+                              do_setcursor(cursor_hand);
+                          else
+                              do_setcursor(cursor_arrow);
+                      }
                   else if (cur_label == LABEL_SELECT && cur_select == SELECT_ON)
                       do_setcursor(cursor_insertion);
                   /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_OFF) */
@@ -18234,7 +18239,7 @@ void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_t
 }
 
 
-struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uint16 y)
+struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uint16 y, int hover)
 {
   struct label_node* current_node;
   struct label_node* tmp_node = NULL;
@@ -18258,7 +18263,11 @@ struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uin
 		      if (current_node->is_enabled == TRUE)
 			{
 			  if (tmp_node == NULL)     /* Preselecting the top label at x,y position*/
-			    tmp_node = current_node;
+                              {
+                                  if (hover == 1)
+                                      return(current_node);
+                                  tmp_node = current_node;
+                              }
 			  SDL_GetRGBA(getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x - current_node->save_x, y - current_node->save_y),
 				      current_node->label_node_surface->format, &r, &g, &b, &a);
 			  if (a != SDL_ALPHA_TRANSPARENT)
