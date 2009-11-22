@@ -1,0 +1,922 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint_persian\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-27 13:15-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: farnaz <dsf@fg.com>\n"
+"Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Persian\n"
+"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
+
+#. Response to Black (0, 0, 0) color selected
+#: ../colors.h:86
+msgid "Black!"
+msgstr "سیاه"
+
+#. Response to Dark grey (128, 128, 128) color selected
+#: ../colors.h:89
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "خاکستری تیره"
+
+#. Response to Light grey (192, 192, 192) color selected
+#: ../colors.h:92
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "خاکستری روشن"
+
+#. Response to White (255, 255, 255) color selected
+#: ../colors.h:95
+msgid "White!"
+msgstr "سفید"
+
+#. Response to Red (255, 0, 0) color selected
+#: ../colors.h:98
+msgid "Red!"
+msgstr "قرمز"
+
+#. Response to Orange (255, 128, 0) color selected
+#: ../colors.h:101
+msgid "Orange!"
+msgstr "نارنجی"
+
+#. Response to Yellow (255, 255, 0) color selected
+#: ../colors.h:104
+msgid "Yellow!"
+msgstr "زرد"
+
+#. Response to Light green (160, 228, 128) color selected
+#: ../colors.h:107
+msgid "Light green!"
+msgstr "سبز روشن"
+
+#. Response to Dark green (33, 148, 70) color selected
+#: ../colors.h:110
+msgid "Dark green!"
+msgstr "سبز تیره"
+
+#. Response to "Sky" blue (138, 168, 205) color selected
+#: ../colors.h:113
+msgid "Sky blue!"
+msgstr "آبی آسمانی"
+
+#. Response to Blue (50, 100, 255) color selected
+#: ../colors.h:116
+msgid "Blue!"
+msgstr "آبی"
+
+#. Response to Lavender (186, 157, 255) color selected
+#: ../colors.h:119
+msgid "Lavender!"
+msgstr "بنفش‌ كمرنگ‌ "
+
+#. Response to Purple (128, 0, 128) color selected
+#: ../colors.h:122
+msgid "Purple!"
+msgstr "ارغوانى"
+
+#. Response to Pink (255, 165, 211) color selected
+#: ../colors.h:125
+msgid "Pink!"
+msgstr "صورتى"
+
+#. Response to Brown (128, 80, 0) color selected
+#: ../colors.h:128
+msgid "Brown!"
+msgstr "قهوه اى"
+
+#. Response to Tan (226, 189, 166) color selected
+#: ../colors.h:131
+msgid "Tan!"
+msgstr "برنزه"
+
+#. Response to Beige (247, 228, 219) color selected
+#: ../colors.h:134
+msgid "Beige!"
+msgstr "(کرمی)قهوه اي روشن "
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same (but not nice -- such fonts get a low score later).
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
+#: ../dirwalk.c:121
+msgid "qx"
+msgstr ""
+
+#: ../dirwalk.c:121
+msgid "QX"
+msgstr ""
+
+#. Line Y
+#: ../dirwalk.c:124
+msgid "qy"
+msgstr ""
+
+#: ../dirwalk.c:124
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+#: ../dirwalk.c:147
+msgid "oO"
+msgstr ""
+
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
+#: ../dirwalk.c:150
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:153
+msgid ",.?!"
+msgstr ""
+
+#. digits (e.g., '0', '1' and '7')
+#: ../dirwalk.c:156
+msgid "017"
+msgstr ""
+
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+#: ../dirwalk.c:159
+msgid "O0"
+msgstr ""
+
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+#: ../dirwalk.c:162
+msgid "1Il|"
+msgstr ""
+
+#. Congratulations #1
+#: ../great.h:37
+msgid "Great!"
+msgstr "عالی!"
+
+#. Congratulations #2
+#: ../great.h:40
+msgid "Cool!"
+msgstr ""
+
+#. Congratulations #3
+#: ../great.h:43
+msgid "Keep it up!"
+msgstr "ادامه بده"
+
+#. Congratulations #4
+#: ../great.h:46
+msgid "Good job!"
+msgstr "آفرین"
+
+#. Input Method: English mode
+#: ../im.c:75
+msgid "English"
+msgstr "انگلیسی"
+
+#. Input Method: Japanese Romanized Hiragana mode
+#: ../im.c:78
+msgid "Hiragana"
+msgstr ""
+
+#. Input Method: Japanese Romanized Katakana mode
+#: ../im.c:81
+msgid "Katakana"
+msgstr ""
+
+#. Input Method: Korean Hangul 2-Bul mode
+#: ../im.c:84
+msgid "Hangul"
+msgstr ""
+
+#. Input Method: Thai mode
+#: ../im.c:87
+msgid "Thai"
+msgstr ""
+
+#. Input Method: Traditional Chinese mode
+#: ../im.c:90
+msgid "ZH_TW"
+msgstr ""
+
+#. Square shape tool (4 equally-lengthed sides at right angles)
+#: ../shapes.h:171
+#: ../shapes.h:172
+msgid "Square"
+msgstr "مربع"
+
+#. Rectangle shape tool (4 sides at right angles)
+#: ../shapes.h:175
+#: ../shapes.h:176
+msgid "Rectangle"
+msgstr "مستطيل"
+
+#. Circle shape tool (X radius and Y radius are the same)
+#: ../shapes.h:179
+#: ../shapes.h:180
+msgid "Circle"
+msgstr "دایره"
+
+#. Ellipse shape tool (X radius and Y radius may differ)
+#: ../shapes.h:183
+#: ../shapes.h:184
+msgid "Ellipse"
+msgstr "بيضي‌ "
+
+#. Triangle shape tool (3 sides)
+#: ../shapes.h:187
+#: ../shapes.h:188
+msgid "Triangle"
+msgstr "مثلث‌"
+
+#. Pentagone shape tool (5 sides)
+#: ../shapes.h:191
+#: ../shapes.h:192
+msgid "Pentagon"
+msgstr "پنج ضلعی"
+
+#. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:195
+#: ../shapes.h:196
+msgid "Rhombus"
+msgstr "لوزي‌"
+
+#. Octagon shape tool (8 sides)
+#: ../shapes.h:199
+#: ../shapes.h:200
+msgid "Octagon"
+msgstr "هشت ضلعی"
+
+#. Description of a square
+#: ../shapes.h:208
+#: ../shapes.h:209
+msgid "A square is a rectangle with four equal sides."
+msgstr " مربع یک چهارگوش است که چهار ضلع مساوی دارد. "
+
+#. Description of a rectangle
+#: ../shapes.h:212
+#: ../shapes.h:213
+msgid "A rectangle has four sides and four right angles."
+msgstr "یک مستطیل چهار ضلع و چهار زاویه 90 درجه دارد. "
+
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "دایره یک منحنی است که فاصله تمام نقاط روی آن تا مرکز منحنی مساوی است."
+
+#. Description of an ellipse
+#: ../shapes.h:222
+#: ../shapes.h:223
+msgid "An ellipse is a stretched circle."
+msgstr "بیضی یک دایره کشیده شده است."
+
+#. Description of a triangle
+#: ../shapes.h:226
+#: ../shapes.h:227
+msgid "A triangle has three sides."
+msgstr "یک مثلث سه ضلع دارد."
+
+#. Description of a pentagon
+#: ../shapes.h:230
+#: ../shapes.h:231
+msgid "A pentagon has five sides."
+msgstr "یک پنج ضلعی پنج ضلع دارد."
+
+#: ../shapes.h:235
+#: ../shapes.h:237
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "یک لوزی چهار ضلع مساوی دارد که ضلع های متقابل موازیند."
+
+#: ../shapes.h:241
+#: ../shapes.h:243
+msgid "An octagon has eight equal sides."
+msgstr "یک هشت ضلعی هشت ضلع دارد."
+
+#. Title of tool selector (buttons down the left)
+#: ../titles.h:41
+msgid "Tools"
+msgstr "ابزار"
+
+#. Title of color palette (buttons across the bottom)
+#: ../titles.h:44
+msgid "Colors"
+msgstr "رنگ ها"
+
+#. Title of brush selector (buttons down the right for paint and line tools)
+#: ../titles.h:47
+msgid "Brushes"
+msgstr "سر قلم ها"
+
+#. Title of eraser selector (buttons down the right for eraser tool)
+#: ../titles.h:50
+msgid "Erasers"
+msgstr "پاک کن ها"
+
+#. Title of stamp selector (buttons down the right for stamps tool)
+#: ../titles.h:53
+msgid "Stamps"
+msgstr ""
+
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
+#: ../titles.h:56
+#: ../tools.h:54
+msgid "Shapes"
+msgstr "اشکال هندسی"
+
+#. Title of font selector (buttons down the right for text tool)
+#: ../titles.h:59
+msgid "Letters"
+msgstr "حروف"
+
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
+#: ../titles.h:62
+#: ../tools.h:60
+msgid "Magic"
+msgstr "جادویی"
+
+#. Freehand painting tool
+#: ../tools.h:45
+msgid "Paint"
+msgstr ""
+
+#. Stamp tool (aka Rubber Stamps)
+#: ../tools.h:48
+msgid "Stamp"
+msgstr ""
+
+#. Line drawing tool
+#: ../tools.h:51
+msgid "Lines"
+msgstr "خطوط"
+
+#. Text tool
+#: ../tools.h:57
+msgid "Text"
+msgstr "متن"
+
+#. Undo last action
+#: ../tools.h:63
+msgid "Undo"
+msgstr "خنثی کردن"
+
+#. Redo undone action
+#: ../tools.h:66
+msgid "Redo"
+msgstr "دوباره انجام دادن"
+
+#. Eraser tool
+#: ../tools.h:69
+msgid "Eraser"
+msgstr "پاک کن"
+
+#. Start a new picture
+#: ../tools.h:72
+msgid "New"
+msgstr "جدید"
+
+#. Open a saved picture
+#. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
+#: ../tools.h:75
+#: ../tuxpaint.c:7835
+msgid "Open"
+msgstr "باز کردن"
+
+#. Save the current picture
+#: ../tools.h:78
+msgid "Save"
+msgstr "ذخیره"
+
+#. Print the current picture
+#: ../tools.h:81
+msgid "Print"
+msgstr "چاپ"
+
+#. Quit/exit Tux Paint application
+#: ../tools.h:84
+msgid "Quit"
+msgstr "خروج"
+
+#. Paint tool instructions
+#: ../tools.h:92
+msgid "Pick a color and a brush shape to draw with."
+msgstr "یک رنگ و یک قلم بدار و با آن نقاشی بکش."
+
+#. Stamp tool instructions
+#: ../tools.h:95
+msgid "Pick a picture to stamp around your drawing."
+msgstr "یک عکس بردار و آن را در نقاشیت بگذار."
+
+#. Line tool instructions
+#: ../tools.h:98
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "کلیک کن و شروع به کشیدن خط کن.برو و آن را کامل کن."
+
+#. Shape tool instructions
+#: ../tools.h:101
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "یکی از شکل ها را انتخاب کن.کلیک کن تا مرکز شکل مشخص شود.سپس موس را بکش تا شکل به سایز دلخواهت درآید.برای چرخاندن شکل،موس را بچرخان و سپس کلیک کن تا شکل رسم شود."
+
+#. Text tool instructions
+#: ../tools.h:104
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+#. Magic tool instruction
+#: ../tools.h:107
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "یک سر قلم جادویی بردار و با آن نقاشی بکش!"
+
+#. Response to 'undo' action
+#: ../tools.h:110
+msgid "Undo!"
+msgstr "برگرداندن آخرين عمل!"
+
+#. Response to 'redo' action
+#: ../tools.h:113
+msgid "Redo!"
+msgstr "دوباره انجام دادن!"
+
+#. Eraser tool
+#: ../tools.h:116
+msgid "Eraser!"
+msgstr "پاک کن!"
+
+#. Response to 'start a new image' action
+#: ../tools.h:119
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr ".ک رنگ یا عکس بردار و شروع کن به کشیدن نقاشی "
+
+#. Response to 'open' action (while file dialog is being constructed)
+#: ../tools.h:122
+msgid "Open…"
+msgstr "باز کردن..."
+
+#. Response to 'save' action
+#: ../tools.h:125
+msgid "Your image has been saved!"
+msgstr "تصویر شما ذخیره شد!"
+
+#. Response to 'print' action (while printing, or print dialog is being used)
+#: ../tools.h:128
+msgid "Printing…"
+msgstr "چاپ..."
+
+#. Response to 'quit' (exit) action
+#: ../tools.h:131
+msgid "Bye bye!"
+msgstr "خداحافظ!"
+
+#. Instruction while using Line tool (after click, before release)
+#: ../tools.h:135
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+#. Instruction while using Shape tool (after first click, before release)
+#: ../tools.h:138
+msgid "Hold the button to stretch the shape."
+msgstr "کلیک کن و دکمه را نگه دار و موس را بکش تا شکل کشیده شود!"
+
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
+#: ../tools.h:141
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "موس را برای چرخاندن شکل حرکت بده.کلیک کن تا رسم شود. "
+
+#. Notification that 'New' action was aborted (current image would have been lost)
+#: ../tools.h:144
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. Prompt to confirm user wishes to quit
+#: ../tuxpaint.c:1809
+msgid "Do you really want to quit?"
+msgstr "آیا واقعاً می خواهی خارج شوی؟"
+
+#. Quit prompt positive response (quit)
+#: ../tuxpaint.c:1812
+msgid "Yes, I'm done!"
+msgstr "بله،ذخیره کن!"
+
+#. Quit prompt negative response (don't quit)
+#: ../tuxpaint.c:1815
+#: ../tuxpaint.c:1842
+msgid "No, take me back!"
+msgstr "!نه،من را برگردان"
+
+#. Current picture is not saved; user is quitting
+#: ../tuxpaint.c:1819
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "اگر خارج شوید تصویر شما از بین میرود!می خواهید آن را ذخیره کنید؟"
+
+#: ../tuxpaint.c:1820
+#: ../tuxpaint.c:1825
+msgid "Yes, save it!"
+msgstr "بله،ذخیره کن!"
+
+#: ../tuxpaint.c:1821
+#: ../tuxpaint.c:1826
+msgid "No, don't bother saving!"
+msgstr "نه،ذخیره نکن!"
+
+#. Current picture is not saved; user is opening another picture
+#: ../tuxpaint.c:1824
+msgid "Save your picture first?"
+msgstr "اول تصویر ذخیره شود؟"
+
+#. Error opening picture
+#: ../tuxpaint.c:1829
+msgid "Can’t open that picture!"
+msgstr "نمی توانی آن تصویر را باز کنی!"
+
+#. Generic dialog dismissal
+#: ../tuxpaint.c:1832
+#: ../tuxpaint.c:1837
+#: ../tuxpaint.c:1846
+#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1859
+msgid "OK"
+msgstr "قبول"
+
+#. Notification that 'Open' dialog has nothing to show
+#: ../tuxpaint.c:1836
+msgid "There are no saved files!"
+msgstr "فایل ذخیره شده ای موجود نیست!"
+
+#. Verification of print action
+#: ../tuxpaint.c:1840
+msgid "Print your picture now?"
+msgstr "تصویر را چاپ کنم؟"
+
+#: ../tuxpaint.c:1841
+msgid "Yes, print it!"
+msgstr "بله،آن را چاپ کن!"
+
+#. Confirmation of successful (we hope) printing
+#: ../tuxpaint.c:1845
+msgid "Your picture has been printed!"
+msgstr "تصویر شما چاپ شد!"
+
+#. Notification that it's too soon to print again (--printdelay option is in effect)
+#: ../tuxpaint.c:1849
+msgid "You can’t print yet!"
+msgstr "شما هنوز نمی توانید تصویر را چاپ کنید!"
+
+#. Prompt to confirm erasing a picture in the Open dialog
+#: ../tuxpaint.c:1853
+msgid "Erase this picture?"
+msgstr " تصویر را پاک کنم؟"
+
+#: ../tuxpaint.c:1854
+msgid "Yes, erase it!"
+msgstr "بله،آن را پاک کن!"
+
+#: ../tuxpaint.c:1855
+msgid "No, don't erase it!"
+msgstr "نه،آن را پاک نکن!"
+
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
+#: ../tuxpaint.c:1858
+msgid "Remember to use the left mouse button!"
+msgstr "یادت باشه از کلیلک چپ استفاده کنی!"
+
+#. Sound has been muted (silenced) via keyboard shortcut
+#: ../tuxpaint.c:1969
+msgid "Sound muted."
+msgstr "صدا قطع شد."
+
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
+#: ../tuxpaint.c:1974
+msgid "Sound unmuted."
+msgstr "صدا وصل است. "
+
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2411
+msgid "Please wait…"
+msgstr "لطفاً کمی صبر کن"
+
+#: ../tuxpaint.c:7061
+msgid "Pick a color."
+msgstr "یک رنگ بردار."
+
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
+#: ../tuxpaint.c:7838
+msgid "Erase"
+msgstr "پاك‌ كردن‌"
+
+#. Open dialog: 'Slides' button, to switch to slide show mode
+#: ../tuxpaint.c:7841
+msgid "Slides"
+msgstr "اسلاید"
+
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+#: ../tuxpaint.c:7844
+msgid "Back"
+msgstr "بازگشت"
+
+#. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:7847
+msgid "Next"
+msgstr "بعدی"
+
+#. Slideshow: 'Play' button, to begin a slideshow sequence
+#: ../tuxpaint.c:7850
+msgid "Play"
+msgstr "نمایش"
+
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+#: ../tuxpaint.c:8443
+msgid "Aa"
+msgstr ""
+
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+#: ../tuxpaint.c:11348
+msgid "Yes"
+msgstr "بله"
+
+#: ../tuxpaint.c:11352
+msgid "No"
+msgstr "خیر"
+
+#. Prompt to ask whether user wishes to save over old version of their file
+#: ../tuxpaint.c:12301
+msgid "Replace the picture with your changes?"
+msgstr "تصویر با تغییرات شما جایگزین شود؟"
+
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
+#: ../tuxpaint.c:12305
+msgid "Yes, replace the old one!"
+msgstr "بله،جایگزین قبلی کن!"
+
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
+#: ../tuxpaint.c:12309
+msgid "No, save a new file!"
+msgstr "خیر،یک فایل جدید ذخیره کن!"
+
+#: ../tuxpaint.c:13072
+msgid "Choose the picture you want, then click “Open”."
+msgstr "تصویری که می خواهی را انتخاب کن و سپس روی \"باز کردن\" کلیک کن."
+
+#. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
+#: ../tuxpaint.c:14059
+#: ../tuxpaint.c:14373
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "تصویری که می خواهی را انتخاب کن و سپس روی \"نمایش\" کلیک کن."
+
+#: ../tuxpaint.desktop.in.h:1
+msgid "A drawing program for children."
+msgstr "یک برنامه نقاشی برای کودکان."
+
+#: ../tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr "برنامه نقاشی"
+
+#: ../tuxpaint.desktop.in.h:3
+msgid "Tux Paint"
+msgstr ""
+
+#: ../../magic/src/blocks_chalk_drip.c:132
+msgid "Blocks"
+msgstr "شطرنجی"
+
+#: ../../magic/src/blocks_chalk_drip.c:134
+msgid "Chalk"
+msgstr "گچ"
+
+#: ../../magic/src/blocks_chalk_drip.c:136
+msgid "Drip"
+msgstr ""
+
+#: ../../magic/src/blocks_chalk_drip.c:146
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "برای شطرنجی کردن تصویر کلیک کن و موس را حرکت بده."
+
+#: ../../magic/src/blocks_chalk_drip.c:149
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ".برای سفید کردن تصویر با گچ کلیک کن و موس را حرکت بده  "
+
+#: ../../magic/src/blocks_chalk_drip.c:152
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+#: ../../magic/src/blur.c:76
+msgid "Blur"
+msgstr "محو کردن"
+
+#: ../../magic/src/blur.c:83
+msgid "Click and move the mouse around to blur the picture."
+msgstr "برای محو کردن تصویر کلیک کن و موس را حرکت بده."
+
+#. Both are named "Bricks", at the moment:
+#: ../../magic/src/bricks.c:104
+msgid "Bricks"
+msgstr "آجر"
+
+#: ../../magic/src/bricks.c:111
+msgid "Click and move to draw large bricks."
+msgstr "برای کشیدن آجرهای بزرگ کلیک کن و موس را حرکت بده."
+
+#: ../../magic/src/bricks.c:113
+msgid "Click and move to draw small bricks."
+msgstr "برای کشیدن آجرهای کوچک کلیک کن و موس را حرکت بده."
+
+#: ../../magic/src/calligraphy.c:108
+msgid "Calligraphy"
+msgstr "خوش نویسی"
+
+#: ../../magic/src/calligraphy.c:115
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "برای خوشنویسی کلیک کن و موس را در جهت مناسب حرکت بده. "
+
+#: ../../magic/src/cartoon.c:80
+msgid "Cartoon"
+msgstr "کارتون"
+
+#: ../../magic/src/cartoon.c:87
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "برای تبدیل تصویر به حالت کارتونی کلیک کن و موس را حرکت بده. "
+
+#: ../../magic/src/distortion.c:121
+msgid "Distortion"
+msgstr "اعوجاج"
+
+#: ../../magic/src/distortion.c:129
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
+
+#: ../../magic/src/emboss.c:76
+msgid "Emboss"
+msgstr "برجسته کردن"
+
+#: ../../magic/src/emboss.c:82
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
+
+#: ../../magic/src/fade_darken.c:116
+msgid "Lighten"
+msgstr "درخشش"
+
+#: ../../magic/src/fade_darken.c:118
+msgid "Darken"
+msgstr "تاریک کردن"
+
+#: ../../magic/src/fade_darken.c:128
+msgid "Click and move to fade the colors."
+msgstr ""
+
+#: ../../magic/src/fade_darken.c:131
+msgid "Click and move to darken the colors."
+msgstr ""
+
+#: ../../magic/src/fill.c:87
+msgid "Fill"
+msgstr "پر کردن"
+
+#: ../../magic/src/fill.c:94
+msgid "Click in the picture to fill that area with color."
+msgstr "روی تصویر کلیک کن تا آن ناحیه با رنگ انتخاب شده پر شود."
+
+#: ../../magic/src/flower.c:124
+msgid "Flower"
+msgstr "گل"
+
+#: ../../magic/src/flower.c:130
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr "برای کشیدن گل کلیک کن و موس را بکش."
+
+#: ../../magic/src/foam.c:104
+msgid "Foam"
+msgstr "کف"
+
+#: ../../magic/src/foam.c:110
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
+msgstr "برای پوشاندن یک ناحیه با حباب های کف کلیک کن و موس را بکش."
+
+#: ../../magic/src/glasstile.c:83
+msgid "Glass Tile"
+msgstr "کف "
+
+#: ../../magic/src/glasstile.c:89
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "برای گذاشتن شیشه های کوچک کلیک کن و موس را بکش."
+
+#: ../../magic/src/grass.c:92
+msgid "Grass"
+msgstr "چمن‌ "
+
+#: ../../magic/src/grass.c:98
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "برای کشیدن چمن کلیک کن و موس را حرکت بده!خاک یادت نره!"
+
+#: ../../magic/src/kalidescope.c:77
+msgid "Kaleidoscope"
+msgstr "لوله‌ شكل‌ نما "
+
+#: ../../magic/src/kalidescope.c:83
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "برای رسم با سرقلم متقارن کلیک کن و موس را بکش.  "
+
+#: ../../magic/src/light.c:84
+msgid "Light"
+msgstr "نور"
+
+#: ../../magic/src/light.c:90
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن و موس را بکش."
+
+#: ../../magic/src/metalpaint.c:77
+msgid "Metal Paint"
+msgstr "سرقلم متال"
+
+#: ../../magic/src/metalpaint.c:83
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "برای نقاشی کردن با یک رنگ متالیک، کلیک کن و موس را بکش."
+
+#: ../../magic/src/mirror_flip.c:94
+msgid "Mirror"
+msgstr "آینه"
+
+#: ../../magic/src/mirror_flip.c:96
+msgid "Flip"
+msgstr "وارونه کردن"
+
+#: ../../magic/src/mirror_flip.c:106
+msgid "Click to make a mirror image."
+msgstr "کلیک کن تا تصویر برعکس شود."
+
+#: ../../magic/src/mirror_flip.c:109
+msgid "Click to flip the picture upside-down."
+msgstr "کلیک کن تا تصویر وارونه شود."
+
+#: ../../magic/src/negative.c:72
+msgid "Negative"
+msgstr "نگاتیو"
+
+#: ../../magic/src/negative.c:79
+msgid "Click and move the mouse around to draw a negative."
+msgstr "برای رسم نگاتیو(رنگ های معکوس)کلیک کن و موس را حرکت بده."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "رنگين‌ كمان"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "تو می تونی با رنگ های رنگین کمان نقاشی کنی!"
+
+#: ../../magic/src/ripples.c:81
+msgid "Ripples"
+msgstr "امواج"
+
+#: ../../magic/src/ripples.c:87
+msgid "Click to make ripples appear over your picture."
+msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
+
+#: ../../magic/src/shift.c:104
+msgid "Shift"
+msgstr "جابجایی"
+
+#: ../../magic/src/shift.c:110
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
+
+#: ../../magic/src/smudge.c:77
+msgid "Smudge"
+msgstr ""
+
+#: ../../magic/src/smudge.c:84
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+#: ../../magic/src/tint.c:77
+msgid "Tint"
+msgstr ""
+
+#: ../../magic/src/tint.c:84
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "برای تغییر رنگ تصویر،کلیک کن و موس را در اطراف آن حرکت بده."
+
+#: ../../magic/src/waves.c:78
+msgid "Waves"
+msgstr "امواج"
+
+#: ../../magic/src/waves.c:84
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "کلیک کن تا تصویر پر موج شود."
+

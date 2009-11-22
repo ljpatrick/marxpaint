@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - July 23, 2009
+  June 14, 2002 - November 21, 2009
 */
 
 #include <stdio.h>
@@ -77,6 +77,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "es_MX",
   "et",
   "eu",
+  "fa",
   "fi",
   "fo",
   "fr",
@@ -159,6 +160,7 @@ static int lang_use_own_font[] = {
 
 static int lang_use_right_to_left[] = {
   LANG_AR,
+  LANG_FA,
   LANG_HE,
   -1
 };
@@ -215,6 +217,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"mexican-spanish", "es_MX.UTF-8"},
   {"espanol-mejicano", "es_MX.UTF-8"},
   {"espanol", "es_ES.UTF-8"},
+  {"persian", "fa_IR.UTF-8"},
   {"finnish", "fi_FI.UTF-8"},
   {"suomi", "fi_FI.UTF-8"},
   {"faroese", "fo_FO.UTF-8"},
@@ -317,7 +320,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 static void show_lang_usage(int exitcode)
 {
   FILE * f = exitcode ? stderr : stdout;
-  const char *const prg = "tuxpaint"
+  const char *const prg = "tuxpaint";
   fprintf(f,
 	  "\n"
 	  "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
@@ -377,6 +380,7 @@ static void show_lang_usage(int exitcode)
 /* nn */ "  norwegian    nynorsk                norsk\n"
 /* oc */ "  occitan\n"
 /* oj */ "  ojibwe       ojibway\n"
+/* fa */ "  persian\n"
 /* pl */ "  polish       polski\n"
 /* pt */ "  portuguese   portugues\n"
 /* ro */ "  romanian\n"
@@ -441,6 +445,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  cs_CZ   (Czech        Cesky)\n"
 	  "  da_DK   (Danish       Dansk)\n"
 	  "  nl_NL   (Dutch)\n"
+          "  fa_IR   (Persian)\n"
 	  "  fi_FI   (Finnish      Suomi)\n"
 	  "  fo_FO   (Faroese)\n"
 	  "  fr_FR   (French       Francais)\n"

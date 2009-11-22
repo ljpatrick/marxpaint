@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.November.4 (0.9.22)
+2009.November.21 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -125,6 +125,11 @@ $Id$
     ---------
     * Another flower brush
       Made out of some open clipart by C Ford.
+
+  * New Locales:
+    ------------
+    * Persian translation
+      Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
   * Localization Updates:
     ---------------------

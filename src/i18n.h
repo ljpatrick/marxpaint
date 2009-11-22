@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - July 23, 2009
+  June 14, 2002 - November 21, 2009
 */
 
 
@@ -63,6 +63,7 @@ enum
   LANG_ES_MX,			/* Spanish (Mexican) */
   LANG_ET,			/* Estonian */
   LANG_EU,			/* Basque */
+  LANG_FA,			/* Persian */
   LANG_FI,			/* Finnish */
   LANG_FO,			/* Faroese */
   LANG_FR,			/* French */

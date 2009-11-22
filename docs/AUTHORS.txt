@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 3, 2009
+June 17, 2002 - November 21, 2009
 
 $Id$
 
@@ -600,6 +600,9 @@ $Id$
 
   * Ojibwe
     Ed Montgomery <edm@rocketmail.com>
+
+  * Persian
+    Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
   * Polish
     Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>
