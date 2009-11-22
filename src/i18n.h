@@ -149,6 +149,8 @@ extern const char *lang_prefix, *short_lang_prefix;
 
 int get_current_language(void);
 int setup_i18n(const char *restrict lang, const char *restrict locale) MUST_CHECK;
+#ifdef NO_SDLPANGO
 int smash_i18n(void) MUST_CHECK;
+#endif
 
 #endif

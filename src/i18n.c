@@ -735,6 +735,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 }
 #endif
 
+#ifdef NO_SDLPANGO
 int smash_i18n(void)
 {
 #ifdef ABUSE_ENV
@@ -743,3 +744,4 @@ int smash_i18n(void)
 #endif
   return set_current_language("C");
 }
+#endif
