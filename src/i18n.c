@@ -564,12 +564,51 @@ static const char *language_to_locale(const char *langstr)
   show_lang_usage(59);
 }
 
+void set_langint_from_locale_string(const char *restrict loc)
+{
+  if (!loc)
+    return;
+
+  char *baseloc = strdup(loc);
+  
+  char *dot = strchr(baseloc, '.');
+  if(dot)
+    *dot = '\0';
+
+  size_t len_baseloc = strlen(baseloc);
+
+  /* Which, if any, of the locales is it? */
+
+  int found = 0;
+  int i;
+
+  for (i = 0; i < NUM_LANGS && found == 0; i++)
+  {
+    // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+    if (len_baseloc == strlen(lang_prefixes[i]) &&
+        !strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])))
+    {
+      langint = i;
+      found = 1;
+    }
+  }
+
+  for (i = 0; i < NUM_LANGS && found == 0; i++)
+  {
+    // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+    if (!strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])))
+    {
+      langint = i;
+      found = 1;
+    }
+  }
+}
 
 static int set_current_language(void) MUST_CHECK;
 static int set_current_language(void)
 {
-  char *loc, *baseloc;
-  int i, found;
+  char *loc;
+  int i;
   int y_nudge = 0;
 
   bindtextdomain("tuxpaint", LOCALEDIR);
@@ -601,14 +640,15 @@ static int set_current_language(void)
 
   if (loc)
   {
-    baseloc = strdup(loc);
+    char *baseloc = strdup(loc);
+    
     char *dot = strchr(baseloc, '.');
     if(dot)
       *dot = '\0';
 
     /* Which, if any, of the locales is it? */
 
-    found = 0;
+    int found = 0;
 
     for (i = 0; i < NUM_LANGS && found == 0; i++)
     {
@@ -631,6 +671,8 @@ static int set_current_language(void)
       }
     }
   }
+
+  set_langint_from_locale_string(loc);
 
   lang_prefix = lang_prefixes[langint];
 
