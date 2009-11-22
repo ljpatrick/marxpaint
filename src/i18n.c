@@ -657,6 +657,7 @@ static int set_current_language(void)
   fflush(stderr);
 #endif
 
+  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
   return y_nudge;
 }
 
@@ -688,9 +689,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
     setlocale(LC_ALL, "");
   }
   ctype_utf8();
-  int y_nudge = set_current_language();
-  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
-  return y_nudge;
+  return set_current_language();
 }
 
 int smash_i18n(void)
