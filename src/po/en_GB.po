@@ -3,11 +3,13 @@
 # Karl Ove Hufthammer <karl@huftis.org>, 2007.
 # Tux Paint British English messages
 # Copyright (C) 2002, 2004, 2007 Free Software Foundation, Inc.
+#. Reserved...
+#: ../tools.h:80 ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 23:37-0700\n"
+"POT-Creation-Date: 2009-11-21 23:14-0800\n"
 "PO-Revision-Date: 2009-09-24 17:48+0100\n"
 "Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -338,7 +340,7 @@ msgstr "Stamps"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:70
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "Shapes"
 
@@ -349,94 +351,94 @@ msgstr "Letters"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:79
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "Magic"
 
 #. Freehand painting tool
-#: ../tools.h:61
+#: ../tools.h:62
 msgid "Paint"
 msgstr "Paint"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:64
+#: ../tools.h:65
 msgid "Stamp"
 msgstr "Stamp"
 
 #. Line drawing tool
-#: ../tools.h:67
+#: ../tools.h:68
 msgid "Lines"
 msgstr "Lines"
 
 #. Text tool
-#: ../tools.h:73
+#: ../tools.h:74
 msgid "Text"
 msgstr "Text"
 
 #. Label tool
-#: ../tools.h:76
+#: ../tools.h:77
 msgid "Label"
 msgstr ""
 
 #. Undo last action
-#: ../tools.h:82
+#: ../tools.h:86
 msgid "Undo"
 msgstr "Undo"
 
 #. Redo undone action
-#: ../tools.h:85
+#: ../tools.h:89
 msgid "Redo"
 msgstr "Redo"
 
 #. Eraser tool
-#: ../tools.h:88
+#: ../tools.h:92
 msgid "Eraser"
 msgstr "Eraser"
 
 #. Start a new picture
-#: ../tools.h:91
+#: ../tools.h:95
 msgid "New"
 msgstr "New"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:94 ../tuxpaint.c:8622
+#: ../tools.h:98 ../tuxpaint.c:6707
 msgid "Open"
 msgstr "Open"
 
 #. Save the current picture
-#: ../tools.h:97
+#: ../tools.h:101
 msgid "Save"
 msgstr "Save"
 
 #. Print the current picture
-#: ../tools.h:100
+#: ../tools.h:104
 msgid "Print"
 msgstr "Print"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:103
+#: ../tools.h:107
 msgid "Quit"
 msgstr "Quit"
 
 #. Paint tool instructions
-#: ../tools.h:111
+#: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Pick a colour and a brush shape to draw with."
 
 #. Stamp tool instructions
-#: ../tools.h:114
+#: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Pick a picture to stamp around your drawing."
 
 #. Line tool instructions
-#: ../tools.h:117
+#: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
 #. Shape tool instructions
-#: ../tools.h:120
+#: ../tools.h:124
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -445,7 +447,7 @@ msgstr ""
 "size you want. Move around to rotate it, and click to draw it."
 
 #. Text tool instructions
-#: ../tools.h:123
+#: ../tools.h:127
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -456,7 +458,7 @@ msgstr ""
 "Choose a style of text. Click on your drawing and you can start typing."
 
 #. Label tool instructions
-#: ../tools.h:126
+#: ../tools.h:130
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -469,246 +471,246 @@ msgstr ""
 "Choose a style of text. Click on your drawing and you can start typing."
 
 #. Magic tool instruction
-#: ../tools.h:129
+#: ../tools.h:136
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pick a magical effect to use on your drawing!"
 
 #. Response to 'undo' action
-#: ../tools.h:132
+#: ../tools.h:139
 msgid "Undo!"
 msgstr "Undo!"
 
 #. Response to 'redo' action
-#: ../tools.h:135
+#: ../tools.h:142
 msgid "Redo!"
 msgstr "Redo!"
 
 #. Eraser tool
-#: ../tools.h:138
+#: ../tools.h:145
 msgid "Eraser!"
 msgstr "Eraser!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:141
+#: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Pick a colour or picture with which to start a new drawing."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:144
+#: ../tools.h:151
 msgid "Open…"
 msgstr "Open…"
 
 #. Response to 'save' action
-#: ../tools.h:147
+#: ../tools.h:154
 msgid "Your image has been saved!"
 msgstr "Your image has been saved!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Printing…"
 msgstr "Printing…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Bye bye!"
 msgstr "Bye bye!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:157
+#: ../tools.h:164
 msgid "Let go of the button to complete the line."
 msgstr "Let go of the button to complete the line."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:160
+#: ../tools.h:167
 msgid "Hold the button to stretch the shape."
 msgstr "Hold the button to stretch the shape."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:163
+#: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move the mouse to rotate the shape. Click to draw it."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:166
+#: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK then… Let’s keep drawing this one!"
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:1930 ../tuxpaint.c:2706
-msgid "Please wait…"
-msgstr "Please wait…"
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1988
+#: ../tuxpaint.c:1848
 msgid "Do you really want to quit?"
 msgstr "Do you really want to quit?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1991
+#: ../tuxpaint.c:1851
 msgid "Yes, I’m done!"
 msgstr "Yes, I’m done!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1994 ../tuxpaint.c:2021
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
 msgid "No, take me back!"
 msgstr "No. take me back!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1998
+#: ../tuxpaint.c:1858
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "If you quit, you’ll lose your picture! Save it?"
 
-#: ../tuxpaint.c:1999 ../tuxpaint.c:2004
+#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
 msgid "Yes, save it!"
 msgstr "Yes, save it!"
 
-#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
+#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
 msgid "No, don’t bother saving!"
 msgstr "No, don’t bother saving!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2003
+#: ../tuxpaint.c:1863
 msgid "Save your picture first?"
 msgstr "Save your picture first?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2008
+#: ../tuxpaint.c:1868
 msgid "Can’t open that picture!"
 msgstr "Can’t open that picture!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2011 ../tuxpaint.c:2016 ../tuxpaint.c:2025 ../tuxpaint.c:2032
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
+#: ../tuxpaint.c:1901
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2015
+#: ../tuxpaint.c:1875
 msgid "There are no saved files!"
 msgstr "There are no saved files!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2019
+#: ../tuxpaint.c:1879
 msgid "Print your picture now?"
 msgstr "Print your picture now?"
 
-#: ../tuxpaint.c:2020
+#: ../tuxpaint.c:1880
 msgid "Yes, print it!"
 msgstr "Yes, print it!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2024
+#: ../tuxpaint.c:1884
 msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2028
+#: ../tuxpaint.c:1888
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Sorry! Your picture could not be printed!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2031
+#: ../tuxpaint.c:1891
 msgid "You can’t print yet!"
 msgstr "You can’t print yet!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2035
+#: ../tuxpaint.c:1895
 msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:1896
 msgid "Yes, erase it!"
 msgstr "Yes, erase it!"
 
-#: ../tuxpaint.c:2037
+#: ../tuxpaint.c:1897
 msgid "No, don’t erase it!"
 msgstr "No, don’t erase it!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:1900
 msgid "Remember to use the left mouse button!"
 msgstr "Remember to use the left mouse button!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2169
+#: ../tuxpaint.c:2029
 msgid "Sound muted."
 msgstr "Sound muted."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2174
+#: ../tuxpaint.c:2034
 msgid "Sound unmuted."
 msgstr "Sound unmuted."
 
-#: ../tuxpaint.c:7821
-msgid "Pick a color."
-msgstr "Pick a colour."
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2622
+msgid "Please wait…"
+msgstr "Please wait…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8625
+#: ../tuxpaint.c:6710
 msgid "Erase"
 msgstr "Erase"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:6713
 msgid "Slides"
 msgstr "Slides"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8631
+#: ../tuxpaint.c:6716
 msgid "Back"
 msgstr "Back"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8634
+#: ../tuxpaint.c:6719
 msgid "Next"
 msgstr "Next"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8637
+#: ../tuxpaint.c:6722
 msgid "Play"
 msgstr "Play"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9345
+#: ../tuxpaint.c:7430
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12444
+#: ../tuxpaint.c:10638
 msgid "Yes"
 msgstr "Yes"
 
-#: ../tuxpaint.c:12448
+#: ../tuxpaint.c:10642
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13443
+#: ../tuxpaint.c:11637
 msgid "Replace the picture with your changes?"
 msgstr "Replace the picture with your changes?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13447
+#: ../tuxpaint.c:11641
 msgid "Yes, replace the old one!"
 msgstr "Yes, replace the old one!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13451
+#: ../tuxpaint.c:11645
 msgid "No, save a new file!"
 msgstr "No, save a new file!"
 
-#: ../tuxpaint.c:14303
+#: ../tuxpaint.c:12517
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click ‘Open’."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
+#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Choose the pictures you want, then click ‘Play’."
+
+#: ../tuxpaint.c:19287
+msgid "Pick a color."
+msgstr "Pick a colour."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."

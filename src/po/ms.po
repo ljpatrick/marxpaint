@@ -6,11 +6,13 @@
 # Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2004.
 # Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009.
 # Muhammad Najmi bin Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009.
+#. Reserved...
+#: ../tools.h:80 ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: nms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 23:37-0700\n"
+"POT-Creation-Date: 2009-11-21 23:14-0800\n"
 "PO-Revision-Date: 2009-10-23 21:39+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <najmi.zabidi@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -283,7 +285,8 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "Segiempat tepat ada empat bahagian."
 
 #: ../shapes.h:217 ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Bulatan ialah bentuk yang di mana semua titik adalah sama jarak dengan "
 "bahagian tengahnya."
@@ -338,7 +341,7 @@ msgstr "Cop"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:70
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "Bentuk"
 
@@ -349,94 +352,94 @@ msgstr "Huruf"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:79
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "Ajaib"
 
 #. Freehand painting tool
-#: ../tools.h:61
+#: ../tools.h:62
 msgid "Paint"
 msgstr "Cat"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:64
+#: ../tools.h:65
 msgid "Stamp"
 msgstr "Cop"
 
 #. Line drawing tool
-#: ../tools.h:67
+#: ../tools.h:68
 msgid "Lines"
 msgstr "Garis"
 
 #. Text tool
-#: ../tools.h:73
+#: ../tools.h:74
 msgid "Text"
 msgstr "Teks"
 
 #. Label tool
-#: ../tools.h:76
+#: ../tools.h:77
 msgid "Label"
 msgstr "Label"
 
 #. Undo last action
-#: ../tools.h:82
+#: ../tools.h:86
 msgid "Undo"
 msgstr "Nyahcara"
 
 #. Redo undone action
-#: ../tools.h:85
+#: ../tools.h:89
 msgid "Redo"
 msgstr "Ulangcara"
 
 #. Eraser tool
-#: ../tools.h:88
+#: ../tools.h:92
 msgid "Eraser"
 msgstr "Pemadam"
 
 #. Start a new picture
-#: ../tools.h:91
+#: ../tools.h:95
 msgid "New"
 msgstr "Baru"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:94 ../tuxpaint.c:8622
+#: ../tools.h:98 ../tuxpaint.c:6707
 msgid "Open"
 msgstr "Buka"
 
 #. Save the current picture
-#: ../tools.h:97
+#: ../tools.h:101
 msgid "Save"
 msgstr "Simpan"
 
 #. Print the current picture
-#: ../tools.h:100
+#: ../tools.h:104
 msgid "Print"
 msgstr "Cetak"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:103
+#: ../tools.h:107
 msgid "Quit"
 msgstr "Keluar"
 
 #. Paint tool instructions
-#: ../tools.h:111
+#: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Ambil warna dan bentuk berus untuk melukis."
 
 #. Stamp tool instructions
-#: ../tools.h:114
+#: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Ambil gambar untuk mengecop di sekeliling lukisan anda."
 
 #. Line tool instructions
-#: ../tools.h:117
+#: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik untuk memulakan melukis garisan. Lepaskan untuk melengkapkan."
 
 #. Shape tool instructions
-#: ../tools.h:120
+#: ../tools.h:124
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -445,7 +448,7 @@ msgstr ""
 "yang dikehendaki. Gerakkan di sekeliling untuk putar, dan klik untuk lukis."
 
 #. Text tool instructions
-#: ../tools.h:123
+#: ../tools.h:127
 #, fuzzy
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
@@ -453,7 +456,7 @@ msgid ""
 msgstr "Pilih gaya tulisan. Klik pada lukisan anda anda mula menaip."
 
 #. Label tool instructions
-#: ../tools.h:126
+#: ../tools.h:130
 #, fuzzy
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
@@ -463,246 +466,246 @@ msgid ""
 msgstr "Pilih gaya tulisan. Klik pada lukisan anda anda mula menaip."
 
 #. Magic tool instruction
-#: ../tools.h:129
+#: ../tools.h:136
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pilih kesan ajaib untuk digunakan pada lukisan anda!"
 
 #. Response to 'undo' action
-#: ../tools.h:132
+#: ../tools.h:139
 msgid "Undo!"
 msgstr "Nyahcara!"
 
 #. Response to 'redo' action
-#: ../tools.h:135
+#: ../tools.h:142
 msgid "Redo!"
 msgstr "Ulangcara!"
 
 #. Eraser tool
-#: ../tools.h:138
+#: ../tools.h:145
 msgid "Eraser!"
 msgstr "Pemadam!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:141
+#: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Pilih warna atau gambar untuk mula melukis."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:144
+#: ../tools.h:151
 msgid "Open…"
 msgstr "Buka ..."
 
 #. Response to 'save' action
-#: ../tools.h:147
+#: ../tools.h:154
 msgid "Your image has been saved!"
 msgstr "Imej telah disimpan!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Printing…"
 msgstr "Mencetak..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Bye bye!"
 msgstr "Jumpa Lagi!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:157
+#: ../tools.h:164
 msgid "Let go of the button to complete the line."
 msgstr "Lepaskan butang untuk melengkapkan garisan."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:160
+#: ../tools.h:167
 msgid "Hold the button to stretch the shape."
 msgstr "Terus tekan butang untuk meregangkan bentuk."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:163
+#: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pindahkan tetikus untuk memutarkan bentuk. Klik untuk lukis."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:166
+#: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Baiklah... Mari teruskan melukis yang ini!"
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:1930 ../tuxpaint.c:2706
-msgid "Please wait…"
-msgstr "Sila tunggu..."
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1988
+#: ../tuxpaint.c:1848
 msgid "Do you really want to quit?"
 msgstr "Anda pasti mahu keluar?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1991
+#: ../tuxpaint.c:1851
 msgid "Yes, I’m done!"
 msgstr "Ya, saya sudah siap!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1994 ../tuxpaint.c:2021
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
 msgid "No, take me back!"
 msgstr "Tidak, kembalikan semula!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1998
+#: ../tuxpaint.c:1858
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jika anda keluar, anda akan kehilangan hasil kerja anda! Simpan?"
 
-#: ../tuxpaint.c:1999 ../tuxpaint.c:2004
+#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
 msgid "Yes, save it!"
 msgstr "Ya, simpan!"
 
-#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
+#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
 msgid "No, don’t bother saving!"
 msgstr "Tidak, jangan simpan!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2003
+#: ../tuxpaint.c:1863
 msgid "Save your picture first?"
 msgstr "Simpan hasil kerja dahulu?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2008
+#: ../tuxpaint.c:1868
 msgid "Can’t open that picture!"
 msgstr "Tidak boleh membuka gambar!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2011 ../tuxpaint.c:2016 ../tuxpaint.c:2025 ../tuxpaint.c:2032
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
+#: ../tuxpaint.c:1901
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2015
+#: ../tuxpaint.c:1875
 msgid "There are no saved files!"
 msgstr "Tiada fail yang disimpan!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2019
+#: ../tuxpaint.c:1879
 msgid "Print your picture now?"
 msgstr "Cetak?"
 
-#: ../tuxpaint.c:2020
+#: ../tuxpaint.c:1880
 msgid "Yes, print it!"
 msgstr "Ya, cetaknya!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2024
+#: ../tuxpaint.c:1884
 msgid "Your picture has been printed!"
 msgstr "Hasil kerja anda sudah dicetak!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2028
+#: ../tuxpaint.c:1888
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Maaf! Gambar awak tidak dapat dicetak!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2031
+#: ../tuxpaint.c:1891
 msgid "You can’t print yet!"
 msgstr "Anda tidak boleh cetak lagi!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2035
+#: ../tuxpaint.c:1895
 msgid "Erase this picture?"
 msgstr "Padam hasil kerja?"
 
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:1896
 msgid "Yes, erase it!"
 msgstr "Ya, padamnya!"
 
-#: ../tuxpaint.c:2037
+#: ../tuxpaint.c:1897
 msgid "No, don’t erase it!"
 msgstr "Tidak, jangan padam!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:1900
 msgid "Remember to use the left mouse button!"
 msgstr "Ingat untuk gunakan butang kiri tetikus!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2169
+#: ../tuxpaint.c:2029
 msgid "Sound muted."
 msgstr "Bunyi disenyapkan."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2174
+#: ../tuxpaint.c:2034
 msgid "Sound unmuted."
 msgstr "Bunyi berfungsi."
 
-#: ../tuxpaint.c:7821
-msgid "Pick a color."
-msgstr "Pilih warna."
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2622
+msgid "Please wait…"
+msgstr "Sila tunggu..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8625
+#: ../tuxpaint.c:6710
 msgid "Erase"
 msgstr "Padam"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:6713
 msgid "Slides"
 msgstr "Slaid"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8631
+#: ../tuxpaint.c:6716
 msgid "Back"
 msgstr "Undur"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8634
+#: ../tuxpaint.c:6719
 msgid "Next"
 msgstr "Seterusnya"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8637
+#: ../tuxpaint.c:6722
 msgid "Play"
 msgstr "Main"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9345
+#: ../tuxpaint.c:7430
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12444
+#: ../tuxpaint.c:10638
 msgid "Yes"
 msgstr "Ya"
 
-#: ../tuxpaint.c:12448
+#: ../tuxpaint.c:10642
 msgid "No"
 msgstr "Tidak"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13443
+#: ../tuxpaint.c:11637
 msgid "Replace the picture with your changes?"
 msgstr "Ganti gambar dengan perubahan anda?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13447
+#: ../tuxpaint.c:11641
 msgid "Yes, replace the old one!"
 msgstr "Ya. ganti yang lama!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13451
+#: ../tuxpaint.c:11645
 msgid "No, save a new file!"
 msgstr "Tidak, simpan kepada fail baru!"
 
-#: ../tuxpaint.c:14303
+#: ../tuxpaint.c:12517
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang anda mahu, dan klik 'Buka'"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
+#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Pilih gambar yang anda mahu, dan klik \"Buka\"."
+
+#: ../tuxpaint.c:19287
+msgid "Pick a color."
+msgstr "Pilih warna."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
@@ -722,7 +725,9 @@ msgstr "Shift Warna"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Klik dan gerakkan tetikus untuk mengubah warna di dalam sebahagian karya anda."
+msgstr ""
+"Klik dan gerakkan tetikus untuk mengubah warna di dalam sebahagian karya "
+"anda."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
@@ -752,10 +757,12 @@ msgstr "Titisan"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -850,7 +857,8 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/fade_darken.c:134
 #, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/fade_darken.c:139
 #, fuzzy
@@ -860,7 +868,8 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/fade_darken.c:141
 #, fuzzy
 msgid "Click to darken your entire picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -906,7 +915,8 @@ msgstr ""
 
 #: ../../magic/src/fold.c:86
 #, fuzzy
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "a latar belakang dan ke  bagi halaman."
 
 #: ../../magic/src/glasstile.c:83
@@ -922,7 +932,8 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 #: ../../magic/src/glasstile.c:92
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/grass.c:92
 #, fuzzy
@@ -941,7 +952,8 @@ msgstr "Kaleidoskope"
 
 #: ../../magic/src/kalidescope.c:83
 #, fuzzy
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
 
 #: ../../magic/src/light.c:84
@@ -987,7 +999,8 @@ msgstr "Ajaib"
 
 #: ../../magic/src/mosaic.c:78
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic.c:79
@@ -1011,7 +1024,8 @@ msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
-msgid "Click and move the mouse to add a square mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:142
@@ -1021,7 +1035,8 @@ msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:144
 #, fuzzy
-msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:145
@@ -1031,7 +1046,8 @@ msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
-msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgid ""
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:148
@@ -1066,7 +1082,8 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/noise.c:67
 #, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
@@ -1199,7 +1216,8 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/sharpen.c:79
 #, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
@@ -1318,7 +1336,8 @@ msgstr "Warna"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/tint.c:76
@@ -1366,12 +1385,14 @@ msgstr ""
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/waves.c:80
 #, fuzzy
@@ -1398,4 +1419,3 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr "ke  atas bawah kiri kecil dan kanan."
-

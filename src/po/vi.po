@@ -3,11 +3,13 @@
 # Le Quang Phan <lqphan@hn.vnn.vn>, 2004.
 # Clytie Siddall <clytie@riverland.net.au>, 2005, 2006, 2007, 2008, 2009.
 #
+#. Reserved...
+#: ../tools.h:80 ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 23:37-0700\n"
+"POT-Creation-Date: 2009-11-21 23:14-0800\n"
 "PO-Revision-Date: 2009-09-27 17:47+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -336,7 +338,7 @@ msgstr "Dấu"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:70
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "Hình"
 
@@ -347,94 +349,94 @@ msgstr "Chữ"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:79
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "Ma thuật"
 
 #. Freehand painting tool
-#: ../tools.h:61
+#: ../tools.h:62
 msgid "Paint"
 msgstr "Sơn"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:64
+#: ../tools.h:65
 msgid "Stamp"
 msgstr "Dấu"
 
 #. Line drawing tool
-#: ../tools.h:67
+#: ../tools.h:68
 msgid "Lines"
 msgstr "Đường"
 
 #. Text tool
-#: ../tools.h:73
+#: ../tools.h:74
 msgid "Text"
 msgstr "Văn bản"
 
 #. Label tool
-#: ../tools.h:76
+#: ../tools.h:77
 msgid "Label"
 msgstr ""
 
 #. Undo last action
-#: ../tools.h:82
+#: ../tools.h:86
 msgid "Undo"
 msgstr "Hoàn tác"
 
 #. Redo undone action
-#: ../tools.h:85
+#: ../tools.h:89
 msgid "Redo"
 msgstr "Làm lại"
 
 #. Eraser tool
-#: ../tools.h:88
+#: ../tools.h:92
 msgid "Eraser"
 msgstr "Xoá"
 
 #. Start a new picture
-#: ../tools.h:91
+#: ../tools.h:95
 msgid "New"
 msgstr "Mới"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:94 ../tuxpaint.c:8622
+#: ../tools.h:98 ../tuxpaint.c:6707
 msgid "Open"
 msgstr "Mở"
 
 #. Save the current picture
-#: ../tools.h:97
+#: ../tools.h:101
 msgid "Save"
 msgstr "Lưu"
 
 #. Print the current picture
-#: ../tools.h:100
+#: ../tools.h:104
 msgid "Print"
 msgstr "In"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:103
+#: ../tools.h:107
 msgid "Quit"
 msgstr "Thoát"
 
 #. Paint tool instructions
-#: ../tools.h:111
+#: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Chọn một màu và một kiểu chổi để vẽ."
 
 #. Stamp tool instructions
-#: ../tools.h:114
+#: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Chọn một hình ảnh để đánh dấu vòng quanh bản vẽ của cháu."
 
 #. Line tool instructions
-#: ../tools.h:117
+#: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Ấn nút chuột để bắt đầu vẽ một đường thẳng. Nhả nút chuột để vẽ nốt."
 
 #. Shape tool instructions
-#: ../tools.h:120
+#: ../tools.h:124
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -443,7 +445,7 @@ msgstr ""
 "lúc đó chỉ buông nút. Di chuyển chung quanh để xoay, và ấn để vẽ."
 
 #. Text tool instructions
-#: ../tools.h:123
+#: ../tools.h:127
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -455,7 +457,7 @@ msgstr ""
 "chữ."
 
 #. Label tool instructions
-#: ../tools.h:126
+#: ../tools.h:130
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -469,246 +471,246 @@ msgstr ""
 "chữ."
 
 #. Magic tool instruction
-#: ../tools.h:129
+#: ../tools.h:136
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Chọn một phép ma thuật để dùng với bản vẽ."
 
 #. Response to 'undo' action
-#: ../tools.h:132
+#: ../tools.h:139
 msgid "Undo!"
 msgstr "Hoàn tác !"
 
 #. Response to 'redo' action
-#: ../tools.h:135
+#: ../tools.h:142
 msgid "Redo!"
 msgstr "Làm lại !"
 
 #. Eraser tool
-#: ../tools.h:138
+#: ../tools.h:145
 msgid "Eraser!"
 msgstr "Xoá !"
 
 #. Response to 'start a new image' action
-#: ../tools.h:141
+#: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Hãy chọn một màu hay hình ảnh để bắt đầu một bản vẽ mới."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:144
+#: ../tools.h:151
 msgid "Open…"
 msgstr "Mở..."
 
 #. Response to 'save' action
-#: ../tools.h:147
+#: ../tools.h:154
 msgid "Your image has been saved!"
 msgstr "Ảnh của cháu đã được lưu!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Printing…"
 msgstr "Dang in..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Bye bye!"
 msgstr "Tạm biệt !"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:157
+#: ../tools.h:164
 msgid "Let go of the button to complete the line."
 msgstr "Buông nút chuột để vẽ xong đường."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:160
+#: ../tools.h:167
 msgid "Hold the button to stretch the shape."
 msgstr "Ấn giữ nút chuột để kéo giãn hình."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:163
+#: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Di chuyển chuột để xoay hình. Nhấn vào để vẽ nó."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:166
+#: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Vậy... Hãy cứ vẽ ở đây !"
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:1930 ../tuxpaint.c:2706
-msgid "Please wait…"
-msgstr "Hãy đợi..."
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1988
+#: ../tuxpaint.c:1848
 msgid "Do you really want to quit?"
 msgstr "Cháu có thực sư muốn thoát không?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1991
+#: ../tuxpaint.c:1851
 msgid "Yes, I’m done!"
 msgstr "Rồi thì có !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1994 ../tuxpaint.c:2021
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
 msgid "No, take me back!"
 msgstr "Chưa, lùi lại đi."
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1998
+#: ../tuxpaint.c:1858
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Nếu thoát thì ảnh của cháu bị mất ! Có lưu không?"
 
-#: ../tuxpaint.c:1999 ../tuxpaint.c:2004
+#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
 msgid "Yes, save it!"
 msgstr "Lưu đi."
 
-#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
+#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
 msgid "No, don’t bother saving!"
 msgstr "Không lưu."
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2003
+#: ../tuxpaint.c:1863
 msgid "Save your picture first?"
 msgstr "Trước tiên nên lưu hình ảnh này ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2008
+#: ../tuxpaint.c:1868
 msgid "Can’t open that picture!"
 msgstr "Không mở được ảnh đó !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2011 ../tuxpaint.c:2016 ../tuxpaint.c:2025 ../tuxpaint.c:2032
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
+#: ../tuxpaint.c:1901
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2015
+#: ../tuxpaint.c:1875
 msgid "There are no saved files!"
 msgstr "Không có tập tin nào được lưu."
 
 #. Verification of print action
-#: ../tuxpaint.c:2019
+#: ../tuxpaint.c:1879
 msgid "Print your picture now?"
 msgstr "In ấn hình ảnh này ngày bây giờ ?"
 
-#: ../tuxpaint.c:2020
+#: ../tuxpaint.c:1880
 msgid "Yes, print it!"
 msgstr "In đi."
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2024
+#: ../tuxpaint.c:1884
 msgid "Your picture has been printed!"
 msgstr "Ảnh của cháu đã được in ra !"
 
 #. We got an error printing
-#: ../tuxpaint.c:2028
+#: ../tuxpaint.c:1888
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tiếc là không thể in ấn hình ảnh này."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2031
+#: ../tuxpaint.c:1891
 msgid "You can’t print yet!"
 msgstr "Cháu chưa có thể in !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2035
+#: ../tuxpaint.c:1895
 msgid "Erase this picture?"
 msgstr "Xoá ảnh này ?"
 
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:1896
 msgid "Yes, erase it!"
 msgstr "Xoá đi."
 
-#: ../tuxpaint.c:2037
+#: ../tuxpaint.c:1897
 msgid "No, don’t erase it!"
 msgstr "Không xoá."
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:1900
 msgid "Remember to use the left mouse button!"
 msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2169
+#: ../tuxpaint.c:2029
 msgid "Sound muted."
 msgstr "Âm câm."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2174
+#: ../tuxpaint.c:2034
 msgid "Sound unmuted."
 msgstr "Âm bỏ cấm."
 
-#: ../tuxpaint.c:7821
-msgid "Pick a color."
-msgstr "Kén một màu."
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2622
+msgid "Please wait…"
+msgstr "Hãy đợi..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8625
+#: ../tuxpaint.c:6710
 msgid "Erase"
 msgstr "Xoá"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:6713
 msgid "Slides"
 msgstr "Ảnh chiếu"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8631
+#: ../tuxpaint.c:6716
 msgid "Back"
 msgstr "Lùi"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8634
+#: ../tuxpaint.c:6719
 msgid "Next"
 msgstr "Tiếp"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8637
+#: ../tuxpaint.c:6722
 msgid "Play"
 msgstr "Chạy"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9345
+#: ../tuxpaint.c:7430
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12444
+#: ../tuxpaint.c:10638
 msgid "Yes"
 msgstr "Có"
 
-#: ../tuxpaint.c:12448
+#: ../tuxpaint.c:10642
 msgid "No"
 msgstr "Không"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13443
+#: ../tuxpaint.c:11637
 msgid "Replace the picture with your changes?"
 msgstr "Thay hình ảnh bằng các thay đổi của cháu không?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13447
+#: ../tuxpaint.c:11641
 msgid "Yes, replace the old one!"
 msgstr "Thay thế cái cũ !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13451
+#: ../tuxpaint.c:11645
 msgid "No, save a new file!"
 msgstr "Không, lưu một tập tin mới."
 
-#: ../tuxpaint.c:14303
+#: ../tuxpaint.c:12517
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn hình ảnh mà cháu muốn, sau đó bấm nút « Mở »."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
+#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Chọn những hình ảnh đã muốn, sau đó bấm nút « Chạy »."
+
+#: ../tuxpaint.c:19287
+msgid "Pick a color."
+msgstr "Kén một màu."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."

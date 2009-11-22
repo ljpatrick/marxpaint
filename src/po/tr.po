@@ -2,11 +2,13 @@
 # Doruk Fisek <dfisek@fisek.com.tr>, 2002, 2004, 2006.
 # Tux Paint turkish messages.
 # Copyright (C) 2002.
+#. Reserved...
+#: ../tools.h:80 ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 23:37-0700\n"
+"POT-Creation-Date: 2009-11-21 23:14-0800\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -338,7 +340,7 @@ msgstr "Damgalar"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:70
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "Şekiller"
 
@@ -349,95 +351,95 @@ msgstr "Harfler"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:79
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "Büyü"
 
 #. Freehand painting tool
-#: ../tools.h:61
+#: ../tools.h:62
 msgid "Paint"
 msgstr "Boya"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:64
+#: ../tools.h:65
 msgid "Stamp"
 msgstr "Damga"
 
 #. Line drawing tool
-#: ../tools.h:67
+#: ../tools.h:68
 msgid "Lines"
 msgstr "Doğrular"
 
 #. Text tool
-#: ../tools.h:73
+#: ../tools.h:74
 msgid "Text"
 msgstr "Yazı"
 
 #. Label tool
-#: ../tools.h:76
+#: ../tools.h:77
 msgid "Label"
 msgstr ""
 
 #. Undo last action
-#: ../tools.h:82
+#: ../tools.h:86
 msgid "Undo"
 msgstr "Geri al"
 
 #. Redo undone action
-#: ../tools.h:85
+#: ../tools.h:89
 msgid "Redo"
 msgstr "İleri al"
 
 #. Eraser tool
-#: ../tools.h:88
+#: ../tools.h:92
 msgid "Eraser"
 msgstr "Silgi"
 
 #. Start a new picture
-#: ../tools.h:91
+#: ../tools.h:95
 msgid "New"
 msgstr "Yeni"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:94 ../tuxpaint.c:8622
+#: ../tools.h:98 ../tuxpaint.c:6707
 msgid "Open"
 msgstr "Aç"
 
 #. Save the current picture
-#: ../tools.h:97
+#: ../tools.h:101
 msgid "Save"
 msgstr "Kaydet"
 
 #. Print the current picture
-#: ../tools.h:100
+#: ../tools.h:104
 msgid "Print"
 msgstr "Yazdır"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:103
+#: ../tools.h:107
 msgid "Quit"
 msgstr "Çıkış"
 
 #. Paint tool instructions
-#: ../tools.h:111
+#: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Çizmek için bir renk ve bir fırça şekli seç."
 
 #. Stamp tool instructions
-#: ../tools.h:114
+#: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Çiziminin etrafına damga basmak için bir resim seç."
 
 #. Line tool instructions
-#: ../tools.h:117
+#: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Bir doğru çizmeye başlamak için tıkla. Tamamlamak için farenin tuşunu bırak."
 
 #. Shape tool instructions
-#: ../tools.h:120
+#: ../tools.h:124
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -447,7 +449,7 @@ msgstr ""
 "ve çizmek için tıkla."
 
 #. Text tool instructions
-#: ../tools.h:123
+#: ../tools.h:127
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -458,7 +460,7 @@ msgstr ""
 "Bir yazı stili seç. Çiziminin üzerine tıkla ve yazmaya başlayabilirsin."
 
 #. Label tool instructions
-#: ../tools.h:126
+#: ../tools.h:130
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -471,255 +473,255 @@ msgstr ""
 "Bir yazı stili seç. Çiziminin üzerine tıkla ve yazmaya başlayabilirsin."
 
 #. Magic tool instruction
-#: ../tools.h:129
+#: ../tools.h:136
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Çiziminde kullanmak için bir büyülü efekt seç!"
 
 #. Response to 'undo' action
-#: ../tools.h:132
+#: ../tools.h:139
 msgid "Undo!"
 msgstr "Geri al!"
 
 #. Response to 'redo' action
-#: ../tools.h:135
+#: ../tools.h:142
 msgid "Redo!"
 msgstr "İleri al!"
 
 #. Eraser tool
-#: ../tools.h:138
+#: ../tools.h:145
 msgid "Eraser!"
 msgstr "Silgi!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:141
+#: ../tools.h:148
 #, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Çiziminin etrafına damga basmak için bir resim seç."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:144
+#: ../tools.h:151
 msgid "Open…"
 msgstr "Aç..."
 
 #. Response to 'save' action
-#: ../tools.h:147
+#: ../tools.h:154
 msgid "Your image has been saved!"
 msgstr "Resmin kaydedildi!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:150
+#: ../tools.h:157
 msgid "Printing…"
 msgstr "Yazdırılıyor..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:153
+#: ../tools.h:160
 msgid "Bye bye!"
 msgstr "Güle Güle!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:157
+#: ../tools.h:164
 msgid "Let go of the button to complete the line."
 msgstr "Doğruyu tamamlamak için farenin tuşunu bırak."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:160
+#: ../tools.h:167
 msgid "Hold the button to stretch the shape."
 msgstr "Şekli çekip uzatmak için farenin tuşuna basılı tut."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:163
+#: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Şekli döndürmek için fareyi hareket ettir. Çizmek için tıkla."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:166
+#: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Tamam o zaman... Bunu çizmeye devam edelim!"
 
-#. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:1930 ../tuxpaint.c:2706
-msgid "Please wait…"
-msgstr "Lütfen bekleyin..."
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1988
+#: ../tuxpaint.c:1848
 msgid "Do you really want to quit?"
 msgstr "Gerçekten çıkmak istiyor musun?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1991
+#: ../tuxpaint.c:1851
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Evet, işim bitti!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1994 ../tuxpaint.c:2021
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
 msgid "No, take me back!"
 msgstr "Hayır, geri götür beni!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1998
+#: ../tuxpaint.c:1858
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Eğer çıkarsan, resmini kaybedeceksin! Kaydedeyim mi?"
 
-#: ../tuxpaint.c:1999 ../tuxpaint.c:2004
+#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
 msgid "Yes, save it!"
 msgstr "Evet, kaydet!"
 
-#: ../tuxpaint.c:2000 ../tuxpaint.c:2005
+#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Hayır, kaydetmeye zahmet etme!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2003
+#: ../tuxpaint.c:1863
 msgid "Save your picture first?"
 msgstr "İlk önce resmini kaydetmek ister misin?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2008
+#: ../tuxpaint.c:1868
 msgid "Can’t open that picture!"
 msgstr "O resmi açamıyorum!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2011 ../tuxpaint.c:2016 ../tuxpaint.c:2025 ../tuxpaint.c:2032
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
+#: ../tuxpaint.c:1901
 msgid "OK"
 msgstr "Tamam"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2015
+#: ../tuxpaint.c:1875
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2019
+#: ../tuxpaint.c:1879
 msgid "Print your picture now?"
 msgstr "Resmini şimdi yazdırayım mı?"
 
-#: ../tuxpaint.c:2020
+#: ../tuxpaint.c:1880
 msgid "Yes, print it!"
 msgstr "Evet, yazdır!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2024
+#: ../tuxpaint.c:1884
 msgid "Your picture has been printed!"
 msgstr "Resmin yazdırıldı!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2028
+#: ../tuxpaint.c:1888
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Resmin yazdırıldı!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2031
+#: ../tuxpaint.c:1891
 msgid "You can’t print yet!"
 msgstr "Henüz yazdıramazsın!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2035
+#: ../tuxpaint.c:1895
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:1896
 msgid "Yes, erase it!"
 msgstr "Evet, sil onu!"
 
-#: ../tuxpaint.c:2037
+#: ../tuxpaint.c:1897
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Hayır, silme onu!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:1900
 msgid "Remember to use the left mouse button!"
 msgstr "Sol fare tuşunu kullanmayı hatırlayın!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2169
+#: ../tuxpaint.c:2029
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2174
+#: ../tuxpaint.c:2034
 msgid "Sound unmuted."
 msgstr ""
 
-#: ../tuxpaint.c:7821
-msgid "Pick a color."
-msgstr ""
+#. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2622
+msgid "Please wait…"
+msgstr "Lütfen bekleyin..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8625
+#: ../tuxpaint.c:6710
 msgid "Erase"
 msgstr "Sil"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:6713
 msgid "Slides"
 msgstr "Slaytlar"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8631
+#: ../tuxpaint.c:6716
 msgid "Back"
 msgstr "Geri"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8634
+#: ../tuxpaint.c:6719
 msgid "Next"
 msgstr "İleri"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8637
+#: ../tuxpaint.c:6722
 msgid "Play"
 msgstr "Çal"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9345
+#: ../tuxpaint.c:7430
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12444
+#: ../tuxpaint.c:10638
 msgid "Yes"
 msgstr "Evet"
 
-#: ../tuxpaint.c:12448
+#: ../tuxpaint.c:10642
 msgid "No"
 msgstr "Hayır"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13443
+#: ../tuxpaint.c:11637
 msgid "Replace the picture with your changes?"
 msgstr "Resmi sizin değişikliklerinizle değiştirelim mi?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13447
+#: ../tuxpaint.c:11641
 msgid "Yes, replace the old one!"
 msgstr "Evet, eskisini yenile!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13451
+#: ../tuxpaint.c:11645
 msgid "No, save a new file!"
 msgstr "Hayır, yeni bir dosyaya kaydet"
 
-#: ../tuxpaint.c:14303
+#: ../tuxpaint.c:12517
 msgid "Choose the picture you want, then click “Open”."
 msgstr "İstediğin resmi seç, sonra \"Aç\" seçeneğine tıkla"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15308 ../tuxpaint.c:15622
+#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "İstediğin resmi seç, sonra \"Çal\" seçeneğine tıkla"
+
+#: ../tuxpaint.c:19287
+msgid "Pick a color."
+msgstr ""
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
