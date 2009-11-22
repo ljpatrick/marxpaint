@@ -125,27 +125,26 @@ int no_system_fonts;
 int no_system_fonts = 1;
 #endif
 int all_locale_fonts;
-volatile long font_thread_done = 0, font_thread_aborted = 0;
-volatile long waiting_for_fonts = 0;
-int font_scanner_pid;
+volatile long font_thread_done;
+static volatile long font_thread_aborted;
+volatile long waiting_for_fonts;
+static int font_scanner_pid;
 int font_socket_fd;
 
 TuxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
 
 family_info **user_font_families;
-int num_font_families = 0;
-int num_font_families_max = 0;
+int num_font_families;
+static int num_font_families_max;
 
 style_info **user_font_styles;
-int num_font_styles = 0;
-int num_font_styles_max = 0;
+int num_font_styles;
+int num_font_styles_max;
 
-int text_state = 0;
+int text_state;
 unsigned text_size = 4;		// initial text size
 
 int button_label_y_nudge;
-
-static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale);
 
 
 /* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
@@ -178,16 +177,9 @@ TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize)
 
 /* #define TTF_OpenFont    BUGFIX_TTF_OpenFont206 */
 
-TuxPaint_Font *try_alternate_font(int size)
-{
 #ifndef NO_SDLPANGO
-
-  /* Do we need to do anything when we use SDL_Pango?
-     -bjk 2007.07.12 */
-
-  (void)size;  // silence 'unused parameter' warning
-
-#else
+static TuxPaint_Font *try_alternate_font(int size)
+{
   char str[128];
   char prefix[64];
   char *p;
@@ -200,55 +192,48 @@ TuxPaint_Font *try_alternate_font(int size)
 
     return TuxPaint_Font_OpenFont("", str, size);
   }
-#endif
-
   return NULL;
 }
+#endif
 
+#ifdef NO_SDLPANGO
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 {
+  if (!need_own_font)
+    return fallback;
+
   TuxPaint_Font *ret = NULL;
   if (need_own_font)
   {
-#ifndef NO_SDLPANGO
-
-    /* FIXME: Do we even need to do anything when using SDL_Pango? -bjk 2007.07.12 */
-
-    (void)size;  // silence 'unused parameter' warning
-
-    return(fallback);
-
-#else
     char str[128];
-    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-	     DATA_PREFIX, lang_prefix);
+    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf", DATA_PREFIX, lang_prefix);
 
     ret = TuxPaint_Font_OpenFont("", str, size);
 	 
 #ifdef __APPLE__
-    if (ret == NULL)
+    if (!ret)
     {
       snprintf(str, sizeof(str), "%sfonts/%s.ttf", DATA_PREFIX, lang_prefix);
       ret = TuxPaint_Font_OpenFont("", str, size);
     }	 
 	 
-    if (ret == NULL)
+    if (!ret)
     {
       snprintf(str, sizeof(str), "/Library/Fonts/%s.ttf", lang_prefix);
       ret = TuxPaint_Font_OpenFont("", str, size);
     }
 	 
-    if (ret == NULL)
+    if (!ret)
     {
       snprintf(str, sizeof(str), "%s/%s.ttf", macosx.fontsPath, lang_prefix);
       ret = TuxPaint_Font_OpenFont("", str, size);
     }	 
 #endif
 
-    if (ret == NULL)
+    if (!ret)
     {
       ret = try_alternate_font(size);
-      if (ret == NULL)
+      if (!ret)
       {
 	fprintf(
 	  stderr,
@@ -263,11 +248,10 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
         button_label_y_nudge = smash_i18n();
       }
     }
-
-#endif
   }
   return ret ? ret : fallback;
 }
+#endif
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {
@@ -332,13 +316,12 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
 
   if (ttffilename != NULL && ttffilename[0] != '\0')
   {
-    int i;
 #ifdef DEBUG
     printf("Opening TTF\n"); fflush(stdout);
 #endif
       
 #ifdef __APPLE__
-    i = 0;
+    int i = 0;
     while (problemFonts[i] != NULL)
     {
       if (!strcmp(ttffilename, problemFonts[i++]))
@@ -407,7 +390,7 @@ void reliable_write(int fd, const void *buf, size_t count)
 }
 
 
-void reliable_read(int fd, void *buf, size_t count)
+static void reliable_read(int fd, void *buf, size_t count)
 {
   struct pollfd p;
   do
@@ -437,6 +420,581 @@ void reliable_read(int fd, void *buf, size_t count)
   }
   while (count);
 }
+
+
+static void groupfonts_range(style_info ** base, int count)
+{
+  int boldcounts[4] = { 0, 0, 0, 0 };
+  int boldmap[4] = { -1, -1, -1, -1 };
+  int i;
+  int boldmax;
+  int boldmin;
+  int bolduse;
+  int spot;
+  family_info *fi;
+
+#if 0
+// THREADED_FONTS
+  if (count < 1 || count > 4)
+  {
+    printf("\n::::::: %d styles in %s:\n", count, base[0]->family);
+    i = count;
+    while (i--)
+    {
+      printf("               %s\n", base[i]->style);
+    }
+  }
+#endif
+
+  i = count;
+  while (i--)
+    boldcounts[base[i]->boldness]++;
+
+  boldmax = base[0]->boldness;
+  boldmin = base[0]->boldness;
+  bolduse = 0;
+
+  i = 4;
+  while (i--)
+  {
+    if (!boldcounts[i])
+      continue;
+    if (i > boldmax)
+      boldmax = i;
+    if (i < boldmin)
+      boldmin = i;
+    bolduse++;
+  }
+  if (likely(bolduse <= 2))
+  {
+    // in case they are same, we want non-bold,
+    // so that setting goes second
+    boldmap[boldmax] = 1;
+    boldmap[boldmin] = 0;
+  }
+  else if (count == 3)
+  {
+    int boldmid;
+    int zmin = 0, zmid = 0, zmax = 0;
+
+    boldmap[boldmax] = 1;
+    boldmap[boldmin] = 0;
+    boldmid = boldcounts[boldmin + 1] ? boldmin + 1 : boldmin + 2;
+
+    i = 3;
+    while (i--)
+    {
+      if (base[i]->boldness == boldmin)
+	zmin = base[i]->italic;
+      if (base[i]->boldness == boldmid)
+	zmid = base[i]->italic;
+      if (base[i]->boldness == boldmax)
+	zmax = base[i]->italic;
+    }
+    if (zmin != zmid)
+      boldmap[boldmid] = 0;
+    else if (zmid != zmax)
+      boldmap[boldmid] = 1;
+    else if (boldmin == 0 && boldmid == 1)
+    {
+      boldmap[0] = -1;
+      boldmap[1] = 0;
+    }
+  }
+  else
+  {
+    int claimed_bold = boldcounts[3];
+    int claimed_norm = boldcounts[1];
+
+    // 3 or 4 boldness levels, 4 or more styles!
+    // This is going to be random hacks and hopes.
+
+    // bold is bold
+    boldmap[3] = 1;
+
+    // norm is norm
+    boldmap[1] = 0;
+
+    // classify demi-bold or medium
+    if (claimed_bold < 2)
+    {
+      boldmap[2] = 1;
+      claimed_bold += boldcounts[2];
+    }
+    else if (claimed_norm < 2)
+    {
+      boldmap[2] = 0;
+      claimed_norm += boldcounts[2];
+    }
+
+    // classify lightface
+    if (claimed_norm < 2)
+    {
+      boldmap[0] = 0;
+      //claimed_norm += boldcounts[0];
+    }
+  }
+
+  if (num_font_families == num_font_families_max)
+  {
+    num_font_families_max = num_font_families_max * 5 / 4 + 30;
+    user_font_families =
+      realloc(user_font_families,
+	      num_font_families_max * sizeof *user_font_families);
+  }
+
+  fi = calloc(1, sizeof *fi);
+  user_font_families[num_font_families++] = fi;
+  fi->directory = strdup(base[0]->directory);
+  fi->family = strdup(base[0]->family);
+  fi->score = base[0]->truetype + base[0]->score;
+  i = count;
+  while (i--)
+  {
+    int b = boldmap[base[i]->boldness];
+    if (b == -1)
+    {
+#if 0
+// THREADED_FONTS
+      printf("too many boldness levels, discarding: %s, %s\n",
+	     base[i]->family, base[i]->style);
+#endif
+      continue;
+    }
+    spot = b ? TTF_STYLE_BOLD : 0;
+    spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
+    if (fi->filename[spot])
+    {
+#if 0
+// THREADED_FONTS
+      printf("duplicates, discarding: %s, %s\n", base[i]->family,
+	     base[i]->style);
+      printf("b %d, spot %d\n", b, spot);
+      printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1],
+	     fi->filename[2], fi->filename[3]);
+#endif
+      continue;
+    }
+    fi->filename[spot] = strdup(base[i]->filename);
+    fi->score += 2;
+  }
+  if (!fi->filename[0] && !fi->filename[1])
+  {
+    fi->filename[0] = fi->filename[2];
+    fi->filename[2] = NULL;
+    fi->filename[1] = fi->filename[3];
+    fi->filename[3] = NULL;
+  }
+  if (!fi->filename[0] && !fi->filename[2])
+  {
+    fi->filename[0] = fi->filename[1];
+    fi->filename[1] = NULL;
+    fi->filename[2] = fi->filename[3];
+    fi->filename[3] = NULL;
+  }
+  if (!fi->filename[0])
+  {
+    fi->filename[0] = strdup(fi->filename[TTF_STYLE_BOLD]);
+  }
+}
+
+
+// void qsort(void *base, size_t nmemb, size_t size,
+// int(*compar)(const void *, const void *));
+
+
+// For qsort() and other use, to see if font files are groupable
+static int compar_fontgroup(const void *v1, const void *v2)
+{
+  const style_info *s1 = *(style_info **) v1;
+  const style_info *s2 = *(style_info **) v2;
+  int rc;
+
+  rc = strcmp(s1->directory, s2->directory);
+  if (rc)
+    return rc;
+
+  rc = s1->truetype - s2->truetype;
+  if (rc)
+    return rc;
+
+  return strcmp(s1->family, s2->family);
+}
+
+
+// For qsort() and other use, to see if font files are duplicates
+static int compar_fontkiller(const void *v1, const void *v2)
+{
+  const family_info *f1 = *(family_info **) v1;
+  const family_info *f2 = *(family_info **) v2;
+  int rc;
+
+  rc = strcmp(f1->family, f2->family);
+  if (rc)
+    return rc;
+
+  return f1->score - f2->score;
+}
+
+
+// For qsort() and other use, to order the worst ones last
+static int compar_fontscore(const void *v1, const void *v2)
+{
+  const family_info *f1 = *(family_info **) v1;
+  const family_info *f2 = *(family_info **) v2;
+
+  return f2->score - f1->score;
+}
+
+
+// Font style names are a mess that we must try to make
+// sense of. For example...
+//
+// Cooper: Light, Medium, Light Bold, Black
+// HoeflerText: (nil), Black
+static void parse_font_style(style_info * si)
+{
+  int have_light = 0;
+  int have_demi = 0;
+  int have_bold = 0;
+  int have_medium = 0;
+  int have_black = 0;
+  int have_heavy = 0;
+
+  int stumped = 0;
+  char *sp = si->style;
+
+  si->italic = 0;
+
+
+  while (*sp)
+  {
+    if (*sp == ' ')
+    {
+      sp++;
+      continue;
+    }
+    if (!strncasecmp(sp, "Bold", strlen("Bold")))
+    {
+      sp += strlen("Bold");
+      have_bold = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Regular", strlen("Regular")))
+    {
+      sp += strlen("Regular");
+      continue;
+    }
+    if (!strncasecmp(sp, "Italic", strlen("Italic")))
+    {
+      sp += strlen("Italic");
+      si->italic = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Oblique", strlen("Oblique")))
+    {
+      sp += strlen("Oblique");
+      si->italic = 1;
+      continue;
+    }
+    // move " Condensed" from style to family
+    if (!strncasecmp(sp, "Condensed", strlen("Condensed")))
+    {
+      size_t len = strlen(si->family);
+      char *name = malloc(len + strlen(" Condensed") + 1);
+      sp += strlen("Condensed");
+      memcpy(name, si->family, len);
+      strcpy(name + len, " Condensed");
+      free(si->family);
+      si->family = name;
+      continue;
+    }
+    if (!strncasecmp(sp, "Light", strlen("Light")))
+    {
+      sp += strlen("Light");
+      have_light = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Medium", strlen("Medium")))
+    {
+      sp += strlen("Medium");
+      have_medium = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Demi", strlen("Demi")))
+    {
+      sp += strlen("Demi");
+      have_demi = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Heavy", strlen("Heavy")))
+    {
+      sp += strlen("Heavy");
+      have_heavy = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Normal", strlen("Normal")))
+    {
+      sp += strlen("Normal");
+      continue;
+    }
+    if (!strncasecmp(sp, "Black", strlen("Black")))
+    {
+      sp += strlen("Black");
+      have_black = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Roman", strlen("Roman")))
+    {
+      sp += strlen("Roman");
+      continue;
+    }
+    if (!strncasecmp(sp, "Book", strlen("Book")))
+    {
+      sp += strlen("Book");
+      continue;
+    }
+    if (!strncasecmp(sp, "Chancery", strlen("Chancery")))
+    {
+      sp += strlen("Chancery");
+      si->italic = 1;
+      continue;
+    }
+    if (!strncasecmp(sp, "Thin", strlen("Thin")))
+    {
+      sp += strlen("Thin");
+      have_light = 1;
+      continue;
+    }
+    if (!strncmp(sp, "LR", strlen("LR")))
+    {
+      sp += strlen("LR");
+      continue;
+    }
+
+    if (!stumped)
+    {
+      stumped = 1;
+#if 0
+// THREADED_FONTS
+      printf("Font style parser stumped by \"%s\".\n", si->style);
+#endif
+    }
+    sp++;			// bad: an unknown character
+  }
+
+
+  if (have_demi || have_medium)
+    si->boldness = 2;
+  else if (have_bold || have_black || have_heavy)	// TODO: split these
+    si->boldness = 3;
+  else if (have_light)
+    si->boldness = 0;
+  else
+    si->boldness = 1;
+
+  // we'll count both TrueType and OpenType
+  si->truetype = !!strcasestr(si->filename, ".ttf")
+    || !!strcasestr(si->filename, ".otf");
+}
+
+
+static void dupe_markdown_range(family_info ** base, int count)
+{
+  int bestscore = -999;
+  int bestslot = 0;
+  int i = count;
+  while (i--)
+  {
+    int score = base[i]->score;
+    if (score <= bestscore)
+      continue;
+    bestscore = score;
+    bestslot = i;
+  }
+  i = count;
+  while (i--)
+  {
+    if (i == bestslot)
+      continue;
+    base[i]->score = -999;
+  }
+}
+
+
+static void groupfonts(void)
+{
+  char **cpp;
+  int i = num_font_styles;
+  int low = 0;
+
+  while (i--)
+    parse_font_style(user_font_styles[i]);
+
+  qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0],
+	compar_fontgroup);
+  //printf("groupfonts() qsort(user_font_styles...)\n");
+  //fflush(stdout);
+
+  for (;;)
+  {
+    int high = low;
+    if (low >= num_font_styles)
+      break;
+    for (;;)
+    {
+      if (++high >= num_font_styles)
+	break;
+      if (compar_fontgroup(user_font_styles + low, user_font_styles + high))
+	break;
+    }
+    groupfonts_range(user_font_styles + low, high - low);
+    low = high;
+  }
+
+  i = num_font_styles;
+  while (i--)
+  {
+    free(user_font_styles[i]->filename);
+    free(user_font_styles[i]->directory);
+    free(user_font_styles[i]->family);
+    free(user_font_styles[i]->style);
+    free(user_font_styles[i]);
+  }
+  free(user_font_styles);
+  user_font_styles = NULL;	// just to catch bugs
+
+  qsort(user_font_families, num_font_families, sizeof user_font_families[0],
+	compar_fontkiller);
+  //printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
+  //fflush(stdout);
+  low = 0;
+  for (;;)
+  {
+    int high = low;
+    if (low >= num_font_families)
+      break;
+    for (;;)
+    {
+      if (++high >= num_font_families)
+	break;
+      if (strcmp
+	  (user_font_families[low]->family, user_font_families[high]->family))
+	break;
+    }
+    dupe_markdown_range(user_font_families + low, high - low);
+    low = high;
+  }
+  qsort(user_font_families, num_font_families, sizeof user_font_families[0],
+	compar_fontscore);
+  //printf("groupfonts() qsort(user_font_families 2...)\n");
+  //fflush(stdout);
+  if (user_font_families[0]->score < 0)
+    printf("sorted the wrong way, or all fonts were unusable\n");
+#if 0
+// THREADED_FONTS
+  printf("Trim starting with %d families\n", num_font_families);
+#endif
+  while (num_font_families > 1
+	 && user_font_families[num_font_families - 1]->score < 0)
+  {
+    i = --num_font_families;
+    free(user_font_families[i]->directory);
+    free(user_font_families[i]->family);
+    cpp = user_font_families[i]->filename;
+    if (cpp[0])
+      free(cpp[0]);
+    if (cpp[1])
+      free(cpp[1]);
+    if (cpp[2])
+      free(cpp[2]);
+    if (cpp[3])
+      free(cpp[3]);
+    free(user_font_families[i]);
+    user_font_families[i] = NULL;
+  }
+#if 0
+// THREADED_FONTS
+  printf("Trim ending with %d families\n", num_font_families);
+#endif
+}
+
+
+static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale)
+{
+  char buf[TP_FTW_PATHSIZE];
+  unsigned dirlen = strlen(dir);
+
+  memcpy(buf, dir, dirlen);
+  tp_ftw(screen, buf, dirlen, 1, loadfont_callback, locale);
+}
+
+static void loadfonts(SDL_Surface * screen, const char *const dir)
+{
+  loadfonts_locale_filter(screen, dir, NULL);
+}
+
+
+static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict locale)
+{
+  char *homedirdir;
+
+  (void) vp;			// junk passed by threading library
+
+  loadfonts_locale_filter(screen, DATA_PREFIX "fonts", locale);
+
+  if (!no_system_fonts)
+  {
+#ifdef WIN32
+    homedirdir = GetSystemFontDir();
+    loadfonts(screen, homedirdir);
+    free(homedirdir);
+#elif defined(__BEOS__)
+    loadfonts(screen, "/boot/home/config/font/ttffonts");
+    loadfonts(screen, "/usr/share/fonts");
+    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+#elif defined(__APPLE__)
+    loadfonts(screen, "/System/Library/Fonts");
+    loadfonts(screen, "/Library/Fonts");
+    loadfonts(screen, macosx.fontsPath);
+    loadfonts(screen, "/usr/share/fonts");
+    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+#elif defined(__sun__)
+    loadfonts(screen, "/usr/openwin/lib/X11/fonts");
+    loadfonts(screen, "/usr/share/fonts");
+    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+#else
+    loadfonts(screen, "/usr/share/feh/fonts");
+    loadfonts(screen, "/usr/share/fonts");
+    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+    loadfonts(screen, "/usr/share/texmf/fonts");
+    loadfonts(screen, "/usr/share/grace/fonts/type1");
+    loadfonts(screen, "/usr/share/hatman/fonts");
+    loadfonts(screen, "/usr/share/icewm/themes/jim-mac");
+    loadfonts(screen, "/usr/share/vlc/skins2/fonts");
+    loadfonts(screen, "/usr/share/xplanet/fonts");
+#endif
+  }
+
+  homedirdir = get_fname("fonts", DIR_DATA);
+  loadfonts(screen, homedirdir);
+  free(homedirdir);
+
+#ifdef WIN32
+  homedirdir = get_fname("data/fonts", DIR_DATA);
+  loadfonts(screen, homedirdir);
+  free(homedirdir);
+#endif
+
+  groupfonts();
+
+  font_thread_done = 1;
+  waiting_for_fonts = 0;
+  // FIXME: need a memory barrier here
+  return 0;			// useless, wanted by threading library
+}
+
+
 
 
 void run_font_scanner(SDL_Surface * screen, const char *restrict locale)
@@ -682,564 +1240,6 @@ void receive_some_font_info(SDL_Surface * screen)
 #endif
 
 
-int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict locale)
-{
-  char *homedirdir;
-
-  (void) vp;			// junk passed by threading library
-
-  loadfonts_locale_filter(screen, DATA_PREFIX "fonts", locale);
-
-  if (!no_system_fonts)
-  {
-#ifdef WIN32
-    homedirdir = GetSystemFontDir();
-    loadfonts(screen, homedirdir);
-    free(homedirdir);
-#elif defined(__BEOS__)
-    loadfonts(screen, "/boot/home/config/font/ttffonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
-#elif defined(__APPLE__)
-    loadfonts(screen, "/System/Library/Fonts");
-    loadfonts(screen, "/Library/Fonts");
-    loadfonts(screen, macosx.fontsPath);
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
-#elif defined(__sun__)
-    loadfonts(screen, "/usr/openwin/lib/X11/fonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
-#else
-    loadfonts(screen, "/usr/share/feh/fonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
-    loadfonts(screen, "/usr/share/texmf/fonts");
-    loadfonts(screen, "/usr/share/grace/fonts/type1");
-    loadfonts(screen, "/usr/share/hatman/fonts");
-    loadfonts(screen, "/usr/share/icewm/themes/jim-mac");
-    loadfonts(screen, "/usr/share/vlc/skins2/fonts");
-    loadfonts(screen, "/usr/share/xplanet/fonts");
-#endif
-  }
-
-  homedirdir = get_fname("fonts", DIR_DATA);
-  loadfonts(screen, homedirdir);
-  free(homedirdir);
-
-#ifdef WIN32
-  homedirdir = get_fname("data/fonts", DIR_DATA);
-  loadfonts(screen, homedirdir);
-  free(homedirdir);
-#endif
-
-  groupfonts();
-
-  font_thread_done = 1;
-  waiting_for_fonts = 0;
-  // FIXME: need a memory barrier here
-  return 0;			// useless, wanted by threading library
-}
-
-
-// void qsort(void *base, size_t nmemb, size_t size,
-// int(*compar)(const void *, const void *));
-
-
-// For qsort() and other use, to see if font files are groupable
-int compar_fontgroup(const void *v1, const void *v2)
-{
-  const style_info *s1 = *(style_info **) v1;
-  const style_info *s2 = *(style_info **) v2;
-  int rc;
-
-  rc = strcmp(s1->directory, s2->directory);
-  if (rc)
-    return rc;
-
-  rc = s1->truetype - s2->truetype;
-  if (rc)
-    return rc;
-
-  return strcmp(s1->family, s2->family);
-}
-
-
-// For qsort() and other use, to see if font files are duplicates
-int compar_fontkiller(const void *v1, const void *v2)
-{
-  const family_info *f1 = *(family_info **) v1;
-  const family_info *f2 = *(family_info **) v2;
-  int rc;
-
-  rc = strcmp(f1->family, f2->family);
-  if (rc)
-    return rc;
-
-  return f1->score - f2->score;
-}
-
-
-// For qsort() and other use, to order the worst ones last
-int compar_fontscore(const void *v1, const void *v2)
-{
-  const family_info *f1 = *(family_info **) v1;
-  const family_info *f2 = *(family_info **) v2;
-
-  return f2->score - f1->score;
-}
-
-
-// Font style names are a mess that we must try to make
-// sense of. For example...
-//
-// Cooper: Light, Medium, Light Bold, Black
-// HoeflerText: (nil), Black
-void parse_font_style(style_info * si)
-{
-  int have_light = 0;
-  int have_demi = 0;
-  int have_bold = 0;
-  int have_medium = 0;
-  int have_black = 0;
-  int have_heavy = 0;
-
-  int stumped = 0;
-  char *sp = si->style;
-
-  si->italic = 0;
-
-
-  while (*sp)
-  {
-    if (*sp == ' ')
-    {
-      sp++;
-      continue;
-    }
-    if (!strncasecmp(sp, "Bold", strlen("Bold")))
-    {
-      sp += strlen("Bold");
-      have_bold = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Regular", strlen("Regular")))
-    {
-      sp += strlen("Regular");
-      continue;
-    }
-    if (!strncasecmp(sp, "Italic", strlen("Italic")))
-    {
-      sp += strlen("Italic");
-      si->italic = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Oblique", strlen("Oblique")))
-    {
-      sp += strlen("Oblique");
-      si->italic = 1;
-      continue;
-    }
-    // move " Condensed" from style to family
-    if (!strncasecmp(sp, "Condensed", strlen("Condensed")))
-    {
-      size_t len = strlen(si->family);
-      char *name = malloc(len + strlen(" Condensed") + 1);
-      sp += strlen("Condensed");
-      memcpy(name, si->family, len);
-      strcpy(name + len, " Condensed");
-      free(si->family);
-      si->family = name;
-      continue;
-    }
-    if (!strncasecmp(sp, "Light", strlen("Light")))
-    {
-      sp += strlen("Light");
-      have_light = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Medium", strlen("Medium")))
-    {
-      sp += strlen("Medium");
-      have_medium = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Demi", strlen("Demi")))
-    {
-      sp += strlen("Demi");
-      have_demi = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Heavy", strlen("Heavy")))
-    {
-      sp += strlen("Heavy");
-      have_heavy = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Normal", strlen("Normal")))
-    {
-      sp += strlen("Normal");
-      continue;
-    }
-    if (!strncasecmp(sp, "Black", strlen("Black")))
-    {
-      sp += strlen("Black");
-      have_black = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Roman", strlen("Roman")))
-    {
-      sp += strlen("Roman");
-      continue;
-    }
-    if (!strncasecmp(sp, "Book", strlen("Book")))
-    {
-      sp += strlen("Book");
-      continue;
-    }
-    if (!strncasecmp(sp, "Chancery", strlen("Chancery")))
-    {
-      sp += strlen("Chancery");
-      si->italic = 1;
-      continue;
-    }
-    if (!strncasecmp(sp, "Thin", strlen("Thin")))
-    {
-      sp += strlen("Thin");
-      have_light = 1;
-      continue;
-    }
-    if (!strncmp(sp, "LR", strlen("LR")))
-    {
-      sp += strlen("LR");
-      continue;
-    }
-
-    if (!stumped)
-    {
-      stumped = 1;
-#if 0
-// THREADED_FONTS
-      printf("Font style parser stumped by \"%s\".\n", si->style);
-#endif
-    }
-    sp++;			// bad: an unknown character
-  }
-
-
-  if (have_demi || have_medium)
-    si->boldness = 2;
-  else if (have_bold || have_black || have_heavy)	// TODO: split these
-    si->boldness = 3;
-  else if (have_light)
-    si->boldness = 0;
-  else
-    si->boldness = 1;
-
-  // we'll count both TrueType and OpenType
-  si->truetype = !!strcasestr(si->filename, ".ttf")
-    || !!strcasestr(si->filename, ".otf");
-}
-
-
-
-
-void groupfonts_range(style_info ** base, int count)
-{
-  int boldcounts[4] = { 0, 0, 0, 0 };
-  int boldmap[4] = { -1, -1, -1, -1 };
-  int i;
-  int boldmax;
-  int boldmin;
-  int bolduse;
-  int spot;
-  family_info *fi;
-
-#if 0
-// THREADED_FONTS
-  if (count < 1 || count > 4)
-  {
-    printf("\n::::::: %d styles in %s:\n", count, base[0]->family);
-    i = count;
-    while (i--)
-    {
-      printf("               %s\n", base[i]->style);
-    }
-  }
-#endif
-
-  i = count;
-  while (i--)
-    boldcounts[base[i]->boldness]++;
-
-  boldmax = base[0]->boldness;
-  boldmin = base[0]->boldness;
-  bolduse = 0;
-
-  i = 4;
-  while (i--)
-  {
-    if (!boldcounts[i])
-      continue;
-    if (i > boldmax)
-      boldmax = i;
-    if (i < boldmin)
-      boldmin = i;
-    bolduse++;
-  }
-  if (likely(bolduse <= 2))
-  {
-    // in case they are same, we want non-bold,
-    // so that setting goes second
-    boldmap[boldmax] = 1;
-    boldmap[boldmin] = 0;
-  }
-  else if (count == 3)
-  {
-    int boldmid;
-    int zmin = 0, zmid = 0, zmax = 0;
-
-    boldmap[boldmax] = 1;
-    boldmap[boldmin] = 0;
-    boldmid = boldcounts[boldmin + 1] ? boldmin + 1 : boldmin + 2;
-
-    i = 3;
-    while (i--)
-    {
-      if (base[i]->boldness == boldmin)
-	zmin = base[i]->italic;
-      if (base[i]->boldness == boldmid)
-	zmid = base[i]->italic;
-      if (base[i]->boldness == boldmax)
-	zmax = base[i]->italic;
-    }
-    if (zmin != zmid)
-      boldmap[boldmid] = 0;
-    else if (zmid != zmax)
-      boldmap[boldmid] = 1;
-    else if (boldmin == 0 && boldmid == 1)
-    {
-      boldmap[0] = -1;
-      boldmap[1] = 0;
-    }
-  }
-  else
-  {
-    int claimed_bold = boldcounts[3];
-    int claimed_norm = boldcounts[1];
-
-    // 3 or 4 boldness levels, 4 or more styles!
-    // This is going to be random hacks and hopes.
-
-    // bold is bold
-    boldmap[3] = 1;
-
-    // norm is norm
-    boldmap[1] = 0;
-
-    // classify demi-bold or medium
-    if (claimed_bold < 2)
-    {
-      boldmap[2] = 1;
-      claimed_bold += boldcounts[2];
-    }
-    else if (claimed_norm < 2)
-    {
-      boldmap[2] = 0;
-      claimed_norm += boldcounts[2];
-    }
-
-    // classify lightface
-    if (claimed_norm < 2)
-    {
-      boldmap[0] = 0;
-      //claimed_norm += boldcounts[0];
-    }
-  }
-
-  if (num_font_families == num_font_families_max)
-  {
-    num_font_families_max = num_font_families_max * 5 / 4 + 30;
-    user_font_families =
-      realloc(user_font_families,
-	      num_font_families_max * sizeof *user_font_families);
-  }
-
-  fi = calloc(1, sizeof *fi);
-  user_font_families[num_font_families++] = fi;
-  fi->directory = strdup(base[0]->directory);
-  fi->family = strdup(base[0]->family);
-  fi->score = base[0]->truetype + base[0]->score;
-  i = count;
-  while (i--)
-  {
-    int b = boldmap[base[i]->boldness];
-    if (b == -1)
-    {
-#if 0
-// THREADED_FONTS
-      printf("too many boldness levels, discarding: %s, %s\n",
-	     base[i]->family, base[i]->style);
-#endif
-      continue;
-    }
-    spot = b ? TTF_STYLE_BOLD : 0;
-    spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
-    if (fi->filename[spot])
-    {
-#if 0
-// THREADED_FONTS
-      printf("duplicates, discarding: %s, %s\n", base[i]->family,
-	     base[i]->style);
-      printf("b %d, spot %d\n", b, spot);
-      printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1],
-	     fi->filename[2], fi->filename[3]);
-#endif
-      continue;
-    }
-    fi->filename[spot] = strdup(base[i]->filename);
-    fi->score += 2;
-  }
-  if (!fi->filename[0] && !fi->filename[1])
-  {
-    fi->filename[0] = fi->filename[2];
-    fi->filename[2] = NULL;
-    fi->filename[1] = fi->filename[3];
-    fi->filename[3] = NULL;
-  }
-  if (!fi->filename[0] && !fi->filename[2])
-  {
-    fi->filename[0] = fi->filename[1];
-    fi->filename[1] = NULL;
-    fi->filename[2] = fi->filename[3];
-    fi->filename[3] = NULL;
-  }
-  if (!fi->filename[0])
-  {
-    fi->filename[0] = strdup(fi->filename[TTF_STYLE_BOLD]);
-  }
-}
-
-
-void dupe_markdown_range(family_info ** base, int count)
-{
-  int bestscore = -999;
-  int bestslot = 0;
-  int i = count;
-  while (i--)
-  {
-    int score = base[i]->score;
-    if (score <= bestscore)
-      continue;
-    bestscore = score;
-    bestslot = i;
-  }
-  i = count;
-  while (i--)
-  {
-    if (i == bestslot)
-      continue;
-    base[i]->score = -999;
-  }
-}
-
-
-void groupfonts(void)
-{
-  char **cpp;
-  int i = num_font_styles;
-  int low = 0;
-
-  while (i--)
-    parse_font_style(user_font_styles[i]);
-
-  qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0],
-	compar_fontgroup);
-  //printf("groupfonts() qsort(user_font_styles...)\n");
-  //fflush(stdout);
-
-  for (;;)
-  {
-    int high = low;
-    if (low >= num_font_styles)
-      break;
-    for (;;)
-    {
-      if (++high >= num_font_styles)
-	break;
-      if (compar_fontgroup(user_font_styles + low, user_font_styles + high))
-	break;
-    }
-    groupfonts_range(user_font_styles + low, high - low);
-    low = high;
-  }
-
-  i = num_font_styles;
-  while (i--)
-  {
-    free(user_font_styles[i]->filename);
-    free(user_font_styles[i]->directory);
-    free(user_font_styles[i]->family);
-    free(user_font_styles[i]->style);
-    free(user_font_styles[i]);
-  }
-  free(user_font_styles);
-  user_font_styles = NULL;	// just to catch bugs
-
-  qsort(user_font_families, num_font_families, sizeof user_font_families[0],
-	compar_fontkiller);
-  //printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
-  //fflush(stdout);
-  low = 0;
-  for (;;)
-  {
-    int high = low;
-    if (low >= num_font_families)
-      break;
-    for (;;)
-    {
-      if (++high >= num_font_families)
-	break;
-      if (strcmp
-	  (user_font_families[low]->family, user_font_families[high]->family))
-	break;
-    }
-    dupe_markdown_range(user_font_families + low, high - low);
-    low = high;
-  }
-  qsort(user_font_families, num_font_families, sizeof user_font_families[0],
-	compar_fontscore);
-  //printf("groupfonts() qsort(user_font_families 2...)\n");
-  //fflush(stdout);
-  if (user_font_families[0]->score < 0)
-    printf("sorted the wrong way, or all fonts were unusable\n");
-#if 0
-// THREADED_FONTS
-  printf("Trim starting with %d families\n", num_font_families);
-#endif
-  while (num_font_families > 1
-	 && user_font_families[num_font_families - 1]->score < 0)
-  {
-    i = --num_font_families;
-    free(user_font_families[i]->directory);
-    free(user_font_families[i]->family);
-    cpp = user_font_families[i]->filename;
-    if (cpp[0])
-      free(cpp[0]);
-    if (cpp[1])
-      free(cpp[1]);
-    if (cpp[2])
-      free(cpp[2]);
-    if (cpp[3])
-      free(cpp[3]);
-    free(user_font_families[i]);
-    user_font_families[i] = NULL;
-  }
-#if 0
-// THREADED_FONTS
-  printf("Trim ending with %d families\n", num_font_families);
-#endif
-}
 
 
 TuxPaint_Font *getfonthandle(int desire)
@@ -1389,26 +1389,11 @@ TuxPaint_Font *getfonthandle(int desire)
 }
 
 
-void loadfonts(SDL_Surface * screen, const char *const dir)
-{
-  loadfonts_locale_filter(screen, dir, NULL);
-}
-
-void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale)
-{
-  char buf[TP_FTW_PATHSIZE];
-  unsigned dirlen = strlen(dir);
-
-  memcpy(buf, dir, dirlen);
-  tp_ftw(screen, buf, dirlen, 1, loadfont_callback, locale);
-}
-
-
 // backdoor into qsort operations, so we don't have to do work again
-int was_bad_font;
+static int was_bad_font;
 
 // see if two font surfaces are the same
-int do_surfcmp(const SDL_Surface * const *const v1,
+static int do_surfcmp(const SDL_Surface * const *const v1,
 	       const SDL_Surface * const *const v2)
 {
   const SDL_Surface *const s1 = *v1;
@@ -1461,7 +1446,7 @@ int do_surfcmp(const SDL_Surface * const *const v1,
 }
 
 // see if two font surfaces are the same
-int surfcmp(const void *s1, const void *s2)
+static int surfcmp(const void *s1, const void *s2)
 {
   int diff = do_surfcmp(s1, s2);
   if (!diff)

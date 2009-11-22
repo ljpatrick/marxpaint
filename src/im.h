@@ -50,10 +50,7 @@ typedef struct IM_DATA {
 */
 
 void im_init(IM_DATA* im, int lang);      /* Initialize IM */
-void im_fullreset(IM_DATA* im);           /* Full Reset IM */
 void im_softreset(IM_DATA* im);           /* Soft Reset IM */
-void im_free(IM_DATA* im);                /* Free IM resources */
-
 int im_read(IM_DATA* im, SDL_keysym ks);
 
 

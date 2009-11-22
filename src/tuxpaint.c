@@ -529,9 +529,9 @@ enum
 
 /* Color globals (copied from colors.h, if no colors specified by user) */
 
-int NUM_COLORS;
-Uint8 * * color_hexes;
-char * * color_names;
+static int NUM_COLORS;
+static Uint8 * * color_hexes;
+static char * * color_names;
 
 
 /* Show debugging stuff: */
@@ -619,8 +619,8 @@ static int WINDOW_WIDTH = 800;
 static int WINDOW_HEIGHT = 600;
 #endif
 
-void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
-Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
+static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
 
 
 static void setup_normal_screen_layout(void)
@@ -965,9 +965,9 @@ static int starter_personal;
 static int template_personal;
 
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
-Uint8 * touched;
+static Uint8 * touched;
 
-int shape_radius;
+static int shape_radius;
 
 /* Text label tool struct to hold information about text on the label layer */
 typedef struct label_node
@@ -1010,37 +1010,37 @@ static unsigned select_text_size;
 static int coming_from_undo_or_redo = FALSE;
 
 
-void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Surface* label_node_surface);
-void load_info_about_label_surface(char[1024]);
+static void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Surface* label_node_surface);
+static void load_info_about_label_surface(char[1024]);
 
-struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
+static struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
 
-void do_undo_label_node(void);
-void do_redo_label_node(void);
-void rec_undo_label(void);
+static void do_undo_label_node(void);
+static void do_redo_label_node(void);
+static void rec_undo_label(void);
 
-void render_all_nodes_starting_at(struct label_node**);
-void simply_render_node(struct label_node*);
+static void render_all_nodes_starting_at(struct label_node**);
+static void simply_render_node(struct label_node*);
 
-void derender_node(struct label_node**);
+static void derender_node(struct label_node**);
 
-void delete_label_list(struct label_node**);
+static void delete_label_list(struct label_node**);
 
 static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, 
 		   SDL_Surface * dest_surf, SDL_Rect * dest_rect);
 
-void set_label_fonts(void);
+static void set_label_fonts(void);
 
-void tmp_apply_uncommited_text(void);
-void undo_tmp_applied_text(void);
+static void tmp_apply_uncommited_text(void);
+static void undo_tmp_applied_text(void);
 
 
 /* Magic tools API and tool handles: */
 
 #include "tp_magic_api.h"
 
-void update_progress_bar(void);
-void special_notify(int flags);
+static void update_progress_bar(void);
+static void special_notify(int flags);
 
 typedef struct magic_funcs_s {
   int (*get_tool_count)(magic_api *);
@@ -1078,10 +1078,10 @@ typedef struct magic_s {
 /* FIXME: Drop the 512 constants :^P */
 
 static int num_plugin_files;	/* How many shared object files we went through */
-void * magic_handle[512];	/* Handle to shared object (to be unloaded later) */ /* FIXME: Unload them! */
-magic_funcs_t magic_funcs[512];	/* Pointer to shared objects' functions */
+static void * magic_handle[512];	/* Handle to shared object (to be unloaded later) */ /* FIXME: Unload them! */
+static magic_funcs_t magic_funcs[512];	/* Pointer to shared objects' functions */
 
-magic_t magics[512];
+static magic_t magics[512];
 static int num_magics;	/* How many magic tools were loaded (note: shared objs may report more than 1 tool) */
 
 enum {
@@ -1093,7 +1093,7 @@ enum {
   NUM_MAGIC_PLACES
 };
 
-magic_api *magic_api_struct; /* Pointer to our internal functions; passed to shared object's functions when we call them */
+static magic_api *magic_api_struct; /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
@@ -1160,7 +1160,7 @@ static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_label, *img_label_select;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell;
-int color_picker_x, color_picker_y;
+static int color_picker_x, color_picker_y;
 
 static SDL_Surface *img_title_on, *img_title_off,
   *img_title_large_on, *img_title_large_off;
@@ -1247,6 +1247,8 @@ static Uint16 *wcstou16(const wchar_t * str)
     /* This is a bodge, but it seems unlikely that a case-conversion
        will cause a change from one utf16 character into two....
        (though at least UTF-8 suffers from this problem) */
+
+    // FIXME: mangles non-BMP characters rather than using UTF-16 surrogates!
     res[i] = (Uint16) str[i];
   }
 
@@ -1409,7 +1411,7 @@ static unsigned int stamp_group_dir_depth = 1; /* How deep (how many slashes in 
 
 static int stamp_group = 0;
 
-const char *load_stamp_basedir;
+static const char *load_stamp_basedir;
 static int num_stamp_groups = 0;
 static int num_stamps[MAX_STAMP_GROUPS];
 static int max_stamps[MAX_STAMP_GROUPS];
@@ -1469,7 +1471,7 @@ enum {
 };
 
 static SDL_Surface *img_cur_brush;
-int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
+static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
     img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
@@ -1575,8 +1577,8 @@ static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
-void reset_brush_counter_and_frame(void);
-void reset_brush_counter(void);
+static void reset_brush_counter_and_frame(void);
+static void reset_brush_counter(void);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
 #define stamp_xor(x,y) rect_xor( \
@@ -1656,21 +1658,21 @@ static int do_png_save(FILE * fi, const char *const fname,
 		       SDL_Surface * surf);
 static void get_new_file_id(void);
 static int do_quit(int tool);
-int do_open(void);
-int do_new_dialog(void);
-int do_color_picker(void);
-int do_slideshow(void);
-void play_slideshow(int * selected, int num_selected, char * dirname,
+static int do_open(void);
+static int do_new_dialog(void);
+static int do_color_picker(void);
+static int do_slideshow(void);
+static void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed);
-void draw_selection_digits(int right, int bottom, int n);
+static void draw_selection_digits(int right, int bottom, int n);
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s,
 		     float *v);
 static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
 		     Uint8 * b8);
 
-SDL_Surface *flip_surface(SDL_Surface * s);
-SDL_Surface *mirror_surface(SDL_Surface * s);
+static SDL_Surface *flip_surface(SDL_Surface * s);
+static SDL_Surface *mirror_surface(SDL_Surface * s);
 
 static void print_image(void);
 static void do_print(void);
@@ -1700,45 +1702,45 @@ static void load_template(char *img_id);
 static SDL_Surface *duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
-int valid_click(Uint8 button);
-int in_circle(int x, int y);
-int in_circle_rad(int x, int y, int rad);
-int paintsound(int size);
-void load_magic_plugins(void);
-int magic_sort(const void * a, const void * b);
+static int valid_click(Uint8 button);
+static int in_circle(int x, int y);
+static int in_circle_rad(int x, int y, int rad);
+static int paintsound(int size);
+static void load_magic_plugins(void);
+static int magic_sort(const void * a, const void * b);
 
 Mix_Chunk * magic_current_snd_ptr;
-void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
-void magic_stopsound(void);
-void magic_line_func(void * mapi,
+static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
+static void magic_stopsound(void);
+static void magic_line_func(void * mapi,
 		     int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
 		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
 				int, int));
 
-Uint8 magic_linear_to_sRGB(float lin);
-float magic_sRGB_to_linear(Uint8 srgb);
-int magic_button_down(void);
-SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect);
-void reset_touched(void);
-Uint8 magic_touched(int x, int y);
+static Uint8 magic_linear_to_sRGB(float lin);
+static float magic_sRGB_to_linear(Uint8 srgb);
+static int magic_button_down(void);
+static SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect);
+static void reset_touched(void);
+static Uint8 magic_touched(int x, int y);
 
-void magic_switchin(SDL_Surface * last);
-void magic_switchout(SDL_Surface * last);
-int magic_modeint(int mode);
+static void magic_switchin(SDL_Surface * last);
+static void magic_switchout(SDL_Surface * last);
+static int magic_modeint(int mode);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
 static int charsize(Uint16 c);
 #endif
 
-SDL_Surface * load_kpx(char * file);
+static SDL_Surface * load_kpx(char * file);
 #ifndef NOSVG
-SDL_Surface * load_svg(char * file);
-float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
+static SDL_Surface * load_svg(char * file);
+static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h);
 #endif
-SDL_Surface * myIMG_Load(char * file);
+static SDL_Surface * myIMG_Load(char * file);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -3753,7 +3755,7 @@ static void mainloop(void)
             {
               if(cur_select == SELECT_OFF)
               {
-                  label_node_to_edit=search_label_list(&current_label_node, old_x, old_y, 0);
+		label_node_to_edit=search_label_list(&current_label_node, old_x, old_y, 0);
                 if(label_node_to_edit)
 		  {
                       cur_thing=label_node_to_edit->save_cur_font;
@@ -4409,12 +4411,13 @@ static void mainloop(void)
                   if (cur_label == LABEL_LABEL)
                       do_setcursor(cursor_insertion);
                   else if (cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
-                      {
-                          if (search_label_list(&current_label_node, event.button.x - 96, event.button.y, 1))
-                              do_setcursor(cursor_hand);
-                          else
-                              do_setcursor(cursor_arrow);
-                      }
+                  {
+                      do_setcursor(cursor_arrow);
+                      if (search_label_list(&current_label_node, event.button.x - 96, event.button.y, 1))
+                        do_setcursor(cursor_hand);
+                      else
+                        do_setcursor(cursor_arrow);
+                  }
                   else if (cur_label == LABEL_SELECT && cur_select == SELECT_ON)
                       do_setcursor(cursor_insertion);
                   /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_OFF) */
@@ -9065,10 +9068,10 @@ static void draw_tux_text(int which_tux, const char *const str,
   draw_tux_text_ex(which_tux, str, want_right_to_left, 0);
 }
 
-int latest_tux;
-const char * latest_tux_text;
-int latest_r2l;
-Uint8 latest_locale_text;
+static int latest_tux;
+static const char * latest_tux_text;
+static int latest_r2l;
+static Uint8 latest_locale_text;
 
 static void redraw_tux_text(void)
 {
@@ -12160,7 +12163,7 @@ static int do_quit(int tool)
 /* FIXME: This, do_slideshow() and do_new_dialog() should be combined
    and modularized! */
 
-int do_open(void)
+static int do_open(void)
 {
   SDL_Surface *img, *img1, *img2;
   int things_alloced;
@@ -13249,7 +13252,7 @@ int do_open(void)
 
 /* Slide Show Selection Screen: */
 
-int do_slideshow(void)
+static int do_slideshow(void)
 {
   SDL_Surface *img, *img1, *img2;
   int things_alloced;
@@ -13998,7 +14001,7 @@ int do_slideshow(void)
 }
 
 
-void play_slideshow(int * selected, int num_selected, char * dirname,
+static void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed)
 {
   int i, which, next, done;
@@ -14223,7 +14226,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 
 /* Draws large, bitmap digits over thumbnails in slideshow selection screen: */
 
-void draw_selection_digits(int right, int bottom, int n)
+static void draw_selection_digits(int right, int bottom, int n)
 {
   SDL_Rect src, dest;
   int i, v, len, place;
@@ -15438,7 +15441,7 @@ static void flip_starter(void)
 }
 
 
-int valid_click(Uint8 button)
+static int valid_click(Uint8 button)
 {
   if (button == 1 || ((button == 2 || button == 3) && no_button_distinction))
     return (1);
@@ -15447,7 +15450,7 @@ int valid_click(Uint8 button)
 }
 
 
-int in_circle(int x, int y)
+static int in_circle(int x, int y)
 {
   if ((x * x) + (y * y) - (16 * 16) < 0)
     return (1);
@@ -15455,7 +15458,7 @@ int in_circle(int x, int y)
     return (0);
 }
 
-int in_circle_rad(int x, int y, int rad)
+static int in_circle_rad(int x, int y, int rad)
 {
   if ((x * x) + (y * y) - (rad * rad) < 0)
     return (1);
@@ -15463,7 +15466,7 @@ int in_circle_rad(int x, int y, int rad)
     return (0);
 }
 
-int paintsound(int size)
+static int paintsound(int size)
 {
   if (SND_PAINT1 + (size / 12) >= SND_PAINT4)
     return(SND_PAINT4);
@@ -15480,7 +15483,7 @@ int paintsound(int size)
    Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
 */
 
-SDL_Surface * load_svg(char * file)
+static SDL_Surface * load_svg(char * file)
 {
   svg_cairo_t * scr;
   int bpp, btpp, stride;
@@ -15640,7 +15643,7 @@ SDL_Surface * load_svg(char * file)
 #else
 
 /* New libcairo2, rsvg and rsvg-cairo based code */
-SDL_Surface * load_svg(char * file)
+static SDL_Surface * load_svg(char * file)
 {
   cairo_surface_t * cairo_surf;
   cairo_t * cr;
@@ -15819,7 +15822,7 @@ SDL_Surface * load_svg(char * file)
 #endif
 
 
-float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
+static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h)
 {
   float aspect, scale, wscale, hscale;
@@ -15906,7 +15909,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
    if we notice it's an SVG file (if available!);
    call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
    otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
-SDL_Surface * myIMG_Load(char * file)
+static SDL_Surface * myIMG_Load(char * file)
 {
   if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
     return(load_kpx(file));
@@ -15918,7 +15921,7 @@ SDL_Surface * myIMG_Load(char * file)
     return(IMG_Load(file));
 }
 
-SDL_Surface * load_kpx(char * file)
+static SDL_Surface * load_kpx(char * file)
 {
   SDL_RWops * data;
   FILE * fi;
@@ -15946,7 +15949,7 @@ SDL_Surface * load_kpx(char * file)
 }
 
 
-void load_magic_plugins(void)
+static void load_magic_plugins(void)
 {
   int res, n, i, plc;
   char * place;
@@ -16347,7 +16350,7 @@ void load_magic_plugins(void)
 
 
 
-int magic_sort(const void * a, const void * b)
+static int magic_sort(const void * a, const void * b)
 {
   magic_t * am = (magic_t *) a;
   magic_t * bm = (magic_t *) b;
@@ -16356,12 +16359,12 @@ int magic_sort(const void * a, const void * b)
 }
 
 
-void update_progress_bar(void)
+static void update_progress_bar(void)
 {
   show_progress_bar(screen);
 }
 
-void magic_line_func(void * mapi,
+static void magic_line_func(void * mapi,
 		     int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
 		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
@@ -16443,7 +16446,7 @@ void magic_line_func(void * mapi,
 /* Handle special things that some magic tools do that
    need to affect more than just the current canvas: */
 
-void special_notify(int flags)
+static void special_notify(int flags)
 {
   int tmp_int;
 
@@ -16475,7 +16478,7 @@ void special_notify(int flags)
   }
 }
 
-void magic_stopsound(void)
+static void magic_stopsound(void)
 {
 #ifndef NOSOUND
   if (mute || !use_sound)
@@ -16485,7 +16488,7 @@ void magic_stopsound(void)
 #endif
 }
 
-void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
+static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
 {
 #ifndef NOSOUND
 
@@ -16527,29 +16530,29 @@ void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
 #endif
 }
 
-Uint8 magic_linear_to_sRGB(float lin)
+static Uint8 magic_linear_to_sRGB(float lin)
 {
   return(linear_to_sRGB(lin));
 }
 
-float magic_sRGB_to_linear(Uint8 srgb)
+static float magic_sRGB_to_linear(Uint8 srgb)
 {
   return(sRGB_to_linear_table[srgb]);
 }
 
-int magic_button_down(void)
+static int magic_button_down(void)
 {
   return(button_down);
 }
 
-SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect)
+static SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect)
 {
   return(thumbnail2(surf, w, h, aspect, 1));
 }
 
 /* FIXME: This, do_open() and do_slideshow() should be combined and modularized! */
 
-int do_new_dialog(void)
+static int do_new_dialog(void)
 {
   SDL_Surface *img, *img1, *img2;
   int things_alloced;
@@ -17676,7 +17679,7 @@ int do_new_dialog(void)
 
 /* FIXME: Use a bitmask! */
 
-void reset_touched(void)
+static void reset_touched(void)
 {
   int x, y;
 
@@ -17689,7 +17692,7 @@ void reset_touched(void)
   }
 }
 
-Uint8 magic_touched(int x, int y)
+static Uint8 magic_touched(int x, int y)
 {
   Uint8 res;
 
@@ -17702,7 +17705,7 @@ Uint8 magic_touched(int x, int y)
   return(res);
 }
 
-int do_color_picker(void)
+static int do_color_picker(void)
 {
 #ifndef NO_PROMPT_SHADOWS
   int i;
@@ -18134,18 +18137,18 @@ int do_color_picker(void)
   return(chose);
 }
 
-void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
+static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
   putpixels[surface->format->BytesPerPixel](surface, x, y, pixel);
 }
 
-Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
+static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 {
   return(getpixels[surface->format->BytesPerPixel](surface, x, y));
 }
 
 
-void magic_switchout(SDL_Surface * last)
+static void magic_switchout(SDL_Surface * last)
 {
   if (cur_tool == TOOL_MAGIC)
   {
@@ -18157,7 +18160,7 @@ void magic_switchout(SDL_Surface * last)
   }
 }
 
-void magic_switchin(SDL_Surface * last)
+static void magic_switchin(SDL_Surface * last)
 {
   if (cur_tool == TOOL_MAGIC)
   {
@@ -18175,7 +18178,7 @@ void magic_switchin(SDL_Surface * last)
   }
 }
 
-int magic_modeint(int mode)
+static int magic_modeint(int mode)
 {
   if (mode == MODE_PAINT)
     return 0;
@@ -18185,7 +18188,7 @@ int magic_modeint(int mode)
     return 0;
 }
 
-void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_to_disable, SDL_Surface* label_node_surface)
+static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_to_disable, SDL_Surface* label_node_surface)
 {
   struct label_node* new_node = malloc(sizeof(struct label_node));
   struct label_node* aux_node;
@@ -18239,7 +18242,7 @@ void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_t
 }
 
 
-struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uint16 y, int hover)
+static struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uint16 y, int hover)
 {
   struct label_node* current_node;
   struct label_node* tmp_node = NULL;
@@ -18263,11 +18266,11 @@ struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uin
 		      if (current_node->is_enabled == TRUE)
 			{
 			  if (tmp_node == NULL)     /* Preselecting the top label at x,y position*/
-                              {
-                                  if (hover == 1)
-                                      return(current_node);
-                                  tmp_node = current_node;
-                              }
+			    {
+			      if (hover == 1)
+			        return(current_node);
+			      tmp_node = current_node;
+			    }
 			  SDL_GetRGBA(getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x - current_node->save_x, y - current_node->save_y),
 				      current_node->label_node_surface->format, &r, &g, &b, &a);
 			  if (a != SDL_ALPHA_TRANSPARENT)
@@ -18313,7 +18316,7 @@ struct label_node* search_label_list(struct label_node** ref_head, Uint16 x, Uin
   return NULL;
 }
 
-void rec_undo_label(void)
+static void rec_undo_label(void)
 {
   printf("rec\n");
   if (first_label_node_in_redo_stack != NULL)
@@ -18356,7 +18359,7 @@ void rec_undo_label(void)
       }
 }
 
-void do_undo_label_node()
+static void do_undo_label_node()
 {
   if (text_undo[(cur_undo + 1) % NUM_UNDO_BUFS] == 1)
     if (current_label_node != NULL)
@@ -18378,7 +18381,7 @@ void do_undo_label_node()
       }
 }
 
-void do_redo_label_node()
+static void do_redo_label_node()
 {
   if ( (text_undo[cur_undo] == 1) &&
        (first_label_node_in_redo_stack != NULL) )
@@ -18404,7 +18407,7 @@ void do_redo_label_node()
 }
 
 
-void simply_render_node(struct label_node* node)
+static void simply_render_node(struct label_node* node)
 {
 
   SDL_Surface *tmp_surf;
@@ -18491,7 +18494,7 @@ void simply_render_node(struct label_node* node)
    }
 }
 
-void render_all_nodes_starting_at(struct label_node** node)
+static void render_all_nodes_starting_at(struct label_node** node)
 {
   struct label_node* current_node;
   if (*node!=NULL)
@@ -18511,7 +18514,7 @@ void render_all_nodes_starting_at(struct label_node** node)
 }
 
 /* FIXME: This should search for the top-down of the overlaping labels and only re-render from it */
-void derender_node(struct label_node** ref_head)
+static void derender_node(struct label_node** ref_head)
 {
   struct label_node* current_node;
   SDL_Rect r_tmp_derender;
@@ -18526,7 +18529,7 @@ void derender_node(struct label_node** ref_head)
   render_all_nodes_starting_at(&start_label_node);
 }
 
-void delete_label_list(struct label_node** ref_head)
+static void delete_label_list(struct label_node** ref_head)
 {
   struct label_node* current = *ref_head;
   struct label_node* next;
@@ -18584,7 +18587,7 @@ static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect,
       }
 } 
 
-void load_info_about_label_surface(char lfname[1024])
+static void load_info_about_label_surface(char lfname[1024])
 {
     struct label_node* new_node;
     int list_ctr;
@@ -18756,7 +18759,7 @@ void load_info_about_label_surface(char lfname[1024])
         set_label_fonts();
 }
 
-void set_label_fonts()
+static void set_label_fonts()
 {
     struct label_node* node;    
     int i;
@@ -18815,7 +18818,7 @@ void set_label_fonts()
 }
 
 
-void tmp_apply_uncommited_text()
+static void tmp_apply_uncommited_text()
 {
     if (texttool_len > 0)
         {
@@ -18862,7 +18865,7 @@ void tmp_apply_uncommited_text()
             }
 }
 
-void undo_tmp_applied_text()
+static void undo_tmp_applied_text()
 {
     struct label_node* aux_label_node;
 
@@ -20101,8 +20104,11 @@ static void setup(void)
   }
 
 
+#ifdef NO_SDLPANGO
   locale_font = load_locale_font(medium_font, 18);
-
+#else
+  locale_font = medium_font;
+#endif
 
 
 #if 0

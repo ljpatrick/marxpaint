@@ -66,15 +66,12 @@
 
 #define my_min(x,y) ((x < y) ? (x) : (y))
 
-int f2int(float f);
-int f2dec(float f);
-
-int f2int(float f)
+static int f2int(float f)
 {
   return ((int)f);
 }
 
-int f2dec(float f)
+static int f2dec(float f)
 {
   return (int)((f - f2int(f)) * 100);
 }

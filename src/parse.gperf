@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include <stdint.h>
 
-const char PARSE_YES[] = "yes";
+static const char PARSE_YES[] = "yes";
 const char PARSE_NO[]  = "no";
 const char PARSE_CLOBBER[]  = ":-(";  // for painful lang/locale priority situation
 
