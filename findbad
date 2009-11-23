@@ -48,3 +48,7 @@ done > patterns.check <<-DONE
 	switchout
 DONE
 egrep -v -f patterns.check soD.check
+
+echo
+echo ++++++++++++++++ things belonging in .bss that may end up in .data instead +++++++++++++++++++++
+egrep '^[a-zA-Z_].*= *(NULL|0|'\'\\0\'') *; *$' $CFILES $HFILES
