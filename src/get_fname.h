@@ -25,8 +25,8 @@
 #ifndef GET_FNAME_H
 #define GET_FNAME_H
 
-extern char *savedir;
-extern char *datadir;
+extern const char *savedir;
+extern const char *datadir;
 
 enum {
   DIR_SAVE,

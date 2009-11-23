@@ -920,7 +920,7 @@ static void groupfonts(void)
 }
 
 
-static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict locale)
+static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict const locale)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
@@ -935,7 +935,7 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
 }
 
 
-static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict locale)
+static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
 
@@ -997,7 +997,7 @@ static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict 
 
 
 
-void run_font_scanner(SDL_Surface * screen, const char *restrict locale)
+void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
 {
   int sv[2];
   int size, i;

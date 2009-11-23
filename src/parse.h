@@ -1,7 +1,7 @@
 #pragma once
 #include "compiler.h"
 
-//extern const char PARSE_YES[];
+extern const char PARSE_YES[];
 extern const char PARSE_NO[];
 extern const char PARSE_CLOBBER[];
 

@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include "SDL.h"
+#include "compiler.h"
 
 
 /* Method for printing images: */
@@ -78,10 +79,9 @@
 #ifdef PRINTMETHOD_PS
 
 int do_ps_save(FILE * fi,
-		// const char *restrict const fname,
-		const char *fname,
+		const char *restrict const fname,
 		SDL_Surface * surf,
-	        char * pprsize,
+	        const char *restrict pprsize,
                 int is_pipe);
 
 #endif

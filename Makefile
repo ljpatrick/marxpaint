@@ -1033,7 +1033,7 @@ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
 #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
-SHARED_FLAGS:=-shared -fpic
+SHARED_FLAGS:=-shared -fpic -Wl,--warn-shared-textrel
 
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))

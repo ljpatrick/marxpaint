@@ -68,7 +68,7 @@
 ///////////////// directory walking callers and callbacks //////////////////
 
 void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
-		       unsigned dirlen, tp_ftw_str * files, unsigned i, char * locale)
+		       unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
   dirlen = dirlen;
 
@@ -107,8 +107,8 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
       char fname[512];
       TuxPaint_Font *font;
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-/* printf("Loading font: %s  (locale is: %s)\n", fname, (locale != NULL ? locale : "NULL")); */
-      if (locale != NULL && strstr(fname, "locale") != NULL && all_locale_fonts == 0)
+/* printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL")); */
+      if (locale && strstr(fname, "locale") && !all_locale_fonts)
       {
         char fname_check[512];
         /* We're (probably) loading from our locale fonts folder; ONLY load our locale's font */
@@ -261,8 +261,8 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
 	    int rsrc, void (*fn) (SDL_Surface * screen,
 				  const char *restrict const dir,
 				  unsigned dirlen, tp_ftw_str * files,
-				  unsigned count, char * locale),
-            char * locale)
+				  unsigned count, const char *restrict const locale),
+            const char *restrict const locale)
 {
   DIR *d;
   unsigned num_file_names = 0;

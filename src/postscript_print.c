@@ -78,10 +78,9 @@ static int f2dec(float f)
 
 /* Actually save the PostScript data to the file stream: */
 int do_ps_save(FILE * fi,
-		// const char *restrict const fname,
-		const char * fname,
+		const char *restrict const fname,
 		SDL_Surface * surf,
-		char * pprsize,
+		const char *restrict pprsize,
                 int is_pipe)
 {
   const struct paper * ppr;
@@ -113,13 +112,13 @@ int do_ps_save(FILE * fi,
        in config file), ask the system.  It will return either their
        $PAPER env. var., the value from /etc/papersize, or NULL: */
 
-    pprsize = (char *) systempapername();
+    pprsize = systempapername();
 
     if (pprsize == NULL)
     {
       /* No setting, env. var. or /etc/ file; use the default! */
 
-      pprsize = (char *) defaultpapername();
+      pprsize = defaultpapername();
 
 #ifdef DEBUG
       printf("Using default paper\n");

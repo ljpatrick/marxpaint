@@ -106,7 +106,7 @@ int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
 
 #ifdef FORKED_FONTS
 void reliable_write(int fd, const void *buf, size_t count);
-void run_font_scanner(SDL_Surface * screen, const char *restrict locale);
+void run_font_scanner(SDL_Surface * screen, const char *restrict const locale);
 void receive_some_font_info(SDL_Surface * screen);
 #endif
 

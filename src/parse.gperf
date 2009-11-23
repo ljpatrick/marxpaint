@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include <stdint.h>
 
-static const char PARSE_YES[] = "yes";
+const char PARSE_YES[] = "yes";
 const char PARSE_NO[]  = "no";
 const char PARSE_CLOBBER[]  = ":-(";  // for painful lang/locale priority situation
 
@@ -27,13 +27,13 @@ struct cfg
 #define MULTIVAL   0x00000000
 #define POS        0x00000001
 #define NEG        0x00000002
-#define BOOL       (POS|NEG)
+#define BOOLMASK   (POS|NEG)
 #define BITS       2 // if this grows past 2, must shift the offset
 #define FLAGMASK   ((1<<BITS)-1)
 
 #define MULTI(x)   (void*)(offsetof(struct cfginfo,x)|MULTIVAL)
-#define POSBOOL(x) (void*)(offsetof(struct cfginfo,x)|POS|BOOL)
-#define NEGBOOL(x) (void*)(offsetof(struct cfginfo,x)|NEG|BOOL)
+#define POSBOOL(x) (void*)(offsetof(struct cfginfo,x)|POS)
+#define NEGBOOL(x) (void*)(offsetof(struct cfginfo,x)|NEG)
 #define IMM(x)     imm_##x
 
 static void imm_version(void)
@@ -173,7 +173,7 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
   uintptr_t uintptr = cfg ? (uintptr_t)cfg->val : 0;
   unsigned flags = (uintptr<CFGINFO_MAXOFFSET) ? (uintptr & FLAGMASK) : 0;
 
-  if(!cfg || (!(flags & BOOL) && noflag) )
+  if(!cfg || (!(flags & BOOLMASK) && noflag) )
   {
     if(src)
       printf("Unknown option '%s' in config file '%s'\n",str,src);
@@ -199,7 +199,7 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
     exit(0);
   }
 
-  if(flags & BOOL)
+  if(flags & BOOLMASK)
   {
     int flip = !!noflag ^ !!(flags & NEG);
     if(!opt)

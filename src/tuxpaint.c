@@ -1107,7 +1107,7 @@ static magic_api *magic_api_struct; /* Pointer to our internal functions; passed
 #endif
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
-char *papersize = NULL;
+static const char *papersize;
 #endif
 
 
@@ -5657,7 +5657,7 @@ static unsigned compute_default_scale_factor(double ratio)
 static void loadbrush_callback(SDL_Surface * screen,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
-			       unsigned i, char * locale)
+			       unsigned i, const char *restrict const locale)
 {
   FILE * fi;
   char buf[64];
@@ -5745,7 +5745,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 
 
 
-static void load_brush_dir(SDL_Surface * screen, const char *const dir)
+static void load_brush_dir(SDL_Surface * screen, const char *restrict const dir)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
@@ -6489,7 +6489,7 @@ static void get_stamp_thumb(stamp_type * sd)
 static void loadstamp_callback(SDL_Surface * screen,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
-			       unsigned i, char * locale)
+			       unsigned i, const char *restrict const locale)
 {
   (void)locale;
 #ifdef DEBUG
@@ -11307,8 +11307,8 @@ static void cleanup(void)
   }
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-  if (papersize != NULL)
-    free(papersize);
+//  if (papersize != NULL)
+//    free(papersize);
 #endif
 
 
@@ -14593,15 +14593,15 @@ void do_print(void)
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
-  char *pcmd;
+  const char *pcmd;
   FILE *pi;
 
   /* Linux, Unix, etc. */
 
   if (want_alt_printcommand && !fullscreen)
-    pcmd = (char *) altprintcommand;
+    pcmd = altprintcommand;
   else
-    pcmd = (char *) printcommand;
+    pcmd = printcommand;
 
   pi = popen(pcmd, "w");
 
@@ -18901,12 +18901,13 @@ static void undo_tmp_applied_text()
 /////////////////////////////////////////////////////////////////////////////
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-static void show_available_papersizes(FILE * fi, const char * prg)
+static void show_available_papersizes(int exitcode)
 {
+  FILE *fi = exitcode ? stderr : stdout;
   const struct paper * ppr;
   int cnt;
 
-  fprintf(fi, "Usage: %s [--papersize PAPERSIZE]\n", prg);
+  fprintf(fi, "Usage: %s [--papersize PAPERSIZE]\n", progname);
   fprintf(fi, "\n");
   fprintf(fi, "PAPERSIZE may be one of:\n");
 
@@ -19083,7 +19084,7 @@ static void setup_config(char *argv[])
 #elif __APPLE__
     savedir = strdup(macosx.preferencesPath);
 #else
-    asprintf(&savedir, "%s/%s", home, ".tuxpaint");
+    asprintf((char**)&savedir, "%s/%s", home, ".tuxpaint");
 #endif
   }
 
@@ -19127,7 +19128,7 @@ static void setup_config(char *argv[])
 
   if(tmpcfg.savedir)
   {
-    free(savedir);
+    free((char*)savedir);
     savedir = tmpcfg.savedir;
   }
 
@@ -19139,18 +19140,106 @@ static void setup_config(char *argv[])
     tmpcfg.parsertmp_locale = NULL;
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale);
 
-#if 0
 
-all_locale_fonts
-no_system_fonts
-
-parsertmp_windowsize
-parsertmp_fullscreen_native
+  // FIXME: most of this is not required before starting the font scanner
 
   if(tmpcfg_cmd.papersize && !strcmp(tmpcfg_cmd.papersize, "help"))
     show_available_papersizes(0);
-#endif
+
+#define SETBOOL(x) do{ if(tmpcfg.x) x = (tmpcfg.x==PARSE_YES); }while(0)
+  SETBOOL(all_locale_fonts);
+  SETBOOL(autosave_on_quit);
+  SETBOOL(disable_label);
+  SETBOOL(disable_magic_controls);
+  SETBOOL(disable_print);
+  SETBOOL(disable_quit);
+  SETBOOL(disable_save);
+  SETBOOL(disable_screensaver);
+  SETBOOL(disable_stamp_controls);
+  SETBOOL(dont_do_xor);
+  SETBOOL(dont_load_stamps);
+  SETBOOL(fullscreen);
+  SETBOOL(grab_input);
+  SETBOOL(hide_cursor);
+  SETBOOL(keymouse);
+  SETBOOL(mirrorstamps);
+  SETBOOL(native_screensize);
+  SETBOOL(no_button_distinction);
+  SETBOOL(no_fancy_cursors);
+  SETBOOL(no_system_fonts);
+  SETBOOL(noshortcuts);
+  SETBOOL(ok_to_use_lockfile);
+  SETBOOL(only_uppercase);
+  SETBOOL(simple_shapes);
+  SETBOOL(start_blank);
+  SETBOOL(use_print_config);
+  SETBOOL(use_sound);
+  SETBOOL(wheely);
+#undef SETBOOL
+
+  if(tmpcfg.parsertmp_windowsize)
+  {
+    char *endp1;
+    char *endp2;
+    int w = strtoul(tmpcfg.parsertmp_windowsize, &endp1, 10);
+    int h = strtoul(endp1 + 1, &endp2, 10);
+    if (tmpcfg.parsertmp_windowsize==endp1 || endp1+1==endp2 || *endp1!='x' || *endp2)
+    {
+      fprintf(stderr,"Window size '%s' is not understood.\n",tmpcfg.parsertmp_windowsize);
+      exit(97);
+    }
+    if (w<500 || w>32000 || h<480 || h>32000 || h>w*3 || w>h*4)
+    {
+      fprintf(stderr,"Window size '%s' is not reasonable.\n",tmpcfg.parsertmp_windowsize);
+      exit(93);
+    }
+    WINDOW_WIDTH = w;
+    WINDOW_HEIGHT = h;
+  }
+  if(tmpcfg.parsertmp_fullscreen_native)
+  {
+    // should conflict with other fullscreen/native_screensize setting?
+    if (!strcmp(tmpcfg.parsertmp_fullscreen_native, "native"))
+      native_screensize = 1;
+    fullscreen = strcmp(tmpcfg.parsertmp_fullscreen_native, "no");
+  }
+  if(tmpcfg.stamp_size_override)
+  {
+    if (!strcmp(tmpcfg.stamp_size_override, "default"))
+      stamp_size_override = -1;
+    else
+    {
+      // FIXME: needs to be a scaling factor
+      stamp_size_override = atoi(tmpcfg.stamp_size_override);
+      if (stamp_size_override > 10)
+        stamp_size_override = 10;
+    }
+  }
+  // FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button)
+  if(tmpcfg.rotate_orientation)
+    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); // alternative is "landscape"
+  if(tmpcfg.colorfile)
+    strcpy(colorfile, tmpcfg.colorfile); // FIXME can overflow
+  if(tmpcfg.print_delay)
+    print_delay = atoi(tmpcfg.print_delay);
+  if(tmpcfg.printcommand)
+    printcommand = tmpcfg.printcommand;
+  if(tmpcfg.altprintcommand)
+    altprintcommand = tmpcfg.altprintcommand;
+  if(tmpcfg.alt_print_command_default)
+  {
+    // FIXME: probably need extra variables
+    if (!strcmp(tmpcfg.alt_print_command_default, "always"))
+      alt_print_command_default = ALTPRINT_ALWAYS;
+    else if (!strcmp(tmpcfg.alt_print_command_default, "never"))
+      alt_print_command_default = ALTPRINT_NEVER;
+    else
+      alt_print_command_default = ALTPRINT_MOD; // default ("mod")
+  }
+  if(tmpcfg.papersize)
+    papersize = tmpcfg.papersize;
 }
+
 
 static void chdir_to_binary(char *argv0)
 {
