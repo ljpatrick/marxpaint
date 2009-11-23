@@ -517,14 +517,6 @@ int get_current_language(void)
   return langint;
 }
 
-#ifdef ABUSE_ENV
-static void abuse_env(const char *restrict name, const char *restrict value)
-{
-  char s[40];
-  snprintf(s, sizeof s, "%s=%s", name, value);
-  putenv(strdup(s));
-}
-#endif
 
 static int search_int_array(int l, int *array)
 {
@@ -617,35 +609,18 @@ static int set_current_language(const char *restrict loc)
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || __APPLE__
+#if defined(_WIN32) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2) || __GLIBC__ > 2 || defined(__NetBSD__) || __APPLE__
   bind_textdomain_codeset("tuxpaint", "UTF-8");
 #endif
   textdomain("tuxpaint");
 
 #ifdef _WIN32
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-#ifdef ABUSE_ENV
-  loc = getenv("LANGUAGE");
-  if (!loc)
-#else
   if (!*loc)
-#endif
-  {
     loc = _nl_locale_name(LC_MESSAGES, "");
-#ifdef ABUSE_ENV
-    if (loc)
-      abuse_env("LANGUAGE",loc);
-#endif
-  }
 #else
   // NULL: Used to direct setlocale() to query the current
   // internationalised environment and return the name of the locale().
   loc = setlocale(LC_MESSAGES, NULL);
-
-#ifdef ABUSE_ENV
-  if (loc && strstr(loc, "LC_MESSAGES"))
-    loc = getenv("LANG");
-#endif
 #endif
 
   set_langint_from_locale_string(loc);
@@ -684,34 +659,6 @@ static int set_current_language(const char *restrict loc)
   return y_nudge;
 }
 
-#ifdef ABUSE_ENV
-int setup_i18n(const char *restrict lang, const char *restrict locale)
-{
-  printf("lang %p, locale %p\n", lang, locale);
-  printf("lang \"%s\", locale \"%s\"\n", lang, locale);
-  if(locale)
-  {
-    if(!strcmp(locale,"help"))
-    {
-      show_locale_usage(stdout,"tuxpaint");
-      exit(0);
-    }
-    abuse_env("LANG",locale);
-  }
-  if(lang)
-  {
-    const char *newlocale = language_to_locale(lang);
-
-    abuse_env("LANGUAGE",newlocale);
-    abuse_env("LC_ALL",newlocale);
-  }
-  // The "" is being passed to setlocale.
-  // It specifies an implementation-dependent native environment.
-  // For XSI-conformant systems, this corresponds to the value
-  // of the associated environment variables, LC_* and LANG
-  return set_current_language("");
-}
-#else
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
   printf("lang %p, locale %p\n", lang, locale);
@@ -733,15 +680,10 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 
   return set_current_language(locale);
 }
-#endif
 
 #ifdef NO_SDLPANGO
 int smash_i18n(void)
 {
-#ifdef ABUSE_ENV
-  putenv((char *) "LANG=C");
-  putenv((char *) "OUTPUT_CHARSET=C");
-#endif
   return set_current_language("C");
 }
 #endif
