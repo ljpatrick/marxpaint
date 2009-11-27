@@ -556,9 +556,9 @@ static void ctype_utf8(void)
   const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8","C.UTF-8"};
   int i = sizeof(names)/sizeof(names[0]);
   for(;;){
-    if(!iswprint((wchar_t)0xf7)) // division symbol -- which is in Latin-1 :-/
+    if(iswprint((wchar_t)0xf7)) // division symbol -- which is in Latin-1 :-/
       return;
-    if(i-- < 0)
+    if(--i < 0)
       break;
     setlocale(LC_CTYPE,names[i]);
   }
