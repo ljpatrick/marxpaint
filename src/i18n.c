@@ -28,6 +28,23 @@
   June 14, 2002 - November 21, 2009
 */
 
+// FIXME: gettext() won't even bother to look up messages unless it
+// is totally satisfied that you are using one of the locales that
+// it ships with! Make gettext() unhappy, and it'll switch to the
+// lobotomized 7-bit Linux "C" locale just to spite you.
+//
+// http://sources.redhat.com/cgi-bin/cvsweb.cgi/libc/localedata/SUPPORTED?content-type=text/x-cvsweb-markup&cvsroot=glibc
+//
+// You can confuse gettext() into mostly behaving. For example, a
+// user could pick a random UTF-8 locale and change the messages.
+// In that case, Tux Paint thinks it's in the other locale but the
+// messages come out right. Like so: LANGUAGE=zam LC_ALL=fr_FR.UTF-8
+// It doesn't work to leave LC_ALL unset, set it to "zam", set it to "C",
+// or set it to random nonsense. Yeah, Tux Paint will think it's in
+// a French locale, but the messages will be Zapotec nonetheless.
+//
+// Maybe it's time to give up on gettext().
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -536,10 +553,16 @@ static int search_int_array(int l, int *array)
 static void ctype_utf8(void)
 {
 #ifndef _WIN32
-  const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
+  const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8","C.UTF-8"};
   int i = sizeof(names)/sizeof(names[0]);
-  while(i && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[--i]))
-    ;
+  for(;;){
+    if(!iswprint((wchar_t)0xf7)) // division symbol -- which is in Latin-1 :-/
+      return;
+    if(i-- < 0)
+      break;
+    setlocale(LC_CTYPE,names[i]);
+  }
+  fprintf(stderr, "Failed to find a locale with iswprint() working!\n");
 #endif
 }
 
