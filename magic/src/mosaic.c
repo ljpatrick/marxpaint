@@ -350,6 +350,7 @@ static void mosaic_sharpen_pixel(void * ptr,
 void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
   int y, x;
+  Uint32 amask;
 
   mosaic_blured = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
   if (mosaic_blured == NULL)
@@ -358,7 +359,7 @@ void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
     exit(1);
   }
 
-   Uint32 amask = ~(canvas->format->Rmask |
+  amask = ~(canvas->format->Rmask |
 		   canvas->format->Gmask |
 		   canvas->format->Bmask);
 

@@ -190,7 +190,7 @@ static int mosaic_shaped_grey(Uint8 r1,Uint8 g1,Uint8 b1){
 
 // Do the effect for the full image
 static void do_mosaic_shaped_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED){
-  int i, j;
+  int i, j, size;
   Uint32 mosaic_shaped_color;
   magic_api * api = (magic_api *) ptr;
 
@@ -217,7 +217,7 @@ static void do_mosaic_shaped_full(void * ptr, SDL_Surface * canvas, SDL_Surface 
 		  if (mosaic_shaped_average_count > 0)
 		    {
 		      reset_counter(canvas, mosaic_shaped_counted);
-		      int size = 0;
+		      size = 0;
 		      pixel_average = SDL_MapRGB(canvas->format, mosaic_shaped_average_r / mosaic_shaped_average_count, mosaic_shaped_average_g / mosaic_shaped_average_count, mosaic_shaped_average_b / mosaic_shaped_average_count);
 		      scan_fill(api, canvas, canvas_shaped, i, j, 0, 1, size, pixel_average);
 		    }
@@ -230,10 +230,11 @@ static void do_mosaic_shaped_full(void * ptr, SDL_Surface * canvas, SDL_Surface 
 static void mosaic_shaped_fill(void * ptr_to_api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
 	          SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
+  Uint32 mosaic_shaped_color;
+  int size;
   magic_api * api = (magic_api *) ptr_to_api;
   x = clamp(0, x, canvas->w - 1);
   y = clamp(0,y,canvas->h - 1);
-  Uint32 mosaic_shaped_color;
   mosaic_shaped_color = SDL_MapRGBA(canvas->format, mosaic_shaped_r, mosaic_shaped_g, mosaic_shaped_b, 0);
   mosaic_shaped_average_r = 0;
   mosaic_shaped_average_g = 0;
@@ -244,7 +245,7 @@ static void mosaic_shaped_fill(void * ptr_to_api, int which ATTRIBUTE_UNUSED, SD
 
   if (mosaic_shaped_average_count > 0)
     {
-      int size = 0;
+      size = 0;
       pixel_average = SDL_MapRGB(canvas->format, mosaic_shaped_average_r / mosaic_shaped_average_count, mosaic_shaped_average_g / mosaic_shaped_average_count, mosaic_shaped_average_b / mosaic_shaped_average_count);
       reset_counter(canvas, mosaic_shaped_counted);
       scan_fill(api, canvas, canvas_shaped, x, y, 0, 1, size, pixel_average);
@@ -367,6 +368,8 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
   int i, j;
   SDL_Rect  rect;
   SDL_Surface * surf_aux;
+  Uint32 amask;
+  char fname[1024];
 
   mosaic_shaped_counted = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
   if (mosaic_shaped_counted == NULL)
@@ -382,7 +385,7 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     exit(1);
   }
 
-   Uint32 amask = ~(canvas->format->Rmask |
+   amask = ~(canvas->format->Rmask |
 		   canvas->format->Gmask |
 		   canvas->format->Bmask);
 
@@ -401,7 +404,6 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
                          canvas->format->Rmask,
                          canvas->format->Gmask,
                          canvas->format->Bmask, amask);
-  char fname[1024];
   snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, mosaic_shaped_pattern_filenames[which]);
 mosaic_shaped_pattern = IMG_Load(fname);
  rect.w = mosaic_shaped_pattern->w;

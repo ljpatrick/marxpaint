@@ -499,6 +499,7 @@ int perspective_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTR
 
 void perspective_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
 {
+  Uint32 amask;
   new_w = canvas->w;
   new_h = canvas->h;
 
@@ -512,7 +513,7 @@ void perspective_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
   black = SDL_MapRGBA(canvas->format, 0, 0, 0, 0);
   white = SDL_MapRGBA(canvas->format, 255, 255, 255, 0);
 
-  Uint32 amask = ~(canvas->format->Rmask |
+  amask = ~(canvas->format->Rmask |
 		   canvas->format->Gmask |
 		   canvas->format->Bmask);
 
