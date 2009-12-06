@@ -974,7 +974,7 @@ typedef struct label_node
 {
   unsigned int save_texttool_len;
   wchar_t save_texttool_str[256];
-  unsigned save_color;
+  SDL_Color save_color;
   int save_width;
   int save_height;
   Uint16 save_x;
@@ -11664,8 +11664,8 @@ static int do_save(int tool, int dont_show_success_results)
   struct label_node* current_node;
   unsigned i = 0;
   int list_ctr = 0;
-  int x, y, pix, size_pix;
-
+  int x, y, pix, alpha_size;
+  Uint8 r, g, b, a;
   /* Was saving completely disabled? */
 
   if (disable_save)
@@ -11845,22 +11845,29 @@ static int do_save(int tool, int dont_show_success_results)
 	  fprintf(fi, "\n");
 
 
-	  fprintf(fi, "%u\n", current_node->save_color);
+	  fprintf(fi, "%u\n", current_node->save_color.r);
+	  fprintf(fi, "%u\n", current_node->save_color.g);
+	  fprintf(fi, "%u\n", current_node->save_color.b);
 	  fprintf(fi, "%d\n", current_node->save_width);
 	  fprintf(fi, "%d\n", current_node->save_height);
 	  fprintf(fi, "%u\n", current_node->save_x);
 	  fprintf(fi, "%u\n", current_node->save_y);
 	  fprintf(fi, "%d\n", current_node->save_cur_font);
-	  fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font)); 
+          fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font)); 
 	  fprintf(fi, "%d\n", current_node->save_text_state);
 	  fprintf(fi, "%u\n", current_node->save_text_size);
-	  for (x=0;x<current_node->save_width; x++)
+
+          SDL_LockSurface(current_node->label_node_surface);
+          alpha_size= sizeof(Uint8);
+          for (x=0;x<current_node->save_width; x++)
 	    for (y=0; y<current_node->save_height; y++)
 	      {
 	      pix= getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
-	      size_pix=current_node->label_node_surface->format->BytesPerPixel;
-	      fwrite(&pix, size_pix, 1, fi);
+              SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
+              fwrite(&a, alpha_size, 1, fi);
+              
 	      }
+          SDL_UnlockSurface(current_node->label_node_surface);
 	  fprintf(fi, "\n\n");
 	}
       current_node = current_node->next_to_up_label_node;
@@ -13032,6 +13039,30 @@ static int do_open(void)
 
               unlink(rfname);
               snprintf(fname, sizeof(fname), "saved/%s.dat", d_names[which]);
+
+              free(rfname);
+              rfname = get_fname(fname, DIR_SAVE);
+              debug(rfname);
+
+              unlink(rfname);
+
+
+              /* Delete the label .png, too: */
+
+              snprintf(fname, sizeof(fname),
+                  "saved/.label/%s.png", d_names[which]);
+
+              free(rfname);
+              rfname = get_fname(fname, DIR_SAVE);
+              debug(rfname);
+
+              unlink(rfname);
+
+
+              /* Delete the label .dat file, if any: */
+
+              unlink(rfname);
+              snprintf(fname, sizeof(fname), "saved/.label/%s.dat", d_names[which]);
 
               free(rfname);
               rfname = get_fname(fname, DIR_SAVE);
@@ -14673,6 +14704,7 @@ static void do_render_cur_text(int do_blit)
     color_hexes[cur_color][2],
     0
   };
+  
   SDL_Surface *tmp_surf, *tmp_label;
   SDL_Rect dest, src;
   wchar_t *str;
@@ -18200,7 +18232,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
 	  new_node->save_texttool_str[i] = texttool_str[i];
 	  i = i+1;
 	}
-      new_node->save_color = cur_color;
+      new_node->save_color.r = color_hexes[cur_color][0];
+      new_node->save_color.g = color_hexes[cur_color][1];
+      new_node->save_color.b = color_hexes[cur_color][2];
       new_node->save_width = w;
       new_node->save_height = h;
       new_node->save_x = x;
@@ -18247,10 +18281,11 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
   struct label_node* current_node;
   struct label_node* tmp_node = NULL;
   SDL_Rect r_tmp_select;
-  unsigned i;
+  unsigned u;
   int done = FALSE;
 
   Uint8 r, g, b, a;
+  int i,j, k;
   current_node =  *ref_head;
   
   while((current_node != NULL) && (done != TRUE))
@@ -18286,32 +18321,84 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
       current_node = current_node->next_to_down_label_node;
     }
   if (tmp_node != NULL)
-    {
-			      select_texttool_len = tmp_node->save_texttool_len;
+      {
+          select_texttool_len = tmp_node->save_texttool_len;
 
-			      i = 0;
-			      while(i < select_texttool_len)
-				{
-				  select_texttool_str[i] = tmp_node->save_texttool_str[i];
-				  i = i+1;
-				}
+          u = 0;
+          while(u < select_texttool_len)
+              {
+                  select_texttool_str[u] = tmp_node->save_texttool_str[u];
+                  u = u + 1;
+              }
 
-			      select_color = tmp_node->save_color;
-			      select_width = tmp_node->save_width;
-			      select_height = tmp_node->save_height;
-			      select_x = tmp_node->save_x;
-			      select_y = tmp_node->save_y;
-			      select_cur_font = tmp_node->save_cur_font;
-			      select_text_state = tmp_node->save_text_state;
-			      select_text_size = tmp_node->save_text_size;
+          for (k = 0; k < NUM_COLORS; k++)
+              {
+                  if ((color_hexes[k][0] == tmp_node->save_color.r) &&
+                      (color_hexes[k][1] == tmp_node->save_color.g) &&
+                      (color_hexes[k][2] == tmp_node->save_color.b) &&
+                      (k < NUM_COLORS - 1))
+                      {
+                          select_color = k;
+                          cur_color = k;
+                          break;
+                      }
+                                      
+                  if (k == NUM_COLORS - 1)
+                      {
+                          cur_color = NUM_COLORS - 1;
+                          select_color = NUM_COLORS - 1;
+                          color_hexes[select_color][0] = tmp_node->save_color.r;
+                          color_hexes[select_color][1] = tmp_node->save_color.g;
+                          color_hexes[select_color][2] = tmp_node->save_color.b;
+                          SDL_LockSurface(img_color_btns[NUM_COLORS - 1]);
+                          SDL_LockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
+                                              
+                          for (j = 0; j < 48 /* 48 */ ; j++)
+                              {
+                                  for (i = 0; i < 48; i++)
+                                      {
+                                          SDL_GetRGBA(getpixels[img_paintwell->format->BytesPerPixel](img_paintwell, i, j),
+                                                      img_paintwell->format, &r, &g, &b, &a);
+                                          if (a == 255)
+                                              {
+                                                  putpixels[img_color_btns[NUM_COLORS - 1]->format->BytesPerPixel]
+                                                      (img_color_btns[NUM_COLORS - 1 ], i, j,
+                                                       SDL_MapRGB(img_color_btns[NUM_COLORS - 1]->format,
+                                                                  tmp_node->save_color.r,
+                                                                  tmp_node->save_color.g,
+                                                                  tmp_node->save_color.b));
+                                                  putpixels[img_color_btns[NUM_COLORS - 1 + NUM_COLORS]->format->BytesPerPixel]
+                                                      (img_color_btns[NUM_COLORS - 1 + NUM_COLORS], i, j,
+                                                       SDL_MapRGB(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]->format,
+                                                                  tmp_node->save_color.r,
+                                                                  tmp_node->save_color.g,
+                                                                  tmp_node->save_color.b));
+                                              }
+                                      }
+                              }
+                          SDL_UnlockSurface(img_color_btns[NUM_COLORS - 1]);
+                          SDL_UnlockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
 
-			      r_tmp_select.w = tmp_node->save_width;
-			      r_tmp_select.h = tmp_node->save_height;
-			      r_tmp_select.x = tmp_node->save_x;
-			      r_tmp_select.y = tmp_node->save_y;
+                          draw_colors(COLORSEL_CLOBBER);
+                          render_brush(); /* FIXME: render_brush should be called at the start of Brush and Line tools? */
+                      }
+              }
+                              
+          select_width = tmp_node->save_width;
+          select_height = tmp_node->save_height;
+          select_x = tmp_node->save_x;
+          select_y = tmp_node->save_y;
+          select_cur_font = tmp_node->save_cur_font;
+          select_text_state = tmp_node->save_text_state;
+          select_text_size = tmp_node->save_text_size;
 
-			      return tmp_node;
-    }
+          r_tmp_select.w = tmp_node->save_width;
+          r_tmp_select.h = tmp_node->save_height;
+          r_tmp_select.x = tmp_node->save_x;
+          r_tmp_select.y = tmp_node->save_y;
+
+          return tmp_node;
+      }
   
   return NULL;
 }
@@ -18416,16 +18503,12 @@ static void simply_render_node(struct label_node* node)
   wchar_t tmp_str[256];
   int w,h;
   unsigned i;
-  printf("simply_render_node\n");
   
   if (node->label_node_surface == NULL)
     {
       /* Render the text: */
         
-      SDL_Color color = { color_hexes[node->save_color][0],
-        color_hexes[node->save_color][1],
-        color_hexes[node->save_color][2], 0};
-
+      SDL_Color color = node->save_color;
       text_state = node->save_text_state;
       text_size = node->save_text_size;
 
@@ -18610,8 +18693,8 @@ static void load_info_about_label_surface(char lfname[1024])
     float new_to_old_ratio;
     int old_pos;
     int new_pos;
-    int x, y, pix, pix_size;
-
+    int x, y, pix_size;
+    Uint8 a;
   
     /* Clear label surface */
 
@@ -18654,7 +18737,12 @@ static void load_info_about_label_surface(char lfname[1024])
                     new_node->save_texttool_str[l] = tmp_char;
                 }
             fscanf(lfi, "\n");
-            fscanf(lfi, "%u\n", &new_node->save_color);
+            fscanf(lfi, "%u\n", &l);
+            new_node->save_color.r = (Uint8) l;
+            fscanf(lfi, "%u\n", &l);
+            new_node->save_color.g = (Uint8) l;
+            fscanf(lfi, "%u\n", &l);
+            new_node->save_color.b = (Uint8) l;
             fscanf(lfi, "%d\n", &new_node->save_width);
             fscanf(lfi, "%d\n", &new_node->save_height);
             fscanf(lfi, "%d\n", &tmp_pos);
@@ -18705,14 +18793,15 @@ static void load_info_about_label_surface(char lfname[1024])
                                                       screen->format->Gmask,
                                                       screen->format->Bmask, TPAINT_AMASK);
 
-            pix_size=label->format->BytesPerPixel;
+            pix_size=sizeof(Uint8);
+            SDL_LockSurface(label_node_surface);
             for (x=0;x<new_node->save_width;x++)
 		for (y=0;y<new_node->save_height;y++)
                     {
-                        fread(&pix, pix_size, 1, lfi);
-                        putpixels[label_node_surface->format->BytesPerPixel](label_node_surface, x, y, pix);
-                        //		    putpixels(label, x, y, pix);
+                        fread(&a, pix_size, 1, lfi);
+                        putpixels[label_node_surface->format->BytesPerPixel](label_node_surface, x, y, SDL_MapRGBA(label_node_surface->format, new_node->save_color.r, new_node->save_color.g, new_node->save_color.b, a));
                     }
+            SDL_UnlockSurface(label_node_surface);
 	      
             new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
             label_node_surface_aux = zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
