@@ -11852,8 +11852,18 @@ static int do_save(int tool, int dont_show_success_results)
 	  fprintf(fi, "%d\n", current_node->save_height);
 	  fprintf(fi, "%u\n", current_node->save_x);
 	  fprintf(fi, "%u\n", current_node->save_y);
-	  fprintf(fi, "%d\n", current_node->save_cur_font);
-          fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font)); 
+
+          if(current_node->save_font_type == NULL) /* Fonts yet setted */
+              {
+                  fprintf(fi, "%d\n", current_node->save_cur_font);
+                  fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font));
+              }
+          else
+              {
+                  fprintf(fi, "%d\n", 0);
+                  fprintf(fi, "%s\n", current_node->save_font_type);
+              }
+
 	  fprintf(fi, "%d\n", current_node->save_text_state);
 	  fprintf(fi, "%u\n", current_node->save_text_size);
 
@@ -18244,6 +18254,7 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
       new_node->save_text_size = text_size;
       new_node->save_undoid = 255;
       new_node->is_enabled=TRUE;
+      new_node->save_font_type = NULL;
 
       if (node_to_disable != NULL)
 	{
@@ -18272,7 +18283,6 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
 	}
       
       current_label_node = new_node;
-//      render_all_nodes_starting_at(&start_label_node);
 }
 
 
@@ -18900,7 +18910,7 @@ static void set_label_fonts()
 		node->save_cur_font = 0;
 
             free(node->save_font_type); /* Not needed anymore */
-
+            node->save_font_type = NULL;
             node = node->next_to_down_label_node;
             
         }
