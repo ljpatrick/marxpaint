@@ -67,6 +67,11 @@
 #include "win32_print.h"
 #endif
 
+#ifdef __HAIKU__
+#include <FindDirectory.h>
+#include <fs_info.h>
+#endif
+
 #ifdef __APPLE__
 #include "wrapperdata.h"
 extern WrapperData macosx;
@@ -1013,7 +1018,9 @@ void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
     close(sv[1]);
     return;
   }
+#ifndef __HAIKU__
   nice(42);			// be nice, letting the main thread get the CPU
+#endif
   sched_yield();		// try to let the parent run right now
   prctl(PR_SET_PDEATHSIG, 9);	// get killed if parent exits
   if(getppid()==1)

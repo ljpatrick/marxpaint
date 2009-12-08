@@ -218,8 +218,11 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #include <locale.h>
 
-#ifdef __BEOS__
+#if defined __BEOS__ || defined __HAIKU__
 #include <wchar.h>
+#include <stdbool.h>
+#define FALSE false
+#define TRUE true
 #else
 #include <wchar.h>
 #include <wctype.h>
@@ -251,7 +254,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <dirent.h>
 #include <signal.h>
 
-#ifdef __BEOS__
+#if defined __BEOS__ //|| defined __HAIKU__
 
 /* BeOS */
 
@@ -1096,7 +1099,7 @@ enum {
 static magic_api *magic_api_struct; /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -1923,6 +1926,8 @@ static void mainloop(void)
   int *thing_scroll;
   int cur_thing, do_draw, max;
   int ignoring_motion;
+  int j;
+  unsigned int i;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key;
@@ -3778,8 +3783,7 @@ static void mainloop(void)
                   cur_font = select_cur_font;
                   text_state = select_text_state;
                   text_size = select_text_size;
-                      
-                  int j;
+                  // int j;
 		  for (j = 0; j < num_font_families; j++)
 		  {
 		    if (user_font_families[j]
@@ -5474,6 +5478,8 @@ static void show_version(int details)
   printf("  Built for Windows  (WIN32)\n");
 #elif __BEOS__
   printf("  Built for BeOS  (__BEOS__)\n");
+#elif __HAIKU__
+  printf("  Built for Haiku (__HAIKU__)\n");
 #elif NOKIA_770
   printf("  Built for Maemo  (NOKIA_770)\n");
 #elif OLPC_XO
@@ -5594,7 +5600,7 @@ static void show_usage(int exitcode)
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
 	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 	  "  %s [--papersize PAPERSIZE | --papersize help]\n"
 #endif
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
@@ -5613,7 +5619,7 @@ static void show_usage(int exitcode)
 	  blank,
 #endif
 	  blank, blank,
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 	  blank,
 #endif
 	  blank, blank, blank, blank, blank);
@@ -8998,7 +9004,7 @@ static void reset_avail_tools(void)
     disallow_print = 1;
 #endif
 
-#ifdef __BEOS__
+#if defined __BEOS__ || __HAIKU__
   if (!IsPrinterAvailable())
     disallow_print = disable_print = 1;
 #endif
@@ -14685,8 +14691,8 @@ void do_print(void)
     if (error)
       fprintf(stderr, "%s\n", error);
   }
-#elif defined(__BEOS__)
-  /* BeOS */
+#elif defined(__BEOS__) || defined(__HAIKU__)
+  /* BeOS and Haiku*/
 
   SurfacePrint(save_canvas);
 #elif defined(__APPLE__)
@@ -18511,7 +18517,7 @@ static void simply_render_node(struct label_node* node)
   SDL_Rect dest, src;
   wchar_t *str;
   wchar_t tmp_str[256];
-  int w,h;
+  int j,w,h;
   unsigned i;
   
   if (node->label_node_surface == NULL)
@@ -18535,7 +18541,6 @@ static void simply_render_node(struct label_node* node)
       text_state = node->save_text_state;
       text_size = node->save_text_size;
 
-      int j;
       for (j = 0; j < num_font_families; j++)
       {
         if (user_font_families[j]
@@ -19036,18 +19041,18 @@ static void show_available_papersizes(int exitcode)
 
 static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *filename)
 {
+  char str[256];
+  char* arg;
   FILE *fi = fopen(filename, "r");
   if(!fi)
     return;
-
-  char str[256];
 
   while(fgets(str, sizeof(str), fi))
   {
     if(!isalnum(*str))
       continue;
     strip_trailing_whitespace(str);
-    char *arg = strchr(str,'=');
+    arg = strchr(str,'=');
     if(arg)
       *arg++ = '\0';
     // FIXME: leaking mem here, but the trouble is that these
@@ -19192,7 +19197,7 @@ static void setup_config(char *argv[])
 #if defined(_WIN32)
   /* Default local config file in users savedir directory on Windows */
   snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir); /* FIXME */
-#elif defined(__BEOS__)
+#elif defined(__BEOS__) || defined(__HAIKU__)
   /* BeOS: Use a "tuxpaint.cfg" file: */
   strcpy(str, "tuxpaint.cfg");
 #elif defined(__APPLE__)

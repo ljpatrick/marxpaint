@@ -46,7 +46,7 @@ comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $
 		echo "$(1)"; \
 	fi ;)
 
-beos_RSRC_CMD:=xres -o tuxpaint src/tuxpaint.rsrc
+beos_RSRC_CMD:=rc src/tuxpaint.rdef && xres -o tuxpaint src/tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
 beos_MIMESET_CMD:=mimeset -f tuxpaint
@@ -79,7 +79,7 @@ FRIBIDI_CFLAGS:=$(shell pkg-config --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
-beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv $(FRIBIDI_LIB)"
+beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB)"
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
@@ -92,10 +92,9 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # Where things will go when ultimately installed:
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
-beos_PREFIX:=/boot/apps/Games/TuxPaint
+beos_PREFIX:=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
-
 
 # Root directory to place files when creating packages.
 # PKG_ROOT is the old name for this, and should be undefined.
@@ -137,6 +136,10 @@ ifeq ($(PREFIX),/usr)
   CONFDIR:=$(DESTDIR)/etc/tuxpaint
 else
   CONFDIR:=$(DESTDIR)$(PREFIX)/etc/tuxpaint
+endif
+
+ifeq ($(SYSNAME),Haiku)
+  CONFDIR:=$(shell finddir B_USER_SETTINGS_DIRECTORY)/TuxPaint
 endif
 
 # Icons and launchers:
@@ -396,7 +399,7 @@ trans:
 
 windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=
-beos_ARCH_INSTALL:=
+beos_ARCH_INSTALL:=install-haiku
 linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
@@ -778,6 +781,13 @@ install-dlls:
 	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
 	fi
 
+# Install symlink:
+.PHONY: install-haiku
+install-haiku:
+	@echo
+	@echo "...Installing symlink in apps/TuxPaint to tuxpaint executable file..."
+	@ln -sf $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/bin/tuxpaint $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/tuxpaint
+	
 # Install the import script:
 .PHONY: install-importscript
 install-importscript:

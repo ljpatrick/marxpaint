@@ -22,7 +22,7 @@
   
 /* Jan. 17, 2003 */ 
 /* $Id$ */ 
-  
+
 #ifndef __BEOS_PRINT_H__
 #define __BEOS_PRINT_H__
   
@@ -32,12 +32,11 @@
 extern "C"
 {
   
-#endif	/*  */
-   extern int SurfacePrint(SDL_Surface * surf);
-    extern int IsPrinterAvailable();
-    
+#endif	/* __cplusplus */
+  extern int SurfacePrint(SDL_Surface * surf);
+  extern int IsPrinterAvailable();
 #ifdef __cplusplus
 } 
-#endif	/*  */
+#endif	/* __cplusplus */
  
-#endif	/*  */
+#endif	/* __BEOS_PRINT__ */
