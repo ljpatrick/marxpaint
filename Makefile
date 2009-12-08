@@ -92,6 +92,8 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # Where things will go when ultimately installed:
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
+
+# FIXME: "finddir" fails on other platforms -bjk 2009.12.08
 beos_PREFIX:=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
