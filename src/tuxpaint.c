@@ -999,6 +999,7 @@ static struct label_node* start_label_node;
 static struct label_node* current_label_node;
 static struct label_node* first_label_node_in_redo_stack;
 static struct label_node* label_node_to_edit;
+static struct label_node* highlighted_label_node;
 
 static unsigned int select_texttool_len;
 static wchar_t select_texttool_str[256];
@@ -1017,6 +1018,9 @@ static void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Su
 static void load_info_about_label_surface(char[1024]);
 
 static struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
+static void highlight_label_nodes(void);
+static void cycle_highlighted_label_node(void);
+static int are_labels(void);
 
 static void do_undo_label_node(void);
 static void do_redo_label_node(void);
@@ -2234,12 +2238,9 @@ static void mainloop(void)
 	else
 	{
 	  /* Handle key in text tool: */
-          if( cur_select == SELECT_OFF && cur_label == LABEL_SELECT && cur_tool == TOOL_LABEL)
-          {
-            /*Select tool has been selected but no text has been selected to edit*/
-          }
-          else if ((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && 
-                   cursor_x != -1 && cursor_y != -1)
+
+            if (((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && cursor_x != -1 && cursor_y != -1) ||
+                (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
 	    {
 	      static int redraw = 0;
 	      wchar_t* im_cp = im_data.s;
@@ -2317,6 +2318,7 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
                   cur_select = SELECT_OFF;
+                  cur_label = LABEL_LABEL;
 
                   if (been_saved)
                       {
@@ -2328,13 +2330,21 @@ static void mainloop(void)
                           draw_toolbar();
                           update_screen_rect(&r_tools);
                       }
+
+	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
+
+	        cursor_x = cursor_left;
+	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+
+	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+
 	        }
                 else if (cur_tool == TOOL_LABEL &&
                          cur_label == LABEL_SELECT &&
                          cur_select == SELECT_ON)
                     {
+                        cur_label = LABEL_LABEL;
                         cur_select = SELECT_OFF;
-                        do_setcursor(cursor_arrow);
                         rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
@@ -2353,12 +2363,61 @@ static void mainloop(void)
                             }
                     }
 
-	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
+                /* Select a node to edit */
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT &&
+                         cur_select == SELECT_OFF)
+                    {
+                        cur_select = SELECT_ON;
+                        label_node_to_edit=search_label_list(&highlighted_label_node, highlighted_label_node->save_x, highlighted_label_node->save_y, 0);
+                        if(label_node_to_edit)
+                            {
+                                cur_thing=label_node_to_edit->save_cur_font;
+                                do_setcursor(cursor_insertion);
+                                cur_select = SELECT_ON;
+                                unsigned int i = 0;
+                                label_node_to_edit->is_enabled = FALSE;
+                                derender_node(&label_node_to_edit);
 
-	        cursor_x = cursor_left;
-	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+                                texttool_len = select_texttool_len;
+                                while(i < texttool_len)
+                                    {
+                                        texttool_str[i] = select_texttool_str[i];
+                                        i = i+1;
+                                    }
+                                texttool_str[i] = L'\0';
+                                cur_color = select_color;
+                                old_x = select_x;
+                                old_y = select_y;
+                                cur_font = select_cur_font;
+                                text_state = select_text_state;
+                                text_size = select_text_size;
+                                // int j;
+                                for (j = 0; j < num_font_families; j++)
+                                    {
+                                        if (user_font_families[j]
+                                            && user_font_families[j]->handle)
+                                            {
+                                                TuxPaint_Font_CloseFont(user_font_families[j]->handle);
+                                                user_font_families[j]->handle = NULL;
+                                            }
+                                    }
+                                draw_fonts();
+                                update_screen_rect(&r_toolopt);
 
-	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+                                cursor_x = old_x;
+                                cursor_y = old_y;
+                                cursor_left = old_x;
+
+                                draw_colors(COLORSEL_REFRESH);
+                                draw_fonts();
+                            }
+
+                        
+                        do_render_cur_text(0);
+                        
+                    }
+
 #ifdef SPEECH
 #ifdef __APPLE__
             if (use_sound)
@@ -2369,6 +2428,7 @@ static void mainloop(void)
 	      }
 	      else if (*im_cp == L'\t')
 	      {
+
 	        if (texttool_len > 0)
 	        {
 	          rec_undo_buffer();
@@ -2377,6 +2437,7 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
                   cur_select = SELECT_OFF;
+                  cur_label = LABEL_LABEL;
 
                   if (been_saved)
                       {
@@ -2412,6 +2473,16 @@ static void mainloop(void)
                                 update_screen_rect(&r_tools);
                             }
                     }
+                /* Cycle accross the nodes */
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT &&
+                         cur_select == SELECT_OFF)
+                    {
+                        cycle_highlighted_label_node();
+                        highlight_label_nodes();
+                    }
+
+
                 
 #ifdef SPEECH
 #ifdef __APPLE__
@@ -2421,7 +2492,8 @@ static void mainloop(void)
 #endif              
 		im_softreset(&im_data);
 	      }
-	      else if (iswprint(*im_cp))
+	      else if (iswprint(*im_cp) && 
+                       (cur_tool == TOOL_TEXT || !(cur_label == LABEL_SELECT && cur_select == SELECT_OFF)))
 	      {
 	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
 	        {
@@ -2565,7 +2637,7 @@ static void mainloop(void)
                     }
 	      }
 	    }
-
+            update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 	    old_tool = cur_tool;
 	    cur_tool = which;
 	    draw_toolbar();
@@ -2651,13 +2723,13 @@ static void mainloop(void)
 		cur_thing = cur_font;
 		num_things = num_font_families;
 		thing_scroll = &font_scroll;
-		draw_fonts();
-		draw_colors(COLORSEL_ENABLE);
 		if (cur_tool == TOOL_LABEL)
 		  {
-                      //cur_label = LABEL_LABEL;
+                      cur_label = LABEL_LABEL;
                       cur_select = SELECT_OFF;
 		  }
+		draw_fonts();
+		draw_colors(COLORSEL_ENABLE);
 	      }
 	      else
 	      {
@@ -3265,19 +3337,49 @@ static void mainloop(void)
                   /* Select button: */
                   if (cur_label == LABEL_SELECT)
                   {
-                    cur_label = LABEL_LABEL;
                     if (cur_select == SELECT_ON)
                     {
-                      select_changed = 1;
+                        if (texttool_len>0)
+                            {
+                                rec_undo_buffer();
+                                do_render_cur_text(1);
+                                texttool_len = 0;
+                                cursor_textwidth = 0;
+                                select_changed = 1;
+                            }
+                        else
+                            {
+                                cur_label = LABEL_LABEL;
+                                cur_select = SELECT_OFF;
+                                rec_undo_buffer();
+                                have_to_rec_label_node = TRUE;
+                                add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                                derender_node(&label_node_to_edit);
+                            }
+                        
                     }
                     else
                     {
                       select_changed = 0;
                     }
+                    cur_label = LABEL_LABEL;
+
                   }
                   else
                   {
-                    cur_label = LABEL_SELECT;
+                      if (are_labels())
+                          {
+                              
+                      if( texttool_len > 0)
+                          {
+                              rec_undo_buffer();
+                              do_render_cur_text(1);
+                              texttool_len = 0;
+                              cursor_textwidth = 0;
+                          }
+                              cur_label = LABEL_SELECT;
+                              highlight_label_nodes();
+                          }
                   }
                   toolopt_changed = 1;
                 }
@@ -3332,6 +3434,9 @@ static void mainloop(void)
 		    update_screen_rect(&r_toolopt);
 		  }
 		}
+		    draw_fonts();
+		    update_screen_rect(&r_toolopt);
+
 	      }
 	    }
 	    else
@@ -3760,7 +3865,7 @@ static void mainloop(void)
             {
               if(cur_select == SELECT_OFF)
               {
-		label_node_to_edit=search_label_list(&current_label_node, old_x, old_y, 0);
+		label_node_to_edit=search_label_list(&highlighted_label_node, old_x, old_y, 0);
                 if(label_node_to_edit)
 		  {
                       cur_thing=label_node_to_edit->save_cur_font;
@@ -7517,11 +7622,18 @@ static void draw_fonts(void)
       dest.x = WINDOW_WIDTH - 48;
       dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
 
-      if(cur_label == LABEL_SELECT)
-        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-      else
-        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-
+      if(cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
+          SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      
+    else
+        {
+            if(are_labels())
+                SDL_BlitSurface(img_btn_up, NULL, screen, &dest);            
+            else
+                SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        }
+      
+      
       dest.x = WINDOW_WIDTH - 48 + (48 - img_label_select->w) / 2;
       dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_label_select->h) / 2);
 
@@ -10455,7 +10567,9 @@ static void load_current(void)
   start_label_node=NULL;
   current_label_node=NULL;
   first_label_node_in_redo_stack=NULL;
-
+  highlighted_label_node = NULL;
+  have_to_rec_label_node = FALSE;
+  
   /* Check the existence of the label stuff and load by default */
   snprintf(ftmp, sizeof(ftmp), "saved/.label/%s%s",
 	   file_id, FNAME_EXTENSION);
@@ -13173,7 +13287,9 @@ static int do_open(void)
 
 	  /* Clean the label stuff */
 	  delete_label_list(&start_label_node);
-	  start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
+	  start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
+          have_to_rec_label_node = FALSE;
+
 	  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
 
           /* Figure out filename: */
@@ -14780,13 +14896,15 @@ static void do_render_cur_text(int do_blit)
   }
   else
   {
-    if(cur_select != SELECT_ON)
+      if(cur_select != SELECT_ON )
         {
       //  cur_select = SELECT_OFF;
     
     /* FIXME: Do something different! */
 
-            update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+
+            if(cur_label != LABEL_SELECT)
+                update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
             cursor_textwidth = 0;
             return;
         }
@@ -17515,7 +17633,9 @@ static int do_new_dialog(void)
     /* Clear all info related to label surface */
 
     delete_label_list(&start_label_node);
-    start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
+    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
+    have_to_rec_label_node = FALSE;
+    
     if (which >= first_starter && (first_template == -1 || which < first_template))
     {
       /* Load a starter: */
@@ -18259,7 +18379,16 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
       new_node->save_text_state = text_state;
       new_node->save_text_size = text_size;
       new_node->save_undoid = 255;
-      new_node->is_enabled=TRUE;
+
+      if (texttool_len > 0)
+          {
+              new_node->is_enabled=TRUE;
+          }
+      else
+          {
+              new_node->is_enabled = FALSE;
+          }
+
       new_node->save_font_type = NULL;
 
       if (node_to_disable != NULL)
@@ -18289,6 +18418,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
 	}
       
       current_label_node = new_node;
+      highlighted_label_node = new_node;
+      if(highlighted_label_node->is_enabled == FALSE)
+          cycle_highlighted_label_node();
 }
 
 
@@ -18302,9 +18434,13 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 
   Uint8 r, g, b, a;
   int i,j, k;
+
+  if (*ref_head == NULL)
+      return(NULL);
+
   current_node =  *ref_head;
   
-  while((current_node != NULL) && (done != TRUE))
+  while(done != TRUE)
     {
       if(x >= current_node->save_x)
 	{
@@ -18321,12 +18457,6 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 			      if (hover == 1)
 			        return(current_node);
 			      tmp_node = current_node;
-			    }
-			  SDL_GetRGBA(getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x - current_node->save_x, y - current_node->save_y),
-				      current_node->label_node_surface->format, &r, &g, &b, &a);
-			  if (a != SDL_ALPHA_TRANSPARENT)
-			    {
-			      tmp_node=current_node;
 			      done = TRUE;
 			    }
 			}
@@ -18335,6 +18465,10 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 	    }
 	}
       current_node = current_node->next_to_down_label_node;
+      if (current_node == NULL)
+          current_node = current_label_node;
+      if (current_node == highlighted_label_node)
+          done = TRUE;
     }
   if (tmp_node != NULL)
       {
@@ -18413,6 +18547,10 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
           r_tmp_select.x = tmp_node->save_x;
           r_tmp_select.y = tmp_node->save_y;
 
+
+
+
+
           return tmp_node;
       }
   
@@ -18446,7 +18584,7 @@ static void rec_undo_label(void)
   // wiped out by an undo,draw combo. Others might be for when the level
   // stops being current or for when the level becomes current again.
 
-  if (have_to_rec_label_node && current_label_node != NULL)
+  if (have_to_rec_label_node)
     {
       current_label_node->save_undoid = cur_undo;
       text_undo[cur_undo] = 1;
@@ -18478,10 +18616,12 @@ static void do_undo_label_node()
 	    if (current_label_node == NULL)
 	      start_label_node = current_label_node;
 
+            highlighted_label_node = current_label_node;
 	    derender_node(&first_label_node_in_redo_stack);
 	    coming_from_undo_or_redo=TRUE;
 	  }
       }
+  highlighted_label_node = current_label_node;
 }
 
 static void do_redo_label_node()
@@ -18496,6 +18636,8 @@ static void do_redo_label_node()
       
 	  if (start_label_node == NULL)
 	    start_label_node = current_label_node;
+
+          highlighted_label_node = current_label_node;
 	  if (current_label_node->disables != NULL) /* If this is a redo of an editing, redisable the old node.*/
 	    {	
 	      current_label_node->disables->is_enabled = FALSE;
@@ -18718,7 +18860,7 @@ static void load_info_about_label_surface(char lfname[1024])
     /* Clear all info related to label surface */
 
     delete_label_list(&start_label_node);
-    start_label_node = current_label_node = first_label_node_in_redo_stack = NULL;
+    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
     have_to_rec_label_node = FALSE;
 
 
@@ -18853,6 +18995,7 @@ static void load_info_about_label_surface(char lfname[1024])
 		    current_label_node=new_node;
 		}
 
+            highlighted_label_node = current_label_node;
             simply_render_node(current_label_node);
 
         }
@@ -19001,6 +19144,129 @@ static void undo_tmp_applied_text()
             do_render_cur_text(0);
         }
 }
+
+
+/* Painting on the screen surface to avoid unnecessary complexity */
+static void highlight_label_nodes()
+{
+    int j;
+    SDL_Rect rect, rect1;
+    SDL_Color color;
+    struct label_node* aux_node;
+
+    if (highlighted_label_node != NULL)
+        {
+            aux_node = highlighted_label_node->next_to_up_label_node;
+            if (aux_node == first_label_node_in_redo_stack)
+                aux_node = start_label_node;
+        
+    
+    while (aux_node != highlighted_label_node)
+        {
+            if (aux_node->is_enabled)
+                {
+                    rect.x = aux_node->save_x + button_w * 2;
+                    rect.y = aux_node->save_y;
+                    rect.w = aux_node->save_width;
+                    rect.h = aux_node->save_height;
+                    
+                    SDL_FillRect(screen, &rect, SDL_MapRGBA(screen->format, 0, 0, 0, SDL_ALPHA_TRANSPARENT));
+
+                    for (j = 2; j < aux_node->save_height / 4; j ++)
+                        {
+                            rect1.x = rect.x + j;
+                            rect1.y = rect.y + j;
+                            rect1.w = rect.w - 2 * j;
+                            if (rect1.w < 2)
+                                break;
+                            rect1.h = rect.h - 2 * j;
+                            SDL_FillRect(screen,
+                                         &rect1,
+                                         SDL_MapRGBA(screen->format,
+                                                     4*j * 200 / aux_node->save_height,
+                                                     4*j * 200 / aux_node->save_height,
+                                                     4*j * 200 / aux_node->save_height,
+                                                     SDL_ALPHA_OPAQUE));
+
+                            SDL_BlitSurface(aux_node->label_node_surface, NULL, screen, &rect);
+                        }
+                    
+                }
+
+            aux_node = aux_node->next_to_up_label_node;
+            if (aux_node == first_label_node_in_redo_stack)
+                aux_node = start_label_node;
+        }
+
+    aux_node = highlighted_label_node;
+    rect.x = aux_node->save_x + button_w * 2;
+    rect.y = aux_node->save_y;
+    rect.w = aux_node->save_width;
+    rect.h = aux_node->save_height;
+    SDL_FillRect(screen, &rect, SDL_MapRGBA(screen->format, 255, 0, 0, SDL_ALPHA_OPAQUE));
+
+    for (j = 2; j < aux_node->save_height / 4; j ++)
+        {
+            rect1.x = rect.x + j;
+            rect1.y = rect.y + j;
+            rect1.w = rect.w - 2 * j;
+            if (rect1.w < 2)
+                break;
+            rect1.h = rect.h - 2 * j;
+            SDL_FillRect(screen,
+                         &rect1,
+                         SDL_MapRGBA(screen->format,
+                                     255,
+                                     4*j * 225 / aux_node->save_height,
+                                     0,
+                                     SDL_ALPHA_OPAQUE));
+
+            SDL_BlitSurface(aux_node->label_node_surface, NULL, screen, &rect);
+        }
+
+    SDL_Flip(screen);    
+}
+}
+
+static void cycle_highlighted_label_node()
+{
+    struct label_node* aux_node;
+    if (highlighted_label_node)
+        {
+            aux_node = highlighted_label_node->next_to_down_label_node;
+            if (aux_node == NULL)
+                aux_node = current_label_node;
+            if (aux_node->is_enabled)
+                highlighted_label_node = aux_node;
+            else
+                while(aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
+                    {
+                        aux_node = aux_node->next_to_down_label_node;
+                        if (aux_node == NULL)
+                            aux_node = current_label_node;
+                        if (aux_node->is_enabled)
+                            highlighted_label_node = aux_node;
+                    }
+        }
+    
+}
+
+static int are_labels()
+{
+    struct label_node* aux_node;
+    if (current_label_node)
+        {
+            aux_node = current_label_node;
+            while (aux_node)
+                {
+                    if (aux_node->is_enabled)
+                        return (TRUE);
+                    aux_node = aux_node->next_to_down_label_node;
+                }
+        }
+    return (FALSE);
+}
+
 
 /////////////////////////////////////////////////////////////////////////////
 
