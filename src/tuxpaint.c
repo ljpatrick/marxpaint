@@ -524,11 +524,7 @@ enum
 //  LABEL_ROTATE
 };
 
-enum
-{
-  SELECT_OFF,
-  SELECT_ON
-};
+
 
 /* Color globals (copied from colors.h, if no colors specified by user) */
 
@@ -1496,6 +1492,7 @@ static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	/* canvas-relative */
+static int old_cursor_x, old_cursor_y;
 static int cur_label, cur_select;
 static int been_saved;
 static char file_id[NAME_MAX];
@@ -2317,9 +2314,12 @@ static void mainloop(void)
 	          do_render_cur_text(1);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
-                  cur_select = SELECT_OFF;
-                  cur_label = LABEL_LABEL;
-
+		  if (cur_tool == TOOL_LABEL)
+		    {
+		      draw_fonts();
+		      update_screen_rect(&r_toolopt);
+		    }
+                  
                   if (been_saved)
                       {
                           been_saved = 0;
@@ -2339,16 +2339,13 @@ static void mainloop(void)
 	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
 	        }
-                else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT &&
-                         cur_select == SELECT_ON)
+                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                     {
-                        cur_label = LABEL_LABEL;
-                        cur_select = SELECT_OFF;
                         rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
                         derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
 
                         if (been_saved)
@@ -2365,16 +2362,14 @@ static void mainloop(void)
 
                 /* Select a node to edit */
                 else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT &&
-                         cur_select == SELECT_OFF)
+                         cur_label == LABEL_SELECT)
                     {
-                        cur_select = SELECT_ON;
-                        label_node_to_edit=search_label_list(&highlighted_label_node, highlighted_label_node->save_x, highlighted_label_node->save_y, 0);
+                        label_node_to_edit=search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3, highlighted_label_node->save_y + 3, 0);
                         if(label_node_to_edit)
                             {
+			      cur_label = LABEL_LABEL;
                                 cur_thing=label_node_to_edit->save_cur_font;
                                 do_setcursor(cursor_insertion);
-                                cur_select = SELECT_ON;
                                 unsigned int i = 0;
                                 label_node_to_edit->is_enabled = FALSE;
                                 derender_node(&label_node_to_edit);
@@ -2417,6 +2412,11 @@ static void mainloop(void)
                         do_render_cur_text(0);
                         
                     }
+		else
+		  {
+		    cursor_x = cursor_left;
+		    cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+		  }
 
 #ifdef SPEECH
 #ifdef __APPLE__
@@ -2436,8 +2436,11 @@ static void mainloop(void)
 	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
-                  cur_select = SELECT_OFF;
-                  cur_label = LABEL_LABEL;
+		  if (cur_tool == TOOL_LABEL)
+		    {
+		      draw_fonts();
+		      update_screen_rect(&r_toolopt);
+		    }
 
                   if (been_saved)
                       {
@@ -2450,16 +2453,13 @@ static void mainloop(void)
                           update_screen_rect(&r_tools);
                       }
 	        }
-                else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT &&
-                         cur_select == SELECT_ON)
+                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                     {
-                        cur_select = SELECT_OFF;
-                        do_setcursor(cursor_arrow);
                         rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
                         derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
 
                         if (been_saved)
@@ -2475,8 +2475,7 @@ static void mainloop(void)
                     }
                 /* Cycle accross the nodes */
                 else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT &&
-                         cur_select == SELECT_OFF)
+                         cur_label == LABEL_SELECT)
                     {
                         cycle_highlighted_label_node();
                         highlight_label_nodes();
@@ -2493,7 +2492,7 @@ static void mainloop(void)
 		im_softreset(&im_data);
 	      }
 	      else if (iswprint(*im_cp) && 
-                       (cur_tool == TOOL_TEXT || !(cur_label == LABEL_SELECT && cur_select == SELECT_OFF)))
+                       (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
 	      {
 	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
 	        {
@@ -2624,16 +2623,15 @@ static void mainloop(void)
 		  do_render_cur_text(1);
 		  texttool_len = 0;
 		  cursor_textwidth = 0;
+		  label_node_to_edit = NULL;
 		}
-                else if(cur_tool == TOOL_LABEL &&
-                        cur_label == LABEL_SELECT &&
-                        cur_select == SELECT_ON)
+                else if(cur_tool == TOOL_LABEL && label_node_to_edit)
                     {
-                        cur_select = SELECT_OFF;
-                        rec_undo_buffer();
+		      rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
                         add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
                         derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
                     }
 	      }
 	    }
@@ -2726,7 +2724,6 @@ static void mainloop(void)
 		if (cur_tool == TOOL_LABEL)
 		  {
                       cur_label = LABEL_LABEL;
-                      cur_select = SELECT_OFF;
 		  }
 		draw_fonts();
 		draw_colors(COLORSEL_ENABLE);
@@ -3337,78 +3334,38 @@ static void mainloop(void)
                   /* Select button: */
                   if (cur_label == LABEL_SELECT)
                   {
-                    if (cur_select == SELECT_ON)
-                    {
-                        if (texttool_len>0)
-                            {
-                                rec_undo_buffer();
-                                do_render_cur_text(1);
-                                texttool_len = 0;
-                                cursor_textwidth = 0;
-                                select_changed = 1;
-                            }
-                        else
-                            {
-                                cur_label = LABEL_LABEL;
-                                cur_select = SELECT_OFF;
-                                rec_undo_buffer();
-                                have_to_rec_label_node = TRUE;
-                                add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
-                                derender_node(&label_node_to_edit);
-                            }
-                        
-                    }
-                    else
-                    {
-                      select_changed = 0;
-                    }
                     cur_label = LABEL_LABEL;
-
+		    update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
                   }
                   else
                   {
-                      if (are_labels())
+		    if( texttool_len > 0)
                           {
-                              
-                      if( texttool_len > 0)
-                          {
-                              rec_undo_buffer();
-                              do_render_cur_text(1);
-                              texttool_len = 0;
-                              cursor_textwidth = 0;
+			    rec_undo_buffer();
+			    do_render_cur_text(1);
+			    texttool_len = 0;
+			    cursor_textwidth = 0;
+			    label_node_to_edit = NULL;
                           }
-                              cur_label = LABEL_SELECT;
-                              highlight_label_nodes();
+		    else if (label_node_to_edit)
+		      {
+			    rec_undo_buffer();
+			    have_to_rec_label_node = TRUE;
+			    add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+			    label_node_to_edit = NULL;
+
+		      }
+
+		    if (are_labels())
+                          {
+			    cur_label = LABEL_SELECT;
+			    highlight_label_nodes();
                           }
                   }
                   toolopt_changed = 1;
                 }
-                /* else */
-                /* { */
-                /*   /\* Rotate button: *\/ */
-                /*   if (cur_label == LABEL_ROTATE) */
-                /*   { */
-                /*     cur_label = LABEL_LABEL; */
-                /*   } */
-                /*   else */
-                /*   { */
-                /*     if(cur_label == LABEL_SELECT && cur_select == SELECT_ON) */
-                /*     { */
-                /*       select_changed = 1; */
-                /*     } */
-                /*     else */
-                /*     { */
-                /*       select_changed = 0; */
-                /*     } */
-                /*     cur_label = LABEL_LABEL; */
-                /*   } */
-                /* } */
               }
             }
-          
-	    
-          
-
 
 		if (control_sound != -1)
 		{
@@ -3536,6 +3493,7 @@ static void mainloop(void)
               draw_fonts();
               if(select_changed)
               {
+		rec_undo_buffer();
                 do_render_cur_text(1);
                 texttool_len = 0;
               }
@@ -3863,14 +3821,12 @@ static void mainloop(void)
 
             if(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
             {
-              if(cur_select == SELECT_OFF)
-              {
 		label_node_to_edit=search_label_list(&highlighted_label_node, old_x, old_y, 0);
                 if(label_node_to_edit)
 		  {
+		    cur_label = LABEL_LABEL;
                       cur_thing=label_node_to_edit->save_cur_font;
 		  do_setcursor(cursor_insertion);
-                  cur_select = SELECT_ON;
                   unsigned int i = 0;
                   label_node_to_edit->is_enabled = FALSE;
                   derender_node(&label_node_to_edit);
@@ -3905,7 +3861,7 @@ static void mainloop(void)
                   draw_colors(COLORSEL_REFRESH);
                   draw_fonts();
                 }
-              }
+              
             }
 	    if (cursor_x != -1 && cursor_y != -1)
 	    {
@@ -4519,20 +4475,14 @@ static void mainloop(void)
               {
                   if (cur_label == LABEL_LABEL)
                       do_setcursor(cursor_insertion);
-                  else if (cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
+                  else if (cur_label == LABEL_SELECT)
                   {
-                      do_setcursor(cursor_arrow);
+		    // do_setcursor(cursor_arrow);
                       if (search_label_list(&current_label_node, event.button.x - 96, event.button.y, 1))
                         do_setcursor(cursor_hand);
                       else
                         do_setcursor(cursor_arrow);
                   }
-                  else if (cur_label == LABEL_SELECT && cur_select == SELECT_ON)
-                      do_setcursor(cursor_insertion);
-                  /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_OFF) */
-                  /*     do_setcursor(cursor_arrow); */
-                  /* else if (cur_label == LABEL_ROTATE &&cur_select == SELECT_ON) */
-                  /*     do_setcursor(cursor_rotate); */
               }
 
 	  else if (cur_tool == TOOL_MAGIC)
@@ -7622,7 +7572,7 @@ static void draw_fonts(void)
       dest.x = WINDOW_WIDTH - 48;
       dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
 
-      if(cur_label == LABEL_SELECT && cur_select == SELECT_OFF)
+      if(cur_label == LABEL_SELECT)
           SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
       
     else
@@ -10568,6 +10518,7 @@ static void load_current(void)
   current_label_node=NULL;
   first_label_node_in_redo_stack=NULL;
   highlighted_label_node = NULL;
+  label_node_to_edit = NULL;
   have_to_rec_label_node = FALSE;
   
   /* Check the existence of the label stuff and load by default */
@@ -12209,7 +12160,6 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf)
 
 
 	png_write_end(png_ptr, NULL);
-
 	png_destroy_write_struct(&png_ptr, &info_ptr);
 	fclose(fi);
 
@@ -13287,7 +13237,7 @@ static int do_open(void)
 
 	  /* Clean the label stuff */
 	  delete_label_list(&start_label_node);
-	  start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
+	  start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = label_node_to_edit = NULL;
           have_to_rec_label_node = FALSE;
 
 	  SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
@@ -14894,75 +14844,35 @@ static void do_render_cur_text(int do_blit)
 
     cursor_textwidth = w;
   }
-  else
+  else  /* Erase the stalle letter.  Hope there is not any letter 3 times wider than its height */
   {
-      if(cur_select != SELECT_ON )
-        {
-      //  cur_select = SELECT_OFF;
-    
-    /* FIXME: Do something different! */
+    if (cur_label != LABEL_SELECT)
+      {
+	update_canvas(cursor_x - 1,
+		      cursor_y - 1,
+		      cursor_x + 1 +  TuxPaint_Font_FontHeight(getfonthandle(cur_font)) * 3,
+		      cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 
+	update_canvas(old_cursor_x - 1,
+		      old_cursor_y - 1,
+		      old_cursor_x + 1 +  TuxPaint_Font_FontHeight(getfonthandle(cur_font)),
+		      old_cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 
-            if(cur_label != LABEL_SELECT)
-                update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-            cursor_textwidth = 0;
+	old_cursor_x = cursor_x;
+	old_cursor_y = cursor_y;
+	cursor_textwidth = 0;
+      }
             return;
-        }
-
-    else
-        {
-            //rec_undo_buffer();
-            dest.w = label_node_to_edit->save_width + 4;
-            dest.h = TuxPaint_Font_FontHeight(getfonthandle(cur_font)) + 4;
-            dest.x = cursor_x - 2;
-            dest.y = cursor_y - 2 ;
-            printf("delete %i \n", HEIGHTOFFSET);
-            
-            printf("%i %i %i %i\n", dest.x, dest.y, dest.w, dest.h);
-            SDL_FillRect(label, &dest, SDL_MapRGBA(label->format, 0, 0, 0, 0));
-            //           add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
-            //derender_node(&label_node_to_edit);
-            
-            //cur_select = SELECT_OFF;
-            //have_to_rec_label_node = TRUE;
-            //do_setcursor(cursor_arrow);
-
-    /* FIXME: Only delete what's changed! */
-
-
-            update_canvas(dest.x, dest.y, dest.x + dest.w, dest.y + dest.h);
-
-            return;
-        } 
+         
   }
-   tmp_label = SDL_CreateRGBSurface(tmp_surf->flags,
-                                    tmp_surf->w, tmp_surf->h, 
-                                    tmp_surf->format->BitsPerPixel,
-                                    tmp_surf->format->Rmask, tmp_surf->format->Gmask, tmp_surf->format->Bmask, 0);
-
-  if(color_hexes[cur_color][0] < 123)
-    rect_red = color_hexes[cur_color][0]+5;
-  else
-    rect_red = color_hexes[cur_color][0]-5;	
-
-  if(color_hexes[cur_color][1] < 123)
-    rect_green = color_hexes[cur_color][1]+5;
-  else
-    rect_green = color_hexes[cur_color][1]-5;
-
-  if(color_hexes[cur_color][2] < 123)
-    rect_blue = color_hexes[cur_color][2]+5;
-  else
-    rect_blue = color_hexes[cur_color][2]-5;
-
-  SDL_FillRect(tmp_label, NULL, SDL_MapRGB(tmp_label->format, rect_red, rect_green, rect_blue));
 
 
   if (!do_blit)
   {
-    /* FIXME: Only delete what's changed! */
-
-    update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+	update_canvas(cursor_x - 1,
+		      cursor_y - 1,
+		      cursor_x + 1 +  TuxPaint_Font_FontHeight(getfonthandle(cur_font)) * 3,
+		      cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 
 
     /* Draw outline around text: */
@@ -15027,8 +14937,8 @@ static void do_render_cur_text(int do_blit)
 
     if (do_blit)
     {
-        if ((cur_tool == TOOL_LABEL && cur_select == SELECT_ON) ||
-            ((old_tool == TOOL_LABEL && cur_select == SELECT_ON) &&
+        if ((cur_tool == TOOL_LABEL && label_node_to_edit) ||
+            ((old_tool == TOOL_LABEL && label_node_to_edit) &&
              (cur_tool == TOOL_PRINT ||
               cur_tool == TOOL_SAVE ||
               cur_tool == TOOL_OPEN ||
@@ -15036,9 +14946,7 @@ static void do_render_cur_text(int do_blit)
       {
 	have_to_rec_label_node=TRUE;
 	add_label_node(src.w, src.h, dest.x, dest.y, &label_node_to_edit, tmp_surf);
-        derender_node(&label_node_to_edit); // Derendering a node also reblits others.
-
-	do_setcursor(cursor_arrow);
+	simply_render_node(current_label_node);
       }
         else if (cur_tool == TOOL_LABEL ||
                  (old_tool == TOOL_LABEL &&
@@ -15052,7 +14960,6 @@ static void do_render_cur_text(int do_blit)
 	have_to_rec_label_node=TRUE;
 	add_label_node(src.w, src.h, dest.x, dest.y, NULL, tmp_surf);
 
-	if (start_label_node == NULL) start_label_node = current_label_node;
       }
       else
       {
@@ -15065,8 +14972,7 @@ static void do_render_cur_text(int do_blit)
     {
       dest.x = dest.x + 96;
       SDL_BlitSurface(tmp_surf, &src, screen, &dest);
-                printf("%i %i %i %i\n", dest.x, dest.y, dest.w, dest.h);
-}
+    }
   }
 
 
@@ -15077,8 +14983,8 @@ static void do_render_cur_text(int do_blit)
 
   if (tmp_surf != NULL)
     SDL_FreeSurface(tmp_surf);
-  if (tmp_label != NULL)
-    SDL_FreeSurface(tmp_label);
+/*   if (tmp_label != NULL) */
+ /*    SDL_FreeSurface(tmp_label); */
 }
 
 
@@ -17633,7 +17539,7 @@ static int do_new_dialog(void)
     /* Clear all info related to label surface */
 
     delete_label_list(&start_label_node);
-    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
+    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = label_node_to_edit = NULL;
     have_to_rec_label_node = FALSE;
     
     if (which >= first_starter && (first_template == -1 || which < first_template))
@@ -18391,11 +18297,10 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
 
       new_node->save_font_type = NULL;
 
-      if (node_to_disable != NULL)
+      if (label_node_to_edit)
 	{
-	  aux_node= *node_to_disable;
-	  aux_node->is_enabled=FALSE;
-	  new_node->disables = *node_to_disable;
+	  new_node->disables = label_node_to_edit;
+	  //label_node_to_edit = NULL;
 	}
       else
 	new_node->disables = NULL;
@@ -18418,6 +18323,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
 	}
       
       current_label_node = new_node;
+
+      if (start_label_node == NULL) start_label_node = current_label_node;
+
       highlighted_label_node = new_node;
       if(highlighted_label_node->is_enabled == FALSE)
           cycle_highlighted_label_node();
@@ -18452,7 +18360,7 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 		    {
 		      if (current_node->is_enabled == TRUE)
 			{
-			  if (tmp_node == NULL)     /* Preselecting the top label at x,y position*/
+			  if (tmp_node == NULL)     /* Selecting the top label at x,y position*/
 			    {
 			      if (hover == 1)
 			        return(current_node);
@@ -18467,9 +18375,10 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
       current_node = current_node->next_to_down_label_node;
       if (current_node == NULL)
           current_node = current_label_node;
-      if (current_node == highlighted_label_node)
+      if (current_node == *ref_head)
           done = TRUE;
     }
+
   if (tmp_node != NULL)
       {
           select_texttool_len = tmp_node->save_texttool_len;
@@ -18860,7 +18769,7 @@ static void load_info_about_label_surface(char lfname[1024])
     /* Clear all info related to label surface */
 
     delete_label_list(&start_label_node);
-    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = NULL;
+    start_label_node = current_label_node = first_label_node_in_redo_stack = highlighted_label_node = label_node_to_edit =  NULL;
     have_to_rec_label_node = FALSE;
 
 
@@ -19097,8 +19006,8 @@ static void tmp_apply_uncommited_text()
                     current_label_node->save_undoid = 253;
                 }
         }
-    else if ((cur_tool == TOOL_LABEL && cur_select == SELECT_ON) ||
-             ((old_tool == TOOL_LABEL && cur_select == SELECT_ON) &&
+    else if ((cur_tool == TOOL_LABEL && label_node_to_edit) ||
+             ((old_tool == TOOL_LABEL && label_node_to_edit) &&
               (cur_tool == TOOL_PRINT ||
                cur_tool == TOOL_SAVE ||
                cur_tool == TOOL_OPEN ||
