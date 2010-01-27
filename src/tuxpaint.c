@@ -3339,7 +3339,9 @@ static void mainloop(void)
                   }
                   else
                   {
-		    if( texttool_len > 0)
+		    if (are_labels())
+		      {
+			if( texttool_len > 0)
                           {
 			    rec_undo_buffer();
 			    do_render_cur_text(1);
@@ -3347,20 +3349,18 @@ static void mainloop(void)
 			    cursor_textwidth = 0;
 			    label_node_to_edit = NULL;
                           }
-		    else if (label_node_to_edit)
-		      {
+			else if (label_node_to_edit)
+			  {
 			    rec_undo_buffer();
 			    have_to_rec_label_node = TRUE;
 			    add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
 			    label_node_to_edit = NULL;
 
-		      }
+			  }
 
-		    if (are_labels())
-                          {
 			    cur_label = LABEL_SELECT;
 			    highlight_label_nodes();
-                          }
+		      }
                   }
                   toolopt_changed = 1;
                 }
