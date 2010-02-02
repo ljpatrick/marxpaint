@@ -204,11 +204,13 @@ static TuxPaint_Font *try_alternate_font(int size)
 #ifdef NO_SDLPANGO
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 {
-  if (!need_own_font)
-    return fallback;
-
   TuxPaint_Font *ret = NULL;
-  if (need_own_font)
+
+  if (!need_own_font)
+  {
+    return fallback;
+  }
+  else
   {
     char str[128];
     snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf", DATA_PREFIX, lang_prefix);
@@ -249,9 +251,9 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 	button_label_y_nudge = smash_i18n();
       }
     }
-  }
 #endif
-  return ret ? ret : fallback;
+    return ret ? ret : fallback;
+  }
 }
 #endif
 
