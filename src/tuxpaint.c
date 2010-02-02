@@ -18605,9 +18605,7 @@ static void simply_render_node(struct label_node* node)
 	 cursor_textwidth = w;
      /* Draw the text itself! */
 
-	 //      if (node->label_node_surface != NULL)
-	 //{
-        dest.x = node->save_x;
+	dest.x = node->save_x;
         dest.y = node->save_y;
 
         src.x = 0;
@@ -18628,7 +18626,6 @@ static void simply_render_node(struct label_node* node)
 	/* Setting the sizes correctly */
 	node->save_width = node->label_node_surface->w;
 	node->save_height = node->label_node_surface->h;
-	//}
    }
 }
 
@@ -18677,6 +18674,8 @@ static void delete_label_list(struct label_node** ref_head)
       fflush(stdout);
 
       next = current->next_to_up_label_node;
+      if (current->label_node_surface)
+          SDL_FreeSurface(current->label_node_surface);
       free(current);
       current = next;
     }
