@@ -11952,7 +11952,6 @@ static int do_save(int tool, int dont_show_success_results)
 	  fprintf(fi, "\n\n");
 	}
       current_node = current_node->next_to_up_label_node;
-      printf("cur %p, red %p\n",current_node, first_label_node_in_redo_stack); //FIXAM
     }
   fclose(fi);
   free(fname);
@@ -18481,11 +18480,7 @@ static void rec_undo_label(void)
       return;
     }
 
-  // FIXME: Bill added the "current_label_node != NULL" test to avoid
-  // crashing in the following situation: (1) use label tool, (2) start new
-  // drawing, (3) change to paint tool & try to draw.  Is this test correct,
-  // or is the crash here an artifact of a different bug?  -bjk 2009.10.05
-  //
+  // FIXME:
   // It's all wrong to have a separate undo stack anyway. We need a way
   // for arbitrary code to supply callback functions and parameters when
   // creating an undo entry. One obvious function is a destructor for the
@@ -18685,7 +18680,6 @@ static void delete_label_list(struct label_node** ref_head)
 
   while(current != NULL)
     {
-      printf("%p current\n", current); //FIXAM
       fflush(stdout);
 
       next = current->next_to_up_label_node;
