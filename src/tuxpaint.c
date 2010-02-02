@@ -18299,7 +18299,6 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node**
       if (label_node_to_edit)
 	{
 	  new_node->disables = label_node_to_edit;
-	  //label_node_to_edit = NULL;
 	}
       else
 	new_node->disables = NULL;
@@ -18359,13 +18358,10 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 		    {
 		      if (current_node->is_enabled == TRUE)
 			{
-			  if (tmp_node == NULL)     /* Selecting the top label at x,y position*/
-			    {
-			      if (hover == 1)
+                            if (hover == 1)
 			        return(current_node);
-			      tmp_node = current_node;
-			      done = TRUE;
-			    }
+                            tmp_node = current_node;
+                            done = TRUE;
 			}
 		    }
 		}
@@ -18467,7 +18463,6 @@ static struct label_node* search_label_list(struct label_node** ref_head, Uint16
 
 static void rec_undo_label(void)
 {
-  printf("rec\n");
   if (first_label_node_in_redo_stack != NULL)
     {
         delete_label_list(&first_label_node_in_redo_stack);
