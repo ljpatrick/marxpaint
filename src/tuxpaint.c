@@ -11864,6 +11864,8 @@ static int do_save(int tool, int dont_show_success_results)
 
     free(fname);
 
+    if (are_labels)
+    {
     snprintf(tmp, sizeof(tmp), "saved/.label/%s%s", file_id, FNAME_EXTENSION);
     fname = get_fname(tmp, DIR_SAVE);
     debug(fname);
@@ -11875,12 +11877,14 @@ static int do_save(int tool, int dont_show_success_results)
       free(fname);
       return 0;
     }
+    }
   }
 
   free(fname);
 
   /* saving information about text on label layer */
-
+  if (are_labels)
+  {
   snprintf(tmp, sizeof(tmp), "saved/.label/%s.dat", file_id);
   fname = get_fname(tmp, DIR_SAVE);
 
@@ -11955,7 +11959,8 @@ static int do_save(int tool, int dont_show_success_results)
     }
   fclose(fi);
   free(fname);
-
+  }
+  
   show_progress_bar(screen);
 
 
