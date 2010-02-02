@@ -235,6 +235,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
     }	 
 #endif
 
+#ifndef NO_SDLPANGO
     if (!ret)
     {
       ret = try_alternate_font(size);
@@ -254,6 +255,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
       }
     }
   }
+#endif
   return ret ? ret : fallback;
 }
 #endif
