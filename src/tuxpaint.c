@@ -1010,7 +1010,7 @@ static unsigned select_text_size;
 static int coming_from_undo_or_redo = FALSE;
 
 
-static void add_label_node(int, int, Uint16, Uint16, struct label_node**, SDL_Surface* label_node_surface);
+static void add_label_node(int, int, Uint16, Uint16, SDL_Surface* label_node_surface);
 static void load_info_about_label_surface(char[1024]);
 
 static struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
@@ -2343,7 +2343,7 @@ static void mainloop(void)
                     {
                         rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                        add_label_node(0, 0, 0, 0, NULL);
                         derender_node(&label_node_to_edit);
 			label_node_to_edit = NULL;
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
@@ -2457,7 +2457,7 @@ static void mainloop(void)
                     {
                         rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                        add_label_node(0, 0, 0, 0, NULL);
                         derender_node(&label_node_to_edit);
 			label_node_to_edit = NULL;
 //                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
@@ -2629,7 +2629,7 @@ static void mainloop(void)
                     {
 		      rec_undo_buffer();
                         have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                        add_label_node(0, 0, 0, 0, NULL);
                         derender_node(&label_node_to_edit);
 			label_node_to_edit = NULL;
                     }
@@ -3353,7 +3353,7 @@ static void mainloop(void)
 			  {
 			    rec_undo_buffer();
 			    have_to_rec_label_node = TRUE;
-			    add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+			    add_label_node(0, 0, 0, 0, NULL);
 			    label_node_to_edit = NULL;
 
 			  }
@@ -14786,10 +14786,9 @@ static void do_render_cur_text(int do_blit)
     0
   };
   
-  SDL_Surface *tmp_surf, *tmp_label;
+  SDL_Surface *tmp_surf;
   SDL_Rect dest, src;
   wchar_t *str;
-  Uint8 rect_red, rect_green, rect_blue;
   hide_blinking_cursor();
 
   /* Keep cursor on the screen! */
@@ -14944,7 +14943,7 @@ static void do_render_cur_text(int do_blit)
               cur_tool == TOOL_NEW)))
       {
 	have_to_rec_label_node=TRUE;
-	add_label_node(src.w, src.h, dest.x, dest.y, &label_node_to_edit, tmp_surf);
+	add_label_node(src.w, src.h, dest.x, dest.y, tmp_surf);
 	simply_render_node(current_label_node);
       }
         else if (cur_tool == TOOL_LABEL ||
@@ -14957,7 +14956,7 @@ static void do_render_cur_text(int do_blit)
           myblit(tmp_surf, &src, label, &dest);
           
 	have_to_rec_label_node=TRUE;
-	add_label_node(src.w, src.h, dest.x, dest.y, NULL, tmp_surf);
+	add_label_node(src.w, src.h, dest.x, dest.y, tmp_surf);
 
       }
       else
@@ -18261,7 +18260,7 @@ static int magic_modeint(int mode)
     return 0;
 }
 
-static void add_label_node(int w, int h, Uint16 x, Uint16 y, struct label_node** node_to_disable, SDL_Surface* label_node_surface)
+static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface* label_node_surface)
 {
   struct label_node* new_node = malloc(sizeof(struct label_node));
   struct label_node* aux_node;
@@ -19002,7 +19001,7 @@ static void tmp_apply_uncommited_text()
                cur_tool == TOOL_OPEN ||
                cur_tool == TOOL_NEW)))
             {
-                add_label_node(0, 0, 0, 0, &label_node_to_edit, NULL);
+                add_label_node(0, 0, 0, 0, NULL);
                 current_label_node->is_enabled = FALSE;
                 current_label_node->save_undoid = 253;
                 
@@ -19049,7 +19048,6 @@ static void highlight_label_nodes()
 {
     int j;
     SDL_Rect rect, rect1;
-    SDL_Color color;
     struct label_node* aux_node;
 
     if (highlighted_label_node != NULL)
