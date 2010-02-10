@@ -870,8 +870,7 @@ static int disable_label = 1;
 static int disable_label;
 #endif
 
-/* Update the screen with the new canvas: */
-static void update_canvas(int x1, int y1, int x2, int y2)
+static void update_canvas_ex(int x1, int y1, int x2, int y2, int screen_too)
 {
   SDL_Rect src, dest;
 
@@ -900,7 +899,14 @@ static void update_canvas(int x1, int y1, int x2, int y2)
   if(!disable_label)
       SDL_BlitSurface(label, NULL, screen, &r_label);
 
-  update_screen(x1 + 96, y1, x2 + 96, y2);
+  if (screen_too)
+    update_screen(x1 + 96, y1, x2 + 96, y2);
+}
+
+/* Update the screen with the new canvas: */
+static void update_canvas(int x1, int y1, int x2, int y2)
+{
+  update_canvas_ex(x1, y1, x2, y1, 1);
 }
 
 
@@ -14794,7 +14800,10 @@ static void do_render_cur_text(int do_blit)
   SDL_Surface *tmp_surf;
   SDL_Rect dest, src;
   wchar_t *str;
-  hide_blinking_cursor();
+
+  /* I THINK this is unnecessary to call here; trying to prevent flicker when typing -bjk 2010.02.10 */
+  /* hide_blinking_cursor(); */
+
 
   /* Keep cursor on the screen! */
 
@@ -14861,10 +14870,13 @@ static void do_render_cur_text(int do_blit)
 		      old_cursor_x + 1 +  TuxPaint_Font_FontHeight(getfonthandle(cur_font)),
 		      old_cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 
+        /* FIXME: Do less flickery updating here (use update_canvas_ex() above, then SDL_Flip() or SDL_UpdateRect() here -bjk 2010.02.10 */
+
 	old_cursor_x = cursor_x;
 	old_cursor_y = cursor_y;
 	cursor_textwidth = 0;
       }
+      SDL_Flip(screen);
             return;
          
   }
@@ -14872,10 +14884,10 @@ static void do_render_cur_text(int do_blit)
 
   if (!do_blit)
   {
-	update_canvas(cursor_x - 1,
+	update_canvas_ex(cursor_x - 1,
 		      cursor_y - 1,
 		      cursor_x + 1 +  TuxPaint_Font_FontHeight(getfonthandle(cur_font)) * 3,
-		      cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
+		      cursor_y + 1 + TuxPaint_Font_FontHeight(getfonthandle(cur_font)), 0);
 
 
     /* Draw outline around text: */
@@ -14968,8 +14980,8 @@ static void do_render_cur_text(int do_blit)
       {
         SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
       }
-      update_canvas(dest.x, dest.y, dest.x + tmp_surf->w,
-		    dest.y + tmp_surf->h);
+      update_canvas_ex(dest.x, dest.y, dest.x + tmp_surf->w,
+		    dest.y + tmp_surf->h, 0);
     }
     else
     {

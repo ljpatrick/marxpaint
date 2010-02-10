@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.8 (0.9.22)
+2009.February.10 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -89,6 +89,8 @@ $Id$
       command-line options are easier to discover (without necessarily
       needing to consult the man page, 'Options' documentation, or --usage
       output).
+
+    * Text (and Label) tool doesn't flicker when typing or erasing text.
 
  * New Starters:
    -------------
