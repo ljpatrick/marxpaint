@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - November 21, 2009
+June 17, 2002 - February 16, 2010
 
 $Id$
 
@@ -574,6 +574,9 @@ $Id$
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite
     Gintaras Go?tautas <gintaras@nes.lt>
+
+  * Luxembourgish
+    René Brandenburger <rene@brandenburger.lu>
 
   * Macedonian
     Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors

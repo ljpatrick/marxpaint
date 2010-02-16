@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - November 21, 2009
+  June 14, 2002 - February 16, 2010
 */
 
 // FIXME: gettext() won't even bother to look up messages unless it
@@ -116,6 +116,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "km",
   "ko",
   "ku",
+  "lb",
   "lt",
   "lv",
   "mk",
@@ -283,6 +284,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"lithuanian", "lt_LT.UTF-8"},
   {"lietuviu", "lt_LT.UTF-8"},
   {"latvian", "lv_LV.UTF-8"},
+  {"luxembourgish", "lb_LU.UTF-8"},
+  {"letzebuergesch", "lb_LU.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
   {"dutch", "nl_NL.UTF-8"},
@@ -389,6 +392,7 @@ static void show_lang_usage(int exitcode)
 /* ku */ "  kurdish\n"
 /* lv */ "  latvian\n"
 /* lt */ "  lithuanian   lietuviu\n"
+/* lb */ "  luxembourgish letzebuergesch\n"
 /* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
 /* es_MX */
@@ -488,6 +492,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  ko_KR   (Korean)\n"
 	  "  ku_TR   (Kurdish)\n"
 	  "  ms_MY   (Malay)\n"
+          "  lb_LU   (Luxembourgish Letzebuergesch)\n"
 	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
 	  "  mk_MK   (Macedonian)\n"

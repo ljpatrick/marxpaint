@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - November 21, 2009
+  June 14, 2002 - February 16, 2010
 */
 
 
@@ -85,6 +85,7 @@ enum
   LANG_KM,			/* Khmer */
   LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */
+  LANG_LB,                      /* Luxembourgish */
   LANG_LT,			/* Lithuanian */
   LANG_LV,			/* Latvian */
   LANG_MK,			/* Macedonian */
