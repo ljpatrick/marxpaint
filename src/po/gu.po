@@ -443,17 +443,16 @@ msgstr ""
 
 #. Text tool instructions
 #: ../tools.h:127
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
-msgstr "લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો."
+msgstr "લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો. "
+"લખાણને પુરું કરવા માટે [Enter] અથવા [Tab] દબાવો."
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Click on the wheel to rotate the text. Click on the edit button and "
@@ -464,9 +463,9 @@ msgid ""
 "and clicking an exist label, you can move it, edit it and change its text "
 "style."
 msgstr ""
-"લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો. લખાણને "
-"ફેરવવા માટે ચક્ર પર ક્લિક કરો. ફેરફાર બટન પર ક્લિક કરો અને ફેરફાર કરવા માટે લેબલ પસંદ "
-"કરો."
+"લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો. "
+"લખાણને પુરું કરવા માટે [Enter] અથવા [Tab] દબાવો. પસંદિત બટનનો ઉપયોગ કરીને "
+"અને લેબલ પર ક્લિક કરીને, તમે તેને ખસેડી, ફેરફાર અથવા તેની લખાણ શૈલી ફેરવી શકો છો."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -1185,10 +1184,9 @@ msgstr "ધબ્બો"
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:85
-#, fuzzy
 #| msgid "Metal Paint"
 msgid "Wet Paint"
-msgstr "ધાતુ રંગ"
+msgstr "તાજો રંગ"
 
 #: ../../magic/src/smudge.c:92
 msgid "Click and move the mouse around to smudge the picture."
@@ -1196,14 +1194,13 @@ msgstr "ચિત્રમાં ધબ્બાઓ ઉમેરવા માઉ
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:94
-#, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
-msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgstr "તાજા રંગ સાથે દોરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr "દડો બતાવો"
+msgstr "બરફનો દડો"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
