@@ -69,6 +69,7 @@
 extern SDL_Thread *font_thread;
 
 extern volatile long font_thread_done;
+extern volatile long font_thread_aborted;
 extern volatile long waiting_for_fonts;
 extern int font_socket_fd;
 

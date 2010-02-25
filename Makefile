@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - November 20, 2009
+# June 14, 2002 - February 24, 2010
 
 
 # The version number, for release:
@@ -33,6 +33,9 @@ endif
 endif
 endif
 endif
+
+WINDRES:=windres
+PKG_CONFIG:=pkg-config
 
 # test if a library can be linked
 linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
@@ -74,8 +77,8 @@ PAPER_LIB:=$(call linktest,-lpaper,)
 PNG:=$(call linktest,-lpng,)
 PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-FRIBIDI_LIB:=$(shell pkg-config --libs fribidi)
-FRIBIDI_CFLAGS:=$(shell pkg-config --cflags fribidi)
+FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
+FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
@@ -93,8 +96,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
 
-# FIXME: "finddir" fails on other platforms -bjk 2009.12.08
-beos_PREFIX:=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
+beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
@@ -164,7 +166,7 @@ CURSOR_SHAPES:=LARGE
 
 
 # Libraries, paths, and flags:
-SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
+SDL_LIBS:=$(shell $(PKG_CONFIG) sdl --libs) -lSDL_image -lSDL_ttf
 
 # Sound support
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
@@ -176,15 +178,15 @@ NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL_Pango failed, n
 
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
-SDL_CFLAGS:=$(shell sdl-config --cflags)
+SDL_CFLAGS:=$(shell $(PKG_CONFIG) sdl --cflags)
 
 
 # New one: -lrsvg-2 -lcairo
 # Old one: -lcairo -lsvg -lsvg-cairo
-SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo || pkg-config --libs libsvg-cairo)
+SVG_LIB:=$(shell $(PKG_CONFIG) --libs librsvg-2.0 cairo || $(PKG_CONFIG) --libs libsvg-cairo)
 
 # lots of -I things, so really should be SVG_CPPFLAGS
-SVG_CFLAGS:=$(shell pkg-config --cflags librsvg-2.0 cairo || pkg-config --cflags libsvg-cairo)
+SVG_CFLAGS:=$(shell $(PKG_CONFIG) --cflags librsvg-2.0 cairo || $(PKG_CONFIG) --cflags libsvg-cairo)
 
 # SVG support via Cairo
 NOSVGFLAG:=$(if $(SVG_LIB),,-DNOSVG$(warning No SVG for you!))
@@ -1004,7 +1006,7 @@ obj/postscript_print.o:	src/postscript_print.c Makefile \
 obj/resource.o:	win32/resources.rc win32/resource.h
 	@echo
 	@echo "...Compiling win32 resources..."
-	@windres -i win32/resources.rc -o obj/resource.o
+	@$(WINDRES) -i win32/resources.rc -o obj/resource.o
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
@@ -1033,8 +1035,8 @@ obj:
 
 ######
 
-MAGIC_SDL_CPPFLAGS:=$(shell sdl-config --cflags)
-MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) sdl --cflags)
+MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) sdl --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 MAGIC_ARCH_LINKS:=-lintl $(PNG)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)

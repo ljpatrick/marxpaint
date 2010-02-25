@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 18, 2006
+  June 14, 2002 - February 24, 2010
   $Id$
 */
 
@@ -52,7 +52,7 @@
   WIN32 and MINGW don't have strcasestr().
 */
 #define NOMINMAX
-#include "Shlwapi.h"
+#include "shlwapi.h"
 #define strcasestr StrStrI
 #endif /* WIN32 */
 

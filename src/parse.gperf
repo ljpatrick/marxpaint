@@ -6,13 +6,13 @@
 
 %{
 
-#include "../src/parse.h"
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <stdint.h>
+#include "../src/parse.h"
 
 const char PARSE_YES[] = "yes";
 const char PARSE_NO[]  = "no";

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 16, 2010
+June 17, 2002 - February 24, 2010
 
 $Id$
 
@@ -735,6 +735,9 @@ $Id$
   * Windows 32-bit coding and builds
     John Popplewell <john@johnnypops.demon.co.uk>
 
+  * Tweaks to help Windows cross-compiling under Linux
+    Volker Grabsch <vog@notjusthosting.com>
+
   * Mac OS X coding and builds
     Martin Fuhrer <mfuhrer@users.sourceforge.net>
     Darrell Walisser <walisser@mac.com>  [retired]
@@ -744,6 +747,7 @@ $Id$
 
   * BeOS coding and builds
     Luc 'Begasus' Schrijvers <Begasus@skynet.be>
+    Scott McCreary <scottmc@users.sourceforge.net>
     Marcin 'Shard' Konicki <shard at beosjournal.org>  [retired]
 
   * Debian Linux packages

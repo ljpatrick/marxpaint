@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.18 (0.9.22)
+2009.February.24 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -34,6 +34,14 @@ $Id$
 
     * Wet Paint - Draws a light coat of paint, and smudges at the same time.
       (Based on Smudge tool.  Requested by gallery artist Angela.)
+
+  * Build System Improvements:
+    --------------------------
+    * Variety of tweaks to help Tux Paint cross-compile for Windows under Linux
+      Volker Grabsch <vog@notjusthosting.com>
+
+    * Added support for building under Haiku OS
+      Scott McCreary <scottmc@users.sourceforge.net>
 
   * Other Improvements:
     -------------------

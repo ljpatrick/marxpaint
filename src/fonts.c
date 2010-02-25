@@ -131,7 +131,7 @@ int no_system_fonts = 1;
 #endif
 int all_locale_fonts;
 volatile long font_thread_done;
-static volatile long font_thread_aborted;
+volatile long font_thread_aborted;
 volatile long waiting_for_fonts;
 static int font_scanner_pid;
 int font_socket_fd;

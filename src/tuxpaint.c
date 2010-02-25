@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 13, 2009
+  June 14, 2002 - February 24, 2010
 */
 
 
@@ -268,7 +268,7 @@ typedef struct safer_dirent
   ino_t d_ino;
   ino_t d_pino;
   unsigned short d_reclen;
-  char d_name[NAME_MAX];
+  char d_name[FILENAME_MAX];
 } safer_dirent;
 #define dirent safer_dirent
 
@@ -1501,9 +1501,9 @@ static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	/* canvas-relative
 static int old_cursor_x, old_cursor_y;
 static int cur_label, cur_select;
 static int been_saved;
-static char file_id[NAME_MAX];
-static char starter_id[NAME_MAX];
-static char template_id[NAME_MAX];
+static char file_id[FILENAME_MAX];
+static char starter_id[FILENAME_MAX];
+static char template_id[FILENAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll, tool_scroll;
@@ -8248,7 +8248,7 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   Uint32(*getpixel) (SDL_Surface *, int, int) =
     getpixels[src->format->BytesPerPixel];
 
-
+  /* FIXME: Deal with gamma, per: http://www.4p8.com/eric.brasseur/gamma.html */
   /* Determine scale and centering offsets: */
 
   if (!keep_aspect)
@@ -10152,7 +10152,7 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 static void load_starter_id(char *saved_id)
 {
   char *rname;
-  char fname[NAME_MAX];
+  char fname[FILENAME_MAX];
   FILE *fi;
   char color_tag;
   int r, g, b;
@@ -19425,8 +19425,10 @@ static void setup_config(char *argv[])
 
   // FIXME: most of this is not required before starting the font scanner
 
+#ifdef PAPER_H
   if(tmpcfg_cmd.papersize && !strcmp(tmpcfg_cmd.papersize, "help"))
     show_available_papersizes(0);
+#endif
 
 #define SETBOOL(x) do{ if(tmpcfg.x) x = (tmpcfg.x==PARSE_YES); }while(0)
   SETBOOL(all_locale_fonts);
@@ -19504,10 +19506,12 @@ static void setup_config(char *argv[])
     strcpy(colorfile, tmpcfg.colorfile); // FIXME can overflow
   if(tmpcfg.print_delay)
     print_delay = atoi(tmpcfg.print_delay);
+#ifdef PAPER_H
   if(tmpcfg.printcommand)
     printcommand = tmpcfg.printcommand;
   if(tmpcfg.altprintcommand)
     altprintcommand = tmpcfg.altprintcommand;
+#endif
   if(tmpcfg.alt_print_command_default)
   {
     // FIXME: probably need extra variables
@@ -19518,8 +19522,10 @@ static void setup_config(char *argv[])
     else
       alt_print_command_default = ALTPRINT_MOD; // default ("mod")
   }
+#ifdef PAPER_H
   if(tmpcfg.papersize)
     papersize = tmpcfg.papersize;
+#endif
 }
 
 
