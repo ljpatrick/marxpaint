@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 24, 2010
+June 17, 2002 - February 25, 2010
 
 $Id$
 
@@ -91,6 +91,12 @@ $Id$
   Extracted and edited using 'mplayer' and 'Audacity'.
   Public Domain.  Archived at the Internet Archive:
   http://www.archive.org/details/tornado
+
+  Gamma-correction in thumbnail/scaling routine based
+  example code from:
+  http://www.4p8.com/eric.brasseur/gamma.html
+  which was from "Gimp-gluas" plug-in for The GIMP:
+  http://pippin.gimp.org/plug-ins/gluas/
 
 
 * Graphics

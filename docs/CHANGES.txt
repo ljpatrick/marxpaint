@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.24 (0.9.22)
+2009.February.25 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -45,6 +45,10 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Thumbnailing (of UI elements, stamps, saved images, etc.) is now
+      gamma-corrected. See:
+      http://www.4p8.com/eric.brasseur/gamma.html
+
     * Template images are now supported.  Similar to Starters, they are
       pre-drawn pictures to begin a new drawing with, accessed via the
       "New" dialog.  The "Eraser" tool will erase back to the original

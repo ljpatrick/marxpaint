@@ -64,7 +64,6 @@
 
 #include "debug.h"
 
-
 #ifdef NOKIA_770
 # define LOW_QUALITY_THUMBNAILS
 # define LOW_QUALITY_STAMP_OUTLINE
@@ -77,7 +76,11 @@
 /* #define LOW_QUALITY_STAMP_OUTLINE */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
+
+/* FIXME: Deal with this option properly -bjk 2010.02.25 */
+#define GAMMA_CORRECTED_THUMBNAILS
 #endif
+
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 /* (This bug is still around, as of SDL 1.2.9, October 2005) */
@@ -8240,7 +8243,11 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   int x, y;
   float src_x, src_y, off_x, off_y;
   SDL_Surface *s;
+#ifdef GAMMA_CORRECTED_THUMBNAILS
+  float tr, tg, tb, ta;
+#else
   Uint32 tr, tg, tb, ta;
+#endif
   Uint8 r, g, b, a;
   float xscale, yscale;
   int tmp;
@@ -8248,7 +8255,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   Uint32(*getpixel) (SDL_Surface *, int, int) =
     getpixels[src->format->BytesPerPixel];
 
-  /* FIXME: Deal with gamma, per: http://www.4p8.com/eric.brasseur/gamma.html */
   /* Determine scale and centering offsets: */
 
   if (!keep_aspect)
@@ -8314,6 +8320,13 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
     for (x = 0; x < max_x; x++)
     {
 #ifndef LOW_QUALITY_THUMBNAILS
+
+#ifdef GAMMA_CORRECTED_THUMBNAILS
+      /* per: http://www.4p8.com/eric.brasseur/gamma.html */
+      float gamma = 2.2;
+      float gamma_invert = 1.0 / gamma;
+#endif
+ 
       tr = 0;
       tg = 0;
       tb = 0;
@@ -8330,9 +8343,15 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 	  SDL_GetRGBA(getpixel(src, src_x, src_y),
 		      src->format, &r, &g, &b, &a);
 
+#ifdef GAMMA_CORRECTED_THUMBNAILS
+	  tr = tr + pow((float)r, gamma);
+	  tb = tb + pow((float)b, gamma);
+	  tg = tg + pow((float)g, gamma);
+#else
 	  tr = tr + r;
 	  tb = tb + b;
 	  tg = tg + g;
+#endif
 	  ta = ta + a;
 
 	  tmp++;
@@ -8345,6 +8364,12 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 	tb = tb / tmp;
 	tg = tg / tmp;
 	ta = ta / tmp;
+
+#ifdef GAMMA_CORRECTED_THUMBNAILS
+        tr = pow(tr, gamma_invert);
+        tg = pow(tg, gamma_invert);
+        tb = pow(tb, gamma_invert);
+#endif
 
 	if (keep_alpha == 0 && s->format->Amask != 0)
 	{
