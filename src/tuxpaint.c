@@ -906,7 +906,7 @@ static void update_canvas_ex(int x1, int y1, int x2, int y2, int screen_too)
 /* Update the screen with the new canvas: */
 static void update_canvas(int x1, int y1, int x2, int y2)
 {
-  update_canvas_ex(x1, y1, x2, y1, 1);
+  update_canvas_ex(x1, y1, x2, y2, 1);
 }
 
 
