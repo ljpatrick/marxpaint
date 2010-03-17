@@ -971,6 +971,7 @@ static int starter_mirrored;
 static int starter_flipped;
 static int starter_personal;
 static int template_personal;
+static int starter_modified;
 
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 * touched;
@@ -1020,7 +1021,7 @@ static int coming_from_undo_or_redo = FALSE;
 
 
 static void add_label_node(int, int, Uint16, Uint16, SDL_Surface* label_node_surface);
-static void load_info_about_label_surface(char[1024]);
+static void load_info_about_label_surface(FILE *lfi);
 
 static struct label_node* search_label_list(struct label_node**, Uint16, Uint16, int hover);
 static void highlight_label_nodes(void);
@@ -1668,7 +1669,12 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results);
 static int do_png_save(FILE * fi, const char *const fname,
-		       SDL_Surface * surf);
+		       SDL_Surface * surf, int embed);
+static void load_embedded_data(char * fname, SDL_Surface * org_surf);
+static int chunk_is_valid(const char * chunk_name, png_unknown_chunk unknown);
+Bytef * get_chunk_data (FILE * fp, char *fname, png_structp png_ptr,
+			png_infop info_ptr, const char *chunk_name,
+			png_unknown_chunk unknown, int *unc_size);
 static void get_new_file_id(void);
 static int do_quit(int tool);
 static int do_open(void);
@@ -1709,7 +1715,7 @@ static char *remove_slash(char *path);
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width);
 #endif
-static void load_starter_id(char *saved_id);
+static void load_starter_id(char *saved_id, FILE *fil);
 static void load_starter(char *img_id);
 static void load_template(char *img_id);
 static SDL_Surface *duplicate_surface(SDL_Surface * orig);
@@ -2315,6 +2321,7 @@ static void mainloop(void)
 	      else if (*im_cp == L'\r')
 	      {
 	        int font_height;
+	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
 
 	        hide_blinking_cursor();
 	        if (texttool_len > 0)
@@ -2340,7 +2347,6 @@ static void mainloop(void)
                           update_screen_rect(&r_tools);
                       }
 
-	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
 
 	        cursor_x = cursor_left;
 	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
@@ -10174,7 +10180,7 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 }
 
 
-static void load_starter_id(char *saved_id)
+static void load_starter_id(char *saved_id, FILE *fil)
 {
   char *rname;
   char fname[FILENAME_MAX];
@@ -10182,13 +10188,21 @@ static void load_starter_id(char *saved_id)
   char color_tag;
   int r, g, b;
 
-  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
-  rname = get_fname(fname, DIR_SAVE);
+  rname = NULL;
+  
+  if (saved_id != NULL)
+      {
+          snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
+          rname = get_fname(fname, DIR_SAVE);
+
+          fi = fopen(rname, "r");
+      }
+  else
+      fi = fil;
 
   starter_id[0] = '\0';
   template_id[0] = '\0';
 
-  fi = fopen(rname, "r");
   if (fi != NULL)
   {
     fgets(starter_id, sizeof(starter_id), fi);
@@ -10226,13 +10240,18 @@ static void load_starter_id(char *saved_id)
       color_tag = fgetc(fi);
     }
     while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
-
-    if (!feof(fi) && color_tag == 'T')
-    { 
-      fgets(template_id, sizeof(template_id), fi);
-      template_id[strlen(template_id) - 1] = '\0';
-      fscanf(fi, "%d", &template_personal);
-      printf("template = %s\n (Personal=%d)", template_id, template_personal);
+    {
+        if (!feof(fi) && color_tag == 'T')
+            { 
+                fgets(template_id, sizeof(template_id), fi);
+                template_id[strlen(template_id) - 1] = '\0';
+                fscanf(fi, "%d", &template_personal);
+                printf("template = %s\n (Personal=%d)", template_id, template_personal);
+            }
+        if (!feof(fi) && color_tag == 'M')
+            {
+                starter_modified = fgetc(fi);
+            }
     }
 
     fclose(fi);
@@ -10244,7 +10263,8 @@ static void load_starter_id(char *saved_id)
     canvas_color_b = 255;
   }
 
-  free(rname);
+  if ( saved_id != NULL)
+      free(rname);
 }
 
 
@@ -10506,10 +10526,10 @@ static void load_template(char *img_id)
 
 static void load_current(void)
 {
-  SDL_Surface *tmp;
-  char *fname, *label_fname;
-  char ftmp[1024], lfname[1024];
-  FILE *fi, *lfi;
+  SDL_Surface *tmp, *org_surf;
+  char *fname;
+  char ftmp[1024];
+  FILE *fi;
 
   /* Determine the current picture's ID: */
 
@@ -10551,25 +10571,10 @@ static void load_current(void)
   highlighted_label_node = NULL;
   label_node_to_edit = NULL;
   have_to_rec_label_node = FALSE;
-  
-  /* Check the existence of the label stuff and load by default */
-  snprintf(ftmp, sizeof(ftmp), "saved/.label/%s%s",
+
+  snprintf(ftmp, sizeof(ftmp), "saved/%s%s",
 	   file_id, FNAME_EXTENSION);
   fname = get_fname(ftmp, DIR_SAVE);
-  lfi = fopen(fname, "r");
-
-  if (lfi == NULL)
-    snprintf(ftmp, sizeof(ftmp), "saved/%s%s", file_id, FNAME_EXTENSION);
-  else
-    {
-      /* Load info about the label surface */
-      snprintf(lfname, sizeof(lfname), "saved/.label/%s.dat", file_id);
-      label_fname = get_fname(lfname, DIR_SAVE);
-      load_info_about_label_surface(label_fname);
-      fclose(lfi);
-    }
-
-    fname = get_fname(ftmp, DIR_SAVE);
 
     tmp = IMG_Load(fname);
 
@@ -10587,8 +10592,12 @@ static void load_current(void)
     }
     else
     {
+      org_surf = SDL_DisplayFormat(tmp);
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
-      load_starter_id(file_id);
+
+      /* First we run this for compatibility, then we will chek if
+	 there are data embedded in the png file */
+      load_starter_id(file_id, NULL);
       if (starter_id[0] != '\0')
       {
         load_starter(starter_id);
@@ -10603,6 +10612,8 @@ static void load_current(void)
       {
         load_template(template_id);
       }
+
+      load_embedded_data(fname, org_surf);
     }
 
     free(fname);
@@ -11763,11 +11774,6 @@ static int do_save(int tool, int dont_show_success_results)
   char tmp[1024];
   SDL_Surface *thm;
   FILE *fi;
-  struct label_node* current_node;
-  unsigned i = 0;
-  int list_ctr = 0;
-  int x, y, pix, alpha_size;
-  Uint8 r, g, b, a;
   /* Was saving completely disabled? */
 
   if (disable_save)
@@ -11887,111 +11893,16 @@ static int do_save(int tool, int dont_show_success_results)
   }
   else
   {
-    if (!do_png_save(fi, fname, save_canvas))
+      if (!do_png_save(fi, fname, save_canvas, 1))
     {
       free(fname);
       return 0;
-    }
-
-    free(fname);
-    snprintf(tmp, sizeof(tmp), "saved/.label/%s%s", file_id, FNAME_EXTENSION);
-    fname = get_fname(tmp, DIR_SAVE);
-    debug(fname);
-
-    if (are_labels())
-    {
-
-    fi = fopen(fname, "wb");
-
-    if (!do_png_save(fi, fname, canvas))
-    {
-      free(fname);
-      return 0;
-    }
     }
   }
 
   free(fname);
 
-  /* saving information about text on label layer */
-  if (are_labels())
-  {
-  snprintf(tmp, sizeof(tmp), "saved/.label/%s.dat", file_id);
-  fname = get_fname(tmp, DIR_SAVE);
 
-  fi = fopen(fname, "wb");
-
-  current_node =  current_label_node;
-  while(current_node != NULL)
-  {
-    if (current_node->is_enabled && current_node->save_texttool_len > 0)
-      list_ctr = list_ctr+1;
-    current_node = current_node->next_to_down_label_node;
-  }
-
-  fprintf(fi, "%d\n", list_ctr);
-  fprintf(fi, "%d\n", r_canvas.w);
-  fprintf(fi, "%d\n\n", r_canvas.h);
-
-  current_node =  start_label_node;
-  while(current_node !=first_label_node_in_redo_stack)
-    {
-      if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
-	{
-
-	  fprintf(fi, "%u\n", current_node->save_texttool_len);
-
-
-
-	  for(i=0; i < current_node->save_texttool_len; i++)
-	    {
-	      fprintf(fi, "%lc", (wint_t)current_node->save_texttool_str[i]);
-	    }
-
-	  fprintf(fi, "\n");
-
-
-	  fprintf(fi, "%u\n", current_node->save_color.r);
-	  fprintf(fi, "%u\n", current_node->save_color.g);
-	  fprintf(fi, "%u\n", current_node->save_color.b);
-	  fprintf(fi, "%d\n", current_node->save_width);
-	  fprintf(fi, "%d\n", current_node->save_height);
-	  fprintf(fi, "%u\n", current_node->save_x);
-	  fprintf(fi, "%u\n", current_node->save_y);
-
-          if(current_node->save_font_type == NULL) /* Fonts yet setted */
-              {
-                  fprintf(fi, "%d\n", current_node->save_cur_font);
-                  fprintf(fi, "%s\n", TTF_FontFaceFamilyName( getfonthandle(current_node->save_cur_font)->ttf_font));
-              }
-          else
-              {
-                  fprintf(fi, "%d\n", 0);
-                  fprintf(fi, "%s\n", current_node->save_font_type);
-              }
-
-	  fprintf(fi, "%d\n", current_node->save_text_state);
-	  fprintf(fi, "%u\n", current_node->save_text_size);
-
-          SDL_LockSurface(current_node->label_node_surface);
-          alpha_size= sizeof(Uint8);
-          for (x=0;x<current_node->save_width; x++)
-	    for (y=0; y<current_node->save_height; y++)
-	      {
-	      pix= getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
-              SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
-              fwrite(&a, alpha_size, 1, fi);
-              
-	      }
-          SDL_UnlockSurface(current_node->label_node_surface);
-	  fprintf(fi, "\n\n");
-	}
-      current_node = current_node->next_to_up_label_node;
-    }
-  fclose(fi);
-  free(fname);
-  }
-  
   show_progress_bar(screen);
 
 
@@ -12030,13 +11941,13 @@ static int do_save(int tool, int dont_show_success_results)
   }
   else
   {
-    do_png_save(fi, fname, thm);
+      do_png_save(fi, fname, thm, 0);
   }
   SDL_FreeSurface(thm);
 
   free(fname);
 
-
+#if 0 /* No more writing the .dat file */  
   /* Write 'starter' and/or canvas color info, if it's useful to: */
 
   if (starter_id[0] != '\0' ||
@@ -12064,7 +11975,7 @@ static int do_save(int tool, int dont_show_success_results)
 
     free(fname);
   }
-
+#endif
 
   /* All happy! */
 
@@ -12081,9 +11992,396 @@ static int do_save(int tool, int dont_show_success_results)
   return 1;
 }
 
+static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, size_t uncompressed_size, Bytef * data,
+			   size_t dataLen)
+{
+  FILE *fi;
+  size_t size;
+  unsigned int i;
+
+
+  fi = open_memstream((char **) chunk_data, &size);
+
+  /* First the header */
+  fprintf(fi, "Tuxpaint\n");
+  fprintf(fi, "Tuxpaint_" VER_VERSION "\n");
+  fprintf(fi, "%d\n", uncompressed_size);
+  fprintf(fi, "%d\n", dataLen);
+
+  /* Add the data */
+  for (i = 0; i < dataLen; i++)
+  {
+    fwrite(&data[i], sizeof(data[i]), 1, fi);
+  }
+
+  fclose(fi);
+  *chunk_data_len = size;
+}
+
+
+static void do_png_embed_data(png_structp png_ptr)
+{
+
+  /* Embedding data and labels in the png file */
+
+  /*
+     Tuxpaint chunks:
+
+     bKGD background color
+
+     Custom chunks:
+
+     tpDT -> 0 the traditional .dat file
+     tpFG -> 1 the starter foreground surface with the transparent pixels cleaned up
+     tpBG -> 2 the starter background surface cleared from what is covered by the foreground to compress better
+     tpLD -> 3 the label diff
+     tpLL -> 4 the label data
+
+     Except in tpDT, the data of all other custom chunks will be compressed
+
+     Chunk data must have a header to avoid conflicts with other software that may use similar names
+     Headers are composed by four fields delimited with "\n" :
+     The string "Tuxpaint" to easy identify them as Tuxpaint chunks.
+     A string identifying the sofware who created it, in our case "Tuxpaint_"VER_VERSION No spaces allowed
+     The size of the uncompressed data.
+     The sizeof the compressed data following. These two are only relevant for compressed chunks
+     After the fourth "\n" comes the data itself
+   */
+  int x, y;
+  Uint8 r, g, b, a;
+
+  png_unknown_chunk tuxpaint_chunks[5];
+  size_t size_of_uncompressed_label_data, chunk_data_len;
+  FILE *fi_stream;
+  unsigned char *sbk_pixs;
+  uLongf compressedLen;
+  unsigned char *chunk_data;
+  Bytef *compressed_data;
+
+  char *ldata;
+  FILE *lfi;
+  lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
+  int list_ctr = 0;
+  Uint32 pix;
+  int alpha_size;
+  Uint32 i;
+  struct label_node *current_node;
+  char *char_stream;
+  size_t dat_size;
+
+  /* Starter foreground */
+  if (img_starter)
+  {
+    printf("Saving starter... %d\n", (int) img_starter);
+    sbk_pixs = malloc(img_starter->h * img_starter->w * 4);
+    compressedLen = compressBound(img_starter->h * img_starter->w * 4);
+
+    compressed_data = malloc(compressedLen * sizeof(Bytef *));
+
+    if (SDL_MUSTLOCK(img_starter))
+      SDL_LockSurface(img_starter);
+
+    for (y = 0; y < img_starter->h; y++)
+      for (x = 0; x < img_starter->w; x++)
+      {
+	SDL_GetRGBA(getpixels[img_starter->format->BytesPerPixel] (img_starter, x, y), img_starter->format, &r, &g, &b,
+		    &a);
+
+/* clear the transparent pixels assigning the same r g and b values */
+	if (a == SDL_ALPHA_TRANSPARENT)
+	{
+	  sbk_pixs[4 * (y * img_starter->w + x)] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 1] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 2] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 3] = SDL_ALPHA_TRANSPARENT;
+	}
+	else
+	{
+	  sbk_pixs[4 * (y * img_starter->w + x)] = r;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 1] = g;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 2] = b;
+	  sbk_pixs[4 * (y * img_starter->w + x) + 3] = a;
+	}
+      }
+
+    if (SDL_MUSTLOCK(img_starter))
+      SDL_UnlockSurface(img_starter);
+
+    compress(compressed_data, &compressedLen, sbk_pixs, img_starter->h * img_starter->w * 4);
+    set_chunk_data(&chunk_data, &chunk_data_len, img_starter->w * img_starter->h * 4, compressed_data, compressedLen);
+
+    tuxpaint_chunks[1].data = (png_byte *) chunk_data;
+    tuxpaint_chunks[1].size = chunk_data_len;
+    tuxpaint_chunks[1].location = PNG_HAVE_IHDR;
+    tuxpaint_chunks[1].name[0] = 't';
+    tuxpaint_chunks[1].name[1] = 'p';
+    tuxpaint_chunks[1].name[2] = 'F';
+    tuxpaint_chunks[1].name[3] = 'G';
+    tuxpaint_chunks[1].name[4] = '\0';
+    png_write_chunk(png_ptr, tuxpaint_chunks[1].name, tuxpaint_chunks[1].data, tuxpaint_chunks[1].size);
+
+    free(compressed_data);
+    free(chunk_data);
+    free(sbk_pixs);
+  }
+
+  /* Starter background */
+  if (img_starter_bkgd)
+  {
+    sbk_pixs = malloc(img_starter_bkgd->w * img_starter_bkgd->h * 3);
+    compressedLen = compressBound(img_starter_bkgd->h * img_starter_bkgd->w * 3);
+
+    compressed_data = malloc(compressedLen * sizeof(Bytef *));
+
+    if (SDL_MUSTLOCK(img_starter_bkgd))
+      SDL_LockSurface(img_starter_bkgd);
+
+    for (y = 0; y < img_starter_bkgd->h; y++)
+      for (x = 0; x < img_starter_bkgd->w; x++)
+      {
+	SDL_GetRGB(getpixels[img_starter_bkgd->format->BytesPerPixel] (img_starter_bkgd, x, y),
+		   img_starter_bkgd->format, &r, &g, &b);
+
+	sbk_pixs[3 * (y * img_starter_bkgd->w + x)] = r;
+	sbk_pixs[3 * (y * img_starter_bkgd->w + x) + 1] = g;
+	sbk_pixs[3 * (y * img_starter_bkgd->w + x) + 2] = b;
+      }
+
+    /* Clear the parts covered by the foreground */
+    if (img_starter)
+    {
+      if (SDL_MUSTLOCK(img_starter))
+	SDL_LockSurface(img_starter);
+      for (y = 0; y < img_starter_bkgd->h; y++)
+	for (x = 0; x < img_starter_bkgd->w; x++)
+	{
+	  SDL_GetRGBA(getpixels[img_starter->format->BytesPerPixel] (img_starter, x, y), img_starter->format, &r, &g,
+		      &b, &a);
+
+	  if (a == SDL_ALPHA_OPAQUE)
+	  {
+	    sbk_pixs[3 * (y * img_starter_bkgd->w + x)] = SDL_ALPHA_TRANSPARENT;
+	    sbk_pixs[3 * (y * img_starter_bkgd->w + x) + 1] = SDL_ALPHA_TRANSPARENT;
+	    sbk_pixs[3 * (y * img_starter_bkgd->w + x) + 2] = SDL_ALPHA_TRANSPARENT;
+	  }
+	}
+      if (SDL_MUSTLOCK(img_starter))
+	SDL_UnlockSurface(img_starter);
+    }
+
+    if (SDL_MUSTLOCK(img_starter_bkgd))
+      SDL_UnlockSurface(img_starter_bkgd);
+
+    printf("%d \n", (int) compressedLen);
+
+    compress(compressed_data, &compressedLen, sbk_pixs, img_starter_bkgd->h * img_starter_bkgd->w * 3);
+
+    set_chunk_data(&chunk_data, &chunk_data_len, img_starter_bkgd->w * img_starter_bkgd->h * 3, compressed_data,
+		   compressedLen);
+    printf("%d \n", (int) compressedLen);
+
+
+    tuxpaint_chunks[2].data = (png_byte *) chunk_data;
+    tuxpaint_chunks[2].size = chunk_data_len;
+    tuxpaint_chunks[2].location = PNG_HAVE_IHDR;
+    tuxpaint_chunks[2].name[0] = 't';
+    tuxpaint_chunks[2].name[1] = 'p';
+    tuxpaint_chunks[2].name[2] = 'B';
+    tuxpaint_chunks[2].name[3] = 'G';
+    tuxpaint_chunks[2].name[4] = '\0';
+    png_write_chunk(png_ptr, tuxpaint_chunks[2].name, tuxpaint_chunks[2].data, tuxpaint_chunks[2].size);
+
+    free(compressed_data);
+    free(chunk_data);
+    free(sbk_pixs);
+  }
+
+  /* Label:  diff from label surface to canvas surface */
+  if (label && are_labels())
+  {
+    sbk_pixs = malloc(label->h * label->w * 4);
+    compressedLen = (uLongf) compressBound(label->h * label->w * 4);
+    compressed_data = malloc(compressedLen * sizeof(Bytef *));
+
+    if (SDL_MUSTLOCK(label))
+      SDL_LockSurface(label);
+    if (SDL_MUSTLOCK(canvas))
+      SDL_LockSurface(canvas);
+
+    for (y = 0; y < label->h; y++)
+    {
+      for (x = 0; x < label->w; x++)
+      {
+	SDL_GetRGBA(getpixels[label->format->BytesPerPixel] (label, x, y), label->format, &r, &g, &b, &a);
+	if (a != SDL_ALPHA_TRANSPARENT)
+	{
+	  SDL_GetRGB(getpixels[canvas->format->BytesPerPixel] (canvas, x, y), canvas->format, &r, &g, &b);
+
+	  sbk_pixs[4 * (y * label->w + x)] = r;
+	  sbk_pixs[4 * (y * label->w + x) + 1] = g;
+	  sbk_pixs[4 * (y * label->w + x) + 2] = b;
+	  sbk_pixs[4 * (y * label->w + x) + 3] = SDL_ALPHA_OPAQUE;
+	}
+	else
+	{
+	  sbk_pixs[4 * (y * label->w + x)] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * label->w + x) + 1] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * label->w + x) + 2] = SDL_ALPHA_TRANSPARENT;
+	  sbk_pixs[4 * (y * label->w + x) + 3] = SDL_ALPHA_TRANSPARENT;
+	}
+      }
+    }
+
+    if (SDL_MUSTLOCK(label))
+      SDL_UnlockSurface(label);
+    if (SDL_MUSTLOCK(canvas))
+      SDL_UnlockSurface(canvas);
+
+    compress(compressed_data, &compressedLen, sbk_pixs, canvas->h * canvas->w * 4);
+    set_chunk_data(&chunk_data, &chunk_data_len, canvas->w * canvas->h * 4, compressed_data, compressedLen);
+
+    tuxpaint_chunks[3].data = chunk_data;
+    tuxpaint_chunks[3].size = chunk_data_len;
+    tuxpaint_chunks[3].location = PNG_HAVE_IHDR;
+    tuxpaint_chunks[3].name[0] = 't';
+    tuxpaint_chunks[3].name[1] = 'p';
+    tuxpaint_chunks[3].name[2] = 'L';
+    tuxpaint_chunks[3].name[3] = 'D';
+    tuxpaint_chunks[3].name[4] = '\0';
+
+    png_write_chunk(png_ptr, tuxpaint_chunks[3].name, tuxpaint_chunks[3].data, tuxpaint_chunks[3].size);
+    free(compressed_data);
+    free(chunk_data);
+    free(sbk_pixs);
+
+    /* Label data */
+    current_node = current_label_node;
+    while (current_node != NULL)
+    {
+      if (current_node->is_enabled && current_node->save_texttool_len > 0)
+	list_ctr = list_ctr + 1;
+      current_node = current_node->next_to_down_label_node;
+    }
+
+    fprintf(lfi, "%d\n", list_ctr);
+    fprintf(lfi, "%d\n", r_canvas.w);
+    fprintf(lfi, "%d\n\n", r_canvas.h);
+
+    current_node = start_label_node;
+    while (current_node != first_label_node_in_redo_stack)
+    {
+      if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
+      {
+	fprintf(lfi, "%u\n", current_node->save_texttool_len);
+
+	for (i = 0; i < current_node->save_texttool_len; i++)
+	{
+	  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
+	}
+
+	fprintf(lfi, "\n");
+
+
+	fprintf(lfi, "%u\n", current_node->save_color.r);
+	fprintf(lfi, "%u\n", current_node->save_color.g);
+	fprintf(lfi, "%u\n", current_node->save_color.b);
+	fprintf(lfi, "%d\n", current_node->save_width);
+	fprintf(lfi, "%d\n", current_node->save_height);
+	fprintf(lfi, "%u\n", current_node->save_x);
+	fprintf(lfi, "%u\n", current_node->save_y);
+
+	if (current_node->save_font_type == NULL)	/* Fonts yet setted */
+	{
+	  fprintf(lfi, "%d\n", current_node->save_cur_font);
+	  fprintf(lfi, "%s\n", TTF_FontFaceFamilyName(getfonthandle(current_node->save_cur_font)->ttf_font));
+	}
+	else
+	{
+	  fprintf(lfi, "%d\n", 0);
+	  fprintf(lfi, "%s\n", current_node->save_font_type);
+	}
+
+	fprintf(lfi, "%d\n", current_node->save_text_state);
+	fprintf(lfi, "%u\n", current_node->save_text_size);
+
+	SDL_LockSurface(current_node->label_node_surface);
+	alpha_size = sizeof(Uint8);
+	for (x = 0; x < current_node->save_width; x++)
+	  for (y = 0; y < current_node->save_height; y++)
+	  {
+	    pix =
+	      getpixels[current_node->label_node_surface->format->BytesPerPixel] (current_node->label_node_surface, x,
+										  y);
+	    SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
+	    fwrite(&a, alpha_size, 1, lfi);
+
+	  }
+	SDL_UnlockSurface(current_node->label_node_surface);
+	fprintf(lfi, "\n\n");
+      }
+      current_node = current_node->next_to_up_label_node;
+      printf("cur %p, red %p\n", current_node, first_label_node_in_redo_stack);
+    }
+    fclose(lfi);
+
+    compressedLen = compressBound(size_of_uncompressed_label_data);
+    compressed_data = malloc(compressedLen * sizeof(Bytef *));
+    compress((Bytef *) compressed_data, &compressedLen, (unsigned char *) ldata, size_of_uncompressed_label_data);
+    set_chunk_data(&chunk_data, &chunk_data_len, size_of_uncompressed_label_data, compressed_data, compressedLen);
+
+    tuxpaint_chunks[4].data = chunk_data;
+    tuxpaint_chunks[4].size = chunk_data_len;
+    tuxpaint_chunks[4].location = PNG_HAVE_IHDR;
+    tuxpaint_chunks[4].name[0] = 't';
+    tuxpaint_chunks[4].name[1] = 'p';
+    tuxpaint_chunks[4].name[2] = 'L';
+    tuxpaint_chunks[4].name[3] = 'L';
+    tuxpaint_chunks[4].name[4] = '\0';
+
+    png_write_chunk(png_ptr, tuxpaint_chunks[4].name, tuxpaint_chunks[4].data, tuxpaint_chunks[4].size);
+
+    free(compressed_data);
+    free(chunk_data);
+  }
+
+
+  /* Write 'starter' and/or canvas color info, if it's useful to: */
+
+  if (starter_id[0] != '\0' ||
+      template_id[0] != '\0' || canvas_color_r != 255 || canvas_color_g != 255 || canvas_color_b != 255)
+  {
+    fi_stream = open_memstream(&char_stream, &dat_size);
+    if (fi_stream != NULL)
+    {
+      fprintf(fi_stream, "%s\n", starter_id);
+      fprintf(fi_stream, "%d %d %d\n", starter_mirrored, starter_flipped, starter_personal);
+      fprintf(fi_stream, "c%d %d %d\n", canvas_color_r, canvas_color_g, canvas_color_b);
+      fprintf(fi_stream, "T%s\n", template_id);
+      fprintf(fi_stream, "%d\n", template_personal);
+      fprintf(fi_stream, "M%d\n", starter_modified);
+
+      fclose(fi_stream);
+    }
+    set_chunk_data(&chunk_data, &chunk_data_len, dat_size, (Bytef *) char_stream, dat_size);
+
+    tuxpaint_chunks[4].data = chunk_data;
+    tuxpaint_chunks[4].size = chunk_data_len;
+    tuxpaint_chunks[4].location = PNG_HAVE_IHDR;
+    tuxpaint_chunks[4].name[0] = 't';
+    tuxpaint_chunks[4].name[1] = 'p';
+    tuxpaint_chunks[4].name[2] = 'D';
+    tuxpaint_chunks[4].name[3] = 'T';
+    tuxpaint_chunks[4].name[4] = '\0';
+
+    png_write_chunk(png_ptr, tuxpaint_chunks[4].name, tuxpaint_chunks[4].data, tuxpaint_chunks[4].size);
+
+    free(char_stream);
+    free(chunk_data);
+  }
+}
 
 /* Actually save the PNG data to the file stream: */
-static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf)
+static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf, int embed)
 {
   png_structp png_ptr;
   png_infop info_ptr;
@@ -12166,8 +12464,9 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf)
 
 	png_write_info(png_ptr, info_ptr);
 
-
-
+        if (embed)
+            do_png_embed_data(png_ptr);            
+        
 	/* Save the picture: */
 
 	png_rows = malloc(sizeof(char *) * surf->h);
@@ -12287,7 +12586,7 @@ static int do_quit(int tool)
 
 static int do_open(void)
 {
-  SDL_Surface *img, *img1, *img2;
+  SDL_Surface *img, *img1, *img2, *org_surf;
   int things_alloced;
   SDL_Surface **thumbs = NULL;
   DIR *d;
@@ -12298,8 +12597,8 @@ static int do_open(void)
   char *rfname;
   char **d_names = NULL, **d_exts = NULL;
   int *d_places;
-  FILE *fi, *lfi;
-  char fname[1024], lfname[1024];
+  FILE *fi;
+  char fname[1024];
   int num_files, i, done, slideshow, update_list, want_erase, cur, which,
     num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
@@ -12605,7 +12904,7 @@ static int do_open(void)
                   }
                   else
                   {
-                    do_png_save(fi, fname, thumbs[num_files]);
+                      do_png_save(fi, fname, thumbs[num_files], 0);
                   }
 
                   show_progress_bar(screen);
@@ -13162,29 +13461,6 @@ static int do_open(void)
               unlink(rfname);
 
 
-              /* Delete the label .png, too: */
-
-              snprintf(fname, sizeof(fname),
-                  "saved/.label/%s.png", d_names[which]);
-
-              free(rfname);
-              rfname = get_fname(fname, DIR_SAVE);
-              debug(rfname);
-
-              unlink(rfname);
-
-
-              /* Delete the label .dat file, if any: */
-
-              unlink(rfname);
-              snprintf(fname, sizeof(fname), "saved/.label/%s.dat", d_names[which]);
-
-              free(rfname);
-              rfname = get_fname(fname, DIR_SAVE);
-              debug(rfname);
-
-              unlink(rfname);
-
 
               /* Move all other files up a notch: */
 
@@ -13279,22 +13555,19 @@ static int do_open(void)
 
           /* Figure out filename: */
 
-            snprintf(fname, sizeof(fname), "%s/.label/%s%s",
-                dirname[d_places[which]], d_names[which], d_exts[which]);
-	    
-	    lfi = fopen(fname, "r");
-
-	    if (lfi == NULL)
-	      snprintf(fname, sizeof(fname), "%s/%s%s",
+	  snprintf(fname, sizeof(fname), "%s/%s%s",
 		       dirname[d_places[which]], d_names[which], d_exts[which]);
-	    else   /* Load info about the label surface */
-	      {
-		fclose(lfi);
-		snprintf(lfname, sizeof(lfname), "%s/.label/%s.dat",
-                      dirname[d_places[which]], d_names[which]);
-
-		load_info_about_label_surface(lfname);
-	      }
+	  fi = fopen(fname, "r");
+	  if (fi == NULL)
+	    {
+            fprintf(stderr,
+                "\nWarning: Couldn't load the saved image!\n"
+                "%s\n"
+                "The file is missing.\n\n\n", fname);
+            do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
+                PROMPT_OPEN_UNOPENABLE_YES, "", 0, 0);
+	    }
+	  fclose (fi);
 
           img = myIMG_Load(fname);
 
@@ -13317,6 +13590,8 @@ static int do_open(void)
             starter_flipped = 0;
             starter_personal = 0;
 
+	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
+						   unescaled to send to load_embedded_data */
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
             cur_undo = 0;
@@ -13332,9 +13607,10 @@ static int do_open(void)
             template_id[0] = '\0';
 
 
+	    /* Keep this for compatibility */
             /* See if this saved image was based on a 'starter' */
 
-            load_starter_id(d_names[which]);
+            load_starter_id(d_names[which], NULL);
 
             if (starter_id[0] != '\0')
             {
@@ -13348,6 +13624,8 @@ static int do_open(void)
             }
             else if (template_id[0] != '\0')
               load_template(template_id);
+
+	    load_embedded_data(fname, org_surf);
 
             reset_avail_tools();
 
@@ -13658,7 +13936,7 @@ static int do_slideshow(void)
 		}
 		else
 		{
-		  do_png_save(fi, fname, thumbs[num_files]);
+                    do_png_save(fi, fname, thumbs[num_files], 0);
 		}
 
 		show_progress_bar(screen);
@@ -14204,7 +14482,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 
 	/* See if this saved image was based on a 'starter' */
 
-	load_starter_id(d_names[which]);
+	load_starter_id(d_names[which], NULL);
 
 	if (starter_id[0] != '\0')
 	{
@@ -14760,7 +15038,7 @@ void do_print(void)
   else
   {
 #ifdef PRINTMETHOD_PNG_PNM_PS
-    if (do_png_save(pi, pcmd, save_canvas))
+      if (do_png_save(pi, pcmd, save_canvas, 0))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
 		    screen->w / 2, screen->h / 2);
 #elif defined(PRINTMETHOD_PNM_PS)
@@ -17123,7 +17401,7 @@ static int do_new_dialog(void)
                 }
                 else
                 {
-                  do_png_save(fi, fname, thumbs[num_files]);
+                    do_png_save(fi, fname, thumbs[num_files], 0);
                 }
 
                 show_progress_bar(screen);
@@ -17611,6 +17889,7 @@ static int do_new_dialog(void)
         starter_mirrored = 0;
         starter_flipped = 0;
         starter_personal = 0;
+        starter_modified = 0;
 
         autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
@@ -17711,7 +17990,7 @@ static int do_new_dialog(void)
       starter_mirrored = 0;
       starter_flipped = 0;
       starter_personal = 0;
-
+      starter_modified = 0;
 
       /* Launch color picker if they chose that: */
 
@@ -18765,13 +19044,12 @@ static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect,
       }
 } 
 
-static void load_info_about_label_surface(char lfname[1024])
+static void load_info_about_label_surface(FILE * lfi)
 {
     struct label_node* new_node;
     int list_ctr;
     int tmp_scale_w;
     int tmp_scale_h;
-    FILE *lfi;
     SDL_Surface *label_node_surface, *label_node_surface_aux;
     float new_text_size;
 
@@ -18803,7 +19081,7 @@ static void load_info_about_label_surface(char lfname[1024])
 
 
 
-    lfi = fopen(lfname, "r");
+//    lfi = fopen(lfname, "r");
     if (lfi == NULL) 
         return;
     fscanf(lfi, "%d\n", &list_ctr);
@@ -19202,6 +19480,491 @@ static int are_labels()
                 }
         }
     return (FALSE);
+}
+
+int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
+{
+  unsigned int count, fields;
+  int new_field;
+  char *control, *softwr;
+  int unc_size, comp;
+
+  if (chunk_name[0] == unknown.name[0] &&
+      chunk_name[1] == unknown.name[1] &&
+      chunk_name[2] == unknown.name[2] &&
+      chunk_name[3] == unknown.name[3] &&
+      50 < unknown.size &&
+      'T' == unknown.data[0] &&
+      'u' == unknown.data[1] &&
+      'x' == unknown.data[2] &&
+      'p' == unknown.data[3] &&
+      'a' == unknown.data[4] &&
+      'i' == unknown.data[5] && 'n' == unknown.data[6] && 't' == unknown.data[7] && '\n' == unknown.data[8])
+  {
+    /* Passed the first test, now checking if there are  at least
+       4 fields in the first 50 bytes of the chunk data */
+    count = 9;
+    fields = 1;
+    new_field = 1;
+    while (count < 50)
+    {
+      if (unknown.data[count] == '\n')
+      {
+	if (new_field == 1)
+	  return (FALSE);	/* Avoid empty fields */
+	fields++;
+	if (fields == 4)
+	{			/* Last check, see if the sizes match */
+	  sscanf((char *) unknown.data, "%as\n%as\n%d\n%d\n", &control, &softwr, &unc_size, &comp);
+	  free(control);
+	  free(softwr);
+	  if (count + comp + 1 == unknown.size)
+	    return (TRUE);
+	  else
+	    return (FALSE);
+	}
+	new_field = 1;
+      }
+      else
+      {
+	/* Check if there are decimal values here */
+	if ((fields < 4 && fields > 1) &&
+	    !((unknown.data[count] == '0') ||
+	      (unknown.data[count] == '1') ||
+	      (unknown.data[count] == '2') ||
+	      (unknown.data[count] == '3') ||
+	      (unknown.data[count] == '4') ||
+	      (unknown.data[count] == '5') ||
+	      (unknown.data[count] == '6') ||
+	      (unknown.data[count] == '7') || (unknown.data[count] == '8') || (unknown.data[count] == '9')))
+	  return (FALSE);
+
+	new_field = 0;
+      }
+      count++;
+    }
+  }
+
+  return (FALSE);
+}
+
+Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
+		      png_infop info_ptr, const char *chunk_name, png_unknown_chunk unknown, int *unc_size)
+{
+  unsigned int i;
+
+  int f, count, comp, unc_err;
+  char *control, *softwr;
+  Bytef *comp_buff, *unc_buff;
+
+  sscanf((char *) unknown.data, "%as\n%as\n%d\n%d\n", &control, &softwr, unc_size, &comp);
+  free(control);
+  free(softwr);
+  comp_buff = malloc(comp);
+
+  if (comp_buff == NULL)
+  {
+    fclose(fp);
+
+    png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+
+    fprintf(stderr,
+	    "\nError: Couldn't recover the embedded data in %s\n\nUnable to allocate memory for the compressed buffer for %s\n\n",
+	    fname, chunk_name);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    return (NULL);
+  }
+  f = 0;
+  count = 0;
+
+  for (i = 0; i < unknown.size; i++)
+  {
+    if (f > 3)
+    {
+      comp_buff[i - count] = unknown.data[i];
+      //            printf("%d, %d, %d    ",i-count, comp_buff[i - count], unknown.data[i]);
+    }
+
+    if (unknown.data[i] == '\n' && f < 4)
+    {
+      f++;
+      count = i + 1;
+    }
+  }
+
+  unc_buff = malloc(*unc_size);
+
+  if (unc_buff == NULL)
+  {
+    fclose(fp);
+
+    png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+
+    fprintf(stderr,
+	    "\nError: Couldn't recover the embedded data in %s\n\nUnable to allocate memory for the compressed buffer for %s\n\n",
+	    fname, chunk_name);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    return (NULL);
+  }
+
+  unc_err = uncompress(unc_buff, (uLongf *) unc_size, comp_buff, comp);
+
+  if (unc_err != 0)
+  {
+    printf("\n error %d, unc %d, comp %d\n", unc_err, *unc_size, comp);
+    fclose(fp);
+    png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+    free(comp_buff);
+    free(unc_buff);
+
+    printf("Can't recover the embedded data in %s, error in uncompressing data from %s\n\n", fname, chunk_name);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    return (NULL);
+  }
+
+  free(comp_buff);
+  return (unc_buff);
+
+}
+
+void load_embedded_data(char *fname, SDL_Surface * org_surf)
+{
+  printf("Loading embedded data...\n");
+  printf("%s\n", fname);
+  FILE *fi, *fp;
+  char *control, *softwr;
+  Bytef *unc_buff;
+
+  int comp, unc, unc_size;
+  int u;
+  int have_background, have_foreground, have_label_delta, have_label_data;
+  int ldelta, ldata, fgnd, bgnd;
+  SDL_Surface *aux_surf;
+
+  png_structp png_ptr;
+  png_infop info_ptr;
+
+  png_uint_32 ww, hh;
+  png_uint_32 i, j;
+
+
+  fp = fopen(fname, "rb");
+  if (!fp)
+  {
+    return;
+  }
+
+  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+  if (png_ptr == NULL)
+  {
+    fclose(fp);
+    png_destroy_read_struct(&png_ptr, (png_infopp) NULL, (png_infopp) NULL);
+
+    fprintf(stderr, "\nError: Couldn't open the image!\n%s\n\n", fname);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    return;
+  }
+  else
+  {
+    printf("%s\n", fname);
+
+    info_ptr = png_create_info_struct(png_ptr);
+    if (info_ptr == NULL)
+    {
+      fclose(fp);
+      png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+
+      fprintf(stderr, "\nError: Couldn't open the image!\n%s\n\n", fname);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
+      return;
+    }
+
+    png_init_io(png_ptr, fp);
+
+    png_set_keep_unknown_chunks(png_ptr, 3, NULL, 0);
+
+    png_read_info(png_ptr, info_ptr);
+
+    ww = png_get_image_width(png_ptr, info_ptr);
+    hh = png_get_image_height(png_ptr, info_ptr);
+
+    png_unknown_chunkp unknowns;
+
+    int num_unknowns = (int) png_get_unknown_chunks(png_ptr, info_ptr, &unknowns);
+
+    printf("num_unknowns %i\n", num_unknowns);
+    if (num_unknowns)
+    {
+      have_label_delta = have_label_data = have_background = have_foreground = FALSE;
+      ldelta = ldata = fgnd = bgnd = FALSE;
+
+/* Need to get things in order, as we can't enforce any order in custom chunks, we need to go around them 3 times */
+
+/* First we search for the things that usually were in the .dat file, so if a starter or a template is found and if it is not modified, we can load it clean (i.e. not rebluring a blured when scaled one)*/
+      for (u = 0; u < num_unknowns; u++)
+      {
+	printf("%s, %d\n", unknowns[u].name, unknowns[u].size);
+
+	if (chunk_is_valid("tpDT", unknowns[u]))
+	{
+	  printf("Valid tpDT\n");
+	  fi = fmemopen(unknowns[u].data, unknowns[u].size, "r");
+	  if (fi == NULL)
+	  {
+	    fclose(fp);
+	    png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+
+	    fprintf(stderr, "\nError: Couldn't load the data embedded in %s\n\n", fname);
+	    draw_tux_text(TUX_OOPS, strerror(errno), 0);
+	    SDL_FreeSurface(org_surf);
+	    return;		/* Refusing to go further with the other chunks */
+	  }
+
+/* Put fi position at the right place after the chunk headers */
+	  fscanf(fi, "%as\n", &control);
+	  fscanf(fi, "%as\n", &softwr);
+	  fscanf(fi, "%d\n", &unc);
+	  fscanf(fi, "%d\n", &comp);
+	  free(control);
+	  free(softwr);
+
+	  load_starter_id(NULL, fi);	// fi will be closed in load_starter_id()
+	  if (!starter_modified)
+	  {
+	    /* Code adapted from load_current() */
+	    if (starter_id[0] != '\0')
+	    {
+	      load_starter(starter_id);
+
+	      if (starter_mirrored && img_starter)
+		mirror_starter();
+
+	      if (starter_flipped && img_starter)
+		flip_starter();
+	    }
+	    else if (template_id[0] != '\0')
+	    {
+	      load_template(template_id);
+	    }
+	  }
+	}
+	/* Also check what we have there */
+	if (chunk_is_valid("tpBK", unknowns[u]))
+	  have_background = TRUE;
+	if (chunk_is_valid("tpFG", unknowns[u]))
+	  have_foreground = TRUE;
+	if (chunk_is_valid("tpLD", unknowns[u]))
+	  have_label_delta = TRUE;
+	if (chunk_is_valid("tpLL", unknowns[u]))
+	  have_label_data = TRUE;
+      }
+
+      /* Recover the labels and apply the diff from label to canvas. */
+      if (!disable_label && have_label_delta && have_label_data)
+      {
+	for (u = 0; u < num_unknowns; u++)
+	{
+	  if (chunk_is_valid("tpLD", unknowns[u]))
+	  {
+	    printf("Valid tpLD\n");
+
+	    unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLD", unknowns[u], &unc_size);
+	    if (unc_buff == NULL)
+	    {
+	      if (are_labels())
+	      {
+		delete_label_list(&start_label_node);
+		start_label_node = current_label_node = NULL;
+	      }
+
+	      SDL_FreeSurface(org_surf);
+	      return;
+	    }
+	    else
+	    {
+	      SDL_LockSurface(org_surf);
+	      for (j = 0; j < hh; j++)
+		for (i = 0; i < ww; i++)
+		{
+		  if ((Uint8) unc_buff[4 * j * ww + 4 * i + 3] == SDL_ALPHA_OPAQUE)
+		    putpixels[org_surf->format->BytesPerPixel] (org_surf, i, j,
+								SDL_MapRGB(org_surf->format,
+									   unc_buff[4 * (j * ww + i)],
+									   unc_buff[4 * (j * ww + i) + 1],
+									   unc_buff[4 * (j * ww + i) + 2]));
+		}
+	    }
+	    SDL_UnlockSurface(org_surf);
+
+	    free(unc_buff);
+	    ldelta = TRUE;
+	  }
+
+	  /* Label Data */
+	  if (!disable_label && chunk_is_valid("tpLL", unknowns[u]))
+	  {
+	    printf("Valid tpLL\n");
+
+	    unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLL", unknowns[u], &unc_size);
+	    if (unc_buff == NULL)
+	    {
+	      SDL_FreeSurface(org_surf);
+	      return;
+	    }
+	    else
+	    {
+	      fi = fmemopen(unc_buff, unc_size, "r");
+	      if (fi == NULL)
+	      {
+		printf("Can't recover the label data embedded in %s, error in create file stream\n\n", fname);
+		fclose(fp);
+		png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+		free(unc_buff);
+		SDL_FreeSurface(org_surf);
+
+		draw_tux_text(TUX_OOPS, strerror(errno), 0);
+		return;
+	      }
+	      else
+		load_info_about_label_surface(fi);
+	    }
+
+	    free(unc_buff);
+	    ldata = TRUE;
+	    printf("Out of label data\n");
+	  }
+	}
+      }
+	/* Apply the original canvas */
+	if (ldelta && ldata)
+	  autoscale_copy_smear_free(org_surf, canvas, SDL_BlitSurface);
+        else
+          SDL_FreeSurface(org_surf);
+
+      /* Third run, back and foreground */
+      if (have_background || have_foreground)
+      {
+	for (u = 0; u < num_unknowns; u++)
+	{
+	  if ((starter_modified || !img_starter_bkgd) && chunk_is_valid("tpBG", unknowns[u]))
+	  {
+	    unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpBG", unknowns[u], &unc_size);
+	    if (unc_buff == NULL)
+	      return;
+	    aux_surf =
+	      SDL_CreateRGBSurface(0, ww, hh, canvas->format->BitsPerPixel,
+				   canvas->format->Rmask, canvas->format->Gmask, canvas->format->Gmask, 0);
+	    if (aux_surf == NULL)
+	    {
+	      printf("Can't recover the background data embedded in %s, error in create aux image\n\n", fname);
+	      fclose(fp);
+	      png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+	      free(unc_buff);
+
+	      draw_tux_text(TUX_OOPS, strerror(errno), 0);
+
+	      free(unc_buff);
+	      return;
+	    }
+	    SDL_LockSurface(aux_surf);
+
+	    printf("Bkgd!!!\n");
+	    for (j = 0; j < hh; j++)
+	      for (i = 0; i < ww; i++)
+		putpixels[aux_surf->format->BytesPerPixel] (aux_surf, i, j,
+							    SDL_MapRGB
+							    (aux_surf->format,
+							     unc_buff[3 * j * ww + 3 * i],
+							     unc_buff[3 * j * ww + 3 * i + 1],
+                                                             unc_buff[3 * j * ww + 3 * i + 2]));
+	    SDL_UnlockSurface(aux_surf);
+
+	    if (img_starter_bkgd)
+	      SDL_FreeSurface(img_starter_bkgd);
+
+	    if (aux_surf->w != canvas->w || aux_surf->h != canvas->h)
+	    {
+	      img_starter_bkgd = SDL_CreateRGBSurface(SDL_SWSURFACE,
+						      canvas->w,
+						      canvas->h,
+						      canvas->format->BitsPerPixel,
+						      canvas->format->Rmask,
+						      canvas->format->Gmask,
+                                                      canvas->format->Bmask, 0);
+
+	      autoscale_copy_smear_free(aux_surf, img_starter_bkgd, SDL_BlitSurface);
+	    }
+	    free(unc_buff);
+	  }
+
+	  if ((starter_modified || !img_starter) && chunk_is_valid("tpFG", unknowns[u]))
+	  {
+	    printf("Frgd!!!\n");
+
+	    unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpFG", unknowns[u], &unc_size);
+	    if (unc_buff == NULL)
+	      return;
+
+	    aux_surf = SDL_CreateRGBSurface(canvas->flags, ww, hh,
+					    canvas->format->BitsPerPixel,
+					    canvas->format->Rmask,
+					    canvas->format->Gmask,
+                                            canvas->format->Gmask,
+                                            TPAINT_AMASK);
+	    if (aux_surf == NULL)
+	    {
+	      printf("Can't recover the foreground data embedded in %s, error in create aux image\n\n", fname);
+	      fclose(fp);
+	      png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+	      free(unc_buff);
+
+	      draw_tux_text(TUX_OOPS, strerror(errno), 0);
+
+	      free(unc_buff);
+	      return;
+	    }
+
+	    SDL_LockSurface(aux_surf);
+	    for (j = 0; j < hh; j++)
+	      for (i = 0; i < ww; i++)
+	      {
+		putpixels[aux_surf->format->BytesPerPixel] (aux_surf, i, j,
+							    SDL_MapRGBA
+							    (aux_surf->format,
+							     unc_buff[4 * j * ww + 4 * i],
+							     unc_buff[4 * j * ww + 4 * i + 1],
+							     unc_buff[4 * j * ww + 4 * i + 2],
+                                                             unc_buff[4 * j * ww + 4 * i + 3]));
+	      }
+	    SDL_UnlockSurface(aux_surf);
+
+	    if (img_starter)
+	      SDL_FreeSurface(img_starter);
+
+
+	    /* Code adapted from load_starter */
+	    img_starter = SDL_CreateRGBSurface(canvas->flags,
+					       canvas->w, canvas->h,
+					       canvas->format->BitsPerPixel,
+					       canvas->format->Rmask,
+					       canvas->format->Gmask,
+                                               canvas->format->Bmask,
+                                               TPAINT_AMASK);
+
+	    /* 3rd arg ignored for RGBA surfaces */
+	    SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+	    autoscale_copy_smear_free(aux_surf, img_starter, NondefectiveBlit);
+	    SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
+
+	    free(unc_buff);
+	  }
+	}
+      }
+    }
+  }
+
+  png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
+  fclose(fp);
 }
 
 
@@ -20267,6 +21030,7 @@ static void setup(void)
   starter_mirrored = 0;
   starter_flipped = 0;
   starter_personal = 0;
+  starter_modified = 0;
 
   if (canvas == NULL)
   {
