@@ -2328,6 +2328,7 @@ static void mainloop(void)
 	        {
 	          rec_undo_buffer();
 	          do_render_cur_text(1);
+                  label_node_to_edit = NULL;
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 		  if (cur_tool == TOOL_LABEL)
@@ -2448,6 +2449,7 @@ static void mainloop(void)
 	        {
 	          rec_undo_buffer();
 	          do_render_cur_text(1);
+                  label_node_to_edit = NULL;
 	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
@@ -12268,7 +12270,7 @@ static void do_png_embed_data(png_structp png_ptr)
     fprintf(lfi, "%d\n\n", r_canvas.h);
 
     current_node = start_label_node;
-    while (current_node != first_label_node_in_redo_stack)
+    while (current_node && current_node != first_label_node_in_redo_stack)
     {
       if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
       {
