@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 24, 2010
+  June 14, 2002 - March 22, 2010
 */
 
 
@@ -3793,9 +3793,18 @@ static void mainloop(void)
 
 	    /* Start doing magic! */
 
-            magic_switchout(canvas); /* <-- FIXME: I dislike this -bjk 2009.10.13 */
+            /* These switchout/in are here for Magic tools that abuse the canvas
+               by drawing widgets on them; you don't want the widgets recorded as part
+               of the canvas in the undo buffer!
+               HOWEVER, as Pere noted in 2010.March, this causes many 'normal' Magic
+               tools to not work right, because they lose their record of the 'original'
+               canvas, before the user started using the tool (e.g., Rails, Perspective, Zoom).
+               FIXME: Some in-between solution is needed (a 'clean up the canvas'/'dirty the canvas'
+               pair of functions for the widgety abusers?) -bjk 2010.03.22 */
+
+            /* magic_switchout(canvas); */ /* <-- FIXME: I dislike this -bjk 2009.10.13 */
 	    rec_undo_buffer();
-            magic_switchin(canvas); /* <-- FIXME: I dislike this -bjk 2009.10.13 */
+            /* magic_switchin(canvas); */ /* <-- FIXME: I dislike this -bjk 2009.10.13 */
 
             if (cur_undo > 0)
               undo_ctr = cur_undo - 1;
