@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 16, 2010
+  June 14, 2002 - March 23, 2010
 */
 
 // FIXME: gettext() won't even bother to look up messages unless it
@@ -119,6 +119,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "lb",
   "lt",
   "lv",
+  "ml",
   "mk",
   "ms",
   "nb",
@@ -168,6 +169,7 @@ static int lang_use_own_font[] = {
   LANG_JA,
   LANG_KA,
   LANG_KO,
+  LANG_ML,
   LANG_TA,
   LANG_TE,
   LANG_TH,
@@ -332,7 +334,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"traditional-chinese", "zh_TW.UTF-8"},
   {"zapotec", "zam.UTF-8"},
   {"miahuatlan-zapotec", "zam.UTF-8"},
-  {"khmer", "km_KH.UTF-8"}
+  {"khmer", "km_KH.UTF-8"},
+  {"malayalam", "ml_IN.UTF-8"}
 };
 
 /* FIXME: All this should REALLY be array-based!!! */
@@ -395,6 +398,7 @@ static void show_lang_usage(int exitcode)
 /* lb */ "  luxembourgish letzebuergesch\n"
 /* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
+/* ml */ "  malayalam\n"
 /* es_MX */
 	  "  mexican      mexican-spanish        espanol-mejicano\n"
 /* nr */ "  ndebele\n"
@@ -492,6 +496,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  ko_KR   (Korean)\n"
 	  "  ku_TR   (Kurdish)\n"
 	  "  ms_MY   (Malay)\n"
+          "  ml_IN   (Malayalam)\n"
           "  lb_LU   (Luxembourgish Letzebuergesch)\n"
 	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
