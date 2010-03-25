@@ -17402,21 +17402,29 @@ static int do_new_dialog(void)
                 snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                     dirname[d_places[num_files]], d_names[num_files]);
 
-                fi = fopen(fname, "wb");
-                if (fi == NULL)
+                if (!make_directory("starters", "Can't create user data directory") ||
+                    !make_directory("templates", "Can't create user data directory") ||
+                    !make_directory("starters/.thumbs", "Can't create user data directory") ||
+                    !make_directory("templates/.thumbs", "Can't create user data directory"))
+                        fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
+                else
                 {
-                  fprintf(stderr,
+                  fi = fopen(fname, "wb");
+                  if (fi == NULL)
+                  {
+                    fprintf(stderr,
                       "\nError: Couldn't save thumbnail of "
                       "saved image!\n"
                       "%s\n"
                       "The error that occurred was:\n"
                       "%s\n\n", fname, strerror(errno));
-                }
-                else
-                {
+                  }
+                  else
+                  {
                     do_png_save(fi, fname, thumbs[num_files], 0);
+                  }
                 }
-
+                
                 show_progress_bar(screen);
               }
 
