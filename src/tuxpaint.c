@@ -17392,8 +17392,10 @@ static int do_new_dialog(void)
 
               /* Let's save this thumbnail, so we don't have to
                  create it again next time 'Open' is called: */
+              /* if (d_places[num_files] == PLACE_SAVED_DIR) */ /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
 
-              if (d_places[num_files] == PLACE_SAVED_DIR) /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
+              if (d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR ||  /* We must check to not try to write to system wide dirs  Pere 2010.3.25 */
+                  d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR)   
               {
                 debug("Saving thumbnail for this one!");
 
