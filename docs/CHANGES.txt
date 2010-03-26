@@ -13,7 +13,7 @@ $Id$
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
       moved later.
-      By Bruno Dilly <bruno.dilly@gmail.com> (GSOC 2008)
+      By Arunodai Reddy Vudem (GSOC 2008)
       With modifications and integration by
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
@@ -103,6 +103,8 @@ $Id$
       output).
 
     * Text (and Label) tool doesn't flicker when typing or erasing text.
+
+    * Creation of thumbnails for personal starters and templates.
 
  * New Starters:
    -------------
