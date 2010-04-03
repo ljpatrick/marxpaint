@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - March 23, 2010
+  June 14, 2002 - April 3, 2010
 */
 
 // FIXME: gettext() won't even bother to look up messages unless it
@@ -263,6 +263,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"italiano", "it_IT.UTF-8"},
   {"japanese", "ja_JP.UTF-8"},
   {"venda", "ve_ZA.UTF-8"},
+  {"venetian", "vec.UTF-8"},
+  {"veneto", "vec.UTF-8"},
   {"vietnamese", "vi_VN.UTF-8"},
   {"afrikaans", "af_ZA.UTF-8"},
   {"albanian", "sq_AL.UTF-8"},
@@ -429,6 +431,7 @@ static void show_lang_usage(int exitcode)
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
 /* ve */ "  venda\n"
+/* vec */"   venetian     veneto\n"
 /* vi */ "  vietnamese\n"
 /* wa */ "  walloon      walon\n"
 /* wo */ "  wolof\n"

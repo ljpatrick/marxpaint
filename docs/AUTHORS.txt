@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 25, 2010
+June 17, 2002 - April 3, 2010
 
 $Id$
 
@@ -718,6 +718,9 @@ $Id$
 
   * Venda
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
+
+  * Venetian
+    Fabio Lazarin, El Galepìn <mistro@elgalepin.com>
 
   * Vietnamese
     Le Quang Phan <lqphan@hn.vnn.vn>

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.March.27 (0.9.22)
+2009.April.3 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -152,6 +152,9 @@ $Id$
 
     * Persian translation
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
+
+    * Venetian language
+      Fabio Lazarin, El Galepìn <mistro@elgalepin.com>
 
   * Localization Updates:
     ---------------------

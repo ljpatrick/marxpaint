@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - March 23, 2010
+  June 14, 2002 - April 3, 2010
 */
 
 
@@ -119,6 +119,7 @@ enum
   LANG_TWI,			/* Twi */
   LANG_UK,			/* Ukrainian */
   LANG_VE,			/* Venda */
+  LANG_VEC,			/* Venetian */
   LANG_VI,			/* Vietnamese */
   LANG_WA,			/* Walloon */
   LANF_WO,                      /* Wolof */
