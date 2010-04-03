@@ -667,6 +667,7 @@ $Id$
     Mohomodou Houssouba <mh@bollag-areal.ch>
 
   * Spanish
+    Teresa Orive <teresa.g.orive@gmail.com>
     Gabriel Gazzan <ggabriel@internet.com.uy>
     Pablo Pita <pablo.pita@kdemail.net>
 

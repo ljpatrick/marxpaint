@@ -197,6 +197,9 @@ $Id$
     * Slovak translation
       Jaroslav Rynik <jrynik@yahoo.co.uk>
 
+    * Spanish (Spain) translation
+      Teresa Orive <teresa.g.orive@gmail.com>
+
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
 
