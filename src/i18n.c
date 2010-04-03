@@ -150,6 +150,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "twi",
   "uk",
   "ve",
+  "vec",
   "vi",
   "wa",
   "wo",
