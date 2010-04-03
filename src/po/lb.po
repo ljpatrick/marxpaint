@@ -3,11 +3,13 @@
 # This file is distributed under the same license as the tuxpaint package.
 # René Brandenburger <rene@brandenburger.lu>
 #
+#. Reserved...
+#: ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: lb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-21 23:14-0800\n"
+"POT-Creation-Date: 2010-04-03 11:56-0700\n"
 "PO-Revision-Date: 2010-02-16 21:10+0100\n"
 "Last-Translator: René Brandenburger <rene@brandenburger.lu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -229,95 +231,83 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Véiereck"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Rechteck"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Krees"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Ellips"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Dräieck"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Fënnefeck"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Raut"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Aachteck"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "A Véiereck as e Rechteck mat véier gläich laang Säiten."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "A Rechteck huet véier Säiten an véier richt Wénkelen."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "A Krees as eng Courbe wou all Punkte gläich wäit vum Zentrum ewech sinn."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"A Krees as eng Courbe wou all Punkte gläich wäit vum Zentrum ewech sinn."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Eng Elipse ass en gestreckte Krees"
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "An Dräieck huet dräi Säiten."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "A Pentagon huet fënnef Säiten."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Eng Raut huet véier gläich Säiten an déi géinteniwwerleiend Säite sinn parallel"
+msgstr ""
+"Eng Raut huet véier gläich Säiten an déi géinteniwwerleiend Säite sinn "
+"parallel"
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "En Octagon huet aacht gläich Säiten."
 
@@ -348,8 +338,7 @@ msgstr "Stempelen"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71
-#: ../tools.h:71
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "Formen"
 
@@ -360,8 +349,7 @@ msgstr "Buschtawen"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77
-#: ../tools.h:83
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "Zauberei"
 
@@ -390,6 +378,11 @@ msgstr "Text"
 msgid "Label"
 msgstr "Étiquette"
 
+#. Reserved...
+#: ../tools.h:80
+msgid " "
+msgstr ""
+
 #. Undo last action
 #: ../tools.h:86
 msgid "Undo"
@@ -413,8 +406,7 @@ msgstr "Nei"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98
-#: ../tuxpaint.c:6707
+#: ../tools.h:98 ../tuxpaint.c:6802
 msgid "Open"
 msgstr "Opmaachen"
 
@@ -450,17 +442,27 @@ msgstr "Klick fir eng Linn ze molen. Looss lass fir se fäerdeg ze maachen."
 
 #. Shape tool instructions
 #: ../tools.h:124
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Wiel eng Form. Klick fir d'Mëtt ze wielen, zéi a looss lass wann d'Gréisst gutt ass. Beweeg d'Maus fir d'Form ze dréien a klick fir se dann ze molen."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Wiel eng Form. Klick fir d'Mëtt ze wielen, zéi a looss lass wann d'Gréisst "
+"gutt ass. Beweeg d'Maus fir d'Form ze dréien a klick fir se dann ze molen."
 
 #. Text tool instructions
 #: ../tools.h:127
-msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text."
 msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text. By using the selector button "
+"and clicking an exist label, you can move it, edit it and change its text "
+"style."
 msgstr ""
 
 #. Magic tool instruction
@@ -529,186 +531,179 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK ehm… Looss eis dëst Bild  weidermolen!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1869
 msgid "Do you really want to quit?"
 msgstr "Wëllst du wierklech ophalen?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1872
 msgid "Yes, I’m done!"
 msgstr "Jo, ech si fäerdeg!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1854
-#: ../tuxpaint.c:1881
+#: ../tuxpaint.c:1875 ../tuxpaint.c:1902
 msgid "No, take me back!"
 msgstr "Nee, looss mech weidermolen"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1879
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Wann's du ophäls geet Bild verluer! Soll et gespäichert ginn?"
 
-#: ../tuxpaint.c:1859
-#: ../tuxpaint.c:1864
+#: ../tuxpaint.c:1880 ../tuxpaint.c:1885
 msgid "Yes, save it!"
 msgstr "Jo, späicher et!"
 
-#: ../tuxpaint.c:1860
-#: ../tuxpaint.c:1865
+#: ../tuxpaint.c:1881 ../tuxpaint.c:1886
 msgid "No, don’t bother saving!"
 msgstr "Nee, dat brauch net gespäichert ze ginn!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1863
+#: ../tuxpaint.c:1884
 msgid "Save your picture first?"
 msgstr "Däin Bild  fir d'éischt späicheren?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1889
 msgid "Can’t open that picture!"
 msgstr "Oh, dat do Bild kann ech net opmaachen!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1871
-#: ../tuxpaint.c:1876
-#: ../tuxpaint.c:1885
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:1892 ../tuxpaint.c:1897 ../tuxpaint.c:1906 ../tuxpaint.c:1913
+#: ../tuxpaint.c:1922
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1896
 msgid "There are no saved files!"
 msgstr "Et gëtt keng gespäichert Biller!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1879
+#: ../tuxpaint.c:1900
 msgid "Print your picture now?"
 msgstr "Däi Bild elo drécken?"
 
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1901
 msgid "Yes, print it!"
 msgstr "Jo, dréck et!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1905
 msgid "Your picture has been printed!"
 msgstr "Däi Bild gouf gedréckt!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1909
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Et deet mer Leed, awer däi Bild konnt net gedréckt ginn!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1912
 msgid "You can’t print yet!"
 msgstr "Du kanns nach net drécken!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1895
+#: ../tuxpaint.c:1916
 msgid "Erase this picture?"
 msgstr "Dëst Bild läschen?"
 
-#: ../tuxpaint.c:1896
+#: ../tuxpaint.c:1917
 msgid "Yes, erase it!"
 msgstr "Jo, läsch et!"
 
-#: ../tuxpaint.c:1897
+#: ../tuxpaint.c:1918
 msgid "No, don’t erase it!"
 msgstr "Nee, net läschen!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1900
+#: ../tuxpaint.c:1921
 msgid "Remember to use the left mouse button!"
 msgstr "Denk drun de lénke Knäppche vun der Maus ze benotzen!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2029
+#: ../tuxpaint.c:2052
 msgid "Sound muted."
 msgstr "Toun ausgeschalt."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2034
+#: ../tuxpaint.c:2057
 msgid "Sound unmuted."
 msgstr "Toun ageschalt."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2622
+#: ../tuxpaint.c:2716
 msgid "Please wait…"
 msgstr "Waart wann ech gelift…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:6710
+#: ../tuxpaint.c:6805
 msgid "Erase"
 msgstr "Läschen"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:6713
+#: ../tuxpaint.c:6808
 msgid "Slides"
 msgstr "Diashow"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:6716
+#: ../tuxpaint.c:6811
 msgid "Back"
 msgstr "Zeréck"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:6719
+#: ../tuxpaint.c:6814
 msgid "Next"
 msgstr "Weider"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:6722
+#: ../tuxpaint.c:6817
 msgid "Play"
 msgstr "Ofspillen"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:7430
+#: ../tuxpaint.c:7525
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:10638
+#: ../tuxpaint.c:10770
 msgid "Yes"
 msgstr "Jo"
 
-#: ../tuxpaint.c:10642
+#: ../tuxpaint.c:10774
 msgid "No"
 msgstr "Nee"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:11637
+#: ../tuxpaint.c:11769
 msgid "Replace the picture with your changes?"
 msgstr "D'Bild mat dénge Ännerungen iwwerschreiwen?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:11641
+#: ../tuxpaint.c:11773
 msgid "Yes, replace the old one!"
 msgstr "Jo, iwwerschreiw dat aalt Bild!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:11645
+#: ../tuxpaint.c:11777
 msgid "No, save a new file!"
 msgstr "Nee, als neit Bild späicheren"
 
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12957
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wiel d'Bild aus, da klick \"Opmaachen\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:13525
-#: ../tuxpaint.c:13839
+#: ../tuxpaint.c:13970 ../tuxpaint.c:14284
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Wiel d'Biller aus déi du kucke wëlls, da klick \"Ofspillen\"."
 
-#: ../tuxpaint.c:19287
+#: ../tuxpaint.c:20519
 msgid "Pick a color."
 msgstr "Wiel eng Faarf."
 
@@ -730,19 +725,25 @@ msgstr "Faarwen verschubsen"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Klick a beweeg d'Maus fir d'Faarwen an Deeler vun déngem Bild ze veränneren."
+msgstr ""
+"Klick a beweeg d'Maus fir d'Faarwen an Deeler vun déngem Bild ze veränneren."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
-msgstr "Klick a beweeg d'Maus fir d'Faarwen an déngem ganze Bild ze veränneren."
+msgstr ""
+"Klick a beweeg d'Maus fir d'Faarwen an déngem ganze Bild ze veränneren."
 
 #: ../../magic/src/blind.c:92
 msgid "Blind"
 msgstr "Jalousie"
 
 #: ../../magic/src/blind.c:97
-msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
-msgstr "Click an den Eck vum Bild fir Jalousien driwwer ze zeien. Beweeg d'Maus fir se op an zou ze maachen."
+msgid ""
+"Click towards the edge of your picture to pull window blinds over it. Move "
+"perpendicularly to open or close the blinds."
+msgstr ""
+"Click an den Eck vum Bild fir Jalousien driwwer ze zeien. Beweeg d'Maus fir "
+"se op an zou ze maachen."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -761,7 +762,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick a beweeg d'Maus fir Bléck aus déngem Bild ze maachen."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klick a beweeg d'Maus fir d'Bild an eng Kräidzeechnung ze verwandelen."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -880,7 +882,9 @@ msgstr "Blummen"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Klick a beweeg d'Maus fir e Blummestill ze molen. Looss lass fir d'Blumm fäerdeg ze molen."
+msgstr ""
+"Klick a beweeg d'Maus fir e Blummestill ze molen. Looss lass fir d'Blumm "
+"fäerdeg ze molen."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -895,7 +899,8 @@ msgid "Fold"
 msgstr "Faalen"
 
 #: ../../magic/src/fold.c:86
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "Wiel eng Hannergrondfaarf a klick fir en Ieselsouer ze maachen."
 
 #: ../../magic/src/glasstile.c:83
@@ -916,15 +921,19 @@ msgstr "Graas"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klick a beweeg d'Maus fir Graas wuessen ze loossen. Vergiess den Dreck net!"
+msgstr ""
+"Klick a beweeg d'Maus fir Graas wuessen ze loossen. Vergiess den Dreck net!"
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Kaleidoscope"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klick a beweeg d'Maus fir fir mat symmetresche Pinselen ze molen (a Kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Klick a beweeg d'Maus fir fir mat symmetresche Pinselen ze molen (a "
+"Kaleidoscope)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -963,8 +972,10 @@ msgid "Mosaic"
 msgstr "Mosaik"
 
 #: ../../magic/src/mosaic.c:78
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
 
 #: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
@@ -983,24 +994,30 @@ msgid "Irregular Mosaic"
 msgstr "Onregelmässege Mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:141
-msgid "Click and move the mouse to add a square mosaic to parts of your picture."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
+msgid ""
+"Click and move the mouse to add a square mosaic to parts of your picture."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klick fir däi ganzt Bild zu engem Mosaik ze maachen."
 
 #: ../../magic/src/mosaic_shaped.c:144
-msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
+msgid ""
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
 
 #: ../../magic/src/mosaic_shaped.c:145
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klick fir däi ganzt Bild zu engem Mosaik ze maachen."
 
 #: ../../magic/src/mosaic_shaped.c:147
-msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
+msgid ""
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild als Mosaik ze maachen."
 
 #: ../../magic/src/mosaic_shaped.c:148
 msgid "Click to add an irregular mosaic to your entire picture."
@@ -1044,7 +1061,9 @@ msgstr "Klick an d'Ecken an beweeg d'Maus wou's du d'Bild wells zeien."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "Klick a beweeg d'Maus no uewen fir d'Bild méi grouss ze maachen, no ennen for d'Bild méi kleng ze maachen."
+msgstr ""
+"Klick a beweeg d'Maus no uewen fir d'Bild méi grouss ze maachen, no ennen "
+"for d'Bild méi kleng ze maachen."
 
 #: ../../magic/src/puzzle.c:79
 msgid "Puzzle"
@@ -1095,8 +1114,12 @@ msgid "ROYGBIV Rainbow"
 msgstr "Echte Reebou"
 
 #: ../../magic/src/realrainbow.c:93
-msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
-msgstr "Klick wou de Reebou ufänke soll, zéi d'Maus dann bis dohin wou en ophale soll an looss dann de Knäppche lass."
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
+"Klick wou de Reebou ufänke soll, zéi d'Maus dann bis dohin wou en ophale "
+"soll an looss dann de Knäppche lass."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1144,7 +1167,8 @@ msgstr "Klick vir an déngem ganze Bild d'Ecken ze fannen."
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild méi schaarf ze maachen."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild méi schaarf ze maachen."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
@@ -1152,11 +1176,14 @@ msgstr "Klick fir d'ganz Bild méi schaarf ze maachen."
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Klick a beweeg d'Maus fir eng Schwaarz a Wäiss Silhouette aus dem Bild ze maachen."
+msgstr ""
+"Klick a beweeg d'Maus fir eng Schwaarz a Wäiss Silhouette aus dem Bild ze "
+"maachen."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Klick fir eng Schwaarz a Wäiss Silhouette aus dem ganze Bild ze maachen."
+msgstr ""
+"Klick fir eng Schwaarz a Wäiss Silhouette aus dem ganze Bild ze maachen."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1213,8 +1240,13 @@ msgid "String 'V'"
 msgstr "Spaweck 'V'"
 
 #: ../../magic/src/string.c:134
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
-msgstr "Klick a beweeg d'Maus fir a Spaweck ze molen. Beweeg d'Maus no ënnen an uewe fir méi oder manner Linnen, lenks oder riets fir d'Lach an der Mëtt méi grouss oder kleng ze maachen."
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, left or right to make a bigger hole."
+msgstr ""
+"Klick a beweeg d'Maus fir a Spaweck ze molen. Beweeg d'Maus no ënnen an uewe "
+"fir méi oder manner Linnen, lenks oder riets fir d'Lach an der Mëtt méi "
+"grouss oder kleng ze maachen."
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
@@ -1233,16 +1265,22 @@ msgid "Color & White"
 msgstr "Faarwen & Wäiss"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Klick a beweeg d'Maus fir d'Faarwen an Deeler vun déngem Bild ze veränneren."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
+msgstr ""
+"Klick a beweeg d'Maus fir d'Faarwen an Deeler vun déngem Bild ze veränneren."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
 msgstr "Klick fir d'Faarwen an déngem ganze Bild ze veränneren."
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild wäiss mat der ausgewielter Faarf ze fierwen."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild wäiss mat der ausgewielter "
+"Faarf ze fierwen."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1269,8 +1307,11 @@ msgid "TV"
 msgstr "Telé"
 
 #: ../../magic/src/tv.c:79
-msgid "Click and drag to make parts of your picture look like they are on television."
-msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild wei op der Telé ze maachen."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild wei op der Telé ze maachen."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
@@ -1285,10 +1326,19 @@ msgid "Wavelets"
 msgstr "kleng Wellen"
 
 #: ../../magic/src/waves.c:88
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Klick fir d'Bild horizontal welleg ze maachen. Klick uewen fir kuerz Wellen, ënnen fir grouss Wellen, lénks fir kleng Wellen a riets fir laang Wellen."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Klick fir d'Bild horizontal welleg ze maachen. Klick uewen fir kuerz Wellen, "
+"ënnen fir grouss Wellen, lénks fir kleng Wellen a riets fir laang Wellen."
 
 #: ../../magic/src/waves.c:89
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Klick fir d'Bild vertikal welleg ze maachen. Klick uewen fir kuerz Wellen, ënnen fir grouss Wellen, lénks fir kleng Wellen a riets fir laang Wellen."
-
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"Klick fir d'Bild vertikal welleg ze maachen. Klick uewen fir kuerz Wellen, "
+"ënnen fir grouss Wellen, lénks fir kleng Wellen a riets fir laang Wellen."

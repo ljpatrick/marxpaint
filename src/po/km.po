@@ -5,12 +5,12 @@
 # Khoem Sokhem <khoemsokhem@khmeros.info>, 2008.
 # Auk Piseth <piseth_dv@khmeros.info>, 2008.
 #. Reserved...
-#: ../tools.h:80 ../tools.h:133
+#: ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-21 23:14-0800\n"
+"POT-Creation-Date: 2010-04-03 11:56-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -380,6 +380,11 @@ msgstr "អត្ថបទ"
 msgid "Label"
 msgstr ""
 
+#. Reserved...
+#: ../tools.h:80
+msgid " "
+msgstr ""
+
 #. Undo last action
 #: ../tools.h:86
 msgid "Undo"
@@ -403,7 +408,7 @@ msgstr "ថ្មី"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:6707
+#: ../tools.h:98 ../tuxpaint.c:6802
 msgid "Open"
 msgstr "បើក"
 
@@ -534,187 +539,187 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "មិនអី​ទេ… គូរ​បន្ត​ទៀត​ចុះ !"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1869
 msgid "Do you really want to quit?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​ចេញ​ឬ ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1872
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "បាទ/ចាស ខ្ញុំ​ធ្វើ​រួច​ហើយ !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
+#: ../tuxpaint.c:1875 ../tuxpaint.c:1902
 msgid "No, take me back!"
 msgstr "ទេ ថយក្រោយ​វិញ​សិន !"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1879
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ប្រសិន​បើ​អ្នក​ចេញ អ្នក​នឹង​បាត់​រូបភាព ! រក្សាទុក​វា​ឬទេ ?"
 
-#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
+#: ../tuxpaint.c:1880 ../tuxpaint.c:1885
 msgid "Yes, save it!"
 msgstr "បាទ/​ចាស រក្សាទុក​វា !"
 
-#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
+#: ../tuxpaint.c:1881 ../tuxpaint.c:1886
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "ទេ មិន​រក្សាទុក​ទេ !"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1863
+#: ../tuxpaint.c:1884
 msgid "Save your picture first?"
 msgstr "រក្សាទុក​រូបភាព​របស់​អ្នក​ជា​មុន​សិន​​ឬ ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1889
 msgid "Can’t open that picture!"
 msgstr "មិនអាច​បើក​រូបភាព​នោះ​បាន​ទេ !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:1892 ../tuxpaint.c:1897 ../tuxpaint.c:1906 ../tuxpaint.c:1913
+#: ../tuxpaint.c:1922
 msgid "OK"
 msgstr "យល់ព្រម"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1896
 msgid "There are no saved files!"
 msgstr "មិនមាន​ឯកសារ​ដែលបាន​រក្សាទុក​ទេ !"
 
 #. Verification of print action
-#: ../tuxpaint.c:1879
+#: ../tuxpaint.c:1900
 msgid "Print your picture now?"
 msgstr "បោះពុម្ព​រូបភាព​របស់​អ្នក​ឥឡូវ​ឬ ?"
 
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1901
 msgid "Yes, print it!"
 msgstr "បាទ/​ចាស បោះពុម្ព !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1905
 msgid "Your picture has been printed!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
 #. We got an error printing
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1909
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1912
 msgid "You can’t print yet!"
 msgstr "អ្នក​មិន​អាច​បោះពុម្ព​បាន​នៅ​ឡើយ​ទេ !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1895
+#: ../tuxpaint.c:1916
 msgid "Erase this picture?"
 msgstr "លុប​រូបភាព​នេះ​ឬ ?"
 
-#: ../tuxpaint.c:1896
+#: ../tuxpaint.c:1917
 msgid "Yes, erase it!"
 msgstr "បាទ​/​ចាស លុប !"
 
-#: ../tuxpaint.c:1897
+#: ../tuxpaint.c:1918
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "ទេ មិន​លុប​ទេ !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1900
+#: ../tuxpaint.c:1921
 msgid "Remember to use the left mouse button!"
 msgstr "ចងចាំ​ថា ត្រូវ​ប្រើ​ប៊ូតុង​កណ្ដុរ​ឆ្វេង !"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2029
+#: ../tuxpaint.c:2052
 msgid "Sound muted."
 msgstr "បាន​បិទ​សំឡេង ។"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2034
+#: ../tuxpaint.c:2057
 msgid "Sound unmuted."
 msgstr "បាន​បើក​សំឡេង ។"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2622
+#: ../tuxpaint.c:2716
 msgid "Please wait…"
 msgstr "សូម​រង់ចាំ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:6710
+#: ../tuxpaint.c:6805
 msgid "Erase"
 msgstr "លុប"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:6713
+#: ../tuxpaint.c:6808
 msgid "Slides"
 msgstr "ស្លាយ"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:6716
+#: ../tuxpaint.c:6811
 msgid "Back"
 msgstr "ថយក្រោយ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:6719
+#: ../tuxpaint.c:6814
 msgid "Next"
 msgstr "បន្ទាប់"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:6722
+#: ../tuxpaint.c:6817
 msgid "Play"
 msgstr "ចាក់"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:7430
+#: ../tuxpaint.c:7525
 msgid "Aa"
 msgstr "កខគ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:10638
+#: ../tuxpaint.c:10770
 msgid "Yes"
 msgstr "បាទ/​ចាស"
 
-#: ../tuxpaint.c:10642
+#: ../tuxpaint.c:10774
 msgid "No"
 msgstr "ទេ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:11637
+#: ../tuxpaint.c:11769
 msgid "Replace the picture with your changes?"
 msgstr "ជំនួស​រូបភាព ដោយ​ការ​ផ្លាស់ប្ដូរ​របស់​អ្នក ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:11641
+#: ../tuxpaint.c:11773
 msgid "Yes, replace the old one!"
 msgstr "បាទ​/​ចាស ជំនួស​លើ​ឯកសារ​ចាស់ !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:11645
+#: ../tuxpaint.c:11777
 msgid "No, save a new file!"
 msgstr "ទេ រក្សាទុក​ជា​ឯកសារ​ថ្មី !"
 
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12957
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ជ្រើស​រូបភាព​ដែល​អ្នក​​ចង់​បាន រួច​ហើយ “បើក” ។"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
+#: ../tuxpaint.c:13970 ../tuxpaint.c:14284
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ជ្រើស​រូបភាព​ដែល​ចង់បាន រួច​ចុច “ចាក់” ។"
 
-#: ../tuxpaint.c:19287
+#: ../tuxpaint.c:20519
 msgid "Pick a color."
 msgstr "ជ្រើស​ពណ៌ ។"
 

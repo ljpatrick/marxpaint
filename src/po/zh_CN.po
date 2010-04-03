@@ -8,12 +8,12 @@
 # should not be cold.
 #
 #. Reserved...
-#: ../tools.h:80 ../tools.h:133
+#: ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-21 23:14-0800\n"
+"POT-Creation-Date: 2010-04-03 11:56-0700\n"
 "PO-Revision-Date: 2008-10-14 12:34+0800\n"
 "Last-Translator: Ijeal <tomorrow1881@sohu.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -379,6 +379,11 @@ msgstr "文本"
 msgid "Label"
 msgstr ""
 
+#. Reserved...
+#: ../tools.h:80
+msgid " "
+msgstr ""
+
 #. Undo last action
 #: ../tools.h:86
 msgid "Undo"
@@ -402,7 +407,7 @@ msgstr "新建"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:6707
+#: ../tools.h:98 ../tuxpaint.c:6802
 msgid "Open"
 msgstr "打开"
 
@@ -533,187 +538,187 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "好了... 我们继续画这个！"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1869
 msgid "Do you really want to quit?"
 msgstr "你真的要退出吗？"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1872
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "是的，我已经完成工作！"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1854 ../tuxpaint.c:1881
+#: ../tuxpaint.c:1875 ../tuxpaint.c:1902
 msgid "No, take me back!"
 msgstr "不，我要返回！"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1879
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果你退出了，你会丢掉你的图片！保存起来吗？"
 
-#: ../tuxpaint.c:1859 ../tuxpaint.c:1864
+#: ../tuxpaint.c:1880 ../tuxpaint.c:1885
 msgid "Yes, save it!"
 msgstr "是的，保存！"
 
-#: ../tuxpaint.c:1860 ../tuxpaint.c:1865
+#: ../tuxpaint.c:1881 ../tuxpaint.c:1886
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "不，不用保存！"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1863
+#: ../tuxpaint.c:1884
 msgid "Save your picture first?"
 msgstr "先保存你的图片？"
 
 #. Error opening picture
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1889
 msgid "Can’t open that picture!"
 msgstr "打不开那个图片啊！"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1871 ../tuxpaint.c:1876 ../tuxpaint.c:1885 ../tuxpaint.c:1892
-#: ../tuxpaint.c:1901
+#: ../tuxpaint.c:1892 ../tuxpaint.c:1897 ../tuxpaint.c:1906 ../tuxpaint.c:1913
+#: ../tuxpaint.c:1922
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1896
 msgid "There are no saved files!"
 msgstr "没有保存过的文件啊！"
 
 #. Verification of print action
-#: ../tuxpaint.c:1879
+#: ../tuxpaint.c:1900
 msgid "Print your picture now?"
 msgstr "现在打印你的图片吗？"
 
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1901
 msgid "Yes, print it!"
 msgstr "是的，打印！"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1905
 msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
 
 #. We got an error printing
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1909
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "你的图片被打印出来了！"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1912
 msgid "You can’t print yet!"
 msgstr "你还不能打印耶！"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1895
+#: ../tuxpaint.c:1916
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
-#: ../tuxpaint.c:1896
+#: ../tuxpaint.c:1917
 msgid "Yes, erase it!"
 msgstr "是的，擦掉！"
 
-#: ../tuxpaint.c:1897
+#: ../tuxpaint.c:1918
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "不，不要擦掉！"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1900
+#: ../tuxpaint.c:1921
 msgid "Remember to use the left mouse button!"
 msgstr "记住使用鼠标左键!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2029
+#: ../tuxpaint.c:2052
 msgid "Sound muted."
 msgstr "静音。"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2034
+#: ../tuxpaint.c:2057
 msgid "Sound unmuted."
 msgstr "取消静音。"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2622
+#: ../tuxpaint.c:2716
 msgid "Please wait…"
 msgstr "请等待..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:6710
+#: ../tuxpaint.c:6805
 msgid "Erase"
 msgstr "删除"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:6713
+#: ../tuxpaint.c:6808
 msgid "Slides"
 msgstr "幻灯片"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:6716
+#: ../tuxpaint.c:6811
 msgid "Back"
 msgstr "退回"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:6719
+#: ../tuxpaint.c:6814
 msgid "Next"
 msgstr "文本"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:6722
+#: ../tuxpaint.c:6817
 msgid "Play"
 msgstr "播放"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:7430
+#: ../tuxpaint.c:7525
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:10638
+#: ../tuxpaint.c:10770
 msgid "Yes"
 msgstr "是的"
 
-#: ../tuxpaint.c:10642
+#: ../tuxpaint.c:10774
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:11637
+#: ../tuxpaint.c:11769
 msgid "Replace the picture with your changes?"
 msgstr "确信要更改图片？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:11641
+#: ../tuxpaint.c:11773
 msgid "Yes, replace the old one!"
 msgstr "是的，替换原来的图片！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:11645
+#: ../tuxpaint.c:11777
 msgid "No, save a new file!"
 msgstr "不，保存到新文件"
 
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12957
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:13525 ../tuxpaint.c:13839
+#: ../tuxpaint.c:13970 ../tuxpaint.c:14284
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
-#: ../tuxpaint.c:19287
+#: ../tuxpaint.c:20519
 msgid "Pick a color."
 msgstr "选择一种颜色。"
 
