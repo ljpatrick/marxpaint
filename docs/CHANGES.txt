@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.3 (0.9.22)
+2009.April.13 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -178,6 +178,9 @@ $Id$
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
+
+    * Italian translation
+      Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
     * Latvian
       Raivis Strogonovs <raivucis@gmail.com>
