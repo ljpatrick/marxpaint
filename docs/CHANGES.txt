@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.13 (0.9.22)
+2009.April.15 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -223,6 +223,9 @@ $Id$
 
     * tuxpaint-import tool uses BASHisms, so changed shebang to #!/bin/bash
       (instead of #!/bin/sh).
+
+    * Added some missing examples to the default tuxpaint.conf file.
+      (Thanks to Aapo Rantalainen <aapo.rantalainen@gmail.com>)
 
 
 2009.June.28 (0.9.21)
