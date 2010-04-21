@@ -244,7 +244,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config
+all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -416,7 +416,7 @@ install:	install-bin install-data install-man install-doc \
 		install-magic-plugin-dev \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
-		install-example-starters \
+		install-example-starters install-thumb-starters\
 		install-bash-completion \
 		$(ARCH_INSTALL)
 	@echo
@@ -521,6 +521,8 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
+	@-rm -f starters/.thumbs/*.png
+	@if [ -d starters/.thumbs ]; then rmdir starters/.thumbs; fi
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -602,9 +604,58 @@ INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
 $(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
 	install -D -m 644 $< $@
 
+.PHONY: echo-install-example-starters
+echo-install-example-starters:
+	@echo
+	@echo "...Installing example starters..."
+
 # Install example starters
 .PHONY: install-example-starters
-install-example-starters: $(INSTALLED_STARTERS)
+install-example-starters: echo-install-example-starters $(INSTALLED_STARTERS)
+
+THUMB_STARTERS:=$(sort $(patsubst starters%, starters/.thumbs%-t.png, $(basename $(subst -back.,.,$(STARTERS)))))
+INSTALLED_THUMB_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(THUMB_STARTERS))
+
+STARTER_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.svg))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.jpeg))))
+
+STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.svg))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpeg))))
+
+$(THUMB_STARTERS):
+	@echo -n "."
+	@mkdir -p starters/.thumbs
+	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
+	then \
+		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp.png ; \
+		convert -scale !132x80 -background white -alpha Background -alpha Off obj/tmp.png $@ ; \
+		rm obj/tmp.png ; \
+	else \
+		convert -scale !132x80 -background white -alpha Background -alpha Off $(STARTER_NAME) $@ ; \
+	fi
+
+$(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
+	@install -D -m 644 $< $@
+
+.PHONY: echo-thumb-starters
+echo-thumb-starters:
+	@echo
+	@echo "...Generating thumbnails for starters..."
+
+# Create thumbnails for starters
+.PHONY: thumb-starters
+thumb-starters: echo-thumb-starters $(THUMB_STARTERS)
+
+.PHONY: echo-install-thumb-starters
+echo-install-thumb-starters:
+	@echo
+	@echo "...Installing thumbnails for starters..."
+
+# Install thumb starters
+.PHONY: install-thumb-starters
+install-thumb-starters: echo-install-thumb-starters $(INSTALLED_THUMB_STARTERS)
 
 
 # Install a launcher icon in the Gnome menu
@@ -791,7 +842,7 @@ install-haiku:
 	@echo
 	@echo "...Installing symlink in apps/TuxPaint to tuxpaint executable file..."
 	@ln -sf $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/bin/tuxpaint $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/tuxpaint
-	
+
 # Install the import script:
 .PHONY: install-importscript
 install-importscript:
