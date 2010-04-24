@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.15 (0.9.22)
+2009.April.24 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -21,7 +21,7 @@ $Id$
     ----------------
     * Blinds - Close window blinds over your picture.
       Perspective - Change the image's perspective.
-      Moasic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
+      Mosaic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
@@ -105,6 +105,8 @@ $Id$
     * Text (and Label) tool doesn't flicker when typing or erasing text.
 
     * Creation of thumbnails for personal starters and templates.
+
+    * Creating thumbnails for the starters we provide.
 
  * New Starters:
    -------------
