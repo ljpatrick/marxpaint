@@ -77,7 +77,7 @@ const char *const tool_names[NUM_TOOLS] = {
   gettext_noop("Label"),
 
   // Reserved...
-  gettext_noop(""),
+  " ",
 
   // "Magic" effects tools (blur, flip image, etc.)
   gettext_noop("Magic"),
@@ -130,7 +130,7 @@ const char *const tool_tips[NUM_TOOLS] = {
   gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."),
 
   // Reserved...
-  gettext_noop(""),
+  " ",
 
   // Magic tool instruction
   gettext_noop("Pick a magical effect to use on your drawing!"),
