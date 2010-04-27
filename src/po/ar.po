@@ -556,8 +556,6 @@ msgstr "أتُريدُ حقاً الخروج؟"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1872
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "نعم، لقد انتهيت"
 
