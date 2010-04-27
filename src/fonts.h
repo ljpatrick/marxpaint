@@ -56,6 +56,9 @@
  * Move into 'fonts.c' and the code in 'tuxpaint.c' 
  * that uses this lot should be put into 'fonts.c' as well.
  */
+
+#ifdef NO_SDLPANGO
+/* Only kill SDL_thread stuff when we're not using Pango, because we need it to let fontconfig make its cache (takes a long time the first time) -bjk 2010.04.27 */
 #define SDL_CreateThread(fn,vp) (void*)(long)(fn(vp))
 #define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
 #define SDL_Thread int
@@ -64,6 +67,8 @@
 #define SDL_DestroyMutex(lock)
 #define SDL_mutexP(lock)	// take lock
 #define SDL_mutexV(lock)	// release lock
+#endif
+
 #endif
 
 extern SDL_Thread *font_thread;
@@ -187,5 +192,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
 #else
 void sdl_color_to_pango_color(SDL_Color sdl_color, SDLPango_Matrix *pango_color);
 #endif
+
+int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale);
 
 #endif

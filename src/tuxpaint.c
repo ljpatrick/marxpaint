@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 22, 2010
+  June 14, 2002 - April 27, 2010
 */
 
 
@@ -95,6 +95,7 @@
 #define COLORSEL_CLOBBER_WIPE 8 /* draw the (greyed out) colors, but don't disable */
 #define COLORSEL_FORCE_REDRAW 16 /* enable, and force redraw (to make color picker work) */
 
+/* FIXME: Why are we checking this BEFORE the #include "SDL.h"!? Does this even work? -bjk 2010.04.24 */
 /* Setting the amask value based on endianness*/
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
 #define TPAINT_AMASK 0xff000000
@@ -318,6 +319,7 @@ extern WrapperData macosx;
 #include <sys/stat.h>
 
 #include "SDL.h"
+#include "SDL_thread.h"
 #if !defined(_SDL_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
@@ -6749,6 +6751,65 @@ static int load_user_fonts_stub(void *vp)
 }
 #endif
 
+#ifndef NO_SDLPANGO
+volatile long fontconfig_thread_done = 0;
+
+int generate_fontconfig_cache_spinner(SDL_Surface * screen)
+{
+  SDL_Event event;
+
+  while (fontconfig_thread_done == 0) {
+    show_progress_bar(screen);
+    SDL_Flip(screen);
+    SDL_Delay(20);
+
+    while (SDL_PollEvent(&event) > 0) {
+      if (event.type == SDL_QUIT ||
+          (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)) {
+        printf("Aborting!\n"); fflush(stdout);
+        return(1);
+      }
+    }
+  }
+  return(0);
+}
+
+static int generate_fontconfig_cache_real(void)
+{
+  TuxPaint_Font * tmp_font;
+  SDL_Surface * tmp_surf;
+  SDL_Color black = { 0, 0, 0, 0 };
+
+  printf("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID()); fflush(stdout);
+
+  tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12);
+
+  if (tmp_font != NULL)
+  {
+    printf("-- Generated a font.\n"); fflush(stdout);
+    tmp_surf = render_text(tmp_font, "Test", black);
+    if (tmp_surf != NULL) {
+      printf("-- Generated a surface\n"); fflush(stdout);
+      SDL_FreeSurface(tmp_surf);
+    } else {
+      printf("-- Failed to make a surface!\n"); fflush(stdout);
+    }
+    TuxPaint_Font_CloseFont(tmp_font);
+  } else {
+    printf("-- Failed to generate a font!\n"); fflush(stdout);
+  }
+
+  fontconfig_thread_done = 1;
+
+  printf("-- generate_fontconfig_cache() is done\n"); fflush(stdout);
+  return(0);
+}
+
+static int generate_fontconfig_cache(void *vp)
+{
+  return generate_fontconfig_cache_real();
+}
+#endif
 
 #define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
 		    ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
@@ -20612,6 +20673,7 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
+
 /////////////////////////////////////////////////////////////////////////////
 static void setup(void)
 {
@@ -20636,7 +20698,9 @@ static void setup(void)
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
   Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
   int big_title;
-
+#ifndef NO_SDLPANGO
+  SDL_Thread * fontconfig_thread;
+#endif
 
 
 
@@ -20911,6 +20975,74 @@ static void setup(void)
 
   SDL_Flip(screen);
 
+
+#if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
+  if (fullscreen && no_fancy_cursors == 0)
+  {
+    fprintf(stderr, "Warning: An SDL bug causes the fancy cursors to leave\n"
+	    "trails in fullscreen mode.  Disabling fancy cursors.\n"
+	    "(You can do this yourself with 'nofancycursors' option,\n"
+	    "to avoid this warning in the future.)\n");
+    no_fancy_cursors = 1;
+  }
+#endif
+
+
+  /* Create cursors: */
+
+  scale = 1;
+
+#ifdef SMALL_CURSOR_SHAPES
+  scale = 2;
+#endif
+  
+#ifdef __APPLE__
+  cursor_arrow = SDL_GetCursor();		/* use standard system cursor */
+#endif
+
+  /* this one first, because we need it yesterday */
+  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
+			    watch_width, watch_height,
+			    14 / scale, 14 / scale);
+
+  do_setcursor(cursor_watch);
+  show_progress_bar(screen);
+
+
+
+
+#ifndef NO_SDLPANGO
+  /* Let Pango & fontcache do their work without locking up */
+
+  fontconfig_thread_done = 0;
+
+  printf("Spawning Pango thread\n"); fflush(stdout);
+
+  fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, NULL);
+  if (fontconfig_thread == NULL) {
+    fprintf(stderr, "Failed to create Pango setup thread: %s\n", SDL_GetError());
+  } else {
+    printf("Thread spawned\n"); fflush(stdout);
+    if (generate_fontconfig_cache_spinner(screen)) /* returns 1 if aborted */
+    {
+      printf("Aborted!\n"); fflush(stdout);
+      SDL_KillThread(fontconfig_thread);
+      SDL_Quit();
+      exit(0);
+      /* FIXME: Let's be more graceful about exiting (e.g., clean up lockfile!) -bjk 2010.04.27 */
+    }
+    printf("Done generating cache\n"); fflush(stdout);
+  }
+
+
+#ifdef FORKED_FONTS
+  /* NOW we can fork our own font scanner stuff, and let it run in the bgkd -bjk 2010.04.27 */
+  printf("Now running font scanner\n"); fflush(stdout);
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+#endif
+
+#endif
+
   medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
 					DATA_PREFIX "fonts/default_font.ttf",
 			    		18 - (only_uppercase * 3));
@@ -20949,38 +21081,6 @@ static void setup(void)
 
   SDL_Flip(screen);
 
-
-#if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
-  if (fullscreen && no_fancy_cursors == 0)
-  {
-    fprintf(stderr, "Warning: An SDL bug causes the fancy cursors to leave\n"
-	    "trails in fullscreen mode.  Disabling fancy cursors.\n"
-	    "(You can do this yourself with 'nofancycursors' option,\n"
-	    "to avoid this warning in the future.)\n");
-    no_fancy_cursors = 1;
-  }
-#endif
-
-
-  /* Create cursors: */
-
-  scale = 1;
-
-#ifdef SMALL_CURSOR_SHAPES
-  scale = 2;
-#endif
-  
-#ifdef __APPLE__
-  cursor_arrow = SDL_GetCursor();		/* use standard system cursor */
-#endif
-
-  /* this one first, because we need it yesterday */
-  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
-			    watch_width, watch_height,
-			    14 / scale, 14 / scale);
-
-  do_setcursor(cursor_watch);
-  show_progress_bar(screen);
 
 #ifdef FORKED_FONTS
   reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
@@ -21631,10 +21731,19 @@ int main(int argc, char *argv[])
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
+
+
+
   CLOCK_ASM(time2);
 #ifdef FORKED_FONTS
   // must start ASAP, but depends on locale which in turn needs the config
+#ifdef NO_SDLPANGO
+  /* Only fork it now if we're not planning on creating a thread to handle fontconfig stuff -bjk 2010.04.27 */
+  printf("Running font scanner\n"); fflush(stdout);
   run_font_scanner(screen, lang_prefixes[get_current_language()]);
+#else
+  printf("NOT running font scanner\n"); fflush(stdout);
+#endif
 #endif
 
   /* Set up! */

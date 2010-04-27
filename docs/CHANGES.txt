@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.24 (0.9.22)
+2009.April.27 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -21,7 +21,7 @@ $Id$
     ----------------
     * Blinds - Close window blinds over your picture.
       Perspective - Change the image's perspective.
-      Mosaic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
+      Moasic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
@@ -45,6 +45,19 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Creating thumbnails for the starters we provide.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * On systems where Pango is used for UI text rendering, Tux Paint now
+      spawns a temporary thread during start-up (at the splash screen) to
+      allow "fontconfig" to generate its font cache in the background,
+      while showing the "please wait" animation, and responding to the US.
+      (Fontconfig takes a long time to generate its cache the first time
+      you run a Pango- and hence fontconfig-enabled application
+      (Tux Paint, Gimp, Inkscape, etc.), or after adding lots of new fonts
+      to your system).
+      SF.net Bug #2944951
+
     * Thumbnailing (of UI elements, stamps, saved images, etc.) is now
       gamma-corrected. See:
       http://www.4p8.com/eric.brasseur/gamma.html
@@ -106,8 +119,6 @@ $Id$
 
     * Creation of thumbnails for personal starters and templates.
 
-    * Creating thumbnails for the starters we provide.
-
  * New Starters:
    -------------
     * Elephant
@@ -147,7 +158,7 @@ $Id$
   * New Locales:
     ------------
     * Luxembourgish translation
-      René Brandenburger <rene@brandenburger.lu>
+      Renï¿½ Brandenburger <rene@brandenburger.lu>
 
     * Malayalam translation
       TBD
@@ -156,7 +167,7 @@ $Id$
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
     * Venetian language
-      Fabio Lazarin, El Galepìn <mistro@elgalepin.com>
+      Fabio Lazarin, El Galepï¿½n <mistro@elgalepin.com>
 
   * Localization Updates:
     ---------------------
@@ -375,7 +386,7 @@ $Id$
 
   * New localizations:
     ------------------
-    * Shuswap (Secwepemctín) translation
+    * Shuswap (Secwepemctï¿½n) translation
       Neskie Manuel <neskiem@gmail.com>
 
     * Songhay translation
@@ -444,7 +455,7 @@ $Id$
       Simona Riva <simona.riva@tiscali.it>
 
     * Kurdish translation
-      Amed Çeko Jiyan <amedcj@gmail.com>
+      Amed ï¿½eko Jiyan <amedcj@gmail.com>
 
     * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
@@ -525,7 +536,7 @@ $Id$
     -----------------
     * Asturian
       Xandru Armesto <alarmes@wanadoo.es>
-      Mikel González <mikelisimu@yahoo.es>
+      Mikel Gonzï¿½lez <mikelisimu@yahoo.es>
 
   * Localization Updates:
     ---------------------
@@ -533,7 +544,7 @@ $Id$
       Samuel Murray (Groenkloof) <samuel@translate.org.za>
 
     * German translation
-      Burkhard Lück <lueck@hube-lueck.de>
+      Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
     * Greek translation:
       Yannis Papatzikos <papatzikos@yahoo.gr>
@@ -546,7 +557,7 @@ $Id$
       Alesis Novik <alesisnov@gmail.com>
 
     * Slovakian translation
-      Peter Tuhársky <tuharsky@misbb.sk>
+      Peter Tuhï¿½rsky <tuharsky@misbb.sk>
 
     * Spanish translation
       Gabriel Gazzan <ggabriel@internet.com.uy>
@@ -721,7 +732,7 @@ $Id$
       Edmund GRIMLEY EVANS <edmundo@rano.org>
 
     * Faroese translation
-      Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+      Lis Gï¿½the ï¿½ Jï¿½kupsstovu <morshus@gmail.com>
 
     * Finnish translation
       Jorma Karvonen <karvjorm@users.sf.net>
@@ -1022,7 +1033,7 @@ $Id$
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
     * German translation
-      Burkhard Lück <lueck@hube-lueck.de>
+      Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
@@ -1042,7 +1053,7 @@ $Id$
     * Norwegian Nynorsk translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
-    * Norwegian Bokmål translation
+    * Norwegian Bokmï¿½l translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
     * Polish translation
@@ -1368,7 +1379,7 @@ $Id$
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
     * Faroese
-      Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+      Lis Gï¿½the ï¿½ Jï¿½kupsstovu <morshus@gmail.com>
 
     * Gujarati
       Kartik Mistry <kartik.mistry@gmail.com>
@@ -1524,7 +1535,7 @@ $Id$
       Khalid Al Holan <alholan@gmail.com>
 
     * Faroese
-      Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+      Lis Gï¿½the ï¿½ Jï¿½kupsstovu <morshus@gmail.com>
 
     * Gujarati -- includes "gu.ttf" font
       Kartik Mistry <kartik.mistry@gmail.com>
@@ -1578,7 +1589,7 @@ $Id$
       Leandro Regueiro <leandro.regueiro@gmail.com>
 
     * German
-      Burkhard Lück <lueck@hube-lueck.de>
+      Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
     * Greek
       Sokratis Sofianopoulos <sokratis.sofianopoulos@gmail.com>
@@ -1612,7 +1623,7 @@ $Id$
 
     * Spanish
       Pablo Pita <pablo.pita@kdemail.net>
-      Gabriel Gazzán <ggabriel@internet.com.uy>
+      Gabriel Gazzï¿½n <ggabriel@internet.com.uy>
 
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
@@ -2097,7 +2108,7 @@ $Id$
     * Mentioned Tux Paint Config. tool in FAQ.
 
     * French documentation created.
-      Jérôme Chantreau <plovemax@hotmail.com>
+      Jï¿½rï¿½me Chantreau <plovemax@hotmail.com>
 
   * New translations:
     -----------------
@@ -2133,7 +2144,7 @@ $Id$
     * Mexican Spanish
       Ignacio Tike <ignaciotike@spymac.com>
       Daniel Illingworth <webmaster@intermagen.net>
-      Luis C. Suárez M. <luiscsuarez@gmail.com>
+      Luis C. Suï¿½rez M. <luiscsuarez@gmail.com>
 
     * Swahili
       Martin Benjamin <martin.benjamin@yale.edu>
@@ -2171,7 +2182,7 @@ $Id$
   
     * German
       Patrick <nc-spechtpa3 [At] netcologne DOT de>
-      Burkhard Lück <lueck@hube-lueck.de>
+      Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
     * Greek
       The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
@@ -2206,11 +2217,11 @@ $Id$
       Eugene Zelenko <greendeath@mail.ru>
 
     * Spanish and Spanish documentation.
-      Gabriel Gazzán <ggabriel@internet.com.uy>
+      Gabriel Gazzï¿½n <ggabriel@internet.com.uy>
     
     * Swedish
       Magnus Dahl <magnus.dahl@bredband.net>
-      Tomas Skäre <tomas@nocrew.org>
+      Tomas Skï¿½re <tomas@nocrew.org>
     
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
@@ -2352,7 +2363,7 @@ $Id$
       Pere Pujal Carabantes <ppujal@airtel.net>
     
     * Updated Danish translation.
-      Mogens Jæger <mogensjaeger@get2net.dk>
+      Mogens Jï¿½ger <mogensjaeger@get2net.dk>
 
     * Updated Dutch translation.
       Geert Stams <geertstams@wanadoo.nl>
@@ -2367,7 +2378,7 @@ $Id$
       Roland Illig <roland.illig@gmx.de>
 
     * Updated Hungarian translation.
-      Török Gábor <gabo@linuxportal.hu>
+      Tï¿½rï¿½k Gï¿½bor <gabo@linuxportal.hu>
 
     * Updated Icelandic translation.
       Pjetur G. Hjaltason <pjetur@pjetur.net>
@@ -2403,7 +2414,7 @@ $Id$
       Andrej Kacian <andrej@kacian.sk>
     
     * Updated Spanish translation.
-      Gabriel Gazzán <ggabriel@internet.com.uy>
+      Gabriel Gazzï¿½n <ggabriel@internet.com.uy>
 
     * Updated Tamil translation.
       Muguntharaj <mugunth@thamizha.com>
@@ -2809,7 +2820,7 @@ $Id$
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Added support for some useful HTML escape sequences in stamp descriptions
-    (e.g., "&acute;" for "á" ("a" with "'" over it))
+    (e.g., "&acute;" for "ï¿½" ("a" with "'" over it))
     Append ".esc" to the locale code (e.g., "fr.esc=...") in the ".txt"
     description files.
 
@@ -3011,7 +3022,7 @@ $Id$
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Translated to Hungarian.
-    Török Gábor <gabo@linuxmania.hu>
+    Tï¿½rï¿½k Gï¿½bor <gabo@linuxmania.hu>
 
   * Partly translated to Korean.  PO file in an unusable charset, though...
     Mark K. Kim <mkkim214@gmail.com>

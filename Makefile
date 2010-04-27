@@ -244,7 +244,8 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters
+all:	tuxpaint translations magic-plugins tp-magic-config
+# thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -416,9 +417,10 @@ install:	install-bin install-data install-man install-doc \
 		install-magic-plugin-dev \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
-		install-example-starters install-thumb-starters\
+		install-example-starters \
 		install-bash-completion \
 		$(ARCH_INSTALL)
+#install-thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo

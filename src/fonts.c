@@ -428,6 +428,7 @@ static void reliable_read(int fd, void *buf, size_t count)
   while (count);
 }
 
+#endif
 
 static void groupfonts_range(style_info ** base, int count)
 {
@@ -931,7 +932,7 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
 }
 
 
-static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale)
+/* static */ int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
 
@@ -991,7 +992,7 @@ static int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict 
 }
 
 
-
+#ifdef FORKED_FONTS
 
 void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
 {
