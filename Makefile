@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2009 by Bill Kendrick and others
+# Copyright (c) 2002-2010 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - February 24, 2010
+# June 14, 2002 - April 27, 2010
 
 
 # The version number, for release:
@@ -278,7 +278,7 @@ build/tuxpaint-$(VER_VERSION):
 	@echo
 	@mkdir -p build/tuxpaint-$(VER_VERSION)
 	@find . -follow \
-	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'dummy.o' -o -name 'build' -o -name '.#*' \) \
+	     \( -wholename '*/CVS' -o name .thumbs -o -name .cvsignore -o -name 'dummy.o' -o -name 'build' -o -name '.#*' \) \
 	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
 
 .PHONY: release
