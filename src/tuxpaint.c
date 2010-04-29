@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 27, 2010
+  June 14, 2002 - April 29, 2010
 */
 
 
@@ -20130,7 +20130,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
-  char *str *arg;
+  char *str, *arg;
 
   /* FIXME: Bring back support for single-dash options:
     -c (--copying)
