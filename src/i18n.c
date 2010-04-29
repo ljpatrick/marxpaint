@@ -597,21 +597,19 @@ static const char *language_to_locale(const char *langstr)
 
 static void set_langint_from_locale_string(const char *restrict loc)
 {
+  char *baseloc = strdup(loc);
+  char *dot = strchr(baseloc, '.');
+  size_t len_baseloc = strlen(baseloc);
+  int found = 0;
+  int i;
+
   if (!loc)
     return;
 
-  char *baseloc = strdup(loc);
-  
-  char *dot = strchr(baseloc, '.');
   if(dot)
     *dot = '\0';
 
-  size_t len_baseloc = strlen(baseloc);
-
   /* Which, if any, of the locales is it? */
-
-  int found = 0;
-  int i;
 
   for (i = 0; i < NUM_LANGS && found == 0; i++)
   {

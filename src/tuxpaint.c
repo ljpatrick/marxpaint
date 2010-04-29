@@ -1944,8 +1944,8 @@ static void mainloop(void)
   int *thing_scroll;
   int cur_thing, do_draw, max;
   int ignoring_motion;
-  int j;
-  unsigned int i;
+  int j = 0;
+  unsigned int i = 0;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key;
@@ -2388,7 +2388,7 @@ static void mainloop(void)
 			      cur_label = LABEL_LABEL;
                                 cur_thing=label_node_to_edit->save_cur_font;
                                 do_setcursor(cursor_insertion);
-                                unsigned int i = 0;
+                                i = 0;
                                 label_node_to_edit->is_enabled = FALSE;
                                 derender_node(&label_node_to_edit);
 
@@ -3855,7 +3855,7 @@ static void mainloop(void)
 		    cur_label = LABEL_LABEL;
                       cur_thing=label_node_to_edit->save_cur_font;
 		  do_setcursor(cursor_insertion);
-                  unsigned int i = 0;
+                  i = 0;
                   label_node_to_edit->is_enabled = FALSE;
                   derender_node(&label_node_to_edit);
 
@@ -12132,7 +12132,6 @@ static void do_png_embed_data(png_structp png_ptr)
 
   char *ldata;
   FILE *lfi;
-  lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
   int list_ctr = 0;
   Uint32 pix;
   int alpha_size;
@@ -12140,6 +12139,8 @@ static void do_png_embed_data(png_structp png_ptr)
   struct label_node *current_node;
   char *char_stream;
   size_t dat_size;
+
+  lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
 
   /* Starter foreground */
   if (img_starter)
@@ -19150,6 +19151,7 @@ static void load_info_about_label_surface(FILE * lfi)
     int new_pos;
     int x, y, pix_size;
     Uint8 a;
+    size_t max_text;
   
     /* Clear label surface */
 
@@ -19231,7 +19233,7 @@ static void load_info_about_label_surface(FILE * lfi)
             fscanf(lfi, "%d\n", &new_node->save_cur_font);
             new_node->save_cur_font = 0;
               
-            size_t max_text = 64;
+            max_text = 64;
             new_node->save_font_type = NULL;
             
             getline(&new_node->save_font_type, &max_text, lfi);
@@ -19711,8 +19713,6 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
 
 void load_embedded_data(char *fname, SDL_Surface * org_surf)
 {
-  printf("Loading embedded data...\n");
-  printf("%s\n", fname);
   FILE *fi, *fp;
   char *control, *softwr;
   Bytef *unc_buff;
@@ -19721,14 +19721,18 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
   int u;
   int have_background, have_foreground, have_label_delta, have_label_data;
   int ldelta, ldata, fgnd, bgnd;
+  int num_unknowns = 0;
   SDL_Surface *aux_surf;
 
   png_structp png_ptr;
   png_infop info_ptr;
+  png_unknown_chunkp unknowns;
 
   png_uint_32 ww, hh;
   png_uint_32 i, j;
 
+  printf("Loading embedded data...\n");
+  printf("%s\n", fname);
 
   fp = fopen(fname, "rb");
   if (!fp)
@@ -19770,9 +19774,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
     ww = png_get_image_width(png_ptr, info_ptr);
     hh = png_get_image_height(png_ptr, info_ptr);
 
-    png_unknown_chunkp unknowns;
-
-    int num_unknowns = (int) png_get_unknown_chunks(png_ptr, info_ptr, &unknowns);
+    num_unknowns = (int) png_get_unknown_chunks(png_ptr, info_ptr, &unknowns);
 
     printf("num_unknowns %i\n", num_unknowns);
     if (num_unknowns)
@@ -20128,7 +20130,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
-  char *str;
+  char *str *arg;
 
   /* FIXME: Bring back support for single-dash options:
     -c (--copying)
@@ -20157,7 +20159,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     if(str[0]=='-' && str[1]=='-' && str[2])
     {
       str += 2;
-      char *arg = strchr(str,'=');
+      arg = strchr(str,'=');
       if(arg)
         *arg++ = '\0';
       else if(argv[1] && argv[1][0]!='-')
@@ -20203,21 +20205,20 @@ static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 static void setup_config(char *argv[])
 {
   char str[128];
+  const char *home = getenv("HOME");
 
   struct cfginfo tmpcfg_usr;
-  memset(&tmpcfg_usr, '\0', sizeof tmpcfg_usr);
-
   struct cfginfo tmpcfg_cmd;
-  memset(&tmpcfg_cmd, '\0', sizeof tmpcfg_cmd);
-
   struct cfginfo tmpcfg;
+
+  memset(&tmpcfg_usr, '\0', sizeof tmpcfg_usr);
+  memset(&tmpcfg_cmd, '\0', sizeof tmpcfg_cmd);
   memset(&tmpcfg, '\0', sizeof tmpcfg);
 
   parse_argv_options(&tmpcfg_cmd, argv);
 
   /* Set default options: */
 
-  const char *home = getenv("HOME");
   if(!home)
   {
     /* Woah, don't know where $HOME is? */
@@ -20593,20 +20594,18 @@ static void setup_colors(void){
 static void do_lock_file(void)
 {
   FILE *fi;
+  char *lock_fname;
+  time_t time_lock, time_now;
+  char *homedirdir;
+
   /* Test for lockfile, if we're using one: */
 
   if (!ok_to_use_lockfile)
     return;
 
-  char *lock_fname;
-  time_t time_lock, time_now;
-  char *homedirdir;
-
-
   /* Get the current time: */
 
   time_now = time(NULL);
-
 
   /* Look for the lockfile... */
 
