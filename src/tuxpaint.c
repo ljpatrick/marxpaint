@@ -2085,8 +2085,28 @@ static void mainloop(void)
           magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_UNDO])
-          {
-	    hide_blinking_cursor();
+          { 
+            if (cursor_x != -1 && cursor_y != -1)
+            {
+              hide_blinking_cursor();
+              if (texttool_len > 0)
+              {
+                rec_undo_buffer();
+                do_render_cur_text(1);
+                texttool_len = 0;
+                cursor_textwidth = 0;
+                label_node_to_edit = NULL;
+              }
+              else if(cur_tool == TOOL_LABEL && label_node_to_edit)
+              {
+                rec_undo_buffer();
+                have_to_rec_label_node = TRUE;
+                add_label_node(0, 0, 0, 0, NULL);
+                derender_node(&label_node_to_edit);
+                label_node_to_edit = NULL;
+              }
+            }
+
 	    if (cur_undo == newest_undo)
 	    {
 	      rec_undo_buffer();
@@ -19458,6 +19478,7 @@ static void undo_tmp_applied_text()
 
             derender_node(&aux_label_node);
             delete_label_list(&aux_label_node);
+            have_to_rec_label_node = FALSE;
             do_render_cur_text(0);
         }
 }
