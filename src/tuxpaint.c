@@ -2085,7 +2085,7 @@ static void mainloop(void)
           magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_UNDO])
-	  {
+          {
 	    hide_blinking_cursor();
 	    if (cur_undo == newest_undo)
 	    {
@@ -12067,27 +12067,33 @@ static int do_save(int tool, int dont_show_success_results)
 static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, size_t uncompressed_size, Bytef * data,
 			   size_t dataLen)
 {
-  FILE *fi;
-  size_t size;
+  int headersLen;
   unsigned int i;
+  char * line, * headers, * cdata;
 
+  headersLen = 0;
+  headers = calloc(256, 1);
+  line = calloc(256, 1);
 
-  fi = open_memstream((char **) chunk_data, &size);
+  strcat(headers, "Tuxpaint\n");
+  strcat(headers, "Tuxpaint_" VER_VERSION "\n");
+  sprintf(line, "%d%s", uncompressed_size, "\n");
+  strcat(headers, line);
+  sprintf(line, "%d%s", dataLen, "\n");
+  strcat(headers, line);
 
-  /* First the header */
-  fprintf(fi, "Tuxpaint\n");
-  fprintf(fi, "Tuxpaint_" VER_VERSION "\n");
-  fprintf(fi, "%d\n", uncompressed_size);
-  fprintf(fi, "%d\n", dataLen);
+  headersLen = strlen(headers);
+  *chunk_data_len = headersLen + dataLen;
 
-  /* Add the data */
+  cdata = calloc(*chunk_data_len, sizeof(unsigned char *));
+  strcat(cdata, headers);
+
   for (i = 0; i < dataLen; i++)
-  {
-    fwrite(&data[i], sizeof(data[i]), 1, fi);
-  }
+      cdata[headersLen + i] = data[i];
+  *chunk_data = (unsigned char *) cdata;
 
-  fclose(fi);
-  *chunk_data_len = size;
+  free(line);
+  free(headers);
 }
 
 
@@ -12124,7 +12130,6 @@ static void do_png_embed_data(png_structp png_ptr)
 
   png_unknown_chunk tuxpaint_chunks[5];
   size_t size_of_uncompressed_label_data, chunk_data_len;
-  FILE *fi_stream;
   unsigned char *sbk_pixs;
   uLongf compressedLen;
   unsigned char *chunk_data;
@@ -12137,7 +12142,7 @@ static void do_png_embed_data(png_structp png_ptr)
   int alpha_size;
   Uint32 i;
   struct label_node *current_node;
-  char *char_stream;
+  char *char_stream, *line;
   size_t dat_size;
 
   lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
@@ -12423,18 +12428,29 @@ static void do_png_embed_data(png_structp png_ptr)
   if (starter_id[0] != '\0' ||
       template_id[0] != '\0' || canvas_color_r != 255 || canvas_color_g != 255 || canvas_color_b != 255)
   {
-    fi_stream = open_memstream(&char_stream, &dat_size);
-    if (fi_stream != NULL)
-    {
-      fprintf(fi_stream, "%s\n", starter_id);
-      fprintf(fi_stream, "%d %d %d\n", starter_mirrored, starter_flipped, starter_personal);
-      fprintf(fi_stream, "c%d %d %d\n", canvas_color_r, canvas_color_g, canvas_color_b);
-      fprintf(fi_stream, "T%s\n", template_id);
-      fprintf(fi_stream, "%d\n", template_personal);
-      fprintf(fi_stream, "M%d\n", starter_modified);
+    /* Usually the .dat data are less than 100 bytes, hope this keeps line and char_stream in the safe side */
+    line = calloc(256, 1);
+    char_stream = calloc(256 + sizeof(starter_id) + sizeof(template_id) , 1);
 
-      fclose(fi_stream);
-    }
+    sprintf(char_stream, "%s\n", starter_id);
+
+    sprintf(line, "%d %d %d\n", starter_mirrored, starter_flipped, starter_personal);
+    strcat(char_stream, line);
+
+    sprintf(line, "c%d %d %d\n", canvas_color_r, canvas_color_g, canvas_color_b);
+    strcat(char_stream, line);
+
+    sprintf(line, "T%s\n", template_id);
+    strcat(char_stream, line);
+
+    sprintf(line, "%d\n", template_personal);
+    strcat(char_stream, line);
+
+    sprintf(line, "M%d\n", starter_modified);
+    strcat(char_stream, line);
+
+    dat_size = strlen(char_stream);
+
     set_chunk_data(&chunk_data, &chunk_data_len, dat_size, (Bytef *) char_stream, dat_size);
 
     tuxpaint_chunks[4].data = chunk_data;
@@ -12449,6 +12465,7 @@ static void do_png_embed_data(png_structp png_ptr)
     png_write_chunk(png_ptr, tuxpaint_chunks[4].name, tuxpaint_chunks[4].data, tuxpaint_chunks[4].size);
 
     free(char_stream);
+    free(line);
     free(chunk_data);
   }
 }
