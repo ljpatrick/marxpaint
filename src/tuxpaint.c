@@ -1152,6 +1152,7 @@ static int undo_starters[NUM_UNDO_BUFS];
 static int cur_undo, oldest_undo, newest_undo;
 static int text_undo[NUM_UNDO_BUFS];
 static int have_to_rec_label_node;
+static int have_to_rec_label_node_back;
 
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
@@ -19404,6 +19405,8 @@ static void set_label_fonts()
 
 static void tmp_apply_uncommited_text()
 {
+    have_to_rec_label_node_back = have_to_rec_label_node;
+    
     if (texttool_len > 0)
         {
             if (cur_tool == TOOL_TEXT ||
@@ -19478,7 +19481,7 @@ static void undo_tmp_applied_text()
 
             derender_node(&aux_label_node);
             delete_label_list(&aux_label_node);
-            have_to_rec_label_node = FALSE;
+            have_to_rec_label_node = have_to_rec_label_node_back;
             do_render_cur_text(0);
         }
 }
