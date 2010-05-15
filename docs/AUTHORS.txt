@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 3, 2010
+June 17, 2002 - May 14, 2010
 
 $Id$
 
@@ -412,6 +412,7 @@ $Id$
     Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
 
   * British English
+    Robert Readman <robert_readman@hotmail.com>
     Gareth Owen <gowen72@yahoo.com>
 
   * Bulgarian
