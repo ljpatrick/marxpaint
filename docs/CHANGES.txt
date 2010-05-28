@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.14 (0.9.22)
+2009.May.28 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -187,6 +187,7 @@ $Id$
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
     * Finnish translation
+      Olli <ollinpostit@gmail.com>
       Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
 
     * Greek translation

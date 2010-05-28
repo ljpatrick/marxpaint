@@ -3,7 +3,7 @@
 
 Options Documentation
 
-                Copyright 2002-2009 by Bill Kendrick and others
+                Copyright 2002-2010 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com

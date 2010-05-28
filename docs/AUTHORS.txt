@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2009 by Bill Kendrick and others
+Copyright (c) 2002-2010 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 14, 2010
+June 17, 2002 - May 28, 2010
 
 $Id$
 
@@ -482,6 +482,7 @@ $Id$
     Jorma Karvonen <karvjorm@users.sf.net>
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
     Niko Lewman <niko.lewman@edu.hel.fi>
+    Olli <ollinpostit@gmail.com>
 
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>

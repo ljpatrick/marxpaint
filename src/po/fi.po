@@ -5,15 +5,13 @@
 # Jorma Karvonen <karvjorm@users.sf.net>, 2008.
 # Tarmo Toikkanen <tarmo@iki.fi>, 2009.
 #
-#. Reserved...
-#: ../tools.h:133
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-03 11:56-0700\n"
-"PO-Revision-Date: 2009-12-08 13:24+0200\n"
-"Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
+"PO-Revision-Date: 2010-05-15 18:56+0200\n"
+"Last-Translator: Olli <ollinpostit@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,8 +81,7 @@ msgstr "Laventelinvärinen eli sinertävän violetti!"
 #. Response to Purple (128, 0, 128) color selected
 #: ../colors.h:122
 msgid "Purple!"
-msgstr ""
-"Violetti! Jotkut käyttävät myös nimiä lilanvärinen, sinipunainen ja purppura."
+msgstr "Violetti! Jotkut käyttävät myös nimiä lilanvärinen, sinipunainen ja purppura."
 
 #. Response to Pink (255, 165, 211) color selected
 #: ../colors.h:125
@@ -207,7 +204,7 @@ msgstr "Hyvin tehty!"
 #. Input Method: English mode
 #: ../im.c:75
 msgid "English"
-msgstr "Englanti"
+msgstr "englanti"
 
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
@@ -235,84 +232,95 @@ msgid "ZH_TW"
 msgstr "Kiina"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "Neliö"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "Nelikulmio"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "Ympyrä"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "Ellipsi"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "Kolmio"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "Viisikulmio"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "Vinoneliö"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "Kahdeksankulmio"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Neliössä on neljä samankokoista sivua. Neliö on myös neljäkäs."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Suorakaiteessa on neljä sivua ja neljä suoraa kulmaa."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Ympyrä on kaari, jonka kaikki pisteet ovat samalla etäisyydellä "
-"keskipisteestä."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Ympyrä on kaari, jonka kaikki pisteet ovat samalla etäisyydellä keskipisteestä."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Ellipsi on venytetty ympyrä. Ellipsistä käytetään myös nimeä soikio."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Kolmiossa on kolme sivua."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Viisikulmiossa on viisi sivua."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Vinoneliössä on neljä yhtä pitkää sivua ja vastakkaiset sivut ovat "
-"samansuuntaiset. Vinoneliö on myös neljäkäs ja suunnikas."
+msgstr "Vinoneliössä on neljä yhtä pitkää sivua ja vastakkaiset sivut ovat samansuuntaiset. Vinoneliö on myös neljäkäs ja suunnikas."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Kahdeksankulmiossa on kahdeksan sivua."
 
@@ -343,7 +351,8 @@ msgstr "Leimat"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:71
+#: ../titles.h:71
+#: ../tools.h:71
 msgid "Shapes"
 msgstr "Muodot"
 
@@ -355,7 +364,8 @@ msgstr "Kirjaimet"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:83
+#: ../titles.h:77
+#: ../tools.h:83
 msgid "Magic"
 msgstr "Taiat"
 
@@ -387,7 +397,7 @@ msgstr "Nimike"
 #. Reserved...
 #: ../tools.h:80
 msgid " "
-msgstr ""
+msgstr " "
 
 #. Undo last action
 #: ../tools.h:86
@@ -412,7 +422,8 @@ msgstr "Uusi"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:6802
+#: ../tools.h:98
+#: ../tuxpaint.c:6802
 msgid "Open"
 msgstr "Avaa"
 
@@ -444,40 +455,22 @@ msgstr "Valitse kuva, jolla haluat leimata maalauksesi."
 #. Line tool instructions
 #: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Aloita viivan piirtäminen painamalla hiiren painike alas. Lopeta piirtäminen "
-"päästämällä painike vapaaksi."
+msgstr "Aloita viivan piirtäminen painamalla hiiren painike alas. Lopeta piirtäminen päästämällä painike vapaaksi."
 
 #. Shape tool instructions
 #: ../tools.h:124
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Valitse muoto. Paina hiiren painike alas muodon päällä ja raahaa muoto sinne "
-"minne haluat. Voit venyttää muotoa pitämällä painiketta alhaalla. Päästä "
-"painike ja voit pyörittää muotoa. Lopeta näpäyttämällä uudelleen."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Valitse muoto. Paina hiiren painike alas muodon päällä ja raahaa muoto sinne minne haluat. Voit venyttää muotoa pitämällä painiketta alhaalla. Päästä painike ja voit pyörittää muotoa. Lopeta näpäyttämällä uudelleen."
 
 #. Text tool instructions
 #: ../tools.h:127
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text."
-msgstr ""
-"Valitse tekstityyli.  Napsauta maalaustasi, niin voit aloittaa "
-"kirjoittamisen. Paina [Enter] tai [Tab] kun olet valmis."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."
+msgstr "Valitse tekstityyli.  Napsauta maalaustasi, niin voit aloittaa kirjoittamisen. Paina [Enter] tai [Tab] kun olet valmis."
 
 #. Label tool instructions
 #: ../tools.h:130
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
-"style."
-msgstr ""
-"Valitse tekstityyli. Napsauta maalausta ja ala kirjoittaa. Paina [Enter] tai "
-"[Tab] kun olet valmis. Voit myöhemmin siirtää tekstiä, muuttaa sitä, tai "
-"vaihtaa sen tyyliä."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."
+msgstr "Valitse tekstityyli. Napsauta maalausta ja ala kirjoittaa. Paina [Enter] tai [Tab] kun olet valmis. Voit myöhemmin siirtää tekstiä, muuttaa sitä, tai vaihtaa sen tyyliä."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -555,7 +548,8 @@ msgid "Yes, I’m done!"
 msgstr "Kyllä, valmista on!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1875 ../tuxpaint.c:1902
+#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1902
 msgid "No, take me back!"
 msgstr "Ei, palaa takaisin maalaukseen!"
 
@@ -564,11 +558,13 @@ msgstr "Ei, palaa takaisin maalaukseen!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Menetät maalauksen jos lopetat! Tallennetaanko se?"
 
-#: ../tuxpaint.c:1880 ../tuxpaint.c:1885
+#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1885
 msgid "Yes, save it!"
 msgstr "Kyllä, tallenna se!"
 
-#: ../tuxpaint.c:1881 ../tuxpaint.c:1886
+#: ../tuxpaint.c:1881
+#: ../tuxpaint.c:1886
 msgid "No, don’t bother saving!"
 msgstr "Ei, älä tallenna!"
 
@@ -583,7 +579,10 @@ msgid "Can’t open that picture!"
 msgstr "Maalauksen avaaminen ei onnistu!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1892 ../tuxpaint.c:1897 ../tuxpaint.c:1906 ../tuxpaint.c:1913
+#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1897
+#: ../tuxpaint.c:1906
+#: ../tuxpaint.c:1913
 #: ../tuxpaint.c:1922
 msgid "OK"
 msgstr "Hyvä"
@@ -715,7 +714,8 @@ msgstr "Valikoi haluamasi maalaus ja valitse “Avaa”."
 #  Pilkku ennen ja-sanaa tarvitaan estämään fuzzy-määrite
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:13970 ../tuxpaint.c:14284
+#: ../tuxpaint.c:13970
+#: ../tuxpaint.c:14284
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Valikoi haluamasi maalaukset, ja valitse “Näytä“."
 
@@ -753,12 +753,8 @@ msgid "Blind"
 msgstr "Verhot"
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click towards the edge of your picture to pull window blinds over it. Move "
-"perpendicularly to open or close the blinds."
-msgstr ""
-"Napsauta kuvan reunan lähellä vetääksesi verhot sen yli. Liikuta "
-"kohtisuoraan avataksesi tai sulkeaksi verhot."
+msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
+msgstr "Napsauta kuvan reunan lähellä vetääksesi verhot sen yli. Liikuta kohtisuoraan avataksesi tai sulkeaksi verhot."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -777,8 +773,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Rakeista maalaus painamalla hiiren painiketta."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Muuta piirros liitupiirrokseksi painamalla hiiren painiketta."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -824,9 +819,7 @@ msgstr "Ääriviivat"
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Muuta kuva ääriviivapiirrokseksi painamalla hiiren painiketta ja piirtämällä "
-"kuvan ympäri."
+msgstr "Muuta kuva ääriviivapiirrokseksi painamalla hiiren painiketta ja piirtämällä kuvan ympäri."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
@@ -899,8 +892,7 @@ msgstr "Kukka"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
-"Piirrä kukan varsi raahaamalla hiirtä. Päästä irti, niin kukka valmistuu."
+msgstr "Piirrä kukan varsi raahaamalla hiirtä. Päästä irti, niin kukka valmistuu."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -915,8 +907,7 @@ msgid "Fold"
 msgstr "Taite"
 
 #: ../../magic/src/fold.c:86
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
+msgid "Choose a background color and click to turn the corner of the page over."
 msgstr "Valitse taustaväri ja napsauta taittaaksesi jonkin maalauksen nurkan."
 
 #: ../../magic/src/glasstile.c:83
@@ -944,8 +935,7 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoskooppi"
 
 #: ../../magic/src/kalidescope.c:83
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Piirrä kaleidoskooppikuvioita raahaamalla hiirtä."
 
 #: ../../magic/src/light.c:84
@@ -985,8 +975,7 @@ msgid "Mosaic"
 msgstr "Mosaiikki"
 
 #: ../../magic/src/mosaic.c:78
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Lisää mosaiikkia maalaukseesi raahamalla hiirtä."
 
 #: ../../magic/src/mosaic.c:79
@@ -1006,8 +995,7 @@ msgid "Irregular Mosaic"
 msgstr "Epäsäännöllinen mosaiikki"
 
 #: ../../magic/src/mosaic_shaped.c:141
-msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+msgid "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Lisää neliömosaiikkia maalaukseesi raahaamalla hiirtä."
 
 #: ../../magic/src/mosaic_shaped.c:142
@@ -1015,18 +1003,15 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Lisää neliömosaiikki koko maalaukseesi hiirtä napsauttamalla."
 
 #: ../../magic/src/mosaic_shaped.c:144
-msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Lisää kuusikulmaista mosaiikkia maalaukseesi hiirtä raahaamalla."
 
 #: ../../magic/src/mosaic_shaped.c:145
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr ""
-"Lisää kuusikulmaista mosaiikkia koko maalaukseesi hiirtä napsauttamalla."
+msgstr "Lisää kuusikulmaista mosaiikkia koko maalaukseesi hiirtä napsauttamalla."
 
 #: ../../magic/src/mosaic_shaped.c:147
-msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Lisää epäsäännöllistä mosaiikkia maalaukseesi hiirtä raahaamalla."
 
 #: ../../magic/src/mosaic_shaped.c:148
@@ -1071,9 +1056,7 @@ msgstr "Venytä maalausta napsauttamalla nurkkia ja raahaamalla hiirtä."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr ""
-"Zoomaa kuvaa lähemmäs raahaamalla hiirtä ylöspäin, ja kauemmas raahaamalla "
-"alaspäin."
+msgstr "Zoomaa kuvaa lähemmäs raahaamalla hiirtä ylöspäin, ja kauemmas raahaamalla alaspäin."
 
 #: ../../magic/src/puzzle.c:79
 msgid "Puzzle"
@@ -1124,12 +1107,8 @@ msgid "ROYGBIV Rainbow"
 msgstr "Sateenkaari"
 
 #: ../../magic/src/realrainbow.c:93
-msgid ""
-"Click where you want your rainbow to start, drag to where you want it to "
-"end, and then let go to draw a rainbow."
-msgstr ""
-"Napsauta sateenkaaren alkupistettä, raahaa loppupisteeseen ja päästä hiiren "
-"napista irti."
+msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
+msgstr "Napsauta sateenkaaren alkupistettä, raahaa loppupisteeseen ja päästä hiiren napista irti."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1246,12 +1225,8 @@ msgid "String 'V'"
 msgstr "V-narut"
 
 #: ../../magic/src/string.c:134
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, left or right to make a bigger hole."
-msgstr ""
-"Piirrä narutaidetta raahaamalla. Raahaa ylhäältä alas piirtääkseei vähemmän "
-"tai enemmän naruja, vasemmalle tai oikealle tehdäksesi suuremman reiän."
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgstr "Piirrä narutaidetta raahaamalla. Raahaa ylhäältä alas piirtääkseei vähemmän tai enemmän naruja, vasemmalle tai oikealle tehdäksesi suuremman reiän."
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
@@ -1270,8 +1245,7 @@ msgid "Color & White"
 msgstr "Väri & valkoinen"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Vaihda maalauksesi värejä hiirtä raahaamalla."
 
 #: ../../magic/src/tint.c:76
@@ -1279,18 +1253,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Vaihda koko maalauksesi värit hiirtä napsauttamalla."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr ""
-"Muuta maalauksesi osia kaksiväriseksi (valitsemasi väri ja valkoinen) hiirtä "
-"raahaamalla."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "Muuta maalauksesi osia kaksiväriseksi (valitsemasi väri ja valkoinen) hiirtä raahaamalla."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
-"Muuta koko maalauksesi kaksiväriseksi (valitsemasi väri ja valkoinen) hiirtä "
-"raahaamalla."
+msgstr "Muuta koko maalauksesi kaksiväriseksi (valitsemasi väri ja valkoinen) hiirtä raahaamalla."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1313,9 +1281,7 @@ msgid "TV"
 msgstr "TV"
 
 #: ../../magic/src/tv.c:79
-msgid ""
-"Click and drag to make parts of your picture look like they are on "
-"television."
+msgid "Click and drag to make parts of your picture look like they are on television."
 msgstr "Tee maalauksen osat näyttämään televisiokuvalta hiirtä raahaamalla."
 
 #: ../../magic/src/tv.c:82
@@ -1331,24 +1297,12 @@ msgid "Wavelets"
 msgstr "Pystyaallot"
 
 #: ../../magic/src/waves.c:88
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"Lisää maalaukseen vaakasuuntaisia aaltoja napsauttamalla hiirellä. Napsauta "
-"yläosaan tehdäksesi lyhyempiä aaltoja, alaosaan korkeampia aaltoja, "
-"vasemmalle pienempiä aaltoja ja oikealle pidempiä aaltoja."
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Lisää maalaukseen vaakasuuntaisia aaltoja napsauttamalla hiirellä. Napsauta yläosaan tehdäksesi lyhyempiä aaltoja, alaosaan korkeampia aaltoja, vasemmalle pienempiä aaltoja ja oikealle pidempiä aaltoja."
 
 #: ../../magic/src/waves.c:89
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"Lisää maalaukseen pystysuuntaisia aaltoja napsauttamalla hiirellä. Napsauta "
-"yläosaan tehdäksesi lyhyempiä aaltoja, alaosaan korkeampia aaltoja, "
-"vasemmalle pienempiä aaltoja ja oikealle pidempiä aaltoja."
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Lisää maalaukseen pystysuuntaisia aaltoja napsauttamalla hiirellä. Napsauta yläosaan tehdäksesi lyhyempiä aaltoja, alaosaan korkeampia aaltoja, vasemmalle pienempiä aaltoja ja oikealle pidempiä aaltoja."
 
 #, fuzzy
 #~ msgid ""
@@ -1382,10 +1336,8 @@ msgstr ""
 #, fuzzy
 #~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
 #~ msgstr "Tee kuvasta peilikuva painamalla hiiren painiketta."
-
 #~ msgid "qy"
 #~ msgstr "qy"
-
 #~ msgid "QY"
 #~ msgstr "QY"
 
@@ -1447,24 +1399,18 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Sumenna"
-
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Vaalenna värejä painamalla hiiren painiketta."
-
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Tummenna värejä painamalla hiiren painiketta."
-
 #~ msgid "Sparkles"
 #~ msgstr "Kipinät"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Sinulla on nyt tyhjä maalausalue!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Aloitetaanko uusi maalaus?"
-
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Kyllä, aloitetaan alusta!"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Piirrä kipinöitä painamalla hiiren painiketta."
+
