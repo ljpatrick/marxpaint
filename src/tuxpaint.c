@@ -19232,7 +19232,6 @@ static void load_info_about_label_surface(FILE * lfi)
     int new_pos;
     int x, y, pix_size;
     Uint8 a;
-    size_t max_text;
   
     /* Clear label surface */
 
@@ -19314,11 +19313,8 @@ static void load_info_about_label_surface(FILE * lfi)
             fscanf(lfi, "%d\n", &new_node->save_cur_font);
             new_node->save_cur_font = 0;
               
-            max_text = 64;
-            new_node->save_font_type = NULL;
-            
-            getline(&new_node->save_font_type, &max_text, lfi);
-
+	    new_node->save_font_type = malloc(64);
+	    fgets(new_node->save_font_type, 64, lfi);
 
             fscanf(lfi, "%d\n", &new_node->save_text_state);
             fscanf(lfi, "%u\n", &new_node->save_text_size);
