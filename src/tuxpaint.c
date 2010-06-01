@@ -499,6 +499,49 @@ extern WrapperData macosx;
 )
 #endif
 
+/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+
+#ifdef fmemopen_alternative
+#undef fmemopen
+
+FILE * my_fmemopen(unsigned char * data, size_t size, const char * mode);
+
+FILE * my_fmemopen(unsigned char * data, size_t size, const char * mode)
+{
+  unsigned int i;
+  char *fname;
+  FILE * fi;
+
+#ifndef WIN32
+    fname = get_fname("tmpfile", DIR_SAVE);
+#else
+    fname = get_temp_fname("tmpfile");
+#endif
+
+
+  fi = fopen(fname, "w");
+  if (fi == NULL)
+    {
+      free(fname);
+      return(NULL);
+    }
+
+  for (i = 0; i < size; i++)
+    {
+      fwrite(data, 1, 1, fi);
+      data ++;
+    }
+  
+  fclose(fi);
+  fi = fopen(fname, mode);
+  free(fname);
+  return(fi);
+}
+
+#define fmemopen my_fmemopen
+
+#endif
+
 
 enum
 {
