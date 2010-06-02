@@ -12206,7 +12206,7 @@ static void do_png_embed_data(png_structp png_ptr)
   unsigned char *chunk_data;
   Bytef *compressed_data;
 
-  char *ldata;
+  char *ldata, *fname;
   FILE *lfi;
   int list_ctr = 0;
   Uint32 pix;
@@ -12216,7 +12216,6 @@ static void do_png_embed_data(png_structp png_ptr)
   char *char_stream, *line;
   size_t dat_size;
 
-  lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
 
   /* Starter foreground */
   if (img_starter)
@@ -12404,6 +12403,22 @@ static void do_png_embed_data(png_structp png_ptr)
     free(sbk_pixs);
 
     /* Label data */
+
+#ifndef fmemopen_alternative
+
+    lfi = open_memstream(&ldata, &size_of_uncompressed_label_data);
+
+#else
+#ifndef WIN32
+    fname = get_fname("tmpfile", DIR_SAVE);
+#else
+    fname = get_temp_fname("tmpfile");
+#endif
+
+    lfi = fopen(fname, "w+");
+    
+#endif
+
     current_node = current_label_node;
     while (current_node != NULL)
     {
@@ -12471,6 +12486,15 @@ static void do_png_embed_data(png_structp png_ptr)
       current_node = current_node->next_to_up_label_node;
       printf("cur %p, red %p\n", current_node, first_label_node_in_redo_stack);
     }
+
+#ifndef fmemopen_alternative
+    size_of_uncompressed_label_data = ftell(lfi);
+    rewind(lfi);
+    ldata = malloc(size_of_uncompressed_label_data);
+    for (i = 0; i < size_of_uncompressed_label_data; i++)
+        fread(&ldata[i], 1, 1, lfi);
+#endif
+
     fclose(lfi);
 
     compressedLen = compressBound(size_of_uncompressed_label_data);
