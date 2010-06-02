@@ -501,7 +501,7 @@ extern WrapperData macosx;
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#ifdef (__HAIKU__)  // Haiku needs it, at least for now
+#if defined (__HAIKU__)  // Haiku needs it, at least for now
 #define fmemopen_alternative 
 #endif
 
