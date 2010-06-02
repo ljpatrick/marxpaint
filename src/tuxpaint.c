@@ -499,7 +499,11 @@ extern WrapperData macosx;
 )
 #endif
 
-/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+//#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+
+#ifdef (__HAIKU__)  // Haiku needs it, at least for now
+#define fmemopen_alternative 
+#endif
 
 #ifdef fmemopen_alternative
 #undef fmemopen
@@ -9239,7 +9243,7 @@ static void reset_avail_tools(void)
     disallow_print = 1;
 #endif
 
-#if defined __BEOS__ || __HAIKU__
+#if defined __BEOS__
   if (!IsPrinterAvailable())
     disallow_print = disable_print = 1;
 #endif
@@ -12160,6 +12164,9 @@ static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, 
   free(headers);
 }
 
+#if defined(__HAIKU__)
+#define open_memstream fdopen // Haiku doesn't use open_memstream
+#endif
 
 static void do_png_embed_data(png_structp png_ptr)
 {
@@ -15172,7 +15179,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__)
   const char *pcmd;
   FILE *pi;
 
@@ -15224,8 +15231,8 @@ void do_print(void)
     if (error)
       fprintf(stderr, "%s\n", error);
   }
-#elif defined(__BEOS__) || defined(__HAIKU__)
-  /* BeOS and Haiku*/
+#elif defined(__BEOS__)
+  /* BeOS */
 
   SurfacePrint(save_canvas);
 #elif defined(__APPLE__)
@@ -20134,7 +20141,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /////////////////////////////////////////////////////////////////////////////
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;

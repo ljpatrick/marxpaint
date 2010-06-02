@@ -49,7 +49,7 @@ comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $
 		echo "$(1)"; \
 	fi ;)
 
-beos_RSRC_CMD:=rc src/tuxpaint.rdef && xres -o tuxpaint src/tuxpaint.rsrc
+beos_RSRC_CMD:=rc haiku/tuxpaint.rdef && xres -o tuxpaint haiku/tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
 beos_MIMESET_CMD:=mimeset -f tuxpaint
@@ -82,7 +82,7 @@ FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
-beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB)"
+beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) -lstdc++"
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
