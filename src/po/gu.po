@@ -378,7 +378,7 @@ msgstr "લેબલ"
 #. Reserved...
 #: ../tools.h:80
 msgid " "
-msgstr ""
+msgstr " "
 
 #. Undo last action
 #: ../tools.h:86
