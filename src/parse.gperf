@@ -157,6 +157,13 @@ windowsize,         MULTI(parsertmp_windowsize)
 
 void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const char *opt, const char *restrict src)
 {
+  int noflag;
+  uintptr_t uintptr;
+  unsigned flags;
+  unsigned offset;
+  char *dupecheck;
+  const struct cfg *cfg;
+    
   //printf("parsing: <%s> <%s>\n",str,arg);
 
   if(isdigit(*str))
@@ -167,11 +174,11 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
     str = "windowsize";
   }
 
-  int noflag = 2*(str[0]=='n' && str[1]=='o' && str[2]);
-  const struct cfg *cfg = in_word_set(str+noflag, strlen(str+noflag));
+  noflag = 2*(str[0]=='n' && str[1]=='o' && str[2]);
+  cfg = in_word_set(str+noflag, strlen(str+noflag));
 
-  uintptr_t uintptr = cfg ? (uintptr_t)cfg->val : 0;
-  unsigned flags = (uintptr<CFGINFO_MAXOFFSET) ? (uintptr & FLAGMASK) : 0;
+  uintptr = cfg ? (uintptr_t)cfg->val : 0;
+  flags = (uintptr<CFGINFO_MAXOFFSET) ? (uintptr & FLAGMASK) : 0;
 
   if(!cfg || (!(flags & BOOLMASK) && noflag) )
   {
@@ -226,9 +233,8 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
       exit(52);
   }
 
-  unsigned offset = uintptr &~ FLAGMASK;
+  offset = uintptr &~ FLAGMASK;
 
-  char *dupecheck;
   memcpy(&dupecheck, offset+(char*)tmpcfg, sizeof(char*));
   if(dupecheck)
   {
