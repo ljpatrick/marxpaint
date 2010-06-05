@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.28 (0.9.22)
+2009.June.4 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -31,6 +31,11 @@ $Id$
 
     * ROYGBIV Rainbow - Draw a rainbow arc using solid colors of
       Red, Orange, Yellow, Green, Blue, Indigo and Violet.
+
+    * Symmetry Left/Right, Symmetry Up/Down - Paint with relfective symmetry
+      across the horizontal or vertical center of the image.
+      (Like Kaleidoscope, but only one mirrored brush, either left/right
+      or up/down.)
 
     * Wet Paint - Draws a light coat of paint, and smudges at the same time.
       (Based on Smudge tool.  Requested by gallery artist Angela.)

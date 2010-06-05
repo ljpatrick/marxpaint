@@ -41,6 +41,19 @@ static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
 
 Uint32 kalidescope_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
+enum {
+  KAL_UD,
+  KAL_LR,
+  KAL_BOTH,
+  KAL_COUNT
+};
+
+char * kal_icon_names[KAL_COUNT] = {
+  "symmetric_updown.png",
+  "symmetric_leftright.png",
+  "kalidescope.png",
+};
+
 
 // No setup required:
 int kalidescope_init(magic_api * api)
@@ -54,10 +67,9 @@ int kalidescope_init(magic_api * api)
   return(1);
 }
 
-// We have multiple tools:
 int kalidescope_get_tool_count(magic_api * api)
 {
-  return(1);
+  return(KAL_COUNT);
 }
 
 // Load our icons:
@@ -65,8 +77,8 @@ SDL_Surface * kalidescope_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/kalidescope.png",
-	   api->data_directory);
+  snprintf(fname, sizeof(fname), "%s/images/magic/%s",
+	   api->data_directory, kal_icon_names[which]);
 
   return(IMG_Load(fname));
 }
@@ -74,13 +86,25 @@ SDL_Surface * kalidescope_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * kalidescope_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext_noop("Kaleidoscope")));
+  if (which == KAL_LR) {
+    return(strdup(gettext_noop("Symmetric Left/Right")));
+  } else if (which == KAL_UD) {
+    return(strdup(gettext_noop("Symmetric Up/Down")));
+  } else { /* KAL_BOTH */
+    return(strdup(gettext_noop("Kaleidoscope")));
+  }
 }
 
 // Return our descriptions, localized:
 char * kalidescope_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
+  if (which == KAL_LR) {
+    return(strdup(gettext_noop("Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture.")));
+  } else if (which == KAL_UD) {
+    return(strdup(gettext_noop("Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture.")));
+  } else { /* KAL_BOTH */
+    return(strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
+  }
 }
 
 // Do the effect:
@@ -104,9 +128,17 @@ static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surf
       if (api->in_circle(xx, yy, 8))
       {
         api->putpixel(canvas, x + xx, y + yy, colr);
-        api->putpixel(canvas, canvas->w - 1 - x + xx, y + yy, colr);
-        api->putpixel(canvas, x + xx, canvas->h - 1 - y + yy, colr);
-        api->putpixel(canvas, canvas->w - 1 - x + xx, canvas->h - 1 - y + yy, colr);
+
+        if (which == KAL_LR || which == KAL_BOTH) {
+          api->putpixel(canvas, canvas->w - 1 - x + xx, y + yy, colr);
+
+          if (which == KAL_BOTH) {
+            api->putpixel(canvas, canvas->w - 1 - x + xx, canvas->h - 1 - y + yy, colr);
+          }
+        }
+        if (which == KAL_UD || which == KAL_BOTH) {
+          api->putpixel(canvas, x + xx, canvas->h - 1 - y + yy, colr);
+        }
       }
     }
   }
@@ -124,7 +156,7 @@ void kalidescope_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(kalidescope_snd, 255, 255);
+  api->playsound(kalidescope_snd, 128, 255);
 }
 
 // Affect the canvas on click:
