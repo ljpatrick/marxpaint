@@ -1979,13 +1979,13 @@ enum
   SHAPE_TOOL_MODE_DONE
 };
 
-
+int flagmouse,xnew,ynew,eraflag,lineflag;
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
 {
   int done, which, old_x, old_y, new_x, new_y,
-    line_start_x, line_start_y, shape_tool_mode,
+    line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
     old_stamp_group;
   int num_things;
@@ -2012,8 +2012,6 @@ static void mainloop(void)
   do_draw = 0;
   old_x = 0;
   old_y = 0;
-  line_start_x = 0;
-  line_start_y = 0;
   shape_ctr_x = 0;
   shape_ctr_y = 0;
   shape_outer_x = 0;
@@ -3778,7 +3776,9 @@ static void mainloop(void)
 	    /* Start painting! */
 
 	    rec_undo_buffer();
-
+	    xnew = event.button.x - r_canvas.x;
+	    ynew = event.button.y - r_canvas.y;
+	    flagmouse++;
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
 
@@ -3807,18 +3807,42 @@ static void mainloop(void)
 	    /* Start a line! */
 
 	    rec_undo_buffer();
+	    
+	    if (lineflag%2 == 0)
+	    {
+		line_start_x = event.button.x - r_canvas.x;
+		line_start_y = event.button.y - r_canvas.y;
+	    }
+ 	    if (lineflag%2 != 0)
+	    {
+		line_end_x = event.button.x - r_canvas.x;
+		line_end_y = event.button.y - r_canvas.y;
+		line_xor(line_start_x, line_start_y, line_start_x, line_start_y);
+		line_xor(line_start_x, line_start_y, line_end_x, line_end_y);
+		
+            	brush_draw(line_start_x, line_start_y,
+		       	event.button.x - r_canvas.x,
+		       	event.button.y - r_canvas.y, 1);
+	    	brush_draw(event.button.x - r_canvas.x,
+		       	event.button.y - r_canvas.y,
+		       	event.button.x - r_canvas.x,
+		       	event.button.y - r_canvas.y, 1);
 
-	    line_start_x = old_x;
-	    line_start_y = old_y;
-
+	    	update_screen(line_start_x + r_canvas.x,
+			  line_start_y + r_canvas.y, line_start_x + r_canvas.x,
+			  line_start_y + r_canvas.y);
+	    	update_screen(line_start_x + r_canvas.x,
+			  line_start_y + r_canvas.y, line_end_x + r_canvas.x,
+			  line_end_y + r_canvas.y);		
+		playsound(screen, 1, SND_LINE_START, 1, event.button.x,
+		      SNDDIST_NEAR);
+	    	draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
+	    }
 	    /* (Arbitrarily large, so we draw once now) */
+	    lineflag++;
 	    reset_brush_counter();
 
-	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */
-
-	    playsound(screen, 1, SND_LINE_START, 1, event.button.x,
-		      SNDDIST_NEAR);
-	    draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
+	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */	    
 	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	  {
@@ -3908,7 +3932,7 @@ static void mainloop(void)
 	    /* Erase! */
 
 	    rec_undo_buffer();
-
+	    eraflag++;
 	    do_eraser(old_x, old_y);
 	  }
 	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
@@ -4394,6 +4418,8 @@ static void mainloop(void)
 	{
 	  /* Tools: */
 	  int most = 14;
+	  flagmouse = 0;
+	  eraflag = 0;
 	  if (NUM_TOOLS > most + TOOLOFFSET)
 	    {
 
@@ -4441,8 +4467,11 @@ static void mainloop(void)
 	}
 	else if (HIT(r_sfx))
 	{
-	  /* Sound player buttons: */
 
+	  flagmouse = 0;
+	  eraflag = 0;
+	  /* Sound player buttons: */
+	  
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute &&
 	    ((GRIDHIT_GD(r_sfx, gd_sfx) == 0 &&
               !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_sound) ||
@@ -4458,6 +4487,9 @@ static void mainloop(void)
         }
 	else if (HIT(r_colors))
 	{
+
+	  flagmouse = 0;
+	  eraflag = 0;
 	  /* Color picker: */
 
 	  if (colors_are_selectable)
@@ -4467,6 +4499,9 @@ static void mainloop(void)
 	}
 	else if (HIT(r_toolopt))
 	{
+
+	  flagmouse = 0;
+	  eraflag = 0;
 	  /* mouse cursor code
 	     WARNING: this must be kept in sync with the mouse-click
 	     and mouse-click code. (it isn't, currently!) */
@@ -4552,12 +4587,22 @@ static void mainloop(void)
 	{
 	  /* Canvas: */
 
-	  if (cur_tool == TOOL_BRUSH)
-	    do_setcursor(cursor_brush);
+	  if (flagmouse%2 != 0 && cur_tool == TOOL_BRUSH)
+	  {
+		brush_draw(xnew, ynew, event.motion.x - r_canvas.x, event.motion.y - r_canvas.y, 1);
+	
+	        playsound(screen, 0, paintsound(img_cur_brush_w), 0,event.motion.x, SNDDIST_NEAR);
+		xnew=event.motion.x - r_canvas.x;
+		ynew=event.motion.y - r_canvas.y;
+	   }
+	  else if (flagmouse%2 == 0 && cur_tool == TOOL_BRUSH)
+	  {
+		  do_setcursor(cursor_brush);
+	  }
 	  else if (cur_tool == TOOL_STAMP)
 	    do_setcursor(cursor_tiny);
 	  else if (cur_tool == TOOL_LINES)
-	    do_setcursor(cursor_crosshair);
+	    do_setcursor(cursor_crosshair);	  
 	  else if (cur_tool == TOOL_SHAPES)
 	  {
 	    if (shape_tool_mode != SHAPE_TOOL_MODE_ROTATE)
@@ -4583,8 +4628,9 @@ static void mainloop(void)
 
 	  else if (cur_tool == TOOL_MAGIC)
 	    do_setcursor(cursor_wand);
-	  else if (cur_tool == TOOL_ERASER)
+	  else if (cur_tool == TOOL_ERASER && eraflag%2 == 0)
 	    do_setcursor(cursor_tiny);
+	    
 	}
 	else
 	{
@@ -4594,32 +4640,7 @@ static void mainloop(void)
 
 	if (button_down)
 	{
-	  if (cur_tool == TOOL_BRUSH)
-	  {
-	    /* Pushing button and moving: Draw with the brush: */
-
-	    brush_draw(old_x, old_y, new_x, new_y, 1);
-
-	    playsound(screen, 0, paintsound(img_cur_brush_w), 0,
-		      event.button.x, SNDDIST_NEAR);
-	  }
-	  else if (cur_tool == TOOL_LINES)
-	  {
-	    /* Still pushing button, while moving:
-	       Draw XOR where line will go: */
-
-	    line_xor(line_start_x, line_start_y, old_x, old_y);
-
-	    line_xor(line_start_x, line_start_y, new_x, new_y);
-
-	    update_screen(line_start_x + r_canvas.x,
-			  line_start_y + r_canvas.y, old_x + r_canvas.x,
-			  old_y + r_canvas.y);
-	    update_screen(line_start_x + r_canvas.x,
-			  line_start_y + r_canvas.y, new_x + r_canvas.x,
-			  new_y + r_canvas.y);
-	  }
-	  else if (cur_tool == TOOL_SHAPES)
+	  if (cur_tool == TOOL_SHAPES)
 	  {
 	    /* Still pushing button, while moving:
 	       Draw XOR where shape will go: */
@@ -4670,12 +4691,7 @@ static void mainloop(void)
 			  update_rect.x + update_rect.w,
 			  update_rect.y + update_rect.h);
 	  }
-	  else if (cur_tool == TOOL_ERASER)
-	  {
-	    /* Still pushing, and moving - Erase! */
-
-	    do_eraser(new_x, new_y);
-	  }
+	  
 	}
 
 
@@ -4692,20 +4708,24 @@ static void mainloop(void)
 	  }
 	  else
 	  {
-	    if (cur_eraser < NUM_ERASERS / 2)
+	    if (eraflag%2 == 0)
 	    {
-	      w = (ERASER_MIN +
-		   (((NUM_ERASERS / 2) - cur_eraser - 1) *
-		    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-	    }
-	    else
-	    {
-	      w = (ERASER_MIN +
-		   (((NUM_ERASERS / 2) - (cur_eraser - NUM_ERASERS / 2) - 1) *
-		    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-	    }
-
+		    if (cur_eraser < NUM_ERASERS / 2)
+		    {
+		      w = (ERASER_MIN +
+			   (((NUM_ERASERS / 2) - cur_eraser - 1) *
+			    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+		    }
+		    else
+		    {
+		      w = (ERASER_MIN +
+			   (((NUM_ERASERS / 2) - (cur_eraser - NUM_ERASERS / 2) - 1) *
+			    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+		    }
 	    h = w;
+	    }
+	    else if (eraflag%2 != 0)
+		do_eraser(new_x,new_y);
 	  }
 
 	  if (old_x >= 0 && old_x < r_canvas.w &&
@@ -4722,14 +4742,17 @@ static void mainloop(void)
 	    }
 	    else
 	    {
-	      rect_xor(old_x - w / 2, old_y - h / 2,
-		       old_x + w / 2, old_y + h / 2);
+	      if (eraflag%2 == 0)
+	      {
+		      rect_xor(old_x - w / 2, old_y - h / 2,
+			       old_x + w / 2, old_y + h / 2);
 
-	      update_screen(old_x - w / 2 + r_canvas.x,
-			    old_y - h / 2 + r_canvas.y,
-			    old_x + w / 2 + r_canvas.x,
-			    old_y + h / 2 + r_canvas.y);
-	    }
+		      update_screen(old_x - w / 2 + r_canvas.x,
+				    old_y - h / 2 + r_canvas.y,
+				    old_x + w / 2 + r_canvas.x,
+				    old_y + h / 2 + r_canvas.y);
+	      }
+	   }
 	  }
 
 	  if (new_x >= 0 && new_x < r_canvas.w &&
@@ -4746,13 +4769,16 @@ static void mainloop(void)
 	    }
 	    else
 	    {
-	      rect_xor(new_x - w / 2, new_y - h / 2,
-		       new_x + w / 2, new_y + h / 2);
+	      if (eraflag%2 == 0)
+	      {
+		      rect_xor(new_x - w / 2, new_y - h / 2,
+			       new_x + w / 2, new_y + h / 2);
 
-	      update_screen(new_x - w / 2 + r_canvas.x,
-			    new_y - h / 2 + r_canvas.y,
-			    new_x + w / 2 + r_canvas.x,
-			    new_y + h / 2 + r_canvas.y);
+		      update_screen(new_x - w / 2 + r_canvas.x,
+				    new_y - h / 2 + r_canvas.y,
+				    new_x + w / 2 + r_canvas.x,
+				    new_y + h / 2 + r_canvas.y);
+	      }
 	    }
 	  }
 	}
