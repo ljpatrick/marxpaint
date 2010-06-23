@@ -1978,16 +1978,17 @@ enum
   SHAPE_TOOL_MODE_ROTATE,
   SHAPE_TOOL_MODE_DONE
 };
-
-int flagmouse,xnew,ynew,eraflag,lineflag, which, keysflag;
+void evalwhich(void);
+void evalwhich_color(void);
+int flagmouse,xnew,ynew,eraflag,lineflag, which, keysflag, colorsflag;
 Uint8 tams;
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
 {
-  int done, keyflag, old_x, old_y, new_x, new_y,
+  int done, tool_flag, canvas_flag, val_x, val_y, keymotion_flag, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
-    shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
+    shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
     old_stamp_group;
   int num_things;
   int *thing_scroll;
@@ -2006,7 +2007,7 @@ static void mainloop(void)
   Uint16 key_unicode;
   SDLKey key_down;
 #endif
-
+  SDL_MouseButtonEvent ev;
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
   cur_thing = 0;
@@ -2023,9 +2024,13 @@ static void mainloop(void)
   texttool_len = 0;
   scrolling = 0;
   scrolltimer = 0;
-  keyflag = 0;
-
+  tool_flag = 0;
+  canvas_flag = 0;
+  keymotion_flag = 0;
+  val_x = 0;
+  val_y = 0;
   done = 0;
+  color_flag = 0;
 
   do
   {
@@ -2058,7 +2063,14 @@ static void mainloop(void)
 	key = event.key.keysym.sym;
 
 	handle_keymouse(key, SDL_KEYUP);
-	
+      }
+      else if (keymotion_flag == 1)
+      {
+        old_x += val_x;
+	old_y += val_y;
+	SDL_WarpMouse(old_x + button_w * 2, old_y);
+	update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	keymotion_flag = 0;
       }
       else if (event.type == SDL_KEYDOWN)
       {
@@ -2081,20 +2093,77 @@ static void mainloop(void)
 
 	handle_keymouse(key, SDL_KEYDOWN);
 
-	if (key == SDLK_DOWN && keyflag == 1)
+	if (key == SDLK_1 && canvas_flag == 1)
+	{
+		val_x = -8;
+		val_y = 8;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+	
+	if (key == SDLK_3 && canvas_flag == 1)
+	{
+		val_x = 8;
+		val_y = 8;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if (key == SDLK_7 && canvas_flag == 1)
+	{
+		val_x = -8;
+		val_y = -8;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+	
+	if (key == SDLK_9 && canvas_flag == 1)
+	{
+		val_x = 8;
+		val_y = -8;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if ((key == SDLK_DOWN || key == SDLK_s || key == SDLK_2) && canvas_flag == 1)
+	{
+		val_y = 8;
+		val_x = 0;
+		keymotion_flag = 1;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+	if ((key == SDLK_UP || key == SDLK_w || key == SDLK_8)&& canvas_flag == 1)
+	{
+		val_y = -8;
+		val_x = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if ((key == SDLK_RIGHT || key == SDLK_d || key == SDLK_6) && canvas_flag == 1)
+	{
+		val_x = 8;
+		val_y = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if ((key == SDLK_LEFT || key == SDLK_a || key == SDLK_4) && canvas_flag == 1)
+	{
+		val_x = -8;
+		val_y = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if (key == SDLK_DOWN && tool_flag == 1)
 	{
 		which += 2;
-		if (which == 16)
-		which = 0;
-		if (which == 17)
-		which = 1;
+		which = which % NUM_TOOLS;
 		while (!tool_avail[which])
 		{
 			which += 2;
-			if (which == 16)
-			which = 0;
-			if (which == 17)
-			which = 1;
+			which = which % NUM_TOOLS;
 		}
 		old_tool = cur_tool;
 	        cur_tool = which;
@@ -2102,23 +2171,18 @@ static void mainloop(void)
 	        update_screen_rect(&r_tools);
 
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
-		printf("\n \n i am here \n \n");
 	}		
 
-	if (key == SDLK_UP && keyflag == 1)
+	if (key == SDLK_UP && tool_flag == 1)
 	{
 		which -= 2;
-		if (which == -1)
-		which = 15;
-		if (which == -2)
-		which = 14;
+		if (which < 0)
+		which += NUM_TOOLS;
 		while (!tool_avail[which])
 		{
 			which -= 2;
-			if (which == -1)
-			which = 15;
-			if (which == -2)
-			which = 14;
+			if (which < 0)
+			which += NUM_TOOLS;
 		}
 		old_tool = cur_tool;
 	        cur_tool = which;
@@ -2128,16 +2192,14 @@ static void mainloop(void)
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
-	if (key == SDLK_RIGHT && keyflag == 1)
+	if (key == SDLK_RIGHT && tool_flag == 1)
 	{
 		which = which + 1;
-		if (which == 16)
-		which = 0;
+		which = which % NUM_TOOLS;
 		while (!tool_avail[which])
 		{
 			which += 1;
-			if (which == 16)
-			which = 0;
+			which = which % NUM_TOOLS;
 		}
 		old_tool = cur_tool;
 	        cur_tool = which;
@@ -2147,16 +2209,16 @@ static void mainloop(void)
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
-	if (key == SDLK_LEFT && keyflag == 1)
+	if (key == SDLK_LEFT && tool_flag == 1)
 	{	
 		which = which - 1;
-		if (which == -1)
-		which = 15;
+		if (which < 0)
+		which += NUM_TOOLS;
 		while (!tool_avail[which])
 		{
 			which -= 1;
-			if (which == -1)
-			which = 15;
+			if (which < 0)
+			which += NUM_TOOLS;
 		}
 		old_tool = cur_tool;
 	        cur_tool = which;
@@ -2166,13 +2228,80 @@ static void mainloop(void)
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
-	if (key == SDLK_RETURN && keyflag == 1)
+	if (key == SDLK_LEFT && color_flag == 1)
+	{
+		which = which - 1;
+		if (which < 0)
+		which += NUM_COLORS;
+		cur_color = which;
+		draw_colors(COLORSEL_REFRESH);
+		
+	}
+
+	if (key == SDLK_RIGHT && color_flag == 1)
+	{
+		which = which + 1;
+		which = which % NUM_COLORS;
+		cur_color = which;
+		draw_colors(COLORSEL_REFRESH);
+	}
+
+	if (key == SDLK_RETURN && color_flag == 1)
+	{
+		colorsflag = 1;
+		evalwhich_color();
+	}
+
+	if (key == SDLK_RETURN && (tool_flag == 1))
 	{
 		keysflag = 1;
 		evalwhich();
 	}
 
-	
+	if ((key == SDLK_BACKSLASH || key == SDLK_5) && (canvas_flag == 1))
+	{
+		ev.which = 0;
+		ev.type = SDL_MOUSEBUTTONDOWN;
+		ev.state = SDL_PRESSED;
+		ev.x    = old_x + button_w * 2;
+		ev.y    = old_y;
+		ev.button = SDL_BUTTON_LEFT;
+		SDL_PushEvent(&ev);
+		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+
+	if (key == SDLK_TAB)
+	{
+		if (canvas_flag == 1)
+		{
+			canvas_flag = 0;
+			tool_flag = 1;
+			color_flag = 0;
+			which = 0;
+			old_tool = cur_tool;
+			cur_tool = which;
+			draw_toolbar();
+			update_screen_rect(&r_tools);
+			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+		}
+		else if (tool_flag == 1)
+		{
+			canvas_flag = 0;
+			tool_flag = 0;
+			color_flag = 1;
+			which = 0;
+			cur_color = which;
+			draw_colors(COLORSEL_REFRESH);
+		}
+		else if (color_flag == 1)
+		{
+			canvas_flag = 1;
+			tool_flag = 0;
+			color_flag = 0;
+		}
+	}
+			
 	if (key == SDLK_ESCAPE && !disable_quit)
 	{
           magic_switchout(canvas);
@@ -2774,8 +2903,9 @@ static void mainloop(void)
           magic_switchout(canvas);
 
 	  which = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
-	  keyflag = 1;
+	  tool_flag = 1;
 	  keysflag = 0;
+	  canvas_flag = 0;
 	  tams = event.button.button;
 	  evalwhich();	  
 	}
@@ -2807,7 +2937,8 @@ static void mainloop(void)
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
 	  flagmouse = 0;
-	  keyflag = 0;
+	  tool_flag = 0;
+	  canvas_flag = 1;
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
@@ -3472,79 +3603,22 @@ static void mainloop(void)
 	      update_screen_rect(&r_toolopt);
 	  }
 	}
-	else if (HIT(r_colors) && colors_are_selectable &&
-		 valid_click(event.button.button))
+	else if (HIT(r_colors) && colors_are_selectable)
 	{
 	  /* Color! */
 	  flagmouse = 0;
-	  keyflag = 0;
+	  tool_flag = 0;
+	  canvas_flag = 0;
+	  colorsflag = 0;
+	  tams = event.button.button;
 	  which = GRIDHIT_GD(r_colors, gd_colors);
-
-	  if (which >= 0 && which < NUM_COLORS)
-	  {
-	    cur_color = which;
-	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
-
-            if (cur_color == (unsigned) (NUM_COLORS - 1))
-	    {
-              disable_avail_tools();
-              draw_toolbar();
-              draw_colors(COLORSEL_CLOBBER_WIPE);
-              draw_none();
-
-
-              do_color_picker();
-
-
-              enable_avail_tools();
-              draw_toolbar();
-              update_screen_rect(&r_tools);
-
-              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
-
-              draw_colors(COLORSEL_FORCE_REDRAW);
-	      
-	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-		draw_brushes();
-	      else if (cur_tool == TOOL_MAGIC)
-		draw_magic();
-	      else if (cur_tool == TOOL_STAMP)
-		draw_stamps();
-	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-		draw_fonts();
-	      else if (cur_tool == TOOL_SHAPES)
-		draw_shapes();
-	      else if (cur_tool == TOOL_ERASER)
-		draw_erasers();
-
-	      playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-	      SDL_Flip(screen);
-	    }
-	    else
-	    {
-              draw_colors(COLORSEL_REFRESH);
-
-	      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
-	    }
-
-	    render_brush();
-	    
-
-	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-	      do_render_cur_text(0);
-            else if (cur_tool == TOOL_MAGIC)
-              magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
-						color_hexes[cur_color][0],
-						color_hexes[cur_color][1],
-						color_hexes[cur_color][2]);
-	  }
+	  evalwhich_color();
 	}
 	else if (HIT(r_canvas) && valid_click(event.button.button))
 	{
 	  /* Draw something! */
-	  keyflag = 0;
+	  tool_flag = 0;
+	  canvas_flag = 1;
 	  old_x = event.button.x - r_canvas.x;
 	  old_y = event.button.y - r_canvas.y;
 	  
@@ -3836,7 +3910,8 @@ static void mainloop(void)
 	{
 	  /* A sound player button on the lower left has been pressed! */
 	  flagmouse = 0;
-	  keyflag = 0;
+	  tool_flag = 0;
+	  canvas_flag = 1;
 #ifndef NOSOUND
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute)
           {
@@ -4321,6 +4396,7 @@ static void mainloop(void)
 	}
 	else if (HIT(r_toolopt))
 	{
+	  canvas_flag = 1;
 	  /* mouse cursor code
 	     WARNING: this must be kept in sync with the mouse-click
 	     and mouse-click code. (it isn't, currently!) */
@@ -4404,6 +4480,7 @@ static void mainloop(void)
 	}
 	else if (HIT(r_canvas))
 	{
+	  canvas_flag = 1;
 	  /* Canvas: */
 	  if (mouseaccessibility == 1 && cur_tool == TOOL_BRUSH)
 	  {
@@ -22147,4 +22224,72 @@ void evalwhich()
 
           if (!done)
             magic_switchin(canvas);
+}
+
+void evalwhich_color(void)
+{
+      SDL_Event event;
+      if (valid_click(tams) || colorsflag == 1)
+      {
+	if (which >= 0 && which < NUM_COLORS)
+	  {
+	    cur_color = which;
+	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
+
+            if (cur_color == (unsigned) (NUM_COLORS - 1))
+	    {
+              disable_avail_tools();
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
+
+              do_color_picker();
+
+
+              enable_avail_tools();
+              draw_toolbar();
+              update_screen_rect(&r_tools);
+
+              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+
+              draw_colors(COLORSEL_FORCE_REDRAW);
+	      
+	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		draw_brushes();
+	      else if (cur_tool == TOOL_MAGIC)
+		draw_magic();
+	      else if (cur_tool == TOOL_STAMP)
+		draw_stamps();
+	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+		draw_fonts();
+	      else if (cur_tool == TOOL_SHAPES)
+		draw_shapes();
+	      else if (cur_tool == TOOL_ERASER)
+		draw_erasers();
+
+	      playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	      SDL_Flip(screen);
+	    }
+	    else
+	    {
+              draw_colors(COLORSEL_REFRESH);
+
+	      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
+	    }
+
+	    render_brush();
+	    
+
+	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	      do_render_cur_text(0);
+            else if (cur_tool == TOOL_MAGIC)
+              magic_funcs[magics[cur_magic].handle_idx].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
+	  }
+	}
 }
