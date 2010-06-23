@@ -963,7 +963,7 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 
 /* Globals: */
-
+static int mouseaccessibility = 1;
 static int disable_screensaver;
 #ifdef NOKIA_770
 static int fullscreen = 1;
@@ -3774,18 +3774,32 @@ static void mainloop(void)
 	  if (cur_tool == TOOL_BRUSH)
 	  {
 	    /* Start painting! */
+	    if (mouseaccessibility == 1)
+	    {
+		    if (flagmouse%2 == 0)
+		    rec_undo_buffer();
+		    xnew = event.button.x - r_canvas.x;
+		    ynew = event.button.y - r_canvas.y;
+		    flagmouse++;
+		    /* (Arbitrarily large, so we draw once now) */
+		    reset_brush_counter();
 
-	    rec_undo_buffer();
-	    xnew = event.button.x - r_canvas.x;
-	    ynew = event.button.y - r_canvas.y;
-	    flagmouse++;
-	    /* (Arbitrarily large, so we draw once now) */
-	    reset_brush_counter();
+		    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes SF #1934883? */
+		    playsound(screen, 0, paintsound(img_cur_brush_w), 1,
+			      event.button.x, SNDDIST_NEAR);
+	     }
+	     else
+	     {
+		    rec_undo_buffer();
 
-	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes SF #1934883? */
-	    playsound(screen, 0, paintsound(img_cur_brush_w), 1,
-		      event.button.x, SNDDIST_NEAR);
-	  }
+		    /* (Arbitrarily large, so we draw once now) */
+		    reset_brush_counter();
+
+		    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes SF #1934883? */
+		    playsound(screen, 0, paintsound(img_cur_brush_w), 1,
+				      event.button.x, SNDDIST_NEAR);
+	     }
+	    }
 	  else if (cur_tool == TOOL_STAMP)
 	  {
 	    /* Draw a stamp! */
@@ -3806,44 +3820,61 @@ static void mainloop(void)
 	  {
 	    /* Start a line! */
 
-	    rec_undo_buffer();
 	    
-	    if (lineflag%2 == 0)
+	    if (mouseaccessibility == 1)
 	    {
-		line_start_x = event.button.x - r_canvas.x;
-		line_start_y = event.button.y - r_canvas.y;
-	    }
- 	    if (lineflag%2 != 0)
-	    {
-		line_end_x = event.button.x - r_canvas.x;
-		line_end_y = event.button.y - r_canvas.y;
-		line_xor(line_start_x, line_start_y, line_start_x, line_start_y);
-		line_xor(line_start_x, line_start_y, line_end_x, line_end_y);
+		    if (lineflag%2 == 0)
+		    {
+			rec_undo_buffer();
+			line_start_x = event.button.x - r_canvas.x;
+			line_start_y = event.button.y - r_canvas.y;
+		    }
+	 	    if (lineflag%2 != 0)
+		    {
+			line_end_x = event.button.x - r_canvas.x;
+			line_end_y = event.button.y - r_canvas.y;
+			line_xor(line_start_x, line_start_y, line_start_x, line_start_y);
+			line_xor(line_start_x, line_start_y, line_end_x, line_end_y);
 		
-            	brush_draw(line_start_x, line_start_y,
-		       	event.button.x - r_canvas.x,
-		       	event.button.y - r_canvas.y, 1);
-	    	brush_draw(event.button.x - r_canvas.x,
-		       	event.button.y - r_canvas.y,
-		       	event.button.x - r_canvas.x,
-		       	event.button.y - r_canvas.y, 1);
+		    	brush_draw(line_start_x, line_start_y,
+			       	event.button.x - r_canvas.x,
+			       	event.button.y - r_canvas.y, 1);
+		    	brush_draw(event.button.x - r_canvas.x,
+			       	event.button.y - r_canvas.y,
+			       	event.button.x - r_canvas.x,
+			       	event.button.y - r_canvas.y, 1);
 
-	    	update_screen(line_start_x + r_canvas.x,
-			  line_start_y + r_canvas.y, line_start_x + r_canvas.x,
-			  line_start_y + r_canvas.y);
-	    	update_screen(line_start_x + r_canvas.x,
-			  line_start_y + r_canvas.y, line_end_x + r_canvas.x,
-			  line_end_y + r_canvas.y);		
-		playsound(screen, 1, SND_LINE_START, 1, event.button.x,
-		      SNDDIST_NEAR);
-	    	draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
+		    	update_screen(line_start_x + r_canvas.x,
+				  line_start_y + r_canvas.y, line_start_x + r_canvas.x,
+				  line_start_y + r_canvas.y);
+		    	update_screen(line_start_x + r_canvas.x,
+				  line_start_y + r_canvas.y, line_end_x + r_canvas.x,
+				  line_end_y + r_canvas.y);	
+			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);	
+			playsound(screen, 1, SND_LINE_START, 1, event.button.x,
+			      SNDDIST_NEAR);
+		    	draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
+	      	    }
+		lineflag++;
+	    	reset_brush_counter();
+	      }
+	      else
+	      {
+		    rec_undo_buffer();
+
+		    line_start_x = old_x;
+		    line_start_y = old_y;
+
+		    /* (Arbitrarily large, so we draw once now) */
+		    reset_brush_counter();
+
+		    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */
+
+		    playsound(screen, 1, SND_LINE_START, 1, event.button.x,
+			      SNDDIST_NEAR);
+		    draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
+	      }
 	    }
-	    /* (Arbitrarily large, so we draw once now) */
-	    lineflag++;
-	    reset_brush_counter();
-
-	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */	    
-	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	  {
 	    if (shape_tool_mode == SHAPE_TOOL_MODE_DONE)
@@ -3930,10 +3961,19 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_ERASER)
 	  {
 	    /* Erase! */
+	    if (mouseaccessibility == 1)
+	    {
+		    if (eraflag%2 == 0)
+		    rec_undo_buffer();
+		    eraflag++;
+		    do_eraser(old_x, old_y);
+	    }
+	    else
+	    {
+		rec_undo_buffer();
 
-	    rec_undo_buffer();
-	    eraflag++;
-	    do_eraser(old_x, old_y);
+	        do_eraser(old_x, old_y);
+	    }
 	  }
 	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	  {
@@ -4418,11 +4458,9 @@ static void mainloop(void)
 	{
 	  /* Tools: */
 	  int most = 14;
-	  flagmouse = 0;
-	  eraflag = 0;
+
 	  if (NUM_TOOLS > most + TOOLOFFSET)
 	    {
-
 	      if (event.button.y < r_tools.y + button_h / 2)
 		{
 		  if (tool_scroll > 0)
@@ -4467,9 +4505,6 @@ static void mainloop(void)
 	}
 	else if (HIT(r_sfx))
 	{
-
-	  flagmouse = 0;
-	  eraflag = 0;
 	  /* Sound player buttons: */
 	  
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute &&
@@ -4487,9 +4522,6 @@ static void mainloop(void)
         }
 	else if (HIT(r_colors))
 	{
-
-	  flagmouse = 0;
-	  eraflag = 0;
 	  /* Color picker: */
 
 	  if (colors_are_selectable)
@@ -4499,9 +4531,6 @@ static void mainloop(void)
 	}
 	else if (HIT(r_toolopt))
 	{
-
-	  flagmouse = 0;
-	  eraflag = 0;
 	  /* mouse cursor code
 	     WARNING: this must be kept in sync with the mouse-click
 	     and mouse-click code. (it isn't, currently!) */
@@ -4586,19 +4615,24 @@ static void mainloop(void)
 	else if (HIT(r_canvas))
 	{
 	  /* Canvas: */
-
-	  if (flagmouse%2 != 0 && cur_tool == TOOL_BRUSH)
+	  if (mouseaccessibility == 1 && cur_tool == TOOL_BRUSH)
 	  {
-		brush_draw(xnew, ynew, event.motion.x - r_canvas.x, event.motion.y - r_canvas.y, 1);
+		  if (flagmouse%2 != 0)
+		  {
+			do_setcursor(cursor_brush);
+			brush_draw(xnew, ynew, event.motion.x - r_canvas.x, event.motion.y - r_canvas.y, 1);
 	
-	        playsound(screen, 0, paintsound(img_cur_brush_w), 0,event.motion.x, SNDDIST_NEAR);
-		xnew=event.motion.x - r_canvas.x;
-		ynew=event.motion.y - r_canvas.y;
+			playsound(screen, 0, paintsound(img_cur_brush_w), 0,event.motion.x, SNDDIST_NEAR);
+			xnew=event.motion.x - r_canvas.x;
+			ynew=event.motion.y - r_canvas.y;
+		   }
+		  else if (flagmouse%2 == 0)
+		  {
+			  do_setcursor(cursor_brush);
+		  }
 	   }
-	  else if (flagmouse%2 == 0 && cur_tool == TOOL_BRUSH)
-	  {
-		  do_setcursor(cursor_brush);
-	  }
+	  else if (mouseaccessibility != 1 && cur_tool == TOOL_BRUSH)
+	  	do_setcursor(cursor_brush);
 	  else if (cur_tool == TOOL_STAMP)
 	    do_setcursor(cursor_tiny);
 	  else if (cur_tool == TOOL_LINES)
@@ -4628,7 +4662,7 @@ static void mainloop(void)
 
 	  else if (cur_tool == TOOL_MAGIC)
 	    do_setcursor(cursor_wand);
-	  else if (cur_tool == TOOL_ERASER && eraflag%2 == 0)
+	  else if (cur_tool == TOOL_ERASER)
 	    do_setcursor(cursor_tiny);
 	    
 	}
@@ -4640,7 +4674,32 @@ static void mainloop(void)
 
 	if (button_down)
 	{
-	  if (cur_tool == TOOL_SHAPES)
+	  if (mouseaccessibility != 1 && cur_tool == TOOL_BRUSH)
+	  {
+	     /* Pushing button and moving: Draw with the brush: */
+
+	    brush_draw(old_x, old_y, new_x, new_y, 1);
+
+	    playsound(screen, 0, paintsound(img_cur_brush_w), 0,
+		      event.button.x, SNDDIST_NEAR);
+	  }
+	  else if (mouseaccessibility != 1 && cur_tool == TOOL_LINES)
+	  {
+		/* Still pushing button, while moving:
+	       Draw XOR where line will go: */
+
+	    line_xor(line_start_x, line_start_y, old_x, old_y);
+
+	    line_xor(line_start_x, line_start_y, new_x, new_y);
+
+	    update_screen(line_start_x + r_canvas.x,
+			  line_start_y + r_canvas.y, old_x + r_canvas.x,
+			  old_y + r_canvas.y);
+	    update_screen(line_start_x + r_canvas.x,
+			  line_start_y + r_canvas.y, new_x + r_canvas.x,
+			  new_y + r_canvas.y);
+	  }
+	  else if (cur_tool == TOOL_SHAPES)
 	  {
 	    /* Still pushing button, while moving:
 	       Draw XOR where shape will go: */
@@ -4691,43 +4750,69 @@ static void mainloop(void)
 			  update_rect.x + update_rect.w,
 			  update_rect.y + update_rect.h);
 	  }
+	  else if (mouseaccessibility != 1 && cur_tool == TOOL_ERASER)
+	  {
+	    /* Still pushing, and moving - Erase! */
+
+	    do_eraser(new_x, new_y);
+	  }
 	  
 	}
 
 
 	if (cur_tool == TOOL_STAMP ||
-	    (cur_tool == TOOL_ERASER && !button_down))
+	    (cur_tool == TOOL_ERASER && !button_down) || (cur_tool == TOOL_LINES && !button_down))
 	{
 	  int w, h;
 	  /* Moving: Draw XOR where stamp/eraser will apply: */
+	  
 
 	  if (cur_tool == TOOL_STAMP)
 	  {
 	    w = active_stamp->w;
 	    h = active_stamp->h;
 	  }
-	  else
+	  else if (cur_tool == TOOL_ERASER)
 	  {
-	    if (eraflag%2 == 0)
+	    if (mouseaccessibility == 1)
 	    {
-		    if (cur_eraser < NUM_ERASERS / 2)
+		    if (eraflag%2 == 0)
 		    {
+			    if (cur_eraser < NUM_ERASERS / 2)
+			    {
+			      w = (ERASER_MIN +
+				   (((NUM_ERASERS / 2) - cur_eraser - 1) *
+				    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+			    }
+			    else
+			    {
+			      w = (ERASER_MIN +
+				   (((NUM_ERASERS / 2) - (cur_eraser - NUM_ERASERS / 2) - 1) *
+				    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+			    }
+		    h = w;
+		    }
+		    else if (eraflag%2 != 0)
+			do_eraser(new_x,new_y);
+	    }
+	    else
+	    {
+		if (cur_eraser < NUM_ERASERS / 2)
+		{
 		      w = (ERASER_MIN +
 			   (((NUM_ERASERS / 2) - cur_eraser - 1) *
 			    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-		    }
-		    else
-		    {
-		      w = (ERASER_MIN +
+	         }
+	    	else
+	    	{
+	      		w = (ERASER_MIN +
 			   (((NUM_ERASERS / 2) - (cur_eraser - NUM_ERASERS / 2) - 1) *
 			    ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-		    }
-	    h = w;
-	    }
-	    else if (eraflag%2 != 0)
-		do_eraser(new_x,new_y);
-	  }
+	         }
 
+	    	h = w;
+	     }
+	   }
 	  if (old_x >= 0 && old_x < r_canvas.w &&
 	      old_y >= 0 && old_y < r_canvas.h)
 	  {
@@ -4740,19 +4825,32 @@ static void mainloop(void)
 			    old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
 			    old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
 	    }
-	    else
+	    else if (cur_tool == TOOL_ERASER)
 	    {
-	      if (eraflag%2 == 0)
+	      if (mouseaccessibility == 1)
 	      {
-		      rect_xor(old_x - w / 2, old_y - h / 2,
-			       old_x + w / 2, old_y + h / 2);
+		      if (eraflag%2 == 0)
+		      {
+			      rect_xor(old_x - w / 2, old_y - h / 2,
+				       old_x + w / 2, old_y + h / 2);
 
-		      update_screen(old_x - w / 2 + r_canvas.x,
-				    old_y - h / 2 + r_canvas.y,
-				    old_x + w / 2 + r_canvas.x,
-				    old_y + h / 2 + r_canvas.y);
+			      update_screen(old_x - w / 2 + r_canvas.x,
+					    old_y - h / 2 + r_canvas.y,
+					    old_x + w / 2 + r_canvas.x,
+					    old_y + h / 2 + r_canvas.y);
+		      }
 	      }
-	   }
+	      else
+	       {
+			rect_xor(old_x - w / 2, old_y - h / 2,
+		       		old_x + w / 2, old_y + h / 2);
+
+	      		update_screen(old_x - w / 2 + r_canvas.x,
+			    old_y - h / 2 + r_canvas.y,
+			    old_x + w / 2 + r_canvas.x,
+			    old_y + h / 2 + r_canvas.y);
+		}
+	     }
 	  }
 
 	  if (new_x >= 0 && new_x < r_canvas.w &&
@@ -4767,20 +4865,45 @@ static void mainloop(void)
 			    old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
 			    old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
 	    }
-	    else
+	    else if (cur_tool == TOOL_LINES && mouseaccessibility == 1)
 	    {
-	      if (eraflag%2 == 0)
+		if (lineflag%2 == 0)
+		do_setcursor(cursor_crosshair);
+		else if (lineflag%2 != 0)
+		{
+		    line_xor(line_start_x, line_start_y, old_x, old_y);
+		    line_xor(line_start_x, line_start_y, new_x, new_y);
+		    update_screen(line_start_x + r_canvas.x, line_start_y + r_canvas.y, old_x + r_canvas.x, old_y + r_canvas.y);
+		    update_screen(line_start_x + r_canvas.x, line_start_y + r_canvas.y, new_x + r_canvas.x, new_y + r_canvas.y);
+		}
+	    }
+	    else if (cur_tool == TOOL_ERASER)
+	    {
+	      if (mouseaccessibility == 1)
 	      {
-		      rect_xor(new_x - w / 2, new_y - h / 2,
-			       new_x + w / 2, new_y + h / 2);
+		      if (eraflag%2 == 0)
+		      {
+			      rect_xor(new_x - w / 2, new_y - h / 2,
+				       new_x + w / 2, new_y + h / 2);
+
+			      update_screen(new_x - w / 2 + r_canvas.x,
+					    new_y - h / 2 + r_canvas.y,
+					    new_x + w / 2 + r_canvas.x,
+					    new_y + h / 2 + r_canvas.y);
+		      }
+	       }
+	       else
+		{
+		     rect_xor(new_x - w / 2, new_y - h / 2,
+		       new_x + w / 2, new_y + h / 2);
 
 		      update_screen(new_x - w / 2 + r_canvas.x,
-				    new_y - h / 2 + r_canvas.y,
-				    new_x + w / 2 + r_canvas.x,
-				    new_y + h / 2 + r_canvas.y);
-	      }
-	    }
-	  }
+			    new_y - h / 2 + r_canvas.y,
+			    new_x + w / 2 + r_canvas.x,
+			    new_y + h / 2 + r_canvas.y);
+		}
+	      } 
+	   }
 	}
 	else if (cur_tool == TOOL_SHAPES &&
 		 shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
