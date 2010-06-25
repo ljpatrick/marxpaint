@@ -1980,13 +1980,13 @@ enum
 };
 void evalwhich(void);
 void evalwhich_color(void);
-int flagmouse,xnew,ynew,eraflag,lineflag, which, keysflag, colorsflag;
+int flagmouse,xnew,ynew,eraflag,lineflag, which, keysflag, colorsflag, magicflag;
 Uint8 tams;
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
 {
-  int done, tool_flag, canvas_flag, val_x, val_y, keymotion_flag, old_x, old_y, new_x, new_y,
+  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, keymotion_flag, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
     old_stamp_group;
@@ -2027,6 +2027,7 @@ static void mainloop(void)
   tool_flag = 0;
   canvas_flag = 0;
   keymotion_flag = 0;
+  text_flag = 0;
   val_x = 0;
   val_y = 0;
   done = 0;
@@ -2068,6 +2069,8 @@ static void mainloop(void)
       {
         old_x += val_x;
 	old_y += val_y;
+	new_x = old_x + button_w * 2;
+	new_y = old_y;
 	SDL_WarpMouse(old_x + button_w * 2, old_y);
 	update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	keymotion_flag = 0;
@@ -2124,15 +2127,15 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 		keymotion_flag = 1;
 	}
-
-	if ((key == SDLK_DOWN || key == SDLK_s || key == SDLK_2) && canvas_flag == 1)
+	
+	if (key == SDLK_s && canvas_flag == 1 && text_flag == 0)
 	{
 		val_y = 8;
 		val_x = 0;
 		keymotion_flag = 1;
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
-	if ((key == SDLK_UP || key == SDLK_w || key == SDLK_8)&& canvas_flag == 1)
+	if (key == SDLK_w && canvas_flag == 1 && text_flag == 0)
 	{
 		val_y = -8;
 		val_x = 0;
@@ -2140,7 +2143,7 @@ static void mainloop(void)
 		keymotion_flag = 1;
 	}
 
-	if ((key == SDLK_RIGHT || key == SDLK_d || key == SDLK_6) && canvas_flag == 1)
+	if (key == SDLK_d && canvas_flag == 1 && text_flag == 0)
 	{
 		val_x = 8;
 		val_y = 0;
@@ -2148,7 +2151,39 @@ static void mainloop(void)
 		keymotion_flag = 1;
 	}
 
-	if ((key == SDLK_LEFT || key == SDLK_a || key == SDLK_4) && canvas_flag == 1)
+	if (key == SDLK_a && canvas_flag == 1 && text_flag == 0)
+	{
+		val_x = -8;
+		val_y = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+		
+
+	if ((key == SDLK_DOWN || key == SDLK_2) && canvas_flag == 1)
+	{
+		val_y = 8;
+		val_x = 0;
+		keymotion_flag = 1;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+	if ((key == SDLK_UP || key == SDLK_8)&& canvas_flag == 1)
+	{
+		val_y = -8;
+		val_x = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if ((key == SDLK_RIGHT || key == SDLK_6) && canvas_flag == 1)
+	{
+		val_x = 8;
+		val_y = 0;
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+		keymotion_flag = 1;
+	}
+
+	if ((key == SDLK_LEFT || key == SDLK_4) && canvas_flag == 1)
 	{
 		val_x = -8;
 		val_y = 0;
@@ -2900,12 +2935,14 @@ static void mainloop(void)
 	{
 	  /* A tool on the left has been pressed! */
 	  flagmouse = 0;
+	  magicflag = 0;
           magic_switchout(canvas);
 
 	  which = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 	  tool_flag = 1;
 	  keysflag = 0;
 	  canvas_flag = 0;
+	  text_flag = 0;
 	  tams = event.button.button;
 	  evalwhich();	  
 	}
@@ -2937,8 +2974,10 @@ static void mainloop(void)
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
 	  flagmouse = 0;
+	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 1;
+	  text_flag = 0;
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
@@ -3607,9 +3646,11 @@ static void mainloop(void)
 	{
 	  /* Color! */
 	  flagmouse = 0;
+	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 0;
 	  colorsflag = 0;
+	  text_flag = 0;
 	  tams = event.button.button;
 	  which = GRIDHIT_GD(r_colors, gd_colors);
 	  evalwhich_color();
@@ -3619,6 +3660,7 @@ static void mainloop(void)
 	  /* Draw something! */
 	  tool_flag = 0;
 	  canvas_flag = 1;
+	  text_flag = 0;
 	  old_x = event.button.x - r_canvas.x;
 	  old_y = event.button.y - r_canvas.y;
 	  
@@ -3777,6 +3819,12 @@ static void mainloop(void)
 	    int undo_ctr;
             SDL_Surface * last;
 
+	    if (mouseaccessibility == 1)
+	    {
+		if (magicflag%2 == 0)
+		    rec_undo_buffer();
+		magicflag++;
+	    }
 
 	    /* Start doing magic! */
 
@@ -3790,6 +3838,7 @@ static void mainloop(void)
                pair of functions for the widgety abusers?) -bjk 2010.03.22 */
 
             /* magic_switchout(canvas); */ /* <-- FIXME: I dislike this -bjk 2009.10.13 */
+	    else
 	    rec_undo_buffer();
             /* magic_switchin(canvas); */ /* <-- FIXME: I dislike this -bjk 2009.10.13 */
 
@@ -3840,7 +3889,7 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	  {
 	    /* Text and Label Tools! */
-
+	    text_flag = 1;
             if(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
             {
 		label_node_to_edit=search_label_list(&highlighted_label_node, old_x, old_y, 0);
@@ -3910,6 +3959,7 @@ static void mainloop(void)
 	{
 	  /* A sound player button on the lower left has been pressed! */
 	  flagmouse = 0;
+	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 1;
 #ifndef NOSOUND
@@ -4321,6 +4371,7 @@ static void mainloop(void)
 	if (HIT(r_tools))
 	{
 	  eraflag = 0;
+	  magicflag = 0;
 	  /* Tools: */
 	  int most = 14;
 
@@ -4372,6 +4423,7 @@ static void mainloop(void)
 	{
 	  /* Sound player buttons: */
 	  eraflag = 0;
+	  magicflag = 0;
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute &&
 	    ((GRIDHIT_GD(r_sfx, gd_sfx) == 0 &&
               !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_sound) ||
@@ -4389,6 +4441,7 @@ static void mainloop(void)
 	{
 	  /* Color picker: */
 	  eraflag = 0;
+	  magicflag = 0;
 	  if (colors_are_selectable)
 	    do_setcursor(cursor_hand);
 	  else
@@ -4404,6 +4457,7 @@ static void mainloop(void)
 	  /* Note set of things we're dealing with */
 	  /* (stamps, brushes, etc.) */
 	  eraflag = 0;
+     	  magicflag = 0;
 	  if (cur_tool == TOOL_STAMP)
 	  {
 	  }
@@ -4482,7 +4536,47 @@ static void mainloop(void)
 	{
 	  canvas_flag = 1;
 	  /* Canvas: */
-	  if (mouseaccessibility == 1 && cur_tool == TOOL_BRUSH)
+	  if (mouseaccessibility == 1 && cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
+	  {
+	   if (magicflag%2 != 0)
+	   {
+       	    int undo_ctr;
+            SDL_Surface * last;
+	    do_setcursor(cursor_wand);
+	    if (cur_undo > 0)
+              undo_ctr = cur_undo - 1;
+            else
+              undo_ctr = NUM_UNDO_BUFS - 1;
+
+            last = undo_bufs[undo_ctr];
+    
+            update_rect.x = 0;
+            update_rect.y = 0;
+            update_rect.w = 0;
+            update_rect.h = 0;
+
+	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct,
+							  magics[cur_magic].idx,
+							  canvas, last,
+							  old_x, old_y,
+							  new_x, new_y,
+							  &update_rect);
+
+  	    update_canvas(update_rect.x, update_rect.y,
+			  update_rect.x + update_rect.w,
+			  update_rect.y + update_rect.h);
+
+	    old_x = new_x;
+	    old_y = new_y;
+	   }
+
+	   else if (magicflag%2 == 0)
+	   {
+		do_setcursor(cursor_wand);
+	   }
+	 }
+
+	else if (mouseaccessibility == 1 && cur_tool == TOOL_BRUSH)
 	  {
 		  if (flagmouse%2 != 0)
 		  {
@@ -4527,7 +4621,7 @@ static void mainloop(void)
                   }
               }
 
-	  else if (cur_tool == TOOL_MAGIC)
+	  else if (mouseaccessibility != 1 && cur_tool == TOOL_MAGIC)
 	    do_setcursor(cursor_wand);
 	  else if (cur_tool == TOOL_ERASER)
 	    do_setcursor(cursor_tiny);
@@ -4588,7 +4682,7 @@ static void mainloop(void)
 	      SDL_Flip(screen);
 	    }
 	  }
-	  else if (cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
+	  else if (mouseaccessibility != 1 && cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
 	  {
 	    int undo_ctr;
             SDL_Surface * last;
@@ -4627,7 +4721,7 @@ static void mainloop(void)
 	  
 	}
 
-
+		
 	if (cur_tool == TOOL_STAMP ||
 	    (cur_tool == TOOL_ERASER && !button_down) || (cur_tool == TOOL_LINES && !button_down))
 	{
@@ -21911,6 +22005,7 @@ void evalwhich()
 	  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 	  texttool_len = 0;
 	  done = 0;
+	magic_switchout(canvas);
 
 	if (which < NUM_TOOLS && tool_avail[which] &&
 	      ((valid_click(tams) || which == TOOL_PRINT) || (keysflag == 1)))
