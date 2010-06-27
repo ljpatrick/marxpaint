@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 28, 2010
+June 17, 2002 - June 27, 2010
 
 $Id$
 
@@ -58,7 +58,7 @@ $Id$
   Contributed as part of Google Summer of Code, 2008.
 
   Label tool.
-  by Bruno Dilly <bruno.dilly@gmail.com>
+  by Arunodai Vudem<arunvudem@gmail.com>
   with modifications and integration by
   Pere Pujal i Carabantes <pere@fornol.no-ip.org>
   Contributed as part of Google Summer of Code, 2008.
@@ -98,6 +98,9 @@ $Id$
   which was from "Gimp-gluas" plug-in for The GIMP:
   http://pippin.gimp.org/plug-ins/gluas/
 
+  Mouse accessibility code and keyboard access
+  Ankit Choudary <ankit.goaldecided@gmail.com>
+  as part of GSOC 2010.
 
 * Graphics
 
