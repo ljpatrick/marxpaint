@@ -1980,7 +1980,7 @@ enum
 };
 void evalwhich(void);
 void evalwhich_color(void);
-int flagmouse,xnew,ynew,eraflag,lineflag, whicht, whichc, keysflag, colorsflag, magicflag;
+int flagmouse,xnew,ynew,eraflag,lineflag, magicflag;
 Uint8 tams;
 /* --- MAIN LOOP! --- */
 
@@ -1989,7 +1989,7 @@ static void mainloop(void)
   int done, tool_flag, canvas_flag,text_flag, val_x, val_y, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
-    old_stamp_group, which;
+    old_stamp_group, which, whicht, whichc, test_x, test_y;
   int num_things;
   int *thing_scroll;
   int cur_thing, do_draw, max;
@@ -2095,8 +2095,9 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
-
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 	
@@ -2108,6 +2109,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2120,6 +2123,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2132,6 +2137,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2144,6 +2151,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2156,6 +2165,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2168,6 +2179,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2180,6 +2193,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2193,6 +2208,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2204,6 +2221,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2216,6 +2235,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2228,6 +2249,8 @@ static void mainloop(void)
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
@@ -2249,11 +2272,7 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h/2 + (whicht * (button_h / 2))));
 		}
-		old_tool = cur_tool;
-	        cur_tool = whicht;
-	        draw_toolbar();
-	        update_screen_rect(&r_tools);
-       	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+     	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}		
 
 	if (key == SDLK_UP && tool_flag == 1)
@@ -2275,12 +2294,7 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
-		old_tool = cur_tool;
-	        cur_tool = whicht;
-	        draw_toolbar();
-	        update_screen_rect(&r_tools);
-
-       	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
 	if (key == SDLK_RIGHT && tool_flag == 1)
@@ -2300,11 +2314,6 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
-		old_tool = cur_tool;
-	        cur_tool = whicht;
-	        draw_toolbar();
-	        update_screen_rect(&r_tools);
-
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
@@ -2327,11 +2336,6 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
-		old_tool = cur_tool;
-	        cur_tool = whicht;
-	        draw_toolbar();
-	        update_screen_rect(&r_tools);
-
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
@@ -2340,10 +2344,7 @@ static void mainloop(void)
 		whichc = whichc - 1;
 		if (whichc < 0)
 		whichc += NUM_COLORS;
-		SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
-		cur_color = whichc;
-		draw_colors(COLORSEL_REFRESH);
-		
+		SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));		
 	}
 
 	if (key == SDLK_RIGHT && color_flag == 1)
@@ -2351,20 +2352,40 @@ static void mainloop(void)
 		whichc = whichc + 1;
 		whichc = whichc % NUM_COLORS;
 		SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
-		cur_color = whichc;
-		draw_colors(COLORSEL_REFRESH);
 	}
 
 	if (key == SDLK_RETURN && color_flag == 1)
 	{
-		colorsflag = 1;
-		evalwhich_color();
+		ev.which = 0;
+		ev.type = SDL_MOUSEBUTTONDOWN;
+		ev.state = SDL_PRESSED;
+		ev.x    = button_w * 2 + whichc * color_button_w + 12;
+		ev.y    = r_canvas.h + (r_colors.h / 2);
+		ev.button = SDL_BUTTON_LEFT;
+		SDL_PushEvent(&ev);
+		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 
 	if (key == SDLK_RETURN && (tool_flag == 1))
 	{
-		keysflag = 1;
-		evalwhich();
+		ev.which = 0;
+		ev.type = SDL_MOUSEBUTTONDOWN;
+		ev.state = SDL_PRESSED;
+		if (whicht%2 == 0)
+		{
+			ev.x    = button_w / 2;
+			ev.y    = button_h + (whicht * (button_h / 2));
+		}
+		else if (whicht%2 != 0)
+		{
+			ev.x = (button_w * 3) / 2;
+			ev.y = button_h / 2 + (whicht * (button_h / 2));
+		}
+		ev.button = SDL_BUTTON_LEFT;
+		SDL_PushEvent(&ev);
+		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 
 	if ((key == SDLK_BACKSLASH || key == SDLK_5) && (canvas_flag == 1))
@@ -2415,7 +2436,7 @@ static void mainloop(void)
 			canvas_flag = 1;
 			tool_flag = 0;
 			color_flag = 0;
-			SDL_WarpMouse(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
+			SDL_WarpMouse(test_x, test_y);
 		}
 	}
 			
@@ -3019,14 +3040,324 @@ static void mainloop(void)
 	  flagmouse = 0;
 	  magicflag = 0;
           magic_switchout(canvas);
-
 	  whicht = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 	  tool_flag = 1;
-	  keysflag = 0;
 	  canvas_flag = 0;
 	  text_flag = 0;
 	  tams = event.button.button;
-	  evalwhich();	  
+//	  evalwhich();
+	  if (whicht < NUM_TOOLS && tool_avail[whicht] &&
+	      (valid_click(tams) || whicht == TOOL_PRINT))
+	  {
+	    /* Allow middle/right-click on "Print", since [Alt]+click
+	       on Mac OS X changes it from left click to middle! */
+
+	    /* Render any current text, if switching to a different
+               drawing tool: */
+
+	    if ((cur_tool == TOOL_TEXT && whicht != TOOL_TEXT &&
+                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
+                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
+                whicht != TOOL_QUIT) ||
+	       (cur_tool == TOOL_LABEL && whicht != TOOL_LABEL &&
+                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
+                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
+                whicht != TOOL_QUIT))
+	    {
+	      if (cursor_x != -1 && cursor_y != -1)
+	      {
+		hide_blinking_cursor();
+		if (texttool_len > 0)
+		{
+		  rec_undo_buffer();
+		  do_render_cur_text(1);
+		  texttool_len = 0;
+		  cursor_textwidth = 0;
+		  label_node_to_edit = NULL;
+		}
+                else if(cur_tool == TOOL_LABEL && label_node_to_edit)
+                    {
+		      rec_undo_buffer();
+                        have_to_rec_label_node = TRUE;
+                        add_label_node(0, 0, 0, 0, NULL);
+                        derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
+                    }
+	      }
+	    }
+            update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+	    old_tool = cur_tool;
+	    cur_tool = whicht;
+	    draw_toolbar();
+	    update_screen_rect(&r_tools);
+
+	    playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+
+	    /* FIXME: this "if" is just plain gross */
+	    if (cur_tool != TOOL_TEXT)
+	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+
+	    /* Draw items for this tool: */
+
+	    if (cur_tool == TOOL_BRUSH)
+	    {
+	      cur_thing = cur_brush;
+	      num_things = num_brushes;
+	      thing_scroll = &brush_scroll;
+	      draw_brushes();
+	      draw_colors(COLORSEL_ENABLE);
+	    }
+	    else if (cur_tool == TOOL_STAMP)
+	    {
+	      cur_thing = cur_stamp[stamp_group];
+	      num_things = num_stamps[stamp_group];
+	      thing_scroll = &(stamp_scroll[stamp_group]);
+	      draw_stamps();
+	      draw_colors(stamp_colorable(cur_stamp[stamp_group]) ||
+			  stamp_tintable(cur_stamp[stamp_group]));
+	      set_active_stamp();
+	      update_stamp_xor();
+	    }
+	    else if (cur_tool == TOOL_LINES)
+	    {
+	      cur_thing = cur_brush;
+	      num_things = num_brushes;
+	      thing_scroll = &brush_scroll;
+	      draw_brushes();
+	      draw_colors(COLORSEL_ENABLE);
+	    }
+	    else if (cur_tool == TOOL_SHAPES)
+	    {
+	      cur_thing = cur_shape;
+	      num_things = NUM_SHAPES;
+	      thing_scroll = &shape_scroll;
+	      draw_shapes();
+	      draw_colors(COLORSEL_ENABLE);
+	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+	    }
+	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	    {
+	      if (!font_thread_done)
+	      {
+		draw_colors(COLORSEL_DISABLE);
+		draw_none();
+		update_screen_rect(&r_toolopt);
+		update_screen_rect(&r_ttoolopt);
+		do_setcursor(cursor_watch);
+
+                /* Wait while Text tool finishes loading fonts */
+		draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
+
+		waiting_for_fonts = 1;
+#ifdef FORKED_FONTS
+		receive_some_font_info(screen);
+#else
+		while (!font_thread_done && !font_thread_aborted)
+		{
+		  /* FIXME: should have a read-depends memory barrier around here */
+		  show_progress_bar(screen);
+		  SDL_Delay(20);
+		}
+		/* FIXME: should kill this in any case */
+		SDL_WaitThread(font_thread, NULL);
+#endif
+                set_label_fonts();
+		do_setcursor(cursor_arrow);
+	      }
+	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+
+	      if (num_font_families > 0)
+	      {
+		cur_thing = cur_font;
+		num_things = num_font_families;
+		thing_scroll = &font_scroll;
+		if (cur_tool == TOOL_LABEL)
+		  {
+                      cur_label = LABEL_LABEL;
+		  }
+		draw_fonts();
+		draw_colors(COLORSEL_ENABLE);
+	      }
+	      else
+	      {
+		/* Problem using fonts! */
+
+		cur_tool = old_tool;
+		draw_toolbar();
+		update_screen_rect(&r_tools);
+	      }
+	    }
+	    else if (cur_tool == TOOL_MAGIC)
+	    {
+	      cur_thing = cur_magic;
+	      num_things = num_magics;
+	      thing_scroll = &magic_scroll;
+              magic_current_snd_ptr = NULL;
+	      draw_magic();
+	      draw_colors(magics[cur_magic].colors);
+
+	      if (magics[cur_magic].colors)
+	        magic_funcs[magics[cur_magic].handle_idx].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
+	    }
+	    else if (cur_tool == TOOL_ERASER)
+	    {
+	      cur_thing = cur_eraser;
+	      num_things = NUM_ERASERS;
+	      thing_scroll = &eraser_scroll;
+	      draw_erasers();
+	      draw_colors(COLORSEL_DISABLE);
+	    }
+	    else if (cur_tool == TOOL_UNDO)
+	    {
+	      if (cur_undo == newest_undo)
+	      {
+		rec_undo_buffer();
+		do_undo();
+	      }
+	      do_undo();
+
+	      been_saved = 0;
+
+	      if (!disable_save)
+		tool_avail[TOOL_SAVE] = 1;
+
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      update_screen_rect(&r_tools);
+	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+	    }
+	    else if (cur_tool == TOOL_REDO)
+	    {
+	      do_redo();
+
+	      been_saved = 0;
+
+	      if (!disable_save)
+		tool_avail[TOOL_SAVE] = 1;
+
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      update_screen_rect(&r_tools);
+	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+	    }
+	    else if (cur_tool == TOOL_OPEN)
+	    {
+	      disable_avail_tools();
+	      draw_toolbar();
+	      draw_colors(COLORSEL_CLOBBER_WIPE);
+	      draw_none();
+
+	      if (do_open() == 0)
+              {
+                if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
+	          do_render_cur_text(0);
+              }
+
+	      enable_avail_tools();
+
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      update_screen_rect(&r_tools);
+
+	      draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+
+	      draw_colors(COLORSEL_REFRESH);
+
+	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		draw_brushes();
+	      else if (cur_tool == TOOL_MAGIC)
+		draw_magic();
+	      else if (cur_tool == TOOL_STAMP)
+		draw_stamps();
+	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+		draw_fonts();
+	      else if (cur_tool == TOOL_SHAPES)
+		draw_shapes();
+	      else if (cur_tool == TOOL_ERASER)
+		draw_erasers();
+	    }
+	    else if (cur_tool == TOOL_SAVE)
+	    {
+	      if (do_save(old_tool, 0))
+	      {
+		been_saved = 1;
+		tool_avail[TOOL_SAVE] = 0;
+	      }
+
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      update_screen_rect(&r_tools);
+	    }
+	    else if (cur_tool == TOOL_NEW)
+	    {
+  	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+
+              disable_avail_tools();
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
+              if (do_new_dialog() == 0)
+	      {
+                cur_tool = old_tool;
+
+		draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
+          
+                if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+                  do_render_cur_text(0);
+	      }
+
+	      cur_tool = old_tool;
+
+              enable_avail_tools();
+
+              draw_toolbar();
+              update_screen_rect(&r_tools);
+              draw_colors(COLORSEL_REFRESH);
+
+              if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                draw_brushes();
+              else if (cur_tool == TOOL_MAGIC)
+                draw_magic();
+              else if (cur_tool == TOOL_STAMP)
+                draw_stamps();
+              else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+                draw_fonts();
+              else if (cur_tool == TOOL_SHAPES)
+                draw_shapes();
+              else if (cur_tool == TOOL_ERASER)
+                draw_erasers();
+	    }
+	    else if (cur_tool == TOOL_PRINT)
+	    {
+              /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
+          tmp_apply_uncommited_text();
+          /* original print code was here */
+          print_image();
+          undo_tmp_applied_text();
+
+          cur_tool = old_tool;
+          draw_toolbar();
+          draw_tux_text(TUX_BORED, "", 0);
+          update_screen_rect(&r_tools);
+	    }
+	    else if (cur_tool == TOOL_QUIT)
+	    {
+	      done = do_quit(old_tool);
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      update_screen_rect(&r_tools);
+	    }
+	    update_screen_rect(&r_toolopt);
+	    update_screen_rect(&r_ttoolopt);
+	  }
+
+          if (!done)
+            magic_switchin(canvas);	  
 	}
 	  else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
 	{
@@ -3731,12 +4062,74 @@ static void mainloop(void)
 	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 0;
-	  colorsflag = 0;
 	  text_flag = 0;
 	  tams = event.button.button;
 	  whichc = GRIDHIT_GD(r_colors, gd_colors);
-	  evalwhich_color();
+//	  evalwhich_color();
+          if (valid_click(tams))
+          {
+	   if (whichc >= 0 && whichc < NUM_COLORS)
+	   {
+	    cur_color = whichc;
+	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
+
+            if (cur_color == (unsigned) (NUM_COLORS - 1))
+	    {
+              disable_avail_tools();
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
+
+              do_color_picker();
+
+
+              enable_avail_tools();
+              draw_toolbar();
+              update_screen_rect(&r_tools);
+
+              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+
+              draw_colors(COLORSEL_FORCE_REDRAW);
+	      
+	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		draw_brushes();
+	      else if (cur_tool == TOOL_MAGIC)
+		draw_magic();
+	      else if (cur_tool == TOOL_STAMP)
+		draw_stamps();
+	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+		draw_fonts();
+	      else if (cur_tool == TOOL_SHAPES)
+		draw_shapes();
+	      else if (cur_tool == TOOL_ERASER)
+		draw_erasers();
+
+	      playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	      SDL_Flip(screen);
+	    }
+	    else
+	    {
+              draw_colors(COLORSEL_REFRESH);
+
+	      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
+	    }
+
+	    render_brush();
+	    
+
+	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	      do_render_cur_text(0);
+            else if (cur_tool == TOOL_MAGIC)
+              magic_funcs[magics[cur_magic].handle_idx].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
+	  }
 	}
+      }
 	else if (HIT(r_canvas) && valid_click(event.button.button))
 	{
 	  /* Draw something! */
@@ -22070,403 +22463,4 @@ int main(int argc, char *argv[])
   wait_for_sfx();
   cleanup();
   return 0;
-}
-
-
-void evalwhich()
-{
-	  int done, shape_tool_mode;
-	  int num_things;
-	  int *thing_scroll;
-	  int cur_thing, do_draw, old_tool;
-
-	  num_things = num_brushes;
-	  thing_scroll = &brush_scroll;
-	  cur_thing = 0;
-	  do_draw = 0;
-	  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-	  texttool_len = 0;
-	  done = 0;
-	magic_switchout(canvas);
-
-	if (whicht < NUM_TOOLS && tool_avail[whicht] &&
-	      ((valid_click(tams) || whicht == TOOL_PRINT) || (keysflag == 1)))
-	  {
-	    /* Allow middle/right-click on "Print", since [Alt]+click
-	       on Mac OS X changes it from left click to middle! */
-
-	    /* Render any current text, if switching to a different
-               drawing tool: */
-
-	    if ((cur_tool == TOOL_TEXT && whicht != TOOL_TEXT &&
-                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
-                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
-                whicht != TOOL_QUIT) ||
-	       (cur_tool == TOOL_LABEL && whicht != TOOL_LABEL &&
-                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
-                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
-                whicht != TOOL_QUIT))
-	    {
-	      if (cursor_x != -1 && cursor_y != -1)
-	      {
-		hide_blinking_cursor();
-		if (texttool_len > 0)
-		{
-		  rec_undo_buffer();
-		  do_render_cur_text(1);
-		  texttool_len = 0;
-		  cursor_textwidth = 0;
-		  label_node_to_edit = NULL;
-		}
-                else if(cur_tool == TOOL_LABEL && label_node_to_edit)
-                    {
-		      rec_undo_buffer();
-                        have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, NULL);
-                        derender_node(&label_node_to_edit);
-			label_node_to_edit = NULL;
-                    }
-	      }
-	    }
-            update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-	    old_tool = cur_tool;
-	    cur_tool = whicht;
-	    draw_toolbar();
-	    update_screen_rect(&r_tools);
-
-	    playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
-
-	    /* FIXME: this "if" is just plain gross */
-	    if (cur_tool != TOOL_TEXT)
-	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-
-	    /* Draw items for this tool: */
-
-	    if (cur_tool == TOOL_BRUSH)
-	    {
-	      cur_thing = cur_brush;
-	      num_things = num_brushes;
-	      thing_scroll = &brush_scroll;
-	      draw_brushes();
-	      draw_colors(COLORSEL_ENABLE);
-	    }
-	    else if (cur_tool == TOOL_STAMP)
-	    {
-	      cur_thing = cur_stamp[stamp_group];
-	      num_things = num_stamps[stamp_group];
-	      thing_scroll = &(stamp_scroll[stamp_group]);
-	      draw_stamps();
-	      draw_colors(stamp_colorable(cur_stamp[stamp_group]) ||
-			  stamp_tintable(cur_stamp[stamp_group]));
-	      set_active_stamp();
-	      update_stamp_xor();
-	    }
-	    else if (cur_tool == TOOL_LINES)
-	    {
-	      cur_thing = cur_brush;
-	      num_things = num_brushes;
-	      thing_scroll = &brush_scroll;
-	      draw_brushes();
-	      draw_colors(COLORSEL_ENABLE);
-	    }
-	    else if (cur_tool == TOOL_SHAPES)
-	    {
-	      cur_thing = cur_shape;
-	      num_things = NUM_SHAPES;
-	      thing_scroll = &shape_scroll;
-	      draw_shapes();
-	      draw_colors(COLORSEL_ENABLE);
-	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-	    }
-	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-	    {
-	      if (!font_thread_done)
-	      {
-		draw_colors(COLORSEL_DISABLE);
-		draw_none();
-		update_screen_rect(&r_toolopt);
-		update_screen_rect(&r_ttoolopt);
-		do_setcursor(cursor_watch);
-
-                /* Wait while Text tool finishes loading fonts */
-		draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
-
-		waiting_for_fonts = 1;
-#ifdef FORKED_FONTS
-		receive_some_font_info(screen);
-#else
-		while (!font_thread_done && !font_thread_aborted)
-		{
-		  /* FIXME: should have a read-depends memory barrier around here */
-		  show_progress_bar(screen);
-		  SDL_Delay(20);
-		}
-		/* FIXME: should kill this in any case */
-		SDL_WaitThread(font_thread, NULL);
-#endif
-                set_label_fonts();
-		do_setcursor(cursor_arrow);
-	      }
-	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-
-	      if (num_font_families > 0)
-	      {
-		cur_thing = cur_font;
-		num_things = num_font_families;
-		thing_scroll = &font_scroll;
-		if (cur_tool == TOOL_LABEL)
-		  {
-                      cur_label = LABEL_LABEL;
-		  }
-		draw_fonts();
-		draw_colors(COLORSEL_ENABLE);
-	      }
-	      else
-	      {
-		/* Problem using fonts! */
-
-		cur_tool = old_tool;
-		draw_toolbar();
-		update_screen_rect(&r_tools);
-	      }
-	    }
-	    else if (cur_tool == TOOL_MAGIC)
-	    {
-	      cur_thing = cur_magic;
-	      num_things = num_magics;
-	      thing_scroll = &magic_scroll;
-              magic_current_snd_ptr = NULL;
-	      draw_magic();
-	      draw_colors(magics[cur_magic].colors);
-
-	      if (magics[cur_magic].colors)
-	        magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
-						color_hexes[cur_color][0],
-						color_hexes[cur_color][1],
-						color_hexes[cur_color][2]);
-	    }
-	    else if (cur_tool == TOOL_ERASER)
-	    {
-	      cur_thing = cur_eraser;
-	      num_things = NUM_ERASERS;
-	      thing_scroll = &eraser_scroll;
-	      draw_erasers();
-	      draw_colors(COLORSEL_DISABLE);
-	    }
-	    else if (cur_tool == TOOL_UNDO)
-	    {
-	      if (cur_undo == newest_undo)
-	      {
-		rec_undo_buffer();
-		do_undo();
-	      }
-	      do_undo();
-
-	      been_saved = 0;
-
-	      if (!disable_save)
-		tool_avail[TOOL_SAVE] = 1;
-
-	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
-	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-	    }
-	    else if (cur_tool == TOOL_REDO)
-	    {
-	      do_redo();
-
-	      been_saved = 0;
-
-	      if (!disable_save)
-		tool_avail[TOOL_SAVE] = 1;
-
-	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
-	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-	    }
-	    else if (cur_tool == TOOL_OPEN)
-	    {
-	      disable_avail_tools();
-	      draw_toolbar();
-	      draw_colors(COLORSEL_CLOBBER_WIPE);
-	      draw_none();
-
-	      if (do_open() == 0)
-              {
-                if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
-	          do_render_cur_text(0);
-              }
-
-	      enable_avail_tools();
-
-	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
-
-	      draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
-
-	      draw_colors(COLORSEL_REFRESH);
-
-	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-		draw_brushes();
-	      else if (cur_tool == TOOL_MAGIC)
-		draw_magic();
-	      else if (cur_tool == TOOL_STAMP)
-		draw_stamps();
-	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-		draw_fonts();
-	      else if (cur_tool == TOOL_SHAPES)
-		draw_shapes();
-	      else if (cur_tool == TOOL_ERASER)
-		draw_erasers();
-	    }
-	    else if (cur_tool == TOOL_SAVE)
-	    {
-	      if (do_save(old_tool, 0))
-	      {
-		been_saved = 1;
-		tool_avail[TOOL_SAVE] = 0;
-	      }
-
-	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
-	    }
-	    else if (cur_tool == TOOL_NEW)
-	    {
-  	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-
-              disable_avail_tools();
-              draw_toolbar();
-              draw_colors(COLORSEL_CLOBBER_WIPE);
-              draw_none();
-
-              if (do_new_dialog() == 0)
-	      {
-                cur_tool = old_tool;
-
-		draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
-          
-                if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-                  do_render_cur_text(0);
-	      }
-
-	      cur_tool = old_tool;
-
-              enable_avail_tools();
-
-              draw_toolbar();
-              update_screen_rect(&r_tools);
-              draw_colors(COLORSEL_REFRESH);
-
-              if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-                draw_brushes();
-              else if (cur_tool == TOOL_MAGIC)
-                draw_magic();
-              else if (cur_tool == TOOL_STAMP)
-                draw_stamps();
-              else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-                draw_fonts();
-              else if (cur_tool == TOOL_SHAPES)
-                draw_shapes();
-              else if (cur_tool == TOOL_ERASER)
-                draw_erasers();
-	    }
-	    else if (cur_tool == TOOL_PRINT)
-	    {
-              /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-          tmp_apply_uncommited_text();
-          /* original print code was here */
-          print_image();
-          undo_tmp_applied_text();
-
-          cur_tool = old_tool;
-          draw_toolbar();
-          draw_tux_text(TUX_BORED, "", 0);
-          update_screen_rect(&r_tools);
-	    }
-	    else if (cur_tool == TOOL_QUIT)
-	    {
-	      done = do_quit(old_tool);
-	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
-	    }
-	    update_screen_rect(&r_toolopt);
-	    update_screen_rect(&r_ttoolopt);
-	  }
-
-          if (!done)
-            magic_switchin(canvas);
-}
-
-void evalwhich_color(void)
-{
-      SDL_Event event;
-      if (valid_click(tams) || colorsflag == 1)
-      {
-	if (whichc >= 0 && whichc < NUM_COLORS)
-	  {
-	    cur_color = whichc;
-	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
-
-            if (cur_color == (unsigned) (NUM_COLORS - 1))
-	    {
-              disable_avail_tools();
-              draw_toolbar();
-              draw_colors(COLORSEL_CLOBBER_WIPE);
-              draw_none();
-
-
-              do_color_picker();
-
-
-              enable_avail_tools();
-              draw_toolbar();
-              update_screen_rect(&r_tools);
-
-              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
-
-              draw_colors(COLORSEL_FORCE_REDRAW);
-	      
-	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-		draw_brushes();
-	      else if (cur_tool == TOOL_MAGIC)
-		draw_magic();
-	      else if (cur_tool == TOOL_STAMP)
-		draw_stamps();
-	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-		draw_fonts();
-	      else if (cur_tool == TOOL_SHAPES)
-		draw_shapes();
-	      else if (cur_tool == TOOL_ERASER)
-		draw_erasers();
-
-	      playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-	      SDL_Flip(screen);
-	    }
-	    else
-	    {
-              draw_colors(COLORSEL_REFRESH);
-
-	      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
-	    }
-
-	    render_brush();
-	    
-
-	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-	      do_render_cur_text(0);
-            else if (cur_tool == TOOL_MAGIC)
-              magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
-						color_hexes[cur_color][0],
-						color_hexes[cur_color][1],
-						color_hexes[cur_color][2]);
-	  }
-	}
 }
