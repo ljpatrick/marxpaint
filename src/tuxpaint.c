@@ -1980,16 +1980,16 @@ enum
 };
 void evalwhich(void);
 void evalwhich_color(void);
-int flagmouse,xnew,ynew,eraflag,lineflag, which, keysflag, colorsflag, magicflag;
+int flagmouse,xnew,ynew,eraflag,lineflag, whicht, whichc, keysflag, colorsflag, magicflag;
 Uint8 tams;
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
 {
-  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, keymotion_flag, old_x, old_y, new_x, new_y,
+  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
-    old_stamp_group;
+    old_stamp_group, which;
   int num_things;
   int *thing_scroll;
   int cur_thing, do_draw, max;
@@ -2013,7 +2013,8 @@ static void mainloop(void)
   cur_thing = 0;
   do_draw = 0;
   old_x = 0;
-  old_y = 0;
+  old_y = 0; 
+  which = 0;
   shape_ctr_x = 0;
   shape_ctr_y = 0;
   shape_outer_x = 0;
@@ -2026,7 +2027,6 @@ static void mainloop(void)
   scrolltimer = 0;
   tool_flag = 0;
   canvas_flag = 0;
-  keymotion_flag = 0;
   text_flag = 0;
   val_x = 0;
   val_y = 0;
@@ -2065,16 +2065,7 @@ static void mainloop(void)
 
 	handle_keymouse(key, SDL_KEYUP);
       }
-      else if (keymotion_flag == 1)
-      {
-        old_x += val_x;
-	old_y += val_y;
-	new_x = old_x + button_w * 2;
-	new_y = old_y;
-	SDL_WarpMouse(old_x + button_w * 2, old_y);
-	update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-	keymotion_flag = 0;
-      }
+      
       else if (event.type == SDL_KEYDOWN)
       {
 	key = event.key.keysym.sym;
@@ -2098,129 +2089,194 @@ static void mainloop(void)
 
 	if (key == SDLK_1 && canvas_flag == 1)
 	{
-		val_x = -8;
-		val_y = 8;
+		val_x = -16;
+		val_y = 16;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
+
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 	
 	if (key == SDLK_3 && canvas_flag == 1)
 	{
-		val_x = 8;
-		val_y = 8;
+		val_x = 16;
+		val_y = 16;
+		old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if (key == SDLK_7 && canvas_flag == 1)
 	{
-		val_x = -8;
-		val_y = -8;
+		val_x = -16;
+		val_y = -16;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 	
 	if (key == SDLK_9 && canvas_flag == 1)
 	{
-		val_x = 8;
-		val_y = -8;
+		val_x = 16;
+		val_y = -16;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 	
 	if (key == SDLK_s && canvas_flag == 1 && text_flag == 0)
 	{
-		val_y = 8;
+		val_y = 12;
 		val_x = 0;
-		keymotion_flag = 1;
+		old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
+
 	if (key == SDLK_w && canvas_flag == 1 && text_flag == 0)
 	{
-		val_y = -8;
+		val_y = -12;
 		val_x = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if (key == SDLK_d && canvas_flag == 1 && text_flag == 0)
 	{
-		val_x = 8;
+		val_x = 16;
 		val_y = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if (key == SDLK_a && canvas_flag == 1 && text_flag == 0)
 	{
-		val_x = -8;
+		val_x = -16;
 		val_y = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 		
 
 	if ((key == SDLK_DOWN || key == SDLK_2) && canvas_flag == 1)
 	{
-		val_y = 8;
+		val_y = 12;
 		val_x = 0;
-		keymotion_flag = 1;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 	if ((key == SDLK_UP || key == SDLK_8)&& canvas_flag == 1)
 	{
-		val_y = -8;
+		val_y = -12;
 		val_x = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if ((key == SDLK_RIGHT || key == SDLK_6) && canvas_flag == 1)
 	{
-		val_x = 8;
+		val_x = 16;
 		val_y = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if ((key == SDLK_LEFT || key == SDLK_4) && canvas_flag == 1)
 	{
-		val_x = -8;
+		val_x = -16;
 		val_y = 0;
+	        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-		keymotion_flag = 1;
 	}
 
 	if (key == SDLK_DOWN && tool_flag == 1)
 	{
-		which += 2;
-		which = which % NUM_TOOLS;
-		while (!tool_avail[which])
+		whicht += 2;
+		whicht = whicht % NUM_TOOLS;
+		while (!tool_avail[whicht])
 		{
-			which += 2;
-			which = which % NUM_TOOLS;
+			whicht += 2;
+			whicht = whicht % NUM_TOOLS;
+		}
+		if (whicht%2 == 0)
+		{
+		SDL_WarpMouse(button_w / 2, (button_h + (whicht * (button_h / 2))));
+		}
+		else if (whicht%2 != 0)
+		{
+		SDL_WarpMouse((button_w * 3) / 2, (button_h/2 + (whicht * (button_h / 2))));
 		}
 		old_tool = cur_tool;
-	        cur_tool = which;
+	        cur_tool = whicht;
 	        draw_toolbar();
 	        update_screen_rect(&r_tools);
-
        	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}		
 
 	if (key == SDLK_UP && tool_flag == 1)
 	{
-		which -= 2;
-		if (which < 0)
-		which += NUM_TOOLS;
-		while (!tool_avail[which])
+		whicht -= 2;
+		if (whicht < 0)
+		whicht += NUM_TOOLS;
+		while (!tool_avail[whicht])
 		{
-			which -= 2;
-			if (which < 0)
-			which += NUM_TOOLS;
+			whicht -= 2;
+			if (whicht < 0)
+			whicht += NUM_TOOLS;
+		}
+		if (whicht%2 == 0)
+		{
+		SDL_WarpMouse(button_w / 2, (button_h + (whicht * (button_h / 2))));
+		}
+		else if (whicht%2 != 0)
+		{
+		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
 		old_tool = cur_tool;
-	        cur_tool = which;
+	        cur_tool = whicht;
 	        draw_toolbar();
 	        update_screen_rect(&r_tools);
 
@@ -2229,15 +2285,23 @@ static void mainloop(void)
 
 	if (key == SDLK_RIGHT && tool_flag == 1)
 	{
-		which = which + 1;
-		which = which % NUM_TOOLS;
-		while (!tool_avail[which])
+		whicht = whicht + 1;
+		whicht = whicht % NUM_TOOLS;
+		while (!tool_avail[whicht])
 		{
-			which += 1;
-			which = which % NUM_TOOLS;
+			whicht += 1;
+			whicht = whicht % NUM_TOOLS;
+		}
+		if (whicht%2 == 0)
+		{
+		SDL_WarpMouse(button_w / 2, (button_h + (whicht * (button_h / 2))));
+		}
+		else if (whicht%2 != 0)
+		{
+		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
 		old_tool = cur_tool;
-	        cur_tool = which;
+	        cur_tool = whicht;
 	        draw_toolbar();
 	        update_screen_rect(&r_tools);
 
@@ -2246,17 +2310,25 @@ static void mainloop(void)
 
 	if (key == SDLK_LEFT && tool_flag == 1)
 	{	
-		which = which - 1;
-		if (which < 0)
-		which += NUM_TOOLS;
-		while (!tool_avail[which])
+		whicht = whicht - 1;
+		if (whicht < 0)
+		whicht += NUM_TOOLS;
+		while (!tool_avail[whicht])
 		{
-			which -= 1;
-			if (which < 0)
-			which += NUM_TOOLS;
+			whicht -= 1;
+			if (whicht < 0)
+			whicht += NUM_TOOLS;
+		}
+		if (whicht%2 == 0)
+		{
+		SDL_WarpMouse(button_w / 2, (button_h + (whicht * (button_h / 2))));
+		}
+		else if (whicht%2 != 0)
+		{
+		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
 		old_tool = cur_tool;
-	        cur_tool = which;
+	        cur_tool = whicht;
 	        draw_toolbar();
 	        update_screen_rect(&r_tools);
 
@@ -2265,19 +2337,21 @@ static void mainloop(void)
 
 	if (key == SDLK_LEFT && color_flag == 1)
 	{
-		which = which - 1;
-		if (which < 0)
-		which += NUM_COLORS;
-		cur_color = which;
+		whichc = whichc - 1;
+		if (whichc < 0)
+		whichc += NUM_COLORS;
+		SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+		cur_color = whichc;
 		draw_colors(COLORSEL_REFRESH);
 		
 	}
 
 	if (key == SDLK_RIGHT && color_flag == 1)
 	{
-		which = which + 1;
-		which = which % NUM_COLORS;
-		cur_color = which;
+		whichc = whichc + 1;
+		whichc = whichc % NUM_COLORS;
+		SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+		cur_color = whichc;
 		draw_colors(COLORSEL_REFRESH);
 	}
 
@@ -2313,9 +2387,16 @@ static void mainloop(void)
 			canvas_flag = 0;
 			tool_flag = 1;
 			color_flag = 0;
-			which = 0;
+			if (whicht%2 == 0)
+			{
+			SDL_WarpMouse((button_w)/2, (button_h + (whicht*(button_h/2))));
+			}
+			else if (whicht%2 != 0)
+			{
+			SDL_WarpMouse((button_w*3)/2, (button_h/2 + (whicht*(button_h/2))));		
+			}
 			old_tool = cur_tool;
-			cur_tool = which;
+			cur_tool = whicht;
 			draw_toolbar();
 			update_screen_rect(&r_tools);
 			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
@@ -2325,8 +2406,8 @@ static void mainloop(void)
 			canvas_flag = 0;
 			tool_flag = 0;
 			color_flag = 1;
-			which = 0;
-			cur_color = which;
+			SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
+			cur_color = whichc;
 			draw_colors(COLORSEL_REFRESH);
 		}
 		else if (color_flag == 1)
@@ -2334,6 +2415,7 @@ static void mainloop(void)
 			canvas_flag = 1;
 			tool_flag = 0;
 			color_flag = 0;
+			SDL_WarpMouse(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
 		}
 	}
 			
@@ -2938,7 +3020,7 @@ static void mainloop(void)
 	  magicflag = 0;
           magic_switchout(canvas);
 
-	  which = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
+	  whicht = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 	  tool_flag = 1;
 	  keysflag = 0;
 	  canvas_flag = 0;
@@ -3652,7 +3734,7 @@ static void mainloop(void)
 	  colorsflag = 0;
 	  text_flag = 0;
 	  tams = event.button.button;
-	  which = GRIDHIT_GD(r_colors, gd_colors);
+	  whichc = GRIDHIT_GD(r_colors, gd_colors);
 	  evalwhich_color();
 	}
 	else if (HIT(r_canvas) && valid_click(event.button.button))
@@ -4589,7 +4671,7 @@ static void mainloop(void)
 		   }
 		  else if (flagmouse%2 == 0)
 		  {
-			  do_setcursor(cursor_brush);
+			  do_setcursor(cursor_arrow);
 		  }
 	   }
 	  else if (mouseaccessibility != 1 && cur_tool == TOOL_BRUSH)
@@ -22007,8 +22089,8 @@ void evalwhich()
 	  done = 0;
 	magic_switchout(canvas);
 
-	if (which < NUM_TOOLS && tool_avail[which] &&
-	      ((valid_click(tams) || which == TOOL_PRINT) || (keysflag == 1)))
+	if (whicht < NUM_TOOLS && tool_avail[whicht] &&
+	      ((valid_click(tams) || whicht == TOOL_PRINT) || (keysflag == 1)))
 	  {
 	    /* Allow middle/right-click on "Print", since [Alt]+click
 	       on Mac OS X changes it from left click to middle! */
@@ -22016,14 +22098,14 @@ void evalwhich()
 	    /* Render any current text, if switching to a different
                drawing tool: */
 
-	    if ((cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
-                which != TOOL_NEW && which != TOOL_OPEN &&
-                which != TOOL_SAVE && which != TOOL_PRINT &&
-                which != TOOL_QUIT) ||
-	       (cur_tool == TOOL_LABEL && which != TOOL_LABEL &&
-                which != TOOL_NEW && which != TOOL_OPEN &&
-                which != TOOL_SAVE && which != TOOL_PRINT &&
-                which != TOOL_QUIT))
+	    if ((cur_tool == TOOL_TEXT && whicht != TOOL_TEXT &&
+                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
+                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
+                whicht != TOOL_QUIT) ||
+	       (cur_tool == TOOL_LABEL && whicht != TOOL_LABEL &&
+                whicht != TOOL_NEW && whicht != TOOL_OPEN &&
+                whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
+                whicht != TOOL_QUIT))
 	    {
 	      if (cursor_x != -1 && cursor_y != -1)
 	      {
@@ -22048,7 +22130,7 @@ void evalwhich()
 	    }
             update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 	    old_tool = cur_tool;
-	    cur_tool = which;
+	    cur_tool = whicht;
 	    draw_toolbar();
 	    update_screen_rect(&r_tools);
 
@@ -22326,9 +22408,9 @@ void evalwhich_color(void)
       SDL_Event event;
       if (valid_click(tams) || colorsflag == 1)
       {
-	if (which >= 0 && which < NUM_COLORS)
+	if (whichc >= 0 && whichc < NUM_COLORS)
 	  {
-	    cur_color = which;
+	    cur_color = whichc;
 	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 
             if (cur_color == (unsigned) (NUM_COLORS - 1))
