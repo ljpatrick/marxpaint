@@ -50,6 +50,12 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Adding a mouse mode to avoid the need to drag the mouse.
+      by Ankit Choudary <ankit.goaldecided@gmail.com>
+
+    * Allowing to paint with the keyboard.
+      by Ankit Choudary.
+
     * Creating thumbnails for the starters we provide.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
