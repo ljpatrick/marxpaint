@@ -2064,6 +2064,15 @@ static void mainloop(void)
 	key = event.key.keysym.sym;
 
 	handle_keymouse(key, SDL_KEYUP);
+
+	if (key == SDLK_BACKSLASH)
+	{
+		ev.which = 0;
+		ev.type = SDL_MOUSEBUTTONUP;
+		ev.state = SDL_RELEASED;
+		ev.button = SDL_BUTTON_LEFT;
+		SDL_PushEvent(&ev);		
+	}
       }
       
       else if (event.type == SDL_KEYDOWN)
