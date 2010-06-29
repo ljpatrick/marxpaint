@@ -13082,7 +13082,7 @@ static void do_png_embed_data(png_structp png_ptr)
       printf("cur %p, red %p\n", current_node, first_label_node_in_redo_stack);
     }
 
-#ifndef fmemopen_alternative
+#ifdef fmemopen_alternative
     size_of_uncompressed_label_data = ftell(lfi);
     rewind(lfi);
     ldata = malloc(size_of_uncompressed_label_data);
