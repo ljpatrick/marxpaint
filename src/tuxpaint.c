@@ -4854,10 +4854,10 @@ static void mainloop(void)
 
 	if (HIT(r_tools))
 	{
+	  int most = 14;
 	  eraflag = 0;
 	  magicflag = 0;
 	  /* Tools: */
-	  int most = 14;
 
 	  if (NUM_TOOLS > most + TOOLOFFSET)
 	    {
