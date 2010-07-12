@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2010.July.2 (0.9.22)
+2010.July.12 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -182,14 +182,17 @@ $Id$
 
   * Localization Updates:
     ---------------------
-    * Albanian
-      Launchpad translations.
+    * Albanian translation.
+      Canonical Ubuntu Launchpad contributors
 
     * British English
       Robert Readman <robert_readman@hotmail.com>
 
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
+
+    * Czech translation
+      Zdeněk Chalupský <chalzd@gmail.com>
 
     * Danish translation
       Joe Dalton <joedalton2@yahoo.dk>

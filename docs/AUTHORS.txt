@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 27, 2010
+June 17, 2002 - July 12, 2010
 
 $Id$
 
@@ -452,10 +452,11 @@ $Id$
   
   * Czech
     Peter Sterba <sterba@sterba.com>
-    Martin <barin@email.cz>,
+    Martin <barin@email.cz>
     Lucie Burianova <Lucie.Burianova@global-dtp.com>
     tropikhajma <tropikhajma@seznam.cz>
     Vaclav Cermak <vaclav.cermak@gmail.com>
+    Zdenek Chalupsky <chalzd@gmail.com>
 
   * Danish
     Joe Hansen <joedalton2@yahoo.dk>
