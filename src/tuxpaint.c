@@ -1980,8 +1980,8 @@ enum
 };
 void evalwhich(void);
 void evalwhich_color(void);
-int flagmouse,xnew,ynew,eraflag,lineflag, magicflag;
-Uint8 tams;
+int brushflag,xnew,ynew,eraflag,lineflag, magicflag;
+
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
@@ -2096,11 +2096,11 @@ static void mainloop(void)
 
 	handle_keymouse(key, SDL_KEYDOWN);
 
-	if (key == SDLK_1 && canvas_flag == 1)
+	if (key == SDLK_1)
 	{
 		val_x = -16;
 		val_y = 16;
-	        old_x += val_x;
+	    old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2110,7 +2110,7 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 	
-	if (key == SDLK_3 && canvas_flag == 1)
+	if (key == SDLK_3)
 	{
 		val_x = 16;
 		val_y = 16;
@@ -2124,11 +2124,11 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 
-	if (key == SDLK_7 && canvas_flag == 1)
+	if (key == SDLK_7)
 	{
 		val_x = -16;
 		val_y = -16;
-	        old_x += val_x;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2138,11 +2138,66 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 	
-	if (key == SDLK_9 && canvas_flag == 1)
+	if (key == SDLK_9)
 	{
 		val_x = 16;
 		val_y = -16;
-	        old_x += val_x;
+        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+ 	if (key == SDLK_2) 
+	{ 
+		val_y = 12; 
+		val_x = 0; 
+        old_x += val_x; 
+		old_y += val_y; 
+		new_x = old_x + button_w * 2; 
+		new_y = old_y; 
+		test_x = new_x; 
+		test_y = new_y; 
+		SDL_WarpMouse(old_x + button_w * 2, old_y); 
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT); 
+	} 
+	 
+	if (key == SDLK_8) 
+	{ 
+		val_y = -12; 
+		val_x = 0;
+        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+
+	if (key == SDLK_6)
+	{
+		val_x = 16;
+		val_y = 0;
+        old_x += val_x;
+		old_y += val_y;
+		new_x = old_x + button_w * 2;
+		new_y = old_y;
+		test_x = new_x;
+		test_y = new_y;
+		SDL_WarpMouse(old_x + button_w * 2, old_y);
+		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	}
+
+	if (key == SDLK_4)
+	{
+		val_x = -16;
+		val_y = 0;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2209,11 +2264,11 @@ static void mainloop(void)
 	}
 		
 
-	if ((key == SDLK_DOWN || key == SDLK_2) && canvas_flag == 1)
+	if (key == SDLK_DOWN && canvas_flag == 1)
 	{
 		val_y = 12;
 		val_x = 0;
-	        old_x += val_x;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2222,11 +2277,11 @@ static void mainloop(void)
 		SDL_WarpMouse(old_x + button_w * 2, old_y);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
-	if ((key == SDLK_UP || key == SDLK_8)&& canvas_flag == 1)
+	if (key == SDLK_UP && canvas_flag == 1)
 	{
 		val_y = -12;
 		val_x = 0;
-	        old_x += val_x;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2236,11 +2291,11 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 
-	if ((key == SDLK_RIGHT || key == SDLK_6) && canvas_flag == 1)
+	if (key == SDLK_RIGHT && canvas_flag == 1)
 	{
 		val_x = 16;
 		val_y = 0;
-	        old_x += val_x;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2250,11 +2305,11 @@ static void mainloop(void)
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	}
 
-	if ((key == SDLK_LEFT || key == SDLK_4) && canvas_flag == 1)
+	if (key == SDLK_LEFT && canvas_flag == 1)
 	{
 		val_x = -16;
 		val_y = 0;
-	        old_x += val_x;
+        old_x += val_x;
 		old_y += val_y;
 		new_x = old_x + button_w * 2;
 		new_y = old_y;
@@ -2281,7 +2336,7 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h/2 + (whicht * (button_h / 2))));
 		}
-     	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+     	playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}		
 
 	if (key == SDLK_UP && tool_flag == 1)
@@ -2323,7 +2378,7 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
-       	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+       	playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
 	if (key == SDLK_LEFT && tool_flag == 1)
@@ -2345,7 +2400,7 @@ static void mainloop(void)
 		{
 		SDL_WarpMouse((button_w * 3) / 2, (button_h / 2 + (whicht * (button_h / 2))));
 		}
-       	        playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+       	playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
 
 	if (key == SDLK_LEFT && color_flag == 1)
@@ -2425,8 +2480,6 @@ static void mainloop(void)
 			{
 			SDL_WarpMouse((button_w*3)/2, (button_h/2 + (whicht*(button_h/2))));		
 			}
-			old_tool = cur_tool;
-			cur_tool = whicht;
 			draw_toolbar();
 			update_screen_rect(&r_tools);
 			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
@@ -2437,7 +2490,6 @@ static void mainloop(void)
 			tool_flag = 0;
 			color_flag = 1;
 			SDL_WarpMouse(button_w * 2 + whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
-			cur_color = whichc;
 			draw_colors(COLORSEL_REFRESH);
 		}
 		else if (color_flag == 1)
@@ -2445,7 +2497,14 @@ static void mainloop(void)
 			canvas_flag = 1;
 			tool_flag = 0;
 			color_flag = 0;
-			SDL_WarpMouse(test_x, test_y);
+			if (test_x > (2 * button_w ) && test_y < r_canvas.h) 
+			SDL_WarpMouse(test_x, test_y); 
+			else 
+			{ 
+				test_x = WINDOW_WIDTH/2; 
+				test_y = WINDOW_HEIGHT/2; 
+				SDL_WarpMouse(test_x, test_y); 
+			}
 		}
 	}
 			
@@ -3046,17 +3105,16 @@ static void mainloop(void)
 	  if (HIT(real_r_tools))
 	{
 	  /* A tool on the left has been pressed! */
-	  flagmouse = 0;
+	  brushflag = 0;
 	  magicflag = 0;
-          magic_switchout(canvas);
+      magic_switchout(canvas);
 	  whicht = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 	  tool_flag = 1;
 	  canvas_flag = 0;
 	  text_flag = 0;
-	  tams = event.button.button;
-//	  evalwhich();
+
 	  if (whicht < NUM_TOOLS && tool_avail[whicht] &&
-	      (valid_click(tams) || whicht == TOOL_PRINT))
+	      (valid_click(event.button.button) || whicht == TOOL_PRINT))
 	  {
 	    /* Allow middle/right-click on "Print", since [Alt]+click
 	       on Mac OS X changes it from left click to middle! */
@@ -3395,7 +3453,7 @@ static void mainloop(void)
 	  /* Options on the right
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
-	  flagmouse = 0;
+	  brushflag = 0;
 	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 1;
@@ -4067,16 +4125,15 @@ static void mainloop(void)
 	else if (HIT(r_colors) && colors_are_selectable)
 	{
 	  /* Color! */
-	  flagmouse = 0;
+	  brushflag = 0;
 	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 0;
 	  text_flag = 0;
-	  tams = event.button.button;
 	  whichc = GRIDHIT_GD(r_colors, gd_colors);
-//	  evalwhich_color();
-          if (valid_click(tams))
-          {
+
+      if (valid_click(event.button.button))
+      {
 	   if (whichc >= 0 && whichc < NUM_COLORS)
 	   {
 	    cur_color = whichc;
@@ -4164,11 +4221,11 @@ static void mainloop(void)
 	    /* Start painting! */
 	    if (mouseaccessibility == 1)
 	    {
-		    if (flagmouse%2 == 0)
+		    if (brushflag%2 == 0)
 		    rec_undo_buffer();
 		    xnew = event.button.x - r_canvas.x;
 		    ynew = event.button.y - r_canvas.y;
-		    flagmouse++;
+		    brushflag++;
 		    /* (Arbitrarily large, so we draw once now) */
 		    reset_brush_counter();
 
@@ -4442,7 +4499,7 @@ static void mainloop(void)
 	else if (HIT(r_sfx) && valid_click(event.button.button))
 	{
 	  /* A sound player button on the lower left has been pressed! */
-	  flagmouse = 0;
+	  brushflag = 0;
 	  magicflag = 0;
 	  tool_flag = 0;
 	  canvas_flag = 1;
@@ -5062,7 +5119,7 @@ static void mainloop(void)
 
 	else if (mouseaccessibility == 1 && cur_tool == TOOL_BRUSH)
 	  {
-		  if (flagmouse%2 != 0)
+		  if (brushflag%2 != 0)
 		  {
 			do_setcursor(cursor_brush);
 			brush_draw(xnew, ynew, event.motion.x - r_canvas.x, event.motion.y - r_canvas.y, 1);
@@ -5071,7 +5128,7 @@ static void mainloop(void)
 			xnew=event.motion.x - r_canvas.x;
 			ynew=event.motion.y - r_canvas.y;
 		   }
-		  else if (flagmouse%2 == 0)
+		  else if (brushflag%2 == 0)
 		  {
 			  do_setcursor(cursor_arrow);
 		  }
