@@ -1608,6 +1608,7 @@ typedef struct dirent2
 
 
 /* Local function prototypes: */
+SDL_Joystick *joystick;
 
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
@@ -3061,7 +3062,59 @@ static void mainloop(void)
 	  }
 	}
       }
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+
+	else if (event.type == SDL_JOYAXISMOTION)
+	{
+		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ) ) 
+	    {        
+			val_x = (int)((SDL_JoystickGetAxis(joystick, 0) / 32768.0f) * 4);
+	    	val_y = (int)((SDL_JoystickGetAxis(joystick, 1) / 32768.0f) * 4);
+			old_x += val_x;
+			old_y += val_y;
+			new_x = old_x + button_w * 2;
+			new_y = old_y;
+			SDL_WarpMouse(new_x,new_y);
+			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+	    }
+	}
+
+	else if (event.type == SDL_JOYBALLMOTION)
+	{
+		if ( event.jball.ball == 0 )
+	    {
+	      /* ball handling */
+			printf("\n ball movement \n");
+		    val_x = event.jball.xrel;
+	    	val_y = event.jball.yrel;
+			old_x += val_x;
+			old_y += val_y;
+			new_x = old_x + button_w * 2;
+			new_y = old_y;
+			SDL_WarpMouse(new_x,new_y);
+			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+		}
+	}
+
+	else if (event.type == SDL_JOYBUTTONDOWN)
+	{
+//		printf("\n button num : %d \n", event.jbutton.button);
+		
+	    if (event.jbutton.button == 0) 
+	    {
+//			printf("\n button pressed \n");
+			ev.which = 0;
+			ev.type = SDL_MOUSEBUTTONDOWN;
+			ev.state = SDL_PRESSED;
+			ev.x    = old_x + button_w * 2;
+			ev.y    = old_y;
+			ev.button = SDL_BUTTON_LEFT;
+			SDL_PushEvent(&ev);
+			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
+			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	    }
+	}
+
+    else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       event.button.button >= 2 &&
 	       event.button.button <= 3 &&
 	       (no_button_distinction == 0 &&
@@ -13401,7 +13454,7 @@ static int do_quit(int tool)
     draw_tux_text(TUX_BORED, "", 0);
     cur_tool = tmp_tool;
   }
-
+  SDL_JoystickClose(joystick);
   return (done);
 }
 
@@ -21499,7 +21552,7 @@ static void setup(void)
 
   do_lock_file();
 
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER;
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_JOYSTICK;
   if (use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if (!fullscreen)
@@ -22521,7 +22574,21 @@ int main(int argc, char *argv[])
 
 
   claim_to_be_ready();
+  int i;
+  printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
+  printf("The names of the joysticks are:\n");
+		
+  for( i=0; i < SDL_NumJoysticks(); i++ ) 
+   {
+       printf("    %s\n", SDL_JoystickName(i));
+   }
 
+  SDL_JoystickEventState(SDL_ENABLE);
+  joystick = SDL_JoystickOpen(0);
+  printf("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
+  printf("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
+  printf("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
+  printf("Number of Hats: %d\n", SDL_JoystickNumHats(joystick));
   mainloop();
 
   /* Close and quit! */
