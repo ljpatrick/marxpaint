@@ -1990,8 +1990,9 @@ static void mainloop(void)
   int done, tool_flag, canvas_flag,text_flag, val_x, val_y, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
-    old_stamp_group, which, whicht, whichc, test_x, test_y;
+    old_stamp_group, which, whicht, whichc, test_x, test_y, iota;
   int num_things;
+  iota = 0;
   int *thing_scroll;
   int cur_thing, do_draw, max;
   int ignoring_motion;
@@ -3065,8 +3066,9 @@ static void mainloop(void)
 
 	else if (event.type == SDL_JOYAXISMOTION)
 	{
-		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ) ) 
+		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ) )
 	    {        
+			printf ("\n value : %d \n",event.jaxis.value );
 			val_x = (int)((SDL_JoystickGetAxis(joystick, 0) / 32768.0f) * 4);
 	    	val_y = (int)((SDL_JoystickGetAxis(joystick, 1) / 32768.0f) * 4);
 			old_x += val_x;
@@ -3076,13 +3078,12 @@ static void mainloop(void)
 			SDL_WarpMouse(new_x,new_y);
 			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 	    }
-	}
+    }
 
 	else if (event.type == SDL_JOYBALLMOTION)
 	{
 		if ( event.jball.ball == 0 )
 	    {
-	      /* ball handling */
 			printf("\n ball movement \n");
 		    val_x = event.jball.xrel;
 	    	val_y = event.jball.yrel;
@@ -3113,6 +3114,23 @@ static void mainloop(void)
 			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	    }
 	}
+
+	else if (event.type == SDL_JOYBUTTONUP)
+	{
+//		printf("\n button num : %d \n", event.jbutton.button);
+		
+	    if (event.jbutton.button == 0) 
+	    {
+//			printf("\n button released \n");
+			ev.which = 0;
+			ev.type = SDL_MOUSEBUTTONUP;
+			ev.state = SDL_RELEASED;
+			ev.button = SDL_BUTTON_LEFT;
+			SDL_PushEvent(&ev);
+			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+	    }
+	}
+
 
     else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       event.button.button >= 2 &&
