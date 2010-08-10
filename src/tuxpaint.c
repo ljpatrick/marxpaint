@@ -1990,9 +1990,8 @@ static void mainloop(void)
   int done, tool_flag, canvas_flag,text_flag, val_x, val_y, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
-    old_stamp_group, which, whicht, whichc, test_x, test_y, iota;
+    old_stamp_group, which, whicht, whichc, test_x, test_y, motioner;
   int num_things;
-  iota = 0;
   int *thing_scroll;
   int cur_thing, do_draw, max;
   int ignoring_motion;
@@ -3066,19 +3065,41 @@ static void mainloop(void)
 
 	else if (event.type == SDL_JOYAXISMOTION)
 	{
-		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ) )
+		motioner = event.jaxis.value;
+		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ))
 	    {        
-			printf ("\n value : %d \n",event.jaxis.value );
-			val_x = (int)((SDL_JoystickGetAxis(joystick, 0) / 32768.0f) * 4);
-	    	val_y = (int)((SDL_JoystickGetAxis(joystick, 1) / 32768.0f) * 4);
+			val_x = (int)((SDL_JoystickGetAxis(joystick, 0) / 32768.0f) * 3);
+	    	val_y = (int)((SDL_JoystickGetAxis(joystick, 1) / 32768.0f) * 3);
+//			printf ("\n value : %d , %d, %d, %d\n",event.jaxis.value, event.jaxis.axis, val_x, val_y);
 			old_x += val_x;
 			old_y += val_y;
 			new_x = old_x + button_w * 2;
 			new_y = old_y;
-			SDL_WarpMouse(new_x,new_y);
+			SDL_WarpMouse(old_x + button_w * 2, old_y);
 			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 	    }
     }
+
+	else if (motioner == -32768)
+	{
+//			printf ("\n values are : %d , %d\n",val_x, val_y);
+			old_x += val_x;
+			old_y += val_y;
+			new_x = old_x + button_w * 2;
+			new_y = old_y;
+			SDL_WarpMouse(old_x + button_w * 2, old_y);
+			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+	}
+
+	else if (motioner == 32767)
+	{
+			old_x += val_x;
+			old_y += val_y;
+			new_x = old_x + button_w * 2;
+			new_y = old_y;
+			SDL_WarpMouse(old_x + button_w * 2, old_y);
+			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
+	}
 
 	else if (event.type == SDL_JOYBALLMOTION)
 	{
@@ -3091,7 +3112,7 @@ static void mainloop(void)
 			old_y += val_y;
 			new_x = old_x + button_w * 2;
 			new_y = old_y;
-			SDL_WarpMouse(new_x,new_y);
+			SDL_WarpMouse(old_x + button_w * 2, old_y);
 			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 		}
 	}
