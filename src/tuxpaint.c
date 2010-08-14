@@ -925,7 +925,6 @@ static int disable_label;
 static void update_canvas_ex(int x1, int y1, int x2, int y2, int screen_too)
 {
   SDL_Rect src, dest;
-//  on_screen_keyboard();
   if (img_starter != NULL)
   {
     /* If there was a starter, cover this part of the drawing with
@@ -1979,17 +1978,15 @@ enum
   SHAPE_TOOL_MODE_DONE
 };
 
-void prepare();
-void finish();
+void keybd_prepare();
+void keybd_finish();
 void apply_surface (int x, int y, SDL_Surface *source, SDL_Surface *destination, SDL_Rect *clip);
 void drawkeybd(void );
 int regionhit(int x, int y, int w, int h);
 int button(int id, int x, int y);
-//void gen_key_event(int ide);
 void on_screen_keyboard(void );
 SDL_Surface *messager = NULL;
 #define initial_x (2 * button_w + 80)
-//#define initial_y 400
 #define key_width 24
 #define key_height 24
 
@@ -3260,7 +3257,6 @@ static void mainloop(void)
                 whicht != TOOL_SAVE && whicht != TOOL_PRINT &&
                 whicht != TOOL_QUIT))
 	    {
-//		  on_screen_keyboard();
 	      if (cursor_x != -1 && cursor_y != -1)
 	      {
 		hide_blinking_cursor();
@@ -4575,7 +4571,6 @@ static void mainloop(void)
 	  {
 	    /* Text and Label Tools! */
 	    text_flag = 1;
-//		on_screen_keyboard();
             if(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
             {
 		label_node_to_edit=search_label_list(&highlighted_label_node, old_x, old_y, 0);
@@ -5921,12 +5916,10 @@ static void mainloop(void)
 	  }
 	  else if (cur_tool == TOOL_TEXT)
 	  {
-//		on_screen_keyboard();
 	    do_setcursor(cursor_insertion);
 	  }
           else if (cur_tool == TOOL_LABEL)
               {
-//				  on_screen_keyboard();
                   if (cur_label == LABEL_LABEL)
                       do_setcursor(cursor_insertion);
                   else if (cur_label == LABEL_SELECT)
@@ -23305,7 +23298,6 @@ int main(int argc, char *argv[])
 
   
   claim_to_be_ready();
-//  on_screen_keyboard();
   int i;
   printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
   printf("The names of the joysticks are:\n");
@@ -23331,10 +23323,6 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-//void gen_key_event(int ide)
-
-
-
 // Check whether current mouse position is within a rectangle
 int regionhit(int x, int y, int w, int h)
 {
@@ -23353,11 +23341,12 @@ int button(int id, int x, int y)
   if (regionhit(x, y, 24, 24))
   {
     uistate.hotitem = id;
-    if (uistate.activeitem != id && uistate.mousedown)
-      {
+
+	if (uistate.activeitem == 0 && uistate.mousedown)
+	{
 		uistate.activeitem = id;
 		activeflag = 1;
-	  }
+	}
   }
   SDL_Rect dest;
   SDL_Surface *tmp_imgup;
@@ -23377,6 +23366,7 @@ int button(int id, int x, int y)
 	  		ide = id;
 	  		gen_key_flag = 1;
 			activeflag = 0;
+			uistate.activeitem = 0;
 		}
 	  SDL_BlitSurface(img_btnsm_down, NULL, screen, &dest);
     }
@@ -23393,7 +23383,7 @@ int button(int id, int x, int y)
   }
 }
 
-void prepare()
+void keybd_prepare()
 {
   fonty = TTF_OpenFont( "data/fonts/FreeSansBold.ttf", 12 );
   if (fonty == NULL)
@@ -23406,7 +23396,7 @@ void prepare()
   uistate.hotitem = 0;
 }
 
-void finish()
+void keybd_finish()
 {
   if (uistate.mousedown == 0)
   {
@@ -23418,7 +23408,6 @@ void finish()
       uistate.activeitem = -1;
   }
   TTF_CloseFont (fonty);
-//  TTF_Quit();
 }
 
 void apply_surface (int x, int y, SDL_Surface *source, SDL_Surface *destination, SDL_Rect *clip)
@@ -23481,11 +23470,11 @@ void on_screen_keyboard(void )
 	  }
 	  else
 	  {
-			initial_y = 25;
+			initial_y = 5;
 	  }
 	  apply_surface( initial_x, initial_y, key_board, screen, NULL);
 
-	  prepare();
+	  keybd_prepare();
 
 	  int i;
 
@@ -23500,7 +23489,7 @@ void on_screen_keyboard(void )
 
 	  drawkeybd();
 
-	  finish();
+	  keybd_finish();
 
 	  SDL_UpdateRect(screen, 0, 0, 640, 480);    
 
