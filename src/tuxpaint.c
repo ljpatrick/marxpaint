@@ -963,6 +963,7 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Globals: */
 static int mouseaccessibility = 1;
+static int onscreen_keyboard = 1;
 static int disable_screensaver;
 #ifdef NOKIA_770
 static int fullscreen = 1;
@@ -1199,7 +1200,6 @@ static int cur_undo, oldest_undo, newest_undo;
 static int text_undo[NUM_UNDO_BUFS];
 static int have_to_rec_label_node;
 static int have_to_rec_label_node_back;
-static SDL_Surface *hello;
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down;
@@ -1994,9 +1994,9 @@ TTF_Font *fonty = NULL;
 
 SDL_Color textcolory = { 0, 0, 0 };
 
-const char *array[] = {"","Esc", "  `", "  1","  2","  3","  4","  5","  6","  7","  8","  9","  0","  -","  =","Back",
+const char *keybd_array[] = {"","Esc", "  `", "  1","  2","  3","  4","  5","  6","  7","  8","  9","  0","  -","  =","Back",
 			"Caps","  a","  b","  c","  d","  e","  f","  g","  h","  i","  j","  k","  l","  m","  n","  [", "  ]","  \\","Ret",
-			"  o","  p","  q","  r","  s","  t","  v","  w","  x","  y","  z","  ,", "  .","  /","  ;","  '\'","Alt","Shift"};
+			"  o","  p","  q","  r","  s","  t","  u","  v","  w","  x","  y","  z","  ,", "  .","  /","  ;","  '\'","Alt","Shift"};
 
 
 struct UIState
@@ -2009,20 +2009,21 @@ struct UIState
   int activeitem;
 } 
 uistate = {0,0,0,0,0};
-int brushflag,xnew,ynew,eraflag,lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag, ide, activeflag;
+int brushflag,xnew,ynew,eraflag,lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag, ide, activeflag, old_x, old_y;
+int cur_thing, shift_flag, caps_flag, enter_flag;
 
 /* --- MAIN LOOP! --- */
 
 static void mainloop(void)
 {
-  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, old_x, old_y, new_x, new_y,
+  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, new_x, new_y,
     line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
     old_stamp_group, which, whicht, whichc, test_x, test_y, motioner,k;
 	k = 0;
   int num_things;
   int *thing_scroll;
-  int cur_thing, do_draw, max;
+  int do_draw, max;
   int ignoring_motion;
   int j = 0;
   unsigned int i = 0;
@@ -3334,6 +3335,7 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    {
+		  if (onscreen_keyboard)
 		  on_screen_keyboard();
 	      if (!font_thread_done)
 	      {
@@ -4608,6 +4610,7 @@ static void mainloop(void)
 		  }
 		  draw_fonts();
 		  update_screen_rect(&r_toolopt);
+		  if (onscreen_keyboard)
 		  on_screen_keyboard();
                   do_render_cur_text(0);
                   draw_colors(COLORSEL_REFRESH);
@@ -4666,613 +4669,6 @@ static void mainloop(void)
 #endif
         }
       }
-	else if (gen_key_flag == 1)
-	{
-		gen_key_flag = 0;
-		int i,j;
-		SDL_EnableUNICODE(1);
-		printf("\n entered here %d th time \n", k);
-		k++;
-		if (ide == 1)
-		{
-			event.key.keysym.sym = SDLK_ESCAPE;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 27;
-		}
-		else if (ide == 2)
-		{
-			event.key.keysym.sym = SDLK_BACKQUOTE;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 96;
-		}
-		else if (ide == 3)
-		{
-			event.key.keysym.sym = SDLK_1;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 49;
-		}
-		else if (ide == 4)
-		{
-			event.key.keysym.sym = SDLK_2;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 50;
-		}
-		else if (ide == 5)
-		{
-			event.key.keysym.sym = SDLK_3;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 51;
-		}
-		else if (ide == 6)
-		{
-			event.key.keysym.sym = SDLK_4;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 52;
-		}
-		else if (ide == 7)
-		{
-			event.key.keysym.sym = SDLK_5;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 53;
-		}
-		else if (ide == 8)
-		{
-			event.key.keysym.sym = SDLK_6;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 54;
-		}
-		else if (ide == 9)
-		{
-			event.key.keysym.sym = SDLK_7;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 55;
-		}
-		else if (ide == 10)
-		{
-			event.key.keysym.sym = SDLK_8;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 56;
-		}
-		else if (ide == 11)
-		{
-			event.key.keysym.sym = SDLK_9;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 57;
-		}
-		else if (ide == 12)
-		{
-			event.key.keysym.sym = SDLK_0;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 48;
-		}
-		else if (ide == 13)
-		{
-			event.key.keysym.sym = SDLK_MINUS;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 45;
-		}
-		else if (ide == 14)
-		{
-			event.key.keysym.sym = SDLK_EQUALS;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 61;
-		}
-		else if (ide == 15)
-		{
-			event.key.keysym.sym = SDLK_BACKSPACE;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 8;
-		}
-		else if (ide == 16)
-		{
-			event.key.keysym.sym = SDLK_CAPSLOCK;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 301;
-		}
-		else if (ide == 17)
-		{
-			event.key.keysym.sym = SDLK_a;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'a';
-		}
-		else if (ide == 18)
-		{
-			event.key.keysym.sym = SDLK_b;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'b';
-		}
-		else if (ide == 19)
-		{
-			event.key.keysym.sym = SDLK_c;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'c';
-		}
-		else if (ide == 20)
-		{
-			event.key.keysym.sym = SDLK_d;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'d';
-		}
-		else if (ide == 21)
-		{
-			event.key.keysym.sym = SDLK_e;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'e';
-		}
-		else if (ide == 22)
-		{
-			event.key.keysym.sym = SDLK_f;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'f';
-		}
-		else if (ide == 23)
-		{
-			event.key.keysym.sym = SDLK_g;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'g';
-		}
-		else if (ide == 24)
-		{
-			event.key.keysym.sym = SDLK_h;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'h';
-		}
-		else if (ide == 25)
-		{
-			event.key.keysym.sym = SDLK_i;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'i';
-		}
-		else if (ide == 26)
-		{
-			event.key.keysym.sym = SDLK_j;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'j';
-		}
-		else if (ide == 27)
-		{
-			event.key.keysym.sym = SDLK_k;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'k';
-		}
-		else if (ide == 28)
-		{
-			event.key.keysym.sym = SDLK_l;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'l';
-		}
-		else if (ide == 29)
-		{
-			event.key.keysym.sym = SDLK_m;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'m';
-		}
-		else if (ide == 30)
-		{
-			event.key.keysym.sym = SDLK_n;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'n';
-		}
-		else if (ide == 31)
-		{
-			event.key.keysym.sym = SDLK_LEFTBRACKET;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 91;
-		}
-		else if (ide == 32)
-		{
-			event.key.keysym.sym = SDLK_RIGHTBRACKET;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 93;
-		}
-		else if (ide == 33)
-		{
-			event.key.keysym.sym = SDLK_BACKSLASH;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 92;
-		}
-		else if (ide == 34)
-		{
-			event.key.keysym.sym = SDLK_RETURN;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 13;
-		}
-		else if (ide == 35)
-		{
-			event.key.keysym.sym = SDLK_o;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'o';
-		}
-		else if (ide == 36)
-		{
-			event.key.keysym.sym = SDLK_p;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'p';
-		}
-		else if (ide == 37)
-		{
-			event.key.keysym.sym = SDLK_q;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'q';
-		}
-		else if (ide == 38)
-		{
-			event.key.keysym.sym = SDLK_r;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'r';
-		}
-		else if (ide == 39)
-		{
-			event.key.keysym.sym = SDLK_s;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'s';
-		}
-		else if (ide == 40)
-		{
-			event.key.keysym.sym = SDLK_t;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'t';
-		}
-		else if (ide == 41)
-		{
-			event.key.keysym.sym = SDLK_u;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'u';
-		}
-		else if (ide == 41)
-		{
-			event.key.keysym.sym = SDLK_v;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'v';
-		}
-		else if (ide == 42)
-		{
-			event.key.keysym.sym = SDLK_w;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'w';
-		}
-		else if (ide == 43)
-		{
-			event.key.keysym.sym = SDLK_x;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'x';
-		}
-		else if (ide == 44)
-		{
-			event.key.keysym.sym = SDLK_y;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'y';
-		}
-		else if (ide == 45)
-		{
-			event.key.keysym.sym = SDLK_z;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = (Uint16)'z';
-		}
-		else if (ide == 46)
-		{
-			event.key.keysym.sym = SDLK_COMMA;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 44;
-		}
-		else if (ide == 47)
-		{
-			event.key.keysym.sym = SDLK_PERIOD;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 46;
-		}
-		else if (ide == 48)
-		{
-			event.key.keysym.sym = SDLK_SLASH;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 47;
-		}
-		else if (ide == 49)
-		{
-			event.key.keysym.sym = SDLK_SEMICOLON;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 59;
-		}
-		else if (ide == 50)
-		{
-			event.key.keysym.sym = SDLK_QUOTEDBL;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 34;
-		}
-		else if (ide == 51)
-		{
-			event.key.keysym.sym = SDLK_RALT;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 307;
-		}
-		else if (ide == 52)
-		{
-			event.key.keysym.sym = SDLK_RSHIFT;
-			event.key.keysym.mod = KMOD_NONE;
-			event.key.keysym.unicode = 303;
-		}
-
-		  static int redraw = 0;
-	      wchar_t* im_cp = im_data.s;
-  	    /* Discard previous # of redraw characters */
-	    if((int)texttool_len <= redraw) texttool_len = 0;
-	    else texttool_len -= redraw;
-	    texttool_str[texttool_len] = L'\0';
-
-	    /* Read IM, remember how many to redraw next iteration */
-	    redraw = im_read(&im_data, event.key.keysym);
-
-	    /* Queue each character to be displayed */
-	    while(*im_cp) {
-	      if (*im_cp == L'\b')
-	      {
-	        hide_blinking_cursor();
-	        if (texttool_len > 0)
-	        {
-	          texttool_len--;
-	          texttool_str[texttool_len] = 0;
-	          playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
-	          	  SNDDIST_NEAR);
-
-	          do_render_cur_text(0);
-
-                  if (been_saved)
-                      {
-                          been_saved = 0;
-
-                          if (!disable_save)
-                              tool_avail[TOOL_SAVE] = 1;
-
-                          draw_toolbar();
-                          update_screen_rect(&r_tools);
-                      }
-
-	        }
-	      }
-	      else if (*im_cp == L'\r')
-	      {
-	        int font_height;
-	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
-
-	        hide_blinking_cursor();
-	        if (texttool_len > 0)
-	        {
-	          rec_undo_buffer();
-	          do_render_cur_text(1);
-                  label_node_to_edit = NULL;
-	          texttool_len = 0;
-	          cursor_textwidth = 0;
-		  if (cur_tool == TOOL_LABEL)
-		    {
-		      draw_fonts();
-		      update_screen_rect(&r_toolopt);
-		    }
-                  
-                  if (been_saved)
-                      {
-                          been_saved = 0;
-
-                          if (!disable_save)
-                              tool_avail[TOOL_SAVE] = 1;
-
-                          draw_toolbar();
-                          update_screen_rect(&r_tools);
-                      }
-
-
-	        cursor_x = cursor_left;
-	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
-
-	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-
-	        }
-                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
-                    {
-                        rec_undo_buffer();
-                        have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, NULL);
-                        derender_node(&label_node_to_edit);
-			label_node_to_edit = NULL;
-//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
-
-                        if (been_saved)
-                            {
-                                been_saved = 0;
-
-                                if (!disable_save)
-                                    tool_avail[TOOL_SAVE] = 1;
-
-                                draw_toolbar();
-                                update_screen_rect(&r_tools);
-                            }
-                    }
-
-                /* Select a node to edit */
-                else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT)
-                    {
-                        label_node_to_edit=search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3, highlighted_label_node->save_y + 3, 0);
-                        if(label_node_to_edit)
-                            {
-			      cur_label = LABEL_LABEL;
-                                cur_thing=label_node_to_edit->save_cur_font;
-                                do_setcursor(cursor_insertion);
-                                i = 0;
-                                label_node_to_edit->is_enabled = FALSE;
-                                derender_node(&label_node_to_edit);
-
-                                texttool_len = select_texttool_len;
-                                while(i < texttool_len)
-                                    {
-                                        texttool_str[i] = select_texttool_str[i];
-                                        i = i+1;
-                                    }
-                                texttool_str[i] = L'\0';
-                                cur_color = select_color;
-                                old_x = select_x;
-                                old_y = select_y;
-                                cur_font = select_cur_font;
-                                text_state = select_text_state;
-                                text_size = select_text_size;
-                                // int j;
-                                for (j = 0; j < num_font_families; j++)
-                                    {
-                                        if (user_font_families[j]
-                                            && user_font_families[j]->handle)
-                                            {
-                                                TuxPaint_Font_CloseFont(user_font_families[j]->handle);
-                                                user_font_families[j]->handle = NULL;
-                                            }
-                                    }
-                                draw_fonts();
-                                update_screen_rect(&r_toolopt);
-
-                                cursor_x = old_x;
-                                cursor_y = old_y;
-                                cursor_left = old_x;
-
-                                draw_colors(COLORSEL_REFRESH);
-                                draw_fonts();
-                            }
-
-                        
-                        do_render_cur_text(0);
-                        
-                    }
-		else
-		  {
-		    cursor_x = cursor_left;
-		    cursor_y = min(cursor_y + font_height, canvas->h - font_height);
-		  }
-
-#ifdef SPEECH
-#ifdef __APPLE__
-            if (use_sound)
-              speak_string(texttool_str);
-#endif
-#endif
-		im_softreset(&im_data);
-	      }
-	      else if (*im_cp == L'\t')
-	      {
-
-	        if (texttool_len > 0)
-	        {
-	          rec_undo_buffer();
-	          do_render_cur_text(1);
-                  label_node_to_edit = NULL;
-	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
-	          texttool_len = 0;
-	          cursor_textwidth = 0;
-		  if (cur_tool == TOOL_LABEL)
-		    {
-		      draw_fonts();
-		      update_screen_rect(&r_toolopt);
-		    }
-
-                  if (been_saved)
-                      {
-                          been_saved = 0;
-
-                          if (!disable_save)
-                              tool_avail[TOOL_SAVE] = 1;
-
-                          draw_toolbar();
-                          update_screen_rect(&r_tools);
-                      }
-	        }
-                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
-                    {
-                        rec_undo_buffer();
-                        have_to_rec_label_node = TRUE;
-                        add_label_node(0, 0, 0, 0, NULL);
-                        derender_node(&label_node_to_edit);
-			label_node_to_edit = NULL;
-//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
-
-                        if (been_saved)
-                            {
-                                been_saved = 0;
-
-                                if (!disable_save)
-                                    tool_avail[TOOL_SAVE] = 1;
-
-                                draw_toolbar();
-                                update_screen_rect(&r_tools);
-                            }
-                    }
-                /* Cycle accross the nodes */
-                else if (cur_tool == TOOL_LABEL &&
-                         cur_label == LABEL_SELECT)
-                    {
-                        cycle_highlighted_label_node();
-                        highlight_label_nodes();
-                    }
-
-
-                
-#ifdef SPEECH
-#ifdef __APPLE__
-            if (use_sound)
-              speak_string(texttool_str);
-#endif
-#endif              
-		im_softreset(&im_data);
-	      }
-	      else if (iswprint(*im_cp) && 
-                       (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
-	      {
-	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
-	        {
-	          int old_cursor_textwidth = cursor_textwidth;
-#ifdef DEBUG  
-	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
-	          	key_down, key_unicode, key_unicode, key_unicode);
-#endif
-
-	          texttool_str[texttool_len++] = *im_cp;
-	          texttool_str[texttool_len] = 0;
-
-	          do_render_cur_text(0);
-
-                  if (been_saved)
-                      {
-                          been_saved = 0;
-
-                          if (!disable_save)
-                              tool_avail[TOOL_SAVE] = 1;
-
-                          draw_toolbar();
-                          update_screen_rect(&r_tools);
-                      }
-
-
-	          if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
-	              cursor_x + cursor_textwidth > canvas->w - 50)
-	          {
-	            playsound(screen, 0, SND_KEYCLICKRING, 1, SNDPOS_RIGHT,
-	          	    SNDDIST_NEAR);
-	          }
-	          else
-	          {
-	            /* FIXME: Might be fun to position the
-	               sound based on keyboard layout...? */
-
-	            playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
-	          	    SNDDIST_NEAR);
-	          }
-	        }
-	      }
-
-	      im_cp++;
-	    } /* while(*im_cp) */
-
-	    /* Show IM tip text */
-	    if(im_data.tip_text) {
-	      draw_tux_text(TUX_DEFAULT, im_data.tip_text, 1);
-	    }
-	
-	}	
 	 
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       wheely && event.button.button >= 4 && event.button.button <= 5)
@@ -6206,6 +5602,7 @@ static void mainloop(void)
 
     if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
         {
+			if (onscreen_keyboard)
 		    on_screen_keyboard();
             cur_cursor_blink = SDL_GetTicks();
 
@@ -23298,6 +22695,8 @@ int main(int argc, char *argv[])
 
   
   claim_to_be_ready();
+  shift_flag = 0;
+  caps_flag = 0;
   int i;
   printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
   printf("The names of the joysticks are:\n");
@@ -23348,14 +22747,20 @@ int button(int id, int x, int y)
 		activeflag = 1;
 	}
   }
-  SDL_Rect dest;
+  SDL_Rect dest,desti;
   SDL_Surface *tmp_imgup;
-  
+  SDL_Event event;
   dest.x = x;
   dest.y = y;
 
   // Render button 
   SDL_BlitSurface(img_btnsm_up, NULL, screen, &dest);
+  if (caps_flag % 2 != 0)
+	{
+		desti.x = initial_x;
+		desti.y = initial_y + key_height;
+		SDL_BlitSurface(img_btnsm_down, NULL, screen, &desti);
+	}
   if (uistate.hotitem == id)
   {
     if (uistate.activeitem == id)
@@ -23377,10 +22782,857 @@ int button(int id, int x, int y)
     }
   }
   else
-  {
-    // button is not hot, but it may be active    
+  {	
+	// button is not hot, but it may be active    
 	SDL_BlitSurface(img_btnsm_up, NULL, screen, &dest);
   }
+
+  if (gen_key_flag == 1)
+	{
+		gen_key_flag = 0;
+		enter_flag = 0;
+		int i,j;
+		SDL_EnableUNICODE(1);
+//		printf("\n entered here %d th time \n", k);
+//		k++;
+		if (ide == 1)
+		{
+			event.key.keysym.sym = SDLK_ESCAPE;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 27;
+		}
+		else if (ide == 2)
+		{
+			event.key.keysym.sym = SDLK_BACKQUOTE;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 96;
+		}
+		else if (ide == 3)
+		{
+			event.key.keysym.sym = SDLK_1;
+			if (shift_flag % 2 != 0)
+			event.key.keysym.mod = KMOD_RSHIFT;
+			else
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 49;
+		}
+		else if (ide == 4)
+		{
+			event.key.keysym.sym = SDLK_2;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 50;
+		}
+		else if (ide == 5)
+		{
+			event.key.keysym.sym = SDLK_3;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 51;
+		}
+		else if (ide == 6)
+		{
+			event.key.keysym.sym = SDLK_4;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 52;
+		}
+		else if (ide == 7)
+		{
+			event.key.keysym.sym = SDLK_5;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 53;
+		}
+		else if (ide == 8)
+		{
+			event.key.keysym.sym = SDLK_6;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 54;
+		}
+		else if (ide == 9)
+		{
+			event.key.keysym.sym = SDLK_7;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 55;
+		}
+		else if (ide == 10)
+		{
+			event.key.keysym.sym = SDLK_8;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 56;
+		}
+		else if (ide == 11)
+		{
+			event.key.keysym.sym = SDLK_9;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 57;
+		}
+		else if (ide == 12)
+		{
+			event.key.keysym.sym = SDLK_0;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 48;
+		}
+		else if (ide == 13)
+		{
+			event.key.keysym.sym = SDLK_MINUS;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 45;
+		}
+		else if (ide == 14)
+		{
+			event.key.keysym.sym = SDLK_EQUALS;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 61;
+		}
+		else if (ide == 15)
+		{
+			event.key.keysym.sym = SDLK_BACKSPACE;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 8;
+		}
+		else if (ide == 16)
+		{
+			caps_flag++;
+			enter_flag = 1;
+		}
+		else if (ide == 17)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_a;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 65;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_a;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'a';
+			}
+		}
+		else if (ide == 18)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_b;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 66;
+			}
+			else
+			{			
+				event.key.keysym.sym = SDLK_b;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'b';
+			}
+		}
+		else if (ide == 19)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_c;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 67;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_c;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'c';
+			}
+		}
+		else if (ide == 20)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_d;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 68;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_d;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'d';
+			}
+		}
+		else if (ide == 21)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_e;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 69;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_e;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'e';
+			}
+		}
+		else if (ide == 22)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_f;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 70;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_f;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'f';
+			}
+		}
+		else if (ide == 23)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_g;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 71;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_g;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'g';
+			}
+		}
+		else if (ide == 24)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_h;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 72;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_h;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'h';
+			}
+		}
+		else if (ide == 25)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_i;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 73;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_i;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'i';
+			}
+		}
+		else if (ide == 26)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_j;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 74;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_j;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'j';
+			}
+		}
+		else if (ide == 27)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_k;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 75;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_k;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'k';
+			}
+		}
+		else if (ide == 28)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_l;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 76;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_l;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'l';
+			}
+		}
+		else if (ide == 29)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_m;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 77;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_m;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'m';
+			}
+		}
+		else if (ide == 30)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_n;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 78;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_n;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'n';
+			}
+		}
+		else if (ide == 31)
+		{
+			event.key.keysym.sym = SDLK_LEFTBRACKET;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 91;
+		}
+		else if (ide == 32)
+		{
+			event.key.keysym.sym = SDLK_RIGHTBRACKET;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 93;
+		}
+		else if (ide == 33)
+		{
+			event.key.keysym.sym = SDLK_BACKSLASH;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 92;
+		}
+		else if (ide == 34)
+		{
+			event.key.keysym.sym = SDLK_RETURN;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 13;
+		}
+		else if (ide == 35)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_o;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 79;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_o;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'o';
+			}
+		}
+		else if (ide == 36)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_p;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 80;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_p;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'p';
+			}
+		}
+		else if (ide == 37)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_q;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 81;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_q;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'q';
+			}
+		}
+		else if (ide == 38)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_r;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 82;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_r;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'r';
+			}
+		}
+		else if (ide == 39)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_s;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 83;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_s;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'s';
+			}
+		}
+		else if (ide == 40)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_t;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 84;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_t;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'t';
+			}
+		}
+		else if (ide == 41)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_u;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 85;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_u;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'u';
+			}
+		}
+		else if (ide == 42)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_v;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 86;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_v;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'v';
+			}
+		}
+		else if (ide == 43)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_w;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 87;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_w;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'w';
+			}
+		}
+		else if (ide == 44)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_x;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 88;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_x;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'x';
+			}
+		}
+		else if (ide == 45)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_y;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 89;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_y;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'y';
+			}
+		}
+		else if (ide == 46)
+		{
+			if (caps_flag % 2 != 0)
+			{
+				event.key.keysym.sym = SDLK_z;
+				event.key.keysym.mod = KMOD_CAPS;
+				event.key.keysym.unicode = 90;
+			}
+			else
+			{
+				event.key.keysym.sym = SDLK_z;
+				event.key.keysym.mod = KMOD_NONE;
+				event.key.keysym.unicode = (Uint16)'z';
+			}
+		}
+		else if (ide == 47)
+		{
+			event.key.keysym.sym = SDLK_COMMA;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 44;
+		}
+		else if (ide == 48)
+		{
+			event.key.keysym.sym = SDLK_PERIOD;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 46;
+		}
+		else if (ide == 49)
+		{
+			event.key.keysym.sym = SDLK_SLASH;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 47;
+		}
+		else if (ide == 50)
+		{
+			event.key.keysym.sym = SDLK_SEMICOLON;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 59;
+		}
+		else if (ide == 51)
+		{
+			event.key.keysym.sym = SDLK_QUOTEDBL;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 34;
+		}
+		else if (ide == 52)
+		{
+			event.key.keysym.sym = SDLK_RALT;
+			event.key.keysym.mod = KMOD_NONE;
+			event.key.keysym.unicode = 307;
+		}
+		else if (ide == 53)
+		{
+			shift_flag++;
+			enter_flag = 1;
+		}
+
+		if (enter_flag == 0) 
+		{
+		  static int redraw = 0;
+	      wchar_t* im_cp = im_data.s;
+  	    /* Discard previous # of redraw characters */
+	    if((int)texttool_len <= redraw) texttool_len = 0;
+	    else texttool_len -= redraw;
+	    texttool_str[texttool_len] = L'\0';
+
+	    /* Read IM, remember how many to redraw next iteration */
+	    redraw = im_read(&im_data, event.key.keysym);
+
+	    /* Queue each character to be displayed */
+	    while(*im_cp) {
+	      if (*im_cp == L'\b')
+	      {
+	        hide_blinking_cursor();
+	        if (texttool_len > 0)
+	        {
+	          texttool_len--;
+	          texttool_str[texttool_len] = 0;
+	          playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
+	          	  SNDDIST_NEAR);
+
+	          do_render_cur_text(0);
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
+
+	        }
+	      }
+	      else if (*im_cp == L'\r')
+	      {
+	        int font_height;
+	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
+
+	        hide_blinking_cursor();
+	        if (texttool_len > 0)
+	        {
+	          rec_undo_buffer();
+	          do_render_cur_text(1);
+                  label_node_to_edit = NULL;
+	          texttool_len = 0;
+	          cursor_textwidth = 0;
+		  if (cur_tool == TOOL_LABEL)
+		    {
+		      draw_fonts();
+		      update_screen_rect(&r_toolopt);
+		    }
+                  
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
+
+
+	        cursor_x = cursor_left;
+	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+
+	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+
+	        }
+                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
+                    {
+                        rec_undo_buffer();
+                        have_to_rec_label_node = TRUE;
+                        add_label_node(0, 0, 0, 0, NULL);
+                        derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
+//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+
+                        if (been_saved)
+                            {
+                                been_saved = 0;
+
+                                if (!disable_save)
+                                    tool_avail[TOOL_SAVE] = 1;
+
+                                draw_toolbar();
+                                update_screen_rect(&r_tools);
+                            }
+                    }
+
+                /* Select a node to edit */
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT)
+                    {
+                        label_node_to_edit=search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3, highlighted_label_node->save_y + 3, 0);
+                        if(label_node_to_edit)
+                            {
+			      cur_label = LABEL_LABEL;
+                                cur_thing=label_node_to_edit->save_cur_font;
+                                do_setcursor(cursor_insertion);
+                                i = 0;
+                                label_node_to_edit->is_enabled = FALSE;
+                                derender_node(&label_node_to_edit);
+
+                                texttool_len = select_texttool_len;
+                                while(i < texttool_len)
+                                    {
+                                        texttool_str[i] = select_texttool_str[i];
+                                        i = i+1;
+                                    }
+                                texttool_str[i] = L'\0';
+                                cur_color = select_color;
+                                old_x = select_x;
+                                old_y = select_y;
+                                cur_font = select_cur_font;
+                                text_state = select_text_state;
+                                text_size = select_text_size;
+                                // int j;
+                                for (j = 0; j < num_font_families; j++)
+                                    {
+                                        if (user_font_families[j]
+                                            && user_font_families[j]->handle)
+                                            {
+                                                TuxPaint_Font_CloseFont(user_font_families[j]->handle);
+                                                user_font_families[j]->handle = NULL;
+                                            }
+                                    }
+                                draw_fonts();
+                                update_screen_rect(&r_toolopt);
+
+                                cursor_x = old_x;
+                                cursor_y = old_y;
+                                cursor_left = old_x;
+
+                                draw_colors(COLORSEL_REFRESH);
+                                draw_fonts();
+                            }
+
+                        
+                        do_render_cur_text(0);
+                        
+                    }
+		else
+		  {
+		    cursor_x = cursor_left;
+		    cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+		  }
+
+#ifdef SPEECH
+#ifdef __APPLE__
+            if (use_sound)
+              speak_string(texttool_str);
+#endif
+#endif
+		im_softreset(&im_data);
+	      }
+	      else if (*im_cp == L'\t')
+	      {
+
+	        if (texttool_len > 0)
+	        {
+	          rec_undo_buffer();
+	          do_render_cur_text(1);
+                  label_node_to_edit = NULL;
+	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
+	          texttool_len = 0;
+	          cursor_textwidth = 0;
+		  if (cur_tool == TOOL_LABEL)
+		    {
+		      draw_fonts();
+		      update_screen_rect(&r_toolopt);
+		    }
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
+	        }
+                else if (cur_tool == TOOL_LABEL && label_node_to_edit)
+                    {
+                        rec_undo_buffer();
+                        have_to_rec_label_node = TRUE;
+                        add_label_node(0, 0, 0, 0, NULL);
+                        derender_node(&label_node_to_edit);
+			label_node_to_edit = NULL;
+//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+
+                        if (been_saved)
+                            {
+                                been_saved = 0;
+
+                                if (!disable_save)
+                                    tool_avail[TOOL_SAVE] = 1;
+
+                                draw_toolbar();
+                                update_screen_rect(&r_tools);
+                            }
+                    }
+                /* Cycle accross the nodes */
+                else if (cur_tool == TOOL_LABEL &&
+                         cur_label == LABEL_SELECT)
+                    {
+                        cycle_highlighted_label_node();
+                        highlight_label_nodes();
+                    }
+
+
+                
+#ifdef SPEECH
+#ifdef __APPLE__
+            if (use_sound)
+              speak_string(texttool_str);
+#endif
+#endif              
+		im_softreset(&im_data);
+	      }
+	      else if (iswprint(*im_cp) && 
+                       (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
+	      {
+	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
+	        {
+	          int old_cursor_textwidth = cursor_textwidth;
+#ifdef DEBUG  
+	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
+	          	key_down, key_unicode, key_unicode, key_unicode);
+#endif
+
+	          texttool_str[texttool_len++] = *im_cp;
+	          texttool_str[texttool_len] = 0;
+
+	          do_render_cur_text(0);
+
+                  if (been_saved)
+                      {
+                          been_saved = 0;
+
+                          if (!disable_save)
+                              tool_avail[TOOL_SAVE] = 1;
+
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                      }
+
+
+	          if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
+	              cursor_x + cursor_textwidth > canvas->w - 50)
+	          {
+	            playsound(screen, 0, SND_KEYCLICKRING, 1, SNDPOS_RIGHT,
+	          	    SNDDIST_NEAR);
+	          }
+	          else
+	          {
+	            /* FIXME: Might be fun to position the
+	               sound based on keyboard layout...? */
+
+	            playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
+	          	    SNDDIST_NEAR);
+	          }
+	        }
+	      }
+
+	      im_cp++;
+	    } /* while(*im_cp) */
+
+	    /* Show IM tip text */
+	    if(im_data.tip_text) {
+	      draw_tux_text(TUX_DEFAULT, im_data.tip_text, 1);
+	    }
+	
+	}	
+	}
 }
 
 void keybd_prepare()
@@ -23426,21 +23678,21 @@ void drawkeybd(void )
   int i;
   for (i = 1; i <= 15; i++)
   {
-    messager = TTF_RenderText_Solid( fonty, array[i], textcolory );
+    messager = TTF_RenderText_Solid( fonty, keybd_array[i], textcolory );
 	apply_surface( initial_x + (key_width)*(i-1), initial_y, messager, screen, NULL);
         SDL_FreeSurface(messager);
   }
 
   for (i = 1; i <= 19; i++)
   {
-    messager = TTF_RenderText_Solid( fonty, array[i+15], textcolory );
+    messager = TTF_RenderText_Solid( fonty, keybd_array[i+15], textcolory );
 	apply_surface( initial_x + (key_width)*(i-1), initial_y + key_height, messager, screen, NULL);
         SDL_FreeSurface(messager);
   }
 
-  for (i = 1; i <= 18; i++)
+  for (i = 1; i <= 19; i++)
   {
-    messager = TTF_RenderText_Solid( fonty, array[i+34], textcolory );
+    messager = TTF_RenderText_Solid( fonty, keybd_array[i+34], textcolory );
 	apply_surface( initial_x + (key_width)*(i-1), initial_y + (2 * key_height), messager, screen, NULL);
         SDL_FreeSurface(messager);
   }
@@ -23484,7 +23736,7 @@ void on_screen_keyboard(void )
 	  for (i = 1; i <= 19; i++)
 	  button (i+15, initial_x + (key_width)*(i-1), initial_y + key_height);
 
-	  for (i = 1; i <= 18; i++)
+	  for (i = 1; i <= 19; i++)
 	  button (i+34, initial_x + (key_width)*(i-1), initial_y + 2*key_height);
 
 	  drawkeybd();
