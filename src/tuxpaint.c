@@ -1978,8 +1978,8 @@ enum
   SHAPE_TOOL_MODE_DONE
 };
 
-void keybd_prepare();
-void keybd_finish();
+void keybd_prepare(void);
+void keybd_finish(void);
 void apply_surface (int x, int y, SDL_Surface *source, SDL_Surface *destination, SDL_Rect *clip);
 void drawkeybd(void );
 int regionhit(int x, int y, int w, int h);
@@ -2017,14 +2017,20 @@ int cur_thing, shift_flag, caps_flag, enter_flag;
 static void mainloop(void)
 {
   int done, tool_flag, canvas_flag,text_flag, val_x, val_y, new_x, new_y,
-    line_start_x, line_start_y, line_end_x, line_end_y, shape_tool_mode,
+    line_end_x, line_end_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
-    old_stamp_group, which, whicht, whichc, test_x, test_y, motioner,k;
-	k = 0;
+    old_stamp_group, which;
   int num_things;
   int *thing_scroll;
   int do_draw, max;
   int ignoring_motion;
+  int motioner = 0;
+  int whichc = 0;
+  int whicht = 0;
+  int test_x = 0;
+  int test_y = 0;
+  int line_start_x = 0;
+  int line_start_y = 0;
   int j = 0;
   unsigned int i = 0;
   SDL_TimerID scrolltimer = NULL;
@@ -5436,7 +5442,8 @@ static void mainloop(void)
 	if (cur_tool == TOOL_STAMP ||
 	    (cur_tool == TOOL_ERASER && !button_down) || (cur_tool == TOOL_LINES && !button_down))
 	{
-	  int w, h;
+	  int w = 0;
+	  int h = 0;
 	  /* Moving: Draw XOR where stamp/eraser will apply: */
 	  
 
@@ -22654,6 +22661,7 @@ static void claim_to_be_ready(void)
 
 int main(int argc, char *argv[])
 {
+  int i;	
   CLOCK_TYPE time1;
   CLOCK_TYPE time2;
   CLOCK_TYPE time3;
@@ -22697,7 +22705,6 @@ int main(int argc, char *argv[])
   claim_to_be_ready();
   shift_flag = 0;
   caps_flag = 0;
-  int i;
   printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
   printf("The names of the joysticks are:\n");
 		
@@ -22735,7 +22742,12 @@ int regionhit(int x, int y, int w, int h)
 
 int button(int id, int x, int y)
 {
-
+  SDL_Rect dest,desti;
+  SDL_Surface *tmp_imgup;
+  SDL_Event event;
+  dest.x = x;
+  dest.y = y;
+  
   // Check whether the button should be hot
   if (regionhit(x, y, 24, 24))
   {
@@ -22747,11 +22759,6 @@ int button(int id, int x, int y)
 		activeflag = 1;
 	}
   }
-  SDL_Rect dest,desti;
-  SDL_Surface *tmp_imgup;
-  SDL_Event event;
-  dest.x = x;
-  dest.y = y;
 
   // Render button 
   SDL_BlitSurface(img_btnsm_up, NULL, screen, &dest);
@@ -22789,9 +22796,9 @@ int button(int id, int x, int y)
 
   if (gen_key_flag == 1)
 	{
+		int i,j;
 		gen_key_flag = 0;
 		enter_flag = 0;
-		int i,j;
 		SDL_EnableUNICODE(1);
 //		printf("\n entered here %d th time \n", k);
 //		k++;
@@ -23701,6 +23708,7 @@ void drawkeybd(void )
 
 void on_screen_keyboard(void )
 {
+	int i;
     if (key_board != NULL)
         SDL_FreeSurface(key_board);
     
@@ -23727,8 +23735,6 @@ void on_screen_keyboard(void )
 	  apply_surface( initial_x, initial_y, key_board, screen, NULL);
 
 	  keybd_prepare();
-
-	  int i;
 
 	  for (i = 1; i <= 15 ; i++)
 	  button (i, initial_x + (key_width)*(i-1), initial_y);
