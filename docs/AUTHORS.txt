@@ -597,6 +597,41 @@ $Id$
   * Malay
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
+  * Malayalam
+    Students of Vocational Higher Secondary School Irimpanam
+    http://vhssirimpanam.org
+    - rimal <rimalmathew@gmail.com>
+    - Abhijith P.K
+    - Appu Ajith
+    - Vishnu Ajith
+    - Harish Vijay
+    - Mathew K.Vaidyan
+    - Manu C.Kauma
+    - Sreejith P.M
+    - Nithin M
+    - Sidharth K.Bhattathiri
+    - Thomas Peter
+    - Dona C.D
+    - Anjitha venugopal
+    - Athira Venugopal
+    - Shelmi P.R
+    - Revathi Sukumaran
+    - Salu P.SAmitha Appukuttan
+    - Geegu Varghese
+    - Ashna Manoharan
+    - sreelakshmi
+    - jithu
+    - Abhinav Thomas
+    - Abhitha Thomas
+    - Sajith P.V
+    - Vishnu Vinod
+    - Senthis
+    - Vimal <vimaljoseph@gmail.com>
+    - Sameer <sameer.thahir@gmail.com>
+    - Sanal <sanalmadatheth@gmail.com>
+    - Sooraj <soorajkenoth@gmail.com>
+    - V Sasi Kumar <sasi.fsf@gmail.com>
+
   * Ndebele
     Vincent Mahlangu <vmahlangu@parliament.gov.za>
 
