@@ -23644,7 +23644,12 @@ int button(int id, int x, int y)
 
 void keybd_prepare()
 {
-  fonty = TTF_OpenFont( "data/fonts/FreeSansBold.ttf", 12 );
+    /* FIXME we should use the current font to draw the keyboard */
+  char * fontname;
+  fontname = malloc(128);
+  
+  sprintf(fontname, "%s/fonts/FreeSansBold.ttf", DATA_PREFIX);
+  fonty = TTF_OpenFont( fontname, 12 );
   if (fonty == NULL)
   {
    fprintf(stderr, "\nError: Can't open the font!\n"
@@ -23653,6 +23658,7 @@ void keybd_prepare()
       exit(1);
   }
   uistate.hotitem = 0;
+  free(fontname);
 }
 
 void keybd_finish()
