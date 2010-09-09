@@ -950,6 +950,16 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
     loadfonts(screen, "/boot/home/config/font/ttffonts");
     loadfonts(screen, "/usr/share/fonts");
     loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+#elif defined(__HAIKU__)
+       dev_t volume = dev_for_path("/boot");
+       char buffer[B_PATH_NAME_LENGTH+B_FILE_NAME_LENGTH];
+       status_t result;
+    result = find_directory(B_SYSTEM_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
+       loadfonts(screen, buffer);
+    result = find_directory(B_COMMON_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
+       loadfonts(screen, buffer);
+    result = find_directory(B_USER_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
+       loadfonts(screen, buffer);
 #elif defined(__APPLE__)
     loadfonts(screen, "/System/Library/Fonts");
     loadfonts(screen, "/Library/Fonts");
