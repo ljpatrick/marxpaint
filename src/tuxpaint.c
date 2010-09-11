@@ -21175,8 +21175,8 @@ static void setup_config(char *argv[])
   {
 #ifdef _WIN32
     savedir = GetDefaultSaveDir("TuxPaint");
-#elif __BEOS__
-    savedir = strdup("./userdata");
+#elif defined __BEOS__ || defined __HAIKU__
+    savedir = strdup("./tuxpaint");
 #elif __APPLE__
     savedir = strdup(macosx.preferencesPath);
 #else
