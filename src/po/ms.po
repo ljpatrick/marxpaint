@@ -1,17 +1,17 @@
-# translation of nms.po to Malay
+# translation of ms.po to Malay
 # tuxpaint Bahasa Melayu (Malay) (ms).
 # Copyright (C) 2003 Muhammad Najmi Ahmad Zabidi
 # This file is distributed under the same license as the tuxpaint package.
 #
 # Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2004.
 # Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009.
-# Muhammad Najmi bin Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009.
+# Muhammad Najmi bin Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: nms\n"
+"Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2009-10-23 21:39+0800\n"
+"PO-Revision-Date: 2010-09-15 09:29+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <najmi.zabidi@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -283,8 +283,7 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "Segiempat tepat ada empat bahagian."
 
 #: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Bulatan ialah bentuk yang di mana semua titik adalah sama jarak dengan "
 "bahagian tengahnya."
@@ -755,12 +754,10 @@ msgstr "Titisan"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -805,7 +802,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menegatifkan gambar."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
-msgstr ""
+msgstr "Kartun"
 
 #: ../../magic/src/cartoon.c:87
 #, fuzzy
@@ -823,7 +820,7 @@ msgstr "ke !"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
-msgstr ""
+msgstr "Distorsi"
 
 #: ../../magic/src/distortion.c:129
 #, fuzzy
@@ -855,8 +852,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/fade_darken.c:134
 #, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/fade_darken.c:139
 #, fuzzy
@@ -864,10 +860,8 @@ msgid "Click and move the mouse to darken parts of your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
 msgid "Click to darken your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik untuk menggelapkan gambar."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -913,8 +907,7 @@ msgstr ""
 
 #: ../../magic/src/fold.c:86
 #, fuzzy
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
+msgid "Choose a background color and click to turn the corner of the page over."
 msgstr "a latar belakang dan ke  bagi halaman."
 
 #: ../../magic/src/glasstile.c:83
@@ -930,8 +923,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 #: ../../magic/src/glasstile.c:92
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/grass.c:92
 #, fuzzy
@@ -974,8 +966,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
 #, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
 
 #: ../../magic/src/light.c:84
@@ -1021,8 +1012,7 @@ msgstr "Ajaib"
 
 #: ../../magic/src/mosaic.c:78
 #, fuzzy
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic.c:79
@@ -1046,8 +1036,7 @@ msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
-msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+msgid "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:142
@@ -1057,8 +1046,7 @@ msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:144
 #, fuzzy
-msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:145
@@ -1068,8 +1056,7 @@ msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
-msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic_shaped.c:148
@@ -1104,8 +1091,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/noise.c:67
 #, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
@@ -1238,8 +1224,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/sharpen.c:79
 #, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
@@ -1358,8 +1343,7 @@ msgstr "Warna"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/tint.c:76
@@ -1407,14 +1391,12 @@ msgstr ""
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/waves.c:80
 #, fuzzy
@@ -1441,3 +1423,4 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr "ke  atas bawah kiri kecil dan kanan."
+
