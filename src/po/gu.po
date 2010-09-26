@@ -916,11 +916,11 @@ msgstr "ઘાસ દોરવા માટે ક્લિક કરો અન�
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "સપ્રમાણ ડાબે/જમણે"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "સપ્રમાણ ઉપર/નીચે"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -928,7 +928,6 @@ msgid "Kaleidoscope"
 msgstr "કેલિડોસ્કોપ"
 
 #: ../../magic/src/kalidescope.c:102
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
@@ -937,19 +936,18 @@ msgid ""
 msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરીને ખસેડો."
 
 #: ../../magic/src/kalidescope.c:104
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
-msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરીને ખસેડો."
+msgstr "ઉપર અને નીચે સપ્રમાણ એવાં બે બ્રશ સાથે તમારું ચિત્ર દોરવા માટે ક્લિક કરીને ખસેડો."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરીને ખસેડો."
+msgstr "સપ્રમાણ બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરીને ખસેડો."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
