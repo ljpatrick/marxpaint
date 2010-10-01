@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 3, 2010
+  June 14, 2002 - October 1, 2010
 */
 
 // FIXME: gettext() won't even bother to look up messages unless it
@@ -289,6 +289,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"lithuanian", "lt_LT.UTF-8"},
   {"lietuviu", "lt_LT.UTF-8"},
   {"latvian", "lv_LV.UTF-8"},
+  {"luganda", "lg_UG.UTF-8"},
   {"luxembourgish", "lb_LU.UTF-8"},
   {"letzebuergesch", "lb_LU.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
@@ -398,6 +399,7 @@ static void show_lang_usage(int exitcode)
 /* ku */ "  kurdish\n"
 /* lv */ "  latvian\n"
 /* lt */ "  lithuanian   lietuviu\n"
+/* lg */ "  luganda\n"
 /* lb */ "  luxembourgish letzebuergesch\n"
 /* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
@@ -501,6 +503,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  ku_TR   (Kurdish)\n"
 	  "  ms_MY   (Malay)\n"
           "  ml_IN   (Malayalam)\n"
+          "  lg_UG   (Luganda)\n"
           "  lb_LU   (Luxembourgish Letzebuergesch)\n"
 	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
@@ -593,6 +596,7 @@ static const char *language_to_locale(const char *langstr)
     show_lang_usage(0);
   fprintf(stderr, "%s is an invalid language\n", langstr);
   show_lang_usage(59);
+  return NULL;
 }
 
 static void set_langint_from_locale_string(const char *restrict loc)

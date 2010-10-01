@@ -86,6 +86,7 @@ enum
   LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */
   LANG_LB,                      /* Luxembourgish */
+  LANG_LG,                      /* Luganda */
   LANG_LT,			/* Lithuanian */
   LANG_LV,			/* Latvian */
   LANG_MK,			/* Macedonian */

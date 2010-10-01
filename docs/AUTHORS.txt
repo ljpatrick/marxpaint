@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 12, 2010
+June 17, 2002 - October 1, 2010
 
 $Id$
 
@@ -586,6 +586,9 @@ $Id$
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite
     Gintaras Go?tautas <gintaras@nes.lt>
+
+  * Luganda
+    James Olweny <sjolweny85@yahoo.co.uk>
 
   * Luxembourgish
     René Brandenburger <rene@brandenburger.lu>
