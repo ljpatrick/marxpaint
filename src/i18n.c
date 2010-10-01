@@ -117,6 +117,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ko",
   "ku",
   "lb",
+  "lg",
   "lt",
   "lv",
   "ml",
