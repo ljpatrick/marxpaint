@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 1, 2010
+June 17, 2002 - October 5, 2010
 
 $Id$
 
@@ -492,6 +492,9 @@ $Id$
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal
     Jérôme Chantreau <plovemax@hotmail.com> [documentation]
+
+  * Fula
+    Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
 
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>

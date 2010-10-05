@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - April 3, 2010
+  June 14, 2002 - October 5, 2010
 */
 
 
@@ -64,6 +64,7 @@ enum
   LANG_ET,			/* Estonian */
   LANG_EU,			/* Basque */
   LANG_FA,			/* Persian */
+  LANG_FF,                      /* Fula */
   LANG_FI,			/* Finnish */
   LANG_FO,			/* Faroese */
   LANG_FR,			/* French */
