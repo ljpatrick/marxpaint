@@ -28,23 +28,6 @@
   June 14, 2002 - October 5, 2010
 */
 
-// FIXME: gettext() won't even bother to look up messages unless it
-// is totally satisfied that you are using one of the locales that
-// it ships with! Make gettext() unhappy, and it'll switch to the
-// lobotomized 7-bit Linux "C" locale just to spite you.
-//
-// http://sources.redhat.com/cgi-bin/cvsweb.cgi/libc/localedata/SUPPORTED?content-type=text/x-cvsweb-markup&cvsroot=glibc
-//
-// You can confuse gettext() into mostly behaving. For example, a
-// user could pick a random UTF-8 locale and change the messages.
-// In that case, Tux Paint thinks it's in the other locale but the
-// messages come out right. Like so: LANGUAGE=zam LC_ALL=fr_FR.UTF-8
-// It doesn't work to leave LC_ALL unset, set it to "zam", set it to "C",
-// or set it to random nonsense. Yeah, Tux Paint will think it's in
-// a French locale, but the messages will be Zapotec nonetheless.
-//
-// Maybe it's time to give up on gettext().
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -644,11 +627,16 @@ static void set_langint_from_locale_string(const char *restrict loc)
   }
 }
 
+#define DEBUG
+
 static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
 static int set_current_language(const char *restrict loc)
 {
   int i;
   int y_nudge = 0;
+  char * oldloc;
+
+  oldloc = strdup(loc);
 
   setlocale(LC_ALL, loc);
   ctype_utf8();
@@ -669,7 +657,36 @@ static int set_current_language(const char *restrict loc)
   loc = setlocale(LC_MESSAGES, NULL);
 #endif
 
-  set_langint_from_locale_string(loc);
+  if (strcmp(loc, oldloc) != 0) {
+    /* System doesn't recognize that locale!  Hack, per Albert C., is to set LC_ALL to a valid UTF-8 locale, then set LANGUAGE to the locale we want to force -bjk 2010.10.05 */
+
+    /* Alberts comments from December 2009:
+       FIXME: gettext() won't even bother to look up messages unless it
+       is totally satisfied that you are using one of the locales that
+       it ships with! Make gettext() unhappy, and it'll switch to the
+       lobotomized 7-bit Linux "C" locale just to spite you.
+       
+       http://sources.redhat.com/cgi-bin/cvsweb.cgi/libc/localedata/SUPPORTED?content-type=text/x-cvsweb-markup&cvsroot=glibc
+       
+       You can confuse gettext() into mostly behaving. For example, a
+       user could pick a random UTF-8 locale and change the messages.
+       In that case, Tux Paint thinks it's in the other locale but the
+       messages come out right. Like so: LANGUAGE=zam LC_ALL=fr_FR.UTF-8
+       It doesn't work to leave LC_ALL unset, set it to "zam", set it to "C",
+       or set it to random nonsense. Yeah, Tux Paint will think it's in
+       a French locale, but the messages will be Zapotec nonetheless.
+       
+       Maybe it's time to give up on gettext().
+
+       [see also: https://sourceforge.net/mailarchive/message.php?msg_name=787b0d920912222352i5ab22834x92686283b565016b%40mail.gmail.com ]
+    */
+
+    setlocale(LC_ALL, "en_US.UTF-8"); /* Is it dumb to assume "en_US" is pretty close to "C" locale? */
+    setenv("LANGUAGE", oldloc, 1);
+    set_langint_from_locale_string(oldloc);
+  } else {
+    set_langint_from_locale_string(loc);
+  }
 
   lang_prefix = lang_prefixes[langint];
 
@@ -700,6 +717,8 @@ static int set_current_language(const char *restrict loc)
 	  need_right_to_left_word ? "(RTL words)" : "");
   fflush(stderr);
 #endif
+
+  free(oldloc);
 
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
   return y_nudge;

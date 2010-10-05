@@ -130,6 +130,10 @@ $Id$
 
     * Creation of thumbnails for personal starters and templates.
 
+    * Major rewrite of configuration and locale-setting code.
+      Albert Cahalan <albert@users.sourceforge.net>,
+      Bill Kendrick <bill@newbreedsoftware.com>
+
  * New Starters:
    -------------
     * Elephant
