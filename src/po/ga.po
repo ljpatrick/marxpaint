@@ -928,11 +928,11 @@ msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Siméadrach Clé/Deas"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Siméadrach Suas/Síos"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -940,26 +940,16 @@ msgid "Kaleidoscope"
 msgstr "Cailéideascóp"
 
 #: ../../magic/src/kalidescope.c:102
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun scuaba siméadracha a úsáid "
-"(cailéideascóp)."
 
 #: ../../magic/src/kalidescope.c:104
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun scuaba siméadracha a úsáid "
-"(cailéideascóp)."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
