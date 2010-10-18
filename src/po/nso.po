@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 15:55-0700\n"
+"POT-Creation-Date: 2010-10-18 08:32-0700\n"
 "PO-Revision-Date: 2010-10-04 17:44+0200\n"
 "Last-Translator: Pheledi <pheledi@mosekolatranslation.co.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: nso\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nso\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.1.1\n"
 
@@ -763,7 +763,8 @@ msgstr "Go rotha"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Kgotla gomme o sepediše mause go dira gore seswantšho se be le diploko."
+msgstr ""
+"Kgotla gomme o sepediše mause go dira gore seswantšho se be le diploko."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
@@ -980,7 +981,8 @@ msgstr "Seetša"
 
 #: ../../magic/src/light.c:90
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Kgotla gomme o goge gore o thale kganya ya seetša seswantšhong sa gago."
+msgstr ""
+"Kgotla gomme o goge gore o thale kganya ya seetša seswantšhong sa gago."
 
 #: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
@@ -1178,7 +1180,8 @@ msgstr "Maphotwana"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr "Kgotla go dira gore maphotwana a tšwelele godimo ga seswantšho sa gago."
+msgstr ""
+"Kgotla go dira gore maphotwana a tšwelele godimo ga seswantšho sa gago."
 
 #: ../../magic/src/rosette.c:93
 msgid "Rosette"
@@ -1235,8 +1238,7 @@ msgstr "Kgotla gomme o šuthiše mause gore o hlame silowete ya boso le bošweu.
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr ""
-"Kgotla gore o hlame silowete ya boso le bošweu go seswantšho sa gago ka "
-"moka."
+"Kgotla gore o hlame silowete ya boso le bošweu go seswantšho sa gago ka moka."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1308,8 +1310,7 @@ msgstr ""
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
 msgstr ""
-"Kgotla gomme o goge gore o thale mesebe yeo e dirilwego ka bokgabo bja "
-"thapo."
+"Kgotla gomme o goge gore o thale mesebe yeo e dirilwego ka bokgabo bja thapo."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
@@ -1364,8 +1365,7 @@ msgstr "Mmamogašwa"
 #: ../../magic/src/tornado.c:133
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
-"Kgotla gomme o goge gore o thale tupamuši ya mmamogašwa seswantšhong sa "
-"gago."
+"Kgotla gomme o goge gore o thale tupamuši ya mmamogašwa seswantšhong sa gago."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
@@ -1381,7 +1381,8 @@ msgstr ""
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
-msgstr "Kgotla go dira seswantšho sa gago se bonagale o ka re se thelebišeneng."
+msgstr ""
+"Kgotla go dira seswantšho sa gago se bonagale o ka re se thelebišeneng."
 
 #: ../../magic/src/waves.c:80
 msgid "Waves"
