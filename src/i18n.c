@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 5, 2010
+  June 14, 2002 - October 18, 2010
 */
 
 #include <stdio.h>
@@ -111,6 +111,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "nl",
   "nn",
   "nr",
+  "nso",
   "oc",
   "oj",
   "pl",
@@ -288,6 +289,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"nynorsk", "nn_NO.UTF-8"},
   {"norsk", "nn_NO.UTF-8"},
   {"ndebele", "nr_ZA.UTF-8"},
+  {"northern-sotho", "nso_ZA.UTF-8"},
+  {"sesotho-sa-leboa", "nso_ZA.UTF-8"},
   {"occitan", "oc_FR.UTF-8"},
   {"ojibwe", "oj_CA.UTF-8"}, // Proper spelling
   {"ojibway", "oj_CA.UTF-8"}, // For compatibility
@@ -393,9 +396,9 @@ static void show_lang_usage(int exitcode)
 /* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
 /* ml */ "  malayalam\n"
-/* es_MX */
-	  "  mexican      mexican-spanish        espanol-mejicano\n"
+/* es_MX */ "  mexican      mexican-spanish        espanol-mejicano\n"
 /* nr */ "  ndebele\n"
+/* nso */ "  northern-sotho                      sesotho-sa-leboa\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
 /* oc */ "  occitan\n"
 /* oj */ "  ojibwe       ojibway\n"
@@ -499,6 +502,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
 	  "  mk_MK   (Macedonian)\n"
           "  nr_ZA   (Ndebele)\n"
+          "  nso_ZA  (Northern Sotho                      Sotho sa Leboa)\n"
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
 	  "  oc_FR   (Occitan)\n"
 	  "  oj_CA   (Ojibway)\n"

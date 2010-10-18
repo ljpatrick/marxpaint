@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - October 5, 2010
+  June 14, 2002 - October 18, 2010
 */
 
 
@@ -97,6 +97,7 @@ enum
   LANG_NL,			/* Dutch */
   LANG_NN,			/* Norwegian Nynorsk */
   LANG_NR,                      /* Ndebele */
+  LANG_NSO,                     /* Northern Sotho */
   LANG_OC,			/* Occitan */
   LANG_OJ,			/* Ojibway */
   LANG_PL,			/* Polish */

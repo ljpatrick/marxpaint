@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2010.October.5 (0.9.22)
+2010.October.18 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -215,6 +215,9 @@ $Id$
       - Sanal <sanalmadatheth@gmail.com>
       - Sooraj <soorajkenoth@gmail.com> 
       - V Sasi Kumar <sasi.fsf@gmail.com> 
+
+    * Northern Sotho translation
+      Pheledi Mathibela <pheledi@mosekolatranslation.co.za>
 
     * Persian translation
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
