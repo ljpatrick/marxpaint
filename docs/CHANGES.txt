@@ -249,6 +249,9 @@ $Id$
       Olli <ollinpostit@gmail.com>
       Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
 
+    * German translation
+      Stephanie Schilling <stephanieschilling@online.de>
+
     * Greek translation
       Kiriaki SERAFEIM <pse04178@rhodes.aegean.gr>
 
