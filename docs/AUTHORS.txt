@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 18, 2010
+June 17, 2002 - October 26, 2010
 
 $Id$
 
@@ -407,6 +407,7 @@ $Id$
 
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
+    Ander Elortondo <ander.elor@gmail.com>
 
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>
