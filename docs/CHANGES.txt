@@ -172,6 +172,9 @@ $Id$
 
   * New Locales:
     ------------
+    * Acholi translation
+      George Patrick <chanchumgpa@gmail.com>
+
     * Akan translation
       Derrick Frimpong <flexyflame2006@yahoo.com>
 

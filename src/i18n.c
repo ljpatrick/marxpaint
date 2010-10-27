@@ -53,6 +53,7 @@
 static int langint = LANG_EN;
 
 const char *lang_prefixes[NUM_LANGS] = {
+  "ach",
   "af",
   "ak",
   "ar",
@@ -194,6 +195,8 @@ const char *lang_prefix, *short_lang_prefix;
 static const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
+  {"acholi", "ach_UG.UTF-8"},
+  {"acoli", "ach_UG.UTF-8"},
   {"akan", "ak_GH.UTF-8"},
   {"twi-fante", "ak_GH.UTF-8"},
   {"arabic", "ar_SA.UTF-8"},
@@ -345,9 +348,10 @@ static void show_lang_usage(int exitcode)
   fprintf(f,
 	  "\n"
 	  "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
-/* C */ "  english      american-english\n"
+/* C */  "  english      american-english\n"
+/* ach */ "  acholi       acoli\n"
 /* af */ "  afrikaans\n"
-/* ak */ "  akan        twi-fante\n"
+/* ak */ "  akan         twi-fante\n"
 /* sq */ "  albanian\n"
 /* ar */ "  arabic\n"
 /* ast */ "  asturian\n"
@@ -452,6 +456,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "\n"
 	  "LOCALE may be one of:\n"
 	  "  C       (English      American English)\n"
+          "  ach_UG  (Acholi       Acoli)\n"
 	  "  af_ZA   (Afrikaans)\n"
           "  ak_GH   (Akan         Twi-Fante)\n"
 	  "  ar_SA   (Arabic)\n"

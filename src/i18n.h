@@ -39,6 +39,7 @@
 
 enum
 {
+  LANG_ACH,                     /* Acholi */
   LANG_AF,			/* Afrikaans */
   LANG_AK,                      /* Akan */
   LANG_AR,			/* Arabic */
