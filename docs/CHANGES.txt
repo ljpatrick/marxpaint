@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2010.October.26 (0.9.22)
+2010.October.27 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -172,6 +172,9 @@ $Id$
 
   * New Locales:
     ------------
+    * Akan translation
+      Derrick Frimpong <flexyflame2006@yahoo.com>
+
     * Fula translation
       Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
 

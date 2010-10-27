@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 18, 2010
+  June 14, 2002 - October 27, 2010
 */
 
 #include <stdio.h>
@@ -54,6 +54,7 @@ static int langint = LANG_EN;
 
 const char *lang_prefixes[NUM_LANGS] = {
   "af",
+  "ak",
   "ar",
   "ast",
   "az",
@@ -193,6 +194,8 @@ const char *lang_prefix, *short_lang_prefix;
 static const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
+  {"akan", "ak_GH.UTF-8"},
+  {"twi-fante", "ak_GH.UTF-8"},
   {"arabic", "ar_SA.UTF-8"},
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
@@ -344,6 +347,7 @@ static void show_lang_usage(int exitcode)
 	  "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
 /* C */ "  english      american-english\n"
 /* af */ "  afrikaans\n"
+/* ak */ "  akan        twi-fante\n"
 /* sq */ "  albanian\n"
 /* ar */ "  arabic\n"
 /* ast */ "  asturian\n"
@@ -449,6 +453,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "LOCALE may be one of:\n"
 	  "  C       (English      American English)\n"
 	  "  af_ZA   (Afrikaans)\n"
+          "  ak_GH   (Akan         Twi-Fante)\n"
 	  "  ar_SA   (Arabic)\n"
 	  "  ast_ES  (Asturian)\n"
 	  "  az_AZ   (Azerbaijani)\n"
