@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - October 27, 2010
+  June 14, 2002 - October 28, 2010
 */
 
 
@@ -50,6 +50,7 @@ enum
   LANG_BO,			/* Tibetan */
   LANG_BR,			/* Breton */
   LANG_CA,			/* Catalan */
+  LANG_CGG,                     /* Kiga */
   LANG_CS,			/* Czech */
   LANG_CY,			/* Welsh */
   LANG_DA,			/* Danish */

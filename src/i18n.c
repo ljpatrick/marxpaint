@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 27, 2010
+  June 14, 2002 - October 28, 2010
 */
 
 #include <stdio.h>
@@ -64,6 +64,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "bo",
   "br",
   "ca",
+  "cgg",
   "cs",
   "cy",
   "da",
@@ -206,6 +207,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"hrvatski", "hr_HR.UTF-8"},
   {"catalan", "ca_ES.UTF-8"},
   {"catala", "ca_ES.UTF-8"},
+  {"kiga", "cgg_UG.UTF-8"},
+  {"chiga", "cgg_UG.UTF-8"},
   {"belarusian", "be_BY.UTF-8"},
   {"bielaruskaja", "be_BY.UTF-8"},
   {"czech", "cs_CZ.UTF-8"},
@@ -393,6 +396,7 @@ static void show_lang_usage(int exitcode)
 /* id */ "  indonesian   bahasa-indonesia\n"
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
+/* cgg */ "  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
 /* tlh */ "  klingon      tlhIngan\n"
 /* ko */ "  korean\n"
@@ -496,6 +500,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  hi_IN   (Hindi)\n"
 	  "  hr_HR   (Croatian     Hrvatski)\n"
 	  "  hu_HU   (Hungarian    Magyar)\n"
+          "  cgg_UG  (Kiga         Chiga)\n"
 	  "  tlh     (Klingon      tlhIngan)\n"
 	  "  is_IS   (Icelandic    Islenska)\n"
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
@@ -674,8 +679,8 @@ static int set_current_language(const char *restrict loc)
   if (strcmp(loc, oldloc) != 0) {
     /* System doesn't recognize that locale!  Hack, per Albert C., is to set LC_ALL to a valid UTF-8 locale, then set LANGUAGE to the locale we want to force -bjk 2010.10.05 */
 
-    /* Alberts comments from December 2009:
-       FIXME: gettext() won't even bother to look up messages unless it
+    /* Albert's comments from December 2009:
+       gettext() won't even bother to look up messages unless it
        is totally satisfied that you are using one of the locales that
        it ships with! Make gettext() unhappy, and it'll switch to the
        lobotomized 7-bit Linux "C" locale just to spite you.

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 27, 2010
+June 17, 2002 - October 28, 2010
 
 $Id$
 
@@ -567,6 +567,9 @@ $Id$
   * Khmer
     Khoem Sokhem <khoemsokhem@khmeros.info>
     Auk Piseth <piseth_dv@khmeros.info>
+
+  * Kiga translation
+    Florence Tushabe <tushabe@cit.mak.ac.ug>
 
   * Kinyarwanda
     Steve Murphy <murf@e-tools.com>
