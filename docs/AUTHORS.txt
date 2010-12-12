@@ -697,6 +697,7 @@ $Id$
   * Romanian
     Sorin Paliga <sorin.paliga@gmail.com>
     Laurentiu Buzdugan
+    Hodorog Andrei <tocitox@gmail.com>
 
   * Russian
     Nikolay Parukhin <parukhin@gmail.com>
@@ -708,6 +709,7 @@ $Id$
 
   * Serbian
     Aleksandar Jelenak <jelenak@verizon.net>
+    Ivana <reci.ne.silvesteru@gmail.com>
   
   * Shuswap (Secwepemctín)
     Neskie Manuel <neskiem@gmail.com>
