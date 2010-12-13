@@ -538,6 +538,7 @@ $Id$
 
   * Hindi
     Ankit Malik <ankitmalik@gmail.com>
+    aki <akash.nawani@gmail.com>
 
   * Hungarian
     Török Gábor <gabo@linuxportal.hu>
