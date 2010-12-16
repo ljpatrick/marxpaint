@@ -270,6 +270,9 @@ $Id$
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
 
+    * Hindi translation
+      aki <akash.nawani@gmail.com>
+
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
