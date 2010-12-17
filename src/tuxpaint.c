@@ -21845,7 +21845,12 @@ static void setup(void)
 
   if (!fullscreen)
   {
-    putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
+    int set_window_pos = 0;
+    if (getenv((char *) "SDL_VIDEO_WINDOW_POS") == NULL)
+    {
+      set_window_pos = 1;
+      putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
+    }
 
 #ifdef USE_HWSURFACE
     screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
@@ -21855,7 +21860,8 @@ static void setup(void)
 			      VIDEO_BPP, SDL_SWSURFACE);
 #endif
 
-    putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
+    if (set_window_pos)
+      putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
   }
 
   if (screen == NULL)
