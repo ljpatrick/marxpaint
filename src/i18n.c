@@ -648,6 +648,24 @@ static void set_langint_from_locale_string(const char *restrict loc)
 
 #define DEBUG
 
+#define HAVE_SETENV
+#ifdef WIN32
+#undef HAVE_SETENV
+#endif
+
+static void mysetenv(const char *name, const char *value)
+{
+#ifdef HAVE_SETENV
+  setenv(name, value, 1);
+#else
+  int len = strlen(name)+1+strlen(value)+1;
+  char *str = malloc(len);
+  sprintf(str, "%s=%s", name, value);
+  putenv(str);
+#endif
+}
+
+
 static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
 static int set_current_language(const char *restrict loc)
 {
@@ -701,7 +719,7 @@ static int set_current_language(const char *restrict loc)
     */
 
     setlocale(LC_ALL, "en_US.UTF-8"); /* Is it dumb to assume "en_US" is pretty close to "C" locale? */
-    setenv("LANGUAGE", oldloc, 1);
+    mysetenv("LANGUAGE", oldloc);
     set_langint_from_locale_string(oldloc);
   } else {
     set_langint_from_locale_string(loc);
