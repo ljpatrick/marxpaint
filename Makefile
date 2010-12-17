@@ -34,6 +34,9 @@ endif
 endif
 endif
 
+# change to sdl-console to build a console version on Windows
+SDL_PCNAME:=sdl
+
 WINDRES:=windres
 PKG_CONFIG:=pkg-config
 
@@ -80,7 +83,7 @@ PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
-windows_ARCH_LINKS:=-lintl $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB)
+windows_ARCH_LINKS:=-lintl $(PNG) -lzdll -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) -lstdc++"
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
@@ -164,9 +167,8 @@ CURSOR_SHAPES:=LARGE
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
 
-
 # Libraries, paths, and flags:
-SDL_LIBS:=$(shell $(PKG_CONFIG) sdl --libs) -lSDL_image -lSDL_ttf
+SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf
 
 # Sound support
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
@@ -178,7 +180,7 @@ NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL_Pango failed, n
 
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
-SDL_CFLAGS:=$(shell $(PKG_CONFIG) sdl --cflags)
+SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
 
 # New one: -lrsvg-2 -lcairo
@@ -1088,8 +1090,8 @@ obj:
 
 ######
 
-MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) sdl --cflags)
-MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) sdl --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
+MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 MAGIC_ARCH_LINKS:=-lintl $(PNG)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
