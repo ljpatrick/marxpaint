@@ -417,6 +417,7 @@ $Id$
 
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>
+    Alexander Geroimenko <a.geroimenko@gmail.com>
   
   * Breton
     Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>

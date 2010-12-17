@@ -242,6 +242,9 @@ $Id$
     * Basque translation
       Ander Elortondo <ander.elor@gmail.com>
 
+    * Belarusian translation
+      Alexander Geroimenko <a.geroimenko@gmail.com>
+
     * British English
       Robert Readman <robert_readman@hotmail.com>
 
