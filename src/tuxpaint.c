@@ -501,7 +501,7 @@ extern WrapperData macosx;
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (__HAIKU__)  // Haiku needs it, at least for now
+#if defined (__HAIKU__) || defined (WIN32) // Haiku and MINGW/MSYS need it, at least for now
 #define fmemopen_alternative 
 #endif
 
@@ -12404,7 +12404,13 @@ static void cleanup(void)
   TTF_Quit();
   SDL_Quit();
 
-
+  /* Call this once only, at exit */
+#if !defined(NOSVG) && !defined(OLD_SVG)
+#ifdef DEBUG
+  printf("rsvg_term()\n"); fflush(stdout);
+#endif
+  rsvg_term();
+#endif
 }
 
 
@@ -16535,7 +16541,7 @@ static int charsize(Uint16 c)
   str[0] = c;
   str[1] = '\0';
 
-  TTF_SizeUNICODE(getfonthandle(cur_font), str, &w, &h);
+  TTF_SizeUNICODE(getfonthandle(cur_font)->ttf_font, str, &w, &h);
 
   return w;
 }
@@ -17071,8 +17077,6 @@ static SDL_Surface * load_svg(char * file)
 
   /* Create an RSVG Handle from the SVG file: */
 
-  rsvg_init();
-
   gerr = NULL;
 
   rsvg_handle = rsvg_handle_new_from_file(file, &gerr);
@@ -17220,8 +17224,6 @@ static SDL_Surface * load_svg(char * file)
   cairo_surface_destroy(cairo_surf);
   free(image);
   cairo_destroy(cr);
-
-  rsvg_term();
 
   return(sdl_surface);
 }
@@ -22545,6 +22547,14 @@ static void setup(void)
 
   signal(SIGPIPE, signal_handler);
 #endif
+
+  /* Call this once */
+#if !defined(NOSVG) && !defined(OLD_SVG)
+#ifdef DEBUG
+  printf("rsvg_init()\n"); fflush(stdout);
+#endif
+  rsvg_init();
+#endif
 }
 
 
@@ -23591,10 +23601,6 @@ int button(int id, int x, int y)
 	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
 	        {
 	          int old_cursor_textwidth = cursor_textwidth;
-#ifdef DEBUG  
-	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
-	          	key_down, key_unicode, key_unicode, key_unicode);
-#endif
 
 	          texttool_str[texttool_len++] = *im_cp;
 	          texttool_str[texttool_len] = 0;
