@@ -222,7 +222,7 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #include <locale.h>
 
-#if defined __BEOS__ || defined __HAIKU__
+#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
 #include <wchar.h>
 #include <stdbool.h>
 #define FALSE false
@@ -501,7 +501,7 @@ extern WrapperData macosx;
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (__HAIKU__) || defined (WIN32) // Haiku and MINGW/MSYS need it, at least for now
+#if defined (__HAIKU__) || defined (WIN32) || defined (__APPLE__) // Haiku, MINGW/MSYS, and MacOSX need it, at least for now
 #define fmemopen_alternative 
 #endif
 
