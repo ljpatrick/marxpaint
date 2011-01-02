@@ -36,7 +36,6 @@
 		2248FCA10CE2C7CB004BC461 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
 		2248FCD10CE2C7E1004BC461 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225789450CFAA093002EE819 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225789440CFAA093002EE819 /* SDL_ttf.framework */; };
-		225789760CFAA0DC002EE819 /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225789440CFAA093002EE819 /* SDL_ttf.framework */; };
 		22578CE10CFE6CCC002EE819 /* fonts.conf in Resources */ = {isa = PBXBuildFile; fileRef = 22578CDF0CFE6CC8002EE819 /* fonts.conf */; };
 		22578CE20CFE6CCC002EE819 /* fonts.dtd in Resources */ = {isa = PBXBuildFile; fileRef = 22578CE00CFE6CCB002EE819 /* fonts.dtd */; };
 		225FCE270ADF277300466C53 /* cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE110ADF277300466C53 /* cursor.c */; };
@@ -51,27 +50,7 @@
 		225FD5280934EC1A00F0B02F /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
 		225FD5290934EC1A00F0B02F /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225FD52B0934EC1A00F0B02F /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
-		225FE6D20939890800F0B02F /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
-		225FE6F00939891500F0B02F /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
-		225FE6F40939892300F0B02F /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225FEDBA093ACC0A00F0B02F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 225FED8E093ACC0A00F0B02F /* html */; };
-		226E96AE0FFB981500A9A38E /* alien.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969D0FFB981500A9A38E /* alien.c */; };
-		226E96AF0FFB981500A9A38E /* confetti.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969E0FFB981500A9A38E /* confetti.c */; };
-		226E96B00FFB981500A9A38E /* fisheye.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969F0FFB981500A9A38E /* fisheye.c */; };
-		226E96B10FFB981500A9A38E /* fold.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A00FFB981500A9A38E /* fold.c */; };
-		226E96B20FFB981500A9A38E /* mosaic.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A10FFB981500A9A38E /* mosaic.c */; };
-		226E96B30FFB981500A9A38E /* noise.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A20FFB981500A9A38E /* noise.c */; };
-		226E96B40FFB981500A9A38E /* puzzle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A30FFB981500A9A38E /* puzzle.c */; };
-		226E96B50FFB981500A9A38E /* rails.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A40FFB981500A9A38E /* rails.c */; };
-		226E96B60FFB981500A9A38E /* rain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A50FFB981500A9A38E /* rain.c */; };
-		226E96B70FFB981500A9A38E /* realrainbow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A60FFB981500A9A38E /* realrainbow.c */; };
-		226E96B80FFB981500A9A38E /* rosette.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A70FFB981500A9A38E /* rosette.c */; };
-		226E96B90FFB981500A9A38E /* sharpen.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A80FFB981500A9A38E /* sharpen.c */; };
-		226E96BA0FFB981500A9A38E /* snow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A90FFB981500A9A38E /* snow.c */; };
-		226E96BB0FFB981500A9A38E /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AA0FFB981500A9A38E /* string.c */; };
-		226E96BC0FFB981500A9A38E /* toothpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AB0FFB981500A9A38E /* toothpaste.c */; };
-		226E96BD0FFB981500A9A38E /* tornado.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AC0FFB981500A9A38E /* tornado.c */; };
-		226E96BE0FFB981500A9A38E /* tv.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AD0FFB981500A9A38E /* tv.c */; };
 		226E96D20FFB999A00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
 		226E96D60FFB999A00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
 		226E96D70FFB999A00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
@@ -226,6 +205,11 @@
 		227111800AE5EC6E00FC7FCF /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2271114E0AE5EC6E00FC7FCF /* fonts */; };
 		228437C40EF5DE5F002A13FD /* libfribidi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 228437C30EF5DE5F002A13FD /* libfribidi.a */; };
 		2286F34F0740B3FC001164FE /* SDLMain.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2286F34D0740B3FC001164FE /* SDLMain.nib */; };
+		22BA86D212C7C59E004C23C6 /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		22BA86D312C7C59E004C23C6 /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		22BA86D412C7C59E004C23C6 /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		22BA86D512C7C59E004C23C6 /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225789440CFAA093002EE819 /* SDL_ttf.framework */; };
+		22BA872312C9643F004C23C6 /* parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 22BA872212C9643F004C23C6 /* parse.c */; };
 		22C005D40736650D008555A2 /* tuxpaint.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C005D30736650D008555A2 /* tuxpaint.icns */; };
 		22C0EA9E0735B76F008555A2 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EA9B0735B76F008555A2 /* SDLMain.m */; };
 		22C0EABD0735B851008555A2 /* macosx_print.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EAAC0735B851008555A2 /* macosx_print.m */; };
@@ -705,10 +689,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				225FE6F40939892300F0B02F /* SDL_mixer.framework in Copy Frameworks */,
-				225FE6F00939891500F0B02F /* SDL_image.framework in Copy Frameworks */,
-				225FE6D20939890800F0B02F /* SDL.framework in Copy Frameworks */,
-				225789760CFAA0DC002EE819 /* SDL_ttf.framework in Copy Frameworks */,
+				22BA86D212C7C59E004C23C6 /* SDL.framework in Copy Frameworks */,
+				22BA86D312C7C59E004C23C6 /* SDL_image.framework in Copy Frameworks */,
+				22BA86D412C7C59E004C23C6 /* SDL_mixer.framework in Copy Frameworks */,
+				22BA86D512C7C59E004C23C6 /* SDL_ttf.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -892,6 +876,7 @@
 		2271114E0AE5EC6E00FC7FCF /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../fonts; sourceTree = SOURCE_ROOT; };
 		228437C30EF5DE5F002A13FD /* libfribidi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfribidi.a; path = /Users/Shared/tuxpaint/lib/libfribidi.a; sourceTree = "<absolute>"; };
 		2286F34E0740B3FC001164FE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SDLMain.nib; sourceTree = "<group>"; };
+		22BA872212C9643F004C23C6 /* parse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parse.c; path = ../obj/parse.c; sourceTree = SOURCE_ROOT; };
 		22C005D30736650D008555A2 /* tuxpaint.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tuxpaint.icns; sourceTree = SOURCE_ROOT; };
 		22C0EA9A0735B76F008555A2 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = SOURCE_ROOT; };
 		22C0EA9B0735B76F008555A2 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = SOURCE_ROOT; };
@@ -905,7 +890,7 @@
 		22C0EAB00735B851008555A2 /* tip_tux.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tip_tux.h; path = ../src/tip_tux.h; sourceTree = SOURCE_ROOT; };
 		22C0EAB10735B851008555A2 /* titles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = titles.h; path = ../src/titles.h; sourceTree = SOURCE_ROOT; };
 		22C0EAB20735B851008555A2 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tools.h; path = ../src/tools.h; sourceTree = SOURCE_ROOT; };
-		22C0EAB30735B851008555A2 /* tuxpaint.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = tuxpaint.c; path = ../src/tuxpaint.c; sourceTree = SOURCE_ROOT; };
+		22C0EAB30735B851008555A2 /* tuxpaint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tuxpaint.c; path = ../src/tuxpaint.c; sourceTree = SOURCE_ROOT; };
 		22C0ED9A0735BED1008555A2 /* stamps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = stamps; path = ../stamps; sourceTree = SOURCE_ROOT; };
 		22C0EDAF0735BED1008555A2 /* starters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = starters; path = ../starters; sourceTree = SOURCE_ROOT; };
 		22C0F5350735BFA8008555A2 /* brushes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = brushes; path = ../data/brushes; sourceTree = SOURCE_ROOT; };
@@ -1479,45 +1464,45 @@
 			isa = PBXGroup;
 			children = (
 				226E969D0FFB981500A9A38E /* alien.c */,
-				226E969E0FFB981500A9A38E /* confetti.c */,
-				226E969F0FFB981500A9A38E /* fisheye.c */,
-				226E96A00FFB981500A9A38E /* fold.c */,
-				226E96A10FFB981500A9A38E /* mosaic.c */,
-				226E96A20FFB981500A9A38E /* noise.c */,
-				226E96A30FFB981500A9A38E /* puzzle.c */,
-				226E96A40FFB981500A9A38E /* rails.c */,
-				226E96A50FFB981500A9A38E /* rain.c */,
-				226E96A60FFB981500A9A38E /* realrainbow.c */,
-				226E96A70FFB981500A9A38E /* rosette.c */,
-				226E96A80FFB981500A9A38E /* sharpen.c */,
-				226E96A90FFB981500A9A38E /* snow.c */,
-				226E96AA0FFB981500A9A38E /* string.c */,
-				226E96AB0FFB981500A9A38E /* toothpaste.c */,
-				226E96AC0FFB981500A9A38E /* tornado.c */,
-				226E96AD0FFB981500A9A38E /* tv.c */,
 				2248FC830CE2C6B5004BC461 /* blocks_chalk_drip.c */,
 				2248FC840CE2C6B5004BC461 /* blur.c */,
 				2248FC850CE2C6B5004BC461 /* bricks.c */,
 				2248FC860CE2C6B5004BC461 /* calligraphy.c */,
 				2248FC870CE2C6B5004BC461 /* cartoon.c */,
+				226E969E0FFB981500A9A38E /* confetti.c */,
 				22F45E500CE3FFE100DB7761 /* distortion.c */,
 				2248FC880CE2C6B5004BC461 /* emboss.c */,
 				2248FC890CE2C6B5004BC461 /* fade_darken.c */,
 				2248FC8A0CE2C6B5004BC461 /* fill.c */,
+				226E969F0FFB981500A9A38E /* fisheye.c */,
 				2248FC8B0CE2C6B5004BC461 /* flower.c */,
 				2248FC8C0CE2C6B5004BC461 /* foam.c */,
+				226E96A00FFB981500A9A38E /* fold.c */,
 				2248FC8D0CE2C6B5004BC461 /* glasstile.c */,
 				22F45E530CE4015300DB7761 /* grass.c */,
 				2248FC8E0CE2C6B5004BC461 /* kalidescope.c */,
 				2248FC8F0CE2C6B5004BC461 /* light.c */,
 				2248FC990CE2C707004BC461 /* metalpaint.c */,
 				2248FC910CE2C6B5004BC461 /* mirror_flip.c */,
+				226E96A10FFB981500A9A38E /* mosaic.c */,
 				2248FC920CE2C6B5004BC461 /* negative.c */,
+				226E96A20FFB981500A9A38E /* noise.c */,
+				226E96A30FFB981500A9A38E /* puzzle.c */,
+				226E96A40FFB981500A9A38E /* rails.c */,
+				226E96A50FFB981500A9A38E /* rain.c */,
 				2248FC930CE2C6B5004BC461 /* rainbow.c */,
+				226E96A60FFB981500A9A38E /* realrainbow.c */,
 				2248FC940CE2C6B5004BC461 /* ripples.c */,
+				226E96A70FFB981500A9A38E /* rosette.c */,
+				226E96A80FFB981500A9A38E /* sharpen.c */,
 				2248FC950CE2C6B5004BC461 /* shift.c */,
 				2248FC960CE2C6B5004BC461 /* smudge.c */,
+				226E96A90FFB981500A9A38E /* snow.c */,
+				226E96AA0FFB981500A9A38E /* string.c */,
 				2248FC970CE2C6B5004BC461 /* tint.c */,
+				226E96AB0FFB981500A9A38E /* toothpaste.c */,
+				226E96AC0FFB981500A9A38E /* tornado.c */,
+				226E96AD0FFB981500A9A38E /* tv.c */,
 				2248FC980CE2C6B5004BC461 /* waves.c */,
 			);
 			name = Magic;
@@ -1639,8 +1624,6 @@
 		29B97315FDCFA39411CA2CEA /* Tux Paint Sources */ = {
 			isa = PBXGroup;
 			children = (
-				221532C10C94825B00CDCB3B /* im.c */,
-				221532C20C94825B00CDCB3B /* im.h */,
 				225FCE110ADF277300466C53 /* cursor.c */,
 				225FCE120ADF277300466C53 /* cursor.h */,
 				225FCE130ADF277300466C53 /* debug.h */,
@@ -1652,6 +1635,9 @@
 				225FCE1A0ADF277300466C53 /* get_fname.h */,
 				225FCE250ADF277300466C53 /* i18n.c */,
 				225FCE240ADF277300466C53 /* i18n.h */,
+				221532C10C94825B00CDCB3B /* im.c */,
+				221532C20C94825B00CDCB3B /* im.h */,
+				22BA872212C9643F004C23C6 /* parse.c */,
 				225FCE1B0ADF277300466C53 /* pixels.c */,
 				225FCE1C0ADF277300466C53 /* pixels.h */,
 				225FCE1D0ADF277300466C53 /* playsound.c */,
@@ -2351,7 +2337,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22ECE2B30CEFE00900D390B3 /* Build configuration list for PBXNativeTarget "blocks_chalk_drip" */;
 			buildPhases = (
-				220D35E70E15A45000D0EFD5 /* Make Magic API */,
 				22ECE2AB0CEFE00200D390B3 /* Headers */,
 				22ECE2AC0CEFE00200D390B3 /* Sources */,
 				22ECE2AD0CEFE00200D390B3 /* Frameworks */,
@@ -2748,6 +2733,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				227111870AE5ED2700FC7FCF /* Copy TrueType Fonts */,
 				2248FB460CDE56D0004BC461 /* Remove Bundled Libraries */,
+				22BA86F112C9600F004C23C6 /* Generate Parser */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				22D5D2A80738498300B67229 /* Copy Frameworks */,
@@ -2903,22 +2889,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		220D35E70E15A45000D0EFD5 /* Make Magic API */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../src/tp_magic_api.h.in",
-			);
-			name = "Make Magic API";
-			outputPaths = (
-				"$(SRCROOT)/../src/tp_magic_api.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd ..\nmake src/tp_magic_api.h";
-		};
 		2217B7D50CD6F6C400DC1DA3 /* Update Library Install Paths */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2976,6 +2946,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "FONTS_RESOURCES_PATH=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/fonts/\nTTF_FONTS_PATH=../data/fonts\ncp -R $TTF_FONTS_PATH/* \"$FONTS_RESOURCES_PATH\"\nexit 0\n";
+		};
+		22BA86F112C9600F004C23C6 /* Generate Parser */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/parse.gperf",
+			);
+			name = "Generate Parser";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/parse.c",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "gperf \"${PROJECT_DIR}/../src/parse.gperf\" > \"${PROJECT_DIR}/../obj/parse_step1.c\"\nsed -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' \"${PROJECT_DIR}/../obj/parse_step1.c\" > \"${PROJECT_DIR}/../obj/parse.c\"\n";
 		};
 		22ECE6710CF1233400D390B3 /* Magic Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3357,23 +3343,7 @@
 				222862BE0D0B48B100CA3F84 /* message.m in Sources */,
 				22140ABE0D110600009534C6 /* TransparentTextView.m in Sources */,
 				22140B9D0D1252E5009534C6 /* speech.m in Sources */,
-				226E96AE0FFB981500A9A38E /* alien.c in Sources */,
-				226E96AF0FFB981500A9A38E /* confetti.c in Sources */,
-				226E96B00FFB981500A9A38E /* fisheye.c in Sources */,
-				226E96B10FFB981500A9A38E /* fold.c in Sources */,
-				226E96B20FFB981500A9A38E /* mosaic.c in Sources */,
-				226E96B30FFB981500A9A38E /* noise.c in Sources */,
-				226E96B40FFB981500A9A38E /* puzzle.c in Sources */,
-				226E96B50FFB981500A9A38E /* rails.c in Sources */,
-				226E96B60FFB981500A9A38E /* rain.c in Sources */,
-				226E96B70FFB981500A9A38E /* realrainbow.c in Sources */,
-				226E96B80FFB981500A9A38E /* rosette.c in Sources */,
-				226E96B90FFB981500A9A38E /* sharpen.c in Sources */,
-				226E96BA0FFB981500A9A38E /* snow.c in Sources */,
-				226E96BB0FFB981500A9A38E /* string.c in Sources */,
-				226E96BC0FFB981500A9A38E /* toothpaste.c in Sources */,
-				226E96BD0FFB981500A9A38E /* tornado.c in Sources */,
-				226E96BE0FFB981500A9A38E /* tv.c in Sources */,
+				22BA872312C9643F004C23C6 /* parse.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3649,10 +3619,8 @@
 		2248FC760CE2C3A4004BC461 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -3794,10 +3762,8 @@
 		224A35F909339642005A3695 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -3948,6 +3914,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = include;
 				LIBRARY_SEARCH_PATHS = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Deployment;
@@ -4003,10 +3970,8 @@
 		226E96DC0FFB999A00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4118,10 +4083,8 @@
 		226E96F10FFB9B3200A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4233,10 +4196,8 @@
 		226E970E0FFB9BBD00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4348,10 +4309,8 @@
 		226E97240FFB9C4E00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4463,10 +4422,8 @@
 		226E97380FFB9CB500A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4578,10 +4535,8 @@
 		226E97520FFB9D3300A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4693,10 +4648,8 @@
 		226E97680FFB9D9100A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4808,10 +4761,8 @@
 		226E97780FFB9DD600A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4923,10 +4874,8 @@
 		226E978B0FFB9E4000A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5038,10 +4987,8 @@
 		226E979D0FFB9E9600A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5153,10 +5100,8 @@
 		226E97AF0FFB9EEF00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5268,10 +5213,8 @@
 		226E97C10FFB9F4200A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5383,10 +5326,8 @@
 		226E97D40FFB9F8E00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5498,10 +5439,8 @@
 		226E97E80FFB9FEE00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5613,10 +5552,8 @@
 		226E97FC0FFBA04000A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5728,10 +5665,8 @@
 		226E98110FFBA08F00A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5843,10 +5778,8 @@
 		226E98200FFBA10500A9A38E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5958,10 +5891,8 @@
 		22ECE2B50CEFE00900D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6073,10 +6004,8 @@
 		22ECE31B0CF0BC9B00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6188,10 +6117,8 @@
 		22ECE3430CF0C4F100D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6303,10 +6230,8 @@
 		22ECE35A0CF0C7EF00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6418,10 +6343,8 @@
 		22ECE36D0CF0C81E00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6533,10 +6456,8 @@
 		22ECE37F0CF0C89300D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6648,10 +6569,8 @@
 		22ECE3940CF0C8E600D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6763,10 +6682,8 @@
 		22ECE3A70CF0C90600D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6878,10 +6795,8 @@
 		22ECE3BA0CF0C9A300D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6993,10 +6908,8 @@
 		22ECE3F10CF0CBDC00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7108,10 +7021,8 @@
 		22ECE4030CF0CC0100D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7223,10 +7134,8 @@
 		22ECE4150CF0CC2500D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7338,10 +7247,8 @@
 		22ECE4270CF0CC4C00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7453,10 +7360,8 @@
 		22ECE4390CF0CC6B00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7568,10 +7473,8 @@
 		22ECE44B0CF0CCB400D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7683,10 +7586,8 @@
 		22ECE45D0CF0CCDB00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7798,10 +7699,8 @@
 		22ECE46F0CF0CD1500D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7913,10 +7812,8 @@
 		22ECE4810CF0CD4000D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -8028,10 +7925,8 @@
 		22ECE4930CF0CD6400D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -8143,10 +8038,8 @@
 		22ECE4A50CF0CD8600D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -8258,10 +8151,8 @@
 		22ECE4B70CF0CDA500D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -8373,10 +8264,8 @@
 		22ECE4C90CF0CDE200D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -8488,10 +8377,8 @@
 		22ECE4DB0CF0CE4A00D390B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
