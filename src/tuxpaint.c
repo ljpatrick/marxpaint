@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2011 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 29, 2010
+  June 14, 2002 - January 8, 2011
 */
 
 
@@ -80,6 +80,8 @@
 /* FIXME: Deal with this option properly -bjk 2010.02.25 */
 #define GAMMA_CORRECTED_THUMBNAILS
 #endif
+
+#define ALLOW_STAMP_OVERSCAN
 
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
@@ -3733,14 +3735,19 @@ static void mainloop(void)
 		  }
 #else
 		  int old_size;
+                  float choice;
 
 		  old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
-		  stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-		    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE) * (event.button.x -
-							   (WINDOW_WIDTH -
-							    96))) / 96) +
-		    MIN_STAMP_SIZE;
+                  stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
+                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1 /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */) * (event.button.x -
+                                                           (WINDOW_WIDTH -
+                                                            96))) / 96) +
+                    MIN_STAMP_SIZE;
+
+#ifdef DEBUG
+                  printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice, stamp_data[stamp_group][cur_stamp[stamp_group]]->size);
+#endif
 
 		  if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < old_size)
 		    control_sound = SND_SHRINK;
@@ -6820,8 +6827,13 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 			       double ratio)
 {
   unsigned int upper = HARD_MAX_STAMP_SIZE;
+  unsigned int underscanned_upper = HARD_MAX_STAMP_SIZE;
   unsigned int lower = 0;
   unsigned mid;
+
+#ifdef DEBUG
+  printf("Finishing %s for %dx%d (ratio=%0.4f)\n", sd->stampname, w, h, ratio);
+#endif
 
   /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
   if (mirrorstamps && sd->mirrorable)
@@ -6835,13 +6847,46 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     pw = (w * s->numer + s->denom - 1) / s->denom;
     ph = (h * s->numer + s->denom - 1) / s->denom;
 
+#ifdef ALLOW_STAMP_OVERSCAN
     /* OK to let a stamp stick off the sides in one direction, not two */
-    if (pw < canvas->w * 2 && ph < canvas->h * 1)
+    /* By default, Tux Paint allowed stamps to be, at max, 2x as wide OR 2x as tall as canvas; scaled that back to 1.5 -bjk 2011.01.08 */
+    if (pw < canvas->w * 1.5 && ph < canvas->h * 1)
+    {
+#ifdef DEBUG
+      printf("Upper at %d with proposed size %dx%d (wide)\n", upper, pw, ph);
+#endif
+      if (pw > canvas->w) {
+        underscanned_upper = upper - 1;
+      } else {
+        underscanned_upper = upper;
+      }
       break;
-    if (pw < canvas->w * 1 && ph < canvas->h * 2)
+    }
+    if (pw < canvas->w * 1 && ph < canvas->h * 1.5)
+    {
+#ifdef DEBUG
+      printf("Upper at %d with proposed size %dx%d (tall)\n", upper, pw, ph);
+#endif
+      if (ph > canvas->h) {
+        underscanned_upper = upper - 1;
+      } else {
+        underscanned_upper = upper;
+      }
       break;
+    }
+#else
+    if (pw <= canvas->w * 1 && ph <= canvas->h * 1)
+    {
+#ifdef DEBUG
+      printf("Upper at %d with proposed size %dx%d\n", upper, pw, ph);
+#endif
+      underscanned_upper = upper;
+      break;
+    }
+#endif
   }
   while (--upper);
+
 
   do
   {
@@ -6852,9 +6897,15 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     ph = (h * s->numer + s->denom - 1) / s->denom;
 
     if (pw * ph > 20)
+    {
+#ifdef DEBUG
+      printf("Lower at %d with proposed size %dx%d\n", lower, pw, ph);
+#endif
       break;
+    }
   }
   while (++lower < HARD_MAX_STAMP_SIZE);
+
 
   if (upper < lower)
   {
@@ -6875,6 +6926,9 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   if (mid > upper)
     mid = upper;
 
+  if (mid > underscanned_upper)
+    mid = underscanned_upper;
+
   if (mid < lower)
     mid = lower;
 
@@ -6882,10 +6936,20 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   sd->size = mid;
   sd->max = upper;
 
+#ifdef DEBUG
+  printf("Final min=%d, size=%d, max=%d\n", lower, mid, upper);
+#endif
+
   if (stamp_size_override != -1)
   {
     sd->size = (((upper - lower) * stamp_size_override) / 10) + lower;
+#ifdef DEBUG
+    printf("...but adjusting size to %d\n", sd->size);
+#endif
   }
+#ifdef DEBUG
+  printf("\n");
+#endif
 }
 
 
@@ -8949,7 +9013,7 @@ static void draw_stamps(void)
     SDL_BlitSurface(img_grow, NULL, screen, &dest);
 
 #else
-    sizes = MAX_STAMP_SIZE - MIN_STAMP_SIZE;
+    sizes = MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1; /* +1 for SF Bug #1668235 -bjk 2011.01.08 */
     size_at = (stamp_data[stamp_group][cur_stamp[stamp_group]]->size - MIN_STAMP_SIZE);
     x_per = 96.0 / sizes;
     y_per = 48.0 / sizes;
@@ -22022,7 +22086,7 @@ static void setup(void)
   printf("%s\n", tmp_str);
 #endif
 
-  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2009 Bill Kendrick et al.");
+  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2011 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2010.December.17 (0.9.22)
+2011.January.8 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -336,6 +336,17 @@ $Id$
 
     * Added some missing examples to the default tuxpaint.conf file.
       (Thanks to Aapo Rantalainen <aapo.rantalainen@gmail.com>)
+
+    * Default stamp size, in some situations, was very large
+      (due to some rules that allowed stamps to be, at maximum,
+      up to 2x width of the canvas, OR 2x height of the canvas, as long
+      as it wasn't larger than the canvas in the other dimension).
+      The stamp sizing buttons were unable to re-select that size.
+      The sizing button bug has been fixed, the rule has been adjusted to
+      allow a maximum overscan of 1.5x width-or-height, and if the maximum
+      size causes overscan, then a smaller size is used for the default
+      when the stamp is first used.
+      (SF.net Bug #1668235)
 
 
 2009.June.28 (0.9.21)
