@@ -709,8 +709,11 @@ $Id$
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
 
-  * Serbian
+  * Serbian cyrillic
     Aleksandar Jelenak <jelenak@verizon.net>
+    Ivana <reci.ne.silvesteru@gmail.com>
+
+  * Serbian latin
     Ivana <reci.ne.silvesteru@gmail.com>
   
   * Shuswap (Secwepemctín)
