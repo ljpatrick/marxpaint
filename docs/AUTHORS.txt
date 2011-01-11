@@ -762,6 +762,7 @@ $Id$
 
   * Telugu
     Pavithran Shakamuri <pavithran.s@gmail.com>
+    saikumar <ramukiashc@gmail.com> as a task in GCI
 
   * Thai
     Ouychai Chaita <ae.freeman@gmail.com>

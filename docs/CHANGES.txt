@@ -316,6 +316,9 @@ $Id$
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
 
+    * Telugu tranlation
+      saikumar <ramukiashc@gmail.com> as a task in GCI
+
     * Vietnamese translation
       Clytie Siddall <clytie@riverland.net.au>
 
