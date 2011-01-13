@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others
+  Copyright (c) 2002-2011 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 28, 2010
+  June 14, 2002 - January 12, 2011
 */
 
 #include <stdio.h>
@@ -129,6 +129,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "son",
   "sq",
   "sr",
+  "sr@latin",
   "sv",
   "sw",
   "ta",
@@ -314,6 +315,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"russian", "ru_RU.UTF-8"},
   {"russkiy", "ru_RU.UTF-8"},
   {"serbian", "sr_YU.UTF-8"},
+  {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
   {"secwepemctin", "shs_CA.UTF-8"},
   {"slovak", "sk_SK.UTF-8"},
@@ -421,6 +423,7 @@ static void show_lang_usage(int exitcode)
 /* ru */ "  russian      russkiy\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
+/* sr@latin */ "  serbian-latin\n"
 /* shs */ "  shuswap      secwepemctin\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
@@ -531,7 +534,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  sl_SI   (Slovenian)\n"
           "  son     (Songhay)\n"
 	  "  sq_AL   (Albanian)\n"
-	  "  sr_YU   (Serbian)\n"
+	  "  sr_YU   (Serbian (cyrillic))\n"
+          "  sr_RS@latin  (Serbian (latin))\n"
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
 	  "  sw_TZ   (Swahili)\n"

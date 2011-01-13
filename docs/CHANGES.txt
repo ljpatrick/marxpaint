@@ -238,6 +238,9 @@ $Id$
     * Persian translation
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
+    * Serbian translation (latin)
+      Ivana Rakic <reci.ne.silvesteru@gmail.com>
+
     * Venetian language
       Fabio Lazarin, El Galep�n <mistro@elgalepin.com>
 
@@ -304,7 +307,7 @@ $Id$
     * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
 
-    * Serbian translations (cyrillic and latin)
+    * Serbian translations (cyrillic)
       Ivana Rakic <reci.ne.silvesteru@gmail.com>
 
     * Slovak translation

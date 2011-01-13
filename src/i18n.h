@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2009 by Bill Kendrick and others
+  Copyright (c) 2002-2011 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - October 28, 2010
+  June 14, 2002 - January 12, 2011
 */
 
 
@@ -114,7 +114,8 @@ enum
   LANG_SL,			/* Slovenian */
   LANG_SON,                     /* Songhay */
   LANG_SQ,			/* Albanian */
-  LANG_SR,			/* Serbian */
+  LANG_SR,			/* Serbian (cyrillic) */
+  LANG_SR_LATIN,		/* Serbian (latin) */
   LANG_SV,			/* Swedish */
   LANG_SW,			/* Swahili */
   LANG_TA,			/* Tamil */
