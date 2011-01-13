@@ -1345,7 +1345,7 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
 
     utfstr_max = (sizeof(char) * 4 * (wcslen(str) + 1));
     utfstr = (char *) malloc(utfstr_max);
-    memset(utfstr, utfstr_max, 0);
+    memset(utfstr, 0, utfstr_max);
 
     j = 0;
     for (i = 0; i < wcslen(str); i++)
