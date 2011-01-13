@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2010 by Bill Kendrick and others
+Copyright (c) 2002-2011 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 28, 2010
+June 17, 2002 - January 12, 2011
 
 $Id$
 
@@ -711,7 +711,7 @@ $Id$
 
   * Serbian cyrillic
     Aleksandar Jelenak <jelenak@verizon.net>
-    Ivana <reci.ne.silvesteru@gmail.com>
+    Ivana Rakic <reci.ne.silvesteru@gmail.com>
 
   * Serbian latin
     Ivana <reci.ne.silvesteru@gmail.com>

@@ -2,13 +2,13 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2010 by Bill Kendrick and others
+Copyright (c) 2002-2011 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 $Id$
 
-2011.January.8 (0.9.22)
+2011.January.12 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -305,7 +305,7 @@ $Id$
       Sergio Marques <smarquespt@gmail.com>
 
     * Serbian translations (cyrillic and latin)
-      Ivana <reci.ne.silvesteru@gmail.com>
+      Ivana Rakic <reci.ne.silvesteru@gmail.com>
 
     * Slovak translation
       Jaroslav Rynik <jrynik@yahoo.co.uk>
