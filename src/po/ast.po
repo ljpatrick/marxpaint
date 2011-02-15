@@ -4,19 +4,19 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Xandru Armesto <xandru@softastur.org>, 2010.
+# Xandru Armesto <xandru@softastur.org>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2010-03-22 20:46+0200\n"
+"POT-Creation-Date: 2010-10-18 08:32-0700\n"
+"PO-Revision-Date: 2011-02-15 18:53+0200\n"
 "Last-Translator: Xandru Armesto <xandru@softastur.org>\n"
-"Language-Team: Asturian Team alministradores@softastur.org\n"
+"Language-Team: Softastur alministradores@softastur.org\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ast\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Virtaal 0.5.2\n"
 
@@ -926,11 +926,11 @@ msgstr "Calca y arrastra pa dibuxar yerba. ¡Nun escaezas la tierra!"
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Simetría Izquierda/Drecha"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Simetría Arriba/Abaxo"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -938,31 +938,28 @@ msgid "Kaleidoscope"
 msgstr "Caleidoscopiu"
 
 #: ../../magic/src/kalidescope.c:102
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Calca y arrastra'l mur pa dibuxar con pinceles simétricos (un caleidoscopiu)."
+"Calca y arrastra'l mur pa dibuxar con dos pinceles simétricos d'izquierda a "
+"drecha de la imaxe."
 
 #: ../../magic/src/kalidescope.c:104
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Calca y arrastra'l mur pa dibuxar con pinceles simétricos (un caleidoscopiu)."
+"Calca y arrastra'l mur pa dibuxar con dos pinceles simétricos d'arriba a "
+"abaxo de la imaxe."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Calca y arrastra'l mur pa dibuxar con pinceles simétricos (un caleidoscopiu)."
+"Calca y arrastra'l mur pa dibuxar con pinceles simétricos (un "
+"caleidoscopiu)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -1355,8 +1352,8 @@ msgid ""
 "the right for long waves."
 msgstr ""
 "Calca pa ondular la imaxe horizontalmente. Calca arriba pa llograr ondes más "
-"cortes y p'abaxo pa faceles más altes, a la manzorga pa faceles más pequeñes "
-"y a la drecha pa faceles más llargues."
+"cortes y p'abaxo pa faceles más altes, a la manzorga pa faceles más "
+"pequeñes y a la drecha pa faceles más llargues."
 
 #: ../../magic/src/waves.c:89
 msgid ""
