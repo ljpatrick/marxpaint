@@ -964,8 +964,8 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 
 /* Globals: */
-static int mouseaccessibility = 1;
-static int onscreen_keyboard = 1;
+static int mouseaccessibility = 0;
+static int onscreen_keyboard = 0;
 static int disable_screensaver;
 #ifdef NOKIA_770
 static int fullscreen = 1;
@@ -22887,6 +22887,7 @@ int button(int id, int x, int y)
 			event.key.keysym.sym = SDLK_ESCAPE;
 			event.key.keysym.mod = KMOD_NONE;
 			event.key.keysym.unicode = 27;
+
 		}
 		else if (ide == 2)
 		{
