@@ -21339,6 +21339,8 @@ static void setup_config(char *argv[])
   SETBOOL(use_print_config);
   SETBOOL(use_sound);
   SETBOOL(wheely);
+  SETBOOL(mouseaccessibility);
+  SETBOOL(onscreen_keyboard);
 #undef SETBOOL
 
   if(tmpcfg.parsertmp_windowsize)

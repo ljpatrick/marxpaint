@@ -153,6 +153,8 @@ version,            IMM(version)
 wheelmouse,         POSBOOL(wheely)
 windowed,           NEGBOOL(fullscreen)
 windowsize,         MULTI(parsertmp_windowsize)
+mouse_accessibility, POSBOOL(mouseaccessibility)
+onscreen_keyboard,  POSBOOL(onscreen_keyboard)
 %%
 
 void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const char *opt, const char *restrict src)

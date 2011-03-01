@@ -51,6 +51,8 @@ struct cfginfo
   const char *use_print_config;
   const char *use_sound;
   const char *wheely;
+  const char *mouseaccessibility;
+  const char *onscreen_keyboard;    
 };
 
 #define CFGINFO_MAXOFFSET  (sizeof(struct cfginfo))
