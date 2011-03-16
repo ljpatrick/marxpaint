@@ -4513,7 +4513,10 @@ static void mainloop(void)
 	    }
               
 	    if (mouseaccessibility)
-	      emulate_button_pressed = !emulate_button_pressed;
+	      {
+		if (magics[cur_magic].mode != MODE_FULLSCREEN)
+		  emulate_button_pressed = !emulate_button_pressed;
+	      }
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -17836,7 +17839,7 @@ static float magic_sRGB_to_linear(Uint8 srgb)
 
 static int magic_button_down(void)
 {
-  return(button_down);
+  return(button_down || emulate_button_pressed);
 }
 
 static SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect)
