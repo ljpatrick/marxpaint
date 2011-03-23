@@ -194,5 +194,5 @@ void waves_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 
 int waves_modes(magic_api * api, int which)
 {
-  return(MODE_FULLSCREEN);
+  return(MODE_PAINT);
 }
