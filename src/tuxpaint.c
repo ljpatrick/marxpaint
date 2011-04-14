@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 8, 2011
+  June 14, 2002 - April 13, 2011
 */
 
 
@@ -20964,33 +20964,42 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
   char *str, *arg;
-
-  /* FIXME: Bring back support for single-dash options:
-    -c (--copying)
-    -h (--help)
-    -u (--usage)
-    -v (--version)
-    -vv (--version-verbose)
-
-    -l (--lang)
-    -L (--locale)
-
-    -b (--startblank)
-    -f (--fullscreen)
-    -m (--mixedcase)
-    -p (--noprint)
-    -q (--nosound)
-    -s (--simpleshapes)
-    -w (--windowed)
-    -x (--noquit)
-
-    Especially the ones I use a lot:  -w -q -f -x -v -h -l  -bjk 2009.11.11
-  */
+  const char * short_synonyms[][2] = {
+    {"-c",  "copying"},
+    {"-h",  "help"},
+    {"-u",  "usage"},
+    {"-v",  "version"},
+    {"-vv", "version-verbose"},
+    {"-l",  "lang"},
+    {"-L",  "locale"},
+    {"-b",  "startblank"},
+    {"-f",  "fullscreen"},
+    {"-m",  "mixedcase"},
+    {"-p",  "noprint"},
+    {"-q",  "nosound"},
+    {"-s",  "simpleshapes"},
+    {"-w",  "windowed"},
+    {"-x",  "noquit"},
+    {NULL,  NULL}
+  };
 
   while(( str = *++argv ))
   {
-    if(str[0]=='-' && str[1]=='-' && str[2])
-    {
+    if(str[0]=='-' && str[1]!='-' && str[1]!='\0') {
+      int i, found = 0;
+      for (i = 0; short_synonyms[i][0] != NULL && !found; i++) {
+        if (strcmp(short_synonyms[i][0], str) == 0) {
+          if(argv[1] && argv[1][0]!='-')
+            arg = *++argv;
+          else
+            arg = NULL;
+          parse_one_option(tmpcfg, short_synonyms[i][1], arg, NULL);
+          found = 1;
+        }
+      }
+      if (found)
+        continue;
+    } else if(str[0]=='-' && str[1]=='-' && str[2]) {
       str += 2;
       arg = strchr(str,'=');
       if(arg)
@@ -21002,6 +21011,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     }
     fprintf(stderr, "%s is not understood\n", *argv);
     show_usage(63);
+    exit(1);
   }
 
   // These interact in horrid ways.
