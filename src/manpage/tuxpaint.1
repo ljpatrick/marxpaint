@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2011.01.12
-.TH TUXPAINT 1 "12 January 2011" "0.9.22" "Tux Paint"
+.\" tuxpaint.1 - 2011.04.13
+.TH TUXPAINT 1 "13 April 2011" "0.9.22" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -62,6 +62,10 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-nolabel]
 .br
 [\-\-mirrorstamps]
+.br
+[\-\-mouse-accessibility]
+.br
+[\-\-onscreen-keyboard]
 .br
 [\-\-stampsize=\fISIZE\fP]
 .br
@@ -361,6 +365,16 @@ text which can be altered or moved later.
 With \fImirrorstamps\fP set, stamps which can be mirrored will appear
 mirrored by default.  This can be useful when used by people who prefer
 things right-to-left over left-to-right.
+
+.TP 8
+.B \-\-mouse-accessibility
+In this mode, instead of clicking, dragging and releasing (e.g., to draw),
+you click, move, and click again to end the motion.
+
+.TP 8
+.B \-\-onscreen-keyboard
+Presents a clickable on-screen keyboard when using the \fIText\fP and
+\fILabel\fP tools.
 
 .TB 8
 .B \-\-stampsize=\fIsize\fP \-\-stampsize=default

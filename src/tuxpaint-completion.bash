@@ -60,6 +60,8 @@ _tuxpaint()
 			-l --lang -L --locale \
 			--nosysconfig \
 			--nolockfile \
+			--mouse-accessibility \
+			--onscreen-keyboard \
 			--colorfile' -- $cur ) ) 
 # We don't accept filenames on the command-line yet -bjk 2009.09.09
 #        else

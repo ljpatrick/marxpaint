@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                January 12, 2011
+                                 April 13, 2011
 
      ----------------------------------------------------------------------
 
@@ -368,6 +368,15 @@ Windows Users
 
                This can be useful for people who prefer things right-to-left,
                rather than left-to-right.
+
+       mouse-accessibility=yes
+               In this mode, instead of clicking, dragging and releasing
+               (e.g., to draw), you click, move, and click again to end the
+               motion.
+
+       onscreen-keyboard=yes
+               Presents a clickable on-screen keyboard when using the Text
+               and Label tools.
 
        stampsize=SIZE
 
@@ -767,6 +776,8 @@ Windows Users
          --nostampcontrols
          --nomagiccontrols
          --nolabel
+         --mouse-accessibility
+         --onscreen-keyboard
          --sysfonts
          --alllocalefonts
          --mirrorstamps
@@ -888,9 +899,9 @@ Command-Line Informational Options
 Available Languages
 
          +------------------------------------------------------------------+
-         |           |     Language      |    Language     |  Input Method  |
-         |Locale Code|   (native name)   | (English name)  |   Cycle Key    |
-         |           |                   |                 |  Combination   |
+         |           |Language           |Language         |Input Method    |
+         |Locale Code|(native name)      |(English name)   |Cycle Key       |
+         |           |                   |                 |Combination     |
          |-----------+-------------------+-----------------+----------------|
          |C          |                   |English          |                |
          |-----------+-------------------+-----------------+----------------|

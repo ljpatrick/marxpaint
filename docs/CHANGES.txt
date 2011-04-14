@@ -48,6 +48,21 @@ $Id$
     * Added support for building under Haiku OS
       Scott McCreary <scottmc@users.sourceforge.net>
 
+  * Accessibility Improvements:
+    ---------------------------
+    * Added a mouse accessibility mode to avoid the need to drag the mouse.
+      ("--mouse-accessibility")
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2009)
+      with integration and fixes by
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Added an option to display an on-screen keyboard when using the
+      'Text' and 'Label' tools. (Experimental.)
+      ("--onscreen-keyboard")
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2009)
+      with integration and fixes by
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
   * Other Improvements:
     -------------------
     * Tux Paint (in windowed mode) now only centers itself if
@@ -55,15 +70,8 @@ $Id$
       the SDL_VIDEO_WINDOW_POS environment variable.
       (SourceForge Bug #3138446)
 
-    * Adding a mouse mode to avoid the need to drag the mouse.
-      FIXME: Explain
-      by Ankit Choudary <ankit.goaldecided@gmail.com>
-
-    * Allowing to paint with the keyboard.
-      FIXME: Explain
-      by Ankit Choudary.
-
     * Creating thumbnails for the starters we provide.
+      (Speeds up 'New' dialog appearance.)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * On systems where Pango is used for UI text rendering, Tux Paint now
