@@ -38,28 +38,28 @@ struct cfg
 
 static void imm_version(void)
 {
-//  show_version(0);
+  show_version(0);
 }
 
 static void imm_verbose_version(void)
 {
-//  show_version(1);
+  show_version(1);
 }
 
 static void imm_usage(void)
 {
-//  show_usage(0);
+  show_usage(0);
 }
 
 static void imm_help(void)
 {
-//  show_version(0);
-//  show_usage(0);
+  show_version(0);
+  show_usage(0);
 }
 
 static void imm_copying(void)
 {
-//  show_version(0);
+  show_version(0);
   printf("\n"
          "This program is free software; you can redistribute it\n"
          "and/or modify it under the terms of the GNU General Public\n"

@@ -1617,7 +1617,7 @@ static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 
-static void show_usage(int exitcode);
+void show_usage(int exitcode);
 static char *progname;
 
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
@@ -6233,7 +6233,7 @@ static void rec_undo_buffer(void)
 
 
 /* Show program version: */
-static void show_version(int details)
+void show_version(int details)
 {
   printf("\nTux Paint\n");
   printf("  Version " VER_VERSION " (" VER_DATE ")\n");
@@ -6363,7 +6363,7 @@ static void show_version(int details)
 
 /* Show usage display: */
 
-static void show_usage(int exitcode)
+void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
   char *blank;
@@ -20969,7 +20969,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     {"-h",  "help"},
     {"-u",  "usage"},
     {"-v",  "version"},
-    {"-vv", "version-verbose"},
+    {"-vv", "verbose-version"},
     {"-l",  "lang"},
     {"-L",  "locale"},
     {"-b",  "startblank"},
