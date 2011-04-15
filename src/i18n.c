@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - January 12, 2011
+  June 14, 2002 - April 15, 2011
 */
 
 #include <stdio.h>
@@ -56,6 +56,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ach",
   "af",
   "ak",
+  "am",
   "ar",
   "ast",
   "az",
@@ -201,6 +202,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"acoli", "ach_UG.UTF-8"},
   {"akan", "ak_GH.UTF-8"},
   {"twi-fante", "ak_GH.UTF-8"},
+  {"amharic", "am_ET.UTF-8"},
   {"arabic", "ar_SA.UTF-8"},
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
@@ -358,6 +360,7 @@ static void show_lang_usage(int exitcode)
 /* af */ "  afrikaans\n"
 /* ak */ "  akan         twi-fante\n"
 /* sq */ "  albanian\n"
+/* am */ "  amharic\n"
 /* ar */ "  arabic\n"
 /* ast */ "  asturian\n"
 /* en_AU */ "  australian-english\n"
@@ -466,6 +469,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  ach_UG  (Acholi       Acoli)\n"
 	  "  af_ZA   (Afrikaans)\n"
           "  ak_GH   (Akan         Twi-Fante)\n"
+          "  am_ET   (Amharic)\n"
 	  "  ar_SA   (Arabic)\n"
 	  "  ast_ES  (Asturian)\n"
 	  "  az_AZ   (Azerbaijani)\n"

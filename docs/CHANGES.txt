@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.January.12 (0.9.22)
+2011.April.15 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -193,11 +193,16 @@ $Id$
     * Akan translation
       Derrick Frimpong <flexyflame2006@yahoo.com>
 
+    * Amharic translation
+      Solomon Gizaw <solohavi@yahoo.com>
+      http://pootle.locamotion.org/am/tuxpaint/
+
     * Kiga translation
       Florence Tushabe <tushabe@cit.mak.ac.ug>
 
     * Fula translation
-      Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
+      Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>,
+      Fula Localization Project, http://www.pulaar-fulfulde.org/
 
     * Luganda translation
       James Olweny <sjolweny85@yahoo.co.uk>

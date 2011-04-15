@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - January 12, 2011
+  June 14, 2002 - April 15, 2011
 */
 
 
@@ -42,6 +42,7 @@ enum
   LANG_ACH,                     /* Acholi */
   LANG_AF,			/* Afrikaans */
   LANG_AK,                      /* Akan */
+  LANG_AM,                      /* Amharic */
   LANG_AR,			/* Arabic */
   LANG_AST,			/* Asturian */
   LANG_AZ,			/* Azerbaijani */

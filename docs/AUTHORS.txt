@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 12, 2011
+June 17, 2002 - April 15, 2011
 
 $Id$
 
@@ -394,6 +394,10 @@ $Id$
   * Albanian
     Ilir Rugova <ilirrugova@gmx.de>
     Laurent Dhima <laurenti@alblinux.net>
+
+  * Amharic translation
+    Solomon Gizaw <solohavi@yahoo.com>
+    http://pootle.locamotion.org/am/tuxpaint/
 
   * Arabic
     Tilo <Drfortilo@gmail.com>
