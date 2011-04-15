@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 13, 2011
+  June 14, 2002 - April 15, 2011
 */
 
 
@@ -2092,6 +2092,7 @@ static void mainloop(void)
       if (event.type == SDL_QUIT)
       {
         magic_switchout(canvas);
+        emulate_button_pressed = 0;
 	done = do_quit(cur_tool);
         if (!done)
           magic_switchin(canvas);
@@ -2551,6 +2552,7 @@ static void mainloop(void)
 			
 	if (key == SDLK_ESCAPE && !disable_quit)
 	{
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2580,6 +2582,7 @@ static void mainloop(void)
 	else if (key == SDLK_ESCAPE &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 	{
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2588,6 +2591,7 @@ static void mainloop(void)
 #ifdef WIN32
 	else if (key == SDLK_F4 && (mod & KMOD_ALT))
 	{
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2598,6 +2602,7 @@ static void mainloop(void)
 	{
 	  /* Ctrl-Z - Undo */
 
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_UNDO])
@@ -2639,6 +2644,7 @@ static void mainloop(void)
 	{
 	  /* Ctrl-R - Redo */
 
+          emulate_button_pressed = 0;
 	  magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_REDO])
@@ -2655,6 +2661,7 @@ static void mainloop(void)
 	{
 	  /* Ctrl-O - Open */
 
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  disable_avail_tools();
@@ -2698,6 +2705,7 @@ static void mainloop(void)
 	{
 	  /* Ctrl-N - New */
 
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  hide_blinking_cursor();
@@ -2741,6 +2749,7 @@ static void mainloop(void)
 	{
 	  /* Ctrl-S - Save */
 
+          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  hide_blinking_cursor();
 
@@ -2771,6 +2780,7 @@ static void mainloop(void)
 
       if (!disable_print)
       {
+        emulate_button_pressed = 0;
         magic_switchout(canvas);
 
         /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
@@ -3243,7 +3253,7 @@ static void mainloop(void)
 	  /* A tool on the left has been pressed! */
 	  brushflag = 0;
 	  magicflag = 0;
-      magic_switchout(canvas);
+          magic_switchout(canvas);
 	  whicht = tool_scroll + GRIDHIT_GD(real_r_tools, gd_tools);
 	  tool_flag = 1;
 	  canvas_flag = 0;
@@ -11611,6 +11621,8 @@ static int do_prompt_image_flash_snd(const char *const text,
   int free_img1b;
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
 
+  emulate_button_pressed = 0;
+
   hide_blinking_cursor();
 
   /* Admittedly stupid way of determining which keys can be used for
@@ -11667,7 +11679,7 @@ static int do_prompt_image_flash_snd(const char *const text,
     SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
     if ((w % 8) == 0)
-      SDL_Delay(10);
+      SDL_Delay(1);
 
     if (w == 94)
       SDL_BlitSurface(backup, NULL, screen, NULL);
@@ -16503,12 +16515,13 @@ static void handle_active(SDL_Event * event)
 	SDL_Flip(screen);
     }
   }
-#ifdef _WIN32
   if (event->active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE)
   {
+    emulate_button_pressed = 0;
+#ifdef _WIN32
     SetActivationState(event->active.gain);
-  }
 #endif
+  }
 }
 
 
@@ -19079,7 +19092,7 @@ static int do_color_picker(void)
     SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
     if (w % 16 == 0)
-      SDL_Delay(10);
+      SDL_Delay(1);
   }
   
   SDL_BlitSurface(backup, NULL, screen, NULL);

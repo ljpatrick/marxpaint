@@ -65,6 +65,8 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Quicker prompt window pop-up animation.
+
     * Tux Paint (in windowed mode) now only centers itself if
       no specific positioning has been provided via
       the SDL_VIDEO_WINDOW_POS environment variable.
