@@ -984,7 +984,7 @@ static int alt_print_command_default = ALTPRINT_MOD;
 static int want_alt_printcommand;
 
 static int wheely = 1;
-static int keymouse;
+static int keymouse = 1; /* FIXME: Should be off by default -bjk 2011.04.15 */
 static int mouse_x;
 static int mouse_y;
 static int no_button_distinction;
