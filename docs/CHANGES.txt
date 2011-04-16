@@ -126,6 +126,7 @@ $Id$
 
     * Creating thumbnails for the starters we provide.
       (Speeds up 'New' dialog appearance.)
+      (SourceForge Bug #1417849)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * On systems where Pango is used for UI text rendering, Tux Paint now
