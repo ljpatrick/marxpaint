@@ -119,6 +119,11 @@ $Id$
     -------------------
     * Quicker prompt window pop-up animation.
 
+    * Deleting files from Tux Paint's 'Open' dialog now moves them to
+      the user's Trash folder.
+      FIXME: Only on freedesktop.org systems (e.g., Linux)
+      (SourceForge.net Feature #3101084)
+
     * Tux Paint (in windowed mode) now only centers itself if
       no specific positioning has been provided via
       the SDL_VIDEO_WINDOW_POS environment variable.

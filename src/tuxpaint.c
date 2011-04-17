@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 15, 2011
+  June 14, 2002 - April 16, 2011
 */
 
 
@@ -1812,6 +1812,8 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h);
 #endif
 static SDL_Surface * myIMG_Load(char * file);
+static int trash(char * path);
+int file_exists(char * path);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -1986,7 +1988,7 @@ void keybd_finish(void);
 void apply_surface (int x, int y, SDL_Surface *source, SDL_Surface *destination, SDL_Rect *clip);
 void drawkeybd(void );
 int regionhit(int x, int y, int w, int h);
-int button(int id, int x, int y);
+void button(int id, int x, int y);
 void on_screen_keyboard(void );
 SDL_Surface *messager = NULL;
 #define initial_x (2 * button_w + 80)
@@ -14341,9 +14343,8 @@ static int do_open(void)
                 d_names[which], d_exts[which]);
 
             rfname = get_fname(fname, DIR_SAVE);
-            debug(rfname);
 
-            if (unlink(rfname) == 0)
+            if (trash(rfname) == 0)
             {
               update_list = 1;
 
@@ -14355,33 +14356,28 @@ static int do_open(void)
 
               free(rfname);
               rfname = get_fname(fname, DIR_SAVE);
-              debug(rfname);
 
               unlink(rfname);
 
 
               /* Try deleting old-style thumbnail, too: */
 
-              unlink(rfname);
               snprintf(fname, sizeof(fname), "saved/%s-t.png", d_names[which]);
 
               free(rfname);
               rfname = get_fname(fname, DIR_SAVE);
-              debug(rfname);
 
               unlink(rfname);
 
 
               /* Delete .dat file, if any: */
 
-              unlink(rfname);
               snprintf(fname, sizeof(fname), "saved/%s.dat", d_names[which]);
 
               free(rfname);
               rfname = get_fname(fname, DIR_SAVE);
-              debug(rfname);
 
-              unlink(rfname);
+              trash(rfname);
 
 
 
@@ -22669,7 +22665,7 @@ int regionhit(int x, int y, int w, int h)
   return 1;
 }
 
-int button(int id, int x, int y)
+void button(int id, int x, int y)
 {
   SDL_Rect dest,desti;
   SDL_Surface *tmp_imgup;
@@ -23687,3 +23683,107 @@ void on_screen_keyboard(void )
 
       keybd_flag = 1;   
 }
+
+
+/* Moves a file to the trashcan (or deletes it) */
+
+static int trash(char * path) {
+  char fname[MAX_PATH], trashpath[MAX_PATH],
+       dest[MAX_PATH], infoname[MAX_PATH],
+       bname[MAX_PATH], ext[MAX_PATH];
+  char deldate[32];
+  struct tm tim;
+  time_t now;
+  int cnt;
+  FILE * fo;
+
+  debug(path);
+
+
+  /* FIXME: This is Freedesktop.org-centric -bjk 2011.04.16 */
+
+  if (basename(path) == NULL) {
+    debug("Can't get basename! Deleting instead.");
+    return(unlink(path));
+  }
+  strcpy(fname, basename(path));
+
+
+  /* Move file into Trash folder */
+
+  if (getenv("XDG_DATA_HOME") != NULL) {
+    sprintf(trashpath, "%s/Trash/", getenv("XDG_DATA_HOME"));
+  } else if (getenv("HOME") != NULL) {
+    sprintf(trashpath, "%s/.local/share/Trash/", getenv("HOME"));
+  } else {
+    debug("Can't move to trash! Deleting instead.");
+    return(unlink(path));
+  }
+
+  mkdir(trashpath, 0x777);
+  sprintf(dest, "%s/files", trashpath);
+  mkdir(dest, 0x777);
+  sprintf(dest, "%s/info", trashpath);
+  mkdir(dest, 0x777);
+
+  sprintf(dest, "%s/files/%s", trashpath, fname);
+
+  strcpy(bname, fname);
+  if (strstr(bname, ".") != NULL) {
+    strcpy(strstr(bname, "."), "\0");
+    strcpy(ext, strstr(fname, ".") + 1);
+  } else {
+    debug("Filename format unfamiliar! Deleting instead.");
+    return(unlink(path));
+  }
+
+  sprintf(infoname, "%s/info/%s.trashinfo", trashpath, fname);
+
+  cnt = 1;
+  while (file_exists(dest) && cnt < 100) {
+    sprintf(fname, "%s_%d.%s", bname, cnt, ext);
+
+    sprintf(dest, "%s/files/%s", trashpath, fname);
+    sprintf(infoname, "%s/info/%s.trashinfo", trashpath, fname);
+    cnt++;
+  }
+
+  if (cnt >= 100) {
+    debug("Too many identically-named files! Deleting instead.");
+    return(unlink(path));
+  }
+
+  debug(dest);
+
+  if (rename(path, dest) == -1) {
+    debug("Could not move to trash. Deleting instead.");
+    return(unlink(path));
+  }
+
+  /* Create info file */
+  fo = fopen(infoname, "w");
+  if (fo == NULL) {
+    debug("Error: Couldn't create info file!");
+    return(1);
+  }
+
+  now = time(NULL);
+  tim = *(localtime(&now));
+  strftime(deldate, sizeof(deldate), "%FT%T", &tim);
+
+  fprintf(fo, "[Trash Info]\n");
+  fprintf(fo, "Path=%s\n", path);
+  fprintf(fo, "DeletionDate=%s\n", deldate);
+  fclose(fo);
+
+  return(0);
+}
+
+int file_exists(char * path) {
+  struct stat buf;
+  int res;
+
+  res = stat(path, &buf);
+  return(res == 0);
+}
+
