@@ -11531,6 +11531,7 @@ static void save_current(void)
   if (!make_directory("", "Can't create user data directory"))
   {
     draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    return;
   }
 
   fname = get_fname("current_id.txt", DIR_SAVE);
@@ -12720,7 +12721,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (!make_directory("", "Can't create user data directory"))
   {
     fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
     return 0;
   }
 
@@ -12732,7 +12733,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (!make_directory("saved", "Can't create user data directory"))
   {
     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
     return 0;
   }
 
@@ -12744,7 +12745,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (!make_directory("saved/.thumbs", "Can't create user data thumbnail directory"))
   {
     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
     return 0;
   }
 
@@ -12755,7 +12756,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (!make_directory("saved/.label", "Can't create label information directory"))
   {
     fprintf(stderr, "Cannot save label information! SORRY!\n\n");
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0);
     return 0;
   }
 
