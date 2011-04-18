@@ -22,12 +22,19 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 16, 2011
+  June 14, 2002 - April 18, 2011
 */
 
 
 /* (Note: VER_VERSION and VER_DATE are now handled by Makefile) */
 
+
+/* FIXME: */
+
+/* Use this in places where we can only (or only want to, for whatever reason)
+   use 'unlink()' to delete files, rather than trying to put them in the
+   desktop enivronment's "trash" -bjk 2011.04.18 */
+/* #define UNLINK_ONLY */
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
@@ -238,7 +245,6 @@ char *strcasestr(const char *haystack, const char *needle)
 #ifndef gettext_noop
 #define gettext_noop(String) String
 #endif
-
 
 #ifdef DEBUG
 #define gettext(String) debug_gettext(String)
@@ -23688,6 +23694,9 @@ void on_screen_keyboard(void )
 /* Moves a file to the trashcan (or deletes it) */
 
 static int trash(char * path) {
+#ifdef UNLINK_ONLY
+  return(unlink(path));
+#else
   char fname[MAX_PATH], trashpath[MAX_PATH],
        dest[MAX_PATH], infoname[MAX_PATH],
        bname[MAX_PATH], ext[MAX_PATH];
@@ -23695,7 +23704,9 @@ static int trash(char * path) {
   struct tm tim;
   time_t now;
   int cnt;
-  FILE * fo;
+  FILE * fi, * fo;
+  unsigned char buf[1024];
+  size_t len;
 
   debug(path);
 
@@ -23708,13 +23719,18 @@ static int trash(char * path) {
   }
   strcpy(fname, basename(path));
 
+  if (!file_exists(path)) {
+    debug("Does't exist anyway, so skipping");
+    return(1);
+  }
+
 
   /* Move file into Trash folder */
 
   if (getenv("XDG_DATA_HOME") != NULL) {
-    sprintf(trashpath, "%s/Trash/", getenv("XDG_DATA_HOME"));
+    sprintf(trashpath, "%s/Trash", getenv("XDG_DATA_HOME"));
   } else if (getenv("HOME") != NULL) {
-    sprintf(trashpath, "%s/.local/share/Trash/", getenv("HOME"));
+    sprintf(trashpath, "%s/.local/share/Trash", getenv("HOME"));
   } else {
     debug("Can't move to trash! Deleting instead.");
     return(unlink(path));
@@ -23756,8 +23772,29 @@ static int trash(char * path) {
   debug(dest);
 
   if (rename(path, dest) == -1) {
-    debug("Could not move to trash. Deleting instead.");
-    return(unlink(path));
+    debug("Could not move to trash. Trying to copy, instead.");
+
+    fi = fopen(path, "r");
+    if (fi == NULL) {
+      debug("Could not open source file for copy. Deleting instead.");
+      return(unlink(path));
+    }
+    fo = fopen(dest, "w");
+    if (fo == NULL) {
+      debug("Could not open dest. file for copy. Deleting instead.");
+      fclose(fi);
+      return(unlink(path));
+    }
+    while (!feof(fi)) {
+      len = fread(buf, sizeof(buf), 1, fi);
+      if (len > 0) {
+        fwrite(buf, sizeof(buf), 1, fo);
+      }
+    }
+    fclose(fi);
+    fclose(fo);
+
+    unlink(path);
   }
 
   /* Create info file */
@@ -23776,7 +23813,25 @@ static int trash(char * path) {
   fprintf(fo, "DeletionDate=%s\n", deldate);
   fclose(fo);
 
+
+  /* Now we can alert the desktop GUI(s) running that something has been
+     placed into the trash! */
+
+  /* Tell KDE 4.x (e.g., Trash icon on your panel) that trash has been affected.
+     Per dfaure (David Faure) and thiago (Thiago Macieria)
+     on #kde-devel 2011.04.18
+     -bjk 2011.04.18 */
+
+  /* FIXME: Is this sufficient to find 'dbus-send' (rely on system to use $PATH?) -bjk 2011.04.18 */
+  system("dbus-send / org.kde.KDirNotify.FilesAdded string:trash:/");
+
+
+  /* FIXME: GNOME: How? */
+
+  /* FIXME: Elsewhere: How? */
+
   return(0);
+#endif /* UNLINK_ONLY */
 }
 
 int file_exists(char * path) {
