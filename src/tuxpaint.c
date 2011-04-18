@@ -23826,9 +23826,18 @@ static int trash(char * path) {
   system("dbus-send / org.kde.KDirNotify.FilesAdded string:trash:/");
 
 
-  /* FIXME: GNOME: How? */
+  /* Note: GNOME figures out when things change because it asks the Kernel
+     to tell it.
+     Per cosimoc (Cosimo Cecchi) on #nautilus 2011.04.18
+     -bjk 2011.04.18 */
 
-  /* FIXME: Elsewhere: How? */
+  /* FIXME: xcfe and elsewhere: Anything to do? */
+
+  /* FIXME: Windows */
+
+  /* FIXME: Mac OS X */
+
+  /* FIXME: Haiku */
 
   return(0);
 #endif /* UNLINK_ONLY */
