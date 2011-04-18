@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.April.15 (0.9.22)
+2011.April.18 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -403,6 +403,11 @@ $Id$
 
   * Bug Fixes
     ---------
+    * Fixed error reporting when make_directory() fails.
+      (Fixes spurious 
+      SF.net Bug #2765872)
+      John Popplewell <john@johnnypops.demon.co.uk>
+
     * Buffersize for holding Starter and image filenames was way too low.
       (Could crash with Starter images with very long filenames.)
 
