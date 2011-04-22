@@ -52,15 +52,13 @@ $Id$
     ---------------------------
     * Added a mouse accessibility mode to avoid the need to drag the mouse.
       ("--mouse-accessibility")
-      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2009)
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
       with integration and fixes by
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Added an option to display an on-screen keyboard when using the
       'Text' and 'Label' tools.  ("--onscreen-keyboard") [Experimental!]
-      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2009)
-      with integration and fixes by
-      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
 
       FIXME:
         * Flickers a lot
@@ -90,6 +88,7 @@ $Id$
 
     * Keyboard can be used to move and click mouse ("keymouse").
       [Experimental!]
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
 
       * Keys to move:
         * [Up] / [Down] / [Left] / [Right]
