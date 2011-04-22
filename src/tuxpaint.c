@@ -5469,7 +5469,6 @@ static void mainloop(void)
                     draw_blinking_cursor();
                 }
         }
-    SDL_Delay(10);
   }
   while (!done);
 }
@@ -21533,6 +21532,25 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
+int TP_EventFilter(const SDL_Event * event)
+{
+  if (event->type == SDL_QUIT ||
+      event->type == SDL_ACTIVEEVENT ||
+      event->type == SDL_JOYAXISMOTION ||
+      event->type == SDL_JOYBALLMOTION ||
+      event->type == SDL_JOYBUTTONDOWN ||
+      event->type == SDL_JOYBUTTONUP ||
+      event->type == SDL_KEYDOWN ||
+      event->type == SDL_KEYUP ||
+      event->type == SDL_MOUSEBUTTONDOWN ||
+      event->type == SDL_MOUSEBUTTONUP ||
+      event->type == SDL_MOUSEMOTION ||
+      event->type == SDL_QUIT ||
+      event->type == SDL_USEREVENT)
+    return 1;
+
+  return 0;
+}
 
 /////////////////////////////////////////////////////////////////////////////
 static void setup(void)
@@ -21629,6 +21647,10 @@ static void setup(void)
       exit(1);
     }
   }
+
+  /* Set up event filter */
+
+  SDL_SetEventFilter(TP_EventFilter);
 
 
 #ifndef NOSOUND
@@ -23686,7 +23708,7 @@ void on_screen_keyboard(void )
 
 	  SDL_UpdateRect(screen, 0, 0, 640, 480);    
 
-	  SDL_Delay(10);
+	  /* SDL_Delay(10); */ /* FIXME: This should not be necessary! -bjk 2011.04.21 */
 
       keybd_flag = 1;   
 }
