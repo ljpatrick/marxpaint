@@ -1072,7 +1072,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@echo
 	@echo "...Generating 'Magic' tool API development header file..."
-	@cat src/tp_magic_api.h.in | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
+	@(echo -e "/*\n\n\n\n\n\n\n\nDO NOT EDIT ME!\n\n\n\n\n\n\n\n*/" ; cat src/tp_magic_api.h.in) | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
 
 
 tp-magic-config:	src/tp-magic-config.sh.in Makefile
