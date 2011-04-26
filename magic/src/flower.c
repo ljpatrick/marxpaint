@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: April 26, 2011
   $Id$
 */
 
@@ -604,5 +604,5 @@ void flower_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas
 
 int flower_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT);
+  return(MODE_PAINT_WITH_PREVIEW);
 }

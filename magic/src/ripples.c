@@ -187,5 +187,5 @@ void ripples_switchout(magic_api * api, int which, int mode, SDL_Surface * canva
 
 int ripples_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT);
+  return(MODE_ONECLICK);
 }

@@ -114,6 +114,16 @@ $Id$
           keyboard layouts.
         * Who wrote this, so we can credit!?!?
 
+  * Magic Tool Improvememnts:
+    --------------------------
+    * Magic tools can register themselves as paint with one click
+      (versus click/drag/release): MODE_ONECLICK.  (e.g., "Ripples")
+      Utilized by mouse-accessibility feature.
+
+    * Magic tools can register themsevles as paint-with-a-preview:
+      MODE_PAINT_WITH_PREVIEW.  (e.g., "Flower")
+      Utilized by mouse-accessibility feature.
+
   * Other Improvements:
     -------------------
     * Quicker prompt window pop-up animation.

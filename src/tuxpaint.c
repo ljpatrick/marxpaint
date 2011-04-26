@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 18, 2011
+  June 14, 2002 - April 26, 2011
 */
 
 
@@ -3848,6 +3848,22 @@ static void mainloop(void)
 		  draw_magic();
 	          update_screen_rect(&r_toolopt);
                 }
+                else if (which == 0 && magics[cur_magic].avail_modes & MODE_PAINT_WITH_PREVIEW)
+                {
+		  magic_switchout(canvas);
+		  magics[cur_magic].mode = MODE_PAINT_WITH_PREVIEW;
+		  magic_switchin(canvas);
+		  draw_magic();
+	          update_screen_rect(&r_toolopt);
+                }
+                else if (which == 0 && magics[cur_magic].avail_modes & MODE_ONECLICK)
+                {
+		  magic_switchout(canvas);
+		  magics[cur_magic].mode = MODE_ONECLICK;
+		  magic_switchin(canvas);
+		  draw_magic();
+	          update_screen_rect(&r_toolopt);
+                }
 		/* FIXME: Sfx */
               }
 	      else if (cur_tool == TOOL_TEXT)
@@ -4523,7 +4539,7 @@ static void mainloop(void)
               
 	    if (mouseaccessibility)
 	      {
-		if (magics[cur_magic].mode != MODE_FULLSCREEN) /* FIXME: Some non-fullscreen tools are also click-only (not click-and-drag), so we need another magic MODE_ type -bjk 2011.04.26 */
+		if (magics[cur_magic].mode != MODE_FULLSCREEN && magics[cur_magic].mode != MODE_ONECLICK) /* Note: some non-fullscreen tools are also click-only (not click-and-drag) -bjk 2011.04.26 */
 		  emulate_button_pressed = !emulate_button_pressed;
 	      }
 	  }
@@ -4988,7 +5004,7 @@ static void mainloop(void)
 	      }
 	    }
 	  }
-	  else if (cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
+	  else if (cur_tool == TOOL_MAGIC && (magics[cur_magic].mode == MODE_PAINT || magics[cur_magic].mode == MODE_ONECLICK || magics[cur_magic].mode == MODE_PAINT_WITH_PREVIEW))
 	  {
 	    if(!mouseaccessibility || (mouseaccessibility && !emulate_button_pressed))
 	    {
@@ -5305,7 +5321,7 @@ static void mainloop(void)
 	      SDL_Flip(screen);
 	    }
 	  }
-	  else if (cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
+	  else if (cur_tool == TOOL_MAGIC && (magics[cur_magic].mode == MODE_PAINT || magics[cur_magic].mode == MODE_ONECLICK || magics[cur_magic].mode == MODE_PAINT_WITH_PREVIEW))
 	  {
 	    int undo_ctr;
             SDL_Surface * last;
@@ -8049,9 +8065,9 @@ static void draw_magic(void)
 
     /* Show paint button: */
 
-    if (magics[cur_magic].mode == MODE_PAINT)
+    if (magics[cur_magic].mode == MODE_PAINT || magics[cur_magic].mode == MODE_ONECLICK || magics[cur_magic].mode == MODE_PAINT_WITH_PREVIEW)
       button_color = img_btn_down; /* Active */
-    else if (magics[cur_magic].avail_modes & MODE_PAINT)
+    else if (magics[cur_magic].avail_modes & MODE_PAINT || magics[cur_magic].avail_modes & MODE_ONECLICK || magics[cur_magic].avail_modes & MODE_PAINT_WITH_PREVIEW)
       button_color = img_btn_up; /* Available, but not active */
     else
       button_color = img_btn_off; /* Unavailable */
@@ -17613,6 +17629,10 @@ static void load_magic_plugins(void)
 		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
 		    if (magics[num_magics].avail_modes & MODE_PAINT)
 		    	magics[num_magics].mode = MODE_PAINT;
+		    else if (magics[num_magics].avail_modes & MODE_ONECLICK)
+		    	magics[num_magics].mode = MODE_ONECLICK;
+		    else if (magics[num_magics].avail_modes & MODE_PAINT_WITH_PREVIEW)
+		    	magics[num_magics].mode = MODE_PAINT_WITH_PREVIEW;
 		    else
 		    	magics[num_magics].mode = MODE_FULLSCREEN;
 
@@ -19487,7 +19507,7 @@ static void magic_switchout(SDL_Surface * last)
 					                canvas, last);
     update_canvas(0, 0, canvas->w, canvas->h);
 
-    if (was_clicking) {
+    if (was_clicking && magics[cur_magic].mode == MODE_PAINT_WITH_PREVIEW) {
       /* Clean up preview! */
       do_undo();
       tool_avail[TOOL_REDO] = 0; /* Don't let them 'redo' to get preview back */
@@ -19517,7 +19537,7 @@ static void magic_switchin(SDL_Surface * last)
 
 static int magic_modeint(int mode)
 {
-  if (mode == MODE_PAINT)
+  if (mode == MODE_PAINT || mode == MODE_ONECLICK || mode == MODE_PAINT_WITH_PREVIEW)
     return 0;
   else if (mode == MODE_FULLSCREEN)
     return 1;

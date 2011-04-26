@@ -483,5 +483,5 @@ void fold_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 
 int fold_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT);
+  return(MODE_PAINT_WITH_PREVIEW);
 }
