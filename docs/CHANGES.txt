@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.April.18 (0.9.22)
+2011.April.26 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -117,6 +117,12 @@ $Id$
   * Other Improvements:
     -------------------
     * Quicker prompt window pop-up animation.
+
+    * Slightly improved mouse motion handling when Tux Paint is very busy
+      drawing or previewing.  (e.g., when drawing a circle, you could often
+      end up with a "D" shape... now, you get more of a regular polygon shape
+      if Tux Paint is taking too long to draw.  It skips some motion events,
+      rather than ignoring all motion events after the first 1/4th second.)
 
     * Deleting files from Tux Paint's 'Open' dialog now moves them to
       the user's Trash folder.

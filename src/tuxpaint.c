@@ -2093,14 +2093,15 @@ static void mainloop(void)
     {
       current_event_time = SDL_GetTicks();
 
-      if (current_event_time > pre_event_time + 250)
-	ignoring_motion = 1;
+      /* To avoid getting stuck in a 'catching up with mouse motion' interface lock-up */
+      /* FIXME: Another thing we could do here is peek into events, and 'skip' to the last motion...? Or something... -bjk 2011.04.26 */
+      if (current_event_time > pre_event_time + 500 && event.type == SDL_MOUSEMOTION)
+	ignoring_motion = (ignoring_motion + 1) % 3; /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
 
 
       if (event.type == SDL_QUIT)
       {
         magic_switchout(canvas);
-        emulate_button_pressed = 0;
 	done = do_quit(cur_tool);
         if (!done)
           magic_switchin(canvas);
@@ -2557,10 +2558,9 @@ static void mainloop(void)
 			}
 		}
 	}
-			
+
 	if (key == SDLK_ESCAPE && !disable_quit)
 	{
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2590,7 +2590,6 @@ static void mainloop(void)
 	else if (key == SDLK_ESCAPE &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 	{
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2599,7 +2598,6 @@ static void mainloop(void)
 #ifdef WIN32
 	else if (key == SDLK_F4 && (mod & KMOD_ALT))
 	{
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
@@ -2610,7 +2608,6 @@ static void mainloop(void)
 	{
 	  /* Ctrl-Z - Undo */
 
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_UNDO])
@@ -2652,7 +2649,6 @@ static void mainloop(void)
 	{
 	  /* Ctrl-R - Redo */
 
-          emulate_button_pressed = 0;
 	  magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_REDO])
@@ -2669,7 +2665,6 @@ static void mainloop(void)
 	{
 	  /* Ctrl-O - Open */
 
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  disable_avail_tools();
@@ -2713,7 +2708,6 @@ static void mainloop(void)
 	{
 	  /* Ctrl-N - New */
 
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 
 	  hide_blinking_cursor();
@@ -2757,7 +2751,6 @@ static void mainloop(void)
 	{
 	  /* Ctrl-S - Save */
 
-          emulate_button_pressed = 0;
           magic_switchout(canvas);
 	  hide_blinking_cursor();
 
@@ -2788,7 +2781,6 @@ static void mainloop(void)
 
       if (!disable_print)
       {
-        emulate_button_pressed = 0;
         magic_switchout(canvas);
 
         /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
@@ -3266,7 +3258,6 @@ static void mainloop(void)
 	  tool_flag = 1;
 	  canvas_flag = 0;
 	  text_flag = 0;
-	  emulate_button_pressed = 0;
 
 	  if (whicht < NUM_TOOLS && tool_avail[whicht] &&
 	      (valid_click(event.button.button) || whicht == TOOL_PRINT))
@@ -3616,9 +3607,6 @@ static void mainloop(void)
 	  /* Options on the right
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
-
-          if (mouseaccessibility)
-	    emulate_button_pressed = 0;
 
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
@@ -4288,6 +4276,9 @@ static void mainloop(void)
 	    if (do_draw)
 	      update_screen_rect(&r_toolopt);
 	  }
+
+          if (mouseaccessibility)
+	    emulate_button_pressed = 0;
 	}
 	else if (HIT(r_colors) && colors_are_selectable)
 	{
@@ -4532,7 +4523,7 @@ static void mainloop(void)
               
 	    if (mouseaccessibility)
 	      {
-		if (magics[cur_magic].mode != MODE_FULLSCREEN)
+		if (magics[cur_magic].mode != MODE_FULLSCREEN) /* FIXME: Some non-fullscreen tools are also click-only (not click-and-drag), so we need another magic MODE_ type -bjk 2011.04.26 */
 		  emulate_button_pressed = !emulate_button_pressed;
 	      }
 	  }
@@ -16519,7 +16510,11 @@ static void handle_active(SDL_Event * event)
   }
   if (event->active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE)
   {
-    emulate_button_pressed = 0;
+    if (mouseaccessibility && emulate_button_pressed) {
+      magic_switchout(canvas);
+      emulate_button_pressed = 0;
+    }
+
 #ifdef _WIN32
     SetActivationState(event->active.gain);
 #endif
@@ -19475,6 +19470,15 @@ static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 
 static void magic_switchout(SDL_Surface * last)
 {
+  int was_clicking = 0;
+
+  if (mouseaccessibility && emulate_button_pressed) {
+    /* We were 'clicking' in mouse accessibility mode; stop clicking now */
+    /* (EVEN if we weren't in magic tool) */
+    emulate_button_pressed = 0;
+    was_clicking = 1;
+  }
+
   if (cur_tool == TOOL_MAGIC)
   {
     magic_funcs[magics[cur_magic].handle_idx].switchout(magic_api_struct,
@@ -19482,6 +19486,14 @@ static void magic_switchout(SDL_Surface * last)
 					                magics[cur_magic].mode,
 					                canvas, last);
     update_canvas(0, 0, canvas->w, canvas->h);
+
+    if (was_clicking) {
+      /* Clean up preview! */
+      do_undo();
+      tool_avail[TOOL_REDO] = 0; /* Don't let them 'redo' to get preview back */
+      draw_toolbar();
+      update_screen_rect(&r_tools);
+    }
   }
 }
 
