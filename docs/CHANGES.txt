@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.April.26 (0.9.22)
+2011.April.27 (0.9.22)
   * New Tools:
     ----------
     * Label - A tool to add text to a drawing, which can be modified or
@@ -127,6 +127,10 @@ $Id$
   * Other Improvements:
     -------------------
     * Quicker prompt window pop-up animation.
+
+    * Left/Right Stamp navigation buttons are purple, like the other (up/down)
+      scroll buttons found in Tux Paint.
+      (SourceForge Bug #2918289)
 
     * Slightly improved mouse motion handling when Tux Paint is very busy
       drawing or previewing.  (e.g., when drawing a circle, you could often

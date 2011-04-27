@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 26, 2011
+  June 14, 2002 - April 27, 2011
 */
 
 
@@ -1212,6 +1212,7 @@ static int have_to_rec_label_node_back;
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down;
+static SDL_Surface *img_btn_nav;
 static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_mirror, *img_flip;
 static SDL_Surface *img_dead40x40;
@@ -8713,7 +8714,7 @@ static void draw_stamps(void)
   /* Show prev button: */
   
   button_color = img_black;
-  button_body = img_btn_up;
+  button_body = img_btn_nav;
 
   dest.x = WINDOW_WIDTH - 96;
   dest.y = 40 + (((most + TOOLOFFSET) / 2) * 48);
@@ -8729,7 +8730,7 @@ static void draw_stamps(void)
   /* Show next button: */
 
   button_color = img_black;
-  button_body = img_btn_up;
+  button_body = img_btn_nav;
   
   dest.x = WINDOW_WIDTH - 48;
   dest.y = 40 + (((most + TOOLOFFSET) / 2) * 48);
@@ -12136,6 +12137,8 @@ static void cleanup(void)
   free_surface(&img_btnsm_up);
   free_surface(&img_btnsm_off);
   free_surface(&img_btnsm_down);
+
+  free_surface(&img_btn_nav);
 
   free_surface(&img_sfx);
   free_surface(&img_speak);
@@ -22156,6 +22159,8 @@ static void setup(void)
   img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
   img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
   img_btnsm_down = loadimage(DATA_PREFIX "images/ui/btnsm_down.png");
+
+  img_btn_nav = loadimage(DATA_PREFIX "images/ui/btn_nav.png");
 
   img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
   img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
