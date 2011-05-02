@@ -3609,6 +3609,8 @@ static void mainloop(void)
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
 
+          magic_switchout(canvas);
+
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
@@ -4293,19 +4295,16 @@ static void mainloop(void)
 	    if (do_draw)
 	      update_screen_rect(&r_toolopt);
 	  }
-
-          if (mouseaccessibility)
-	    emulate_button_pressed = 0;
 	}
 	else if (HIT(r_colors) && colors_are_selectable)
 	{
 	  /* Color! */
 	  whichc = GRIDHIT_GD(r_colors, gd_colors);
-          if (mouseaccessibility)
-	    emulate_button_pressed = 0;
 
       if (valid_click(event.button.button))
       {
+           magic_switchout(canvas);
+
 	   if (whichc >= 0 && whichc < NUM_COLORS)
 	   {
 	    cur_color = whichc;
@@ -4626,9 +4625,6 @@ static void mainloop(void)
 	else if (HIT(r_sfx) && valid_click(event.button.button))
 	{
 	  /* A sound player button on the lower left has been pressed! */
-	  if (mouseaccessibility)
-	    emulate_button_pressed = 0;
-
 #ifndef NOSOUND
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute)
           {
@@ -4648,6 +4644,8 @@ static void mainloop(void)
 	      Mix_ChannelFinished(NULL);
 	      Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->sdesc, 0);
 	    }
+
+            magic_switchout(canvas);
 	  }
 #endif
         }
@@ -5118,7 +5116,6 @@ static void mainloop(void)
 	else if (HIT(r_sfx))
 	{
 	  /* Sound player buttons: */
-          emulate_button_pressed = 0;
 
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute &&
 	    ((GRIDHIT_GD(r_sfx, gd_sfx) == 0 &&
@@ -16531,7 +16528,6 @@ static void handle_active(SDL_Event * event)
   {
     if (mouseaccessibility && emulate_button_pressed) {
       magic_switchout(canvas);
-      emulate_button_pressed = 0;
     }
 
 #ifdef _WIN32
