@@ -535,7 +535,7 @@ void perspective_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
 
 int perspective_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return(MODE_PAINT);
+  return(MODE_PAINT_WITH_PREVIEW);
 }
 
 void perspective_line(void * ptr_to_api, int which ATTRIBUTE_UNUSED,  SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
