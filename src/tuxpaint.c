@@ -3609,7 +3609,7 @@ static void mainloop(void)
 	     WARNING: this must be kept in sync with the mouse-move
 	     code (for cursor changes) and mouse-scroll code. */
 
-          magic_switchout(canvas);
+	  //          magic_switchout(canvas);
 
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
@@ -4303,7 +4303,7 @@ static void mainloop(void)
 
       if (valid_click(event.button.button))
       {
-           magic_switchout(canvas);
+	// magic_switchout(canvas);
 
 	   if (whichc >= 0 && whichc < NUM_COLORS)
 	   {
