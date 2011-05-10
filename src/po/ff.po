@@ -1,20 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Fula (Fulah) translation of Tux Paint
+# Copyright (C) 2011
+# This file is distributed under the same license as the tuxpaint package.
+# Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-18 08:32-0700\n"
-"PO-Revision-Date: 2010-09-20 17:16+0200\n"
+"POT-Creation-Date: 2010-08-17 15:55-0700\n"
+"PO-Revision-Date: 2011-04-10 11:24+0200\n"
 "Last-Translator: Ibrahima SARR <ibrahima.sarr@pulaagu.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Fula Localization Project <http://www.pulaar-fulfulde.org/>\n"
+"Language: ff\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ff\n"
-"X-Generator: Pootle 2.1.1\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -437,8 +437,8 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"suɓo mɓeelu. Dobo ngam ɓamde hakkunde, daas, woppu so heɓii njaajeendi njiɗ-"
-"ɗaa. Yiil so a yiɗii yiiltude, dobo ngam natde ɗum."
+"suɓo mɓeelu. Dobo ngam ɓamde hakkunde, daas, woppu so heɓii njaajeendi "
+"njiɗ-ɗaa. Yiil so a yiɗii yiiltude, dobo ngam natde ɗum."
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -767,7 +767,7 @@ msgstr "Dobo, njiilaa doombel ngam waɗtude natal ngal natgno baade."
 
 #: ../../magic/src/blur.c:57
 msgid "Blur"
-msgstr "Iirɗin"
+msgstr "Iirɗol"
 
 #: ../../magic/src/blur.c:60
 msgid "Click and move the mouse around to blur the image."
@@ -816,7 +816,7 @@ msgstr "Dobo ngam weddaade konfetti."
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
-msgstr "Ooñtooru"
+msgstr "Ooñol"
 
 #: ../../magic/src/distortion.c:129
 msgid "Click and drag the mouse to cause distortion in your picture."
