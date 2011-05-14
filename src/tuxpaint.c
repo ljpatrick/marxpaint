@@ -17681,7 +17681,7 @@ static int magic_sort(const void * a, const void * b)
   magic_t * am = (magic_t *) a;
   magic_t * bm = (magic_t *) b;
 
-  return(strcmp(am->name, bm->name));
+  return(strcmp(gettext(am->name), gettext(bm->name)));
 }
 
 
