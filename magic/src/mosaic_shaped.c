@@ -2,10 +2,14 @@
   mosaic_shaped.c
 
   mosaic_shaped, Add a mosaic_shaped effect to the image using a combination of other tools.
-  Requires the mosaic_shapedAll sharpen and noise tools.
   Tux Paint - A simple drawing program for children.
 
-  Credits: Andrew Corcoran <akanewbie@gmail.com>
+  Credits: 
+  * Andrew Corcoran <akanewbie@gmail.com> for the edge step used in hexagon
+  * Whoever who wrote the "Fill" magic tool 
+  * Bill Kendrick for the code derived from api->touched
+  * Pere Pujal for joining all toghether
+  * Caroline Ford for the text descriptions
 
   Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
@@ -100,6 +104,10 @@ Uint8 mosaic_shaped_r, mosaic_shaped_g, mosaic_shaped_b;
 int mosaic_shaped_average_r, mosaic_shaped_average_g, mosaic_shaped_average_b, mosaic_shaped_average_count;
 Uint32 pixel_average, black, white;
 
+/* FIXME This is just a workaround, the problem is that at switchin(),
+   api->data_directory points to the local user directory instead of the system wide instalation. */
+char api_data_directory_at_init[1024];
+
 enum {
         TOOL_SQUARE,
 	TOOL_HEX,
@@ -159,6 +167,7 @@ int mosaic_shaped_init(magic_api * api){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, mosaic_shaped_snd_filenames[i]);
     mosaic_shaped_snd_effect[i] = Mix_LoadWAV(fname);
   }
+  snprintf(api_data_directory_at_init, sizeof(api_data_directory_at_init), api->data_directory);
   return(1);
 }
 
@@ -404,7 +413,8 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
                          canvas->format->Rmask,
                          canvas->format->Gmask,
                          canvas->format->Bmask, amask);
-  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, mosaic_shaped_pattern_filenames[which]);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api_data_directory_at_init, mosaic_shaped_pattern_filenames[which]);
+
 mosaic_shaped_pattern = IMG_Load(fname);
  rect.w = mosaic_shaped_pattern->w;
  rect.h = mosaic_shaped_pattern->h;
