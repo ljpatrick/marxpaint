@@ -2109,7 +2109,20 @@ static void mainloop(void)
       }
       else if (event.type == SDL_ACTIVEEVENT)
       {
+	/* Reset Shapes tool and clean the canvas if we lose focus*/
+	if (mouseaccessibility && emulate_button_pressed &&
+	    ((cur_tool == TOOL_SHAPES && shape_tool_mode != SHAPE_TOOL_MODE_DONE) || cur_tool == TOOL_LINES) &&
+	    event.active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE &&
+	    event.active.gain == 0)
+	  {
+	    do_undo();
+	    tool_avail[TOOL_REDO] = 0; /* Don't let them 'redo' to get preview back */
+	    draw_toolbar();
+	    update_screen_rect(&r_tools);
+	    shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+	  }
 	handle_active(&event);
+
       }
       else if (event.type == SDL_KEYUP)
       {
@@ -16526,9 +16539,15 @@ static void handle_active(SDL_Event * event)
   }
   if (event->active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE)
   {
-    if (mouseaccessibility && emulate_button_pressed) {
-      magic_switchout(canvas);
+    if (event->active.gain == 1)
+    {
+      if (mouseaccessibility) {
+	magic_switchin(canvas);
+      }
     }
+    else if (mouseaccessibility && emulate_button_pressed) {
+	  magic_switchout(canvas);
+	  }
 
 #ifdef _WIN32
     SetActivationState(event->active.gain);
