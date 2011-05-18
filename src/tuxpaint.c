@@ -4274,6 +4274,14 @@ static void mainloop(void)
 	    {
 	      cur_shape = cur_thing;
 
+	      /* Remove ghost previews an reset the tool */
+	      if(shape_tool_mode != SHAPE_TOOL_MODE_DONE)
+		{
+		  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+		  update_canvas(0, 0, canvas->w, canvas->h);
+		}
+
+
 	      draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
 
 	      if (do_draw)
@@ -4482,19 +4490,23 @@ static void mainloop(void)
 	    {
 	      /* Draw the shape with the brush! */
 
-	      /* (Arbitrarily large...) */
-	      reset_brush_counter();
+	      /* Only draw here in mouse accessibility mode as there IS a mouse */
+	      /* See #300881 for the reasons that this is deplaced to draw in mouse release */
+	      if(mouseaccessibility)
+		{
+		  /* (Arbitrarily large...) */
+		  reset_brush_counter();
 
-	      playsound(screen, 1, SND_LINE_END, 1, event.button.x,
-			SNDDIST_NEAR);
-	      do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
-		       shape_rotation(shape_ctr_x, shape_ctr_y,
-				      event.button.x - r_canvas.x,
-			              event.button.y - r_canvas.y), 1);
+		  playsound(screen, 1, SND_LINE_END, 1, event.button.x,
+			    SNDDIST_NEAR);
+		  do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
+			   shape_rotation(shape_ctr_x, shape_ctr_y,
+					  event.button.x - r_canvas.x,
+					  event.button.y - r_canvas.y), 1);
 
-	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-	      draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
-
+		  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+		  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+		}
 	    }
             else  if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH)
 	      /* Only reached in accessibility mode */
@@ -5014,6 +5026,20 @@ static void mainloop(void)
 		  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
 		}
 	      }
+	      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
+		{
+		  reset_brush_counter();
+
+		  playsound(screen, 1, SND_LINE_END, 1, event.button.x,
+			    SNDDIST_NEAR);
+		  do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
+			   shape_rotation(shape_ctr_x, shape_ctr_y,
+					  event.button.x - r_canvas.x,
+					  event.button.y - r_canvas.y), 1);
+
+		  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+		  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+		}
 	    }
 	  }
 	  else if (cur_tool == TOOL_MAGIC && (magics[cur_magic].mode == MODE_PAINT || magics[cur_magic].mode == MODE_ONECLICK || magics[cur_magic].mode == MODE_PAINT_WITH_PREVIEW))
