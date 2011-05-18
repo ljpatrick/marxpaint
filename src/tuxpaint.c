@@ -5513,6 +5513,8 @@ static void mainloop(void)
                     draw_blinking_cursor();
                 }
         }
+
+    SDL_Delay(1);
   }
   while (!done);
 }
