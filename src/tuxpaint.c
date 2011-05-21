@@ -4278,6 +4278,10 @@ static void mainloop(void)
 	      if(shape_tool_mode != SHAPE_TOOL_MODE_DONE)
 		{
 		  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+		  do_undo();
+		  tool_avail[TOOL_REDO] = 0; /* Don't let them 'redo' to get preview back */
+		  draw_toolbar();
+		  update_screen_rect(&r_tools);
 		  update_canvas(0, 0, canvas->w, canvas->h);
 		}
 
@@ -4416,7 +4420,8 @@ static void mainloop(void)
 	  if (cur_tool == TOOL_BRUSH)
 	  {
 	    /* Start painting! */
-	    rec_undo_buffer();
+	    if(!emulate_button_pressed)
+	      rec_undo_buffer();
 
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
@@ -4571,7 +4576,8 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_ERASER)
 	  {
 	    /* Erase! */
-	    rec_undo_buffer();
+	    if (!emulate_button_pressed)
+	      rec_undo_buffer();
 
 	    do_eraser(old_x, old_y);
 
