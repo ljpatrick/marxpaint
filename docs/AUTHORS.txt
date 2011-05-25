@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 15, 2011
+June 17, 2002 - May 25, 2011
 
 $Id$
 
@@ -548,6 +548,7 @@ $Id$
   * Hungarian
     Török Gábor <gabo@linuxportal.hu>
     Gabor Kelemen <kelemeng@gnome.hu>
+    Nagy Akos <nagy.akos@codespring.ro>
 
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>
