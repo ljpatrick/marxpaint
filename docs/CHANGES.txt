@@ -347,6 +347,9 @@ $Id$
     * Belarusian translation
       Alexander Geroimenko <a.geroimenko@gmail.com>
 
+    * Brazilian Portuguese translation
+      Frederico Goncalves Guimaraes <frederico@teia.bio.br>
+
     * British English
       Robert Readman <robert_readman@hotmail.com>
 
