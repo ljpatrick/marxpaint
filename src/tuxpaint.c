@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 27, 2011
+  June 14, 2002 - May 25, 2011
 */
 
 
@@ -1624,6 +1624,7 @@ static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 
+void show_version(int details);
 void show_usage(int exitcode);
 static char *progname;
 
@@ -2029,7 +2030,7 @@ int cur_thing, shift_flag, caps_flag, enter_flag;
 static void mainloop(void)
 {
   int done, tool_flag, canvas_flag,text_flag, val_x, val_y, new_x, new_y,
-    line_end_x, line_end_y, shape_tool_mode,
+    shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
     old_stamp_group, which;
   int num_things;
@@ -2056,7 +2057,7 @@ static void mainloop(void)
   Uint16 key_unicode;
   SDLKey key_down;
 #endif
-  SDL_MouseButtonEvent ev;
+  SDL_Event ev;
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
   cur_thing = 0;
@@ -2112,7 +2113,7 @@ static void mainloop(void)
 	/* Reset Shapes tool and clean the canvas if we lose focus*/
 	if (mouseaccessibility && emulate_button_pressed &&
 	    ((cur_tool == TOOL_SHAPES && shape_tool_mode != SHAPE_TOOL_MODE_DONE) || cur_tool == TOOL_LINES) &&
-	    event.active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE &&
+	    event.active.state & (SDL_APPINPUTFOCUS|SDL_APPACTIVE) &&
 	    event.active.gain == 0)
 	  {
 	    do_undo();
@@ -2132,11 +2133,11 @@ static void mainloop(void)
 
 	if (key == SDLK_BACKSLASH)
 	{
-		ev.which = 0;
 		ev.type = SDL_MOUSEBUTTONUP;
-		ev.state = SDL_RELEASED;
-		ev.button = SDL_BUTTON_LEFT;
-		SDL_PushEvent(&ev);		
+		ev.button.which = 0;
+		ev.button.state = SDL_RELEASED;
+		ev.button.button = SDL_BUTTON_LEFT;
+		SDL_PushEvent(&ev);
 	}
       }
       
@@ -2485,12 +2486,12 @@ static void mainloop(void)
 
 	if (key == SDLK_RETURN && color_flag == 1)
 	{
-		ev.which = 0;
 		ev.type = SDL_MOUSEBUTTONDOWN;
-		ev.state = SDL_PRESSED;
-		ev.x    = button_w * 2 + whichc * color_button_w + 12;
-		ev.y    = r_canvas.h + (r_colors.h / 2);
-		ev.button = SDL_BUTTON_LEFT;
+		ev.button.which = 0;
+		ev.button.state = SDL_PRESSED;
+		ev.button.x    = button_w * 2 + whichc * color_button_w + 12;
+		ev.button.y    = r_canvas.h + (r_colors.h / 2);
+		ev.button.button = SDL_BUTTON_LEFT;
 		SDL_PushEvent(&ev);
 		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -2498,20 +2499,20 @@ static void mainloop(void)
 
 	if (key == SDLK_RETURN && (tool_flag == 1))
 	{
-		ev.which = 0;
 		ev.type = SDL_MOUSEBUTTONDOWN;
-		ev.state = SDL_PRESSED;
+		ev.button.which = 0;
+		ev.button.state = SDL_PRESSED;
 		if (whicht%2 == 0)
 		{
-			ev.x    = button_w / 2;
-			ev.y    = button_h + (whicht * (button_h / 2));
+			ev.button.x    = button_w / 2;
+			ev.button.y    = button_h + (whicht * (button_h / 2));
 		}
 		else if (whicht%2 != 0)
 		{
-			ev.x = (button_w * 3) / 2;
-			ev.y = button_h / 2 + (whicht * (button_h / 2));
+			ev.button.x = (button_w * 3) / 2;
+			ev.button.y = button_h / 2 + (whicht * (button_h / 2));
 		}
-		ev.button = SDL_BUTTON_LEFT;
+		ev.button.button = SDL_BUTTON_LEFT;
 		SDL_PushEvent(&ev);
 		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -2519,12 +2520,12 @@ static void mainloop(void)
 
 	if ((key == SDLK_BACKSLASH || key == SDLK_5) && (canvas_flag == 1))
 	{
-		ev.which = 0;
 		ev.type = SDL_MOUSEBUTTONDOWN;
-		ev.state = SDL_PRESSED;
-		ev.x    = old_x + button_w * 2;
-		ev.y    = old_y;
-		ev.button = SDL_BUTTON_LEFT;
+		ev.button.which = 0;
+		ev.button.state = SDL_PRESSED;
+		ev.button.x    = old_x + button_w * 2;
+		ev.button.y    = old_y;
+		ev.button.button = SDL_BUTTON_LEFT;
 		SDL_PushEvent(&ev);
 		playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 		update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -3187,12 +3188,12 @@ static void mainloop(void)
 	    if (event.jbutton.button == 0) 
 	    {
 //			printf("\n button pressed \n");
-			ev.which = 0;
 			ev.type = SDL_MOUSEBUTTONDOWN;
-			ev.state = SDL_PRESSED;
-			ev.x    = old_x + button_w * 2;
-			ev.y    = old_y;
-			ev.button = SDL_BUTTON_LEFT;
+			ev.button.which = 0;
+			ev.button.state = SDL_PRESSED;
+			ev.button.x    = old_x + button_w * 2;
+			ev.button.y    = old_y;
+			ev.button.button = SDL_BUTTON_LEFT;
 			SDL_PushEvent(&ev);
 			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -3206,10 +3207,10 @@ static void mainloop(void)
 	    if (event.jbutton.button == 0) 
 	    {
 //			printf("\n button released \n");
-			ev.which = 0;
 			ev.type = SDL_MOUSEBUTTONUP;
-			ev.state = SDL_RELEASED;
-			ev.button = SDL_BUTTON_LEFT;
+			ev.button.which = 0;
+			ev.button.state = SDL_RELEASED;
+			ev.button.button = SDL_BUTTON_LEFT;
 			SDL_PushEvent(&ev);
 			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
 	    }
@@ -3758,7 +3759,9 @@ static void mainloop(void)
 		  }
 #else
 		  int old_size;
+#ifdef DEBUG
                   float choice;
+#endif
 
 		  old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
@@ -16519,9 +16522,13 @@ static void draw_image_title(int t, SDL_Rect dest)
 static void handle_keymouse(SDLKey key, Uint8 updown)
 {
   SDL_Event event;
+  int old_mouse_x, old_mouse_y;
 
   if (keymouse)
   {
+    old_mouse_x = mouse_x;
+    old_mouse_y = mouse_y;
+
     if (key == SDLK_LEFT)
       mousekey_left = updown;
     else if (key == SDLK_RIGHT)
@@ -16554,7 +16561,8 @@ static void handle_keymouse(SDLKey key, Uint8 updown)
     if (mousekey_right == SDL_KEYDOWN && mouse_x < WINDOW_WIDTH - 1)
       mouse_x = mouse_x + 8;
 
-    SDL_WarpMouse(mouse_x, mouse_y);
+    if (mouse_x != old_mouse_x || mouse_y != old_mouse_y) /* Only move mouse if the keypress did something (else, mouse repositions all the time: annoying!) -bjk 2011.05.25 */
+      SDL_WarpMouse(mouse_x, mouse_y);
   }
 }
 
