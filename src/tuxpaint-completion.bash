@@ -62,6 +62,9 @@ _tuxpaint()
 			--nolockfile \
 			--mouse-accessibility \
 			--onscreen-keyboard \
+			--joystick-slowness \
+			--joystick-threshold \
+			--joystick-maxsteps \
 			--colorfile' -- $cur ) ) 
 # We don't accept filenames on the command-line yet -bjk 2009.09.09
 #        else

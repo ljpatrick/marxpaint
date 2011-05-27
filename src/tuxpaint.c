@@ -973,6 +973,11 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 static int emulate_button_pressed = 0;
 static int mouseaccessibility = 0;
 static int onscreen_keyboard = 0;
+static int joystick_low_threshold = 3200;
+static int joystick_slowness = 15;
+static int joystick_maxsteps = 7;
+static int oldpos_x;
+static int oldpos_y;
 static int disable_screensaver;
 #ifdef NOKIA_770
 static int fullscreen = 1;
@@ -1105,6 +1110,10 @@ static void set_label_fonts(void);
 static void tmp_apply_uncommited_text(void);
 static void undo_tmp_applied_text(void);
 
+static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int *val_y);
+static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y);
+static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y);
+static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y);
 
 /* Magic tools API and tool handles: */
 
@@ -3127,94 +3136,18 @@ static void mainloop(void)
 	  }
 	}
       }
-	else if (event.type == SDL_JOYAXISMOTION)
-	{
-		motioner = event.jaxis.value;
-		if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ))
-	    {        
-			val_x = (int)((SDL_JoystickGetAxis(joystick, 0) / 32768.0f) * 3);
-	    	val_y = (int)((SDL_JoystickGetAxis(joystick, 1) / 32768.0f) * 3);
-//			printf ("\n value : %d , %d, %d, %d\n",event.jaxis.value, event.jaxis.axis, val_x, val_y);
-			old_x += val_x;
-			old_y += val_y;
-			new_x = old_x + button_w * 2;
-			new_y = old_y;
-			SDL_WarpMouse(old_x + button_w * 2, old_y);
-			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-	    }
-    }
 
-	else if (motioner == -32768)
-	{
-//			printf ("\n values are : %d , %d\n",val_x, val_y);
-			old_x += val_x;
-			old_y += val_y;
-			new_x = old_x + button_w * 2;
-			new_y = old_y;
-			SDL_WarpMouse(old_x + button_w * 2, old_y);
-			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-	}
+      else if (event.type == SDL_JOYAXISMOTION)
+	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
-	else if (motioner == 32767)
-	{
-			old_x += val_x;
-			old_y += val_y;
-			new_x = old_x + button_w * 2;
-			new_y = old_y;
-			SDL_WarpMouse(old_x + button_w * 2, old_y);
-			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-	}
+      else if (event.type == SDL_JOYHATMOTION)
+	handle_joyhatmotion(event, oldpos_x, oldpos_y);
 
-	else if (event.type == SDL_JOYBALLMOTION)
-	{
-		if ( event.jball.ball == 0 )
-	    {
-			printf("\n ball movement \n");
-		    val_x = event.jball.xrel;
-	    	val_y = event.jball.yrel;
-			old_x += val_x;
-			old_y += val_y;
-			new_x = old_x + button_w * 2;
-			new_y = old_y;
-			SDL_WarpMouse(old_x + button_w * 2, old_y);
-			update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-		}
-	}
+      else if (event.type == SDL_JOYBALLMOTION)
+	handle_joyballmotion(event, oldpos_x, oldpos_y);
 
-	else if (event.type == SDL_JOYBUTTONDOWN)
-	{
-//		printf("\n button num : %d \n", event.jbutton.button);
-		
-	    if (event.jbutton.button == 0) 
-	    {
-//			printf("\n button pressed \n");
-			ev.type = SDL_MOUSEBUTTONDOWN;
-			ev.button.which = 0;
-			ev.button.state = SDL_PRESSED;
-			ev.button.x    = old_x + button_w * 2;
-			ev.button.y    = old_y;
-			ev.button.button = SDL_BUTTON_LEFT;
-			SDL_PushEvent(&ev);
-			playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
-			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-	    }
-	}
-
-	else if (event.type == SDL_JOYBUTTONUP)
-	{
-//		printf("\n button num : %d \n", event.jbutton.button);
-		
-	    if (event.jbutton.button == 0) 
-	    {
-//			printf("\n button released \n");
-			ev.type = SDL_MOUSEBUTTONUP;
-			ev.button.which = 0;
-			ev.button.state = SDL_RELEASED;
-			ev.button.button = SDL_BUTTON_LEFT;
-			SDL_PushEvent(&ev);
-			update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-	    }
-	}
+      else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
 	
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       event.button.button >= 2 &&
@@ -5086,14 +5019,16 @@ static void mainloop(void)
 	    }
 	  }
         }
-
 	button_down = 0;
       }
       else if (event.type == SDL_MOUSEMOTION && !ignoring_motion)
       {
 	new_x = event.button.x - r_canvas.x;
 	new_y = event.button.y - r_canvas.y;
-	
+
+	oldpos_x = event.motion.x;
+	oldpos_y = event.motion.y;
+
 	if (keybd_flag == 1)
 	{
 //		uistate.mousedown = 1;
@@ -5506,6 +5441,8 @@ static void mainloop(void)
 
 	old_x = new_x;
 	old_y = new_y;
+	oldpos_x = event.button.x;
+	oldpos_y = event.button.y;
       }
     }
 
@@ -5522,6 +5459,13 @@ static void mainloop(void)
                     draw_blinking_cursor();
                 }
         }
+
+    if (motioner)
+    {
+      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+      if (joystick_slowness)
+	SDL_Delay(joystick_slowness);
+    }
 
     SDL_Delay(1);
   }
@@ -6492,6 +6436,11 @@ void show_usage(int exitcode)
 	  "  %s [--nosysconfig]\n"
           "  %s [--nolockfile]\n"
 	  "  %s [--colorfile FILE]\n"
+	  "  %s [--mouse-accessibility]\n"
+	  "  %s [--onscreen-keyboard]\n"
+	  "  %s [--joystick-slowness] (0-500). Default value is 15\n"
+	  "  %s [--joystick-threshold] (0-32766). Default value is 3200\n"
+	  "  %s [--joystick-maxsteps] (1-7). Default value is 7\n"
 	  "\n",
 	  progname, progname,
 	  blank, blank, blank, blank,
@@ -6507,7 +6456,7 @@ void show_usage(int exitcode)
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 	  blank,
 #endif
-	  blank, blank, blank, blank, blank);
+	  blank, blank, blank, blank, blank, blank, blank, blank, blank, blank);
 
   free(blank);
 }
@@ -11683,7 +11632,9 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDL_Surface *img1b;
   int free_img1b;
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
+  int val_x, val_y, motioner;
 
+  val_x = val_y = motioner = 0;
   emulate_button_pressed = 0;
 
   hide_blinking_cursor();
@@ -12025,10 +11976,31 @@ static int do_prompt_image_flash_snd(const char *const text,
 	{
 	  do_setcursor(cursor_arrow);
 	}
+	oldpos_x = event.button.x;
+	oldpos_y = event.button.y;
       }
+
+      else if (event.type == SDL_JOYAXISMOTION)
+	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+      else if (event.type == SDL_JOYHATMOTION)
+	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBALLMOTION)
+	handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBUTTONDOWN)
+	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
 
-    SDL_Delay(100);
+    if (motioner)
+    {
+      if (joystick_slowness)
+	SDL_Delay(joystick_slowness);
+      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+    }
+
+    SDL_Delay(10);
 
     if (animate)
     {
@@ -13552,7 +13524,8 @@ static int do_quit(int tool)
     draw_tux_text(TUX_BORED, "", 0);
     cur_tool = tmp_tool;
   }
-  SDL_JoystickClose(joystick);
+  if (done)
+    SDL_JoystickClose(joystick);
   return (done);
 }
 
@@ -13596,6 +13569,9 @@ static int do_open(void)
   int last_click_which, last_click_button;
   int places_to_look;
   int opened_something;
+  int val_x, val_y, motioner;
+
+  val_x = val_y = motioner = 0;
 
   opened_something = 0;
 
@@ -14080,9 +14056,8 @@ static int do_open(void)
           update_list = 0;
         }
 
-
-        SDL_WaitEvent(&event);
-
+	while (SDL_PollEvent(&event))
+	  {
         if (event.type == SDL_QUIT)
         {
           done = 1;
@@ -14388,8 +14363,30 @@ static int do_open(void)
 
             do_setcursor(cursor_arrow);
           }
-        }
+	  oldpos_x = event.button.x;
+	  oldpos_y = event.button.y;
+	}
 
+	else if (event.type == SDL_JOYAXISMOTION)
+	  handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+	else if (event.type == SDL_JOYHATMOTION)
+	  handle_joyhatmotion(event, oldpos_x, oldpos_y);
+
+	else if (event.type == SDL_JOYBALLMOTION)
+	  handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+	else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	  handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+	  }
+
+	if (motioner)
+	{
+	  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+	  if (joystick_slowness)
+	    SDL_Delay(joystick_slowness);
+	}
+	SDL_Delay(10);
 
         if (want_erase)
         {
@@ -14503,7 +14500,6 @@ static int do_open(void)
             update_list = 1;
           }
         }
-
       }
       while (!done);
 
@@ -14684,6 +14680,9 @@ static int do_slideshow(void)
   float x_per, y_per;
   int xx, yy;
   SDL_Surface *btn, *blnk;
+  int val_x, val_y, motioner;
+
+  val_x = val_y = motioner = 0;
 
   do_setcursor(cursor_watch);
 
@@ -15099,289 +15098,310 @@ static int do_slideshow(void)
       update_list = 0;
     }
 
-
-    SDL_WaitEvent(&event);
-
-    if (event.type == SDL_QUIT)
+    /* Was a call to SDL_WaitEvent(&event); before, 
+       changed to this while loop in order to get joystick working */
+    while (SDL_PollEvent(&event))
     {
-      done = 1;
-
-      /* FIXME: Handle SDL_Quit better */
-    }
-    else if (event.type == SDL_ACTIVEEVENT)
-    {
-      handle_active(&event);
-    }
-    else if (event.type == SDL_KEYUP)
-    {
-      key = event.key.keysym.sym;
-
-      handle_keymouse(key, SDL_KEYUP);
-    }
-    else if (event.type == SDL_KEYDOWN)
-    {
-      key = event.key.keysym.sym;
-
-      handle_keymouse(key, SDL_KEYDOWN);
-
-      if (key == SDLK_RETURN || key == SDLK_SPACE)
+      if (event.type == SDL_QUIT)
       {
-	/* Play */
-
 	done = 1;
-	playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+
+	/* FIXME: Handle SDL_Quit better */
       }
-      else if (key == SDLK_ESCAPE)
+      else if (event.type == SDL_ACTIVEEVENT)
       {
-	/* Go back: */
-
-	go_back = 1;
-	done = 1;
-	playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	handle_active(&event);
       }
-    }
-    else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	     valid_click(event.button.button))
-    {
-      if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
-	  event.button.y >= 24 &&
-	  event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
+      else if (event.type == SDL_KEYUP)
       {
-	/* Picked an icon! */
+	key = event.key.keysym.sym;
 
-	which = ((event.button.x - 96) / (THUMB_W) +
-		 (((event.button.y - 24) / THUMB_H) * 4)) + cur;
+	handle_keymouse(key, SDL_KEYUP);
+      }
+      else if (event.type == SDL_KEYDOWN)
+      {
+	key = event.key.keysym.sym;
 
-	if (which < num_files)
+	handle_keymouse(key, SDL_KEYDOWN);
+
+	if (key == SDLK_RETURN || key == SDLK_SPACE)
 	{
-	  playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
+	  /* Play */
 
-	  /* Is it selected already? */
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	}
+	else if (key == SDLK_ESCAPE)
+	{
+	  /* Go back: */
 
-	  found = -1;
-	  for (i = 0; i < num_selected && found == -1; i++)
+	  go_back = 1;
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	}
+      }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	       valid_click(event.button.button))
+      {
+	if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+	    event.button.y >= 24 &&
+	    event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
+	{
+	  /* Picked an icon! */
+
+	  which = ((event.button.x - 96) / (THUMB_W) +
+		   (((event.button.y - 24) / THUMB_H) * 4)) + cur;
+
+	  if (which < num_files)
 	  {
-	    if (selected[i] == which)
-	      found = i;
+	    playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
+
+	    /* Is it selected already? */
+
+	    found = -1;
+	    for (i = 0; i < num_selected && found == -1; i++)
+	    {
+	      if (selected[i] == which)
+		found = i;
+	    }
+
+	    if (found == -1)
+	    {
+	      /* No!  Select it! */
+
+	      selected[num_selected++] = which;
+	    }
+	    else
+	    {
+	      /* Yes!  Unselect it! */
+
+	      for (i = found; i < num_selected - 1; i++)
+		selected[i] = selected[i + 1];
+
+	      num_selected--;
+	    }
+
+	    update_list = 1;
+	  }
+	}
+	else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+		 event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
+	{
+	  if (event.button.y < 24)
+	  {
+	    /* Up scroll button: */
+
+	    if (cur > 0)
+	    {
+	      cur = cur - 4;
+	      update_list = 1;
+	      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	      if (cur == 0)
+		do_setcursor(cursor_arrow);
+	    }
+
+	    if (which >= cur + 16)
+	      which = which - 4;
+	  }
+	  else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+		   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
+	  {
+	    /* Down scroll button: */
+
+	    if (cur < num_files - 16)
+	    {
+	      cur = cur + 4;
+	      update_list = 1;
+	      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	      if (cur >= num_files - 16)
+		do_setcursor(cursor_arrow);
+	    }
+
+	    if (which < cur)
+	      which = which + 4;
+	  }
+	}
+	else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* Play */
+
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+
+
+	  /* If none selected, select all, in order! */
+
+	  if (num_selected == 0)
+	  {
+	    for (i = 0; i < num_files; i++)
+	      selected[i] = i;
+	    num_selected = num_files;
 	  }
 
-	  if (found == -1)
-	  {
-	    /* No!  Select it! */
+	  play_slideshow(selected, num_selected, dirname, d_names, d_exts, speed);
 
-	    selected[num_selected++] = which;
-	  }
-	  else
-	  {
-            /* Yes!  Unselect it! */
 
-	    for (i = found; i < num_selected - 1; i++)
-	      selected[i] = selected[i + 1];
+	  /* Redraw entire screen, after playback: */
 
-	    num_selected--;
-	  }
+	  SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
+	  draw_toolbar();
+	  draw_colors(COLORSEL_CLOBBER_WIPE);
+	  draw_none();
+
+	  /* Instructions for Slideshow file dialog (FIXME: Make a #define) */
+	  freeme = textdir(gettext_noop("Choose the pictures you want, " "then click “Play”."));
+	  draw_tux_text(TUX_BORED, freeme, 1);
+	  free(freeme);
+
+	  SDL_Flip(screen);
 
 	  update_list = 1;
 	}
-      }
-      else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-	       event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
-      {
-	if (event.button.y < 24)
+	else if (event.button.x >= 96 + 48 && event.button.x < 96 + 48 + 96 &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
 	{
-	  /* Up scroll button: */
+	  /* Speed slider */
 
-	  if (cur > 0)
+	  int old_speed, control_sound, click_x;
+
+	  old_speed = speed;
+
+	  click_x = event.button.x - 96 - 48;
+	  speed = ((10 * click_x) / 96);
+
+	  control_sound = -1;
+
+	  if (speed < old_speed)
+	    control_sound = SND_SHRINK;
+	  else if (speed > old_speed)
+	    control_sound = SND_GROW;
+
+	  if (control_sound != -1)
 	  {
-	    cur = cur - 4;
-	    update_list = 1;
-	    playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+	    playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
-	    if (cur == 0)
-	      do_setcursor(cursor_arrow);
+	    update_list = 1;
 	  }
+	}
+	else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+		 event.button.x < (WINDOW_WIDTH - 96) &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* Back */
+
+	  go_back = 1;
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	}
+      }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	       event.button.button >= 4 && event.button.button <= 5 && wheely)
+      {
+	/* Scroll wheel! */
+
+	if (event.button.button == 4 && cur > 0)
+	{
+	  cur = cur - 4;
+	  update_list = 1;
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	  if (cur == 0)
+	    do_setcursor(cursor_arrow);
 
 	  if (which >= cur + 16)
 	    which = which - 4;
 	}
-	else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
-		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
+	else if (event.button.button == 5 && cur < num_files - 16)
 	{
-	  /* Down scroll button: */
+	  cur = cur + 4;
+	  update_list = 1;
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
-	  if (cur < num_files - 16)
-	  {
-	    cur = cur + 4;
-	    update_list = 1;
-	    playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-	    if (cur >= num_files - 16)
-	      do_setcursor(cursor_arrow);
-	  }
+	  if (cur >= num_files - 16)
+	    do_setcursor(cursor_arrow);
 
 	  if (which < cur)
 	    which = which + 4;
 	}
       }
-      else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
-	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+      else if (event.type == SDL_MOUSEMOTION)
       {
-	/* Play */
+	/* Deal with mouse pointer shape! */
 
-	playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
-
-
-	/* If none selected, select all, in order! */
-
-	if (num_selected == 0)
+	if (event.button.y < 24 &&
+	    event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+	    event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 && cur > 0)
 	{
-	  for (i = 0; i < num_files; i++)
-	    selected[i] = i;
-	  num_selected = num_files;
+	  /* Scroll up button: */
+
+	  do_setcursor(cursor_up);
 	}
-
-	play_slideshow(selected, num_selected, dirname, d_names, d_exts, speed);
-
-
-	/* Redraw entire screen, after playback: */
-
-        SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
-	draw_toolbar();
-        draw_colors(COLORSEL_CLOBBER_WIPE);
-	draw_none();
-
-  	/* Instructions for Slideshow file dialog (FIXME: Make a #define) */
-	freeme = textdir(gettext_noop("Choose the pictures you want, "
-				      "then click “Play”."));
-	draw_tux_text(TUX_BORED, freeme, 1);
-	free(freeme);
-
-	SDL_Flip(screen);
-
-	update_list = 1;
-      }
-      else if (event.button.x >= 96 + 48 && event.button.x < 96 + 48 + 96 &&
-	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-	/* Speed slider */
-
-	int old_speed, control_sound, click_x;
-
-	old_speed = speed;
-
-	click_x = event.button.x - 96 - 48;
-        speed = ((10 * click_x) / 96);
-
-	control_sound = -1;
-
-        if (speed < old_speed)
-	  control_sound = SND_SHRINK;
-	else if (speed > old_speed)
-	  control_sound = SND_GROW;
-
-	if (control_sound != -1)
+	else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
+		 event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+		 event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+		 cur < num_files - 16)
 	{
-	  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
-		    SNDDIST_NEAR);
+	  /* Scroll down button: */
 
-	  update_list = 1;
+	  do_setcursor(cursor_down);
 	}
-      }
-      else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
-	       event.button.x < (WINDOW_WIDTH - 96) &&
-	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-	/* Back */
+	else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 96) ||
+		  (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+		   event.button.x < (WINDOW_WIDTH - 96))) &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* One of the command buttons: */
 
-	go_back = 1;
-	done = 1;
-	playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-      }
-    }
-    else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	     event.button.button >= 4 && event.button.button <= 5 && wheely)
-    {
-      /* Scroll wheel! */
+	  do_setcursor(cursor_hand);
+	}
+	else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96
+		 && event.button.y > 24
+		 && event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48
+		 &&
+		 ((((event.button.x - 96) / (THUMB_W) +
+		    (((event.button.y - 24) / THUMB_H) * 4)) + cur) <
+		  num_files))
+	{
+	  /* One of the thumbnails: */
 
-      if (event.button.button == 4 && cur > 0)
-      {
-	cur = cur - 4;
-	update_list = 1;
-	playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+	  do_setcursor(cursor_hand);
+	}
+	else
+	{
+	  /* Unclickable... */
 
-	if (cur == 0)
 	  do_setcursor(cursor_arrow);
-
-	if (which >= cur + 16)
-	  which = which - 4;
+	}
+	oldpos_x = event.button.x;
+	oldpos_y = event.button.y;
       }
-      else if (event.button.button == 5 && cur < num_files - 16)
-      {
-	cur = cur + 4;
-	update_list = 1;
-	playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+      else if (event.type == SDL_JOYAXISMOTION)
+	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
-	if (cur >= num_files - 16)
-	  do_setcursor(cursor_arrow);
+      else if (event.type == SDL_JOYHATMOTION)
+	handle_joyhatmotion(event, oldpos_x, oldpos_y);
 
-	if (which < cur)
-	  which = which + 4;
-      }
+      else if (event.type == SDL_JOYBALLMOTION)
+	handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
-    else if (event.type == SDL_MOUSEMOTION)
+
+    if (motioner)
     {
-      /* Deal with mouse pointer shape! */
-
-      if (event.button.y < 24 &&
-	  event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-	  event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 && cur > 0)
-      {
-	/* Scroll up button: */
-
-	do_setcursor(cursor_up);
-      }
-      else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
-	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
-	       event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-	       event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
-	       cur < num_files - 16)
-      {
-	/* Scroll down button: */
-
-	do_setcursor(cursor_down);
-      }
-      else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 96) ||
-		(event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
-		 event.button.x < (WINDOW_WIDTH - 96))) &&
-	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-	/* One of the command buttons: */
-
-	do_setcursor(cursor_hand);
-      }
-      else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96
-	       && event.button.y > 24
-	       && event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48
-	       &&
-	       ((((event.button.x - 96) / (THUMB_W) +
-		  (((event.button.y - 24) / THUMB_H) * 4)) + cur) <
-		num_files))
-      {
-	/* One of the thumbnails: */
-
-	do_setcursor(cursor_hand);
-      }
-      else
-      {
-	/* Unclickable... */
-
-	do_setcursor(cursor_arrow);
-      }
+      if (joystick_slowness)
+	SDL_Delay(joystick_slowness);
+      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
     }
+    SDL_Delay(10);
   }
   while (!done);
 
@@ -15413,6 +15433,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed)
 {
   int i, which, next, done;
+  int val_x, val_y, motioner;
   SDL_Surface * img;
   char * tmp_starter_id, * tmp_template_id, * tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
@@ -15422,6 +15443,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
   SDL_Rect dest;
   Uint32 last_ticks;
 
+  val_x = val_y = motioner = 0;
 
   /* Back up the current image's IDs, because they will get
      clobbered below! */
@@ -15597,10 +15619,32 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 
   	      do_setcursor(cursor_tiny);
 	    }
+	    oldpos_x = event.button.x;
+	    oldpos_y = event.button.y;
 	  }
+
+	  else if (event.type == SDL_JOYAXISMOTION)
+	    handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+	  else if (event.type == SDL_JOYHATMOTION)
+	    handle_joyhatmotion(event, oldpos_x, oldpos_y);
+
+	  else if (event.type == SDL_JOYBALLMOTION)
+	    handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+	  else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	    handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+
 	}
 
-	SDL_Delay(100);
+	if (motioner)
+	{
+	  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+	  if (joystick_slowness)
+	    SDL_Delay(joystick_slowness);
+	}
+
+	SDL_Delay(10);
 
 
 	/* Automatically skip to the next one after time expires: */
@@ -17966,7 +18010,9 @@ static int do_new_dialog(void)
   int added;
   Uint8 r, g, b;
   int white_in_palette;
+  int val_x, val_y, motioner;
 
+  val_x = val_y = motioner = 0;
   
   do_setcursor(cursor_watch);
 
@@ -18560,280 +18606,304 @@ static int do_new_dialog(void)
       update_list = 0;
     }
 
-
-    SDL_WaitEvent(&event);
-
-    if (event.type == SDL_QUIT)
+    /* Was a call to SDL_WaitEvent(&event); before, 
+       changed to this while loop in order to get joystick working */
+    while(SDL_PollEvent(&event))
     {
-      done = 1;
+      if (event.type == SDL_QUIT)
+      {
+	done = 1;
 
-      /* FIXME: Handle SDL_Quit better */
+	/* FIXME: Handle SDL_Quit better */
+      }
+      else if (event.type == SDL_ACTIVEEVENT)
+      {
+	handle_active(&event);
+      }
+      else if (event.type == SDL_KEYUP)
+      {
+	key = event.key.keysym.sym;
+
+	handle_keymouse(key, SDL_KEYUP);
+      }
+      else if (event.type == SDL_KEYDOWN)
+      {
+	key = event.key.keysym.sym;
+
+	handle_keymouse(key, SDL_KEYDOWN);
+
+	if (key == SDLK_LEFT)
+	{
+	  if (which > 0)
+	  {
+	    which--;
+
+	    if (which < cur)
+	      cur = cur - 4;
+
+	    update_list = 1;
+	  }
+	}
+	else if (key == SDLK_RIGHT)
+	{
+	  if (which < num_files - 1)
+	  {
+	    which++;
+
+	    if (which >= cur + 16)
+	      cur = cur + 4;
+
+	    update_list = 1;
+	  }
+	}
+	else if (key == SDLK_UP)
+	{
+	  if (which >= 0)
+	  {
+	    which = which - 4;
+
+	    if (which < 0)
+	      which = 0;
+
+	    if (which < cur)
+	      cur = cur - 4;
+
+	    update_list = 1;
+	  }
+	}
+	else if (key == SDLK_DOWN)
+	{
+	  if (which < num_files)
+	  {
+	    which = which + 4;
+
+	    if (which >= num_files)
+	      which = num_files - 1;
+
+	    if (which >= cur + 16)
+	      cur = cur + 4;
+
+	    update_list = 1;
+	  }
+	}
+	else if (key == SDLK_RETURN || key == SDLK_SPACE)
+	{
+	  /* Open */
+
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	}
+	else if (key == SDLK_ESCAPE)
+	{
+	  /* Go back: */
+
+	  which = -1;
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	}
+      }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	       valid_click(event.button.button))
+      {
+	if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+	    event.button.y >= 24 &&
+	    event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
+	{
+	  /* Picked an icon! */
+
+	  which = ((event.button.x - 96) / (THUMB_W) +
+		   (((event.button.y - 24) / THUMB_H) * 4)) + cur;
+
+	  if (which < num_files)
+	  {
+	    playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
+	    update_list = 1;
+
+
+	    if (which == last_click_which &&
+		SDL_GetTicks() < last_click_time + 1000 &&
+		event.button.button == last_click_button)
+	    {
+	      /* Double-click! */
+
+	      done = 1;
+	    }
+
+	    last_click_which = which;
+	    last_click_time = SDL_GetTicks();
+	    last_click_button = event.button.button;
+	  }
+	}
+	else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+		 event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
+	{
+	  if (event.button.y < 24)
+	  {
+	    /* Up scroll button: */
+
+	    if (cur > 0)
+	    {
+	      cur = cur - 4;
+	      update_list = 1;
+	      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+			SNDDIST_NEAR);
+
+	      if (cur == 0)
+		do_setcursor(cursor_arrow);
+	    }
+
+	    if (which >= cur + 16)
+	      which = which - 4;
+	  }
+	  else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+		   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
+	  {
+	    /* Down scroll button: */
+
+	    if (cur < num_files - 16)
+	    {
+	      cur = cur + 4;
+	      update_list = 1;
+	      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+			SNDDIST_NEAR);
+
+	      if (cur >= num_files - 16)
+		do_setcursor(cursor_arrow);
+	    }
+
+	    if (which < cur)
+	      which = which + 4;
+	  }
+	}
+	else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* Open */
+
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	}
+	else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+		 event.button.x < (WINDOW_WIDTH - 96) &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* Back */
+
+	  which = -1;
+	  done = 1;
+	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	}
+      }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	       event.button.button >= 4 && event.button.button <= 5 && wheely)
+      {
+	/* Scroll wheel! */
+
+	if (event.button.button == 4 && cur > 0)
+	{
+	  cur = cur - 4;
+	  update_list = 1;
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	  if (cur == 0)
+	    do_setcursor(cursor_arrow);
+
+	  if (which >= cur + 16)
+	    which = which - 4;
+	}
+	else if (event.button.button == 5 && cur < num_files - 16)
+	{
+	  cur = cur + 4;
+	  update_list = 1;
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+	  if (cur >= num_files - 16)
+	    do_setcursor(cursor_arrow);
+
+	  if (which < cur)
+	    which = which + 4;
+	}
+      }
+      else if (event.type == SDL_MOUSEMOTION)
+      {
+	/* Deal with mouse pointer shape! */
+
+	if (event.button.y < 24 &&
+	    event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+	    event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+	    cur > 0)
+	{
+	  /* Scroll up button: */
+
+	  do_setcursor(cursor_up);
+	}
+	else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
+		 event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+		 event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+		 cur < num_files - 16)
+	{
+	  /* Scroll down button: */
+
+	  do_setcursor(cursor_down);
+	}
+	else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 48) ||
+		  (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+		   event.button.x < (WINDOW_WIDTH - 96)) ||
+		  (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
+		   event.button.x < (WINDOW_WIDTH - 48 - 96) &&
+		   d_places[which] != PLACE_STARTERS_DIR &&
+		   d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
+		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+	{
+	  /* One of the command buttons: */
+
+	  do_setcursor(cursor_hand);
+	}
+	else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+		 event.button.y > 24 &&
+		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+		 ((((event.button.x - 96) / (THUMB_W) +
+		    (((event.button.y - 24) / THUMB_H) * 4)) +
+		   cur) < num_files))
+	{
+	  /* One of the thumbnails: */
+
+	  do_setcursor(cursor_hand);
+	}
+	else
+	{
+	  /* Unclickable... */
+
+	  do_setcursor(cursor_arrow);
+	}
+	oldpos_x = event.button.x;
+	oldpos_y = event.button.y;
+      }
+
+      else if (event.type == SDL_JOYAXISMOTION)
+	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+      else if (event.type == SDL_JOYHATMOTION)
+	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBALLMOTION)
+	handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
-    else if (event.type == SDL_ACTIVEEVENT)
+
+    if (motioner)
     {
-      handle_active(&event);
+      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+      if (joystick_slowness)
+	SDL_Delay(joystick_slowness);
     }
-    else if (event.type == SDL_KEYUP)
-    {
-      key = event.key.keysym.sym;
-
-      handle_keymouse(key, SDL_KEYUP);
-    }
-    else if (event.type == SDL_KEYDOWN)
-    {
-      key = event.key.keysym.sym;
-
-      handle_keymouse(key, SDL_KEYDOWN);
-
-      if (key == SDLK_LEFT)
-      {
-        if (which > 0)
-        {
-          which--;
-
-          if (which < cur)
-            cur = cur - 4;
-
-          update_list = 1;
-        }
-      }
-      else if (key == SDLK_RIGHT)
-      {
-        if (which < num_files - 1)
-        {
-          which++;
-
-          if (which >= cur + 16)
-            cur = cur + 4;
-
-          update_list = 1;
-        }
-      }
-      else if (key == SDLK_UP)
-      {
-        if (which >= 0)
-        {
-          which = which - 4;
-
-          if (which < 0)
-            which = 0;
-
-          if (which < cur)
-            cur = cur - 4;
-
-          update_list = 1;
-        }
-      }
-      else if (key == SDLK_DOWN)
-      {
-        if (which < num_files)
-        {
-          which = which + 4;
-
-          if (which >= num_files)
-            which = num_files - 1;
-
-          if (which >= cur + 16)
-            cur = cur + 4;
-
-          update_list = 1;
-        }
-      }
-      else if (key == SDLK_RETURN || key == SDLK_SPACE)
-      {
-        /* Open */
-
-        done = 1;
-        playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
-      }
-      else if (key == SDLK_ESCAPE)
-      {
-        /* Go back: */
-
-        which = -1;
-        done = 1;
-        playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-      }
-    }
-    else if (event.type == SDL_MOUSEBUTTONDOWN &&
-        valid_click(event.button.button))
-    {
-      if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
-          event.button.y >= 24 &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
-      {
-        /* Picked an icon! */
-
-        which = ((event.button.x - 96) / (THUMB_W) +
-            (((event.button.y - 24) / THUMB_H) * 4)) + cur;
-
-        if (which < num_files)
-        {
-          playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
-          update_list = 1;
-
-
-          if (which == last_click_which &&
-              SDL_GetTicks() < last_click_time + 1000 &&
-              event.button.button == last_click_button)
-          {
-            /* Double-click! */
-
-            done = 1;
-          }
-
-          last_click_which = which;
-          last_click_time = SDL_GetTicks();
-          last_click_button = event.button.button;
-        }
-      }
-      else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
-      {
-        if (event.button.y < 24)
-        {
-          /* Up scroll button: */
-
-          if (cur > 0)
-          {
-            cur = cur - 4;
-            update_list = 1;
-            playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
-                SNDDIST_NEAR);
-
-            if (cur == 0)
-              do_setcursor(cursor_arrow);
-          }
-
-          if (which >= cur + 16)
-            which = which - 4;
-        }
-        else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
-            event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
-        {
-          /* Down scroll button: */
-
-          if (cur < num_files - 16)
-          {
-            cur = cur + 4;
-            update_list = 1;
-            playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
-                SNDDIST_NEAR);
-
-            if (cur >= num_files - 16)
-              do_setcursor(cursor_arrow);
-          }
-
-          if (which < cur)
-            which = which + 4;
-        }
-      }
-      else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
-          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-        /* Open */
-
-        done = 1;
-        playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
-      }
-      else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
-          event.button.x < (WINDOW_WIDTH - 96) &&
-          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-        /* Back */
-
-        which = -1;
-        done = 1;
-        playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-      }
-    }
-    else if (event.type == SDL_MOUSEBUTTONDOWN &&
-        event.button.button >= 4 && event.button.button <= 5 && wheely)
-    {
-      /* Scroll wheel! */
-
-      if (event.button.button == 4 && cur > 0)
-      {
-        cur = cur - 4;
-        update_list = 1;
-        playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-        if (cur == 0)
-          do_setcursor(cursor_arrow);
-
-        if (which >= cur + 16)
-          which = which - 4;
-      }
-      else if (event.button.button == 5 && cur < num_files - 16)
-      {
-        cur = cur + 4;
-        update_list = 1;
-        playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-        if (cur >= num_files - 16)
-          do_setcursor(cursor_arrow);
-
-        if (which < cur)
-          which = which + 4;
-      }
-    }
-    else if (event.type == SDL_MOUSEMOTION)
-    {
-      /* Deal with mouse pointer shape! */
-
-      if (event.button.y < 24 &&
-          event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
-          cur > 0)
-      {
-        /* Scroll up button: */
-
-        do_setcursor(cursor_up);
-      }
-      else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
-          event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
-          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
-          cur < num_files - 16)
-      {
-        /* Scroll down button: */
-
-        do_setcursor(cursor_down);
-      }
-      else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 48) ||
-            (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
-             event.button.x < (WINDOW_WIDTH - 96)) ||
-            (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
-             event.button.x < (WINDOW_WIDTH - 48 - 96) &&
-             d_places[which] != PLACE_STARTERS_DIR &&
-             d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
-          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
-      {
-        /* One of the command buttons: */
-
-        do_setcursor(cursor_hand);
-      }
-      else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
-          event.button.y > 24 &&
-          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-          ((((event.button.x - 96) / (THUMB_W) +
-             (((event.button.y - 24) / THUMB_H) * 4)) +
-            cur) < num_files))
-      {
-        /* One of the thumbnails: */
-
-        do_setcursor(cursor_hand);
-      }
-      else
-      {
-        /* Unclickable... */
-
-        do_setcursor(cursor_arrow);
-      }
-    }
+    SDL_Delay(10);
   }
   while (!done);
 
@@ -19114,6 +19184,7 @@ static int do_color_picker(void)
   SDL_Rect dest;
   int x, y, w;
   int ox, oy, oox, ooy, nx, ny;
+  int val_x, val_y, motioner;
   SDL_Surface * tmp_btn_up, * tmp_btn_down;
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
@@ -19129,6 +19200,7 @@ static int do_color_picker(void)
   SDL_Rect color_example_dest;
   SDL_Surface * backup;
 
+  val_x = val_y = motioner = 0;
 
   hide_blinking_cursor();
 
@@ -19315,6 +19387,7 @@ static int do_color_picker(void)
   done = 0;
   chose = 0;
   x = y = 0;
+  SDL_WarpMouse(back_left + button_w / 2, back_top - button_w / 2);
 
   do
   {
@@ -19434,7 +19507,28 @@ static int do_color_picker(void)
 	  else
             do_setcursor(cursor_arrow);
         }
+
+	oldpos_x = event.motion.x;
+	oldpos_y = event.motion.y;
       }
+      else if (event.type == SDL_JOYAXISMOTION)
+	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+      else if (event.type == SDL_JOYHATMOTION)
+	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBALLMOTION)
+	handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
+	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+    }
+
+    if (motioner)
+    {
+      if (joystick_slowness)
+	SDL_Delay(joystick_slowness);
+      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
     }
 
     SDL_Delay(10);
@@ -21349,6 +21443,35 @@ static void setup_config(char *argv[])
   if(tmpcfg.papersize)
     papersize = tmpcfg.papersize;
 #endif
+  if(tmpcfg.joystick_slowness)
+    {
+      if(strtof(tmpcfg.joystick_slowness, NULL) < 0 || strtof(tmpcfg.joystick_slowness, NULL) > 500)
+	{
+	  printf("Joystick slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_slowness);
+	  exit(1);
+	}
+      joystick_slowness = strtof(tmpcfg.joystick_slowness, NULL);
+    }
+  if(tmpcfg.joystick_lowthreshold)
+    {
+      if (strtof(tmpcfg.joystick_lowthreshold, NULL) < 0 || strtof(tmpcfg.joystick_lowthreshold, NULL) > 32766)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick lower threshold (now %s)  must be between 0 and 32766", tmpcfg.joystick_lowthreshold);
+	  exit(1);
+	}
+	joystick_low_threshold = strtof(tmpcfg.joystick_lowthreshold, NULL);
+    }
+  if(tmpcfg.joystick_maxsteps)
+    {
+      if (strtof(tmpcfg.joystick_maxsteps, NULL) < 1 || strtof(tmpcfg.joystick_maxsteps, NULL) > 7)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick lower threshold (now %s)  must be between 1 and 7", tmpcfg.joystick_maxsteps);
+	  exit(1);
+	}
+	joystick_maxsteps = strtof(tmpcfg.joystick_maxsteps, NULL);
+    }
 }
 
 
@@ -21630,6 +21753,7 @@ int TP_EventFilter(const SDL_Event * event)
       event->type == SDL_ACTIVEEVENT ||
       event->type == SDL_JOYAXISMOTION ||
       event->type == SDL_JOYBALLMOTION ||
+      event->type == SDL_JOYHATMOTION ||
       event->type == SDL_JOYBUTTONDOWN ||
       event->type == SDL_JOYBUTTONUP ||
       event->type == SDL_KEYDOWN ||
@@ -22659,6 +22783,10 @@ static void claim_to_be_ready(void)
 
   mouse_x = WINDOW_WIDTH / 2;
   mouse_y = WINDOW_HEIGHT / 2;
+
+  oldpos_x = mouse_x;
+  oldpos_y = mouse_y;
+
   SDL_WarpMouse(mouse_x, mouse_y);
 
   mousekey_up = SDL_KEYUP;
@@ -22761,8 +22889,9 @@ int main(int argc, char *argv[])
        printf("    %s\n", SDL_JoystickName(i));
    }
  
-  SDL_JoystickEventState(SDL_ENABLE);
   joystick = SDL_JoystickOpen(0);
+  SDL_JoystickEventState(SDL_ENABLE);
+
   printf("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
   printf("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
   printf("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
@@ -23966,5 +24095,121 @@ int file_exists(char * path) {
 
   res = stat(path, &buf);
   return(res == 0);
+}
+
+/* Don't move the mouse here as this is only called when an event triggers it
+   and the joystick can be holded withouth sending any event. */
+static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int *val_y) {
+  int i, j, step;
+
+  if (event.jaxis.which != 0)
+    return;
+
+  i = SDL_JoystickGetAxis(joystick, 0);
+  j = SDL_JoystickGetAxis(joystick, 1);
+  step = 5000;
+  if (abs(i) < joystick_low_threshold && abs(j) < joystick_low_threshold)
+    *motioner = FALSE;
+  else
+  { 
+    if (i > joystick_low_threshold)
+      *val_x = min((i - joystick_low_threshold) / step + 1, joystick_maxsteps);
+    else if (i < -joystick_low_threshold)
+      *val_x = max((i + joystick_low_threshold) / step - 1, -joystick_maxsteps);
+    else
+      *val_x = 0;
+
+    if (j > joystick_low_threshold)
+      *val_y = min((j - joystick_low_threshold) / step + 1, joystick_maxsteps);
+    else if (j < -joystick_low_threshold)
+      *val_y = max((j + joystick_low_threshold) / step - 1, -joystick_maxsteps);
+    else
+      *val_y = 0;
+
+    //	      printf("i %d  valx %d    j %d  val_y %d\n", i, val_x, j, val_y);
+    if (*val_x || *val_y)
+    {
+      *motioner = TRUE;       
+    }
+    else
+      *motioner = FALSE;
+  }
+}
+
+static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
+  int val_x, val_y;
+  val_x = val_y = 0;
+
+  switch (event.jhat.value) {
+  case SDL_HAT_CENTERED:
+    val_x = 0;
+    val_y = 0;
+    break;
+  case SDL_HAT_UP:
+    val_x = 0;
+    val_y = -1;
+    break;
+  case SDL_HAT_RIGHTUP:
+    val_x = 1;
+    val_y = -1;
+    break;
+  case SDL_HAT_RIGHT:
+    val_x = 1;
+    val_y = 0;
+    break;
+  case SDL_HAT_RIGHTDOWN:
+    val_x = 1;
+    val_y = 1;
+    break;
+  case SDL_HAT_DOWN:
+    val_x = 0;
+    val_y = 1;
+    break;
+  case SDL_HAT_LEFTDOWN:
+    val_x = -1;
+    val_y = 1;
+    break;
+  case SDL_HAT_LEFT:
+    val_x = -1;
+    val_y = 0;
+    break;
+  case SDL_HAT_LEFTUP:
+    val_x = -1;
+    val_y = -1;
+    break;
+  }
+  if(val_x || val_y)
+    SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+}
+
+static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
+  int val_x, val_y;
+  /* FIXME: NOT TESTED Should this act like handle_joyaxismotion? 
+     in the sense of setting the values for the moving but don't move the mouse here? */
+  /* printf("\n ball movement \n"); */
+  val_x = event.jball.xrel;
+  val_y = event.jball.yrel;
+  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+}
+
+static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y) {
+  SDL_Event ev;
+
+  ev.button.x = oldpos_x;
+  ev.button.y = oldpos_y;
+  ev.button.button = SDL_BUTTON_LEFT;
+
+  if (event.type == SDL_JOYBUTTONDOWN)
+  {
+    ev.button.type = SDL_MOUSEBUTTONDOWN;
+    ev.button.state = SDL_PRESSED;
+  }
+  else
+  {
+    ev.button.type = SDL_MOUSEBUTTONUP;
+    ev.button.state = SDL_RELEASED;
+  }
+
+  SDL_PushEvent(&ev);
 }
 

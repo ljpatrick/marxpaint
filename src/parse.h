@@ -52,7 +52,10 @@ struct cfginfo
   const char *use_sound;
   const char *wheely;
   const char *mouseaccessibility;
-  const char *onscreen_keyboard;    
+  const char *onscreen_keyboard;
+  const char *joystick_slowness;
+  const char *joystick_lowthreshold;
+  const char *joystick_maxsteps;
 };
 
 #define CFGINFO_MAXOFFSET  (sizeof(struct cfginfo))
