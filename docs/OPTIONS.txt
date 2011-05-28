@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                 April 15, 2011
+                                  May 28, 2011
 
      ----------------------------------------------------------------------
 
@@ -378,17 +378,18 @@ Windows Users
                Presents a clickable on-screen keyboard when using the Text
                and Label tools.
 
-       joystick-slowness=number
-               Sets a delay at each axis motion, allowing to slow the joystick.
-	       Allowed values are 0 to 500. Default value is 15.
+       joystick-slowness=SPEED
+               Sets a delay at each axis motion, allowing to slow the
+               joystick. Allowed values are 0 to 500. Default value is 15.
 
-       joystick-threshold
-	       Sets the minimum level of axis motion to start moving the pointer.
-	       Allowed values are from 0 to 32766. Default value is 3200.
+       joystick-threshold=THRESHOLD
+               Sets the minimum level of axis motion to start moving the
+               pointer. Allowed values are from 0 to 32766. Default value is
+               3200.
 
-       joystick-maxsteps
-	       Sets the maximum pixels the pointer will move at once.
-	       Allowed values are from 1 to 7. Default value is 7.
+       joystick-maxsteps=STEPS
+               Sets the maximum pixels the pointer will move at once. Allowed
+               values are from 1 to 7. Default value is 7.
 
        stampsize=SIZE
 
@@ -772,7 +773,8 @@ Windows Users
          --noquit
          --noprint
          --printdelay=SECONDS
-         --printcfg         --altprintnever
+         --printcfg
+         --altprintnever
          --altprintalways
          --papersize=PAPERSIZE
          --nolockfile
@@ -791,9 +793,6 @@ Windows Users
          --nolabel
          --mouse-accessibility
          --onscreen-keyboard
-	 --joystick-slowness
-	 --joystick-threshold
-	 --joystick-maxsteps
          --sysfonts
          --alllocalefonts
          --mirrorstamps

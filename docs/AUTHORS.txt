@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 25, 2011
+June 17, 2002 - May 28, 2011
 
 $Id$
 
@@ -99,8 +99,13 @@ $Id$
   http://pippin.gimp.org/plug-ins/gluas/
 
   Mouse accessibility code and keyboard access
-  Ankit Choudary <ankit.goaldecided@gmail.com>
-  as part of GSOC 2010.
+  Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
+  with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+  Joystick control
+  Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
+  with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
 
 * Graphics
 
