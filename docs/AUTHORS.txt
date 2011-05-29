@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 28, 2011
+June 17, 2002 - May 29, 2011
 
 $Id$
 
@@ -549,6 +549,7 @@ $Id$
   * Hindi
     Ankit Malik <ankitmalik@gmail.com>
     aki <akash.nawani@gmail.com>
+    Ashish Arora <ashish.arora13@gmail.com>
 
   * Hungarian
     Török Gábor <gabo@linuxportal.hu>

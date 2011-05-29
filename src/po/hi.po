@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2010-12-13 21:45+0530\n"
-"Last-Translator: aki <akash.nawani@gmail.com>\n"
+"PO-Revision-Date: 2011-05-29 04:44+1000\n"
+"Last-Translator: Ashish <ashish.arora13@gmail.com>\n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,12 @@ msgstr "काला!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Dark grey! कुछ लोग बोलते हैं “dark gray”."
+msgstr " गहरा भूरा! कुछ लोग बोलते हैं “गहरा भूरा”."
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Light grey! कुछ लोग बोलते हैं “light gray”|"
+msgstr "हलका भूरा! कुछ लोग बोलते हैं “\"हलका भूरा”|"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -334,7 +334,7 @@ msgstr "रंग"
 #. Title of brush selector (buttons down the right for paint and line tools)
 #: ../titles.h:62
 msgid "Brushes"
-msgstr "बरश"
+msgstr "ब्रश"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
 #: ../titles.h:65
@@ -344,7 +344,7 @@ msgstr "रबड़"
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:68
 msgid "Stamps"
-msgstr "स्टॉम्प"
+msgstr "टिकटें"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
@@ -373,7 +373,7 @@ msgstr "रंग"
 #. Stamp tool (aka Rubber Stamps)
 #: ../tools.h:65
 msgid "Stamp"
-msgstr "स्टॉम्प"
+msgstr "टिकट"
 
 #. Line drawing tool
 #: ../tools.h:68
@@ -426,7 +426,7 @@ msgstr "सेव"
 #. Print the current picture
 #: ../tools.h:104
 msgid "Print"
-msgstr "पिृंट"
+msgstr "प्रिंट"
 
 #. Quit/exit Tux Paint application
 #: ../tools.h:107
@@ -441,17 +441,17 @@ msgstr "रंग और ब्रुश उठाओ।"
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "स्टाम्प के लिए कला उठाओ"
+msgstr "ड्राइंग के चारों ओर  मोहर अंकित करने के लिए तस्वीर चुने "
 
 #. Line tool instructions
 #: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "रेखा बनाओ"
+msgstr "एक रेखा खींचने के लिए क्लिक करे"
 
 #. Shape tool instructions
 #: ../tools.h:124
 msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "आकारो के लिए औजार।"
+msgstr "किसी आकृति को उठाओ. केंद्र का चयन करने के लिए क्लिक करो और खींचो जब तक आपका चाहा आकार न मिले. आकार को सही दिशा देने के लिये घुमाये  खींचने के लिए क्लिक करे "
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -525,12 +525,12 @@ msgstr "आकार को बडा करने के लिए खीचो
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "आकार को घुमाने के लिए घुमाओ"
+msgstr "आकार को घुमाने के लिए mouse घुमाओ। ड्रा करने के लिये क्लिक करें। "
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "चलो काम को जाराी रखते हब्क१ै"
+msgstr "चलो ड्राइंग को जारी रखते है "
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:1918
@@ -571,7 +571,7 @@ msgstr "कया पहले काम को सेव करे ऋ"
 #. Error opening picture
 #: ../tuxpaint.c:1938
 msgid "Can’t open that picture!"
-msgstr "खोलने में असमर्थ !"
+msgstr "तस्वीर नहीं खुल रही है"
 
 #. Generic dialog dismissal
 #: ../tuxpaint.c:1941
@@ -585,7 +585,7 @@ msgstr "हॉंं"
 #. Notification that 'Open' dialog has nothing to show
 #: ../tuxpaint.c:1945
 msgid "There are no saved files!"
-msgstr "यहॉं तो कुछ भी नहीं है"
+msgstr "वहाँ कोई फ़ाइलें बची नही है"
 
 #. Verification of print action
 #: ../tuxpaint.c:1949
@@ -763,15 +763,15 @@ msgstr "गिरता हुआ"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "ब्लाकस करो।"
+msgstr "चित्र को blocky करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
 
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "चाक करो।"
+msgstr "चित्र को chalk drawing के रूप मे करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "ड्रिप करो"
+msgstr "चित्र को drip के रूप मे करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
 
 #: ../../magic/src/blur.c:57
 msgid "Blur"
@@ -975,11 +975,11 @@ msgstr "ऊल्टा"
 
 #: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
-msgstr "शीशे मे देखो"
+msgstr "mirror image बनाने के लिये यहँा click करे"
 
 #: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
-msgstr "उल्टा करो"
+msgstr "image उल्टा बनाने के लिये यहा click करे"
 
 #: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
@@ -1097,7 +1097,7 @@ msgstr "सतरंगी"
 
 #: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
-msgstr "सतरंगी काम करो"
+msgstr "तुम इंद्रधनुष के रंग में ड्रा कर सकते हैं!"
 
 #: ../../magic/src/rain.c:65
 msgid "Rain"

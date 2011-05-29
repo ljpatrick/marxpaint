@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.May.27 (0.9.22)
+2011.May.29 (0.9.22)
 
   * New Tools:
     ----------
@@ -403,6 +403,7 @@ $Id$
 
     * Hindi translation
       aki <akash.nawani@gmail.com>
+      Ashish Arora <ashish.arora13@gmail.com>
 
     * Hungarian translation
       Nagy Akos <nagy.akos@codespring.ro>
