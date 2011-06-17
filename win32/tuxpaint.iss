@@ -436,7 +436,7 @@ function MyLicence(Default: String): String;
 var
   lang, licence: String;
 begin
-  lang := Lang2Gettext();
+  lang := Lang2Gettext(false);
 
   if lang = 'pt_br' then
     licence := 'pt_br\COPYING_pt_BR.txt'
@@ -477,7 +477,7 @@ function MyPublisherURL(Default: String): String;
 var
   lang: String;
 begin
-  lang := Lang2Gettext();
+  lang := Lang2Gettext(false);
 
   if lang = 'chs' then
     lang := 'zh-cn'
