@@ -5,7 +5,15 @@
 ;
 ; The version string is extracted from the executable.
 ;
+; As of 2011.06.15, this integrates OpenCandy advertising module.
+; However, by default, using "tuxpaint.iss", the standard Tux Paint installer
+; will be built.  Use "tuxpaint-opencandy.iss" (and you will need the
+; product key and secret, stored in a "tuxpaint-opencandy-secrets.iss" file;
+; Bill Kendrick has access to these), which sets up a #define and then
+; #include's this file, to produce an installer with OpenCandy built-in.
+; -bjk
 
+; Should we change this to Tux4Kids? -bjk 2011.06.15
 #define PublisherName "New Breed Software"
 #define PublisherURL  "{code:MyPublisherURL}"
 
@@ -26,6 +34,30 @@
 #define BdistDir      ".\bdist"
 #define AppVersion    GetStringFileInfo(BdistDir+"\"+AppExe, "FileVersion")
 
+
+#ifdef OpenCandy
+#define OC_STR_MY_PRODUCT_NAME "Tux Paint"
+;// Note: Please change the registry path to match your company name
+;#define OC_STR_REGISTRY_PATH "Software\Tux Paint\OpenCandy"
+#define OC_OCSETUPHLP_FILE_PATH ".\OCSetupHlp.dll"
+#include 'tuxpaint-opencandy-secrets.iss'
+;#if OC_STR_MY_PRODUCT_NAME == "Open Candy Sample"
+;	#pragma warning "Do not forget to change the product name from 'Open Candy Sample' to your company's product name before releasing this installer."	
+;#endif
+;#if OC_STR_KEY == "1401d0bd8048e1f0f4628dbec1a73092"
+;	#pragma warning "Do not forget to change the test key '1401d0bd8048e1f0f4628dbec1a73092' to your company's product key before releasing this installer."
+;#endif
+;#if OC_STR_SECRET == "4564bdaf826bbe2115718d1643ecc19e"
+;	#pragma warning "Do not forget to change the test secret '4564bdaf826bbe2115718d1643ecc19e' to your company's product secret before releasing this installer."
+;#endif
+;#if OC_STR_REGISTRY_PATH == "Software\Your Company\OpenCandy"
+;	#pragma warning "Do not forget to change the test registry path 'Your Company' to your companies name before releasing this installer."
+;#endif
+;#if Pos(LowerCase("Software\OpenCandy"),LowerCase(OC_STR_REGISTRY_PATH)) != 0
+;	#pragma warning "ERROR, your registry path has OpenCandy before your company name. Please place your company name before OpenCandy. eg Software\Your Company\OpenCandy"
+;#endif
+#endif
+
 [Setup]
 AppName={#AppName}
 AppVerName={#AppName} {#AppVersion}
@@ -35,30 +67,38 @@ AppSupportURL={#PublisherURL}
 AppUpdatesURL={#PublisherURL}
 DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
-LicenseFile={#BdistDir}\docs\COPYING.txt
 OutputDir=.\
-OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
+;FIXME - It would be good if we showed the localized license -bjk 2011.06.15
+#ifdef OpenCandy
+  LicenseFile={#BdistDir}\docs\COPYING-OC.txt
+  OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer-opencandy
+#else
+  LicenseFile={#BdistDir}\docs\COPYING.txt
+  OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
+#endif
 SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
 Compression=lzma
 SolidCompression=yes
+PrivilegesRequired=admin
 
 [Languages]
 Name: "eng"; MessagesFile: "compiler:Default.isl"
-Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"; LicenseFile: {#BdistDir}\docs\pt_br\COPYING_pt_BR.txt;
-Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"; LicenseFile: {#BdistDir}\docs\ca\COPYING.txt;
-Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"; LicenseFile: {#BdistDir}\docs\cs\COPYING.txt;
-Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"; LicenseFile: {#BdistDir}\docs\da\COPYING.txt;
-Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"; LicenseFile: {#BdistDir}\docs\nl\COPYING_nl.txt;
-Name: "fre"; MessagesFile: "compiler:Languages\French.isl"; LicenseFile: {#BdistDir}\docs\fr\COPIER.txt;
-Name: "ger"; MessagesFile: "compiler:Languages\German.isl"; LicenseFile: {#BdistDir}\docs\de\KOPIE.txt;
+Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
+Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
+Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
+Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: "fre"; MessagesFile: "compiler:Languages\French.isl"
+Name: "ger"; MessagesFile: "compiler:Languages\German.isl"
 Name: "hun"; MessagesFile: "compiler:Languages\Hungarian.isl"
-Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"; LicenseFile: {#BdistDir}\docs\it\COPIATURA.txt;
+Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "nor"; MessagesFile: "compiler:Languages\Norwegian.isl"
-Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"; LicenseFile: {#BdistDir}\docs\pl\LICENCJA-GNU.txt;
+Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
-Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"; LicenseFile: {#BdistDir}\docs\es\COPIADO.txt;
+Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "jpn"; MessagesFile: "compiler:Languages\Japanese.isl"
 
 ; Additional, Candidate official translations
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-12-5.1.11.isl"
@@ -66,7 +106,6 @@ Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-12-5.1.11.isl"
 ; Additional, Unofficial translations
 Name: "gal"; MessagesFile: "compiler:Languages\Galician-2-5.1.11.isl"
 Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.11.isl"
-Name: "jpn"; MessagesFile: "compiler:Languages\Japanese-5-5.1.11.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
@@ -83,6 +122,12 @@ Source: "{#BdistDir}\plugins\*"; DestDir: "{app}\plugins"; Flags: ignoreversion 
 Source: "{#BdistDir}\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\..\libdocs\*"; DestDir: "{app}\docs\libdocs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+
+#ifdef OpenCandy
+	Source: "{#OC_OCSETUPHLP_FILE_PATH}"; Flags: dontcopy ignoreversion;
+#endif
+
+
 
 [INI]
 Filename: "{code:MyGroupDir}\{groupname}\{cm:ProgramOnTheWeb,{#AppName}}.url"; Section: "InternetShortcut"; Key: "URL"; String: "{#PublisherURL}"
@@ -110,6 +155,10 @@ Filename: "{app}\{#AppConfigExe}"; Description: "{cm:LaunchProgram,{#AppConfigNa
 Type: files; Name: "{code:MyGroupDir}\{groupname}\{cm:ProgramOnTheWeb,{#AppName}}.url"
 
 [code]
+#ifdef OpenCandy
+#include 'OCSetupHlp.iss'
+#endif
+
 const
   CSIDL_PROFILE = $0028;
   CSIDL_COMMON_PROGRAMS = $0017;
@@ -117,7 +166,9 @@ const
 var
   InstallTypePageID: Integer;
   CheckListBox2: TNewCheckListBox;
-
+#ifdef OpenCandy
+ 	OCtszInstallerLanguage: OCTString;
+#endif
 function Restricted(): Boolean;
 begin
   Result := not (IsAdminLoggedOn() or IsPowerUserLoggedOn())
@@ -162,8 +213,8 @@ begin
       if Path = '' then
         Path := RemoveBackslashUnlessRoot(ExtractFilePath(ExpandConstant('{userdocs}')));
       Path := Path + '\Programs\{#AppDirName}'
-    end
-  end
+    end;
+  end;
   Result := Path
 end;
 
@@ -174,8 +225,8 @@ begin
   if ThisUserOnly() then
     Path := ExpandConstant('{userprograms}')
   else
-    Path := ExpandConstant('{commonprograms}')
-  Result := Path
+    Path := ExpandConstant('{commonprograms}');
+  Result := Path;
 end;
 
 function MyDesktopDir(Default: String): String;
@@ -185,8 +236,8 @@ begin
   if ThisUserOnly() then
     Path := ExpandConstant('{userdesktop}')
   else
-    Path := ExpandConstant('{commondesktop}')
-  Result := Path
+    Path := ExpandConstant('{commondesktop}');
+  Result := Path;
 end;
 
 procedure CreateTheWizardPages;
@@ -217,17 +268,52 @@ begin
   if CurPageID = wpSelectDir then
   begin
     WizardForm.DirEdit.Text := MyAppDir();
-  end
+  end;
+  begin
+   #ifdef OpenCandy
+	 OpenCandyCurPageChanged(CurPageID);
+	 #endif
+  end;
 end;
 
 function ShouldSkipPage(PageID: Integer): Boolean;
 begin
   Result := (PageID = InstallTypePageID) and Is9xME();
+  begin
+   #ifdef OpenCandy
+	 Result := OpenCandyShouldSkipPage(PageID);
+   #endif
+  end;
 end;
 
-procedure InitializeWizard();
+#ifdef OpenCandy
+function NextButtonClick(CurPageID: Integer): Boolean;
 begin
-  CreateTheWizardPages;
+	Result := OpenCandyNextButtonClick(CurPageID);
+end;
+#endif
+
+function BackButtonClick(CurPageID: Integer): Boolean;
+begin
+	Result := true; // Allow action by default
+
+  #ifdef OpenCandy
+	OpenCandyBackButtonClick(CurPageID);
+	#endif
+end;
+
+procedure DeinitializeSetup();
+begin
+  #ifdef OpenCandy
+	OpenCandyDeinitializeSetup();
+	#endif
+end;
+
+procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  #ifdef OpenCandy
+	OpenCandyCurStepChanged(CurStep);
+	#endif
 end;
 
 function Lang2Gettext(): String;
@@ -290,8 +376,22 @@ begin
   if lang = 'cht' then
     lc := 'zh_tw'
   else
-    lc := 'en'
+    lc := 'en';
   Result := lc
+end;
+
+procedure InitializeWizard();
+#ifdef OpenCandy
+Var OCstrInstallerLanguage: String;
+#endif
+begin
+  begin
+    CreateTheWizardPages;  
+  end
+#ifdef OpenCandy
+  OCstrInstallerLanguage := Lang2Gettext();
+	OpenCandyAsyncInit('{#OC_STR_MY_PRODUCT_NAME}', '{#OC_STR_KEY}', '{#OC_STR_SECRET}', OCtszInstallerLanguage, {#OC_INIT_MODE_NORMAL});
+  #endif
 end;
 
 function MyReadme(Default: String): String;
@@ -318,7 +418,7 @@ begin
   if lang = 'zh_tw' then
     readme := 'zh_tw\html\README.html'
   else
-    readme := 'html\README.html'
+    readme := 'html\README.html';
 
   Result := 'docs\'+readme
 end;
@@ -359,7 +459,7 @@ begin
   if lang = 'es' then
     licence := 'es\COPIADO.txt'
   else
-    licence := 'COPYING.txt'
+    licence := 'COPYING.txt';
 
   Result := 'docs\'+licence
 end;
@@ -374,7 +474,7 @@ begin
     lang := 'zh-cn'
   else
   if lang = 'cht' then
-    lang := 'zh-tw'
+    lang := 'zh-tw';
 
   Result := 'http://www.tuxpaint.org/?lang='+lang
 end;

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.May.29 (0.9.22)
+2011.June.16 (0.9.22)
 
   * New Tools:
     ----------
@@ -48,6 +48,18 @@ $Id$
 
     * Added support for building under Haiku OS
       Scott McCreary <scottmc@users.sourceforge.net>
+
+    * Integrated OpenCandy-powered recommendation service
+      into Windows installation scripts (InnoSetup), as an option.
+      <http://www.opencandy.com/>
+
+      Note: "tuxpaint.iss" still builds standard, OpenCandy-less
+      Tux Paint installer; "tuxpaint-opencandy.iss", along with a file
+      with secret key info (not included in CVS, of course!), build
+      an OpenCandy-enabled version.  The OC account is currently
+      maintained by Bill Kendrick <nbs@sonic.net>, lead developer.
+
+      For more info, see http://www.tuxpaint.org/docs/opencandy/
 
   * Accessibility Improvements:
     ---------------------------
