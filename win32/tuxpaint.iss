@@ -381,15 +381,12 @@ begin
 end;
 
 procedure InitializeWizard();
-#ifdef OpenCandy
-Var OCstrInstallerLanguage: String;
-#endif
 begin
   begin
     CreateTheWizardPages;  
   end
 #ifdef OpenCandy
-  OCstrInstallerLanguage := Lang2Gettext();
+  OCtszInstallerLanguage := Lang2Gettext();
 	OpenCandyAsyncInit('{#OC_STR_MY_PRODUCT_NAME}', '{#OC_STR_KEY}', '{#OC_STR_SECRET}', OCtszInstallerLanguage, {#OC_INIT_MODE_NORMAL});
   #endif
 end;
