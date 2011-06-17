@@ -316,14 +316,17 @@ begin
 	#endif
 end;
 
-function Lang2Gettext(): String;
+function Lang2Gettext(TwoLetter: Boolean): String;
 var
   lang, lc: String;
 begin
   lang := ActiveLanguage();
 
   if lang = 'bra' then
-    lc := 'pt_br'
+    if TwoLetter = true then
+      lc := 'pt'
+    else
+      lc := 'pt_br'
   else
   if lang = 'cat' then
     lc := 'ca'
@@ -365,7 +368,10 @@ begin
     lc := 'sk'
   else
   if lang = 'chs' then
-    lc := 'zh_cn'
+    if TwoLetter = true then
+      lc := 'zh'
+    else
+      lc := 'zh_cn'
   else
   if lang = 'esp' then
     lc := 'es'
@@ -373,8 +379,14 @@ begin
   if lang = 'gal' then
     lc := 'gl'
   else
+  if lang = 'jpn' then
+    lc := 'ja'
+  else
   if lang = 'cht' then
-    lc := 'zh_tw'
+    if TwoLetter = true then
+      lc := 'zh'
+    else
+      lc := 'zh_tw'
   else
     lc := 'en';
   Result := lc
@@ -386,7 +398,7 @@ begin
     CreateTheWizardPages;  
   end
 #ifdef OpenCandy
-  OCtszInstallerLanguage := Lang2Gettext();
+  OCtszInstallerLanguage := Lang2Gettext(true);
 	OpenCandyAsyncInit('{#OC_STR_MY_PRODUCT_NAME}', '{#OC_STR_KEY}', '{#OC_STR_SECRET}', OCtszInstallerLanguage, {#OC_INIT_MODE_NORMAL});
   #endif
 end;
@@ -395,7 +407,7 @@ function MyReadme(Default: String): String;
 var
   lang, readme: String;
 begin
-  lang := Lang2Gettext();
+  lang := Lang2Gettext(false);
 
   if lang = 'nl' then
     readme := 'nl\html\README.html'
