@@ -42,7 +42,10 @@ struct cfginfo
   const char *parsertmp_windowsize;
   const char *print_delay;
   const char *printcommand;
-  const char *promptless_save;
+//  const char *promptless_save;
+  const char *_promptless_save_over;
+  const char *_promptless_save_over_new;
+  const char *_promptless_save_over_ask;
   const char *rotate_orientation;
   const char *savedir;
   const char *simple_shapes;

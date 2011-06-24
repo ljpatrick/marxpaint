@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 25, 2011
+  June 14, 2002 - June 24, 2011
 */
 
 
@@ -557,6 +557,7 @@ FILE * my_fmemopen(unsigned char * data, size_t size, const char * mode)
 
 enum
 {
+  SAVE_OVER_UNSET = -1,
   SAVE_OVER_PROMPT,
   SAVE_OVER_ALWAYS,
   SAVE_OVER_NO
@@ -1006,7 +1007,10 @@ static int mousekey_right;
 static int button_down;
 static int scrolling;
 
-static int promptless_save = SAVE_OVER_PROMPT;
+static int promptless_save = SAVE_OVER_UNSET;
+static int _promptless_save_over,
+           _promptless_save_over_ask,
+           _promptless_save_over_new;
 static int disable_quit;
 
 static int noshortcuts;
@@ -21376,6 +21380,9 @@ static void setup_config(char *argv[])
   SETBOOL(wheely);
   SETBOOL(mouseaccessibility);
   SETBOOL(onscreen_keyboard);
+  SETBOOL(_promptless_save_over);
+  SETBOOL(_promptless_save_over_new);
+  SETBOOL(_promptless_save_over_ask);
 #undef SETBOOL
 
   if(tmpcfg.parsertmp_windowsize)
@@ -21472,6 +21479,19 @@ static void setup_config(char *argv[])
 	}
 	joystick_maxsteps = strtof(tmpcfg.joystick_maxsteps, NULL);
     }
+
+
+  printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n", _promptless_save_over_ask, _promptless_save_over_new, _promptless_save_over);
+
+  if (_promptless_save_over_ask) {
+    promptless_save = SAVE_OVER_PROMPT;
+  } else if (_promptless_save_over_new) {
+    promptless_save = SAVE_OVER_NO;
+  } else if (_promptless_save_over) {
+    promptless_save = SAVE_OVER_ALWAYS;
+  }
+
+
 }
 
 
@@ -22851,9 +22871,6 @@ int main(int argc, char *argv[])
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
-
-
-
   CLOCK_ASM(time2);
 #ifdef FORKED_FONTS
   // must start ASAP, but depends on locale which in turn needs the config
@@ -22865,6 +22882,18 @@ int main(int argc, char *argv[])
   printf("NOT running font scanner\n"); fflush(stdout);
 #endif
 #endif
+
+  /* Warnings to satisfy SF.net Bug #3327493 -bjk 2011.06.24 */
+  if (disable_save && autosave_on_quit) {
+    fprintf(stderr, "Warning: Autosave requested, but saving is disabled.\n");
+  }
+  if (disable_save && (promptless_save != SAVE_OVER_UNSET)) {
+    fprintf(stderr, "Warning: Save-over option specified, but saving is disabled.\n");
+  }
+
+  if (promptless_save == SAVE_OVER_UNSET) {
+    promptless_save = SAVE_OVER_PROMPT;
+  }
 
   /* Set up! */
   setup();

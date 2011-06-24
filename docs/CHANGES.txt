@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.June.16 (0.9.22)
+2011.June.24 (0.9.22)
 
   * New Tools:
     ----------
@@ -155,6 +155,9 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Showing a warning when using save-related options when "nosave" is set.
+      (SourceForge Bug #3327493)
+
     * Quicker prompt window pop-up animation.
 
     * Left/Right Stamp navigation buttons are purple, like the other (up/down)
