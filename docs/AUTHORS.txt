@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 29, 2011
+June 17, 2002 - June 30, 2011
 
 $Id$
 
@@ -688,6 +688,7 @@ $Id$
     Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
   * Polish
+    Piotr Kwilinski <euvcp@hotmail.com>
     Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>
     Robert Glowczynski <robertg@software.com.pl>
     Tomasz 'karave' Tarach <karave@poczta.onet.pl>

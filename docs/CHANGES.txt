@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.June.24 (0.9.22)
+2011.June.30 (0.9.22)
 
   * New Tools:
     ----------
@@ -438,6 +438,9 @@ $Id$
     * Russian translation
       Nikolay Parukhin <parukhin@gmail.com>
       Sergei Popov <skein@rambler.ru>
+
+    * Polish translation
+      Piotr Kwiliński <euvcp@hotmail.com>
 
     * Portuguese now using plain "pt" locale (vs. always specifying "_PT")
 
