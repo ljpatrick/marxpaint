@@ -21253,7 +21253,9 @@ static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 static void setup_config(char *argv[])
 {
   char str[128];
+#ifndef _WIN32
   const char *home = getenv("HOME");
+#endif
 
   struct cfginfo tmpcfg_usr;
   struct cfginfo tmpcfg_cmd;
@@ -21267,12 +21269,14 @@ static void setup_config(char *argv[])
 
   /* Set default options: */
 
+#ifndef _WIN32
   if(!home)
   {
     /* Woah, don't know where $HOME is? */
     fprintf(stderr, "Error: You have no $HOME environment variable!\n");
     exit(1);
   }
+#endif
 
   if(tmpcfg_cmd.savedir)
     savedir = strdup(tmpcfg_cmd.savedir);
