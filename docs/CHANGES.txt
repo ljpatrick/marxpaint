@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.June.30 (0.9.22)
+2011.July.2 (0.9.22)
 
   * New Tools:
     ----------
@@ -21,8 +21,10 @@ $Id$
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
+      Pattern - Draws a tiled pattern around the picture.
       Perspective - Change the image's perspective.
-      Moasic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
+      Mosaic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
+      Tiles - Draws a symettric pattern around the picture.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

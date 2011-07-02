@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 30, 2011
+June 17, 2002 - July 2, 2011
 
 $Id$
 
@@ -105,6 +105,9 @@ $Id$
   Joystick control
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
   with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+  Various other improvements and clean-ups by
+  Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 
 * Graphics

@@ -37,7 +37,7 @@
 
 static Mix_Chunk * kalidescope_snd;
 static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
-
+static int square_size = 128;
 
 Uint32 kalidescope_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
@@ -45,6 +45,8 @@ enum {
   KAL_UD,
   KAL_LR,
   KAL_BOTH,
+  KAL_PATTERN,
+  KAL_TILES,
   KAL_COUNT
 };
 
@@ -52,6 +54,8 @@ char * kal_icon_names[KAL_COUNT] = {
   "symmetric_updown.png",
   "symmetric_leftright.png",
   "kalidescope.png",
+  "kal_pattern.png",
+  "kal_tiles.png"
 };
 
 
@@ -90,6 +94,10 @@ char * kalidescope_get_name(magic_api * api, int which)
     return(strdup(gettext_noop("Symmetric Left/Right")));
   } else if (which == KAL_UD) {
     return(strdup(gettext_noop("Symmetric Up/Down")));
+  } else if (which == KAL_PATTERN) {
+    return(strdup(gettext_noop("Pattern")));
+  } else if (which == KAL_TILES) {
+    return(strdup(gettext_noop("Tiles")));
   } else { /* KAL_BOTH */
     return(strdup(gettext_noop("Kaleidoscope")));
   }
@@ -102,6 +110,10 @@ char * kalidescope_get_description(magic_api * api, int which, int mode)
     return(strdup(gettext_noop("Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture.")));
   } else if (which == KAL_UD) {
     return(strdup(gettext_noop("Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture.")));
+  } else if (which == KAL_PATTERN) {
+    return(strdup(gettext_noop("Click and drag the mouse to draw a pattern across the picture.")));
+  } else if (which == KAL_TILES) {
+    return(strdup(gettext_noop("Click and drag the mouse to draw a pattern plus its symmetric across the picture.")));
   } else { /* KAL_BOTH */
     return(strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
   }
@@ -114,6 +126,7 @@ static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surf
 {
   magic_api * api = (magic_api *) ptr;
   int xx, yy;
+  int i, j;
   Uint32 colr;
 
   colr = SDL_MapRGB(canvas->format,
@@ -139,6 +152,14 @@ static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surf
         if (which == KAL_UD || which == KAL_BOTH) {
           api->putpixel(canvas, x + xx, canvas->h - 1 - y + yy, colr);
         }
+	if (which == KAL_PATTERN || which == KAL_TILES) {
+	  for (i = 0; i <= canvas->w; i += square_size)
+	    for (j = 0; j <= canvas->h; j += square_size){
+	      api->putpixel(canvas, i + xx + x % square_size, j + yy + y % square_size, colr);
+	      if (which == KAL_TILES)
+		api->putpixel(canvas, i + yy + y % square_size, j + xx + x % square_size, colr);
+	    }
+	  }
       }
     }
   }
