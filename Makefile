@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - April 26, 2011
+# June 14, 2002 - July 2, 2011
 
 
 # The version number, for release:
@@ -18,17 +18,22 @@ MAGIC_API_VERSION:=0x00000003
 SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
 OS:=windows
+GPERF:=/usr/bin/gperf
 else
 ifeq ($(SYSNAME),Darwin)
 OS:=osx
+GPERF:=/usr/bin/gperf
 else
 ifeq ($(SYSNAME),BeOS)
 OS:=beos
+GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
 else
 ifeq ($(SYSNAME),Haiku)
 OS:=beos
+GPERF:=$(shell finddir B_COMMON_BIN_DIRECTORY)/gperf
 else
 OS:=linux
+GPERF:=/usr/bin/gperf
 endif
 endif
 endif
@@ -968,8 +973,8 @@ obj/parse.c:	obj/parse_step1.c
 obj/parse_step1.c:	src/parse.gperf
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 1)..."
-	@if [ -x /usr/bin/gperf ] ; then \
-		gperf src/parse.gperf > obj/parse_step1.c ; \
+	@if [ -x $(GPERF) ] ; then \
+		$(GPERF) src/parse.gperf > obj/parse_step1.c ; \
 	else \
 		echo "Please install 'gperf' and try again!" ; \
 		false ; \
