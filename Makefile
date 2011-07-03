@@ -332,6 +332,18 @@ uninstall-i18n:
 	-rm $(IM_PREFIX)/th.im
 	-rm $(IM_PREFIX)/zh_tw.im
 
+##### i18n stuff for Tux Paint Config bundling
+TPCONF_PATH:=../tuxpaint-config
+TPCPOFILES:=$(wildcard $(TPCONF_PATH)/src/po/*.po)
+TPCMOFILES:=$(patsubst $(TPCONF_PATH)/src/po/%.po,$(TPCONF_PATH)/trans/%.mo,$(TPCPOFILES))
+TPCINSTALLED_MOFILES:=$(patsubst $(TPCONF_PATH)/trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo,$(TPCMOFILES))
+
+$(TPCINSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo: $(TPCONF_PATH)/trans/%.mo
+	@echo
+	@echo "...Installing Tux Paint Config i18n..."
+	install -D -m 644 $< $@
+
+install-tpconf-i18n: $(TPCINSTALLED_MOFILES)
 
 # Install the translated text:
 # We can install *.mo files if they were already generated, or if it can be
@@ -504,7 +516,7 @@ bdist-win32:
 		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins \
-		windows_ARCH_INSTALL:=install-dlls
+		windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
