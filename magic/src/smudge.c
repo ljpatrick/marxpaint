@@ -7,7 +7,7 @@
   Smudge by Albert Cahalan <albert@users.sf.net>
   Wet Paint addition by Bill Kendrick <bill@newbreedsoftware.com>
 
-  Copyright (c) 2002-2009
+  Copyright (c) 2002-2011
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -115,7 +115,8 @@ static void do_smudge(void * ptr, int which, SDL_Surface * canvas, SDL_Surface *
         {
           SDL_GetRGB(api->getpixel(last, x + xx, y + yy),
                      last->format, &r, &g, &b);
-          strength = (abs(xx * yy) / 8) + 6;
+          //strength = (abs(xx * yy) / 8) + 6;
+          strength = (abs(xx * yy) / 8) + 1;
           api->putpixel(canvas, x + xx, y +yy, SDL_MapRGB(canvas->format,
                                                           (smudge_r + r * strength) / (strength + 1),
                                                           (smudge_g + g * strength) / (strength + 1),
