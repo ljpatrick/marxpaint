@@ -39,6 +39,8 @@ const char * descs[NUM_TOOLS] = {
 
 Mix_Chunk * snd_effect[NUM_TOOLS];
 
+static SDL_Surface * canvas_backup;
+
 void halftone_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect);
@@ -122,6 +124,8 @@ void halftone_shutdown(magic_api * api)
 
   for (i = 0; i < NUM_TOOLS; i++)
     Mix_FreeChunk(snd_effect[i]);
+
+  SDL_FreeSurface(canvas_backup);
 }
 
 void halftone_click(magic_api * api, int which, int mode,
@@ -193,14 +197,22 @@ void halftone_line_callback(void * ptr, int which,
   Uint32 total_r, total_g, total_b;
   Uint32 pixel;
   int xx, yy, xxx, yyy, channel;
+  SDL_Rect dest;
   magic_api * api = (magic_api *) ptr;
 
-  for (xx = x - 16; xx < x + 16; xx = xx + 4) {
-    for (yy = y - 16; yy < y + 16; yy = yy + 4) {
+  pixel = SDL_MapRGB(canvas->format, 255, 255, 255);
+  dest.x = x - 8;
+  dest.y = y - 8;
+  dest.w = 16;
+  dest.h = 16;
+  SDL_FillRect(canvas, &dest, pixel);
+
+  for (xx = x - 8; xx < x + 8; xx = xx + 4) {
+    for (yy = y - 8; yy < y + 8; yy = yy + 4) {
       total_r = total_g = total_b = 0;
       for (xxx = xx; xxx < xx + 4; xxx++) {
         for (yyy = xx; yyy < xx + 4; yyy++) {
-          SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r, &g, &b);
+          SDL_GetRGB(api->getpixel(canvas_backup, x, y), canvas_backup->format, &r, &g, &b);
           total_r += r;
           total_g += g;
           total_b += b;
@@ -210,14 +222,17 @@ void halftone_line_callback(void * ptr, int which,
       total_g /= 16;
       total_b /= 16;
 
+      /* FIXME: Do some magic here! */
       for (channel = 0; channel < NUM_CHANS; channel++) {
-        
-      }
+        r = total_r & chan_colors[channel][0];
+        g = total_g & chan_colors[channel][2];
+        b = total_b & chan_colors[channel][1];
 
-      pixel = SDL_MapRGB(canvas->format, total_r, total_g, total_b);
-      for (xxx = xx; xxx < xx + 4; xxx++) {
-        for (yyy = yy; yyy < yy + 4; yyy++) {
-          api->putpixel(canvas, xxx, yyy, pixel);
+        pixel = SDL_MapRGB(canvas->format, r, g, b);
+        for (xxx = xx; xxx < xx + 4; xxx++) {
+          for (yyy = yy; yyy < yy + 4; yyy++) {
+            api->putpixel(canvas, xxx, yyy, pixel);
+          }
         }
       }
     }
@@ -226,6 +241,9 @@ void halftone_line_callback(void * ptr, int which,
 
 void halftone_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+  canvas_backup=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+
+  SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
 }
 
 void halftone_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
