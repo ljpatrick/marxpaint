@@ -1,6 +1,6 @@
 /* halftone.c
 
-   Last modified: 2011.07.15
+   Last modified: 2011.07.17
 */
 
 
@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
+#include <math.h>
 
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -39,7 +40,7 @@ const char * descs[NUM_TOOLS] = {
 
 Mix_Chunk * snd_effect[NUM_TOOLS];
 
-static SDL_Surface * canvas_backup;
+static SDL_Surface * canvas_backup, * square;
 
 void halftone_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
@@ -59,14 +60,24 @@ int halftone_init(magic_api * api)
   int i;
   char fname[1024];
 
+  canvas_backup = NULL;
+  square = NULL;
+
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname),
              "%s/sounds/magic/%s",
 	     api->data_directory, snd_filenames[i]);
 
-/* FIXME    snd_effect[i] = Mix_LoadWAV(fname); */
+/* FIXME    snd_effect[i] = Mix_LoadWAV(fname);
+    if (snd_effect[i] == NULL) {
+      SDL_FreeSurface(canvas_backup);
+      SDL_FreeSurface(square);
+      return(0);
+    }
+*/
   }
+
 
   return(1);
 }
@@ -126,6 +137,7 @@ void halftone_shutdown(magic_api * api)
     Mix_FreeChunk(snd_effect[i]);
 
   SDL_FreeSurface(canvas_backup);
+  SDL_FreeSurface(square);
 }
 
 void halftone_click(magic_api * api, int which, int mode,
@@ -140,7 +152,7 @@ void halftone_drag(magic_api * api, int which, SDL_Surface * canvas,
 		  SDL_Rect * update_rect)
 {
   api->line((void *) api, which, canvas, snapshot,
-            ox, oy, x, y, 1, halftone_line_callback);
+            ox, oy, x, y, 4, halftone_line_callback);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
@@ -193,26 +205,30 @@ void halftone_line_callback(void * ptr, int which,
                            SDL_Surface * canvas, SDL_Surface * snapshot,
                            int x, int y)
 {
-  Uint8 r, g, b;
+  Uint8 r, g, b, or, og, ob;
   Uint32 total_r, total_g, total_b;
   Uint32 pixel;
-  int xx, yy, xxx, yyy, channel;
+  int xx, yy, xxx, yyy, channel, ox, oy, sqx, sqy;
   SDL_Rect dest;
   magic_api * api = (magic_api *) ptr;
+  float cmyk[4];
 
-  pixel = SDL_MapRGB(canvas->format, 255, 255, 255);
-  dest.x = x - 8;
-  dest.y = y - 8;
-  dest.w = 16;
-  dest.h = 16;
-  SDL_FillRect(canvas, &dest, pixel);
+  pixel = SDL_MapRGB(square->format, 255, 255, 255);
+  SDL_FillRect(square, NULL, pixel);
 
-  for (xx = x - 8; xx < x + 8; xx = xx + 4) {
-    for (yy = y - 8; yy < y + 8; yy = yy + 4) {
+  /* Lock to grid, centered around mouse */
+  x = ((x / 8) - 1) * 8;
+  y = ((y / 8) - 1) * 8;
+
+  if (api->touched(x, y)) { return; }
+
+  for (xx = 0; xx < 16; xx = xx + 4) {
+    for (yy = 0; yy < 16; yy = yy + 4) {
+      /* Get avg color around the mouse */
       total_r = total_g = total_b = 0;
-      for (xxx = xx; xxx < xx + 4; xxx++) {
-        for (yyy = xx; yyy < xx + 4; yyy++) {
-          SDL_GetRGB(api->getpixel(canvas_backup, x, y), canvas_backup->format, &r, &g, &b);
+      for (xxx = 0; xxx < 4; xxx++) {
+        for (yyy = 0; yyy < 4; yyy++) {
+          SDL_GetRGB(api->getpixel(canvas_backup, x + xx + xxx, y + yy + yyy), canvas_backup->format, &r, &g, &b);
           total_r += r;
           total_g += g;
           total_b += b;
@@ -222,30 +238,99 @@ void halftone_line_callback(void * ptr, int which,
       total_g /= 16;
       total_b /= 16;
 
-      /* FIXME: Do some magic here! */
-      for (channel = 0; channel < NUM_CHANS; channel++) {
-        r = total_r & chan_colors[channel][0];
-        g = total_g & chan_colors[channel][2];
-        b = total_b & chan_colors[channel][1];
+      /* Convert to CMYK values */
+      halftone_rgb2cmyk(total_r, total_g, total_b, cmyk);
 
-        pixel = SDL_MapRGB(canvas->format, r, g, b);
-        for (xxx = xx; xxx < xx + 4; xxx++) {
-          for (yyy = yy; yyy < yy + 4; yyy++) {
-            api->putpixel(canvas, xxx, yyy, pixel);
+      /* Draw C, M, Y and K blobs into our 'square' surface */
+      for (channel = 0; channel < NUM_CHANS; channel++) {
+        r = chan_colors[channel][0];
+        g = chan_colors[channel][1];
+        b = chan_colors[channel][2];
+
+        for (xxx = 0; xxx < 8; xxx++) {
+          for (yyy = 0; yyy < 8; yyy++) {
+            /* A circle blob, radius based upon channel (C, M, Y or K) strength for this color */
+
+            /* FIXME: Base it upon this channel's angle! -bjk 2011.07.17 */
+            ox = xxx;
+            oy = yyy;
+
+            sqx = (xx + ox) % 16;
+            sqy = (yy + oy) % 16;
+
+            if (api->in_circle(xxx - 4, yyy - 4, cmyk[channel] * 6.0)) {
+              SDL_GetRGB(api->getpixel(square, sqx, sqy), square->format, &or, &og, &ob);
+
+              if (or == 255 && og == 255 && ob == 255) {
+                /* If it's just white, put full color down */
+                pixel = SDL_MapRGB(square->format, r, g, b);
+              } else {
+                /* Otherwise, blend a little */
+                pixel = SDL_MapRGB(square->format, (r + or) / 2, (g + og) / 2, (b + ob) / 2);
+              }
+
+              api->putpixel(square, sqx, sqy, pixel);
+            }
           }
         }
       }
     }
   }
+
+  dest.x = x;
+  dest.y = y;
+
+  SDL_BlitSurface(square, NULL, canvas, &dest);
 }
 
 void halftone_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-  canvas_backup=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  if (canvas_backup == NULL)
+    canvas_backup = SDL_CreateRGBSurface(SDL_ANYFORMAT, api->canvas_w, api->canvas_h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+
+  if (square == NULL)
+    square = SDL_CreateRGBSurface(SDL_ANYFORMAT, 16, 16, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+
+  /* FIXME: What to do if they come back NULL!? :( */
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
 }
 
 void halftone_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+}
+
+void halftone_rgb2cmyk(Uint8 r, Uint8 g, Uint8 b, float cmyk[])
+{
+  float mincmy, c, m, y, k;
+
+  /* Simple RGB to CMYK math (not worrying about color profiles, etc.),
+     based on math found at http://www.javascripter.net/faq/rgb2cmyk.htm
+     by Alexei Kourbatov <alexei@kourbatov.com> */
+
+  if (r == 0 && g == 0 && b == 0)
+  {
+    /* Black */
+    c = 0.0;
+    m = 0.0;
+    y = 0.0;
+    k = 1.0;
+  }
+  else
+  {
+    c = 1.0 - (((float) r) / 255.0);
+    m = 1.0 - (((float) g) / 255.0);
+    y = 1.0 - (((float) b) / 255.0);
+   
+    mincmy = min(c, min(m, y));
+    c = (c - mincmy) / (1.0 - mincmy);
+    m = (m - mincmy) / (1.0 - mincmy);
+    y = (y - mincmy) / (1.0 - mincmy);
+    k = mincmy;
+  }
+
+  cmyk[0] = c;
+  cmyk[1] = m;
+  cmyk[2] = y;
+  cmyk[3] = k;
 }
