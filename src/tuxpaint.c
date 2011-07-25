@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 24, 2011
+  June 14, 2002 - July 25, 2011
 */
 
 
@@ -9256,9 +9256,9 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 	ta = ta / tmp;
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-        tr = pow(tr, gamma_invert);
-        tg = pow(tg, gamma_invert);
-        tb = pow(tb, gamma_invert);
+        tr = ceil(pow(tr, gamma_invert));
+        tg = ceil(pow(tg, gamma_invert));
+        tb = ceil(pow(tb, gamma_invert));
 #endif
 
 	if (keep_alpha == 0 && s->format->Amask != 0)
