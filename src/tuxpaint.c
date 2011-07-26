@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 25, 2011
+  June 14, 2002 - July 26, 2011
 */
 
 
@@ -9234,9 +9234,12 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 		      src->format, &r, &g, &b, &a);
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-	  tr = tr + pow((float)r, gamma);
-	  tb = tb + pow((float)b, gamma);
-	  tg = tg + pow((float)g, gamma);
+//	  tr = tr + pow((float)r, gamma);
+//	  tb = tb + pow((float)b, gamma);
+//	  tg = tg + pow((float)g, gamma);
+          tr = tr + sRGB_to_linear_table[r];
+          tg = tg + sRGB_to_linear_table[g];
+          tb = tb + sRGB_to_linear_table[b];
 #else
 	  tr = tr + r;
 	  tb = tb + b;
@@ -9256,9 +9259,12 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 	ta = ta / tmp;
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-        tr = ceil(pow(tr, gamma_invert));
-        tg = ceil(pow(tg, gamma_invert));
-        tb = ceil(pow(tb, gamma_invert));
+//      tr = ceil(pow(tr, gamma_invert));
+//      tg = ceil(pow(tg, gamma_invert));
+//      tb = ceil(pow(tb, gamma_invert));
+        tr = linear_to_sRGB(tr);
+        tg = linear_to_sRGB(tg);
+        tb = linear_to_sRGB(tb);
 #endif
 
 	if (keep_alpha == 0 && s->format->Amask != 0)
