@@ -59,6 +59,25 @@ struct cfginfo
   const char *joystick_slowness;
   const char *joystick_lowthreshold;
   const char *joystick_maxsteps;
+  const char *joystick_hat_slowness;
+  const char *joystick_hat_timeout;
+  const char *joystick_button_escape;
+  const char *joystick_button_selectbrushtool;
+  const char *joystick_button_selectstamptool;
+  const char *joystick_button_selectlinestool;
+  const char *joystick_button_selectshapestool;
+  const char *joystick_button_selecttexttool;
+  const char *joystick_button_selectlabeltool;
+  const char *joystick_button_selectmagictool;
+  const char *joystick_button_undo;
+  const char *joystick_button_redo;
+  const char *joystick_button_selecterasertool;
+  const char *joystick_button_new;
+  const char *joystick_button_open;
+  const char *joystick_button_save;
+  const char *joystick_button_pagesetup;
+  const char *joystick_button_print;
+
 };
 
 #define CFGINFO_MAXOFFSET  (sizeof(struct cfginfo))
