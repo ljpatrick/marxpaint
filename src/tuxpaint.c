@@ -977,6 +977,25 @@ static int onscreen_keyboard = 0;
 static int joystick_low_threshold = 3200;
 static int joystick_slowness = 15;
 static int joystick_maxsteps = 7;
+static int joystick_hat_slowness = 15;
+static Uint32 joystick_hat_timeout = 1000;
+static int joystick_button_escape = 255;
+static int joystick_button_selectbrushtool = 255;
+static int joystick_button_selectstamptool = 255;
+static int joystick_button_selectlinestool = 255;
+static int joystick_button_selectshapestool = 255;
+static int joystick_button_selecttexttool = 255;
+static int joystick_button_selectlabeltool = 255;
+static int joystick_button_selectmagictool = 255;
+static int joystick_button_undo = 255;
+static int joystick_button_redo = 255;
+static int joystick_button_selecterasertool = 255;
+static int joystick_button_new = 255;
+static int joystick_button_open = 255;
+static int joystick_button_save = 255;
+static int joystick_button_pagesetup = 255;
+static int joystick_button_print = 255;
+static Uint32 old_hat_ticks = 0;
 static int oldpos_x;
 static int oldpos_y;
 static int disable_screensaver;
@@ -1115,9 +1134,13 @@ static void tmp_apply_uncommited_text(void);
 static void undo_tmp_applied_text(void);
 
 static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int *val_y);
-static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y);
+static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int *valhat_x, int *valhat_y, int *hat_motioner, Uint32 *old_hat_ticks);
 static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y);
 static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y);
+static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmotioner, int old_hat_ticks, int val_x, int val_y, int valhat_x, int valhat_y);
+
+static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools);
+
 
 /* Magic tools API and tool handles: */
 
@@ -2018,7 +2041,7 @@ SDL_Surface *messager = NULL;
 
 TTF_Font *fonty = NULL;
 
-SDL_Color textcolory = { 0, 0, 0 };
+SDL_Color textcolory = { 0, 0, 0, 0};
 
 const char *keybd_array[] = {"","Esc", "  `", "  1","  2","  3","  4","  5","  6","  7","  8","  9","  0","  -","  =","Back",
 			"Caps","  a","  b","  c","  d","  e","  f","  g","  h","  i","  j","  k","  l","  m","  n","  [", "  ]","  \\","Ret",
@@ -2042,7 +2065,7 @@ int cur_thing, shift_flag, caps_flag, enter_flag;
 
 static void mainloop(void)
 {
-  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, new_x, new_y,
+  int done, tool_flag, canvas_flag,text_flag, val_x, val_y, valhat_x, valhat_y, new_x, new_y,
     shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, color_flag,
     old_stamp_group, which;
@@ -2051,6 +2074,7 @@ static void mainloop(void)
   int do_draw, max;
   int ignoring_motion;
   int motioner = 0;
+  int hatmotioner = 0;
   int whichc = 0;
   int whicht = 0;
   int test_x = 0;
@@ -2066,6 +2090,7 @@ static void mainloop(void)
   Uint32 last_cursor_blink, cur_cursor_blink,
     pre_event_time, current_event_time;
   SDL_Rect update_rect;
+  SDL_Rect real_r_tools = r_tools;
 #ifdef DEBUG
   Uint16 key_unicode;
   SDLKey key_down;
@@ -2093,6 +2118,8 @@ static void mainloop(void)
   text_flag = 0;
   val_x = 0;
   val_y = 0;
+  valhat_x = 0;
+  valhat_y = 0;
   done = 0;
   color_flag = 0;
   keyglobal = 0;
@@ -2599,6 +2626,8 @@ static void mainloop(void)
 #ifndef NOSOUND
 	  if (use_sound)
 	  {
+	    printf("modstate at mainloop %d, mod %d\n", SDL_GetModState(), mod);
+
 	    mute = !mute;
 	    Mix_HaltChannel(-1);
 
@@ -3145,13 +3174,13 @@ static void mainloop(void)
 	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
       else if (event.type == SDL_JOYHATMOTION)
-	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
       else if (event.type == SDL_JOYBALLMOTION)
 	handle_joyballmotion(event, oldpos_x, oldpos_y);
 
       else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
-	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+	handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, real_r_tools);
 	
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       event.button.button >= 2 &&
@@ -3192,7 +3221,7 @@ static void mainloop(void)
 
 	if (HIT(r_tools))
 	  {
-	    SDL_Rect real_r_tools = r_tools;
+	    real_r_tools = r_tools;
 
 	  if  (NUM_TOOLS > 14 + TOOLOFFSET)
 	  {
@@ -5464,12 +5493,9 @@ static void mainloop(void)
                 }
         }
 
-    if (motioner)
-    {
-      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-      if (joystick_slowness)
-	SDL_Delay(joystick_slowness);
-    }
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
+  
 
     SDL_Delay(1);
   }
@@ -11643,8 +11669,10 @@ static int do_prompt_image_flash_snd(const char *const text,
   int free_img1b;
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
 
   val_x = val_y = motioner = 0;
+  valhat_x = valhat_y = hatmotioner = 0;
   emulate_button_pressed = 0;
 
   hide_blinking_cursor();
@@ -11994,7 +12022,8 @@ static int do_prompt_image_flash_snd(const char *const text,
 	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
       else if (event.type == SDL_JOYHATMOTION)
-	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
+
 
       else if (event.type == SDL_JOYBALLMOTION)
 	handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -12003,12 +12032,9 @@ static int do_prompt_image_flash_snd(const char *const text,
 	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
 
-    if (motioner)
-    {
-      if (joystick_slowness)
-	SDL_Delay(joystick_slowness);
-      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-    }
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
+
 
     SDL_Delay(10);
 
@@ -13580,9 +13606,10 @@ static int do_open(void)
   int places_to_look;
   int opened_something;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
 
   val_x = val_y = motioner = 0;
-
+  valhat_x = valhat_y = hatmotioner = 0;
   opened_something = 0;
 
   do
@@ -14381,7 +14408,7 @@ static int do_open(void)
 	  handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
 	else if (event.type == SDL_JOYHATMOTION)
-	  handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
 	else if (event.type == SDL_JOYBALLMOTION)
 	  handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -14390,12 +14417,10 @@ static int do_open(void)
 	  handle_joybuttonupdown(event, oldpos_x, oldpos_y);
 	  }
 
-	if (motioner)
-	{
-	  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-	  if (joystick_slowness)
-	    SDL_Delay(joystick_slowness);
-	}
+	if (motioner | hatmotioner)
+	  handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
+
+
 	SDL_Delay(10);
 
         if (want_erase)
@@ -14691,9 +14716,10 @@ static int do_slideshow(void)
   int xx, yy;
   SDL_Surface *btn, *blnk;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
 
   val_x = val_y = motioner = 0;
-
+  valhat_x = valhat_y = hatmotioner = 0;
   do_setcursor(cursor_watch);
 
   /* Allocate some space: */
@@ -15396,7 +15422,7 @@ static int do_slideshow(void)
 	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
       else if (event.type == SDL_JOYHATMOTION)
-	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
       else if (event.type == SDL_JOYBALLMOTION)
 	handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -15405,12 +15431,9 @@ static int do_slideshow(void)
 	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
 
-    if (motioner)
-    {
-      if (joystick_slowness)
-	SDL_Delay(joystick_slowness);
-      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-    }
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
+
     SDL_Delay(10);
   }
   while (!done);
@@ -15444,6 +15467,8 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 {
   int i, which, next, done;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
+
   SDL_Surface * img;
   char * tmp_starter_id, * tmp_template_id, * tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
@@ -15454,7 +15479,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
   Uint32 last_ticks;
 
   val_x = val_y = motioner = 0;
-
+  valhat_x = valhat_y = hatmotioner = 0;
   /* Back up the current image's IDs, because they will get
      clobbered below! */
 
@@ -15637,7 +15662,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 	    handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
 	  else if (event.type == SDL_JOYHATMOTION)
-	    handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
 	  else if (event.type == SDL_JOYBALLMOTION)
 	    handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -15647,12 +15672,8 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 
 	}
 
-	if (motioner)
-	{
-	  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-	  if (joystick_slowness)
-	    SDL_Delay(joystick_slowness);
-	}
+	if (motioner | hatmotioner)
+	  handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
 
 	SDL_Delay(10);
 
@@ -18021,9 +18042,11 @@ static int do_new_dialog(void)
   Uint8 r, g, b;
   int white_in_palette;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
+
 
   val_x = val_y = motioner = 0;
-  
+  valhat_x = valhat_y = hatmotioner = 0;  
   do_setcursor(cursor_watch);
 
   /* Allocate some space: */
@@ -18898,7 +18921,7 @@ static int do_new_dialog(void)
 	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
       else if (event.type == SDL_JOYHATMOTION)
-	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
       else if (event.type == SDL_JOYBALLMOTION)
 	handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -18907,12 +18930,9 @@ static int do_new_dialog(void)
 	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
 
-    if (motioner)
-    {
-      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-      if (joystick_slowness)
-	SDL_Delay(joystick_slowness);
-    }
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
+
     SDL_Delay(10);
   }
   while (!done);
@@ -19195,6 +19215,7 @@ static int do_color_picker(void)
   int x, y, w;
   int ox, oy, oox, ooy, nx, ny;
   int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
   SDL_Surface * tmp_btn_up, * tmp_btn_down;
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
@@ -19211,7 +19232,7 @@ static int do_color_picker(void)
   SDL_Surface * backup;
 
   val_x = val_y = motioner = 0;
-
+  valhat_x = valhat_y = hatmotioner = 0;
   hide_blinking_cursor();
 
   do_setcursor(cursor_hand);
@@ -19525,7 +19546,7 @@ static int do_color_picker(void)
 	handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
       else if (event.type == SDL_JOYHATMOTION)
-	handle_joyhatmotion(event, oldpos_x, oldpos_y);
+	handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
 
       else if (event.type == SDL_JOYBALLMOTION)
 	handle_joyballmotion(event, oldpos_x, oldpos_y);
@@ -19534,12 +19555,8 @@ static int do_color_picker(void)
 	handle_joybuttonupdown(event, oldpos_x, oldpos_y);
     }
 
-    if (motioner)
-    {
-      if (joystick_slowness)
-	SDL_Delay(joystick_slowness);
-      SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
-    }
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
 
     SDL_Delay(10);
   }
@@ -21484,12 +21501,190 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_maxsteps, NULL) < 1 || strtof(tmpcfg.joystick_maxsteps, NULL) > 7)
 	{
 	  /* FIXME: Find better exit code */
-	  printf("Joystick lower threshold (now %s)  must be between 1 and 7", tmpcfg.joystick_maxsteps);
+	  printf("Joystick max steps (now %s)  must be between 1 and 7", tmpcfg.joystick_maxsteps);
 	  exit(1);
 	}
 	joystick_maxsteps = strtof(tmpcfg.joystick_maxsteps, NULL);
     }
-
+  if(tmpcfg.joystick_hat_slowness)
+    {
+      if(strtof(tmpcfg.joystick_hat_slowness, NULL) < 0 || strtof(tmpcfg.joystick_hat_slowness, NULL) > 500)
+	{
+	  printf("Joystick hat slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_hat_slowness);
+	  exit(1);
+	}
+      joystick_hat_slowness = strtof(tmpcfg.joystick_hat_slowness, NULL);
+    }
+  if(tmpcfg.joystick_hat_timeout)
+    {
+      if (strtof(tmpcfg.joystick_hat_timeout, NULL) < 0 || strtof(tmpcfg.joystick_hat_timeout, NULL) > 3000)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick hat timeout (now %s)  must be between 0 and 3000", tmpcfg.joystick_hat_timeout);
+	  exit(1);
+	}
+	joystick_hat_timeout = strtof(tmpcfg.joystick_hat_timeout, NULL);
+    }
+  if(tmpcfg.joystick_button_escape)
+    {
+      if (strtof(tmpcfg.joystick_button_escape, NULL) < 0 || strtof(tmpcfg.joystick_button_escape, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button escape shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_escape);
+	  exit(1);
+	}
+	joystick_button_escape = strtof(tmpcfg.joystick_button_escape, NULL);
+    }
+  if(tmpcfg.joystick_button_selectbrushtool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectbrushtool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectbrushtool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button brush tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectbrushtool);
+	  exit(1);
+	}
+	joystick_button_selectbrushtool = strtof(tmpcfg.joystick_button_selectbrushtool, NULL);
+    }
+  if(tmpcfg.joystick_button_selectstamptool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectstamptool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectstamptool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button stamp tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectstamptool);
+	  exit(1);
+	}
+	joystick_button_selectstamptool = strtof(tmpcfg.joystick_button_selectstamptool, NULL);
+    }
+  if(tmpcfg.joystick_button_selectlinestool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectlinestool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectlinestool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button lines tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectlinestool);
+	  exit(1);
+	}
+	joystick_button_selectlinestool = strtof(tmpcfg.joystick_button_selectlinestool, NULL);
+    }
+  if(tmpcfg.joystick_button_selectshapestool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectshapestool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectshapestool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button shapes tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectshapestool);
+	  exit(1);
+	}
+	joystick_button_selectshapestool = strtof(tmpcfg.joystick_button_selectshapestool, NULL);
+    }
+  if(tmpcfg.joystick_button_selecttexttool)
+    {
+      if (strtof(tmpcfg.joystick_button_selecttexttool, NULL) < 0 || strtof(tmpcfg.joystick_button_selecttexttool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button text tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selecttexttool);
+	  exit(1);
+	}
+	joystick_button_selecttexttool = strtof(tmpcfg.joystick_button_selecttexttool, NULL);
+    }
+  if(tmpcfg.joystick_button_selectlabeltool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectlabeltool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectlabeltool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button label tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectlabeltool);
+	  exit(1);
+	}
+	joystick_button_selectlabeltool = strtof(tmpcfg.joystick_button_selectlabeltool, NULL);
+    }
+  if(tmpcfg.joystick_button_selectmagictool)
+    {
+      if (strtof(tmpcfg.joystick_button_selectmagictool, NULL) < 0 || strtof(tmpcfg.joystick_button_selectmagictool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button magic tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selectmagictool);
+	  exit(1);
+	}
+	joystick_button_selectmagictool = strtof(tmpcfg.joystick_button_selectmagictool, NULL);
+    }
+  if(tmpcfg.joystick_button_undo)
+    {
+      if (strtof(tmpcfg.joystick_button_undo, NULL) < 0 || strtof(tmpcfg.joystick_button_undo, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button undo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_undo);
+	  exit(1);
+	}
+	joystick_button_undo = strtof(tmpcfg.joystick_button_undo, NULL);
+    }
+  if(tmpcfg.joystick_button_redo)
+    {
+      if (strtof(tmpcfg.joystick_button_redo, NULL) < 0 || strtof(tmpcfg.joystick_button_redo, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button redo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_redo);
+	  exit(1);
+	}
+	joystick_button_redo = strtof(tmpcfg.joystick_button_redo, NULL);
+    }
+  if(tmpcfg.joystick_button_selecterasertool)
+    {
+      if (strtof(tmpcfg.joystick_button_selecterasertool, NULL) < 0 || strtof(tmpcfg.joystick_button_selecterasertool, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button eraser tool shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_selecterasertool);
+	  exit(1);
+	}
+	joystick_button_selecterasertool = strtof(tmpcfg.joystick_button_selecterasertool, NULL);
+    }
+  if(tmpcfg.joystick_button_new)
+    {
+      if (strtof(tmpcfg.joystick_button_new, NULL) < 0 || strtof(tmpcfg.joystick_button_new, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button new shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_new);
+	  exit(1);
+	}
+	joystick_button_new = strtof(tmpcfg.joystick_button_new, NULL);
+    }
+  if(tmpcfg.joystick_button_open)
+    {
+      if (strtof(tmpcfg.joystick_button_open, NULL) < 0 || strtof(tmpcfg.joystick_button_open, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button open shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_open);
+	  exit(1);
+	}
+	joystick_button_open = strtof(tmpcfg.joystick_button_open, NULL);
+    }
+  if(tmpcfg.joystick_button_save)
+    {
+      if (strtof(tmpcfg.joystick_button_save, NULL) < 0 || strtof(tmpcfg.joystick_button_save, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button save shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_save);
+	  exit(1);
+	}
+	joystick_button_save = strtof(tmpcfg.joystick_button_save, NULL);
+    }
+  if(tmpcfg.joystick_button_pagesetup)
+    {
+      if (strtof(tmpcfg.joystick_button_pagesetup, NULL) < 0 || strtof(tmpcfg.joystick_button_pagesetup, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button page setup shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_pagesetup);
+	  exit(1);
+	}
+	joystick_button_pagesetup = strtof(tmpcfg.joystick_button_pagesetup, NULL);
+    }
+  if(tmpcfg.joystick_button_print)
+    {
+      if (strtof(tmpcfg.joystick_button_print, NULL) < 0 || strtof(tmpcfg.joystick_button_print, NULL) > 254)
+	{
+	  /* FIXME: Find better exit code */
+	  printf("Joystick button print shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_print);
+	  exit(1);
+	}
+	joystick_button_print = strtof(tmpcfg.joystick_button_print, NULL);
+    }
 
   printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n", _promptless_save_over_ask, _promptless_save_over_new, _promptless_save_over);
 
@@ -24148,7 +24343,11 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
   j = SDL_JoystickGetAxis(joystick, 1);
   step = 5000;
   if (abs(i) < joystick_low_threshold && abs(j) < joystick_low_threshold)
+  {
     *motioner = FALSE;
+    *val_x = 0;
+    *val_y = 0;
+  }
   else
   { 
     if (i > joystick_low_threshold)
@@ -24175,50 +24374,52 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
   }
 }
 
-static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
-  int val_x, val_y;
-  val_x = val_y = 0;
+static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int *valhat_x, int *valhat_y, int *hatmotioner, Uint32 *old_hat_ticks) {
+  *hatmotioner = 1;
 
   switch (event.jhat.value) {
   case SDL_HAT_CENTERED:
-    val_x = 0;
-    val_y = 0;
+    *valhat_x = 0;
+    *valhat_y = 0;
+    *hatmotioner = 0;
     break;
   case SDL_HAT_UP:
-    val_x = 0;
-    val_y = -1;
+    *valhat_x = 0;
+    *valhat_y = -1;
     break;
   case SDL_HAT_RIGHTUP:
-    val_x = 1;
-    val_y = -1;
+    *valhat_x = 1;
+    *valhat_y = -1;
     break;
   case SDL_HAT_RIGHT:
-    val_x = 1;
-    val_y = 0;
+    *valhat_x = 1;
+    *valhat_y = 0;
     break;
   case SDL_HAT_RIGHTDOWN:
-    val_x = 1;
-    val_y = 1;
+    *valhat_x = 1;
+    *valhat_y = 1;
     break;
   case SDL_HAT_DOWN:
-    val_x = 0;
-    val_y = 1;
+    *valhat_x = 0;
+    *valhat_y = 1;
     break;
   case SDL_HAT_LEFTDOWN:
-    val_x = -1;
-    val_y = 1;
+    *valhat_x = -1;
+    *valhat_y = 1;
     break;
   case SDL_HAT_LEFT:
-    val_x = -1;
-    val_y = 0;
+    *valhat_x = -1;
+    *valhat_y = 0;
     break;
   case SDL_HAT_LEFTUP:
-    val_x = -1;
-    val_y = -1;
+    *valhat_x = -1;
+    *valhat_y = -1;
     break;
   }
-  if(val_x || val_y)
-    SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+  if(*valhat_x || *valhat_y)
+    SDL_WarpMouse(oldpos_x + *valhat_x, oldpos_y + *valhat_y);
+
+  *old_hat_ticks = SDL_GetTicks();
 }
 
 static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
@@ -24231,17 +24432,188 @@ static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
   SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
 }
 
+
+static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmotioner, int old_hat_ticks, int val_x, int val_y, int valhat_x, int valhat_y)
+{
+  int vx, vy, ticks;
+
+  ticks = SDL_GetTicks();
+  vx = vy = 0;
+
+  vx = oldpos_x + val_x;
+  vy = oldpos_y + val_y;
+
+
+if (ticks - old_hat_ticks > joystick_hat_timeout)
+  {
+    vx += valhat_x;
+    vy += valhat_y;
+  }
+SDL_WarpMouse(vx, vy);
+
+if (motioner && joystick_slowness)
+  SDL_Delay(joystick_slowness);
+
+if (hatmotioner && joystick_hat_slowness)
+  SDL_Delay(joystick_hat_slowness);
+
+}
+
 static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y) {
+  handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, r_tools);
+}
+ 
+static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools) {
+  int eby, ts;
   SDL_Event ev;
 
   ev.button.x = oldpos_x;
   ev.button.y = oldpos_y;
   ev.button.button = SDL_BUTTON_LEFT;
+  ev.button.type = SDL_MOUSEBUTTONDOWN;
+  ev.button.state = SDL_PRESSED;
 
   if (event.type == SDL_JOYBUTTONDOWN)
   {
-    ev.button.type = SDL_MOUSEBUTTONDOWN;
-    ev.button.state = SDL_PRESSED;
+    /* First the actions that can be reached via keyboard shortcurts. */
+    /* Escape is usefull to dismiss dialogs */
+    if (event.button.button == joystick_button_escape)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_ESCAPE;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+    else if (event.button.button == joystick_button_pagesetup)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_p;
+      ev.key.keysym.mod = KMOD_CTRL | KMOD_SHIFT;
+    }
+
+    /* Those could be reached too via clicks on the buttons. */
+    else if (event.button.button == joystick_button_undo)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_z;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+    else if (event.button.button == joystick_button_redo)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_r;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+      else if (event.button.button == joystick_button_open)    
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_o;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+    else if (event.button.button == joystick_button_new)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_n;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+    else if (event.button.button == joystick_button_save)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_s;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+    else if (event.button.button == joystick_button_print)
+    {
+      ev.type = SDL_KEYDOWN;
+      ev.key.keysym.sym = SDLK_p;
+      ev.key.keysym.mod = KMOD_CTRL;
+    }
+
+
+    /* Now the clicks on the tool buttons. */
+    /* Note that at small window sizes there are scroll buttons in the tools rectangle */
+    /* and some tools are hiden. */
+    /* As any click outside of real_r_tools will not select the desired tool, */
+    /* the workaround I came up with is to click on the scroll buttons to reveal the button, */
+    /* then click on it. */
+    else if (event.button.button == joystick_button_selectbrushtool ||
+	     event.button.button == joystick_button_selectstamptool ||
+	     event.button.button == joystick_button_selectlinestool ||
+	     event.button.button == joystick_button_selectshapestool ||
+	     event.button.button == joystick_button_selecttexttool ||
+	     event.button.button == joystick_button_selectlabeltool ||
+	     event.button.button == joystick_button_selectmagictool ||
+	     event.button.button == joystick_button_selecterasertool)
+
+    {
+      if (event.button.button == joystick_button_selectbrushtool)
+      {
+	ev.button.x = (TOOL_BRUSH % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_BRUSH / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectstamptool)
+      {
+	ev.button.x = (TOOL_STAMP % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_STAMP / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectlinestool)
+      {
+	ev.button.x = (TOOL_LINES % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_LINES / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectshapestool)
+      {
+	ev.button.x = (TOOL_SHAPES % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_SHAPES / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selecttexttool)
+      {
+	ev.button.x = (TOOL_TEXT % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_TEXT / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectlabeltool)
+      {
+	ev.button.x = (TOOL_LABEL % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_LABEL / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectmagictool)
+      {
+	ev.button.x = (TOOL_MAGIC % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_MAGIC / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selecterasertool)
+      {
+	ev.button.x = (TOOL_ERASER % 2) * button_w + button_w / 2;
+	ev.button.y = real_r_tools.y + TOOL_ERASER / 2 * button_h + button_h / 2;
+      }
+
+      /* Deal with scroll to reveal the button that should be clicked */
+      eby = ev.button.y;
+      ts = tool_scroll;
+
+      while (eby < real_r_tools.y + ts / 2 * button_h)
+      {
+	ev.button.y = real_r_tools.y - 1;
+	SDL_PushEvent(&ev);
+	ts -= 2;
+      }
+
+      /* We don't need this ATM, but better left it ready in case the number of tools grows enouth */
+      while (eby > real_r_tools.y + real_r_tools.h + ts / 2 * button_h)
+      {
+	ev.button.y = real_r_tools.y + real_r_tools.h + 1;
+	SDL_PushEvent(&ev);
+	ts += 2;
+      }
+
+      ev.button.y = eby - ts / 2 * button_h;
+    }
   }
   else
   {
