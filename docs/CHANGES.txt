@@ -262,11 +262,16 @@ $Id$
       Albert Cahalan <albert@users.sourceforge.net>,
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Packaging all the metadata in the PNG file. Before a draw based on a starter
-      would have need 3 files: the draw, the starter and the .dat file, whith
-      the addition of the Labels tool this increased to 5 files. Now all this stuff
-      is packed in customs chunks inside the PNG file.
+    * Packaging all the metadata in the PNG file. Before a draw based
+      on a starter would have need 3 files: the draw, the starter and the
+      .dat file, whith the addition of the Labels tool this increased to
+      5 files. Now all this stuff is packed in customs chunks inside the
+      PNG file.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+    * No longer directly accessing PNG structure members directly, now using
+      png_set_IHDR().
+      Thomas Klausner, SF.net Bug #3386433
 
  * New Starters:
    -------------
