@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 2, 2011
+# June 14, 2002 - August 9, 2011
 
 
 # The version number, for release:
@@ -939,7 +939,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -1133,7 +1133,7 @@ MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
 
 $(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c  
-	$(CC) $(MAGIC_CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
+	$(CC) $(MAGIC_CFLAGS) $(LDFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
 # Probably should separate the various flags like the following:
 #	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
 

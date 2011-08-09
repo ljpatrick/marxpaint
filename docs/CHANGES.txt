@@ -63,6 +63,9 @@ $Id$
 
       For more info, see http://www.tuxpaint.org/docs/opencandy/
 
+    * Using $LDFLAGS when linking Magic tool plugins and Tux Paint binary.
+      Volkov Peter <volkov_peter@users.sourceforge.net> (SF.Net Bug #3389067)
+
   * Accessibility Improvements:
     ---------------------------
     * Added a mouse accessibility mode to avoid the need to drag the mouse.
