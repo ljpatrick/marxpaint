@@ -42,7 +42,7 @@ int hide_cursor = 1;
 int hide_cursor;
 #endif
 
-#if defined(NOKIA_770) || defined(__BEOS__)
+#if defined(NOKIA_770) || defined(__BEOS__) || defined(__HAIKU__)
 // Fancy cursors on BeOS are buggy in SDL
 int no_fancy_cursors = 1;
 #else
