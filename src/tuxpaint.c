@@ -231,6 +231,9 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #include <locale.h>
 
+#ifdef __HAIKU__
+#include <zconf.h>
+#endif
 #if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
 #include <wchar.h>
 #include <stdbool.h>
