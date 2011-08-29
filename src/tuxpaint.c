@@ -233,6 +233,8 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #ifdef __HAIKU__
 #include <zconf.h>
+#include <FindDirectory.h>
+#include <fs_info.h>
 #endif
 #if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
 #include <wchar.h>
@@ -512,7 +514,7 @@ extern WrapperData macosx;
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (__HAIKU__) || defined (WIN32) || defined (__APPLE__) // Haiku, MINGW/MSYS, and MacOSX need it, at least for now
+#if defined (WIN32) || defined (__APPLE__) // MINGW/MSYS, and MacOSX need it, at least for now
 #define fmemopen_alternative 
 #endif
 
@@ -12978,10 +12980,6 @@ static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, 
   free(headers);
 }
 
-#if defined(__HAIKU__)
-#define open_memstream fdopen // Haiku doesn't use open_memstream
-#endif
-
 static void do_png_embed_data(png_structp png_ptr)
 {
 
@@ -21305,8 +21303,15 @@ static void setup_config(char *argv[])
   {
 #ifdef _WIN32
     savedir = GetDefaultSaveDir("TuxPaint");
-#elif defined __BEOS__ || defined __HAIKU__
-    savedir = strdup("./tuxpaint");
+#elif __BEOS__
+    savedir = strdup("~/tuxpaint");
+#elif __HAIKU__
+  /* Haiku: Make use of find_directory() */
+       dev_t volume = dev_for_path("/boot");
+       char buffer[B_PATH_NAME_LENGTH+B_FILE_NAME_LENGTH];
+       status_t result;
+    result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
+    asprintf((char**)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
     savedir = strdup(macosx.preferencesPath);
 #else
