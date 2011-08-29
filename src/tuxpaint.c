@@ -21304,7 +21304,7 @@ static void setup_config(char *argv[])
 #ifdef _WIN32
     savedir = GetDefaultSaveDir("TuxPaint");
 #elif __BEOS__
-    savedir = strdup("~/tuxpaint");
+    savedir = strdup("./tuxpaint");
 #elif __HAIKU__
   /* Haiku: Make use of find_directory() */
        dev_t volume = dev_for_path("/boot");
