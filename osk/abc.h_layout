@@ -1,0 +1,135 @@
+# Derived from the output of xmodmap -pk  with the keyboard set to 
+# US intl altgr plus dead keys and some editing.
+
+# Adapted to the use in Tuxpaint, to roughly follow the layout
+# of my computer. No functions keys, no esc key,
+# no menu or windows keys, no multimedia keys and so on.
+
+# keycodes up to 8 are reserved for internal use, like
+# 0 empty button
+# 1 next layout
+# 2 previous layout
+
+# ABC layout of 15 buttons wide and 5 rows height
+
+WIDTH 15
+HEIGHT 5
+#FONTPATH default_font.ttf
+
+
+# For the purpose of osk should be:
+# KEY keycode  width  label_plain label_top label_altgr shiftcaps
+# shiftcaps means if the value of the key should be shifted if capslock is active
+# 
+
+KEY 49 1.0 ` ~ NULL 0
+KEY 10 1.0 1 ! ¡ 0
+KEY 11 1.0 2 @ ² 0
+KEY 12 1.0 3 # · 0
+KEY 13 1.0 4 $ ¤ 0
+KEY 14 1.0 5 % € 0
+KEY 15 1.0 6 ^ ¼ 0
+KEY 16 1.0 7 & ½ 0
+KEY 17 1.0 8 * ¾ 0
+KEY 18 1.0 9 ( ‘ 0
+KEY 19 1.0 0 ) ’ 0
+KEY 20 1.0 - _ ¥ 0
+KEY 21 1.0 = + × 0
+KEY 22 2.0 Back NULL NULL 0
+
+
+
+
+NEWLINE
+
+# Tab
+KEY 23 1.5 |<->| NULL NULL 0
+
+# Some tests to see how fonts works
+#KEY 38 1.0 耳  NULL NULL
+#KEY 56 1.0 à  NULL NULL
+#KEY 54 1.0 ش  NULL NULL
+#KEY 40 1.0 φ  NULL NULL
+#KEY 38 1.0 𐎈 NULL NULL
+
+KEY 38 1.0 a  NULL á 1
+KEY 56 1.0 b  NULL NULL 1
+KEY 54 1.0 c  NULL © 1
+KEY 40 1.0 d  NULL ð 1
+KEY 26 1.0 e  NULL é 1
+KEY 41 1.0 f  NULL NULL 1
+KEY 42 1.0 g  NULL NULL 1
+KEY 43 1.0 h  NULL NULL 1
+KEY 31 1.0 i  NULL í 1
+KEY 44 1.0 j  NULL NULL 1
+KEY 34 1.0 [ { « 0
+KEY 35 1.0 ] } » 0
+KEY 51 1.5 \ | ¬ 0
+
+
+
+NEWLINE
+
+# CAPSLOCK
+KEY 66 2.0 Caps  NULL NULL 0
+KEY 45 1.0 k  NULL œ 1
+KEY 46 1.0 l  NULL ø 1
+KEY 58 1.0 m  NULL µ 1
+KEY 57 1.0 n  NULL ñ 1
+KEY 32 1.0 o  NULL ó 1
+KEY 33 1.0 p  NULL ö 1
+KEY 24 1.0 q  NULL ä 1
+KEY 27 1.0 r  NULL ® 1
+KEY 39 1.0 s  NULL ß 1
+KEY 47 1.0 ; : ¶ 0
+KEY 48 1.0 ´ ¨ ' 0
+
+# Return
+KEY 36 2.0 Enter NULL NULL 0
+
+
+NEWLINE
+
+KEY 50 2.5 Shift  NULL NULL 0
+KEY 28 1.0 t  NULL þ 1
+KEY 30 1.0 u  NULL ú 1
+KEY 55 1.0 v  NULL NULL 1
+
+KEY 25 1.0 w  NULL å 1
+
+KEY 53 1.0 x  NULL NULL 1
+KEY 29 1.0 y  NULL ü 1
+KEY 52 1.0 z  NULL æ 1
+KEY 59 1.0 , < ç 0
+KEY 60 1.0 . > ˙ 0
+KEY 61 1.0 / ? ¿ 0
+KEY 62 2.5 Shift  NULL NULL 0
+
+
+
+NEWLINE
+
+# Arrow to left will change to the previous keyboard
+# Disabled for now...
+KEY 2 0.5 <--  NULL NULL 0
+#KEY 0 0.5 <  NULL NULL 0
+
+# Empty button
+#KEY 0 1.0    NULL NULL NULL 0
+
+
+KEY 133 1.5 Cmp NULL NULL 0
+
+# The ALT or ALTGR keys are used in im to switch the input mode.
+KEY 64 2.0 Alt  NULL NULL 0
+
+# Space
+KEY 65 8.0  SPACE  NULL NULL 0
+
+KEY 108 2.5 AltGr  NULL NULL 0
+
+# Arrow to right will change to the next keyboard
+# Disabled for now...
+KEY 1 0.5 -->  NULL NULL 0
+#KEY 0 0.5 >  NULL NULL 0
+

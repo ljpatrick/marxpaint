@@ -173,7 +173,7 @@ CURSOR_SHAPES:=LARGE
 # CURSOR_SHAPES:=SMALL
 
 # Libraries, paths, and flags:
-SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf
+SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf -lz -lpng
 
 # Sound support
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
@@ -935,7 +935,7 @@ install-man:
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o \
-		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
+		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
@@ -955,7 +955,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/sounds.h src/tip_tux.h src/great.h \
-		src/tp_magic_api.h src/parse.h \
+		src/tp_magic_api.h src/parse.h src/onscreen_keyboard.h \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
 		src/$(MOUSEDIR)/insertion.xbm \
@@ -1088,6 +1088,12 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 	@echo "...Compiling win32 resources..."
 	@$(WINDRES) -i win32/resources.rc -o obj/resource.o
 
+obj/onscreen_keyboard.o:	src/onscreen_keyboard.c src/onscreen_keyboard.h src/dirwalk.h src/progressbar.h \
+		src/get_fname.h src/debug.h
+	@echo
+	@echo "...Compiling on screen keyboard support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/onscreen_keyboard.c -o obj/onscreen_keyboard.o
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@echo
