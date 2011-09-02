@@ -438,6 +438,7 @@ install:	install-bin install-data install-man install-doc \
 		install-default-config install-example-stamps \
 		install-example-starters \
 		install-bash-completion \
+		install-osk \
 		$(ARCH_INSTALL)
 #install-thumb-starters
 	@echo
@@ -890,6 +891,15 @@ install-data:
 	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
 	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
 
+
+# Install the onscreen keyboard:
+.PHONY: install-osk
+install-osk:
+	@echo
+	@echo "...Installing onscreen keyboard files..."
+	@install -d $(DATA_PREFIX)/osk
+	@cp -R osk/[a-z]* $(DATA_PREFIX)/osk
+	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
 
 
 # Install the text documentation:
