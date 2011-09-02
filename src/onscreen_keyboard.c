@@ -1312,6 +1312,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
   char *keysym, *mnemo;
   char *name, *aux_name, *aux_list;
   wchar_t *wkeysym;
+  wchar_t *ks;
   on_screen_keyboard * new_keyboard;
 
   printf("list: %s\n", keyboard->keyboard_list);
@@ -1405,7 +1406,6 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     
 
     get_composed_keysym(keyboard, keyboard->composing, wkeysym);
-    wchar_t *ks;
     draw_key(keyboard->keymodifiers.compose, keyboard, 0);
 
     if (keyboard->composed)
