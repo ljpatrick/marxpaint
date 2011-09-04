@@ -31,7 +31,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 static void print_composemap(osk_composenode *composemap, char * sp);
 #endif
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off)
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, int disable_change)
 {
   SDL_Surface *surface;
   osk_layout *layout;
@@ -39,7 +39,7 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
 
   keyboard = malloc(sizeof(on_screen_keyboard));
 
-  
+  keyboard->disable_change = disable_change;  
   layout = load_layout(keyboard, layout_name);
   if (!layout)
   {
@@ -67,7 +67,7 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
     printf("Error creating the onscreen keyboard surface\n");
     return NULL;
   }
-  keyboard->name = layout_name;
+  //  keyboard->name = layout_name;
   keyboard->layout = layout;
   keyboard->surface = surface;
   keyboard->rect.x = 0;
@@ -110,6 +110,8 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   filename = malloc(255);
   if (layout_name != NULL)
   {
+    keyboard->name = layout_name;
+
     /* Try full path */
     fi = fopen(layout_name, "r");
     if (fi == NULL)
@@ -124,6 +126,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 	/* Fallback to default */
 	snprintf(filename, 255, "%sosk/default.layout", DATA_PREFIX);
 	fi = fopen(filename, "r");
+	keyboard->name = "default.layout";
       }
     }
   }
@@ -131,6 +134,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   {
     snprintf(filename, 255, "%sosk/default.layout", DATA_PREFIX);
     fi = fopen(filename, "r");
+    keyboard->name = "default.layout";
   }
 
   free(filename);
@@ -1325,6 +1329,9 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     /* Select next or previous keyboard */
     if (key->keycode == 1 || key->keycode == 2)
     {
+      if (keyboard->disable_change)
+	return(keyboard);
+
       aux_list = strdup(keyboard->keyboard_list);
   printf("auxlist: %s\n", aux_list);
   printf("kn %s\n",  keyboard->name);
@@ -1371,7 +1378,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
 
-      new_keyboard = osk_create(strdup(name), keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off);
+      new_keyboard = osk_create(strdup(name), keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->disable_change);
       printf("freeeeeeeeeeeeeeeeeeeeeee\n");
       free(aux_list);
 

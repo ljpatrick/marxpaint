@@ -1022,6 +1022,8 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 static int emulate_button_pressed = 0;
 static int mouseaccessibility = 0;
 static int onscreen_keyboard = 0;
+static char * onscreen_keyboard_layout = NULL;
+static int onscreen_keyboard_disable_change = 0;
 static int joystick_low_threshold = 3200;
 static int joystick_slowness = 15;
 static int joystick_maxsteps = 7;
@@ -1412,7 +1414,7 @@ static Uint16 *wcstou16(const wchar_t * str)
 }
 
 
-SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
+static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
 				  const wchar_t * restrict str,
 				  SDL_Color color)
 {
@@ -1983,7 +1985,7 @@ static void eat_sdl_events(void)
     else if (event.type == SDL_ACTIVEEVENT)
       handle_active(&event);
     else if (event.type == SDL_KEYDOWN)
-      {//AAAAAAAAAAAAAAQQQQQQQQQQQQQQQQQQUUUUUUUUUUUUUUUUUUIIIIIIIIIII
+      {
       SDLKey key = event.key.keysym.sym;
       SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
       SDLMod alt = event.key.keysym.mod & KMOD_ALT;
@@ -3391,7 +3393,12 @@ static void mainloop(void)
 	      if (onscreen_keyboard)
 	      {
 		if (kbd == NULL)
-		    kbd = osk_create("test.layout", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off);
+		{
+		  if (onscreen_keyboard_layout)
+		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, onscreen_keyboard_disable_change);
+		  else
+		    kbd = osk_create("default", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, onscreen_keyboard_disable_change);
+		}
 		if (kbd == NULL)
 		  printf("kbd = NULL\n");
 		else
@@ -21570,6 +21577,7 @@ static void setup_config(char *argv[])
   SETBOOL(wheely);
   SETBOOL(mouseaccessibility);
   SETBOOL(onscreen_keyboard);
+  SETBOOL(onscreen_keyboard_disable_change);
   SETBOOL(_promptless_save_over);
   SETBOOL(_promptless_save_over_new);
   SETBOOL(_promptless_save_over_ask);
@@ -21838,7 +21846,7 @@ static void setup_config(char *argv[])
 	}
 	joystick_button_pagesetup = strtof(tmpcfg.joystick_button_pagesetup, NULL);
     }
-  if(tmpcfg.joystick_button_print)
+   if(tmpcfg.joystick_button_print)
     {
       if (strtof(tmpcfg.joystick_button_print, NULL) < 0 || strtof(tmpcfg.joystick_button_print, NULL) > 254)
 	{
@@ -21847,6 +21855,20 @@ static void setup_config(char *argv[])
 	  exit(1);
 	}
 	joystick_button_print = strtof(tmpcfg.joystick_button_print, NULL);
+    }
+
+
+   /* having any of theese implies having onscreen keyboard setted */
+  if(tmpcfg.onscreen_keyboard_layout)
+    {
+      onscreen_keyboard_layout = strdup(tmpcfg.onscreen_keyboard_layout);
+      onscreen_keyboard = TRUE;     
+    }
+
+  if(tmpcfg.onscreen_keyboard_disable_change)
+    {
+      onscreen_keyboard_disable_change = strdup(tmpcfg.onscreen_keyboard_disable_change);
+      onscreen_keyboard = TRUE;     
     }
 
   printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n", _promptless_save_over_ask, _promptless_save_over_new, _promptless_save_over);

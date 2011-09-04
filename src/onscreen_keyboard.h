@@ -102,6 +102,7 @@ typedef struct osk_keyboard
   osk_keymodifiers keymodifiers; /* A shortcurt to find the place of the pressed modifiers */
   osk_layout *layout;            /* The layout struct */ 
   char *layout_name[256];        /* The layout name */
+  int disable_change;            /* If true, stay with the first layout found */
   wchar_t * key[256];            /* The text of the key */
   int keycode;                   /* The unicode code corresponding to the key */
   wchar_t * composed;            /* The unicode char found after a sequence of key presses */
@@ -110,7 +111,7 @@ typedef struct osk_keyboard
   osk_key * last_key_pressed;    /* The last key pressed */
 } on_screen_keyboard;
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface * button_off);
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface * button_off, int disable_change);
 
 struct osk_layout *osk_load_layout(char *layout_name);
 
