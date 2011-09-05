@@ -472,10 +472,25 @@ New Breed Software</p>
     <b>Label</b> tools.
   </dd>
 
+  <dt><code><b>onscreen-keyboard-layout=<i>LAYOUTNAME</i></b></code></dt>
+  <dd>
+    Selects the initial layout for the on-screen keyboard when using the <b>Text</b> and
+    <b>Label</b> tools.<br>
+    Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.
+  </dd>
+
+  <dt><code><b>onscreen-keyboard-disable-change=yes</b></code></dt>
+  <dd>
+    Disables the possibility for changing the layout of the on-screen keyboard when using the <b>Text</b> and
+    <b>Label</b> tools, usefull for simplifying things for the small children.<br>
+    Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.
+  </dd>
+
+
   <dt><code><b>joystick-slowness=<i>SPEED</i></b></code></dt>
   <dd>
     Sets a delay at each axis motion, allowing to slow the joystick.
-    Allowed values are 0 to 500. Default value is 15.
+    Allowed values are from 0 to 500. Default value is 15.
   </dd>
 
   <dt><code><b>joystick-threshold=<i>THRESHOLD</i></b></code></dt>
@@ -489,6 +504,102 @@ New Breed Software</p>
     Sets the maximum pixels the pointer will move at once.
     Allowed values are from 1 to 7. Default value is 7.
   </dd>
+
+  <dt><code><b>joystick-hat-timeout=<i>MILISECONDS</i></b></code></dt>
+  <dd>
+    Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed.
+    Allowed values are from 0 to 3000. Default value is 1000.
+  </dd>
+
+  <dt><code><b>joystick-hat-slowness=<i>SPEED</i></b></code></dt>
+  <dd>
+    Sets a delay at each automatic motion, allowing to slow the speed of the hat.
+    Allowed values are from 0 to 500. Default value is 15.
+  </dd>
+
+  <dt><code><b>joystick-btn-escape=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be used to generate a escape event.
+    Usefull to dismiss dialogs and quit.
+  </dd>
+
+  <dt><code><b>joystick-btn-brush=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the brush tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-stamp=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the stamp tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-lines=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the lines tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-shapes=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the shapes tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-text=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the text tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-label=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the label tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-magic=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to select the magic tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-undo=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to the undo tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-redo=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to the redo tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-eraser=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt for selecting the eraser tool.
+  </dd>
+
+  <dt><code><b>joystick-btn-new=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to launch the dialog for opening a new draw.
+  </dd>
+
+  <dt><code><b>joystick-btn-open=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to launch the dialog for opening an existing draw.
+  </dd>
+
+  <dt><code><b>joystick-btn-save=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt for saving the draw.
+  </dd>
+
+  <dt><code><b>joystick-btn-pgsetup=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to launch the page setup dialog for printing.
+  </dd>
+
+  <dt><code><b>joystick-btn-print=<i>BUTTON NUMBER</i></b></code></dt>
+  <dd>
+    Selects the joystick button number, as seen by SDL, that will be a shortcurt to print.
+  </dd>
+
+
+
 
   <dt><code><b>stampsize=<i>SIZE</i></b></code></dt>
   <dd>
@@ -1219,6 +1330,29 @@ New Breed Software</p>
     --nolabel<br>
     --mouse-accessibility<br>
     --onscreen-keyboard<br>
+    --onscreen-keyboard-layout<br>
+    --onscreen-keyboard-disable-change<br>
+    --joystick-slowness<br>
+    --joystick-threshold<br>
+    --joystick-maxsteps<br>
+    --joystick-hat-slowness<br>
+    --joystick-hat-timeout<br>
+    --joystick-btn-escape<br>
+    --joystick-btn-brush<br>
+    --joystick-btn-stamp<br>
+    --joystick-btn-lines<br>
+    --joystick-btn-shapes<br>
+    --joystick-btn-text<br>
+    --joystick-btn-label<br>
+    --joystick-btn-magic<br>
+    --joystick-btn-undo<br>
+    --joystick-btn-redo<br>
+    --joystick-btn-eraser<br>
+    --joystick-btn-new<br>
+    --joystick-btn-open<br>
+    --joystick-btn-save<br>
+    --joystick-btn-pgsetup<br>
+    --joystick-btn-print<br>
     --sysfonts<br>
     --alllocalefonts<br>
     --mirrorstamps<br>

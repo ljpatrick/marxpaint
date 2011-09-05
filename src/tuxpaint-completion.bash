@@ -62,9 +62,29 @@ _tuxpaint()
 			--nolockfile \
 			--mouse-accessibility \
 			--onscreen-keyboard \
+			--onscreen-keyboard-layout \
+			--onscreen-keyboard-disable-change \
 			--joystick-slowness \
 			--joystick-threshold \
 			--joystick-maxsteps \
+			--joystick-hat-slowness \
+			--joystick-hat-timeout \
+			--joystick-btn-escape \
+			--joystick-btn-brush \
+			--joystick-btn-stamp \
+			--joystick-btn-lines \
+			--joystick-btn-shapes\
+			--joystick-btn-text \
+			--joystick-btn-label \
+			--joystick-btn-magic \
+			--joystick-btn-undo \
+			--joystick-btn-redo \
+			--joystick-btn-eraser \
+			--joystick-btn-new \
+			--joystick-btn-open \
+			--joystick-btn-save \
+			--joystick-btn-pgsetup \
+			--joystick-btn-print \
 			--colorfile' -- $cur ) ) 
 # We don't accept filenames on the command-line yet -bjk 2009.09.09
 #        else
