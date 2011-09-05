@@ -31,7 +31,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 static void print_composemap(osk_composenode *composemap, char * sp);
 #endif
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, int disable_change)
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, int disable_change)
 {
   SDL_Surface *surface;
   osk_layout *layout;
@@ -77,6 +77,7 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
   keyboard->button_up = button_up;
   keyboard->button_down = button_down;
   keyboard->button_off = button_off;
+  keyboard->button_nav = button_nav;
   keyboard->composing = layout->composemap;
   keyboard->composed = NULL;
   keyboard->last_key_pressed = NULL;
@@ -1050,12 +1051,19 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
   if( strncmp("NULL", text, 4) != 0 && key.keycode != 0)
   {
     if (!hot)
-      skey = stretch_surface(keyboard->button_up, key.width * keyboard->button_up->w);
+    {
+      if (key.keycode == 1 || key.keycode == 2)
+      {
+	skey = stretch_surface(keyboard->button_nav, key.width * keyboard->button_nav->w);
+      }
+      else
+	skey = stretch_surface(keyboard->button_up, key.width * keyboard->button_up->w);
+    }    
     else
       skey = stretch_surface(keyboard->button_down, key.width * keyboard->button_down->w);
   }
   else
-    skey = stretch_surface(keyboard->button_off, key.width * keyboard->button_up->w);
+    skey = stretch_surface(keyboard->button_off, key.width * keyboard->button_off->w);
 
   apply_surface(key.x, key.y, skey, keyboard->surface, NULL);
 
@@ -1378,7 +1386,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
 
-      new_keyboard = osk_create(strdup(name), keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->disable_change);
+      new_keyboard = osk_create(strdup(name), keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->disable_change);
       printf("freeeeeeeeeeeeeeeeeeeeeee\n");
       free(aux_list);
 
