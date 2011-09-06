@@ -14,7 +14,7 @@
 
 WIDTH 15
 HEIGHT 5
-#FONTPATH default_font.ttf
+#FONTPATH FreeMonoBold.ttf
 
 
 # For the purpose of osk should be:
@@ -110,26 +110,29 @@ KEY 62 2.5 Shift  NULL NULL 0
 NEWLINE
 
 # Arrow to left will change to the previous keyboard
-# Disabled for now...
-KEY 2 0.5 <--  NULL NULL 0
-#KEY 0 0.5 <  NULL NULL 0
+KEY 2 1.0 <-  NULL NULL 0
+# notfound a proper fontfor this symbol...
+#KEY 2 1.0 ←  NULL NULL 0
+
 
 # Empty button
 #KEY 0 1.0    NULL NULL NULL 0
 
 
-KEY 133 1.5 Cmp NULL NULL 0
+KEY 133 2.0 Cmp NULL NULL 0
 
 # The ALT or ALTGR keys are used in im to switch the input mode.
 KEY 64 2.0 Alt  NULL NULL 0
 
 # Space
-KEY 65 8.0  SPACE  NULL NULL 0
+KEY 65 7.0  SPACE  NULL NULL 0
 
-KEY 108 2.5 AltGr  NULL NULL 0
+KEY 108 2.0 AltGr  NULL NULL 0
 
 # Arrow to right will change to the next keyboard
 # Disabled for now...
-KEY 1 0.5 -->  NULL NULL 0
-#KEY 0 0.5 >  NULL NULL 0
+KEY 1 1.0 ->  NULL NULL 0
+
+# Not found a proper font for this symbol...
+#KEY 1 1.0 →  NULL NULL 0
 

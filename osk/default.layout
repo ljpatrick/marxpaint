@@ -10,5 +10,5 @@ keymap us-intl-altgr-dead-keys.keymap
 dead_keys_map	 dead_keys.map
 composemap en_US.UTF-8_Compose
 keysymdefs keysymdef.h
-keyboardlist default.layout test.layout
+keyboardlist default.layout test.layout qwerty.layout
 # 
