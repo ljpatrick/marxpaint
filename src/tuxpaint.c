@@ -21810,8 +21810,7 @@ static void setup_config(char *argv[])
 
   if(tmpcfg.onscreen_keyboard_disable_change)
     {
-      onscreen_keyboard_disable_change = strdup(tmpcfg.onscreen_keyboard_disable_change);
-      onscreen_keyboard = TRUE;     
+      onscreen_keyboard = TRUE;
     }
 
   printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n", _promptless_save_over_ask, _promptless_save_over_new, _promptless_save_over);
