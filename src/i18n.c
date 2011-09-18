@@ -587,6 +587,8 @@ static int search_int_array(int l, int *array)
 static void ctype_utf8(void)
 {
 #ifndef _WIN32
+  /*  FIXME: should this iterate over more locales?
+      A zapotec speaker may have es_MX.UTF-8 available but not have en_US.UTF-8 for example */
   const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8","C.UTF-8"};
   int i = sizeof(names)/sizeof(names[0]);
   for(;;){
@@ -595,6 +597,7 @@ static void ctype_utf8(void)
     if(--i < 0)
       break;
     setlocale(LC_CTYPE,names[i]);
+    setlocale(LC_MESSAGES,names[i]);
   }
   fprintf(stderr, "Failed to find a locale with iswprint() working!\n");
 #endif
@@ -683,6 +686,10 @@ static int set_current_language(const char *restrict loc)
 
   oldloc = strdup(loc);
 
+  /* First set the locale according to the environment, then try to overwrite with loc,
+     after that, ctype_utf8() call will test the compatibility with utf8 and try to load
+     a different locale if the resulting one is not compatible. */
+  setlocale(LC_ALL, "");
   setlocale(LC_ALL, loc);
   ctype_utf8();
 
@@ -702,7 +709,7 @@ static int set_current_language(const char *restrict loc)
   loc = setlocale(LC_MESSAGES, NULL);
 #endif
 
-  if (strcmp(loc, oldloc) != 0) {
+  if (strcmp(oldloc, "") != 0 && strcmp(loc, oldloc) != 0) {
     /* System doesn't recognize that locale!  Hack, per Albert C., is to set LC_ALL to a valid UTF-8 locale, then set LANGUAGE to the locale we want to force -bjk 2010.10.05 */
 
     /* Albert's comments from December 2009:
@@ -726,7 +733,9 @@ static int set_current_language(const char *restrict loc)
        [see also: https://sourceforge.net/mailarchive/message.php?msg_name=787b0d920912222352i5ab22834x92686283b565016b%40mail.gmail.com ]
     */
 
-    setlocale(LC_ALL, "en_US.UTF-8"); /* Is it dumb to assume "en_US" is pretty close to "C" locale? */
+    /* Unneeded here, this has yet been done as part of ctype_utf8() call before, iterating over a list of locales */
+    //    setlocale(LC_ALL, "en_US.UTF-8"); /* Is it dumb to assume "en_US" is pretty close to "C" locale? */
+
     mysetenv("LANGUAGE", oldloc);
     set_langint_from_locale_string(oldloc);
   } else {
