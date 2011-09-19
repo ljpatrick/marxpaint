@@ -17846,7 +17846,7 @@ static void load_magic_plugins(void)
                 }
                 else
                 {
-                  int j, bit;
+                  int j;
 
 		  for (i = 0; i < n; i++)
 		  {
@@ -17857,14 +17857,23 @@ static void load_magic_plugins(void)
 
 		    magics[num_magics].avail_modes = magic_funcs[num_plugin_files].modes(magic_api_struct, i);
 
-                    bit = 1;
                     for (j = 0; j < MAX_MODES; j++)
 		    {
-                      if (magics[num_magics].avail_modes & bit)
-		        magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, bit);
-                      else
-		        magics[num_magics].tip[j] = NULL;
-                      bit *= 2;
+		      magics[num_magics].tip[j] = NULL;
+		      if (j)
+		      {
+			if (magics[num_magics].avail_modes & MODE_FULLSCREEN)
+			  magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, MODE_FULLSCREEN);
+		      }
+		      else
+		      {
+			if (magics[num_magics].avail_modes & MODE_PAINT)
+			  magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, MODE_PAINT);
+			else if (magics[num_magics].avail_modes & MODE_ONECLICK)
+			  magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, MODE_ONECLICK);
+			else if (magics[num_magics].avail_modes & MODE_PAINT_WITH_PREVIEW)
+			  magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, MODE_PAINT_WITH_PREVIEW);
+		      }
 		    }
 
 		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
