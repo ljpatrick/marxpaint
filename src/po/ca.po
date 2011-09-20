@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2010-03-18 00:09+0100\n"
+"PO-Revision-Date: 2011-09-20 23:55+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -211,7 +211,7 @@ msgstr "aa"
 # Aquest dos compten 9 punts.
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr "eèéëcÇ"
+msgstr "eèéëcç"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
@@ -345,7 +345,7 @@ msgstr "Un romb té quatre cares iguals i les cares oposades són paralel·les."
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
-msgstr "Un octàgon té vuit cares."
+msgstr "Un octàgon té vuit cares iguals."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -778,9 +778,7 @@ msgstr "Persiana"
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
-msgstr ""
-"Feu clic i arrossegueu des de la vora per passar una persiana. Feu lliscar "
-"el ratolí sobre el primer full per"
+msgstr "Feu clic i arrossegueu des de la vora per passar una persiana. Feu lliscar el ratolí sobre el primer llistó per fer els llistons més fins o gruixuts."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -965,11 +963,11 @@ msgstr "Feu clic i moveu per dibuixar herba. No oblideu la terra."
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Simetria"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Simetria"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -977,26 +975,16 @@ msgid "Kaleidoscope"
 msgstr "Cal·lidoscopi"
 
 #: ../../magic/src/kalidescope.c:102
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
-msgstr ""
-"Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics (un "
-"cal·lidoscopi)."
+msgstr "Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics horitzontalment."
 
 #: ../../magic/src/kalidescope.c:104
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
-msgstr ""
-"Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics (un "
-"cal·lidoscopi)."
+msgstr "Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics verticalment."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
@@ -1318,22 +1306,15 @@ msgstr "Fils angle"
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
-msgstr ""
-"Cliqueu i arrossegueu per fer un dibuix amb fils. Arrossegueu amunt i avall "
-"per tenir més o menys fils, acosteu la busca al centre per que els fils s'hi "
-"apropin."
+msgstr "Feu clic i arrossegueu per fer un dibuix amb fils. Arrossegueu amunt i avall per tenir més o menys fils, acosteu la busca al centre per que els fils s'hi apropin."
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
-msgstr ""
-"Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
+msgstr "Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
-"Fa un dibuix de fils amb angles lliures. Feu clic i arrossegueu com si "
-"dibuixessiu una V: Arrossegueu fins el vertex, una mica endarrera cap el "
-"començament, llavors fins el destí."
+msgstr "Feu clic i arrossegueu com si dibuixessiu una V: Feu clic en un dels extrems, arrossegueu fins el vèrtex, sense deixar anar, torneu una mica endarrera cap el començament fins que veieu que el vèrtex queda fixat, llavors fins el destí."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1408,10 +1389,7 @@ msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr ""
-"Feu clic dins la imatge per aplicar-hi ones horitzontals. Clic a dalt fa "
-"ones curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones "
-"llargues."
+msgstr "Feu clic dins la imatge per aplicar-hi ones horitzontals. Clic a dalt fa ones curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
 
 #: ../../magic/src/waves.c:89
 msgid ""
