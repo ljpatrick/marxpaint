@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 26, 2011
+  June 14, 2002 - September 23, 2011
 */
 
 
@@ -1111,6 +1111,7 @@ static int starter_modified;
 
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 * touched;
+static int last_print_time = 0;
 
 static int shape_radius;
 
@@ -11892,7 +11893,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (img1 != NULL)
   {
-    if (img1->h > 64)
+    if (img1->h > 64 && img2 != NULL /* Only scale if it matters */)
     {
       img1b = thumbnail(img1, 80, 64, 1);
       free_img1b = 1;
@@ -16121,7 +16122,6 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
 
 static void print_image(void)
 {
-  static int last_print_time = 0;
   int cur_time;  
     
   cur_time = SDL_GetTicks() / 1000;
@@ -21578,8 +21578,10 @@ static void setup_config(char *argv[])
     rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); // alternative is "landscape"
   if(tmpcfg.colorfile)
     strcpy(colorfile, tmpcfg.colorfile); // FIXME can overflow
-  if(tmpcfg.print_delay)
+  if(tmpcfg.print_delay) {
     print_delay = atoi(tmpcfg.print_delay);
+    last_print_time = -print_delay;
+  }
 #ifdef PAPER_H
   if(tmpcfg.printcommand)
     printcommand = tmpcfg.printcommand;

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2011.July.2 (0.9.22)
+2011.September.23 (0.9.22)
 
   * New Tools:
     ----------
@@ -480,6 +480,12 @@ $Id$
 
   * Bug Fixes
     ---------
+    * Image on right of dialogs would get scaled/cut-off even if there was
+      room for them.
+
+    * When using 'print delay' option, it would not allow printing the
+      first time until the delay had passed.
+
     * Fixed error reporting when make_directory() fails.
       (Fixes spurious 
       SF.net Bug #2765872)
