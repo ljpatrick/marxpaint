@@ -515,11 +515,13 @@ $Id$
       when the stamp is first used.
       (SF.net Bug #1668235)
 
-    * Shapes tool now draws at mouse release to help painting with touchscreen devices.
+    * Shapes tool now draws at mouse release to help painting with
+      touchscreen devices.
       (SF.net Feature request #3008811)
 
     * Shapes tool would left their preview on the canvas if you leave it 
       or change the shape before finishing to draw it.
+      (SF.net Bug #1057311)
 
 
 2009.June.28 (0.9.21)
