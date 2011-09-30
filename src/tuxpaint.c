@@ -1023,6 +1023,7 @@ static int emulate_button_pressed = 0;
 static int mouseaccessibility = 0;
 static int onscreen_keyboard = 0;
 static char * onscreen_keyboard_layout = NULL;
+static on_screen_keyboard *kbd = NULL;
 static int onscreen_keyboard_disable_change = 0;
 static int joystick_low_threshold = 3200;
 static int joystick_slowness = 15;
@@ -2117,7 +2118,7 @@ static void mainloop(void)
   SDLKey key_down;
 #endif
   SDL_Event ev;
-  on_screen_keyboard *kbd, *new_kbd;
+  on_screen_keyboard  *new_kbd;
   SDL_Rect kbd_rect;
 
   num_things = num_brushes;
@@ -3364,7 +3365,7 @@ static void mainloop(void)
 		  if (onscreen_keyboard_layout)
 		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, onscreen_keyboard_disable_change);
 		  else
-		    kbd = osk_create("default", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, onscreen_keyboard_disable_change);
+		    kbd = osk_create("default.layout", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, onscreen_keyboard_disable_change);
 		}
 		if (kbd == NULL)
 		  printf("kbd = NULL\n");
@@ -12297,6 +12298,7 @@ static void cleanup(void)
   free_surface(&img_btnsm_down);
 
   free_surface(&img_btn_nav);
+  free_surface(&img_btnsm_nav);
 
   free_surface(&img_sfx);
   free_surface(&img_speak);
@@ -12466,6 +12468,9 @@ static void cleanup(void)
 
     free(lock_fname);
   }
+
+  if (kbd)
+    osk_free(kbd);
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 //  if (papersize != NULL)
@@ -16420,7 +16425,8 @@ static void do_render_cur_text(int do_blit)
              (cur_tool == TOOL_PRINT ||
               cur_tool == TOOL_SAVE ||
               cur_tool == TOOL_OPEN ||
-              cur_tool == TOOL_NEW)))
+              cur_tool == TOOL_NEW ||
+	      cur_tool == TOOL_QUIT)))
       {
 	have_to_rec_label_node=TRUE;
 	add_label_node(src.w, src.h, dest.x, dest.y, tmp_surf);
@@ -16431,7 +16437,8 @@ static void do_render_cur_text(int do_blit)
                   (cur_tool == TOOL_PRINT ||
                    cur_tool == TOOL_SAVE ||
                    cur_tool == TOOL_OPEN ||
-                   cur_tool == TOOL_NEW)))
+                   cur_tool == TOOL_NEW ||
+		   cur_tool == TOOL_QUIT)))
       {
           myblit(tmp_surf, &src, label, &dest);
           
@@ -20549,7 +20556,8 @@ static void tmp_apply_uncommited_text()
                           (cur_tool == TOOL_PRINT ||
                            cur_tool == TOOL_SAVE ||
                            cur_tool == TOOL_OPEN ||
-                           cur_tool == TOOL_NEW)))                {
+                           cur_tool == TOOL_NEW ||
+			   cur_tool == TOOL_QUIT)))                {
                     canvas_back = SDL_CreateRGBSurface(canvas->flags,
                                                        canvas->w,
                                                        canvas->h,
@@ -20566,7 +20574,8 @@ static void tmp_apply_uncommited_text()
                           (cur_tool == TOOL_PRINT ||
                            cur_tool == TOOL_SAVE ||
                            cur_tool == TOOL_OPEN ||
-                           cur_tool == TOOL_NEW)))
+                           cur_tool == TOOL_NEW ||
+			   cur_tool == TOOL_QUIT)))
                 {
                     do_render_cur_text(1);
                     current_label_node->save_undoid = 253;
@@ -20577,7 +20586,8 @@ static void tmp_apply_uncommited_text()
               (cur_tool == TOOL_PRINT ||
                cur_tool == TOOL_SAVE ||
                cur_tool == TOOL_OPEN ||
-               cur_tool == TOOL_NEW)))
+               cur_tool == TOOL_NEW ||
+	       cur_tool == TOOL_QUIT)))
             {
                 add_label_node(0, 0, 0, 0, NULL);
                 current_label_node->is_enabled = FALSE;
@@ -20597,7 +20607,8 @@ static void undo_tmp_applied_text()
                 (cur_tool == TOOL_PRINT && old_tool == TOOL_TEXT) ||
                 (cur_tool == TOOL_SAVE && old_tool == TOOL_TEXT) ||
                 (cur_tool == TOOL_OPEN && old_tool == TOOL_TEXT) ||
-                (cur_tool == TOOL_NEW && old_tool == TOOL_TEXT))
+                (cur_tool == TOOL_NEW && old_tool == TOOL_TEXT) ||
+		(cur_tool == TOOL_QUIT && old_tool == TOOL_TEXT))
                 {
                     SDL_BlitSurface(canvas_back, NULL, canvas, NULL);
                     SDL_FreeSurface(canvas_back);

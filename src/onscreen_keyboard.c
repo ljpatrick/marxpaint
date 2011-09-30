@@ -111,7 +111,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   filename = malloc(255);
   if (layout_name != NULL)
   {
-    keyboard->name = layout_name;
+    keyboard->name = strdup(layout_name);
 
     /* Try full path */
     fi = fopen(layout_name, "r");
@@ -264,10 +264,12 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
       layout->keys[0] = malloc(width * sizeof(osk_key ));
 
       for (i = 0; i< width; i++)
-	{
+      {
       	layout->keys[0][i].width = 0;
 	layout->keys[0][i].plain_label = NULL;
-	}
+	layout->keys[ line_number][i].top_label=NULL;
+	layout->keys[ line_number][i].altgr_label=NULL;
+      }
       layout->width = width;
       layout->height = height;
 
@@ -322,8 +324,13 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
       line_number ++;
       key_number = 0;
       layout->keys[line_number] = malloc(width * sizeof(osk_key));
-       for (i = 0; i< width; i++) 
-       	layout->keys[line_number][i].width = 0; 
+      for (i = 0; i< width; i++)
+      {
+	layout->keys[line_number][i].width = 0;
+	layout->keys[ line_number][i].plain_label=NULL;
+	layout->keys[ line_number][i].top_label=NULL;
+	layout->keys[ line_number][i].altgr_label=NULL;
+      }
     }
 
 
@@ -360,6 +367,9 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
     free(fontpath);
     layout->fontpath = NULL;
   }
+
+  free(line);
+  free(key);
   /* int j; */
   /* for(i = 0; i<= line_number; i++) */
   /* { */
@@ -381,7 +391,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 /* A keymap contains the keysyms (X keysym mnemonics) associated to each keycode in the hlayout.*/
 void load_keymap(osk_layout *layout, char * keymap_name)
 {
-  int keycode, readed;
+  int i, keycode, readed;
   char *filename;
   char *ksname1, *ksname2, *ksname3, *ksname4;
   char *line;
@@ -411,6 +421,15 @@ void load_keymap(osk_layout *layout, char * keymap_name)
   line = malloc(1024);
   layout->keymap = malloc(256 * sizeof(osk_keymap));
 
+  for (i = 0;i < 256; i++)
+  {
+	layout->keymap[i].plain = NULL;
+	layout->keymap[i].caps = NULL;
+	layout->keymap[i].altgr = NULL;
+	layout->keymap[i].shiftaltgr = NULL;
+  }
+
+
   while (!feof(fi))
   {
 
@@ -429,6 +448,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
     ksname4[0] = '\0';
 
     /* FIXME: Why is the us-intl keymap duplicating the two first entries of every keycode? */
+    /* And why is the arabic keymap using the 5th and 6th entries as plain/shifted keys? */
     readed = sscanf(line, "keycode %i = %s %s %*s %*s %s %s", &keycode,
 	   ksname1, ksname2, ksname3, ksname4);
 
@@ -452,6 +472,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
       }
   }
 
+  free(line);
   /* int i; */
   /* for (i = 0; i < 256; i++) */
   /* { */
@@ -484,6 +505,7 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
     result = wcsdup(wcstok(line, L": \"\t", pointer)); 
 	    //      printf("result %ls\n", result);
     composenode->result = result;
+    free(tok);
     return;
   }
   else
@@ -513,6 +535,7 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
 	  //	        printf("Size %d, keysym %ls =>", composenode->size, composenode->childs[i]->keysym);
 
 	  gettokens(NULL, delim, pointer, composenode->childs[i], layout);
+	  free(tok);
 	  return;
 	}
       }
@@ -570,6 +593,8 @@ static void load_composemap(osk_layout *layout, char * composemap_name)
 
   layout->composemap = malloc(sizeof(osk_composenode));
   layout->composemap[0].keysym = NULL;
+  layout->composemap[0].result = NULL;
+
   layout->composemap->size = 0;
   line = malloc(1024*sizeof(wchar_t));
 
@@ -585,7 +610,7 @@ static void load_composemap(osk_layout *layout, char * composemap_name)
 
   fclose(fi);
   free(line);
-
+  free(pointer);
 #ifdef DEBUG_OSK_COMPOSEMAP
   print_composemap(layout->composemap, NULL);
 #endif
@@ -766,7 +791,9 @@ static void get_composed_keysym(on_screen_keyboard * keyboard, osk_composenode *
   /* If there is not a compose table return the keysym */
   if (! composenode)
   {
-    keyboard->composed = keysym;
+    if (keyboard->composed)
+      free(keyboard->composed);
+    keyboard->composed = wcsdup(keysym);
     keyboard->composed_type = 0;
     return;
   }
@@ -779,7 +806,9 @@ static void get_composed_keysym(on_screen_keyboard * keyboard, osk_composenode *
     {
       if (composenode->childs[i]->result)
       {
-	keyboard->composed = composenode->childs[i]->result;
+	if(keyboard->composed)
+	  free(keyboard->composed);
+	keyboard->composed = wcsdup(composenode->childs[i]->result);
 	keyboard->composing = keyboard->layout->composemap;
 	/* The result in the Compose files from xorg is yet in unicode */
 	keyboard->composed_type = 1;
@@ -787,6 +816,8 @@ static void get_composed_keysym(on_screen_keyboard * keyboard, osk_composenode *
       }
       else
       {
+	if(keyboard->composed)
+	  free(keyboard->composed);
 	keyboard->composed = NULL;
 	keyboard->composing = composenode->childs[i];
 	return;
@@ -799,12 +830,16 @@ static void get_composed_keysym(on_screen_keyboard * keyboard, osk_composenode *
 
   if (keyboard->layout->composemap == composenode)
   {
-    keyboard->composed = keysym;
+    if(keyboard->composed)
+      free(keyboard->composed);
+    keyboard->composed = wcsdup(keysym);
     keyboard->composed_type = 0;
   }
   else /* reset */
   {
     keyboard->composing = keyboard->layout->composemap;
+    if(keyboard->composed)
+      free(keyboard->composed);
     keyboard->composed = NULL;
     keyboard->composed_type = 0;
   }
@@ -853,6 +888,8 @@ static int isw_blank_or_comment(wchar_t *line)
 
 
 /* Fixme: Is it safe to supose that if a font is loaded at one size, it will be loaded at any size? */
+/* Fixme: sizes should be dynamically adapted to the button size */
+/* Fixme: starting a layout with one font causes all other layouts be in that font */
 static void keybd_prepare(on_screen_keyboard *keyboard)
 {
   char * fontname;
@@ -1054,7 +1091,10 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
     {
       if (key.keycode == 1 || key.keycode == 2)
       {
-	skey = stretch_surface(keyboard->button_nav, key.width * keyboard->button_nav->w);
+	if (keyboard->disable_change)
+	  skey = stretch_surface(keyboard->button_off, key.width * keyboard->button_off->w);
+	else
+	  skey = stretch_surface(keyboard->button_nav, key.width * keyboard->button_nav->w);
       }
       else
 	skey = stretch_surface(keyboard->button_up, key.width * keyboard->button_up->w);
@@ -1114,6 +1154,7 @@ static osk_key * find_key(on_screen_keyboard * keyboard, int x, int y)
 	  return key;
 	}
   }
+  free(key);
   return NULL;
 }
 
@@ -1322,12 +1363,16 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
   osk_key *key;
   SDL_Event event;
   char *keysym, *mnemo;
-  char *name, *aux_name, *aux_list;
+  char *name, *aux_name, *aux_list, *aux_list_ptr;
   wchar_t *wkeysym;
   wchar_t *ks;
   on_screen_keyboard * new_keyboard;
 
   printf("list: %s\n", keyboard->keyboard_list);
+
+  event.key.keysym.mod = KMOD_NONE;
+  event.key.keysym.sym = 0;
+  event.key.keysym.unicode = 0;
 
   key = find_key(keyboard, x, y);
 
@@ -1338,9 +1383,13 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     if (key->keycode == 1 || key->keycode == 2)
     {
       if (keyboard->disable_change)
+      {
+	free(key);
 	return(keyboard);
+      }
 
       aux_list = strdup(keyboard->keyboard_list);
+      aux_list_ptr = aux_list;
   printf("auxlist: %s\n", aux_list);
   printf("kn %s\n",  keyboard->name);
       if (key->keycode == 1)
@@ -1386,16 +1435,20 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
 
-      new_keyboard = osk_create(strdup(name), keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->disable_change);
-      printf("freeeeeeeeeeeeeeeeeeeeeee\n");
-      free(aux_list);
+      new_keyboard = osk_create(name, keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->disable_change);
+
+      free(aux_list_ptr);
 
       if (new_keyboard == NULL)
+      {
+	free(key);
 	return(keyboard); /* Don't break here, at least the old keyboard should work */
+      }
       else
       {
 	free(new_keyboard->keyboard_list);
 	new_keyboard->keyboard_list = strdup(keyboard->keyboard_list);
+	free(key);
 	osk_free(keyboard);
 	return(new_keyboard);
       }
@@ -1403,10 +1456,17 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 
 
     keysym = find_keysym(*key, keyboard);
-    if (!keysym) return(keyboard);
+    if (!keysym)
+      {
+      free(key);
+      return(keyboard);
+    }
 
     if (handle_keymods(keysym, *key, keyboard))
+    {
+      free(key);
       return(keyboard); /* no more processing is needed */
+    }
 
     draw_key(*key, keyboard, 1);
 
@@ -1416,9 +1476,8 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 		   strlen(keysym)+1,
 		   NULL);
 
-    printf("wkeysym %ls %i\n", wkeysym, wcslen(wkeysym));
-    printf("\n");
-    
+    printf("wkeysym %ls %i\n\n", wkeysym, wcslen(wkeysym));
+
 
     get_composed_keysym(keyboard, keyboard->composing, wkeysym);
     draw_key(keyboard->keymodifiers.compose, keyboard, 0);
@@ -1474,10 +1533,12 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       {
 	set_key(key, &keyboard->keymodifiers.compose, 0);
 	printf("still composing %d\n", (int)keyboard->composing);
+	free(key);
       }
     }
-
+    free(wkeysym);
   }
+
   return(keyboard);
 }
 
@@ -1495,14 +1556,100 @@ void osk_released(on_screen_keyboard *keyboard)
 }
 
 
-
-void osk_free(on_screen_keyboard *osk)
+static void free_keymap(osk_keymap *keymap)
 {
-  /* FILLME */
-  printf("osk_free: FILLME.\n"); 
+  int i;
+  for (i=0; i<256; i++)
+  {
+    if (keymap[i].plain)
+      free(keymap[i].plain);
+    if (keymap[i].caps)
+      free(keymap[i].caps);
+    if (keymap[i].altgr)
+      free(keymap[i].altgr);
+    if (keymap[i].shiftaltgr)
+      free(keymap[i].shiftaltgr);
+  }
+  free(keymap);
+}
 
+static void free_composemap(osk_composenode * composenode)
+{
+  int i;
+  for(i = 0; i < composenode->size; i++)
+  {
+    free_composemap(composenode->childs[i]);
+    free(composenode->childs[i]);
+  }
+  if (composenode->result)
+    free(composenode->result);
+  else
+    free(composenode->childs);
 
+  if (composenode->keysym)
+    free(composenode->keysym);
+}
 
+static void free_keysymdefs(keysymdefs *ksd, int size)
+{
+  int i;
+
+  for (i = 0; i <= size; i++)
+    free(ksd[i].mnemo);
+}
+
+static void free_keys(osk_layout *layout)
+{
+  int i, j;
+
+  for (j = 0; j < layout->height; j++)
+  {
+    for (i = 0; i < layout->width; i++)
+    {
+      if (layout->keys[j][i].plain_label)
+	free(layout->keys[j][i].plain_label);
+      if (layout->keys[j][i].top_label)
+	free(layout->keys[j][i].top_label);
+      if (layout->keys[j][i].altgr_label)
+	free(layout->keys[j][i].altgr_label);
+    }
+    free(layout->keys[j]);
+  }
+  free(layout->keys);
+}
+
+static void free_layout(osk_layout *layout)
+{
+  //  free(layout->name);
+  //  free(layout->rows);
+  //  free(layout->fontpath);
+  free_keys(layout);
+  free_keymap(layout->keymap);
+  free_composemap(layout->composemap);
+  free(layout->composemap);
+
+  free_keysymdefs(layout->keysymdefs, layout->sizeofkeysymdefs);
+  free(layout->keysymdefs);
+  free(layout);
+}
+
+void osk_free(on_screen_keyboard *keyboard)
+{
+  free(keyboard->name);
+  free_layout(keyboard->layout);
+  if(keyboard->composed)
+    free(keyboard->composed);
+  if(keyboard->last_key_pressed)
+    free(keyboard->last_key_pressed);
+  if(keyboard->keyboard_list)
+    free(keyboard->keyboard_list);
+  SDL_FreeSurface(keyboard->surface);
+  set_key(NULL, &keyboard->keymodifiers.shift, 0);
+  set_key(NULL, &keyboard->keymodifiers.altgr, 0);
+  set_key(NULL, &keyboard->keymodifiers.compose, 0);
+  set_key(NULL, &keyboard->keymodifiers.dead, 0);
+
+  free(keyboard);
 }
 
 
