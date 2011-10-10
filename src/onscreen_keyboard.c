@@ -719,7 +719,7 @@ static void load_keysymdefs(osk_layout *layout, char * keysymdefs_name)
 /* Return the mnemonic string of a x keysym as defined in the source of xorg in keysymdef.h */
 static char * keysym2mnemo(int keysym, on_screen_keyboard * keyboard)
 {
-  uint i;
+  unsigned int i;
   for (i = 0; i < keyboard->layout->sizeofkeysymdefs ;i++)
     if (keysym == keyboard->layout->keysymdefs[i].keysym)
       return(keyboard->layout->keysymdefs[i].mnemo);
@@ -731,7 +731,7 @@ static char * keysym2mnemo(int keysym, on_screen_keyboard * keyboard)
 /* Returns the x keysym corresponding to a mnemonic string */
 static int mnemo2keysym(char * mnemo, on_screen_keyboard * keyboard)
 {
-  uint i;
+  unsigned int i;
 
   for (i = 0; i < keyboard->layout->sizeofkeysymdefs; i++)
   {
@@ -754,7 +754,7 @@ static int mnemo2keysym(char * mnemo, on_screen_keyboard * keyboard)
 /* Returns the unicode value of a x keysym if any, otherwise returns 0 */
 static int keysym2unicode(int keysym, on_screen_keyboard * keyboard)
 {
-  uint i;
+  unsigned int i;
 
   /* Credits for the conversion from xkeysyms to unicode values, code taken from the source code of xterm, file keysym2ucs.c.
    *Author: Markus G. Kuhn <mkuhn@acm.org>, University of Cambridge, April 2001

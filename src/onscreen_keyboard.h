@@ -74,7 +74,7 @@ typedef struct osk_layout
   osk_keymap *keymap;
   osk_composenode * composemap;
   keysymdefs * keysymdefs;
-  uint sizeofkeysymdefs;
+  unsigned int sizeofkeysymdefs;
   SDL_Color bgcolor;
   SDL_Color fgcolor;
 } osk_layout;
