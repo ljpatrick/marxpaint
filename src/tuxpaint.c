@@ -2166,7 +2166,18 @@ static void mainloop(void)
         magic_switchout(canvas);
 	done = do_quit(cur_tool);
         if (!done)
+	{
           magic_switchin(canvas);
+
+	  if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	  {
+	    if (onscreen_keyboard && kbd)
+	    {
+	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	      update_screen_rect(&kbd_rect);
+	    }
+	  }
+	}
       }
       else if (event.type == SDL_ACTIVEEVENT)
       {
@@ -2231,7 +2242,18 @@ static void mainloop(void)
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
           if (!done)
+	  {
             magic_switchin(canvas);
+
+	    if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	    {
+	      if (onscreen_keyboard && kbd)
+	      {
+		SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		update_screen_rect(&kbd_rect);
+	      }
+	    }
+	  }
 	}
 	else if (key == SDLK_s && (mod & KMOD_ALT))
 	{
@@ -2360,7 +2382,14 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_STAMP)
 	    draw_stamps();
 	  else if (cur_tool == TOOL_TEXT ||cur_tool == TOOL_LABEL)
+	  {
 	    draw_fonts();
+	    if (onscreen_keyboard && kbd)
+	    {
+	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	      update_screen_rect(&kbd_rect);
+	    }
+	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
 	  else if (cur_tool == TOOL_ERASER)
@@ -2408,7 +2437,14 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_STAMP)
 	    draw_stamps();
 	  else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	  {
 	    draw_fonts();
+	    if (onscreen_keyboard && kbd)
+	    {
+	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	      update_screen_rect(&kbd_rect);
+	    }
+	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
 	  else if (cur_tool == TOOL_ERASER)
@@ -2433,7 +2469,15 @@ static void mainloop(void)
 
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
-          
+          if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	  {
+	    if (onscreen_keyboard && kbd)
+	    {
+	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	      update_screen_rect(&kbd_rect);
+	    }
+	  }
+
           magic_switchin(canvas);
 	}
 #ifdef __APPLE__
@@ -2458,6 +2502,15 @@ static void mainloop(void)
         print_image(); 
         undo_tmp_applied_text();
         magic_switchin(canvas);
+
+	if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	{
+	  if (onscreen_keyboard && kbd)
+	  {
+	    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	    update_screen_rect(&kbd_rect);
+	  }
+	}
 
         draw_toolbar();
         draw_tux_text(TUX_BORED, "", 0);
@@ -2992,10 +3045,8 @@ static void mainloop(void)
 		cur_thing = cur_font;
 		num_things = num_font_families;
 		thing_scroll = &font_scroll;
-		if (cur_tool == TOOL_LABEL)
-		  {
-                      cur_label = LABEL_LABEL;
-		  }
+		cur_label = LABEL_LABEL;
+
 		draw_fonts();
 		draw_colors(COLORSEL_ENABLE);
 	      }
@@ -3097,7 +3148,14 @@ static void mainloop(void)
 	      else if (cur_tool == TOOL_STAMP)
 		draw_stamps();
 	      else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	      {
 		draw_fonts();
+		if (onscreen_keyboard && kbd)
+		{
+		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		  update_screen_rect(&kbd_rect);
+		}
+	      }
 	      else if (cur_tool == TOOL_SHAPES)
 		draw_shapes();
 	      else if (cur_tool == TOOL_ERASER)
@@ -3109,6 +3167,15 @@ static void mainloop(void)
 	      {
 		been_saved = 1;
 		tool_avail[TOOL_SAVE] = 0;
+	      }
+
+	      if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
+	      {
+		if (onscreen_keyboard && kbd)
+		{
+		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		  update_screen_rect(&kbd_rect);
+		}
 	      }
 
 	      cur_tool = old_tool;
@@ -3149,7 +3216,14 @@ static void mainloop(void)
               else if (cur_tool == TOOL_STAMP)
                 draw_stamps();
               else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	      {
                 draw_fonts();
+		if (onscreen_keyboard && kbd)
+		{
+		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		  update_screen_rect(&kbd_rect);
+		}
+	      }
               else if (cur_tool == TOOL_SHAPES)
                 draw_shapes();
               else if (cur_tool == TOOL_ERASER)
@@ -3158,19 +3232,38 @@ static void mainloop(void)
 	    else if (cur_tool == TOOL_PRINT)
 	    {
               /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-          tmp_apply_uncommited_text();
-          /* original print code was here */
-          print_image();
-          undo_tmp_applied_text();
+	      tmp_apply_uncommited_text();
+	      /* original print code was here */
+	      print_image();
+	      undo_tmp_applied_text();
 
-          cur_tool = old_tool;
-          draw_toolbar();
-          draw_tux_text(TUX_BORED, "", 0);
-          update_screen_rect(&r_tools);
+	      if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
+	      {
+		if (onscreen_keyboard && kbd)
+		{
+		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		  update_screen_rect(&kbd_rect);
+		}
+	      }
+
+	      cur_tool = old_tool;
+	      draw_toolbar();
+	      draw_tux_text(TUX_BORED, "", 0);
+	      update_screen_rect(&r_tools);
 	    }
 	    else if (cur_tool == TOOL_QUIT)
 	    {
 	      done = do_quit(old_tool);
+
+	      if (old_tool == TOOL_TEXT || old_tool == TOOL_LABEL)
+	      {
+		if (onscreen_keyboard && kbd)
+		{
+		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		  update_screen_rect(&kbd_rect);
+		}
+	      }
+
 	      cur_tool = old_tool;
 	      draw_toolbar();
 	      update_screen_rect(&r_tools);
@@ -3941,6 +4034,14 @@ static void mainloop(void)
 
               do_color_picker();
 
+	      if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+	       {
+		 if (onscreen_keyboard && kbd)
+		  {
+		    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+		    update_screen_rect(&kbd_rect);
+		  }
+	       }
 
               enable_avail_tools();
               draw_toolbar();
@@ -4253,7 +4354,7 @@ static void mainloop(void)
 	         }
 	       */
 	    }
-	    if (onscreen_keyboard && HIT(kbd_rect))
+	    if (onscreen_keyboard && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
 	    {
 	      new_kbd = osk_clicked(kbd, old_x - kbd_rect.x + r_canvas.x, old_y - kbd_rect.y + r_canvas.y);
 	      /* keyboard has changed, erase the old, note that the old kbd has yet been freed. */
@@ -4277,7 +4378,7 @@ static void mainloop(void)
 	      cursor_y = old_y;
 	      cursor_left = old_x;
 
-	      if (onscreen_keyboard)
+	      if (onscreen_keyboard && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
 	      {
 		if (old_y < r_canvas.h/2)
 	        {
