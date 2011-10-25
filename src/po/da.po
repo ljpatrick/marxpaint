@@ -4,7 +4,7 @@
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
 # Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
-# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010.
+# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011.
 #
 # konventioner
 # blur -> sløre
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2010-02-05 22:30+0100\n"
+"PO-Revision-Date: 2011-08-08 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -938,11 +938,11 @@ msgstr "Klik og flyt for at tegne græs. Husk »skidtet«!"
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Symmetrisk venstre/højre"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Symmetrisk op/ned"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -950,26 +950,20 @@ msgid "Kaleidoscope"
 msgstr "Kalejdoskop"
 
 #: ../../magic/src/kalidescope.c:102
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Klik og bevæg musen rundt, for at tegne med symmetriske pensler (et "
-"kalejdoskop)."
+"Klik og bevæg musen rundt, for at tegne med to pensler som er symmetriske over "
+"venstre og højre del af dit billede."
 
 #: ../../magic/src/kalidescope.c:104
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Klik og bevæg musen rundt, for at tegne med symmetriske pensler (et "
-"kalejdoskop)."
+"Klik og bevæg musen rundt, for at tegne med to pensler som er symmetriske over "
+"øverste og nederste del af dit billede."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
