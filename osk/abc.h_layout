@@ -18,24 +18,24 @@ HEIGHT 5
 
 
 # For the purpose of osk should be:
-# KEY keycode  width  label_plain label_top label_altgr shiftcaps
+# KEY keycode  width  label_plain label_top label_altgr label_shift_altgr shiftcaps
 # shiftcaps means if the value of the key should be shifted if capslock is active
 # 
 
-KEY 49 1.0 ` ~ NULL 0
-KEY 10 1.0 1 ! ¡ 0
-KEY 11 1.0 2 @ ² 0
-KEY 12 1.0 3 # · 0
-KEY 13 1.0 4 $ ¤ 0
-KEY 14 1.0 5 % € 0
-KEY 15 1.0 6 ^ ¼ 0
-KEY 16 1.0 7 & ½ 0
-KEY 17 1.0 8 * ¾ 0
-KEY 18 1.0 9 ( ‘ 0
-KEY 19 1.0 0 ) ’ 0
-KEY 20 1.0 - _ ¥ 0
-KEY 21 1.0 = + × 0
-KEY 22 2.0 Back NULL NULL 0
+KEY 49 1.0 ` ~ ` ~ 0
+KEY 10 1.0 1 ! ¡ ¹ 0
+KEY 11 1.0 2 @ ² ˝ 0
+KEY 12 1.0 3 # · ³ 0
+KEY 13 1.0 4 $ ¤ £ 0
+KEY 14 1.0 5 % € ¸ 0
+KEY 15 1.0 6 ^ ¼ ^ 0
+KEY 16 1.0 7 & ½ ̛ 0
+KEY 17 1.0 8 * ¾ ˛ 0
+KEY 18 1.0 9 ( ‘ ˘ 0
+KEY 19 1.0 0 ) ’ ° 0
+KEY 20 1.0 - _ ¥ ̣ 0
+KEY 21 1.0 = + × ÷ 0
+KEY 22 2.0 Back Back Back Back 0
 
 
 
@@ -43,7 +43,7 @@ KEY 22 2.0 Back NULL NULL 0
 NEWLINE
 
 # Tab
-KEY 23 1.5 |<->| NULL NULL 0
+KEY 23 1.5 |<->| |<->| |<->| |<->| 0
 
 # Some tests to see how fonts works
 #KEY 38 1.0 耳  NULL NULL
@@ -52,65 +52,66 @@ KEY 23 1.5 |<->| NULL NULL 0
 #KEY 40 1.0 φ  NULL NULL
 #KEY 38 1.0 𐎈 NULL NULL
 
-KEY 38 1.0 a  NULL á 1
-KEY 56 1.0 b  NULL NULL 1
-KEY 54 1.0 c  NULL © 1
-KEY 40 1.0 d  NULL ð 1
-KEY 26 1.0 e  NULL é 1
-KEY 41 1.0 f  NULL NULL 1
-KEY 42 1.0 g  NULL NULL 1
-KEY 43 1.0 h  NULL NULL 1
-KEY 31 1.0 i  NULL í 1
-KEY 44 1.0 j  NULL NULL 1
-KEY 34 1.0 [ { « 0
-KEY 35 1.0 ] } » 0
-KEY 51 1.5 \ | ¬ 0
+KEY 38 1.0 a A á Á 1
+KEY 56 1.0 b B b B 1
+KEY 54 1.0 c C © ¢ 1
+KEY 40 1.0 d D ð Ð 1
+KEY 26 1.0 e E é É 1
+KEY 41 1.0 f F f F 1
+KEY 42 1.0 g G g G 1
+KEY 43 1.0 h H h H 1
+KEY 31 1.0 i I í Í 1
+KEY 44 1.0 j J j J 1
+KEY 34 1.0 [ { « “ 0
+KEY 35 1.0 ] } » ” 0
+KEY 51 1.5 \ | ¬ ¦ 0
 
 
 
 NEWLINE
 
 # CAPSLOCK
-KEY 66 2.0 Caps  NULL NULL 0
-KEY 45 1.0 k  NULL œ 1
-KEY 46 1.0 l  NULL ø 1
-KEY 58 1.0 m  NULL µ 1
-KEY 57 1.0 n  NULL ñ 1
-KEY 32 1.0 o  NULL ó 1
-KEY 33 1.0 p  NULL ö 1
-KEY 24 1.0 q  NULL ä 1
-KEY 27 1.0 r  NULL ® 1
-KEY 39 1.0 s  NULL ß 1
-KEY 47 1.0 ; : ¶ 0
-KEY 48 1.0 ´ ¨ ' 0
+KEY 66 2.0 Caps Caps Caps Caps 0
+KEY 45 1.0 k K œ Œ 1
+KEY 46 1.0 l L ø Ø 1
+KEY 58 1.0 m M µ µ 1
+KEY 57 1.0 n N ñ Ñ 1
+KEY 32 1.0 o O ó Ó 1
+KEY 33 1.0 p P ö Ö 1
+KEY 24 1.0 q Q ä Ä 1
+KEY 27 1.0 r R ® ® 1
+KEY 39 1.0 s S ß § 1
+KEY 47 1.0 ; : ¶ ° 0
+KEY 48 1.0 ´ ¨ ' " 0
 
 # Return
-KEY 36 2.0 Enter NULL NULL 0
+KEY 36 2.0 Enter Enter Enter Enter 0
 
 
 NEWLINE
 
-KEY 50 2.5 Shift  NULL NULL 0
-KEY 28 1.0 t  NULL þ 1
-KEY 30 1.0 u  NULL ú 1
-KEY 55 1.0 v  NULL NULL 1
+KEY 50 2.5 Shift Shift Shift Shift 0
+KEY 28 1.0 t T þ Þ 1
+KEY 30 1.0 u U ú Ú 1
+KEY 55 1.0 v V v V 1
 
-KEY 25 1.0 w  NULL å 1
+KEY 25 1.0 w W å Å 1
 
-KEY 53 1.0 x  NULL NULL 1
-KEY 29 1.0 y  NULL ü 1
-KEY 52 1.0 z  NULL æ 1
-KEY 59 1.0 , < ç 0
-KEY 60 1.0 . > ˙ 0
-KEY 61 1.0 / ? ¿ 0
-KEY 62 2.5 Shift  NULL NULL 0
+KEY 53 1.0 x X x X 1
+KEY 29 1.0 y Y ü Ü 1
+KEY 52 1.0 z Z æ Æ 1
+KEY 59 1.0 , < ç Ç 0
+
+KEY 60 1.0 . > ˙ ˇ 0
+KEY 61 1.0 / ? ¿ ̉ 0
+KEY 62 2.5 Shift Shift Shift Shift 0
 
 
 
 NEWLINE
 
 # Arrow to left will change to the previous keyboard
-KEY 2 1.0 <-  NULL NULL 0
+KEY 2 1.0 <- <- <- <- 0
 # notfound a proper fontfor this symbol...
 #KEY 2 1.0 ←  NULL NULL 0
 
@@ -119,19 +120,19 @@ KEY 2 1.0 <-  NULL NULL 0
 #KEY 0 1.0    NULL NULL NULL 0
 
 
-KEY 133 2.0 Cmp NULL NULL 0
+KEY 133 2.0 Cmp Cmp Cmp Cmp 0
 
 # The ALT or ALTGR keys are used in im to switch the input mode.
-KEY 64 2.0 Alt  NULL NULL 0
+KEY 64 2.0 Alt Alt Alt Alt 0
 
 # Space
-KEY 65 7.0  SPACE  NULL NULL 0
+KEY 65 7.0 SPACE SPACE SPACE SPACE 0
 
-KEY 108 2.0 AltGr  NULL NULL 0
+KEY 108 2.0 AltGr AltGr AltGr AltGr 0
 
 # Arrow to right will change to the next keyboard
 # Disabled for now...
-KEY 1 1.0 ->  NULL NULL 0
+KEY 1 1.0 -> -> -> -> 0
 
 # Not found a proper font for this symbol...
 #KEY 1 1.0 →  NULL NULL 0

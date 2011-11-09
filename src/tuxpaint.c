@@ -1293,7 +1293,7 @@ static int have_to_rec_label_node;
 static int have_to_rec_label_node_back;
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
-static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down;
+static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down, *img_btnsm_hold;
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
 static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_mirror, *img_flip;
@@ -2992,9 +2992,9 @@ static void mainloop(void)
 		if (kbd == NULL)
 		{
 		  if (onscreen_keyboard_layout)
-		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, onscreen_keyboard_disable_change);
+		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
 		  else
-		    kbd = osk_create("default.layout", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, onscreen_keyboard_disable_change);
+		    kbd = osk_create("default.layout", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
 		}
 		if (kbd == NULL)
 		  printf("kbd = NULL\n");
@@ -11964,6 +11964,7 @@ static void cleanup(void)
   free_surface(&img_btnsm_up);
   free_surface(&img_btnsm_off);
   free_surface(&img_btnsm_down);
+  free_surface(&img_btnsm_hold);
 
   free_surface(&img_btn_nav);
   free_surface(&img_btnsm_nav);
@@ -22631,6 +22632,7 @@ static void setup(void)
   img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
   img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
   img_btnsm_down = loadimage(DATA_PREFIX "images/ui/btnsm_down.png");
+  img_btnsm_hold = loadimage(DATA_PREFIX "images/ui/btnsm_hold.png");
 
   img_btn_nav = loadimage(DATA_PREFIX "images/ui/btn_nav.png");
   img_btnsm_nav = loadimage(DATA_PREFIX "images/ui/btnsm_nav.png");

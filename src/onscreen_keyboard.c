@@ -31,7 +31,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 static void print_composemap(osk_composenode *composemap, char * sp);
 #endif
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, int disable_change)
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change)
 {
   SDL_Surface *surface;
   osk_layout *layout;
@@ -78,6 +78,7 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
   keyboard->button_down = button_down;
   keyboard->button_off = button_off;
   keyboard->button_nav = button_nav;
+  keyboard->button_hold = button_hold;
   keyboard->composing = layout->composemap;
   keyboard->composed = NULL;
   keyboard->last_key_pressed = NULL;
@@ -87,6 +88,13 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
   set_key(NULL, &keyboard->keymodifiers.altgr, 1);
   set_key(NULL, &keyboard->keymodifiers.compose, 1);
   set_key(NULL, &keyboard->keymodifiers.dead, 1);
+
+  keyboard->kmdf.shift = NULL;
+  keyboard->kmdf.altgr = NULL;
+  keyboard->kmdf.dead = NULL;
+  keyboard->kmdf.dead2 = NULL;
+  keyboard->kmdf.dead3 = NULL;
+  keyboard->kmdf.dead4 = NULL;
 
   SDL_FillRect(surface, NULL, SDL_MapRGB(surface->format, keyboard->layout->bgcolor.r, keyboard->layout->bgcolor.g, keyboard->layout->bgcolor.b));
 
@@ -213,7 +221,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
   char *filename;
   char *line;
   char *key, *fontpath;
-  wchar_t *plain_label, *top_label, *altgr_label;
+  wchar_t *plain_label, *top_label, *altgr_label, *shift_altgr_label;
   FILE * fi;
 
   key_number = line_number = 0;
@@ -269,6 +277,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 	layout->keys[0][i].plain_label = NULL;
 	layout->keys[ line_number][i].top_label=NULL;
 	layout->keys[ line_number][i].altgr_label=NULL;
+	layout->keys[ line_number][i].shift_altgr_label=NULL;
       }
       layout->width = width;
       layout->height = height;
@@ -330,6 +339,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 	layout->keys[ line_number][i].plain_label=NULL;
 	layout->keys[ line_number][i].top_label=NULL;
 	layout->keys[ line_number][i].altgr_label=NULL;
+	layout->keys[ line_number][i].shift_altgr_label=NULL;
       }
     }
 
@@ -339,9 +349,10 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
       plain_label = malloc(64);
       top_label = malloc(64);
       altgr_label = malloc(64);
+      shift_altgr_label = malloc(64);
 
       sscanf(line, 
-	     "%s %i %i.%i %ls %ls %ls %i",
+	     "%s %i %i.%i %ls %ls %ls %ls %i",
 	     key, 
 	     &keycode, 
 	     &key_width,
@@ -349,13 +360,16 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 	     plain_label, 
 	     top_label,
 	     altgr_label,
+	     shift_altgr_label,
 	     &shiftcaps);
       layout->keys[line_number][key_number].keycode = keycode;
       layout->keys[line_number][key_number].width = (float)0.1 * key_width_decimal + key_width;
       layout->keys[line_number][key_number].plain_label = plain_label;
       layout->keys[line_number][key_number].top_label = top_label;
       layout->keys[line_number][key_number].altgr_label = altgr_label;
+      layout->keys[line_number][key_number].shift_altgr_label = shift_altgr_label;
       layout->keys[line_number][key_number].shiftcaps = shiftcaps;
+      layout->keys[line_number][key_number].stick = 0;
       key_number ++;
     }
   }
@@ -1052,7 +1066,7 @@ static void draw_keyboard(on_screen_keyboard *keyboard)
   float key_width;
   key_width = keyboard->button_up->w;
   key_height = keyboard->button_up->h;
-
+  printf("dkbd\n");
   accumulated_height = 0;
 
   for (j = 0; j < keyboard->layout->height; j++)
@@ -1072,6 +1086,11 @@ static void draw_keyboard(on_screen_keyboard *keyboard)
     }
     accumulated_height += key_height;
   }
+
+  /* draw_key(keyboard->keymodifiers.shift, keyboard, 0); */
+  /* draw_key(keyboard->keymodifiers.altgr, keyboard, 0); */
+  /* draw_key(keyboard->keymodifiers.compose, keyboard, 0); */
+  /* draw_key(keyboard->keymodifiers.dead, keyboard, 0); */
 }
 
 static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
@@ -1087,7 +1106,13 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
 
   if( strncmp("NULL", text, 4) != 0 && key.keycode != 0)
   {
-    if (!hot)
+    if (hot)
+      skey = stretch_surface(keyboard->button_down, key.width * keyboard->button_down->w);
+
+    else if (key.stick)
+      skey = stretch_surface(keyboard->button_hold, key.width * keyboard->button_hold->w);
+
+    else
     {
       if (key.keycode == 1 || key.keycode == 2)
       {
@@ -1098,9 +1123,7 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
       }
       else
 	skey = stretch_surface(keyboard->button_up, key.width * keyboard->button_up->w);
-    }    
-    else
-      skey = stretch_surface(keyboard->button_down, key.width * keyboard->button_down->w);
+    }
   }
   else
     skey = stretch_surface(keyboard->button_off, key.width * keyboard->button_off->w);
@@ -1118,14 +1141,72 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 {
   Uint16 *ustr;
   SDL_Surface *messager;
-  char *text;
-  text = malloc(255);
-  snprintf(text, 6,"%ls", key.plain_label);
+  int modstate;
+  wchar_t *text;
 
-  if( strncmp("SPACE", text, 5) != 0 && strncmp("NULL",text, 4) != 0)
+  /* To remove a warning... */
+  text = NULL;
+
+  modstate = keyboard->modifiers;
+
+  /* FIXME There MUST be a simpler way to do this. Pere 2011/8/3 */
+  /* First the plain ones */
+  if (modstate == KMOD_NONE || (modstate == (KMOD_NONE | KMOD_LALT)))
+    text = wcsdup(key.plain_label);
+
+  else if (modstate == KMOD_SHIFT)
   {
-    ustr = wcstou16(key.plain_label);
-    //messager = TTF_RenderUNICODE_Solid(
+    text = wcsdup(key.top_label);
+  }
+
+  else if (modstate == KMOD_RALT)
+  {
+    text = wcsdup(key.altgr_label);
+  }
+
+  else if (modstate == KMOD_CAPS)
+  {
+    if (key.shiftcaps)
+      text = wcsdup(key.top_label);
+    else
+      text = wcsdup(key.plain_label);
+  }
+
+  /* Now the combined ones */
+  else if (modstate & KMOD_RALT && modstate & KMOD_SHIFT)
+  {
+    if (modstate & KMOD_CAPS)
+    {
+      if (key.shiftcaps)
+	text = wcsdup(key.altgr_label);
+      else
+	text = wcsdup(key.shift_altgr_label);
+    }
+    else
+    {
+      text = wcsdup(key.shift_altgr_label);
+    }
+  }
+
+  else if (modstate & KMOD_RALT && modstate & KMOD_CAPS && !(modstate & KMOD_SHIFT))
+  {
+    if (key.shiftcaps)
+      text = wcsdup(key.shift_altgr_label);
+    else
+      text = wcsdup(key.altgr_label);
+  }
+
+  else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
+  {
+    if (key.shiftcaps)
+      text = wcsdup(key.plain_label);
+    else
+      text = wcsdup(key.top_label);
+  }
+
+  if( wcsncmp(L"SPACE", text, 5) != 0 && wcsncmp(L"NULL", text, 4) != 0)
+  {
+    ustr = wcstou16(text);
     messager = TTF_RenderUNICODE_Blended(osk_fonty, ustr, keyboard->layout->fgcolor);
 
     free(ustr);
@@ -1140,8 +1221,8 @@ static osk_key * find_key(on_screen_keyboard * keyboard, int x, int y)
 {
   int i, j;
   osk_key *key;
-  key =malloc(sizeof(osk_key));
 
+  key = NULL;
   for (j = 0; j <keyboard->layout->height; j++)
   {
     if (keyboard->layout->keys[j][0].y < y &&
@@ -1150,11 +1231,11 @@ static osk_key * find_key(on_screen_keyboard * keyboard, int x, int y)
 	if (keyboard->layout->keys[j][i].x < x &&
 	    keyboard->layout->keys[j][i].x + keyboard->layout->keys[j][i].width * keyboard->button_up->w > x)
 	{
-	  *key = keyboard->layout->keys[j][i];
+	  key = &keyboard->layout->keys[j][i];
 	  return key;
 	}
   }
-  free(key);
+
   return NULL;
 }
 
@@ -1276,7 +1357,7 @@ static char * find_keysym(osk_key key, on_screen_keyboard *keyboard)
 }
 
 /* We lose the SDL ModState by leaving and entering the tuxpaint window, so using a custom state */
-static int handle_keymods(char * keysym, osk_key key, on_screen_keyboard *keyboard)
+static int handle_keymods(char * keysym, osk_key * key, on_screen_keyboard *keyboard)
 {
   SDLMod mod;
   SDL_Event ev;
@@ -1287,16 +1368,16 @@ static int handle_keymods(char * keysym, osk_key key, on_screen_keyboard *keyboa
   {
     if (mod & KMOD_SHIFT)
     {
-      draw_key(key, keyboard, 0);
       keyboard->modifiers = mod & 0xFFF0;
+      key->stick = 0;
+      keyboard->kmdf.shift->stick = 0;
     }
     else
     {
-      draw_key(key, keyboard, 1);
       keyboard->modifiers = mod | KMOD_SHIFT;
-      set_key(&key, &keyboard->keymodifiers.shift, 0);
+      key->stick = 1;
+      keyboard->kmdf.shift = key;
     }
-
     return 1;
   }
   else if (strncmp("Alt_L", keysym, 5) == 0)
@@ -1317,12 +1398,15 @@ static int handle_keymods(char * keysym, osk_key key, on_screen_keyboard *keyboa
 	   strncmp("ALT_R", keysym, 5) == 0)
   {
     if (mod & KMOD_RALT)
+    {
       keyboard->modifiers = mod & 0xF0FF;
+      keyboard->kmdf.altgr->stick = 0;
+    }
     else
     {
       keyboard->modifiers = mod | KMOD_RALT;
-      draw_key(key, keyboard, 1);
-      set_key(&key, &keyboard->keymodifiers.altgr, 0);
+      key->stick = 1;
+      keyboard->kmdf.altgr = key;
 
       return 1;
     }
@@ -1333,17 +1417,19 @@ static int handle_keymods(char * keysym, osk_key key, on_screen_keyboard *keyboa
   {
     if (mod & KMOD_CAPS)
     {
-      draw_key(key, keyboard, 0);
       keyboard->modifiers = mod & 0x0FFF;
+      key->stick = 0;
     }
     else
     {
       keyboard->modifiers = mod | KMOD_CAPS;
-      draw_key(key, keyboard, 1);
+      key->stick = 1;
     }
+
 
     return 1;
   }
+
   if (mod & KMOD_CAPS)
   {
     keyboard->modifiers = KMOD_CAPS;
@@ -1351,10 +1437,51 @@ static int handle_keymods(char * keysym, osk_key key, on_screen_keyboard *keyboa
   else
     keyboard->modifiers = KMOD_NONE;
 
-  draw_key(keyboard->keymodifiers.shift, keyboard, 0);
-  draw_key(keyboard->keymodifiers.altgr, keyboard, 0);
+  if(keyboard->kmdf.shift)
+    keyboard->kmdf.shift->stick = 0;
+  if(keyboard->kmdf.altgr)
+    keyboard->kmdf.altgr->stick = 0;
 
   return 0;
+}
+
+/* set_dead_sticks and clear_dead_sticks deals with the persistence of
+   the keys that are still affecting other key presses. */
+static void set_dead_sticks(osk_key *key, on_screen_keyboard *keyboard)
+{
+  key->stick= 1;
+  if(!keyboard->kmdf.dead)
+    keyboard->kmdf.dead = key;
+  else if(!keyboard->kmdf.dead2)
+    keyboard->kmdf.dead2 = key;
+  else if(!keyboard->kmdf.dead3)
+    keyboard->kmdf.dead3 = key;
+  else if(!keyboard->kmdf.dead4)
+    keyboard->kmdf.dead4 = key;
+}
+
+static void clear_dead_sticks(on_screen_keyboard *keyboard)
+{
+  if(keyboard->kmdf.dead)
+  {
+    keyboard->kmdf.dead->stick = 0;
+    keyboard->kmdf.dead = NULL;
+  }
+  if(keyboard->kmdf.dead2)
+  {
+    keyboard->kmdf.dead2->stick = 0;
+    keyboard->kmdf.dead2 = NULL;
+  }
+  if(keyboard->kmdf.dead3)
+  {
+    keyboard->kmdf.dead3->stick = 0;
+    keyboard->kmdf.dead3 = NULL;
+  }
+  if(keyboard->kmdf.dead4)
+  {
+    keyboard->kmdf.dead4->stick = 0;
+    keyboard->kmdf.dead4 = NULL;
+  }
 }
 
 struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
@@ -1384,7 +1511,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     {
       if (keyboard->disable_change)
       {
-	free(key);
+	//	free(key);
 	return(keyboard);
       }
 
@@ -1435,20 +1562,20 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
 
-      new_keyboard = osk_create(name, keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->disable_change);
+      new_keyboard = osk_create(name, keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->button_hold, keyboard->disable_change);
 
       free(aux_list_ptr);
 
       if (new_keyboard == NULL)
       {
-	free(key);
+	//	free(key);
 	return(keyboard); /* Don't break here, at least the old keyboard should work */
       }
       else
       {
 	free(new_keyboard->keyboard_list);
 	new_keyboard->keyboard_list = strdup(keyboard->keyboard_list);
-	free(key);
+	//	free(key);
 	osk_free(keyboard);
 	return(new_keyboard);
       }
@@ -1458,17 +1585,15 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     keysym = find_keysym(*key, keyboard);
     if (!keysym)
       {
-      free(key);
       return(keyboard);
     }
 
-    if (handle_keymods(keysym, *key, keyboard))
+    draw_key(*key, keyboard, 1);
+
+    if (handle_keymods(keysym, key, keyboard))
     {
-      free(key);
       return(keyboard); /* no more processing is needed */
     }
-
-    draw_key(*key, keyboard, 1);
 
     wkeysym = malloc(sizeof(wchar_t) * (strlen(keysym) + 1));
 
@@ -1480,7 +1605,6 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 
 
     get_composed_keysym(keyboard, keyboard->composing, wkeysym);
-    draw_key(keyboard->keymodifiers.compose, keyboard, 0);
 
     if (keyboard->composed)
     {
@@ -1517,6 +1641,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 	else
 	  event.key.keysym.unicode = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
 
+      clear_dead_sticks(keyboard);
       event.type = SDL_KEYDOWN;
       SDL_PushEvent(&event);
       free(mnemo);
@@ -1528,12 +1653,14 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 	printf("compose sequence resetted %d\n", (int)keyboard->composing);
 	set_key(NULL, &keyboard->keymodifiers.compose, 0);
 	keyboard->last_key_pressed = key;
+	clear_dead_sticks(keyboard);
       }
       else
       {
 	set_key(key, &keyboard->keymodifiers.compose, 0);
 	printf("still composing %d\n", (int)keyboard->composing);
-	free(key);
+	set_dead_sticks(key, keyboard);
+	/* Fixme: Would be nice if we can highlight next available-to-compose keys, but how? */
       }
     }
     free(wkeysym);
@@ -1549,10 +1676,10 @@ void osk_released(on_screen_keyboard *keyboard)
   if (key)
   {
     draw_key(*key, keyboard, 0);
-    free(key);
+    //    free(key);
   }
   keyboard->last_key_pressed = NULL;
-
+  draw_keyboard(keyboard);
 }
 
 
@@ -1612,6 +1739,9 @@ static void free_keys(osk_layout *layout)
 	free(layout->keys[j][i].top_label);
       if (layout->keys[j][i].altgr_label)
 	free(layout->keys[j][i].altgr_label);
+      if (layout->keys[j][i].shift_altgr_label)
+	free(layout->keys[j][i].shift_altgr_label);
+
     }
     free(layout->keys[j]);
   }

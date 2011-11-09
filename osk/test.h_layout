@@ -9,8 +9,11 @@
 # 0 empty button
 # 1 next layout
 # 2 previous layout
+# TODO 3 reset modstate
 
-# ABC layout of 15 buttons wide and 5 rows height
+
+
+# layout of 25 buttons wide and 1 row height
 
 WIDTH 25
 HEIGHT 1
@@ -18,42 +21,42 @@ HEIGHT 1
 
 
 # For the purpose of osk should be:
-# KEY keycode  width  label_plain label_top label_altgr shiftcaps
+# KEY keycode  width  label_plain label_top label_altgr label_altgr_top shiftcaps
 # shiftcaps means if the value of the key should be shifted if capslock is active
 # 
 
 
 
 # Arrow to left will change to the previous keyboard
-# Disabled for now...
-KEY 2 1.5 <--  NULL NULL NULL 0
-KEY 0 2.0 NULL NULL NULL 0
 
-KEY 10 1.0 1 ! ¡ 0
-KEY 11 1.0 2 @ ² 0
-KEY 12 1.0 3 # · 0
-KEY 13 1.0 4 $ ¤ 0
-KEY 14 1.0 5 % € 0
-KEY 15 1.0 6 ^ ¼ 0
-KEY 16 1.0 7 & ½ 0
-KEY 17 1.0 8 * ¾ 0
-KEY 18 1.0 9 ( ‘ 0
-KEY 19 1.0 0 ) ’ 0
-KEY 0 1.0 NULL NULL NULL 0
+KEY 2 1.5 <--  NULL NULL NULL NULL 0
+KEY 0 1.0 NULL NULL NULL NULL 0
 
-KEY 20 1.0 - _ ¥ 0
-KEY 21 1.0 = + × 0
-KEY 0 2.0 NULL NULL NULL 0
+KEY 10 1.0 1 ! ¡ ¹ 0
+KEY 11 1.0 2 @ ² ˝ 0
+KEY 12 1.0 3 # · ³ 0
+KEY 13 1.0 4 $ ¤ £ 0
+KEY 14 1.0 5 % € ¸ 0
+KEY 15 1.0 6 ^ ¼ ^ 0
+KEY 16 1.0 7 & ½ ̛ 0
+KEY 17 1.0 8 * ¾ ˛ 0
+KEY 18 1.0 9 ( ‘ ˘ 0
+KEY 19 1.0 0 ) ’ ° 0
+KEY 0 1.0 NULL NULL NULL NULL 0
 
-
+KEY 20 1.0 - _ ¥ ̣ 0
+KEY 21 1.0 = + × ÷ 0
+KEY 0 1.0 NULL NULL NULL NULL 0
 
 
-KEY 22 2.0 Back NULL NULL 0
+
+
+KEY 22 2.0 Back Back Back Back 0
 
 
 
 # Return
-KEY 36 2.0 Enter NULL NULL 0
+KEY 36 2.0 Enter Enter Enter Enter 0
 
-KEY 1 1.5 -->  NULL NULL NULL 0
+KEY 1 1.5 -->  NULL NULL NULL NULL 0
 

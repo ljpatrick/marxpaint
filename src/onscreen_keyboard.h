@@ -44,7 +44,9 @@ typedef struct osk_key
   wchar_t *plain_label;        /* The text that will show the key */
   wchar_t *top_label;          /* The text that will show the key above the plain label. */
   wchar_t *altgr_label;        /* The text that will show the key at the right of the plain label */
+  wchar_t *shift_altgr_label;  /* The text that will show the key when shift and altgr are activeted */
   int shiftcaps;               /* If the value of the key should be shifted when capslock is active */
+  int stick;                   /* If the key currently affects the others */
 } osk_key;
 
 typedef struct osk_composenode
@@ -87,6 +89,17 @@ typedef struct osk_keymodifiers
   osk_key dead;
 } osk_keymodifiers;
 
+typedef struct osk_kmdf
+{
+  osk_key * shift;
+  osk_key * altgr;
+  osk_key * compose;
+  osk_key * dead;
+  osk_key * dead2;
+  osk_key * dead3;
+  osk_key * dead4;
+} osk_kmdf;
+
 typedef struct osk_keyboard
 {
   char * name;                   /* The name of the keyboard */
@@ -96,11 +109,13 @@ typedef struct osk_keyboard
   SDL_Surface *button_down;
   SDL_Surface *button_off;
   SDL_Surface *button_nav;
+  SDL_Surface *button_hold;
   int changed;                   /* If the surface has been modified (painted)  */
   SDL_Rect rect;                 /* The rectangle that has changed */
   int recreated;                 /* If the surface has been deleted and newly created */ 
   int modifiers;                 /* The state of Alt, CTRL, Shift, CapsLock, AltGr keys */
   osk_keymodifiers keymodifiers; /* A shortcurt to find the place of the pressed modifiers */
+  osk_kmdf kmdf;
   osk_layout *layout;            /* The layout struct */ 
   char *layout_name[256];        /* The layout name */
   int disable_change;            /* If true, stay with the first layout found */
@@ -112,7 +127,7 @@ typedef struct osk_keyboard
   osk_key * last_key_pressed;    /* The last key pressed */
 } on_screen_keyboard;
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, int disable_change);
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change);
 
 struct osk_layout *osk_load_layout(char *layout_name);
 
