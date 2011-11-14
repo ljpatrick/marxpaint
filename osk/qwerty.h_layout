@@ -103,7 +103,7 @@ KEY 56 1.0 b B b B 1
 KEY 57 1.0 n N ñ Ñ 1
 KEY 58 1.0 m M µ µ 1
 
-KEY 59 1.0 , < ç Ç 0
+KEY 59 1.0 , < ç Ç 2
 KEY 60 1.0 . > ˙ ˇ 0
 KEY 61 1.0 / ? ¿ ̉ 0
 KEY 62 2.5 Shift Shift Shift Shift 0

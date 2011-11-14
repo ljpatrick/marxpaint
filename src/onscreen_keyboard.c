@@ -1166,7 +1166,7 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 
   else if (modstate == KMOD_CAPS)
   {
-    if (key.shiftcaps)
+    if (key.shiftcaps == 1)
       text = wcsdup(key.top_label);
     else
       text = wcsdup(key.plain_label);
@@ -1198,7 +1198,7 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 
   else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
   {
-    if (key.shiftcaps)
+    if (key.shiftcaps == 1)
       text = wcsdup(key.plain_label);
     else
       text = wcsdup(key.top_label);
@@ -1315,7 +1315,7 @@ static char * find_keysym(osk_key key, on_screen_keyboard *keyboard)
 
   else if (modstate == KMOD_CAPS)
   {
-    if (key.shiftcaps)
+    if (key.shiftcaps == 1)
       keysym = keysyms.caps;
     else
       keysym = keysyms.plain;
@@ -1347,7 +1347,7 @@ static char * find_keysym(osk_key key, on_screen_keyboard *keyboard)
 
   else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
   {
-    if (key.shiftcaps)
+    if (key.shiftcaps == 1)
       keysym = keysyms.plain;
     else
       keysym = keysyms.caps;
