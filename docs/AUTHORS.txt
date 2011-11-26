@@ -109,6 +109,13 @@ $Id$
   Various other improvements and clean-ups by
   Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+  Cleanup of warnings in magic tools by many students as part of GCI 2011
+  Dominic Monroe
+  finaiized
+  _player1537
+  YeyaSwizaw
+  Steve Ryan
+  Peter Pol√°ƒçik 
 
 * Graphics
 
@@ -414,7 +421,7 @@ $Id$
 
   * Asturian
     Xandru Armesto <alarmes@wanadoo.es>
-    Mikel Gonz·lez <mikelisimu@yahoo.es>
+    Mikel Gonz√°lez <mikelisimu@yahoo.es>
 
   * Australian English
     Chris Goerner, Canonical Ltd, and Rosetta Contributors
@@ -432,7 +439,7 @@ $Id$
     Alexander Geroimenko <a.geroimenko@gmail.com>
   
   * Breton
-    Korvigello˘ An Drouizi (Philippe) <drouizig@drouizig.org>
+    Korvigello√π An Drouizi (Philippe) <drouizig@drouizig.org>
 
   * British English
     Robert Readman <robert_readman@hotmail.com>
@@ -483,7 +490,7 @@ $Id$
     Gruppen for Lokalisering af Frit Programmel til Dansk
       <http://dansk-gruppen.dk>
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
-    Mogens JÊger <mogensjaeger@get2net.dk> 
+    Mogens J√¶ger <mogensjaeger@get2net.dk> 
     Mikkel Kirkgaard Nielsen <translation@mikini.dk>
 
   * Dutch
@@ -501,7 +508,7 @@ $Id$
     Henrik Pihl <henrik@saarlane.ee>
 
   * Faroese
-    Lis G¯the Ì J·kupsstovu <morshus@gmail.com>
+    Lis G√∏the √≠ J√°kupsstovu <morshus@gmail.com>
 
   * Finnish
     Jorma Karvonen <karvjorm@users.sf.net>
@@ -512,7 +519,7 @@ $Id$
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal
-    JÈrÙme Chantreau <plovemax@hotmail.com> [documentation]
+    J√©r√¥me Chantreau <plovemax@hotmail.com> [documentation]
 
   * Fula
     Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
@@ -527,7 +534,7 @@ $Id$
     Fabian Franz <FabianFranz@gmx.de>
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
-    Burkhard L¸ck <lueck@hube-lueck.de>
+    Burkhard L√ºck <lueck@hube-lueck.de>
 
   * Gronings
     J.F.M. Lange <jfm.lange@hky.de>
@@ -555,7 +562,7 @@ $Id$
     Ashish Arora <ashish.arora13@gmail.com>
 
   * Hungarian
-    Tˆrˆk G·bor <gabo@linuxportal.hu>
+    T√∂r√∂k G√°bor <gabo@linuxportal.hu>
     Gabor Kelemen <kelemeng@gnome.hu>
     Nagy Akos <nagy.akos@codespring.ro>
 
@@ -592,7 +599,7 @@ $Id$
     (Based on translations by:
     Philibert Ndandali <ndandali@yahoo.fr>,
     Viateur MUGENZI <muvia1@yahoo.fr>,
-    No√´lla Mupole <s24211045@tuks.co.za>,
+    No√É¬´lla Mupole <s24211045@tuks.co.za>,
     Carole Karema <karemacarole@hotmail.com>,
     JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>,
     Augustin KIBERWA,
@@ -606,7 +613,7 @@ $Id$
     Mark K. Kim <mkkim214@gmail.com>
   
   * Kurdish
-    Amed «eko Jiyan <amedcj@gmail.com>
+    Amed √áeko Jiyan <amedcj@gmail.com>
 
   * Latvian
     Raivis Strogonovs <raivucis@gmail.com>
@@ -621,7 +628,7 @@ $Id$
     James Olweny <sjolweny85@yahoo.co.uk>
 
   * Luxembourgish
-    RenÈ Brandenburger <rene@brandenburger.lu>
+    Ren√© Brandenburger <rene@brandenburger.lu>
 
   * Macedonian
     Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors
@@ -700,7 +707,7 @@ $Id$
 
   * Portuguese (Brazilian)
     Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
-    Daniel JosÈ Viana <danjovic@vespanet.com.br>
+    Daniel Jos√© Viana <danjovic@vespanet.com.br>
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
     Adorilson Bezerra de Araujo <adorilson@gmail.com>
@@ -731,12 +738,12 @@ $Id$
   * Serbian latin
     Ivana <reci.ne.silvesteru@gmail.com>
   
-  * Shuswap (SecwepemctÌn)
+  * Shuswap (Secwepemct√≠n)
     Neskie Manuel <neskiem@gmail.com>
 
   * Slovak
     Jaroslav Rynik <jrynik@yahoo.co.uk>
-    Peter Tuh·rsky <tuharsky@misbb.sk>
+    Peter Tuh√°rsky <tuharsky@misbb.sk>
     Milan Plzik <mmp@golem.gymzv.sk> [retired?]
     Andrej Kacian <andrej@kacian.sk>
 
@@ -757,7 +764,7 @@ $Id$
   * Spanish (Mexico)
     Ignacio Tike <ignaciotike@spymac.com>
     Daniel Illingworth <webmaster@intermagen.net>
-    Luis C. Su·rez <luiscsuarez@gmail.com>
+    Luis C. Su√°rez <luiscsuarez@gmail.com>
 
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>
@@ -766,7 +773,7 @@ $Id$
   * Swedish
     Robin Rosenberg <robin.rosenberg@dewire.com>
     Daniel Nylander <po@danielnylander.se>
-    Tomas Sk‰re <tomas@nocrew.org>
+    Tomas Sk√§re <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
 
@@ -805,7 +812,7 @@ $Id$
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
 
   * Venetian
-    Fabio Lazarin, El GalepÏn <mistro@elgalepin.com>
+    Fabio Lazarin, El Galep√¨n <mistro@elgalepin.com>
 
   * Vietnamese
     Le Quang Phan <lqphan@hn.vnn.vn>
