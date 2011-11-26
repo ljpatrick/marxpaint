@@ -39,7 +39,6 @@ static Mix_Chunk * kalidescope_snd;
 static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
 static int square_size = 128;
 
-Uint32 kalidescope_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 enum {
   KAL_UD,
@@ -58,6 +57,33 @@ char * kal_icon_names[KAL_COUNT] = {
   "kal_tiles.png"
 };
 
+/* Function Declarations: */
+
+Uint32 kalidescope_api_version(void);
+int kalidescope_init(magic_api * api);
+int kalidescope_get_tool_count(magic_api * api);
+SDL_Surface * kalidescope_get_icon(magic_api * api, int which);
+char * kalidescope_get_name(magic_api * api, int which);
+char * kalidescope_get_description(magic_api * api, int which, int mode);
+static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+                int x, int y);
+void kalidescope_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect);
+void kalidescope_click(magic_api * api, int which, int mode,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void kalidescope_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void kalidescope_shutdown(magic_api * api);
+int kalidescope_requires_colors(magic_api * api, int which);
+void kalidescope_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void kalidescope_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void kalidescope_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
+int kalidescope_modes(magic_api * api, int which);
+
+Uint32 kalidescope_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 // No setup required:
 int kalidescope_init(magic_api * api)
@@ -71,7 +97,7 @@ int kalidescope_init(magic_api * api)
   return(1);
 }
 
-int kalidescope_get_tool_count(magic_api * api)
+int kalidescope_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return(KAL_COUNT);
 }
@@ -88,7 +114,7 @@ SDL_Surface * kalidescope_get_icon(magic_api * api, int which)
 }
 
 // Return our names, localized:
-char * kalidescope_get_name(magic_api * api, int which)
+char * kalidescope_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == KAL_LR) {
     return(strdup(gettext_noop("Symmetric Left/Right")));
@@ -104,7 +130,7 @@ char * kalidescope_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * kalidescope_get_description(magic_api * api, int which, int mode)
+char * kalidescope_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == KAL_LR) {
     return(strdup(gettext_noop("Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture.")));
@@ -121,8 +147,8 @@ char * kalidescope_get_description(magic_api * api, int which, int mode)
 
 // Do the effect:
 
-static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
+static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, 
+                SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
   int xx, yy;
@@ -181,7 +207,7 @@ void kalidescope_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 // Affect the canvas on click:
-void kalidescope_click(magic_api * api, int which, int mode,
+void kalidescope_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
@@ -189,22 +215,23 @@ void kalidescope_click(magic_api * api, int which, int mode,
 }
 
 // Affect the canvas on release:
-void kalidescope_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
+void kalidescope_release(magic_api * api, int which ATTRIBUTE_UNUSED,
+	           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+	           int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, 
+                   SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   api->stopsound();
 }
 
 // No setup happened:
-void kalidescope_shutdown(magic_api * api)
+void kalidescope_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (kalidescope_snd != NULL)
     Mix_FreeChunk(kalidescope_snd);
 }
 
 // Record the color from Tux Paint:
-void kalidescope_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void kalidescope_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)
 {
   kalidescope_r = r;
   kalidescope_g = g;
@@ -212,20 +239,22 @@ void kalidescope_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 }
 
 // Use colors:
-int kalidescope_requires_colors(magic_api * api, int which)
+int kalidescope_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-void kalidescope_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void kalidescope_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, 
+                   int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-void kalidescope_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void kalidescope_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, 
+                   int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int kalidescope_modes(magic_api * api, int which)
+int kalidescope_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(MODE_PAINT);
 }

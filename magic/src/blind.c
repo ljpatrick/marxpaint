@@ -1,6 +1,6 @@
 /*
   blind.c
-
+//
   BLIND Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
@@ -48,6 +48,31 @@ enum blind_tools{
 
 Mix_Chunk * blind_snd;
 
+// Prototypes
+Uint32 blind_api_version(void);
+void blind_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int blind_init(magic_api * api);
+int blind_get_tool_count(magic_api * api);
+SDL_Surface * blind_get_icon(magic_api * api, int which);
+char * blind_get_name(magic_api * api, int which);
+char * blind_get_description(magic_api * api, int which, int mode);
+int blind_requires_colors(magic_api * api, int which);
+void blind_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * snapshot,
+	           int x, int y, SDL_Rect * update_rect);
+void blind_shutdown(magic_api * api);
+void blind_paint_blind(void * ptr_to_api, int which_tool,
+               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+void blind_drag(magic_api * api, int which, SDL_Surface * canvas,
+		SDL_Surface * snapshot, int ox, int oy, int x, int y,
+		SDL_Rect * update_rect);
+void blind_click(magic_api * api, int which, int mode,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void blind_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void blind_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
+int blind_modes(magic_api * api, int which);
+
 //				Housekeeping functions
 
 Uint32 blind_api_version(void)
@@ -55,7 +80,7 @@ Uint32 blind_api_version(void)
   return(TP_MAGIC_API_VERSION);
 }
 
-void blind_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)	//get the colors from API and store it in structure
+void blind_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)	//get the colors from API and store it in structure
 {
   blind_r = r;
   blind_g = g;
@@ -72,12 +97,12 @@ int blind_init(magic_api * api)
   return(1);
 }
 
-int blind_get_tool_count(magic_api * api)
+int blind_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return BLIND_NUMTOOLS;
 }
 
-SDL_Surface * blind_get_icon(magic_api * api, int which)
+SDL_Surface * blind_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -87,36 +112,36 @@ SDL_Surface * blind_get_icon(magic_api * api, int which)
   return(IMG_Load(fname));
 }
 
-char * blind_get_name(magic_api * api, int which)
+char * blind_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return strdup(gettext_noop("Blind")); 
 }
 
-char * blind_get_description(magic_api * api, int which, int mode) 
+char * blind_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) 
 { 
     return strdup(gettext_noop("Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."));
 }
 
-int blind_requires_colors(magic_api * api, int which)
+int blind_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-void blind_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * snapshot,
-	           int x, int y, SDL_Rect * update_rect)
+void blind_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+	           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+	           int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
-void blind_shutdown(magic_api * api)
+void blind_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
       Mix_FreeChunk(blind_snd);
 }
 
 // Interactivity functions
 
-void blind_paint_blind(void * ptr_to_api, int which_tool,
-               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
+void blind_paint_blind(void * ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
+               SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api * api = (magic_api *) ptr_to_api;
 
@@ -240,7 +265,7 @@ void blind_drag(magic_api * api, int which, SDL_Surface * canvas,
     }
 }
 
-void blind_click(magic_api * api, int which, int mode,
+void blind_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
@@ -261,17 +286,17 @@ void blind_click(magic_api * api, int which, int mode,
 	blind_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
-void blind_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void blind_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {	
 	
 }
 
-void blind_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void blind_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 	
 }
 
-int blind_modes(magic_api * api, int which)
+int blind_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(MODE_FULLSCREEN | MODE_PAINT);
 }
