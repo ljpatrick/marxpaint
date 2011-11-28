@@ -448,6 +448,7 @@ $Id$
   * Bulgarian
     Martin Zhekov <mjekov@bginfo.net>
     Yavor Doganov <yavor@doganov.org>
+    Stefani Stoyanova
 
   * Canadian English
     Matthew Lange, Canonical Ltd, and Rosetta Contributors

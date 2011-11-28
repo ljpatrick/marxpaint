@@ -401,6 +401,9 @@ $Id$
     * British English
       Robert Readman <robert_readman@hotmail.com>
 
+    * Bulgarian
+      Stefani Stoyanova
+
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
 
