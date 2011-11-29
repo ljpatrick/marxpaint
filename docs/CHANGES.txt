@@ -371,6 +371,8 @@ $Id$
       - Sanal <sanalmadatheth@gmail.com>
       - Sooraj <soorajkenoth@gmail.com> 
       - V Sasi Kumar <sasi.fsf@gmail.com> 
+      Updated by Sonith Kumar <sonith.kumar153@gmail.com>
+      Reviewed by Haris Ibrahim K. V. <blucalvin@gmail.com>
 
     * Northern Sotho translation
       Pheledi Mathibela <pheledi@mosekolatranslation.co.za>

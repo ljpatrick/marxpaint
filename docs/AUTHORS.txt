@@ -672,6 +672,8 @@ $Id$
     - Sanal <sanalmadatheth@gmail.com>
     - Sooraj <soorajkenoth@gmail.com>
     - V Sasi Kumar <sasi.fsf@gmail.com>
+    Sonith Kumar <sonith.kumar153@gmail.com>
+    Haris Ibrahim K. V. <blucalvin@gmail.com>
 
   * Ndebele
     Vincent Mahlangu <vmahlangu@parliament.gov.za>
