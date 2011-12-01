@@ -44,7 +44,7 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
   if (!layout)
   {
     printf("Error trying to load the required layout %s\n", layout_name);
-    layout = load_layout(keyboard, layout_name); //FIXME, this should try to load the default layout
+    layout = load_layout(keyboard, strdup("default.layout"));
     if (!layout)
     {
       printf("Error trying to load the default layout\n");
@@ -120,7 +120,6 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   if (layout_name != NULL)
   {
     keyboard->name = strdup(layout_name);
-
     /* Try full path */
     fi = fopen(layout_name, "r");
     if (fi == NULL)
@@ -135,7 +134,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 	/* Fallback to default */
 	snprintf(filename, 255, "%sosk/default.layout", DATA_PREFIX);
 	fi = fopen(filename, "r");
-	keyboard->name = "default.layout";
+	keyboard->name = strdup("default.layout");
       }
     }
   }
@@ -143,7 +142,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   {
     snprintf(filename, 255, "%sosk/default.layout", DATA_PREFIX);
     fi = fopen(filename, "r");
-    keyboard->name = "default.layout";
+    keyboard->name = strdup("default.layout");
   }
 
   free(filename);

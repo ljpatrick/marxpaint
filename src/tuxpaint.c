@@ -2994,7 +2994,7 @@ static void mainloop(void)
 		  if (onscreen_keyboard_layout)
 		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
 		  else
-		    kbd = osk_create("default.layout", screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
+		    kbd = osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
 		}
 		if (kbd == NULL)
 		  printf("kbd = NULL\n");
