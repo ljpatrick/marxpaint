@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
 %doc docs/*
 %{_datadir}/tuxpaint/*
+%{_sysconfdir}/bash_completion.d/tuxpaint-completion.bash
 
 %defattr(0755, root, root)
 %{_bindir}/tuxpaint
@@ -87,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Wed Dec 07 2011 <shin1@wmail.plala.or.jp> -
+- Added bash-completion file
+
 * Wed Jul 1 2009 <nbs@sonic.net> -
 - Set version number 0.9.22
 
