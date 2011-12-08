@@ -31,6 +31,10 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 static void print_composemap(osk_composenode *composemap, char * sp);
 #endif
 
+#ifdef WIN32
+#define wcstok(line, delim, pointer)  wcstok(line, delim)
+#endif
+
 struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change)
 {
   SDL_Surface *surface;
@@ -187,8 +191,8 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 
     else if (strncmp("keyboardlist", key, 12) == 0)
     {
-      char * pointer;      strtok_r(line, " \t",  &pointer);
-      keyboard->keyboard_list = strdup( pointer);
+      strcpy(value, &line[13]);
+      keyboard->keyboard_list = strdup(value);
     }
  
     printf("key %s, value %s\n", key, value);
@@ -516,7 +520,7 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
   if (tok[0] == L':') /* End of precompose keysyms, next will be the result in unicode. */
   {
     result = wcsdup(wcstok(line, L": \"\t", pointer)); 
-	    //      printf("result %ls\n", result);
+    //    printf("result %ls\n", result);
     composenode->result = result;
     free(tok);
     return;
@@ -718,8 +722,9 @@ static void load_keysymdefs(osk_layout *layout, char * keysymdefs_name)
 
     /* Some keysyms doesn't correspond to any unicode value, ej. BackSpace */
     layout->keysymdefs[i].unicode = 0;
-    sscanf(line, "#define XK_%ms %x /* U+%x",
-	   &layout->keysymdefs[i].mnemo,
+    layout->keysymdefs[i].mnemo = malloc(128);
+    sscanf(line, "#define XK_%s %x /* U+%x",
+	   layout->keysymdefs[i].mnemo,
 	   &layout->keysymdefs[i].keysym,
 	   &layout->keysymdefs[i].unicode);
     i++;
