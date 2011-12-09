@@ -537,7 +537,7 @@ FILE * my_fmemopen(unsigned char * data, size_t size, const char * mode)
 #endif
 
 
-  fi = fopen(fname, "w");
+  fi = fopen(fname, "wb");
   if (fi == NULL)
     {
       free(fname);
@@ -12999,7 +12999,7 @@ static void do_png_embed_data(png_structp png_ptr)
     fname = get_temp_fname("tmpfile");
 #endif
 
-    lfi = fopen(fname, "w+");
+    lfi = fopen(fname, "wb+");
     
 #endif
 
@@ -20329,7 +20329,7 @@ static void load_info_about_label_surface(FILE * lfi)
                     new_node->save_y = tmp_pos;
                 }
 
-            printf("%ix%i\n", new_node->save_x, new_node->save_y);
+            printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
               
             fscanf(lfi, "%d\n", &new_node->save_cur_font);
             new_node->save_cur_font = 0;
@@ -20348,16 +20348,15 @@ static void load_info_about_label_surface(FILE * lfi)
                                                       screen->format->Gmask,
                                                       screen->format->Bmask, TPAINT_AMASK);
 
-            pix_size=sizeof(Uint8);
             SDL_LockSurface(label_node_surface);
             for (x=0;x<new_node->save_width;x++)
-		for (y=0;y<new_node->save_height;y++)
-                    {
-                        fread(&a, pix_size, 1, lfi);
-                        putpixels[label_node_surface->format->BytesPerPixel](label_node_surface, x, y, SDL_MapRGBA(label_node_surface->format, new_node->save_color.r, new_node->save_color.g, new_node->save_color.b, a));
-                    }
+	      for (y=0;y<new_node->save_height;y++)
+	      {
+		a = fgetc(lfi);
+		putpixels[label_node_surface->format->BytesPerPixel](label_node_surface, x, y, SDL_MapRGBA(label_node_surface->format, new_node->save_color.r, new_node->save_color.g, new_node->save_color.b, a));
+	      }
             SDL_UnlockSurface(label_node_surface);
-	      
+
             new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
             label_node_surface_aux = zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
             SDL_FreeSurface(label_node_surface);
@@ -20704,7 +20703,9 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
 	fields++;
 	if (fields == 4)
 	{			/* Last check, see if the sizes match */
-	  sscanf((char *) unknown.data, "%as\n%as\n%d\n%d\n", &control, &softwr, &unc_size, &comp);
+	  control = malloc(50);
+	  softwr  = malloc(50);
+	  sscanf((char *) unknown.data, "%s\n%s\n%d\n%d\n", control, softwr, &unc_size, &comp);
 	  free(control);
 	  free(softwr);
 	  if (count + comp + 1 == unknown.size)
@@ -20746,7 +20747,9 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
   char *control, *softwr;
   Bytef *comp_buff, *unc_buff;
 
-  sscanf((char *) unknown.data, "%as\n%as\n%d\n%d\n", &control, &softwr, unc_size, &comp);
+  control = malloc(50);
+  softwr  = malloc(50);
+  sscanf((char *) unknown.data, "%s\n%s\n%d\n%d\n", control, softwr, unc_size, &comp);
   free(control);
   free(softwr);
   comp_buff = malloc(comp);
@@ -20910,8 +20913,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 	  }
 
 /* Put fi position at the right place after the chunk headers */
-	  fscanf(fi, "%as\n", &control);
-	  fscanf(fi, "%as\n", &softwr);
+	  control = malloc(50);
+	  softwr  = malloc(50);
+	  fscanf(fi, "%s\n", control);
+	  fscanf(fi, "%s\n", softwr);
 	  fscanf(fi, "%d\n", &unc);
 	  fscanf(fi, "%d\n", &comp);
 	  free(control);
@@ -21002,7 +21007,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 	    }
 	    else
 	    {
-	      fi = fmemopen(unc_buff, unc_size, "r");
+	      fi = fmemopen(unc_buff, unc_size, "rb");
 	      if (fi == NULL)
 	      {
 		printf("Can't recover the label data embedded in %s, error in create file stream\n\n", fname);
