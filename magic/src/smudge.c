@@ -40,6 +40,29 @@
 static Mix_Chunk * smudge_snd;
 static Uint8 smudge_r, smudge_g, smudge_b;
 
+int smudge_init(magic_api * api);
+Uint32 smudge_api_version(void);
+SDL_Surface * smudge_get_icon(magic_api * api, int which);
+char * smudge_get_name(magic_api * api, int which);
+char * smudge_get_description(magic_api * api, int which, int mode);
+static void do_smudge(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+                int x, int y);
+void smudge_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect);
+void smudge_click(magic_api * api, int which, int mode,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void smudge_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void smudge_shutdown(magic_api * api);
+void smudge_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int smudge_requires_colors(magic_api * api, int which);
+void smudge_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void smudge_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
+int smudge_modes(magic_api * api, int which);
+int smudge_get_tool_count(magic_api * api);
 
 // No setup required:
 int smudge_init(magic_api * api)
@@ -56,7 +79,7 @@ int smudge_init(magic_api * api)
 Uint32 smudge_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 // We have multiple tools:
-int smudge_get_tool_count(magic_api * api)
+int smudge_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return(2);
 }
@@ -77,7 +100,7 @@ SDL_Surface * smudge_get_icon(magic_api * api, int which)
 }
 
 // Return our names, localized:
-char * smudge_get_name(magic_api * api, int which)
+char * smudge_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == 0)
     return(strdup(gettext_noop("Smudge")));
@@ -86,7 +109,7 @@ char * smudge_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * smudge_get_description(magic_api * api, int which, int mode)
+char * smudge_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == 0)
     return(strdup(gettext_noop("Click and move the mouse around to smudge the picture.")));
@@ -169,7 +192,7 @@ void smudge_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 // Affect the canvas on click:
-void smudge_click(magic_api * api, int which, int mode,
+void smudge_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
@@ -177,21 +200,21 @@ void smudge_click(magic_api * api, int which, int mode,
 }
 
 // Affect the canvas on click:
-void smudge_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
+void smudge_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+	           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+	           int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 // No setup happened:
-void smudge_shutdown(magic_api * api)
+void smudge_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (smudge_snd != NULL)
     Mix_FreeChunk(smudge_snd);
 }
 
 // Record the color from Tux Paint:
-void smudge_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void smudge_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)
 {
   smudge_r = r;
   smudge_g = g;
@@ -199,7 +222,7 @@ void smudge_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 }
 
 // Use colors:
-int smudge_requires_colors(magic_api * api, int which)
+int smudge_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   if (which == 0)
     return 0;
@@ -207,15 +230,15 @@ int smudge_requires_colors(magic_api * api, int which)
     return 1;
 }
 
-void smudge_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void smudge_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-void smudge_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void smudge_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int smudge_modes(magic_api * api, int which)
+int smudge_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(MODE_PAINT);
 }
