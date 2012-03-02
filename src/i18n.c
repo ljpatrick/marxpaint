@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2011 by Bill Kendrick and others
+  Copyright (c) 2002-2012 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 15, 2011
+  June 14, 2002 - March 2, 2012
 */
 
 #include <stdio.h>
@@ -57,6 +57,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "af",
   "ak",
   "am",
+  "an",
   "ar",
   "ast",
   "az",
@@ -204,6 +205,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"twi-fante", "ak_GH.UTF-8"},
   {"amharic", "am_ET.UTF-8"},
   {"arabic", "ar_SA.UTF-8"},
+  {"aragones", "an_ES.UTF-8"},
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
@@ -362,6 +364,7 @@ static void show_lang_usage(int exitcode)
 /* sq */ "  albanian\n"
 /* am */ "  amharic\n"
 /* ar */ "  arabic\n"
+/* an */ "  aragones\n"
 /* ast */ "  asturian\n"
 /* en_AU */ "  australian-english\n"
 /* az */ "  azerbaijani\n"
@@ -471,6 +474,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  ak_GH   (Akan         Twi-Fante)\n"
           "  am_ET   (Amharic)\n"
 	  "  ar_SA   (Arabic)\n"
+          "  an_ES   (Aragones)\n"
 	  "  ast_ES  (Asturian)\n"
 	  "  az_AZ   (Azerbaijani)\n"
 	  "  eu_ES   (Basque       Euskara)\n"

@@ -3,13 +3,13 @@
 
 Options Documentation
 
-                Copyright 2002-2011 by Bill Kendrick and others
+                Copyright 2002-2012 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  May 28, 2011
+                                 March 2, 2012
 
      ----------------------------------------------------------------------
 
@@ -378,9 +378,23 @@ Windows Users
                Presents a clickable on-screen keyboard when using the Text
                and Label tools.
 
+       onscreen-keyboard-layout=LAYOUTNAME
+               Selects the initial layout for the on-screen keyboard when
+               using the Text and Label tools.
+               Note: Using this option implies automatically
+               onscreen-keyboard=yes, so setting both is redundant.
+
+       onscreen-keyboard-disable-change=yes
+               Disables the possibility for changing the layout of the
+               on-screen keyboard when using the Text and Label tools,
+               usefull for simplifying things for the small children.
+               Note: Using this option implies automatically
+               onscreen-keyboard=yes, so setting both is redundant.
+
        joystick-slowness=SPEED
                Sets a delay at each axis motion, allowing to slow the
-               joystick. Allowed values are 0 to 500. Default value is 15.
+               joystick. Allowed values are from 0 to 500. Default value is
+               15.
 
        joystick-threshold=THRESHOLD
                Sets the minimum level of axis motion to start moving the
@@ -390,6 +404,82 @@ Windows Users
        joystick-maxsteps=STEPS
                Sets the maximum pixels the pointer will move at once. Allowed
                values are from 1 to 7. Default value is 7.
+
+       joystick-hat-timeout=MILISECONDS
+               Sets the delay after wich the pointer will start moving
+               automatically if the hat is keeped pushed. Allowed values are
+               from 0 to 3000. Default value is 1000.
+
+       joystick-hat-slowness=SPEED
+               Sets a delay at each automatic motion, allowing to slow the
+               speed of the hat. Allowed values are from 0 to 500. Default
+               value is 15.
+
+       joystick-btn-escape=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be used to generate a escape event. Usefull to dismiss dialogs
+               and quit.
+
+       joystick-btn-brush=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the brush tool.
+
+       joystick-btn-stamp=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the stamp tool.
+
+       joystick-btn-lines=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the lines tool.
+
+       joystick-btn-shapes=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the shapes tool.
+
+       joystick-btn-text=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the text tool.
+
+       joystick-btn-label=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the label tool.
+
+       joystick-btn-magic=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to select the magic tool.
+
+       joystick-btn-undo=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to the undo tool.
+
+       joystick-btn-redo=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to the redo tool.
+
+       joystick-btn-eraser=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt for selecting the eraser tool.
+
+       joystick-btn-new=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to launch the dialog for opening a new draw.
+
+       joystick-btn-open=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to launch the dialog for opening an existing
+               draw.
+
+       joystick-btn-save=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt for saving the draw.
+
+       joystick-btn-pgsetup=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to launch the page setup dialog for printing.
+
+       joystick-btn-print=BUTTON NUMBER
+               Selects the joystick button number, as seen by SDL, that will
+               be a shortcurt to print.
 
        stampsize=SIZE
 
@@ -556,6 +646,8 @@ Windows Users
                  |amharic             |                     |               |
                  |--------------------+---------------------+---------------|
                  |arabic              |                     |               |
+                 |--------------------+---------------------+---------------|
+                 |aragones            |                     |               |
                  |--------------------+---------------------+---------------|
                  |asturian            |                     |               |
                  |--------------------+---------------------+---------------|
@@ -793,6 +885,29 @@ Windows Users
          --nolabel
          --mouse-accessibility
          --onscreen-keyboard
+         --onscreen-keyboard-layout
+         --onscreen-keyboard-disable-change
+         --joystick-slowness
+         --joystick-threshold
+         --joystick-maxsteps
+         --joystick-hat-slowness
+         --joystick-hat-timeout
+         --joystick-btn-escape
+         --joystick-btn-brush
+         --joystick-btn-stamp
+         --joystick-btn-lines
+         --joystick-btn-shapes
+         --joystick-btn-text
+         --joystick-btn-label
+         --joystick-btn-magic
+         --joystick-btn-undo
+         --joystick-btn-redo
+         --joystick-btn-eraser
+         --joystick-btn-new
+         --joystick-btn-open
+         --joystick-btn-save
+         --joystick-btn-pgsetup
+         --joystick-btn-print
          --sysfonts
          --alllocalefonts
          --mirrorstamps
@@ -927,6 +1042,8 @@ Available Languages
          |ak_GH      |                   |Akan             |                |
          |-----------+-------------------+-----------------+----------------|
          |am_ET      |                   |Amharic          |                |
+         |-----------+-------------------+-----------------+----------------|
+         |an_ES      |                   |Aragones         |                |
          |-----------+-------------------+-----------------+----------------|
          |ar_SA      |                   |Arabic           |                |
          |-----------+-------------------+-----------------+----------------|

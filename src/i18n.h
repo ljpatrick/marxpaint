@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2011 by Bill Kendrick and others
+  Copyright (c) 2002-2012 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - April 15, 2011
+  June 14, 2002 - March 2, 2012
 */
 
 
@@ -43,6 +43,7 @@ enum
   LANG_AF,			/* Afrikaans */
   LANG_AK,                      /* Akan */
   LANG_AM,                      /* Amharic */
+  LANG_AN,                      /* Aragones */
   LANG_AR,			/* Arabic */
   LANG_AST,			/* Asturian */
   LANG_AZ,			/* Azerbaijani */

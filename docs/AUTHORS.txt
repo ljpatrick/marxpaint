@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2011 by Bill Kendrick and others
+Copyright (c) 2002-2012 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 2, 2011
+June 17, 2002 - March 2, 2012
 
 $Id$
 
@@ -418,6 +418,9 @@ $Id$
     Tilo <Drfortilo@gmail.com>
     Khaled Hosny <khaledhosny@eglug.org>
     Khalid Al Holan <alholan@gmail.com>
+
+  * Aragones
+    Juan Pablo Martinez Cortes <jpmart@unizar.es>
 
   * Asturian
     Xandru Armesto <alarmes@wanadoo.es>
