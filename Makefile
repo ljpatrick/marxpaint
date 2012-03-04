@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2011 by Bill Kendrick and others
+# Copyright (c) 2002-2012 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - August 9, 2011
+# June 14, 2002 - March 4, 2012
 
 
 # The version number, for release:
@@ -173,7 +173,7 @@ CURSOR_SHAPES:=LARGE
 # CURSOR_SHAPES:=SMALL
 
 # Libraries, paths, and flags:
-SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf -lz -lpng
+SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf -lz $(PNG)
 
 # Sound support
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
