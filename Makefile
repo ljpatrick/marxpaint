@@ -129,9 +129,12 @@ LOCALE_PREFIX=$(DESTDIR)$(PREFIX)/share/locale
 # IM files
 IM_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint/im
 
+# Libraries
+LIBDIR=$(PREFIX)
+
 # Magic Tool plug-ins
 INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
-MAGIC_PREFIX:=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
+MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib/tuxpaint/plugins
 
 
 # Docs and man page:
@@ -243,6 +246,10 @@ DEBUG_FLAGS:=
 MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
 .SUFFIXES:
+
+foo:
+	@echo Libdir = $(LIBDIR)
+	@echo Prefix = $(PREFIX)
 
 #############################################################################
 #############################################################################
