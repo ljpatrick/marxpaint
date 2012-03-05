@@ -115,7 +115,8 @@ $Id$
   _player1537
   YeyaSwizaw
   Steve Ryan
-  Peter Poláčik 
+  Peter Poláčik
+  m4tx
 
 * Graphics
 
