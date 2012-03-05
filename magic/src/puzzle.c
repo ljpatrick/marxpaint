@@ -42,9 +42,35 @@
 
 static Mix_Chunk * puzzle_snd;
 static int puzzle_gcd=0;		//length of side of each rectangle; 0 is temporary value.
-static int puzzle_rect_q=4;		//quantity of rectangles when using paint mode. Must be an odd value - but it's even!
+// static int puzzle_rect_q=4;		//quantity of rectangles when using paint mode. Must be an odd value - but it's even!
 static int rects_w, rects_h;
 SDL_Surface * canvas_backup;
+
+Uint32 puzzle_api_version(void) ;
+int puzzle_init(magic_api * api);
+int puzzle_get_tool_count(magic_api * api);
+SDL_Surface * puzzle_get_icon(magic_api * api, int which);
+char * puzzle_get_name(magic_api * api, int which);
+char * puzzle_get_description(magic_api * api, int which, int mode);
+void puzzle_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void puzzle_shutdown(magic_api * api);
+void puzzle_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int puzzle_requires_colors(magic_api * api, int which);
+void puzzle_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void puzzle_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
+int puzzle_modes(magic_api * api, int which);
+static void puzzle_draw(void * ptr, int which_tool,
+               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+void puzzle_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect);
+
+void puzzle_click(magic_api * api, int which, int mode,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+int gcd(int a, int b);
 
 Uint32 puzzle_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
@@ -59,12 +85,12 @@ int puzzle_init(magic_api * api)
   return 1 ;
 }
 
-int puzzle_get_tool_count(magic_api * api)
+int puzzle_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-SDL_Surface * puzzle_get_icon(magic_api * api, int which)
+SDL_Surface * puzzle_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -74,37 +100,37 @@ SDL_Surface * puzzle_get_icon(magic_api * api, int which)
   return(IMG_Load(fname));
 }
 
-char * puzzle_get_name(magic_api * api, int which)
+char * puzzle_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(strdup(gettext_noop("Puzzle")));
 }
 
 
-char * puzzle_get_description(magic_api * api, int which, int mode)
+char * puzzle_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode==MODE_PAINT)
 	return strdup(gettext_noop("Click the part of your picture where would you like a puzzle."));
   return strdup(gettext_noop("Click to make a puzzle in fullscreen mode."));
 }
 
-void puzzle_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
+void puzzle_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+	           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+	           int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   api->playsound(puzzle_snd, 128, 255);
 }
 
-void puzzle_shutdown(magic_api * api)
+void puzzle_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (puzzle_snd != NULL)
     Mix_FreeChunk(puzzle_snd);
 }
 
-void puzzle_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void puzzle_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
 {
 }
 
-int puzzle_requires_colors(magic_api * api, int which)
+int puzzle_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
@@ -115,7 +141,7 @@ int gcd(int a, int b)		//greatest common divisor
  return gcd(b, a%b);
 }
 
-void puzzle_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void puzzle_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
 {
 	puzzle_gcd=RATIO*gcd(canvas->w, canvas->h);
 	rects_w=(unsigned int)canvas->w/puzzle_gcd;
@@ -123,25 +149,25 @@ void puzzle_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
         canvas_backup = SDL_CreateRGBSurface(SDL_ANYFORMAT,canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 }
 
-void puzzle_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void puzzle_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
   SDL_FreeSurface(canvas_backup);
   canvas_backup = NULL;
 }
 
-int puzzle_modes(magic_api * api, int which)
+int puzzle_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(MODE_PAINT);
 }
 
-static void puzzle_draw(void * ptr, int which_tool,
-               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
+static void puzzle_draw(void * ptr, int which_tool ATTRIBUTE_UNUSED,
+               SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {	
   
   	
   magic_api * api = (magic_api *) ptr;
 	
-  Uint8 i, j, r;		//r - random value
+  Uint8 r;		//r - random value
   SDL_Rect rect_this, rect_that;
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
@@ -193,7 +219,7 @@ static void puzzle_draw(void * ptr, int which_tool,
 }
 
 void puzzle_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y,
+	          SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y,
 		  SDL_Rect * update_rect)
 {
 	puzzle_draw(api, which, canvas, last, x-puzzle_gcd/2, y-puzzle_gcd/2);
@@ -209,7 +235,7 @@ void puzzle_drag(magic_api * api, int which, SDL_Surface * canvas,
 	update_rect->w=canvas->w;
 }
 
-void puzzle_click(magic_api * api, int which, int mode,
+void puzzle_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
