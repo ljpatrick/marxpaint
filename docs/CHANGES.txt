@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2012.March.2 (0.9.22)
+2012.March.8 (0.9.22)
 
   * New Tools:
     ----------
@@ -333,6 +333,9 @@ $Id$
     * Fula translation
       Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>,
       Fula Localization Project, http://www.pulaar-fulfulde.org/
+
+    * Inuktitut
+      Harvey Ginter <harveyginter@gmail.com>
 
     * Luganda translation
       James Olweny <sjolweny85@yahoo.co.uk>

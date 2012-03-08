@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - March 2, 2012
+  June 14, 2002 - March 8, 2012
 */
 
 #include <stdio.h>
@@ -100,6 +100,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "id",
   "is",
   "it",
+  "iu",
   "ja",
   "ka",
   "km",
@@ -265,6 +266,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"islenska", "is_IS.UTF-8"},
   {"italian", "it_IT.UTF-8"},
   {"italiano", "it_IT.UTF-8"},
+  {"inuktitut", "iu_CA.UTF-8"},
   {"japanese", "ja_JP.UTF-8"},
   {"venda", "ve_ZA.UTF-8"},
   {"venetian", "vec.UTF-8"},
@@ -402,6 +404,7 @@ static void show_lang_usage(int exitcode)
 /* hu */ "  hungarian    magyar\n"
 /* is */ "  icelandic    islenska\n"
 /* id */ "  indonesian   bahasa-indonesia\n"
+/* iu */ "  inuktitut\n"
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
 /* cgg */ "  kiga         chiga\n"
@@ -516,6 +519,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  is_IS   (Icelandic    Islenska)\n"
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
 	  "  it_IT   (Italian      Italiano)\n"
+          "  iu_CA   (Inuktitut)\n"
 	  "  ja_JP   (Japanese)\n"
 	  "  ka_GE   (Georgian)\n"
 	  "  ko_KR   (Korean)\n"

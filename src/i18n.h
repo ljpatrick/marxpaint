@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - March 2, 2012
+  June 14, 2002 - March 8, 2012
 */
 
 
@@ -86,6 +86,7 @@ enum
   LANG_ID,			/* Indonesian */
   LANG_IS,			/* Icelandic */
   LANG_IT,			/* Italian */
+  LANG_IU,                      /* Inuktitut */
   LANG_JA,			/* Japanese */
   LANG_KA,			/* Georgian */
   LANG_KM,			/* Khmer */

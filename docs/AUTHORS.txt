@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 2, 2012
+June 17, 2002 - March 8, 2012
 
 $Id$
 
@@ -576,6 +576,9 @@ $Id$
 
   * Indonesian
     Tedi Heriyanto <tedi_h@gmx.net>
+
+  * Inuktitut
+    Harvey Ginter <harveyginter@gmail.com>
 
   * Irish Gaelic
     Kevin Patrick Scannell <kscanne@gmail.com>
