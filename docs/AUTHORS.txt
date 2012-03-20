@@ -740,6 +740,7 @@ $Id$
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
+    Michael Bauer<fios@akerbeltz.org>
 
   * Serbian cyrillic
     Aleksandar Jelenak <jelenak@verizon.net>

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-18 08:32-0700\n"
-"PO-Revision-Date: 2011-12-05 17:42+0200\n"
+"POT-Creation-Date: 2010-08-17 15:55-0700\n"
+"PO-Revision-Date: 2012-03-20 07:42+0100\n"
 "Last-Translator: Michael <fios@akerbeltz.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: gd\n"
@@ -67,7 +67,7 @@ msgstr "Dorch-ghorm!"
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr "Liath!"
+msgstr "Speur-ghorm!"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -102,7 +102,7 @@ msgstr "Soilleir-dhonn!"
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
 msgid "Beige!"
-msgstr ""
+msgstr "Bèis!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -125,11 +125,11 @@ msgstr ""
 #. Most translators should use scoring instead.
 #: ../dirwalk.c:164
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 #: ../dirwalk.c:164
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
@@ -149,7 +149,7 @@ msgstr "’,.?!-"
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
 msgid "`\\%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*"
+msgstr "`\\%_@$~#{<(^&*┐⁊"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
@@ -168,19 +168,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spare-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spare-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -195,7 +195,7 @@ msgstr "Sgoinneil!"
 #. Congratulations #3
 #: ../great.h:43
 msgid "Keep it up!"
-msgstr "Cùm ort!"
+msgstr "Cum ort!"
 
 #. Congratulations #4
 #: ../great.h:46
@@ -298,22 +298,22 @@ msgstr "’S e cearcall air a shìneadh a th’ anns an eileaps."
 #. Description of a triangle
 #: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
-msgstr "Tha trì taobhan aig triantan"
+msgstr "Tha trì taobhan aig triantan."
 
 #. Description of a pentagon
 #: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
-msgstr "Tha còig taobhan aig còig-cheàrnach"
+msgstr "Tha còig taobhan aig còig-cheàrnach."
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Tha ceithir taobhan dhen aon fhaide aig rombas, is tha na taobhan mu "
-"choinneamh co-shìnte"
+"choinneamh co-shìnte."
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
-msgstr "Tha ochd taobhan dhen aon fhaide aig ochd-cheàrnach"
+msgstr "Tha ochd taobhan de dh'fhaid co-ionnann aig ochd-cheàrnach."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -673,7 +673,7 @@ msgstr "Cluich"
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8485
 msgid "Aa"
-msgstr "Aa"
+msgstr "A!"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -775,7 +775,8 @@ msgstr ""
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"Briog is gluais an luchag mu thimcheall gus tèid an dealbh na dhealbh cailce."
+"Briog is gluais an luchag mu thimcheall gus tèid an dealbh na dhealbh "
+"cailce."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
@@ -788,8 +789,7 @@ msgstr "Sgleò"
 
 #: ../../magic/src/blur.c:60
 msgid "Click and move the mouse around to blur the image."
-msgstr ""
-"Briog is gluais an luchag mu thimcheall gus sgleò a chur air an dealbh."
+msgstr "Briog is gluais an luchag mu thimcheall gus sgleò a chur air an dealbh."
 
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
@@ -819,7 +819,8 @@ msgstr "Snas-sgrìobhadh"
 #: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr ""
-"Briog is gluais an luchag mu thimcheall gus peantadh ann an stoidhle snasail."
+"Briog is gluais an luchag mu thimcheall gus peantadh ann an stoidhle "
+"snasail."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
@@ -879,8 +880,7 @@ msgstr ""
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click to darken your entire picture."
-msgstr ""
-"Briog is gluais an luchag gus an dealbh gu lèir a dhèanamh nas duirche."
+msgstr "Briog is gluais an luchag gus an dealbh gu lèir a dhèanamh nas duirche."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -915,8 +915,7 @@ msgstr "Cop"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr ""
-"Briog is slaod an luchag gus roinn a chòmhdachadh le builgeanan copach."
+msgstr "Briog is slaod an luchag gus roinn a chòmhdachadh le builgeanan copach."
 
 #: ../../magic/src/fold.c:84
 msgid "Fold"
@@ -1129,12 +1128,12 @@ msgstr ""
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
-"Briog is slaod suas airson sùm a-steach dhan dealbh no sìos airson sùm a-"
-"mach às an dealbh"
+"Briog is slaod suas airson sùmadh a-steach dhan dealbh no sìos airson sùmadh "
+"a-mach às an dealbh."
 
 #: ../../magic/src/puzzle.c:79
 msgid "Puzzle"
-msgstr "Toimhseachan!"
+msgstr "Tòimhseachan"
 
 #: ../../magic/src/puzzle.c:86
 msgid "Click the part of your picture where would you like a puzzle."
@@ -1151,7 +1150,8 @@ msgstr "Rèilichean"
 #: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
-"Briog is slaod gus rèilichean rathaid-iarainn a pheantadh air an dealbh agad."
+"Briog is slaod gus rèilichean rathaid-iarainn a pheantadh air an dealbh "
+"agad."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1179,7 +1179,7 @@ msgstr "Fìor bhogha-froise"
 
 #: ../../magic/src/realrainbow.c:88
 msgid "ROYGBIV Rainbow"
-msgstr ""
+msgstr "Bogha-froise"
 
 #: ../../magic/src/realrainbow.c:93
 msgid ""
@@ -1199,7 +1199,7 @@ msgstr "Briog gus an nochd frith-thonnan air an dealbh agad."
 
 #: ../../magic/src/rosette.c:93
 msgid "Rosette"
-msgstr ""
+msgstr "Cruth ròis"
 
 #: ../../magic/src/rosette.c:93
 msgid "Picasso"
@@ -1405,8 +1405,8 @@ msgid ""
 "the right for long waves."
 msgstr ""
 "Briog gus an tèid an dealbh agad na thonnan còmhnard. Briog mun bhàrr airson "
-"thonnan as giorra, mun bhonn airson thonnan as àirde, mu chlì airson thonnan "
-"as lugha, is mu dheas airson thonnan as fhaide."
+"thonnan as giorra, mun bhonn airson thonnan as àirde, mu chlì airson "
+"thonnan as lugha, is mu dheas airson thonnan as fhaide."
 
 #: ../../magic/src/waves.c:89
 msgid ""
