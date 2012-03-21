@@ -13,7 +13,7 @@ static void load_keymap(osk_layout *layout, char * keymap_name);
 static void load_composemap(osk_layout *layout, char * composemap_name);
 
 static int is_blank_or_comment(char *line);
-static int isw_blank_or_comment(wchar_t *line);
+/* static int isw_blank_or_comment(wchar_t *line); */
 
 
 static void keybd_prepare(on_screen_keyboard *keyboard);
@@ -32,7 +32,35 @@ static void print_composemap(osk_composenode *composemap, char * sp);
 #endif
 
 #ifdef WIN32
+#include <iconv.h>
 #define wcstok(line, delim, pointer)  wcstok(line, delim)
+#define strtok_r(line, delim, pointer) strtok(line, delim)
+
+static void mtw(wchar_t * wtok, char * tok);
+
+static void mtw(wchar_t * wtok, char * tok)
+{
+  /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
+  Uint16 *ui16;
+  ui16 = malloc(255);
+  char *wrptr = (char *) ui16;
+  size_t n, in, out;
+  iconv_t trans;
+  wchar_t * wch;
+
+  n = 255;
+  in = 250;
+  out = 250;
+  wch =malloc(255);
+
+  trans = iconv_open("WCHAR_T", "UTF-8");
+  iconv(trans, (const char **) &tok, &in, &wrptr, &out);
+  *((wchar_t *) wrptr) = L'\0';
+  swprintf(wtok, L"%ls", ui16);
+  free(ui16);
+  iconv_close(trans);
+}
+#define mbstowcs(wtok, tok, size) mtw(wtok, tok)
 #endif
 
 struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change)
@@ -224,7 +252,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
   char *filename;
   char *line;
   char *key, *fontpath;
-  wchar_t *plain_label, *top_label, *altgr_label, *shift_altgr_label;
+  char *plain_label, *top_label, *altgr_label, *shift_altgr_label;
   FILE * fi;
 
   key_number = line_number = 0;
@@ -355,7 +383,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
       shift_altgr_label = malloc(64);
 
       sscanf(line, 
-	     "%s %i %i.%i %ls %ls %ls %ls %i",
+	     "%s %i %i.%i %s %s %s %s %i",
 	     key, 
 	     &keycode, 
 	     &key_width,
@@ -506,23 +534,28 @@ void load_keymap(osk_layout *layout, char * keymap_name)
 }
 
 /* Scans a line of keysyms and result and classifies them. */
-static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_composenode *composenode, osk_layout *layout)
+static void gettokens(char * line, char * delim, char ** pointer, osk_composenode *composenode, osk_layout *layout)
 {
   int i;
-  wchar_t  *tok;
-  wchar_t * result;
+  char  *tok;
+  wchar_t *result, *wtok;
   osk_composenode *auxnode;
+  wtok=malloc(255);
 
-  tok = wcsdup(wcstok(line, delim, pointer));
+  tok = strdup(strtok_r(line, delim, pointer));
+
   if(!tok)
     return;
-
-  if (tok[0] == L':') /* End of precompose keysyms, next will be the result in unicode. */
+  if (tok[0] == ':') /* End of precompose keysyms, next will be the result in UTF-8. */
   {
-    result = wcsdup(wcstok(line, L": \"\t", pointer)); 
-    //    printf("result %ls\n", result);
-    composenode->result = result;
+    tok = strdup(strtok_r(line, ": \"\t", pointer));
+
+    mbstowcs(wtok, tok, 255);
+    result = wcsdup(wtok);
+    /* printf("->%ls<-\n", wtok); */
+    free(wtok);
     free(tok);
+    composenode->result = result;
     return;
   }
   else
@@ -533,26 +566,32 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
       auxnode = malloc(sizeof(osk_composenode));
       composenode->childs = malloc(sizeof(osk_composenode *));
       composenode->childs[0] = auxnode;
-      composenode->childs[0]->keysym = tok;
+      mbstowcs(wtok, tok, 255);
+      composenode->childs[0]->keysym = wcsdup(wtok);
       composenode->childs[0]->result = NULL;
       composenode->childs[0]->size = 0;
 
-      //      printf("size %d, keysym %ls => ", composenode->size, composenode->childs[0]->keysym);
+      /* printf("size %d, keysym %ls => ", composenode->size, composenode->childs[0]->keysym); */
 
       gettokens(NULL, delim, pointer, composenode->childs[0], layout);
+      free(wtok);
+      free(tok);
       return;
     }
     else
     {
+
       for (i = 0; i < composenode->size; i++)
       {
-	if(wcscmp(composenode->childs[i]->keysym, tok) == 0)
+	mbstowcs(wtok, tok, 255);
+	if(wcscmp(composenode->childs[i]->keysym, wtok) == 0)
 	{
  
-	  //	        printf("Size %d, keysym %ls =>", composenode->size, composenode->childs[i]->keysym);
+	  /* printf("Size %d, keysym %ls =>", composenode->size, composenode->childs[i]->keysym); */
 
 	  gettokens(NULL, delim, pointer, composenode->childs[i], layout);
 	  free(tok);
+	  free(wtok);
 	  return;
 	}
       }
@@ -561,14 +600,14 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
     composenode->size = composenode->size + 1;
     composenode->childs = realloc(composenode->childs,composenode->size * sizeof(osk_composenode *));
 
-
+    mbstowcs(wtok, tok, 255);
     auxnode = malloc(sizeof(osk_composenode));
     composenode->childs[composenode->size - 1] = auxnode;//malloc(sizeof(osk_composenode));
-    composenode->childs[composenode->size - 1]->keysym = tok;
+    composenode->childs[composenode->size - 1]->keysym = wtok;
     composenode->childs[composenode->size - 1]->result = NULL;
     composenode->childs[composenode->size - 1]->size = 0;
 
-    //      printf("size %d, keysym %ls =>", composenode->size, composenode->childs[composenode->size - 1]->keysym);
+    /* printf("size %d, keysym %ls =>", composenode->size, composenode->childs[composenode->size - 1]->keysym); */
 
     gettokens(NULL, delim, pointer, composenode->childs[composenode->size - 1], layout);
     return;
@@ -582,8 +621,8 @@ static void gettokens(wchar_t * line, wchar_t * delim, wchar_t ** pointer, osk_c
 static void load_composemap(osk_layout *layout, char * composemap_name)
 {
   char *filename;
-  wchar_t **pointer;
-  wchar_t *line;
+  char **pointer;
+  char *line;
   FILE * fi;
 
   pointer = malloc(sizeof(wchar_t *));
@@ -613,16 +652,16 @@ static void load_composemap(osk_layout *layout, char * composemap_name)
   layout->composemap[0].result = NULL;
 
   layout->composemap->size = 0;
-  line = malloc(1024*sizeof(wchar_t));
+  line = malloc(1024*sizeof(char));
 
   while (!feof(fi))
   {
-    fgetws(line, 1023, fi);
+    fgets(line, 1023, fi);
 
-    if (isw_blank_or_comment(line))
+    if (is_blank_or_comment(line))
       continue;
 
-    gettokens(line, (wchar_t *) L">< \t", pointer, layout->composemap, layout);
+    gettokens(line, (char *) ">< \t", pointer, layout->composemap, layout);
   }
 
   fclose(fi);
@@ -734,17 +773,17 @@ static void load_keysymdefs(osk_layout *layout, char * keysymdefs_name)
   free(line);
 }
 
-/* Return the mnemonic string of a x keysym as defined in the source of xorg in keysymdef.h */
-static char * keysym2mnemo(int keysym, on_screen_keyboard * keyboard)
-{
-  unsigned int i;
-  for (i = 0; i < keyboard->layout->sizeofkeysymdefs ;i++)
-    if (keysym == keyboard->layout->keysymdefs[i].keysym)
-      return(keyboard->layout->keysymdefs[i].mnemo);
+/* /\* Return the mnemonic string of a x keysym as defined in the source of xorg in keysymdef.h *\/ */
+/* static char * keysym2mnemo(int keysym, on_screen_keyboard * keyboard) */
+/* { */
+/*   unsigned int i; */
+/*   for (i = 0; i < keyboard->layout->sizeofkeysymdefs ;i++) */
+/*     if (keysym == keyboard->layout->keysymdefs[i].keysym) */
+/*       return(keyboard->layout->keysymdefs[i].mnemo); */
 
-  /* For the purpose of onscreen keyboard we don't need the conversion to strings in the form U0000 */
-  return(NULL);
-}
+/*   /\* For the purpose of onscreen keyboard we don't need the conversion to strings in the form U0000 *\/ */
+/*   return(NULL); */
+/* } */
 
 /* Returns the x keysym corresponding to a mnemonic string */
 static int mnemo2keysym(char * mnemo, on_screen_keyboard * keyboard)
@@ -885,24 +924,24 @@ static int is_blank_or_comment(char *line)
 }
 
 
-static int isw_blank_or_comment(wchar_t *line)
-{
-  int i;
+/* static int isw_blank_or_comment(wchar_t *line) */
+/* { */
+/*   int i; */
 
-  i = 0;
-  if (wcslen(line) == 0)
-    return 0;
-  while (line[i] != L'\n')
-  {
-    if (line[i] == L'#')
-      return 1;
-    else if (line[i] == L' ' || line[i] == L'\t')
-      i++;
-    else
-      return 0;
-  }
-  return 1;
-}
+/*   i = 0; */
+/*   if (wcslen(line) == 0) */
+/*     return 0; */
+/*   while (line[i] != L'\n') */
+/*   { */
+/*     if (line[i] == L'#') */
+/*       return 1; */
+/*     else if (line[i] == L' ' || line[i] == L'\t') */
+/*       i++; */
+/*     else */
+/*       return 0; */
+/*   } */
+/*   return 1; */
+/* } */
 
 
 /* Fixme: Is it safe to supose that if a font is loaded at one size, it will be loaded at any size? */
@@ -979,29 +1018,29 @@ static void apply_surface (int x, int y, SDL_Surface *source, SDL_Surface *desti
 }
 
 
-/* NOTE: This is a duplicate of wcstou16 in tuxpaint.c
+/* /\* NOTE: This is a duplicate of wcstou16 in tuxpaint.c */
 
-   This conversion is required on platforms where Uint16 doesn't match wchar_t.
-   On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
-   Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
-   I guess wchar_t is really only suitable for internal use ... */
-static Uint16 *wcstou16(const wchar_t * str)
-{
-  unsigned int i, len = wcslen(str);
-  Uint16 *res = malloc((len + 1) * sizeof(Uint16));
+/*    This conversion is required on platforms where Uint16 doesn't match wchar_t. */
+/*    On Windows, wchar_t is 16-bit, elsewhere it is 32-bit. */
+/*    Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf. */
+/*    I guess wchar_t is really only suitable for internal use ... *\/ */
+/* static Uint16 *wcstou16(const wchar_t * str) */
+/* { */
+/*   unsigned int i, len = wcslen(str); */
+/*   Uint16 *res = malloc((len + 1) * sizeof(Uint16)); */
 
-  for (i = 0; i < len + 1; ++i)
-  {
-    /* This is a bodge, but it seems unlikely that a case-conversion
-       will cause a change from one utf16 character into two....
-       (though at least UTF-8 suffers from this problem) */
+/*   for (i = 0; i < len + 1; ++i) */
+/*   { */
+/*     /\* This is a bodge, but it seems unlikely that a case-conversion */
+/*        will cause a change from one utf16 character into two.... */
+/*        (though at least UTF-8 suffers from this problem) *\/ */
 
-    // FIXME: mangles non-BMP characters rather than using UTF-16 surrogates!
-    res[i] = (Uint16) str[i];
-  }
+/*     // FIXME: mangles non-BMP characters rather than using UTF-16 surrogates! */
+/*     res[i] = (Uint16) str[i]; */
+/*   } */
 
-  return res;
-}
+/*   return res; */
+/* } */
 
 /* Stretches a button from the middle, keeping the extrems intact */
 static SDL_Surface * stretch_surface(SDL_Surface * orig, int width)
@@ -1070,7 +1109,7 @@ static void draw_keyboard(on_screen_keyboard *keyboard)
   float key_width;
   key_width = keyboard->button_up->w;
   key_height = keyboard->button_up->h;
-  printf("dkbd\n");
+
   accumulated_height = 0;
 
   for (j = 0; j < keyboard->layout->height; j++)
@@ -1105,7 +1144,7 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
     return;
   text = malloc(255);
 	
-  snprintf(text, 6,"%ls", key.plain_label);
+  snprintf(text, 6,"%s", key.plain_label);
 
 
   if( strncmp("NULL", text, 4) != 0 && key.keycode != 0)
@@ -1143,10 +1182,9 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
 /* FIXME: TODO draw top and bottom_right (altgr) labels */
 static void label_key(osk_key key, on_screen_keyboard *keyboard)
 {
-  Uint16 *ustr;
   SDL_Surface *messager;
   int modstate;
-  wchar_t *text;
+  char *text;
 
   /* To remove a warning... */
   text = NULL;
@@ -1156,24 +1194,25 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
   /* FIXME There MUST be a simpler way to do this. Pere 2011/8/3 */
   /* First the plain ones */
   if (modstate == KMOD_NONE || (modstate == (KMOD_NONE | KMOD_LALT)))
-    text = wcsdup(key.plain_label);
+    text=strdup(key.plain_label);
 
   else if (modstate == KMOD_SHIFT)
   {
-    text = wcsdup(key.top_label);
+    text = strdup(key.top_label);
   }
 
   else if (modstate == KMOD_RALT)
   {
-    text = wcsdup(key.altgr_label);
+    text = strdup(key.altgr_label);
   }
 
   else if (modstate == KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
-      text = wcsdup(key.top_label);
+      text = strdup(key.top_label);
+
     else
-      text = wcsdup(key.plain_label);
+      text = strdup(key.plain_label);
   }
 
   /* Now the combined ones */
@@ -1182,38 +1221,36 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
     if (modstate & KMOD_CAPS)
     {
       if (key.shiftcaps)
-	text = wcsdup(key.altgr_label);
+	text = strdup(key.altgr_label);
       else
-	text = wcsdup(key.shift_altgr_label);
+	text = strdup(key.shift_altgr_label);
     }
     else
     {
-      text = wcsdup(key.shift_altgr_label);
+      text = strdup(key.shift_altgr_label);
     }
   }
 
   else if (modstate & KMOD_RALT && modstate & KMOD_CAPS && !(modstate & KMOD_SHIFT))
   {
     if (key.shiftcaps)
-      text = wcsdup(key.shift_altgr_label);
+      text = strdup(key.shift_altgr_label);
     else
-      text = wcsdup(key.altgr_label);
+      text = strdup(key.altgr_label);
   }
 
   else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
-      text = wcsdup(key.plain_label);
+      text = strdup(key.plain_label);
     else
-      text = wcsdup(key.top_label);
+      text = strdup(key.top_label);
   }
 
-  if( wcsncmp(L"SPACE", text, 5) != 0 && wcsncmp(L"NULL", text, 4) != 0)
+  if( strncmp("SPACE", text, 5) != 0 && strncmp("NULL", text, 4) != 0)
   {
-    ustr = wcstou16(text);
-    messager = TTF_RenderUNICODE_Blended(osk_fonty, ustr, keyboard->layout->fgcolor);
+    messager = TTF_RenderUTF8_Blended(osk_fonty, text, keyboard->layout->fgcolor);
 
-    free(ustr);
     apply_surface( key.x + 5, key.y, messager, keyboard->surface, NULL);
     SDL_FreeSurface(messager);
   }
@@ -1275,15 +1312,15 @@ static void set_key(osk_key *orig, osk_key *dest, int firsttime)
 
     if (dest->plain_label != NULL)
       free(dest->plain_label);
-    dest->plain_label = wcsdup(orig->plain_label);
+    dest->plain_label = strdup(orig->plain_label);
 
     if (dest->top_label != NULL)
       free(dest->top_label);
-    dest->top_label = wcsdup(orig->top_label);
+    dest->top_label = strdup(orig->top_label);
 
     if (dest->altgr_label != NULL)
       free(dest->altgr_label);
-    dest->altgr_label = wcsdup(orig->altgr_label);
+    dest->altgr_label = strdup(orig->altgr_label);
 
     dest->shiftcaps = orig->shiftcaps;
   }
@@ -1605,7 +1642,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 		   strlen(keysym)+1,
 		   NULL);
 
-    printf("wkeysym %ls %i\n\n", wkeysym, wcslen(wkeysym));
+    printf("wkeysym %ls %i\n\n", wkeysym, (int)wcslen(wkeysym));
 
 
     get_composed_keysym(keyboard, keyboard->composing, wkeysym);
@@ -1654,7 +1691,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     {
       if (keyboard->composing == keyboard->layout->composemap)
       {
-	printf("compose sequence resetted %d\n", (int)keyboard->composing);
+	printf("compose sequence resetted\n");
 	set_key(NULL, &keyboard->keymodifiers.compose, 0);
 	keyboard->last_key_pressed = key;
 	clear_dead_sticks(keyboard);
@@ -1662,7 +1699,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       else
       {
 	set_key(key, &keyboard->keymodifiers.compose, 0);
-	printf("still composing %d\n", (int)keyboard->composing);
+	printf("still composing\n");
 	set_dead_sticks(key, keyboard);
 	/* Fixme: Would be nice if we can highlight next available-to-compose keys, but how? */
       }

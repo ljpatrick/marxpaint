@@ -41,10 +41,10 @@ typedef struct osk_key
   int x;
   int y;
   float width;                 /* The width in buttons */
-  wchar_t *plain_label;        /* The text that will show the key */
-  wchar_t *top_label;          /* The text that will show the key above the plain label. */
-  wchar_t *altgr_label;        /* The text that will show the key at the right of the plain label */
-  wchar_t *shift_altgr_label;  /* The text that will show the key when shift and altgr are activeted */
+  char *plain_label;        /* The text that will show the key */
+  char *top_label;          /* The text that will show the key above the plain label. */
+  char *altgr_label;        /* The text that will show the key at the right of the plain label */
+  char *shift_altgr_label;  /* The text that will show the key when shift and altgr are activated */
   int shiftcaps;               /* If the value of the key should be shifted when capslock is active */
   int stick;                   /* If the key currently affects the others */
 } osk_key;
