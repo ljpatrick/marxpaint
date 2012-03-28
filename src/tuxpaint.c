@@ -11153,7 +11153,7 @@ static void load_template(char *img_id)
   if (template_personal == 0)
     dirname = strdup(DATA_PREFIX "templates");
   else
-    dirname = get_fname("templates", DIR_DATA);
+    dirname = get_fname("templates", DIR_SAVE);
 
   /* Clear them to NULL first: */
   img_starter = NULL;
@@ -20752,7 +20752,7 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
   sscanf((char *) unknown.data, "%s\n%s\n%d\n%d\n", control, softwr, unc_size, &comp);
   free(control);
   free(softwr);
-  comp_buff = malloc(comp);
+  comp_buff = malloc(comp * sizeof(Bytef));
 
   if (comp_buff == NULL)
   {
@@ -20784,7 +20784,7 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
     }
   }
 
-  unc_buff = malloc(*unc_size);
+  unc_buff = malloc(*unc_size * sizeof(Bytef));
 
   if (unc_buff == NULL)
   {
@@ -20799,9 +20799,27 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
     return (NULL);
   }
 
-  unc_err = uncompress(unc_buff, (uLongf *) unc_size, comp_buff, comp);
+  /* Seems that uncompress() has problems in 64bits systems, so using inflate() Pere 2012/03/28 */
+  /*  unc_err = uncompress(unc_buff, (uLongf *) unc_size, comp_buff, comp); */
+  z_streamp zstp;
+  zstp = malloc(sizeof(z_stream));
+  zstp->next_in = comp_buff;
+  zstp->avail_in = comp;
+  zstp->total_in = comp;
 
-  if (unc_err != 0)
+  zstp->next_out =unc_buff;
+  zstp->avail_out = *unc_size;
+  zstp->total_out = 0;
+
+  zstp->zalloc = Z_NULL;
+  zstp->zfree = Z_NULL;
+  zstp->opaque = Z_NULL;
+
+  inflateInit(zstp);
+  unc_err = inflate(zstp, Z_FINISH);
+  inflateEnd(zstp);
+
+  if (unc_err != Z_STREAM_END)
   {
     printf("\n error %d, unc %d, comp %d\n", unc_err, *unc_size, comp);
     fclose(fp);
@@ -20822,10 +20840,10 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
 void load_embedded_data(char *fname, SDL_Surface * org_surf)
 {
   FILE *fi, *fp;
-  char *control, *softwr;
+  char *control;
   Bytef *unc_buff;
 
-  int comp, unc, unc_size;
+  int unc_size;
   int u;
   int have_background, have_foreground, have_label_delta, have_label_data;
   int ldelta, ldata, fgnd, bgnd;
@@ -20914,13 +20932,11 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* Put fi position at the right place after the chunk headers */
 	  control = malloc(50);
-	  softwr  = malloc(50);
-	  fscanf(fi, "%s\n", control);
-	  fscanf(fi, "%s\n", softwr);
-	  fscanf(fi, "%d\n", &unc);
-	  fscanf(fi, "%d\n", &comp);
+	  fgets(control, 49, fi);
+	  fgets(control, 49, fi);
+	  fgets(control, 49, fi);
+	  fgets(control, 49, fi);
 	  free(control);
-	  free(softwr);
 
 	  load_starter_id(NULL, fi);	// fi will be closed in load_starter_id()
 	  if (!starter_modified)
@@ -20988,6 +21004,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 									   unc_buff[4 * (j * ww + i) + 2]));
 		}
 	    }
+
 	    SDL_UnlockSurface(org_surf);
 
 	    free(unc_buff);
