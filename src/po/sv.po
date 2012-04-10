@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 15:55-0700\n"
-"PO-Revision-Date: 2008-12-08 12:36+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"POT-Creation-Date: 2010-10-18 08:32-0700\n"
+"PO-Revision-Date: 2012-04-08 23:37+0100\n"
+"Last-Translator: Henrik Holst <henrik.holst@millistream.com>\n"
 "Language-Team:  <tp-sv@listor.tp-sv.se>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -145,8 +146,6 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#, fuzzy
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
@@ -167,19 +166,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>reserv-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>reserv-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>reserv-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>reserv-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -232,80 +231,95 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "Kvadrat"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "Rektangel"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "Cirkel"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "Ellips"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "Triangel"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "Femhörning"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "Oktogon"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "En kvadrat är en rektangel med fyra lika sidor."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "En rektangel har fyra sidor och fyra lika vinklar."
+msgstr "En rektangel har fyra sidor och fyra räta vinklar."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "En cirkel är en kurva där alla punkter har samma avstånd till mitten."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "En ellips är en utsträckt cirkel."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "En triangel har tre sidor."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "En femhörning har fem sidor."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En romb har fyra lika sidor och motstående sidor är parallella."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "En oktogon har åtta lika långa sidor"
 
@@ -336,7 +350,8 @@ msgstr "Stämplar"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:71
+#: ../titles.h:71
+#: ../tools.h:71
 msgid "Shapes"
 msgstr "Former"
 
@@ -347,7 +362,8 @@ msgstr "Bokstäver"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:83
+#: ../titles.h:77
+#: ../tools.h:83
 msgid "Magic"
 msgstr "Magi"
 
@@ -374,7 +390,7 @@ msgstr "Text"
 #. Label tool
 #: ../tools.h:77
 msgid "Label"
-msgstr ""
+msgstr "Rubrik"
 
 #. Undo last action
 #: ../tools.h:86
@@ -399,7 +415,8 @@ msgstr "Ny"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7762
+#: ../tools.h:98
+#: ../tuxpaint.c:7762
 msgid "Open"
 msgstr "Öppna"
 
@@ -421,49 +438,32 @@ msgstr "Avsluta"
 #. Paint tool instructions
 #: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Välj en färg och en pensel att rita med."
+msgstr "Välj en färg och pensel att rita med."
 
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Välj en bild att stämpla runt din bild."
+msgstr "Välj vilken stämpel du vill använda för att stämpla på din bild."
 
 #. Line tool instructions
 #: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klicka för att börja rita en linje. Släpp för att avsluta den."
+msgstr "Klicka där du vill att din linje ska börja. Släpp där du vill att den ska sluta."
 
 #. Shape tool instructions
 #: ../tools.h:124
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har "
-"den storlek du önskar. Flytta runt för att rotera den, och klicka för att "
-"bestämma storleken."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har den storlek du önskar. Flytta runt för att rotera den, och klicka för att bestämma storleken."
 
 #. Text tool instructions
 #: ../tools.h:127
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text."
-msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."
+msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva. Tryck på [Enter] eller [Tab] för att slutföra texten."
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
-"style."
-msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."
+msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva. Tryck på [Enter] eller [Tab] för att slutföra texten. Genom att använda musen och klicka på en befintligt rubrik kan du flytta den, redigera den och ändra dess textstil."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -528,7 +528,7 @@ msgstr "Flytta musen för att rotera formen. Klicka för att rita den."
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Okej.. Låt oss fortsätta rita den här!"
+msgstr "Okej.. Vi fortsätter med att rita den här!"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:1918
@@ -537,28 +537,27 @@ msgstr "Vill du verkligen avsluta?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1921
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Ja, jag är färdig!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1924 ../tuxpaint.c:1951
+#: ../tuxpaint.c:1924
+#: ../tuxpaint.c:1951
 msgid "No, take me back!"
 msgstr "Nej, ta mig tillbaka!"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1928
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Om du avslutar, så kommer du att förlora bilden!Vill du spara den?"
+msgstr "Om du avslutar, så kommer du att förlora bilden! Vill du spara den?"
 
-#: ../tuxpaint.c:1929 ../tuxpaint.c:1934
+#: ../tuxpaint.c:1929
+#: ../tuxpaint.c:1934
 msgid "Yes, save it!"
 msgstr "Ja, spara den!"
 
-#: ../tuxpaint.c:1930 ../tuxpaint.c:1935
-#, fuzzy
-#| msgid "No, don't bother saving!"
+#: ../tuxpaint.c:1930
+#: ../tuxpaint.c:1935
 msgid "No, don’t bother saving!"
 msgstr "Nej, spara inte!"
 
@@ -573,7 +572,10 @@ msgid "Can’t open that picture!"
 msgstr "Kan inte öppna den här bilden!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1941 ../tuxpaint.c:1946 ../tuxpaint.c:1955 ../tuxpaint.c:1962
+#: ../tuxpaint.c:1941
+#: ../tuxpaint.c:1946
+#: ../tuxpaint.c:1955
+#: ../tuxpaint.c:1962
 #: ../tuxpaint.c:1971
 msgid "OK"
 msgstr "OK"
@@ -617,8 +619,6 @@ msgid "Yes, erase it!"
 msgstr "Ja, ta bort den!"
 
 #: ../tuxpaint.c:1967
-#, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Nej, ta inte bort den!"
 
@@ -645,7 +645,7 @@ msgstr "Vänta..."
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7765
 msgid "Erase"
-msgstr "Sudda ut"
+msgstr "Radera"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:7768
@@ -705,7 +705,8 @@ msgstr "Välj den bild du vill ha, klicka sen på \"Öppna\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14976 ../tuxpaint.c:15290
+#: ../tuxpaint.c:14976
+#: ../tuxpaint.c:15290
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Välj de bilder som du vill ha, klicka sedan på \"Spela\"."
 
@@ -731,23 +732,19 @@ msgstr "Färgväxling"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Klicka och rör musen runt för att ändra färgen i delar av din bild."
+msgstr "Klicka och rör musen för att ändra färgen i delar av din bild."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
 msgstr "Klicka för att ändra färgerna för hela din bild."
 
 #: ../../magic/src/blind.c:92
-#, fuzzy
-#| msgid "Alien"
 msgid "Blind"
-msgstr "Utomjordisk"
+msgstr "Persienner"
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click towards the edge of your picture to pull window blinds over it. Move "
-"perpendicularly to open or close the blinds."
-msgstr ""
+msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
+msgstr "Klicka mot kanten av din bild för att dra persienner över den. Rör musen vinkelrätt för att öppna eller stänga persiennerna."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -766,8 +763,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klicka och rör musen runt för att göra bilden kantig."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och rör musen runt för att omvandla bilden till kritteckning."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -886,9 +882,7 @@ msgstr "Blomma"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
-"Klicka och dra musen för att rita blommans stjälk. Släpp för att göra "
-"färdigt blomman."
+msgstr "Klicka och dra musen för att rita blommans stjälk. Släpp för att göra färdigt blomman."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -903,8 +897,7 @@ msgid "Fold"
 msgstr "Vik"
 
 #: ../../magic/src/fold.c:86
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
+msgid "Choose a background color and click to turn the corner of the page over."
 msgstr "Välj en bakgrundsfärg och klicka för att vika över hörnet av sidan."
 
 #: ../../magic/src/glasstile.c:83
@@ -929,11 +922,11 @@ msgstr "Klicka och rör musen runt för att rita gräs. Glöm inte jorden!"
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Symmetrisk vänster/höger"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Symmetrisk upp/ner"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -942,33 +935,18 @@ msgstr "Kaleidoskop"
 
 #: ../../magic/src/kalidescope.c:102
 #, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgid ""
-"Click and drag the mouse to draw with two brushes that are symmetric across "
-"the left and right of your picture."
-msgstr ""
-"Klicka och rör musen runt för att rita med symmetriska penslar (ett "
-"kaleidoskop)."
+msgid "Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture."
+msgstr "Klicka och rör musen för att rita med två penslar som är symmetriska över vänster och höger om din bild."
 
 #: ../../magic/src/kalidescope.c:104
 #, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgid ""
-"Click and drag the mouse to draw with two brushes that are symmetric across "
-"the top and bottom of your picture."
-msgstr ""
-"Klicka och rör musen runt för att rita med symmetriska penslar (ett "
-"kaleidoskop)."
+msgid "Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture."
+msgstr "Klicka och rör musen för att rita med två penslar som är symmetriska över toppen och botten av din bild."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:106
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
-"Klicka och rör musen runt för att rita med symmetriska penslar (ett "
-"kaleidoskop)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Klicka och rör musen runt för att rita med symmetriska penslar (ett kaleidoskop)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -1007,79 +985,48 @@ msgid "Mosaic"
 msgstr "Mosaik"
 
 #: ../../magic/src/mosaic.c:78
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr ""
-"Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-"bild."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr "Klicka och rör musen för att lägga till en mosaikeffekt till delar av din bild."
 
 #: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
 
 #: ../../magic/src/mosaic_shaped.c:134
-#, fuzzy
-#| msgid "Square"
 msgid "Square Mosaic"
-msgstr "Kvadrat"
+msgstr "Rutmosaik"
 
 #: ../../magic/src/mosaic_shaped.c:135
-#, fuzzy
-#| msgid "Mosaic"
 msgid "Hexagon Mosaic"
-msgstr "Mosaik"
+msgstr "Hexagonal mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:136
 msgid "Irregular Mosaic"
-msgstr ""
+msgstr "Oregelbunden mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:141
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
-msgstr ""
-"Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-"bild."
+msgid "Click and move the mouse to add a square mosaic to parts of your picture."
+msgstr "Klicka och rör musen för att lägga till rutmosaik till delar av din bild."
 
 #: ../../magic/src/mosaic_shaped.c:142
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add a square mosaic to your entire picture."
-msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
+msgstr "Klicka för att lägga rutmosaik till hela bilden."
 
 #: ../../magic/src/mosaic_shaped.c:144
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr ""
-"Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-"bild."
+msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgstr "Klicka och rör musen för att lägga till en hexagonal mosaik till delar av din bild."
 
 #: ../../magic/src/mosaic_shaped.c:145
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
+msgstr "Klicka för att lägga en hexagonal mosaik till hela bilden."
 
 #: ../../magic/src/mosaic_shaped.c:147
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr ""
-"Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-"bild."
+msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgstr "Klicka och rör musen för att lägga till en oregelbunden mosaik till delar av din bild."
 
 #: ../../magic/src/mosaic_shaped.c:148
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
+msgstr "Klicka för att lägga en oregelbunden mosaik till hela bilden."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -1107,23 +1054,19 @@ msgstr "Klicka för att lägga till brus till hela din bild."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
-msgstr ""
+msgstr "Perspektiv"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
-msgstr ""
+msgstr "Zooma"
 
 #: ../../magic/src/perspective.c:151
-#, fuzzy
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click on the corners and drag where you want to stretch the picture."
-msgstr "Klicka och rör musen för att göra bilden till en relief."
+msgstr "Klicka på hörnen och dra där du vill att sträcka bilden."
 
 #: ../../magic/src/perspective.c:154
-#, fuzzy
-#| msgid "Click and drag to squirt toothpaste onto your picture."
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "Klicka och rör musen för att spruta tandkräm på din bild."
+msgstr "Klicka och dra uppåt för att zooma in eller dra nedåt för att zooma ut bilden."
 
 #: ../../magic/src/puzzle.c:79
 msgid "Puzzle"
@@ -1166,22 +1109,17 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Klicka för att täcka din bild med regndroppar."
 
 #: ../../magic/src/realrainbow.c:86
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Real Rainbow"
-msgstr "Regnbåge"
+msgstr "Riktig regnbåge"
 
 #: ../../magic/src/realrainbow.c:88
 #, fuzzy
-#| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
-msgstr "Regnbåge"
+msgstr "ROGGBIV Regnbåge"
 
 #: ../../magic/src/realrainbow.c:93
-msgid ""
-"Click where you want your rainbow to start, drag to where you want it to "
-"end, and then let go to draw a rainbow."
-msgstr ""
+msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
+msgstr "Klicka där du vill att din regnbåge ska börja, rör musen dit du vill att den ska sluta och släpp sedan för att rita en regnbåge."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1257,10 +1195,8 @@ msgstr "Kladda"
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:85
-#, fuzzy
-#| msgid "Metal Paint"
 msgid "Wet Paint"
-msgstr "Metall"
+msgstr "Våt färg"
 
 #: ../../magic/src/smudge.c:92
 msgid "Click and move the mouse around to smudge the picture."
@@ -1268,10 +1204,8 @@ msgstr "Klicka och rör musen runt för att kladda ut bilden."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:94
-#, fuzzy
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
-msgstr "Klicka och rör musen för att göra bilden suddig."
+msgstr "Klicka och rör musen för att rita med våt, suddig färg."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1290,32 +1224,34 @@ msgid "Click to add snow flakes to your picture."
 msgstr "Klicka för att lägga till snöflingor till din bild."
 
 #: ../../magic/src/string.c:120
+#, fuzzy
 msgid "String edges"
-msgstr ""
+msgstr "Kanttrådar"
 
 #: ../../magic/src/string.c:123
+#, fuzzy
 msgid "String corner"
-msgstr ""
+msgstr "Hörntrådar"
 
 #: ../../magic/src/string.c:126
+#, fuzzy
 msgid "String 'V'"
-msgstr ""
+msgstr "Trådar 'V'"
 
 #: ../../magic/src/string.c:134
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, left or right to make a bigger hole."
-msgstr ""
+#, fuzzy
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgstr "Klicka och rör för att rita trådar. Rör musen upp och ned för att ändra antelet trådar, vänster eller höger för att göra hålet större."
 
 #: ../../magic/src/string.c:137
 #, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
+msgstr "Klicka och rör för att rita pilar gjorda av trådar."
 
 #: ../../magic/src/string.c:140
+#, fuzzy
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Rita trådpilar med fria vinklar."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1326,8 +1262,7 @@ msgid "Color & White"
 msgstr "Färg och vitt"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klicka och rör musen runt för att ändra färgen i delar av din bild."
 
 #: ../../magic/src/tint.c:76
@@ -1335,12 +1270,8 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klicka för att ändra färgen för hela din bild."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr ""
-"Klicka och rör musen runt för att göra delar av din bild till vit och en "
-"färg som du väljer."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "Klicka och rör musen runt för att göra delar av din bild till vit och en färg som du väljer."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1356,29 +1287,23 @@ msgstr "Klicka och rör musen för att spruta tandkräm på din bild."
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornado"
 
 #: ../../magic/src/tornado.c:133
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Klicka och rör musen för att rita tågräls på bilden."
+msgstr "Klicka och rör musen för att rita en tornado  på din bild."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
 #: ../../magic/src/tv.c:79
-#, fuzzy
-#| msgid "Click to make your picture look like it's on television."
-msgid ""
-"Click and drag to make parts of your picture look like they are on "
-"television."
-msgstr "Klicka för att göra att din bild ser ut som om den var på tv."
+msgid "Click and drag to make parts of your picture look like they are on television."
+msgstr "Klicka och rör för att få delar av din bild att se ut som om de är på TV."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
-msgstr "Klicka för att göra att din bild ser ut som om den var på tv."
+msgstr "Klicka för att få din bild att se ut som om den var på tv."
 
 #: ../../magic/src/waves.c:80
 msgid "Waves"
@@ -1389,126 +1314,10 @@ msgid "Wavelets"
 msgstr "Små vågor"
 
 #: ../../magic/src/waves.c:88
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"Klicka för att göra bilden vågig horisontellt. Klicka högt uppe för korta "
-"vågor, långt ner för långa vågor, till vänster för små vågor och till höger "
-"för långa vågor."
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Klicka för att göra bilden horisontellt vågig. Klicka högt uppe för kortare vågor, långt ner för högre vågor, till vänster för små vågor och till höger för långa vågor."
 
 #: ../../magic/src/waves.c:89
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"Klicka för att göra bilden vågig vertikalt. Klicka högt uppe för korta "
-"vågor, långt ner för långa vågor, till vänster för små vågor och till höger "
-"för långa vågor."
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Klicka för att göra bilden vertikalt vågig. Klicka högt uppe för kortare vågor, långt ner för högre vågor, till vänster för små vågor och till höger för långa vågor."
 
-#, fuzzy
-#~| msgid "Click and drag to draw a beam of light on your picture."
-#~ msgid ""
-#~ "Click and drag to draw the blind, move left or right to open or close."
-#~ msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
-
-#, fuzzy
-#~| msgid "Mosaic"
-#~ msgid "Mosaic square"
-#~ msgstr "Mosaik"
-
-#, fuzzy
-#~| msgid "Mosaic"
-#~ msgid "Mosaic hexagon"
-#~ msgstr "Mosaik"
-
-#, fuzzy
-#~| msgid ""
-#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
-#~ "picture."
-#~ msgstr ""
-#~ "Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-#~ "bild."
-
-#, fuzzy
-#~| msgid "Click to add a mosaic effect to your entire picture."
-#~ msgid "Click to add a mosaic squared effect to your entire picture."
-#~ msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
-
-#, fuzzy
-#~| msgid ""
-#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
-#~ "your picture."
-#~ msgstr ""
-#~ "Klicka och rör musen för att lägga till en mosaikeffekt till delar av din "
-#~ "bild."
-
-#, fuzzy
-#~| msgid "Click to add a mosaic effect to your entire picture."
-#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
-#~ msgstr "Klicka för att lägga till en mosaikeffekt till hela din bild."
-
-#~ msgid "qy"
-#~ msgstr "qy"
-
-#~ msgid "QY"
-#~ msgstr "QY"
-
-#, fuzzy
-#~| msgid "Click and drag to draw train track rails on your picture."
-#~ msgid "Click and drag to draw string art aligned to the edges."
-#~ msgstr "Klicka och rör musen för att rita tågräls på bilden."
-
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "Klicka och dra musen för att rita blommans stjälk. Släpp för att göra "
-#~ "färdigt blomman."
-
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr ""
-#~ "Klicka och rör musen för att ge delar av din bild ett \"utomjordisk\" "
-#~ "utseende."
-
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr "Klicka för att ge hela din bild ett \"utomjordiskt\" utseende."
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Klicka och rör musen runt för att blekna färgerna!"
-
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Klicka och rör musen runt för att mörka färgerna."
-
-#~ msgid "Sparkles"
-#~ msgstr "Gnistor"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Klicka och rör musen för att rita gnistor!"
-
-#~ msgid ""
-#~ "A circle is a curve where all points have the same distance from the "
-#~ "centre."
-#~ msgstr ""
-#~ "En cirkel är en kurva där alla punkter har samma distans från centrum."
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Du har nu en tom bild att rita på!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Påbörja en ny bild?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Ja, börja från början!"
-
-#~ msgid "Please wait..."
-#~ msgstr "Vänta..."

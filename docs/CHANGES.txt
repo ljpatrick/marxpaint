@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2012.March.8 (0.9.22)
+2012.April.10 (0.9.22)
 
   * New Tools:
     ----------
@@ -477,11 +477,14 @@ $Id$
     * Slovak translation
       Jaroslav Rynik <jrynik@yahoo.co.uk>
 
+    * Songhay translation
+      Abdoul Cisse <abdoulseydou@hotmail.com>
+
     * Spanish (Spain) translation
       Teresa Orive <teresa.g.orive@gmail.com>
 
-    * Songhay translation
-      Abdoul Cisse <abdoulseydou@hotmail.com>
+    * Swedish translation
+      Henrik Holst <henrik.holst@millistream.com>
 
     * Telugu tranlation
       saikumar <ramukiashc@gmail.com> as a task in GCI

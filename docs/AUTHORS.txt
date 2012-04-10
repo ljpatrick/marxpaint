@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 8, 2012
+June 17, 2002 - April 10, 2012
 
 $Id$
 
@@ -786,6 +786,7 @@ $Id$
     Daniel Nylander <po@danielnylander.se>
     Tomas Skäre <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
+    Henrik Holst <henrik.holst@millistream.com>
     Daniel Andersson <daniel@septum.org> [retired]
 
   * Tagalog
