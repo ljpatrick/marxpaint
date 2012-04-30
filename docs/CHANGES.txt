@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2012.April.10 (0.9.22)
+2012.April.30 (0.9.22)
 
   * New Tools:
     ----------
@@ -135,18 +135,24 @@ $Id$
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
       with integration and fixes by Pere Pujal i Carabantes
 
-      * Uses the first joystick found on the system, so should work out of the box
-      * Uses any of the buttons found in the joystick, no need for configuration.
-      * The hat of the joystick moves one pixel at a time, usefull to carefully place the pointer.
-      * The ball of the joystick should also trigger pointer motion. FIXME: This should work but is not tested.
-      * The responsivity of the joystick can be configured via command line or config files:
+      * Uses the first joystick found on the system, so should work out
+        of the box.
+      * Uses any of the buttons found in the joystick, no need for
+        configuration.
+      * The hat of the joystick moves one pixel at a time, usefull to
+        carefully place the pointer.
+      * The ball of the joystick should also trigger pointer
+        motion. FIXME: This should work but is not tested.
+      * The responsivity of the joystick can be configured via command
+        line or config files:
 	* --joystick-slownes sets a delay at each axis motion event.
 	    Allowed values from 0 to 500, defaults to 15.
-	* --joystick-threshold sets the minimum value of axis motion to begin move the pointer.
+	* --joystick-threshold sets the minimum value of axis motion to
+	  begin move the pointer.
 	    Allowed values from 0 to 32766, defaults to 3200.
-	* --joystick_maxsteps sets the maximum number of pixels that the pointer will move at a time.
+	* --joystick_maxsteps sets the maximum number of pixels that
+	  the pointer will move at a time.
 	    Allowed values from 1 to 7, defaults to 7.
-
 
   * Magic Tool Improvememnts:
     --------------------------
@@ -540,6 +546,10 @@ $Id$
       or change the shape before finishing to draw it.
       (SF.net Bug #1057311)
 
+    * Example for 'savedir' in tuxpaint.conf suggested you needed /saved
+      at the end, which is not true.  Added note explaining that actual
+      image files go under 'saved' subdirectory.
+      (Thanks to Marco Menardi)
 
 2009.June.28 (0.9.21)
   * New Starters:
