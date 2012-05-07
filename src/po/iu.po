@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-18 08:32-0700\n"
-"PO-Revision-Date: 2012-03-08 10:50-0500\n"
+"PO-Revision-Date: 2012-04-30 10:53-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,12 +93,12 @@ msgstr "ᑲᔪᖅ!"
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
 msgid "Tan!"
-msgstr ""
+msgstr "ᑲᔪᖅ ᖃᑯᓐᓂᓴᖅ"
 
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
 msgid "Beige!"
-msgstr ""
+msgstr "ᐅᕕᓂᐅᔭᖅ"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -466,7 +466,7 @@ msgstr "ᐊᓪᓚᓯᒪᔪᑦ ᖃᓄᐃᑦᑑᓂᖏᑦ ᓂᕈᐊᕐᓗᒋᑦ. �
 #. Magic tool instruction
 #: ../tools.h:136
 msgid "Pick a magical effect to use on your drawing!"
-msgstr ""
+msgstr "ᐱᒋᐊᑫᓐᓇᑌᑦ ᐅᑎᕐᑎᓗᒍ!"
 
 #. Response to 'undo' action
 #: ../tools.h:139
@@ -795,11 +795,11 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᒥᑭᔪᖑᐊᓂᒃ ᓯᒃᑭᑕᑲ
 
 #: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
-msgstr ""
+msgstr "ᐊᓪᓚᐅᑎᑐᐃᓐᓇᒧᑦ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖕᖑᑎᑦᓯᓂᖅ"
 
 #: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓪᓚᐅᑎᑐᐃᓐᓇᒧᑦ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᓕᐅᕐᓂᒧᑦ"
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
@@ -867,12 +867,12 @@ msgstr "ᐊᑦᔨᖑᐊᕐᒦᑐᖅ ᓇᕐᓂᓗᒍ ᓇᕐᓂᑌ ᑕᕐᓯᑐᕐ
 
 #: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
-msgstr ""
+msgstr "ᕿᕐᖑᑎᐅᔭᖅ"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᕐᓃᑐᖅ ᕿᕐᖑᑎᐅᔭᐅᖁᔦᑦ"
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -920,11 +920,11 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᕵ ᓄᓇᔭᓕᐅᕐᓂᒧᑦ. ᓯᕐ�
 
 #: ../../magic/src/kalidescope.c:90
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "ᐊᑦᔨᖑᐊᖅ ᒧᒥᑦᑎᓗᒍ ᓴᐅᒥᒻᒧᑦ/ᑕᓕᕐᕆᒧᑦ"
 
 #: ../../magic/src/kalidescope.c:92
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "ᐊᑦᔨᖑᐊᖅ ᒧᒥᑦᑎᓗᒍ ᖁᓛᓄᑦ/ᐊᑖᓄᑦ"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:94
@@ -978,63 +978,63 @@ msgstr "ᓇᕐᓂᓗᒍ ᒧᒥᑦᑎᓯᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖅ ᑯᑦᔭ
 
 #: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
-msgstr ""
+msgstr "ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᓯᖅ"
 
 #: ../../magic/src/mosaic.c:78
 msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ."
 
 #: ../../magic/src/mosaic_shaped.c:134
 msgid "Square Mosaic"
-msgstr ""
+msgstr "ᓯᒃᑭᑌᑦ ᓯᖃᓕᐊᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑏᑦ"
 
 #: ../../magic/src/mosaic_shaped.c:135
 msgid "Hexagon Mosaic"
-msgstr ""
+msgstr "ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓖᑦ ᓯᖃᓕᐊᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑏᑦ"
 
 #: ../../magic/src/mosaic_shaped.c:136
 msgid "Irregular Mosaic"
-msgstr ""
+msgstr "ᖃᓄᑐᐃᓐᓈᑐᑦ ᓯᖃᓕᐊᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑏᑦ"
 
 #: ../../magic/src/mosaic_shaped.c:141
 msgid "Click and move the mouse to add a square mosaic to parts of your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᓯᒃᑭᑕᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Click to add a square mosaic to your entire picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᓯᒃᑭᑕᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
 
 #: ../../magic/src/mosaic_shaped.c:144
 msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:145
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
 
 #: ../../magic/src/mosaic_shaped.c:147
 msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᖃᓄᑐᐃᓐᓈᑐᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:148
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᖃᓄᑐᐃᓐᓈᑐᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
-msgstr ""
+msgstr "ᐊᑦᔨᖑᐊᑦᓴᔭᖅ"
 
 #: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to make your painting negative."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᖅ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖑᑎᓗᒍ"
 
 #: ../../magic/src/negative.c:83
 msgid "Click to turn your painting into its negative."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ"
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -1050,7 +1050,7 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᕐᓂᒃ ᓂᐱᑖᕐᑎᓯᓂᕐ�
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
-msgstr ""
+msgstr "ᑕᑯᓐᓇᒍᓯᖅ"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
@@ -1078,11 +1078,11 @@ msgstr "ᓇᕐᓂᓗᒍ ᐋᕐᕿᓱᒐᓕᐅᕐᓂᒧᑦ ᓄᐃᑕᔪᐃᓐᓇ�
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"
-msgstr ""
+msgstr "ᓄᓇᒃᑰᔫᑯᑕ ᐊᕐᖁᑎᖏᑦ"
 
 #: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓄᓇᒃᑰᔫᑯᑖᑦ ᐊᕐᖁᑎᖏᓐᓂᒃ ᐊᑦᔨᖑᐊᕐᓂ"
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1122,7 +1122,7 @@ msgstr "ᓴᖑᐊᔪᖅ"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᓴᖑᐃᓪᓛᓕᕐᑎᓯᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᕐᓂ."
 
 #: ../../magic/src/rosette.c:93
 msgid "Rosette"
@@ -1204,7 +1204,7 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓪᓚᖑ
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "ᐊᐳᑎᐊᕐᔪᒃ"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
@@ -1212,101 +1212,101 @@ msgstr "ᖃᓐᓂᖅ"
 
 #: ../../magic/src/snow.c:72
 msgid "Click to add snow balls to your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᕐᒥᒃ ᐊᐳᑎᐊᕐᔪᑕᕐᓰᓂᕐᒧᑦ"
 
 #: ../../magic/src/snow.c:73
 msgid "Click to add snow flakes to your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᕐᒥᒃ ᐱᓕᓕᕐᑐᐃᓂᕐᒧᑦ"
 
 #: ../../magic/src/string.c:120
 msgid "String edges"
-msgstr ""
+msgstr "ᐊᓪᓚᖑᐊᕈᑎ ᐃᓱᖏᓐᓃᑐᓂᒃ"
 
 #: ../../magic/src/string.c:123
 msgid "String corner"
-msgstr ""
+msgstr "ᐊᓪᓚᖑᐊᕈᑎ ᑎᕆᕐᖁᖏᓐᓃᑐᓂᒃ"
 
 #: ../../magic/src/string.c:126
 msgid "String 'V'"
-msgstr ""
+msgstr "ᐊᓪᓚᖑᐊᕈᑎ \"ᐯ\"-ᖑᓕᖓᔪᓂᒃ"
 
 #: ../../magic/src/string.c:134
 msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᕐᑕᓯᓂᕐᒧᑦ. ᐅᓂᐊᑯᑖᕐᓗᒍ ᖁᓛᓄᑦ-ᐊᑖᓄᑦ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓀᓐᓂᓴᓂᒃ ᑐᑭᒧᐊᑦᑐᖃᕐᓂᓴᐅᑎᑦᓯᓂᕐᒧᓘᓐᓃᑦ, ᓴᐅᒥᒻᒧᑦ ᑕᓕᕐᐱᒧᓪᓘᓃᑦ ᐊᒻᒪᓂᖓᓂᒃ ᐊᖏᓂᕐᓴᐅᑎᑦᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᑎᒃᑯᑑᑎᓂᒃ ᑐᑭᒧᐊᑦᑐᓄᑦ."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᑐᑭᒧᐊᑦᑐᓂᒃ ᑎᒃᑯᑑᑎᓂᒃ ᖃᓄᑐᐃᓐᓈᓂᕐᓴᓂᒃ."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
-msgstr ""
+msgstr "ᑕᐅᑦᑐᖓ"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "ᑕᐅᑦᑐᖅ ᖃᑯᕐᑕᓗ"
 
 #: ../../magic/src/tint.c:75
 msgid "Click and move the mouse around to change the color of parts of your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᑦᑕ ᑕᐅᑦᑐᖏᓐᓂᒃ"
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᕐᐱᑦ ᑕᐅᑦᑐᖓᓂᒃ"
 
 #: ../../magic/src/tint.c:77
 msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᓐᓂᒃ ᖃᑯᕐᑕᕈᕐᑎᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ"
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᕐᓂᒃ ᖃᑯᕐᓯᑎᑦᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ"
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "ᑭᒍᑎᓯᐅᑎᐅᑉ ᐅᕝᕙᐅᑎᖓ"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᑭᒍᑎᓯᐅᑎᐅᑉ ᐅᕝᕙᐅᑎᖓᓂᒃ ᐃᓚᕐᑐᐃᓂᕐᒧᑦ"
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "ᐊᕙᓗᔭᖅ"
 
 #: ../../magic/src/tornado.c:133
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᕙᓗᔭᕐᑕᓯᓗᒍ ᐊᑦᔨᖑᐊᑦ"
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
-msgstr ""
+msgstr "ᑕᓚᕖᓴᖅ"
 
 #: ../../magic/src/tv.c:79
 msgid "Click and drag to make parts of your picture look like they are on television."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᑕᓚᕖᓴᒦᑦᑑᔮᕐᑎᓯᓂᕐᒧᑦ"
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᑦ ᑕᓚᕖᓴᒦᑦᑑᔮᕐᑎᓗᒍ."
 
 #: ../../magic/src/waves.c:80
 msgid "Waves"
-msgstr ""
+msgstr "ᐃᖏᐅᓕᐅᔦᑦ"
 
 #: ../../magic/src/waves.c:81
 msgid "Wavelets"
-msgstr ""
+msgstr "ᐃᖏᐅᓕᐅᔮᕈᐃᑦ"
 
 #: ../../magic/src/waves.c:88
 msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᓴᓂᒨᕐᑐᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑖᑎᓗᒍ. ᖁᓛᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᐊᑖᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ ᑕᓕᕐᐱᒧᓪᓗ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ. "
 
 #: ../../magic/src/waves.c:89
 msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᖁᒻᒧᑦ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓗᒍ. ᓇᕐᓂᓗᒍ ᖁᓛᓅᕙᓪᓕᐊᔪᒥᒃ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᐊᑖᓄᑦ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᑕᓕᕐᐱᒧᑦ ᑕᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ. "
 
