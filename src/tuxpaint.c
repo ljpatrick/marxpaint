@@ -323,8 +323,32 @@ extern WrapperData macosx;
 #include "win32_print.h"
 #include <io.h>
 #include <direct.h>
+#include <iconv.h>
 
 #define mkdir(path,access)    _mkdir(path)
+
+static void mtw(wchar_t * wtok, char * tok)
+{
+  /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
+  Uint16 *ui16;
+  ui16 = malloc(255);
+  char *wrptr = (char *) ui16;
+  size_t n, in, out;
+  iconv_t trans;
+  wchar_t * wch;
+
+  n = 255;
+  in = 250;
+  out = 250;
+  wch =malloc(255);
+
+  trans = iconv_open("WCHAR_T", "UTF-8");
+  iconv(trans, (const char **) &tok, &in, &wrptr, &out);
+  *((wchar_t *) wrptr) = L'\0';
+  swprintf(wtok, L"%ls", ui16);
+  free(ui16);
+  iconv_close(trans);
+}
 
 #endif /* WIN32 */
 
@@ -13020,12 +13044,36 @@ static void do_png_embed_data(png_structp png_ptr)
     {
       if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
       {
+
+#ifdef WIN32
+	iconv_t trans;
+	wchar_t *wch;
+	char *conv, *conv2;
+	size_t in, out;
+
+	in = out = 1;
+	conv = malloc(255);
+	trans = iconv_open("UTF-8", "WCHAR_T");
+
+	fprintf(lfi, "%u\n", current_node->save_texttool_len);
+	for (i = 0; i < current_node->save_texttool_len; i++)
+	{
+	  conv2 =conv;
+	  in = 2;
+	  out = 10;
+	  wch = &current_node->save_texttool_str[i];
+	  iconv(trans, (char **) &wch, &in, &conv, &out);
+	  conv[0] = '\0';
+	  fprintf(lfi, "%s",  conv2);
+	}
+#else
 	fprintf(lfi, "%u\n", current_node->save_texttool_len);
 
 	for (i = 0; i < current_node->save_texttool_len; i++)
 	{
 	  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
 	}
+ #endif 
 
 	fprintf(lfi, "\n");
 
@@ -20289,12 +20337,26 @@ static void load_info_about_label_surface(FILE * lfi)
             new_node = malloc(sizeof(struct label_node));
 
             fscanf(lfi , "%u\n", &new_node->save_texttool_len);
+#ifdef WIN32
+	    char *tmpstr;
+	    wchar_t *wtmpstr;
+	    tmpstr = malloc(1024);
+	    wtmpstr = malloc(1024);
+	    fscanf(lfi, "%s\n", tmpstr);
+	    mtw(wtmpstr, tmpstr);
+            for(l = 0; l < new_node->save_texttool_len; l++)
+                {
+		  new_node->save_texttool_str[l] = wtmpstr[l];
+		}
+
+#else
             for(l = 0; l < new_node->save_texttool_len; l++)
                 {
                     fscanf(lfi, "%lc", &tmp_char);
                     new_node->save_texttool_str[l] = tmp_char;
                 }
             fscanf(lfi, "\n");
+#endif
             fscanf(lfi, "%u\n", &l);
             new_node->save_color.r = (Uint8) l;
             fscanf(lfi, "%u\n", &l);
