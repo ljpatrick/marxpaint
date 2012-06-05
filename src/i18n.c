@@ -747,6 +747,10 @@ static int set_current_language(const char *restrict loc)
     mysetenv("LANGUAGE", oldloc);
     set_langint_from_locale_string(oldloc);
   } else {
+#ifdef _WIN32
+    mysetenv("LANGUAGE", loc);
+#endif
+
     set_langint_from_locale_string(loc);
   }
 
