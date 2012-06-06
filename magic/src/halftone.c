@@ -111,7 +111,7 @@ SDL_Surface * halftone_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/%s.png",
+  snprintf(fname, sizeof(fname), "%s/images/magic/%s",
 	     api->data_directory, icon_filenames[which]);
 
   return(IMG_Load(fname));
