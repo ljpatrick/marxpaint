@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 15:55-0700\n"
+"POT-Creation-Date: 2012-06-06 18:53+0200\n"
 "PO-Revision-Date: 2004-09-21 14:28+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -408,7 +409,7 @@ msgstr "Newydd"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7762
+#: ../tools.h:98 ../tuxpaint.c:7507
 msgid "Open"
 msgstr "Agor"
 
@@ -540,198 +541,198 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Iawn... Gawn ni ddal i dynnu'r un yma!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1918
+#: ../tuxpaint.c:2038
 msgid "Do you really want to quit?"
 msgstr "Wyt ti wir eisiau terfynu?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1921
+#: ../tuxpaint.c:2041
 msgid "Yes, I’m done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1924 ../tuxpaint.c:1951
+#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
 msgid "No, take me back!"
 msgstr ""
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1928
+#: ../tuxpaint.c:2048
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Os wyt am derfynu, mi fyddi di'n colli dy lun!  Wyt eisiau ei gadw?"
 
-#: ../tuxpaint.c:1929 ../tuxpaint.c:1934
+#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1930 ../tuxpaint.c:1935
+#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
 msgid "No, don’t bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1933
+#: ../tuxpaint.c:2053
 msgid "Save your picture first?"
 msgstr "Cadw dy lun yn gyntaf?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1938
+#: ../tuxpaint.c:2058
 msgid "Can’t open that picture!"
 msgstr "Methu agor y llun yna!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1941 ../tuxpaint.c:1946 ../tuxpaint.c:1955 ../tuxpaint.c:1962
-#: ../tuxpaint.c:1971
+#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
+#: ../tuxpaint.c:2091
 msgid "OK"
 msgstr "Iawn"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1945
+#: ../tuxpaint.c:2065
 msgid "There are no saved files!"
 msgstr "Nid oes ffeiliau wedi'u cadw!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1949
+#: ../tuxpaint.c:2069
 msgid "Print your picture now?"
 msgstr "Argraffu dy lun rwan?"
 
-#: ../tuxpaint.c:1950
+#: ../tuxpaint.c:2070
 msgid "Yes, print it!"
 msgstr ""
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1954
+#: ../tuxpaint.c:2074
 msgid "Your picture has been printed!"
 msgstr "Mae dy lun wedi cael ei argraffu!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1958
+#: ../tuxpaint.c:2078
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Mae dy lun wedi cael ei argraffu!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1961
+#: ../tuxpaint.c:2081
 msgid "You can’t print yet!"
 msgstr "Rwyt yn methu argraffu eto!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1965
+#: ../tuxpaint.c:2085
 msgid "Erase this picture?"
 msgstr "Dileu'r llun yma?"
 
-#: ../tuxpaint.c:1966
+#: ../tuxpaint.c:2086
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1967
+#: ../tuxpaint.c:2087
 msgid "No, don’t erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1970
+#: ../tuxpaint.c:2090
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2567
+#: ../tuxpaint.c:2295
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2572
+#: ../tuxpaint.c:2300
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3355
+#: ../tuxpaint.c:3047
 msgid "Please wait…"
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7765
+#: ../tuxpaint.c:7510
 msgid "Erase"
 msgstr "Dileu"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7768
+#: ../tuxpaint.c:7513
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7771
+#: ../tuxpaint.c:7516
 msgid "Back"
 msgstr "Yn ôl"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7774
+#: ../tuxpaint.c:7519
 #, fuzzy
 msgid "Next"
 msgstr "Testun"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7777
+#: ../tuxpaint.c:7522
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8485
+#: ../tuxpaint.c:8230
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11730
+#: ../tuxpaint.c:11488
 msgid "Yes"
 msgstr "Ydw"
 
-#: ../tuxpaint.c:11734
+#: ../tuxpaint.c:11492
 msgid "No"
 msgstr "Nac ydw"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12730
+#: ../tuxpaint.c:12510
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12734
+#: ../tuxpaint.c:12514
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12738
+#: ../tuxpaint.c:12518
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Nage, cadw ffeil newydd"
 
-#: ../tuxpaint.c:13963
+#: ../tuxpaint.c:13763
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14976 ../tuxpaint.c:15290
+#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
 
-#: ../tuxpaint.c:21524
+#: ../tuxpaint.c:22032
 msgid "Pick a color."
 msgstr ""
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "Rhaglen lunio ar gyfer plant."
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Rhaglen lunio"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "Rhaglen lunio ar gyfer plant."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -747,357 +748,400 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 msgid "Click to change the colors in your entire picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
-#: ../../magic/src/blind.c:92
+#: ../../magic/src/blind.c:117
 msgid "Blind"
 msgstr ""
 
-#: ../../magic/src/blind.c:97
+#: ../../magic/src/blind.c:122
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
 msgstr "Blociau"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:138
 msgid "Chalk"
 msgstr "Sialc"
 
-#: ../../magic/src/blocks_chalk_drip.c:136
+#: ../../magic/src/blocks_chalk_drip.c:140
 msgid "Drip"
 msgstr "Diferu"
 
-#: ../../magic/src/blocks_chalk_drip.c:146
+#: ../../magic/src/blocks_chalk_drip.c:150
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:153
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
-#: ../../magic/src/blocks_chalk_drip.c:152
+#: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud i'r llun ddiferu."
 
-#: ../../magic/src/blur.c:57
+#: ../../magic/src/blur.c:80
 msgid "Blur"
 msgstr "Pylu"
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:83
 #, fuzzy
 msgid "Click and move the mouse around to blur the image."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
-#: ../../magic/src/blur.c:61
+#: ../../magic/src/blur.c:84
 #, fuzzy
 msgid "Click to blur the entire image."
 msgstr "Clicia i adlewyrchu'r llun."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:104
+#: ../../magic/src/bricks.c:124
 #, fuzzy
 msgid "Bricks"
 msgstr "Blociau"
 
-#: ../../magic/src/bricks.c:111
+#: ../../magic/src/bricks.c:131
 #, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr "Clicia a symuda i lunio gwreichion."
 
-#: ../../magic/src/bricks.c:113
+#: ../../magic/src/bricks.c:133
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Clicia a symuda i lunio gwreichion."
 
-#: ../../magic/src/calligraphy.c:108
+#: ../../magic/src/calligraphy.c:127
 msgid "Calligraphy"
 msgstr ""
 
-#: ../../magic/src/calligraphy.c:115
+#: ../../magic/src/calligraphy.c:134
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Clicia a symuda'r llygoden o gwmpas i dynnu gwrthliwiau."
 
-#: ../../magic/src/cartoon.c:80
+#: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
 msgstr ""
 
-#: ../../magic/src/cartoon.c:87
+#: ../../magic/src/cartoon.c:113
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
-#: ../../magic/src/confetti.c:63
+#: ../../magic/src/confetti.c:85
 msgid "Confetti"
 msgstr ""
 
-#: ../../magic/src/confetti.c:65
+#: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
 msgstr ""
 
-#: ../../magic/src/distortion.c:121
+#: ../../magic/src/distortion.c:142
 msgid "Distortion"
 msgstr ""
 
-#: ../../magic/src/distortion.c:129
+#: ../../magic/src/distortion.c:150
 #, fuzzy
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/emboss.c:76
+#: ../../magic/src/emboss.c:103
 msgid "Emboss"
 msgstr ""
 
-#: ../../magic/src/emboss.c:82
+#: ../../magic/src/emboss.c:109
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:121
+#: ../../magic/src/fade_darken.c:123
 msgid "Darken"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:134
 #, fuzzy
 msgid "Click and move the mouse to lighten parts of your picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
-#: ../../magic/src/fade_darken.c:134
+#: ../../magic/src/fade_darken.c:136
 #, fuzzy
 msgid "Click to lighten your entire picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/fade_darken.c:139
+#: ../../magic/src/fade_darken.c:141
 #, fuzzy
 msgid "Click and move the mouse to darken parts of your picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
-#: ../../magic/src/fade_darken.c:141
+#: ../../magic/src/fade_darken.c:143
 #, fuzzy
 msgid "Click to darken your entire picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/fill.c:87
+#: ../../magic/src/fill.c:108
 msgid "Fill"
 msgstr "Llenwi"
 
-#: ../../magic/src/fill.c:94
+#: ../../magic/src/fill.c:115
 msgid "Click in the picture to fill that area with color."
 msgstr "Clicia yn y llun i lenwi'r ardal yno efo lliw."
 
-#: ../../magic/src/fisheye.c:78
+#: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:80
+#: ../../magic/src/fisheye.c:106
 #, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/flower.c:124
+#: ../../magic/src/flower.c:150
 msgid "Flower"
 msgstr ""
 
-#: ../../magic/src/flower.c:130
+#: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
-#: ../../magic/src/foam.c:104
+#: ../../magic/src/foam.c:121
 msgid "Foam"
 msgstr ""
 
-#: ../../magic/src/foam.c:110
+#: ../../magic/src/foam.c:127
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:105
 msgid "Fold"
 msgstr ""
 
-#: ../../magic/src/fold.c:86
+#: ../../magic/src/fold.c:107
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
 
-#: ../../magic/src/glasstile.c:83
+#: ../../magic/src/fretwork.c:176
+msgid "Fretwork"
+msgstr ""
+
+#: ../../magic/src/fretwork.c:180
+#, fuzzy
+msgid "Click and drag to draw repetitive patterns. "
+msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
+
+#: ../../magic/src/fretwork.c:182
+#, fuzzy
+msgid "Click to surround your picture with repetitive patterns."
+msgstr "Clicia i adlewyrchu'r llun."
+
+#: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:114
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/glasstile.c:92
+#: ../../magic/src/glasstile.c:116
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/grass.c:92
+#: ../../magic/src/grass.c:112
 #, fuzzy
 msgid "Grass"
 msgstr "Dileu"
 
-#: ../../magic/src/grass.c:98
+#: ../../magic/src/grass.c:118
 #, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Clicia a symuda i lunio gwreichion."
 
-#: ../../magic/src/kalidescope.c:90
+#: ../../magic/src/halftone.c:34
+msgid "Halftone"
+msgstr ""
+
+#: ../../magic/src/halftone.c:38
+#, fuzzy
+msgid "Click and drag to turn your drawing into a newspaper."
+msgstr "Clicia i adlewyrchu'r llun."
+
+#: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:92
+#: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
 msgstr ""
 
+#: ../../magic/src/kalidescope.c:124
+msgid "Pattern"
+msgstr ""
+
+#: ../../magic/src/kalidescope.c:126
+msgid "Tiles"
+msgstr ""
+
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:94
+#: ../../magic/src/kalidescope.c:128
 msgid "Kaleidoscope"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:102
+#: ../../magic/src/kalidescope.c:136
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
 
-#: ../../magic/src/kalidescope.c:104
+#: ../../magic/src/kalidescope.c:138
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
 
+#: ../../magic/src/kalidescope.c:140
+#, fuzzy
+msgid "Click and drag the mouse to draw a pattern across the picture."
+msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
+
+#: ../../magic/src/kalidescope.c:142
+#, fuzzy
+msgid ""
+"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"picture."
+msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
+
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:106
+#: ../../magic/src/kalidescope.c:144
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
 
-#: ../../magic/src/light.c:84
+#: ../../magic/src/light.c:107
 msgid "Light"
 msgstr ""
 
-#: ../../magic/src/light.c:90
+#: ../../magic/src/light.c:113
 #, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/metalpaint.c:77
+#: ../../magic/src/metalpaint.c:101
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Paent"
 
-#: ../../magic/src/metalpaint.c:83
+#: ../../magic/src/metalpaint.c:107
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/mirror_flip.c:94
+#: ../../magic/src/mirror_flip.c:117
 msgid "Mirror"
 msgstr "Drych"
 
-#: ../../magic/src/mirror_flip.c:96
+#: ../../magic/src/mirror_flip.c:119
 msgid "Flip"
 msgstr "Gwrthdroi"
 
-#: ../../magic/src/mirror_flip.c:106
+#: ../../magic/src/mirror_flip.c:130
 msgid "Click to make a mirror image."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mirror_flip.c:109
+#: ../../magic/src/mirror_flip.c:133
 msgid "Click to flip the picture upside-down."
 msgstr "Clicia i droi'r llun pen-i-lawr."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:100
 #, fuzzy
 msgid "Mosaic"
 msgstr "Hud"
 
-#: ../../magic/src/mosaic.c:78
+#: ../../magic/src/mosaic.c:103
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic.c:79
+#: ../../magic/src/mosaic.c:104
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:134
+#: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 #| msgid "Square"
 msgid "Square Mosaic"
 msgstr "Sgwâr"
 
-#: ../../magic/src/mosaic_shaped.c:135
+#: ../../magic/src/mosaic_shaped.c:143
 #, fuzzy
 msgid "Hexagon Mosaic"
 msgstr "Hud"
 
-#: ../../magic/src/mosaic_shaped.c:136
+#: ../../magic/src/mosaic_shaped.c:144
 msgid "Irregular Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:141
+#: ../../magic/src/mosaic_shaped.c:149
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:150
 #, fuzzy
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:152
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:145
+#: ../../magic/src/mosaic_shaped.c:153
 #, fuzzy
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:155
 #, fuzzy
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/negative.c:72
+#: ../../magic/src/negative.c:98
 msgid "Negative"
 msgstr "Gwrthliw"
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:106
 #, fuzzy
 #| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Clicia a symuda'r llygoden o gwmpas i dynnu gwrthliwiau."
 
-#: ../../magic/src/negative.c:83
+#: ../../magic/src/negative.c:109
 #, fuzzy
 msgid "Click to turn your painting into its negative."
 msgstr "Clicia i adlewyrchu'r llun."
@@ -1134,35 +1178,35 @@ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/puzzle.c:79
+#: ../../magic/src/puzzle.c:105
 #, fuzzy
 msgid "Puzzle"
 msgstr "Piws!"
 
-#: ../../magic/src/puzzle.c:86
+#: ../../magic/src/puzzle.c:112
 #, fuzzy
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/puzzle.c:87
+#: ../../magic/src/puzzle.c:113
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/rails.c:101
+#: ../../magic/src/rails.c:131
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:103
+#: ../../magic/src/rails.c:133
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/rainbow.c:107
+#: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
 msgstr "Enfys!"
 
-#: ../../magic/src/rainbow.c:114
+#: ../../magic/src/rainbow.c:146
 msgid "You can draw in rainbow colors!"
 msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
 
@@ -1181,47 +1225,47 @@ msgstr "Clicia i adlewyrchu'r llun."
 msgid "Click to cover your picture with rain drops."
 msgstr "Clicia i adlewyrchu'r llun."
 
-#: ../../magic/src/realrainbow.c:86
+#: ../../magic/src/realrainbow.c:110
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Enfys!"
 
-#: ../../magic/src/realrainbow.c:88
+#: ../../magic/src/realrainbow.c:112
 #, fuzzy
 #| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "Enfys!"
 
-#: ../../magic/src/realrainbow.c:93
+#: ../../magic/src/realrainbow.c:117
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
 
-#: ../../magic/src/ripples.c:81
+#: ../../magic/src/ripples.c:106
 msgid "Ripples"
 msgstr ""
 
-#: ../../magic/src/ripples.c:87
+#: ../../magic/src/ripples.c:112
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/rosette.c:93
+#: ../../magic/src/rosette.c:116
 msgid "Rosette"
 msgstr ""
 
-#: ../../magic/src/rosette.c:93
+#: ../../magic/src/rosette.c:116
 msgid "Picasso"
 msgstr ""
 
-#: ../../magic/src/rosette.c:98
+#: ../../magic/src/rosette.c:121
 #, fuzzy
 msgid "Click and start drawing your rosette."
 msgstr "Clicia i ddechrau tynnu llinell.  Gad fynd i'w orffen."
 
-#: ../../magic/src/rosette.c:100
+#: ../../magic/src/rosette.c:123
 #, fuzzy
 msgid "You can draw just like Picasso!"
 msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
@@ -1269,32 +1313,32 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
-#: ../../magic/src/shift.c:104
+#: ../../magic/src/shift.c:109
 msgid "Shift"
 msgstr ""
 
-#: ../../magic/src/shift.c:110
+#: ../../magic/src/shift.c:115
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/smudge.c:83
+#: ../../magic/src/smudge.c:106
 msgid "Smudge"
 msgstr ""
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:108
 #, fuzzy
 msgid "Wet Paint"
 msgstr "Paent"
 
-#: ../../magic/src/smudge.c:92
+#: ../../magic/src/smudge.c:115
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:94
+#: ../../magic/src/smudge.c:117
 #, fuzzy
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
@@ -1317,30 +1361,30 @@ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 msgid "Click to add snow flakes to your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/string.c:120
+#: ../../magic/src/string.c:123
 msgid "String edges"
 msgstr ""
 
-#: ../../magic/src/string.c:123
+#: ../../magic/src/string.c:126
 msgid "String corner"
 msgstr ""
 
-#: ../../magic/src/string.c:126
+#: ../../magic/src/string.c:129
 msgid "String 'V'"
 msgstr ""
 
-#: ../../magic/src/string.c:134
+#: ../../magic/src/string.c:137
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
 
-#: ../../magic/src/string.c:137
+#: ../../magic/src/string.c:140
 #, fuzzy
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/string.c:140
+#: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
 msgstr ""
 
@@ -1387,49 +1431,49 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/tornado.c:127
+#: ../../magic/src/tornado.c:157
 msgid "Tornado"
 msgstr ""
 
-#: ../../magic/src/tornado.c:133
+#: ../../magic/src/tornado.c:163
 #, fuzzy
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:100
 msgid "TV"
 msgstr ""
 
-#: ../../magic/src/tv.c:79
+#: ../../magic/src/tv.c:105
 #, fuzzy
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/tv.c:82
+#: ../../magic/src/tv.c:108
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
-#: ../../magic/src/waves.c:80
+#: ../../magic/src/waves.c:103
 #, fuzzy
 msgid "Waves"
 msgstr "Cadw"
 
-#: ../../magic/src/waves.c:81
+#: ../../magic/src/waves.c:104
 #, fuzzy
 msgid "Wavelets"
 msgstr "Cadw"
 
-#: ../../magic/src/waves.c:88
+#: ../../magic/src/waves.c:111
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
 
-#: ../../magic/src/waves.c:89
+#: ../../magic/src/waves.c:112
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -1468,10 +1512,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
 #~ msgstr "Clicia i adlewyrchu'r llun."
-
-#, fuzzy
-#~ msgid "Click and drag to draw string art aligned to the edges."
-#~ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
 #, fuzzy
 #~ msgid ""
