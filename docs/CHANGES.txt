@@ -76,33 +76,25 @@ $Id$
 
     * Added an option to display an on-screen keyboard when using the
       'Text' and 'Label' tools.  ("--onscreen-keyboard") [Experimental!]
-      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
+      by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010) with 
+      integration and fixes by Pere Pujal i Carabantes <perepujal@gmail.com>
+      and some code borrowed from xorg (keysymdef.h and en_US.UTF-8_COMPOSE
+      Authors?) 
+      and xterm file keysym2ucs.c (function keysym2unicode   
+      Markus G. Kuhn <mkuhn@acm.org>, University of Cambridge, April 2001
+      Special thanks to Richard Verhoeven <river@win.tue.nl>
+      Public domain.
+
 
       FIXME:
-        * Flickers a lot
-        * "Caps" label overwrites "a"; perhaps show an up-arrow (a la
+        * When refreshing a draw full of labels flickers a lot.
+        * "Caps" label perhaps should show an up-arrow (a la
           old Mac keyboards?) (Unicode U+21CE or U+21EA?)
-        * "Shift" key doesn't seem to do anything (I click it, and it
-          highlights, then goes back to light blue)
         * Replace "Shift" with an arrow? (Unicode U+21E7)
-        * Hightlight-on-hover isn't something we do elsewhere in
-          Tux Paint; not a bad idea, but having the keyboard do it is
-          inconsistent
-        * Why is there an "Esc" key?
-        * "Back" label goes outside of its button; perhaps a delete left-arrow?
+        * "Back" label perhaps should be a delete left-arrow?
           (Unicode U+232B)
-        * "Ret" should probably be replaced with a carriage return
+        * "Enter" should probably be replaced with a carriage return
           down-then-left-arrow. (Unicode U+21B5 or U+23CE)
-        * "Alt" seems to cause "ij" to get added to the text; what is
-          this supposed to be for?
-        * When using "Caps" (or "Shift") ... FIXME: What?
-        * Keyboard layout should be configurable (at least via config
-          file, if not (optionally) within the app); should support QWERTY,
-          alphabetic (A-Z), and support international characters (depending
-          on the locale?)
-        * Should be 4 rows for numbers & alphabetic (at least in
-          QWERTY-style layouts; maybe more in others? big world out there!)
-        * Needs a space key! (5th row?)
 
     * Keyboard can be used to move and click mouse ("keymouse").
       [Experimental!]
