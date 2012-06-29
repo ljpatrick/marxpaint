@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
-"PO-Revision-Date: 2012-03-20 07:42+0100\n"
-"Last-Translator: Michael <fios@akerbeltz.org>\n"
+"POT-Creation-Date: 2012-06-29 17:33+0200\n"
+"PO-Revision-Date: 2012-06-29 01:19-0000\n"
+"Last-Translator: Michael Bauer <fios@akerbeltz.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: gd\n"
 "MIME-Version: 1.0\n"
@@ -929,19 +929,15 @@ msgstr "Tagh dath cùlaibh is briog gus oisean na duilleige a phasgadh."
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Obair-fhriota"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Briog is slaod gus saigheadan de dh'ealain teuda a pheantadh."
+msgstr "Briog is slaod gus pàtranan ath-chùrsach a pheantadh."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Briog gus an dealbh agad a còmhdachadh le druthagan uisge."
+msgstr "Briog gus pàtranan ath-chùrsach a chur mun dealbh agad."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -969,13 +965,11 @@ msgstr "Briog is slaod gus feur a pheantadh. Na dìochuimhnich an talamh!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Leth-thòna"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Briog is slaod an luchag gus claon-chlò a chur ris an dealbh gu lèir."
+msgstr "Briog is slaod gus pàipear-naidheachd a dhèanamh dhen dealbh agad."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -987,11 +981,11 @@ msgstr "Co-chothromach bàrr/bonn"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Pàtran"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Leacagan"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1003,7 +997,7 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Briog is slaod an luachag gus peantadh le dà bhruis a tha co-chothromach a "
+"Briog is slaod an luchag gus peantadh le dà bhruis a tha co-chothromach a "
 "dh'ionnsaigh taobh deas is clì an deilbh agad."
 
 #: ../../magic/src/kalidescope.c:138
@@ -1011,33 +1005,27 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Briog is slaod an luachag gus peantadh le dà bhruis a tha co-chothromach a "
+"Briog is slaod an luchag gus peantadh le dà bhruis a tha co-chothromach a "
 "dh'ionnsaigh bàrr is bonn an deilbh agad."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Briog is gluais an luchag gus copanaich a chur air an dealbh agad."
+msgstr "Briog is slaod an luchag gus pàtran a chur thairis air an dealbh."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with two brushes that are symmetric "
-#| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Briog is slaod an luachag gus peantadh le dà bhruis a tha co-chothromach a "
-"dh'ionnsaigh taobh deas is clì an deilbh agad."
+"Briog is slaod an luchag gus pàtran agus am pàtran co-chothromach aige a "
+"pheantadh thairis air an dealbh."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Briog is slaod an luachag gus peantadh le dà bhruis a tha co-chothromach "
+"Briog is slaod an luchag gus peantadh le dà bhruis a tha co-chothromach "
 "(kaleidoscop)."
 
 #: ../../magic/src/light.c:107
