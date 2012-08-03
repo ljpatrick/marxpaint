@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 081207\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
+"POT-Creation-Date: 2012-08-02 20:36-0500\n"
 "PO-Revision-Date: 2010-01-26 14:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -909,19 +909,15 @@ msgstr ""
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Crinnghréas"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Cliceáil agus tarraing chun ráillí traenach a dhearadh ar do phictiúr."
+msgstr ""
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Cliceáil chun braonta báistí a chur ar fud an phictiúir."
+msgstr ""
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -945,14 +941,11 @@ msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Leath-thon"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr ""
-"Cliceáil agus tarraing chun an pictiúr a aistriú timpeall an chanbháis."
+msgstr "Cliceáil agus tarraing chun páipéar nuachta a dhéanamh as do phictiúr."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -964,11 +957,11 @@ msgstr "Siméadrach Suas/Síos"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Patrún"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Tíleanna"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -989,19 +982,15 @@ msgstr ""
 
 # yes this is the right verbal noun
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Cliceáil agus bog an luch chun an pictiúr a chabhradh."
+msgstr "Cliceáil agus tarraing an luch chun patrún a dhearadh ar an bpictiúr."
 
 # yes this is the right verbal noun
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
-msgstr "Cliceáil agus bog an luch chun an pictiúr a chabhradh."
+msgstr ""
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
