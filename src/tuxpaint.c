@@ -460,6 +460,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 #endif
 
+#define PNG_INTERNAL
 #include <png.h>
 #define FNAME_EXTENSION ".png"
 #ifndef PNG_H
