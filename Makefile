@@ -825,6 +825,7 @@ install-dlls:
 	@cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX)
 	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
 	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
+	@cp `which libpthread-2.dll` $(BIN_PREFIX)
 	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
