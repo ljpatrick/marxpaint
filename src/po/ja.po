@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-06 18:53+0200\n"
-"PO-Revision-Date: 2011-10-10 15:41+0900\n"
-"Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
+"PO-Revision-Date: 2012-08-18 15:58+0900\n"
+"Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -918,22 +917,18 @@ msgstr "うらのいろを えらんでから、かどのちかくを クリッ�
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "らいもん もよう"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw string art aligned to the edges."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr ""
-"クリックしたまま マウスをうごかして いとめ もようを かこう。 かどが ひとつの "
-"いとめだよ。"
+msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう"
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "えをクリックして　ぜんたいに　あめを　ふらせよう"
+msgstr "クリック して えの ぜんたいに くりかえしもようを かこう"
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -957,13 +952,12 @@ msgstr "くさを かこう。つちもわすれずにね"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "ハーフトーン"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "えを　クリックして　ぜんたいを　ネガポジにしよう"
+msgstr "クリックしたまま マウスをうごかして しんぶん みたいに しよう"
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -975,11 +969,11 @@ msgstr "じょうげたいしょう"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "もよう"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "タイル"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1003,13 +997,11 @@ msgstr ""
 "を かこう"
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう"
+msgstr "クリックしたまま マウスをうごかして えの ぜんたいに もようを かこう"
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
@@ -1017,8 +1009,8 @@ msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"クリックしたまま マウスをうごかして にほんの ふでで さゆうたいしょうの えを "
-"かこう"
+"クリックしたまま マウスをうごかして えの ぜんたいに たいしょうてきな もよう"
+"を かこう"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1096,7 +1088,7 @@ msgstr "クリックしたまま　マウスをうごかして　しかっけい
 
 #: ../../magic/src/mosaic_shaped.c:150
 msgid "Click to add a square mosaic to your entire picture."
-msgstr ""
+msgstr "クリック して えのぜんたいを しかくい モザイクに しよう"
 
 #: ../../magic/src/mosaic_shaped.c:152
 msgid ""
@@ -1104,12 +1096,9 @@ msgid ""
 msgstr "クリックしたまま　マウスをうごかして　ろっかっけいの モザイクを かこう"
 
 #: ../../magic/src/mosaic_shaped.c:153
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr ""
-"クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのようにし"
-"よう"
+msgstr "クリック して えのぜんたいを ろっかくけいの モザイクに しよう"
 
 #: ../../magic/src/mosaic_shaped.c:155
 msgid ""
@@ -1118,12 +1107,9 @@ msgstr ""
 "クリックしたまま マウスをうごかして ふきそくな かたちの モザイクを かこう"
 
 #: ../../magic/src/mosaic_shaped.c:156
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr ""
-"クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのようにし"
-"よう"
+msgstr "クリック して えのぜんたいを ふきそくな モザイクに しよう"
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
@@ -1158,10 +1144,10 @@ msgid "Zoom"
 msgstr "ズーム"
 
 #: ../../magic/src/perspective.c:151
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click on the corners and drag where you want to stretch the picture."
-msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう"
+msgstr ""
+"のびちぢみ させたい ばしょの かどを クリックしたまま マウスをうごかそう"
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1179,7 +1165,7 @@ msgstr "クリックしたまま マウスをうごかして えを パズルの
 
 #: ../../magic/src/puzzle.c:113
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr ""
+msgstr "フルスクリーン モードで パズルを つくろう"
 
 #: ../../magic/src/rails.c:131
 msgid "Rails"
