@@ -8,11 +8,11 @@ Group: Multimedia/Graphics
 URL: http://www.tuxpaint.org/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango libpng >= 1.2.17 zlib
-Requires: librsvg2 libpaper fribidi
+Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango
+Requires: libpng librsvg2 cairo libpaper fribidi
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
-BuildRequires: libpng-devel >= 1.2.17 zlib-devel gettext
-BuildRequires: librsvg2-devel libpaper-devel fribidi-devel gperf
+BuildRequires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
+BuildRequires: libgsf-devel libxml2-devel gtk2-devel gperf gettext
 
 %description
 "Tux Paint" is a drawing program for young children.
@@ -30,7 +30,8 @@ Summary: development files for tuxpaint plugins.
 Group: Development/Libraries
 Requires: tuxpaint = %{version}
 Requires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
-Requires: libpng-devel zlib-devel gettext, librsvg2-devel libpaper-devel fribidi-devel
+Requires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
+Requires: libgsf-devel libxml2-devel gtk2-devel gperf gettext
 
 %description devel
 development files for tuxpaint plugins.
@@ -88,6 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Mon Aug 20 2012 <shin1@wmail.plala.or.jp> -
+- Corrected 'Requires' and 'BuildRequires'
+
 * Wed Dec 07 2011 <shin1@wmail.plala.or.jp> -
 - Added bash-completion file
 
