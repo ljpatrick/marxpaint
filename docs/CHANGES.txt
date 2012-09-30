@@ -487,6 +487,9 @@ $Id$
     * Telugu tranlation
       saikumar <ramukiashc@gmail.com> as a task in GCI
 
+    * Turkish
+      Enes Burhan KURAN <asd@gmail.com>
+
     * Vietnamese translation
       Clytie Siddall <clytie@riverland.net.au>
 

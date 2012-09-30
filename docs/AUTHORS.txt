@@ -812,6 +812,7 @@ $Id$
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
+    Enes Burhan KURAN <asd@gmail.com>
 
   * Twi
     Joana Portia Antwi-Danso <portnass2003@yahoo.com>
