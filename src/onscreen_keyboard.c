@@ -494,7 +494,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
 
     /* FIXME: Why is the us-intl keymap duplicating the two first entries of every keycode? */
     /* And why is the arabic keymap using the 5th and 6th entries as plain/shifted keys? */
-    readed = sscanf(line, "keycode %i = %s %s %*s %*s %s %s", &keycode,
+    readed = sscanf(line, "keycode %i = %s %s %s %s", &keycode,
 	   ksname1, ksname2, ksname3, ksname4);
 
     if (readed == 5 && keycode > 8 && keycode < 256)
