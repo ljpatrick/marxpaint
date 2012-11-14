@@ -102,6 +102,52 @@ $Id$
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
   with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+  Onscreen keyboard support
+  Some code from 
+    Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
+
+    Markus G. Kuhn <mkuhn@acm.org>, University of Cambridge, April 2001, code taken from the source code of xterm, file keysym2ucs.c
+    Richard Verhoeven <river@win.tue.nl>                                 Public Domain
+
+    Whoever who wrote keysymdef.h from the source code of xorg
+      Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts
+      Copyright 1987, 1994, 1998  The Open Group
+        Permission to use, copy, modify, distribute, and sell this software and its
+        documentation for any purpose is hereby granted without fee, provided that
+        the above copyright notice appear in all copies and that both that
+        copyright notice and this permission notice appear in supporting
+        documentation. (full license text at the start of the file)
+
+    David.Monniaux@ens.fr and          for the file /usr/share/X11/locale/en_US.UTF-8/Compose in the package libx11-data
+    Jungshik Shin <jshin@jshin.net>    in the source code of xorg, the following copyright notice comes from the file
+                                       /usr/share/doc/libx11-data/copyright that is shipped with the Compose file.
+      Copyright (C) 2003-2006,2008 Jamey Sharp, Josh Triplett
+      Copyright © 2009 Red Hat, Inc.
+      Copyright 1990-1992,1999,2000,2004,2009,2010 Oracle and/or its affiliates.
+      All rights reserved.
+
+        Permission is hereby granted, free of charge, to any person obtaining a
+        copy of this software and associated documentation files (the "Software"),
+        to deal in the Software without restriction, including without limitation
+        the rights to use, copy, modify, merge, publish, distribute, sublicense,
+        and/or sell copies of the Software, and to permit persons to whom the
+        Software is furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice (including the next
+        paragraph) shall be included in all copies or substantial portions of the
+        Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+        THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+        DEALINGS IN THE SOFTWARE.
+
+    Pere Pujal i Carabantes <perepujal@gmail.com> for gluing all toghether
+    
+
   Joystick control
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
   with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
