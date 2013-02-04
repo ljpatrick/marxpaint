@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-06 18:53+0200\n"
-"PO-Revision-Date: 2012-04-30 10:53-0500\n"
+"PO-Revision-Date: 2013-02-04 14:11-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -94,12 +94,12 @@ msgstr "ᑲᔪᖅ!"
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
 msgid "Tan!"
-msgstr "ᑲᔪᖅ ᖃᑯᓐᓂᓴᖅ"
+msgstr "ᑲᔪᖅ ᖃᑯᓐᓂᓴᖅ!"
 
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
 msgid "Beige!"
-msgstr "ᐅᕕᓂᐅᔭᖅ"
+msgstr "ᐅᕕᓂᐅᔭᖅ!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -151,7 +151,7 @@ msgstr "`\\%_@$~#{<(^&*"
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
 msgid "017"
-msgstr "17"
+msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:203
@@ -230,82 +230,97 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "ᓯᒃᑭᑕᖅ"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "ᓯᒃᑭᑕᑯᑖᖅ"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "ᐊᒻᒪᓗᑭᑖᖅ"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "ᐊᒻᒪᓗᑭᑕᐅᖓᔪᖅ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "ᐱᖓᓱᓂᒃ ᓯᓈᓕᒃ"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "ᑕᓪᓕᒪᓂᒃ ᓯᓈᓕᒃ"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "ᓯᒃᑭᑕᖅ ᖁᑦᓱᖓᔮᑦᑐᖅ"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "ᓯᑕᒪᐅᔪᕐᑐᓂᒃ ᓯᓈᓕᒃ"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "ᓯᒃᑭᑕᖅ ᓯᒃᑭᑕᑯᑖᖑᕗᖅ ᓯᑕᒪᓂᒃ ᓯᓈᖃᕐᓱᓂ ᓇᓪᓕᖁᐊᕇᓂᒃ."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "ᓯᒃᑭᑕᑯᑖᖅ ᓯᑕᒪᓂᒃ ᓯᓈᓕᒃ ᓯᑕᒪᓂᓪᓗ ᐃᕿᕐᕋᖃᕐᓱᓂ ᒪᑭᑕᑦᓯᐊᑐᕐᑕᓕᓐᓂᒃ"
+msgstr "ᓯᒃᑭᑕᑯᑖᖅ ᓯᑕᒪᓂᒃ ᓯᓈᓕᒃ ᓯᑕᒪᓂᓪᓗ ᐃᕿᕐᕋᖃᕐᓱᓂ ᒪᑭᑕᑦᓯᐊᑐᕐᑕᓕᓐᓂᒃ."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr "ᐊᒻᒪᓗᑭᑖᖅ ᓴᖑᒻᒪᐅᕗᖅ ᓱᑯᑦᓯᓕᒫᖏᑦ ᕿᑎᓪᓗᐊᖓᓄᑦ ᓇᓪᓕᖁᐊᕇᑦᑎᓗᒋᑦ "
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "ᐊᒻᒪᓗᑭᑖᖅ ᓴᖑᒻᒪᐅᕗᖅ ᓱᑯᑦᓯᓕᒫᖏᑦ ᕿᑎᓪᓗᐊᖓᓄᑦ ᓇᓪᓕᖁᐊᕇᑦᑎᓗᒋᑦ."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
-msgstr "ᐊᒻᒪᓗᑭᑕᐅᖓᔪᖅ ᐊᒻᒪᓗᑭᑖᖑᕗᖅ ᑕᓯᑎᕐᓯᒪᑦᓱᓂ"
+msgstr "ᐊᒻᒪᓗᑭᑕᐅᖓᔪᖅ ᐊᒻᒪᓗᑭᑖᖑᕗᖅ ᑕᓯᑎᕐᓯᒪᑦᓱᓂ."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "ᐱᖓᓱᓂᒃ ᓯᓈᓕᒃ ᐱᖓᓱᓂᒃ ᐊᓐᓂᖃᕐᓱᓂ."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "ᑕᓪᓕᒪᓂᒃ ᓯᓈᓕᒃ ᑕᓪᓕᒪᓂᒃ ᐊᓐᓂᖃᕐᖁᖅ."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "ᓯᒃᑭᑕᖅ ᖁᑦᓱᖓᔮᑦᑐᖅ ᓯᑕᒪᓂᒃ ᓯᓈᓕᒃ ᓇᓪᓕᖁᐊᕇᓂᒃ, ᐊᑭᓪᓕᒌᓐᓂᖏᑦ ᑲᑎᐅᑎᕐᖃᔭᕐᑎᓇᒋᑦ"
+msgstr "ᓯᒃᑭᑕᖅ ᖁᑦᓱᖓᔮᑦᑐᖅ ᓯᑕᒪᓂᒃ ᓯᓈᓕᒃ ᓇᓪᓕᖁᐊᕇᓂᒃ, ᐊᑭᓪᓕᒌᓐᓂᖏᑦ ᑲᑎᐅᑎᕐᖃᔭᕐᑎᓇᒋᑦ."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
-msgstr "ᓯᑕᒪᐅᔪᕐᑐᓂᒃ ᓯᓈᓕᒃ ᓯᑕᒪᐅᔪᕐᑐᓂᒃ ᐊᓐᓂᖃᕐᓱᓂ ᓇᓪᓕᖁᐊᕇᓂᒃ"
+msgstr "ᓯᑕᒪᐅᔪᕐᑐᓂᒃ ᓯᓈᓕᒃ ᓯᑕᒪᐅᔪᕐᑐᓂᒃ ᐊᓐᓂᖃᕐᓱᓂ ᓇᓪᓕᖁᐊᕇᓂᒃ."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -334,7 +349,8 @@ msgstr "ᑕᕐᓯᑐᐃᕈᑏᑦ"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:71
+#: ../titles.h:71
+#: ../tools.h:71
 msgid "Shapes"
 msgstr "ᓴᓇᒻᒣᑦ"
 
@@ -345,7 +361,8 @@ msgstr "ᐊᓪᓓᑦ"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:83
+#: ../titles.h:77
+#: ../tools.h:83
 msgid "Magic"
 msgstr "ᐊᔪᒉᑦᑐᓕᑎᑦᓯᒍᑎ"
 
@@ -397,7 +414,8 @@ msgstr "ᓄᑖᖅ"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98
+#: ../tuxpaint.c:7507
 msgid "Open"
 msgstr "ᐅᒃᑯᐃᓗᒍ"
 
@@ -433,33 +451,18 @@ msgstr "ᓇᕐᓂᓗᒍ ᑎᑦᑕᑯᑖᓕᐅᕈᓐᓇᓯᓚᖓᒐᕕᑦ. ᓴᒃ
 
 #. Shape tool instructions
 #: ../tools.h:124
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"ᓴᓇᒻᒪᒥᒃ ᓂᕈᐊᕐᓗᑎᑦ. ᓇᕐᓃᕕᒋᓗᒍ ᕿᑎᖓᓂᒃ ᓂᕈᐊᕐᓂᒧᑦ, ᓅᑦᑎᓗᒍ, ᓴᒃᑯᓗᒍᓗ ᐊᖏᓂᖓ ᓈᒻᒪᒋᓕᕈᕕᐅᒃ. ᐊᐅᓚᑎᓪᓗᒍ "
-"ᑫᕙᓪᓚᖁᕈᕕᐅᒃ, ᓇᕐᓂᒥᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "ᓴᓇᒻᒪᒥᒃ ᓂᕈᐊᕐᓗᑎᑦ. ᓇᕐᓃᕕᒋᓗᒍ ᕿᑎᖓᓂᒃ ᓂᕈᐊᕐᓂᒧᑦ, ᓅᑦᑎᓗᒍ, ᓴᒃᑯᓗᒍᓗ ᐊᖏᓂᖓ ᓈᒻᒪᒋᓕᕈᕕᐅᒃ. ᐊᐅᓚᑎᓪᓗᒍ ᑫᕙᓪᓚᖁᕈᕕᐅᒃ, ᓇᕐᓂᒥᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ."
 
 #. Text tool instructions
 #: ../tools.h:127
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text."
-msgstr ""
-"ᐊᓪᓚᓯᒪᔪᑦ ᖃᓄᐃᑦᑑᓂᖏᑦ ᓂᕈᐊᕐᓗᒋᑦ. ᓇᕐᓂᕕᒋᓗᒍ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖅ, ᐊᓪᓚᓯᒪᔪᓕᐅᕈᓐᓇᓚᖓᕋᕕᑦ. ᓇᕐᓂᓗᒍ "
-"\"ᑲᔪᓯᑎᑦᓯᒍᑎ\" \"ᐊᓪᓗᐅᕈᑎᓘᓐᓃᑦ\" ᐊᓪᓚᓯᒪᔪᓕᐅᕇᕐᓂᒧᑦ."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."
+msgstr "ᐊᓪᓚᓯᒪᔪᑦ ᖃᓄᐃᑦᑑᓂᖏᑦ ᓂᕈᐊᕐᓗᒋᑦ. ᓇᕐᓂᕕᒋᓗᒍ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖅ, ᐊᓪᓚᓯᒪᔪᓕᐅᕈᓐᓇᓚᖓᕋᕕᑦ. ᓇᕐᓂᓗᒍ \"ᑲᔪᓯᑎᑦᓯᒍᑎ\" \"ᐊᓪᓗᐅᕈᑎᓘᓐᓃᑦ\" ᐊᓪᓚᓯᒪᔪᓕᐅᕇᕐᓂᒧᑦ."
 
 #. Label tool instructions
 #: ../tools.h:130
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing. "
-"Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
-"style."
-msgstr ""
-"ᐊᓪᓚᓯᒪᔪᑦ ᖃᓄᐃᑦᑑᓂᖏᑦ ᓂᕈᐊᕐᓗᒋᑦ. ᓇᕐᓂᕕᒋᓗᒍ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖅ, ᐊᓪᓚᓯᒪᔪᓕᐅᕈᓐᓇᓚᖓᕋᕕᑦ. ᓇᕐᓂᓗᒍ "
-"\"ᑲᔪᓯᑎᑦᓯᒍᑎ\" \"ᐊᓪᓗᐅᕈᑎᓘᓐᓃᑦ\" ᐊᓪᓚᓯᒪᔪᓕᐅᕇᕐᓂᒧᑦ. ᓂᕈᐊᕈᑎᐅᑉ ᓇᕐᓂᒐᖓ ᐊᑐᑐᐊᕈᕕᐅᒃ ᓇᕐᓂᓗᒍᓗ "
-"ᓄᐃᑕᕇᕐᑐᖅ ᐊᐅᓚᕈᓐᓇᑌᑦ, ᐊᓯᑦᔨᑐᕐᓗᒍ ᐊᓪᓚᓯᒪᔪᖏᓪᓗ ᐊᓯᑦᔨᒍᓐᓇᓱᒋᑦ."
+msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."
+msgstr "ᐊᓪᓚᓯᒪᔪᑦ ᖃᓄᐃᑦᑑᓂᖏᑦ ᓂᕈᐊᕐᓗᒋᑦ. ᓇᕐᓂᕕᒋᓗᒍ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖅ, ᐊᓪᓚᓯᒪᔪᓕᐅᕈᓐᓇᓚᖓᕋᕕᑦ. ᓇᕐᓂᓗᒍ \"ᑲᔪᓯᑎᑦᓯᒍᑎ\" \"ᐊᓪᓗᐅᕈᑎᓘᓐᓃᑦ\" ᐊᓪᓚᓯᒪᔪᓕᐅᕇᕐᓂᒧᑦ. ᓂᕈᐊᕈᑎᐅᑉ ᓇᕐᓂᒐᖓ ᐊᑐᑐᐊᕈᕕᐅᒃ ᓇᕐᓂᓗᒍᓗ ᓄᐃᑕᕇᕐᑐᖅ ᐊᐅᓚᕈᓐᓇᑌᑦ, ᐊᓯᑦᔨᑐᕐᓗᒍ ᐊᓪᓚᓯᒪᔪᖏᓪᓗ ᐊᓯᑦᔨᒍᓐᓇᓱᒋᑦ."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -537,7 +540,8 @@ msgid "Yes, I’m done!"
 msgstr "ᐋ, ᑌᒪᐅᕗᖓ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2044
+#: ../tuxpaint.c:2071
 msgid "No, take me back!"
 msgstr "ᐊᐅᑲ, ᐅᑎᕐᑎᖓ!"
 
@@ -546,11 +550,13 @@ msgstr "ᐊᐅᑲ, ᐅᑎᕐᑎᖓ!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ᓄᕐᖃᑐᐊᕈᕕᑦ, ᐊᓪᓚᖑᐊᑫᓐᓇᑌᑦ ᐊᓯᐅᓚᖓᔪᖅ! ᓴᓂᕝᕙᓖ?"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2049
+#: ../tuxpaint.c:2054
 msgid "Yes, save it!"
 msgstr "ᐋ, ᓴᓂᕝᕙᓗᒍ!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2050
+#: ../tuxpaint.c:2055
 msgid "No, don’t bother saving!"
 msgstr "ᐊᐅᑲ, ᓴᓂᕝᕙᕆᐊᑐᖕᖏᑐᖅ!"
 
@@ -565,7 +571,10 @@ msgid "Can’t open that picture!"
 msgstr "ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖅ ᒪᑐᐃᕐᖃᔭᖕᖏᑐᖅ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
+#: ../tuxpaint.c:2061
+#: ../tuxpaint.c:2066
+#: ../tuxpaint.c:2075
+#: ../tuxpaint.c:2082
 #: ../tuxpaint.c:2091
 msgid "OK"
 msgstr "ᐋ, ᐊᑌ"
@@ -660,7 +669,7 @@ msgstr "ᐱᖕᖑᐊᓂᖅ"
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8230
 msgid "Aa"
-msgstr "ᐊ"
+msgstr "aᐊ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -695,7 +704,8 @@ msgstr "ᐊᑦᔨᖑᐊᖅ ᐊᑐᕈᒪᔦᑦ ᓂᕈᐊᕐᓗᒍ, ᓇᕐᓂᓗ�
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14794
+#: ../tuxpaint.c:15122
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ᐊᑦᔨᖑᐊᑦ ᓂᕈᐊᕐᓗᒋᑦ ᐊᑐᕈᒪᔭᑎᑦ, ᓇᕐᓂᓗᒍᓗ \"ᐱᖕᖑᐊᓂᖅ\"."
 
@@ -732,12 +742,8 @@ msgid "Blind"
 msgstr "ᑖᓗᑕᖅ"
 
 #: ../../magic/src/blind.c:122
-msgid ""
-"Click towards the edge of your picture to pull window blinds over it. Move "
-"perpendicularly to open or close the blinds."
-msgstr ""
-"ᐊᑦᔨᖑᐊᕐᐱᑦ ᓯᓈᒍᑦ ᓇᕐᓂᓗᒍ ᑖᓗᑦᓯᓚᖓᒻᒪᑦ. ᐊᕙᑦᓯᖓᐅᑎᓪᓗᐊᑎᓪᓗᒋᒃ ᐊᐅᓚᑎᓪᓗᒋᒃ ᑖᓗᑌᑦᔮᓂᕐᒧᑦ "
-"ᑕᓗᑦᓯᓂᕐᒧᓘᓐᓃᑦ."
+msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
+msgstr "ᐊᑦᔨᖑᐊᕐᐱᑦ ᓯᓈᒍᑦ ᓇᕐᓂᓗᒍ ᑖᓗᑦᓯᓚᖓᒻᒪᑦ. ᐊᕙᑦᓯᖓᐅᑎᓪᓗᐊᑎᓪᓗᒋᒃ ᐊᐅᓚᑎᓪᓗᒋᒃ ᑖᓗᑌᑦᔮᓂᕐᒧᑦ ᑕᓗᑦᓯᓂᕐᒧᓘᓐᓃᑦ."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
@@ -756,8 +762,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᒥᒃ ᓯᒃᑭᑕᐅᖓᑎᑦᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᖅ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖕᖑᑎᓗᒍ ᐊᓪᓚᕕᐊᓗᒻᒥ ᐊᓪᓚᐅᑎᒧᑦ."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
@@ -795,7 +800,7 @@ msgstr "ᐊᓪᓚᐅᑎᑐᐃᓐᓇᒧᑦ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖕᖑᑎ�
 
 #: ../../magic/src/calligraphy.c:134
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓪᓚᐅᑎᑐᐃᓐᓇᒧᑦ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᓕᐅᕐᓂᒧᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓪᓚᐅᑎᑐᐃᓐᓇᒧᑦ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
@@ -807,11 +812,11 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑ
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
-msgstr ""
+msgstr "ᑕᐅᑦᑐᓖᑦ ᓯᖃᓖᑦ ᐃᒋᑕᐅᓲᑦ"
 
 #: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "ᓇᕐᓂᓗᒍ ᑕᐅᑦᑐᓖᑦ ᓯᖃᓖᑦ ᐃᒋᑕᐅᓲᑦ ᐃᒋᒃᑭᑦ!"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -819,7 +824,7 @@ msgstr "ᑐᑮᕈᕐᓯᒪᔪᖅ"
 
 #: ../../magic/src/distortion.c:150
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "ᓇᕐᓂᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᖃᕆᑕᐅᔭᐅᑉ ᓅᑦᓯᒍᑎᖓ ᓅᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓗᑎᑦ ᑌᒫᑦᓯᐊᖏᑦᑐᒥᒃ ᐊᑦᔨᖑᐊᒥᒃ."
 
 #: ../../magic/src/emboss.c:103
 msgid "Emboss"
@@ -827,7 +832,7 @@ msgstr "ᐳᕐᑐᓯᒋᐊᕆᓂᖅ"
 
 #: ../../magic/src/emboss.c:109
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ"
+msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ."
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
@@ -839,19 +844,19 @@ msgstr "ᑖᕐᓯᑎᒋᐊᕐᓗᒍ"
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎ ᐊᑦᔨᖑᐊᑉ ᐃᓚᖓᓂᒃ ᖃᑯᕐᓯᒋᐊᕆᓂᕐᒧᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎ ᐊᑦᔨᖑᐊᑉ ᐃᓚᖓᓂᒃ ᖃᑯᕐᓯᒋᐊᕆᓂᕐᒧᑦ."
 
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᖅ ᖃᑯᕐᓯᒋᐊᕐᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᖅ ᖃᑯᕐᓯᒋᐊᕐᓗᒍ."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎ ᐊᑦᔨᖑᐊᑉ ᐃᓚᖓᓂᒃ ᑖᕐᓰᒋᐊᕐᓂᒧᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎ ᐊᑦᔨᖑᐊᑉ ᐃᓚᖓᓂᒃ ᑖᕐᓰᒋᐊᕐᓂᒧᑦ."
 
 #: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᖅ ᑖᕐᓯᑎᒋᐊᕐᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᖅ ᑖᕐᓯᑎᒋᐊᕐᓗᒍ."
 
 #: ../../magic/src/fill.c:108
 msgid "Fill"
@@ -859,7 +864,7 @@ msgstr "ᑕᕐᓯᑐᕐᓗᒍ"
 
 #: ../../magic/src/fill.c:115
 msgid "Click in the picture to fill that area with color."
-msgstr "ᐊᑦᔨᖑᐊᕐᒦᑐᖅ ᓇᕐᓂᓗᒍ ᓇᕐᓂᑌ ᑕᕐᓯᑐᕐᓗᒍ"
+msgstr "ᐊᑦᔨᖑᐊᕐᒦᑐᖅ ᓇᕐᓂᓗᒍ ᓇᕐᓂᑌ ᑕᕐᓯᑐᕐᓗᒍ."
 
 #: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
@@ -868,7 +873,7 @@ msgstr "ᕿᕐᖑᑎᐅᔭᖅ"
 #. Needs better name
 #: ../../magic/src/fisheye.c:106
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᕐᓃᑐᖅ ᕿᕐᖑᑎᐅᔭᐅᖁᔦᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᕐᓃᑐᖅ ᕿᕐᖑᑎᐅᔭᐅᖁᔦᑦ."
 
 #: ../../magic/src/flower.c:150
 msgid "Flower"
@@ -891,22 +896,19 @@ msgid "Fold"
 msgstr "ᐱᕆᑎᕆᓂᖅ"
 
 #: ../../magic/src/fold.c:107
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr "ᐅᖓᑖᖓᑕ ᑕᐅᑦᑐᓴᖓ ᓂᕈᐊᕐᓗᒍ ᓇᕐᓂᓗᒍᓗ ᑎᕆᕐᖁᖓᓂᒃ ᒪᑉᐱᕋᐅᑉ ᓴᖑᑎᑦᓯᓂᕐᒧᑦ"
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "ᐅᖓᑖᖓᑕ ᑕᐅᑦᑐᓴᖓ ᓂᕈᐊᕐᓗᒍ ᓇᕐᓂᓗᒍᓗ ᑎᕆᕐᖁᖓᓂᒃ ᒪᑉᐱᕋᐅᑉ ᓴᖑᑎᑦᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "ᕿᔪᒻᒥᒃ ᑭᓪᓗᓱᒍ ᑕᑯᒥᓇᕐᑐᓕᐅᕐᓂᖅ"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᑎᒃᑯᑑᑎᓂᒃ ᑐᑭᒧᐊᑦᑐᓄᑦ."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "ᓇᕐᓂᓗᒍ ᐲᕐᓯᒪᓂᕐᒧᑦ ᑯᓯᕐᑕᐅᔪᕕᓂᖕᖑᐊᓂᒃ ᐊᑦᔨᖑᐊᕐᓂ."
@@ -933,13 +935,12 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᕵ ᓄᓇᔭᓕᐅᕐᓂᒧᑦ. ᓯᕐ�
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "ᑕᕐᓴᑲᓪᓛᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᖅ"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -951,48 +952,39 @@ msgstr "ᐊᑦᔨᖑᐊᖅ ᒧᒥᑦᑎᓗᒍ ᖁᓛᓄᑦ/ᐊᑖᓄᑦ"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "ᐋᕐᕿᓯᒪᒍᓯᖅ"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "ᓯᒃᑭᑌᑦ"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "ᐊᒥᓱᓂᒃ ᐋᕐᕿᓯᒪᒍᓯᕐᓂᒃ ᑕᑯᒍᑎ"
 
 #: ../../magic/src/kalidescope.c:136
-msgid ""
-"Click and drag the mouse to draw with two brushes that are symmetric across "
-"the left and right of your picture."
-msgstr ""
+msgid "Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture."
+msgstr "ᓇᕐᓂᓗᒍ ᖃᕆᑕᐅᔭᐅᑉ ᓅᑦᓯᒍᑎᖓ ᓅᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓗᑎᑦ ᒪᕐᕉᓄᑦ ᒥᖑᐊᕆᑦᔪᑏᓐᓄᑦ ᖁᑉᐸᕇᓐᓄᑦ ᐊᑦᔨᖑᐊᕐᐱᑦ ᓴᐅᒥᐊᒍᑦ ᑕᓕᕐᐱᐊᒍᓪᓗ."
 
 #: ../../magic/src/kalidescope.c:138
-msgid ""
-"Click and drag the mouse to draw with two brushes that are symmetric across "
-"the top and bottom of your picture."
-msgstr ""
+msgid "Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture."
+msgstr "ᓇᕐᓂᓗᒍ ᖃᕆᑕᐅᔭᐅᓪᓗ ᓅᑦᓯᒍᑎᖓ ᓅᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓗᑎᑦ ᒪᕐᕉᓄᑦ ᒥᖑᐊᕆᑦᔪᑏᓐᓄᑦ ᖁᑉᐸᕇᓐᓄᑦ ᐊᑦᔨᖑᐊᕐᐱᑦ ᓴᓂᒧᖓᒍᑦ ᖁᓛᒍᑦ ᐊᑖᒍᓪᓗ."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ"
+msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
-msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
-"picture."
-msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ"
+msgid "Click and drag the mouse to draw a pattern plus its symmetric across the picture."
+msgstr "ᐊᐅᓚᑦᓯᒍᑎ ᓇᓐᓂᓯᒪᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐳᕐᑐᓯᒋᐊᕆᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᖓᓂᒃ."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "ᓇᕐᓂᓗᒍ ᖃᕆᑕᐅᔭᐅᑉ ᓅᑦᓯᒍᑎᖓ ᓅᓪᓗᒍ ᐊᓪᓚᖑᐊᕐᓗᑎᑦ ᒪᕐᕉᓄᑦ ᒥᖑᐊᕆᑦᔪᑏᓐᓄᑦ ᖁᑉᐸᕇᓐᓄᑦ (ᐊᒥᓱᓂᒃ ᐋᕐᕿᓯᒪᒍᓯᕐᓂᒃ ᑕᑯᒍᑎ)."
 
 #: ../../magic/src/light.c:107
 msgid "Light"
@@ -1031,8 +1023,7 @@ msgid "Mosaic"
 msgstr "ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᓯᖅ"
 
 #: ../../magic/src/mosaic.c:103
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic.c:104
@@ -1052,32 +1043,28 @@ msgid "Irregular Mosaic"
 msgstr "ᖃᓄᑐᐃᓐᓈᑐᑦ ᓯᖃᓕᐊᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑏᑦ"
 
 #: ../../magic/src/mosaic_shaped.c:149
-msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+msgid "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᓯᒃᑭᑕᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:150
 msgid "Click to add a square mosaic to your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᓯᒃᑭᑕᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
+msgstr "ᓇᕐᓂᓗᒍ ᓯᒃᑭᑕᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ."
 
 #: ../../magic/src/mosaic_shaped.c:152
-msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr ""
-"ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
+msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:153
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
+msgstr "ᓇᕐᓂᓗᒍ ᐱᖓᓲᔪᕐᑐᓂᒃ ᓯᓈᓕᓐᓄᑦ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ."
 
 #: ../../magic/src/mosaic_shaped.c:155
-msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᖃᓄᑐᐃᓐᓈᑐᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕐᓂᒧᑦ."
 
 #: ../../magic/src/mosaic_shaped.c:156
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᖃᓄᑐᐃᓐᓈᑐᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ"
+msgstr "ᓇᕐᓂᓗᒍ ᖃᓄᑐᐃᓐᓈᑐᓂᒃ ᓯᖃᓕᐊᓄᑦ ᐊᑦᔨᖑᐊᓕᐅᕈᑎᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᖅ."
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
@@ -1085,11 +1072,11 @@ msgstr "ᐊᑦᔨᖑᐊᑦᓴᔭᖅ"
 
 #: ../../magic/src/negative.c:106
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᖅ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖑᑎᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᖅ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖑᑎᓗᒍ."
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -1137,7 +1124,7 @@ msgstr "ᓄᓇᒃᑰᔫᑯᑕ ᐊᕐᖁᑎᖏᑦ"
 
 #: ../../magic/src/rails.c:133
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓄᓇᒃᑰᔫᑯᑖᑦ ᐊᕐᖁᑎᖏᓐᓂᒃ ᐊᑦᔨᖑᐊᕐᓂ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓄᓇᒃᑰᔫᑯᑖᑦ ᐊᕐᖁᑎᖏᓐᓂᒃ ᐊᑦᔨᖑᐊᕐᓂ."
 
 #: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
@@ -1168,9 +1155,7 @@ msgid "ROYGBIV Rainbow"
 msgstr "ᐊᔭᒍᑕᐅᑉ ᑕᐅᑦᑐᖏᑦ"
 
 #: ../../magic/src/realrainbow.c:117
-msgid ""
-"Click where you want your rainbow to start, drag to where you want it to "
-"end, and then let go to draw a rainbow."
+msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᔭᒍᑕᕐᒧᑦ ᐱᒋᐊᖕᖓᓂᐅᖑᔦᑦ ᓴᕐᖁᓗᒍᓗ ᐃᓱᓕᕝᕕᐅᖁᔭᕐᓄᑦ."
 
 #: ../../magic/src/ripples.c:106
@@ -1288,12 +1273,8 @@ msgid "String 'V'"
 msgstr "ᐊᓪᓚᖑᐊᕈᑎ \"ᐯ\"-ᖑᓕᖓᔪᓂᒃ"
 
 #: ../../magic/src/string.c:137
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, left or right to make a bigger hole."
-msgstr ""
-"ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᕐᑕᓯᓂᕐᒧᑦ. ᐅᓂᐊᑯᑖᕐᓗᒍ ᖁᓛᓄᑦ-ᐊᑖᓄᑦ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓀᓐᓂᓴᓂᒃ "
-"ᑐᑭᒧᐊᑦᑐᖃᕐᓂᓴᐅᑎᑦᓯᓂᕐᒧᓘᓐᓃᑦ, ᓴᐅᒥᒻᒧᑦ ᑕᓕᕐᐱᒧᓪᓘᓃᑦ ᐊᒻᒪᓂᖓᓂᒃ ᐊᖏᓂᕐᓴᐅᑎᑦᓯᓂᕐᒧᑦ."
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᕐᑕᓯᓂᕐᒧᑦ. ᐅᓂᐊᑯᑖᕐᓗᒍ ᖁᓛᓄᑦ-ᐊᑖᓄᑦ ᐊᓪᓚᖑᐊᕐᓂᒧᑦ ᓀᓐᓂᓴᓂᒃ ᑐᑭᒧᐊᑦᑐᖃᕐᓂᓴᐅᑎᑦᓯᓂᕐᒧᓘᓐᓃᑦ, ᓴᐅᒥᒻᒧᑦ ᑕᓕᕐᐱᒧᓪᓘᓃᑦ ᐊᒻᒪᓂᖓᓂᒃ ᐊᖏᓂᕐᓴᐅᑎᑦᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/string.c:140
 msgid "Click and drag to draw arrows made of string art."
@@ -1312,23 +1293,20 @@ msgid "Color & White"
 msgstr "ᑕᐅᑦᑐᖅ ᖃᑯᕐᑕᓗ"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᑦᑕ ᑕᐅᑦᑐᖏᓐᓂᒃ"
+msgid "Click and move the mouse around to change the color of parts of your picture."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᑦᑕ ᑕᐅᑦᑐᖏᓐᓂᒃ."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᕐᐱᑦ ᑕᐅᑦᑐᖓᓂᒃ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᓯᑦᔩᓂᕐᒧᑦ ᐊᑦᔨᖑᐊᓕᒫᕐᐱᑦ ᑕᐅᑦᑐᖓᓂᒃ."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᓐᓂᒃ ᖃᑯᕐᑕᕈᕐᑎᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ"
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᓐᓂᒃ ᖃᑯᕐᑕᕈᕐᑎᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᕐᓂᒃ ᖃᑯᕐᓯᑎᑦᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᕐᓂᒃ ᖃᑯᕐᓯᑎᑦᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1336,7 +1314,7 @@ msgstr "ᑭᒍᑎᓯᐅᑎᐅᑉ ᐅᕝᕙᐅᑎᖓ"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᑭᒍᑎᓯᐅᑎᐅᑉ ᐅᕝᕙᐅᑎᖓᓂᒃ ᐃᓚᕐᑐᐃᓂᕐᒧᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᑭᒍᑎᓯᐅᑎᐅᑉ ᐅᕝᕙᐅᑎᖓᓂᒃ ᐃᓚᕐᑐᐃᓂᕐᒧᑦ."
 
 #: ../../magic/src/tornado.c:157
 msgid "Tornado"
@@ -1344,17 +1322,15 @@ msgstr "ᐊᕙᓗᔭᖅ"
 
 #: ../../magic/src/tornado.c:163
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᕙᓗᔭᕐᑕᓯᓗᒍ ᐊᑦᔨᖑᐊᑦ"
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍᓗ ᐊᕙᓗᔭᕐᑕᓯᓗᒍ ᐊᑦᔨᖑᐊᑦ."
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
 msgstr "ᑕᓚᕖᓴᖅ"
 
 #: ../../magic/src/tv.c:105
-msgid ""
-"Click and drag to make parts of your picture look like they are on "
-"television."
-msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᑕᓚᕖᓴᒦᑦᑑᔮᕐᑎᓯᓂᕐᒧᑦ"
+msgid "Click and drag to make parts of your picture look like they are on television."
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᑕᓚᕖᓴᒦᑦᑑᔮᕐᑎᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
@@ -1369,21 +1345,10 @@ msgid "Wavelets"
 msgstr "ᐃᖏᐅᓕᐅᔮᕈᐃᑦ"
 
 #: ../../magic/src/waves.c:111
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᓴᓂᒨᕐᑐᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑖᑎᓗᒍ. ᖁᓛᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, "
-"ᐊᑖᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ ᑕᓕᕐᐱᒧᓪᓗ "
-"ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ. "
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᓴᓂᒨᕐᑐᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑖᑎᓗᒍ. ᖁᓛᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᐊᑖᓅᕐᑐᒥᒃ ᓇᕐᓂᓗᒍ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ ᑕᓕᕐᐱᒧᓪᓗ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/waves.c:112
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᖁᒻᒧᑦ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓗᒍ. ᓇᕐᓂᓗᒍ ᖁᓛᓅᕙᓪᓕᐊᔪᒥᒃ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᐊᑖᓄᑦ "
-"ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᑕᓕᕐᐱᒧᑦ ᑕᑭᔪᓂᒃ "
-"ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ. "
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᖁᒻᒧᑦ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓗᒍ. ᓇᕐᓂᓗᒍ ᖁᓛᓅᕙᓪᓕᐊᔪᒥᒃ ᓀᓐᓂᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᐊᑖᓄᑦ ᑕᑭᓂᕐᓴᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᓴᐅᒥᒻᒧᑦ ᒥᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ, ᑕᓕᕐᐱᒧᑦ ᑕᑭᔪᓂᒃ ᐃᖏᐅᓕᐅᔭᕐᑕᓯᓂᕐᒧᑦ."
+
