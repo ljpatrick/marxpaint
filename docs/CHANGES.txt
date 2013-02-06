@@ -381,6 +381,9 @@ $Id$
     * Northern Sotho translation
       Pheledi Mathibela <pheledi@mosekolatranslation.co.za>
 
+    * Punjabi translation
+      Arshpreet Singh <arsh840@gmail.com>
+
     * Persian translation
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
 

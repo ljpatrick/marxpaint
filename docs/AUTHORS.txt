@@ -750,6 +750,9 @@ $Id$
   * Ojibwe
     Ed Montgomery <edm@rocketmail.com>
 
+  * Punjabi
+    Arshpreet Singh <arsh840@gmail.com>
+
   * Persian
     Farinaz Hedayat <farinaz.hedayat@gmail.com>
 
