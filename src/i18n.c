@@ -120,6 +120,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "nso",
   "oc",
   "oj",
+  "pa",
   "pl",
   "pt_BR",
   "pt",
@@ -310,6 +311,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"occitan", "oc_FR.UTF-8"},
   {"ojibwe", "oj_CA.UTF-8"}, // Proper spelling
   {"ojibway", "oj_CA.UTF-8"}, // For compatibility
+  {"punjabi", "pa_IN.UTF-8"},
+  {"panjabi", "pa_IN.UTF-8"},
   {"polish", "pl_PL.UTF-8"},
   {"polski", "pl_PL.UTF-8"},
   {"brazilian-portuguese", "pt_BR.UTF-8"},
@@ -428,6 +431,7 @@ static void show_lang_usage(int exitcode)
 /* fa */ "  persian\n"
 /* pl */ "  polish       polski\n"
 /* pt */ "  portuguese   portugues\n"
+/* pa */ "  punjabi      panjabi\n"
 /* ro */ "  romanian\n"
 /* ru */ "  russian      russkiy\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
@@ -536,6 +540,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
 	  "  oc_FR   (Occitan)\n"
 	  "  oj_CA   (Ojibway)\n"
+	  "  pa_IN   (Punjabi      Panjabi)\n"
 	  "  pl_PL   (Polish       Polski)\n"
 	  "  pt_PT   (Portuguese   Portugues)\n"
 	  "  ro_RO   (Romanian)\n"
