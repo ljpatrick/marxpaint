@@ -149,9 +149,9 @@ const char *lang_prefixes[NUM_LANGS] = {
   "wa",
   "wo",
   "xh",
+  "zam",
   "zh_CN",
   "zh_TW",
-  "zw"
 };
 
 

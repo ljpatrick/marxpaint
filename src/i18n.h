@@ -106,6 +106,7 @@ enum
   LANG_NSO,                     /* Northern Sotho */
   LANG_OC,			/* Occitan */
   LANG_OJ,			/* Ojibway */
+  LANG_PA,			/* Punjabi */
   LANG_PL,			/* Polish */
   LANG_PT_BR,			/* Portuguese (Brazilian) */
   LANG_PT,			/* Portuguese */
