@@ -158,6 +158,8 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * Random brushes avoid repeating the same frame twice.
+
     * Showing a warning when using save-related options when "nosave" is set.
       (SourceForge Bug #3327493)
 

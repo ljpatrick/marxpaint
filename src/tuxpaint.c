@@ -5473,7 +5473,14 @@ static void blit_brush(int x, int y, int direction)
         brush_frame = 0;
     }
     else
-      brush_frame = rand() % abs(img_cur_brush_frames);
+    {
+      int old_brush_frame = brush_frame;
+      do
+      {
+        brush_frame = rand() % abs(img_cur_brush_frames);
+      }
+      while (brush_frame == old_brush_frame);
+    }
 
     dest.x = x;
     dest.y = y;
