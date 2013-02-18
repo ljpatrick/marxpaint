@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2012.July.19 (0.9.22)
+2013.February.17 (0.9.22)
 
   * New Tools:
     ----------
@@ -305,10 +305,15 @@ $Id$
     * Frame - neon
       Made in inkscape and the gimp by C Ford.
 
-  * New Brush
+  * New Brushes
     ---------
     * Another flower brush
       Made out of some open clipart by C Ford.
+
+    * Inksplat
+      Based on 'Splatter Brushes' for GIMP
+      By 'Flyhorn' at deviantART
+      http://browse.deviantart.com/art/Splatter-brushes-340519966
 
   * New Locales:
     ------------
