@@ -1,7 +1,7 @@
 # Tux Paint translation to Gujarati
 # Copyright (C) 2006
 # This file is distributed under the same license as the Tux Paint package.
-# Kartik Mistry <kartik.mistry@gmail.com>, 2006.
+# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2013.
 #
 msgid ""
 msgstr ""
@@ -897,19 +897,17 @@ msgstr "તમારો પાશ્વભાગ રંગ પસંદ કર�
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "કરવતકામ"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw string art aligned to the edges."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "તમારા ચિત્રમાં રેલ્વેનાં પાટાઓ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+msgstr "ફરીથી બનતી ભાતોને દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "તમારા ચિત્રને વરસાદનાં ટીપાંઓ વડે ઢાંકી દેવા માટે ક્લિક કરો."
+msgstr "ફરીથી બનતી ભાતો વડે ઢાંકી દેવા માટે ક્લિક કરો."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -933,13 +931,12 @@ msgstr "ઘાસ દોરવા માટે ક્લિક કરો અન�
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "હાફટોન"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "તમારાં ચિત્રને તેની નેગેટીવમાં ફેરવવા માટે ક્લિક કરો."
+msgstr "તમારાં ચિત્રને સમાચારપત્રમાં ફેરવવા માટે ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -951,11 +948,11 @@ msgstr "સપ્રમાણ ઉપર/નીચે"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "ભાત"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "તકતીઓ"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -975,20 +972,19 @@ msgid ""
 msgstr "ઉપર અને નીચે સપ્રમાણ એવાં બે બ્રશ સાથે તમારું ચિત્ર દોરવા માટે ક્લિક કરીને ખસેડો."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "ચિત્રને ઉપસેલું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgstr "ચિત્રની આજુ-બાજુ ભાત દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
-msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરીને ખસેડો."
+msgstr ""
+"આખા ચિત્રમાં ભાત તેમજ તેની સમાન દોરવા માટે (કેલિડોસ્કોપ) ક્લિક કરીને ખસેડો."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
