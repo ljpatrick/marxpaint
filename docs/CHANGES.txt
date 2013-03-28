@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2013.February.17 (0.9.22)
+2013.March.28 (0.9.22)
 
   * New Tools:
     ----------
@@ -85,7 +85,6 @@ $Id$
       Special thanks to Richard Verhoeven <river@win.tue.nl>
       Public domain.
 
-
       FIXME:
         * When refreshing a draw full of labels flickers a lot.
         * "Caps" label perhaps should show an up-arrow (a la
@@ -147,7 +146,7 @@ $Id$
 	    Allowed values from 1 to 7, defaults to 7.
 
   * Magic Tool Improvememnts:
-    --------------------------
+    -------------------------
     * Magic tools can register themselves as paint with one click
       (versus click/drag/release): MODE_ONECLICK.  (e.g., "Ripples")
       Utilized by mouse-accessibility feature.
@@ -384,6 +383,9 @@ $Id$
       - V Sasi Kumar <sasi.fsf@gmail.com> 
       Updated by Sonith Kumar <sonith.kumar153@gmail.com>
       Reviewed by Haris Ibrahim K. V. <blucalvin@gmail.com>
+
+    * Marathi translation
+      Santosh Jankiram Kshetre <quicklearning@rediffmail.com>
 
     * Northern Sotho translation
       Pheledi Mathibela <pheledi@mosekolatranslation.co.za>

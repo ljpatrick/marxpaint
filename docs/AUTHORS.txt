@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2012 by Bill Kendrick and others
+Copyright (c) 2002-2013 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 10, 2012
+June 17, 2002 - March 28, 2013
 
 $Id$
 
@@ -727,6 +727,9 @@ $Id$
     - V Sasi Kumar <sasi.fsf@gmail.com>
     Sonith Kumar <sonith.kumar153@gmail.com>
     Haris Ibrahim K. V. <blucalvin@gmail.com>
+
+  * Marathi
+    Santosh Jankiram Kshetre <quicklearning@rediffmail.com>
 
   * Ndebele
     Vincent Mahlangu <vmahlangu@parliament.gov.za>
