@@ -19559,7 +19559,7 @@ static int do_color_picker(void)
           done = 1;
         }
       }
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+      else if (event.type == SDL_MOUSEBUTTONUP &&
 	       valid_click(event.button.button))
       {
         if (event.button.x >= color_picker_left &&
