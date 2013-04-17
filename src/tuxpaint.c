@@ -1926,6 +1926,7 @@ static SDL_Surface * load_kpx(char * file);
 static SDL_Surface * load_svg(char * file);
 static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h);
+static SDL_Surface * myIMG_Load_RWops(char * file);
 #endif
 static SDL_Surface * myIMG_Load(char * file);
 static int trash(char * path);
@@ -11306,7 +11307,7 @@ static void load_current(void)
 	   file_id, FNAME_EXTENSION);
   fname = get_fname(ftmp, DIR_SAVE);
 
-    tmp = IMG_Load(fname);
+    tmp = myIMG_Load_RWops(fname);
 
     if (tmp == NULL)
     {
@@ -17454,6 +17455,35 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
 #endif
 
+/* FIXME: we can remove this after SDL folks fix their bug at http://bugzilla.libsdl.org/show_bug.cgi?id=1485 */
+/* Try to load an image with IMG_Load(), if it fails, then try with RWops() */
+static SDL_Surface * myIMG_Load_RWops(char * file)
+{
+  SDL_Surface * surf;
+  FILE * fi;
+  SDL_RWops * data;
+
+  surf = IMG_Load(file);
+  if (surf != NULL)
+    return(surf);
+
+  /* From load_kpx() */
+  fi = fopen(file, "rb");
+  if (fi == NULL)
+    return NULL;
+
+  data = SDL_RWFromFP(fi, 1); /* 1 = Close when we're done */
+
+  if (data == NULL)
+    return(NULL);
+
+  surf = IMG_Load_RW(data, 1); /* 1 = Free when we're done */
+  if (surf == NULL)
+    return(NULL);
+
+  return(surf);
+}
+
 /* Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
    if we notice it's an SVG file (if available!);
    call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
@@ -17467,7 +17497,7 @@ static SDL_Surface * myIMG_Load(char * file)
     return(load_svg(file));
 #endif
   else
-    return(IMG_Load(file));
+    return(myIMG_Load_RWops(file));
 }
 
 static SDL_Surface * load_kpx(char * file)
@@ -17477,7 +17507,7 @@ static SDL_Surface * load_kpx(char * file)
   SDL_Surface * surf;
   int i;
 
-  fi = fopen(file, "r");
+  fi = fopen(file, "rb");
   if (fi == NULL)
     return NULL;
 
