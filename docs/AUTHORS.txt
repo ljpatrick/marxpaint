@@ -92,6 +92,9 @@ $Id$
   Public Domain.  Archived at the Internet Archive:
   http://www.archive.org/details/tornado
 
+  Xor Colors Magic Tool
+  by Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
+
   Gamma-correction in thumbnail/scaling routine based
   example code from:
   http://www.4p8.com/eric.brasseur/gamma.html

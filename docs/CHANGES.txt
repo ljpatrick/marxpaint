@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2013.March.28 (0.9.22)
+2013.April.30 (0.9.22)
 
   * New Tools:
     ----------
@@ -42,6 +42,9 @@ $Id$
 
     * Wet Paint - Draws a light coat of paint, and smudges at the same time.
       (Based on Smudge tool.  Requested by gallery artist Angela.)
+
+    * Xor Colors - Colors based on the position drawn on the picture.
+      Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
 
   * Build System Improvements:
     --------------------------
