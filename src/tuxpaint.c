@@ -2123,6 +2123,9 @@ static void mainloop(void)
   int line_start_x = 0;
   int line_start_y = 0;
   int j = 0;
+  int stamp_size_selector_clicked = 0;
+  int stamp_xored = 0;
+
   unsigned int i = 0;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
@@ -3984,6 +3987,16 @@ static void mainloop(void)
 	      /* Enable or disable color selector: */
 	      draw_colors(stamp_colorable(cur_stamp[stamp_group])
 			  || stamp_tintable(cur_stamp[stamp_group]));
+	      if (!scrolling)
+	      {
+		stamp_xor(canvas->w/2, canvas->h/2);
+		stamp_xored = 1;
+		stamp_size_selector_clicked = 1;
+		update_screen(canvas->w/2 - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			      canvas->h/2 - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
+			      canvas->w/2 + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			      canvas->h/2 + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
+	      }
 	    }
 	    else if (cur_tool == TOOL_SHAPES)
 	    {
@@ -4155,22 +4168,6 @@ static void mainloop(void)
 
 	    if (mouseaccessibility)
 	      emulate_button_pressed = !emulate_button_pressed;
-	  }
-	  else if (cur_tool == TOOL_STAMP)
-	  {
-	    /* Draw a stamp! */
-
-	    rec_undo_buffer();
-
-	    stamp_draw(old_x, old_y);
-	    stamp_xor(old_x, old_y);
-	    playsound(screen, 1, SND_STAMP, 1, event.button.x, SNDDIST_NEAR);
-
-	    draw_tux_text(TUX_GREAT, great_str(), 1);
-
-	    /* FIXME: Make delay configurable: */
-
-	    control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt, stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
 	  }
 	  else if (cur_tool == TOOL_LINES)
 	  {
@@ -4723,6 +4720,18 @@ static void mainloop(void)
 
 	  /* printf("Killing scrolling\n"); */
 	}
+	/* Erase the xor drawed at click */
+	else if (cur_tool == TOOL_STAMP && stamp_xored && event.button.button < 4)
+	{
+	  stamp_xor(canvas->w/2, canvas->h/2);
+	  stamp_xored = 0;
+	  stamp_size_selector_clicked = 0;
+	  update_screen(canvas->w/2 - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			canvas->h/2 - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
+			canvas->w/2 + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			canvas->h/2 + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
+	}
+
 
 	if (button_down || emulate_button_pressed)
 	{
@@ -4731,6 +4740,29 @@ static void mainloop(void)
             /* (Drawing on mouse release to fix single click issue) */
             brush_draw(old_x, old_y, old_x, old_y, 1);
           }
+	  else if (cur_tool == TOOL_STAMP)
+	  {
+	    if(old_x >= 0 &&
+	       old_y >= 0 &&
+	       old_x <= r_canvas.w &&
+	       old_y <= r_canvas.h)
+	    {
+	      /* Draw a stamp! */
+
+	      rec_undo_buffer();
+
+	      stamp_draw(old_x, old_y);
+	      stamp_xor(old_x, old_y);
+	      playsound(screen, 1, SND_STAMP, 1, event.button.x, SNDDIST_NEAR);
+
+	      draw_tux_text(TUX_GREAT, great_str(), 1);
+
+	      /* FIXME: Make delay configurable: */
+
+	      control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt, stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
+	    }
+	  }
+
           else if (cur_tool == TOOL_LINES)
           {
 	    if(!mouseaccessibility || (mouseaccessibility && !emulate_button_pressed))
@@ -5260,6 +5292,63 @@ static void mainloop(void)
 			      new_x + w / 2 + r_canvas.x,
 			      new_y + h / 2 + r_canvas.y);
 	      }
+	  }
+	  if (cur_tool == TOOL_STAMP && HIT(r_toolopt) && event.motion.y > r_toolopt.h && event.motion.state == SDL_PRESSED && stamp_size_selector_clicked)
+	  {
+	    int control_sound = -1;
+	    int w, h;
+	    int old_size;
+#ifdef DEBUG
+	    float choice;
+#endif
+
+	    old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
+	    w = CUR_STAMP_W;
+	    h = CUR_STAMP_H;
+
+	    stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
+	      (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1 /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */) * (event.button.x -
+																				     (WINDOW_WIDTH -
+																				      96))) / 96) +
+	      MIN_STAMP_SIZE;
+
+#ifdef DEBUG
+	    printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice, stamp_data[stamp_group][cur_stamp[stamp_group]]->size);
+#endif
+
+	    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size != old_size)
+	    {
+	      if(stamp_xored)
+	      {
+		stamp_xor(canvas->w/2, canvas->h/2);
+		stamp_xored = 0;
+
+		update_screen(canvas->w/2 - (w + 1) / 2 + r_canvas.x,
+			      canvas->h/2 - (h + 1) / 2 + r_canvas.y,
+			      canvas->w/2 + (w + 1) / 2 + r_canvas.x,
+			      canvas->h/2 + (h + 1) / 2 + r_canvas.y);
+	      }
+
+	      update_stamp_xor();
+	      stamp_xor(canvas->w/2, canvas->h/2);
+	      stamp_xored = 1;
+	      update_screen(canvas->w/2 - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			    canvas->h/2 - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
+			    canvas->w/2 + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+			    canvas->h/2 + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
+	    }
+
+	    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < old_size)
+	      control_sound = SND_SHRINK;
+	    else if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size > old_size)
+	      control_sound = SND_GROW;
+
+	    if(control_sound){
+	      playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
+			SNDDIST_NEAR);
+	      draw_stamps();
+	      update_screen_rect(&r_toolopt);
+	    }
 	  }
 	}
 	else if (cur_tool == TOOL_SHAPES &&
