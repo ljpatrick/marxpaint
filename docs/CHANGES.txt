@@ -278,6 +278,9 @@ $Id$
       png_set_IHDR().
       Thomas Klausner, SF.net Bug #3386433
 
+    * Adapted the interface to play nice too on touchscreen devices.
+
+
  * New Starters:
    -------------
     * Elephant
@@ -333,6 +336,10 @@ $Id$
 
     * Aragones translation
       Juan Pablo Martinez Cortes <jpmart@unizar.es>
+
+    * Armenian translation
+      Anush MKRTCHYAN 
+      Jasmine Udea
 
     * Kiga translation
       Florence Tushabe <tushabe@cit.mak.ac.ug>
@@ -560,6 +567,9 @@ $Id$
       at the end, which is not true.  Added note explaining that actual
       image files go under 'saved' subdirectory.
       (Thanks to Marco Menardi)
+
+    * Saved images woose path contains non-ascii chars can now be opened on Windows.
+      Fixes http://sourceforge.net/p/tuxpaint/bugs/188/
 
 2009.June.28 (0.9.21)
   * New Starters:

@@ -472,6 +472,10 @@ $Id$
   * Aragones
     Juan Pablo Martinez Cortes <jpmart@unizar.es>
 
+  * Armenian
+    Anush MKRTCHYAN 
+    Jasmine Udea
+
   * Asturian
     Xandru Armesto <alarmes@wanadoo.es>
     Mikel González <mikelisimu@yahoo.es>
