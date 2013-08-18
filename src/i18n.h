@@ -82,6 +82,7 @@ enum
   LANG_HI,			/* Hindi */
   LANG_HR,			/* Croatian */
   LANG_HU,			/* Hungarian */
+  LANG_HY,			/* Armenian */
   LANG_I_KLINGON_ROMANIZED,	/* Klingon (Romanized) */
   LANG_ID,			/* Indonesian */
   LANG_IS,			/* Icelandic */

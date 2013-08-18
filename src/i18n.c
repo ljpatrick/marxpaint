@@ -96,6 +96,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "hi",
   "hr",
   "hu",
+  "hy",
   "tlh",
   "id",
   "is",
@@ -209,6 +210,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"amharic", "am_ET.UTF-8"},
   {"arabic", "ar_SA.UTF-8"},
   {"aragones", "an_ES.UTF-8"},
+  {"armenian", "hy_AM.utf8"},
+  {"hayeren", "hy_AM.utf8"},
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
@@ -372,6 +375,7 @@ static void show_lang_usage(int exitcode)
 /* am */ "  amharic\n"
 /* ar */ "  arabic\n"
 /* an */ "  aragones\n"
+/* hy */ "  armenian\n"
 /* ast */ "  asturian\n"
 /* en_AU */ "  australian-english\n"
 /* az */ "  azerbaijani\n"
@@ -485,6 +489,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  am_ET   (Amharic)\n"
 	  "  ar_SA   (Arabic)\n"
           "  an_ES   (Aragones)\n"
+          "  hy_AM   (Armenian)\n"
 	  "  ast_ES  (Asturian)\n"
 	  "  az_AZ   (Azerbaijani)\n"
 	  "  eu_ES   (Basque       Euskara)\n"
