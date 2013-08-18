@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-06 18:53+0200\n"
-"PO-Revision-Date: 2013-08-02 12:41+0200\n"
-"Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
+"PO-Revision-Date: 2013-08-07 21:37+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
@@ -21,27 +21,27 @@ msgstr ""
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
 msgid "Black!"
-msgstr "Սև!"
+msgstr "Սև"
 
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Մուգ մոխրագույն! Որոշ մարդիկ արտասանում են ՞մուգ մոխրագույն՞"
+msgstr "Մուգ մոխրագույն: Որոշ մարդիկ արտասանում են ՞մուգ մոխրագույն՞:"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Բաց մոխրագույն! Որոշ մարդիկ արտասանում են ՞բաց մոխրագույն՞"
+msgstr "Բաց մոխրագույն: Որոշ մարդիկ արտասանում են ՞բաց մոխրագույն՞"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
 msgid "White!"
-msgstr "Սպիտակ!"
+msgstr "Սպիտակ"
 
 #. Response to Red (255, 0, 0) color selected
 #: ../colors.h:98
 msgid "Red!"
-msgstr "Կարմիր!"
+msgstr "Կարմիր"
 
 #. Response to Orange (255, 128, 0) color selected
 #: ../colors.h:101
@@ -73,10 +73,11 @@ msgstr "Երկնակապույտ"
 msgid "Blue!"
 msgstr "Կապույտ"
 
+# Լավանդա
 #. Response to Lavender (186, 157, 255) color selected
 #: ../colors.h:119
 msgid "Lavender!"
-msgstr "Լավանդա"
+msgstr "Մուգ կապտա-մանուշակագույն Նարդուս"
 
 #. Response to Purple (128, 0, 128) color selected
 #: ../colors.h:122
@@ -91,7 +92,7 @@ msgstr "Վարդագույն"
 #. Response to Brown (128, 80, 0) color selected
 #: ../colors.h:128
 msgid "Brown!"
-msgstr "Դարչնագույն"
+msgstr "Շագանակագույն"
 
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
@@ -167,15 +168,15 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr "<1>հատկացում-1a"
+msgstr "<1>պահեստային-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr "<1>հատկացում-1b"
+msgstr "<1>պահեստային-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr "<9>հատկացում-9a"
+msgstr "<9>պահեստային-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
@@ -189,7 +190,7 @@ msgstr "Հրաշալի է"
 #. Congratulations #2
 #: ../great.h:40
 msgid "Cool!"
-msgstr "Շնորհավոր!"
+msgstr "Շնորհավոր"
 
 #. Congratulations #3
 #: ../great.h:43
@@ -247,7 +248,7 @@ msgstr "Ուղղանկյուն"
 #. Circle shape tool (X radius and Y radius are the same)
 #: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
-msgstr "Շրջան"
+msgstr "Շրջանագիծ"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
 #: ../shapes.h:183 ../shapes.h:184
@@ -272,47 +273,48 @@ msgstr "Շեղանկյուն"
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
-msgstr "ութանկյուն"
+msgstr "Ութանկյուն"
 
 #. Description of a square
 #: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
-msgstr "Քառակուսին մի ուղղանկյուն է չորս հավասար կողմեր"
+msgstr "Քառակուսին մի ուղղանկյուն է` չորս հավասար կողմերով"
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "Ուղղանկյունը ունի չորս կողմեր և չորս ուղիղ անկյուններ:"
+msgstr "Ուղղանկյունն ունի չորս կողմեր և չորս ուղիղ անկյուններ:"
 
 #: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
-"Շրջանը կոր է, որտեղ բոլոր կետերը կենտրոնից գտնվում են հավասար հեռավորության "
-"վրա:"
+"Շրջանագիծը դա մի կոր է, որտեղ բոլոր կետերը կենտրոնից գտնվում են հավասար "
+"հեռավորության վրա:"
 
 #. Description of an ellipse
 #: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
-msgstr "Էլիպսը ձգված շրջան է:"
+msgstr "Էլիպսը ձգված շրջանագիծ է:"
 
 #. Description of a triangle
 #: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
-msgstr "Եռանկյունը ունի երեք կողմեր:"
+msgstr "Եռանկյունն ունի երեք կողմ:"
 
 #. Description of a pentagon
 #: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
-msgstr "Հնգանկյունը ունի հինգ կողմեր:"
+msgstr "Հնգանկյունն ունի հինգ կողմ:"
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Շեղանկյունը ունի չորս հավասար կողմեր, և հանդիպակաց կողմերը զուգահեռ են:"
+msgstr ""
+"Շեղանկյունն ունի չորս հավասար կողմեր, իսկ հանդիպակաց կողմերը` զուգահեռ են:"
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
-msgstr "Ութանկյունը ունի ութ հավասար կողմեր:"
+msgstr "Ութանկյունն ունի ութ հավասար կողմ:"
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -343,18 +345,18 @@ msgstr "Կնիքներ"
 #. Shape creation tool (square, circle, etc.)
 #: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
-msgstr "Չափսեր"
+msgstr "Երկրաչափական պատկերներ"
 
 #. Title of font selector (buttons down the right for text and label tools)
 #: ../titles.h:74
 msgid "Letters"
-msgstr "Նամակներ"
+msgstr "Տառեր"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
 #: ../titles.h:77 ../tools.h:83
 msgid "Magic"
-msgstr "Մոգություն"
+msgstr "Մոգական գործիքներ"
 
 #. Freehand painting tool
 #: ../tools.h:62
@@ -416,7 +418,7 @@ msgstr "Պահպանել"
 #. Print the current picture
 #: ../tools.h:104
 msgid "Print"
-msgstr "տպել"
+msgstr "Տպել"
 
 #. Quit/exit Tux Paint application
 #: ../tools.h:107
@@ -426,7 +428,7 @@ msgstr "Դուրս գալ"
 #. Paint tool instructions
 #: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Ընտրել որևէ գույն և վրձնի չափս նկարելու համար"
+msgstr "Ընտրել որևէ գույն և վրձնի չափսը` նկարելու համար"
 
 #. Stamp tool instructions
 #: ../tools.h:118
@@ -436,7 +438,7 @@ msgstr "Ընտրել որևէ նկար քո նկարի շուրջը դրոշմե
 #. Line tool instructions
 #: ../tools.h:121
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Սեղմել տողը նկարել սկսելու համար: Եկեք ավարտենք այն:"
+msgstr "Սեղմել` տողը նկարել սկսելու համար: Եկեք ավարտենք այն:"
 
 #. Shape tool instructions
 #: ../tools.h:124
@@ -444,9 +446,9 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"ընտրիր չափսը: Սեղմիր կենտրոնն ընտրելու համար, քաշիր, այնուհետև թույլ տուր "
-"շարունակել, երբ քո ուզած չափսը լինի: Տեղաշարժիր շուրջը այն շրջելու համար, և "
-"սեղմիր նկարելու համար:"
+"Ընտրիր չափսը: Սեղմիր կենտրոնն ընտրելու համար, քաշիր, այնուհետև երբ քո ուզած "
+"չափսը լինի, բաց թող: Սլաքը պտտիր իր շուրջն` եթե ցանկանում ես այն շրջել և "
+"սեղմիր` այն որպես պատկեր ամրացնելու համար::"
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -454,8 +456,8 @@ msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Ընտրիր տեքստի ոճը: Սեղմիր նկարիտ վրա և կարող ես սկսել տպագրել: Սեղմիր "
-"[Enter] կամ [Tab] տեքստը ավարտելու համար:"
+"Ընտրիր տեքստի ոճը: Սեղմիր նկարիդ վրա և կարող ես սկսել տպագրել: Սեղմիր "
+"[Enter] կամ [Tab] տեքստն ավարտելու համար:"
 
 #. Label tool instructions
 #: ../tools.h:130
@@ -491,7 +493,7 @@ msgstr "Ռետին"
 #. Response to 'start a new image' action
 #: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Ընտրիր որևէ գույն կամ նկար, որով կարող ես սկսել նոր նկար"
+msgstr "Ընտրիր որևէ գույն կամ պատկեր, որով կարող ես սկսել նոր նկար"
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:151
@@ -511,7 +513,7 @@ msgstr "Տպում է…"
 #. Response to 'quit' (exit) action
 #: ../tools.h:160
 msgid "Bye bye!"
-msgstr "Ցտեսություն ցտեսություն"
+msgstr "Ցտեսություն"
 
 #. Instruction while using Line tool (after click, before release)
 #: ../tools.h:164
@@ -531,45 +533,45 @@ msgstr "Շարժիր մկնիկը ուրվագիծը շրջելու համար: 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Լավ, այնուհետև... Շարունակենք նկարել այս մեկը"
+msgstr "Լավ, ուրեմն... Շարունակենք նկարել այս մեկը"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2038
 msgid "Do you really want to quit?"
-msgstr "Իսկապես ցանկանում ես լքել?"
+msgstr "Իսկապե՞ս ցանկանում ես դուրս գալ:"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:2041
 msgid "Yes, I’m done!"
-msgstr "Այո, արված է"
+msgstr "Այո, վերջացրեցի:"
 
 #. Quit prompt negative response (don't quit)
 #: ../tuxpaint.c:2044 ../tuxpaint.c:2071
 msgid "No, take me back!"
-msgstr "Ոչ, ինձ ետ տար"
+msgstr "Ոչ, ինձ ետ տար:"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:2048
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Եթե հեռանաս, կկորցնես նկարը, պահպանել այն?"
+msgstr "Եթե հեռանաս, կկորցնես նկարը, պահպանե՞լ այն:"
 
 #: ../tuxpaint.c:2049 ../tuxpaint.c:2054
 msgid "Yes, save it!"
-msgstr "Այո, պահպանել այն"
+msgstr "Այո, պահպանել այն:"
 
 #: ../tuxpaint.c:2050 ../tuxpaint.c:2055
 msgid "No, don’t bother saving!"
-msgstr "Ոչ, մի ընդհատիր պահպանելու գործընթացը"
+msgstr "Ոչ, մի անհանգստացիր պահպանելու համար:"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:2053
 msgid "Save your picture first?"
-msgstr "Առաջինը պահպանիր նկարը"
+msgstr "Նախ պահպանե՞մ քո նկարը:"
 
 #. Error opening picture
 #: ../tuxpaint.c:2058
 msgid "Can’t open that picture!"
-msgstr "Չի կարող բացել նկարը"
+msgstr "Չի կարող բացել նկարը:"
 
 #. Generic dialog dismissal
 #: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
@@ -599,7 +601,7 @@ msgstr "Քո նկարը տպվեց"
 #. We got an error printing
 #: ../tuxpaint.c:2078
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Ցավոք, քո նկարը հնարավոր չի տպել"
+msgstr "Ցավոք, քո նկարը հնարավոր չէ տպել"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:2081
@@ -609,7 +611,7 @@ msgstr "Չես կարող տպել դեռևս"
 #. Prompt to confirm erasing a picture in the Open dialog
 #: ../tuxpaint.c:2085
 msgid "Erase this picture?"
-msgstr "Ջնջել այս նկարը?"
+msgstr "Ջնջե՞լ այս նկարը:"
 
 #: ../tuxpaint.c:2086
 msgid "Yes, erase it!"
@@ -632,12 +634,12 @@ msgstr "Ձայնը լռեցված է"
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2300
 msgid "Sound unmuted."
-msgstr "Ձայնը ակտիվացված է"
+msgstr "Ձայնը միացված է:"
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:3047
 msgid "Please wait…"
-msgstr "խնդրեմ սպասել..."
+msgstr "Խնդրեմ սպասել..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7510
@@ -704,7 +706,7 @@ msgstr "Ընտրիր այն նկարը, որը ցանկանում ես, այնո
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #: ../tuxpaint.c:14794 ../tuxpaint.c:15122
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Ընտրիր այն նկարը, որը ցանկանում ես, այնուհետև սեղմիր ՞Նվագարկել՞"
+msgstr "Ընտրիր այն նկարը, որը ցանկանում ես, այնուհետև սեղմիր ՞Գործարկել՞"
 
 #: ../tuxpaint.c:22032
 msgid "Pick a color."
@@ -712,7 +714,7 @@ msgstr "Ընտրիր գույնը"
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"
-msgstr "Թուքս Փաինթ"
+msgstr "Թուքս Փեյնթ"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
@@ -753,7 +755,7 @@ msgstr "Արգելափակումներ"
 
 #: ../../magic/src/blocks_chalk_drip.c:138
 msgid "Chalk"
-msgstr "Կավիչճ"
+msgstr "Կավիճ"
 
 #: ../../magic/src/blocks_chalk_drip.c:140
 msgid "Drip"
@@ -767,12 +769,13 @@ msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլոր�
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը նկարը փոխելու կավիճով նկարելու համար"
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը նկարին կավճանկարի տեսք տալու համար:"
 
 #: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը նկարը կաթոցքային դարձնելու համար"
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը նկարին կաթոցքային տեսք հաղորդելու "
+"համար:"
 
 #: ../../magic/src/blur.c:80
 msgid "Blur"
@@ -780,11 +783,12 @@ msgstr "Լղոզում"
 
 #: ../../magic/src/blur.c:83
 msgid "Click and move the mouse around to blur the image."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը պատկերը լղոզելու համար"
+msgstr ""
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը պատկերին \"լղոզված\" տեսք տալու համար:"
 
 #: ../../magic/src/blur.c:84
 msgid "Click to blur the entire image."
-msgstr "Սեղմիր ամբողջ պատկերը լղոզելու համար:"
+msgstr "Սեղմիր ամբողջ պատկերին \"լղոզված\" տեսք տալու համար:"
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:124
@@ -830,7 +834,7 @@ msgstr "Աղավաղում"
 
 #: ../../magic/src/distortion.c:150
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "Սեղմիր և քաշելով տար մկնիկը պատկերը աղավաղելու համար"
+msgstr "Սեղմիր և քաշելով տար մկնիկը պատկերն աղավաղելու համար"
 
 #: ../../magic/src/emboss.c:103
 msgid "Emboss"
@@ -846,11 +850,11 @@ msgstr "Լուսավորել"
 
 #: ../../magic/src/fade_darken.c:123
 msgid "Darken"
-msgstr "Մգացնել"
+msgstr "Մթնեցնել"
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներ լուսավորելու համար:"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներ լուսավորելու համար:"
 
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
@@ -858,11 +862,11 @@ msgstr "Սեղմիր, նկարդ ամբողջությամբ լուսավորել
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներ մգացնելու համար:"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներ մթնեցնելու համար:"
 
 #: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
-msgstr "Սեղմիր, նկարդ ամբողջությամբ մգացնելու համար"
+msgstr "Սեղմիր, նկարդ ամբողջությամբ մթնեցնելու համար:"
 
 #: ../../magic/src/fill.c:108
 msgid "Fill"
@@ -889,7 +893,7 @@ msgstr "Ծաղիկ"
 #: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
-"Սեղմիր և քաշիր, ծաղիկի ցողուն նկարելու համար: Շարունակիր ծաղիկը ավարտելու "
+"Սեղմիր և քաշիր, ծաղիկի ցողուն նկարելու համար: Շարունակիր` ծաղիկն ավարտելու "
 "համար:"
 
 #: ../../magic/src/foam.c:121
@@ -941,7 +945,7 @@ msgstr "Խոտ"
 
 #: ../../magic/src/grass.c:118
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Սեղմիր և տեղաշարժիր, խոտ նկարելու համար: Մի մոռացիր աղտը:"
+msgstr "Սեղմիր և տեղաշարժիր, խոտ նկարելու համար: Մի մոռացիր աղբը:"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
@@ -949,7 +953,7 @@ msgstr "Կիսատոն"
 
 #: ../../magic/src/halftone.c:38
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Սեղմիր և քաշիր նկարդ թերթի մեջ գցելու համար"
+msgstr "Սեղմիր և քաշիր նկարդ \"թերթ\" դարձնելու համար:"
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -998,7 +1002,7 @@ msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Սեղմիր և քաշելով տար մկնիկը, ձևանմուշը իր սիմետրիկությամբ նկարի երկայնքով "
+"Սեղմիր և քաշելով տար մկնիկը, ձևանմուշն իր սիմետրիկությամբ նկարի երկայնքով "
 "նկարելու համար:"
 
 #. KAL_BOTH
@@ -1006,7 +1010,7 @@ msgstr ""
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Սեղմիր և քաշելով տար մկնիկը սիմետրիկ վրձիններով նկարելու համար (գեղադիտակ)"
+"Սեղմիր և քաշելով տար մկնիկը` սիմետրիկ վրձիններով նկարելու համար (գեղադիտակ)"
 
 #: ../../magic/src/light.c:107
 msgid "Light"
@@ -1014,7 +1018,7 @@ msgstr "Լույս"
 
 #: ../../magic/src/light.c:113
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Սեղմիր և քաշիր, նկարումդ լույսի շող նկարելու համար:"
+msgstr "Սեղմիր և քաշիր` նկարումդ լույսի շող նկարելու համար:"
 
 #: ../../magic/src/metalpaint.c:101
 msgid "Metal Paint"
@@ -1022,7 +1026,7 @@ msgstr "Մետաղե ներկ"
 
 #: ../../magic/src/metalpaint.c:107
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Սեղմիր և քաշելով տար մկնիկը, մետաղյա գույնով ներկելու համար:"
+msgstr "Սեղմիր և քաշելով տար մկնիկը` մետաղյա գույնով ներկելու համար:"
 
 #: ../../magic/src/mirror_flip.c:117
 msgid "Mirror"
@@ -1034,11 +1038,11 @@ msgstr "Շրջել"
 
 #: ../../magic/src/mirror_flip.c:130
 msgid "Click to make a mirror image."
-msgstr "Սեղմիր, հայելային պատկեր ստեղծելու համար"
+msgstr "Սեղմիր` հայելային պատկեր ստեղծելու համար"
 
 #: ../../magic/src/mirror_flip.c:133
 msgid "Click to flip the picture upside-down."
-msgstr "Սեղմիր, նկարը վերևից ներքև շրջելու համար:"
+msgstr "Սեղմիր` նկարը գլխիվայր շրջելու համար:"
 
 #: ../../magic/src/mosaic.c:100
 msgid "Mosaic"
@@ -1048,12 +1052,12 @@ msgstr "Խճանկար"
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվածներում խճանկարի էֆեկտ "
+"Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում խճանկարի էֆեկտ "
 "ավելացնելու համար"
 
 #: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարում խճանկարի էֆեկտ ավելացնելու համար:"
+msgstr "Սեղմիր` ամբողջ պատկերում խճանկարի էֆեկտ ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Square Mosaic"
@@ -1071,47 +1075,47 @@ msgstr "Անկանոն Խճանկար"
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվածներում քառակուսի խճանկար "
+"Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում քառակուսի խճանկար "
 "ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:150
 msgid "Click to add a square mosaic to your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ քառակուսի խճանկար ավելացնելու համար:"
+msgstr "Սեղմիր` ամբողջ նկարիդ քառակուսի խճանկար ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:152
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվածներում վեցանկյուն խճանկար "
+"Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում վեցանկյուն խճանկար "
 "ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:153
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ վեցանկյուն մոզաիկ ավելացնելու համար:"
+msgstr "Սեղմիր` ամբողջ նկարիդ վեցանկյուններով խճանկար ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:155
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվածներում անկանոն խճանկար "
+"Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում անկանոն խճանկար "
 "ավելացնելու համար:"
 
 #: ../../magic/src/mosaic_shaped.c:156
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ անկանոն մոզաիկ ավելացնելու համար:"
+msgstr "Սեղմիր` ամբողջ նկարիդ անկանոն խճանկար ավելացնելու համար:"
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
-msgstr "Բացասական"
+msgstr "Սևանկար"
 
 #: ../../magic/src/negative.c:106
 msgid "Click and move the mouse around to make your painting negative."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը, նկարդ բացասական դարձնելու համար:"
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` պատկերը սևանկար դարձնելու համար:"
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr "Սեղմիր, նկարդ բացասական դարձնելու համար"
+msgstr "Սեղմիր` պատկերը սևանկար դարձնելու համար"
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -1120,12 +1124,12 @@ msgstr "Աղմուկ"
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվածներում աղմուկ ավելացնելու "
+"Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում աղմուկ ավելացնելու "
 "համար:"
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ աղմուկ ավելացնելու համար"
+msgstr "Սեղմիր` ամբողջ նկարիդ աղմուկ ավելացնելու համար"
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
@@ -1133,7 +1137,7 @@ msgstr "Հեռանկար"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
-msgstr "Տեսք"
+msgstr "Չափս"
 
 #: ../../magic/src/perspective.c:151
 msgid "Click on the corners and drag where you want to stretch the picture."
@@ -1142,7 +1146,7 @@ msgstr ""
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "Սեղմիր և քաշիր վերև նկարդ խոշորացնելու և քաշիր ներքև՝ փոքրացնելու համար"
+msgstr "Սեղմիր և քաշիր վեր` նկարդ խոշորացնելու և քաշիր վար՝ փոքրացնելու համար"
 
 #: ../../magic/src/puzzle.c:105
 msgid "Puzzle"
@@ -1150,11 +1154,11 @@ msgstr "Գլուխկոտրուկ"
 
 #: ../../magic/src/puzzle.c:112
 msgid "Click the part of your picture where would you like a puzzle."
-msgstr "Սեղմիր նկարիդ այն հատվածի վրա, որտեղ կցանկանաիր գլուխկոտրուկը"
+msgstr "Սեղմիր նկարիդ այն հատվածի վրա, որտեղ կցանկանաիր տեղադրել գլուխկոտրուկը"
 
 #: ../../magic/src/puzzle.c:113
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr "Սեղմիր, գլուխկոտրուկը էկրանի չափով ռեժիմ դարձնելու համար"
+msgstr "Սեղմիր` գլուխկոտրուկն էկրանի չափով դնելու համար:"
 
 #: ../../magic/src/rails.c:131
 msgid "Rails"
@@ -1162,7 +1166,7 @@ msgstr "Երկաթուղի"
 
 #: ../../magic/src/rails.c:133
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Սեղմիր և քաշիր, նկարումդ գնացքի երկաթգծեր նկարելու համար"
+msgstr "Սեղմիր և քաշիր` նկարումդ երկաթգծեր նկարելու համար"
 
 #: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
@@ -1178,19 +1182,20 @@ msgstr "Անձրև"
 
 #: ../../magic/src/rain.c:68
 msgid "Click to place a rain drop onto your picture."
-msgstr "Սեղմիր, նկարումդ անձրևի կաթիլ տեղադրելու համար"
+msgstr "Սեղմիր` նկարումդ անձրևի կաթիլ տեղադրելու համար"
 
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
-msgstr "Սեղմիր, նկարդ անձրևի կաթիլներով ծածկելու համար"
+msgstr "Սեղմիր` նկարդ անձրևի կաթիլներով պատելու համար"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
 msgstr "Իրական Ծիածան"
 
+# ԿՆԴԿԵԿՄ - Կարմիր, Նարնջագույն, Դեղին, Կանաչ, Երկնագույն, Կապույտ, Մանուշակագույն - ծիածանի գույների հերթականությունը:
 #: ../../magic/src/realrainbow.c:112
 msgid "ROYGBIV Rainbow"
-msgstr "ROYGBIV ծիածան"
+msgstr "ԿՆԴԿԵԿՄ ծիածան"
 
 #: ../../magic/src/realrainbow.c:117
 msgid ""
@@ -1198,7 +1203,8 @@ msgid ""
 "end, and then let go to draw a rainbow."
 msgstr ""
 "Սեղմիր այն հատվածը, որտեղ ցանկանում ես, որ ծիածանը սկսվի, քաշելով տար "
-"այնտեղ, որտեղ ցանկանում ես, այն ավարտվի, և այնուհետև նկարիր ծիածան"
+"այնտեղ, որտեղ ցանկանում ես, որ այն ավարտվի և այնուհետև բաց թող, որ նկարվի "
+"ծիածանը:"
 
 #: ../../magic/src/ripples.c:106
 msgid "Ripples"
@@ -1206,7 +1212,7 @@ msgstr "Ալյակներ"
 
 #: ../../magic/src/ripples.c:112
 msgid "Click to make ripples appear over your picture."
-msgstr "Սեղմիր, նկարումդ ալյակներ ավելացնելու համար"
+msgstr "Սեղմիր` նկարումդ ալյակներ ավելացնելու համար"
 
 #: ../../magic/src/rosette.c:116
 msgid "Rosette"
@@ -1218,7 +1224,7 @@ msgstr "Պիկասո"
 
 #: ../../magic/src/rosette.c:121
 msgid "Click and start drawing your rosette."
-msgstr "Սեղմիր, վարդաքանդակներ նկարելու համար"
+msgstr "Սեղմիր` վարդաքանդակներ նկարելու համար"
 
 #: ../../magic/src/rosette.c:123
 msgid "You can draw just like Picasso!"
@@ -1238,28 +1244,27 @@ msgstr "Ուրվանկար"
 
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ որոշ հատվցածներում եզրեր գծելու համար"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում եզրեր գծելու համար"
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարումդ եզրեր գծելու համար"
+msgstr "Սեղմիր` ամբողջ նկարումդ եզրեր գծելու համար"
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը, նկարիդ հատվածները բարելավելու համար:"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ հատվածները բարելավելու համար:"
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
-msgstr "Սեղմիր, ամբողջ նկարդ բարելավելու համար"
+msgstr "Սեղմիր` ամբողջ նկարդ բարելավելու համար"
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը, սև և սպիտակ ուրվանկարներ ստեղծելու համար:"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը` սև և սպիտակ ուրվանկարներ ստեղծելու համար:"
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ սև և սպիտակ ուրվանկարները ստեղծելու համար"
+msgstr "Սեղմիր` ամբողջ նկարիդ սև և սպիտակ ուրվանկարները ստեղծելու համար"
 
 #: ../../magic/src/shift.c:109
 msgid "Shift"
@@ -1267,7 +1272,7 @@ msgstr "Փոխել"
 
 #: ../../magic/src/shift.c:115
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Սեղմիր և քաշիր, նկարդ կանվաների վրա փոխելու համար"
+msgstr "Սեղմիր և քաշիր` նկարդ պաստառի վրա փոխելու համար"
 
 #: ../../magic/src/smudge.c:106
 msgid "Smudge"
@@ -1280,13 +1285,13 @@ msgstr "Խոնավ ներկ"
 
 #: ../../magic/src/smudge.c:115
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը, նկարը կեղտաբծելու համար:"
+msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարը կեղտաբծելու համար:"
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgstr ""
-"՛Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը, խոնավ, կեղտաբծված ներկով նկարելու "
+"՛Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` խոնավ, կեղտաբծված ներկով նկարելու "
 "համար"
 
 #: ../../magic/src/snow.c:68
@@ -1299,11 +1304,11 @@ msgstr "Ձյան փաթիլ"
 
 #: ../../magic/src/snow.c:72
 msgid "Click to add snow balls to your picture."
-msgstr "Սեղմիր, նկարումդ ձնագնդիներ ավելացնելու համար"
+msgstr "Սեղմիր` նկարումդ ձնագնդիներ ավելացնելու համար"
 
 #: ../../magic/src/snow.c:73
 msgid "Click to add snow flakes to your picture."
-msgstr "Սեղմիր, նկարումդ ձյան փաթիլներ ավելացնելու համար"
+msgstr "Սեղմիր` նկարումդ ձյան փաթիլներ ավելացնելու համար"
 
 #: ../../magic/src/string.c:123
 msgid "String edges"
@@ -1322,17 +1327,18 @@ msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
-"Սեղմիր և քաշիր լարային արվեստ նկարելու համար: Քաշիր վերևի կոճակը, ավելի քիչ "
-"կամ շատ տողեր նկարելու համար, քաշիր դեպի ձախ կամ աջ ավելի մեծ անցք անելու "
+"Սեղմիր և քաշիր լարային արվեստ նկարելու համար: Քաշիր վերևի կոճակն` ավելի քիչ "
+"կամ շատ տողեր նկարելու համար, քաշիր դեպի ձախ կամ աջ` ավելի մեծ անցք անելու "
 "համար:"
 
 #: ../../magic/src/string.c:140
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Սեղմիր և քաշիր, լարային արվեստով պատրաստված նետեր նկարելու համար:"
+msgstr ""
+"Սեղմիր և քաշիր` լարային արվեստով պատրաստված նետեր/սլաքներ նկարելու համար:"
 
 #: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
-msgstr "Նկարել լարային արվեստի նետեր ազատ անկյուններով"
+msgstr "Նկարել լարային արվեստի նետեր/սլաքներ` ազատ անկյուններով"
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1346,40 +1352,40 @@ msgstr "Գունավոր & Սպիտակ"
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը, նկարիդ հատվածների գույնը փոխելու "
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ հատվածների գույնը փոխելու "
 "համար:"
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
-msgstr "Սեղմիր, ամբողջ նկարիդ գույնը փոխելու համար:"
+msgstr "Սեղմիր` ամբողջ նկարիդ գույնը փոխելու համար:"
 
 #: ../../magic/src/tint.c:77
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը, նկարիդ որոշ հատվածներ սպիտակ և քո "
+"Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ որոշ հատվածներ սպիտակ և քո "
 "ընտրած գույնով ներկելու համար"
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Սեղմիր, ամբողջ նկարդ սպիտակ և քո ընտրած գույնով ներկելու համար"
+msgstr "Սեղմիր` ամբողջ նկարդ սպիտակ և քո ընտրած գույնով ներկելու համար"
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr "Ատամի մածում"
+msgstr "Ատամի մածուկ"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "Սեղմիր և քաշիր, նկարիդ վրա ատամի մածուկ ցայտեցնելու համար"
+msgstr "Սեղմիր և քաշիր` նկարիդ վրա ատամի մածուկ ցայտեցնելու համար"
 
 #: ../../magic/src/tornado.c:157
 msgid "Tornado"
-msgstr "Տորնադո"
+msgstr "Պտտահողմ"
 
 #: ../../magic/src/tornado.c:163
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Սեղմիր և քաշիր, նկարիդ վրա տորնադոյի ծխան նկարելու համար"
+msgstr "Սեղմիր և քաշիր` նկարիդ վրա պտտահեղմի \"ձագար\" նկարելու համար"
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
@@ -1390,12 +1396,12 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Սեղմիր և քաշիր, նկարիդ որոշ հատվածներ այնպես դարձնելու համար, որ կարծես "
-"հեռուստացույցով դիտելիս լինես"
+"Սեղմիր և քաշիր` նկարիդ որոշ հատվածներին հեռուստաէկրանի պատկերի տեսք տալու "
+"համար:"
 
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
-msgstr "Սեղմիր, նկարը այնպես դարձնելու, որ կարծես հեռուսացույցով դիտելիս լինես"
+msgstr "Սեղմիր` նկարին հեռուստաէկրանի պատկերի տեսք տալու համար:"
 
 #: ../../magic/src/waves.c:103
 msgid "Waves"
@@ -1411,9 +1417,9 @@ msgid ""
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
-"Սեղմիր, նկարին հորիզոնական ալիքների տեսք տալու համար: Սեղմիր դեպի վեր, ավելի "
+"Սեղմիր` նկարին հորիզոնական ալիքների տեսք տալու համար: Սեղմիր դեպի վեր` ավելի "
 "կարճ ալիքների համար, ներքև՝ ավելի բարձր ալիքների համար, ձախ՝ փոքր ալիքների "
-"համար և աջ երկար ալիքների համար:"
+"համար և աջ` երկար ալիքների համար:"
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1421,6 +1427,6 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
-"Սեղմիր, նկարին ուղղահայաց ալիքների տեսք տալու համար: Սեղմիր դեպի վեր, ավելի "
-"կարճ ալիքների համար, ներքև՝ ավելի բարձր ալիքների համար, ձախ՝ փոքր ալիքների "
-"համար և աջ երկար ալիքների համար:"
+"Սեղմիր`նկարն ուղղահայաց ալիքներով պատելու համար: Սեղմիր դեպի վեր` ավելի կարճ "
+"ալիքների համար, ներքև՝ ավելի բարձր ալիքների համար, ձախ՝ փոքր ալիքների համար "
+"և աջ` երկար ալիքների համար:"
