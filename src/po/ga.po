@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 081207\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-02 20:36-0500\n"
+"POT-Creation-Date: 2013-10-26 17:43+0900\n"
 "PO-Revision-Date: 2010-01-26 14:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
-"Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ga\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -400,7 +400,7 @@ msgstr "Nua"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98 ../tuxpaint.c:7605
 msgid "Open"
 msgstr "Oscail"
 
@@ -528,195 +528,195 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK… Bímis ag dearadh an chinn seo!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2038
+#: ../tuxpaint.c:2040
 msgid "Do you really want to quit?"
 msgstr "An bhfuil tú cinnte gur mhaith leat scor?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2043
 msgid "Yes, I’m done!"
 msgstr "Tá, táim críochnaithe!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
 msgid "No, take me back!"
 msgstr "Níl, ba mhaith liom dul ar ais!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2048
+#: ../tuxpaint.c:2050
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
 msgid "Yes, save it!"
 msgstr "Sábháil!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
 msgid "No, don’t bother saving!"
 msgstr "Ná sábháil!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2053
+#: ../tuxpaint.c:2055
 msgid "Save your picture first?"
 msgstr "Sábháil ar dtús?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2058
+#: ../tuxpaint.c:2060
 msgid "Can’t open that picture!"
 msgstr "Ní féidir an pictiúr sin a oscailt!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
-#: ../tuxpaint.c:2091
+#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
+#: ../tuxpaint.c:2093
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2067
 msgid "There are no saved files!"
 msgstr "Níl aon chomhad sábháilte ann!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2071
 msgid "Print your picture now?"
 msgstr "Priontáil an pictiúr anois?"
 
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2072
 msgid "Yes, print it!"
 msgstr "Priontáil!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2074
+#: ../tuxpaint.c:2076
 msgid "Your picture has been printed!"
 msgstr "Priontáladh do phictiúr!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2078
+#: ../tuxpaint.c:2080
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tá brón orm! Níorbh fhéidir do phictiúr a phriontáil!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2083
 msgid "You can’t print yet!"
 msgstr "Ní féidir leat priontáil fós!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2085
+#: ../tuxpaint.c:2087
 msgid "Erase this picture?"
 msgstr "Léirscrios an pictiúr seo?"
 
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2088
 msgid "Yes, erase it!"
 msgstr "Léirscrios!"
 
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2089
 msgid "No, don’t erase it!"
 msgstr "Ná léirscrios!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2092
 msgid "Remember to use the left mouse button!"
 msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2300
 msgid "Sound muted."
 msgstr "Gan fuaim."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2305
 msgid "Sound unmuted."
 msgstr "Le fuaim."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3047
+#: ../tuxpaint.c:3052
 msgid "Please wait…"
 msgstr "Fan go fóill…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7510
+#: ../tuxpaint.c:7608
 msgid "Erase"
 msgstr "Léirscrios"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7513
+#: ../tuxpaint.c:7611
 msgid "Slides"
 msgstr "Sleamhnáin"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7516
+#: ../tuxpaint.c:7614
 msgid "Back"
 msgstr "Siar"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7519
+#: ../tuxpaint.c:7617
 msgid "Next"
 msgstr "Ar Aghaidh"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7522
+#: ../tuxpaint.c:7620
 msgid "Play"
 msgstr "Seinn"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8230
+#: ../tuxpaint.c:8328
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11488
+#: ../tuxpaint.c:11586
 msgid "Yes"
 msgstr "Tá"
 
-#: ../tuxpaint.c:11492
+#: ../tuxpaint.c:11590
 msgid "No"
 msgstr "Níl"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12510
+#: ../tuxpaint.c:12608
 msgid "Replace the picture with your changes?"
 msgstr "Forscríobh an pictiúr le do chuid athruithe?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12514
+#: ../tuxpaint.c:12612
 msgid "Yes, replace the old one!"
 msgstr "Forscríobh é!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12518
+#: ../tuxpaint.c:12616
 msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
-#: ../tuxpaint.c:13763
+#: ../tuxpaint.c:13861
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 "Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
 
-#: ../tuxpaint.c:22032
+#: ../tuxpaint.c:22159
 msgid "Pick a color."
 msgstr "Roghnaigh dath."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "Clár líníochta le haghaidh páistí."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Clár líníochta"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
-msgstr "Clár líníochta le haghaidh páistí."
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -1152,14 +1152,6 @@ msgstr "Ráillí"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Cliceáil agus tarraing chun ráillí traenach a dhearadh ar do phictiúr."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "Tua Cheatha"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
-
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Báisteach"
@@ -1171,6 +1163,14 @@ msgstr "Cliceáil chun braon báistí a chur ar an bpictiúr."
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Cliceáil chun braonta báistí a chur ar fud an phictiúir."
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "Tua Cheatha"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1395,6 +1395,24 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#: ../../magic/src/xor.c:95
+#, fuzzy
+#| msgid "Colors"
+msgid "Xor Colors"
+msgstr "Dathanna"
+
+#: ../../magic/src/xor.c:101
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw a XOR effect"
+msgstr "Cliceáil agus tarraing chun léas solais a dhearadh ar do phictiúr."
+
+#: ../../magic/src/xor.c:103
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr "Cliceáil chun maisíocht mhósáic a dhéanamh ar fud an phictiúir."
 
 #~ msgid "qy"
 #~ msgstr "qy"

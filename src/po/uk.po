@@ -6,19 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
+"POT-Creation-Date: 2013-10-26 17:43+0900\n"
 "PO-Revision-Date: 2009-06-01 23:22+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: translation@linux.org.ua <Ukrainian Linux Team>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -405,7 +405,7 @@ msgstr "Новий"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98 ../tuxpaint.c:7605
 msgid "Open"
 msgstr "Відкрий"
 
@@ -542,194 +542,194 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Добре, продовжуємо малювати!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2038
+#: ../tuxpaint.c:2040
 msgid "Do you really want to quit?"
 msgstr "Ви дійсно хочете вийти?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2043
 msgid "Yes, I’m done!"
 msgstr "Так, я завершив!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
 msgid "No, take me back!"
 msgstr "Ні, хочу назад!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2048
+#: ../tuxpaint.c:2050
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Якщо Ви вийдете, Ви втратите Ваш малюнок! Зберегти?"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
 msgid "Yes, save it!"
 msgstr "Так, зберегти!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
 msgid "No, don’t bother saving!"
 msgstr "Ні, не потрібно зберігати!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2053
+#: ../tuxpaint.c:2055
 msgid "Save your picture first?"
 msgstr "Зберегти Ваш малюнок спочатку?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2058
+#: ../tuxpaint.c:2060
 msgid "Can’t open that picture!"
 msgstr "Не можу відкрити цей малюнок!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
-#: ../tuxpaint.c:2091
+#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
+#: ../tuxpaint.c:2093
 msgid "OK"
 msgstr "Гаразд"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2067
 msgid "There are no saved files!"
 msgstr "Немає збережених малюнків!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2071
 msgid "Print your picture now?"
 msgstr "Надрукувати Вашу малюнок?"
 
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2072
 msgid "Yes, print it!"
 msgstr "Так, роздрукувати!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2074
+#: ../tuxpaint.c:2076
 msgid "Your picture has been printed!"
 msgstr "Ваш малюнок роздруковано!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2078
+#: ../tuxpaint.c:2080
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Вибачте! Ваш малюнок не може бути роздрукований!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2083
 msgid "You can’t print yet!"
 msgstr "Ви поки не можете друкувати!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2085
+#: ../tuxpaint.c:2087
 msgid "Erase this picture?"
 msgstr "Вилучити цей малюнок?"
 
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2088
 msgid "Yes, erase it!"
 msgstr "Так, вилучити!"
 
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2089
 msgid "No, don’t erase it!"
 msgstr "Ні, не вилучати!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2092
 msgid "Remember to use the left mouse button!"
 msgstr "Не забувайте про ліву клавішу миші!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2300
 msgid "Sound muted."
 msgstr "Звук заглушено."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2305
 msgid "Sound unmuted."
 msgstr "Звук увімкнено."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3047
+#: ../tuxpaint.c:3052
 msgid "Please wait…"
 msgstr "Будь ласка, зачекайте..."
 
 #  'Erase' label:
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7510
+#: ../tuxpaint.c:7608
 msgid "Erase"
 msgstr "Вилучити"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7513
+#: ../tuxpaint.c:7611
 msgid "Slides"
 msgstr "Слайди"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7516
+#: ../tuxpaint.c:7614
 msgid "Back"
 msgstr "Назад"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7519
+#: ../tuxpaint.c:7617
 msgid "Next"
 msgstr "Далі"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7522
+#: ../tuxpaint.c:7620
 msgid "Play"
 msgstr "Слайд-шоу"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8230
+#: ../tuxpaint.c:8328
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11488
+#: ../tuxpaint.c:11586
 msgid "Yes"
 msgstr "Так"
 
-#: ../tuxpaint.c:11492
+#: ../tuxpaint.c:11590
 msgid "No"
 msgstr "Ні"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12510
+#: ../tuxpaint.c:12608
 msgid "Replace the picture with your changes?"
 msgstr "Замінити старий малюнок?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12514
+#: ../tuxpaint.c:12612
 msgid "Yes, replace the old one!"
 msgstr "Так, замінити старий малюнок!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12518
+#: ../tuxpaint.c:12616
 msgid "No, save a new file!"
 msgstr "Ні, зберегти у новий файл!"
 
-#: ../tuxpaint.c:13763
+#: ../tuxpaint.c:13861
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Виберіть бажані малюнки, а потім натисніть \"Слайд-шоу\"."
 
-#: ../tuxpaint.c:22032
+#: ../tuxpaint.c:22159
 msgid "Pick a color."
 msgstr "Виберіть колір."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr "Малюй разом з Tux!"
+msgid "A drawing program for children."
+msgstr "Дитяча програма для малювання."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Програма для малювання"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
-msgstr "Дитяча програма для малювання."
+msgid "Tux Paint"
+msgstr "Малюй разом з Tux!"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -1209,14 +1209,6 @@ msgstr "Рейки"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Натисніть та тягніть мишку — за нею прокладатимуться залізничні рейки."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "Веселка"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "Ви можете малювати барвами веселки!"
-
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Дощ"
@@ -1228,6 +1220,14 @@ msgstr "Поклацайте на малюнку, щоб помістити на
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Клацніть, щоб покрити весь малюнок дощовими краплями."
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "Веселка"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "Ви можете малювати барвами веселки!"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1480,6 +1480,24 @@ msgstr ""
 "Натисніть, щоб намалювати вертикальні хвильки. Рухайте вгору, щоб зробити "
 "хвилі коротшими, донизу — вищими, ліворуч — для низьких хвиль, праворуч — "
 "для довгих."
+
+#: ../../magic/src/xor.c:95
+#, fuzzy
+#| msgid "Colors"
+msgid "Xor Colors"
+msgstr "Фарба"
+
+#: ../../magic/src/xor.c:101
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw a XOR effect"
+msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."
+
+#: ../../magic/src/xor.c:103
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
 
 #, fuzzy
 #~| msgid "Click and drag to draw a beam of light on your picture."

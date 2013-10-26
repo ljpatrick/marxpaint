@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint_persian\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
+"POT-Creation-Date: 2013-10-26 17:43+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: farnaz <dsf@fg.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Persian\n"
 "X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 
@@ -394,7 +394,7 @@ msgstr "جدید"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98 ../tuxpaint.c:7605
 msgid "Open"
 msgstr "باز کردن"
 
@@ -520,201 +520,201 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2038
+#: ../tuxpaint.c:2040
 msgid "Do you really want to quit?"
 msgstr "آیا واقعاً می خواهی خارج شوی؟"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2043
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "بله،ذخیره کن!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
 msgid "No, take me back!"
 msgstr "!نه،من را برگردان"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2048
+#: ../tuxpaint.c:2050
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "اگر خارج شوید تصویر شما از بین میرود!می خواهید آن را ذخیره کنید؟"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
 msgid "Yes, save it!"
 msgstr "بله،ذخیره کن!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "نه،ذخیره نکن!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2053
+#: ../tuxpaint.c:2055
 msgid "Save your picture first?"
 msgstr "اول تصویر ذخیره شود؟"
 
 #. Error opening picture
-#: ../tuxpaint.c:2058
+#: ../tuxpaint.c:2060
 msgid "Can’t open that picture!"
 msgstr "نمی توانی آن تصویر را باز کنی!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
-#: ../tuxpaint.c:2091
+#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
+#: ../tuxpaint.c:2093
 msgid "OK"
 msgstr "قبول"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2067
 msgid "There are no saved files!"
 msgstr "فایل ذخیره شده ای موجود نیست!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2071
 msgid "Print your picture now?"
 msgstr "تصویر را چاپ کنم؟"
 
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2072
 msgid "Yes, print it!"
 msgstr "بله،آن را چاپ کن!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2074
+#: ../tuxpaint.c:2076
 msgid "Your picture has been printed!"
 msgstr "تصویر شما چاپ شد!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2078
+#: ../tuxpaint.c:2080
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "تصویر شما چاپ شد!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2083
 msgid "You can’t print yet!"
 msgstr "شما هنوز نمی توانید تصویر را چاپ کنید!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2085
+#: ../tuxpaint.c:2087
 msgid "Erase this picture?"
 msgstr " تصویر را پاک کنم؟"
 
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2088
 msgid "Yes, erase it!"
 msgstr "بله،آن را پاک کن!"
 
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2089
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "نه،آن را پاک نکن!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2092
 msgid "Remember to use the left mouse button!"
 msgstr "یادت باشه از کلیلک چپ استفاده کنی!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2300
 msgid "Sound muted."
 msgstr "صدا قطع شد."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2305
 msgid "Sound unmuted."
 msgstr "صدا وصل است. "
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3047
+#: ../tuxpaint.c:3052
 msgid "Please wait…"
 msgstr "لطفاً کمی صبر کن"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7510
+#: ../tuxpaint.c:7608
 msgid "Erase"
 msgstr "پاك‌ كردن‌"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7513
+#: ../tuxpaint.c:7611
 msgid "Slides"
 msgstr "اسلاید"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7516
+#: ../tuxpaint.c:7614
 msgid "Back"
 msgstr "بازگشت"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7519
+#: ../tuxpaint.c:7617
 msgid "Next"
 msgstr "بعدی"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7522
+#: ../tuxpaint.c:7620
 msgid "Play"
 msgstr "نمایش"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8230
+#: ../tuxpaint.c:8328
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11488
+#: ../tuxpaint.c:11586
 msgid "Yes"
 msgstr "بله"
 
-#: ../tuxpaint.c:11492
+#: ../tuxpaint.c:11590
 msgid "No"
 msgstr "خیر"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12510
+#: ../tuxpaint.c:12608
 msgid "Replace the picture with your changes?"
 msgstr "تصویر با تغییرات شما جایگزین شود؟"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12514
+#: ../tuxpaint.c:12612
 msgid "Yes, replace the old one!"
 msgstr "بله،جایگزین قبلی کن!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12518
+#: ../tuxpaint.c:12616
 msgid "No, save a new file!"
 msgstr "خیر،یک فایل جدید ذخیره کن!"
 
-#: ../tuxpaint.c:13763
+#: ../tuxpaint.c:13861
 msgid "Choose the picture you want, then click “Open”."
 msgstr "تصویری که می خواهی را انتخاب کن و سپس روی \"باز کردن\" کلیک کن."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "تصویری که می خواهی را انتخاب کن و سپس روی \"نمایش\" کلیک کن."
 
-#: ../tuxpaint.c:22032
+#: ../tuxpaint.c:22159
 msgid "Pick a color."
 msgstr "یک رنگ بردار."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr ""
+msgid "A drawing program for children."
+msgstr "یک برنامه نقاشی برای کودکان."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "برنامه نقاشی"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
-msgstr "یک برنامه نقاشی برای کودکان."
+msgid "Tux Paint"
+msgstr ""
 
 #: ../../magic/src/alien.c:64
 #, fuzzy
@@ -1204,14 +1204,6 @@ msgstr "امواج"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن و موس را بکش."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "رنگين‌ كمان"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "تو می تونی با رنگ های رنگین کمان نقاشی کنی!"
-
 #: ../../magic/src/rain.c:65
 #, fuzzy
 #| msgid "Rainbow"
@@ -1229,6 +1221,14 @@ msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
 #| msgid "Pick a color or picture with which to start a new drawing."
 msgid "Click to cover your picture with rain drops."
 msgstr ".ک رنگ یا عکس بردار و شروع کن به کشیدن نقاشی "
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "رنگين‌ كمان"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "تو می تونی با رنگ های رنگین کمان نقاشی کنی!"
 
 #: ../../magic/src/realrainbow.c:110
 #, fuzzy
@@ -1506,3 +1506,21 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr "کلیک کن تا تصویر پر موج شود."
+
+#: ../../magic/src/xor.c:95
+#, fuzzy
+#| msgid "Colors"
+msgid "Xor Colors"
+msgstr "رنگ ها"
+
+#: ../../magic/src/xor.c:101
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw a XOR effect"
+msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن و موس را بکش."
+
+#: ../../magic/src/xor.c:103
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."

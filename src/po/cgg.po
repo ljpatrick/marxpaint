@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
+"POT-Creation-Date: 2013-10-26 17:43+0900\n"
 "PO-Revision-Date: 2010-09-17 16:19+0200\n"
 "Last-Translator: Florence <tushabe@cit.mak.ac.ug>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: cgg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cgg\n"
 "X-Generator: Pootle 2.1.1\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -397,7 +397,7 @@ msgstr "Ekisya"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98 ../tuxpaint.c:7605
 msgid "Open"
 msgstr "Iguraho"
 
@@ -526,193 +526,193 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Kale mbwenu... Reka tugumizemu okuteera ekyi!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2038
+#: ../tuxpaint.c:2040
 msgid "Do you really want to quit?"
 msgstr "Namazima nooyenda okuhinguka?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2043
 msgid "Yes, I’m done!"
 msgstr "Yeego, na'amara!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
 msgid "No, take me back!"
 msgstr "Ingaha, ongaruzeyo!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2048
+#: ../tuxpaint.c:2050
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ku orarugeho nooza kufeerwa ekishushani kyawe. Tukibiike?"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
 msgid "Yes, save it!"
 msgstr "Yeego, kibiike!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
 msgid "No, don’t bother saving!"
 msgstr "Ingaha, otakibiika!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2053
+#: ../tuxpaint.c:2055
 msgid "Save your picture first?"
 msgstr "Ekishushani kyawe kiibanze kiibiikwe?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2058
+#: ../tuxpaint.c:2060
 msgid "Can’t open that picture!"
 msgstr "Ekishushani ekyo tikya baasa kwigurwa!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
-#: ../tuxpaint.c:2091
+#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
+#: ../tuxpaint.c:2093
 msgid "OK"
 msgstr "Kale"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2067
 msgid "There are no saved files!"
 msgstr "Tihariho ebihandiko ebibibikirwe!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2071
 msgid "Print your picture now?"
 msgstr "Oshohoze ekishushani kywawe ahampapura?"
 
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2072
 msgid "Yes, print it!"
 msgstr "Yeego, kishohoze!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2074
+#: ../tuxpaint.c:2076
 msgid "Your picture has been printed!"
 msgstr "Ekishushani kyawe kyateerwa!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2078
+#: ../tuxpaint.c:2080
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Bambe! Ekishushani kyawe tikyateerwa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2083
 msgid "You can’t print yet!"
 msgstr "Tokabaasa kushohoza ahampapura hati!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2085
+#: ../tuxpaint.c:2087
 msgid "Erase this picture?"
 msgstr "Sangura ekishushani ekyi?"
 
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2088
 msgid "Yes, erase it!"
 msgstr "Yeego, kisangure!"
 
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2089
 msgid "No, don’t erase it!"
 msgstr "Ingaha, otakisangura!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2092
 msgid "Remember to use the left mouse button!"
 msgstr "Ijuka kunyiga mawusi ahabukono bwabumosho!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2300
 msgid "Sound muted."
 msgstr "Eiraka ryeihwamu."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2305
 msgid "Sound unmuted."
 msgstr "Eiraka tiryeihwamu."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3047
+#: ../tuxpaint.c:3052
 msgid "Please wait…"
 msgstr "Orikazaara we, rindaho..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7510
+#: ../tuxpaint.c:7608
 msgid "Erase"
 msgstr "Sangura"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7513
+#: ../tuxpaint.c:7611
 msgid "Slides"
 msgstr "Filiimu"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7516
+#: ../tuxpaint.c:7614
 msgid "Back"
 msgstr "Enyima"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7519
+#: ../tuxpaint.c:7617
 msgid "Next"
 msgstr "Ekindi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7522
+#: ../tuxpaint.c:7620
 msgid "Play"
 msgstr "Zaana"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8230
+#: ../tuxpaint.c:8328
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11488
+#: ../tuxpaint.c:11586
 msgid "Yes"
 msgstr "Yeego"
 
-#: ../tuxpaint.c:11492
+#: ../tuxpaint.c:11590
 msgid "No"
 msgstr "Apana"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12510
+#: ../tuxpaint.c:12608
 msgid "Replace the picture with your changes?"
 msgstr "Omumwanya gwekishushani tamu ebiwahindura?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12514
+#: ../tuxpaint.c:12612
 msgid "Yes, replace the old one!"
 msgstr "Yeego, chusa ekikuru!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12518
+#: ../tuxpaint.c:12616
 msgid "No, save a new file!"
 msgstr "Apaana, biika fayiro ensya!"
 
-#: ../tuxpaint.c:13763
+#: ../tuxpaint.c:13861
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Torana ekishushani kyorikwenda reero onyige \"Iguraho\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Torana ebishushani ebyorikwenda reero onyige \"Zaana\"."
 
-#: ../tuxpaint.c:22032
+#: ../tuxpaint.c:22159
 msgid "Pick a color."
 msgstr "Ihamu erangi."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "Akeire kabaana kuteera ebishushani."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Akeire kukuteera ebishushani"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
-msgstr "Akeire kabaana kuteera ebishushani."
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -1181,14 +1181,6 @@ msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Imata kandi okurure kuteera obuziga bwegaari yomwika omukishushani kyawe."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "Omuhanganzima"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "Noobasa kuteera omurangi zomuhanganzima"
-
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Enjura"
@@ -1200,6 +1192,14 @@ msgstr "Imata okuta eitondo ryenjura omukishushani kyawe."
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Imata okushweka ekishushani kyawe namatondo genjura."
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "Omuhanganzima"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "Noobasa kuteera omurangi zomuhanganzima"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1445,3 +1445,23 @@ msgstr ""
 "Imata oretere ekishushani kyezingemu omubukiika. Imata haihi nahamutwe "
 "otunge ebirezingamu bigufu, haihi na'hansi otunge ebirezingamu ebiche, kandi "
 "obumosho okutunga ebirenzingamu ebilingwa."
+
+#: ../../magic/src/xor.c:95
+#, fuzzy
+#| msgid "Colors"
+msgid "Xor Colors"
+msgstr "Erangi"
+
+#: ../../magic/src/xor.c:101
+#, fuzzy
+#| msgid "Click and drag to draw arrows made of string art."
+msgid "Click and drag to draw a XOR effect"
+msgstr "Imata kandi okurure oteere enyambi eyemikono."
+
+#: ../../magic/src/xor.c:103
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr ""
+"Imata okuhindura ekishushani kyona kibe nke ebishushani ekikozibwe na za "
+"gilaasi"

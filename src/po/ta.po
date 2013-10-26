@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-06 18:53+0200\n"
+"POT-Creation-Date: 2013-10-26 17:43+0900\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Tamil\n"
 "X-Poedit-Country: INDIA\n"
 
@@ -400,7 +400,7 @@ msgstr "புதிது"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7507
+#: ../tools.h:98 ../tuxpaint.c:7605
 msgid "Open"
 msgstr "திற"
 
@@ -534,201 +534,201 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "அப்ப சரி.. தொடர்ந்து இந்தப் படத்தை வரைவோம்!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2038
+#: ../tuxpaint.c:2040
 msgid "Do you really want to quit?"
 msgstr "உண்மையிலேயே வெளியேற வேண்டுமா?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2043
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "ஆம், வேலை முடிந்தது!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2044 ../tuxpaint.c:2071
+#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
 msgid "No, take me back!"
 msgstr "இல்லை, முன் பக்கத்துக்கு கொண்டு செல்!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2048
+#: ../tuxpaint.c:2050
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "நீங்கள் வெளியேறினால், படத்தை இழக்க நேரிடும்! படத்தைச் சேமிக்கவா?"
 
-#: ../tuxpaint.c:2049 ../tuxpaint.c:2054
+#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
 msgid "Yes, save it!"
 msgstr "ஆம், சேமி!"
 
-#: ../tuxpaint.c:2050 ../tuxpaint.c:2055
+#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "இல்லை, சேமிக்க வேண்டாம்!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2053
+#: ../tuxpaint.c:2055
 msgid "Save your picture first?"
 msgstr "முதலில் உங்கள் படத்தைச் சேமிக்கலாமா?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2058
+#: ../tuxpaint.c:2060
 msgid "Can’t open that picture!"
 msgstr "அந்தப் படத்தைத் திறக்க இயலவில்லை!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2061 ../tuxpaint.c:2066 ../tuxpaint.c:2075 ../tuxpaint.c:2082
-#: ../tuxpaint.c:2091
+#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
+#: ../tuxpaint.c:2093
 msgid "OK"
 msgstr "சரி"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2067
 msgid "There are no saved files!"
 msgstr "சேமித்த படங்கள் ஏதும் இல்லை!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2071
 msgid "Print your picture now?"
 msgstr "இப்பொழுது உங்கள் படத்தை அச்சிடலாமா?"
 
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2072
 msgid "Yes, print it!"
 msgstr "ஆம், அச்சிடு!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2074
+#: ../tuxpaint.c:2076
 msgid "Your picture has been printed!"
 msgstr "உங்கள் படத்தை அச்சிட்டு விட்டோம்!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2078
+#: ../tuxpaint.c:2080
 msgid "Sorry! Your picture could not be printed!"
 msgstr "மன்னிக்கவும், உங்கள் படத்தை அச்சிட இயலவில்லை!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2083
 msgid "You can’t print yet!"
 msgstr "இப்பொழுது அச்செடுக்க இயலாது!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2085
+#: ../tuxpaint.c:2087
 msgid "Erase this picture?"
 msgstr "படத்தை அழிக்கவா?"
 
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2088
 msgid "Yes, erase it!"
 msgstr "ஆம், அழிக்கவும்!"
 
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2089
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "இல்லை, அழிக்க வேண்டாம்!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2092
 msgid "Remember to use the left mouse button!"
 msgstr "சொடுக்கியின் இடது பொத்தானை அழுத்த மறக்காதீங்க!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2300
 msgid "Sound muted."
 msgstr "ஒலியை நிறுத்தி விட்டோம்."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2305
 msgid "Sound unmuted."
 msgstr "மீண்டும் ஒலிக்கிறது."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3047
+#: ../tuxpaint.c:3052
 msgid "Please wait…"
 msgstr "கொஞ்சம் காத்திருங்க..."
 
 #  'Erase' label:
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7510
+#: ../tuxpaint.c:7608
 msgid "Erase"
 msgstr "அழி"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7513
+#: ../tuxpaint.c:7611
 msgid "Slides"
 msgstr "வில்லைகள்"
 
 #  'Back' label:
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7516
+#: ../tuxpaint.c:7614
 msgid "Back"
 msgstr "திரும்பு"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7519
+#: ../tuxpaint.c:7617
 msgid "Next"
 msgstr "அடுத்து"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7522
+#: ../tuxpaint.c:7620
 msgid "Play"
 msgstr "காட்டு"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8230
+#: ../tuxpaint.c:8328
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11488
+#: ../tuxpaint.c:11586
 msgid "Yes"
 msgstr "ஆம்"
 
-#: ../tuxpaint.c:11492
+#: ../tuxpaint.c:11590
 msgid "No"
 msgstr "இல்லை"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12510
+#: ../tuxpaint.c:12608
 msgid "Replace the picture with your changes?"
 msgstr "படத்தில் செய்த மாற்றங்களோடு சேமிக்கவா?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12514
+#: ../tuxpaint.c:12612
 msgid "Yes, replace the old one!"
 msgstr "ஆம், ஏற்கனவே உள்ளதை மாற்று!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12518
+#: ../tuxpaint.c:12616
 msgid "No, save a new file!"
 msgstr "இல்லை, புதிய படம் ஒன்றைச் சேமி!"
 
-#: ../tuxpaint.c:13763
+#: ../tuxpaint.c:13861
 msgid "Choose the picture you want, then click “Open”."
 msgstr "வேண்டிய படத்தைத் தெரிவு செய்த பிறகு, \"திற\" பொத்தானைச் சொடுக்குங்க."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14794 ../tuxpaint.c:15122
+#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "வேண்டிய படங்களைத் தெரிவு செய்த பிறகு, \"காட்டு\" பொத்தானை அழுத்துங்க."
 
-#: ../tuxpaint.c:22032
+#: ../tuxpaint.c:22159
 msgid "Pick a color."
 msgstr "ஒரு நிறத்தைத் தேர்ந்தெடுங்க."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr "டக்சு பெயின்ட்"
+msgid "A drawing program for children."
+msgstr "குழந்தைகள் வரைவதற்கான மென்பொருள்"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "வரையும் மென்பொருள்"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
-msgstr "குழந்தைகள் வரைவதற்கான மென்பொருள்"
+msgid "Tux Paint"
+msgstr "டக்சு பெயின்ட்"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -1188,14 +1188,6 @@ msgstr "இருப்புப் பாதைகள்"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "வானவில்"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "வானவில் வண்ணங்களில் வரையலாம்!"
-
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "மழை"
@@ -1207,6 +1199,14 @@ msgstr "சொடுக்கினால், படத்தில் மழை
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "சொடுக்கினால், படம் முழுக்க மழைத்துளிகளைச் சேர்க்கலாம்."
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "வானவில்"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "வானவில் வண்ணங்களில் வரையலாம்!"
 
 #: ../../magic/src/realrainbow.c:110
 #, fuzzy
@@ -1449,6 +1449,24 @@ msgstr ""
 "சொடுக்கினால், படம் நெடுக்குவாட்டில் அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே "
 "சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் "
 "சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
+
+#: ../../magic/src/xor.c:95
+#, fuzzy
+#| msgid "Colors"
+msgid "Xor Colors"
+msgstr "வண்ணங்கள்"
+
+#: ../../magic/src/xor.c:101
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw a XOR effect"
+msgstr "சொடுக்கி இழுத்தால், படத்தின் மேல் ஒளிக்கற்றை ஒன்றை வரையலாம்."
+
+#: ../../magic/src/xor.c:103
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
 
 #, fuzzy
 #~| msgid "Click and drag to draw a beam of light on your picture."
