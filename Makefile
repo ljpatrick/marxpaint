@@ -799,7 +799,7 @@ install-bin:
 	@echo
 	@echo "...Installing program itself..."
 	@install -d $(BIN_PREFIX)
-	@cp tuxpaint $(BIN_PREFIX)
+	@cp tuxpaint$(EXE_EXT) $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
 # Install the required Windows DLLs into the 'bdist' directory
