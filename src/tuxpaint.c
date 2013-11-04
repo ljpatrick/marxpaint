@@ -239,8 +239,10 @@ char *strcasestr(const char *haystack, const char *needle)
 #if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
 #include <wchar.h>
 #include <stdbool.h>
+#ifndef __HAIKU__
 #define FALSE false
 #define TRUE true
+#endif
 #else
 #include <wchar.h>
 #include <wctype.h>
