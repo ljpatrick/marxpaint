@@ -30,7 +30,7 @@ GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
 else
 ifeq ($(SYSNAME),Haiku)
 OS:=beos
-GPERF:=$(shell finddir B_COMMON_BIN_DIRECTORY)/gperf
+GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
 else
 OS:=linux
 GPERF:=/usr/bin/gperf
