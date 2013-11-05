@@ -232,6 +232,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <locale.h>
 
 #ifdef __HAIKU__
+#include <zlib.h>
 #include <zconf.h>
 #include <FindDirectory.h>
 #include <fs_info.h>
@@ -20937,6 +20938,8 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
   int f, count, comp, unc_err;
   char *control, *softwr;
   Bytef *comp_buff, *unc_buff;
+  
+  z_streamp zstp;
 
   control = malloc(50);
   softwr  = malloc(50);
@@ -20992,7 +20995,6 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
 
   /* Seems that uncompress() has problems in 64bits systems, so using inflate() Pere 2012/03/28 */
   /*  unc_err = uncompress(unc_buff, (uLongf *) unc_size, comp_buff, comp); */
-  z_streamp zstp;
   zstp = malloc(sizeof(z_stream));
   zstp->next_in = comp_buff;
   zstp->avail_in = comp;
