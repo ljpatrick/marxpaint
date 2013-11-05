@@ -956,8 +956,6 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
        status_t result;
     result = find_directory(B_SYSTEM_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
        loadfonts(screen, buffer);
-    result = find_directory(B_COMMON_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
-       loadfonts(screen, buffer);
     result = find_directory(B_USER_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
        loadfonts(screen, buffer);
 #elif defined(__APPLE__)
