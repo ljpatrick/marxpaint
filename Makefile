@@ -31,6 +31,10 @@ else
 ifeq ($(SYSNAME),Haiku)
 OS:=beos
 GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
+STDC_LIB:=-lstdc++
+ifeq ($(shell gcc --version | cut -c 1-6),2.95.3)
+STDC_LIB:=-lstdc++.r4
+endif
 else
 OS:=linux
 GPERF:=/usr/bin/gperf
@@ -90,7 +94,7 @@ FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lzdll -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
-beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) -lstdc++"
+beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB)
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
