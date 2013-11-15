@@ -98,6 +98,7 @@ enum
   LANG_LT,			/* Lithuanian */
   LANG_LV,			/* Latvian */
   LANG_MK,			/* Macedonian */
+  LANG_MN,			/* Mongolian */
   LANG_ML,                      /* Malayalam */
   LANG_MR,                      /* Marath */
   LANG_MS,			/* Malay */

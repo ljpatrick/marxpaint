@@ -113,6 +113,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "lv",
   "ml",
   "mk",
+  "mn",
   "mr",
   "ms",
   "nb",
@@ -303,6 +304,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"luxembourgish", "lb_LU.UTF-8"},
   {"letzebuergesch", "lb_LU.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
+  {"mongolian", "mn_MN.UTF-8"},
   {"marathi", "mr_IN.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
   {"dutch", "nl_NL.UTF-8"},
@@ -431,6 +433,7 @@ static void show_lang_usage(int exitcode)
 /* ml */ "  malayalam\n"
 /* nr */ "  marathi\n"
 /* es_MX */ "  mexican      mexican-spanish        espanol-mejicano\n"
+/* mn */ "  mongolian\n"
 /* nr */ "  ndebele\n"
 /* nso */ "  northern-sotho                      sesotho-sa-leboa\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
@@ -545,6 +548,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
 	  "  mk_MK   (Macedonian)\n"
+	  "  mn_MN   (Mongolian)\n"
           "  mr_IN   (Marathi)\n"
           "  nr_ZA   (Ndebele)\n"
           "  nso_ZA  (Northern Sotho                      Sotho sa Leboa)\n"
