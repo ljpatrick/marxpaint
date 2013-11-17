@@ -581,6 +581,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  twi_GH  (Twi)\n"
 	  "  uk_UA   (Ukrainian)\n"
 	  "  ve_ZA   (Venda)\n"
+	  "  vec     (Venetian)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
 	  "  wo_SN   (Wolof)\n"
