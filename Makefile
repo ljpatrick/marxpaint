@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2012 by Bill Kendrick and others
+# Copyright (c) 2002-2014 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - March 4, 2012
+# June 14, 2002 - January 4, 2014
 
 
 # The version number, for release:
@@ -443,7 +443,7 @@ install:	install-bin install-data install-man install-doc \
 		install-magic-plugin-dev \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
-		install-example-starters \
+		install-example-starters install-example-templates \
 		install-bash-completion \
 		install-osk \
 		$(ARCH_INSTALL)
@@ -552,6 +552,8 @@ clean:
 	@if [ -d trans ]; then rmdir trans; fi
 	@-rm -f starters/.thumbs/*.png
 	@if [ -d starters/.thumbs ]; then rmdir starters/.thumbs; fi
+	@-rm -f templates/.thumbs/*.png
+	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -685,6 +687,22 @@ echo-install-thumb-starters:
 # Install thumb starters
 .PHONY: install-thumb-starters
 install-thumb-starters: echo-install-thumb-starters $(INSTALLED_THUMB_STARTERS)
+
+
+TEMPLATES:=$(wildcard templates/*.*)
+INSTALLED_TEMPLATES:=$(patsubst %,$(DATA_PREFIX)/%,$(TEMPLATES))
+
+$(INSTALLED_TEMPLATES): $(DATA_PREFIX)/%: %
+	install -D -m 644 $< $@
+
+.PHONY: echo-install-example-templates
+echo-install-example-templates:
+	@echo
+	@echo "...Installing example templates..."
+
+# Install example templates
+.PHONY: install-example-templates
+install-example-templates: echo-install-example-templates $(INSTALLED_TEMPLATES)
 
 
 # Install a launcher icon in the Gnome menu
