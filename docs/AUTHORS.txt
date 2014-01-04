@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2013 by Bill Kendrick and others
+Copyright (c) 2002-2014 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 28, 2013
+June 17, 2002 - January 4, 2014
 
 $Id$
 
@@ -283,7 +283,8 @@ $Id$
     Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Silver Frame
-    Original is by Nicu Buculei and taken from Open Clip Art. Prepared by    Caroline Ford <caroline.ford.work@googlemail.com>
+    Original is by Nicu Buculei and taken from Open Clip Art.
+    Prepared by Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Hat, Elephant, Skull, Old Soviet Car, Bald Eagle, Car 2, 
     Desert Tortoise, Gecko, Manatee, Pansy, Stained Glass,
@@ -312,6 +313,28 @@ $Id$
 
   * Other fonts: See their respective "COPYING.txt" details,
     under "fonts/locale/*_docs/"...
+
+* Templates
+  * Burnt bark
+  * Cliff
+  * Corn maze
+  * Jellyfish
+  * Lighthouse
+  * Mossy bark
+  * Mossy log
+  * Mudstone
+  * Ocean splash
+  * Ocean waves
+  * Redwoods above
+  * Rocks
+  * Sheep
+  * Spider's web
+  * Sun behind clouds
+  * Sun behind leaves
+  * Trees above
+  * Trees at dusk
+  * Wool mill machine
+    Bill Kendrick <bill@newbreedsoftware.com>
 
 
 * Sound

@@ -280,7 +280,6 @@ $Id$
 
     * Adapted the interface to play nice too on touchscreen devices.
 
-
  * New Starters:
    -------------
     * Elephant
@@ -305,12 +304,34 @@ $Id$
     * Frame - hearts
     * Fish Icon
     * Mosaic
-
-    From Open Clip Art, curated by 
-    Caroline Ford<caroline.ford.work@googlemail.com>
+      From Open Clip Art, curated by 
+      Caroline Ford <caroline.ford.work@googlemail.com>
 
     * Frame - neon
-      Made in inkscape and the gimp by C Ford.
+      Made in inkscape and the gimp by Caroline Ford.
+
+  * New Templates
+    -------------
+    * Burnt bark
+    * Cliff
+    * Corn maze
+    * Jellyfish
+    * Lighthouse
+    * Mossy bark
+    * Mossy log
+    * Mudstone
+    * Ocean splash
+    * Ocean waves
+    * Redwoods above
+    * Rocks
+    * Sheep
+    * Spider's web
+    * Sun behind clouds
+    * Sun behind leaves
+    * Trees above
+    * Trees at dusk
+    * Wool mill machine
+      Photographed by Bill Kendrick <bill@newbreedsoftware.com>
 
   * New Brushes
     ---------
