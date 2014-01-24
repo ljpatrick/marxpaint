@@ -545,6 +545,11 @@ $Id$
       would fail to load.
       SF.net Bug #191
 
+    * If a non-SVG starter or template with the same name as an SVG one
+      existed, it would be loaded instead of the SVG (despite a thumbnail
+      of the SVG appearing in the file selector).
+      SF.net Bug #191
+
     * Image on right of dialogs would get scaled/cut-off even if there was
       room for them.
 

@@ -11133,8 +11133,7 @@ static void load_starter(char *img_id)
   img_starter_bkgd = NULL;
 
   /* Load the core image: */
-  snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
-  tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
+  tmp_surf = NULL;
 
 #ifndef NOSVG
   if (tmp_surf == NULL)
@@ -11145,6 +11144,12 @@ static void load_starter(char *img_id)
     tmp_surf = load_starter_helper(fname, "svg", &load_svg);
   }
 #endif
+
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
+  }
 
   if (tmp_surf == NULL)
   {
@@ -11162,9 +11167,24 @@ static void load_starter(char *img_id)
 
   /* Try to load the a background image: */
 
-  /* (JPEG first) */
-  snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
-  tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
+  tmp_surf = NULL;
+
+#ifndef NOSVG
+  /* (Try SVG) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
+  }
+#endif
+
+  /* (JPEG) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
+  }
+
   if (tmp_surf == NULL)
   {
     /* (Then just JPG) */
@@ -11178,15 +11198,6 @@ static void load_starter(char *img_id)
     snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
     tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
   }
-
-#ifndef NOSVG
-  /* (Failed? Try SVG next) */
-  if (tmp_surf == NULL)
-  {
-    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
-    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
-  }
-#endif
 
   if (tmp_surf != NULL)
   {
@@ -11311,6 +11322,15 @@ static void load_template(char *img_id)
   snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
   tmp_surf = load_starter_helper(fname, "kpx", &myIMG_Load);
 
+#ifndef NOSVG
+  /* (Failed? Try SVG next) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
+  }
+#endif
+
   /* (JPEG) */
   if (tmp_surf == NULL) 
   {
@@ -11330,15 +11350,6 @@ static void load_template(char *img_id)
     snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
     tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
   }
-
-#ifndef NOSVG
-  /* (Failed? Try SVG next) */
-  if (tmp_surf == NULL)
-  {
-    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
-    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
-  }
-#endif
 
   if (tmp_surf != NULL)
   {
@@ -11410,17 +11421,16 @@ static void load_current(void)
 
   if (file_id[0] != '\0')
   {
+    start_label_node=NULL;
+    current_label_node=NULL;
+    first_label_node_in_redo_stack=NULL;
+    highlighted_label_node = NULL;
+    label_node_to_edit = NULL;
+    have_to_rec_label_node = FALSE;
 
-  start_label_node=NULL;
-  current_label_node=NULL;
-  first_label_node_in_redo_stack=NULL;
-  highlighted_label_node = NULL;
-  label_node_to_edit = NULL;
-  have_to_rec_label_node = FALSE;
-
-  snprintf(ftmp, sizeof(ftmp), "saved/%s%s",
-	   file_id, FNAME_EXTENSION);
-  fname = get_fname(ftmp, DIR_SAVE);
+    snprintf(ftmp, sizeof(ftmp), "saved/%s%s",
+             file_id, FNAME_EXTENSION);
+    fname = get_fname(ftmp, DIR_SAVE);
 
     tmp = myIMG_Load_RWops(fname);
 
@@ -17605,14 +17615,15 @@ static SDL_Surface * myIMG_Load_RWops(char * file)
    otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
 static SDL_Surface * myIMG_Load(char * file)
 {
-  if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
+  if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0) {
     return(load_kpx(file));
 #ifndef NOSVG
-  else if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0)
+  } else if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0) {
     return(load_svg(file));
 #endif
-  else
+  } else {
     return(myIMG_Load_RWops(file));
+  }
 }
 
 static SDL_Surface * load_kpx(char * file)
@@ -18288,6 +18299,7 @@ static int do_new_dialog(void)
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
+  int skip, k;
 
 
   val_x = val_y = motioner = 0;
@@ -18500,26 +18512,12 @@ static int do_new_dialog(void)
            )
         {
           strcpy(fname, f->d_name);
+          skip = 0;
+
           if (strcasestr(fname, FNAME_EXTENSION) != NULL)
           {
             d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
             strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
-
-#ifndef NOSVG
-            /* Found a PNG; but if identically-named SVG exists, skip it */
-            if (1)
-            {
-              char svgname[512];
-              FILE * fi;
-
-              sprintf(svgname, "%s/%s.svg", dirname[place], fname);
-              fi = fopen(svgname, "r");
-              if (fi != NULL) {
-                fclose(fi);
-                continue;
-              }
-            }
-#endif
           }
 
           if (strcasestr(fname, ".bmp") != NULL)
@@ -18548,201 +18546,222 @@ static int do_new_dialog(void)
             strcpy((char *) strcasestr(fname, ".jpg"), "");
           }
 
-          d_names[num_files] = strdup(fname);
-          d_places[num_files] = place;
+#ifndef NOSVG
+          /* If identically-named SVG exists, skip this version */
+          for (k = 0; k < num_files_in_dirs; k++) {
+            if (k != j) {
+              struct dirent *f2;
+              char fname2[1024];
 
+              f2 = &(fs[k].f);
+              strcpy(fname2, f2->d_name);
 
-          /* Try to load thumbnail first: */
-
-          snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
-              dirname[d_places[num_files]], d_names[num_files]);
-          debug(fname);
-          img = IMG_Load(fname);
-
-          if (img == NULL)
-          {
-            /* No thumbnail in the new location ("saved/.thumbs"),
-               try the old location ("saved/"): */
-
-            snprintf(fname, sizeof(fname), "%s/%s-t.png",
+              if (strstr(fname2, fname) == fname2 &&
+                  strcasestr(fname2, ".svg") != NULL) {
+                /* SVG of this bitmap exists; we'll skip it */
+                skip = 1;
+              }
+            }
+          }
+#endif
+          if (skip) {
+            free(d_exts[num_files]);
+          } else {
+            d_names[num_files] = strdup(fname);
+            d_places[num_files] = place;
+  
+  
+            /* Try to load thumbnail first: */
+  
+            snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                 dirname[d_places[num_files]], d_names[num_files]);
             debug(fname);
-
             img = IMG_Load(fname);
-          }
-
-          if (img != NULL)
-          {
-            /* Loaded the thumbnail from one or the other location */
-            show_progress_bar(screen);
-
-            img1 = SDL_DisplayFormat(img);
-            SDL_FreeSurface(img);
-
-            /* if too big, or too small in both dimensions, rescale it
-               (for now: using old thumbnail as source for high speed,
-               low quality) */
-            if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
-                || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
-            {
-              img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
-              SDL_FreeSurface(img1);
-              img1 = img2;
-            }
-
-            thumbs[num_files] = img1;
-
-            if (thumbs[num_files] == NULL)
-            {
-              fprintf(stderr,
-                  "\nError: Couldn't create a thumbnail of "
-                  "saved image!\n" "%s\n", fname);
-            }
-
-            num_files++;
-          }
-          else
-          {
-            /* No thumbnail - load original: */
-
-            /* Make sure we have a ~/.tuxpaint/saved directory: */
-            if (make_directory("saved", "Can't create user data directory"))
-            {
-              /* (Make sure we have a .../saved/.thumbs/ directory:) */
-              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
-            }
-
-            img = NULL;
-
-            if (d_places[num_files] == PLACE_STARTERS_DIR ||
-                d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
-            {
-              /* Try to load a starter's background image, first!
-                 If it exists, it should give a better idea of what the
-                 starter looks like, compared to the overlay image... */
-
-              /* FIXME: Add .jpg support -bjk 2007.03.22 */
-
-              /* (Try JPEG first) */
-              snprintf(fname, sizeof(fname), "%s/%s-back",
-                  dirname[d_places[num_files]], d_names[num_files]);
-              img = load_starter_helper(fname, "jpeg", &IMG_Load);
-              if (img == NULL)
-              {
-                snprintf(fname, sizeof(fname), "%s/%s-back",
-                  dirname[d_places[num_files]], d_names[num_files]);
-                img = load_starter_helper(fname, "jpg", &IMG_Load);
-              }
-
-
-              if (img == NULL)
-              {
-                /* (Try PNG next) */
-                snprintf(fname, sizeof(fname), "%s/%s-back",
-                    dirname[d_places[num_files]], d_names[num_files]);
-                img = load_starter_helper(fname, "png", &IMG_Load);
-              }
-
-#ifndef NOSVG
-              if (img == NULL)
-              {
-                /* (Try SVG next) */
-                snprintf(fname, sizeof(fname), "%s/%s-back",
-                    dirname[d_places[num_files]], d_names[num_files]);
-                img = load_starter_helper(fname, "svg", &load_svg);
-              }
-#endif
-            }
-
+  
             if (img == NULL)
             {
-              /* Didn't load a starter background (or didn't try!),
-                 try loading the actual image... */
-
-              snprintf(fname, sizeof(fname), "%s/%s",
-                  dirname[d_places[num_files]], f->d_name);
+              /* No thumbnail in the new location ("saved/.thumbs"),
+                 try the old location ("saved/"): */
+  
+              snprintf(fname, sizeof(fname), "%s/%s-t.png",
+                  dirname[d_places[num_files]], d_names[num_files]);
               debug(fname);
-              img = myIMG_Load(fname);
+  
+              img = IMG_Load(fname);
             }
-
-
-            show_progress_bar(screen);
-
-            if (img == NULL)
+  
+            if (img != NULL)
             {
-              fprintf(stderr,
-                  "\nWarning: I can't open one of the saved files!\n"
-                  "%s\n"
-                  "The Simple DirectMedia Layer error that "
-                  "occurred was:\n" "%s\n\n", fname, SDL_GetError());
-
-              free(d_names[num_files]);
-              free(d_exts[num_files]);
-            }
-            else
-            {
-              /* Turn it into a thumbnail: */
-
-              img1 = SDL_DisplayFormatAlpha(img);
-              img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-              SDL_FreeSurface(img1);
-
+              /* Loaded the thumbnail from one or the other location */
               show_progress_bar(screen);
-
-              thumbs[num_files] = SDL_DisplayFormat(img2);
-              SDL_FreeSurface(img2);
+  
+              img1 = SDL_DisplayFormat(img);
+              SDL_FreeSurface(img);
+  
+              /* if too big, or too small in both dimensions, rescale it
+                 (for now: using old thumbnail as source for high speed,
+                 low quality) */
+              if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
+                  || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
+              {
+                img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
+                SDL_FreeSurface(img1);
+                img1 = img2;
+              }
+  
+              thumbs[num_files] = img1;
+  
               if (thumbs[num_files] == NULL)
               {
                 fprintf(stderr,
                     "\nError: Couldn't create a thumbnail of "
                     "saved image!\n" "%s\n", fname);
               }
-
-              SDL_FreeSurface(img);
-
-              show_progress_bar(screen);
-
-
-              /* Let's save this thumbnail, so we don't have to
-                 create it again next time 'Open' is called: */
-              /* if (d_places[num_files] == PLACE_SAVED_DIR) */ /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
-
-              if (d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR ||  /* We must check to not try to write to system wide dirs  Pere 2010.3.25 */
-                  d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR)   
+  
+              num_files++;
+            }
+            else
+            {
+              /* No thumbnail - load original: */
+  
+              /* Make sure we have a ~/.tuxpaint/saved directory: */
+              if (make_directory("saved", "Can't create user data directory"))
               {
-                debug("Saving thumbnail for this one!");
-
-                snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+                /* (Make sure we have a .../saved/.thumbs/ directory:) */
+                make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+              }
+  
+              img = NULL;
+  
+              if (d_places[num_files] == PLACE_STARTERS_DIR ||
+                  d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
+              {
+                /* Try to load a starter's background image, first!
+                   If it exists, it should give a better idea of what the
+                   starter looks like, compared to the overlay image... */
+  
+                /* FIXME: Add .jpg support -bjk 2007.03.22 */
+  
+                /* (Try JPEG first) */
+                snprintf(fname, sizeof(fname), "%s/%s-back",
                     dirname[d_places[num_files]], d_names[num_files]);
-
-                if (!make_directory("starters", "Can't create user data directory") ||
-                    !make_directory("templates", "Can't create user data directory") ||
-                    !make_directory("starters/.thumbs", "Can't create user data directory") ||
-                    !make_directory("templates/.thumbs", "Can't create user data directory"))
-                        fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
-                else
+                img = load_starter_helper(fname, "jpeg", &IMG_Load);
+                if (img == NULL)
                 {
-                  fi = fopen(fname, "wb");
-                  if (fi == NULL)
-                  {
-                    fprintf(stderr,
-                      "\nError: Couldn't save thumbnail of "
-                      "saved image!\n"
-                      "%s\n"
-                      "The error that occurred was:\n"
-                      "%s\n\n", fname, strerror(errno));
-                  }
+                  snprintf(fname, sizeof(fname), "%s/%s-back",
+                    dirname[d_places[num_files]], d_names[num_files]);
+                  img = load_starter_helper(fname, "jpg", &IMG_Load);
+                }
+  
+  #ifndef NOSVG
+  	      if (img == NULL)
+  	      {
+  		/* (Try SVG next) */
+  		snprintf(fname, sizeof(fname), "%s/%s-back",
+  		    dirname[d_places[num_files]], d_names[num_files]);
+  		img = load_starter_helper(fname, "svg", &load_svg);
+  	      }
+  #endif
+  
+                if (img == NULL)
+                {
+                  /* (Try PNG next) */
+                  snprintf(fname, sizeof(fname), "%s/%s-back",
+                      dirname[d_places[num_files]], d_names[num_files]);
+                  img = load_starter_helper(fname, "png", &IMG_Load);
+                }
+              }
+  
+              if (img == NULL)
+              {
+                /* Didn't load a starter background (or didn't try!),
+                   try loading the actual image... */
+  
+                snprintf(fname, sizeof(fname), "%s/%s",
+                    dirname[d_places[num_files]], f->d_name);
+                debug(fname);
+                img = myIMG_Load(fname);
+              }
+  
+  
+              show_progress_bar(screen);
+  
+              if (img == NULL)
+              {
+                fprintf(stderr,
+                    "\nWarning: I can't open one of the saved files!\n"
+                    "%s\n"
+                    "The Simple DirectMedia Layer error that "
+                    "occurred was:\n" "%s\n\n", fname, SDL_GetError());
+  
+                free(d_names[num_files]);
+                free(d_exts[num_files]);
+              }
+              else
+              {
+                /* Turn it into a thumbnail: */
+  
+                img1 = SDL_DisplayFormatAlpha(img);
+                img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
+                SDL_FreeSurface(img1);
+  
+                show_progress_bar(screen);
+  
+                thumbs[num_files] = SDL_DisplayFormat(img2);
+                SDL_FreeSurface(img2);
+                if (thumbs[num_files] == NULL)
+                {
+                  fprintf(stderr,
+                      "\nError: Couldn't create a thumbnail of "
+                      "saved image!\n" "%s\n", fname);
+                }
+  
+                SDL_FreeSurface(img);
+  
+                show_progress_bar(screen);
+  
+  
+                /* Let's save this thumbnail, so we don't have to
+                   create it again next time 'Open' is called: */
+                /* if (d_places[num_files] == PLACE_SAVED_DIR) */ /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
+  
+                if (d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR ||  /* We must check to not try to write to system wide dirs  Pere 2010.3.25 */
+                    d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR)   
+                {
+                  debug("Saving thumbnail for this one!");
+  
+                  snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+                      dirname[d_places[num_files]], d_names[num_files]);
+  
+                  if (!make_directory("starters", "Can't create user data directory") ||
+                      !make_directory("templates", "Can't create user data directory") ||
+                      !make_directory("starters/.thumbs", "Can't create user data directory") ||
+                      !make_directory("templates/.thumbs", "Can't create user data directory"))
+                          fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                   else
                   {
-                    do_png_save(fi, fname, thumbs[num_files], 0);
+                    fi = fopen(fname, "wb");
+                    if (fi == NULL)
+                    {
+                      fprintf(stderr,
+                        "\nError: Couldn't save thumbnail of "
+                        "saved image!\n"
+                        "%s\n"
+                        "The error that occurred was:\n"
+                        "%s\n\n", fname, strerror(errno));
+                    }
+                    else
+                    {
+                      do_png_save(fi, fname, thumbs[num_files], 0);
+                    }
                   }
+                  
+                  show_progress_bar(screen);
                 }
-                
-                show_progress_bar(screen);
+  
+  
+                num_files++;
               }
-
-
-              num_files++;
             }
           }
         }
@@ -19225,6 +19244,8 @@ static int do_new_dialog(void)
 
       snprintf(fname, sizeof(fname), "%s/%s%s",
             dirname[d_places[which]], d_names[which], d_exts[which]);
+
+printf("LOADING %s\n", fname);
 
       img = myIMG_Load(fname);
 
