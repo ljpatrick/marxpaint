@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2013.April.30 (0.9.22)
+2014.January.23 (0.9.22)
 
   * New Tools:
     ----------
@@ -541,6 +541,10 @@ $Id$
 
   * Bug Fixes
     ---------
+    * Starter and template filenames with non-lowercase extensions (e.g. .JPG)
+      would fail to load.
+      SF.net Bug #191
+
     * Image on right of dialogs would get scaled/cut-off even if there was
       room for them.
 

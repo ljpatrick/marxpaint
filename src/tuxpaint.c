@@ -11091,6 +11091,29 @@ static void load_starter_id(char *saved_id, FILE *fil)
 }
 
 
+static SDL_Surface * load_starter_helper(char * path_and_basename, char * extension, SDL_Surface * (*load_func)(char *)) {
+  char * ext;
+  char fname[256];
+  SDL_Surface * surf;
+  int i;
+
+  ext = strdup(extension);
+  snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
+  surf = (*load_func)(fname);
+
+  if (surf == NULL) {
+    for (i = 0; i < strlen(ext); i++) {
+      ext[i] = toupper(ext[i]);
+    }
+    snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
+    surf = (*load_func)(fname);
+  }
+
+  free(ext);
+
+  return(surf);
+}
+
 
 static void load_starter(char *img_id)
 {
@@ -11110,24 +11133,24 @@ static void load_starter(char *img_id)
   img_starter_bkgd = NULL;
 
   /* Load the core image: */
-  snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
-  tmp_surf = IMG_Load(fname);
+  snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+  tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
 
 #ifndef NOSVG
   if (tmp_surf == NULL)
   {
     /* Try loading an SVG */
 
-    snprintf(fname, sizeof(fname), "%s/%s.svg", dirname, img_id);
-    tmp_surf = load_svg(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
   }
 #endif
 
   if (tmp_surf == NULL)
   {
     /* Try loading a KPX */
-    snprintf(fname, sizeof(fname), "%s/%s.kpx", dirname, img_id);
-    tmp_surf = myIMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "kpx", &myIMG_Load);
   }
     
 
@@ -11141,27 +11164,27 @@ static void load_starter(char *img_id)
 
   /* (JPEG first) */
   snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
-  tmp_surf = IMG_Load(fname);
+  tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
   if (tmp_surf == NULL)
   {
     /* (Then just JPG) */
-    snprintf(fname, sizeof(fname), "%s/%s-back.jpg", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "jpg", &IMG_Load);
   }
 
   /* (Failed? Try PNG next) */
   if (tmp_surf == NULL)
   {
-    snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
   }
 
 #ifndef NOSVG
   /* (Failed? Try SVG next) */
   if (tmp_surf == NULL)
   {
-    snprintf(fname, sizeof(fname), "%s/%s-back.svg", dirname, img_id);
-    tmp_surf = load_svg(fname);
+    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
   }
 #endif
 
@@ -11285,35 +11308,35 @@ static void load_template(char *img_id)
   img_starter_bkgd = NULL;
 
   /* (Try loading a KPX) */
-  snprintf(fname, sizeof(fname), "%s/%s.kpx", dirname, img_id);
-  tmp_surf = myIMG_Load(fname);
+  snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+  tmp_surf = load_starter_helper(fname, "kpx", &myIMG_Load);
 
   /* (JPEG) */
   if (tmp_surf == NULL) 
   {
-    snprintf(fname, sizeof(fname), "%s/%s.jpeg", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
   }
   if (tmp_surf == NULL)
   {
     /* (Then just JPG) */
-    snprintf(fname, sizeof(fname), "%s/%s.jpg", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "jpg", &IMG_Load);
   }
 
   /* (Failed? Try PNG next) */
   if (tmp_surf == NULL)
   {
-    snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "png", &IMG_Load);
   }
 
 #ifndef NOSVG
   /* (Failed? Try SVG next) */
   if (tmp_surf == NULL)
   {
-    snprintf(fname, sizeof(fname), "%s/%s.svg", dirname, img_id);
-    tmp_surf = load_svg(fname);
+    snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
+    tmp_surf = load_starter_helper(fname, "svg", &load_svg);
   }
 #endif
 
@@ -13662,14 +13685,14 @@ static int do_open(void)
             strcpy(fname, f->d_name);
             if (strcasestr(fname, FNAME_EXTENSION) != NULL)
             {
+              d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
               strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
-              d_exts[num_files] = strdup(FNAME_EXTENSION);
             }
 
             if (strcasestr(fname, ".bmp") != NULL)
             {
+              d_exts[num_files] = strdup(strcasestr(fname, ".bmp"));
               strcpy((char *) strcasestr(fname, ".bmp"), "");
-              d_exts[num_files] = strdup(".bmp");
             }
 
             d_names[num_files] = strdup(fname);
@@ -14493,7 +14516,7 @@ static int do_open(void)
 	  if (fi == NULL)
 	    {
             fprintf(stderr,
-                "\nWarning: Couldn't load the saved image!\n"
+                "\nWarning: Couldn't load the saved image! (1)\n"
                 "%s\n"
                 "The file is missing.\n\n\n", fname);
             do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
@@ -14506,7 +14529,7 @@ static int do_open(void)
           if (img == NULL)
           {
             fprintf(stderr,
-                "\nWarning: Couldn't load the saved image!\n"
+                "\nWarning: Couldn't load the saved image! (2)\n"
                 "%s\n"
                 "The Simple DirectMedia Layer error that occurred "
                 "was:\n" "%s\n\n", fname, SDL_GetError());
@@ -14729,14 +14752,14 @@ static int do_slideshow(void)
 	  strcpy(fname, f->d_name);
 	  if (strcasestr(fname, FNAME_EXTENSION) != NULL)
 	  {
+	    d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
 	    strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
-	    d_exts[num_files] = strdup(FNAME_EXTENSION);
 	  }
 
 	  if (strcasestr(fname, ".bmp") != NULL)
 	  {
+	    d_exts[num_files] = strdup(strcasestr(fname, ".bmp"));
 	    strcpy((char *) strcasestr(fname, ".bmp"), "");
-	    d_exts[num_files] = strdup(".bmp");
 	  }
 
 	  d_names[num_files] = strdup(fname);
@@ -18479,8 +18502,8 @@ static int do_new_dialog(void)
           strcpy(fname, f->d_name);
           if (strcasestr(fname, FNAME_EXTENSION) != NULL)
           {
+            d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
             strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
-            d_exts[num_files] = strdup(FNAME_EXTENSION);
 
 #ifndef NOSVG
             /* Found a PNG; but if identically-named SVG exists, skip it */
@@ -18501,28 +18524,28 @@ static int do_new_dialog(void)
 
           if (strcasestr(fname, ".bmp") != NULL)
           {
+            d_exts[num_files] = strdup(strcasestr(fname, ".bmp"));
             strcpy((char *) strcasestr(fname, ".bmp"), "");
-            d_exts[num_files] = strdup(".bmp");
           }
 
 #ifndef NOSVG
           if (strcasestr(fname, ".svg") != NULL)
           {
+            d_exts[num_files] = strdup(strcasestr(fname, ".svg"));
             strcpy((char *) strcasestr(fname, ".svg"), "");
-            d_exts[num_files] = strdup(".svg");
           }
 #endif
 
           if (strcasestr(fname, ".kpx") != NULL)
           {
+            d_exts[num_files] = strdup(strcasestr(fname, ".kpx"));
             strcpy((char *) strcasestr(fname, ".kpx"), "");
-            d_exts[num_files] = strdup(".kpx");
           }
 
           if (strcasestr(fname, ".jpg") != NULL)
           {
+            d_exts[num_files] = strdup(strcasestr(fname, ".jpg"));
             strcpy((char *) strcasestr(fname, ".jpg"), "");
-            d_exts[num_files] = strdup(".jpg");
           }
 
           d_names[num_files] = strdup(fname);
@@ -18601,29 +18624,32 @@ static int do_new_dialog(void)
               /* FIXME: Add .jpg support -bjk 2007.03.22 */
 
               /* (Try JPEG first) */
-              snprintf(fname, sizeof(fname), "%s/%s-back.jpeg",
+              snprintf(fname, sizeof(fname), "%s/%s-back",
                   dirname[d_places[num_files]], d_names[num_files]);
-
-              img = IMG_Load(fname);
+              img = load_starter_helper(fname, "jpeg", &IMG_Load);
+              if (img == NULL)
+              {
+                snprintf(fname, sizeof(fname), "%s/%s-back",
+                  dirname[d_places[num_files]], d_names[num_files]);
+                img = load_starter_helper(fname, "jpg", &IMG_Load);
+              }
 
 
               if (img == NULL)
               {
                 /* (Try PNG next) */
-                snprintf(fname, sizeof(fname), "%s/%s-back.png",
+                snprintf(fname, sizeof(fname), "%s/%s-back",
                     dirname[d_places[num_files]], d_names[num_files]);
-
-                img = IMG_Load(fname);
+                img = load_starter_helper(fname, "png", &IMG_Load);
               }
 
 #ifndef NOSVG
               if (img == NULL)
               {
                 /* (Try SVG next) */
-                snprintf(fname, sizeof(fname), "%s/%s-back.svg",
+                snprintf(fname, sizeof(fname), "%s/%s-back",
                     dirname[d_places[num_files]], d_names[num_files]);
-
-                img = load_svg(fname);
+                img = load_starter_helper(fname, "svg", &load_svg);
               }
 #endif
             }
@@ -19205,7 +19231,7 @@ static int do_new_dialog(void)
       if (img == NULL)
       {
         fprintf(stderr,
-            "\nWarning: Couldn't load the saved image!\n"
+            "\nWarning: Couldn't load the saved image! (3)\n"
             "%s\n"
             "The Simple DirectMedia Layer error that occurred "
             "was:\n" "%s\n\n", fname, SDL_GetError());
@@ -19267,7 +19293,7 @@ static int do_new_dialog(void)
       if (img == NULL)
       {
         fprintf(stderr,
-            "\nWarning: Couldn't load the saved image!\n"
+            "\nWarning: Couldn't load the saved image! (4)\n"
             "%s\n"
             "The Simple DirectMedia Layer error that occurred "
             "was:\n" "%s\n\n", fname, SDL_GetError());
