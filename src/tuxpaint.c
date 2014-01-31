@@ -19245,8 +19245,6 @@ static int do_new_dialog(void)
       snprintf(fname, sizeof(fname), "%s/%s%s",
             dirname[d_places[which]], d_names[which], d_exts[which]);
 
-printf("LOADING %s\n", fname);
-
       img = myIMG_Load(fname);
 
       if (img == NULL)
