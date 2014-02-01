@@ -346,7 +346,9 @@ $Id$
   * New Locales:
     ------------
     * Acholi translation
-      George Patrick <chanchumgpa@gmail.com>
+      Achuma George Patrick <chanchumgpa@gmail.com>
+      Opio June Bryan
+      Ogwal Kenneth Awio
 
     * Akan translation
       Derrick Frimpong <flexyflame2006@yahoo.com>

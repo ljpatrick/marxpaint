@@ -470,7 +470,9 @@ $Id$
 * Translations
 
   * Acholi translation
-    George Patrick <chanchumgpa@gmail.com>
+    Achuma George Patrick <chanchumgpa@gmail.com>
+    Opio June Bryan
+    Ogwal Kenneth Awio
 
   * Afrikaans
     Samuel Murray (Groenkloof) <samuel@translate.org.za>
