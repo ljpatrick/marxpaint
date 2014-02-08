@@ -364,6 +364,9 @@ $Id$
       Anush MKRTCHYAN 
       Jasmine Udea
 
+    * Bambara translation
+      Fasokan <konate20032001@yahoo.fr>
+
     * Kiga translation
       Florence Tushabe <tushabe@cit.mak.ac.ug>
 

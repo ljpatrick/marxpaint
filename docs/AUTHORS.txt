@@ -512,6 +512,9 @@ $Id$
   * Azerbaijani
     Jamil Farzana <jamil.farzana@gmail.com>
 
+  * Bambara translation
+    Fasokan <konate20032001@yahoo.fr>
+
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
     Ander Elortondo <ander.elor@gmail.com>
