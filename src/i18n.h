@@ -49,6 +49,7 @@ enum
   LANG_AZ,			/* Azerbaijani */
   LANG_BE,			/* Belarusian */
   LANG_BG,			/* Bulgarian */
+  LANG_BM,			/* Bambara */
   LANG_BO,			/* Tibetan */
   LANG_BR,			/* Breton */
   LANG_CA,			/* Catalan */
