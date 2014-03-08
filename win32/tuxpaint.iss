@@ -99,6 +99,7 @@ Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "jpn"; MessagesFile: "compiler:Languages\Japanese.isl"
+Name: "gla"; MessagesFile: "compiler:Languages\ScottishGaelic.isl"
 
 ; Additional, Candidate official translations
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-12-5.1.11.isl"
@@ -381,6 +382,9 @@ begin
   else
   if lang = 'jpn' then
     lc := 'ja'
+  else
+  if lang = 'gla' then
+    lc := 'gd'
   else
   if lang = 'cht' then
     if TwoLetter = true then
