@@ -525,6 +525,7 @@ $Id$
 
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
+      Mohomodou Houssouba  <mh@bollag-areal.ch>
 
     * Spanish (Spain) translation
       Teresa Orive <teresa.g.orive@gmail.com>
