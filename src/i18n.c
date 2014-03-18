@@ -138,6 +138,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "sq",
   "sr",
   "sr@latin",
+  "su",
   "sv",
   "sw",
   "ta",
@@ -340,6 +341,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"slovenian", "sl_SI.UTF-8"},
   {"slovensko", "sl_SI.UTF-8"},
   {"songhay", "son.UTF-8"},
+  {"sundanese", "su_ID.UTF-8"},
   {"swedish", "sv_SE.UTF-8"},
   {"svenska", "sv_SE.UTF-8"},
   {"swahili", "sw_TZ.UTF-8"},
@@ -457,6 +459,7 @@ static void show_lang_usage(int exitcode)
 /* en_ZA */ "  southafrican-english\n"
 /* son */ "  songhay\n"
 /* es */ "  spanish      espanol\n"
+/* su */ "  sundanese\n"
 /* sw */ "  swahili\n"
 /* sv */ "  swedish      svenska\n"
 /* tl */ "  tagalog\n"
@@ -573,6 +576,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  sr_YU   (Serbian (cyrillic))\n"
           "  sr_RS@latin  (Serbian (latin))\n"
 	  "  es_ES   (Spanish      Espanol)\n"
+          "  su_ID   (Sundanese)\n"
 	  "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
 	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"

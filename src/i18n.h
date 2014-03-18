@@ -124,6 +124,7 @@ enum
   LANG_SQ,			/* Albanian */
   LANG_SR,			/* Serbian (cyrillic) */
   LANG_SR_LATIN,		/* Serbian (latin) */
+  LANG_SU,                      /* Sundanese */
   LANG_SV,			/* Swedish */
   LANG_SW,			/* Swahili */
   LANG_TA,			/* Tamil */
