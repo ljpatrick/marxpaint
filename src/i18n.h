@@ -143,6 +143,7 @@ enum
   LANG_ZH_CN,			/* Chinese (Simplified) */
   LANG_ZH_TW,			/* Chinese (Traditional) */
   LANG_ZAM,			/* Zapotec (Miahuatlan) */
+  LANG_ZU,                      /* Zulu */
   NUM_LANGS
 };
 

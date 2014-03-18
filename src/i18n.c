@@ -157,6 +157,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "zam",
   "zh_CN",
   "zh_TW",
+  "zu",
 };
 
 
@@ -361,7 +362,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"zapotec", "zam.UTF-8"},
   {"miahuatlan-zapotec", "zam.UTF-8"},
   {"khmer", "km_KH.UTF-8"},
-  {"malayalam", "ml_IN.UTF-8"}
+  {"malayalam", "ml_IN.UTF-8"},
+  {"zulu", "zu_ZA.UTF-8"}
 };
 
 /* FIXME: All this should REALLY be array-based!!! */
@@ -478,6 +480,7 @@ static void show_lang_usage(int exitcode)
 /* cy */ "  welsh        cymraeg\n"
 /* xh */ "  xhosa\n"
 /* zam */"  zapotec      miahuatlan-zapotec\n"
+/* zu */ "  zulu\n"
 	  "\n", prg);
   exit(exitcode);
 }
@@ -596,6 +599,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  cy_GB   (Welsh        Cymraeg)\n"
 	  "  xh_ZA   (Xhosa)\n"
 	  "  zam     (Zapoteco-Miahuatlan)\n"
+          "  zu_ZA   (Zulu)\n"
 	  "\n", prg);
 }
 
