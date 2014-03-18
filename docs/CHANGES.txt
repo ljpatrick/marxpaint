@@ -533,6 +533,9 @@ $Id$
     * Swedish translation
       Henrik Holst <henrik.holst@millistream.com>
 
+    * Swahili translation
+      Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>
+
     * Telugu tranlation
       saikumar <ramukiashc@gmail.com> as a task in GCI
 

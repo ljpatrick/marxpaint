@@ -867,6 +867,7 @@ $Id$
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>
     Alberto Escudero-Pascual <aep@it46.se>
+    Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>
 
   * Swedish
     Robin Rosenberg <robin.rosenberg@dewire.com>
