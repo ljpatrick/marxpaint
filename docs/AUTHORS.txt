@@ -932,6 +932,9 @@ $Id$
     Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
     
 
+  * Zulu
+    sipho <sipho@translate.org.za>
+
 * Ports and Packaging
 
   * Windows 32-bit coding and builds

@@ -438,6 +438,9 @@ $Id$
     * Venetian language
       Fabio Lazarin, El Galep�n <mistro@elgalepin.com>
 
+    * Zulu
+      sipho <sipho@translate.org.za>
+
   * Localization Updates:
     ---------------------
     * Albanian translation.
