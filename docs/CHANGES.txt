@@ -69,6 +69,14 @@ $Id$
     * Using $LDFLAGS when linking Magic tool plugins and Tux Paint binary.
       Volkov Peter <volkov_peter@users.sourceforge.net> (SF.Net Bug #3389067)
 
+  * Collection of Mac OS X Updates:
+    -------------------------------
+    Produced by Eric Poncet <http://www.linguasoft.com/>
+    Commissioned by Harvey Ginter <harveyginter@gmail.com>
+
+    * Customization support for Mac OS X (automatic, under XCode)
+      and Windows (manual).
+
   * Accessibility Improvements:
     ---------------------------
     * Added a mouse accessibility mode to avoid the need to drag the mouse.
