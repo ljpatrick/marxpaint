@@ -484,7 +484,7 @@ static int charmap_add(CHARMAP* cm, int section, char* seq, const wchar_t* unico
 
   /* For now, we only utilize one-character flags */
   if(strlen(flag) > 1) {
-    fprintf(stderr, "%04X: Multi-character flag, truncated.\n", (int)unicode);
+    fprintf(stderr, "%04X: Multi-character flag, truncated.\n", (int)(intptr_t)unicode);        //EP added (intptr_t) to avoid warning on x64
   }
 
   return sm_add(&cm->sections[section], seq, unicode, flag[0]);

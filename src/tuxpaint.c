@@ -181,6 +181,7 @@ static scaleparams scaletable[] = {
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+#include <libgen.h>     //EP added this include for basename()
 
 /* On Linux, we can use 'wordexp()' to expand env. vars. in settings
    pulled from config. files */
@@ -255,6 +256,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #endif
 
 #ifdef DEBUG
+#undef gettext  //EP to avoid warning on following line
 #define gettext(String) debug_gettext(String)
 #endif
 
@@ -448,7 +450,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #else
 
 #include <librsvg/rsvg.h>
-#include <librsvg/rsvg-cairo.h>
+//#include <librsvg/rsvg-cairo.h>       //EP to avoid warning "Including <librsvg/rsvg-cairo.h> directly is deprecated."
 /* #include "rsvg.h" */
 /* #include "rsvg-cairo.h" */
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
@@ -463,6 +465,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 #endif
 
+#include <zlib.h>       //EP added for PNG upgrade from 1.2 to 1.5
 #define PNG_INTERNAL
 #include <png.h>
 #define FNAME_EXTENSION ".png"
@@ -507,6 +510,8 @@ static void mtw(wchar_t * wtok, char * tok)
 #include "compiler.h"
 
 
+//EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL
+#ifndef __APPLE__
 #if VIDEO_BPP==32
 #ifdef __GNUC__
 #define SDL_GetRGBA(p,f,rp,gp,bp,ap) ({ \
@@ -539,6 +544,7 @@ static void mtw(wchar_t * wtok, char * tok)
   |                              \
   (((b) & 0xffu) <<  0)          \
 )
+#endif
 #endif
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
@@ -4674,17 +4680,17 @@ static void mainloop(void)
 	  /* Time to replace "Great!" with old tip text: */
 
 	  if (event.user.data1 != NULL)
-	  {
-	    if (((unsigned char *) event.user.data1)[0] == '=')
-	    {
-	      draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1 + 1, 1, (int)event.user.data2);
-	    }
-	    else
-	    {
-	      draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1, 0, (int)event.user.data2);
-	    }
-	  }
-	  else
+          {
+            if (((unsigned char *) event.user.data1)[0] == '=')
+            {
+                  draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1 + 1, 1, (int)(intptr_t)event.user.data2);       //EP added (intptr_t) to avoid warning on x64
+            }
+            else
+            {
+              draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1, 0, (int)(intptr_t)event.user.data2);       //EP added (intptr_t) to avoid warning on x64
+            }
+          }
+          else
 	    draw_tux_text(TUX_GREAT, "", 1);
 	}
 	else if (event.user.code == USEREVENT_PLAYDESCSOUND)
@@ -4698,15 +4704,15 @@ static void mainloop(void)
 #ifndef NOSOUND
 	  Mix_ChannelFinished(NULL);	/* Kill the callback, so we don't get stuck in a loop! */
 
-	  if (event.user.data1 != NULL)
-	  {
-	    if ((int) event.user.data1 == cur_stamp[stamp_group])	/* Don't play old stamp's sound... */
-	    {
-	      if (!mute && stamp_data[stamp_group][(int) event.user.data1]->sdesc != NULL)
-		Mix_PlayChannel(2, stamp_data[stamp_group][(int) event.user.data1]->sdesc,
-				0);
-	    }
-	  }
+          if (event.user.data1 != NULL)
+          {
+            if ((int)(intptr_t) event.user.data1 == cur_stamp[stamp_group])     /* Don't play old stamp's sound... */   //EP added (intptr_t) to avoid warning on x64
+            {
+              if (!mute && stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc != NULL)            //EP added (intptr_t) to avoid warning on x64
+                Mix_PlayChannel(2, stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc,                    //EP added (intptr_t) to avoid warning on x64
+                                0);
+            }
+          }
 #endif
 	}
       }
@@ -5974,10 +5980,10 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 #endif
 
     key_color_ptr = find_most_saturated(initial_hue, work,
-					width * height, &hue_range);
+                                        width * height, &hue_range);
 
 #ifdef DEBUG
-    printf("key_color_ptr = %d\n", (int) key_color_ptr);
+    printf("key_color_ptr = %d\n", (int)(intptr_t) key_color_ptr);      //EP added (intptr_t) to avoid warning on x64
 #endif
 
     if (key_color_ptr)
@@ -8049,7 +8055,7 @@ static unsigned draw_colors(unsigned action)
   SDL_Rect dest;
   static unsigned old_color;
   unsigned old_colors_state;
-
+	
   old_colors_state = colors_state;
 
   if (action == COLORSEL_CLOBBER || action == COLORSEL_CLOBBER_WIPE)
@@ -9309,14 +9315,31 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
       one_minus_y = 1.0 - fraction_y;
 
 #if VIDEO_BPP==32
+        {       //EP added local block to avoid warning "Passing arg 3 from incompatible pointer type" of section below block
+          Uint8         r, g, b, a;
       SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
-                  &r1, &g1, &b1, &a1);
+                  &r, &g, &b, &a);
+          r1 = (float)r; g1=(float)g; b1 = (float)b; a1 = (float)a;
       SDL_GetRGBA(getpixel(src, ceil_x,  floor_y), src->format,
-                  &r2, &g2, &b2, &a2);
+                  &r, &g, &b, &a);
+          r2 = (float)r; g2=(float)g; b2 = (float)b; a2 = (float)a;
       SDL_GetRGBA(getpixel(src, floor_x, ceil_y),  src->format,
-                  &r3, &g3, &b3, &a3);
+                  &r, &g, &b, &a);
+          r3 = (float)r; g3=(float)g; b3 = (float)b; a3 = (float)a;
       SDL_GetRGBA(getpixel(src, ceil_x,  ceil_y),  src->format,
-                  &r4, &g4, &b4, &a4);
+                  &r, &g, &b, &a);
+          r4 = (float)r; g4=(float)g; b4 = (float)b; a4 = (float)a;
+        }
+                /*
+                SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
+                                        &r1, &g1, &b1, &a1);
+                SDL_GetRGBA(getpixel(src, ceil_x,  floor_y), src->format,
+					&r2, &g2, &b2, &a2);
+		SDL_GetRGBA(getpixel(src, floor_x, ceil_y),  src->format,
+                                        &r3, &g3, &b3, &a3);
+                SDL_GetRGBA(getpixel(src, ceil_x,  ceil_y),  src->format,
+                                        &r4, &g4, &b4, &a4);
+                */
 #else
       {
       Uint8 r, g, b, a;
@@ -10517,7 +10540,7 @@ static void playstampdesc(int chan)
 
     playsound_event.type = SDL_USEREVENT;
     playsound_event.user.code = USEREVENT_PLAYDESCSOUND;
-    playsound_event.user.data1 = (void *) cur_stamp[stamp_group];
+    playsound_event.user.data1 = (void *)(intptr_t) cur_stamp[stamp_group];     //EP added (intptr_t) to avoid warning on x64
 
     SDL_PushEvent(&playsound_event);
   }
@@ -11324,7 +11347,7 @@ static void load_template(char *img_id)
 
 #ifndef NOSVG
   /* (Failed? Try SVG next) */
-  if (tmp_surf == NULL)
+  if (tmp_surf == NULL) 
   {
     snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
     tmp_surf = load_starter_helper(fname, "svg", &load_svg);
@@ -11332,7 +11355,7 @@ static void load_template(char *img_id)
 #endif
 
   /* (JPEG) */
-  if (tmp_surf == NULL) 
+  if (tmp_surf == NULL)
   {
     snprintf(fname, sizeof(fname), "%s/%s", dirname, img_id);
     tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
@@ -11421,16 +11444,17 @@ static void load_current(void)
 
   if (file_id[0] != '\0')
   {
-    start_label_node=NULL;
-    current_label_node=NULL;
-    first_label_node_in_redo_stack=NULL;
-    highlighted_label_node = NULL;
-    label_node_to_edit = NULL;
-    have_to_rec_label_node = FALSE;
 
-    snprintf(ftmp, sizeof(ftmp), "saved/%s%s",
-             file_id, FNAME_EXTENSION);
-    fname = get_fname(ftmp, DIR_SAVE);
+  start_label_node=NULL;
+  current_label_node=NULL;
+  first_label_node_in_redo_stack=NULL;
+  highlighted_label_node = NULL;
+  label_node_to_edit = NULL;
+  have_to_rec_label_node = FALSE;
+
+  snprintf(ftmp, sizeof(ftmp), "saved/%s%s",
+	   file_id, FNAME_EXTENSION);
+  fname = get_fname(ftmp, DIR_SAVE);
 
     tmp = myIMG_Load_RWops(fname);
 
@@ -12173,18 +12197,21 @@ static void cleanup(void)
 
   if (medium_font != NULL)
   {
+        printf("cleanup: medium font\n");       //EP
     TuxPaint_Font_CloseFont(medium_font);
     medium_font = NULL;
   }
 
   if (small_font != NULL)
   {
+        printf("cleanup: small font\n");        //EP
     TuxPaint_Font_CloseFont(small_font);
     small_font = NULL;
   }
 
   if (large_font != NULL)
   {
+        printf("cleanup: large font\n");        //EP
     TuxPaint_Font_CloseFont(large_font);
     large_font = NULL;
   }
@@ -12313,22 +12340,26 @@ static void cleanup(void)
   SDL_Quit();
 
   /* Call this once only, at exit */
+//EP now deprecated
+/*
 #if !defined(NOSVG) && !defined(OLD_SVG)
 #ifdef DEBUG
   printf("rsvg_term()\n"); fflush(stdout);
 #endif
   rsvg_term();
 #endif
+*/
 }
 
 
 static void free_surface(SDL_Surface ** surface_array)
 {
-  if (*surface_array)
-  {
-    SDL_FreeSurface(*surface_array);
-    *surface_array = NULL;
-  }
+  if (surface_array)    //EP added this line to avoid app crash
+          if (*surface_array)
+          {
+                  SDL_FreeSurface(*surface_array);
+		  *surface_array = NULL;
+	  }
 }
 
 
@@ -12336,10 +12367,11 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 {
   int i;
 
-  for (i = 0; i < count; ++i)
-  {
-    free_surface(&surface_array[i]);
-  }
+  if (surface_array)    //EP added this line to avoid app crash
+          for (i = 0; i < count; ++i)
+          {
+                  free_surface(&surface_array[i]);
+	  }
 }
 
 
@@ -12962,7 +12994,7 @@ static void do_png_embed_data(png_structp png_ptr)
   /* Starter foreground */
   if (img_starter)
   {
-    printf("Saving starter... %d\n", (int) img_starter);
+    printf("Saving starter... %d\n", (int)(intptr_t) img_starter);      //EP added (intptr_t) to avoid warning on x64
     sbk_pixs = malloc(img_starter->h * img_starter->w * 4);
     compressedLen = compressBound(img_starter->h * img_starter->w * 4);
 
@@ -14523,8 +14555,8 @@ static int do_open(void)
 	  snprintf(fname, sizeof(fname), "%s/%s%s",
 		       dirname[d_places[which]], d_names[which], d_exts[which]);
 	  fi = fopen(fname, "r");
-	  if (fi == NULL)
-	    {
+          if (fi == NULL)
+            {
             fprintf(stderr,
                 "\nWarning: Couldn't load the saved image! (1)\n"
                 "%s\n"
@@ -14759,20 +14791,20 @@ static int do_slideshow(void)
 	    || strcasestr(f->d_name, ".bmp") != NULL
 	  )
 	{
-	  strcpy(fname, f->d_name);
-	  if (strcasestr(fname, FNAME_EXTENSION) != NULL)
-	  {
-	    d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
-	    strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
-	  }
+          strcpy(fname, f->d_name);
+          if (strcasestr(fname, FNAME_EXTENSION) != NULL)
+          {
+            d_exts[num_files] = strdup(strcasestr(fname, FNAME_EXTENSION));
+            strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
+          }
 
-	  if (strcasestr(fname, ".bmp") != NULL)
-	  {
-	    d_exts[num_files] = strdup(strcasestr(fname, ".bmp"));
-	    strcpy((char *) strcasestr(fname, ".bmp"), "");
-	  }
+          if (strcasestr(fname, ".bmp") != NULL)
+          {
+            d_exts[num_files] = strdup(strcasestr(fname, ".bmp"));
+            strcpy((char *) strcasestr(fname, ".bmp"), "");
+          }
 
-	  d_names[num_files] = strdup(fname);
+          d_names[num_files] = strdup(fname);
 
 
 	  /* FIXME: Try to center list on whatever was selected
@@ -16145,7 +16177,8 @@ static void do_render_cur_text(int do_blit)
   {
     #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
       //FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
-      FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+      //FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+      FriBidiParType baseDir = FRIBIDI_TYPE_WL; //EP to avoid warning on types in now commented line above
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;
 
@@ -16500,7 +16533,7 @@ static void control_drawtext_timer(Uint32 interval, const char *const text, Uint
   drawtext_event.type = SDL_USEREVENT;
   drawtext_event.user.code = USEREVENT_TEXT_UPDATE;
   drawtext_event.user.data1 = (void *) text;
-  drawtext_event.user.data2 = (void *) ((int) locale_text);
+  drawtext_event.user.data2 = (void *) (intptr_t)((int) locale_text);   //EP added (intptr_t) to avoid warning on x64
 
 
   /* Add new timer */
@@ -17623,7 +17656,7 @@ static SDL_Surface * myIMG_Load(char * file)
 #endif
   } else {
     return(myIMG_Load_RWops(file));
-  }
+}
 }
 
 static SDL_Surface * load_kpx(char * file)
@@ -17828,42 +17861,43 @@ static void load_magic_plugins(void)
               snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "switchout");
 	      magic_funcs[num_plugin_files].switchout =
-	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+                SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
 #ifdef DEBUG
-	      printf("get_tool_count = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].get_tool_count);
-	      printf("get_name = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].get_name);
-	      printf("get_icon = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].get_icon);
-	      printf("get_description = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].get_description);
-	      printf("requires_colors = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].requires_colors);
-	      printf("modes = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].modes);
-	      printf("set_color = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].set_color);
-	      printf("init = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].init);
-	      printf("api_version = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].api_version);
-	      printf("shutdown = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].shutdown);
-	      printf("click = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].click);
-	      printf("drag = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].drag);
-	      printf("release = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].release);
-	      printf("switchin = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].switchin);
-	      printf("switchout = 0x%x\n",
-		   (int) magic_funcs[num_plugin_files].switchout);
+                  //EP added (intptr_t) to avoid warning on x64 on all lines below
+              printf("get_tool_count = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].get_tool_count);
+              printf("get_name = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].get_name);
+              printf("get_icon = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].get_icon);
+              printf("get_description = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].get_description);
+              printf("requires_colors = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].requires_colors);
+              printf("modes = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].modes);
+              printf("set_color = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].set_color);
+              printf("init = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].init);
+              printf("api_version = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].api_version);
+              printf("shutdown = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].shutdown);
+              printf("click = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].click);
+              printf("drag = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].drag);
+              printf("release = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].release);
+              printf("switchin = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].switchin);
+              printf("switchout = 0x%x\n",
+                   (int)(intptr_t) magic_funcs[num_plugin_files].switchout);
 #endif
 
-	      err = 0;
+              err = 0;
 
 	      if (magic_funcs[num_plugin_files].get_tool_count == NULL)
 	      {
@@ -18567,101 +18601,101 @@ static int do_new_dialog(void)
           if (skip) {
             free(d_exts[num_files]);
           } else {
-            d_names[num_files] = strdup(fname);
-            d_places[num_files] = place;
-  
-  
-            /* Try to load thumbnail first: */
-  
-            snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+          d_names[num_files] = strdup(fname);
+          d_places[num_files] = place;
+
+
+          /* Try to load thumbnail first: */
+
+          snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+              dirname[d_places[num_files]], d_names[num_files]);
+          debug(fname);
+          img = IMG_Load(fname);
+
+          if (img == NULL)
+          {
+            /* No thumbnail in the new location ("saved/.thumbs"),
+               try the old location ("saved/"): */
+
+            snprintf(fname, sizeof(fname), "%s/%s-t.png",
                 dirname[d_places[num_files]], d_names[num_files]);
             debug(fname);
+
             img = IMG_Load(fname);
-  
-            if (img == NULL)
+          }
+
+          if (img != NULL)
+          {
+            /* Loaded the thumbnail from one or the other location */
+            show_progress_bar(screen);
+
+            img1 = SDL_DisplayFormat(img);
+            SDL_FreeSurface(img);
+
+            /* if too big, or too small in both dimensions, rescale it
+               (for now: using old thumbnail as source for high speed,
+               low quality) */
+            if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
+                || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
             {
-              /* No thumbnail in the new location ("saved/.thumbs"),
-                 try the old location ("saved/"): */
-  
-              snprintf(fname, sizeof(fname), "%s/%s-t.png",
-                  dirname[d_places[num_files]], d_names[num_files]);
-              debug(fname);
-  
-              img = IMG_Load(fname);
+              img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
+              SDL_FreeSurface(img1);
+              img1 = img2;
             }
-  
-            if (img != NULL)
+
+            thumbs[num_files] = img1;
+
+            if (thumbs[num_files] == NULL)
             {
-              /* Loaded the thumbnail from one or the other location */
-              show_progress_bar(screen);
-  
-              img1 = SDL_DisplayFormat(img);
-              SDL_FreeSurface(img);
-  
-              /* if too big, or too small in both dimensions, rescale it
-                 (for now: using old thumbnail as source for high speed,
-                 low quality) */
-              if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
-                  || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
-              {
-                img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
-                SDL_FreeSurface(img1);
-                img1 = img2;
-              }
-  
-              thumbs[num_files] = img1;
-  
-              if (thumbs[num_files] == NULL)
-              {
-                fprintf(stderr,
-                    "\nError: Couldn't create a thumbnail of "
-                    "saved image!\n" "%s\n", fname);
-              }
-  
-              num_files++;
+              fprintf(stderr,
+                  "\nError: Couldn't create a thumbnail of "
+                  "saved image!\n" "%s\n", fname);
             }
-            else
+
+            num_files++;
+          }
+          else
+          {
+            /* No thumbnail - load original: */
+
+            /* Make sure we have a ~/.tuxpaint/saved directory: */
+            if (make_directory("saved", "Can't create user data directory"))
             {
-              /* No thumbnail - load original: */
-  
-              /* Make sure we have a ~/.tuxpaint/saved directory: */
-              if (make_directory("saved", "Can't create user data directory"))
-              {
-                /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
-              }
-  
-              img = NULL;
-  
-              if (d_places[num_files] == PLACE_STARTERS_DIR ||
-                  d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
-              {
-                /* Try to load a starter's background image, first!
-                   If it exists, it should give a better idea of what the
-                   starter looks like, compared to the overlay image... */
-  
-                /* FIXME: Add .jpg support -bjk 2007.03.22 */
-  
-                /* (Try JPEG first) */
+              /* (Make sure we have a .../saved/.thumbs/ directory:) */
+              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+            }
+
+            img = NULL;
+
+            if (d_places[num_files] == PLACE_STARTERS_DIR ||
+                d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
+            {
+              /* Try to load a starter's background image, first!
+                 If it exists, it should give a better idea of what the
+                 starter looks like, compared to the overlay image... */
+
+              /* FIXME: Add .jpg support -bjk 2007.03.22 */
+
+              /* (Try JPEG first) */
                 snprintf(fname, sizeof(fname), "%s/%s-back",
-                    dirname[d_places[num_files]], d_names[num_files]);
+                  dirname[d_places[num_files]], d_names[num_files]);
                 img = load_starter_helper(fname, "jpeg", &IMG_Load);
-                if (img == NULL)
-                {
+              if (img == NULL)
+              {
                   snprintf(fname, sizeof(fname), "%s/%s-back",
                     dirname[d_places[num_files]], d_names[num_files]);
                   img = load_starter_helper(fname, "jpg", &IMG_Load);
-                }
-  
-  #ifndef NOSVG
-  	      if (img == NULL)
-  	      {
-  		/* (Try SVG next) */
-  		snprintf(fname, sizeof(fname), "%s/%s-back",
-  		    dirname[d_places[num_files]], d_names[num_files]);
-  		img = load_starter_helper(fname, "svg", &load_svg);
-  	      }
-  #endif
+              }
+
+#ifndef NOSVG
+              if (img == NULL)
+              {
+                /* (Try SVG next) */
+                snprintf(fname, sizeof(fname), "%s/%s-back",
+                    dirname[d_places[num_files]], d_names[num_files]);
+                img = load_starter_helper(fname, "svg", &load_svg);
+              }
+#endif
   
                 if (img == NULL)
                 {
@@ -18670,101 +18704,101 @@ static int do_new_dialog(void)
                       dirname[d_places[num_files]], d_names[num_files]);
                   img = load_starter_helper(fname, "png", &IMG_Load);
                 }
-              }
-  
-              if (img == NULL)
-              {
-                /* Didn't load a starter background (or didn't try!),
-                   try loading the actual image... */
-  
-                snprintf(fname, sizeof(fname), "%s/%s",
-                    dirname[d_places[num_files]], f->d_name);
-                debug(fname);
-                img = myIMG_Load(fname);
-              }
-  
-  
+            }
+
+            if (img == NULL)
+            {
+              /* Didn't load a starter background (or didn't try!),
+                 try loading the actual image... */
+
+              snprintf(fname, sizeof(fname), "%s/%s",
+                  dirname[d_places[num_files]], f->d_name);
+              debug(fname);
+              img = myIMG_Load(fname);
+            }
+
+
+            show_progress_bar(screen);
+
+            if (img == NULL)
+            {
+              fprintf(stderr,
+                  "\nWarning: I can't open one of the saved files!\n"
+                  "%s\n"
+                  "The Simple DirectMedia Layer error that "
+                  "occurred was:\n" "%s\n\n", fname, SDL_GetError());
+
+              free(d_names[num_files]);
+              free(d_exts[num_files]);
+            }
+            else
+            {
+              /* Turn it into a thumbnail: */
+
+              img1 = SDL_DisplayFormatAlpha(img);
+              img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
+              SDL_FreeSurface(img1);
+
               show_progress_bar(screen);
-  
-              if (img == NULL)
+
+              thumbs[num_files] = SDL_DisplayFormat(img2);
+              SDL_FreeSurface(img2);
+              if (thumbs[num_files] == NULL)
               {
                 fprintf(stderr,
-                    "\nWarning: I can't open one of the saved files!\n"
-                    "%s\n"
-                    "The Simple DirectMedia Layer error that "
-                    "occurred was:\n" "%s\n\n", fname, SDL_GetError());
-  
-                free(d_names[num_files]);
-                free(d_exts[num_files]);
+                    "\nError: Couldn't create a thumbnail of "
+                    "saved image!\n" "%s\n", fname);
               }
-              else
+
+              SDL_FreeSurface(img);
+
+              show_progress_bar(screen);
+
+
+              /* Let's save this thumbnail, so we don't have to
+                 create it again next time 'Open' is called: */
+              /* if (d_places[num_files] == PLACE_SAVED_DIR) */ /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
+
+              if (d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR ||  /* We must check to not try to write to system wide dirs  Pere 2010.3.25 */
+                  d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR)   
               {
-                /* Turn it into a thumbnail: */
-  
-                img1 = SDL_DisplayFormatAlpha(img);
-                img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-                SDL_FreeSurface(img1);
-  
-                show_progress_bar(screen);
-  
-                thumbs[num_files] = SDL_DisplayFormat(img2);
-                SDL_FreeSurface(img2);
-                if (thumbs[num_files] == NULL)
+                debug("Saving thumbnail for this one!");
+
+                snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+                    dirname[d_places[num_files]], d_names[num_files]);
+
+                if (!make_directory("starters", "Can't create user data directory") ||
+                    !make_directory("templates", "Can't create user data directory") ||
+                    !make_directory("starters/.thumbs", "Can't create user data directory") ||
+                    !make_directory("templates/.thumbs", "Can't create user data directory"))
+                        fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
+                else
                 {
-                  fprintf(stderr,
-                      "\nError: Couldn't create a thumbnail of "
-                      "saved image!\n" "%s\n", fname);
-                }
-  
-                SDL_FreeSurface(img);
-  
-                show_progress_bar(screen);
-  
-  
-                /* Let's save this thumbnail, so we don't have to
-                   create it again next time 'Open' is called: */
-                /* if (d_places[num_files] == PLACE_SAVED_DIR) */ /* <-- FIXME: This test should probably go...? -bjk 2009.10.15 */
-  
-                if (d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR ||  /* We must check to not try to write to system wide dirs  Pere 2010.3.25 */
-                    d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR)   
-                {
-                  debug("Saving thumbnail for this one!");
-  
-                  snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
-                      dirname[d_places[num_files]], d_names[num_files]);
-  
-                  if (!make_directory("starters", "Can't create user data directory") ||
-                      !make_directory("templates", "Can't create user data directory") ||
-                      !make_directory("starters/.thumbs", "Can't create user data directory") ||
-                      !make_directory("templates/.thumbs", "Can't create user data directory"))
-                          fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
+                  fi = fopen(fname, "wb");
+                  if (fi == NULL)
+                  {
+                    fprintf(stderr,
+                      "\nError: Couldn't save thumbnail of "
+                      "saved image!\n"
+                      "%s\n"
+                      "The error that occurred was:\n"
+                      "%s\n\n", fname, strerror(errno));
+                  }
                   else
                   {
-                    fi = fopen(fname, "wb");
-                    if (fi == NULL)
-                    {
-                      fprintf(stderr,
-                        "\nError: Couldn't save thumbnail of "
-                        "saved image!\n"
-                        "%s\n"
-                        "The error that occurred was:\n"
-                        "%s\n\n", fname, strerror(errno));
-                    }
-                    else
-                    {
-                      do_png_save(fi, fname, thumbs[num_files], 0);
-                    }
+                    do_png_save(fi, fname, thumbs[num_files], 0);
                   }
-                  
-                  show_progress_bar(screen);
                 }
-  
-  
-                num_files++;
+                
+                show_progress_bar(screen);
               }
+
+
+              num_files++;
             }
           }
         }
+      }
       }
       else
       {
@@ -20983,7 +21017,7 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
   int f, count, comp, unc_err;
   char *control, *softwr;
   Bytef *comp_buff, *unc_buff;
-  
+
   z_streamp zstp;
 
   control = malloc(50);
@@ -21594,7 +21628,15 @@ static void setup_config(char *argv[])
 
   parse_argv_options(&tmpcfg_cmd, argv);
 
-  /* Set default options: */
+#if defined(__APPLE__)  //EP added this conditional section for Mac to allow for a config in the current directory, that supersedes sys and user configs
+        /* Mac OS X: Use a "tuxpaint.cfg" file in the current folder */
+        struct cfginfo tmpcfg_curdir;
+        memset(&tmpcfg_curdir, '\0', sizeof tmpcfg_curdir);
+        parse_file_options(&tmpcfg_curdir, "./tuxpaint.cfg");
+        tmpcfg_merge(&tmpcfg_curdir, &tmpcfg_cmd);
+#endif
+        
+        /* Set default options: */
 
 #ifndef _WIN32
   if(!home)
@@ -21648,7 +21690,11 @@ static void setup_config(char *argv[])
 
 
 
-  tmpcfg_merge(&tmpcfg_usr, &tmpcfg_cmd);
+#if defined(__APPLE__)  //EP added this conditional section for Mac
+        tmpcfg_merge(&tmpcfg_usr, &tmpcfg_curdir);
+#else
+        tmpcfg_merge(&tmpcfg_usr, &tmpcfg_cmd);
+#endif
 
   if (tmpcfg_usr.parsertmp_sysconfig != PARSE_NO)
   {
@@ -21657,6 +21703,10 @@ static void setup_config(char *argv[])
 #ifdef _WIN32
     // global config file in the application directory
     parse_file_options(&tmpcfg_sys, "tuxpaint.cfg");
+#elif defined(__APPLE__)        //EP added this conditional section for Mac to fix folder&extension inconsistency with Tux Paint Config application)
+          /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint application support folder */
+        snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.globalPreferencesPath);
+        parse_file_options(&tmpcfg_sys, str);
 #else
     // normally /etc/tuxpaint/tuxpaint.conf
     parse_file_options(&tmpcfg_sys, CONFDIR "tuxpaint.conf");
@@ -21664,8 +21714,8 @@ static void setup_config(char *argv[])
     tmpcfg_merge(&tmpcfg, &tmpcfg_sys);
   }
   tmpcfg_merge(&tmpcfg, &tmpcfg_usr);
-
-  if(tmpcfg.savedir)
+	
+	if(tmpcfg.savedir)
   {
     free((char*)savedir);
     savedir = tmpcfg.savedir;
@@ -22029,7 +22079,11 @@ static void setup_config(char *argv[])
 
 static void chdir_to_binary(char *argv0)
 {
-#if defined(__BEOS__) || defined(WIN32)
+        char    curdir[256];    //EP added this block to print out of current directory
+        getcwd(curdir, sizeof(curdir));
+        printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
+        
+#if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)   //EP added __APPLE__
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
      find path from which binary was run and change dir to it
      so all files will be local :) */
@@ -22044,16 +22098,28 @@ static void chdir_to_binary(char *argv0)
     char *app_path = strdup(argv0);
     char *slash = strrchr(app_path, '/');
 
-    if (!slash)
+#if defined(__APPLE__)  //EP added to fix 10.9 issue of current directory set by Finder to something else than folder where app bundle resides
+          // typical path of app's binary on Mac OS : /Applications/Tux Paint.app/Contents/MacOS/Tux Paint
+          int   levels = 3;     // we need to back up 3 levels
+          while ((levels-- > 0) && (slash))
+          {
+                  *slash = '\0';                                        // this overwrites the \0 at end of string
+                  slash = strrchr(app_path, '/');       // so we can carry on our back-pedaling...
+          }
+#endif
+
+        if (!slash)
     {
       slash = strrchr(app_path, '\\');
     }
     if (slash)
     {
-      *(slash + 1) = '\0';
+		*(slash + 1) = '\0';
       chdir(app_path);
     }
     free(app_path);
+        getcwd(curdir, sizeof(curdir));
+        printf("New current directory for runtime: %s\n", curdir);
   }
 #else
   (void)argv0;
@@ -23265,12 +23331,15 @@ static void setup(void)
 #endif
 
   /* Call this once */
+//EP now deprecated
+/*
 #if !defined(NOSVG) && !defined(OLD_SVG)
 #ifdef DEBUG
   printf("rsvg_init()\n"); fflush(stdout);
 #endif
   rsvg_init();
 #endif
+*/
 }
 
 
@@ -23394,6 +23463,19 @@ int main(int argc, char *argv[])
 
   // do not add code (slowness) here unless required for scanning fonts
   progname = argv[0];
+        
+#if defined(DEBUG) && defined(__APPLE__)                //EP added block to log messages
+  freopen("/tmp/tuxpaint.log", "w", stdout);    // redirect stdout to a file
+  dup2(fileno(stdout), fileno(stderr));                 // redirect stderr to stdout
+  setvbuf(stdout, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
+  setvbuf(stderr, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
+  char  logTime[100];
+  time_t        t = time(NULL);
+  strftime(logTime, sizeof(logTime), "%A %d/%m/%Y %H:%M:%S", localtime(&t));
+  printf("Tux Paint log - %s\n", logTime);
+                 
+#endif
+        
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
@@ -23490,6 +23572,8 @@ static int trash(char * path) {
     debug("Can't get basename! Deleting instead.");
     return(unlink(path));
   }
+        
+  printf("trash: basename=%s", basename(path)); //EP
   strcpy(fname, basename(path));
 
   if (!file_exists(path)) {

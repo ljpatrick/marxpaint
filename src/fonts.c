@@ -259,15 +259,24 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {
+  printf("TuxPaint_Font_CloseFont step 1 (%p)\n", tpf); //EP
+  if (!tpf) return;     //EP
+        
 #ifndef NO_SDLPANGO
+  printf("TuxPaint_Font_CloseFont step 2 (%p, %d)\n", tpf->pango_context, tpf->typ);    //EP
   if (tpf->typ == FONT_TYPE_PANGO)
+          if (tpf->pango_context)       //EP
   {
-    SDLPango_FreeContext(tpf->pango_context);
-    tpf->pango_context = NULL;
+#ifndef __APPLE__       //EP added ifdef because SDLPango_FreeContext sometimes crashed with "pointer being freed was not allocated"
+        SDLPango_FreeContext(tpf->pango_context);
+#endif
+        tpf->pango_context = NULL;
   }
 #endif
 
+  printf("TuxPaint_Font_CloseFont step 3 (%p, %d)\n", tpf->ttf_font, tpf->typ); //EP
   if (tpf->typ == FONT_TYPE_TTF)
+          if (tpf->ttf_font)    //EP
   {
     TTF_CloseFont(tpf->ttf_font);
     tpf->ttf_font = NULL;
@@ -956,6 +965,8 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
        status_t result;
     result = find_directory(B_SYSTEM_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
        loadfonts(screen, buffer);
+    result = find_directory(B_COMMON_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
+       loadfonts(screen, buffer);
     result = find_directory(B_USER_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
        loadfonts(screen, buffer);
 #elif defined(__APPLE__)
@@ -1286,7 +1297,7 @@ TuxPaint_Font *getfonthandle(int desire)
   }
   else
   {
-#ifdef DBEUG
+#ifdef DEBUG    //EP fixed typo: replaced DBEUG with DEBUG
     printf("fi->filename is NULL\n");
     fflush(stdout);
 #endif
@@ -1297,7 +1308,8 @@ TuxPaint_Font *getfonthandle(int desire)
   if (fi->handle)
   {
 #ifdef DEBUG
-    printf("fi->handle was set (0x%x)\n", (int) fi->handle);
+          printf("fi->handle was set (0x%x)\n", (int)(intptr_t) fi->handle);            //EP added (intptr_t) to avoid warning on x64
+
     fflush(stdout);
 #endif
     return fi->handle;

@@ -107,13 +107,13 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
       char fname[512];
       TuxPaint_Font *font;
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-/* printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL")); */
+/* */printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL")); /**/     //EP
       if (locale && strstr(fname, "locale") && !all_locale_fonts)
       {
         char fname_check[512];
         /* We're (probably) loading from our locale fonts folder; ONLY load our locale's font */
         snprintf(fname_check, sizeof fname_check, "%s/%s.ttf", dir, locale);
-/* printf("checking vs \"%s\" vs \"%s\"\n", fname_check, fname); */
+/* */printf("checking vs \"%s\" vs \"%s\"\n", fname_check, fname); /**/ //EP
         if (strcmp(fname, fname_check) == 0)
           font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
         else
@@ -136,7 +136,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 		 family, style);
 
         printf("success: tpf: 0x%x tpf->ttf_font: 0x%x\n",
-	       (unsigned int) font, (unsigned int) font->ttf_font);
+			   (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->ttf_font);	//EP added (intptr_t) to avoid warning on x64
 #endif
 
 	// These fonts crash Tux Paint via a library bug.

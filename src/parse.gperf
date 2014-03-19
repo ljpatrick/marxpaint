@@ -13,6 +13,7 @@
 #include <ctype.h>
 #include <stdint.h>
 #include "../src/parse.h"
+#include "debug.h"
 
 const char PARSE_YES[] = "yes";
 const char PARSE_NO[]  = "no";
@@ -188,8 +189,10 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
   unsigned offset;
   char *dupecheck;
   const struct cfg *cfg;
-    
-  //printf("parsing: <%s> <%s>\n",str,arg);
+  
+#ifdef DEBUG
+  printf("parsing %s: <%s> <%s>\n", src, str, opt);
+#endif
 
   if(isdigit(*str))
   {

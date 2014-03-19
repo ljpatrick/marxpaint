@@ -74,8 +74,26 @@ $Id$
     Produced by Eric Poncet <http://www.linguasoft.com/>
     Commissioned by Harvey Ginter <harveyginter@gmail.com>
 
+    * Fix OS X 10.9 issue of current directory set by Finder
+      to something else than folder where app bundle resides.
+
     * Customization support for Mac OS X (automatic, under XCode)
       and Windows (manual).
+
+    * Some Mac OS X build / project changes & updates.
+
+    * Adjustments to Mac OS X fontconfig config file, to avoid warnings
+      and make things more robust.
+
+    * Updates to some #include's to catch up with newer library revisions.
+
+    * Tweaks to pixel read/write on Apple.
+
+    * Introduction of 'intprt_t' casting to avoid warnings on x64.
+
+    * Some additional debugging output.
+
+    * Logging stderr & stdout to /tmp/tuxpaint.log
 
   * Accessibility Improvements:
     ---------------------------

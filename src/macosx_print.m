@@ -305,10 +305,10 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
     
 	[ image setSize:imageSize ];
     [ printView setImage:image ];
-	
+        
     // run printing
     printOperation = [ NSPrintOperation printOperationWithView:printView printInfo:printInfo ];
-    [ printOperation setShowPanels:showDialog ];
+    [ printOperation setShowsPrintPanel:showDialog ];   //EP replaced setShowPanels by setShowsPrintPanel
     
     macosx.cocoaKeystrokes = 1;
     delegate = [ [ [ ModalDelegate alloc ] init ] autorelease ];

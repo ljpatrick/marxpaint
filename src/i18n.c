@@ -481,7 +481,7 @@ static void show_lang_usage(int exitcode)
 /* xh */ "  xhosa\n"
 /* zam */"  zapotec      miahuatlan-zapotec\n"
 /* zu */ "  zulu\n"
-	  "\n", prg);
+          "\n", prg);
   exit(exitcode);
 }
 
@@ -500,15 +500,15 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  af_ZA   (Afrikaans)\n"
           "  ak_GH   (Akan         Twi-Fante)\n"
           "  am_ET   (Amharic)\n"
-	  "  ar_SA   (Arabic)\n"
+          "  ar_SA   (Arabic)\n"
           "  an_ES   (Aragones)\n"
           "  hy_AM   (Armenian)\n"
-	  "  ast_ES  (Asturian)\n"
-	  "  az_AZ   (Azerbaijani)\n"
-	  "  bm_ML   (Bambara)\n"
-	  "  eu_ES   (Basque       Euskara)\n"
-	  "  be_BY   (Belarusian   Bielaruskaja)\n"
-	  "  nb_NO   (Bokmal)\n"
+          "  ast_ES  (Asturian)\n"
+          "  az_AZ   (Azerbaijani)\n"
+          "  bm_ML   (Bambara)\n"
+          "  eu_ES   (Basque       Euskara)\n"
+          "  be_BY   (Belarusian   Bielaruskaja)\n"
+          "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
 	  "  en_AU   (Australian English)\n"
@@ -546,19 +546,19 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
 	  "  it_IT   (Italian      Italiano)\n"
           "  iu_CA   (Inuktitut)\n"
-	  "  ja_JP   (Japanese)\n"
-	  "  ka_GE   (Georgian)\n"
-	  "  km_KH   (Khmer)\n"
-	  "  ko_KR   (Korean)\n"
-	  "  ku_TR   (Kurdish)\n"
-	  "  ms_MY   (Malay)\n"
+          "  ja_JP   (Japanese)\n"
+          "  ka_GE   (Georgian)\n"
+          "  km_KH   (Khmer)\n"
+          "  ko_KR   (Korean)\n"
+          "  ku_TR   (Kurdish)\n"
+          "  ms_MY   (Malay)\n"
           "  ml_IN   (Malayalam)\n"
           "  lg_UG   (Luganda)\n"
           "  lb_LU   (Luxembourgish Letzebuergesch)\n"
-	  "  lv_LV   (Latvian)\n"
-	  "  lt_LT   (Lithuanian   Lietuviu)\n"
-	  "  mk_MK   (Macedonian)\n"
-	  "  mn_MN   (Mongolian)\n"
+          "  lv_LV   (Latvian)\n"
+          "  lt_LT   (Lithuanian   Lietuviu)\n"
+          "  mk_MK   (Macedonian)\n"
+          "  mn_MN   (Mongolian)\n"
           "  mr_IN   (Marathi)\n"
           "  nr_ZA   (Ndebele)\n"
           "  nso_ZA  (Northern Sotho                      Sotho sa Leboa)\n"
@@ -576,31 +576,31 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  sl_SI   (Slovenian)\n"
           "  son     (Songhay)\n"
 	  "  sq_AL   (Albanian)\n"
-	  "  sr_YU   (Serbian (cyrillic))\n"
+          "  sr_YU   (Serbian (cyrillic))\n"
           "  sr_RS@latin  (Serbian (latin))\n"
-	  "  es_ES   (Spanish      Espanol)\n"
+          "  es_ES   (Spanish      Espanol)\n"
           "  su_ID   (Sundanese)\n"
-	  "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
-	  "  sw_TZ   (Swahili)\n"
-	  "  sv_SE   (Swedish      Svenska)\n"
+          "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
+          "  sw_TZ   (Swahili)\n"
+          "  sv_SE   (Swedish      Svenska)\n"
 	  "  ta_IN   (Tamil)\n"
           "  te_IN   (Telugu)\n"
 	  "  tl_PH   (Tagalog)\n"
 	  "  bo_CN   (Tibetan)\n"
 	  "  th_TH   (Thai)\n"
 	  "  tr_TR   (Turkish)\n"
-	  "  twi_GH  (Twi)\n"
-	  "  uk_UA   (Ukrainian)\n"
-	  "  ve_ZA   (Venda)\n"
-	  "  vec     (Venetian)\n"
-	  "  vi_VN   (Vietnamese)\n"
-	  "  wa_BE   (Walloon)\n"
-	  "  wo_SN   (Wolof)\n"
-	  "  cy_GB   (Welsh        Cymraeg)\n"
-	  "  xh_ZA   (Xhosa)\n"
-	  "  zam     (Zapoteco-Miahuatlan)\n"
+          "  twi_GH  (Twi)\n"
+          "  uk_UA   (Ukrainian)\n"
+          "  ve_ZA   (Venda)\n"
+          "  vec     (Venetian)\n"
+          "  vi_VN   (Vietnamese)\n"
+          "  wa_BE   (Walloon)\n"
+          "  wo_SN   (Wolof)\n"
+          "  cy_GB   (Welsh        Cymraeg)\n"
+          "  xh_ZA   (Xhosa)\n"
+          "  zam     (Zapoteco-Miahuatlan)\n"
           "  zu_ZA   (Zulu)\n"
-	  "\n", prg);
+          "\n", prg);
 }
 
 
@@ -730,9 +730,12 @@ static int set_current_language(const char *restrict loc)
   /* First set the locale according to the environment, then try to overwrite with loc,
      after that, ctype_utf8() call will test the compatibility with utf8 and try to load
      a different locale if the resulting one is not compatible. */
+printf ("Locale BEFORE is: %s\n", setlocale(LC_ALL,NULL));//EP
   setlocale(LC_ALL, "");
   setlocale(LC_ALL, loc);
   ctype_utf8();
+printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
+        
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -841,7 +844,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 
   if(lang)
     locale = language_to_locale(lang);
-
+  patch_i18n(locale);   //EP
   return set_current_language(locale);
 }
 

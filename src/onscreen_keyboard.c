@@ -1,3 +1,4 @@
+#include "patch.h"      //EP
 #include "onscreen_keyboard.h"
 
 //#define DEBUG_OSK_COMPOSEMAP

@@ -140,11 +140,16 @@ static void do_alien_pixel(void * ptr, int which ATTRIBUTE_UNUSED,
   double temp2[3];
   int k;
 
-	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+        SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
   for (k =0;k<3;k++){
-		temp2[k] = clamp(0,127.5 * (1.0 + sin (((temp[k] / 127.5 - 1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)),255);
+//EP      temp2[k] = clamp(0,127.5 * (1.0 + sin (((temp[k] / 127.5 - 1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)),255);
+          temp2[k] = clamp(0.0,
+                                           127.5 * (
+                                                                1.0 + sin (((temp[k] / 127.5 - 1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)
+                                                                ),
+                                           255.0);
   }
-	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+        api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
 
 }
 
