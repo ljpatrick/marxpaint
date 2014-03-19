@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 4, 2014
+June 17, 2002 - March 19, 2014
 
 $Id$
 
@@ -828,6 +828,7 @@ $Id$
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
     Michael Bauer<fios@akerbeltz.org>
+    Foram na Gaidhlig <fios@foramnagaidhlig.net>
 
   * Serbian cyrillic
     Aleksandar Jelenak <jelenak@verizon.net>

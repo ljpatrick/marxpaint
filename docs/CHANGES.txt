@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.January.23 (0.9.22)
+2014.March.19 (0.9.22)
 
   * New Tools:
     ----------
@@ -517,8 +517,11 @@ $Id$
     * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
 
-    * Scottish gaelic translation
+    * Scottish Gaelic translation
       Michael Bauer <fios@akerbeltz.org>
+
+    * Scottish Gaelic translation for Inno Setup
+      Foram na Gaidhlig <fios@foramnagaidhlig.net>
 
     * Serbian translations (cyrillic)
       Ivana Rakic <reci.ne.silvesteru@gmail.com>
