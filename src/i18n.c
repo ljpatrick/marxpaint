@@ -296,7 +296,6 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"kinyarwanda", "rw_RW.UTF-8"},
   {"klingon", "tlh.UTF-8"},
   {"tlhIngan", "tlh.UTF-8"},
-  {"tlhingan", "tlh.UTF-8"},
   {"korean", "ko_KR.UTF-8"},
   {"kurdish", "ku_TR.UTF-8"},
   {"tamil", "ta_IN.UTF-8"},
