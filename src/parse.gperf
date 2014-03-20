@@ -13,7 +13,7 @@
 #include <ctype.h>
 #include <stdint.h>
 #include "../src/parse.h"
-#include "debug.h"
+#include "../src/debug.h"
 
 const char PARSE_YES[] = "yes";
 const char PARSE_NO[]  = "no";

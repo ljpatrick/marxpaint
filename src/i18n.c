@@ -844,7 +844,9 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 
   if(lang)
     locale = language_to_locale(lang);
+#ifdef __APPLE__
   patch_i18n(locale);   //EP
+#endif
   return set_current_language(locale);
 }
 
