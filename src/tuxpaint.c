@@ -2111,7 +2111,7 @@ enum
 
 
 int brushflag,xnew,ynew,eraflag,lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag, ide, activeflag, old_x, old_y;
-int cur_thing, shift_flag, caps_flag, enter_flag;
+int cur_thing;
 
 /* --- MAIN LOOP! --- */
 
@@ -23516,8 +23516,6 @@ int main(int argc, char *argv[])
 
   
   claim_to_be_ready();
-  shift_flag = 0;
-  caps_flag = 0;
   printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
   printf("The names of the joysticks are:\n");
 		
