@@ -45,7 +45,6 @@ static void mtw(wchar_t * wtok, char * tok)
 {
   /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
   Uint16 *ui16;
-  ui16 = malloc(255);
   char *wrptr = (char *) ui16;
   size_t n, in, out;
   iconv_t trans;
@@ -54,7 +53,8 @@ static void mtw(wchar_t * wtok, char * tok)
   n = 255;
   in = 250;
   out = 250;
-  wch =malloc(255);
+  wch = malloc(sizeof(wchar_t) * 255);
+  ui16 = malloc(sizeof(Uint16) * 255);
 
   trans = iconv_open("WCHAR_T", "UTF-8");
   iconv(trans, (const char **) &tok, &in, &wrptr, &out);
@@ -88,7 +88,9 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
     printf("Loaded the default layout instead.\n");
   }
 
+#ifdef DEBUG
   printf("w %i, h %i\n", layout->width, layout->height);
+#endif
 
   surface = SDL_CreateRGBSurface(canvas->flags,
 				   layout->width * button_up->w,
@@ -150,8 +152,10 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
 
   layout = malloc(sizeof(osk_layout));
   hlayout_loaded = 0;
+#ifdef DEBUG
   printf("load_layout %s\n", layout_name);
-  filename = malloc(255);
+#endif
+  filename = malloc(sizeof(char) * 255);
   if (layout_name != NULL)
   {
     keyboard->name = strdup(layout_name);
@@ -188,9 +192,9 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   }
 
 
-  line = malloc(1024);
-  key = malloc(255);
-  value = malloc(255);
+  line = malloc(sizeof(char) * 1024);
+  key = malloc(sizeof(char) * 255);
+  value = malloc(sizeof(char) * 255);
 
   while (!feof(fi))
   {
@@ -202,31 +206,40 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
     sscanf(line, "%s %s", key, value);
     if (strcmp("layout", key) == 0 && !hlayout_loaded)
     {
+#ifdef DEBUG
       printf("layout found: %s\n", value);
+#endif
 
       load_hlayout(layout, value);
       hlayout_loaded = 1;
     }
     else if (strncmp("keymap", key, 6) == 0)
     {
+#ifdef DEBUG
       printf("keymap found: %s\n", value);
+#endif
       load_keymap(layout, value);
     }
     else if (strncmp("composemap", key, 10) == 0)
     {
+#ifdef DEBUG
       printf("composemap found: %s\n", value);
+#endif
       load_composemap(layout, value);
     }
     else if (strncmp("keysymdefs", key, 10) == 0)
-    load_keysymdefs(layout, value);
-
+    {
+      load_keysymdefs(layout, value);
+    }
     else if (strncmp("keyboardlist", key, 12) == 0)
     {
       strcpy(value, &line[13]);
       keyboard->keyboard_list = strdup(value);
     }
  
+#ifdef DEBUG
     printf("key %s, value %s\n", key, value);
+#endif
     key[0] = '\0';
     value[0] = '\0';
   }
@@ -263,7 +276,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
   allocated = 0;
   have_fontpath = 0;
 
-  filename = malloc(255);
+  filename = malloc(sizeof(char) * 255);
 
   /* Try full path */
   fi = fopen(hlayout_name, "r");
@@ -284,9 +297,9 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 
   free(filename);
 
-  line = malloc(1024);
-  key = malloc(255);
-  fontpath = malloc(255);
+  line = malloc(sizeof(char) * 1024);
+  key = malloc(sizeof(char) * 255);
+  fontpath = malloc(sizeof(char) * 255);
   r = g = b = 256;
 
   layout->fgcolor.r = def_fgcolor.r;
@@ -316,7 +329,9 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
       layout->width = width;
       layout->height = height;
 
+#ifdef DEBUG
       printf("w %i, h %i\n" ,  layout->width, layout->height);
+#endif
       allocated = 1;
     }
 
@@ -333,14 +348,18 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 
     else if (strncmp(line, "FONTPATH", 8) == 0)
     {
+#ifdef DEBUG
       printf("linefont %s\n", line);
+#endif
       sscanf(line, "%s %s", key, fontpath);
       if (!is_blank_or_comment(fontpath))
 	have_fontpath = 1;
     }
     else if (strncmp(line, "FGCOLOR", 5) == 0)
     {
+#ifdef DEBUG
       printf("linefont %s\n", line);
+#endif
       sscanf(line, "%s %i %i %i", key, &r, &g, &b);
       if (r > 0 && r< 256 && g > 0 && g< 256 && b > 0 && b< 256)
       {
@@ -352,7 +371,9 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
     }
     else if (strncmp(line, "BGCOLOR", 5) == 0)
     {
+#ifdef DEBUG
       printf("linefont %s\n", line);
+#endif
       sscanf(line, "%s %i %i %i", key, &r, &g, &b);
       if (r > 0 && r< 256 && g > 0 && g< 256 && b > 0 && b< 256)
       {
@@ -376,14 +397,12 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 	layout->keys[ line_number][i].shift_altgr_label=NULL;
       }
     }
-
-
     else if (width && height && allocated && strncmp(line, "KEY ", 4) == 0 && key_number < width)
     {
-      plain_label = malloc(64);
-      top_label = malloc(64);
-      altgr_label = malloc(64);
-      shift_altgr_label = malloc(64);
+      plain_label = malloc(sizeof(char) * 64);
+      top_label = malloc(sizeof(char) * 64);
+      altgr_label = malloc(sizeof(char) * 64);
+      shift_altgr_label = malloc(sizeof(char) * 64);
 
       sscanf(line, 
 	     "%s %i %i.%i %s %s %s %s %i",
@@ -445,7 +464,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
   char *line;
   FILE * fi;
 
-  filename = malloc(255);
+  filename = malloc(sizeof(char) * 255);
 
   /* Try full path */
   fi = fopen(keymap_name, "r");
@@ -466,7 +485,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
 
   free(filename);
 
-  line = malloc(1024);
+  line = malloc(sizeof(char) * 1024);
   layout->keymap = malloc(256 * sizeof(osk_keymap));
 
   for (i = 0;i < 256; i++)
@@ -480,16 +499,15 @@ void load_keymap(osk_layout *layout, char * keymap_name)
 
   while (!feof(fi))
   {
-
     fgets(line, 1023, fi);
 
     if (is_blank_or_comment(line))
       continue;
 
-    ksname1 = malloc(64);
-    ksname2 = malloc(64);
-    ksname3 = malloc(64);
-    ksname4 = malloc(64);
+    ksname1 = malloc(sizeof(char) * 64);
+    ksname2 = malloc(sizeof(char) * 64);
+    ksname3 = malloc(sizeof(char) * 64);
+    ksname4 = malloc(sizeof(char) * 64);
     ksname1[0] = '\0';
     ksname2[0] = '\0';
     ksname3[0] = '\0';
@@ -543,17 +561,20 @@ static void gettokens(char * line, char * delim, char ** pointer, osk_composenod
   char  *tok;
   wchar_t *result, *wtok;
   osk_composenode *auxnode;
-  wtok=malloc(255);
+
+  wtok = malloc(sizeof(wchar_t) * 255);
 
   tok = strdup(strtok_r(line, delim, pointer));
 
   if(!tok)
     return;
+
   if (tok[0] == ':') /* End of precompose keysyms, next will be the result in UTF-8. */
   {
     tok = strdup(strtok_r(line, ": \"\t", pointer));
 
     mbstowcs(wtok, tok, 255);
+
     result = wcsdup(wtok);
     /* printf("->%ls<-\n", wtok); */
     free(wtok);
@@ -569,7 +590,7 @@ static void gettokens(char * line, char * delim, char ** pointer, osk_composenod
       auxnode = malloc(sizeof(osk_composenode));
       composenode->childs = malloc(sizeof(osk_composenode *));
       composenode->childs[0] = auxnode;
-      mbstowcs(wtok, tok, 255);
+      mbstowcs(wtok, tok, 254); /* <<< CRASH */
       composenode->childs[0]->keysym = wcsdup(wtok);
       composenode->childs[0]->result = NULL;
       composenode->childs[0]->size = 0;
@@ -583,7 +604,6 @@ static void gettokens(char * line, char * delim, char ** pointer, osk_composenod
     }
     else
     {
-
       for (i = 0; i < composenode->size; i++)
       {
 	mbstowcs(wtok, tok, 255);
@@ -629,7 +649,7 @@ static void load_composemap(osk_layout *layout, char * composemap_name)
   FILE * fi;
 
   pointer = malloc(sizeof(wchar_t *));
-  filename = malloc(255);
+  filename = malloc(sizeof(char) * 255);
 
   /* Try full path */
   fi = fopen(composemap_name, "r");
@@ -655,7 +675,7 @@ static void load_composemap(osk_layout *layout, char * composemap_name)
   layout->composemap[0].result = NULL;
 
   layout->composemap->size = 0;
-  line = malloc(1024*sizeof(char));
+  line = malloc(1024 * sizeof(char));
 
   while (!feof(fi))
   {
@@ -680,22 +700,31 @@ static void print_composemap(osk_composenode *composemap, char * sp)
 {
   int i;
   char * space;
-  space = malloc(255);
 
+  space = malloc(sizeof(char) * 255);
 
-
-      printf("%ls, ", composemap->keysym);
-      printf("%d ==> ", composemap->size);
-      if (composemap->size == 0)
-	{      	printf("result %ls\n", composemap->result);
-	  return;}
+#ifdef DEBUG
+  printf("%ls, ", composemap->keysym);
+  printf("%d ==> ", composemap->size);
+#endif
+  if (composemap->size == 0)
+  {
+#ifdef DEBUG
+    printf("result %ls\n", composemap->result);
+#endif
+    return;
+  }
   if (sp)
   {
-  sprintf(space, "%s\t", sp);
+    sprintf(space, "%s\t", sp);
   }
   else
+  {
     sprintf(space, " ");
+  }
+#ifdef DEBUG
   printf("%s", space);
+#endif
 
   for (i = 0; i < composemap->size; i++)
     {
@@ -727,7 +756,7 @@ static void load_keysymdefs(osk_layout *layout, char * keysymdefs_name)
   char *line;
   FILE * fi;
 
-  filename = malloc(255);
+  filename = malloc(sizeof(char) * 255);
 
   /* Try full path */
   fi = fopen(keysymdefs_name, "r");
@@ -764,7 +793,7 @@ static void load_keysymdefs(osk_layout *layout, char * keysymdefs_name)
 
     /* Some keysyms doesn't correspond to any unicode value, ej. BackSpace */
     layout->keysymdefs[i].unicode = 0;
-    layout->keysymdefs[i].mnemo = malloc(128);
+    layout->keysymdefs[i].mnemo = malloc(sizeof(char) * 128);
     sscanf(line, "#define XK_%s %x /* U+%x",
 	   layout->keysymdefs[i].mnemo,
 	   &layout->keysymdefs[i].keysym,
@@ -953,7 +982,8 @@ static int is_blank_or_comment(char *line)
 static void keybd_prepare(on_screen_keyboard *keyboard)
 {
   char * fontname;
-  fontname = malloc(255);
+
+  fontname = malloc(sizeof(char) * 255);
 
   if (keyboard->layout->fontpath)
   {
@@ -1143,12 +1173,13 @@ static void draw_key(osk_key key, on_screen_keyboard * keyboard, int hot)
 {
   char *text;
   SDL_Surface *skey;
+
   if (!key.width)
     return;
-  text = malloc(255);
-	
-  snprintf(text, 6,"%s", key.plain_label);
 
+  text = malloc(sizeof(char) * 255);
+
+  snprintf(text, 6,"%s", key.plain_label);
 
   if( strncmp("NULL", text, 4) != 0 && key.keycode != 0)
   {
@@ -1539,7 +1570,9 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
   wchar_t *ks;
   on_screen_keyboard * new_keyboard;
 
+#ifdef DEBUG
   printf("list: %s\n", keyboard->keyboard_list);
+#endif
 
   event.key.keysym.mod = KMOD_NONE;
   event.key.keysym.sym = 0;
@@ -1561,8 +1594,12 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 
       aux_list = strdup(keyboard->keyboard_list);
       aux_list_ptr = aux_list;
-  printf("auxlist: %s\n", aux_list);
-  printf("kn %s\n",  keyboard->name);
+
+#ifdef DEBUG
+      printf("auxlist: %s\n", aux_list);
+      printf("kn %s\n",  keyboard->name);
+#endif
+
       if (key->keycode == 1)
       {
 	for (i = 0;;i++, aux_list = NULL)
@@ -1645,7 +1682,9 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 		   strlen(keysym)+1,
 		   NULL);
 
+#ifdef DEBUG
     printf("wkeysym %ls %i\n\n", wkeysym, (int)wcslen(wkeysym));
+#endif
 
 
     get_composed_keysym(keyboard, keyboard->composing, wkeysym);
@@ -1655,9 +1694,12 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       keyboard->last_key_pressed = key;
       set_key(NULL, &keyboard->keymodifiers.compose, 0);
       ks = keyboard->composed;
-      printf("keysym found %ls\n", ks);
 
-      mnemo = malloc(32);
+#ifdef DEBUG
+      printf("keysym found %ls\n", ks);
+#endif
+
+      mnemo = malloc(sizeof(char) * 32);
       snprintf(mnemo, 31, "%ls", ks);
 
       if (wcsncmp(L"Return", ks, 6) == 0)
@@ -1694,7 +1736,9 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
     {
       if (keyboard->composing == keyboard->layout->composemap)
       {
+#ifdef DEBUG
 	printf("compose sequence resetted\n");
+#endif
 	set_key(NULL, &keyboard->keymodifiers.compose, 0);
 	keyboard->last_key_pressed = key;
 	clear_dead_sticks(keyboard);
@@ -1702,7 +1746,9 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       else
       {
 	set_key(key, &keyboard->keymodifiers.compose, 0);
+#ifdef DEBUG
 	printf("still composing\n");
+#endif
 	set_dead_sticks(key, keyboard);
 	/* Fixme: Would be nice if we can highlight next available-to-compose keys, but how? */
       }
