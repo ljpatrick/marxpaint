@@ -386,10 +386,14 @@ Windows Users
 
        onscreen-keyboard-disable-change=yes
                Disables the possibility for changing the layout of the
-               on-screen keyboard when using the Text and Label tools,
-               usefull for simplifying things for the small children.
+               on-screen keyboard when using the Text and Label tools, useful
+               for simplifying things for the small children.
                Note: Using this option implies automatically
                onscreen-keyboard=yes, so setting both is redundant.
+
+       joystick-dev=N
+               Specify which joystick device should be used by Tux Paint.
+               Default value is 0 (the first joystick).
 
        joystick-slowness=SPEED
                Sets a delay at each axis motion, allowing to slow the
@@ -417,7 +421,7 @@ Windows Users
 
        joystick-btn-escape=BUTTON NUMBER
                Selects the joystick button number, as seen by SDL, that will
-               be used to generate a escape event. Usefull to dismiss dialogs
+               be used to generate a escape event. Useful to dismiss dialogs
                and quit.
 
        joystick-btn-brush=BUTTON NUMBER
@@ -1027,6 +1031,9 @@ Command-Line Informational Options
 
            --lang help
                    Display a list of available languages in Tux Paint.
+
+           --joystick-dev list
+                   Display list of attached joysticks available to Tux Paint.
 
      ----------------------------------------------------------------------
 

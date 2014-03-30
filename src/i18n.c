@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2012 by Bill Kendrick and others
+  Copyright (c) 2002-2014 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - March 28, 2013
+  June 14, 2002 - March 29, 2014
 */
 
 #include <stdio.h>
@@ -697,8 +697,6 @@ static void set_langint_from_locale_string(const char *restrict loc)
   }
 }
 
-#define DEBUG
-
 #define HAVE_SETENV
 #ifdef WIN32
 #undef HAVE_SETENV
@@ -729,12 +727,15 @@ static int set_current_language(const char *restrict loc)
   /* First set the locale according to the environment, then try to overwrite with loc,
      after that, ctype_utf8() call will test the compatibility with utf8 and try to load
      a different locale if the resulting one is not compatible. */
+#ifdef DEBUG
 printf ("Locale BEFORE is: %s\n", setlocale(LC_ALL,NULL));//EP
+#endif
   setlocale(LC_ALL, "");
   setlocale(LC_ALL, loc);
   ctype_utf8();
+#ifdef DEBUG
 printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
-        
+#endif        
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -821,14 +822,19 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
 
   free(oldloc);
 
+#ifdef DEBUG
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
+#endif
+
   return y_nudge;
 }
 
 int setup_i18n(const char *restrict lang, const char *restrict locale)
 {
+#ifdef DEBUG
   printf("lang %p, locale %p\n", lang, locale);
   printf("lang \"%s\", locale \"%s\"\n", lang, locale);
+#endif
 
   if(locale)
   {

@@ -64,6 +64,7 @@ _tuxpaint()
 			--onscreen-keyboard \
 			--onscreen-keyboard-layout \
 			--onscreen-keyboard-disable-change \
+			--joystick-dev \
 			--joystick-slowness \
 			--joystick-threshold \
 			--joystick-maxsteps \

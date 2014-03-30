@@ -58,6 +58,7 @@ struct cfginfo
   const char *onscreen_keyboard;
   const char *onscreen_keyboard_layout;
   const char *onscreen_keyboard_disable_change;
+  const char *joystick_dev;
   const char *joystick_slowness;
   const char *joystick_lowthreshold;
   const char *joystick_maxsteps;

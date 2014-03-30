@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009
+  Copyright (c) 2009-2014
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -259,11 +259,15 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {
+#ifdef DEBUG
   printf("TuxPaint_Font_CloseFont step 1 (%p)\n", tpf); //EP
+#endif
   if (!tpf) return;     //EP
         
 #ifndef NO_SDLPANGO
+#ifdef DEBUG
   printf("TuxPaint_Font_CloseFont step 2 (%p, %d)\n", tpf->pango_context, tpf->typ);    //EP
+#endif
   if (tpf->typ == FONT_TYPE_PANGO)
           if (tpf->pango_context)       //EP
   {
@@ -274,7 +278,9 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
   }
 #endif
 
+#ifdef DEBUG
   printf("TuxPaint_Font_CloseFont step 3 (%p, %d)\n", tpf->ttf_font, tpf->typ); //EP
+#endif
   if (tpf->typ == FONT_TYPE_TTF)
           if (tpf->ttf_font)    //EP
   {

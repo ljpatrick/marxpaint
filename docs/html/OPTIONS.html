@@ -482,10 +482,16 @@ New Breed Software</p>
   <dt><code><b>onscreen-keyboard-disable-change=yes</b></code></dt>
   <dd>
     Disables the possibility for changing the layout of the on-screen keyboard when using the <b>Text</b> and
-    <b>Label</b> tools, usefull for simplifying things for the small children.<br>
+    <b>Label</b> tools, useful for simplifying things for the small children.<br>
     Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.
   </dd>
 
+
+  <dt><code><b>joystick-dev=<i>N</i></b></code></dt>
+  <dd>
+    Specify which joystick device should be used by Tux Paint.
+    Default value is 0 (the first joystick).
+  </dd>
 
   <dt><code><b>joystick-slowness=<i>SPEED</i></b></code></dt>
   <dd>
@@ -520,7 +526,7 @@ New Breed Software</p>
   <dt><code><b>joystick-btn-escape=<i>BUTTON NUMBER</i></b></code></dt>
   <dd>
     Selects the joystick button number, as seen by SDL, that will be used to generate a escape event.
-    Usefull to dismiss dialogs and quit.
+    Useful to dismiss dialogs and quit.
   </dd>
 
   <dt><code><b>joystick-btn-brush=<i>BUTTON NUMBER</i></b></code></dt>
@@ -1526,6 +1532,11 @@ New Breed Software</p>
       <dt><code><b>--lang help</b></code></dt>
       <dd>
         Display a list of available languages in Tux&nbsp;Paint.
+      </dd>
+
+      <dt><code><b>--joystick-dev list</b></code></dt>
+      <dd>
+        Display list of attached joysticks available to Tux&nbsp;Paint.
       </dd>
     </dl>
     </blockquote>

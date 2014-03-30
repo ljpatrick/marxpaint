@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2002-2012 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2014 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 2, 2012
+  June 14, 2002 - March 30, 2014
 */
 
 
@@ -1092,6 +1092,7 @@ static int fullscreen;
 static int native_screensize;
 static int grab_input;
 static int rotate_orientation;
+static int joystick_dev = 0;
 
 static int disable_print;
 static int print_delay;
@@ -6381,16 +6382,17 @@ void show_usage(int exitcode)
 	  "  %s [--colorfile FILE]\n"
 	  "  %s [--mouse-accessibility]\n"
 	  "  %s [--onscreen-keyboard]\n"
-	  "  %s [--joystick-slowness] (0-500). Default value is 15\n"
-	  "  %s [--joystick-threshold] (0-32766). Default value is 3200\n"
-	  "  %s [--joystick-maxsteps] (1-7). Default value is 7\n"
+          "  %s [--joystick-dev N] (default=0)\n"
+	  "  %s [--joystick-slowness N] (0-500; default value is 15)\n"
+	  "  %s [--joystick-threshold N] (0-32766; default value is 3200)\n"
+	  "  %s [--joystick-maxsteps N] (1-7; default value is 7)\n"
 	  "\n",
 	  progname, progname,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
-	  blank, blank, blank,
+	  blank, blank, blank, blank,
 	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
 #ifdef WIN32
 	  blank,
@@ -7531,28 +7533,40 @@ static int generate_fontconfig_cache_real(void)
   SDL_Surface * tmp_surf;
   SDL_Color black = { 0, 0, 0, 0 };
 
+#ifdef DEBUG
   printf("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID()); fflush(stdout);
+#endif
 
   tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12);
 
   if (tmp_font != NULL)
   {
+#ifdef DEBUG
     printf("-- Generated a font.\n"); fflush(stdout);
+#endif
     tmp_surf = render_text(tmp_font, "Test", black);
     if (tmp_surf != NULL) {
+#ifdef DEBUG
       printf("-- Generated a surface\n"); fflush(stdout);
+#endif
       SDL_FreeSurface(tmp_surf);
     } else {
+#ifdef DEBUG
       printf("-- Failed to make a surface!\n"); fflush(stdout);
+#endif
     }
     TuxPaint_Font_CloseFont(tmp_font);
   } else {
+#ifdef DEBUG
     printf("-- Failed to generate a font!\n"); fflush(stdout);
+#endif
   }
 
   fontconfig_thread_done = 1;
 
+#ifdef DEBUG
   printf("-- generate_fontconfig_cache() is done\n"); fflush(stdout);
+#endif
   return(0);
 }
 
@@ -12197,21 +12211,27 @@ static void cleanup(void)
 
   if (medium_font != NULL)
   {
-        printf("cleanup: medium font\n");       //EP
+#ifdef DEBUG
+    printf("cleanup: medium font\n");       //EP
+#endif
     TuxPaint_Font_CloseFont(medium_font);
     medium_font = NULL;
   }
 
   if (small_font != NULL)
   {
-        printf("cleanup: small font\n");        //EP
+#ifdef DEBUG
+    printf("cleanup: small font\n");        //EP
+#endif
     TuxPaint_Font_CloseFont(small_font);
     small_font = NULL;
   }
 
   if (large_font != NULL)
   {
-        printf("cleanup: large font\n");        //EP
+#ifdef DEBUG
+    printf("cleanup: large font\n");        //EP
+#endif
     TuxPaint_Font_CloseFont(large_font);
     large_font = NULL;
   }
@@ -21841,6 +21861,19 @@ static void setup_config(char *argv[])
   if(tmpcfg.papersize)
     papersize = tmpcfg.papersize;
 #endif
+  if(tmpcfg.joystick_dev)
+    {
+      if(strcmp(tmpcfg.joystick_dev, "list") == 0) {
+        joystick_dev = -1;
+      } else {
+        if(strtof(tmpcfg.joystick_dev, NULL) < 0 || strtof(tmpcfg.joystick_dev, NULL) > 100)
+	{
+	  printf("Joystick dev (now %s) must be between 0 and 100.\n", tmpcfg.joystick_dev);
+	  exit(1);
+	}
+        joystick_dev = strtof(tmpcfg.joystick_dev, NULL);
+      }
+    }
   if(tmpcfg.joystick_slowness)
     {
       if(strtof(tmpcfg.joystick_slowness, NULL) < 0 || strtof(tmpcfg.joystick_slowness, NULL) > 500)
@@ -22063,7 +22096,9 @@ static void setup_config(char *argv[])
       onscreen_keyboard = TRUE;
     }
 
+#ifdef DEBUG
   printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n", _promptless_save_over_ask, _promptless_save_over_new, _promptless_save_over);
+#endif
 
   if (_promptless_save_over_ask) {
     promptless_save = SAVE_OVER_PROMPT;
@@ -22081,7 +22116,9 @@ static void chdir_to_binary(char *argv0)
 {
         char    curdir[256];    //EP added this block to print out of current directory
         getcwd(curdir, sizeof(curdir));
+#ifdef DEBUG
         printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
+#endif
         
 #if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)   //EP added __APPLE__
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
@@ -22445,9 +22482,8 @@ static void setup(void)
     }
   }
 
-
-
-  do_lock_file();
+  if (joystick_dev != -1)
+    do_lock_file();
 
   init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_JOYSTICK;
   if (use_sound)
@@ -22485,6 +22521,34 @@ static void setup(void)
   /* Set up event filter */
 
   SDL_SetEventFilter(TP_EventFilter);
+
+
+  /* Set up joystick */
+
+  if (joystick_dev == -1) {
+    printf("%i joystick(s) were found:\n", SDL_NumJoysticks() );
+		
+    for( i=0; i < SDL_NumJoysticks(); i++ ) 
+    {
+      printf(" %d: %s\n", i, SDL_JoystickName(i));
+    }
+
+    SDL_Quit();
+    exit(0);
+  }
+
+  joystick = SDL_JoystickOpen(joystick_dev);
+  if (joystick == NULL) {
+    fprintf(stderr, "Could not open joystick device %d: %s\n", joystick_dev, SDL_GetError());
+  } else {
+    SDL_JoystickEventState(SDL_ENABLE);
+#ifdef DEBUG
+    printf("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
+    printf("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
+    printf("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
+    printf("Number of Hats: %d\n", SDL_JoystickNumHats(joystick));
+#endif
+  }
 
 
 #ifndef NOSOUND
@@ -22738,28 +22802,36 @@ static void setup(void)
 
   fontconfig_thread_done = 0;
 
+#ifdef DEBUG
   printf("Spawning Pango thread\n"); fflush(stdout);
+#endif
 
   fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, NULL);
   if (fontconfig_thread == NULL) {
     fprintf(stderr, "Failed to create Pango setup thread: %s\n", SDL_GetError());
   } else {
+#ifdef DEBUG
     printf("Thread spawned\n"); fflush(stdout);
+#endif
     if (generate_fontconfig_cache_spinner(screen)) /* returns 1 if aborted */
     {
-      printf("Aborted!\n"); fflush(stdout);
+      printf("Pango thread aborted!\n"); fflush(stdout);
       SDL_KillThread(fontconfig_thread);
       SDL_Quit();
       exit(0);
       /* FIXME: Let's be more graceful about exiting (e.g., clean up lockfile!) -bjk 2010.04.27 */
     }
+#ifdef DEBUG
     printf("Done generating cache\n"); fflush(stdout);
+#endif
   }
 
 
 #ifdef FORKED_FONTS
   /* NOW we can fork our own font scanner stuff, and let it run in the bgkd -bjk 2010.04.27 */
+#ifdef DEBUG
   printf("Now running font scanner\n"); fflush(stdout);
+#endif
   run_font_scanner(screen, lang_prefixes[get_current_language()]);
 #endif
 
@@ -23473,7 +23545,6 @@ int main(int argc, char *argv[])
   time_t        t = time(NULL);
   strftime(logTime, sizeof(logTime), "%A %d/%m/%Y %H:%M:%S", localtime(&t));
   printf("Tux Paint log - %s\n", logTime);
-                 
 #endif
         
   chdir_to_binary(argv[0]);
@@ -23484,10 +23555,14 @@ int main(int argc, char *argv[])
   // must start ASAP, but depends on locale which in turn needs the config
 #ifdef NO_SDLPANGO
   /* Only fork it now if we're not planning on creating a thread to handle fontconfig stuff -bjk 2010.04.27 */
+#ifdef DEBUG
   printf("Running font scanner\n"); fflush(stdout);
+#endif
   run_font_scanner(screen, lang_prefixes[get_current_language()]);
 #else
+#ifdef DEBUG
   printf("NOT running font scanner\n"); fflush(stdout);
+#endif
 #endif
 #endif
 
@@ -23516,21 +23591,6 @@ int main(int argc, char *argv[])
 
   
   claim_to_be_ready();
-  printf("%i joysticks were found.\n\n", SDL_NumJoysticks() );
-  printf("The names of the joysticks are:\n");
-		
-  for( i=0; i < SDL_NumJoysticks(); i++ ) 
-   {
-       printf("    %s\n", SDL_JoystickName(i));
-   }
- 
-  joystick = SDL_JoystickOpen(0);
-  SDL_JoystickEventState(SDL_ENABLE);
-
-  printf("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
-  printf("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
-  printf("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
-  printf("Number of Hats: %d\n", SDL_JoystickNumHats(joystick));
 
   mainloop();
 
@@ -23979,7 +24039,7 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
 	ts -= 2;
       }
 
-      /* We don't need this ATM, but better left it ready in case the number of tools grows enouth */
+      /* We don't need this ATM, but better left it ready in case the number of tools grows enough */
       while (eby > real_r_tools.y + real_r_tools.h + ts / 2 * button_h)
       {
 	ev.button.y = real_r_tools.y + real_r_tools.h + 1;
@@ -23995,7 +24055,11 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
     ev.button.type = SDL_MOUSEBUTTONUP;
     ev.button.state = SDL_RELEASED;
   }
-printf("result %d %d\n", ev.button.x, ev.button.y);
+
+#ifdef DEBUG
+  printf("result %d %d\n", ev.button.x, ev.button.y);
+#endif
+
   SDL_PushEvent(&ev);
 }
 

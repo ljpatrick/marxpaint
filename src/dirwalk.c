@@ -1,7 +1,7 @@
 /*
   dirwalk.c
 
-  Copyright (c) 2009
+  Copyright (c) 2009-2014
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -107,13 +107,17 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
       char fname[512];
       TuxPaint_Font *font;
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-/* */printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL")); /**/     //EP
+#ifdef DEBUG
+      printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL")); //EP
+#endif
       if (locale && strstr(fname, "locale") && !all_locale_fonts)
       {
         char fname_check[512];
         /* We're (probably) loading from our locale fonts folder; ONLY load our locale's font */
         snprintf(fname_check, sizeof fname_check, "%s/%s.ttf", dir, locale);
-/* */printf("checking vs \"%s\" vs \"%s\"\n", fname_check, fname); /**/ //EP
+#ifdef DEBUG
+        printf("checking \"%s\" vs \"%s\"\n", fname_check, fname); //EP
+#endif
         if (strcmp(fname, fname_check) == 0)
           font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
         else
