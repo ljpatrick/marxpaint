@@ -38,7 +38,7 @@ KEY 18 1.0 9 ( ‘ ˘ 0
 KEY 19 1.0 0 ) ’ ° 0
 KEY 20 1.0 - _ ¥ ̣ 0
 KEY 21 1.0 = + × ÷ 0
-KEY 22 2.0 Back Back Back Back 0
+KEY 22 2.0 DELETE DELETE DELETE DELETE 0
 
 
 NEWLINE
@@ -46,7 +46,7 @@ NEWLINE
 
 
 # Tab
-KEY 23 1.5 |<->| |<->| |<->| |<->| 0
+KEY 23 1.5 TAB TAB TAB TAB 0
 
 
 
@@ -69,7 +69,7 @@ KEY 51 1.5 \ | ¬ ¦ 0
 NEWLINE
 
 # CAPSLOCK
-KEY 66 2.0 Caps Caps Caps Caps 0
+KEY 66 2.0 CAPSLOCK CAPSLOCK CAPSLOCK CAPSLOCK 0
 
 KEY 38 1.0 a A á Á 1
 KEY 39 1.0 s S ß § 1
@@ -86,14 +86,14 @@ KEY 47 1.0 ; : ¶ ° 0
 KEY 48 1.0 ´ ¨ ' " 0
 
 # Return
-KEY 36 2.0 Enter Enter Enter Enter 0
+KEY 36 2.0 ENTER ENTER ENTER ENTER 0
 
 
 
 
 NEWLINE
 
-KEY 50 2.5 Shift Shift Shift Shift 0
+KEY 50 2.5 SHIFT SHIFT SHIFT SHIFT 0
 
 KEY 52 1.0 z Z æ Æ 1
 KEY 53 1.0 x X x X 1
@@ -106,7 +106,7 @@ KEY 58 1.0 m M µ µ 1
 KEY 59 1.0 , < ç Ç 2
 KEY 60 1.0 . > ˙ ˇ 0
 KEY 61 1.0 / ? ¿ ̉ 0
-KEY 62 2.5 Shift Shift Shift Shift 0
+KEY 62 2.5 SHIFT SHIFT SHIFT SHIFT 0
 
 
 

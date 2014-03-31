@@ -110,6 +110,11 @@ typedef struct osk_keyboard
   SDL_Surface *button_off;
   SDL_Surface *button_nav;
   SDL_Surface *button_hold;
+  SDL_Surface *oskdel;           /* The surfaces containing some symbols for the buttons, delete arrow */
+  SDL_Surface *osktab;           /* Tab arrows */
+  SDL_Surface *oskenter;         /* Return hook/arrow */
+  SDL_Surface *oskcapslock;      /* CapsLock */
+  SDL_Surface *oskshift;         /* Shift */
   int changed;                   /* If the surface has been modified (painted)  */
   SDL_Rect rect;                 /* The rectangle that has changed */
   int recreated;                 /* If the surface has been deleted and newly created */ 
@@ -127,7 +132,7 @@ typedef struct osk_keyboard
   osk_key * last_key_pressed;    /* The last key pressed */
 } on_screen_keyboard;
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change);
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, SDL_Surface *oskdel, SDL_Surface *osktab, SDL_Surface *oskenter, SDL_Surface *oskcapslock, SDL_Surface *oskshift, int disable_change);
 
 struct osk_layout *osk_load_layout(char *layout_name);
 

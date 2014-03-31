@@ -66,7 +66,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #define mbstowcs(wtok, tok, size) mtw(wtok, tok)
 #endif
 
-struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, int disable_change)
+struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surface *button_up, SDL_Surface *button_down, SDL_Surface *button_off, SDL_Surface *button_nav, SDL_Surface *button_hold, SDL_Surface *oskdel, SDL_Surface *osktab, SDL_Surface *oskenter, SDL_Surface *oskcapslock, SDL_Surface *oskshift, int disable_change)
 {
   SDL_Surface *surface;
   osk_layout *layout;
@@ -116,6 +116,11 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
   keyboard->button_off = button_off;
   keyboard->button_nav = button_nav;
   keyboard->button_hold = button_hold;
+  keyboard->oskdel = oskdel;
+  keyboard->osktab = osktab;
+  keyboard->oskenter = oskenter;
+  keyboard->oskcapslock = oskcapslock;
+  keyboard->oskshift = oskshift;
   keyboard->composing = layout->composemap;
   keyboard->composed = NULL;
   keyboard->last_key_pressed = NULL;
@@ -1281,7 +1286,32 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
       text = strdup(key.top_label);
   }
 
-  if( strncmp("SPACE", text, 5) != 0 && strncmp("NULL", text, 4) != 0)
+  if( strncmp("DELETE", text, 6) == 0)
+  {
+    apply_surface(key.x, key.y, keyboard->oskdel, keyboard->surface, NULL);
+  }
+
+  else if( strncmp("TAB", text, 3) == 0)
+  {
+    apply_surface(key.x, key.y, keyboard->osktab, keyboard->surface, NULL);
+  }
+
+  else if( strncmp("ENTER", text, 5) == 0)
+  {
+    apply_surface(key.x, key.y, keyboard->oskenter, keyboard->surface, NULL);
+  }
+
+  else if( strncmp("CAPSLOCK", text, 8) == 0)
+  {
+    apply_surface(key.x, key.y, keyboard->oskcapslock, keyboard->surface, NULL);
+  }
+
+  else if( strncmp("SHIFT", text, 5) == 0)
+  {
+    apply_surface(key.x, key.y, keyboard->oskshift, keyboard->surface, NULL);
+  }
+
+    else if( strncmp("SPACE", text, 5) != 0 && strncmp("NULL", text, 4) != 0)
   {
     messager = TTF_RenderUTF8_Blended(osk_fonty, text, keyboard->layout->fgcolor);
 
@@ -1643,7 +1673,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
 
-      new_keyboard = osk_create(name, keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->button_hold, keyboard->disable_change);
+      new_keyboard = osk_create(name, keyboard->surface, keyboard->button_up, keyboard->button_down, keyboard->button_off, keyboard->button_nav, keyboard->button_hold, keyboard->oskdel, keyboard->osktab, keyboard->oskenter, keyboard->oskcapslock, keyboard->oskshift, keyboard->disable_change);
 
       free(aux_list_ptr);
 

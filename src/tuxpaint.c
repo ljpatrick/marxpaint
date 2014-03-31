@@ -1358,6 +1358,7 @@ static SDL_Surface *img_title_on, *img_title_off,
 static SDL_Surface *img_title_names[NUM_TITLES];
 static SDL_Surface *img_tools[NUM_TOOLS], *img_tool_names[NUM_TOOLS];
 
+static SDL_Surface *img_oskdel, *img_osktab, *img_oskenter, *img_oskcapslock, *img_oskshift;
 static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y,
 			      int keep_aspect);
 static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
@@ -3033,9 +3034,9 @@ static void mainloop(void)
 		if (kbd == NULL)
 		{
 		  if (onscreen_keyboard_layout)
-		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
+		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
 		  else
-		    kbd = osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, onscreen_keyboard_disable_change);
+		    kbd = osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
 		}
 		if (kbd == NULL)
 		  printf("kbd = NULL\n");
@@ -12198,6 +12199,15 @@ static void cleanup(void)
   free_surface_array(img_color_btns, NUM_COLORS * 2);
   free(img_color_btns);
 #endif
+
+  if (onscreen_keyboard)
+  {
+    free_surface(&img_oskdel);
+    free_surface(&img_osktab);
+    free_surface(&img_oskenter);
+    free_surface(&img_oskcapslock);
+    free_surface(&img_oskshift);
+  }
 
   free_surface(&screen);
   free_surface(&img_starter);
@@ -23143,6 +23153,15 @@ static void setup(void)
   img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
 #endif
 
+  if (onscreen_keyboard)
+  {
+    img_oskdel = loadimage(DATA_PREFIX "images/ui/osk_delete.png");
+    img_osktab = loadimage(DATA_PREFIX "images/ui/osk_tab.png");
+    img_oskenter = loadimage(DATA_PREFIX "images/ui/osk_enter.png");
+    img_oskcapslock = loadimage(DATA_PREFIX "images/ui/osk_capslock.png");
+    img_oskshift = loadimage(DATA_PREFIX "images/ui/osk_shift.png");
+
+  }
   show_progress_bar(screen);
 
 

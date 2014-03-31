@@ -14,12 +14,14 @@
 
 WIDTH 15
 HEIGHT 5
-#FONTPATH FreeMonoBold.ttf
+FONTPATH FreeMonoBold.ttf
 
 
 # For the purpose of osk should be:
 # KEY keycode  width  label_plain label_top label_altgr label_shift_altgr shiftcaps
 # shiftcaps means if the value of the key should be shifted if capslock is active
+# DELETE TAB ENTER CAPSLOCK and SHIFT will be replaced by corresponding images
+# SPACE will be replaced by blank
 # 
 
 KEY 49 1.0 ` ~ ` ~ 0
@@ -35,15 +37,15 @@ KEY 18 1.0 9 ( ‘ ˘ 0
 KEY 19 1.0 0 ) ’ ° 0
 KEY 20 1.0 - _ ¥ ̣ 0
 KEY 21 1.0 = + × ÷ 0
-KEY 22 2.0 Back Back Back Back 0
-
-
+#KEY 22 2.0 <--- <--- <--- <--- 0
+KEY 22 2.0 DELETE DELETE DELETE DELETE 0
 
 
 NEWLINE
 
 # Tab
-KEY 23 1.5 |<->| |<->| |<->| |<->| 0
+KEY 23 1.5 TAB TAB TAB TAB 0
+#          |<->| |<->| |<->| |<->| 0
 
 # Some tests to see how fonts works
 #KEY 38 1.0 耳  NULL NULL
@@ -71,7 +73,8 @@ KEY 51 1.5 \ | ¬ ¦ 0
 NEWLINE
 
 # CAPSLOCK
-KEY 66 2.0 Caps Caps Caps Caps 0
+KEY 66 2.0 CAPSLOCK CAPSLOCK CAPSLOCK CAPSLOCK 0
+#          ↥ ↥ ↥ ↥ 0
 KEY 45 1.0 k K œ Œ 1
 KEY 46 1.0 l L ø Ø 1
 KEY 58 1.0 m M µ µ 1
@@ -85,12 +88,13 @@ KEY 47 1.0 ; : ¶ ° 0
 KEY 48 1.0 ´ ¨ ' " 0
 
 # Return
-KEY 36 2.0 Enter Enter Enter Enter 0
-
-
+KEY 36 2.0 ENTER ENTER ENTER ENTER 0
+#KEY 36 2.0 ↵ ↵ ↵ ↵ 0
+#KEY 36 2.0 ⤶ ⤶ ⤶ ⤶ 0
 NEWLINE
 
-KEY 50 2.5 Shift Shift Shift Shift 0
+KEY 50 2.5 SHIFT SHIFT SHIFT SHIFT 0
+#          __↑__ __↑__ __↑__ __↑__ 0
 KEY 28 1.0 t T þ Þ 1
 KEY 30 1.0 u U ú Ú 1
 KEY 55 1.0 v V v V 1
@@ -104,7 +108,8 @@ KEY 59 1.0 , < ç Ç 2
 
 KEY 60 1.0 . > ˙ ˇ 0
 KEY 61 1.0 / ? ¿ ̉ 0
-KEY 62 2.5 Shift Shift Shift Shift 0
+KEY 62 2.5 SHIFT SHIFT SHIFT SHIFT 0
+#          __↑__ __↑__ __↑__ __↑__ 0
 
 
 
