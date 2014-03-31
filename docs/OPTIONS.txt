@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                 March 28, 2013
+                                 March 30, 2013
 
      ----------------------------------------------------------------------
 
@@ -485,6 +485,12 @@ Windows Users
                Selects the joystick button number, as seen by SDL, that will
                be a shortcurt to print.
 
+       joystick-buttons-ignore=BUTTON1,BUTTON2,...
+               A set of joystick button numbers, as seen by SDL, that should
+               be ignored. Otherwise, unless they are used by one of the
+               "joystick-btn-" options above, buttons will be seen as a mouse
+               left-click.
+
        stampsize=SIZE
 
                Use this option to force Tux Paint to set the starting size of
@@ -909,6 +915,7 @@ Windows Users
          --onscreen-keyboard
          --onscreen-keyboard-layout
          --onscreen-keyboard-disable-change
+         --joystick-dev
          --joystick-slowness
          --joystick-threshold
          --joystick-maxsteps
@@ -930,6 +937,7 @@ Windows Users
          --joystick-btn-save
          --joystick-btn-pgsetup
          --joystick-btn-print
+         --joystick-buttons-ignore
          --sysfonts
          --alllocalefonts
          --mirrorstamps

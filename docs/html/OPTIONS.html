@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>March 28, 2013</p>
+<p>March 30, 2013</p>
 
 
 </center>
@@ -602,6 +602,13 @@ New Breed Software</p>
   <dt><code><b>joystick-btn-print=<i>BUTTON NUMBER</i></b></code></dt>
   <dd>
     Selects the joystick button number, as seen by SDL, that will be a shortcurt to print.
+  </dd>
+
+  <dt><code><b>joystick-buttons-ignore=<i>BUTTON1,BUTTON2,...</i></b></code></dt>
+  <dd>
+    A set of joystick button numbers, as seen by SDL, that should be ignored.
+    Otherwise, unless they are used by one of the "<code>joystick-btn-</code>" options
+    above, buttons will be seen as a mouse left-click.
   </dd>
 
 
@@ -1388,6 +1395,7 @@ New Breed Software</p>
     --onscreen-keyboard<br>
     --onscreen-keyboard-layout<br>
     --onscreen-keyboard-disable-change<br>
+    --joystick-dev<br>
     --joystick-slowness<br>
     --joystick-threshold<br>
     --joystick-maxsteps<br>
@@ -1409,6 +1417,7 @@ New Breed Software</p>
     --joystick-btn-save<br>
     --joystick-btn-pgsetup<br>
     --joystick-btn-print<br>
+    --joystick-buttons-ignore<br>
     --sysfonts<br>
     --alllocalefonts<br>
     --mirrorstamps<br>

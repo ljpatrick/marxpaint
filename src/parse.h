@@ -80,6 +80,7 @@ struct cfginfo
   const char *joystick_button_save;
   const char *joystick_button_pagesetup;
   const char *joystick_button_print;
+  const char *joystick_buttons_ignore;
 
 };
 

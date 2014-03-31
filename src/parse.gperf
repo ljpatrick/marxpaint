@@ -180,6 +180,7 @@ joystick-btn-open,     MULTI(joystick_button_open)
 joystick-btn-save,     MULTI(joystick_button_save)
 joystick-btn-pgsetup,  MULTI(joystick_button_pagesetup)
 joystick-btn-print,    MULTI(joystick_button_print)
+joystick-buttons-ignore,    MULTI(joystick_buttons_ignore)
 %%
 
 void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const char *opt, const char *restrict src)

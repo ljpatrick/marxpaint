@@ -1080,6 +1080,8 @@ static int joystick_button_open = 255;
 static int joystick_button_save = 255;
 static int joystick_button_pagesetup = 255;
 static int joystick_button_print = 255;
+static int joystick_buttons_ignore_len = 0;
+static int joystick_buttons_ignore[256];
 static Uint32 old_hat_ticks = 0;
 static int oldpos_x;
 static int oldpos_y;
@@ -22082,6 +22084,22 @@ static void setup_config(char *argv[])
 	}
 	joystick_button_print = strtof(tmpcfg.joystick_button_print, NULL);
     }
+  if(tmpcfg.joystick_buttons_ignore)
+    {
+      int i;
+      char * token;
+
+      token = strtok(tmpcfg.joystick_buttons_ignore, ",");
+      while (token != NULL) {
+        if (strtof(token, NULL) < 0 || strtof(token, NULL) > 254) {
+	  /* FIXME: Find better exit code */
+	  printf("Joystick buttons must be between 0 and 254", tmpcfg.joystick_button_print);
+	  exit(1);
+        }
+        joystick_buttons_ignore[joystick_buttons_ignore_len++] = strtof(token, NULL);
+        token = strtok(NULL, ",");
+      }
+    }
 
 
    /* having any of theese implies having onscreen keyboard setted */
@@ -23899,6 +23917,7 @@ static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y) 
 }
  
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools) {
+  int i, ignore = 0;
   int eby, ts;
   SDL_Event ev;
 
@@ -24060,6 +24079,14 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
   printf("result %d %d\n", ev.button.x, ev.button.y);
 #endif
 
-  SDL_PushEvent(&ev);
-}
+  /* See if it's a button we ignore */
 
+  for (i = 0; i < joystick_buttons_ignore_len && !ignore; i++) {
+    if (event.button.button == joystick_buttons_ignore[i]) {
+      ignore = 1;
+    }
+  }
+
+  if (!ignore)
+    SDL_PushEvent(&ev);
+}

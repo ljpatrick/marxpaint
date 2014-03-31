@@ -151,18 +151,19 @@ $Id$
         * ASDW is QWERTY-centric; drop it, or add ways to support other
           keyboard layouts.
 
-    * Joystick can be used to drive Tuxpaint
+    * Joystick can be used to drive Tux Paint
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
       with integration and fixes by Pere Pujal i Carabantes
 
-      * Uses the first joystick found on the system, so should work out
-        of the box.
+      * Use --joystick-dev to choose joystick (otherwise
+        uses the first joystick found on the system).
       * Uses any of the buttons found in the joystick, no need for
-        configuration.
-      * The hat of the joystick moves one pixel at a time, usefull to
+        configuration.  (--joystick-buttons-ignore can be used to
+        ignore buttons.)
+      * The hat of the joystick moves one pixel at a time, useful to
         carefully place the pointer.
       * The ball of the joystick should also trigger pointer
-        motion. FIXME: This should work but is not tested.
+        motion.
       * The responsivity of the joystick can be configured via command
         line or config files:
 	* --joystick-slownes sets a delay at each axis motion event.
@@ -173,6 +174,8 @@ $Id$
 	* --joystick_maxsteps sets the maximum number of pixels that
 	  the pointer will move at a time.
 	    Allowed values from 1 to 7, defaults to 7.
+      * Joystick buttons can be assigned used to activate certain commands.
+        (--joystick-btn-COMMAND options)
 
   * Magic Tool Improvememnts:
     -------------------------

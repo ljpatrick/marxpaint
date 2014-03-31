@@ -86,6 +86,7 @@ _tuxpaint()
 			--joystick-btn-save \
 			--joystick-btn-pgsetup \
 			--joystick-btn-print \
+			--joystick-buttons-ignore \
 			--colorfile' -- $cur ) ) 
 # We don't accept filenames on the command-line yet -bjk 2009.09.09
 #        else
