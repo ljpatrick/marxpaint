@@ -409,7 +409,7 @@ Windows Users
                Sets the maximum pixels the pointer will move at once. Allowed
                values are from 1 to 7. Default value is 7.
 
-       joystick-hat-timeout=MILISECONDS
+       joystick-hat-timeout=MILLISECONDS
                Sets the delay after wich the pointer will start moving
                automatically if the hat is keeped pushed. Allowed values are
                from 0 to 3000. Default value is 1000.
