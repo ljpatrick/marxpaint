@@ -2,13 +2,13 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2012 by Bill Kendrick and others
+Copyright (c) 2002-2014 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 $Id$
 
-2014.March.19 (0.9.22)
+2014.April.6 (0.9.22)
 
   * New Tools:
     ----------
@@ -114,17 +114,7 @@ $Id$
       Special thanks to Richard Verhoeven <river@win.tue.nl>
       Public domain.
 
-      FIXME:
-        * When refreshing a draw full of labels flickers a lot.
-        * "Caps" label perhaps should show an up-arrow (a la
-          old Mac keyboards?) (Unicode U+21CE or U+21EA?)
-        * Replace "Shift" with an arrow? (Unicode U+21E7)
-        * "Back" label perhaps should be a delete left-arrow?
-          (Unicode U+232B)
-        * "Enter" should probably be replaced with a carriage return
-          down-then-left-arrow. (Unicode U+21B5 or U+23CE)
-
-    * Keyboard can be used to move and click mouse ("keymouse").
+    * Keyboard can be used to move and click mouse ("keyboard" option).
       [Experimental!]
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
 
@@ -157,6 +147,7 @@ $Id$
 
       * Use --joystick-dev to choose joystick (otherwise
         uses the first joystick found on the system).
+        * Use '--joystick-dev list' to list available joysticks.
       * Uses any of the buttons found in the joystick, no need for
         configuration.  (--joystick-buttons-ignore can be used to
         ignore buttons.)
@@ -174,8 +165,8 @@ $Id$
 	* --joystick_maxsteps sets the maximum number of pixels that
 	  the pointer will move at a time.
 	    Allowed values from 1 to 7, defaults to 7.
-      * Joystick buttons can be assigned used to activate certain commands.
-        (--joystick-btn-COMMAND options)
+      * Joystick buttons can be assigned used to activate certain commands
+        in Tux Paint (--joystick-btn-COMMAND options)
 
   * Magic Tool Improvememnts:
     -------------------------

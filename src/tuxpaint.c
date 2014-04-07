@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 30, 2014
+  June 14, 2002 - April 6, 2014
 */
 
 
@@ -1103,7 +1103,7 @@ static int alt_print_command_default = ALTPRINT_MOD;
 static int want_alt_printcommand;
 
 static int wheely = 1;
-static int keymouse = 1; /* FIXME: Should be off by default -bjk 2011.04.15 */
+static int keymouse = 0;
 static int no_button_distinction;
 static int button_down;
 static int scrolling;
