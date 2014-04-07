@@ -3,13 +3,13 @@
 
 Options Documentation
 
-                Copyright 2002-2012 by Bill Kendrick and others
+                Copyright 2002-2014 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                 March 30, 2013
+                                 April 6, 2014
 
      ----------------------------------------------------------------------
 
@@ -505,10 +505,38 @@ Windows Users
        keyboard=yes
 
                This allows the keyboard arrow keys to be used to control the
-               mouse pointer. (e.g., for mouseless environments.)
+               mouse pointer. (e.g., for mouseless environments, or
+               handicapped/accessibility purposes)
 
-               The [Arrow] keys move the mouse pointer. [Space] acts as the
-               mouse button.
+               Features:
+                  * Fine movement within canvas, or coarse movement if
+                    [Shift] is held.
+                  * Coarse movement within tool button areas.
+                  * Key controls:
+                       * [Left]/[Right]/[Up]/[Down], numpad [1] thru [9]:
+                         Move mouse
+                       * [Space]/[5]: Click mouse (except when using "Text"
+                         or "Label" tools)
+                       * [Insert]: Click mouse (always)
+                       * [F4] jump mouse between "Tools", "Colors" and canvas
+                         areas
+                       * If mouse is within "Tools" section on the left, or
+                         "Colors" secton at the bottom:
+                            * [F7], [F8]: Move down/up between buttons,
+                              respectively (Tools section, only)
+                            * [F11], [F12]: Move to previous/next button,
+                              respectively
+                  * To click-and-drag, hold one of the 'click' keys (e.g.,
+                    [Insert]), and use the movement keys (e.g., [Left]).
+                       * Note: The "mouse accessibility" feature works with
+                         the keyboard mouse controls. With both options
+                         enabled, painting tools can be used to draw by
+                         pressing a 'click' key to start clicking, movement
+                         keys to move around (which will draw), and another
+                         'click' key to end the click (stop drawing).
+                  * A regular mouse and/or joystick may still be used (so you
+                    can, e.g., move with the mouse, and click with the
+                    keyboard, or vice-versa)
 
        savedir=DIRECTORY
 

@@ -114,32 +114,10 @@ $Id$
       Special thanks to Richard Verhoeven <river@win.tue.nl>
       Public domain.
 
-    * Keyboard can be used to move and click mouse ("keyboard" option).
+    * Keyboard can be used to move and click mouse ("--keyboard" option).
       [Experimental!]
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
-
-      * Keys to move:
-        * [Up] / [Down] / [Left] / [Right]
-        * [A] / [S] / [D] / [W]
-        * Numpad 1/2/3/4/6/7/8/9
-
-      * Keys to click:
-        * [\] (backslash)
-        * Numpad 5
-
-      * [Tab] can be used to jump between Tools (toolbox on the left),
-        Colors (color palette at the bottom) and drawing canvas.
-
-      Note: disabled when using Text or Label tool to type, so that you
-      can type text, and use [Tab] to end a string (without moving text
-      cursor).
-
-      * FIXME:
-        * Difficult to actually draw, unless mouse-accessibility is also on.
-        * Option is on by default; should be disabled by default, and enabled
-          via config.
-        * ASDW is QWERTY-centric; drop it, or add ways to support other
-          keyboard layouts.
+      * See documentation in OPTIONS for how to use it.
 
     * Joystick can be used to drive Tux Paint
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)

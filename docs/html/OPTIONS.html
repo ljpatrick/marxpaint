@@ -16,14 +16,14 @@ version
 </h1>
 <h2>Options Documentation</h2>
 
-<p>Copyright 2002-2012 by Bill Kendrick and others<br>
+<p>Copyright 2002-2014 by Bill Kendrick and others<br>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>March 30, 2013</p>
+<p>April 6, 2014</p>
 
 
 </center>
@@ -629,10 +629,40 @@ New Breed Software</p>
   <dt><code><b>keyboard=yes</b></code></dt>
   <dd>
     <p>This allows the keyboard arrow keys to be used
-    to control the mouse pointer.  (e.g., for mouseless environments.)</p>
-    
-    <p>The <b>[Arrow]</b> keys move the mouse pointer.
-    <b>[Space]</b> acts as the mouse button.</p>
+    to control the mouse pointer.  (e.g., for mouseless environments, or
+    handicapped/accessibility purposes)</p>
+
+    <p>Features:
+    <ul>
+    <li>Fine movement within canvas, or coarse movement if [Shift] is held.
+    <li>Coarse movement within tool button areas.
+    <li>Key controls:
+      <ul>
+      <li>[Left]/[Right]/[Up]/[Down], numpad [1] thru [9]: Move mouse
+      <li>[Space]/[5]: Click mouse (except when using "Text" or "Label" tools)
+      <li>[Insert]: Click mouse (always)
+      <li>[F4] jump mouse between "Tools", "Colors" and canvas areas
+      <li>If mouse is within "Tools" section on the left, or
+         "Colors" secton at the bottom:
+        <ul>
+        <li>[F7], [F8]: Move down/up between buttons, respectively
+           (Tools section, only)
+        <li>[F11], [F12]: Move to previous/next button, respectively
+        </ul>
+      </ul>
+    <li>To click-and-drag, hold one of the 'click' keys (e.g., [Insert]),
+       and use the movement keys (e.g., [Left]).
+      <ul>
+      <li>Note: The "mouse accessibility" feature works with the keyboard
+         mouse controls.  With both options enabled, painting tools
+         can be used to draw by pressing a 'click' key to start clicking,
+         movement keys to move around (which will draw), and another
+         'click' key to end the click (stop drawing).
+      </ul>
+    <li>A regular mouse and/or joystick may still be used
+       (so you can, e.g., move with the mouse, and click with the keyboard,
+       or vice-versa)
+    </ul>
   </dd>
   
   <dt><code><b>savedir=<i>DIRECTORY</i></b></code></dt>
