@@ -70,7 +70,7 @@ enum
   LANG_ET,			/* Estonian */
   LANG_EU,			/* Basque */
   LANG_FA,			/* Persian */
-  LANG_FF,                      /* Fula */
+  LANG_FF,                      /* Fulah */
   LANG_FI,			/* Finnish */
   LANG_FO,			/* Faroese */
   LANG_FR,			/* French */

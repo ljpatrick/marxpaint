@@ -252,7 +252,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"persian", "fa_IR.UTF-8"},
   {"fula", "ff_SN.UTF-8"},
   {"fulah", "ff_SN.UTF-8"},
-  {"pulaar", "ff_SN.UTF-8"},
+  {"pulaar-fulfulde", "ff_SN.UTF-8"},
   {"finnish", "fi_FI.UTF-8"},
   {"suomi", "fi_FI.UTF-8"},
   {"faroese", "fo_FO.UTF-8"},
@@ -408,7 +408,7 @@ static void show_lang_usage(int exitcode)
 /* fo */ "  faroese\n"
 /* fi */ "  finnish      suomi\n"
 /* fr */ "  french       francais\n"
-/* ff */ "  fula         fulah                  pulaar\n"
+/* ff */ "  fula         fulah                  pulaar-fulfulde\n"
 /* ga */ "  gaelic       irish-gaelic           gaidhlig\n"
 /* gl */ "  galician     galego\n"
 /* ka */ "  georgian\n"
@@ -522,7 +522,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  da_DK   (Danish       Dansk)\n"
 	  "  nl_NL   (Dutch)\n"
           "  fa_IR   (Persian)\n"
-          "  ff_SN   (Fula)\n"
+          "  ff_SN   (Fulah)\n"
 	  "  fi_FI   (Finnish      Suomi)\n"
 	  "  fo_FO   (Faroese)\n"
 	  "  fr_FR   (French       Francais)\n"
