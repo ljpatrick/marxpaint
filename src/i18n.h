@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - March 28, 2013
+  June 14, 2002 - April 11, 2014
 */
 
 
@@ -117,6 +117,7 @@ enum
   LANG_RO,			/* Romanian */
   LANG_RU,			/* Russian */
   LANG_RW,			/* Kinyarwanda */
+  LANG_SAT,                     /* Santali */
   LANG_SHS,			/* Shuswap */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.April.6 (0.9.22)
+2014.April.11 (0.9.22)
 
   * New Tools:
     ----------
@@ -429,6 +429,9 @@ $Id$
 
     * Persian translation
       Farinaz Hedayat <farinaz.hedayat@gmail.com>
+
+    * Santali translation
+      Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>
 
     * Serbian translation (latin)
       Ivana Rakic <reci.ne.silvesteru@gmail.com>
