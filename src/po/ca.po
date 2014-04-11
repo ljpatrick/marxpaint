@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2012-06-06 19:08+0200\n"
+"PO-Revision-Date: 2014-04-12 00:21+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -1458,23 +1458,16 @@ msgstr ""
 "llargues."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
-#| msgid "Colors"
 msgid "Xor Colors"
-msgstr "Colors"
+msgstr "Xor"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr ""
-"Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
+msgstr "Feu clic i arrossegueu per aplicar un patró de disjunció exclusiva dels colors."
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Feu clic per afegir un efecte de mosaic al dibuix."
+msgstr "Feu clic per aplicar un patró de disjunció exclusiva dels colors."
 
 #~ msgid "qy"
 #~ msgstr "qy"
