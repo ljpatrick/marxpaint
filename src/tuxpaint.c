@@ -450,7 +450,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #else
 
 #include <librsvg/rsvg.h>
-//#include <librsvg/rsvg-cairo.h>       //EP to avoid warning "Including <librsvg/rsvg-cairo.h> directly is deprecated."
+#include <librsvg/rsvg-cairo.h>
 /* #include "rsvg.h" */
 /* #include "rsvg-cairo.h" */
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
