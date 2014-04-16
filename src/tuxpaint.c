@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 6, 2014
+  June 14, 2002 - April 15, 2014
 */
 
 
@@ -11221,7 +11221,7 @@ static void load_starter(char *img_id)
   /* (JPEG) */
   if (tmp_surf == NULL)
   {
-    snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
+    snprintf(fname, sizeof(fname), "%s/%s-back", dirname, img_id);
     tmp_surf = load_starter_helper(fname, "jpeg", &IMG_Load);
   }
 
