@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 11, 2014
+  June 14, 2002 - April 16, 2014
 */
 
 #include <stdio.h>
@@ -131,6 +131,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ro",
   "ru",
   "rw",
+  "sa",
   "sat",
   "shs",
   "sk",
@@ -334,6 +335,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"romanian", "ro_RO.UTF-8"},
   {"russian", "ru_RU.UTF-8"},
   {"russkiy", "ru_RU.UTF-8"},
+  {"sanskrit", "sa_IN.UTF-8"},
   {"santali", "sat_IN.UTF-8"},
   {"serbian", "sr_YU.UTF-8"},
   {"serbian-latin", "sr_RS@latin"},
@@ -453,6 +455,7 @@ static void show_lang_usage(int exitcode)
 /* pa */ "  punjabi      panjabi\n"
 /* ro */ "  romanian\n"
 /* ru */ "  russian      russkiy\n"
+/* sa */ "  sanskrit\n"
 /* sat */"  santali\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
@@ -573,6 +576,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  ro_RO   (Romanian)\n"
 	  "  ru_RU   (Russian      Russkiy)\n"
 	  "  rw_RW   (Kinyarwanda)\n"
+          "  sa_IN   (Sanskrit)\n"
           "  sat_IN  (Santali)\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"
 	  "  sk_SK   (Slovak)\n"
