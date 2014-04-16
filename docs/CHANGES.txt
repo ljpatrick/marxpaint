@@ -424,6 +424,9 @@ $Id$
     * Northern Sotho translation
       Pheledi Mathibela <pheledi@mosekolatranslation.co.za>
 
+    * Odia translation
+      Kaniska Padhi <kaniska2008@gmail.com>
+
     * Punjabi translation
       Arshpreet Singh <arsh840@gmail.com>
 

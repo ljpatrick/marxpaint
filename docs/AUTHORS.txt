@@ -785,6 +785,9 @@ $Id$
     Yannig MARCHEGAY (Kokoyaya), Canonical Ltd, and Rosetta Contributors
     via Caroline Ford <caroline.ford.work@googlemail.com>
 
+  * Odia translation
+    Kaniska Padhi <kaniska2008@gmail.com>
+
   * Ojibwe
     Ed Montgomery <edm@rocketmail.com>
 

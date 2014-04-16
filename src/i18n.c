@@ -124,6 +124,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "nso",
   "oc",
   "oj",
+  "or",
   "pa",
   "pl",
   "pt_BR",
@@ -321,6 +322,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"northern-sotho", "nso_ZA.UTF-8"},
   {"sesotho-sa-leboa", "nso_ZA.UTF-8"},
   {"occitan", "oc_FR.UTF-8"},
+  {"odia", "or_IN.UTF-8"}, // Proper spelling
+  {"oriya", "or_IN.UTF-8"}, // Alternative
   {"ojibwe", "oj_CA.UTF-8"}, // Proper spelling
   {"ojibway", "oj_CA.UTF-8"}, // For compatibility
   {"punjabi", "pa_IN.UTF-8"},
@@ -379,7 +382,7 @@ static void show_lang_usage(int exitcode)
 	  "\n"
 	  "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
 /* C */  "  english      american-english\n"
-/* ach */ "  acholi       acoli\n"
+/* ach */"  acholi       acoli\n"
 /* af */ "  afrikaans\n"
 /* ak */ "  akan         twi-fante\n"
 /* sq */ "  albanian\n"
@@ -387,15 +390,14 @@ static void show_lang_usage(int exitcode)
 /* ar */ "  arabic\n"
 /* an */ "  aragones\n"
 /* hy */ "  armenian     hayeren\n"
-/* ast */ "  asturian\n"
+/* ast */"  asturian\n"
 /* en_AU */ "  australian-english\n"
 /* az */ "  azerbaijani\n"
 /* bm */ "  bambara\n"
 /* eu */ "  basque       euskara\n"
 /* be */ "  belarusian   bielaruskaja\n"
 /* nb */ "  bokmal\n"
-/* pt_BR */
-	  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
+/* pt_BR */ "  brazilian    brazilian-portuguese   portugues-brazilian\n"
 /* br */ "  breton       brezhoneg\n"
 /* en_GB */ "  british      british-english\n"
 /* bg_BG */ "  bulgarian\n"
@@ -418,7 +420,7 @@ static void show_lang_usage(int exitcode)
 /* ka */ "  georgian\n"
 /* de */ "  german       deutsch\n"
 /* el */ "  greek\n"
-/* gos */ "  gronings     zudelk-veenkelonioals\n"
+/* gos */"  gronings     zudelk-veenkelonioals\n"
 /* gu */ "  gujarati\n"
 /* he */ "  hebrew\n"
 /* hi */ "  hindi\n"
@@ -429,9 +431,9 @@ static void show_lang_usage(int exitcode)
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
 /* km */ "  khmer\n"
-/* cgg */ "  kiga         chiga\n"
+/* cgg */"  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
-/* tlh */ "  klingon      tlhIngan\n"
+/* tlh */"  klingon      tlhIngan\n"
 /* ko */ "  korean\n"
 /* ku */ "  kurdish\n"
 /* lv */ "  latvian\n"
@@ -445,9 +447,10 @@ static void show_lang_usage(int exitcode)
 /* es_MX */ "  mexican      mexican-spanish        espanol-mejicano\n"
 /* mn */ "  mongolian\n"
 /* nr */ "  ndebele\n"
-/* nso */ "  northern-sotho                      sesotho-sa-leboa\n"
+/* nso */"  northern-sotho                      sesotho-sa-leboa\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
 /* oc */ "  occitan\n"
+/* or */ "  odia         oriya\n"
 /* oj */ "  ojibwe       ojibway\n"
 /* fa */ "  persian\n"
 /* pl */ "  polish       polski\n"
@@ -460,7 +463,7 @@ static void show_lang_usage(int exitcode)
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
 /* sr@latin */ "  serbian-latin\n"
-/* shs */ "  shuswap      secwepemctin\n"
+/* shs*/ "  shuswap      secwepemctin\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
 /* en_ZA */ "  southafrican-english\n"
@@ -478,7 +481,7 @@ static void show_lang_usage(int exitcode)
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
 /* ve */ "  venda\n"
-/* vec */"   venetian     veneto\n"
+/* vec */"  venetian     veneto\n"
 /* vi */ "  vietnamese\n"
 /* wa */ "  walloon      walon\n"
 /* wo */ "  wolof\n"
@@ -570,6 +573,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
 	  "  oc_FR   (Occitan)\n"
 	  "  oj_CA   (Ojibway)\n"
+          "  or_IN   (Odia         Oriya)\n"
 	  "  pa_IN   (Punjabi      Panjabi)\n"
 	  "  pl_PL   (Polish       Polski)\n"
 	  "  pt_PT   (Portuguese   Portugues)\n"
