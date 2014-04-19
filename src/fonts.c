@@ -83,6 +83,12 @@ static const char *problemFonts[] = {
   NULL
 };
 
+/* font types that cause TTF_OpenFont to crash */
+static const char *problemFontExtensions[] = {
+  ".pfb", /* Ubuntu 14.04 (libsdl-ttf2.0-0 2.0.11-3, libfreetype6 2.5.2-1ubuntu2) -bjk 2014.04.19 */
+  NULL
+};
+
 #ifdef FORKED_FONTS
 
 #include <sys/socket.h>
@@ -270,7 +276,7 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size)
 {
   TuxPaint_Font *tpf = NULL;
-  int i = 0;
+  int i;
 #ifndef NO_SDLPANGO
   char desc[1024];
 #endif
@@ -320,10 +326,18 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
     fflush(stdout);
 #endif
 
+    i = 0;
     while (problemFonts[i] != NULL)
     {
       if (!strcmp(ttffilename, problemFonts[i++]))
 	return NULL;		/* bail on known problematic fonts that cause TTF_OpenFont to crash */
+    }
+
+    i = 0;
+    while (problemFontExtensions[i] != NULL)
+    {
+      if (strstr(ttffilename, problemFontExtensions[i++]))
+	return NULL;		/* bail on known problematic font types that cause TTF_OpenFont to crash */
     }
 
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));

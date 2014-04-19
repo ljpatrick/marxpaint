@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.April.16 (0.9.22)
+2014.April.19 (0.9.22)
 
   * New Tools:
     ----------
@@ -622,6 +622,9 @@ $Id$
 
     * Saved images woose path contains non-ascii chars can now be opened on Windows.
       Fixes http://sourceforge.net/p/tuxpaint/bugs/188/
+
+    * Ignoring ".pfb" (PostScript 'Printer Font Binary') fonts, to
+      avoid crashes.
 
 2009.June.28 (0.9.21)
   * New Starters:
