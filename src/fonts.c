@@ -75,13 +75,13 @@
 #ifdef __APPLE__
 #include "wrapperdata.h"
 extern WrapperData macosx;
+#endif
 
 /* system fonts that cause TTF_OpenFont to crash */
 static const char *problemFonts[] = {
   "/Library/Fonts//AppleMyungjo.ttf",
   NULL
 };
-#endif
 
 #ifdef FORKED_FONTS
 
@@ -151,36 +151,6 @@ unsigned text_size = 4;		// initial text size
 
 int button_label_y_nudge;
 
-
-/* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
-   that causes a segmentation fault if an attempt is made to call
-   TTF_OpenFont() with the filename of a font that doesn't exist. This
-   is an old and well documented bug that is fixed in CVS.
-*/
-
-/* FIXME: SDL_ttf is up to 2.0.8, so we can probably fully remove this
-   -bjk 2007.06.05 */
-
-/*
-
-TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize)
-{
-  FILE *fp;
-
-#ifdef DEBUG
-  printf("Loading font: %s\n", file);
-#endif
-
-  if ((fp = fopen(file, "rb")) == NULL)
-    return NULL;
-  fclose(fp);
-
-#undef TTF_OpenFont
-  return TTF_OpenFont(file, ptsize);
-}
-*/
-
-/* #define TTF_OpenFont    BUGFIX_TTF_OpenFont206 */
 
 #ifndef NO_SDLPANGO
 static TuxPaint_Font *try_alternate_font(int size)
@@ -280,6 +250,7 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 
 #ifdef DEBUG
   printf("TuxPaint_Font_CloseFont step 3 (%p, %d)\n", tpf->ttf_font, tpf->typ); //EP
+  fflush(stdout);
 #endif
   if (tpf->typ == FONT_TYPE_TTF)
           if (tpf->ttf_font)    //EP
@@ -287,12 +258,19 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
     TTF_CloseFont(tpf->ttf_font);
     tpf->ttf_font = NULL;
   }
+
+  if (tpf->desc != NULL) {
+    free(tpf->desc);
+    tpf->desc = NULL;
+  }
+
   free(tpf);
 }
 
 TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size)
 {
   TuxPaint_Font *tpf = NULL;
+  int i = 0;
 #ifndef NO_SDLPANGO
   char desc[1024];
 #endif
@@ -308,6 +286,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
     tpf->typ = FONT_TYPE_PANGO;
     snprintf(desc, sizeof(desc), "%s %d", pangodesc, (size * 3) / 4);
+    tpf->desc = strdup(desc);
 
 #ifdef DEBUG
     printf("Creating context: \"%s\"\n", desc);
@@ -341,18 +320,22 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
     fflush(stdout);
 #endif
 
-#ifdef __APPLE__
-    int i = 0;
     while (problemFonts[i] != NULL)
     {
       if (!strcmp(ttffilename, problemFonts[i++]))
 	return NULL;		/* bail on known problematic fonts that cause TTF_OpenFont to crash */
     }
-#endif
 
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
     tpf->typ = FONT_TYPE_TTF;
     tpf->ttf_font = TTF_OpenFont(ttffilename, size);
+    tpf->desc = strdup(ttffilename);
+
+#ifdef DEBUG
+    printf("Loaded %s: %d->%d\n", ttffilename, tpf, tpf->ttf_font);
+    fflush(stdout);
+#endif
+
     if (tpf->ttf_font == NULL)
     {
 #ifdef DEBUG
@@ -881,8 +864,6 @@ static void groupfonts(void)
   user_font_styles = NULL;	// just to catch bugs
 
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
-  //printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
-  //fflush(stdout);
   low = 0;
   for (;;)
   {

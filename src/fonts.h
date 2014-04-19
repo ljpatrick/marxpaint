@@ -1,7 +1,7 @@
 /*
   fonts.h
 
-  Copyright (c) 2009
+  Copyright (c) 2009-2014
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -105,6 +105,7 @@ typedef struct TuxPaint_Font_s {
   int typ;
   TTF_Font * ttf_font;
   int height;
+  char * desc;
 } TuxPaint_Font;
 
 int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
