@@ -6,8 +6,6 @@
 //#define DEBUG_OSK_COMPOSEMAP
 
 static TTF_Font * osk_fonty;
-static TTF_Font * osk_fonty10;
-static TTF_Font * osk_fonty8;
 static SDL_Color def_bgcolor = {255, 255, 255, 255};
 static SDL_Color def_fgcolor = {0, 0, 0, 0};
 
@@ -995,30 +993,22 @@ static void keybd_prepare(on_screen_keyboard *keyboard)
   {
   /* First try if it is an absolute path */
     osk_fonty = TTF_OpenFont( keyboard->layout->fontpath, 12 );
-    osk_fonty10 = TTF_OpenFont( keyboard->layout->fontpath, 10 );
-    osk_fonty8 = TTF_OpenFont( keyboard->layout->fontpath, 8 );
     if (osk_fonty == NULL)
     {
       /* Now trying if it is relative to DATA_PREFIX/fonts/ */
       snprintf(fontname, 255, "%s/fonts/%s", DATA_PREFIX, keyboard->layout->fontpath);
 
       osk_fonty = TTF_OpenFont( fontname, 12 );
-      osk_fonty10 = TTF_OpenFont( fontname, 10 );
-      osk_fonty8 = TTF_OpenFont( fontname, 8 );
       if (osk_fonty == NULL)
       {
 	/* Perhaps it is relative to DATA_PREFIX only? */
 	snprintf(fontname, 255, "%s/%s", DATA_PREFIX, keyboard->layout->fontpath);
 	osk_fonty = TTF_OpenFont( fontname, 12 );
-	osk_fonty10 = TTF_OpenFont( fontname, 10 );
-	osk_fonty8 = TTF_OpenFont( fontname, 8 );
 	if (osk_fonty == NULL)
 	{
 	  /* Or to DATA_PREFIX/fonts/locale/ ? */
 	  snprintf(fontname, 255, "%s/fonts/locale/%s", DATA_PREFIX, keyboard->layout->fontpath);
 	  osk_fonty = TTF_OpenFont( fontname, 12 );
-	  osk_fonty10 = TTF_OpenFont( fontname, 10 );
-	  osk_fonty8 = TTF_OpenFont( fontname, 8 );
 	}
       }
     }
@@ -1029,8 +1019,6 @@ static void keybd_prepare(on_screen_keyboard *keyboard)
     /* Going with the default */
     sprintf(fontname, "%s/fonts/FreeSansBold.ttf", DATA_PREFIX);
     osk_fonty = TTF_OpenFont( fontname, 12 );
-    osk_fonty10 = TTF_OpenFont( fontname, 10 );
-    osk_fonty8 = TTF_OpenFont( fontname, 8 );
   }
 
   if (osk_fonty == NULL)
