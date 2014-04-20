@@ -45,7 +45,7 @@ static void mtw(wchar_t * wtok, char * tok)
 {
   /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
   Uint16 *ui16;
-  char *wrptr = (char *) ui16;
+  char *wrptr;
   size_t n, in, out;
   iconv_t trans;
   wchar_t * wch;
@@ -55,6 +55,7 @@ static void mtw(wchar_t * wtok, char * tok)
   out = 250;
   wch = malloc(sizeof(wchar_t) * 255);
   ui16 = malloc(sizeof(Uint16) * 255);
+  wrptr = (char *) ui16;
 
   trans = iconv_open("WCHAR_T", "UTF-8");
   iconv(trans, (const char **) &tok, &in, &wrptr, &out);
