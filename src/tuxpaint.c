@@ -852,12 +852,12 @@ static void setup_screen_layout(void)
 #endif
 }
 
-static SDL_Surface *screen;
-static SDL_Surface *canvas;
-static SDL_Surface *label;
-static SDL_Surface *save_canvas;
-static SDL_Surface *canvas_back;
-static SDL_Surface *img_starter, *img_starter_bkgd;
+static SDL_Surface *screen = NULL;
+static SDL_Surface *canvas = NULL;
+static SDL_Surface *label = NULL;
+static SDL_Surface *save_canvas = NULL;
+static SDL_Surface *canvas_back = NULL;
+static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
 static void update_screen(int x1, int y1, int x2, int y2)
@@ -7797,6 +7797,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 	      "The Simple DirectMedia Layer error that occurred was:\n"
 	      "%s\n\n", fname, SDL_GetError());
 
+      SDL_FreeSurface(s);
       cleanup();
       exit(1);
     }
@@ -12213,6 +12214,7 @@ static void cleanup(void)
   free_surface(&img_starter);
   free_surface(&img_starter_bkgd);
   free_surface(&canvas);
+  free_surface(&save_canvas);
   free_surface(&img_cur_brush);
 
   if (touched != NULL)
@@ -14620,7 +14622,7 @@ static int do_open(void)
             starter_personal = 0;
 
 	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
-						   unescaled to send to load_embedded_data */
+						   unscaled to send to load_embedded_data */
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
             cur_undo = 0;
@@ -21167,6 +21169,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
   fp = fopen(fname, "rb");
   if (!fp)
   {
+    SDL_FreeSurface(org_surf);
     return;
   }
 
@@ -21178,6 +21181,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
     fprintf(stderr, "\nError: Couldn't open the image!\n%s\n\n", fname);
     draw_tux_text(TUX_OOPS, strerror(errno), 0);
+    SDL_FreeSurface(org_surf);
     return;
   }
   else
@@ -21192,6 +21196,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
       fprintf(stderr, "\nError: Couldn't open the image!\n%s\n\n", fname);
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
+      SDL_FreeSurface(org_surf);
       return;
     }
 
@@ -21231,7 +21236,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 	    fprintf(stderr, "\nError: Couldn't load the data embedded in %s\n\n", fname);
 	    draw_tux_text(TUX_OOPS, strerror(errno), 0);
 	    SDL_FreeSurface(org_surf);
-	    return;		/* Refusing to go further with the other chunks */
+	    return;	/* Refusing to go further with the other chunks */
 	  }
 
 /* Put fi position at the right place after the chunk headers */

@@ -5,7 +5,6 @@
 
 //#define DEBUG_OSK_COMPOSEMAP
 
-static TTF_Font * osk_fonty;
 static SDL_Color def_bgcolor = {255, 255, 255, 255};
 static SDL_Color def_fgcolor = {0, 0, 0, 0};
 
@@ -73,6 +72,8 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas, SDL_Surf
 
   keyboard = malloc(sizeof(on_screen_keyboard));
 
+  keyboard->osk_fonty = NULL;
+  
   keyboard->disable_change = disable_change;  
   layout = load_layout(keyboard, layout_name);
   if (!layout)
@@ -155,6 +156,7 @@ static struct osk_layout *load_layout(on_screen_keyboard *keyboard, char *layout
   osk_layout *layout;
 
   layout = malloc(sizeof(osk_layout));
+  layout->name = NULL;
   hlayout_loaded = 0;
 #ifdef DEBUG
   printf("load_layout %s\n", layout_name);
@@ -575,6 +577,7 @@ static void gettokens(char * line, char * delim, char ** pointer, osk_composenod
 
   if (tok[0] == ':') /* End of precompose keysyms, next will be the result in UTF-8. */
   {
+    free(tok);
     tok = strdup(strtok_r(line, ": \"\t", pointer));
 
     mbstowcs(wtok, tok, 255);
@@ -637,6 +640,7 @@ static void gettokens(char * line, char * delim, char ** pointer, osk_composenod
     /* printf("size %d, keysym %ls =>", composenode->size, composenode->childs[composenode->size - 1]->keysym); */
 
     gettokens(NULL, delim, pointer, composenode->childs[composenode->size - 1], layout);
+    free(tok);
     return;
   }
 }
@@ -988,49 +992,50 @@ static void keybd_prepare(on_screen_keyboard *keyboard)
   char * fontname;
 
   fontname = malloc(sizeof(char) * 255);
-
-  if (keyboard->layout->fontpath)
-  {
-  /* First try if it is an absolute path */
-    osk_fonty = TTF_OpenFont( keyboard->layout->fontpath, 12 );
-    if (osk_fonty == NULL)
+  if (keyboard->osk_fonty == NULL) {
+    if (keyboard->layout->fontpath)
     {
-      /* Now trying if it is relative to DATA_PREFIX/fonts/ */
-      snprintf(fontname, 255, "%s/fonts/%s", DATA_PREFIX, keyboard->layout->fontpath);
-
-      osk_fonty = TTF_OpenFont( fontname, 12 );
-      if (osk_fonty == NULL)
+    /* First try if it is an absolute path */
+      keyboard->osk_fonty = TTF_OpenFont( keyboard->layout->fontpath, 12 );
+      if (keyboard->osk_fonty == NULL)
       {
-	/* Perhaps it is relative to DATA_PREFIX only? */
-	snprintf(fontname, 255, "%s/%s", DATA_PREFIX, keyboard->layout->fontpath);
-	osk_fonty = TTF_OpenFont( fontname, 12 );
-	if (osk_fonty == NULL)
-	{
-	  /* Or to DATA_PREFIX/fonts/locale/ ? */
-	  snprintf(fontname, 255, "%s/fonts/locale/%s", DATA_PREFIX, keyboard->layout->fontpath);
-	  osk_fonty = TTF_OpenFont( fontname, 12 );
-	}
+        /* Now trying if it is relative to DATA_PREFIX/fonts/ */
+        snprintf(fontname, 255, "%s/fonts/%s", DATA_PREFIX, keyboard->layout->fontpath);
+
+        keyboard->osk_fonty = TTF_OpenFont( fontname, 12 );
+        if (keyboard->osk_fonty == NULL)
+        {
+	 /* Perhaps it is relative to DATA_PREFIX only? */
+	 snprintf(fontname, 255, "%s/%s", DATA_PREFIX, keyboard->layout->fontpath);
+	 keyboard->osk_fonty = TTF_OpenFont( fontname, 12 );
+	 if (keyboard->osk_fonty == NULL)
+	 {
+	   /* Or to DATA_PREFIX/fonts/locale/ ? */
+	   snprintf(fontname, 255, "%s/fonts/locale/%s", DATA_PREFIX, keyboard->layout->fontpath);
+	   keyboard->osk_fonty = TTF_OpenFont( fontname, 12 );
+	 }
+        }
       }
     }
-  }
 
-  if (osk_fonty == NULL)
-  {
-    /* Going with the default */
-    sprintf(fontname, "%s/fonts/FreeSansBold.ttf", DATA_PREFIX);
-    osk_fonty = TTF_OpenFont( fontname, 12 );
-  }
+    if (keyboard->osk_fonty == NULL)
+    {
+      /* Going with the default */
+      sprintf(fontname, "%s/fonts/FreeSansBold.ttf", DATA_PREFIX);
+      keyboard->osk_fonty = TTF_OpenFont( fontname, 12 );
+    }
 
-  if (osk_fonty == NULL)
-  {
-    fprintf(stderr, "\nError: Can't open the font!\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
+    if (keyboard->osk_fonty == NULL)
+    {
+      fprintf(stderr, "\nError: Can't open the font!\n"
+	     "The Simple DirectMedia Layer error that occurred was:\n"
+	     "%s\n\n", SDL_GetError());
+      free(fontname);
+      exit(1);
+    }
+
     free(fontname);
-    exit(1);
   }
-
-  free(fontname);
 }
 
 
@@ -1302,7 +1307,7 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 
     else if( strncmp("SPACE", text, 5) != 0 && strncmp("NULL", text, 4) != 0)
   {
-    messager = TTF_RenderUTF8_Blended(osk_fonty, text, keyboard->layout->fgcolor);
+    messager = TTF_RenderUTF8_Blended(keyboard->osk_fonty, text, keyboard->layout->fgcolor);
 
     apply_surface( key.x + 5, key.y, messager, keyboard->surface, NULL);
     SDL_FreeSurface(messager);
@@ -1859,9 +1864,10 @@ static void free_keys(osk_layout *layout)
 
 static void free_layout(osk_layout *layout)
 {
-  //  free(layout->name);
-  //  free(layout->rows);
-  //  free(layout->fontpath);
+  if (layout->name != NULL)
+    free(layout->name);
+  // free(layout->rows);
+  free(layout->fontpath);
   free_keys(layout);
   free_keymap(layout->keymap);
   free_composemap(layout->composemap);
@@ -1887,7 +1893,9 @@ void osk_free(on_screen_keyboard *keyboard)
   set_key(NULL, &keyboard->keymodifiers.altgr, 0);
   set_key(NULL, &keyboard->keymodifiers.compose, 0);
   set_key(NULL, &keyboard->keymodifiers.dead, 0);
-
+  if (keyboard->osk_fonty != NULL)
+    TTF_CloseFont(keyboard->osk_fonty);
+  
   free(keyboard);
 }
 

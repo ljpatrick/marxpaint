@@ -123,6 +123,7 @@ typedef struct osk_keyboard
   osk_kmdf kmdf;
   osk_layout *layout;            /* The layout struct */ 
   char *layout_name[256];        /* The layout name */
+  TTF_Font * osk_fonty;          /* Font */
   int disable_change;            /* If true, stay with the first layout found */
   wchar_t * key[256];            /* The text of the key */
   int keycode;                   /* The unicode code corresponding to the key */
