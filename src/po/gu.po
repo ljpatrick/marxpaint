@@ -1382,22 +1382,19 @@ msgstr ""
 "મોજાં પહોળા થશે."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "રંગો"
+msgstr "Xor રંગો"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "દોરી કળાનાં બનેલા તીરો દોરવા માટે ક્લિક કરીને ખેંચો."
+msgstr "XOR અસર દોરવા માટે ક્લિક કરીને ખેંચો"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "તમારા સમગ્ર ચિત્રમાં તકતી અસર ઉમેરવા માટે ક્લિક કરો."
+msgstr "સમગ્ર ચિત્રમાં XOR અસર ઉમેરવા માટે ક્લિક કરો"
 
 #~ msgid " "
 #~ msgstr " "
