@@ -501,6 +501,9 @@ $Id$
     Anush MKRTCHYAN 
     Jasmine Udea
 
+  * Assamese translation
+    Anand Kulkarni <kulkarni1016@yahoo.co.in>
+
   * Asturian
     Xandru Armesto <alarmes@wanadoo.es>
     Mikel González <mikelisimu@yahoo.es>

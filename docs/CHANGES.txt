@@ -362,6 +362,9 @@ $Id$
       Anush MKRTCHYAN 
       Jasmine Udea
 
+    * Assamese translation
+      Anand Kulkarni <kulkarni1016@yahoo.co.in>
+
     * Bambara translation
       Fasokan <konate20032001@yahoo.fr>
 
