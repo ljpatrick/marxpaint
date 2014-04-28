@@ -91,6 +91,7 @@ enum
   LANG_IU,                      /* Inuktitut */
   LANG_JA,			/* Japanese */
   LANG_KA,			/* Georgian */
+  LANG_KN,                      /* Kannada */
   LANG_KM,			/* Khmer */
   LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */

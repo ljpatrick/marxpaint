@@ -105,6 +105,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "iu",
   "ja",
   "ka",
+  "kn",
   "km",
   "ko",
   "ku",
@@ -301,6 +302,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"kinyarwanda", "rw_RW.UTF-8"},
   {"klingon", "tlh.UTF-8"},
   {"tlhIngan", "tlh.UTF-8"},
+  {"kannada", "kn_IN.UTF-8"},
   {"korean", "ko_KR.UTF-8"},
   {"kurdish", "ku_TR.UTF-8"},
   {"tamil", "ta_IN.UTF-8"},
@@ -434,6 +436,7 @@ static void show_lang_usage(int exitcode)
 /* iu */ "  inuktitut\n"
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
+/* kn */ "  kannada\n"
 /* km */ "  khmer\n"
 /* cgg */"  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
@@ -562,6 +565,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  iu_CA   (Inuktitut)\n"
           "  ja_JP   (Japanese)\n"
           "  ka_GE   (Georgian)\n"
+          "  kn_IN   (Kannada)\n"
           "  km_KH   (Khmer)\n"
           "  ko_KR   (Korean)\n"
           "  ku_TR   (Kurdish)\n"
