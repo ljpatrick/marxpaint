@@ -676,6 +676,10 @@ $Id$
     Mark K. Kim <mkkim214@gmail.com>
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+  * Kannada translation
+    Savitha <savithasprasad@yahoo.com>
+    Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
+
   * Khmer
     Khoem Sokhem <khoemsokhem@khmeros.info>
     Auk Piseth <piseth_dv@khmeros.info>

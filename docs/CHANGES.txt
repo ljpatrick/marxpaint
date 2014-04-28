@@ -375,6 +375,10 @@ $Id$
     * Inuktitut
       Harvey Ginter <harveyginter@gmail.com>
 
+    * Kannada translation
+      Savitha <savithasprasad@yahoo.com>
+      Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
+
     * Luganda translation
       James Olweny <sjolweny85@yahoo.co.uk>
 
