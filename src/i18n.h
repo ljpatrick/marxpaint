@@ -105,6 +105,7 @@ enum
   LANG_MR,                      /* Marath */
   LANG_MS,			/* Malay */
   LANG_NB,			/* Norwegian Bokmal */
+  LANG_NE,                      /* Nepali */
   LANG_NL,			/* Dutch */
   LANG_NN,			/* Norwegian Nynorsk */
   LANG_NR,                      /* Ndebele */
