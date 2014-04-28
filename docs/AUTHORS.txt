@@ -723,6 +723,11 @@ $Id$
     Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors
     via Caroline Ford <caroline.ford.work@googlemail.com>
 
+  * Maithili
+    U.Sudhakar <sudhakaru@cdac.in>
+    sk <sk>
+    Provided by Praveen Dewangan <pdvg.cdac@gmail.com>
+
   * Malay
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
@@ -768,6 +773,10 @@ $Id$
 
   * Ndebele
     Vincent Mahlangu <vmahlangu@parliament.gov.za>
+
+  * Nepali
+    Khagen Sharma <khagen.sharma@gmail.com>
+    Provided by Neha Aphale <aphaleneha@gmail.com>
 
   * Northern Sotho
     Pheledi Mathibela <pheledi@mosekolatranslation.co.za>
