@@ -222,6 +222,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"aragones", "an_ES.UTF-8"},
   {"armenian", "hy_AM.UTF-8"},
   {"hayeren", "hy_AM.UTF-8"},
+  {"assamese", "as_IN.UTF-8"},
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"bambara", "bm_ML.UTF-8"},
@@ -396,6 +397,7 @@ static void show_lang_usage(int exitcode)
 /* ar */ "  arabic\n"
 /* an */ "  aragones\n"
 /* hy */ "  armenian     hayeren\n"
+/* as */ "  assamese\n"
 /* ast */"  asturian\n"
 /* en_AU */ "  australian-english\n"
 /* az */ "  azerbaijani\n"
@@ -520,6 +522,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  ar_SA   (Arabic)\n"
           "  an_ES   (Aragones)\n"
           "  hy_AM   (Armenian)\n"
+          "  as_IN   (Assamese)\n"
           "  ast_ES  (Asturian)\n"
           "  az_AZ   (Azerbaijani)\n"
           "  bm_ML   (Bambara)\n"

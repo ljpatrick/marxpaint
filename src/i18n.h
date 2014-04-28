@@ -45,6 +45,7 @@ enum
   LANG_AM,                      /* Amharic */
   LANG_AN,                      /* Aragones */
   LANG_AR,			/* Arabic */
+  LANG_AS,                      /* Assamese */
   LANG_AST,			/* Asturian */
   LANG_AZ,			/* Azerbaijani */
   LANG_BE,			/* Belarusian */
