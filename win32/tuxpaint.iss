@@ -105,7 +105,7 @@ Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "scc"; MessagesFile: "compiler:Languages\SerbianCyrillic.isl"
 Name: "scl"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
-Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
+Name: "slv"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "tur"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "ukr"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
@@ -369,6 +369,12 @@ begin
   if lang = 'arm' then
     lc := 'hy'
   else
+  if lang = 'ast' then
+    if TwoLetter = true then
+      lc := 'es'
+    else
+      lc := 'ast'
+  else
   if lang = 'baq' then
     lc := 'eu'
   else
@@ -564,20 +570,23 @@ var
 begin
   lang := Lang2Gettext(false);
 
-  if lang = 'nl' then
-    readme := 'nl\html\README.html'
-  else
-  if lang = 'fr' then
-    readme := 'fr\html\README1.html'
+  if lang = 'gl' then
+    readme := 'gl\html\README.html'
   else
   if lang = 'it' then
     readme := 'it\html\README.html'
   else
-  if lang = 'es' then
-    readme := 'es\html\LEEME.html'
+  if lang = 'ja' then
+    readme := 'ja\html\README.html'
   else
-  if lang = 'gl' then
-    readme := 'gl\html\README.html'
+  if lang = 'nl' then
+    readme := 'nl\html\README.html'
+  else
+  if lang = 'ru' then
+    readme := 'ru\html\README.html'
+  else
+  if lang = 'zh_cn' then
+    readme := 'zh_cn\html\README.html'
   else
   if lang = 'zh_tw' then
     readme := 'zh_tw\html\README.html'
@@ -634,11 +643,53 @@ var
 begin
   lang := Lang2Gettext(false);
 
-  if lang = 'chs' then
-    lang := 'zh-cn'
+  if lang = 'eng' then
+    lang := 'en_US'
   else
-  if lang = 'cht' then
-    lang := 'zh-tw';
+  if lang = 'enb' then
+    lang := 'en_GB'
+  else
+  if lang = 'cat' then
+    lang := 'ca_ES'
+  else
+  if lang = 'dan' then
+    lang := 'da_DK'
+  else
+  if lang = 'esp' then
+    lang := 'es_ES'
+  else
+  if lang = 'fin' then
+    lang := 'fi_FI'
+  else
+  if lang = 'fre' then
+    lang := 'fr_FR'
+  else
+  if lang = 'geo' then
+    lang := 'ka_GE'
+  else
+  if lang = 'gre' then
+    lang := 'el_GR'
+  else
+  if lang = 'ita' then
+    lang := 'it_IT'
+  else
+  if lang = 'jpn' then
+    lang := 'ja_JP'
+  else
+  if lang = 'mon' then
+    lang := 'mn_MN'
+  else
+  if lang = 'dut' then
+    lang := 'nl_NL'
+  else
+  if lang = 'nno' then
+    lang := 'nn_NO'
+  else
+  if lang = 'pol' then
+    lang := 'pl_PL'
+  else
+  if lang = 'rus' then
+    lang := 'ru_RU';
 
   Result := 'http://www.tuxpaint.org/?lang='+lang
 end;
