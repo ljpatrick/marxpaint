@@ -59,6 +59,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "am",
   "an",
   "ar",
+  "as",
   "ast",
   "az",
   "be",
