@@ -124,6 +124,7 @@ enum
   LANG_RW,			/* Kinyarwanda */
   LANG_SA,                      /* Sanskrit */
   LANG_SAT,                     /* Santali */
+  LANG_SAT_OL_CHIKI,
   LANG_SHS,			/* Shuswap */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */

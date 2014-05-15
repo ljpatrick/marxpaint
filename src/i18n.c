@@ -138,6 +138,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "rw",
   "sa",
   "sat",
+  "sat@olchiki",
   "shs",
   "sk",
   "sl",
@@ -347,7 +348,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"russian", "ru_RU.UTF-8"},
   {"russkiy", "ru_RU.UTF-8"},
   {"sanskrit", "sa_IN.UTF-8"},
-  {"santali", "sat_IN.UTF-8"},
+  {"santali-devaganari", "sat_IN.UTF-8"},
+  {"santali-ol-chiki", "sat@olchiki"},
   {"serbian", "sr_YU.UTF-8"},
   {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
@@ -471,7 +473,8 @@ static void show_lang_usage(int exitcode)
 /* ro */ "  romanian\n"
 /* ru */ "  russian      russkiy\n"
 /* sa */ "  sanskrit\n"
-/* sat */"  santali\n"
+/* sat */"  santali-devaganari\n"
+/* sat@olchiki */"  santali-ol-chiki\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
 /* sr@latin */ "  serbian-latin\n"
@@ -598,6 +601,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  rw_RW   (Kinyarwanda)\n"
           "  sa_IN   (Sanskrit)\n"
           "  sat_IN  (Santali)\n"
+          "  sat@olchiki  (Santali (Ol-Chiki)\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"
