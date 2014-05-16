@@ -847,8 +847,13 @@ $Id$
   * Sanskrit translation
     Babita Shinde <babitagaikwad@gmail.com>
 
-  * Santali translation
+  * Santali translation (Devaganari)
     Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>
+    Ganesh Murmu <g_murmu_in@yahoo.com>
+
+  * Santali translation (Ol-Chiki)
+    Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>
+    Ganesh Murmu <g_murmu_in@yahoo.com>
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
