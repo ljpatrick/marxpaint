@@ -118,6 +118,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ml",
   "mk",
   "mn",
+  "mni",
+  "mni@meiteimayek",
   "mr",
   "ms",
   "nb",
@@ -319,6 +321,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"maithili", "mai_IN.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
   {"mongolian", "mn_MN.UTF-8"},
+  {"manipuri-bengali", "mni_IN.UTF-8"},
+  {"manipuri-meitei-mayek", "mni@meiteimayek"},
   {"marathi", "mr_IN.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
   {"nepali", "ne_NP.UTF-8"},
@@ -456,6 +460,8 @@ static void show_lang_usage(int exitcode)
 /* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
 /* ml */ "  malayalam\n"
+/* mni */ "  manipuri-bengali\n"
+/* mni@meiteimayek */ "  manipuri-meitei-mayek\n"
 /* nr */ "  marathi\n"
 /* es_MX */ "  mexican      mexican-spanish        espanol-mejicano\n"
 /* mn */ "  mongolian\n"
@@ -584,6 +590,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  lt_LT   (Lithuanian   Lietuviu)\n"
           "  mai_IN  (Maithili)\n"
           "  mk_MK   (Macedonian)\n"
+          "  mni_IN  (Manipuri (Bengali))\n"
+          "  mni@meiteimayek (Manipuri(Meitei Mayek))\n"
           "  mn_MN   (Mongolian)\n"
           "  mr_IN   (Marathi)\n"
           "  nr_ZA   (Ndebele)\n"
@@ -601,7 +609,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  rw_RW   (Kinyarwanda)\n"
           "  sa_IN   (Sanskrit)\n"
           "  sat_IN  (Santali)\n"
-          "  sat@olchiki  (Santali (Ol-Chiki)\n"
+          "  sat@olchiki  (Santali (Ol-Chiki))\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"

@@ -104,6 +104,8 @@ enum
   LANG_MK,			/* Macedonian */
   LANG_MN,			/* Mongolian */
   LANG_ML,                      /* Malayalam */
+  LANG_MNI_BENGALI,             /* Manipuri (Bengali script)*/
+  LANG_MNI_METEI_MAYEK,         /* Manipuri (Metei Mayek script) */
   LANG_MR,                      /* Marath */
   LANG_MS,			/* Malay */
   LANG_NB,			/* Norwegian Bokmal */
