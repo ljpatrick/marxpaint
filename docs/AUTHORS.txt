@@ -702,6 +702,9 @@ $Id$
     Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, and
     Antoine Bigirimana <antoine@e-tools.com>.)
 
+  * Konkani (Devaganari and Roman)
+    Rahul Borade <rahulborade01@gmail.com>
+
   * Korean
     Mark K. Kim <mkkim214@gmail.com>
   
@@ -774,6 +777,10 @@ $Id$
     - V Sasi Kumar <sasi.fsf@gmail.com>
     Sonith Kumar <sonith.kumar153@gmail.com>
     Haris Ibrahim K. V. <blucalvin@gmail.com>
+
+  * Manipuri (Bengali and Metei Mayek)
+    Hidam Dolen <dolenhi@gmail.com>
+    Provided by rahul dabre <rahulvdabre@yahoo.com>
 
   * Marathi
     Santosh Jankiram Kshetre <quicklearning@rediffmail.com>

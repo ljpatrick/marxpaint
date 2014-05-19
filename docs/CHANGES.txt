@@ -382,6 +382,9 @@ $Id$
       Savitha <savithasprasad@yahoo.com>
       Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
 
+    * Konkani (Devaganari and Roman)
+      Rahul Borade <rahulborade01@gmail.com>
+
     * Luganda translation
       James Olweny <sjolweny85@yahoo.co.uk>
 
@@ -429,6 +432,10 @@ $Id$
       - V Sasi Kumar <sasi.fsf@gmail.com> 
       Updated by Sonith Kumar <sonith.kumar153@gmail.com>
       Reviewed by Haris Ibrahim K. V. <blucalvin@gmail.com>
+
+    * Manipuri (Bengali and Metei Mayek)
+      Hidam Dolen <dolenhi@gmail.com>
+      Provided by rahul dabre <rahulvdabre@yahoo.com>
 
     * Marathi translation
       Santosh Jankiram Kshetre <quicklearning@rediffmail.com>
