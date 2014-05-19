@@ -109,6 +109,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "kn",
   "km",
   "ko",
+  "kok",
+  "kok@roman",
   "ku",
   "lb",
   "lg",
@@ -318,6 +320,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"luganda", "lg_UG.UTF-8"},
   {"luxembourgish", "lb_LU.UTF-8"},
   {"letzebuergesch", "lb_LU.UTF-8"},
+  {"konkani-devaganari", "kok_IN.UTF-8"},
+  {"konkani-roman", "kok@roman"},
   {"maithili", "mai_IN.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
   {"mongolian", "mn_MN.UTF-8"},
@@ -450,6 +454,8 @@ static void show_lang_usage(int exitcode)
 /* cgg */"  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
 /* tlh */"  klingon      tlhIngan\n"
+/* kok */"  konkani-devaganari\n"
+/* kok@roman */"  konkani-roman\n"
 /* ko */ "  korean\n"
 /* ku */ "  kurdish\n"
 /* lv */ "  latvian\n"
@@ -588,6 +594,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  lb_LU   (Luxembourgish Letzebuergesch)\n"
           "  lv_LV   (Latvian)\n"
           "  lt_LT   (Lithuanian   Lietuviu)\n"
+          "  kok_IN  (Konkani (Devaganari))\n"
+          "  kok@roman  (Konkani (Roman))\n"
           "  mai_IN  (Maithili)\n"
           "  mk_MK   (Macedonian)\n"
           "  mni_IN  (Manipuri (Bengali))\n"

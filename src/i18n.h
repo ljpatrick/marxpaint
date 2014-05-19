@@ -95,6 +95,8 @@ enum
   LANG_KN,                      /* Kannada */
   LANG_KM,			/* Khmer */
   LANG_KO,			/* Korean */
+  LANG_KOK,                     /* Konkani (Devaganari) */
+  LANG_KOK_ROMAN,               /* Konkani (Roman) */
   LANG_KU,			/* Kurdish */
   LANG_LB,                      /* Luxembourgish */
   LANG_LG,                      /* Luganda */
