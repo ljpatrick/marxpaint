@@ -441,6 +441,7 @@ void load_hlayout(osk_layout *layout, char * hlayout_name)
 
   free(line);
   free(key);
+  fclose(fi);
   /* int j; */
   /* for(i = 0; i<= line_number; i++) */
   /* { */
@@ -543,6 +544,7 @@ void load_keymap(osk_layout *layout, char * keymap_name)
   }
 
   free(line);
+  fclose(fi);
   /* int i; */
   /* for (i = 0; i < 256; i++) */
   /* { */
