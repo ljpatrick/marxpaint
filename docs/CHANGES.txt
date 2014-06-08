@@ -537,6 +537,12 @@ $Id$
     * Malay translation
       Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
 
+    * Norwegian Bokmål translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
     * Romanian translation
       Hodorog Andrei <tocitox@gmail.com>
 
