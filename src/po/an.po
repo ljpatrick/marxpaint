@@ -1,27 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# None <None>, 2012.
-# None <None>, 2012.
-# None <None>, 2012.
-# None <None>, 2012.
-# None <None>, 2012.
-# None <None>, 2012.
-# None <None>, 2012.
+# Tuxpaint Aragonese translation.
+# Copyright (C) 2002-2014
+# This file is distributed under the same license as the tuxpaint package.
+# Juan Pablo Martínez Cortés <juanpabl@gmail.com>, 2012, 2014.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2012-01-29 23:20+0200\n"
-"Last-Translator: None <None>\n"
-"Language-Team: juanpabl\n"
+"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"PO-Revision-Date: 2014-06-08 01:05+0200\n"
+"Last-Translator: Juan Pablo <juanpabl@gmail.com>\n"
+"Language-Team: softaragonés\n"
+"Language: an\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: an\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -127,11 +122,11 @@ msgstr "Beige!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "QX"
 msgstr "QX"
 
@@ -141,48 +136,48 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:191
+#: ../dirwalk.c:195
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:194
+#: ../dirwalk.c:198
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:197
+#: ../dirwalk.c:201
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:200
+#: ../dirwalk.c:204
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:203
+#: ../dirwalk.c:207
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:206
+#: ../dirwalk.c:210
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:210
+#: ../dirwalk.c:214
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:211
+#: ../dirwalk.c:215
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:212
+#: ../dirwalk.c:216
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:213
+#: ../dirwalk.c:217
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -408,7 +403,7 @@ msgstr "Nuevo"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7605
+#: ../tools.h:98 ../tuxpaint.c:7631
 msgid "Open"
 msgstr "Ubrir"
 
@@ -541,193 +536,193 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Muit bien... A seguir dibuixando!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:2053
 msgid "Do you really want to quit?"
 msgstr "De verdat que quiers ir-te-ne?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2043
+#: ../tuxpaint.c:2056
 msgid "Yes, I’m done!"
 msgstr "Sí, ya ye prou por agora!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
+#: ../tuxpaint.c:2059 ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "No, quiero tornar!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2050
+#: ../tuxpaint.c:2063
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si te vas, perderás o tuyo dibuixo, lo quiers alzar?"
 
-#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
+#: ../tuxpaint.c:2064 ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "Sí, alza-lo!"
 
-#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
+#: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 msgid "No, don’t bother saving!"
 msgstr "No, m'importa igual!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2055
+#: ../tuxpaint.c:2068
 msgid "Save your picture first?"
 msgstr "Quiers alzar antes o tuyo dibuixo?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2060
+#: ../tuxpaint.c:2073
 msgid "Can’t open that picture!"
 msgstr "No puetz ubrir ixe dibuixo!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
-#: ../tuxpaint.c:2093
+#: ../tuxpaint.c:2076 ../tuxpaint.c:2081 ../tuxpaint.c:2090 ../tuxpaint.c:2097
+#: ../tuxpaint.c:2106
 msgid "OK"
 msgstr "Acceptar"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2067
+#: ../tuxpaint.c:2080
 msgid "There are no saved files!"
 msgstr "No i hai garra documento alzaus!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2071
+#: ../tuxpaint.c:2084
 msgid "Print your picture now?"
 msgstr "Quiers imprentar agora o tuyo dibuixo?"
 
-#: ../tuxpaint.c:2072
+#: ../tuxpaint.c:2085
 msgid "Yes, print it!"
-msgstr "Sí, imprenta-lo."
+msgstr "Sí, imprenta-lo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2076
+#: ../tuxpaint.c:2089
 msgid "Your picture has been printed!"
 msgstr "O tuyo dibuixo s'ha imprentau."
 
 #. We got an error printing
-#: ../tuxpaint.c:2080
+#: ../tuxpaint.c:2093
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Vai, ya lo siento! No s'ha puesto imprentar o tuyo dibuixo."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2083
+#: ../tuxpaint.c:2096
 msgid "You can’t print yet!"
 msgstr "No puetz tornar a imprentar encara!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2100
 msgid "Erase this picture?"
 msgstr "Quiers borrar iste dibuixo?"
 
-#: ../tuxpaint.c:2088
+#: ../tuxpaint.c:2101
 msgid "Yes, erase it!"
-msgstr "Sí, borra-lo."
+msgstr "Sí, borra-lo!"
 
-#: ../tuxpaint.c:2089
+#: ../tuxpaint.c:2102
 msgid "No, don’t erase it!"
 msgstr "No! No lo borres!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2092
+#: ../tuxpaint.c:2105
 msgid "Remember to use the left mouse button!"
 msgstr "Fe servir o botón cucho d'o ratet!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2313
 msgid "Sound muted."
 msgstr "O son ye desactivau."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Sound unmuted."
 msgstr "O son ye activau."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3052
+#: ../tuxpaint.c:3065
 msgid "Please wait…"
 msgstr "Aguarda un poquet…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7608
+#: ../tuxpaint.c:7634
 msgid "Erase"
 msgstr "Borrar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7611
+#: ../tuxpaint.c:7637
 msgid "Slides"
 msgstr "Diapositivas"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7614
+#: ../tuxpaint.c:7640
 msgid "Back"
 msgstr "Anterior"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7617
+#: ../tuxpaint.c:7643
 msgid "Next"
 msgstr "Siguient"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7620
+#: ../tuxpaint.c:7646
 msgid "Play"
 msgstr "Reproducir"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8328
+#: ../tuxpaint.c:8355
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11586
+#: ../tuxpaint.c:11664
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11590
+#: ../tuxpaint.c:11668
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12608
+#: ../tuxpaint.c:12710
 msgid "Replace the picture with your changes?"
 msgstr "Quiers reemplazar o dibuixo con os tuyos cambeos?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12612
+#: ../tuxpaint.c:12714
 msgid "Yes, replace the old one!"
-msgstr "Sí, reemplaza-lo."
+msgstr "Sí, substituye-lo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12616
+#: ../tuxpaint.c:12718
 msgid "No, save a new file!"
-msgstr "No, alza un documento nuevo."
+msgstr "No, alza un documento nuevo!"
 
-#: ../tuxpaint.c:13861
+#: ../tuxpaint.c:13963
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Triga o dibuixo que quieras y dimpués fe clic en \"Ubrir\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
+#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Triga o dibuixo que quiera y dimpués fe clic en \"Reproducir\"."
 
-#: ../tuxpaint.c:22159
+#: ../tuxpaint.c:22344
 msgid "Pick a color."
 msgstr "Triga una color."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "Un programa de dibuixo ta ninos."
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Un programa de dibuixo"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "Un programa de dibuixo ta ninos."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -920,19 +915,17 @@ msgstr ""
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Marquetería"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Fe clic y arrociega o ratet ta dibuixar filogramas en anglo recto."
+msgstr "Fe clic y arrociega ta dibuixar patrons repetitivos."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Fe clic ta emplir o tuyo dibuixo con gotas de plevia."
+msgstr "Fe clic ta rodiar o dibuixo con patrons repetitivos."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -956,17 +949,16 @@ msgstr "Fe clic y mueve o ratet ta dibuixar hierba. No t'ixuplides d'a tierra!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Semitonos"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Fe clic ta veyer o tuyo dibuixo en negativo."
+msgstr "Fe clic y arrociega ta tornar o tuyo dibuixo en un periodico."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
-msgstr "Simetrico cucha/dreita"
+msgstr "Simetrico zurda/dreita"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
@@ -974,11 +966,11 @@ msgstr "Simetrico alto/abaixo"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Patrón"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Recholas"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -991,7 +983,7 @@ msgid ""
 "the left and right of your picture."
 msgstr ""
 "Fe clic y arrociega o ratet ta dibuixar con dos pincels simetricos con "
-"respecto a la cucha y dreita d'o tuyo dibuixo."
+"respecto a la zurda y dreita d'o tuyo dibuixo."
 
 #: ../../magic/src/kalidescope.c:138
 msgid ""
@@ -1002,13 +994,11 @@ msgstr ""
 "respecto a l'alto y l'abaixo d'o tuyo dibuixo."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Fe clic y arrociega o ratet ta dar-le relieu a o tuyo dibuixo."
+msgstr "Fe clic y arrociega o ratet ta dibuixar patrons sobre tot o dibuixo."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
@@ -1016,8 +1006,8 @@ msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Fe clic y arrociega o ratet ta dibuixar con dos pincels simetricos con "
-"respecto a la cucha y dreita d'o tuyo dibuixo."
+"Fe clic y arrociega o ratet ta dibuixar un patrón y o suyo simetrico sobre "
+"tot o dibuixo."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1181,6 +1171,14 @@ msgstr "Vías"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Fe clic y arrociega ta dibuixar vías de tren en o tuyo dibuixo."
 
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "Arco de Sant Chuan"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "Puetz dibuixar en as colors de l'arco de Sant Chuan!"
+
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Plevia"
@@ -1192,14 +1190,6 @@ msgstr "Fe clic ta dibuixar una gota de plevia en o tuyo dibuixo."
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Fe clic ta emplir o tuyo dibuixo con gotas de plevia."
-
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "Arco de Sant Chuan"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "Puetz dibuixar en as colors de l'arco de Sant Chuan!"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1338,7 +1328,7 @@ msgid ""
 "lines, left or right to make a bigger hole."
 msgstr ""
 "Fe clic y arrociega ta dibuixar un filograma. Arrociega o cursor enta alto u "
-"enta baixo ta creyar mas u menos linias, y enta a cucha u a dreita ta "
+"enta baixo ta creyar mas u menos linias, y enta a zurda u a dreita ta "
 "controlar a grandaria d'o forau central."
 
 #: ../../magic/src/string.c:140
@@ -1428,7 +1418,7 @@ msgid ""
 msgstr ""
 "Fe clic ta fer que dibuixo quede ondulau horizonalment. Fe clic en o cobalto "
 "ta obtener ondetas mas curtas, y en o cobaixo ta que sían mas largas, en la "
-"cucha ta que sían mas chicotas y a la dreita ta que sían mas grans."
+"zurda ta que sían mas chicotas y a la dreita ta que sían mas grans."
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1437,23 +1427,20 @@ msgid ""
 "for long waves."
 msgstr ""
 "Fe clic ta que o dibuixo quede ondulau verticalment. Fe clic alto ta obtener "
-"ondas mas curtas, abaixo ta que sían mas largas, a la cucha ta que sían mas "
+"ondas mas curtas, abaixo ta que sían mas largas, a la zurda ta que sían mas "
 "chicotas y a la dreita mas grans."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "Colors"
+msgstr "XOR de colors"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "Fe clic y arrociega o ratet ta dibuixar filogramas en anglo recto."
+msgstr "Fe clic y arrociega ta dibuixar un efecto XOR."
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Fe clic ta aconseguir un efecto de mosaico en tot o dibuixo."
+msgstr "Fe clic ta dibuixar un efecto XOR sobre tot o dibuixo."
