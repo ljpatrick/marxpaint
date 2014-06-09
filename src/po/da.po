@@ -1,10 +1,8 @@
-# translation of da.po to Danish
-# translation of Tux Paint to Danish
-# Tux Paint Danish messages
+# translation of Tux Paint to Danish.
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
 # Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
-# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011.
+# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011, 2014.
 #
 # konventioner
 # blur -> sløre
@@ -14,14 +12,13 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2011-08-08 22:30+0100\n"
+"PO-Revision-Date: 2014-05-25 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
-"X-Generator: KBabel 1.10\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -915,21 +912,18 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Vælg en baggrundsfarve og klik for at vende hjørnet af siden."
 
+# http://en.wikipedia.org/wiki/Fretwork
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Fretwork"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Klik og bevæg for at tegne pile omkring strengkunst."
+msgstr "Klik og bevæg for at tegne gentagende mønstre."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Klik for at dække dit billede med regndråber."
+msgstr "Klik for at omringe dit billede med gentagende mønstre."
 
 # kunne måske også være glasfelt, glasflise. Men er en knap hvor man gør 
 # billedet glasagtigt.
@@ -955,13 +949,11 @@ msgstr "Klik og flyt for at tegne græs. Husk »skidtet«!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Rasterbillede"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Klik på billedet for at invertere det."
+msgstr "Klik og bevæg for at omdanne dit billede til en avis."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -973,11 +965,11 @@ msgstr "Symmetrisk op/ned"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Mønster"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Felter"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1001,22 +993,16 @@ msgstr ""
 "over øverste og nederste del af dit billede."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Klik og bevæg musen rundt, for at tydeliggøre billedet."
+msgstr "Klik og bevæg musen rundt, for at tegne et mønster over billedet."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw with two brushes that are symmetric "
-#| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Klik og bevæg musen rundt, for at tegne med to pensler som er symmetriske "
-"over venstre og højre del af dit billede."
+"Klik og bevæg musen rundt, for at tegne et mønster plus dets symmetrisk "
+"over billedet."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1444,19 +1430,13 @@ msgstr ""
 "for lange bølger."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
-#| msgid "Colors"
 msgid "Xor Colors"
-msgstr "Farver"
+msgstr "Xor-farver"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "Klik og bevæg for at tegne pile omkring strengkunst."
+msgstr "Klik og bevæg for at tegne en XOR-effekt"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
+msgstr "Klik for at tilføje en XOR-effekt på hele dit billede."
