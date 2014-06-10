@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-06-04 11:40+0100\n"
+"PO-Revision-Date: 2014-06-10 11:45+0100\n"
 "Last-Translator: Solomon Gizaw <solohavi@yahoo.com>\n"
 "Language-Team: none\n"
 "Language: am\n"
@@ -932,7 +932,7 @@ msgstr "ሳር ለመሳል ጠቅ አድርገውና አንቀሳቅስ። ቆ�
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "የፎቶ ቅጂ"
 
 #: ../../magic/src/halftone.c:38
 #| msgid "Click to turn your painting into its negative."
