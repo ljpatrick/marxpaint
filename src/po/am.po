@@ -901,12 +901,10 @@ msgid "Fretwork"
 msgstr "ቅርጻ ቅርጽ"
 
 #: ../../magic/src/fretwork.c:180
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "ተደጋጋሚ ስርአተ ጥለት ለመሳል አዝራሩን ጠቅ አድርግ እና ጎትት።"
 
 #: ../../magic/src/fretwork.c:182
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "ተደጋጋሚ ስርአተ ጥለት ምስልህን ለመክበብ አዝራሩን ጠቅ አድርግ።"
 
@@ -935,7 +933,6 @@ msgid "Halftone"
 msgstr "የፎቶ ቅጂ"
 
 #: ../../magic/src/halftone.c:38
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "ምስልህን ወደ ጋዜጣ ለመቀየር አዝራሩን ጠቅ አድርግ እና ጎትት።"
 
@@ -973,14 +970,10 @@ msgid ""
 msgstr "በስዕልህ ላይና ታች እኩል በሆኑ ሁለት ብሩሾች ለመሳል አዝራሩን ጠቅ አድርገውና ጎትት። "
 
 #: ../../magic/src/kalidescope.c:140
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "በምስልህ ላይ ስርአተ ጥለት ለመሳል መዳፊትን ጠቅ አድርግ እና ጎትት።"
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw with two brushes that are symmetric "
-#| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
@@ -1386,16 +1379,13 @@ msgstr ""
 "ለትንሽ ማዕበሎች ወደ ግራው እና ለረጅም ማዕበሎች ወደ ቀኙ ጠቅ አድርግ። "
 
 #: ../../magic/src/xor.c:95
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "ወይም ቀለሞች"
 
 #: ../../magic/src/xor.c:101
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
 msgstr "ለመሳል ወይም ተጽዕኖ ለማሳደር አዝራሩን ጠቅ አድርግና ጎትት።"
 
 #: ../../magic/src/xor.c:103
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "ለመሳል ወይም በሁሉም ስዕሎች ላይ ተጽዕኖ ለማሳደር አዝራሩን ጠቅ አድርግ።"
