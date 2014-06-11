@@ -1,22 +1,25 @@
-# Tux Paint Russian messages
+# Tux Paint Russian messages.
 # Copyright (C) 2003-2004
+# This file is distributed under the same license as the tuxpaint package.
 # Translators: Dmitriy Ivanov <ace22b@myrealbox.com>
 #              Eugene Zelenko <greendeath@mail.ru>
+# Yuri Kozlov <yuray@komyakino.ru>, 2014.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2010-04-12 00:28+0300\n"
-"Last-Translator: Nikolay Parukhin <parukhin@gmail.com>\n"
-"Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
+"PO-Revision-Date: 2014-05-29 20:24+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"X-Generator: KBabel 1.3.1\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Language: ru\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # При выборе чёрного (0, 0, 0) цвета
 #. Response to Black (0, 0, 0) color selected
@@ -773,7 +776,7 @@ msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
-"Щёлкните около края вашего рисунка, чтобы натянуть оконнные шторы над ним. "
+"Щёлкните около края вашего рисунка, чтобы натянуть оконные шторы над ним. "
 "Двигайте перпендикулярно, чтобы открыть или закрыть шторы."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
@@ -938,20 +941,17 @@ msgstr "Выберите фоновый цвет и щёлкните, чтобы
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Узор"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw string art aligned to the edges."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr ""
-"Нажмите и потяните мышь, чтобы нарисовать строку, выровненную по границам."
+msgstr "Нажмите и потяните мышь, чтобы нарисовать повторяющиеся узоры."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Щёлкните, чтобы покрыть вашу картинку дождевыми каплями."
+msgstr "Щёлкните, чтобы окружить вашу картинку повторяющимися узорами."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -977,29 +977,28 @@ msgstr ""
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Полутоновый оттиск"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Щёлкните, чтобы превратить ваш рисунок  в негатив."
+msgstr "Нажмите и потяните мышь, чтобы превратить рисунок в газету."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Симметрично слева направо"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Симметрично сверху вниз"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Образец"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Плитки"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1007,40 +1006,39 @@ msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
 #: ../../magic/src/kalidescope.c:136
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
+"Нажмите и ведите мышь, чтобы рисовать двумя кистями, которые симметрично "
+"слева направо пересекают вашу картинку."
 
 #: ../../magic/src/kalidescope.c:138
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
+"Нажмите и ведите мышь, чтобы рисовать двумя кистями, которые симметрично "
+"сверху вниз пересекают вашу картинку."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Нажмите и ведите мышь, чтобы сделать рисунок рельефным."
+msgstr "Нажмите и ведите мышь, чтобы рисовать образцом по вашей картинке."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
+"Нажмите и ведите мышь, чтобы рисовать образом плюс его симметричным "
+"изображением по картинке."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1463,23 +1461,20 @@ msgstr ""
 "волны короче, вниз - выше, налево - для коротких волн, направо - для длинных."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "Цвета"
+msgstr "Цвета XOR"
 
 #  msgid "Click and drag to draw a beam of light on your picture."
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "Нажмите и потяните, чтобы стрелу из нитей."
+msgstr "Нажмите и потяните мышь, чтобы рисовать эффектом XOR"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Щёлкните, чтобы добавить эффект мозаики к вашей картинке."
+msgstr "Щёлкните, чтобы добавить эффект XOR к вашей картинке."
 
 #~ msgid " "
 #~ msgstr " "
