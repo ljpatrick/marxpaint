@@ -1,4 +1,4 @@
-# Tux Paint Georgian strings
+# Georgiran translation Tux Paint.
 # Copyright (C) 2005-2014.
 # This file is distributed under the same license as the Tuxpaint package.
 # Translator: Gia Shervashidze <giasher@telenet.ge>, 2014.
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-06-10 12:56+0400\n"
+"PO-Revision-Date: 2014-06-13 10:24+0400\n"
 "Last-Translator: Gia Shervashidze <giasher at googlemail>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
 "Language: ka\n"
@@ -348,7 +348,7 @@ msgstr "საშლეები"
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:68
 msgid "Stamps"
-msgstr "დამღა"
+msgstr "შტამპები"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
@@ -377,7 +377,7 @@ msgstr "ხატვა"
 #. Stamp tool (aka Rubber Stamps)
 #: ../tools.h:65
 msgid "Stamp"
-msgstr "დამღა"
+msgstr "შტამპი"
 
 #. Line drawing tool
 #: ../tools.h:68
@@ -445,7 +445,7 @@ msgstr "შეარჩიეთ თქვენთვის სასურვ�
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "შეარჩიეთ ნახატი რომლის დამღაც გინდათ დაასვათ თქვენს ნახატს."
+msgstr "შეარჩიეთ რომელი შტამპი გნებავთ დაასვათ თქვენს ნახატს."
 
 #. Line tool instructions
 #: ../tools.h:121
