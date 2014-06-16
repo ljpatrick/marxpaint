@@ -1,16 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Santali translation tuxpaint.
+# Copyright (C) 2014 tuxpaint.
+# This file is distributed under the same license as the tuxpaint package.
+# Louni kandulna <kandulna.louni@gmail.com>, 2013.
+# Ganesh Murmu <murmu.ganesh@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-18 08:32-0700\n"
-"PO-Revision-Date: 2011-10-05 23:54+0530\n"
-"Last-Translator: Ganesh Murmu <g_murmu_in@yahoo.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"PO-Revision-Date: 2014-06-16 16:55+0530\n"
+"Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
+"Language-Team: none\n"
+"Language: sat\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,12 +25,12 @@ msgstr "हेंदे!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "गाड़हो झिंगा! तिना़क् गान होड़ नोवा को बानाना “गाड़हो झिंगा”."
+msgstr "पेनडरा रोङ! तिना़क् गान होड़ नोवा को बानाना “पेनडरा रोङ”."
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "एताङ झिंगा रोङ! तिना़क् गान होड़ नोवा को बानाना “एताङ झिंगा रोङ”."
+msgstr "एताङ पेनडरा रोङ! तिना़क् गान होड़ नोवा को बानाना “पेनडरा रोङ रोङ”."
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -88,7 +90,7 @@ msgstr "पुँड आर आराक् मेसा रोङ!"
 #. Response to Brown (128, 80, 0) color selected
 #: ../colors.h:128
 msgid "Brown!"
-msgstr "झिंगा रोङ!"
+msgstr "खायरी रोङ!"
 
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
@@ -119,11 +121,11 @@ msgstr "मा़टिया़ड़ रोङ!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "QX"
 msgstr "QX"
 
@@ -133,50 +135,50 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:191
+#: ../dirwalk.c:195
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:194
+#: ../dirwalk.c:198
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:197
+#: ../dirwalk.c:201
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:200
+#: ../dirwalk.c:204
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:203
+#: ../dirwalk.c:207
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:206
+#: ../dirwalk.c:210
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:210
+#: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr "<1>सारेच्-1a"
+msgstr "<1>बाड़तियाक्-1a"
 
-#: ../dirwalk.c:211
+#: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr "<1>सारेच्-1b"
+msgstr "<1>बाड़तियाक्-1b"
 
-#: ../dirwalk.c:212
+#: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr "<9>सारेच्-9a"
+msgstr "<9>बाड़तियाक्-9a"
 
-#: ../dirwalk.c:213
+#: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr "<9>सारेच्-9b"
+msgstr "<9>बाड़तियाक्-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -324,7 +326,7 @@ msgstr "इरा़ल जिलिञ गार ते एसेत् ते�
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
 msgid "Tools"
-msgstr "हा़तिया़र को"
+msgstr "टुल को"
 
 #. Title of color palette (buttons across the bottom)
 #: ../titles.h:59
@@ -344,7 +346,7 @@ msgstr "बा़ड़िजाक् को"
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:68
 msgid "Stamps"
-msgstr "छाप लागावाक् को"
+msgstr "मोहर"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
@@ -414,7 +416,7 @@ msgstr "नावानाक्"
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
 #: ../tools.h:98
-#: ../tuxpaint.c:7762
+#: ../tuxpaint.c:7631
 msgid "Open"
 msgstr "झिच्"
 
@@ -441,7 +443,7 @@ msgstr "रोङ लाटाप् मे आर  ओनाते गार �
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "आमाक् गार चिता़र बेहाय ते छाप ला़गित् मित् चिता़र लाटाप् मे."
+msgstr "आमाक् गार चिता़र बेड़हाय ते छाप ला़गित् मित् चिता़र लाटाप् मे."
 
 #. Line tool instructions
 #: ../tools.h:121
@@ -451,7 +453,7 @@ msgstr "गार चिता़र गार एहोब ला़गित�
 #. Shape tool instructions
 #: ../tools.h:124
 msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "मित् बेनाव लाटाप् मे. ताला तेत् लाटाप् ला़गित् ओताय मे, ओर मे, इना़ तायोम चालाक् आ तिन रे नोवा आमेम ला़कती कान माराङ तेत् तेयारोक् आ. नोवा आ़चुर ला़गित् बे हायते लाड़ाव मे, आर नोवा तेयार ला़गित् ओताय मे."
+msgstr "मित् बेनाव लाटाप् मे. ताला तेत् लाटाप् ला़गित् ओताय मे, ओर मे, इना़ तायोम चालाक् आ तिन रे नोवा आमेम ला़कती कान माराङ तेत् तेयारोक् आ. नोवा आ़चुर ला़गित् बेड़हायते लाड़ाव मे, आर नोवा तेयार ला़गित् ओताय मे."
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -476,7 +478,7 @@ msgstr "तायोम सेदाक् का़मी ञाम रुव�
 #. Response to 'redo' action
 #: ../tools.h:142
 msgid "Redo!"
-msgstr "बाङ पुरा़वाक् दोहड़ा ते का़मी!"
+msgstr "दोहड़ा ते का़मी!"
 
 #. Eraser tool
 #: ../tools.h:145
@@ -496,7 +498,7 @@ msgstr "झिच्…"
 #. Response to 'save' action
 #: ../tools.h:154
 msgid "Your image has been saved!"
-msgstr "आमाक् आहला चिता़र सांचावाका ताहेन काना!"
+msgstr "आमाक् आहला चिता़र सांचाव होचो लेन ताहेना!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:157
@@ -529,171 +531,171 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "होय तोबे… नोवा गार चिता़र दोहोया!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1918
+#: ../tuxpaint.c:2053
 msgid "Do you really want to quit?"
 msgstr "चेत् आम सारी गे बोनदो सानाम काना?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1921
+#: ../tuxpaint.c:2056
 msgid "Yes, I’m done!"
 msgstr "होय , इञिञ का़मी केत् आ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1924
-#: ../tuxpaint.c:1951
+#: ../tuxpaint.c:2059
+#: ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "बाङा, तायोम इदिञिञ मे!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1928
+#: ../tuxpaint.c:2063
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "जुदी आमेम बोनदो या, आम आमाक् चिता़रेम आदा! नोवा सांचाव मे?"
 
-#: ../tuxpaint.c:1929
-#: ../tuxpaint.c:1934
+#: ../tuxpaint.c:2064
+#: ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "होय, नोवा सांचाव मे!"
 
-#: ../tuxpaint.c:1930
-#: ../tuxpaint.c:1935
+#: ../tuxpaint.c:2065
+#: ../tuxpaint.c:2070
 msgid "No, don’t bother saving!"
 msgstr "बाङ, सांचाव ला़गित् आलोम दिकोक् आ!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1933
+#: ../tuxpaint.c:2068
 msgid "Save your picture first?"
 msgstr "आमाक् चिता़र पा़हिल सांचाव मे?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1938
+#: ../tuxpaint.c:2073
 msgid "Can’t open that picture!"
 msgstr "ओना चिता़र बाम झिच् दाड़ेयाक् आ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1941
-#: ../tuxpaint.c:1946
-#: ../tuxpaint.c:1955
-#: ../tuxpaint.c:1962
-#: ../tuxpaint.c:1971
+#: ../tuxpaint.c:2076
+#: ../tuxpaint.c:2081
+#: ../tuxpaint.c:2090
+#: ../tuxpaint.c:2097
+#: ../tuxpaint.c:2106
 msgid "OK"
-msgstr "होय"
+msgstr "सुही"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1945
+#: ../tuxpaint.c:2080
 msgid "There are no saved files!"
-msgstr "नोडे जाहान सांचाव रे को बा़नुक् आ!"
+msgstr "नोडे जाहान सांचाव रेत् को बा़नुक् आ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1949
+#: ../tuxpaint.c:2084
 msgid "Print your picture now?"
-msgstr "आमाक् चिता़र नितोक् छापाय मेPrint your picture now?"
+msgstr "आमाक् चिता़र नितोक् छापाय मे?"
 
-#: ../tuxpaint.c:1950
+#: ../tuxpaint.c:2085
 msgid "Yes, print it!"
 msgstr "होय, नोवा छापाय मे!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1954
+#: ../tuxpaint.c:2089
 msgid "Your picture has been printed!"
-msgstr "आमाक् चिता़र छापायेत् काना!"
+msgstr "आमाक् चिता़र छापा होचो आकाना!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1958
+#: ../tuxpaint.c:2093
 msgid "Sorry! Your picture could not be printed!"
 msgstr "हारुङ! आमाक् चिता़र बाङ छापा दाड़ेयाक् आ!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1961
+#: ../tuxpaint.c:2096
 msgid "You can’t print yet!"
 msgstr "आम नित् हाबिच् बाम छापा दाड़ेयाक् ना!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1965
+#: ../tuxpaint.c:2100
 msgid "Erase this picture?"
 msgstr "नोवा चिता़र बा़ड़िज मे?"
 
-#: ../tuxpaint.c:1966
+#: ../tuxpaint.c:2101
 msgid "Yes, erase it!"
 msgstr "होय, नोवा बा़ड़िज मे!"
 
-#: ../tuxpaint.c:1967
+#: ../tuxpaint.c:2102
 msgid "No, don’t erase it!"
 msgstr "बाङा, नोवा आलोम बा़ड़िजा!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1970
+#: ../tuxpaint.c:2105
 msgid "Remember to use the left mouse button!"
 msgstr "लेंगा माउस बुता़म बेबोहार ला़गित् उयहा़र मे!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2567
+#: ../tuxpaint.c:2313
 msgid "Sound muted."
 msgstr "साडे थिर हानताड़."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2572
+#: ../tuxpaint.c:2318
 msgid "Sound unmuted."
 msgstr "साडे साडे होचो."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3355
+#: ../tuxpaint.c:3065
 msgid "Please wait…"
 msgstr "तांगी मे…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7765
+#: ../tuxpaint.c:7634
 msgid "Erase"
 msgstr "बा़ड़िज"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7768
+#: ../tuxpaint.c:7637
 msgid "Slides"
 msgstr "सालाइड"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7771
+#: ../tuxpaint.c:7640
 msgid "Back"
 msgstr "तायनोम"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7774
+#: ../tuxpaint.c:7643
 msgid "Next"
 msgstr "इना़ तायोम"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7777
+#: ../tuxpaint.c:7646
 msgid "Play"
 msgstr "हा़लका़व"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8485
+#: ../tuxpaint.c:8355
 msgid "Aa"
 msgstr "आखोर बाछावाक्"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11730
+#: ../tuxpaint.c:11664
 msgid "Yes"
 msgstr "होय"
 
-#: ../tuxpaint.c:11734
+#: ../tuxpaint.c:11668
 msgid "No"
 msgstr "बाङ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12730
+#: ../tuxpaint.c:12710
 msgid "Replace the picture with your changes?"
 msgstr "आमाक् बोदोल को सांव चिता़र साहाय मे?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12734
+#: ../tuxpaint.c:12714
 msgid "Yes, replace the old one!"
 msgstr "होय, मारेयाक् सहाय मे!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12738
+#: ../tuxpaint.c:12718
 msgid "No, save a new file!"
 msgstr "बाङा, मित् नावा रेत् सांचाव मे!"
 
@@ -703,26 +705,26 @@ msgstr "आमेम ञाम कान चिता़र बाछाव म�
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14976
-#: ../tuxpaint.c:15290
+#: ../tuxpaint.c:14994
+#: ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "आमेम ञाम कान चिता़र को बाछाव मे, इना तायोम “एनेच्” ओताय मे."
 
-#: ../tuxpaint.c:21524
+#: ../tuxpaint.c:22344
 msgid "Pick a color."
 msgstr "मित् रोङ लाटाप् मे."
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "गिदरा़ को ला़गित् मित् गार चिता़र तेयार का़मी होरा."
+msgid "Tux Paint"
+msgstr "टक्स रोङ पेरेच्"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "गार चिता़र तेयार का़मी होरा"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "टक्स रोङ पेरेच्"
+msgid "A drawing program for children."
+msgstr "गिदरा़ को ला़गित् मित् गार चिता़र तेयार का़मी होरा."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -736,303 +738,339 @@ msgstr "आमाक् चिता़र रेयाक् हिंस र�
 msgid "Click to change the colors in your entire picture."
 msgstr "आमाक् गोटा चिता़र रे रोङ को बोदोल ला़गित् ओताय मे."
 
-#: ../../magic/src/blind.c:92
+#: ../../magic/src/blind.c:117
 msgid "Blind"
 msgstr "कांड़ा"
 
-#: ../../magic/src/blind.c:97
+#: ../../magic/src/blind.c:122
 msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
 msgstr "विंडो कांड़ा चेतान सेत् ते ओर ला़गित् आमाक् चिता़र रेयाक् धारे सेत् ते ओताय मे. कांड़ा को झिज आर बाङ बोनदो ला़गित् सिदुब लेका ते लाड़ाव मे."
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
 msgstr "एसेत् को"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:138
 msgid "Chalk"
 msgstr "चोक खुड़ी"
 
-#: ../../magic/src/blocks_chalk_drip.c:136
+#: ../../magic/src/blocks_chalk_drip.c:140
 msgid "Drip"
 msgstr "टोपोक्"
 
-#: ../../magic/src/blocks_chalk_drip.c:146
+#: ../../magic/src/blocks_chalk_drip.c:150
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "चिता़र एसेत् तेयार ला़गित् गोटा सेत् माउस आ़चुर आर ओताय मे."
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:153
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "चोक खुड़ी गार तेयार रे चितार आ़चुर ला़गित माउस गोटा सेत् लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/blocks_chalk_drip.c:152
+#: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "चिता़र टोपोक् तेयार ला़गित् माउस गोटा सेत् आ़चुर आर ओताय मे."
 
-#: ../../magic/src/blur.c:57
+#: ../../magic/src/blur.c:80
 msgid "Blur"
 msgstr "धुंध"
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:83
 msgid "Click and move the mouse around to blur the image."
 msgstr "चिता़र धुंध ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
-#: ../../magic/src/blur.c:61
+#: ../../magic/src/blur.c:84
 msgid "Click to blur the entire image."
 msgstr "गोटा चिता़र धुंध ला़गित् ओताय मे."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:104
+#: ../../magic/src/bricks.c:124
 msgid "Bricks"
 msgstr "इंटा को"
 
-#: ../../magic/src/bricks.c:111
+#: ../../magic/src/bricks.c:131
 msgid "Click and move to draw large bricks."
 msgstr "माराङ इंटा को गार ला़गित् आ़चुर आर ओताय मे."
 
-#: ../../magic/src/bricks.c:113
+#: ../../magic/src/bricks.c:133
 msgid "Click and move to draw small bricks."
 msgstr "हुडिञ इंटा को गार तेयार ला़गित् आ़चुर आर ओताय मे."
 
-#: ../../magic/src/calligraphy.c:108
+#: ../../magic/src/calligraphy.c:127
 msgid "Calligraphy"
 msgstr "बेस आखोर ओल हुना़र"
 
-#: ../../magic/src/calligraphy.c:115
+#: ../../magic/src/calligraphy.c:134
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "बेस आखोर ओल हुना़र रे गार ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
-#: ../../magic/src/cartoon.c:80
+#: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
 msgstr "चिगा़रिया़ ला़गित् बेनावाकान चिता़र"
 
-#: ../../magic/src/cartoon.c:87
+#: ../../magic/src/cartoon.c:113
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "चिगा़रिया़ ला़गित् बेनावाकान चिता़र रे चिता़र आ़चुर ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
-#: ../../magic/src/confetti.c:63
+#: ../../magic/src/confetti.c:85
 msgid "Confetti"
 msgstr "सिका़र"
 
-#: ../../magic/src/confetti.c:65
+#: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
 msgstr "सिका़र गिडी ला़गित् ओताय मे!"
 
-#: ../../magic/src/distortion.c:121
+#: ../../magic/src/distortion.c:142
 msgid "Distortion"
 msgstr "बा़ड़िच् तेयार"
 
-#: ../../magic/src/distortion.c:129
+#: ../../magic/src/distortion.c:150
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "आमाक् चिता़र रे बा़ड़िच् तेयार ला़गित् माउस ओर आर ओताय मे."
 
-#: ../../magic/src/emboss.c:76
+#: ../../magic/src/emboss.c:103
 msgid "Emboss"
 msgstr "गाड़हाव"
 
-#: ../../magic/src/emboss.c:82
+#: ../../magic/src/emboss.c:109
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "चिता़र गाड़हाव ला़गित् माउस ओर आर ओताय मे."
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
 msgstr "एताङ तेयार"
 
-#: ../../magic/src/fade_darken.c:121
+#: ../../magic/src/fade_darken.c:123
 msgid "Darken"
 msgstr "गाड़हो तेयार"
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:134
 msgid "Click and move the mouse to lighten parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् एताङ हिंस ला़गित् माउस आ़चुर आर ओताय मे."
 
-#: ../../magic/src/fade_darken.c:134
+#: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
-msgstr "आमाक् गोटा चितार एताह ला़गित् ओताय मे."
+msgstr "आमाक् गोटा चितार एताङ ला़गित् ओताय मे."
 
-#: ../../magic/src/fade_darken.c:139
+#: ../../magic/src/fade_darken.c:141
 msgid "Click and move the mouse to darken parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् गाड़हो हिंस ला़गित् माउस आ़चुर आर ओताय मे."
 
-#: ../../magic/src/fade_darken.c:141
+#: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
 msgstr "आमाक् गोटा चिता़र गाड़हो ला़गित् ओताय मे."
 
-#: ../../magic/src/fill.c:87
+#: ../../magic/src/fill.c:108
 msgid "Fill"
 msgstr "पेरेज मे"
 
-#: ../../magic/src/fill.c:94
+#: ../../magic/src/fill.c:115
 msgid "Click in the picture to fill that area with color."
 msgstr "ओना जायगा रोङ ते पेरेज ला़गित् चिता़र रे ओताय मे."
 
-#: ../../magic/src/fisheye.c:78
+#: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
 msgstr "हा़कू मेत्"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:80
+#: ../../magic/src/fisheye.c:106
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "हा़कू मेत् पोरभाव तेयार ला़गित् आमाक् चिता़र रेयाक् हिंस रे ओताय मे."
 
-#: ../../magic/src/flower.c:124
+#: ../../magic/src/flower.c:150
 msgid "Flower"
 msgstr "बाहा"
 
-#: ../../magic/src/flower.c:130
+#: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "बाहा ढारवाक् गार तेयार ला़गित् ओर आर ओताय मे. देला बाहा चाबाय ला़गित् बो चालाक् आ."
 
-#: ../../magic/src/foam.c:104
+#: ../../magic/src/foam.c:121
 msgid "Foam"
 msgstr "फोतो"
 
-#: ../../magic/src/foam.c:110
+#: ../../magic/src/foam.c:127
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "फोतो बुरबुडुच् सांव मित् जायगा एसेत् ला़गित् माउस ओर आर ओताय मे."
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:105
 msgid "Fold"
 msgstr "ला़टुम"
 
-#: ../../magic/src/fold.c:86
+#: ../../magic/src/fold.c:107
 msgid "Choose a background color and click to turn the corner of the page over."
-msgstr "साहटा मुचा़त् रेयाक् कोंड आ़चुर ला़गित् ओताय मे आर मित् ओनोड़ रोङ बाछाव मेChoose a background color and click to turn the corner of the page over."
+msgstr "साहटा मुचा़त् रेयाक् कोंड आ़चुर ला़गित् ओताय मे आर मित् ओनोड़ रोङ बाछाव मे."
 
-#: ../../magic/src/glasstile.c:83
+#: ../../magic/src/fretwork.c:176
+msgid "Fretwork"
+msgstr "आड़िस का़मी "
+
+#: ../../magic/src/fretwork.c:180
+msgid "Click and drag to draw repetitive patterns. "
+msgstr " दोपोड़हा हुना़र को गार ला़गित् ओता  आर ओरपेनडरा रोङपेनडरा रोङ."
+
+#: ../../magic/src/fretwork.c:182
+msgid "Click to surround your picture with repetitive patterns."
+msgstr " दोपोड़हा हुना़र को  सांव आमाक् चिता़र बेड़हाय ते ओताय मे."
+
+#: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
 msgstr "कांच खापरा"
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:114
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "आमाक् चिता़र चेतान कांच खापरा दोहो ला़गित् माउस ओर आर ओताय मे."
 
-#: ../../magic/src/glasstile.c:92
+#: ../../magic/src/glasstile.c:116
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "गिला़स खापरा कोरे आमाक् जोतो चिता़र ला़गित् ओताय मे."
 
-#: ../../magic/src/grass.c:92
+#: ../../magic/src/grass.c:112
 msgid "Grass"
 msgstr "घांस"
 
-#: ../../magic/src/grass.c:98
+#: ../../magic/src/grass.c:118
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "घांस गार चिता़र ला़गित् लाड़ाव आर ओता. ओजरा आलोम हिड़िञा!"
 
-#: ../../magic/src/kalidescope.c:90
+#: ../../magic/src/halftone.c:34
+msgid "Halftone"
+msgstr "ओरधेक टान"
+
+#: ../../magic/src/halftone.c:38
+msgid "Click and drag to turn your drawing into a newspaper."
+msgstr "मित् खोबोर कागोज रे आमाक् गार चिता़र आ़चुर ला़गित् ओता आर ओर."
+
+#: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
 msgstr "सोमान सोमान लेंगा/जोजोम"
 
-#: ../../magic/src/kalidescope.c:92
+#: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
 msgstr "सोमान सोमान चोट/लातार"
 
+#: ../../magic/src/kalidescope.c:124
+msgid "Pattern"
+msgstr "हुना़र "
+
+#: ../../magic/src/kalidescope.c:126
+msgid "Tiles"
+msgstr "खापरा को"
+
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:94
+#: ../../magic/src/kalidescope.c:128
 msgid "Kaleidoscope"
 msgstr "आ़डी रुप ञेलाक्"
 
-#: ../../magic/src/kalidescope.c:102
+#: ../../magic/src/kalidescope.c:136
 msgid "Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture."
 msgstr "बारया जोतोक् सांव गार तेयार ला़गित् माउस ओर आर ओताय मे ओका आमाक् चिता़र रेयाक् लेंगा आर जोजोम सोमान सोमान पारोम कोक् आ."
 
-#: ../../magic/src/kalidescope.c:104
+#: ../../magic/src/kalidescope.c:138
 msgid "Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture."
 msgstr "बारया जोतोक् सांव गार तेयार ला़गित् माउस ओर आर ओताय मे ओका आमाक् चिता़र रेयाक् चोट आर लातार सोमान सोमान पारोम कोक् आ."
 
+#: ../../magic/src/kalidescope.c:140
+msgid "Click and drag the mouse to draw a pattern across the picture."
+msgstr " चिता़र गाड़हाव ला़गित् माउस ओर आर ओताय मे."
+
+#: ../../magic/src/kalidescope.c:142
+msgid "Click and drag the mouse to draw a pattern plus its symmetric across the picture."
+msgstr " बारया जोतोक् सांव गार तेयार ला़गित् माउस ओर आर ओताय मे ओका आमाक् चिता़र रेयाक् लेंगा आर जोजोम सोमान सोमान पारोम कोक् आ."
+
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:106
+#: ../../magic/src/kalidescope.c:144
 msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "सोमान सोमान जोतोक् सांव गार तेयार ला़गित्  (आ़डी रुप ञेलाक्) माउस ओर आर ओताय मे."
 
-#: ../../magic/src/light.c:84
+#: ../../magic/src/light.c:107
 msgid "Light"
 msgstr "आरसाल"
 
-#: ../../magic/src/light.c:90
+#: ../../magic/src/light.c:113
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "आमाक् चिता़र रे आरसाल रेयाक् पा़ड़ गार तेयार ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/metalpaint.c:77
+#: ../../magic/src/metalpaint.c:101
 msgid "Metal Paint"
 msgstr "धातू रोङ पेरेच्"
 
-#: ../../magic/src/metalpaint.c:83
+#: ../../magic/src/metalpaint.c:107
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "धातू रोङ सांव रोङ पेरेच् ला़गित् माउस ओर आर ओताय मे."
 
-#: ../../magic/src/mirror_flip.c:94
+#: ../../magic/src/mirror_flip.c:117
 msgid "Mirror"
 msgstr "आ़रसी"
 
-#: ../../magic/src/mirror_flip.c:96
+#: ../../magic/src/mirror_flip.c:119
 msgid "Flip"
 msgstr "उछला़व"
 
-#: ../../magic/src/mirror_flip.c:106
+#: ../../magic/src/mirror_flip.c:130
 msgid "Click to make a mirror image."
 msgstr "आरसी उमुल तेयार ला़गित् ओताय मे."
 
-#: ../../magic/src/mirror_flip.c:109
+#: ../../magic/src/mirror_flip.c:133
 msgid "Click to flip the picture upside-down."
 msgstr "चिता़र चेतान धारे-लातार उछला़व ला़गित् ओताय मे."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:100
 msgid "Mosaic"
 msgstr "चिता़र बोरनो"
 
-#: ../../magic/src/mosaic.c:78
+#: ../../magic/src/mosaic.c:103
 msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे चिता़र बोरनो पोरभाव सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/mosaic.c:79
+#: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे चिता़र बोरनो पोरभाव सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:134
+#: ../../magic/src/mosaic_shaped.c:142
 msgid "Square Mosaic"
 msgstr "पुन सोमान जिलिञ गार ते एसेत् तेयार चिता़र बोरनो"
 
-#: ../../magic/src/mosaic_shaped.c:135
+#: ../../magic/src/mosaic_shaped.c:143
 msgid "Hexagon Mosaic"
 msgstr "इरा़ल गार ते एसेत् तेयार चिता़र बोरनो"
 
-#: ../../magic/src/mosaic_shaped.c:136
+#: ../../magic/src/mosaic_shaped.c:144
 msgid "Irregular Mosaic"
 msgstr "आपा बा़ड़िया चिता़र बोरनो"
 
-#: ../../magic/src/mosaic_shaped.c:141
+#: ../../magic/src/mosaic_shaped.c:149
 msgid "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे पुन सोमान जिलिञ गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे पुन सोमान जिलिञ गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे इरा़ल गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:145
+#: ../../magic/src/mosaic_shaped.c:153
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे इरा़ल गार ते एसेत् तेयार चिता़र सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:155
 msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे आपाबाड़िया़ चिता़र बोरनो सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:156
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे आपाबा़ड़िया चिता़र बोरनो सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/negative.c:72
+#: ../../magic/src/negative.c:98
 msgid "Negative"
 msgstr "एंडरे, बाङ"
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:106
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "आमाक् रोङ पेरेच् एंडरे तेयार ला़गित् माउस धारे धारे सेत् ते लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/negative.c:83
+#: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
 msgstr "ओना रेयाक् एंडरे रे आमाक् रोङ पेरेच् आ़चुर ला़गित् ओताय मे."
 
@@ -1064,33 +1102,33 @@ msgstr "कोंड रे ओताय मे आर आम ओकारे �
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "चिता़र माराङ होचो आर बाङ माराङ  हुडिञ होचो ला़गित् ओर आंड़गो हाबिच् ओर आर ओताय मे."
 
-#: ../../magic/src/puzzle.c:79
+#: ../../magic/src/puzzle.c:105
 msgid "Puzzle"
 msgstr "आका बाका"
 
-#: ../../magic/src/puzzle.c:86
+#: ../../magic/src/puzzle.c:112
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "आमाक् चिता़र रेयाक् हिंस ओताय मे ओका रे आम आका बाका कुसियाक् आम."
 
-#: ../../magic/src/puzzle.c:87
+#: ../../magic/src/puzzle.c:113
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "पुरा़ इसकिरिन ओबोसता रे आका बाका तेयार ला़गित् ओताय मे."
 
-#: ../../magic/src/rails.c:101
+#: ../../magic/src/rails.c:131
 msgid "Rails"
 msgstr "बिनधा़ड़"
 
-#: ../../magic/src/rails.c:103
+#: ../../magic/src/rails.c:133
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "आमाक् चिता़र रे रेलगाड़ी पांजा बिनधाड़ गार तेयार ला़गित् ओर आर ओताय मे."
+msgstr "आमाक् चिता़र रे रेलगाड़ी पांजा मेड़हेद छोड़ गार तेयार ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/rainbow.c:107
+#: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
-msgstr "राम आक्"
+msgstr "लिटा़ आक्"
 
-#: ../../magic/src/rainbow.c:114
+#: ../../magic/src/rainbow.c:146
 msgid "You can draw in rainbow colors!"
-msgstr "आम राम आक् रोङ रे गार तेयार दाड़ेयाक् आ!"
+msgstr "आम लिटा़ आक् रोङ रे गार तेयार दाड़ेयाक् आ!"
 
 #: ../../magic/src/rain.c:65
 msgid "Rain"
@@ -1104,39 +1142,39 @@ msgstr "आमाक् चिता़र रे जा़पुद टाप�
 msgid "Click to cover your picture with rain drops."
 msgstr "आमाक् चिता़र जा़पुद टापाच्  टिपिच् सांव जोपोरोक् ला़गित् ओताय मे."
 
-#: ../../magic/src/realrainbow.c:86
+#: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
-msgstr "सा़री राम आक्"
+msgstr "सा़रियाक् लिटा़  आक्"
 
-#: ../../magic/src/realrainbow.c:88
+#: ../../magic/src/realrainbow.c:112
 msgid "ROYGBIV Rainbow"
-msgstr "ROYGBIV राम आक्"
+msgstr "ROYGBIV लिटा़ आक्"
 
-#: ../../magic/src/realrainbow.c:93
+#: ../../magic/src/realrainbow.c:117
 msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
-msgstr "ओकारे आम आमाक् राम आक् एहोब सानाम काना ओताय मे, ओकारे आम नोवा मुचा़त् सानाम काना ओर मे, आर इना़ तायोम देला राम आक् गार तेयारा."
+msgstr "ओकारे आम आमाक् लिटा आक् एहोब सानाम काना ओताय मे, ओकारे आम नोवा मुचा़त् सानाम काना ओर मे, आर इना़ तायोम देला लिटा़ आक् गार तेयारा."
 
-#: ../../magic/src/ripples.c:81
+#: ../../magic/src/ripples.c:106
 msgid "Ripples"
 msgstr "बोहोर को"
 
-#: ../../magic/src/ripples.c:87
+#: ../../magic/src/ripples.c:112
 msgid "Click to make ripples appear over your picture."
 msgstr "आमाक् चिता़र चेतान ते बोहोर ञेल तेयार ला़गित् ओताय मे."
 
-#: ../../magic/src/rosette.c:93
+#: ../../magic/src/rosette.c:116
 msgid "Rosette"
 msgstr "फिता़ ते तेयार गुला़ब बाहा"
 
-#: ../../magic/src/rosette.c:93
+#: ../../magic/src/rosette.c:116
 msgid "Picasso"
 msgstr "गेल बार टुडा़क् रेयाक् छापा"
 
-#: ../../magic/src/rosette.c:98
+#: ../../magic/src/rosette.c:121
 msgid "Click and start drawing your rosette."
 msgstr "ओताय मे आर आमाक् फिता़ ते तेयार गुलाब बाहा गार तेयार एहोब मे."
 
-#: ../../magic/src/rosette.c:100
+#: ../../magic/src/rosette.c:123
 msgid "You can draw just like Picasso!"
 msgstr "आम गेल बार टुडा़क् छापा लेका गार तेयार दाड़ेयाक् आ!"
 
@@ -1176,29 +1214,29 @@ msgstr "हेंदे आर पुंड उमुल चिता़र त�
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "आमाक् गोटा चिता़र रेयाक् हेंदे आर पुंड उमुल चिता़र तेयार ला़गित् ओताय मे."
 
-#: ../../magic/src/shift.c:104
+#: ../../magic/src/shift.c:109
 msgid "Shift"
 msgstr "उचा़ड़"
 
-#: ../../magic/src/shift.c:110
+#: ../../magic/src/shift.c:115
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "चिता़र पाटा लुगड़ी रे याक् धारा धारे ते आमाक् चिता़र उचा़ड़ ला़गित् ओर आर ओताय मे."
+msgstr "चिता़र पाटा लुगड़ी रे याक् धारे धारे ते आमाक् चिता़र उचा़ड़ ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/smudge.c:83
+#: ../../magic/src/smudge.c:106
 msgid "Smudge"
 msgstr "धुंवा़ दाग"
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:108
 msgid "Wet Paint"
 msgstr "लोहोदाक् रोङ पेरेच्"
 
-#: ../../magic/src/smudge.c:92
+#: ../../magic/src/smudge.c:115
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "धुंवा़ दाग चिता़र सेत् ते माउस लाड़ाव आर ओताय मे."
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:94
+#: ../../magic/src/smudge.c:117
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgstr "लोहोद, धुंवा़ दाग रोङ पेरेच् सेत् ते माउस लाड़ाव आर ओताय मे."
 
@@ -1218,27 +1256,27 @@ msgstr "आमाक् चिता़र रे इतिञ दाक् ढ�
 msgid "Click to add snow flakes to your picture."
 msgstr "आमाक् चिता़र रे इतिञ दाक् रोत् सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/string.c:120
-msgid "String edges"
-msgstr "तांत धारे को"
-
 #: ../../magic/src/string.c:123
-msgid "String corner"
-msgstr "तांत कोंड"
+msgid "String edges"
+msgstr "स्ट्रिंग  धारे को"
 
 #: ../../magic/src/string.c:126
-msgid "String 'V'"
-msgstr "तांत 'V'"
+msgid "String corner"
+msgstr "स्ट्रिंग कोंड"
 
-#: ../../magic/src/string.c:134
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
-msgstr "तांत हुना़र गार तेयार ला़गित् ओर आर ओताय मे. माराङ भुगा़क् तेयार ला़गित् कोम आर ढेर गार को गार तेयार ला़गित् लेंगा आर बाङ जोजोम सेत् ओर मे."
+#: ../../magic/src/string.c:129
+msgid "String 'V'"
+msgstr "स्ट्रिंग 'V'"
 
 #: ../../magic/src/string.c:137
-msgid "Click and drag to draw arrows made of string art."
-msgstr "तांत हुना़र ते तेयाराक् सार गार तेयार ला़गित् ओर आर  ओताय मे."
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgstr "स्ट्रिंग हुना़र गार तेयार ला़गित् ओर आर ओताय मे. माराङ भुगा़क् तेयार ला़गित् कोम आर ढेर गार को गार तेयार ला़गित् लेंगा आर बाङ जोजोम सेत् ओर मे."
 
 #: ../../magic/src/string.c:140
+msgid "Click and drag to draw arrows made of string art."
+msgstr "स्ट्रिंग हुना़र ते तेयाराक् सार गार तेयार ला़गित् ओर आर  ओताय मे."
+
+#: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
 msgstr "साधिन कोंड को सांव तांत हुना़र सार कोवाक् गार तेयार."
 
@@ -1274,39 +1312,51 @@ msgstr "डाटा माजावाक्"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "आमाक् चिता़र रे डाटा माजावाक् पोचोर ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/tornado.c:127
+#: ../../magic/src/tornado.c:157
 msgid "Tornado"
 msgstr "होय दाक्"
 
-#: ../../magic/src/tornado.c:133
+#: ../../magic/src/tornado.c:163
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "आमाक् चिता़र रे मित्  होय दाक् चिमनी गार तेयार ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:100
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:79
+#: ../../magic/src/tv.c:105
 msgid "Click and drag to make parts of your picture look like they are on television."
 msgstr "आमाक् चिता़र  टेलिविजान रे ञेलोक् लेका रेयाक् हिंस तेयार ला़गित् ओर आर ओताय मे."
 
-#: ../../magic/src/tv.c:82
+#: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
 msgstr "आमाक् चिता़र ओना टेलिविजान रे मेनाक् लेका तेयार ला़गित् ओताय मे."
 
-#: ../../magic/src/waves.c:80
+#: ../../magic/src/waves.c:103
 msgid "Waves"
 msgstr "हेलकाव "
 
-#: ../../magic/src/waves.c:81
+#: ../../magic/src/waves.c:104
 msgid "Wavelets"
 msgstr "का़च् हेलकाव"
 
-#: ../../magic/src/waves.c:88
+#: ../../magic/src/waves.c:111
 msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
 msgstr "चिता़र गितिच् तेयाक् किड़चोङ कोड़चोङ हेलकाव तेयार ला़गित् ओताय मे. खाटो हेलकाव को ला़गित् चोट सेत् , जिलिञ हेलकाव को ला़गित् लातार, हुडिञ हेलकाव को ला़गित् लेंगा, आर जिलिञ हेलकाव को ला़गित् जोजोम ओताय मे."
 
-#: ../../magic/src/waves.c:89
+#: ../../magic/src/waves.c:112
 msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
 msgstr "चिता़र तिंगू तेयाक्  किड़चोङ कोड़चोङ हेलकाव तेयार ला़गित् ओताय मे. खाटो हेलकाव को ला़गित् चोट सेत् , जिलिञ हेलकाव को ला़गित् लातार, हुडिञ हेलकाव को ला़गित् लेंगा, आर जिलिञ हेलकाव को ला़गित् जोजोम ओताय मे."
+
+#: ../../magic/src/xor.c:95
+msgid "Xor Colors"
+msgstr "Xor  रोङ को"
+
+#: ../../magic/src/xor.c:101
+msgid "Click and drag to draw a XOR effect"
+msgstr "मित् XOR पोरभाव तेयार ला़गित् ओता आर ओर"
+
+#: ../../magic/src/xor.c:103
+msgid "Click to draw a XOR effect on the whole picture"
+msgstr " आमाक् गोटा चिता़र रे मित् XOR पोरभाव तेयार ला़गित् ओताय मे."
 
