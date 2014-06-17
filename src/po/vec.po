@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-06-16 10:16+0100\n"
+"PO-Revision-Date: 2014-06-17 08:23+0100\n"
 "Last-Translator: Fabio Lazarin <mistro@elgalepin.com>\n"
 "Language-Team: none\n"
 "Language: vec\n"
@@ -123,11 +123,11 @@ msgstr "\"Beige\"! (Bèž)."
 #. Most translators should use scoring instead.
 #: ../dirwalk.c:168
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 #: ../dirwalk.c:168
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
@@ -137,7 +137,7 @@ msgstr ""
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:195
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:198
@@ -304,7 +304,7 @@ msgstr "Un pentàgono el gà sincue lai."
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Un ronbo el gà cuatro lai conpagni, e i lai opòsti i xé paralèƚi."
+msgstr "Un ronbo el gà cuatro lai conpagni, e i lai opòsti i xé paralèli."
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
@@ -427,7 +427,7 @@ msgstr "Desernisi un coƚor e na forma de penèƚo par piturar."
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Dsernisi na fegura da stanpar so 'l to dixegno."
+msgstr "Desernisi na fegura da stanpar so 'l to dixegno."
 
 #. Line tool instructions
 #: ../tools.h:121
@@ -441,7 +441,7 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Desernisi na forma. Clica par far el sentro, strasina, pò mòƚa co ƚa xé "
-"granda fà basta. Movi par voltarla, e clica par piturarla."
+"granda che basta. Movi par voltarla, e clica par piturarla."
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -487,7 +487,7 @@ msgstr "Goma!"
 #. Response to 'start a new image' action
 #: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Desernisi un coƚor o modèƚo par scominsiar piturar."
+msgstr "Desernisi un coƚor o modèƚo par scominsiar a piturar."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:151
@@ -694,13 +694,13 @@ msgstr "Nò, salva un file niovo!"
 
 #: ../tuxpaint.c:13963
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Desernisi el dixegno che te vol, e pò clica \"Vèrxi\"."
+msgstr "Desernisi el dixegno che te vol, e 'pò clica \"Vèrxi\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Desernisi i dixegni che te vol, e pò clica \"Mostra\"."
+msgstr "Desernisi i dixegni che te vol, e 'pò clica \"Mostra\"."
 
 #: ../tuxpaint.c:22344
 msgid "Pick a color."
@@ -716,7 +716,7 @@ msgstr "Programa de dixegno."
 
 #: ../tuxpaint.desktop.in.h:3
 msgid "A drawing program for children."
-msgstr "Un programa de dixegno par i cèi."
+msgstr "Un programa de dixegno par putèi."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -729,7 +729,7 @@ msgstr ""
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
-msgstr "Clica par canbiar i coƚori de tuto el to diƚegno."
+msgstr "Clica par canbiar i coƚori de tuto el to dixegno."
 
 #: ../../magic/src/blind.c:117
 msgid "Blind"
@@ -740,7 +740,7 @@ msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
-"Clica vèrso el bordo de 'l to dixegno ar tirar na coltrina. Movi in "
+"Clica vèrso el bordo de 'l to dixegno par tirar na coltrina. Movi in "
 "perpendìcoƚo par vèrxar e sarar ƚe coltrine."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
@@ -811,11 +811,11 @@ msgstr "Clica e strasina par far el dixegno cofà a cartoni anemadi"
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
-msgstr "Confèti"
+msgstr "Coriàndoƚi"
 
 #: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
-msgstr "Clica par semenar confèti!"
+msgstr "Clica par semenar coriàndoƚi!"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -907,7 +907,7 @@ msgstr "Traforo"
 #: ../../magic/src/fretwork.c:180
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Clica e strasina pardixegnar decorasion ripeteste."
+msgstr "Clica e strasina par dixegnar decorasion ripeteste."
 
 #: ../../magic/src/fretwork.c:182
 #| msgid "Click to cover your picture with rain drops."
@@ -1090,15 +1090,15 @@ msgstr "Clica par xontar moxàico iregoƚar so tuto el to dixegno."
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
-msgstr "Begativo"
+msgstr "Negadivo"
 
 #: ../../magic/src/negative.c:106
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "Clica e strasina par far porsion de 'l to dixegno in negativo."
+msgstr "Clica e strasina par far porsion de 'l to dixegno in negadivo."
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr "Clica par far tuto el to dixegno in negativo."
+msgstr "Clica par far tuto el to dixegno in negadivo."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
