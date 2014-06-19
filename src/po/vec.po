@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-06-17 08:23+0100\n"
-"Last-Translator: Fabio Lazarin <mistro@elgalepin.com>\n"
+"PO-Revision-Date: 2014-06-18 07:59+0100\n"
+"Last-Translator: el Galepin <mistro@elgalepin.com>\n"
 "Language-Team: none\n"
 "Language: vec\n"
 "MIME-Version: 1.0\n"
@@ -166,19 +166,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spare-9a"
 
 #: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spare-9b"
 
 #. Congratulations #1
 #: ../great.h:37
