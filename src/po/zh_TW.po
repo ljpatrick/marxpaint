@@ -1,24 +1,24 @@
 # Traditional Chinese Messages for tuxpaint.
-# Copyright (C) 2004, 05, 07 Free Software Foundation, Inc.
-# Song Huang <song@ossacc.org>, 2004.
+# Copyright (C) 2014 Tuxpaint.
+# This file is distributed under the same license as the tuxpaint package.
 # OLS3 <ols3@lxer.idv.tw>, 2004.
 # Wei-Lun Chao <chaoweilun@gmail.com>, 2005, 2007.
+# Song Huang <song@ossacc.org>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2011-10-31 15:47+0800\n"
-"Last-Translator: Song Huang <songhuang.tw@gmail.com>\n"
+"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"PO-Revision-Date: 2014-06-24 14:46+0800\n"
+"Last-Translator: Song Huang <song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
+"X-Generator: Poedit 1.6.5\n"
 
-#  Response to Black (0, 0, 0) color selected
-#  Response to Black (0, 0, 0) color selected
 #  Response to Black (0, 0, 0) color selected
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -156,11 +156,11 @@ msgstr "米黃色!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "qx"
 msgstr "正體中文"
 
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "QX"
 msgstr "正體中文"
 
@@ -175,54 +175,54 @@ msgstr "正體中文"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:191
+#: ../dirwalk.c:195
 msgid "oO"
 msgstr "oO"
 
 #  common punctuation (e.g., '?', '!', '.', ',', etc.)
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:194
+#: ../dirwalk.c:198
 msgid ",.?!"
 msgstr ",.?!"
 
 #  uncommon punctuation (e.g., '@', '#', '*', etc.)
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:197
+#: ../dirwalk.c:201
 msgid "`\\%_@$~#{<(^&*"
 msgstr "，。、；：？（）"
 
 #  digits (e.g., '0', '1' and '7')
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:200
+#: ../dirwalk.c:204
 msgid "017"
 msgstr "017"
 
 #  distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:203
+#: ../dirwalk.c:207
 msgid "O0"
 msgstr "O0"
 
 #  distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #  distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:206
+#: ../dirwalk.c:210
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:210
+#: ../dirwalk.c:214
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:211
+#: ../dirwalk.c:215
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:212
+#: ../dirwalk.c:216
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:213
+#: ../dirwalk.c:217
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -494,7 +494,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7605
+#: ../tools.h:98 ../tuxpaint.c:7631
 msgid "Open"
 msgstr "打開"
 
@@ -650,7 +650,7 @@ msgstr "很好，讓我們繼續來畫這張圖吧!"
 
 #  Prompt to confirm user wishes to quit
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:2053
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
@@ -658,69 +658,69 @@ msgstr "你確定要離開嗎?"
 #  msgid "Yes, I'm done!"
 #  Quit prompt positive response (quit)
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2043
+#: ../tuxpaint.c:2056
 msgid "Yes, I’m done!"
 msgstr "好，我做完了!"
 
 #  Quit prompt negative response (don't quit)
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
+#: ../tuxpaint.c:2059 ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
 #  Current picture is not saved; user is quitting
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2050
+#: ../tuxpaint.c:2063
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
-#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
+#: ../tuxpaint.c:2064 ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "好，把它存起來!"
 
 #  msgid "No, don't bother saving!"
-#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
+#: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 msgid "No, don’t bother saving!"
 msgstr "不，別存了!"
 
 #  Current picture is not saved; user is opening another picture
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2055
+#: ../tuxpaint.c:2068
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
 
 #  Error opening picture
 #. Error opening picture
-#: ../tuxpaint.c:2060
+#: ../tuxpaint.c:2073
 msgid "Can’t open that picture!"
 msgstr "沒辦法打開這個圖畫!"
 
 #  Generic dialog dismissal
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
-#: ../tuxpaint.c:2093
+#: ../tuxpaint.c:2076 ../tuxpaint.c:2081 ../tuxpaint.c:2090 ../tuxpaint.c:2097
+#: ../tuxpaint.c:2106
 msgid "OK"
 msgstr "好的"
 
 #  Notification that 'Open' dialog has nothing to show
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2067
+#: ../tuxpaint.c:2080
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
 #  Verification of print action
 #. Verification of print action
-#: ../tuxpaint.c:2071
+#: ../tuxpaint.c:2084
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
 
-#: ../tuxpaint.c:2072
+#: ../tuxpaint.c:2085
 msgid "Yes, print it!"
 msgstr "好，印出它來!"
 
 #  Confirmation of successful (we hope) printing
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2076
+#: ../tuxpaint.c:2089
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
 
@@ -728,90 +728,90 @@ msgstr "你的圖畫已經印出來了!"
 #  msgid "Your picture has been printed!"
 #  We got an error printing
 #. We got an error printing
-#: ../tuxpaint.c:2080
+#: ../tuxpaint.c:2093
 msgid "Sorry! Your picture could not be printed!"
 msgstr "不好意思，你的圖畫不能列印!"
 
 #  Notification that it's too soon to print again (--printdelay option is in effect)
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2083
+#: ../tuxpaint.c:2096
 msgid "You can’t print yet!"
 msgstr "你還沒辦法列印喔!"
 
 #  Prompt to confirm erasing a picture in the Open dialog
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2100
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
-#: ../tuxpaint.c:2088
+#: ../tuxpaint.c:2101
 msgid "Yes, erase it!"
 msgstr "好，刪除它吧!"
 
 #  msgid "No, don't erase it!"
-#: ../tuxpaint.c:2089
+#: ../tuxpaint.c:2102
 msgid "No, don’t erase it!"
 msgstr "不，別刪除它!"
 
 #  Reminder that Mouse Button 1 is the button to use in Tux Paint
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2092
+#: ../tuxpaint.c:2105
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
 #  Sound has been muted (silenced) via keyboard shortcut
 #  Sound has been muted (silenced) via keyboard shortcut
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2313
 msgid "Sound muted."
 msgstr "靜音"
 
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Sound unmuted."
 msgstr "取消靜音"
 
 #  Wait while Text tool finishes loading fonts
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3052
+#: ../tuxpaint.c:3065
 msgid "Please wait…"
 msgstr "請等一下…"
 
 #  Open dialog: 'Erase' button, to erase/deleted the selected picture
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7608
+#: ../tuxpaint.c:7634
 msgid "Erase"
 msgstr "刪除"
 
 #  Open dialog: 'Slides' button, to switch to slide show mode
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7611
+#: ../tuxpaint.c:7637
 msgid "Slides"
 msgstr "投影片"
 
 #  Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7614
+#: ../tuxpaint.c:7640
 msgid "Back"
 msgstr "上一個"
 
 #  Slideshow: 'Next' button, to load next slide (image)
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7617
+#: ../tuxpaint.c:7643
 msgid "Next"
 msgstr "下一個"
 
 #  Slideshow: 'Play' button, to begin a slideshow sequence
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7620
+#: ../tuxpaint.c:7646
 msgid "Play"
 msgstr "播放"
 
 #  Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8328
+#: ../tuxpaint.c:8355
 msgid "Aa"
 msgstr "A中"
 
@@ -819,17 +819,17 @@ msgstr "A中"
 #  positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11586
+#: ../tuxpaint.c:11664
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:11590
+#: ../tuxpaint.c:11668
 msgid "No"
 msgstr "不"
 
 #  Prompt to ask whether user wishes to save over old version of their file
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12608
+#: ../tuxpaint.c:12710
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
@@ -837,7 +837,7 @@ msgstr "用你所做的改變來取代圖畫嗎?"
 #  (like a 'File:Save' action in other applications)
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12612
+#: ../tuxpaint.c:12714
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
@@ -845,11 +845,11 @@ msgstr "好，取代舊的!"
 #  (like a 'File:Save As...' action in other applications)
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12616
+#: ../tuxpaint.c:12718
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:13861
+#: ../tuxpaint.c:13963
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
@@ -857,25 +857,25 @@ msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 #  Instructions for Slideshow file dialog (FIXME: Make a #define)
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
+#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
-#: ../tuxpaint.c:22159
+#: ../tuxpaint.c:22344
 msgid "Pick a color."
 msgstr "挑選一個顏色"
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "適合兒童的畫圖程式"
+msgid "Tux Paint"
+msgstr "企鵝小畫家"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "畫圖程式"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "企鵝小畫家"
+msgid "A drawing program for children."
+msgstr "適合兒童的畫圖程式"
 
 #  msgid "Shift"
 #: ../../magic/src/alien.c:64
@@ -989,7 +989,7 @@ msgstr "浮雕"
 
 #: ../../magic/src/emboss.c:109
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
+msgstr "按著並移動滑鼠來彎折圖畫。"
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
@@ -1062,19 +1062,17 @@ msgstr "挑選一個背景色，並按一下圖紙的角落讓他翻起來。"
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "鏤空"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "按著並移動滑鼠來畫出箭頭藝術字。"
+msgstr "按著並移動滑鼠來畫出重複的鏤空樣式。"
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "按一下來使整張圖畫布滿雨滴。"
+msgstr "按一下使整張圖布滿重複的鏤空樣式。"
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -1098,13 +1096,12 @@ msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "渲染"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "按一下來使畫筆的顏色轉變成相反顏色。"
+msgstr "按著並拖動將你的圖案變成像是在報紙上。"
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1116,11 +1113,11 @@ msgstr "上下對稱"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "瓷磚樣式"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "瓷磚對稱"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1140,20 +1137,18 @@ msgid ""
 msgstr "按著並移動滑鼠來畫出上下對稱的筆刷(萬花筒)。"
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
+msgstr "按著並移動滑鼠來添加圖案樣式在畫上。"
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
-msgstr "按著並移動滑鼠來畫出左右對稱的筆刷(萬花筒)。"
+msgstr "按著並移動滑鼠來添加對稱的圖案樣式在畫上。"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1311,6 +1306,14 @@ msgstr "鐵軌"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "按著並移動滑鼠畫一段鐵軌到你的圖上。"
 
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "彩虹"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "你可以畫出彩虹的顏色!"
+
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "下雨"
@@ -1322,14 +1325,6 @@ msgstr "按一下來使雨滴到你的圖上。"
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "按一下來使整張圖畫布滿雨滴。"
-
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "彩虹"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "你可以畫出彩虹的顏色!"
 
 #  msgid "Rainbow"
 #: ../../magic/src/realrainbow.c:110
@@ -1562,19 +1557,16 @@ msgstr ""
 
 #  Title of color palette (buttons across the bottom)
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "顏色"
+msgstr "互異顏色"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "按著並移動滑鼠來畫出箭頭藝術字。"
+msgstr "按著並移動滑鼠來畫出互異的效果。"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "按一下來使整張圖畫產生馬賽克效果。"
+msgstr "按一下來使整張圖畫產生互異的效果。"
