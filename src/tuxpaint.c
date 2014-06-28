@@ -16729,7 +16729,7 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
 
     if (updown == SDL_KEYUP)
     {
-      if (key == SDLK_INSERT ||
+      if (key == SDLK_INSERT || key == SDLK_F5 ||
 	  ((cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL) &&
 	   (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP5)))
 
@@ -16756,7 +16756,7 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
       else if (key == SDLK_DOWN)
 	SDL_WarpMouse(oldpos_x, bottom);
 
-      else if (key == SDLK_INSERT && !button_down)
+      else if ((key == SDLK_INSERT || key == SDLK_F5) && !button_down)
       {
 	event.type = SDL_MOUSEBUTTONDOWN;
 	event.button.x = oldpos_x;
