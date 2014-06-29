@@ -1,22 +1,22 @@
-# Tux Paint hungarian messages
+# Tux Paint hungarian messages.
+# Copyright (C) 2010-2014.
+# This file is distributed under the same license as the tuxpaint package.
 # Török Gábor <gabo@linuxmania.hu>, 2002.
 # Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007, 2009.
-# Copyright (C) 2002
 # Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint-0.9.17\n"
+"Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-06-20 11:47+0200\n"
+"PO-Revision-Date: 2014-06-28 12:48+0200\n"
 "Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
 "Language-Team: Hungarian <debian-l10n-hungarian@lists.d.o>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: UTF-8\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: ???\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -148,10 +148,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*ß€£¥"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -170,19 +168,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "áíűőüöúóé"
 
 #: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "ÁÍŰŐÜÖÓÉ"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -453,8 +451,6 @@ msgstr ""
 
 #. Text tool instructions
 #: ../tools.h:127
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -465,8 +461,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -920,12 +914,10 @@ msgid "Fretwork"
 msgstr "Faragott díszítés"
 
 #: ../../magic/src/fretwork.c:180
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "Az egér gombját lenyomva tartva ismétlődő mintát rajzolhatsz."
 
 #: ../../magic/src/fretwork.c:182
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Kattints a rajz ismétlődő mintákkal körbedíszítéséhez."
 
@@ -955,7 +947,6 @@ msgid "Halftone"
 msgstr "Féltónus"
 
 #: ../../magic/src/halftone.c:38
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr ""
 "Az egér gombját lenyomva tartva újságpapírrá változtathatod a rajzodat."
@@ -982,8 +973,6 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoszkóp"
 
 #: ../../magic/src/kalidescope.c:136
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -992,8 +981,6 @@ msgstr ""
 "képed bal és jobb oldalára."
 
 #: ../../magic/src/kalidescope.c:138
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -1002,13 +989,10 @@ msgstr ""
 "képed tetején és alján."
 
 #: ../../magic/src/kalidescope.c:140
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Az egér gombját lenyomva tartva mintát rajzolhatsz a képedre."
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
@@ -1154,12 +1138,10 @@ msgid "Puzzle"
 msgstr "Kirakós"
 
 #: ../../magic/src/puzzle.c:112
-#| msgid "Click on part of your picture to create a fisheye effect."
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Kattints oda a rajzodon, ahol kirakó hatást szeretnél."
 
 #: ../../magic/src/puzzle.c:113
-#| msgid "Click to make a mirror image."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Kattints rá, hogy teljes képernyős kirakót csináljunk."
 
@@ -1382,7 +1364,6 @@ msgid "Tornado"
 msgstr "Tornádó"
 
 #: ../../magic/src/tornado.c:163
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Az egér gombját lenyomva tartva tornádó tölcsért rajzolhatsz a képedre."
@@ -1392,7 +1373,6 @@ msgid "TV"
 msgstr "TV"
 
 #: ../../magic/src/tv.c:105
-#| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -1433,16 +1413,13 @@ msgstr ""
 "hosszabb hullámokért."
 
 #: ../../magic/src/xor.c:95
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Színek XOR-olása."
 
 #: ../../magic/src/xor.c:101
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
 msgstr "Az egér gombját lenyomva tartva XOR hatással rahzolhatsz."
 
 #: ../../magic/src/xor.c:103
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Rákattintva XOR hatást tehetsz az egész rajzodra."
