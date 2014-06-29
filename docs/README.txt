@@ -9,19 +9,19 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - March 2, 2012
+                         June 14, 2002 - June 29, 2014
 
      ----------------------------------------------------------------------
 
-   +-------------------------------------------+
-   |Table of Contents                          |
-   |-------------------------------------------|
-   |  * About                                  |
-   |  * Using Tux Paint                        |
-   |  * Loading Other Pictures into Tux Paint  |
-   |  * Further Reading                        |
-   |  * How to Get Help                        |
-   +-------------------------------------------+
+   +------------------------------------------------------------------------+
+   |Table of Contents                                                       |
+   |------------------------------------------------------------------------|
+   |  * About                                                               |
+   |  * Using Tux Paint                                                     |
+   |  * Loading Other Pictures into Tux Paint                               |
+   |  * Further Reading                                                     |
+   |  * How to Get Help                                                     |
+   +------------------------------------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -100,8 +100,8 @@ Loading Tux Paint
 
   Windows Users
 
-                                                                    [Icon]    
-                                                                   Tux Paint  
+                                                          [Icon]              
+                                                         Tux Paint            
 
          If you installed Tux Paint on your computer using the
          'Tux Paint Installer,' it will have asked you whether you wanted a
@@ -474,6 +474,9 @@ Available Tools
                       * Click the brown "Erase" (trash can) button at the
                         lower right of the list to erase the selected
                         picture. (You will be asked to confirm.)
+
+                        Note: As of version 0.9.22, the picture will be
+                        placed in your desktop's trash can, on Linux only.
 
                       * Click the blue "Slides" (slide projector) button at
                         the lower left to go to slideshow mode. See "Slides",
