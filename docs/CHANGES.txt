@@ -278,6 +278,8 @@ $Id$
 
     * Adapted the interface to play nice too on touchscreen devices.
 
+    * Optimised PNG files using TruePNG and PNGZopfli, for smaller file sizes.
+
  * New Starters:
    -------------
     * Elephant
