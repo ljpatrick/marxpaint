@@ -1,19 +1,18 @@
 # Tux Paint Korean messages
 # Copyright (C) 2003-2014 Mark K. Kim
 # Translation: Mark K. Kim <mkkim214@gmail.com>, 2003-2014.
-#
 # This file is distributed under the same license as the Tux Paint program.
-#
 # 이 파일의 라이센스는 Tux Paint의 라이센스와 같습니다.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Tux Paint 0.9.16\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: tuxpaint\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
 "PO-Revision-Date: 2014-06-08 20:28-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
-"Language: \n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -167,19 +166,19 @@ msgstr "1Il|ㅣ"
 
 #: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spare-9a"
 
 #: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spare-9b"
 
 #. Congratulations #1
 #: ../great.h:37
