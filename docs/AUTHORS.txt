@@ -864,8 +864,8 @@ $Id$
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
-    Michael Bauer<fios@akerbeltz.org>
-    Foram na Gaidhlig <fios@foramnagaidhlig.net>
+    Michael "Akerbeltz" Bauer <fios@akerbeltz.org>
+    GunChleoc <fios@foramnagaidhlig.net>
 
   * Serbian cyrillic
     Aleksandar Jelenak <jelenak@verizon.net>
