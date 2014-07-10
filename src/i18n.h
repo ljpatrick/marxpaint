@@ -144,7 +144,7 @@ enum
   LANG_TH,			/* Thai */
   LANG_TL,			/* Tagalog */
   LANG_TR,			/* Turkish */
-  LANG_TWI,			/* Twi */
+  LANG_TW,			/* Twi */
   LANG_UK,			/* Ukrainian */
   LANG_VE,			/* Venda */
   LANG_VEC,			/* Venetian */
