@@ -67,6 +67,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "bm",
   "bo",
   "br",
+  "bs",
   "ca",
   "cgg",
   "cs",
@@ -232,6 +233,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"bambara", "bm_ML.UTF-8"},
+  {"bosnian", "bs_BA.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
   {"hrvatski", "hr_HR.UTF-8"},
   {"catalan", "ca_ES.UTF-8"},
@@ -416,6 +418,7 @@ static void show_lang_usage(int exitcode)
 /* eu */ "  basque       euskara\n"
 /* be */ "  belarusian   bielaruskaja\n"
 /* nb */ "  bokmal\n"
+/* bs */ "  bosnian\n"
 /* pt_BR */ "  brazilian    brazilian-portuguese   portugues-brazilian\n"
 /* br */ "  breton       brezhoneg\n"
 /* en_GB */ "  british      british-english\n"
@@ -544,6 +547,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  bm_ML   (Bambara)\n"
           "  eu_ES   (Basque       Euskara)\n"
           "  be_BY   (Belarusian   Bielaruskaja)\n"
+          "  bs_BA   (Bosnian)\n"
           "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"

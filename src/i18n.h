@@ -53,6 +53,7 @@ enum
   LANG_BM,			/* Bambara */
   LANG_BO,			/* Tibetan */
   LANG_BR,			/* Breton */
+  LANG_BS,                       /* Bosnian */
   LANG_CA,			/* Catalan */
   LANG_CGG,                     /* Kiga */
   LANG_CS,			/* Czech */
