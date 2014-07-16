@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2014-07-04 15:52+0200\n"
+"PO-Revision-Date: 2014-07-14 19:47+0200\n"
 "Last-Translator: Yannis Kaskamanidis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Bookmarks: 130,170,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -27,12 +27,12 @@ msgstr "Μαύρο!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Σκούρο Γκρίζο!"
+msgstr "Σκούρο γκρίζο!"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Ανοιχτό Γκρίζο!"
+msgstr "Ανοιχτό γκρίζο!"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -57,12 +57,12 @@ msgstr "Κίτρινο!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr "Ανοιχτό Πράσινο!"
+msgstr "Ανοιχτό πράσινο!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
 msgid "Dark green!"
-msgstr "Σκούρο Πράσινο!"
+msgstr "Σκούρο πράσινο!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
@@ -360,7 +360,7 @@ msgstr "Μαγικά"
 #. Freehand painting tool
 #: ../tools.h:62
 msgid "Paint"
-msgstr "Ζωγραφιά"
+msgstr "Πινέλο"
 
 #. Stamp tool (aka Rubber Stamps)
 #: ../tools.h:65
@@ -390,7 +390,7 @@ msgstr "Αναίρεση"
 #. Redo undone action
 #: ../tools.h:89
 msgid "Redo"
-msgstr "Επανάληψη"
+msgstr "Ακύρωση"
 
 #. Eraser tool
 #: ../tools.h:92
@@ -412,7 +412,7 @@ msgstr "Άνοιγμα"
 #. Save the current picture
 #: ../tools.h:101
 msgid "Save"
-msgstr "Φύλαξη"
+msgstr "Αποθήκευση"
 
 #. Print the current picture
 #: ../tools.h:104
@@ -706,13 +706,13 @@ msgstr "Όχι, κάνε αποθήκευση σε νέο αρχείο!"
 
 #: ../tuxpaint.c:13963
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε “Άνοιγμα”."
+msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε 'Άνοιγμα'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε \"Αναπαραγωγή”."
+msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά πάτησε 'Αναπαραγωγή'."
 
 #: ../tuxpaint.c:22344
 msgid "Pick a color."
@@ -1081,7 +1081,7 @@ msgstr "Κάνε κλικ για να προσθέσεις εφέ μωσαϊκο
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Square Mosaic"
-msgstr "Τετραγωνικό Μωσαϊκό"
+msgstr "Τετραγωνικό μωσαϊκό"
 
 #: ../../magic/src/mosaic_shaped.c:143
 msgid "Hexagon Mosaic"
@@ -1264,7 +1264,7 @@ msgstr "Άκρες"
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
-msgstr "Οξύνω"
+msgstr "Όξυνση"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
@@ -1349,11 +1349,11 @@ msgstr "Κάνε κλικ για να προσθέσεις νιφάδες χιο
 
 #: ../../magic/src/string.c:123
 msgid "String edges"
-msgstr "Άκρες Καμπυλωτών Γραμμών"
+msgstr "Άκρες καμπυλωτών γραμμών"
 
 #: ../../magic/src/string.c:126
 msgid "String corner"
-msgstr "Γωνίες Καμπυλωτών Γραμμών"
+msgstr "Γωνίες καμπυλωτών γραμμών"
 
 #: ../../magic/src/string.c:129
 msgid "String 'V'"
@@ -1487,5 +1487,3 @@ msgstr "Κάνε κλικ και σύρε το ποντίκι για να σχε
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Κάνε κλικ για να σχεδιάσεις ένα XOR εφέ σε ολόκληρη τη ζωγραφιά σου."
-
-
