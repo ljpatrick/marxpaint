@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 16, 2014
+June 17, 2002 - July 16, 2014
 
 $Id$
 
@@ -525,6 +525,9 @@ $Id$
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>
     Alexander Geroimenko <a.geroimenko@gmail.com>
+
+  * Bosnian
+    Samir Ribić
   
   * Breton
     Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.April.19 (0.9.22)
+2014.July.16 (0.9.22)
 
   * New Tools:
     ----------
@@ -369,6 +369,9 @@ $Id$
 
     * Bambara translation
       Fasokan <konate20032001@yahoo.fr>
+
+    * Bosnian translation
+      Samir Ribić
 
     * Kiga translation
       Florence Tushabe <tushabe@cit.mak.ac.ug>
