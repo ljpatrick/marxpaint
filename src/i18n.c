@@ -68,6 +68,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "bo",
   "br",
   "bs",
+  "ca@valencia",
   "ca",
   "cgg",
   "cs",
@@ -81,8 +82,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "en_GB",
   "en_ZA",
   "eo",
-  "es",
   "es_MX",
+  "es",
   "et",
   "eu",
   "fa",
@@ -109,9 +110,9 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ka",
   "kn",
   "km",
-  "ko",
-  "kok",
   "kok@roman",
+  "kok",
+  "ko",
   "ku",
   "lb",
   "lg",
@@ -141,16 +142,16 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ro",
   "ru",
   "rw",
-  "sa",
-  "sat",
   "sat@olchiki",
+  "sat",
+  "sa",
   "shs",
   "sk",
   "sl",
   "son",
   "sq",
-  "sr",
   "sr@latin",
+  "sr",
   "su",
   "sv",
   "sw",
@@ -161,8 +162,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "tr",
   "tw",
   "uk",
-  "ve",
   "vec",
+  "ve",
   "vi",
   "wa",
   "wo",
@@ -238,6 +239,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"hrvatski", "hr_HR.UTF-8"},
   {"catalan", "ca_ES.UTF-8"},
   {"catala", "ca_ES.UTF-8"},
+  {"valencian", "ca_ES.UTF-8@valencia"},
+  {"valencia", "ca_ES.UTF-8@valencia"},
   {"kiga", "cgg_UG.UTF-8"},
   {"chiga", "cgg_UG.UTF-8"},
   {"belarusian", "be_BY.UTF-8"},
@@ -510,6 +513,7 @@ static void show_lang_usage(int exitcode)
 /* bo */ "  tibetan\n"
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
+/* ca@valencia */  "  valencian    valencia\n"
 /* ve */ "  venda\n"
 /* vec */"  venetian     veneto\n"
 /* vi */ "  vietnamese\n"
@@ -557,6 +561,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  en_ZA   (South African English)\n"
 	  "  bg_BG   (Bulgarian)\n"
 	  "  ca_ES   (Catalan      Catala)\n"
+          "  ca_ES@valencia   (Valencian    Valencia)n"
 	  "  zh_CN   (Chinese-Simplified)\n"
 	  "  zh_TW   (Chinese-Traditional)\n"
 	  "  cs_CZ   (Czech        Cesky)\n"
@@ -715,28 +720,115 @@ static void set_langint_from_locale_string(const char *restrict loc)
 {
   char *baseloc = strdup(loc);
   char *dot = strchr(baseloc, '.');
-  size_t len_baseloc = strlen(baseloc);
+  char *at = strchr(baseloc, '@');
+  char *cntrycode = strchr(baseloc, '_');
+  char straux[255];
+  char *ataux = NULL;
+  char *ccodeaux = NULL;
+  size_t len_baseloc;
   int found = 0;
   int i;
+  printf("langint %i\n", langint);
 
   if (!loc)
     return;
 
+  /* Remove the .UTF-8 extension, then
+     try to find the full locale including country code and variant,
+     if it fails, then try to find the language code plus the variant,
+     if it still fails, try to find language and country code without the variant,
+     finally scan just the lang part.
+     as a last resource reverse the scanning
+  */
+
   if(dot)
     *dot = '\0';
 
+  if (cntrycode)
+  {
+    ccodeaux = strdup(cntrycode);
+    *cntrycode = '\0';
+  }
+
+  if (at)
+  {
+    ataux = strdup(at);
+    *at = '\0';
+
+    if(cntrycode)
+    {
+      /* ll_CC@variant */if (found == 0)  printf("ll_CC@variant check\n");
+      snprintf(straux, 255, "%s%s%s", baseloc, ccodeaux, ataux);
+      len_baseloc = strlen(straux);
+      for (i = 0; i < NUM_LANGS && found == 0; i++)
+      {
+	// Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+	if (len_baseloc == strlen(lang_prefixes[i]) &&
+	    !strncasecmp(straux, lang_prefixes[i], len_baseloc))
+	{
+	  langint = i;
+	  found = 1;
+	}
+      }
+    }
+
+    /* ll@variant*/if (found == 0)  printf("ll@variant check\n");
+    snprintf(straux, 255, "%s%s", baseloc, ataux);
+    len_baseloc = strlen(straux);
+    for (i = 0; i < NUM_LANGS && found == 0; i++)
+    {
+      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+      if (len_baseloc == strlen(lang_prefixes[i]) &&
+	  !strncasecmp(straux, lang_prefixes[i], len_baseloc))
+      {
+	langint = i;
+	found = 1;
+      }
+    }
+  }
+
+  if(cntrycode)
+    {
+      /* ll_CC */if (found == 0)  printf("ll_CC check\n");
+      snprintf(straux, 255, "%s%s",baseloc, ccodeaux); 
+      len_baseloc = strlen(straux);
+
+      /* Which, if any, of the locales is it? */
+
+      for (i = 0; i < NUM_LANGS && found == 0; i++)
+      {
+	// Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+	if (len_baseloc == strlen(lang_prefixes[i]) &&
+	    !strncasecmp(straux, lang_prefixes[i], strlen(lang_prefixes[i])))
+	{
+	  langint = i;
+	  found = 1;
+	}
+      }
+    }
+
+  /* ll */
+  if (found == 0)  printf("ll check\n");
+  len_baseloc = strlen(baseloc);
   /* Which, if any, of the locales is it? */
 
   for (i = 0; i < NUM_LANGS && found == 0; i++)
   {
     // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
     if (len_baseloc == strlen(lang_prefixes[i]) &&
-        !strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])))
+	!strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])))
     {
       langint = i;
       found = 1;
     }
   }
+
+/* Last resource, we should never arrive here, this check depends
+   on the right order in lang_prefixes[] 
+   Languages sharing the same starting letters must be ordered 
+   from longest to shortest, like currently are pt_BR and pt */
+// if (found == 0)
+  // printf("Language still not found: loc= %s  Trying reverse check as last resource...\n", loc);
 
   for (i = 0; i < NUM_LANGS && found == 0; i++)
   {
@@ -747,6 +839,13 @@ static void set_langint_from_locale_string(const char *restrict loc)
       found = 1;
     }
   }
+  printf("langint %i, lang_ext %s\n", langint, lang_prefixes[langint]);
+
+  free(baseloc);
+  if (ataux)
+    free(ataux);
+  if (ccodeaux)
+    free(ccodeaux);  
 }
 
 #define HAVE_SETENV

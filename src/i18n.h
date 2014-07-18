@@ -53,7 +53,8 @@ enum
   LANG_BM,			/* Bambara */
   LANG_BO,			/* Tibetan */
   LANG_BR,			/* Breton */
-  LANG_BS,                       /* Bosnian */
+  LANG_BS,                      /* Bosnian */
+  LANG_CA_VALENCIA,             /* Valencian */
   LANG_CA,			/* Catalan */
   LANG_CGG,                     /* Kiga */
   LANG_CS,			/* Czech */
@@ -67,8 +68,8 @@ enum
   LANG_EN_GB,			/* English (British) */
   LANG_EN_ZA,			/* English (South African) */
   LANG_EO,			/* Esperanto */
-  LANG_ES,			/* Spanish */
   LANG_ES_MX,			/* Spanish (Mexican) */
+  LANG_ES,			/* Spanish */
   LANG_ET,			/* Estonian */
   LANG_EU,			/* Basque */
   LANG_FA,			/* Persian */
@@ -95,18 +96,18 @@ enum
   LANG_KA,			/* Georgian */
   LANG_KN,                      /* Kannada */
   LANG_KM,			/* Khmer */
-  LANG_KO,			/* Korean */
-  LANG_KOK,                     /* Konkani (Devaganari) */
   LANG_KOK_ROMAN,               /* Konkani (Roman) */
+  LANG_KOK,                     /* Konkani (Devaganari) */
+  LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */
   LANG_LB,                      /* Luxembourgish */
   LANG_LG,                      /* Luganda */
   LANG_LT,			/* Lithuanian */
   LANG_LV,			/* Latvian */
   LANG_MAI,                     /* Maithili */
+  LANG_ML,                      /* Malayalam */
   LANG_MK,			/* Macedonian */
   LANG_MN,			/* Mongolian */
-  LANG_ML,                      /* Malayalam */
   LANG_MNI_BENGALI,             /* Manipuri (Bengali script)*/
   LANG_MNI_METEI_MAYEK,         /* Manipuri (Metei Mayek script) */
   LANG_MR,                      /* Marath */
@@ -127,16 +128,16 @@ enum
   LANG_RO,			/* Romanian */
   LANG_RU,			/* Russian */
   LANG_RW,			/* Kinyarwanda */
-  LANG_SA,                      /* Sanskrit */
-  LANG_SAT,                     /* Santali */
   LANG_SAT_OL_CHIKI,
+  LANG_SAT,                     /* Santali */
+  LANG_SA,                      /* Sanskrit */
   LANG_SHS,			/* Shuswap */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */
   LANG_SON,                     /* Songhay */
   LANG_SQ,			/* Albanian */
-  LANG_SR,			/* Serbian (cyrillic) */
   LANG_SR_LATIN,		/* Serbian (latin) */
+  LANG_SR,			/* Serbian (cyrillic) */
   LANG_SU,                      /* Sundanese */
   LANG_SV,			/* Swedish */
   LANG_SW,			/* Swahili */
@@ -147,15 +148,15 @@ enum
   LANG_TR,			/* Turkish */
   LANG_TW,			/* Twi */
   LANG_UK,			/* Ukrainian */
-  LANG_VE,			/* Venda */
   LANG_VEC,			/* Venetian */
+  LANG_VE,			/* Venda */
   LANG_VI,			/* Vietnamese */
   LANG_WA,			/* Walloon */
   LANG_WO,                      /* Wolof */
   LANG_XH,			/* Xhosa */
+  LANG_ZAM,			/* Zapotec (Miahuatlan) */
   LANG_ZH_CN,			/* Chinese (Simplified) */
   LANG_ZH_TW,			/* Chinese (Traditional) */
-  LANG_ZAM,			/* Zapotec (Miahuatlan) */
   LANG_ZU,                      /* Zulu */
   NUM_LANGS
 };
