@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2011-01-08 18:36+0200\n"
-"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"PO-Revision-Date: 2014-07-18 08:21+0200\n"
+"Last-Translator: Dawid van Wyngaard <dawid.vanwyngaard@gmail.com>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: af\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.0-beta3\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -26,7 +26,7 @@ msgstr "Swart!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Donkergrys!"
+msgstr "Donker grys!"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
@@ -167,19 +167,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spaar-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spaar-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spaar-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spaar-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -314,7 +314,7 @@ msgstr "'n Agthoek het agt kante."
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
 msgid "Tools"
-msgstr "Nutsgoed"
+msgstr "Gereedskap"
 
 #. Title of color palette (buttons across the bottom)
 #: ../titles.h:59
@@ -351,7 +351,7 @@ msgstr "Letters"
 #. "Magic" effects tools (blur, flip image, etc.)
 #: ../titles.h:77 ../tools.h:83
 msgid "Magic"
-msgstr "Towergoed"
+msgstr "Towerkuns"
 
 #. Freehand painting tool
 #: ../tools.h:62
@@ -908,19 +908,17 @@ msgstr ""
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Lys werk"
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Klik en sleep om pyltjies met lynkuns te teken."
+msgstr "Klik en sleep om herhalende patrone te teken."
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Klik om die prent vol reëndruppels te maak."
+msgstr "Klik om herhalende patrone om die prent te maak."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -944,13 +942,12 @@ msgstr "Klik en beweeg om gras te teken. Moenie die grond vergeet nie!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Raster"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Klik om die prent na sy negatief te verander."
+msgstr "Klik en sleep om die prent na 'n koerant papier te verander."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -962,11 +959,11 @@ msgstr "Simmetries Op/Af"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "Patroon"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Teels"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -990,13 +987,11 @@ msgstr ""
 "onderkant van die prent."
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Klik en sleep die muis om die prent te embosseer."
+msgstr "Klik en sleep die muis om 'n patroon oor die prent te teken."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
@@ -1004,8 +999,7 @@ msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
 msgstr ""
-"Klik en sleep die muis om met simmetriese kwasse te verf oor die linker- en "
-"regterkant van die prent."
+"Klik en sleep die muis om 'n patroon en sy simmetriese oor die prent te verf."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1426,22 +1420,19 @@ msgstr ""
 "golwe, onder vir hoër golwe, links vir klein golfies en regs vir lang golwe."
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "Kleure"
+msgstr "Xor Kleure"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "Klik en sleep om pyltjies met lynkuns te teken."
+msgstr "Klik en sleep om 'n XOR uitwerking te teken"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Klik om die hele prent 'n mosaïek-effek te gee."
+msgstr "Klik om die hele prent 'n XOR utiwerking te gee"
 
 #~ msgid ""
 #~ "Choose a style of text. Click on your drawing and you can start typing."
