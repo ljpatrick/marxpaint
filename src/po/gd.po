@@ -2,15 +2,14 @@
 # Copyright (C) 2014 tuxpaint.
 # This file is distributed under the same license as the tuxpaint package.
 # GunChleoc <fios@foramnagaidhlig.net>, 2014.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2014-06-02 17:17+0100\n"
+"PO-Revision-Date: 2014-07-28 08:28+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
-"Language-Team: Fòram na Gàidhlig http://www.foramnagaidhlig.net\n"
+"Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -458,7 +457,9 @@ msgid ""
 "Press [Enter] or [Tab] to complete the text."
 msgstr ""
 "Tagh seòrsa de theacsa. Briog air an dealbh agad gus tòiseachadh air "
-"sgrìobhadh. Brùth air [Enter] no [Taba] nuair a bhios tu deiseil."
+"sgrìobhadh. Brùth air [Enter] no [Taba] nuair a bhios tu deiseil. Gus "
+"fuaimreag le stràc fhaighinn (à è ì ò ù), brùth an iuchair san oisean clì "
+"air a' bharr an toiseach agus A, E, I, O no U an uairsin."
 
 #. Label tool instructions
 #: ../tools.h:130
@@ -468,11 +469,10 @@ msgid ""
 "and clicking an exist label, you can move it, edit it and change its text "
 "style."
 msgstr ""
-"Tagh seòrsa de theacsa. Briog air an dealbh agad gus tòiseachadh air "
-"sgrìobhadh. Brùth air [Enter] no [Taba] nuair a bhios tu deiseil. Ma "
-"chleachdas tu am putain-taghaidh is ma bhriogas tu air leubail a tha ann "
-"mar-thà, ’s urrainn dhut ga gluasad, ga deasachadh is stoidhle a teacsa "
-"atharrachadh."
+"Tagh seòrsa de theacsa. Briog air an dealbh agad agus sgrìobh. Brùth air "
+"[Enter] no [Taba] nuair a bhios tu deiseil. Ma chleachdas tu am putain-"
+"taghaidh is ma bhriogas tu air leubail a tha ann mar-thà, ’s urrainn dhut a "
+"ghluasad, a dheasachadh is stoidhle an teacsa atharrachadh."
 
 #. Magic tool instruction
 #: ../tools.h:136
