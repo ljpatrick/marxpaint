@@ -178,6 +178,20 @@ extern int need_own_font;
 extern int need_right_to_left; // Right-justify
 extern int need_right_to_left_word; // Words need to be reversed, too! (e.g., Hebrew, but not Arabic)
 extern const char *lang_prefix, *short_lang_prefix;
+extern int num_wished_langs;
+
+typedef struct w_langs
+{
+  int langint;
+  int need_own_font;
+  int need_right_to_left;
+  int need_right_to_left_word;
+  int lang_y_nudge;
+  const char *lang_prefix;
+  const char *short_lang_prefix;
+} w_langs;
+
+extern w_langs wished_langs[255];
 
 /* Function prototypes: */
 

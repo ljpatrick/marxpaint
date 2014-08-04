@@ -7031,6 +7031,14 @@ static void get_stamp_thumb(stamp_type * sd)
     ratio = 1.0;
   }
 
+  if (!sd->no_txt && !sd->stxt)
+  {
+    /* damn thing wants a .png extension; give it one */
+    memcpy(buf + len, ".png", 5);
+    sd->stxt = loaddesc(buf, &(sd->locale_text));
+    sd->no_txt = !sd->stxt;
+  }
+
 #ifndef NOSOUND
   /* good time to load the sound */
   if (!sd->no_sound && !sd->ssnd && use_sound)
@@ -7050,14 +7058,6 @@ static void get_stamp_thumb(stamp_type * sd)
     sd->no_descsound = !sd->sdesc;
   }
 #endif
-
-  if (!sd->no_txt && !sd->stxt)
-  {
-    /* damn thing wants a .png extension; give it one */
-    memcpy(buf + len, ".png", 5);
-    sd->stxt = loaddesc(buf, &(sd->locale_text));
-    sd->no_txt = !sd->stxt;
-  }
 
 
   /* first see if we can re-use an existing thumbnail */
@@ -10701,7 +10701,7 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
   char buf[512], def_buf[512];  /* doubled to 512 per TOYAMA Shin-Ichi's requested; -bjk 2007.05.10 */
   int found, got_first;
   FILE *fi;
-
+  int i;
 
   txt_fname = strdup(fname);
   *locale_text = 0;
@@ -10749,20 +10749,37 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
 	debug(buf);
 
+	/* Set the first available language */
+	for(i = 0; i < num_wished_langs; i++)
+	{
+	  //	  lang_prefix = lang_prefixes[langint];
 
 	/* See if it's the one for this locale... */
 
-	if ((char *) strcasestr(buf, lang_prefix) == buf)
+	if ((char *) strcasestr(buf, wished_langs[i].lang_prefix) == buf)
 	{
 
-	  debug(buf + strlen(lang_prefix));
-	  if ((char *) strcasestr(buf + strlen(lang_prefix), ".utf8=") ==
-	      buf + strlen(lang_prefix))
+	  debug(buf + strlen(wished_langs[i].lang_prefix));
+	  if ((char *) strcasestr(buf + strlen(wished_langs[i].lang_prefix), ".utf8=") ==
+	      buf + strlen(wished_langs[i].lang_prefix))
 	  {
+	    lang_prefix = wished_langs[i].lang_prefix;
+  short_lang_prefix = strdup(lang_prefix);
+  /* When in doubt, cut off country code */
+  if (strchr(short_lang_prefix, '_'))
+    *strchr(short_lang_prefix, '_') = '\0';
+
+  need_own_font = wished_langs[i].need_own_font;
+  need_right_to_left = wished_langs[i].need_right_to_left;
+  need_right_to_left_word = wished_langs[i].need_right_to_left_word;
+
+
+
 	    found = 1;
 
 	    debug("...FOUND!");
 	  }
+	}
 	}
       }
     }

@@ -218,6 +218,9 @@ int need_right_to_left;
 int need_right_to_left_word;
 const char *lang_prefix, *short_lang_prefix;
 
+int num_wished_langs = 0;
+w_langs wished_langs[255]; 
+
 static const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
@@ -872,6 +875,27 @@ static int set_current_language(const char *restrict loc)
   int i;
   int y_nudge = 0;
   char * oldloc;
+  char *env_language;
+
+
+  if (strlen(loc) > 0)
+  {
+    /* Got command line or config file language */
+    mysetenv("LANGUAGE", loc);
+  }
+  else
+  {
+    /* Find what language to use from env vars */
+    if (getenv("LANGUAGE") == NULL)
+    {
+      if (getenv("LC_ALL"))
+	mysetenv("LANGUAGE", getenv("LC_ALL"));
+      else if (getenv("LC_MESSAGES"))
+	mysetenv("LANGUAGE", getenv("LC_MESSAGES"));
+      else if (getenv("LANG"))
+	mysetenv("LANGUAGE", getenv("LANG"));
+    }
+  }
 
   oldloc = strdup(loc);
 
@@ -935,12 +959,50 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
     set_langint_from_locale_string(oldloc);
   } else {
 #ifdef _WIN32
-    mysetenv("LANGUAGE", loc);
+    if (getenv("LANGUAGE") == NULL)
+      mysetenv("LANGUAGE", loc);
 #endif
 
-    set_langint_from_locale_string(loc);
+    if (getenv("LANGUAGE") == NULL)
+      mysetenv("LANGUAGE", "C");
+
+    env_language = strdup(getenv("LANGUAGE"));
+    int j = 0;
+    char *env_language_lang;
+    if (*env_language)
+      {
+      env_language_lang = strtok(env_language, ":");
+      while (env_language_lang != NULL)
+      {
+	num_wished_langs++;
+	set_langint_from_locale_string(env_language_lang);
+	wished_langs[j].langint = langint;
+	wished_langs[j].lang_prefix = lang_prefixes[langint];
+	wished_langs[j].need_own_font = search_int_array(langint, lang_use_own_font);
+	wished_langs[j].need_right_to_left = search_int_array(langint, lang_use_right_to_left);
+	wished_langs[j].need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
+	for (i = 0; lang_y_nudge[i][0] != -1; i++)
+	{
+	  // printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
+	  if (lang_y_nudge[i][0] == langint)
+	  {
+	    wished_langs[j].lang_y_nudge = lang_y_nudge[i][1];
+	    //printf("y_nudge = %d\n", y_nudge);
+	    break;
+	  }
+	}
+ 
+
+	j++;
+	env_language_lang = strtok(NULL, ":");
+      }
+      if (*env_language)
+      free(env_language);
+    }
+    //    set_langint_from_locale_string(loc);
   }
 
+#if 0
   lang_prefix = lang_prefixes[langint];
 
   short_lang_prefix = strdup(lang_prefix);
@@ -962,7 +1024,7 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
       break;
     }
   }
-
+#endif
 #ifdef DEBUG
   fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
 	  lang_prefix, langint,
@@ -977,7 +1039,7 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
 #endif
 
-  return y_nudge;
+  return wished_langs[0].lang_y_nudge;
 }
 
 int setup_i18n(const char *restrict lang, const char *restrict locale)
