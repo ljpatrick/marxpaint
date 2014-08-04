@@ -132,6 +132,7 @@ enum
   LANG_SAT,                     /* Santali */
   LANG_SA,                      /* Sanskrit */
   LANG_SHS,			/* Shuswap */
+  LANG_SI,                      /* Sinhala */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */
   LANG_SON,                     /* Songhay */

@@ -146,6 +146,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "sat",
   "sa",
   "shs",
+  "si",
   "sk",
   "sl",
   "son",
@@ -370,6 +371,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
   {"secwepemctin", "shs_CA.UTF-8"},
+  {"sinhala", "si_LK.UTF-8"},
   {"slovak", "sk_SK.UTF-8"},
   {"slovenian", "sl_SI.UTF-8"},
   {"slovensko", "sl_SI.UTF-8"},
@@ -500,6 +502,7 @@ static void show_lang_usage(int exitcode)
 /* sr */ "  serbian\n"
 /* sr@latin */ "  serbian-latin\n"
 /* shs*/ "  shuswap      secwepemctin\n"
+/* si */ "  sinhala\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
 /* en_ZA */ "  southafrican-english\n"
@@ -631,6 +634,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  sat_IN  (Santali)\n"
           "  sat@olchiki  (Santali (Ol-Chiki))\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"
+          "  si_LK   (Sinhala)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"
           "  son     (Songhay)\n"
