@@ -1002,18 +1002,19 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
     //    set_langint_from_locale_string(loc);
   }
 
-#if 0
-  lang_prefix = lang_prefixes[langint];
+
+  lang_prefix = lang_prefixes[wished_langs[0].langint];
 
   short_lang_prefix = strdup(lang_prefix);
   /* When in doubt, cut off country code */
   if (strchr(short_lang_prefix, '_'))
     *strchr(short_lang_prefix, '_') = '\0';
 
-  need_own_font = search_int_array(langint, lang_use_own_font);
-  need_right_to_left = search_int_array(langint, lang_use_right_to_left);
-  need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
+  need_own_font = wished_langs[0].need_own_font;
+  need_right_to_left = wished_langs[0].need_right_to_left;
+  need_right_to_left_word = wished_langs[0].need_right_to_left_word;
 
+#if 0
   for (i = 0; lang_y_nudge[i][0] != -1; i++)
   {
     // printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
