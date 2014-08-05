@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - July 9, 2014
+                         June 14, 2002 - August 5, 2014
 
      ----------------------------------------------------------------------
 

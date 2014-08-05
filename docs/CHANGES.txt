@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.August.4 (0.9.22)
+2014.August.5 (0.9.22)
 
   * New Tools:
     ----------
