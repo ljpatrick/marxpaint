@@ -542,10 +542,6 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
 
     leftx = x - 1;
     rightx = x + 1;
-/*
-    printf("x=%d, y=%d, fill_edge=%d\n", x, y, fill_edge);
-    fflush(stdout);
-*/
 
     if (mosaic_shaped_counted[y * canvas->w + x] == 1)
     {
