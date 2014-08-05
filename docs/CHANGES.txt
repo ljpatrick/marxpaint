@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2014.July.16 (0.9.22)
+2014.August.4 (0.9.22)
 
   * New Tools:
     ----------
@@ -474,6 +474,9 @@ $Id$
 
     * Serbian translation (latin)
       Ivana Rakic <reci.ne.silvesteru@gmail.com>
+
+    * Sinhala
+      Menik Prasantha <manikprasantha@gmail.com>
 
     * Venetian language
       Fabio Lazarin, El Galep�n <mistro@elgalepin.com>

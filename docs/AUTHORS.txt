@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 16, 2014
+June 17, 2002 - August 4, 2014
 
 $Id$
 
@@ -879,6 +879,9 @@ $Id$
   
   * Shuswap (Secwepemctín)
     Neskie Manuel <neskiem@gmail.com>
+
+  * Sinhala
+    Menik Prasantha <manikprasantha@gmail.com>
 
   * Slovak
     Jaroslav Rynik <jrynik@yahoo.co.uk>
