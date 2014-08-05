@@ -367,7 +367,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"sanskrit", "sa_IN.UTF-8"},
   {"santali-devaganari", "sat_IN.UTF-8"},
   {"santali-ol-chiki", "sat@olchiki"},
-  {"serbian", "sr_YU.UTF-8"},
+  {"serbian", "sr_RS.UTF-8"}, /* Was sr_YU, but that's not in /usr/share/i18n/SUPPORTED, and sr_RS is -bjk 2014.08.04 */
   {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
   {"secwepemctin", "shs_CA.UTF-8"},
