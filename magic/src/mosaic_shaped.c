@@ -534,6 +534,8 @@ void reset_counter(SDL_Surface * canvas, Uint8 * counter)
 }
 
 
+int scan_fill_count;
+
 int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, int y, int fill_edge, int fill_tile, int size, Uint32 color)
 {
     int leftx, rightx;
@@ -543,8 +545,17 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
     leftx = x - 1;
     rightx = x + 1;
 
+    /* Abort, if we recurse too deep! -bjk 2014.08.05 */
+    scan_fill_count++;
+    if (scan_fill_count > 50000)
+    {
+        scan_fill_count--;
+        return (0);
+    }
+
     if (mosaic_shaped_counted[y * canvas->w + x] == 1)
     {
+        scan_fill_count--;
         return (0);
     }
 
@@ -555,6 +566,7 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
             fill_square(api, canvas, x, y, size, color);
         }
 
+        scan_fill_count--;
         return (0); /* No need to check more */
     }
 
@@ -607,6 +619,7 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
         }
     }
 
+    scan_fill_count--;
     return (1);
 }
 
