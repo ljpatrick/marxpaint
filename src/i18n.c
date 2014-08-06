@@ -969,7 +969,7 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
 
     if (getenv("LANGUAGE") == NULL)
       mysetenv("LANGUAGE", "C");
-
+  }
     env_language = strdup(getenv("LANGUAGE"));
     int j = 0;
     char *env_language_lang;
@@ -1004,7 +1004,6 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
       free(env_language);
     }
     //    set_langint_from_locale_string(loc);
-  }
 
 
   lang_prefix = lang_prefixes[wished_langs[0].langint];
