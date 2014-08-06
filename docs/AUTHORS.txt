@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - August 4, 2014
+June 17, 2002 - August 6, 2014
 
 $Id$
 
@@ -477,6 +477,7 @@ $Id$
   * Afrikaans
     Samuel Murray (Groenkloof) <samuel@translate.org.za>
     Petri Jooste <petri.jooste@nwu.ac.za>
+    Dawid van Wyngaard
 
   * Akan
     Derrick Frimpong <flexyflame2006@yahoo.com>
@@ -500,6 +501,7 @@ $Id$
   * Armenian
     Anush MKRTCHYAN 
     Jasmine Udea
+    Aram Palyan
 
   * Assamese translation
     Anand Kulkarni <kulkarni1016@yahoo.co.in>
@@ -525,6 +527,8 @@ $Id$
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>
     Alexander Geroimenko <a.geroimenko@gmail.com>
+    Hleb Valoshka
+    Pavel Shalamitski
 
   * Bosnian
     Samir Ribić
@@ -568,6 +572,7 @@ $Id$
 
   * Croatian
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
+    Paulo Pavačić
   
   * Czech
     Peter Sterba <sterba@sterba.com>
@@ -593,8 +598,17 @@ $Id$
     Bert Saal <bertsaal@gmail.com>
     Stephanie Schilling <stephanieschilling@online.de>
 
+  * English (Australian)
+    Caroline Ford
+    Ian
+
+  * English (Canadian)
+    Caroline Ford
+
   * Esperanto
     Edmund GRIMLEY EVANS <edmundo@rano.org>
+    Felipe Castro
+    Nuno Magalhães
 
   * Estonian
     Henrik Pihl <henrik@saarlane.ee>
@@ -616,6 +630,9 @@ $Id$
   * Fula
     Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
 
+  * Gaelic (Scottish)
+    Fòram na Gàidhlig
+    
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>
 
@@ -627,7 +644,9 @@ $Id$
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
     Burkhard Lück <lueck@hube-lueck.de>
-
+    Holger Wansing
+    Pfannenstein Erik (website)
+    
   * Gronings
     J.F.M. Lange <jfm.lange@hky.de>
 
@@ -636,6 +655,7 @@ $Id$
     Yannis Papatzikos <papatzikos@yahoo.gr>
     Sokratis Sofianopoulos <sokratis.sofianopoulos@gmail.com>
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
+    Yannis Kaskamanidis
 
   * Gujarati
     Kartik Mistry <kartik.mistry@gmail.com>
@@ -657,12 +677,14 @@ $Id$
     Török Gábor <gabo@linuxportal.hu>
     Gabor Kelemen <kelemeng@gnome.hu>
     Nagy Akos <nagy.akos@codespring.ro>
+    Dr. Nagy Elemér Kár oly
 
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>
 
   * Indonesian
     Tedi Heriyanto <tedi_h@gmx.net>
+    T. Surya Fajri
 
   * Inuktitut
     Harvey Ginter <harveyginter@gmail.com>
@@ -683,7 +705,7 @@ $Id$
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Kannada translation
-    Savitha <savithasprasad@yahoo.com>
+    Savitha Shankar <savithasprasad@yahoo.com>
     Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
 
   * Khmer
@@ -853,6 +875,7 @@ $Id$
     Nikolay Parukhin <parukhin@gmail.com>
     Sergei Popov <skein@rambler.ru>
     Dmitriy Ivanov <ace22b@myrealbox.com>
+    Yuri Kozlov
 
   * Sanskrit translation
     Babita Shinde <babitagaikwad@gmail.com>
@@ -902,6 +925,7 @@ $Id$
     Teresa Orive <teresa.g.orive@gmail.com>
     Gabriel Gazzan <ggabriel@internet.com.uy>
     Pablo Pita <pablo.pita@kdemail.net>
+    Matías Bellone
 
   * Spanish (Mexico)
     Ignacio Tike <ignaciotike@spymac.com>
@@ -975,7 +999,6 @@ $Id$
   * Zapoteco
     Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
     
-
   * Zulu
     sipho <sipho@translate.org.za>
 
