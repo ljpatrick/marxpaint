@@ -547,7 +547,7 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
 
     /* Abort, if we recurse too deep! -bjk 2014.08.05 */
     scan_fill_count++;
-    if (scan_fill_count > 50000)
+    if (scan_fill_count > 50000 && 0)
     {
         scan_fill_count--;
         return (0);
