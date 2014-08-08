@@ -1,20 +1,22 @@
-# TuxPaint <LANGUAGE> translation file
-# Copyright (C) 2004 Bill Kendrick
+# Hindi translation TuxPaint.
+# Copyright (C) 2014 the tuxpaint team.
 # This file is distributed under the same license as the TuxPaint package.
-# Ankit Malik <greatestankit@yahoo.co.in>, 2004.
+# Ankit Malik <greatestankit@yahoo.co.in>, 2004. (inactive)
+# Ashish Arora <ashish.arora13@gmail.com>, 2014
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2011-05-29 04:44+1000\n"
-"Last-Translator: Ashish <ashish.arora13@gmail.com>\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"PO-Revision-Date: 2014-08-09 02:17+1000\n"
+"Last-Translator: Ashish Arora <ashish.arora13@gmail.com>\n"
 "Language-Team: Hindi\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"X-Generator: Poedit 1.6.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -120,11 +122,11 @@ msgstr "मटमैला!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "QX"
 msgstr "QX"
 
@@ -134,48 +136,48 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:191
+#: ../dirwalk.c:195
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:194
+#: ../dirwalk.c:198
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:197
+#: ../dirwalk.c:201
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:200
+#: ../dirwalk.c:204
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:203
+#: ../dirwalk.c:207
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:206
+#: ../dirwalk.c:210
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:210
+#: ../dirwalk.c:214
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:211
+#: ../dirwalk.c:215
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:212
+#: ../dirwalk.c:216
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:213
+#: ../dirwalk.c:217
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -397,7 +399,7 @@ msgstr "नया काम"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7605
+#: ../tools.h:98 ../tuxpaint.c:7631
 msgid "Open"
 msgstr "खोलो"
 
@@ -527,193 +529,193 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "चलो ड्राइंग को जारी रखते है "
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:2053
 msgid "Do you really want to quit?"
 msgstr "क्या आप सही मे टक्सपेंट को बंद करना चाहते है ऋ"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2043
+#: ../tuxpaint.c:2056
 msgid "Yes, I’m done!"
 msgstr "हाँ, मैं पूरा कर चूका हूँ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
+#: ../tuxpaint.c:2059 ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "नहीं, मुझे वापस ले जाएं!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2050
+#: ../tuxpaint.c:2063
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "आपका काम सेव करे ऋ"
 
-#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
+#: ../tuxpaint.c:2064 ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "हाँ, इसे सुरक्षित करें!"
 
-#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
+#: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 msgid "No, don’t bother saving!"
 msgstr "नहीं, इसे सुरक्षित करने का कष्ट न करें!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2055
+#: ../tuxpaint.c:2068
 msgid "Save your picture first?"
 msgstr "कया पहले काम को सेव करे ऋ"
 
 #. Error opening picture
-#: ../tuxpaint.c:2060
+#: ../tuxpaint.c:2073
 msgid "Can’t open that picture!"
 msgstr "तस्वीर नहीं खुल रही है"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
-#: ../tuxpaint.c:2093
+#: ../tuxpaint.c:2076 ../tuxpaint.c:2081 ../tuxpaint.c:2090 ../tuxpaint.c:2097
+#: ../tuxpaint.c:2106
 msgid "OK"
 msgstr "हॉंं"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2067
+#: ../tuxpaint.c:2080
 msgid "There are no saved files!"
 msgstr "वहाँ कोई फ़ाइलें बची नही है"
 
 #. Verification of print action
-#: ../tuxpaint.c:2071
+#: ../tuxpaint.c:2084
 msgid "Print your picture now?"
 msgstr "प्रिन्ट करू क्या"
 
-#: ../tuxpaint.c:2072
+#: ../tuxpaint.c:2085
 msgid "Yes, print it!"
 msgstr "हाँ, इसे प्रिंट करें!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2076
+#: ../tuxpaint.c:2089
 msgid "Your picture has been printed!"
 msgstr "प्रिन्ट हो गयी"
 
 #. We got an error printing
-#: ../tuxpaint.c:2080
+#: ../tuxpaint.c:2093
 msgid "Sorry! Your picture could not be printed!"
 msgstr "क्षमा करें! आपका चित्र मुद्रित नहीं किया जा सका|"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2083
+#: ../tuxpaint.c:2096
 msgid "You can’t print yet!"
 msgstr "अभी प्रिन्ट नहीं कर सकते"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2100
 msgid "Erase this picture?"
 msgstr "नष्ट करू क्या ऋ"
 
-#: ../tuxpaint.c:2088
+#: ../tuxpaint.c:2101
 msgid "Yes, erase it!"
 msgstr "हाँ, इसे मिटाएं!"
 
-#: ../tuxpaint.c:2089
+#: ../tuxpaint.c:2102
 msgid "No, don’t erase it!"
 msgstr "नहीं, इसे मत मिटाएं!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2092
+#: ../tuxpaint.c:2105
 msgid "Remember to use the left mouse button!"
 msgstr "बाएँ माउस बटन का उपयोग करना न भूलें!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2313
 msgid "Sound muted."
 msgstr "आवाज बंद किया गया|"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Sound unmuted."
 msgstr "आवाज शुरू किया गया|"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3052
+#: ../tuxpaint.c:3065
 msgid "Please wait…"
 msgstr "कृपया प्रतीक्षा करें..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7608
+#: ../tuxpaint.c:7634
 msgid "Erase"
 msgstr "नष्ट कर"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7611
+#: ../tuxpaint.c:7637
 msgid "Slides"
 msgstr "स्लाइड"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7614
+#: ../tuxpaint.c:7640
 msgid "Back"
 msgstr "पीछे"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7617
+#: ../tuxpaint.c:7643
 msgid "Next"
 msgstr "अगला"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7620
+#: ../tuxpaint.c:7646
 msgid "Play"
 msgstr "चलायें"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8328
+#: ../tuxpaint.c:8355
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11586
+#: ../tuxpaint.c:11664
 msgid "Yes"
 msgstr "हॉं"
 
-#: ../tuxpaint.c:11590
+#: ../tuxpaint.c:11668
 msgid "No"
 msgstr "नहीं"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12608
+#: ../tuxpaint.c:12710
 msgid "Replace the picture with your changes?"
 msgstr "आपके परिवर्तनों के साथ चित्र बदलें?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12612
+#: ../tuxpaint.c:12714
 msgid "Yes, replace the old one!"
 msgstr "हाँ, पुराने को बदलें!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12616
+#: ../tuxpaint.c:12718
 msgid "No, save a new file!"
 msgstr "नहीं, नयी फाइल सुरक्षित करें|"
 
-#: ../tuxpaint.c:13861
+#: ../tuxpaint.c:13963
 msgid "Choose the picture you want, then click “Open”."
 msgstr "काम को चुन कर ‘खोलो’।"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
+#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "जो चित्र आप चाहते हैं उसे चुने और \"चलायें\" पर क्लिक करें"
 
-#: ../tuxpaint.c:22159
+#: ../tuxpaint.c:22344
 msgid "Pick a color."
 msgstr "एक रंग चुनें|"
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "बच्चों के लिए एक ड्राइंग कार्यक्रम|"
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "ड्राइंग कार्यक्रम"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "बच्चों के लिए एक ड्राइंग कार्यक्रम|"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -898,18 +900,16 @@ msgstr "एक पृष्ठभूमि रंग चुनें एवं �
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "नक्काशी "
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "पतला करो"
+msgstr "पैटर्न को दोहराने  के लिए क्लिक करें और खीचें|"
 
 #: ../../magic/src/fretwork.c:182
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "बारिश के बूंदों के साथ अपनी तस्वीर कवर पर क्लिक करें|"
+msgstr "पैटर्न को अपनी तस्वीर के चारों ओर दोहराने के लिए क्लिक करें"
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -933,13 +933,12 @@ msgstr "घांस बनाने के लिए क्लिक करे�
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "आंशिक रंग"
 
 #: ../../magic/src/halftone.c:38
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "अपने चित्र को नकारात्मक में बदलने के लिए क्लिक करें|"
+msgstr "अपनी तस्वीर को समाचार पत्र में परिवर्तित करने के लिए क्लिक और ड्रैग करें|"
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -951,11 +950,11 @@ msgstr "सममित ऊपर/नीचे"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "पैटर्न"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "टाइल्स"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -975,20 +974,18 @@ msgid ""
 msgstr "दो ब्रशों से बनाने के लिए जो आपके चित्र के ऊपर/निचे सममित है क्लिक करें और खीचें|"
 
 #: ../../magic/src/kalidescope.c:140
-#, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "उभरे हुए चित्र बनाने के लिए क्लिक करें और स्थानांतरित करें"
+msgstr "पैटर्न को चित्र के चारो ओर बनाने के लिए क्लिक और ड्रैग करें|"
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
 #| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
-msgstr "दो ब्रशों से बनाने के लिए जो आपके चित्र के दायें/बाएं सममित है क्लिक करें और खीचें|"
+msgstr "पैटर्न को चित्र के चारो ओर एक समान बनाने के लिए क्लिक और ड्रैग करें|"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1146,6 +1143,14 @@ msgstr "रेल"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "तस्वीर पर ट्रेन ट्रैक बनाने के लिए क्लिक करें और खीचें|"
 
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "सतरंगी"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "तुम इंद्रधनुष के रंग में ड्रा कर सकते हैं!"
+
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "बारिश"
@@ -1157,14 +1162,6 @@ msgstr "चित्र पर एक बारिश की बूँद रख
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "बारिश के बूंदों के साथ अपनी तस्वीर कवर पर क्लिक करें|"
-
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "सतरंगी"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "तुम इंद्रधनुष के रंग में ड्रा कर सकते हैं!"
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1402,22 +1399,19 @@ msgstr ""
 "लिए नीचे, छोटे लहरों के लिए बाएँ, और लंबी तरंगों के लिए दायीं ओर क्लिक करें|"
 
 #: ../../magic/src/xor.c:95
-#, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
-msgstr "रंग"
+msgstr "Xor रंग"
 
 #: ../../magic/src/xor.c:101
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
-msgstr "स्ट्रिंग कला से बने तीर बनाने के लिए क्लिक करें और खीचें|"
+msgstr "XOR प्रभाव बनाने के लिए क्लिक करें और खीचें |"
 
 #: ../../magic/src/xor.c:103
-#, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "पूरे चित्र में मोजेक प्रभाव जोड़ने के लिए क्लिक करें|"
+msgstr "पूरे चित्र में XOR प्रभाव जोड़ने के लिए क्लिक करें|"
 
 #, fuzzy
 #~ msgid ""
