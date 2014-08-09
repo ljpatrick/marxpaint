@@ -1,17 +1,21 @@
+# Wolof translation Tux Paint.
+# Copyright (C) 2014 the tuxpaint team.
+# This file is distributed under the same license as the tuxpaint package.
+# Haby Diallo <haby42@yahoo.fr>, 2007, 2014.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2007-07-04 11:24-0000\n"
+"Project-Id-Version: tuxpaint\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"PO-Revision-Date: 2014-08-08 23:26-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
+"Language: wo_SN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"X-Poedit-Language: Wolof\n"
-"X-Poedit-Country: SENEGAL\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -119,11 +123,11 @@ msgstr "Xaal!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:164
+#: ../dirwalk.c:168
 msgid "QX"
 msgstr "QX"
 
@@ -133,52 +137,51 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:191
+#: ../dirwalk.c:195
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:194
+#: ../dirwalk.c:198
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:197
+#: ../dirwalk.c:201
 #, fuzzy
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "\\%_@$~#{}<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:200
+#: ../dirwalk.c:204
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:203
+#: ../dirwalk.c:207
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:206
+#: ../dirwalk.c:210
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:210
+#: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>wutu-1a"
 
-#: ../dirwalk.c:211
+#: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>wutu-1b"
 
-#: ../dirwalk.c:212
+#: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>wutu-9a"
 
-#: ../dirwalk.c:213
+#: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>wutu-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -203,32 +206,32 @@ msgstr "Sa ligeey rafet na !"
 #. Input Method: English mode
 #: ../im.c:75
 msgid "English"
-msgstr ""
+msgstr "Angale"
 
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
 msgid "Hiragana"
-msgstr ""
+msgstr "Xiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
 #: ../im.c:81
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
 #: ../im.c:84
 msgid "Hangul"
-msgstr ""
+msgstr "Angul"
 
 #. Input Method: Thai mode
 #: ../im.c:87
 msgid "Thai"
-msgstr ""
+msgstr "Laaku taylande"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:171 ../shapes.h:172
@@ -378,7 +381,7 @@ msgstr "Bataxal"
 #. Label tool
 #: ../tools.h:77
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #. Undo last action
 #: ../tools.h:86
@@ -403,7 +406,7 @@ msgstr "Bees"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7605
+#: ../tools.h:98 ../tuxpaint.c:7631
 msgid "Open"
 msgstr "Ubbi"
 
@@ -449,8 +452,6 @@ msgstr ""
 #. Text tool instructions
 #: ../tools.h:127
 #, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -538,210 +539,207 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Baxna! leeggi ñu motali suñu natal!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:2053
 msgid "Do you really want to quit?"
 msgstr "Da nga bëgg bayi?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2043
+#: ../tuxpaint.c:2056
 #, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Waaw, ñu dem ci!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2046 ../tuxpaint.c:2073
+#: ../tuxpaint.c:2059 ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "Deedeet, ñu delu ci!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2050
+#: ../tuxpaint.c:2063
 #, fuzzy
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "So baye, nga ñak sa natal ! Da nga ko bëgg deñc lu?"
 
-#: ../tuxpaint.c:2051 ../tuxpaint.c:2056
+#: ../tuxpaint.c:2064 ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "Waaw, ñu deñc ko!"
 
-#: ../tuxpaint.c:2052 ../tuxpaint.c:2057
+#: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 #, fuzzy
-#| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Deedeet, jaru ko!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2055
+#: ../tuxpaint.c:2068
 msgid "Save your picture first?"
 msgstr "Da ngay deñc lu sa natal ba pare?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2060
+#: ../tuxpaint.c:2073
 #, fuzzy
 msgid "Can’t open that picture!"
 msgstr "Mënuma ubbi natal bi!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2063 ../tuxpaint.c:2068 ../tuxpaint.c:2077 ../tuxpaint.c:2084
-#: ../tuxpaint.c:2093
+#: ../tuxpaint.c:2076 ../tuxpaint.c:2081 ../tuxpaint.c:2090 ../tuxpaint.c:2097
+#: ../tuxpaint.c:2106
 msgid "OK"
 msgstr "Deegë na"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2067
+#: ../tuxpaint.c:2080
 msgid "There are no saved files!"
 msgstr "Amul fisie buñ fi mana deñc!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2071
+#: ../tuxpaint.c:2084
 msgid "Print your picture now?"
 msgstr "Sotilu leeggi natal bi?"
 
-#: ../tuxpaint.c:2072
+#: ../tuxpaint.c:2085
 msgid "Yes, print it!"
 msgstr "Waaw,ñu sotilu ko!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2076
+#: ../tuxpaint.c:2089
 msgid "Your picture has been printed!"
 msgstr "Sotilu nañu sa natal!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2080
+#: ../tuxpaint.c:2093
 #, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Sotilu nañu sa natal!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2083
+#: ../tuxpaint.c:2096
 #, fuzzy
 msgid "You can’t print yet!"
 msgstr "Mëno go sotilu leeggi!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2087
+#: ../tuxpaint.c:2100
 msgid "Erase this picture?"
 msgstr "Ñu dindi natal bi?"
 
-#: ../tuxpaint.c:2088
+#: ../tuxpaint.c:2101
 msgid "Yes, erase it!"
 msgstr "Waaw, dindi ko !"
 
-#: ../tuxpaint.c:2089
+#: ../tuxpaint.c:2102
 #, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Deedeet, buko dindi !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2092
+#: ../tuxpaint.c:2105
 msgid "Remember to use the left mouse button!"
 msgstr "Bul fate jëffandiku ciammoñu butoŋ jinax bi !"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2313
 msgid "Sound muted."
-msgstr ""
+msgstr "Son bu ñu dag"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Sound unmuted."
-msgstr ""
+msgstr "son bu suffe"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3052
+#: ../tuxpaint.c:3065
+#, fuzzy
 msgid "Please wait…"
 msgstr "Bal ma te xar..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7608
+#: ../tuxpaint.c:7634
 msgid "Erase"
 msgstr "Dindil"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7611
+#: ../tuxpaint.c:7637
 msgid "Slides"
 msgstr "Japo"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7614
+#: ../tuxpaint.c:7640
 msgid "Back"
 msgstr "Dellu"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7617
+#: ../tuxpaint.c:7643
 msgid "Next"
 msgstr "Li ci topp"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7620
+#: ../tuxpaint.c:7646
 msgid "Play"
 msgstr "Ñu dor"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8328
+#: ../tuxpaint.c:8355
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11586
+#: ../tuxpaint.c:11664
 msgid "Yes"
 msgstr "Waaw"
 
-#: ../tuxpaint.c:11590
+#: ../tuxpaint.c:11668
 msgid "No"
 msgstr "Deedeet"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12608
+#: ../tuxpaint.c:12710
 msgid "Replace the picture with your changes?"
 msgstr "Ñu deñca tal natal bi ak sopitem yi ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12612
+#: ../tuxpaint.c:12714
 msgid "Yes, replace the old one!"
 msgstr "Waaw, ñu sopi bu magat bi !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12616
+#: ../tuxpaint.c:12718
 msgid "No, save a new file!"
 msgstr "Deedeet, natal bu bees la !"
 
-#: ../tuxpaint.c:13861
+#: ../tuxpaint.c:13963
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tannal natal, te bëss ci «Ubbi»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14892 ../tuxpaint.c:15220
+#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Tanal natal yu la nex so bëgge, te nga bëss ci «Ñu dor»."
 
-#: ../tuxpaint.c:22159
+#: ../tuxpaint.c:22344
 msgid "Pick a color."
-msgstr ""
+msgstr "Tanal ap kulor. "
 
 #: ../tuxpaint.desktop.in.h:1
-msgid "A drawing program for children."
-msgstr "Lël lu natal yu ñu jagglel guneyi."
+msgid "Tux Paint"
+msgstr "Tux Paint"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Lëlu natal"
 
 #: ../tuxpaint.desktop.in.h:3
-msgid "Tux Paint"
-msgstr "Tux Paint"
+msgid "A drawing program for children."
+msgstr "Lël lu natal yu ñu jagglel guneyi."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
-msgstr ""
+msgstr "Kulor bu mag"
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
@@ -755,13 +753,14 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/blind.c:117
 msgid "Blind"
-msgstr ""
+msgstr "gumba"
 
 #: ../../magic/src/blind.c:122
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
+"Bëssël ci sa catu naatal ngir tej ko. Xëtël ngir nga ubi ko wala nga tëj ko."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
@@ -817,7 +816,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge pentur ay mul yu ndaw."
 
 #: ../../magic/src/calligraphy.c:127
 msgid "Calligraphy"
-msgstr ""
+msgstr "Mbindef"
 
 #: ../../magic/src/calligraphy.c:134
 #, fuzzy
@@ -834,15 +833,15 @@ msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
-msgstr ""
+msgstr "Ay kulor"
 
 #: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "Bëssël ngir sandi ay kulor!"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
-msgstr ""
+msgstr "Wañaru"
 
 #: ../../magic/src/distortion.c:150
 #, fuzzy
@@ -851,7 +850,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/emboss.c:103
 msgid "Emboss"
-msgstr ""
+msgstr "kote"
 
 #: ../../magic/src/emboss.c:109
 #, fuzzy
@@ -874,7 +873,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 #: ../../magic/src/fade_darken.c:136
 #, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
 
 #: ../../magic/src/fade_darken.c:141
 #, fuzzy
@@ -884,7 +883,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 #: ../../magic/src/fade_darken.c:143
 #, fuzzy
 msgid "Click to darken your entire picture."
-msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/fill.c:108
 msgid "Fill"
@@ -896,7 +895,7 @@ msgstr "Bëssël ci natal bi soko bëge pentur fi nga tan ak kulor bi."
 
 #: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
-msgstr ""
+msgstr "Dëngël"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:106
@@ -906,15 +905,16 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/flower.c:150
 msgid "Flower"
-msgstr ""
+msgstr "fulër"
 
 #: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
+"Bëssël te nga diri ngir rëdë ap caru fulër. Yegalil ngir motali fulër bi."
 
 #: ../../magic/src/foam.c:121
 msgid "Foam"
-msgstr ""
+msgstr "Xubbit"
 
 #: ../../magic/src/foam.c:127
 #, fuzzy
@@ -923,21 +923,21 @@ msgstr "Bëssël ci natal bi soko bëge pentur fi nga tan ak kulor bi."
 
 #: ../../magic/src/fold.c:105
 msgid "Fold"
-msgstr ""
+msgstr "Lem"
 
 #: ../../magic/src/fold.c:107
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
-msgstr ""
+msgstr "Tanal ap kulor buy jiitu te nga bëss ngir turne buru kaït bi ci."
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "Melo bant"
 
 #: ../../magic/src/fretwork.c:180
 #, fuzzy
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay ferñent."
 
 #: ../../magic/src/fretwork.c:182
 #, fuzzy
@@ -946,7 +946,7 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
-msgstr ""
+msgstr "Karo yu tabax"
 
 #: ../../magic/src/glasstile.c:114
 #, fuzzy
@@ -970,7 +970,7 @@ msgstr ""
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "Xawa tinte"
 
 #: ../../magic/src/halftone.c:38
 #, fuzzy
@@ -979,24 +979,24 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "Digidomu Càmmoñ/Deyjoor"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "Digidomu Kaw/Suff"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "model"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "Karo"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "kaledoskop"
 
 #: ../../magic/src/kalidescope.c:136
 #, fuzzy
@@ -1022,7 +1022,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
-msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
@@ -1076,16 +1076,15 @@ msgstr "Yeeme"
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic.c:104
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
-#| msgid "Square"
 msgid "Square Mosaic"
 msgstr "Kare"
 
@@ -1096,40 +1095,40 @@ msgstr "Yeeme"
 
 #: ../../magic/src/mosaic_shaped.c:144
 msgid "Irregular Mosaic"
-msgstr ""
+msgstr "Rëdë bu temebay"
 
 #: ../../magic/src/mosaic_shaped.c:149
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:150
 #, fuzzy
 msgid "Click to add a square mosaic to your entire picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:152
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:153
 #, fuzzy
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:155
 #, fuzzy
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
@@ -1137,7 +1136,6 @@ msgstr "Ludul nonu"
 
 #: ../../magic/src/negative.c:106
 #, fuzzy
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Bëssël te jalale ak jinax bi ngir am natal bu lerul."
 
@@ -1148,7 +1146,7 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "Baat"
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
@@ -1158,25 +1156,25 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 #: ../../magic/src/noise.c:67
 #, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
-msgstr ""
+msgstr "Mbebet"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
-msgstr ""
+msgstr "Zum"
 
 #: ../../magic/src/perspective.c:151
 #, fuzzy
 msgid "Click on the corners and drag where you want to stretch the picture."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
 
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
 
 #: ../../magic/src/puzzle.c:105
 #, fuzzy
@@ -1195,12 +1193,20 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/rails.c:131
 msgid "Rails"
-msgstr ""
+msgstr "Ray"
 
 #: ../../magic/src/rails.c:133
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+#: ../../magic/src/rainbow.c:139
+msgid "Rainbow"
+msgstr "Xonn"
+
+#: ../../magic/src/rainbow.c:146
+msgid "You can draw in rainbow colors!"
+msgstr "Mën nga rëd aki kuloru xonn yi !"
 
 #: ../../magic/src/rain.c:65
 #, fuzzy
@@ -1217,23 +1223,13 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 msgid "Click to cover your picture with rain drops."
 msgstr "Bëssël ngir guis natal bi ci setu."
 
-#: ../../magic/src/rainbow.c:139
-msgid "Rainbow"
-msgstr "Xonn"
-
-#: ../../magic/src/rainbow.c:146
-msgid "You can draw in rainbow colors!"
-msgstr "Mën nga rëd aki kuloru xonn yi !"
-
 #: ../../magic/src/realrainbow.c:110
 #, fuzzy
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Xonn"
 
 #: ../../magic/src/realrainbow.c:112
 #, fuzzy
-#| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "Xonn"
 
@@ -1242,23 +1238,25 @@ msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
+"Bëssël fo bëgë sa xon bi door, diril ba fi nga bëgë mu yem , te nga rëd sa "
+"xon."
 
 #: ../../magic/src/ripples.c:106
 msgid "Ripples"
-msgstr ""
+msgstr "Ay wag"
 
 #: ../../magic/src/ripples.c:112
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/rosette.c:116
 msgid "Rosette"
-msgstr ""
+msgstr "As ros"
 
 #: ../../magic/src/rosette.c:116
 msgid "Picasso"
-msgstr ""
+msgstr "Pikasso"
 
 #: ../../magic/src/rosette.c:121
 #, fuzzy
@@ -1272,7 +1270,7 @@ msgstr "Mën nga rëd aki kuloru xonn yi !"
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "Boru"
 
 #: ../../magic/src/sharpen.c:74
 #, fuzzy
@@ -1281,17 +1279,17 @@ msgstr "Melokann yi"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "Melokan"
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
 
 #: ../../magic/src/sharpen.c:79
 #, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
@@ -1301,7 +1299,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
 msgid "Click to sharpen the entire picture."
-msgstr "Bëssël ngir guis natal bi ci setu."
+msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
@@ -1315,7 +1313,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/shift.c:109
 msgid "Shift"
-msgstr ""
+msgstr "Butong buy bindë bu mag"
 
 #: ../../magic/src/shift.c:115
 #, fuzzy
@@ -1340,15 +1338,15 @@ msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi.
 #: ../../magic/src/smudge.c:117
 #, fuzzy
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi ngir am natal bu lerul."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "Snow Ball"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "Tawyu galass"
 
 #: ../../magic/src/snow.c:72
 #, fuzzy
@@ -1362,30 +1360,32 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/string.c:123
 msgid "String edges"
-msgstr ""
+msgstr "boru bum bi"
 
 #: ../../magic/src/string.c:126
 msgid "String corner"
-msgstr ""
+msgstr "Catu bum bi"
 
 #: ../../magic/src/string.c:129
 msgid "String 'V'"
-msgstr ""
+msgstr "Bum 'V'"
 
 #: ../../magic/src/string.c:137
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
+"Bësël te xëtë ngir rëdë bum bu aare. Xëtël ci kay ba ci suuf ngir bagna am "
+"ay rëd yu bari, sa càmmoñ wala sa ndeyjoor ngir rëd pax bu gëne yaatu."
 
 #: ../../magic/src/string.c:140
 #, fuzzy
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay mul yu mak."
 
 #: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Rëdël Bum bu are ak féttë ak angal yi la neex."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1393,13 +1393,13 @@ msgstr "Pentur"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "Kulor & Wéx"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
 
 #: ../../magic/src/tint.c:76
 #, fuzzy
@@ -1420,7 +1420,7 @@ msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "pat dantifris"
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
@@ -1429,7 +1429,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/tornado.c:157
 msgid "Tornado"
-msgstr ""
+msgstr "Dënnë"
 
 #: ../../magic/src/tornado.c:163
 #, fuzzy
@@ -1438,7 +1438,7 @@ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: ../../magic/src/tv.c:105
 #, fuzzy
@@ -1468,6 +1468,9 @@ msgid ""
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
+"Bëssël ngir nga Ondile naatal bu tëdë bi. Bëssël ci kaw ngir am melo ndox "
+"muy daw ak ay wag yu rey, ci sa càmmooñ ngir am ay wag yu tuti, sa ndeyjoor "
+"ay wag yu ngande."
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1475,144 +1478,21 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+"Bëssël ngir nga Ondile naatal bu taxaw bi. Bëssël ci kaw ngir am melo ndox "
+"muy daw ak ay wag yu rey, ci sa càmmooñ ngir am ay wag yu tuti, sa ndeyjoor "
+"ay wag yu ngande."
 
 #: ../../magic/src/xor.c:95
 #, fuzzy
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Kulor yi"
 
 #: ../../magic/src/xor.c:101
 #, fuzzy
 msgid "Click and drag to draw a XOR effect"
-msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay ferñent."
 
 #: ../../magic/src/xor.c:103
 #, fuzzy
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw the blind, move left or right to open or close."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Mosaic square"
-#~ msgstr "Yeeme"
-
-#, fuzzy
-#~ msgid "Mosaic hexagon"
-#~ msgstr "Yeeme"
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
-#~ "picture."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid "Click to add a mosaic squared effect to your entire picture."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
-#~ "your picture."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#~ msgid "qy"
-#~ msgstr "qy"
-
-#~ msgid "QY"
-#~ msgstr "QY"
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to add noise to the image."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Click to add noise to the entire image."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to trace the edges of objects in the image."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to sharpen the image."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Click to add snow to the entire image."
-#~ msgstr "Bëssël ngir guis natal bi ci setu."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse around to turn the image into pure color and "
-#~ "white regions."
-#~ msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
-
-#, fuzzy
-#~ msgid "Click and move the mouse around convert the image to greyscale."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
-
-#, fuzzy
-#~ msgid "Click to change the entire picture’s color."
-#~ msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
-
-#, fuzzy
-#~ msgid "Blur All"
-#~ msgstr "Reral"
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu kulor yi."
-
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
-
-#~ msgid "Sparkles"
-#~ msgstr "Ferñent"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Am nga kait bu wex ngir rëd!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Ñu defar natal bu bess?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Waw, ñu defar bu bess!"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Bëssël te jalale ak jinax bi so buge pentur ay ferñent."
-
-#~ msgid "Openâ¦"
-#~ msgstr "Ubbil.."
-
-#~ msgid "Thatâs OK!"
-#~ msgstr "C'est d'accord !"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Remplacer l'ancienne version de ce dessin ?"
+msgstr "Bëssëll ngir rëd. Demal ngir motali ko."
