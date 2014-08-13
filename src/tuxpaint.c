@@ -10715,17 +10715,21 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
   if (extptr != NULL)
   {
+    found = 0;
+
+    /* Set the first available language */
+    for(i = 0; i < num_wished_langs && !found; i++)
+    {
     strcpy((char *) extptr, ".txt");
 
     fi = fopen(txt_fname, "r");
-    free(txt_fname);
 
     if (!fi)
       return NULL;
 
 
     got_first = 0;
-    found = 0;
+    //    found = 0;
 
     strcpy(def_buf, "");
 
@@ -10736,7 +10740,7 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
       if (!feof(fi))
       {
 	strip_trailing_whitespace(buf);
-
+	printf("buf %s\n", buf);
 
 	if (!got_first)
 	{
@@ -10749,11 +10753,8 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
 	debug(buf);
 
-	/* Set the first available language */
-	for(i = 0; i < num_wished_langs; i++)
-	{
-	  //	  lang_prefix = lang_prefixes[langint];
 
+	  //	  lang_prefix = lang_prefixes[langint];
 	/* See if it's the one for this locale... */
 
 	if ((char *) strcasestr(buf, wished_langs[i].lang_prefix) == buf)
@@ -10764,14 +10765,14 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 	      buf + strlen(wished_langs[i].lang_prefix))
 	  {
 	    lang_prefix = wished_langs[i].lang_prefix;
-  short_lang_prefix = strdup(lang_prefix);
-  /* When in doubt, cut off country code */
-  if (strchr(short_lang_prefix, '_'))
-    *strchr(short_lang_prefix, '_') = '\0';
+	    short_lang_prefix = strdup(lang_prefix);
+	    /* When in doubt, cut off country code */
+	    if (strchr(short_lang_prefix, '_'))
+	      *strchr(short_lang_prefix, '_') = '\0';
 
-  need_own_font = wished_langs[i].need_own_font;
-  need_right_to_left = wished_langs[i].need_right_to_left;
-  need_right_to_left_word = wished_langs[i].need_right_to_left_word;
+	    need_own_font = wished_langs[i].need_own_font;
+	    need_right_to_left = wished_langs[i].need_right_to_left;
+	    need_right_to_left_word = wished_langs[i].need_right_to_left_word;
 
 
 
@@ -10780,12 +10781,14 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 	    debug("...FOUND!");
 	  }
 	}
-	}
       }
     }
     while (!feof(fi) && !found);
 
     fclose(fi);
+
+    }
+    free(txt_fname);
 
 
     /* Return the string: */
