@@ -4,9 +4,9 @@
   Draws an arc with semi-transparent rainbow colors.
 
   by Bill Kendrick <bill@newbreedsoftware.com>
-  Math assistence by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
+  Math assistance by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
-  2009.04.02 - 2009.08.31
+  2009.04.02 - 2014.08.14
 
 FIXME:
 * Color/alpha art needs improvement.
@@ -259,7 +259,7 @@ void realrainbow_arc(magic_api * api, int which, SDL_Surface * canvas, SDL_Surfa
 
   if (y1 == y2)
   {
-    xc = x1 + abs(x2 - x1) / 2;
+    xc = x1 + (x2 - x1) / 2;
     yc = y1;
     r = abs(xc - x1);
 
