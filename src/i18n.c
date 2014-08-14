@@ -735,7 +735,7 @@ static void set_langint_from_locale_string(const char *restrict loc)
   size_t len_baseloc;
   int found = 0;
   int i;
-  printf("langint %i\n", langint);
+  //  printf("langint %i\n", langint);
 
   if (!loc)
     return;
@@ -764,7 +764,8 @@ static void set_langint_from_locale_string(const char *restrict loc)
 
     if(cntrycode)
     {
-      /* ll_CC@variant */if (found == 0)  printf("ll_CC@variant check\n");
+      /* ll_CC@variant */
+      //if (found == 0)  printf("ll_CC@variant check\n");
       snprintf(straux, 255, "%s%s%s", baseloc, ccodeaux, ataux);
       len_baseloc = strlen(straux);
       for (i = 0; i < NUM_LANGS && found == 0; i++)
@@ -779,7 +780,8 @@ static void set_langint_from_locale_string(const char *restrict loc)
       }
     }
 
-    /* ll@variant*/if (found == 0)  printf("ll@variant check\n");
+    /* ll@variant*/
+    //if (found == 0)  printf("ll@variant check\n");
     snprintf(straux, 255, "%s%s", baseloc, ataux);
     len_baseloc = strlen(straux);
     for (i = 0; i < NUM_LANGS && found == 0; i++)
@@ -796,7 +798,8 @@ static void set_langint_from_locale_string(const char *restrict loc)
 
   if(cntrycode)
     {
-      /* ll_CC */if (found == 0)  printf("ll_CC check\n");
+      /* ll_CC */
+      //if (found == 0)  printf("ll_CC check\n");
       snprintf(straux, 255, "%s%s",baseloc, ccodeaux); 
       len_baseloc = strlen(straux);
 
@@ -815,7 +818,7 @@ static void set_langint_from_locale_string(const char *restrict loc)
     }
 
   /* ll */
-  if (found == 0)  printf("ll check\n");
+  //  if (found == 0)  printf("ll check\n");
   len_baseloc = strlen(baseloc);
   /* Which, if any, of the locales is it? */
 
@@ -846,7 +849,7 @@ static void set_langint_from_locale_string(const char *restrict loc)
       found = 1;
     }
   }
-  printf("langint %i, lang_ext %s\n", langint, lang_prefixes[langint]);
+  //  printf("langint %i, lang_ext %s\n", langint, lang_prefixes[langint]);
 
   free(baseloc);
   if (ataux)

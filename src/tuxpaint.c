@@ -10740,7 +10740,6 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
       if (!feof(fi))
       {
 	strip_trailing_whitespace(buf);
-	printf("buf %s\n", buf);
 
 	if (!got_first)
 	{
