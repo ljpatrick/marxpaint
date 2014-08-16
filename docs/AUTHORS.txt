@@ -932,6 +932,9 @@ $Id$
     Daniel Illingworth <webmaster@intermagen.net>
     Luis C. Suárez <luiscsuarez@gmail.com>
 
+  * Sundanese
+    kumincir <ia.adnan@gmail.com>
+
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>
     Alberto Escudero-Pascual <aep@it46.se>
@@ -976,6 +979,9 @@ $Id$
 
   * Ukranian / Urkanian documentation
     Serhij Dubyk <serhijdubyk@gmail.com>
+
+  * Valencian
+    Pilar Embid Giner <embid_mar@gva.es>
 
   * Venda
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>

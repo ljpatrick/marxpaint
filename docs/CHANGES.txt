@@ -478,6 +478,12 @@ $Id$
     * Sinhala
       Menik Prasantha <manikprasantha@gmail.com>
 
+    * Sundanese
+      kumincir <ia.adnan@gmail.com>
+
+    * Valencian
+      Pilar Embid Giner <embid_mar@gva.es>
+
     * Venetian language
       Fabio Lazarin, El Galep�n <mistro@elgalepin.com>
 
