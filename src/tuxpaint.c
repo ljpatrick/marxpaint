@@ -18572,7 +18572,7 @@ static int do_new_dialog(void)
     f = &(fs[j].f);
     place = fs[j].place;
 
-    if (place == PLACE_PERSONAL_TEMPLATES_DIR && oldplace != place)
+    if ((place == PLACE_PERSONAL_TEMPLATES_DIR || place == PLACE_TEMPLATES_DIR) && oldplace != place)
       first_template = num_files;
 
     oldplace = place;
