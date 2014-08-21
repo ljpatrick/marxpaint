@@ -204,6 +204,23 @@ void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const ch
     str = "windowsize";
   }
 
+  if (!strcmp(str, "saveover"))
+  {
+    if (!strcmp(opt, "new")) {
+      str = "saveovernew";
+      opt = "yes";
+    } else if (!strcmp(opt, "ask")) {
+      str = "saveoverask";
+      opt = "yes";
+    } else if (strcmp(opt, "yes")) {
+      if(src)
+        printf("Option '%s' in config file '%s' is yes/ask/new only, but got '%s'\n",str,src,opt);
+      else
+        printf("Command line option '--%s' is yes/ask/new only, but got '%s'\n",str,opt);
+      exit(51);
+    }
+  }
+
   noflag = 2*(str[0]=='n' && str[1]=='o' && str[2]);
   cfg = in_word_set(str+noflag, strlen(str+noflag));
 
