@@ -20604,7 +20604,7 @@ static void load_info_about_label_surface(FILE * lfi)
 	    wchar_t *wtmpstr;
 	    tmpstr = malloc(1024);
 	    wtmpstr = malloc(1024);
-	    fscanf(lfi, "%s\n", tmpstr);
+	    fgets(tmpstr, 1024, lfi);
 	    mtw(wtmpstr, tmpstr);
             for(l = 0; l < new_node->save_texttool_len; l++)
                 {
