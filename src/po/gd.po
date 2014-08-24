@@ -1,13 +1,14 @@
 # Translation of tuxpaint to Gaelic (Scottish) (gd).
-# Copyright (C) 2014 tuxpaint.
+# Copyright (C) 2014 the Tuxpaint team.
 # This file is distributed under the same license as the tuxpaint package.
 # GunChleoc <fios@foramnagaidhlig.net>, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2014-07-28 08:28+0100\n"
+"PO-Revision-Date: 2014-08-17 08:52+0200\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -497,7 +498,7 @@ msgstr "Suathan!"
 #. Response to 'start a new image' action
 #: ../tools.h:148
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Tagh dath no dealbh leis an do thòisicheas tu dealbh ùr."
+msgstr "Tagh dath no dealbh leis a thòisicheas tu dealbh ùr."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:151
