@@ -1939,8 +1939,8 @@ static SDL_Surface * load_kpx(char * file);
 static SDL_Surface * load_svg(char * file);
 static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
                       unsigned int max_w, unsigned int max_h);
-static SDL_Surface * myIMG_Load_RWops(char * file);
 #endif
+static SDL_Surface * myIMG_Load_RWops(char * file);
 static SDL_Surface * myIMG_Load(char * file);
 static int trash(char * path);
 int file_exists(char * path);
