@@ -549,7 +549,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) // MINGW/MSYS, NetBSD, and MacOSX need it, at least for now
+#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) // MINGW/MSYS, NetBSD, and MacOSX need it, at least for now
 #define fmemopen_alternative 
 #endif
 
