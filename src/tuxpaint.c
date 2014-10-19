@@ -12464,9 +12464,9 @@ static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp,
-    old_brush, step;
+    xv, yv, old_brush, step;
   float a1, a2, rotn_rad;
-  int xx;
+  int xx, yy;
 
 
   /* Determine radius/shape of the shape to draw: */
@@ -12562,6 +12562,11 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     x2 = (int) (cos(a2) * rx);
     y2 = (int) (-sin(a2) * ry);
 
+    xv = (int) (cos((a1 + a2) / 2) * rx * shape_valley[cur_shape] / 100);
+    yv = (int) (-sin((a1 + a2) / 2) * ry * shape_valley[cur_shape] / 100);
+
+
+
 
     /* Rotate the line: */
 
@@ -12580,6 +12585,12 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 
       x2 = xp;
       y2 = yp;
+
+      xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
+      yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
+
+      xv = xp;
+      yv = yp;
     }
 
 
@@ -12589,6 +12600,8 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     y1 = y1 + cy;
     x2 = x2 + cx;
     y2 = y2 + cy;
+    xv = xv + cx;
+    yv = yv + cy;
 
 
     /* Draw: */
@@ -12596,35 +12609,65 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     if (!use_brush)
     {
       /* (XOR) */
-
-      line_xor(x1, y1, x2, y2);
+      if (shape_valley[cur_shape] == 100)
+	line_xor(x1, y1, x2, y2);
+      else
+      {
+	line_xor(x1, y1, xv, yv);
+	line_xor(xv, yv, x2, y2);
+      }
     }
     else
     {
+      if (shape_valley[cur_shape] == 100)
       /* Brush */
 
-      brush_draw(x1, y1, x2, y2, 0);
+	brush_draw(x1, y1, x2, y2, 0);
+      else
+      /* Stars */
+      {
+	brush_draw(x1, y1, xv, yv, 0);
+	brush_draw(xv, yv, x2, y2, 0);
+      }
     }
   }
 
 
-  if (use_brush && shape_filled[cur_shape])
+  if (use_brush && shape_filled[cur_shape] && rx > 0 && ry > 0)
   {
     /* FIXME: In the meantime, we'll do this lame radius-based fill: */
 
-    for (xx = abs(rx); xx >= 0; xx--)
+    for (xx = max(abs(rx), abs(ry)); xx > 0; xx--)
     {
+      yy = min(xx * rx / ry,xx * ry / rx);
+
       for (side = 0; side < shape_sides[cur_shape]; side++)
       {
 	a1 = (angle_skip * side + init_ang) * M_PI / 180;
 	a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
 
-	x1 = (int) (cos(a1) * xx);
-	y1 = (int) (-sin(a1) * ry);
+	if (yy == xx * ry / rx)
+	{
+	  x1 = (int) (cos(a1) * xx);
+	  y1 = (int) (-sin(a1) * yy);
 
-	x2 = (int) (cos(a2) * xx);
-	y2 = (int) (-sin(a2) * ry);
+	  x2 = (int) (cos(a2) * xx);
+	  y2 = (int) (-sin(a2) * yy);
 
+	  xv = (int) (cos((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
+	  yv = (int) (-sin((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
+	}
+	else
+	{
+	  x1 = (int) (cos(a1) * yy);
+	  y1 = (int) (-sin(a1) * xx);
+
+	  x2 = (int) (cos(a2) * yy);
+	  y2 = (int) (-sin(a2) * xx);
+
+	  xv = (int) (cos((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
+	  yv = (int) (-sin((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
+	}
 
 	/* Rotate the line: */
 
@@ -12643,6 +12686,12 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 
 	  x2 = xp;
 	  y2 = yp;
+
+	  xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
+	  yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
+
+	  xv = xp;
+	  yv = yp;
 	}
 
 
@@ -12652,11 +12701,19 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 	y1 = y1 + cy;
 	x2 = x2 + cx;
 	y2 = y2 + cy;
+	xv = xv + cx;
+	yv = yv + cy;
 
 
 	/* Draw: */
-
+      if (shape_valley[cur_shape] == 100)
 	brush_draw(x1, y1, x2, y2, 0);
+      else
+      /* Stars */
+      {
+	brush_draw(x1, y1, xv, yv, 0);
+	brush_draw(xv, yv, x2, y2, 0);
+      }
       }
 
       if (xx % 10 == 0)
