@@ -353,11 +353,11 @@ const char *const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/diamond_f.png",
   DATA_PREFIX "images/shapes/octagon.png",
   DATA_PREFIX "images/shapes/octagon_f.png",
-  DATA_PREFIX "images/shapes/rectangle.png",
-  DATA_PREFIX "images/shapes/rectangle.png",
-  DATA_PREFIX "images/shapes/rectangle.png",
-  DATA_PREFIX "images/shapes/rectangle.png",
-  DATA_PREFIX "images/shapes/rectangle.png",
-  DATA_PREFIX "images/shapes/rectangle.png"
+  DATA_PREFIX "images/shapes/star3p.png",
+  DATA_PREFIX "images/shapes/star3p_f.png",
+  DATA_PREFIX "images/shapes/star4p.png",
+  DATA_PREFIX "images/shapes/star4p_f.png",
+  DATA_PREFIX "images/shapes/star5p.png",
+  DATA_PREFIX "images/shapes/star5p_f.png"
 
 };
