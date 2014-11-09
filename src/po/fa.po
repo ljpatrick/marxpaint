@@ -2,19 +2,21 @@
 # Copyright (C) 2014 tuxpaint.
 # This file is distributed under the same license as the tuxpaint package.
 # farnaz <dsf@fg.com>, 2009.
+# Nima Sahraneshin-Samani <unix.nima@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-03 21:03+0200\n"
-"PO-Revision-Date: 2009-06-03 21:03+0200\n"
-"Last-Translator: farnaz <dsf@fg.com>\n"
+"PO-Revision-Date: 2014-11-09 21:17+0330\n"
+"Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -146,12 +148,12 @@ msgstr ""
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
 msgid "`\\%_@$~#{<(^&*"
-msgstr ""
+msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
 msgid "017"
-msgstr ""
+msgstr "۰۱۷"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:207
@@ -161,7 +163,7 @@ msgstr ""
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:210
 msgid "1Il|"
-msgstr ""
+msgstr "ا۱"
 
 #: ../dirwalk.c:214
 msgid "<1>spare-1a"
@@ -187,7 +189,7 @@ msgstr "عالی!"
 #. Congratulations #2
 #: ../great.h:40
 msgid "Cool!"
-msgstr ""
+msgstr "باحال!"
 
 #. Congratulations #3
 #: ../great.h:43
@@ -207,27 +209,27 @@ msgstr "انگلیسی"
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
 msgid "Hiragana"
-msgstr ""
+msgstr "هیراگانا"
 
 #. Input Method: Japanese Romanized Katakana mode
 #: ../im.c:81
 msgid "Katakana"
-msgstr ""
+msgstr "کاتاکانا"
 
 #. Input Method: Korean Hangul 2-Bul mode
 #: ../im.c:84
 msgid "Hangul"
-msgstr ""
+msgstr "هانگول"
 
 #. Input Method: Thai mode
 #: ../im.c:87
 msgid "Thai"
-msgstr ""
+msgstr "تایلندی"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
 msgid "ZH_TW"
-msgstr ""
+msgstr "‏ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:171 ../shapes.h:172
@@ -330,7 +332,7 @@ msgstr "پاک کن ها"
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:68
 msgid "Stamps"
-msgstr ""
+msgstr "تمبر‌ها"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
@@ -352,12 +354,12 @@ msgstr "جادویی"
 #. Freehand painting tool
 #: ../tools.h:62
 msgid "Paint"
-msgstr ""
+msgstr "نقاشی"
 
 #. Stamp tool (aka Rubber Stamps)
 #: ../tools.h:65
 msgid "Stamp"
-msgstr ""
+msgstr "تمبر"
 
 #. Line drawing tool
 #: ../tools.h:68
@@ -372,7 +374,7 @@ msgstr "متن"
 #. Label tool
 #: ../tools.h:77
 msgid "Label"
-msgstr ""
+msgstr "برچسب"
 
 #. Undo last action
 #: ../tools.h:86
@@ -447,6 +449,8 @@ msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
 msgstr ""
+"سبک متن را انتخاب کن. با کلیک روی نقاشی‌های خود می‌توانی شروع به نوشتن کنی.کلید"
+" ‪[‬Enter‪]‬ و ‪[‬Tab‪]‬ را برای کامل کردن متن فشار بده."
 
 #. Label tool instructions
 #: ../tools.h:130
@@ -456,6 +460,9 @@ msgid ""
 "and clicking an exist label, you can move it, edit it and change its text "
 "style."
 msgstr ""
+"سبک متن را انتخاب کن. با کلیک روی نقاشی‌های خود می‌توانی شروع به نوشتن کنی.کلید"
+" ‪[‬Enter‪]‬ و ‪[‬Tab‪]‬ را برای کامل کردن متن فشار بده. با استفاده از دکمه انتخاب‌گر "
+"و کلیک کردن برچسب موجود، می‌توانی آن را جابجا، ویرایش و سبک متن را تغییر دهی."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -505,7 +512,7 @@ msgstr "خداحافظ!"
 #. Instruction while using Line tool (after click, before release)
 #: ../tools.h:164
 msgid "Let go of the button to complete the line."
-msgstr ""
+msgstr "برای کامل کردن متن دکمه را رها کن."
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:167
@@ -520,7 +527,7 @@ msgstr "موس را برای چرخاندن شکل حرکت بده.کلیک کن
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
-msgstr ""
+msgstr "خب حالا… بزار این یکی رو بکشیم!"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2053
@@ -664,7 +671,7 @@ msgstr "نمایش"
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8355
 msgid "Aa"
-msgstr ""
+msgstr "آا"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -709,7 +716,7 @@ msgstr "یک رنگ بردار."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"
-msgstr ""
+msgstr "تاکس پینت"
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
@@ -739,13 +746,15 @@ msgstr "برای محو کردن تصویر کلیک کن و موس را حرک�
 
 #: ../../magic/src/blind.c:117
 msgid "Blind"
-msgstr ""
+msgstr "کور"
 
 #: ../../magic/src/blind.c:122
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
+"به سمت لبه های عکس خود کلیک کن تا پنجره‌های غیر‌قابل دیدن را روی آن بکشی. "
+"به‌صورت ۹۰ درجه حرکت بده تا غیر‌قابل دیدن‌ها را باز یا بسته کنی."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
@@ -757,7 +766,7 @@ msgstr "گچ"
 
 #: ../../magic/src/blocks_chalk_drip.c:140
 msgid "Drip"
-msgstr ""
+msgstr "چکه"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
 msgid "Click and move the mouse around to make the picture blocky."
@@ -770,7 +779,7 @@ msgstr ".برای سفید کردن تصویر با گچ کلیک کن و موس
 
 #: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
+msgstr "برای ایجاد چکه در عکس کلیک کن و موشی را به اطراف حرکت بده."
 
 #: ../../magic/src/blur.c:80
 msgid "Blur"
@@ -819,11 +828,11 @@ msgstr "برای تبدیل تصویر به حالت کارتونی کلیک ک�
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
-msgstr ""
+msgstr "نقل"
 
 #: ../../magic/src/confetti.c:87
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "کلیک کن تا نقل بپاشد."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -885,12 +894,12 @@ msgstr "روی تصویر کلیک کن تا آن ناحیه با رنگ انت�
 
 #: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
-msgstr ""
+msgstr "چشم‌ماهی"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:106
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr ""
+msgstr "روی قسمتی از عکس خود کلیک کن تا اثر چشم‌ماهی اعمال شود."
 
 #: ../../magic/src/flower.c:150
 msgid "Flower"
@@ -910,16 +919,16 @@ msgstr "برای پوشاندن یک ناحیه با حباب های کف کلی
 
 #: ../../magic/src/fold.c:105
 msgid "Fold"
-msgstr ""
+msgstr "تا کردن"
 
 #: ../../magic/src/fold.c:107
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
-msgstr ""
+msgstr "رنگ پس‌زمینه را انتخاب کن سپس کلیک کن تا گوشه‌های تصویر رویش برگردد."
 
 #: ../../magic/src/fretwork.c:176
 msgid "Fretwork"
-msgstr ""
+msgstr "برجسته کاری"
 
 #: ../../magic/src/fretwork.c:180
 #, fuzzy
@@ -943,7 +952,7 @@ msgstr "برای گذاشتن شیشه های کوچک کلیک کن و موس �
 
 #: ../../magic/src/glasstile.c:116
 msgid "Click to cover your entire picture in glass tiles."
-msgstr ""
+msgstr "برای پوشش کاشیکاری شیشه ای بر روی تمام عکس کلیک کن."
 
 #: ../../magic/src/grass.c:112
 msgid "Grass"
@@ -955,7 +964,7 @@ msgstr "برای کشیدن چمن کلیک کن و موس را حرکت بده!
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
-msgstr ""
+msgstr "ترام"
 
 #: ../../magic/src/halftone.c:38
 #, fuzzy
@@ -965,19 +974,19 @@ msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقا
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
-msgstr ""
+msgstr "راست/چپ متقارن"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
-msgstr ""
+msgstr "پايین/بالا متقارن"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
-msgstr ""
+msgstr "الگو"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr ""
+msgstr "کاشی‌ها"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1082,11 +1091,11 @@ msgstr "مربع"
 
 #: ../../magic/src/mosaic_shaped.c:143
 msgid "Hexagon Mosaic"
-msgstr ""
+msgstr "موزائیک شش‌گوش"
 
 #: ../../magic/src/mosaic_shaped.c:144
 msgid "Irregular Mosaic"
-msgstr ""
+msgstr "موزائید بی‌ ترتیب"
 
 #: ../../magic/src/mosaic_shaped.c:149
 #, fuzzy
@@ -1139,11 +1148,11 @@ msgstr "برای رسم نگاتیو(رنگ های معکوس)کلیک کن و �
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr ""
+msgstr "برای نگاتیو کردن نقاشیت کلیک کن."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "سر و صدا"
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
@@ -1159,11 +1168,11 @@ msgstr "برای ایجاد برجستگی در تصویر روی محل مور�
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
-msgstr ""
+msgstr "چشم انداز"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
-msgstr ""
+msgstr "زوم"
 
 #: ../../magic/src/perspective.c:151
 #, fuzzy
@@ -1250,6 +1259,8 @@ msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
+"جایی که می‌خواهی رنگین‌کمان شروع بشه را کلیک کن بعد به جایی که می‌خواهی تمام "
+"بشه بکش و بعد برای رسم  رنگین‌کمان آماده شو."
 
 #: ../../magic/src/ripples.c:106
 msgid "Ripples"
@@ -1261,11 +1272,11 @@ msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
 
 #: ../../magic/src/rosette.c:116
 msgid "Rosette"
-msgstr ""
+msgstr "گل و بوته"
 
 #: ../../magic/src/rosette.c:116
 msgid "Picasso"
-msgstr ""
+msgstr "پیکاسو"
 
 #: ../../magic/src/rosette.c:121
 #, fuzzy
@@ -1281,7 +1292,7 @@ msgstr "تو می تونی با رنگ های رنگین کمان نقاشی ک�
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "لبه ها"
 
 #: ../../magic/src/sharpen.c:74
 #, fuzzy
@@ -1291,7 +1302,7 @@ msgstr "اشکال هندسی"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "نقاشی سیاه "
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
@@ -1339,7 +1350,7 @@ msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقا
 
 #: ../../magic/src/smudge.c:106
 msgid "Smudge"
-msgstr ""
+msgstr "لک "
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:108
@@ -1350,22 +1361,21 @@ msgstr "سرقلم متال"
 
 #: ../../magic/src/smudge.c:115
 msgid "Click and move the mouse around to smudge the picture."
-msgstr ""
+msgstr "کلیک کنید و موشی را به اطراف حرکت دهید تا تصویر لک شود."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 #, fuzzy
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgstr "برای رسم نگاتیو(رنگ های معکوس)کلیک کن و موس را حرکت بده."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "توپ برقی"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "پوسته برفی"
 
 #: ../../magic/src/snow.c:72
 #, fuzzy
@@ -1381,21 +1391,23 @@ msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
 
 #: ../../magic/src/string.c:123
 msgid "String edges"
-msgstr ""
+msgstr "لبه های رشته‌ای"
 
 #: ../../magic/src/string.c:126
 msgid "String corner"
-msgstr ""
+msgstr "گوشه رشته ای"
 
 #: ../../magic/src/string.c:129
 msgid "String 'V'"
-msgstr ""
+msgstr "رشته ‪'‬V‪'‬"
 
 #: ../../magic/src/string.c:137
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
+"برای ترسیم کارهای هنری با رشته کلیک کن و بکش. برای ترسیم خط‌های کم‌تر یا بیشتر "
+"به بالا-پایین و برای حفره‌های بزرگتر به چپ-راست بکش."
 
 #: ../../magic/src/string.c:140
 #, fuzzy
@@ -1405,15 +1417,15 @@ msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن 
 
 #: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "ترسیم کارهای هنری جهت‌دار با رشته زاویه آزاد."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
-msgstr ""
+msgstr "سایه رنگ کردن"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "رنگ و سفید"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
@@ -1438,11 +1450,11 @@ msgstr "برای تبدیل تصویر به حالت کارتونی کلیک ک�
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
+msgstr "برای تغیر تصویر شما به رنگ سفید و رنگ انتخابی شما کلیک کن."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "خمیر‌دندون"
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
@@ -1452,7 +1464,7 @@ msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن 
 
 #: ../../magic/src/tornado.c:157
 msgid "Tornado"
-msgstr ""
+msgstr "توفان"
 
 #: ../../magic/src/tornado.c:163
 #, fuzzy
@@ -1462,7 +1474,7 @@ msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن 
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
-msgstr ""
+msgstr "تلویزیون"
 
 #: ../../magic/src/tv.c:105
 #, fuzzy
@@ -1474,7 +1486,7 @@ msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقا
 
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
-msgstr ""
+msgstr "برای شبه کردن عکس شما به شکل تلویزیونیش کلیک کن."
 
 #: ../../magic/src/waves.c:103
 msgid "Waves"
