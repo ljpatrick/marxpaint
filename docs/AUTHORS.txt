@@ -2,7 +2,7 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2014 by Bill Kendrick and others
+Copyright (c) 2002-2015 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
@@ -584,11 +584,9 @@ $Id$
 
   * Danish
     Joe Hansen <joedalton2@yahoo.dk>
-    Gruppen for Lokalisering af Frit Programmel til Dansk
-      <http://dansk-gruppen.dk>
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
-    Mogens Jæger <mogensjaeger@get2net.dk> 
-    Mikkel Kirkgaard Nielsen <translation@mikini.dk>
+    Mogens Jæger <mogensjaeger@get2net.dk> [retired]
+    Mikkel Kirkgaard Nielsen <translation@mikini.dk> [retired]
 
   * Dutch
     Freek de Kruijf <f.de.kruijf@hetnet.nl>
@@ -611,7 +609,9 @@ $Id$
     Nuno Magalhães
 
   * Estonian
-    Henrik Pihl <henrik@saarlane.ee>
+    Sven Ollino <sven.ollino@gmail.com>
+    Lauri Jesmin <lauri.jesmin@nordtech.ee> [retired]
+    Henrik Pihl <henrik@saarlane.ee> [retired]
 
   * Faroese
     Lis Gøthe í Jákupsstovu <morshus@gmail.com>
