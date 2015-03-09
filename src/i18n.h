@@ -51,8 +51,10 @@ enum
   LANG_BE,			/* Belarusian */
   LANG_BG,			/* Bulgarian */
   LANG_BM,			/* Bambara */
+  LANG_BN,                      /* Bengali */
   LANG_BO,			/* Tibetan */
   LANG_BR,			/* Breton */
+  LANG_BRX,			/* Bodo */
   LANG_BS,                      /* Bosnian */
   LANG_CA_VALENCIA,             /* Valencian */
   LANG_CA,			/* Catalan */
@@ -61,6 +63,7 @@ enum
   LANG_CY,			/* Welsh */
   LANG_DA,			/* Danish */
   LANG_DE,			/* German */
+  LANG_DOI,			/* Dogri */
   LANG_EL,			/* Greek */
   LANG_EN,			/* English (American) (DEFAULT) */
   LANG_EN_AU,			/* English (Australian) */
@@ -149,6 +152,7 @@ enum
   LANG_TR,			/* Turkish */
   LANG_TW,			/* Twi */
   LANG_UK,			/* Ukrainian */
+  LANG_UR,			/* Urdu */
   LANG_VEC,			/* Venetian */
   LANG_VE,			/* Venda */
   LANG_VI,			/* Vietnamese */

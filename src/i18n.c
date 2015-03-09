@@ -65,8 +65,10 @@ const char *lang_prefixes[NUM_LANGS] = {
   "be",
   "bg",
   "bm",
+  "bn",
   "bo",
   "br",
+  "brx",
   "bs",
   "ca@valencia",
   "ca",
@@ -75,6 +77,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "cy",
   "da",
   "de",
+  "doi",
   "el",
   "en",
   "en_AU",
@@ -163,6 +166,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "tr",
   "tw",
   "uk",
+  "ur",
   "vec",
   "ve",
   "vi",
@@ -238,6 +242,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"bambara", "bm_ML.UTF-8"},
+  {"bengali", "bn_IN.UTF-8"},
+  {"bodo", "brx_IN.UTF-8"},
   {"bosnian", "bs_BA.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
   {"hrvatski", "hr_HR.UTF-8"},
@@ -253,6 +259,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"cesky", "cs_CZ.UTF-8"},
   {"danish", "da_DK.UTF-8"},
   {"dansk", "da_DK.UTF-8"},
+  {"dogri", "doi_IN.UTF-8"},
   {"german", "de_DE.UTF-8"},
   {"deutsch", "de_DE.UTF-8"},
   {"estonian", "et_EE.UTF-8"},
@@ -386,6 +393,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"turkish", "tr_TR.UTF-8"},
   {"twi", "tw_GH.UTF-8"},
   {"ukrainian", "uk_UA.UTF-8"},
+  {"urdu", "ur_IN.UTF-8"},
   {"walloon", "wa_BE.UTF-8"},
   {"walon", "wa_BE.UTF-8"},
   {"wolof", "wo_SN.UTF-8"},
@@ -425,6 +433,8 @@ static void show_lang_usage(int exitcode)
 /* bm */ "  bambara\n"
 /* eu */ "  basque       euskara\n"
 /* be */ "  belarusian   bielaruskaja\n"
+/* bn */ "  bengali\n"
+/* brx */ "  bodo\n"
 /* nb */ "  bokmal\n"
 /* bs */ "  bosnian\n"
 /* pt_BR */ "  brazilian    brazilian-portuguese   portugues-brazilian\n"
@@ -438,6 +448,7 @@ static void show_lang_usage(int exitcode)
 /* hr */ "  croatian     hrvatski\n"
 /* cs */ "  czech        cesky\n"
 /* da */ "  danish       dansk\n"
+/* doi */ "  dogri\n"
 /* nl */ "  dutch        nederlands\n"
 /* eo */ "  esperanto\n"
 /* et */ "  estonian\n"
@@ -519,6 +530,7 @@ static void show_lang_usage(int exitcode)
 /* bo */ "  tibetan\n"
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
+/* ur */ "  urdu\n"
 /* ca@valencia */  "  valencian    valencia\n"
 /* ve */ "  venda\n"
 /* vec */"  venetian     veneto\n"
@@ -557,6 +569,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  bm_ML   (Bambara)\n"
           "  eu_ES   (Basque       Euskara)\n"
           "  be_BY   (Belarusian   Bielaruskaja)\n"
+          "  bn_IN   (Bengali)\n"
+          "  brx_IN  (Bodo)\n"
           "  bs_BA   (Bosnian)\n"
           "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
@@ -572,6 +586,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  zh_TW   (Chinese-Traditional)\n"
 	  "  cs_CZ   (Czech        Cesky)\n"
 	  "  da_DK   (Danish       Dansk)\n"
+	  "  doi_IN   (Dogri)\n"
 	  "  nl_NL   (Dutch)\n"
           "  fa_IR   (Persian)\n"
           "  ff_SN   (Fulah)\n"
@@ -654,6 +669,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
 	  "  tr_TR   (Turkish)\n"
           "  tw_GH  (Twi)\n"
           "  uk_UA   (Ukrainian)\n"
+          "  ur_IN   (Urdu)\n"
           "  ve_ZA   (Venda)\n"
           "  vec     (Venetian)\n"
           "  vi_VN   (Vietnamese)\n"
