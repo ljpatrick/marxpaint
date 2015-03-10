@@ -961,6 +961,7 @@ $Id$
     saikumar <ramukiashc@gmail.com> as a task in GCI
 
   * Thai
+    Nudjaree <poonim_p@hotmail.com>
     Ouychai Chaita <ae.freeman@gmail.com>
 
   * Thai input method

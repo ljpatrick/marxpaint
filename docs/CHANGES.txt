@@ -13,8 +13,11 @@ $Id$
 
   * Localization Updates:
     ---------------------
-    * Estonian translation.
+    * Estonian translation
       "Sven Ollino" <sven.ollino@gmail.com>
+
+    * Thai translation
+      Nudjaree <poonim_p@hotmail.com>
 
 
 2014.August.5 (0.9.22)
