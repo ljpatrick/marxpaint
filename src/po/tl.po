@@ -1,18 +1,18 @@
-# Tagalog tuxpaint.pot translation
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# RICKY LONTOC <gb_515_deme@hotmail.com>, 2006
+# Tagalog translation Tux Paint.
+# Copyright (C) 2015 The Tux Paint team.
+# This file is distributed under the same license as the tuxpaint package.
+# RICKY LONTOC <gb_515_deme@hotmail.com>, 2006. (inactive)
 # Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
+# Please consider updating this translation.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: Tux Paint\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-01-01 17:43+0900\n"
+"Last-Translator: none\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
