@@ -116,6 +116,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "kok@roman",
   "kok",
   "ko",
+  "ks@devanagari",
+  "ks",
   "ku",
   "lb",
   "lg",
@@ -148,6 +150,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "sat@olchiki",
   "sat",
   "sa",
+  "sd",
+  "sd@devanagari",
   "shs",
   "si",
   "sk",
@@ -327,6 +331,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"tlhIngan", "tlh.UTF-8"},
   {"kannada", "kn_IN.UTF-8"},
   {"korean", "ko_KR.UTF-8"},
+  {"kashmiri-devanagari", "ks_IN.UTF-8@devanagari"},
+  {"kashmiri-perso-arabic", "ks_IN.UTF-8"},
   {"kurdish", "ku_TR.UTF-8"},
   {"tamil", "ta_IN.UTF-8"},
   {"telugu", "te_IN.UTF-8"},
@@ -378,6 +384,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
   {"secwepemctin", "shs_CA.UTF-8"},
+  {"sindhi-perso-arabic", "sd_IN.UTF-8"},
+  {"sindhi-devanagari", "sd_IN.UTF-8@devanagari"},
   {"sinhala", "si_LK.UTF-8"},
   {"slovak", "sk_SK.UTF-8"},
   {"slovenian", "sl_SI.UTF-8"},
@@ -472,6 +480,8 @@ static void show_lang_usage(int exitcode)
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
 /* kn */ "  kannada\n"
+/* ks@devanagari */ "  kashmiri-devanagari\n"
+/* ks */ "  kashmiri-perso-arabic\n"
 /* km */ "  khmer\n"
 /* cgg */"  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
@@ -513,6 +523,8 @@ static void show_lang_usage(int exitcode)
 /* sr */ "  serbian\n"
 /* sr@latin */ "  serbian-latin\n"
 /* shs*/ "  shuswap      secwepemctin\n"
+/* sd@devanagari */ "  sindhi-devanagari\n"
+/* sd */ "  sindhi-perso-arabic\n"
 /* si */ "  sinhala\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
@@ -617,6 +629,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  kn_IN   (Kannada)\n"
           "  km_KH   (Khmer)\n"
           "  ko_KR   (Korean)\n"
+          "  ks_IN@devanagari   (Kashmiri (Devanagari))\n"
+          "  ks_IN   (Kashmiri (Perso-Arabic))\n"
           "  ku_TR   (Kurdish)\n"
           "  ms_MY   (Malay)\n"
           "  ml_IN   (Malayalam)\n"
@@ -648,6 +662,8 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  sa_IN   (Sanskrit)\n"
           "  sat_IN  (Santali)\n"
           "  sat@olchiki  (Santali (Ol-Chiki))\n"
+          "  sd_IN@devanagari  (Sindhi (Devanagari))\n"
+          "  sd_IN  (Sindhii (Perso-Arabic))\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"
           "  si_LK   (Sinhala)\n"
 	  "  sk_SK   (Slovak)\n"

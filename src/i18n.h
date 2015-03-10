@@ -102,6 +102,8 @@ enum
   LANG_KOK_ROMAN,               /* Konkani (Roman) */
   LANG_KOK,                     /* Konkani (Devaganari) */
   LANG_KO,			/* Korean */
+  LANG_KS_DEVANAGARI,		/* Kashmiri (Devanagari script) */
+  LANG_KS,			/* Kashmiri (Perso-Arabic script) */
   LANG_KU,			/* Kurdish */
   LANG_LB,                      /* Luxembourgish */
   LANG_LG,                      /* Luganda */
@@ -134,6 +136,8 @@ enum
   LANG_SAT_OL_CHIKI,
   LANG_SAT,                     /* Santali */
   LANG_SA,                      /* Sanskrit */
+  LANG_SD,                      /* Sindhi (Perso-Arabic) */
+  LANG_SD_DEVANAGARI,           /* Sindhi (Devanagari) */
   LANG_SHS,			/* Shuswap */
   LANG_SI,                      /* Sinhala */
   LANG_SK,			/* Slovak */
