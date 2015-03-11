@@ -206,6 +206,9 @@ static int lang_use_right_to_left[] = {
   LANG_AR,
   LANG_FA,
   LANG_HE,
+  LANG_KS,
+  LANG_SD,
+  LANG_UR,
   -1
 };
 
