@@ -1,14 +1,14 @@
-# TuxPaint Irish translation file
-# Copyright (C) 2004 Bill Kendrick
-# This file is distributed under the same license as the TuxPaint package.
-# Kevin Scannell <kscanne@gmail.com>, 2004, 2007, 2008, 2010.
+# Irish translation Tux Paint.
+# Copyright (C) 2015 The Tux Paint team.
+# This file is distributed under the same license as the tuxpaint package.
+# Kevin Scannell <kscanne@gmail.com>, 2004, 2007, 2008, 2010, 2014, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 081207\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: tuxpaint\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2013-10-26 17:43+0900\n"
-"PO-Revision-Date: 2010-01-26 14:06-0500\n"
+"PO-Revision-Date: 2015-03-11 14:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1410,88 +1410,4 @@ msgstr "Cliceáil agus tarraing chun éifeacht XOR a dhearadh"
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Cliceáil chun éifeacht XOR a dhearadh ar fud an phictiúir"
 
-#~ msgid "qy"
-#~ msgstr "qy"
 
-#~ msgid "QY"
-#~ msgstr "QY"
-
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr ""
-#~ "Cliceáil agus bog an luch chun cuma \"eachtardhomhanda\" a chur ar "
-#~ "chodanna de do phictiúr."
-
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr ""
-#~ "Cliceáil chun cuma \"eachtardhomhanda\" a chur ar an bpictiúr ar fad."
-
-#~ msgid "Sparkles"
-#~ msgstr "Drithlí"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Cliceáil agus bog chun drithlí a dhearadh."
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Cliceáil agus bog chun na dathanna a liathadh."
-
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Tá leathanach bán agat chun dearadh air!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Ar mhaith leat pictiúr nua a thosú?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Ba mhaith!"
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Léirscriosfar an pictiúr reatha agus ceann nua á thosú!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Ceart go leor!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Ná bac leis!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Forscríobh an leagan níos sine den phictiúr seo?"
-
-#~ msgid "Lime!"
-#~ msgstr "Líoma!"
-
-#~ msgid "Green!"
-#~ msgstr "Glas!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fiúise!"
-
-#~ msgid "Silver!"
-#~ msgstr "Airgead!"
-
-#~ msgid "Fade"
-#~ msgstr "Céimnigh"
-
-#~ msgid "Oval"
-#~ msgstr "Ubhchruth"
-
-#~ msgid "Diamond"
-#~ msgstr "Muileata"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Tá ceithre thaobh ar chearnóg, iad ar comhfhad."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Tá ciorcal go cruinn."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Is éard atá i muileata ná cearnóg, rothlaithe beagáinín."
