@@ -1389,14 +1389,14 @@ msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr ""
+msgstr "Cliceáil chun tonnta cothrománacha a dhéanamh. Cliceáil i ngar don bharr le haghaidh tonnta níos giorra, an bun le haghaidh tonnta níos airde, ar chlé le haghaidh tonnta níos lú, agus ar dheis le haghaidh tonnta fada."
 
 #: ../../magic/src/waves.c:112
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr ""
+msgstr "Cliceáil chun tonnta ingearacha a dhéanamh. Cliceáil i ngar don bharr le haghaidh tonnta níos giorra, an bun le haghaidh tonnta níos airde, ar chlé le haghaidh tonnta níos lú, agus ar dheis le haghaidh tonnta fada."
 
 #: ../../magic/src/xor.c:95
 msgid "Xor Colors"
