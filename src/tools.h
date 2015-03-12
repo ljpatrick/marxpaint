@@ -127,7 +127,7 @@ const char *const tool_tips[NUM_TOOLS] = {
   gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."),
 
   // Label tool instructions
-  gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."),
+  gettext_noop("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an existing label, you can move it, edit it and change its text style."),
 
   // Reserved...
   " ",
