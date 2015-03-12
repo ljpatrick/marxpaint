@@ -2,7 +2,7 @@
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
 # Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
-# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011, 2014.
+# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011, 2014, 2015.
 #
 # konventioner
 # blur -> sløre
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 19:02+0100\n"
-"PO-Revision-Date: 2014-05-25 22:30+0100\n"
+"PO-Revision-Date: 2015-03-12 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -278,17 +278,17 @@ msgstr "Ottekant"
 #. Triangle star (3 points star)
 #: ../shapes.h:266 ../shapes.h:269
 msgid "3p Star"
-msgstr ""
+msgstr "3p stjerne"
 
 #. Rhombus star (4 points star)
 #: ../shapes.h:272 ../shapes.h:275
 msgid "4p Star"
-msgstr ""
+msgstr "4p stjerne"
 
 #. Pentagone star (5 points star)
 #: ../shapes.h:278 ../shapes.h:281
 msgid "5p Star"
-msgstr ""
+msgstr "5p stjerne"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -330,15 +330,15 @@ msgstr "En ottekant har 8 lige store sider."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "En stjerne med 3 punkter."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "En stjerne med 4 punkter."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "En stjerne med 5 punkter."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -486,12 +486,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an exist label, you can move it, edit it and change its text "
-#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -500,7 +494,7 @@ msgid ""
 msgstr ""
 "Vælg skrifttype. Klik hvor på tegningen du vil skrive - og skriv. Tryk "
 "[Retur] eller [Tab] for at færdiggøre teksten. Ved at bruge "
-"udvælgelseskanppen og klikke på en eksisterende etiket kan du flytte den, "
+"udvælgelsesknappen og klikke på en eksisterende etiket kan du flytte den, "
 "redigere den og ændre dens skrifttype."
 
 #. Magic tool instruction
