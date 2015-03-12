@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"POT-Creation-Date: 2015-03-12 19:02+0100\n"
 "PO-Revision-Date: 2014-06-09 01:50+0000\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -233,83 +233,110 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:234 ../shapes.h:235
 msgid "Square"
 msgstr "Ferningur"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Rectangle"
 msgstr "Rétthyrningur"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Circle"
 msgstr "Hringur"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Ellipse"
 msgstr "Sporbaugur"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Triangle"
 msgstr "Þríhyrningur"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Pentagon"
 msgstr "Fimmhyrningur"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Rhombus"
 msgstr "Tígull"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Octagon"
 msgstr "Átthyrningur"
 
+#. Triangle star (3 points star)
+#: ../shapes.h:266 ../shapes.h:269
+msgid "3p Star"
+msgstr ""
+
+#. Rhombus star (4 points star)
+#: ../shapes.h:272 ../shapes.h:275
+msgid "4p Star"
+msgstr ""
+
+#. Pentagone star (5 points star)
+#: ../shapes.h:278 ../shapes.h:281
+msgid "5p Star"
+msgstr ""
+
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:290 ../shapes.h:291
 msgid "A square is a rectangle with four equal sides."
 msgstr "Rétthyrningur hefur fjórar jafnlangar hliðar."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:294 ../shapes.h:295
 msgid "A rectangle has four sides and four right angles."
 msgstr "Rétthyrningur hefur fjórar hliðar og öll horn hornrétt."
 
-#: ../shapes.h:217 ../shapes.h:219
+#: ../shapes.h:299 ../shapes.h:301
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Hringur er ferill þar sem allir punktar eru í sömu fjarlægð frá miðju."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:304 ../shapes.h:305
 msgid "An ellipse is a stretched circle."
 msgstr "Sporbaugur er teygður hringur"
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:308 ../shapes.h:309
 msgid "A triangle has three sides."
 msgstr "Þríhyrningur hefur þrjár hliðar."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:312 ../shapes.h:313
 msgid "A pentagon has five sides."
 msgstr "Fimmhyrningur hefur fimm hliðar."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:317 ../shapes.h:319
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Tígull hefur fjórar jafnlangar hliðar, og andstæðar hliðar eru samsíða."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:323 ../shapes.h:325
 msgid "An octagon has eight equal sides."
 msgstr "Átthyrningur hefur átta hliðar."
+
+#: ../shapes.h:327 ../shapes.h:328
+msgid "A star with 3 points."
+msgstr ""
+
+#: ../shapes.h:329 ../shapes.h:330
+msgid "A star with 4 points."
+msgstr ""
+
+#: ../shapes.h:331 ../shapes.h:332
+msgid "A star with 5 points."
+msgstr ""
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -448,29 +475,30 @@ msgstr ""
 
 #. Text tool instructions
 #: ../tools.h:127
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Veldu letur. Smelltu á myndina og þú getur byrjað að skrifa. "
-"Ýttu á [Enter] eða [Tab] til að ljúka texta."
+"Veldu letur. Smelltu á myndina og þú getur byrjað að skrifa. Ýttu á [Enter] "
+"eða [Tab] til að ljúka texta."
 
 #. Label tool instructions
 #: ../tools.h:130
+#, fuzzy
 #| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing."
+#| "Choose a style of text. Click on your drawing and you can start typing. "
+#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
+#| "and clicking an exist label, you can move it, edit it and change its text "
+#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
+"and clicking an existing label, you can move it, edit it and change its text "
 "style."
 msgstr ""
-"Veldu letur. Smelltu á myndina og þú getur byrjað að skrifa. "
-"Ýttu á [Enter] eða [Tab] til að ljúka texta. Með því að nota valhnappinn "
-"og smella á texta, þá getur þú fært textann, breytt honum og breytt "
-"útliti og stíl."
+"Veldu letur. Smelltu á myndina og þú getur byrjað að skrifa. Ýttu á [Enter] "
+"eða [Tab] til að ljúka texta. Með því að nota valhnappinn og smella á texta, "
+"þá getur þú fært textann, breytt honum og breytt útliti og stíl."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -602,7 +630,6 @@ msgstr "Búið að prenta myndina þína!"
 
 #. We got an error printing
 #: ../tuxpaint.c:2093
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Því miður! Það var ekki hægt að prenta myndina þína!"
 
@@ -676,42 +703,42 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11664
+#: ../tuxpaint.c:11683
 msgid "Yes"
 msgstr "Já"
 
-#: ../tuxpaint.c:11668
+#: ../tuxpaint.c:11687
 msgid "No"
 msgstr "Nei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12710
+#: ../tuxpaint.c:12786
 msgid "Replace the picture with your changes?"
 msgstr "Skipta út eldri myndinni með þeirri nýju?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12714
+#: ../tuxpaint.c:12790
 msgid "Yes, replace the old one!"
 msgstr "Já, geymdu nýju myndina!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12718
+#: ../tuxpaint.c:12794
 msgid "No, save a new file!"
 msgstr "Nei, geyma nýja mynd!"
 
-#: ../tuxpaint.c:13963
+#: ../tuxpaint.c:14039
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
+#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Veldu myndirnar sem þú vilt, og smelltu svo á \"Spila\"."
 
-#: ../tuxpaint.c:22344
+#: ../tuxpaint.c:22420
 msgid "Pick a color."
 msgstr "Veldu lit."
 
@@ -1049,52 +1076,51 @@ msgstr ""
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Smelltu til að bæta við tígulsteina-áhrifum á myndina þína."
 
-#: ../../magic/src/mosaic_shaped.c:142
-#| msgid "Square"
+#: ../../magic/src/mosaic_shaped.c:147
 msgid "Square Mosaic"
 msgstr "Ferhyrndur tígulsteinn"
 
-#: ../../magic/src/mosaic_shaped.c:143
+#: ../../magic/src/mosaic_shaped.c:148
 msgid "Hexagon Mosaic"
 msgstr "Sexhyrndur tígulsteinn"
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:149
 msgid "Irregular Mosaic"
 msgstr "Óreglulegur tígulsteinn"
 
-#: ../../magic/src/mosaic_shaped.c:149
+#: ../../magic/src/mosaic_shaped.c:156
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Smelltu og hreyfðu músina til að bæta við ferhyrndum tígulsteina-áhrifum á "
 "myndina"
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:157
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "Smelltu og hreyfðu músina til að bæta við ferhyrndum tígulsteina-áhrifum á "
 "alla myndina þína."
 
-#: ../../magic/src/mosaic_shaped.c:152
+#: ../../magic/src/mosaic_shaped.c:161
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Smelltu og hreyfðu músina til að bæta við sexhyrndum tígulsteina-áhrifum á "
 "myndina"
 
-#: ../../magic/src/mosaic_shaped.c:153
+#: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Smelltu til að bæta við sexhyrndum tígulsteina-áhrifum á alla myndina þína."
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:166
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Smelltu og hreyfðu músina til að bæta við óreglulegum tígulsteina-áhrifum á "
 "hluta myndarinnar."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:167
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Smelltu til að bæta við óreglulegum tígulsteina-áhrifum á myndina þína."
@@ -1104,7 +1130,6 @@ msgid "Negative"
 msgstr "Andhverfa"
 
 #: ../../magic/src/negative.c:106
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Smelltu og hreyfðu músina til að andhverfa litum myndarinnar."
 
@@ -1139,8 +1164,8 @@ msgstr "Smelltu á hornin og dragðu myndina til."
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
-"Smelltu og hreyfðu músina upp til að renna að myndinni eða niður til að renna "
-"frá myndinni."
+"Smelltu og hreyfðu músina upp til að renna að myndinni eða niður til að "
+"renna frá myndinni."
 
 #: ../../magic/src/puzzle.c:105
 msgid "Puzzle"
@@ -1184,12 +1209,10 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Smelltu til að setja regndropa á alla myndina þína."
 
 #: ../../magic/src/realrainbow.c:110
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Raunverulegur Regnbogi"
 
 #: ../../magic/src/realrainbow.c:112
-#| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "RAGGBLF Regnbogi"
 
@@ -1387,8 +1410,8 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Smelltu og hreyfðu músina til að láta hluta myndarinnar líta út "
-"eins og þeir séu í sjónvarpi."
+"Smelltu og hreyfðu músina til að láta hluta myndarinnar líta út eins og þeir "
+"séu í sjónvarpi."
 
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
@@ -1409,8 +1432,8 @@ msgid ""
 "the right for long waves."
 msgstr ""
 "Smelltu til að búa til láréttar bylgjur. Smelltu ofarlega til að gera "
-"bylgjurnar styttri, neðarlega fyrir stærri bylgjur, til vinstri fyrir "
-"litlar bylgjur og til hægri fyrir langar bylgjur."
+"bylgjurnar styttri, neðarlega fyrir stærri bylgjur, til vinstri fyrir litlar "
+"bylgjur og til hægri fyrir langar bylgjur."
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1419,11 +1442,10 @@ msgid ""
 "for long waves."
 msgstr ""
 "Smelltu til að búa til lóðréttar bylgjur. Smelltu ofarlega til að gera "
-"bylgjurnar styttri, neðarlega fyrir stærri bylgjur, til vinstri fyrir "
-"litlar bylgjur og til hægri fyrir langar bylgjur."
+"bylgjurnar styttri, neðarlega fyrir stærri bylgjur, til vinstri fyrir litlar "
+"bylgjur og til hægri fyrir langar bylgjur."
 
 #: ../../magic/src/xor.c:95
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "XOR Litir"
 

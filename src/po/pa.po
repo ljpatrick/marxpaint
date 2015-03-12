@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"POT-Creation-Date: 2015-03-12 19:02+0100\n"
 "PO-Revision-Date: 2013-02-04 21:03+0200\n"
 "Last-Translator: Arshpreet singh <EMAIL@ADDRESS>\n"
 "Language-Team: none>\n"
@@ -230,82 +230,109 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:234 ../shapes.h:235
 msgid "Square"
 msgstr "ਵਰਗ "
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Rectangle"
 msgstr "ਆਇਤ"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Circle"
 msgstr "ਚਕਰ "
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Ellipse"
 msgstr "ਅੰਡਾਕਾਰ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Triangle"
 msgstr "ਤਿਕੋਣ "
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Pentagon"
 msgstr "ਪੰਜਭੁਜ"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Rhombus"
 msgstr "ਸਮ ਚੁਤਰਭੁਜ "
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Octagon"
 msgstr "ਅਠਭੁਜਾ"
 
+#. Triangle star (3 points star)
+#: ../shapes.h:266 ../shapes.h:269
+msgid "3p Star"
+msgstr ""
+
+#. Rhombus star (4 points star)
+#: ../shapes.h:272 ../shapes.h:275
+msgid "4p Star"
+msgstr ""
+
+#. Pentagone star (5 points star)
+#: ../shapes.h:278 ../shapes.h:281
+msgid "5p Star"
+msgstr ""
+
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:290 ../shapes.h:291
 msgid "A square is a rectangle with four equal sides."
 msgstr "ਵਰਗ ਇੱਕ ਆਇਤ ਹੁੰਦਾ ਹੈ ਜਿਸਦੀਆਂ ਸਾਰੀਆ ਭੁਜਾਵਾਂ ਬਰਾਬਰ ਹੁੰਦੀਆ ਹਨ "
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:294 ../shapes.h:295
 msgid "A rectangle has four sides and four right angles."
 msgstr "ਆਇਤ ਦੀਆਂ ਚਾਰ ਭੁਜਾਵਾਂ ਅਤੇ ਚਾਰ ਸਮਕੋਣ ਹੁੰਦੇ ਹਨ "
 
-#: ../shapes.h:217 ../shapes.h:219
+#: ../shapes.h:299 ../shapes.h:301
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "ਚੱਕਰ ਇੱਕ ਅਜੇਹਾ ਬਿੰਦੁ ਹੁੰਦਾ ਹੈ ਜਿਸਦਾ ਵਿਆਸ ਜ਼ੀਰੋ ਤੋਂ ਜ਼ਿਆਦਾ ਹੁੰਦਾ ਹੈ "
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:304 ../shapes.h:305
 msgid "An ellipse is a stretched circle."
 msgstr "ਅੰਡਾਕਾਰ ਸ਼ਕਲ ਅੰਡੇ ਦੀ ਤਰਾਂ ਗੋਲ ਹੁੰਦੀ ਹੈ "
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:308 ../shapes.h:309
 msgid "A triangle has three sides."
 msgstr "ਤਿਕੋਣ ਦੀਆਂ ਤਿੰਨ  ਭੁਜਾਵਾਂ ਹੁੰਦੀਆਂ ਹਨ "
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:312 ../shapes.h:313
 msgid "A pentagon has five sides."
 msgstr "ਪੰਜਭੁਜ ਦੀਆਂ ਪੰਜ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:317 ../shapes.h:319
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "ਸਮਚੁਤਰਭੁਜ ਦੀਆਂ ਚਾਰੇ ਭੁਜਾਵਾਂ ਬਰਾਬਰ ਹੁੰਦੀਆ ਹਨ"
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:323 ../shapes.h:325
 msgid "An octagon has eight equal sides."
 msgstr "ਅਠਭੁਜ ਦੀਆਂ ਅਠ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
+
+#: ../shapes.h:327 ../shapes.h:328
+msgid "A star with 3 points."
+msgstr ""
+
+#: ../shapes.h:329 ../shapes.h:330
+msgid "A star with 4 points."
+msgstr ""
+
+#: ../shapes.h:331 ../shapes.h:332
+msgid "A star with 5 points."
+msgstr ""
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -452,12 +479,15 @@ msgstr "ਤੁਸੀਂ ਆਪਣੀ ਪੇਂਟਿੰਗ ਤੇ ਜੋ ਵੀ 
 
 #. Label tool instructions
 #: ../tools.h:130
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
+"and clicking an existing label, you can move it, edit it and change its text "
 "style."
-msgstr ""
+msgstr "ਤੁਸੀਂ ਆਪਣੀ ਪੇਂਟਿੰਗ ਤੇ ਜੋ ਵੀ ਲਿਖਣਾ ਚੁਣਦੇ ਓ ਲਿਖ ਸਕਦੇ ਓ "
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -662,42 +692,42 @@ msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11664
+#: ../tuxpaint.c:11683
 msgid "Yes"
 msgstr "ਹਾਂ "
 
-#: ../tuxpaint.c:11668
+#: ../tuxpaint.c:11687
 msgid "No"
 msgstr "ਨਹੀ "
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12710
+#: ../tuxpaint.c:12786
 msgid "Replace the picture with your changes?"
 msgstr "ਨਵੀ ਬਣਾਈ ਫੋਟੋ ਸੇਵ ਕਰੋ ਪੁਰਾਨੀ ਨਹੀ "
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12714
+#: ../tuxpaint.c:12790
 msgid "Yes, replace the old one!"
 msgstr "ਹਾਂ, ਪੁਰਾਨੀ ਦੀ ਥਾਂ ਨਵੀ ਕਰੋ  "
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12718
+#: ../tuxpaint.c:12794
 msgid "No, save a new file!"
 msgstr "ਨਹੀ, ਨਵੀ ਫਾਇਲ ਸੇਵ ਕਰੋ "
 
-#: ../tuxpaint.c:13963
+#: ../tuxpaint.c:14039
 msgid "Choose the picture you want, then click “Open”."
 msgstr " ਜਿਹੜੀ ਤਸਵੀਰ ਤੁਸੀਂ  ਖੋਲਨਾ ਚੁਣਦੇ ਓ ਉਸ ਤੇ ਕਲਿਕ ਕਰੋ "
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
+#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ਜਿਹੜੀ ਤਸਵੀਰ ਤੁਸੀਂ  ਖੋਲਨਾ ਚੁਣਦੇ ਓ ਉਸ ਤੇ ਕਲਿਕ ਕਰੋ "
 
-#: ../tuxpaint.c:22344
+#: ../tuxpaint.c:22420
 msgid "Pick a color."
 msgstr "ਇੱਕ ਰੰਗ ਚੁਕੋ "
 
@@ -1044,54 +1074,54 @@ msgstr ""
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
 #| msgid "Square"
 msgid "Square Mosaic"
 msgstr "ਵਰਗ "
 
-#: ../../magic/src/mosaic_shaped.c:143
+#: ../../magic/src/mosaic_shaped.c:148
 msgid "Hexagon Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:149
 msgid "Irregular Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:149
+#: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:157
 #, fuzzy
 #| msgid "Click to add noise to your entire picture."
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
-#: ../../magic/src/mosaic_shaped.c:152
+#: ../../magic/src/mosaic_shaped.c:161
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
-#: ../../magic/src/mosaic_shaped.c:153
+#: ../../magic/src/mosaic_shaped.c:162
 #, fuzzy
 #| msgid "Click to add noise to your entire picture."
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:167
 #, fuzzy
 #| msgid "Click to add noise to your entire picture."
 msgid "Click to add an irregular mosaic to your entire picture."

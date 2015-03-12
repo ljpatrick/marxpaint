@@ -17,8 +17,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
-"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2014-07-16 16:16+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-12 19:02+0100\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -241,97 +241,109 @@ msgid "ZH_TW"
 msgstr "ചൈനീസ്"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:234 ../shapes.h:235
 msgid "Square"
 msgstr "സമചതുരം"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Rectangle"
 msgstr "ദീര്‍ഘചതുരം"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Circle"
 msgstr "വൃത്തം"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Ellipse"
 msgstr "ദീര്‍ഘ വൃത്തം"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Triangle"
 msgstr "ത്രികോണം"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Pentagon"
 msgstr "പഞ്ചഭുജം"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Rhombus"
 msgstr "സമചതുര്‍ഭുജം"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Octagon"
 msgstr "അഷ്ടഭുജം"
 
+#. Triangle star (3 points star)
+#: ../shapes.h:266 ../shapes.h:269
+msgid "3p Star"
+msgstr ""
+
+#. Rhombus star (4 points star)
+#: ../shapes.h:272 ../shapes.h:275
+msgid "4p Star"
+msgstr ""
+
+#. Pentagone star (5 points star)
+#: ../shapes.h:278 ../shapes.h:281
+msgid "5p Star"
+msgstr ""
+
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:290 ../shapes.h:291
 msgid "A square is a rectangle with four equal sides."
 msgstr "നാലു വശങ്ങളും തുല്യമായിട്ടുള്ള ചതുരമാണ് സമചതുരം"
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:294 ../shapes.h:295
 msgid "A rectangle has four sides and four right angles."
 msgstr "ഒരു ചതുരത്തിന് നാല് വശങ്ങളും നാല് മട്ടകോണുകളും ഉണ്ട്."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:299 ../shapes.h:301
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "കേന്ദ്രത്തില്‍ നിന്ന് തുല്യഅകലത്തിലുള്ള ബിന്ദുക്കളുടെ വളഞ്ഞ രൂപമാണ് വൃത്തം"
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:304 ../shapes.h:305
 msgid "An ellipse is a stretched circle."
 msgstr "വലിച്ചുനീട്ടിയ വൃത്തമാണ് ദീര്‍ഘവൃത്തം"
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:308 ../shapes.h:309
 msgid "A triangle has three sides."
 msgstr "ഒരു ത്രികോണത്തിന് മുന്ന് വശങ്ങളുണ്ട്"
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:312 ../shapes.h:313
 msgid "A pentagon has five sides."
 msgstr "പഞ്ചഭുജത്തിന് അഞ്ച് വശങ്ങളുണ്ട്. "
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:317 ../shapes.h:319
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "സമചതുര്‍ഭുജത്തിന്റെ നാല് വശങ്ങള്‍  തുല്യവും എതിര്‍ വശങ്ങള്‍ സമാന്തരവുമാണ്."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:323 ../shapes.h:325
 msgid "An octagon has eight equal sides."
 msgstr "അഷ്ടഭുജത്തിന് എട്ട് തുല്യ വശങ്ങളുണ്ട്."
+
+#: ../shapes.h:327 ../shapes.h:328
+msgid "A star with 3 points."
+msgstr ""
+
+#: ../shapes.h:329 ../shapes.h:330
+msgid "A star with 4 points."
+msgstr ""
+
+#: ../shapes.h:331 ../shapes.h:332
+msgid "A star with 5 points."
+msgstr ""
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -360,8 +372,7 @@ msgstr "ചിത്രങ്ങള്‍"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71
-#: ../tools.h:71
+#: ../titles.h:71 ../tools.h:71
 msgid "Shapes"
 msgstr "രൂപങ്ങള്‍"
 
@@ -372,8 +383,7 @@ msgstr "അക്ഷരങ്ങള്‍"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77
-#: ../tools.h:83
+#: ../titles.h:77 ../tools.h:83
 msgid "Magic"
 msgstr "ഇന്ദ്രജാലം"
 
@@ -425,8 +435,7 @@ msgstr "പുതിയ ചിത്രം"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98
-#: ../tuxpaint.c:7631
+#: ../tools.h:98 ../tuxpaint.c:7631
 msgid "Open"
 msgstr "തുറക്കുക"
 
@@ -462,18 +471,38 @@ msgstr " വരയ്ക്കാന്‍ തുടങ്ങാനായി ക
 
 #. Shape tool instructions
 #: ../tools.h:124
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "ഒരു രൂപം തിരഞ്ഞെടുക്കുക. കേന്ദ്രം കിട്ടാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക. വലുപ്പം മാറ്റാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തി വലിക്കുക. ആവശ്യമായ വലുപ്പമാകുമ്പോള്‍ മൗസ് ബട്ടണ്‍ വിടുക."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"ഒരു രൂപം തിരഞ്ഞെടുക്കുക. കേന്ദ്രം കിട്ടാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക. വലുപ്പം മാറ്റാനായി മൗസ് "
+"ബട്ടണ്‍ അമര്‍ത്തി വലിക്കുക. ആവശ്യമായ വലുപ്പമാകുമ്പോള്‍ മൗസ് ബട്ടണ്‍ വിടുക."
 
 #. Text tool instructions
 #: ../tools.h:127
-msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text."
-msgstr "എഴുതാനുള്ള രീതി തിരഞ്ഞെടുക്കുക. എഴുതിത്തുടങ്ങാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക.എഴുത്ത് പൂര്‍ത്തിയാക്കുവാനായി [Enter] അല്ലെങ്കില്‍ [Tab] അമര്‍ത്തുക"
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text."
+msgstr ""
+"എഴുതാനുള്ള രീതി തിരഞ്ഞെടുക്കുക. എഴുതിത്തുടങ്ങാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക.എഴുത്ത് പൂര്‍ത്തിയാക്കുവാനായി "
+"[Enter] അല്ലെങ്കില്‍ [Tab] അമര്‍ത്തുക"
 
 #. Label tool instructions
 #: ../tools.h:130
-msgid "Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an exist label, you can move it, edit it and change its text style."
-msgstr "എഴുതാനുള്ള രീതി തിരഞ്ഞെടുക്കുക. എഴുതിത്തുടങ്ങാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക. എഴുതികഴിഞ്ഞാല്‍  [Enter] അല്ലെങ്കില്‍ [Tab] അമര്‍ത്തുക"
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing. "
+#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
+#| "and clicking an exist label, you can move it, edit it and change its text "
+#| "style."
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing. "
+"Press [Enter] or [Tab] to complete the text. By using the selector button "
+"and clicking an existing label, you can move it, edit it and change its text "
+"style."
+msgstr ""
+"എഴുതാനുള്ള രീതി തിരഞ്ഞെടുക്കുക. എഴുതിത്തുടങ്ങാനായി മൗസ് ബട്ടണ്‍ അമര്‍ത്തുക. എഴുതികഴിഞ്ഞാല്‍  "
+"[Enter] അല്ലെങ്കില്‍ [Tab] അമര്‍ത്തുക"
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -551,8 +580,7 @@ msgid "Yes, I’m done!"
 msgstr "ചെയ്തുകഴിഞ്ഞു!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2059
-#: ../tuxpaint.c:2086
+#: ../tuxpaint.c:2059 ../tuxpaint.c:2086
 msgid "No, take me back!"
 msgstr "തിരിച്ചുപോകൂ"
 
@@ -561,13 +589,11 @@ msgstr "തിരിച്ചുപോകൂ"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ഇപ്പോള്‍ പുറത്തുപോയാല്‍ വരച്ചത് നഷ്ടപ്പെടും! സൂക്ഷിക്കണോ?"
 
-#: ../tuxpaint.c:2064
-#: ../tuxpaint.c:2069
+#: ../tuxpaint.c:2064 ../tuxpaint.c:2069
 msgid "Yes, save it!"
 msgstr "ശരി, സൂക്ഷിയ്ക്കാം"
 
-#: ../tuxpaint.c:2065
-#: ../tuxpaint.c:2070
+#: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 msgid "No, don’t bother saving!"
 msgstr "ഇതിനെ സൂക്ഷിക്കേണ്ട."
 
@@ -582,10 +608,7 @@ msgid "Can’t open that picture!"
 msgstr "ചിത്രം തുറക്കാന്‍ സാധിക്കുന്നില്ല!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2076
-#: ../tuxpaint.c:2081
-#: ../tuxpaint.c:2090
-#: ../tuxpaint.c:2097
+#: ../tuxpaint.c:2076 ../tuxpaint.c:2081 ../tuxpaint.c:2090 ../tuxpaint.c:2097
 #: ../tuxpaint.c:2106
 msgid "OK"
 msgstr "ശരി"
@@ -684,43 +707,42 @@ msgstr "അആ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11664
+#: ../tuxpaint.c:11683
 msgid "Yes"
 msgstr "വേണം"
 
-#: ../tuxpaint.c:11668
+#: ../tuxpaint.c:11687
 msgid "No"
 msgstr "വേണ്ട"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12710
+#: ../tuxpaint.c:12786
 msgid "Replace the picture with your changes?"
 msgstr "നിങ്ങള്‍ വരച്ച ഈ ചിത്രം മാറ്റങ്ങളോടെ പകരം വെക്കുന്നോ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12714
+#: ../tuxpaint.c:12790
 msgid "Yes, replace the old one!"
 msgstr "ശരി, പകരം വച്ചുകോള്ളു!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12718
+#: ../tuxpaint.c:12794
 msgid "No, save a new file!"
 msgstr "വേണ്ട, പുതിയ ഒരു ഫയലായി സൂക്ഷിച്ചുകൊള്ളൂ."
 
-#: ../tuxpaint.c:13963
+#: ../tuxpaint.c:14039
 msgid "Choose the picture you want, then click “Open”."
 msgstr "നിങ്ങള്‍ക്കു വേണ്ട ചിത്രം തിരഞ്ഞടുത്ത്  “തുറക്കുക”"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14994
-#: ../tuxpaint.c:15322
+#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "നിങ്ങള്‍ക്ക് ഉചിതമായ ചിത്രം ലഭിയ്ക്കാന്‍ “പ്രദര്‍ശനം” അമര്‍ത്തുക "
 
-#: ../tuxpaint.c:22344
+#: ../tuxpaint.c:22420
 msgid "Pick a color."
 msgstr "ഒരു നിറം തിരഞ്ഞെടുക്കൂ."
 
@@ -753,8 +775,12 @@ msgid "Blind"
 msgstr "ജനല്‍പ്പാളി"
 
 #: ../../magic/src/blind.c:122
-msgid "Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."
-msgstr "ജനല്‍പ്പാളിക്കായി ചിത്രത്തിന്റെ വക്കില്‍ ക്ലിക്കുചെയ്യുക. പാളി തുറക്കാന്‍ മുകളിലേക്കോ താഴേക്കോ നീക്കുക"
+msgid ""
+"Click towards the edge of your picture to pull window blinds over it. Move "
+"perpendicularly to open or close the blinds."
+msgstr ""
+"ജനല്‍പ്പാളിക്കായി ചിത്രത്തിന്റെ വക്കില്‍ ക്ലിക്കുചെയ്യുക. പാളി തുറക്കാന്‍ മുകളിലേക്കോ താഴേക്കോ "
+"നീക്കുക"
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
@@ -773,12 +799,14 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തില്‍ കട്ടകള്‍ വരയ്ക്കാനാവും."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "ചിത്രത്തെ വെണ്മയുള്ളതാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ മതി."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തെ ഇറ്റിറ്റു വീഴുന്ന രീതിയിലാക്കാനാവും."
+msgstr ""
+"മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തെ ഇറ്റിറ്റു വീഴുന്ന രീതിയിലാക്കാനാവും."
 
 #: ../../magic/src/blur.c:80
 msgid "Blur"
@@ -907,7 +935,8 @@ msgid "Fold"
 msgstr "മടക്കുക"
 
 #: ../../magic/src/fold.c:107
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "ഒരു പശ്ചാത്തല നിറം തിരഞ്ഞടുത്ത് അമര്‍ത്തിയാല്‍ പേജിന്റെ മൂല ഉയര്‍ന്നു വരും."
 
 #: ../../magic/src/fretwork.c:176
@@ -915,12 +944,10 @@ msgid "Fretwork"
 msgstr "Fretwork"
 
 #: ../../magic/src/fretwork.c:180
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "ഒരേപോലുള്ള പാറ്റേൺ ലഭിക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
 #: ../../magic/src/fretwork.c:182
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "മഴത്തുള്ളികള്‍ കൊണ്ട് മൂടാന്‍ അമര്‍ത്തുക"
 
@@ -949,7 +976,6 @@ msgid "Halftone"
 msgstr "ഹാഫ്‌ടോൺ"
 
 #: ../../magic/src/halftone.c:38
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "നിങ്ങളുടെ ചിത്രം പത്രം പോലെയാക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
@@ -975,29 +1001,39 @@ msgid "Kaleidoscope"
 msgstr "കാലിഡോസ്കോപ്പ്"
 
 #: ../../magic/src/kalidescope.c:136
-msgid "Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture."
-msgstr "ചിത്രത്തിന്റെ ഇടതും വലതും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ അമര്‍ത്തിവലിക്കുക"
+msgid ""
+"Click and drag the mouse to draw with two brushes that are symmetric across "
+"the left and right of your picture."
+msgstr ""
+"ചിത്രത്തിന്റെ ഇടതും വലതും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ "
+"അമര്‍ത്തിവലിക്കുക"
 
 #: ../../magic/src/kalidescope.c:138
-msgid "Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture."
-msgstr "ചിത്രത്തിന്റെ മുകളും താഴെയും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ അമര്‍ത്തിവലിക്കുക"
+msgid ""
+"Click and drag the mouse to draw with two brushes that are symmetric across "
+"the top and bottom of your picture."
+msgstr ""
+"ചിത്രത്തിന്റെ മുകളും താഴെയും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ "
+"അമര്‍ത്തിവലിക്കുക"
 
 #: ../../magic/src/kalidescope.c:140
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "ചിത്രത്തിലുടനീളം പാറ്റേൺ ലഭിക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw with two brushes that are symmetric "
-#| "across the left and right of your picture."
-msgid "Click and drag the mouse to draw a pattern plus its symmetric across the picture."
-msgstr "ചിത്രത്തിന്റെ ഇടതും വലതും ഒരു പോലെയുളള രണ്ടു ബ്രഷ് ഉപയോഗിച്ച് വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ അമര്‍ത്തിവലിക്കുക"
+msgid ""
+"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"picture."
+msgstr ""
+"ചിത്രത്തിന്റെ ഇടതും വലതും ഒരു പോലെയുളള രണ്ടു ബ്രഷ് ഉപയോഗിച്ച് വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ "
+"അമര്‍ത്തിവലിക്കുക"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "ചേര്‍ച്ചയുള്ള ബ്രഷുകള്‍ കൊണ്ട്  തിരശ്ചീനമായ (ഒരു കാലിഡോസ്കോപ്പ്) മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിക്കുക "
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"ചേര്‍ച്ചയുള്ള ബ്രഷുകള്‍ കൊണ്ട്  തിരശ്ചീനമായ (ഒരു കാലിഡോസ്കോപ്പ്) മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിക്കുക "
 
 #: ../../magic/src/light.c:107
 msgid "Light"
@@ -1036,46 +1072,51 @@ msgid "Mosaic"
 msgstr "നാനാവര്‍ണമായ"
 
 #: ../../magic/src/mosaic.c:103
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തിന്  മൊസൈക്കിന്റെ ഭംഗി ചേര്‍ക്കാന്‍ മൗസ് അമര്‍ത്തിവലിക്കുക."
 
 #: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "മൊസൈക്കിന്റെ ഫലം ലഭിക്കുന്നതിനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:147
 msgid "Square Mosaic"
 msgstr "സമചതുര മൊസൈക്ക്"
 
-#: ../../magic/src/mosaic_shaped.c:143
+#: ../../magic/src/mosaic_shaped.c:148
 msgid "Hexagon Mosaic"
 msgstr "ഷഡ്ഭുജ മൊസൈക്ക്"
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:149
 msgid "Irregular Mosaic"
 msgstr "ക്രമരഹിത മൊസൈക്ക്"
 
-#: ../../magic/src/mosaic_shaped.c:149
-msgid "Click and move the mouse to add a square mosaic to parts of your picture."
+#: ../../magic/src/mosaic_shaped.c:156
+msgid ""
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് സമചതുര മൊസൈക്ക് വരയ്ക്കാനാവും."
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:157
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "സമചതുര മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/mosaic_shaped.c:152
-msgid "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+#: ../../magic/src/mosaic_shaped.c:161
+msgid ""
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് ഷഡ്ഭുജ മൊസൈക്ക് വരയ്ക്കാനാവും."
 
-#: ../../magic/src/mosaic_shaped.c:153
+#: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "ഷഡ്ഭുജ മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/mosaic_shaped.c:155
-msgid "Click and move the mouse to add an irregular mosaic to parts of your picture."
-msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് ക്രമരഹിത മൊസൈക്ക് വരയ്ക്കാനാവും."
+#: ../../magic/src/mosaic_shaped.c:166
+msgid ""
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
+msgstr ""
+"മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് ക്രമരഹിത മൊസൈക്ക് വരയ്ക്കാനാവും."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:167
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ക്രമരഹിത മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
@@ -1117,7 +1158,8 @@ msgstr "ചിത്രത്തിന്റെ മൂലകളില്‍ അ�
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
-msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രം വലുതാക്കുകയും ചെറുതാക്കുകയും ചെയ്യാം."
+msgstr ""
+"മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രം വലുതാക്കുകയും ചെറുതാക്കുകയും ചെയ്യാം."
 
 #: ../../magic/src/puzzle.c:105
 msgid "Puzzle"
@@ -1168,8 +1210,12 @@ msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV മഴവില്ല്"
 
 #: ../../magic/src/realrainbow.c:117
-msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
-msgstr "മഴവില്ല് വരച്ചുതുടങ്ങേണ്ട സ്ഥലത്ത് അമര്‍ത്തുക, ആവശ്യമുള്ള സ്ഥലങ്ങളിലേക്ക് മൗസ് നീക്കുക, അമര്‍ത്തല്‍ അവസാനിപ്പിക്കുക. "
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
+"മഴവില്ല് വരച്ചുതുടങ്ങേണ്ട സ്ഥലത്ത് അമര്‍ത്തുക, ആവശ്യമുള്ള സ്ഥലങ്ങളിലേക്ക് മൗസ് നീക്കുക, അമര്‍ത്തല്‍ "
+"അവസാനിപ്പിക്കുക. "
 
 #: ../../magic/src/ripples.c:106
 msgid "Ripples"
@@ -1286,7 +1332,9 @@ msgid "String 'V'"
 msgstr "നൂല്‍രൂപങ്ങള്‍ കൊണ്ടുള്ള V"
 
 #: ../../magic/src/string.c:137
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, left or right to make a bigger hole."
 msgstr "നൂല്‍രൂപങ്ങള്‍ വരയ്ക്കാന്‍ വേണ്ടി മൗസ് ക്ലിക്കുചെയ്ത്  വലിക്കുക. "
 
 #: ../../magic/src/string.c:140
@@ -1306,7 +1354,8 @@ msgid "Color & White"
 msgstr "നിറവും വെള്ളയും"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "ചിത്രത്തിന്റെ നിശ്ചിത ഭാഗത്തിന്റെ നിറം മാറ്റുവാന്‍ മൗസ് ക്ലിക്ക് ചെയ്ത് നീക്കുക."
 
 #: ../../magic/src/tint.c:76
@@ -1314,8 +1363,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "മുഴുവന്‍ ചിത്രത്തിന്റെയും നിറം മാറ്റാന്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് അമര്‍ത്തി നീക്കുക"
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് "
+"അമര്‍ത്തി നീക്കുക"
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1342,7 +1395,9 @@ msgid "TV"
 msgstr "ടി.വി"
 
 #: ../../magic/src/tv.c:105
-msgid "Click and drag to make parts of your picture look like they are on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
 msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോലെ നിങ്ങളുടെ ചിത്രത്തെ മാറ്റാന്‍ മൗസിലമര്‍ത്തി വലിക്കുക."
 
 #: ../../magic/src/tv.c:108
@@ -1358,25 +1413,33 @@ msgid "Wavelets"
 msgstr "തിരമാലകള്‍"
 
 #: ../../magic/src/waves.c:111
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "ചിത്രത്തില്‍ തിരശ്ചീനമായ തിരകള്‍ വരുത്തുവാന്‍ ക്ലിക്കുചെയ്യുക. നീളംകുറഞ്ഞ തിരകള്‍ വരുത്തുവാന്‍ മുകളിലേക്ക് ക്ലിക്കുചെയ്യുക, വലിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയതിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"ചിത്രത്തില്‍ തിരശ്ചീനമായ തിരകള്‍ വരുത്തുവാന്‍ ക്ലിക്കുചെയ്യുക. നീളംകുറഞ്ഞ തിരകള്‍ വരുത്തുവാന്‍ "
+"മുകളിലേക്ക് ക്ലിക്കുചെയ്യുക, വലിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയതിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ "
+"തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
 
 #: ../../magic/src/waves.c:112
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "ചിത്രത്തില്‍ ലംബമായ തിരകള്‍ ഉണ്ടാക്കുന്നതിന്  ക്ലിക്കുചെയ്യുക. നീളം കുറഞ്ഞ തിരകള്‍ക്ക് മുകളില്‍ ക്ലിക്കുചെയ്യുക, ഉയരം കൂടിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയ തിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"ചിത്രത്തില്‍ ലംബമായ തിരകള്‍ ഉണ്ടാക്കുന്നതിന്  ക്ലിക്കുചെയ്യുക. നീളം കുറഞ്ഞ തിരകള്‍ക്ക് മുകളില്‍ "
+"ക്ലിക്കുചെയ്യുക, ഉയരം കൂടിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയ തിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ "
+"തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
 
 #: ../../magic/src/xor.c:95
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "എക്സോർ നിറങ്ങള്‍"
 
 #: ../../magic/src/xor.c:101
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
 msgstr "എക്സോർ പ്രഭാവം ലഭിക്കുന്നതിനു ക്ലിക്ക് ചെയ്ത് വലിക്കുക."
 
 #: ../../magic/src/xor.c:103
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "ചിത്രത്തിലുടനീളം എക്സോർ പ്രഭാവം ലഭിക്കുന്നതിനു ക്ലിക്ക് ചെയ്ത് വലിക്കുക."
-

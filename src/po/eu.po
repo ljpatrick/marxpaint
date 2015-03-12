@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-03 21:03+0200\n"
+"POT-Creation-Date: 2015-03-12 19:02+0100\n"
 "PO-Revision-Date: 2014-08-07 15:22+0200\n"
 "Last-Translator: etxondoko <ander.elor@gmail.com>\n"
 "Language-Team: librezale@librezale.org\n"
@@ -235,84 +235,111 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:234 ../shapes.h:235
 msgid "Square"
 msgstr "Laukia"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Rectangle"
 msgstr "Lauki zuzena"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Circle"
 msgstr "Zirkulua"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Ellipse"
 msgstr "Elipsea"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Triangle"
 msgstr "Triangelua"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Pentagon"
 msgstr "Pentagonoa"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Rhombus"
 msgstr "Erronboa"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Octagon"
 msgstr "Oktogonoa"
 
+#. Triangle star (3 points star)
+#: ../shapes.h:266 ../shapes.h:269
+msgid "3p Star"
+msgstr ""
+
+#. Rhombus star (4 points star)
+#: ../shapes.h:272 ../shapes.h:275
+msgid "4p Star"
+msgstr ""
+
+#. Pentagone star (5 points star)
+#: ../shapes.h:278 ../shapes.h:281
+msgid "5p Star"
+msgstr ""
+
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:290 ../shapes.h:291
 msgid "A square is a rectangle with four equal sides."
 msgstr "Karratua lau alde berdinak dituen laukia da."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:294 ../shapes.h:295
 msgid "A rectangle has four sides and four right angles."
 msgstr "Lauki zuzenak lau alde eta lau angelu zuzen ditu."
 
-#: ../shapes.h:217 ../shapes.h:219
+#: ../shapes.h:299 ../shapes.h:301
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Zirkuluaren puntu guztiek distatzia berdina daukate erdiraino."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:304 ../shapes.h:305
 msgid "An ellipse is a stretched circle."
 msgstr "Elipsea zirkulu zapaldua da"
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:308 ../shapes.h:309
 msgid "A triangle has three sides."
 msgstr "Triangeluak hiru alde ditu."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:312 ../shapes.h:313
 msgid "A pentagon has five sides."
 msgstr "Pentagonoak bost alde ditu."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:317 ../shapes.h:319
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Erronboaren lau aldeak berdinak dira, eta aurrez aurre daudenak paraleloak "
 "dira"
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:323 ../shapes.h:325
 msgid "An octagon has eight equal sides."
 msgstr "Oktogonoak zortzi alde berdin ditu."
+
+#: ../shapes.h:327 ../shapes.h:328
+msgid "A star with 3 points."
+msgstr ""
+
+#: ../shapes.h:329 ../shapes.h:330
+msgid "A star with 4 points."
+msgstr ""
+
+#: ../shapes.h:331 ../shapes.h:332
+msgid "A star with 5 points."
+msgstr ""
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -458,10 +485,16 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
+#, fuzzy
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing. "
+#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
+#| "and clicking an exist label, you can move it, edit it and change its text "
+#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
+"and clicking an existing label, you can move it, edit it and change its text "
 "style."
 msgstr ""
 "Aukera ezazu testu estiloa. Egin klik zure irudian eta has zaitez idazten.\n"
@@ -672,43 +705,43 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11664
+#: ../tuxpaint.c:11683
 msgid "Yes"
 msgstr "Bai"
 
-#: ../tuxpaint.c:11668
+#: ../tuxpaint.c:11687
 msgid "No"
 msgstr "Ez"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12710
+#: ../tuxpaint.c:12786
 msgid "Replace the picture with your changes?"
 msgstr "Ordeztu irudia zure aldaketa berriekin?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12714
+#: ../tuxpaint.c:12790
 msgid "Yes, replace the old one!"
 msgstr "Bai, zaharra ordeztu!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12718
+#: ../tuxpaint.c:12794
 msgid "No, save a new file!"
 msgstr "Ez, artxibo berria gorde"
 
-#: ../tuxpaint.c:13963
+#: ../tuxpaint.c:14039
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14994 ../tuxpaint.c:15322
+#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoian"
 
-#: ../tuxpaint.c:22344
+#: ../tuxpaint.c:22420
 msgid "Pick a color."
 msgstr "Hautatu kolore bat"
 
@@ -916,12 +949,10 @@ msgid "Fretwork"
 msgstr "Sareta"
 
 #: ../../magic/src/fretwork.c:180
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "Klik egin eta arrastatu sare artistiko korapilatsua marrazteko."
 
 #: ../../magic/src/fretwork.c:182
-#| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Egizu klik zure irudia diseinu korapilatsuaz inguratzeko."
 
@@ -952,7 +983,6 @@ msgid "Halftone"
 msgstr "Tonoerdi"
 
 #: ../../magic/src/halftone.c:38
-#| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Egin klik eta arrastatu egunkari paperera pasatzeko irudia."
 
@@ -994,14 +1024,10 @@ msgstr ""
 "pintzelekin marrazteko."
 
 #: ../../magic/src/kalidescope.c:140
-#| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klik egin eta mugitu sagua diseinua marrazteko irudian zehar."
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw with two brushes that are symmetric "
-#| "across the left and right of your picture."
 msgid ""
 "Click and drag the mouse to draw a pattern plus its symmetric across the "
 "picture."
@@ -1063,48 +1089,48 @@ msgstr ""
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko efektua emateko."
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:147
 msgid "Square Mosaic"
 msgstr "Mosaiko laukia"
 
-#: ../../magic/src/mosaic_shaped.c:143
+#: ../../magic/src/mosaic_shaped.c:148
 msgid "Hexagon Mosaic"
 msgstr "Mosaiko hexagonala"
 
-#: ../../magic/src/mosaic_shaped.c:144
+#: ../../magic/src/mosaic_shaped.c:149
 msgid "Irregular Mosaic"
 msgstr "Mosaiko irregularra"
 
-#: ../../magic/src/mosaic_shaped.c:149
+#: ../../magic/src/mosaic_shaped.c:156
 msgid ""
 "Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko laukia "
 "gehitzeko."
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:157
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko efektua emateko."
 
-#: ../../magic/src/mosaic_shaped.c:152
+#: ../../magic/src/mosaic_shaped.c:161
 msgid ""
 "Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko hexagonal "
 "efektua emateko."
 
-#: ../../magic/src/mosaic_shaped.c:153
+#: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko hexagonal efektua emateko."
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:166
 msgid ""
 "Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko irregular "
 "efektua emateko."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:167
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko irregular efektua emateko."
 
@@ -1427,16 +1453,13 @@ msgstr ""
 "luzeak egiteko."
 
 #: ../../magic/src/xor.c:95
-#| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Xor Koloreak"
 
 #: ../../magic/src/xor.c:101
-#| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
 msgstr "Klik egin eta arrastatu XOR efektua marrazteko."
 
 #: ../../magic/src/xor.c:103
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Egizu klik XOR efektua irudi osoan marrazteko."
