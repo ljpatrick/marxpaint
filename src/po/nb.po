@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 19:02+0100\n"
+"POT-Creation-Date: 2015-03-14 21:32+0100\n"
 "PO-Revision-Date: 2014-06-08 16:57+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -148,7 +148,9 @@ msgstr "«»,.?!-–"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`\\%_@$~#{<(^&*"
+#, fuzzy
+#| msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -273,18 +275,11 @@ msgid "Octagon"
 msgstr "Åttekant"
 
 #. Triangle star (3 points star)
-#: ../shapes.h:266 ../shapes.h:269
-msgid "3p Star"
-msgstr ""
-
 #. Rhombus star (4 points star)
-#: ../shapes.h:272 ../shapes.h:275
-msgid "4p Star"
-msgstr ""
-
 #. Pentagone star (5 points star)
+#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
-msgid "5p Star"
+msgid "Star"
 msgstr ""
 
 #. Description of a square

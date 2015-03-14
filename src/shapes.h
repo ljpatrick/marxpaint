@@ -263,22 +263,22 @@ const char *const shape_names[NUM_SHAPES] = {
   gettext_noop("Octagon"),
 
   // Triangle star (3 points star)
-  gettext_noop("3p Star"),
+  gettext_noop("Star"),
 
   // Triangle star (3 points star)
-  gettext_noop("3p Star"),
+  gettext_noop("Star"),
 
   // Rhombus star (4 points star)
-  gettext_noop("4p Star"),
+  gettext_noop("Star"),
 
   // Rhombus star (4 points star)
-  gettext_noop("4p Star"),
+  gettext_noop("Star"),
 
   // Pentagone star (5 points star)
-  gettext_noop("5p Star"),
+  gettext_noop("Star"),
 
   // Pentagone star (5 points star)
-  gettext_noop("5p Star")
+  gettext_noop("Star")
 
 };
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 19:02+0100\n"
+"POT-Creation-Date: 2015-03-14 21:32+0100\n"
 "PO-Revision-Date: 2015-03-12 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -151,7 +151,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`\\%_@$~#{<(^&*"
+#, fuzzy
+#| msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -276,19 +278,14 @@ msgid "Octagon"
 msgstr "Ottekant"
 
 #. Triangle star (3 points star)
-#: ../shapes.h:266 ../shapes.h:269
-msgid "3p Star"
-msgstr "3p stjerne"
-
 #. Rhombus star (4 points star)
-#: ../shapes.h:272 ../shapes.h:275
-msgid "4p Star"
-msgstr "4p stjerne"
-
 #. Pentagone star (5 points star)
+#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
-msgid "5p Star"
-msgstr "5p stjerne"
+#, fuzzy
+#| msgid "3p Star"
+msgid "Star"
+msgstr "3p stjerne"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -1467,3 +1464,9 @@ msgstr "Klik og bevæg for at tegne en XOR-effekt"
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Klik for at tilføje en XOR-effekt på hele dit billede."
+
+#~ msgid "4p Star"
+#~ msgstr "4p stjerne"
+
+#~ msgid "5p Star"
+#~ msgstr "5p stjerne"

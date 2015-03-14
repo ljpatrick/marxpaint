@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 19:02+0100\n"
+"POT-Creation-Date: 2015-03-14 21:32+0100\n"
 "PO-Revision-Date: 2009-05-10 21:45+0200\n"
 "Last-Translator: Jorge Mariano <jmariano@ymail.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -156,7 +156,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{}<>^&*"
-msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -281,18 +281,11 @@ msgid "Octagon"
 msgstr "מתומן"
 
 #. Triangle star (3 points star)
-#: ../shapes.h:266 ../shapes.h:269
-msgid "3p Star"
-msgstr ""
-
 #. Rhombus star (4 points star)
-#: ../shapes.h:272 ../shapes.h:275
-msgid "4p Star"
-msgstr ""
-
 #. Pentagone star (5 points star)
+#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
-msgid "5p Star"
+msgid "Star"
 msgstr ""
 
 #. Description of a square

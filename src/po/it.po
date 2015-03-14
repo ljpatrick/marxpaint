@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 19:02+0100\n"
+"POT-Creation-Date: 2015-03-14 21:32+0100\n"
 "PO-Revision-Date: 2014-06-29 10:46+0200\n"
 "Last-Translator: Beatrice Torracca <beatricet@libero.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
@@ -163,7 +163,9 @@ msgstr ",.?!"
 #  distinct uppercase and lowercase
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`\\%_@$~#{<(^&*"
+#, fuzzy
+#| msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>(^&*€"
 
 #  common punctuation
@@ -291,18 +293,11 @@ msgid "Octagon"
 msgstr "Ottagono"
 
 #. Triangle star (3 points star)
-#: ../shapes.h:266 ../shapes.h:269
-msgid "3p Star"
-msgstr ""
-
 #. Rhombus star (4 points star)
-#: ../shapes.h:272 ../shapes.h:275
-msgid "4p Star"
-msgstr ""
-
 #. Pentagone star (5 points star)
+#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
-msgid "5p Star"
+msgid "Star"
 msgstr ""
 
 #. Description of a square
