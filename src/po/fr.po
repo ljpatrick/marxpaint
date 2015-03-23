@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-14 21:32+0100\n"
-"PO-Revision-Date: 2014-06-16 14:15+0100\n"
+"PO-Revision-Date: 2015-03-23 16:51+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: fr\n"
@@ -146,10 +146,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "\\%_@$~#{<>^&*"
+msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -278,7 +277,7 @@ msgstr "Octogone"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "Étoile"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -322,15 +321,15 @@ msgstr "Un octogone a huit côtés égaux."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "Étoile à 3 branches"
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "Étoile à 4 branches"
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "Étoile à 5 branches"
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -477,7 +476,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -490,7 +488,7 @@ msgid ""
 "style."
 msgstr ""
 "Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
-"texte. Presse [Entrée] ou [tab] quand tu as fini. En cliquant sur le bouton "
+"texte. Presse [Entrée] ou [Tab] quand tu as fini. En cliquant sur le bouton "
 "de sélection puis sur un texte déjà existant, tu peux le déplacer, l'éditer "
 "et changer son style."
 
