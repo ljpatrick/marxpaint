@@ -530,6 +530,12 @@ $Id$
     Hleb Valoshka
     Pavel Shalamitski
 
+  * Bengali
+    Provided by chandrakant dhutadmal
+
+  * Bodo
+    Provided by chandrakant dhutadmal
+
   * Bosnian
     Samir Ribić
   
@@ -588,6 +594,9 @@ $Id$
     Mogens Jæger <mogensjaeger@get2net.dk> [retired]
     Mikkel Kirkgaard Nielsen <translation@mikini.dk> [retired]
 
+  * Dogri
+    Provided by chandrakant dhutadmal
+
   * Dutch
     Freek de Kruijf <f.de.kruijf@hetnet.nl>
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
@@ -635,6 +644,7 @@ $Id$
     
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>
+    Miguel Bouzada
 
   * Georgian and Georgian TrueType Font (GPL)
     Gia Shervashidze <giasher@gmail.com>
@@ -707,6 +717,10 @@ $Id$
   * Kannada translation
     Savitha Shankar <savithasprasad@yahoo.com>
     Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
+
+  * Kashmiri (Devanagari)
+  * Kashmiri (Perso-Arabic)
+    Provided by chandrakant dhutadmal
 
   * Khmer
     Khoem Sokhem <khoemsokhem@khmeros.info>
@@ -903,6 +917,10 @@ $Id$
   * Shuswap (Secwepemctín)
     Neskie Manuel <neskiem@gmail.com>
 
+  * Sindhi (Devanagari)
+  * Sindhi (Perso-Arabic)
+    Provided by chandrakant dhutadmal
+
   * Sinhala
     Menik Prasantha <manikprasantha@gmail.com>
 
@@ -980,6 +998,9 @@ $Id$
 
   * Ukranian / Urkanian documentation
     Serhij Dubyk <serhijdubyk@gmail.com>
+
+  * Urdu
+    Provided by chandrakant dhutadmal
 
   * Valencian
     Pilar Embid Giner <embid_mar@gva.es>

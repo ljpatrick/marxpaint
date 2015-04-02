@@ -10,11 +10,45 @@ $Id$
 
 201x.xxx.x (0.9.23)
 
+  * New shapes
+    ----------
+    * Stars
+      Pere Pujal i Carabantes
+
+  * New locales
+    -----------
+
+    * Bengali
+      Provided by chandrakant dhutadmal
+
+    * Bodo
+      Provided by chandrakant dhutadmal
+
+    * Dogri
+      Provided by chandrakant dhutadmal
+
+    * Kashmiri (Devanagari)
+    * Kashmiri (Perso-Arabic)
+      Provided by chandrakant dhutadmal
+
+    * Sindhi (Devanagari)
+    * Sindhi (Perso-Arabic)
+      Provided by chandrakant dhutadmal
+
+    * Urdu
+      Provided by chandrakant dhutadmal
+
 
   * Localization Updates:
     ---------------------
     * Estonian translation
       "Sven Ollino" <sven.ollino@gmail.com>
+
+    * Galician translation
+      Miguel Bouzada
+
+    * Scottish translation
+      Fòram na Gàidhlig
 
     * Thai translation
       Nudjaree <poonim_p@hotmail.com>
