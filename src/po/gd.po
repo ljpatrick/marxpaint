@@ -1,14 +1,13 @@
 # Translation of tuxpaint to Gaelic (Scottish) (gd).
 # Copyright (C) 2014 the Tuxpaint team.
 # This file is distributed under the same license as the tuxpaint package.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014.
-#
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-14 21:32+0100\n"
-"PO-Revision-Date: 2014-08-17 08:52+0200\n"
+"PO-Revision-Date: 2015-04-02 20:35+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -148,10 +147,9 @@ msgstr "’,.?!-"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*┐⁊"
+msgstr "`%_@$~#{<(^&*┐⁊"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -280,7 +278,7 @@ msgstr "Ochd-cheàrnach"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "Rionnag"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -327,15 +325,15 @@ msgstr "Tha ochd taobhan de dh'fhaid co-ionnann aig ochd-cheàrnach."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "Rionnag le 3 puingean."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "Rionnag le 4 puingean."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "Rionnag le 5 puingean."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -486,7 +484,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text. By using the selector button "
