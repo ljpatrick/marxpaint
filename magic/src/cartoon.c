@@ -110,7 +110,7 @@ char * cartoon_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
 char * cartoon_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return(strdup(gettext_noop(
-"Click and move the mouse around to turn the picture into a cartoon.")));
+"Click and drag the mouse around to turn the picture into a cartoon.")));
 }
 
 // Do the effect:

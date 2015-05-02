@@ -131,14 +131,14 @@ char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, 
   if (which == TOOL_FADE)
   {
     if (mode == MODE_PAINT)
-      return(strdup(gettext_noop("Click and move the mouse to lighten parts of your picture.")));
+      return(strdup(gettext_noop("Click and drag the mouse to lighten parts of your picture.")));
     else if (mode == MODE_FULLSCREEN)
       return(strdup(gettext_noop("Click to lighten your entire picture.")));
   }
   else if (which == TOOL_DARKEN)
   {
     if (mode == MODE_PAINT)
-      return(strdup(gettext_noop("Click and move the mouse to darken parts of your picture.")));
+      return(strdup(gettext_noop("Click and drag the mouse to darken parts of your picture.")));
     else if (mode == MODE_FULLSCREEN)
       return(strdup(gettext_noop("Click to darken your entire picture.")));
   }

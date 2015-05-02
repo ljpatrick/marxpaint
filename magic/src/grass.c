@@ -115,7 +115,7 @@ char * grass_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
 // Return our descriptions, localized:
 char * grass_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return(strdup(gettext_noop("Click and move to draw grass. Don’t forget the dirt!")));
+  return(strdup(gettext_noop("Click and drag to draw grass. Don’t forget the dirt!")));
 }
 
 

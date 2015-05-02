@@ -64,7 +64,7 @@ const char * alien_names[alien_NUM_TOOLS] = {
   gettext_noop("Color Shift"),
 };
 const char * alien_descs[alien_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse to change the colors in parts of your picture."),
+  {gettext_noop("Click and drag the mouse to change the colors in parts of your picture."),
     gettext_noop("Click to change the colors in your entire picture."),},
 };
 

@@ -80,7 +80,7 @@ const char * blur_names[blur_NUM_TOOLS] = {
   gettext_noop("Blur"),
 };
 const char * blur_descs[blur_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse around to blur the image."), 
+  {gettext_noop("Click and drag the mouse around to blur the image."), 
     gettext_noop("Click to blur the entire image.")},
 };
 
