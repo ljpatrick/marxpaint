@@ -128,9 +128,9 @@ char * bricks_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 char * bricks_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_LARGEBRICKS)
-    return(strdup(gettext_noop("Click and move to draw large bricks.")));
+    return(strdup(gettext_noop("Click and drag to draw large bricks.")));
   else if (which == TOOL_SMALLBRICKS)
-    return(strdup(gettext_noop("Click and move to draw small bricks.")));
+    return(strdup(gettext_noop("Click and drag to draw small bricks.")));
 
   return(NULL);
 }
