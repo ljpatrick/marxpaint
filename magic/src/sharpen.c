@@ -75,11 +75,11 @@ const char * sharpen_names[sharpen_NUM_TOOLS] = {
   gettext_noop("Silhouette")
 };
 const char * sharpen_descs[sharpen_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse to trace edges in parts of your picture."),
+  {gettext_noop("Click and drag the mouse to trace edges in parts of your picture."),
     gettext_noop("Click to trace edges in your entire picture."),},
-  {gettext_noop("Click and move the mouse to sharpen parts of your picture."),
+  {gettext_noop("Click and drag the mouse to sharpen parts of your picture."),
     gettext_noop("Click to sharpen the entire picture."),},
-  {gettext_noop("Click and move the mouse to create a black and white silhouette."),
+  {gettext_noop("Click and drag the mouse to create a black and white silhouette."),
     gettext_noop("Click to create a black and white silhouette of your entire picture.")},
 };
 

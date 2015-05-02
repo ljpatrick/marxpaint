@@ -112,9 +112,9 @@ char * smudge_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 char * smudge_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == 0)
-    return(strdup(gettext_noop("Click and move the mouse around to smudge the picture.")));
+    return(strdup(gettext_noop("Click and drag the mouse around to smudge the picture.")));
   else /* if (which == 1) */
-    return(strdup(gettext_noop("Click and move the mouse around to draw with wet, smudgy paint.")));
+    return(strdup(gettext_noop("Click and drag the mouse around to draw with wet, smudgy paint.")));
 }
 
 // Do the effect:

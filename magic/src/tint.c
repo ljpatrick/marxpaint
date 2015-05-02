@@ -72,9 +72,9 @@ const char * tint_names[tint_NUM_TOOLS] = {
   gettext_noop("Color & White") // It does more than this but more intuitive than threshold.
 };
 const char * tint_descs[tint_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse around to change the color of parts of your picture."),
+  {gettext_noop("Click and drag the mouse around to change the color of parts of your picture."),
     gettext_noop("Click to change the color of your entire picture."),},
-  {gettext_noop("Click and move the mouse around to turn parts of your picture into white and a color you choose."),
+  {gettext_noop("Click and drag the mouse around to turn parts of your picture into white and a color you choose."),
     gettext_noop("Click to turn your entire picture into white and a color you choose.")}
 };
 

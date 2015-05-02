@@ -100,7 +100,7 @@ const char * mosaic_names[mosaic_NUM_TOOLS] = {
   gettext_noop("Mosaic"),
 };
 const char * mosaic_descs[mosaic_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse to add a mosaic effect to parts of your picture."),
+  {gettext_noop("Click and drag the mouse to add a mosaic effect to parts of your picture."),
     gettext_noop("Click to add a mosaic effect to your entire picture."),},
 };
 

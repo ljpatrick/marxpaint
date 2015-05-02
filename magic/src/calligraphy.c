@@ -131,7 +131,7 @@ char * calligraphy_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUT
 char * calligraphy_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return(strdup(
-         gettext_noop("Click and move the mouse around to draw in calligraphy.")));
+         gettext_noop("Click and drag the mouse around to draw in calligraphy.")));
 }
 
 

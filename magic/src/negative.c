@@ -103,7 +103,7 @@ char * negative_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTR
 {
   if (mode == MODE_PAINT)
     return(strdup(
-           gettext_noop("Click and move the mouse around to make your painting negative."))); /* Does this make more sense? */
+           gettext_noop("Click and drag the mouse around to make your painting negative."))); /* Does this make more sense? */
   else if (mode == MODE_FULLSCREEN)
     return(strdup(
            gettext_noop("Click to turn your painting into its negative.")));

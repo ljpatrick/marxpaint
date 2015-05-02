@@ -153,17 +153,17 @@ const char * mosaic_shaped_names[mosaic_shaped_NUM_TOOLS] =
 const char * mosaic_shaped_descs[mosaic_shaped_NUM_TOOLS][2] =
 {
     {
-        gettext_noop("Click and move the mouse to add a square mosaic to parts of your picture."),
+        gettext_noop("Click and drag the mouse to add a square mosaic to parts of your picture."),
         gettext_noop("Click to add a square mosaic to your entire picture."),
     },
 
     {
-        gettext_noop("Click and move the mouse to add a hexagonal mosaic to parts of your picture."),
+        gettext_noop("Click and drag the mouse to add a hexagonal mosaic to parts of your picture."),
         gettext_noop("Click to add a hexagonal mosaic to your entire picture."),
     },
 
     {
-        gettext_noop("Click and move the mouse to add an irregular mosaic to parts of your picture."),
+        gettext_noop("Click and drag the mouse to add an irregular mosaic to parts of your picture."),
         gettext_noop("Click to add an irregular mosaic to your entire picture."),
     },
 };
