@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2009-10-04 11:57+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -1027,8 +1027,12 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "ચિત્રની આજુ-બાજુ ભાત દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/kalidescope.c:142
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr "આખા ચિત્રમાં ભાત તેમજ તેની સમાન દોરવા માટે (કેલિડોસ્કોપ) ક્લિક કરીને ખસેડો."
 

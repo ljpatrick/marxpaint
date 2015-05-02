@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2015-03-07 23:30+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1042,7 +1042,7 @@ msgstr "Klik dan gerakkan tetikus untuk cetak timbulkan gambar."
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr "Klik dan gerakkan tetikus untuk cetak timbulkan gambar."
 

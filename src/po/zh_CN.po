@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2014-08-22 16:57+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -1027,8 +1027,12 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "单击然后滑动鼠标在画质上画一个图案。"
 
 #: ../../magic/src/kalidescope.c:142
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr "单击然后滑动鼠标，画一对对称图案。"
 

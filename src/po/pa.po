@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2013-02-04 21:03+0200\n"
 "Last-Translator: Arshpreet singh <EMAIL@ADDRESS>\n"
 "Language-Team: none>\n"
@@ -1038,7 +1038,7 @@ msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਏਮਬੋਸ �
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਏਮਬੋਸ ਕਰੋ "
 

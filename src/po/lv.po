@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2014-06-11 23:13-0000\n"
 "Last-Translator: Raivis Strogonovs <raivis.strogonovs@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -1050,8 +1050,12 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Nopsied un velc peli, lai zīmētu rakstu pāri zīmējumam."
 
 #: ../../magic/src/kalidescope.c:142
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr "Nospied un velc peli, lai zīmētu rakstu, kurš būs simetrisks."
 

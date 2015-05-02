@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
-"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2015-05-02 11:24+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-02 12:33+0200\n"
 "PO-Revision-Date: 2015-05-02 12:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -1019,8 +1019,12 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klik og bevæg musen rundt, for at tegne et mønster over billedet."
 
 #: ../../magic/src/kalidescope.c:142
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
+"Click and drag the mouse to draw a pattern that it symmetric across the "
 "picture."
 msgstr ""
 "Klik og bevæg musen rundt, for at tegne et mønster plus dets symmetrisk over "
@@ -1415,8 +1419,8 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Klik og bevæg musen rundt for at få dit billede til at se ud som om, det er i "
-"fjernsynet."
+"Klik og bevæg musen rundt for at få dit billede til at se ud som om, det er "
+"i fjernsynet."
 
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
@@ -1462,4 +1466,3 @@ msgstr "Klik og bevæg for at tegne en XOR-effekt"
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Klik for at tilføje en XOR-effekt på hele dit billede."
-
