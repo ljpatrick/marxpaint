@@ -1,4 +1,6 @@
-# translation of Tux Paint to Danish.
+# Translation of Tux Paint to Danish.
+# Copyright (C) 2015 Tux Paint.
+# This file is distributed under the same license as the tuxpaint package.
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
 # Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
@@ -10,9 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-05-02 11:24+0200\n"
-"PO-Revision-Date: 2015-03-12 22:30+0100\n"
+"PO-Revision-Date: 2015-05-02 12:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -151,8 +153,6 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
-#| msgid "`\\%_@$~#{<(^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
@@ -282,10 +282,8 @@ msgstr "Ottekant"
 #. Pentagone star (5 points star)
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
-#, fuzzy
-#| msgid "3p Star"
 msgid "Star"
-msgstr "3p stjerne"
+msgstr "Stjerne"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -755,9 +753,6 @@ msgid "Color Shift"
 msgstr "Farveskift"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klik og bevæg musen rundt for at ændre farverne i dele af dit billede."
 
@@ -790,23 +785,16 @@ msgid "Drip"
 msgstr "Dryp"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klik og bevæg musen rundt for at gøre billedet »ternet«."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik og bevæg musen rundt for at få billedet til at ligne en kridt tegning."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik og bevæg musen rundt for at få farverne til at løbe/dryppe."
 
@@ -815,8 +803,6 @@ msgid "Blur"
 msgstr "Sløre"
 
 #: ../../magic/src/blur.c:83
-#, fuzzy
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Klik og bevæg musen rundt for at sløre billedet."
 
@@ -830,14 +816,10 @@ msgid "Bricks"
 msgstr "Mursten"
 
 #: ../../magic/src/bricks.c:131
-#, fuzzy
-#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Klik og bevæg for at tegne store mursten."
 
 #: ../../magic/src/bricks.c:133
-#, fuzzy
-#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Klik og bevæg for at tegne små mursten."
 
@@ -846,8 +828,6 @@ msgid "Calligraphy"
 msgstr "Kalligrafi"
 
 #: ../../magic/src/calligraphy.c:134
-#, fuzzy
-#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik og bevæg musen rundt for at tegne med kalligrafi."
 
@@ -856,8 +836,6 @@ msgid "Cartoon"
 msgstr "Karikatur"
 
 #: ../../magic/src/cartoon.c:113
-#, fuzzy
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klik og bevæg musen rundt for at karikere billedet."
 
@@ -897,8 +875,6 @@ msgid "Darken"
 msgstr "Mørkne"
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
-#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klik og bevæg musen rundt for at oplyse dele af dit billede."
 
@@ -907,8 +883,6 @@ msgid "Click to lighten your entire picture."
 msgstr "Klik for at oplyse hele dit billede."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik og bevæg musen rundt for at formørke dele af dit billede."
 
@@ -941,7 +915,7 @@ msgstr "Blomst"
 #: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
-"Klik og træk for at tegne en blomsterstilk. Slip for at færdiggøre blomsten."
+"Klik og bevæg for at tegne en blomsterstilk. Slip for at færdiggøre blomsten."
 
 #: ../../magic/src/foam.c:121
 msgid "Foam"
@@ -992,10 +966,8 @@ msgid "Grass"
 msgstr "Græs"
 
 #: ../../magic/src/grass.c:118
-#, fuzzy
-#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
-msgstr "Klik og flyt for at tegne græs. Husk »skidtet«!"
+msgstr "Klik og bevæg for at tegne græs. Husk »skidtet«!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
@@ -1099,13 +1071,10 @@ msgid "Mosaic"
 msgstr "Mosaik"
 
 #: ../../magic/src/mosaic.c:103
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
-"Klik og flyt musen rundt for at tilføje en mosaikeffekt til dele af dit "
+"Klik og bevæg musen rundt for at tilføje en mosaikeffekt til dele af dit "
 "billede."
 
 #: ../../magic/src/mosaic.c:104
@@ -1125,13 +1094,10 @@ msgid "Irregular Mosaic"
 msgstr "Asymmetrisk mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:156
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Klik og flyt musen rundt for at tilføje en kvadratmosaik til dele af dit "
+"Klik og bevæg musen rundt for at tilføje en kvadratmosaik til dele af dit "
 "billede."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1139,14 +1105,10 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klik for at tilføje en kvadratmosaik på hele dit billede."
 
 #: ../../magic/src/mosaic_shaped.c:161
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Klik og flyt musen rundt for at tilføje en sekskantmosaik til dele af dit "
+"Klik og bevæg musen rundt for at tilføje en sekskantmosaik til dele af dit "
 "billede."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1154,14 +1116,10 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klik for at tilføje en sekskantmosaik på hele dit billede."
 
 #: ../../magic/src/mosaic_shaped.c:166
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add an irregular mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Klik og flyt musen rundt for at tilføje en irregulær mosaik til dele af dit "
+"Klik og bevæg musen rundt for at tilføje en irregulær mosaik til dele af dit "
 "billede."
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1173,8 +1131,6 @@ msgid "Negative"
 msgstr "Inverter"
 
 #: ../../magic/src/negative.c:106
-#, fuzzy
-#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klik og bevæg musen rundt for at invertere dit billede."
 
@@ -1187,8 +1143,6 @@ msgid "Noise"
 msgstr "Støj"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
-#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Klik og bevæg musen rundt for at tilføje støj til dele af dit billede."
 
@@ -1212,7 +1166,7 @@ msgstr ""
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
-"Klik og træk op for at zoome ind eller træk ned for at zoome billedet ud."
+"Klik og bevæg op for at zoome ind eller træk ned for at zoome billedet ud."
 
 #: ../../magic/src/puzzle.c:105
 msgid "Puzzle"
@@ -1312,8 +1266,6 @@ msgstr "Silhuet"
 # hjørner -> kanter
 # jeg ville måske kalde det noget med at "fremhæve kanter"
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
-#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Klik og bevæg musen rundt for at fremhæve kanter i dele af dit billede."
@@ -1323,8 +1275,6 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Klik for at fremhæve kanter i hele dit billede."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
-#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Klik og bevæg musen rundt for at skærpe dele af dit billede."
 
@@ -1333,8 +1283,6 @@ msgid "Click to sharpen the entire picture."
 msgstr "Klik for at skærpe hele billedet."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
-#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Klik og bevæg musen rundt for at oprette en sort og hvid silhuet."
 
@@ -1361,15 +1309,11 @@ msgid "Wet Paint"
 msgstr "Våd farve"
 
 #: ../../magic/src/smudge.c:115
-#, fuzzy
-#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Klik og bevæg musen rundt for at udtvære billedet."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-#, fuzzy
-#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Klik og bevæg musen rundt for at tegne med våd, snavset farve."
 
@@ -1406,7 +1350,7 @@ msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
-"Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne færre "
+"Klik og bevæg for at tegne strengkunst. Træk top mod bund for at tegne færre "
 "eller flere linjer, venstre og højre for at lave større huller."
 
 #: ../../magic/src/string.c:140
@@ -1426,10 +1370,6 @@ msgid "Color & White"
 msgstr "Farve & hvid"
 
 #: ../../magic/src/tint.c:75
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klik og bevæg musen rundt for at ændre farven i dele af dit billede."
@@ -1439,10 +1379,6 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klik for at ændre farven i hele dit billede."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
@@ -1479,7 +1415,7 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Klik og træk musen rundt for at få dit billede til at se ud som om, det er i "
+"Klik og bevæg musen rundt for at få dit billede til at se ud som om, det er i "
 "fjernsynet."
 
 #: ../../magic/src/tv.c:108
@@ -1527,8 +1463,3 @@ msgstr "Klik og bevæg for at tegne en XOR-effekt"
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Klik for at tilføje en XOR-effekt på hele dit billede."
 
-#~ msgid "4p Star"
-#~ msgstr "4p stjerne"
-
-#~ msgid "5p Star"
-#~ msgstr "5p stjerne"
