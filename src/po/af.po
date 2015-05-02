@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-07-18 08:21+0200\n"
 "Last-Translator: Dawid van Wyngaard <dawid.vanwyngaard@gmail.com>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
@@ -149,7 +149,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -754,7 +754,10 @@ msgid "Color Shift"
 msgstr "Kleurverandering"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om die kleure in 'n gedeelte van die prent te "
 "verander."
@@ -788,17 +791,24 @@ msgid "Drip"
 msgstr "Drup"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik en beweeg die muis om die prent te laat afdrup."
 
 #: ../../magic/src/blur.c:80
@@ -806,7 +816,9 @@ msgid "Blur"
 msgstr "Verwaas"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Klik en beweeg die muis om die prent wasig te maak."
 
 #: ../../magic/src/blur.c:84
@@ -819,11 +831,15 @@ msgid "Bricks"
 msgstr "Stene"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Klik en beweeg om groot stene te teken."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Klik en beweeg om klein stene te teken."
 
 #: ../../magic/src/calligraphy.c:127
@@ -831,7 +847,9 @@ msgid "Calligraphy"
 msgstr "Kalligrafie"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik en beweeg die muis om met kalligrafie te teken."
 
 #: ../../magic/src/cartoon.c:106
@@ -839,7 +857,9 @@ msgid "Cartoon"
 msgstr "Cartoon"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klik en beweeg die muis om die prent te verander na 'n cartoon."
 
 #: ../../magic/src/confetti.c:85
@@ -875,7 +895,9 @@ msgid "Darken"
 msgstr "Maak donkerder"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klik en beweeg die muis om gedeeltes van die prent ligter te maak."
 
 #: ../../magic/src/fade_darken.c:136
@@ -883,7 +905,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Klik om die hele prent ligter te maak."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik en beweeg die muis om gedeeltes van die prent donkerder te maak."
 
 #: ../../magic/src/fade_darken.c:143
@@ -963,7 +987,9 @@ msgid "Grass"
 msgstr "Gras"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Klik en beweeg om gras te teken. Moenie die grond vergeet nie!"
 
 #: ../../magic/src/halftone.c:34
@@ -1066,8 +1092,11 @@ msgid "Mosaic"
 msgstr "Mosaïek"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent 'n mosaïek-effek te gee."
 
@@ -1088,8 +1117,11 @@ msgid "Irregular Mosaic"
 msgstr "Onreëlmatige mosaïek"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent 'n vierkant-mosaïek-effek "
 "te gee."
@@ -1099,8 +1131,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klik om die hele prent 'n vierkant-mosaïek-effek te gee."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent 'n seshoek-mosaïek-effek "
 "te gee."
@@ -1110,8 +1146,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klik om die hele prent 'n seshoek-mosaïek-effek te gee."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent 'n onreëlmatige mosaïek-"
 "effek te gee."
@@ -1125,7 +1165,9 @@ msgid "Negative"
 msgstr "Negatief"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes negatief te maak, met teenoorgestelde "
 "kleure."
@@ -1139,7 +1181,9 @@ msgid "Noise"
 msgstr "Geraas"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om geraas (spikkels) op gedeeltes van die prent te "
 "maak."
@@ -1258,7 +1302,9 @@ msgid "Silhouette"
 msgstr "Silhoeët"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om rande op te spoor in gedeeltes van die prent."
 
@@ -1267,7 +1313,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Klik om die hele prent se rande op te spoor."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Klik en beweeg die muis om gedeeltes van die prent skerper te maak."
 
 #: ../../magic/src/sharpen.c:81
@@ -1275,7 +1323,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Klik om die hele prent skerper te maak."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Klik en beweeg die muis om 'n swart en wit silhoeët te maak."
 
 # Spelling?
@@ -1301,12 +1351,16 @@ msgid "Wet Paint"
 msgstr "Nat verf"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Klik en beweeg die muis om die prent te smeer."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Klik en beweeg die muis rond om met nat, smerige verf te teken."
 
 #: ../../magic/src/snow.c:68
@@ -1362,8 +1416,12 @@ msgid "Color & White"
 msgstr "Kleur & wit"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent se kleure te verander."
 
@@ -1372,8 +1430,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klik om die hele prent se kleure te verander."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent te verander na wit en 'n "

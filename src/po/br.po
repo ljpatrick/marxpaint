@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -148,7 +148,7 @@ msgstr ""
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr ""
 
 #. digits (e.g., '0', '1' and '7')
@@ -758,7 +758,7 @@ msgstr ""
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/alien.c:68
@@ -789,17 +789,24 @@ msgid "Drip"
 msgstr "Beradenn"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
 
 #: ../../magic/src/blur.c:80
@@ -808,7 +815,7 @@ msgstr "Luziañ"
 
 #: ../../magic/src/blur.c:83
 #, fuzzy
-msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/blur.c:84
@@ -822,11 +829,15 @@ msgid "Bricks"
 msgstr "Bloc'hadoù"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bras."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bihan."
 
 #: ../../magic/src/calligraphy.c:127
@@ -835,7 +846,7 @@ msgstr ""
 
 #: ../../magic/src/calligraphy.c:134
 #, fuzzy
-msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
 #: ../../magic/src/cartoon.c:106
@@ -843,7 +854,9 @@ msgid "Cartoon"
 msgstr "Tresadenn-vev"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
 
 #: ../../magic/src/confetti.c:85
@@ -883,7 +896,7 @@ msgstr "Teñvaloc'h"
 
 #: ../../magic/src/fade_darken.c:134
 #, fuzzy
-msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/fade_darken.c:136
@@ -893,7 +906,7 @@ msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/fade_darken.c:141
 #, fuzzy
-msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/fade_darken.c:143
@@ -979,7 +992,7 @@ msgstr "Geot"
 
 #: ../../magic/src/grass.c:118
 #, fuzzy
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Klik ha fiñv al logodenn evit tresañ geot. Na zisoñj ket ar poultr."
 
 #: ../../magic/src/halftone.c:34
@@ -1089,7 +1102,7 @@ msgstr "Strobinellus"
 #: ../../magic/src/mosaic.c:103
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: ../../magic/src/mosaic.c:104
@@ -1115,7 +1128,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1126,7 +1139,7 @@ msgstr "Klik evit kaout ar skeudenn en ur melezour."
 #: ../../magic/src/mosaic_shaped.c:161
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1137,7 +1150,7 @@ msgstr "Klik evit kaout ar skeudenn en ur melezour."
 #: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1152,7 +1165,7 @@ msgstr "Rakluc'henn"
 #: ../../magic/src/negative.c:106
 #, fuzzy
 #| msgid "Click and move the mouse around to draw a negative."
-msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
 #: ../../magic/src/negative.c:109
@@ -1166,7 +1179,7 @@ msgstr ""
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/noise.c:67
@@ -1299,7 +1312,7 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/sharpen.c:79
@@ -1309,7 +1322,7 @@ msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/sharpen.c:81
@@ -1319,7 +1332,7 @@ msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/sharpen.c:83
@@ -1347,13 +1360,15 @@ msgid "Wet Paint"
 msgstr "Livañ"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 #, fuzzy
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/snow.c:68
@@ -1412,7 +1427,7 @@ msgstr ""
 #: ../../magic/src/tint.c:75
 #, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/tint.c:76
@@ -1423,7 +1438,7 @@ msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
 

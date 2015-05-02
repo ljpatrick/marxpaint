@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2010-03-27 15:12+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -149,7 +149,7 @@ msgstr ",.?!«»"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*đ"
 
 #. digits (e.g., '0', '1' and '7')
@@ -752,7 +752,10 @@ msgid "Color Shift"
 msgstr "Dịch Màu"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Ấn và di chuyển chuột để thay đổi màu sắc trong phần của hình ảnh."
 
 #: ../../magic/src/alien.c:68
@@ -784,18 +787,25 @@ msgid "Drip"
 msgstr "Nhỏ giọt"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh có hiệu ứng khối."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh là bản vẽ phấn."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Ấn chuột và di chuyển nó chung quanh để làm cho hình ảnh chạy nhỏ giọt."
 
@@ -804,7 +814,9 @@ msgid "Blur"
 msgstr "Mờ"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Ấn chuột và di chuyển nó chung quanh để làm mờ hình ảnh."
 
 #: ../../magic/src/blur.c:84
@@ -817,11 +829,15 @@ msgid "Bricks"
 msgstr "Gạch"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Ấn và di chuyển để vẽ nhiều gạch lớn."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Ấn và di chuyển để vẽ nhiều gạch nhỏ."
 
 #: ../../magic/src/calligraphy.c:127
@@ -829,7 +845,9 @@ msgid "Calligraphy"
 msgstr "Chữ viết đẹp"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "Ấn chuột và di chuyển nó chung quanh để vẽ theo kiểu dáng chữ viết đẹp."
 
@@ -838,7 +856,9 @@ msgid "Cartoon"
 msgstr "Hoạt hình"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Ấn chuột và di chuyển nó chung quanh để chuyển đổi hình ảnh sang một ảnh "
 "hoạt hình."
@@ -876,7 +896,9 @@ msgid "Darken"
 msgstr "Tối hơn"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Ấn chuột và di chuyển nó để làm nhạt hơn phần của hình ảnh."
 
 #: ../../magic/src/fade_darken.c:136
@@ -884,7 +906,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Ấn để làm nhạt hơn toàn bộ hình ảnh."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Ấn chuột và di chuyển nó để làm tối hơn phần của hình ảnh."
 
 #: ../../magic/src/fade_darken.c:143
@@ -966,7 +990,9 @@ msgid "Grass"
 msgstr "Cỏ"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Ấn và di chuyển chuột để vẽ cỏ. Đừng quên vẽ đất !"
 
 #: ../../magic/src/halftone.c:34
@@ -1076,8 +1102,11 @@ msgid "Mosaic"
 msgstr "Khảm"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Ấn và di chuyển chuột để thêm một hiệu ứng khảm vào phần của hình ảnh."
 
 #: ../../magic/src/mosaic.c:104
@@ -1097,8 +1126,11 @@ msgid "Irregular Mosaic"
 msgstr "Khảm không đều"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Ấn và di chuyển chuột để thêm một mẫu khảm hình vuông vào phần của hình ảnh."
 
@@ -1107,8 +1139,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Nhấn vào để thêm một mẫu khảm hình vuông vào toàn bộ hình ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Ấn và di chuyển chuột để thêm một mẫu khảm hình sáu cạnh vào phần của hình "
 "ảnh."
@@ -1118,8 +1154,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr " Nhấn vào để thêm một mẫu khảm hình sáu cạnh vào toàn bộ hình ảnh."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Ấn và di chuyển chuột để thêm một mẫu khảm thất thường vào phần của hình ảnh."
 
@@ -1132,7 +1172,9 @@ msgid "Negative"
 msgstr "Âm"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Ấn và di chuyển chuột chung quanh để làm cho hình ảnh có hiệu ứng bản âm."
 
@@ -1145,7 +1187,9 @@ msgid "Noise"
 msgstr "Nhiễu"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Ấn và di chuyển chuột để tăng nhiễu trên phần của hình ảnh."
 
 #: ../../magic/src/noise.c:67
@@ -1261,7 +1305,9 @@ msgid "Silhouette"
 msgstr "Hình bóng"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Ấn và di chuyển chuột để đồ lại cạnh trên phần của hình ảnh."
 
 #: ../../magic/src/sharpen.c:79
@@ -1269,7 +1315,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Nhấn vào để đồ lại cạnh trên toàn bộ hình ảnh."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Ấn và di chuyển chuột để mài sắc phần của hình ảnh."
 
 #: ../../magic/src/sharpen.c:81
@@ -1277,7 +1325,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Nhấn vào để mài sắc toàn bộ hình ảnh."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Ấn và di chuyển chuột để tạo một hình bóng đen trắng."
 
 #: ../../magic/src/sharpen.c:83
@@ -1302,12 +1352,16 @@ msgid "Wet Paint"
 msgstr "Sơn ướt"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Ấn và di chuyển chuột chung quanh để làm nhoè hình ảnh."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Ấn chuột và di chuyển nó chung quanh để vẽ bằng sơn ướt làm nhoè."
 
 #: ../../magic/src/snow.c:68
@@ -1363,8 +1417,12 @@ msgid "Color & White"
 msgstr "Màu sắc và Trắng"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Ấn và di chuyển chuột chung quanh để thay đổi màu của phần của hình ảnh."
 
@@ -1373,8 +1431,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Nhấn vào để thay đổi màu của toàn bộ hình ảnh."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Ấn và di chuyển chuột chung quanh để chuyển đổi đổi phần của hình ảnh sang "

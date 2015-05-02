@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2015-03-23 16:51+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -146,8 +146,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+#, fuzzy
+#| msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -476,11 +477,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an exist label, you can move it, edit it and change its text "
-#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -753,7 +749,10 @@ msgstr "Couleurs"
 
 #
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Clique et déplace la souris pour changer la couleur localement."
 
 #
@@ -786,19 +785,26 @@ msgid "Drip"
 msgstr "Goutte"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Clique et déplace la souris pour transformer l'image en un ensemble de "
 "petits blocs."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clique et déplace la souris pour transformer l'image en dessin à la craie."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Clique et déplace la souris pour rendre l'image dégoulinante."
 
 #: ../../magic/src/blur.c:80
@@ -807,7 +813,9 @@ msgstr "Flou"
 
 #
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Clique et déplace la souris pour rendre l'image floue par endroits."
 
 #
@@ -821,11 +829,15 @@ msgid "Bricks"
 msgstr "Briques"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Clique et déplace la souris pour dessiner des grandes briques."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Clique et déplace la souris pour dessiner des petites briques."
 
 #: ../../magic/src/calligraphy.c:127
@@ -833,7 +845,9 @@ msgid "Calligraphy"
 msgstr "Calligraphie"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Clique et déplace la souris pour dessiner en calligraphie."
 
 #: ../../magic/src/cartoon.c:106
@@ -841,7 +855,9 @@ msgid "Cartoon"
 msgstr "B.D."
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Clique et déplace la souris pour que ton dessin ressemble à une bande "
 "dessinée."
@@ -880,7 +896,9 @@ msgstr "Assombrir"
 
 #
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Clique et déplace la souris pour éclaircir le dessin par endroits."
 
 #
@@ -890,7 +908,9 @@ msgstr "Clique pour éclaircir la totalité du dessin."
 
 #
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Clique et déplace la souris pour assombrir le dessin par endroits."
 
 #
@@ -977,7 +997,9 @@ msgid "Grass"
 msgstr "Herbe"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr ""
 "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
@@ -1088,8 +1110,11 @@ msgstr "Mosaïque"
 
 #
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Clique et déplace la souris pour ajouter, par endroits, un effet de mosaïque."
 
@@ -1113,8 +1138,11 @@ msgstr "Mosaïque irrégulière"
 
 #
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Clique et déplace la souris pour ajouter, par endroits, un effet de mosaïque."
 
@@ -1127,8 +1155,12 @@ msgstr ""
 
 #
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Clique et déplace la souris pour ajouter, par endroits, un effet de mosaïque "
 "avec des carreaux de forme hexagonale."
@@ -1142,8 +1174,12 @@ msgstr ""
 
 #
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Clique et déplace la souris pour ajouter, par endroits, un effet de mosaïque "
 "avec des carreaux de forme irrégulière."
@@ -1160,7 +1196,9 @@ msgid "Negative"
 msgstr "Négatif"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Clique et déplace la souris pour obtenir, par endroits, le dessin en négatif."
 
@@ -1175,7 +1213,9 @@ msgstr "Parasites"
 
 #
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Clique et déplace la souris pour ajouter des parasites localement."
 
 #
@@ -1304,7 +1344,9 @@ msgstr "Silhouette"
 
 #
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Clique et déplace la souris pour avoir localement le contour des objets "
 "dessinés."
@@ -1316,7 +1358,9 @@ msgstr "Clique pour obtenir le contour de tous les objets."
 
 #
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Clique et déplace la souris pour affiner l'image localement."
 
 #
@@ -1326,7 +1370,9 @@ msgstr "Clique pour affiner tout le dessin."
 
 #
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
 "Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
 
@@ -1353,13 +1399,17 @@ msgid "Wet Paint"
 msgstr "Mouillé"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Clique et déplace la souris pour avoir une image baveuse."
 
 #
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Clique et déplace la souris pour obtenir un effet mouillé, barbouillé."
 
 #: ../../magic/src/snow.c:68
@@ -1419,8 +1469,12 @@ msgstr "Couleur+Blanc"
 
 #
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Clique et déplace la souris pour changer la couleur localement."
 
 #
@@ -1429,8 +1483,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Clique pour changer la couleur de tout le dessin."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Clique et déplace la souris pour obtenir localement du blanc et une couleur "

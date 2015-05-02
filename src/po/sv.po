@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-06-14 02:01+0200\n"
 "Last-Translator: Henrik Holst <henrik.holst@millistream.com>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
@@ -151,7 +151,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -756,7 +756,10 @@ msgid "Color Shift"
 msgstr "Färgväxling"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klicka och dra med musen för att ändra färgen i delar av din bild."
 
 #: ../../magic/src/alien.c:68
@@ -788,16 +791,23 @@ msgid "Drip"
 msgstr "Droppa"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klicka och dra med musen för att göra bilden kantig."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och dra med musen för att omvandla bilden till kritteckning."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klicka och dra med musen för att göra så att bilden \"droppar\"!"
 
 #: ../../magic/src/blur.c:80
@@ -805,7 +815,9 @@ msgid "Blur"
 msgstr "Suddig"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Klicka och dra med musen för att göra bilden suddig."
 
 #: ../../magic/src/blur.c:84
@@ -818,11 +830,15 @@ msgid "Bricks"
 msgstr "Tegelstenar"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Klicka och dra med musen för att rita stora tegelstenar."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Klicka och dra med musen för att rita små tegelstenar."
 
 #: ../../magic/src/calligraphy.c:127
@@ -830,7 +846,9 @@ msgid "Calligraphy"
 msgstr "Kalligrafi"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klicka och dra med musen för att rita med kalligrafipensel."
 
 #: ../../magic/src/cartoon.c:106
@@ -838,7 +856,9 @@ msgid "Cartoon"
 msgstr "Seriefigur"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klicka och dra med musen för att omvandla bilden till serieteckning!"
 
 #: ../../magic/src/confetti.c:85
@@ -874,7 +894,9 @@ msgid "Darken"
 msgstr "Mörkare"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild ljusare."
 
 #: ../../magic/src/fade_darken.c:136
@@ -882,7 +904,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Klicka för att göra hela din bild ljusare."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild mörkare."
 
 #: ../../magic/src/fade_darken.c:143
@@ -962,7 +986,9 @@ msgid "Grass"
 msgstr "Gräs"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Klicka och dra för att rita gräs. Glöm inte jorden!"
 
 #: ../../magic/src/halftone.c:34
@@ -1067,8 +1093,11 @@ msgid "Mosaic"
 msgstr "Mosaik"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klicka och dra med musen för att lägga till en mosaikeffekt till delar av "
 "din bild."
@@ -1090,8 +1119,11 @@ msgid "Irregular Mosaic"
 msgstr "Oregelbunden mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klicka och dra med musen för att lägga till rutmosaik till delar av din bild."
 
@@ -1100,8 +1132,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klicka för att lägga rutmosaik till hela bilden."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Klicka och dra med musen för att lägga till en hexagonal mosaik till delar "
 "av din bild."
@@ -1111,8 +1147,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klicka för att lägga en hexagonal mosaik till hela bilden."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klicka och dra med musen för att lägga till en oregelbunden mosaik till "
 "delar av din bild."
@@ -1126,7 +1166,9 @@ msgid "Negative"
 msgstr "Negativ"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klicka och dra med musen för att skapa ett negativ av din bild."
 
 #: ../../magic/src/negative.c:109
@@ -1138,7 +1180,9 @@ msgid "Noise"
 msgstr "Brus"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Klicka och dra med musen för att lägga till brus till delar av din bild."
 
@@ -1257,7 +1301,9 @@ msgid "Silhouette"
 msgstr "Silhuett"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Klicka och dra med musen för att spåra kanterna i delar av din bild."
 
 #: ../../magic/src/sharpen.c:79
@@ -1265,7 +1311,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Klicka för att spåra kanterna i hela din bild."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild skarpare."
 
 #: ../../magic/src/sharpen.c:81
@@ -1273,7 +1321,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Klicka för att göra hela bilden skarpare."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Klicka och dra med musen för att skapa en svartvit silhuett."
 
 #: ../../magic/src/sharpen.c:83
@@ -1298,12 +1348,16 @@ msgid "Wet Paint"
 msgstr "Våt färg"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Klicka och dra med musen för att kladda till bilden."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Klicka och dra med musen för att rita med våt, suddig färg."
 
 #: ../../magic/src/snow.c:68
@@ -1360,8 +1414,12 @@ msgid "Color & White"
 msgstr "Färg och vitt"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klicka och dra med musen för att ändra färgen i delar av din bild."
 
 #: ../../magic/src/tint.c:76
@@ -1369,8 +1427,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klicka för att ändra färgen för hela din bild."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Klicka och dra med musen för att göra delar av din bild till vit samt en "

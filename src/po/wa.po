@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -147,7 +147,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{}<>^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -768,7 +768,7 @@ msgstr ""
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/alien.c:68
@@ -799,19 +799,26 @@ msgid "Drip"
 msgstr "Gotes"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
 "al croye"
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come moyîs "
 "avou des gotes d' aiwe."
@@ -822,7 +829,7 @@ msgstr "Adoûci"
 
 #: ../../magic/src/blur.c:83
 #, fuzzy
-msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/blur.c:84
@@ -836,11 +843,15 @@ msgid "Bricks"
 msgstr "Brikes"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Clitchîz et s' bodjîz l' sori po dessiner des grandès brikes."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Clitchîz et s' bodjîz l' sori po dessiner des ptitès brikes."
 
 #: ../../magic/src/calligraphy.c:127
@@ -849,7 +860,7 @@ msgstr ""
 
 #: ../../magic/src/calligraphy.c:134
 #, fuzzy
-msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
@@ -858,7 +869,9 @@ msgid "Cartoon"
 msgstr "B.D."
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje a môde di "
 "binde dessinêye."
@@ -901,7 +914,7 @@ msgstr "Noeri"
 
 #: ../../magic/src/fade_darken.c:134
 #, fuzzy
-msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/fade_darken.c:136
@@ -911,7 +924,7 @@ msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje
 
 #: ../../magic/src/fade_darken.c:141
 #, fuzzy
-msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/fade_darken.c:143
@@ -999,7 +1012,9 @@ msgid "Grass"
 msgstr "Yebe"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po dessiner des yerbêyes. Èn rovyîz nén l' "
 "tere!"
@@ -1113,7 +1128,7 @@ msgstr "Madjike"
 #: ../../magic/src/mosaic.c:103
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic.c:104
@@ -1139,7 +1154,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1150,7 +1165,7 @@ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 #: ../../magic/src/mosaic_shaped.c:161
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1161,7 +1176,7 @@ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 #: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1176,7 +1191,7 @@ msgstr "Negatif"
 #: ../../magic/src/negative.c:106
 #, fuzzy
 #| msgid "Click and move the mouse around to draw a negative."
-msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
@@ -1191,7 +1206,7 @@ msgstr ""
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/noise.c:67
@@ -1328,7 +1343,7 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/sharpen.c:79
@@ -1338,7 +1353,7 @@ msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/sharpen.c:81
@@ -1348,7 +1363,7 @@ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/sharpen.c:83
@@ -1376,13 +1391,15 @@ msgid "Wet Paint"
 msgstr "Ponde"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Clitchîz et s' bodjîz l' sori po dåborer l' imådje."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 #, fuzzy
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/snow.c:68
@@ -1442,7 +1459,7 @@ msgstr ""
 #: ../../magic/src/tint.c:75
 #, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/tint.c:76
@@ -1453,7 +1470,7 @@ msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådj
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje a môde di "

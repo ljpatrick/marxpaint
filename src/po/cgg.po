@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2010-09-17 16:19+0200fu\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -148,7 +148,7 @@ msgstr "???"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -748,7 +748,10 @@ msgid "Color Shift"
 msgstr "Chusa erangi"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Imata kandi otambuze mawusi kuhindura erangi omubicweka bye'kishushani."
 
@@ -781,19 +784,26 @@ msgid "Drip"
 msgstr "Kutonyooka"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe obukuba "
 "nkekibihigikizo."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe okuba nkeinoni."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe okutonyooka."
 
 #: ../../magic/src/blur.c:80
@@ -801,7 +811,9 @@ msgid "Blur"
 msgstr "Okutarebekagye"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe okutarebekagye."
 
@@ -815,11 +827,15 @@ msgid "Bricks"
 msgstr "Amatafari"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Imata kandi oyetoroze mawusi okuteera amatafari amahango."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Imata kandi oyetoroze mawusi okuteera amatafari amakye."
 
 #: ../../magic/src/calligraphy.c:127
@@ -827,7 +843,9 @@ msgid "Calligraphy"
 msgstr "Empandika enungi"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Imata kandi oyetoroze mawusi okuteera omumpandika enungi."
 
 #: ../../magic/src/cartoon.c:106
@@ -835,7 +853,9 @@ msgid "Cartoon"
 msgstr "Katuuni"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Imata kandi oyetoroze mawusi okuhindura ekishushani omu katuuni"
 
 #: ../../magic/src/confetti.c:85
@@ -871,7 +891,9 @@ msgid "Darken"
 msgstr "Bikwatise"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Imata kandi okurure mawusi okwasya ekishushani kyawe"
 
 #: ../../magic/src/fade_darken.c:136
@@ -879,7 +901,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Imata okwakise ekishushani kyona"
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Imata kandi okurure mawusi okwatise ebicweka bye'kishushani "
 
 #: ../../magic/src/fade_darken.c:143
@@ -963,7 +987,9 @@ msgid "Grass"
 msgstr "Obunyatsi"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Imata kandi okurure oteere ebinyatsi. Oteebwa oburofa!"
 
 #: ../../magic/src/halftone.c:34
@@ -1076,8 +1102,11 @@ msgid "Mosaic"
 msgstr "Ekishushani ekikozibwe na za gilaasi"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Imata kandi otambuze mawusi okuhindura ebicweeka bimwe byekishushani bibe "
 "nke ebishushani ebikozibwe na za gilaasi "
@@ -1107,8 +1136,11 @@ msgstr ""
 "gilaasi"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Imata kandi otambuze mawusi okwongyera omubi cweeka bye'kishushani kyawe "
 "akantu akeshonda ina ezilingana akari nkekishushani ekikozibwe na za gilaasi."
@@ -1120,8 +1152,12 @@ msgstr ""
 "nkekishushani ekikozibwe na za gilaasi."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Imata kandi otambuze mawusi okwongyera omubicweeka bye'kishushani kyawe "
 "akantu akeshonda mukaaga ezilingana akari nkekishushani ekikozibwe na za "
@@ -1134,8 +1170,12 @@ msgstr ""
 "mukaaga ezilingana akari nkekishushani ekikozibwe na za gilaasi."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Imata kandi otambuze mawusi okwongyera omubi cweeka bye'kishushani kyawe "
 "akantu akeshonda ezitalingana akari nkekishushani ekikozibwe na za gilaasi."
@@ -1151,7 +1191,9 @@ msgid "Negative"
 msgstr "Negativu"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Imata kandi otambuze mawusi okuhindura ekishushani kyawe kibe nka negatiivu "
 
@@ -1164,7 +1206,9 @@ msgid "Noise"
 msgstr "Yiraguza"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Imata kandi otambuze mawusi okwiraguza ebicweeka bye'kishushani kyawe."
 
 #: ../../magic/src/noise.c:67
@@ -1283,7 +1327,9 @@ msgid "Silhouette"
 msgstr "Omwirima ndindidi"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Imata kandi otanbuze mawusi oboone .... omukishushani kyawe. "
 
 #: ../../magic/src/sharpen.c:79
@@ -1291,7 +1337,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr ""
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr ""
 "Imata kandi otanbuze mawusi kushongora ebicweeka bye'kishushani kyawe. "
 
@@ -1300,7 +1348,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Imata kushongora ekishushani kyona."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Imata kandi otambuze mawusi kureetaho omurima ndindidi"
 
 #: ../../magic/src/sharpen.c:83
@@ -1325,12 +1375,16 @@ msgid "Wet Paint"
 msgstr "Erangi embisi"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Imata kandi otambuze mawusi ogyetoroze orikurofakaza ekishushani."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Imata kandi otambuze mawusi ogyetoroze oteere nerangi embisi."
 
 #: ../../magic/src/snow.c:68
@@ -1387,8 +1441,12 @@ msgid "Color & White"
 msgstr "Erangi na mutare"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura erangi yebicweeka byekishushani "
 "kyawe."
@@ -1398,8 +1456,12 @@ msgid "Click to change the color of your entire picture."
 msgstr " Imata okuhindura erangi yekishushani kyawe "
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura ebicweeka byekishushani kyawe "

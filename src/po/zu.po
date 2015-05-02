@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2011-02-07 12:30+0200\n"
 "Last-Translator: sipho <sipho@translate.org.za>\n"
 "Language-Team: SIpho\n"
@@ -148,7 +148,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -757,7 +757,10 @@ msgid "Color Shift"
 msgstr "Ququla umubala"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukushintsha imibala ezingxenyeni zesithombe "
 "sakho."
@@ -791,19 +794,26 @@ msgid "Drip"
 msgstr "Consisa"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukwenza isithombe sibe sikwedlana."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukujikisa isithombe sibe umdwebo "
 "kashoki."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukwenza sibe ngathi siyaconsa."
 
@@ -812,7 +822,9 @@ msgid "Blur"
 msgstr "Kumafifi"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukwenza isithombe sibe lufifi."
 
@@ -826,11 +838,15 @@ msgid "Bricks"
 msgstr "Izitini"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Chofoza bese uyanyakazisa ukuze udwebe izitini ezinkulu."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Chofoza bese uyanyakazisa ukuze udwebe izitini ezincane."
 
 #: ../../magic/src/calligraphy.c:127
@@ -838,7 +854,9 @@ msgid "Calligraphy"
 msgstr "Ukuloba kahle"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Chofoza bese unyakazisa igundane kaningana ukuze ulobe kahle."
 
 #: ../../magic/src/cartoon.c:106
@@ -846,7 +864,9 @@ msgid "Cartoon"
 msgstr "Ikhathuni"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukuze ujikise isithombe sibe "
 "ikhathuni."
@@ -885,7 +905,9 @@ msgid "Darken"
 msgstr "Yenza kubemnyamana"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukukhanyisa izingxenye zesithombe sakho."
 
@@ -894,7 +916,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Chofoza ukukhanyisa isithombe sakho sonke."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukukhanyisa izingxenye zesithombe sakho."
 
@@ -984,7 +1008,9 @@ msgid "Grass"
 msgstr "Utshani"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Chofoza bese uyanyakazisa ukuze udwebe utshani. Ungakhohlwa ukungcola!"
 
 #: ../../magic/src/halftone.c:34
@@ -1097,8 +1123,11 @@ msgid "Mosaic"
 msgstr "Mozayiki"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze wongeze amiphumela yemozayiki "
 "ezinxenyeni zesithombe sakho."
@@ -1120,8 +1149,11 @@ msgid "Irregular Mosaic"
 msgstr "Imozayiki engaqondile"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engunxantathu ezinxenyeni "
 "zesithombe sakho."
@@ -1132,8 +1164,12 @@ msgstr ""
 "Chofoza ukuze unezelele ngemozayiki engunxantathu esithombeni sakho sonke."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engusithuphanhlangothi "
 "ezinxenyeni zesithombe sakho."
@@ -1145,8 +1181,12 @@ msgstr ""
 "sonke."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engaqondile ezinxenyeni "
 "zesithombe sakho."
@@ -1160,7 +1200,9 @@ msgid "Negative"
 msgstr "Nekethivu"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Chofoza uhambise imawuzi izungeze ukuze wenze upende wakho uebenekethivu."
 
@@ -1173,7 +1215,9 @@ msgid "Noise"
 msgstr "Umsindo"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele umsindo ezinxenyeni zesithombe "
 "sakho."
@@ -1294,7 +1338,9 @@ msgid "Silhouette"
 msgstr "Umfanekiso oyisithunzi"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze ulinganise imiphetho ezinxenyeni "
 "zesithombe sakho."
@@ -1304,7 +1350,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Chofoza ukuze ulinganise yonke imiphetho esithombeni sakho sonke."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze ucijise izingxenye zesithombe sakho."
 
@@ -1313,7 +1361,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Chofoza ukucijisa sonke isithombe."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze udale umfanekiso oyisithunzi omnyama "
 "nokumhlophe."
@@ -1343,12 +1393,16 @@ msgid "Wet Paint"
 msgstr "Upende Omanzi"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Chofoza bese unyakazisa igundane ukuze uninde isithombe."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze udwebeb ngopende omanzi futhi "
 "onindayo."
@@ -1409,8 +1463,12 @@ msgid "Color & White"
 msgstr "Umubala & Mhlo"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Chofoza bese uhambisa igundane ukuze ushintshe umbala wezinxenye zesithombe "
 "sakho."
@@ -1420,8 +1478,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Chofoza ukuze ushintshe umbala wesithombe sakho sonke."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Chofoza bese unyakazisa igundane ukuze wenze izinxenye zesithombe sakho zibe "

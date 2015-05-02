@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-06-07 18:00+0200\n"
 "Last-Translator: Olli <ollinpostit@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -151,7 +151,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -763,7 +763,10 @@ msgid "Color Shift"
 msgstr "Värin vaihto"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Vaihda maalauksesi värejä eri kohdista raahaamalla hiirtä."
 
 #: ../../magic/src/alien.c:68
@@ -795,16 +798,23 @@ msgid "Drip"
 msgstr "Pisara"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Rakeista maalaus painamalla hiiren painiketta."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Muuta piirros liitupiirrokseksi painamalla hiiren painiketta."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Valuta värejä maalaukseen painamalla hiiren painiketta."
 
 #: ../../magic/src/blur.c:80
@@ -812,7 +822,9 @@ msgid "Blur"
 msgstr "Sumenna"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Sumenna maalausta raahaamalla hiirtä."
 
 #: ../../magic/src/blur.c:84
@@ -825,11 +837,15 @@ msgid "Bricks"
 msgstr "Tiilet"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Piirrä isoja tiiliä painamalla hiiren painiketta."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Piirrä pieniä tiiliä painamalla hiiren painiketta."
 
 #: ../../magic/src/calligraphy.c:127
@@ -837,7 +853,9 @@ msgid "Calligraphy"
 msgstr "Kalligrafia"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Piirrää kallifgrafiaa raahaamalla hiirtä."
 
 #: ../../magic/src/cartoon.c:106
@@ -845,7 +863,9 @@ msgid "Cartoon"
 msgstr "Ääriviivat"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Muuta kuva ääriviivapiirrokseksi painamalla hiiren painiketta ja piirtämällä "
 "kuvan ympäri."
@@ -883,7 +903,9 @@ msgid "Darken"
 msgstr "Tummenna"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Vaalenna maalausta raahaamalla hiirtä."
 
 #: ../../magic/src/fade_darken.c:136
@@ -891,7 +913,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Vaalenna koko maalauksesi hiirtä napsauttamalla."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Tummenna maalauksesi osia raahaamalla hiirtä."
 
 #: ../../magic/src/fade_darken.c:143
@@ -970,7 +994,9 @@ msgid "Grass"
 msgstr "Nurmikko"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Piirrä nurmikko painamalla hiiren painiketta. Älä unohda multaa!"
 
 #: ../../magic/src/halftone.c:34
@@ -1072,8 +1098,11 @@ msgid "Mosaic"
 msgstr "Mosaiikki"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Lisää mosaiikkia maalaukseesi raahamalla hiirtä."
 
 #: ../../magic/src/mosaic.c:104
@@ -1093,8 +1122,11 @@ msgid "Irregular Mosaic"
 msgstr "Epäsäännöllinen mosaiikki"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Lisää neliömosaiikkia maalaukseesi raahaamalla hiirtä."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1102,8 +1134,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Lisää neliömosaiikki koko maalaukseesi hiirtä napsauttamalla."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Lisää kuusikulmaista mosaiikkia maalaukseesi hiirtä raahaamalla."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1112,8 +1148,12 @@ msgstr ""
 "Lisää kuusikulmaista mosaiikkia koko maalaukseesi hiirtä napsauttamalla."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Lisää epäsäännöllistä mosaiikkia maalaukseesi hiirtä raahaamalla."
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1125,7 +1165,9 @@ msgid "Negative"
 msgstr "Vastaväri"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Vaihda värit vastakkaisiksi hiirtä raahaamalla."
 
 #: ../../magic/src/negative.c:109
@@ -1137,7 +1179,9 @@ msgid "Noise"
 msgstr "Häiriö"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Lisää häiriötä maalaukseesi raahaamalla hiirtä."
 
 #: ../../magic/src/noise.c:67
@@ -1255,7 +1299,9 @@ msgid "Silhouette"
 msgstr "Varjokuva"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Erottele ääriviivoja maalauksessasi hiirtä raahaamalla."
 
 #: ../../magic/src/sharpen.c:79
@@ -1263,7 +1309,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Erottele ääriviivat koko maalauksestasi hiirtä napsauttamalla."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Terävöitä maalausta hiirtä raahaamalla."
 
 #: ../../magic/src/sharpen.c:81
@@ -1271,7 +1319,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Terävöitä koko maalaus painamalla hiiren painiketta."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Tee mustavalkoinen varjokuva hiirtä raahaamalla."
 
 #: ../../magic/src/sharpen.c:83
@@ -1296,12 +1346,16 @@ msgid "Wet Paint"
 msgstr "Märkä maali"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Töhri maalausta raahaamalla hiirtä."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Maalaa märällä, tahrivalla maalilla hiirtä raahaamalla."
 
 #: ../../magic/src/snow.c:68
@@ -1357,8 +1411,12 @@ msgid "Color & White"
 msgstr "Väri & valkoinen"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Vaihda maalauksesi värejä hiirtä raahaamalla."
 
 #: ../../magic/src/tint.c:76
@@ -1366,8 +1424,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Vaihda koko maalauksesi värit hiirtä napsauttamalla."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Muuta maalauksesi osia kaksiväriseksi (valitsemasi väri ja valkoinen) hiirtä "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-06-08 23:13+0700\n"
 "Last-Translator: T. Surya Fajri <kilelme@gmail.com>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -149,7 +149,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -760,7 +760,10 @@ msgid "Color Shift"
 msgstr "Mengubah Warna."
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klik dan gerakkan mouse untuk merubah warna pada bagian gambar anda."
 
 #: ../../magic/src/alien.c:68
@@ -792,18 +795,25 @@ msgid "Drip"
 msgstr "Drip"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klik dan pindah mouse ke sekitar untuk membuat gambar berblok."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik dan pindahkan mouse ke sekitar untuk merubah gambar ke gambar dengan "
 "kapur."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik dan pindahkan mouse ke sekitar untuk membuat gambar drip."
 
 #: ../../magic/src/blur.c:80
@@ -811,7 +821,9 @@ msgid "Blur"
 msgstr "Blur"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Klik dan gerakkan mouse di sekitar gambar untuk mengaburkan gambar."
 
 #: ../../magic/src/blur.c:84
@@ -824,11 +836,15 @@ msgid "Bricks"
 msgstr "Balok"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Klik dan pindahkan untuk menggambar balok besar."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Klik dan pindahkan untuk menggambar balok kecil."
 
 #: ../../magic/src/calligraphy.c:127
@@ -836,7 +852,9 @@ msgid "Calligraphy"
 msgstr "Kaligrafi"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik dan gerakkan mouse di sekitar gambar untuk mengambar kaligrafi."
 
 #: ../../magic/src/cartoon.c:106
@@ -844,7 +862,9 @@ msgid "Cartoon"
 msgstr "Kartun"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Klik dan pindahkan mouse ke sekitar untuk mengubah gambar ke sebuah kartun."
 
@@ -881,7 +901,9 @@ msgid "Darken"
 msgstr "Gelapkan"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse di sekitar gambar untuk menerangkan bagian dari "
 "gambar anda."
@@ -891,7 +913,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Klik untuk menerangkan seluruh gambar anda."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik dan pindahkan mouse untuk menggelapkan bagian dari gambar anda."
 
 #: ../../magic/src/fade_darken.c:143
@@ -972,7 +996,9 @@ msgid "Grass"
 msgstr "Gores"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Klik dan pindahkan untuk menggambar goresan. Jangan lupa kotoran!"
 
 #: ../../magic/src/halftone.c:34
@@ -1076,8 +1102,11 @@ msgid "Mosaic"
 msgstr "Mozaik"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan efek mozaik pada bagian gambar "
 "anda."
@@ -1100,8 +1129,11 @@ msgid "Irregular Mosaic"
 msgstr "Mozaik Tidak Teratur"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan sebuah mozaik persegi pada bagian "
 "gambar anda."
@@ -1111,8 +1143,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klik untuk menambahkan mozaik persegi pada seluruh gambar anda."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "klik dan gerakkan mouse untuk menambahkan mozaik segi lima pada bagian "
 "gambar anda."
@@ -1122,8 +1158,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klik untuk menambahkan mozaik segi lima pada seluruh gambar anda."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan mozaik tidak teratur pada bagian "
 "gambar anda."
@@ -1138,7 +1178,9 @@ msgstr "Negatif"
 
 # | msgid "Click and move the mouse around to draw a negative."
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Klik dan gerakkan mouse disekitar gambar untuk membuat negatis dari lukisan "
 "anda."
@@ -1152,7 +1194,9 @@ msgid "Noise"
 msgstr "Noise"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan noise pada bagian gambar anda."
 
@@ -1273,7 +1317,9 @@ msgid "Silhouette"
 msgstr "Siluet"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Klik dan gerakkan mouse untuk melacak tepian pada bagian gambar anda."
 
 #: ../../magic/src/sharpen.c:79
@@ -1281,7 +1327,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Klik untuk melacak tepian pada seluruh gambar anda."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Klik dan gerakkan mouse untuk mempertajam bagian dari gambar anda."
 
 #: ../../magic/src/sharpen.c:81
@@ -1289,7 +1337,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Klik untuk mempertajam seluruh gambar."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Klik dan gerakkan mouse untuk membuat sebuah siluet hitam dan putih."
 
 #: ../../magic/src/sharpen.c:83
@@ -1315,12 +1365,16 @@ msgid "Wet Paint"
 msgstr "Wet Paint"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Klik dan gerakkan mouse disekitar gambar untuk mengammbar dengan wet, smudgy "
 "paint."
@@ -1379,8 +1433,12 @@ msgid "Color & White"
 msgstr "Warna dan Putih"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "klik dan gerakkan mouse disekitar gambar untuk merubah warna pada bagian "
 "gambar anda."
@@ -1390,8 +1448,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klik untuk mengubah warna pada seluruh gambar anda."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Klik dan gerakkan mouse disekitar gambar untuk merubah bagian gambar anda "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2010-12-09 09:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -149,7 +149,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -751,7 +751,10 @@ msgid "Color Shift"
 msgstr "Diro rangi"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Dii ci iywa ladic ne wek olok rangi idul kom cal mamegi."
 
 #: ../../magic/src/alien.c:68
@@ -783,16 +786,23 @@ msgid "Drip"
 msgstr "Ton"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi cal gubed calo bulok."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Dii ci iywa ladic iyi akina ne wek ilok cal kun dwoko ne igoc ma coka."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi ton pa cal."
 
 #: ../../magic/src/blur.c:80
@@ -800,7 +810,9 @@ msgid "Blur"
 msgstr "Ma laribiribi."
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi cal bed laribiribi."
 
 #: ../../magic/src/blur.c:84
@@ -813,11 +825,15 @@ msgid "Bricks"
 msgstr "Matapwali"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Dii ci idir wek ogo cal matapwali ma dit odoco."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Dii ci idir wek igo cal matapwali ma tino."
 
 #: ../../magic/src/calligraphy.c:127
@@ -825,7 +841,9 @@ msgid "Calligraphy"
 msgstr "Coc  ma mwonya"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Dii ci idir ladic iyi akina ne wek igo iyi coc ma mwonya."
 
 #: ../../magic/src/cartoon.c:106
@@ -833,7 +851,9 @@ msgid "Cartoon"
 msgstr "Katuun"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Dii ci idir iyi akina ne wek owir cal dwok tung kum katuun."
 
 #: ../../magic/src/confetti.c:85
@@ -869,7 +889,9 @@ msgid "Darken"
 msgstr "Cidi"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Dii ci idir ladic wek icwiny dul kom pa cal mamegi."
 
 #: ../../magic/src/fade_darken.c:136
@@ -877,7 +899,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Dii wek icwiny cal mamegi weng."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Dii ci idir ladic wek icid dul kom cal mamegi."
 
 #: ../../magic/src/fade_darken.c:143
@@ -960,7 +984,9 @@ msgid "Grass"
 msgstr "Lum"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Dii ci idir wek ogo lum. Kur wii wil ki cilo!"
 
 #: ../../magic/src/halftone.c:34
@@ -1073,8 +1099,11 @@ msgid "Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma olinge(Mosaic)"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Dii wek idir ladic ka ibimedo teko pa mojaik ikom dul kom cal mamegi."
 
 #: ../../magic/src/mosaic.c:104
@@ -1095,8 +1124,11 @@ msgid "Irregular Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma olinge ma pe ki twoke "
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Dii ci idir ladic wek omed cal ma kiketo ki gwenge ma olinge  ma twoke "
 "angwen rorom ikom dul cal mamegi weng."
@@ -1108,8 +1140,12 @@ msgstr ""
 "cal mamegi weng."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Dii ki idir ladic wek omed cal ma kiketo kacel ki gwenge ma olinge ma twoke "
 "abicel marom ikom cal mamegi."
@@ -1121,8 +1157,12 @@ msgstr ""
 "ikom cal mamegi weng."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Dii ki idir ladic wek imed cal ma kiketo kacel ki gwenge ma olinge ma twoke "
 "tye ataata  idul kom cal mamegi."
@@ -1138,7 +1178,9 @@ msgid "Negative"
 msgstr "Olutuke"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Dii ki idir ladic akina ne wek omi wir mamegi obed marac."
 
 #: ../../magic/src/negative.c:109
@@ -1150,7 +1192,9 @@ msgid "Noise"
 msgstr "Dange"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Dii ki idir ladic wek imed dange idul ikom cal mamegi."
 
 #: ../../magic/src/noise.c:67
@@ -1266,7 +1310,9 @@ msgid "Silhouette"
 msgstr "Silhoutte"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Dii ki idir ladic wek okwed teng idul kom cal mamegi."
 
 #: ../../magic/src/sharpen.c:79
@@ -1274,7 +1320,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Dii wek okwed teng ical mamegi weng."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Dii ki idir ladic ne  wek opak dul kom cal mamegi."
 
 #: ../../magic/src/sharpen.c:81
@@ -1282,7 +1330,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Dii wek ipak cal mamegi weng."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Dii ki idir ladic wek oyik silhoutte matye macol ki  matar."
 
 #: ../../magic/src/sharpen.c:83
@@ -1307,12 +1357,16 @@ msgid "Wet Paint"
 msgstr "Rangi madyaka"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Dii ki idir ladic akina ne wek ilil cal."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Dii ki idir ladic iyi akina ne wek igo kwede madyak. dawa ma dyakdyak."
 
 #: ../../magic/src/snow.c:68
@@ -1368,8 +1422,12 @@ msgid "Color & White"
 msgstr "Rangi & Matar"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Dii ki idir ladic i akinakina ne wek olok rangi pa dul kom cal mamegi."
 
 #: ../../magic/src/tint.c:76
@@ -1377,8 +1435,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Dii wek ilok rangi pa cal mamegi weng."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Dii ki idir ladic i akinakina ne wek olok dul kom cal mamegi idwok matar "

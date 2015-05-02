@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -148,7 +148,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -754,7 +754,10 @@ msgid "Color Shift"
 msgstr "रोङ उचा़ड़"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे रोङ बोदोल ला़गित् ओताय मे आर माउस लाड़ाव मे."
 
 #: ../../magic/src/alien.c:68
@@ -786,16 +789,23 @@ msgid "Drip"
 msgstr "टोपोक्"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "चिता़र एसेत् तेयार ला़गित् गोटा सेत् माउस आ़चुर आर ओताय मे."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "चोक खुड़ी गार तेयार रे चितार आ़चुर ला़गित माउस गोटा सेत् लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "चिता़र टोपोक् तेयार ला़गित् माउस गोटा सेत् आ़चुर आर ओताय मे."
 
 #: ../../magic/src/blur.c:80
@@ -803,7 +813,9 @@ msgid "Blur"
 msgstr "धुंध"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "चिता़र धुंध ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
 #: ../../magic/src/blur.c:84
@@ -816,11 +828,15 @@ msgid "Bricks"
 msgstr "इंटा को"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "माराङ इंटा को गार ला़गित् आ़चुर आर ओताय मे."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "हुडिञ इंटा को गार तेयार ला़गित् आ़चुर आर ओताय मे."
 
 #: ../../magic/src/calligraphy.c:127
@@ -828,7 +844,9 @@ msgid "Calligraphy"
 msgstr "बेस आखोर ओल हुना़र"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "बेस आखोर ओल हुना़र रे गार ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
 #: ../../magic/src/cartoon.c:106
@@ -836,7 +854,9 @@ msgid "Cartoon"
 msgstr "चिगा़रिया़ ला़गित् बेनावाकान चिता़र"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "चिगा़रिया़ ला़गित् बेनावाकान चिता़र रे चिता़र आ़चुर ला़गित् माउस गोटा सेत् ते आ़चुर आर ओताय मे."
 
@@ -873,7 +893,9 @@ msgid "Darken"
 msgstr "गाड़हो तेयार"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् एताङ हिंस ला़गित् माउस आ़चुर आर ओताय मे."
 
 #: ../../magic/src/fade_darken.c:136
@@ -881,7 +903,9 @@ msgid "Click to lighten your entire picture."
 msgstr "आमाक् गोटा चितार एताङ ला़गित् ओताय मे."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् गाड़हो हिंस ला़गित् माउस आ़चुर आर ओताय मे."
 
 #: ../../magic/src/fade_darken.c:143
@@ -960,7 +984,9 @@ msgid "Grass"
 msgstr "घांस"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "घांस गार चिता़र ला़गित् लाड़ाव आर ओता. ओजरा आलोम हिड़िञा!"
 
 #: ../../magic/src/halftone.c:34
@@ -1063,8 +1089,11 @@ msgid "Mosaic"
 msgstr "चिता़र बोरनो"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "आमाक् चिता़र रेयाक् हिंस रे चिता़र बोरनो पोरभाव सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
@@ -1085,8 +1114,11 @@ msgid "Irregular Mosaic"
 msgstr "आपा बा़ड़िया चिता़र बोरनो"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "आमाक् चिता़र रेयाक् हिंस रे पुन सोमान जिलिञ गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् "
 "माउस लाड़ाव आर ओताय मे."
@@ -1097,8 +1129,12 @@ msgstr ""
 "आमाक् गोटा चिता़र रे पुन सोमान जिलिञ गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् ओताय मे."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "आमाक् चिता़र रेयाक् हिंस रे इरा़ल गार ते एसेत् तेयार चिता़र बोरनो सेलेद ला़गित् माउस लाड़ाव "
 "आर ओताय मे."
@@ -1108,8 +1144,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे इरा़ल गार ते एसेत् तेयार चिता़र सेलेद ला़गित् ओताय मे."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "आमाक् चिता़र रेयाक् हिंस रे आपाबाड़िया़ चिता़र बोरनो सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
@@ -1122,7 +1162,9 @@ msgid "Negative"
 msgstr "एंडरे, बाङ"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "आमाक् रोङ पेरेच् एंडरे तेयार ला़गित् माउस धारे धारे सेत् ते लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/negative.c:109
@@ -1134,7 +1176,9 @@ msgid "Noise"
 msgstr "आंदोड़"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे आंदोड़ सेलेद ला़गित् माउस लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/noise.c:67
@@ -1251,7 +1295,9 @@ msgid "Silhouette"
 msgstr "उमुल चिता़र"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस रे धारे को पानते ला़गित् माउस लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/sharpen.c:79
@@ -1259,7 +1305,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "आमाक् गोटा चिता़र रे धारे को पानते ला़गित् ओताय मे."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "आमाक् चिता़र रेयाक् हिंस लासेर ला़गित् माउस लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/sharpen.c:81
@@ -1267,7 +1315,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "गोटा चिता़र लासेर ला़गित् ओताय मे."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "हेंदे आर पुंड उमुल चिता़र तेयार ला़गित् माउस लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/sharpen.c:83
@@ -1292,12 +1342,16 @@ msgid "Wet Paint"
 msgstr "लोहोदाक् रोङ पेरेच्"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "धुंवा़ दाग चिता़र सेत् ते माउस लाड़ाव आर ओताय मे."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "लोहोद, धुंवा़ दाग रोङ पेरेच् सेत् ते माउस लाड़ाव आर ओताय मे."
 
 #: ../../magic/src/snow.c:68
@@ -1353,8 +1407,12 @@ msgid "Color & White"
 msgstr " रोङाक् & पुंडाक्"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "आमाक् चिता़र हिंस रेयाक् रोङ बोदोल ला़गित् गोटा सेत् माउस लाड़ाव  आर ओताय मे."
 
 #: ../../magic/src/tint.c:76
@@ -1362,8 +1420,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "आमाक् गोटा चिता़र रेयाक् रोङ बोदोल ला़गित् ओताय मे."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "पुंड आर आमेम बाछाव रोङ रे आमाक् चिता़र रेयाक् हिंस आ़चुर ला़गित्  गेटा सेत् माउस लाड़ाव आर "

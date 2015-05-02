@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2012-01-02 22:41+0200\n"
 "Last-Translator: gvhı <asd@gmail.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -147,7 +147,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -753,7 +753,10 @@ msgid "Color Shift"
 msgstr "Renk Kaydırma"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Resminizdeki renk parçalarını değiştirmek için fareyi parçanın üzerinde "
 "tıklatın ve gezdirin."
@@ -787,17 +790,24 @@ msgid "Drip"
 msgstr "Damla damla akıt"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Resmi tıknaz hale getirmek için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Resmi bir tebeşir çizimine çevirmek için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Resmi damla damla akıtmak için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/blur.c:80
@@ -805,7 +815,9 @@ msgid "Blur"
 msgstr "Bulanıklaştır"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr ""
 "Resmi bulanıklaştırmak için fareyi tıklatın ve resmin etrafında çevirin."
 
@@ -819,11 +831,15 @@ msgid "Bricks"
 msgstr "Tuğlalar"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Büyük tuğlalar çizmek için tıkla ve fareyi hareket ettir."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Küçük tuğlalar çizmek için tıkla ve fareyi hareket ettir."
 
 #: ../../magic/src/calligraphy.c:127
@@ -831,7 +847,9 @@ msgid "Calligraphy"
 msgstr "Kaligrafi"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Tıklayın ve resmin çevresinde hat çizmek için fareyi hareket ettirin."
 
 #: ../../magic/src/cartoon.c:106
@@ -839,7 +857,9 @@ msgid "Cartoon"
 msgstr "Karikatür"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Resmi bir karikatüre çevirmek için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/confetti.c:85
@@ -875,7 +895,9 @@ msgid "Darken"
 msgstr "Rengini koyulaştır"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Resminin aydınlanmasını istediğin yere fareyi tıklat ve orada gezdir."
 
 #: ../../magic/src/fade_darken.c:136
@@ -883,7 +905,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Resmin tamamını aydınlatmak için tıklayın"
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Resminin kararmasını istediğin yere fareyi tıklat ve orada gezdir."
 
 #: ../../magic/src/fade_darken.c:143
@@ -968,7 +992,9 @@ msgid "Grass"
 msgstr "Çim"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Çim çizmek için tıkla ve fareyi hareket ettir. Kiri unutmayın!"
 
 #: ../../magic/src/halftone.c:34
@@ -1083,8 +1109,11 @@ msgid "Mosaic"
 msgstr "Mozaik"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Resminde mozaik efekti uygulamak istediğin yere tıkla ve fareyi hareket "
 "ettir."
@@ -1106,8 +1135,11 @@ msgid "Irregular Mosaic"
 msgstr "Düzensiz Mozaik"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Resmine karesel mozaik eklemek istediğin alana tıkla ve fareyi hareket ettir."
 
@@ -1116,8 +1148,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Bütün resmine karesel mozaik eklemek için tıkla."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Resmine sekizgen mozaik eklemek istediğin alana tıkla ve fareyi gezdir."
 
@@ -1126,8 +1162,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Bütün resmine sekizgen mozaik eklemek için tıkla."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Resmine düzensiz mozaik eklemek istediğin alana tıkla ve fareyi gezdir."
 
@@ -1140,7 +1180,9 @@ msgid "Negative"
 msgstr "Negatif"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Boyanın tersine dönmesini istediğiniz yere tıklayın ve fareyi oranın "
 "etrafında gezdirin."
@@ -1154,7 +1196,9 @@ msgid "Noise"
 msgstr "Gürültü"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Resminde gürültü eklemek istediğin yere tıkla ve fareyi gezdir."
 
 #: ../../magic/src/noise.c:67
@@ -1274,7 +1318,9 @@ msgid "Silhouette"
 msgstr "Silüet"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Resminizde iz koymak istediğiniz kenarlarını tıklayın ve fareyi gezdirin."
 
@@ -1283,7 +1329,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Reminizin bütün kenarlarına iz koymak için tıklayın."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr ""
 "Resminizde keskinleştirmek istediğiniz alanlara tıklayın ve fareyi hareket "
 "ettirin."
@@ -1293,7 +1341,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Bütün resmi keskinleştirmek için tıklayın."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
 "Beyaz ve siyah silüetler oluşturmak için tıklayın ve fareyi hareket ettirin."
 
@@ -1320,12 +1370,16 @@ msgid "Wet Paint"
 msgstr "Islak Boya"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Tütsülemek için tıkla ve fareyi etrafta gezdir."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Resmin etrafını ıslak,lekeli boyayla boyamak için tıklayın ve fareyi hareket "
 "ettirin."
@@ -1384,8 +1438,12 @@ msgid "Color & White"
 msgstr "Renk & Beyaz"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Değişmesini istediğin renk kısımlarının üzerinde fareyi tıkla ve hareket "
 "ettir."
@@ -1395,8 +1453,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Bütün resminizin resmini değiştirmek için tıklayın."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Resminizin beyaza ve sizin seçtinğiniz bir renge dönmesi için fareyi "

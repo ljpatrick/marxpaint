@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -153,7 +153,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -748,7 +748,10 @@ msgid "Color Shift"
 msgstr "Värvinihe"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Hoia hiirenuppu all ja liiguta, et muuta su pildis värve."
 
 #: ../../magic/src/alien.c:68
@@ -778,16 +781,23 @@ msgid "Drip"
 msgstr "Tilgad"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Tee klõps ja liiguta hiirt pildi ruudulisemaks muutmiseks."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
 
 #: ../../magic/src/blur.c:80
@@ -795,7 +805,9 @@ msgid "Blur"
 msgstr "Hägu"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 
 #: ../../magic/src/blur.c:84
@@ -808,11 +820,15 @@ msgid "Bricks"
 msgstr "Tellised"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Tee klõps ja liiguta hiirt, et joonistada suuri telliskive."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Tee klõps ja liiguta hiirt, et joonistada väikeseid telliskive."
 
 #: ../../magic/src/calligraphy.c:127
@@ -820,7 +836,9 @@ msgid "Calligraphy"
 msgstr "Kalligraafia"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Tee klõps ja liiguta hiirt kalligraafiaga joonistamiseks."
 
 #: ../../magic/src/cartoon.c:106
@@ -828,7 +846,9 @@ msgid "Cartoon"
 msgstr "Multikas"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
 #: ../../magic/src/confetti.c:85
@@ -864,7 +884,9 @@ msgid "Darken"
 msgstr "Tumendus"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et pilti heledamaks teha."
 
 #: ../../magic/src/fade_darken.c:136
@@ -872,7 +894,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Klõpsa, et tervet pilti heledamaks teha"
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et pilti tumedamaks teha."
 
 #: ../../magic/src/fade_darken.c:143
@@ -955,7 +979,9 @@ msgid "Grass"
 msgstr "Muru"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Tee klõps ja liiguta hiirt,et joonistada muru. Ära unusta pori!"
 
 #: ../../magic/src/halftone.c:34
@@ -1063,8 +1089,11 @@ msgid "Mosaic"
 msgstr "Mosaiik"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
 #: ../../magic/src/mosaic.c:104
@@ -1088,7 +1117,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:156
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1099,7 +1128,7 @@ msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
 #: ../../magic/src/mosaic_shaped.c:161
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1110,7 +1139,7 @@ msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
 #: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1123,7 +1152,9 @@ msgid "Negative"
 msgstr "Negatiiv"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Tee klõps ja liiguta hiirt ringi, et teha pilt negatiivseks."
 
 #: ../../magic/src/negative.c:109
@@ -1135,7 +1166,9 @@ msgid "Noise"
 msgstr "Müra"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada pildile müra."
 
 #: ../../magic/src/noise.c:67
@@ -1257,7 +1290,9 @@ msgid "Silhouette"
 msgstr "Siluett"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et tuua ääri esile."
 
 #: ../../magic/src/sharpen.c:79
@@ -1265,7 +1300,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Klõpsa, et tuua tervel pildil ääred esile."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et teravdada pilti."
 
 #: ../../magic/src/sharpen.c:81
@@ -1273,7 +1310,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Tee klõps, et teha terve pilt teravamaks."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Tee klõps ja liiguta hiirt, et luua mustvalget siluetti."
 
 #: ../../magic/src/sharpen.c:83
@@ -1299,13 +1338,15 @@ msgid "Wet Paint"
 msgstr "Metallivärv"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Tee klõps ja liiguta hiirt, et värvidega mäkerdada."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 #, fuzzy
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 
 #: ../../magic/src/snow.c:68
@@ -1363,8 +1404,12 @@ msgid "Color & White"
 msgstr "Värviline & Valge"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klõpsa ja liiguta hiirt ringi, et muuta pildi värve."
 
 #: ../../magic/src/tint.c:76
@@ -1372,8 +1417,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klõpsa, et muuta terve pildi värve."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Klõpsa ja liiguta hiirt ringi, et muuta pilti valgeks ja sinu valitud "

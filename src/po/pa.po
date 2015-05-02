@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2013-02-04 21:03+0200\n"
 "Last-Translator: Arshpreet singh <EMAIL@ADDRESS>\n"
 "Language-Team: none>\n"
@@ -145,7 +145,7 @@ msgstr ""
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr ""
 
 #. digits (e.g., '0', '1' and '7')
@@ -741,7 +741,10 @@ msgid "Color Shift"
 msgstr "ਰੰਗ ਬਦਲੋ  "
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "ਮਾਉਸ ਕਲਿਕ  ਦੀ  ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਵਿਚ ਅਲਗ-ਅਲਗ ਰੰਗ ਭਰੋ "
 
 #: ../../magic/src/alien.c:68
@@ -771,17 +774,24 @@ msgid "Drip"
 msgstr "ਬੂੰਦ "
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "ਕਲਿਕ ਕਰੋ ਅਤੇ ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਆਪਣੀ ਤਸਵੀਰ ਨੂ ਬਲਾਕ ਵਿਚ ਲੈ ਕੇ ਆਓ "
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "  ਕਲਿਕ ਕਰੋ ਅਤੇ ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਆਪਣੀ ਤਸਵੀਰ ਨੂੰ ਸਲੇਟੀ ਨਾਲ ਬਣਾਈ ਹੋਈ ਪੇਂਟਿੰਗ ਵਿਚ ਬਦਲੋ "
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "ਕਲਿਕ ਕਰੋ ਅਤੇ ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਆਪਣੀ ਤਸਵੀਰ ਨੂੰ ਬੂੰਦਾਂ ਵਿਚ ਬਦਲੋ "
 
 #: ../../magic/src/blur.c:80
@@ -789,7 +799,9 @@ msgid "Blur"
 msgstr "ਧੁੰਦਲੀ "
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr " ਜਿਸ ਹਿੱਸੇ ਨੂੰ  ਧੁੰਦਲਾ  ਬਨਾਓਣਾ ਹੈ ਉਸ ਤੇ ਕਲਿਕ ਕਰੋ "
 
 #: ../../magic/src/blur.c:84
@@ -802,11 +814,15 @@ msgid "Bricks"
 msgstr "ਇੱਟਾਂ"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr " ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਵੱਡੀਆਂ ਇੱਟਾਂ ਬਨਾਓ"
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr " ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਛੋਟੀਆਂ  ਇੱਟਾਂ ਬਨਾਓ"
 
 #: ../../magic/src/calligraphy.c:127
@@ -814,7 +830,9 @@ msgid "Calligraphy"
 msgstr "ਕੈਲੀਗ੍ਰਾਫੀ"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr " ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਕੈਲੀਗ੍ਰਾਫੀ ਬਨਾਓ"
 
 #: ../../magic/src/cartoon.c:106
@@ -822,7 +840,9 @@ msgid "Cartoon"
 msgstr "ਕਾਰਟੂਨ "
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਕਾਰਟੂਨ  ਬਨਾਓ "
 
 #: ../../magic/src/confetti.c:85
@@ -858,7 +878,9 @@ msgid "Darken"
 msgstr "ਗੂੜਾ "
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਦੇ ਹਿੱਸੇ ਫਿੱਕੇ ਕਰੋ "
 
 #: ../../magic/src/fade_darken.c:136
@@ -866,7 +888,9 @@ msgid "Click to lighten your entire picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਸਾਰੀ ਤਸਵੀਰ ਫਿੱਕੀ ਕਰੋ "
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਦੇ ਹਿੱਸੇ ਗੂੜੇ  ਕਰੋ"
 
 #: ../../magic/src/fade_darken.c:143
@@ -948,7 +972,9 @@ msgid "Grass"
 msgstr "ਘਾਹ  "
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "  ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਵਿਚ ਘਾਹ ਲਗਾਓ "
 
 #: ../../magic/src/halftone.c:34
@@ -1059,9 +1085,11 @@ msgid "Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr ""
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
+msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
 #: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
@@ -1085,7 +1113,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1098,7 +1126,7 @@ msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤ�
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1111,7 +1139,7 @@ msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤ�
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
 #: ../../magic/src/mosaic_shaped.c:167
@@ -1125,7 +1153,9 @@ msgid "Negative"
 msgstr "ਨੈਗੇਟਿਵ "
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "    ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਨੂ ਨੈਗੇਟਿਵ ਵਿਚ ਬਦਲੋ "
 
 #: ../../magic/src/negative.c:109
@@ -1137,7 +1167,9 @@ msgid "Noise"
 msgstr "ਆਵਾਜ਼ "
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ  ਤਸਵੀਰ ਵਿਚ ਆਵਾਜ਼ ਭਰੋ "
 
 #: ../../magic/src/noise.c:67
@@ -1263,7 +1295,9 @@ msgid "Silhouette"
 msgstr ""
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr " ਆਪਣੀ ਤਸਵੀਰ ਦੇ ਕਿਨਾਰੇ ਲਭੋ  "
 
 #: ../../magic/src/sharpen.c:79
@@ -1271,7 +1305,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "ਆਪਣੀ ਪੂਰੀ ਤਸਵੀਰ ਦੇ ਕਿਨਾਰੇ ਲਭੋ  "
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਦੇ ਹਿੱਸੇ ਤੀਖ਼ੇ ਕਰੋ "
 
 #: ../../magic/src/sharpen.c:81
@@ -1279,7 +1315,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਪੂਰੀ ਤਸਵੀਰ ਨੂ ਤਿਖਾ ਕਰੋ "
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ  ਤਸਵੀਰ ਦੇ ਹਿੱਸੇ ਨੂ ਬਲੈਕ ਏੰਡ ਵਾਈਟ ਕਰੋ "
 
 #: ../../magic/src/sharpen.c:83
@@ -1306,14 +1344,16 @@ msgid "Wet Paint"
 msgstr "ਧਾਤੂ ਵਾਲਾ ਰੰਗ "
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click and drag the mouse around to smudge the picture."
+msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਏਮਬੋਸ ਕਰੋ "
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 #, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr " ਜਿਸ ਹਿੱਸੇ ਨੂੰ  ਧੁੰਦਲਾ  ਬਨਾਓਣਾ ਹੈ ਉਸ ਤੇ ਕਲਿਕ ਕਰੋ "
 
 #: ../../magic/src/snow.c:68
@@ -1367,8 +1407,12 @@ msgid "Color & White"
 msgstr "ਰੰਗਦਾਰ ਅਤੇ ਚਿੱਟਾ "
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਤਸਵੀਰ ਦੇ ਹਿਸੇਆਂ  ਦਾ ਰੰਗ ਬਦਲੋ "
 
 #: ../../magic/src/tint.c:76
@@ -1376,8 +1420,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਸਾਰੀ ਤਸਵੀਰ ਦਾ ਰੰਗ ਬਦਲੋ "
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ ਸਾਰੀ ਤਸਵੀਰ ਦੇ ਹਿਸੇਆਂ ਨੂ ਵਾਈਟ ਅਤੇ ਹੋਰ ਕਿਸੇ ਵੀ ਰੰਗ ਵਿਚ ਬਦਲੋ "

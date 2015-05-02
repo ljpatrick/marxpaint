@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2010-11-04 23:59+0200\n"
 "Last-Translator: Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,7 +148,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -750,7 +750,10 @@ msgid "Color Shift"
 msgstr "Badili rangi"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Bofya na sogeza kipanya kubadili rangi kwenye sehemu za picha zako."
 
 #: ../../magic/src/alien.c:68
@@ -782,16 +785,23 @@ msgid "Drip"
 msgstr "Dondosha"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Bofya na sogea kipanya kuweka miraba midogo kwenye picha."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Bofya na sogea kipanya kuchua picha na chaki."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Bofya na sogea kipanya kudondoshea picha."
 
 #: ../../magic/src/blur.c:80
@@ -799,7 +809,9 @@ msgid "Blur"
 msgstr "Ukungu"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "Bofya na sogeza kipanya kuweka ukungu kwenye picha."
 
 #: ../../magic/src/blur.c:84
@@ -812,11 +824,15 @@ msgid "Bricks"
 msgstr "Vipande"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "Bofya na sogeza kuchora kipande kikubwa."
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "Bofya na sogeza kuchora kipande kidogo."
 
 #: ../../magic/src/calligraphy.c:127
@@ -824,7 +840,9 @@ msgid "Calligraphy"
 msgstr "Kaligrafia"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Bofya na sogeza kipanya kuchora kikaligrafia."
 
 #: ../../magic/src/cartoon.c:106
@@ -832,7 +850,9 @@ msgid "Cartoon"
 msgstr "Katuni"
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Bofya na sogeza kipanya kubadilisha picha kuwa katuni."
 
 #: ../../magic/src/confetti.c:85
@@ -868,7 +888,9 @@ msgid "Darken"
 msgstr "Koleza"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Bofya na sogeza kipanya kupunguza rangi kwenye sehemu ya picha."
 
 #: ../../magic/src/fade_darken.c:136
@@ -876,7 +898,9 @@ msgid "Click to lighten your entire picture."
 msgstr "Bofya na sogeza kipanya kupunguza rangi kwenye picha nzima."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Bofya na sogeza kipanya kukoleza rangi kwenye sehemu ya picha."
 
 #: ../../magic/src/fade_darken.c:143
@@ -958,7 +982,9 @@ msgid "Grass"
 msgstr "Jani"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Bofya na sogeza kuchora majani. Usisahau udongo!"
 
 #: ../../magic/src/halftone.c:34
@@ -1070,8 +1096,11 @@ msgid "Mosaic"
 msgstr "Nakshi"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Bofya na sogeza kipanya kuongeza nakshi kwenye sehemu ya picha yako."
 
 #: ../../magic/src/mosaic.c:104
@@ -1091,8 +1120,11 @@ msgid "Irregular Mosaic"
 msgstr "Nakshi ya pembe nyingi"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Bofya na sogeza kipanya kuongeza nakshi kwenye sehemu ya picha yako."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1100,8 +1132,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Bofya kuongeza nakshi ya mraba kwenye picha yako nzima."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Bofya na sogeza kipanya kuongeza nakshi ya pembetisa kwenye sehemu ya picha "
 "yako."
@@ -1111,8 +1147,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Bofya kuongeza nakshi ya pembetisa kwenye picha yako nzima."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Bofya na sogeza kipanya kuongeza nakshi ya pembe nyingi kwenye sehemu ya "
 "picha yako."
@@ -1126,7 +1166,9 @@ msgid "Negative"
 msgstr "Kinyume"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Bofya na sogeza kipanya kufanya mchoro wako kuwa negativu."
 
 #: ../../magic/src/negative.c:109
@@ -1138,7 +1180,9 @@ msgid "Noise"
 msgstr "Kelele"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Bofya na sogeza kipanya kuongeza kelele picha yako."
 
 #: ../../magic/src/noise.c:67
@@ -1254,7 +1298,9 @@ msgid "Silhouette"
 msgstr "Kivuli"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Bofya na sogeza kipanya kupata ncha za sehemu ya picha yako."
 
 #: ../../magic/src/sharpen.c:79
@@ -1262,7 +1308,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Bofya kupata ncha za picha yako yote."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Bofya na sogeza kipanya kuchonga baadhi ya sehemu za picha yako."
 
 #: ../../magic/src/sharpen.c:81
@@ -1270,7 +1318,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "Bofya kuchonga picha yote."
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Bofya na sogeza kipanya kutengeneza kivuli cheusi na cheupe."
 
 #: ../../magic/src/sharpen.c:83
@@ -1295,12 +1345,16 @@ msgid "Wet Paint"
 msgstr "Rangi ya majimaji"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Bofya na sogeza kipanya kuweka doa kwenye picha."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Bofya na kokota kipanya kwa kuzungusha kichora kwa rangi ya madoa ya "
 "majimaji."
@@ -1358,8 +1412,12 @@ msgid "Color & White"
 msgstr "Rangi & Nyeupe"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Bofya na sogeza kipanya kubalidi rangi ya sehemu za picha yako."
 
 #: ../../magic/src/tint.c:76
@@ -1367,8 +1425,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Bofya na sogeza kipanya kubalidi rangi picha yako nzima."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr "Bofya na sogeza kipanya zungusha kugeuza sehemu za picha yako."
 

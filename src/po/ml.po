@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-14 21:32+0100\n"
+"POT-Creation-Date: 2015-05-02 11:24+0200\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -158,7 +158,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`%_@$~#{<(^&*"
+msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -758,7 +758,10 @@ msgid "Color Shift"
 msgstr "നിറം മാറ്റാം"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to change the colors in parts of your picture."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
+msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തിന്റെ ഒരു ഭാഗത്ത് നിറം മാറ്റാന്‍ മൗസിന്റെ ഇടതു ബട്ടണ്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/alien.c:68
@@ -790,16 +793,23 @@ msgid "Drip"
 msgstr "ഇറ്റിറ്റു വീഴുക"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-msgid "Click and move the mouse around to make the picture blocky."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
+msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തില്‍ കട്ടകള്‍ വരയ്ക്കാനാവും."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+"Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "ചിത്രത്തെ വെണ്മയുള്ളതാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ മതി."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-msgid "Click and move the mouse around to make the picture drip."
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture drip."
+msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തെ ഇറ്റിറ്റു വീഴുന്ന രീതിയിലാക്കാനാവും."
 
@@ -808,7 +818,9 @@ msgid "Blur"
 msgstr "മങ്ങുക"
 
 #: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the image."
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
+msgid "Click and drag the mouse around to blur the image."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തിന് ഒരു മങ്ങല്‍ നല്‍കാനാവും."
 
 #: ../../magic/src/blur.c:84
@@ -821,11 +833,15 @@ msgid "Bricks"
 msgstr "ഇഷ്ടിക"
 
 #: ../../magic/src/bricks.c:131
-msgid "Click and move to draw large bricks."
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to draw large bricks."
 msgstr "വലിയ ഇഷ്ടിക വരയ്ക്കാന്‍ അമര്‍ത്തിയശേഷം നീക്കുക"
 
 #: ../../magic/src/bricks.c:133
-msgid "Click and move to draw small bricks."
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
+msgid "Click and drag to draw small bricks."
 msgstr "ചെറിയ ഇഷ്ടിക വരയ്ക്കാന്‍ അമര്‍ത്തിയശേഷം നീക്കുക"
 
 #: ../../magic/src/calligraphy.c:127
@@ -833,7 +849,9 @@ msgid "Calligraphy"
 msgstr "കാലിഗ്രാഫി"
 
 #: ../../magic/src/calligraphy.c:134
-msgid "Click and move the mouse around to draw in calligraphy."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "കാലിഗ്രാഫിക്ക് ചുറ്റും വരയ്കാനായി മൗസില്‍ അമര്‍ത്തുക."
 
 #: ../../magic/src/cartoon.c:106
@@ -841,7 +859,9 @@ msgid "Cartoon"
 msgstr "കാര്‍ട്ടൂണ്‍."
 
 #: ../../magic/src/cartoon.c:113
-msgid "Click and move the mouse around to turn the picture into a cartoon."
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "ചിത്രം കാര്‍ട്ടൂണ്‍ ആക്കിമാറ്റുവാനായി മൗസ് ചിത്രത്തില്‍ അമര്‍ത്തുക."
 
 #: ../../magic/src/confetti.c:85
@@ -877,7 +897,9 @@ msgid "Darken"
 msgstr "കടും നിറം"
 
 #: ../../magic/src/fade_darken.c:134
-msgid "Click and move the mouse to lighten parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to lighten parts of your picture."
+msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "ചിത്രത്തെ ഇളം നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക.."
 
 #: ../../magic/src/fade_darken.c:136
@@ -885,7 +907,9 @@ msgid "Click to lighten your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ ഇളം നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
 #: ../../magic/src/fade_darken.c:141
-msgid "Click and move the mouse to darken parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "ചിത്രത്തെ കടും നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക."
 
 #: ../../magic/src/fade_darken.c:143
@@ -963,7 +987,9 @@ msgid "Grass"
 msgstr "പുല്ല്"
 
 #: ../../magic/src/grass.c:118
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ പുല്ല് വരയ്ക്കാനാവും. ചെളി മറക്കരുത്!"
 
 #: ../../magic/src/halftone.c:34
@@ -1067,8 +1093,11 @@ msgid "Mosaic"
 msgstr "നാനാവര്‍ണമായ"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+"Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തിന്  മൊസൈക്കിന്റെ ഭംഗി ചേര്‍ക്കാന്‍ മൗസ് അമര്‍ത്തിവലിക്കുക."
 
 #: ../../magic/src/mosaic.c:104
@@ -1088,8 +1117,11 @@ msgid "Irregular Mosaic"
 msgstr "ക്രമരഹിത മൊസൈക്ക്"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
-"Click and move the mouse to add a square mosaic to parts of your picture."
+"Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് സമചതുര മൊസൈക്ക് വരയ്ക്കാനാവും."
 
 #: ../../magic/src/mosaic_shaped.c:157
@@ -1097,8 +1129,12 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "സമചതുര മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
+"Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് ഷഡ്ഭുജ മൊസൈക്ക് വരയ്ക്കാനാവും."
 
 #: ../../magic/src/mosaic_shaped.c:162
@@ -1106,8 +1142,12 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "ഷഡ്ഭുജ മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add an irregular mosaic to parts of your picture."
+"Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്ത് ക്രമരഹിത മൊസൈക്ക് വരയ്ക്കാനാവും."
 
@@ -1120,7 +1160,9 @@ msgid "Negative"
 msgstr "വിപരീതരൂപം"
 
 #: ../../magic/src/negative.c:106
-msgid "Click and move the mouse around to make your painting negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
+msgid "Click and drag the mouse around to make your painting negative."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തെ വിപരീതരൂപത്തിലാക്കാനാവും."
 
 #: ../../magic/src/negative.c:109
@@ -1132,7 +1174,9 @@ msgid "Noise"
 msgstr "ശബ്ദം"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
+msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തിലെ നിശ്ചിത ഭാഗത്തെ ശബ്ദാത്മകമാക്കാന്‍ സാധിക്കും. ‌"
 
 #: ../../magic/src/noise.c:67
@@ -1249,7 +1293,9 @@ msgid "Silhouette"
 msgstr "ഛായാരൂപം"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace edges in parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
+msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "ചിത്രത്തിന്റെ  അരിക് വ്യക്തമാക്കാന്‍ മൗസിനെ ചലിപ്പിക്കുകയും അമര്‍ത്തുകയും  ചെയ്യുക"
 
 #: ../../magic/src/sharpen.c:79
@@ -1257,7 +1303,9 @@ msgid "Click to trace edges in your entire picture."
 msgstr "മുഴുവന്‍ ചിത്രത്തിന്റെയും വക്കുകള്‍ ട്രേസ് ചെയ്യാന്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen parts of your picture."
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "ചിത്രത്തിന്റെ ഭാഗങ്ങള്‍ കൃത്യതയുള്ളതാക്കാന്‍ മൗസില്‍ അമര്‍ത്തി നീക്കുക"
 
 #: ../../magic/src/sharpen.c:81
@@ -1265,7 +1313,9 @@ msgid "Click to sharpen the entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ കൃത്യതയുള്ളതാക്കാന്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/sharpen.c:82
-msgid "Click and move the mouse to create a black and white silhouette."
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
+msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "കറുപ്പും വെള്ളയും കലര്‍ന്ന ഛായാരൂപമുണ്ടാക്കുവാന്‍ മൗസില്‍ അമര്‍ത്തി നീക്കുക"
 
 #: ../../magic/src/sharpen.c:83
@@ -1290,12 +1340,16 @@ msgid "Wet Paint"
 msgstr "നനഞ്ഞ പെയ്​ന്റ്"
 
 #: ../../magic/src/smudge.c:115
-msgid "Click and move the mouse around to smudge the picture."
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
+msgid "Click and drag the mouse around to smudge the picture."
 msgstr "ചിത്രത്തില്‍ സ്മഡ്ജ് ചെയ്യുവാന്‍ മൗസില്‍ അമര്‍ത്തി ചലിപ്പിയ്ക്കുക"
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-msgid "Click and move the mouse around to draw with wet, smudgy paint."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
+msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "നനഞ്ഞ, പടര്‍ത്താവുന്ന നിറത്തില്‍ വരയ്ക്കാന്‍ മൗസ് ക്ലിക്കുചെയ്ത് നീക്കുക"
 
 #: ../../magic/src/snow.c:68
@@ -1349,8 +1403,12 @@ msgid "Color & White"
 msgstr "നിറവും വെള്ളയും"
 
 #: ../../magic/src/tint.c:75
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+"Click and drag the mouse around to change the color of parts of your picture."
 msgstr "ചിത്രത്തിന്റെ നിശ്ചിത ഭാഗത്തിന്റെ നിറം മാറ്റുവാന്‍ മൗസ് ക്ലിക്ക് ചെയ്ത് നീക്കുക."
 
 #: ../../magic/src/tint.c:76
@@ -1358,8 +1416,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "മുഴുവന്‍ ചിത്രത്തിന്റെയും നിറം മാറ്റാന്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
+"Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് "
