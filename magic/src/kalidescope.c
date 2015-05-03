@@ -139,7 +139,7 @@ char * kalidescope_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, 
   } else if (which == KAL_PATTERN) {
     return(strdup(gettext_noop("Click and drag the mouse to draw a pattern across the picture.")));
   } else if (which == KAL_TILES) {
-    return(strdup(gettext_noop("Click and drag the mouse to draw a pattern that it symmetric across the picture.")));
+    return(strdup(gettext_noop("Click and drag the mouse to draw a pattern that is symmetric across the picture.")));
   } else { /* KAL_BOTH */
     return(strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
   }
