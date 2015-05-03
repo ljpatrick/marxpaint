@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -1050,7 +1050,7 @@ msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Ji bo tarîkirina rengan bitikîne û mişkî bigerîne."
 

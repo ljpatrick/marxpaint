@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
-"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
-"PO-Revision-Date: 2015-05-02 15:26+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
+"PO-Revision-Date: 2015-05-02 15:27+0200\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -746,8 +746,6 @@ msgid "Color Shift"
 msgstr "Cambio de cor"
 
 #: ../../magic/src/alien.c:67
-#| msgid ""
-#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Preme e arrastra o rato para cambiarlle a cor a algunhas partes do debuxo."
@@ -781,13 +779,10 @@ msgid "Drip"
 msgstr "Pingar"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Preme e arrastra o rato arredor para facer bloques no debuxo."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-#| msgid ""
-#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
@@ -795,7 +790,6 @@ msgstr ""
 "feito con xiz."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Preme e arrastra o rato o rato arredor para facer que o debuxo pingue."
 
@@ -804,7 +798,6 @@ msgid "Blur"
 msgstr "Esvaer"
 
 #: ../../magic/src/blur.c:83
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Preme e arrastra o rato para esvaer o debuxo."
 
@@ -818,12 +811,10 @@ msgid "Bricks"
 msgstr "Ladrillos"
 
 #: ../../magic/src/bricks.c:131
-#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Preme e arrastra o rato para debuxar ladrillos grandes."
 
 #: ../../magic/src/bricks.c:133
-#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Preme e arrastra o rato para debuxar ladrillos pequenos."
 
@@ -832,7 +823,6 @@ msgid "Calligraphy"
 msgstr "Caligrafía"
 
 #: ../../magic/src/calligraphy.c:134
-#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Preme e arrastra o rato arredor para debuxar estilo caligrafía."
 
@@ -841,7 +831,6 @@ msgid "Cartoon"
 msgstr "Cómic"
 
 #: ../../magic/src/cartoon.c:113
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Preme e arrastra o rato arredor para para converter o debuxo nun debuxo de "
@@ -880,7 +869,6 @@ msgid "Darken"
 msgstr "Escurecer"
 
 #: ../../magic/src/fade_darken.c:134
-#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Preme e arrastra o rato para clarexar algunhas partes do debuxo."
 
@@ -889,7 +877,6 @@ msgid "Click to lighten your entire picture."
 msgstr "Preme para clarexar todo o debuxo"
 
 #: ../../magic/src/fade_darken.c:141
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Preme e arrastra o rato para escurecer algunhas partes do debuxo."
 
@@ -969,7 +956,6 @@ msgid "Grass"
 msgstr "Herba"
 
 #: ../../magic/src/grass.c:118
-#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Preme e arrastra para debuxar a herba. ¡Non esquezas a terra!"
 
@@ -1023,11 +1009,8 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Preme e arrastra o rato para debuxar un patrón no debuxo."
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
-#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr ""
 "Preme e arrastra o rato para debuxar un patrón e o seu simétrico no debuxo."
@@ -1078,8 +1061,6 @@ msgid "Mosaic"
 msgstr "Mosaico"
 
 #: ../../magic/src/mosaic.c:103
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
@@ -1103,8 +1084,6 @@ msgid "Irregular Mosaic"
 msgstr "Mosaico irregular"
 
 #: ../../magic/src/mosaic_shaped.c:156
-#| msgid ""
-#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
@@ -1116,9 +1095,6 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Preme para para engadir un mosaico cadrado en todo o debuxo."
 
 #: ../../magic/src/mosaic_shaped.c:161
-#| msgid ""
-#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
@@ -1130,9 +1106,6 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Preme para para engadir un mosaico hexagonal en todo o debuxo."
 
 #: ../../magic/src/mosaic_shaped.c:166
-#| msgid ""
-#| "Click and move the mouse to add an irregular mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
@@ -1148,7 +1121,6 @@ msgid "Negative"
 msgstr "Negativo"
 
 #: ../../magic/src/negative.c:106
-#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Preme e arrastra o rato arredor para converter a negativo o debuxo."
 
@@ -1161,7 +1133,6 @@ msgid "Noise"
 msgstr "Noise"
 
 #: ../../magic/src/noise.c:66
-#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Preme e arrastra o rato para engadirlle ruído a algunhas partes do debuxo."
@@ -1281,7 +1252,6 @@ msgid "Silhouette"
 msgstr "Silueta"
 
 #: ../../magic/src/sharpen.c:78
-#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Preme e arrastra o rato para trazar bordos nalgunhas partes do debuxo."
 
@@ -1290,7 +1260,6 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Preme para trazar bordos en todo o debuxo."
 
 #: ../../magic/src/sharpen.c:80
-#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Preme e arrastra o rato para reforzar algunhas partes do debuxo."
 
@@ -1299,7 +1268,6 @@ msgid "Click to sharpen the entire picture."
 msgstr "Preme para reforzar todo o debuxo."
 
 #: ../../magic/src/sharpen.c:82
-#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Preme e arrastra o rato para crear siluetas en branco e negro."
 
@@ -1325,13 +1293,11 @@ msgid "Wet Paint"
 msgstr "Pintura húmida"
 
 #: ../../magic/src/smudge.c:115
-#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Preme e arrastra o rato arredor para lixar o debuxo."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Preme e arrastra o rato arredor para debuxar con pintura húmida, estilo "
@@ -1391,9 +1357,6 @@ msgid "Color & White"
 msgstr "Cor e branco"
 
 #: ../../magic/src/tint.c:75
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Preme e arrastra o rato para cambiar a cor nalgunha parte do debuxo."
@@ -1403,9 +1366,6 @@ msgid "Click to change the color of your entire picture."
 msgstr "Preme para cambiar a cor en todo o debuxo."
 
 #: ../../magic/src/tint.c:77
-#| msgid ""
-#| "Click and move the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."

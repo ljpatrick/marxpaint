@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1054,7 +1054,7 @@ msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Kliko dhe lëviz miun për të \"trashur\" foton."
 

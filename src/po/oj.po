@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -1017,7 +1017,7 @@ msgstr "Waabizo"
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Waabizo"
 

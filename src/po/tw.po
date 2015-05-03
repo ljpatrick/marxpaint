@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -1047,7 +1047,7 @@ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Mia na fa akura no fa so ma nnum."
 

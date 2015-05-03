@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
-"PO-Revision-Date: 2015-05-02 20:15+0100\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
+"PO-Revision-Date: 2015-05-02 20:16+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -148,7 +148,6 @@ msgstr "’,.?!-"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#| msgid "`%_@$~#{<(^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*┐⁊"
 
@@ -755,8 +754,6 @@ msgid "Color Shift"
 msgstr "Mùthadh datha"
 
 #: ../../magic/src/alien.c:67
-#| msgid ""
-#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Briog is slaod an luchag gus car a chur air na dathan ann am pàirt dhen "
@@ -791,15 +788,12 @@ msgid "Drip"
 msgstr "Sil"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus an tèid an dealbh 'na "
 "bhlocaichean."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-#| msgid ""
-#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
@@ -807,7 +801,6 @@ msgstr ""
 "cailce."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus sileadh a thoirt air an dealbh."
@@ -817,7 +810,6 @@ msgid "Blur"
 msgstr "Sgleò"
 
 #: ../../magic/src/blur.c:83
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Briog is slaod an luchag mu thimcheall gus sgleò a chur air an dealbh."
 
@@ -831,14 +823,12 @@ msgid "Bricks"
 msgstr "Breigichean"
 
 #: ../../magic/src/bricks.c:131
-#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus an tèid an dealbh 'na "
 "bhreigichean mòra."
 
 #: ../../magic/src/bricks.c:133
-#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus tèid an dealbh 'na bhreigichean "
@@ -849,7 +839,6 @@ msgid "Calligraphy"
 msgstr "Snas-sgrìobhadh"
 
 #: ../../magic/src/calligraphy.c:134
-#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus peantadh ann an stoidhle snasail."
@@ -859,7 +848,6 @@ msgid "Cartoon"
 msgstr "Cartùn"
 
 #: ../../magic/src/cartoon.c:113
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus an tèid an dealbh 'na chartùn."
@@ -897,11 +885,9 @@ msgid "Darken"
 msgstr "Dorch"
 
 #: ../../magic/src/fade_darken.c:134
-#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
-"Briog is slaod an luchag gus pàirt dhen dealbh agad a dhèanamh nas "
-"soilleire."
+"Briog is slaod an luchag gus pàirt dhen dealbh agad a dhèanamh nas soilleire."
 
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
@@ -909,7 +895,6 @@ msgstr ""
 "Briog is gluais an luchag gus an dealbh gu lèir a dhèanamh nas soilleire."
 
 #: ../../magic/src/fade_darken.c:141
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr ""
 "Briog is slaod an luchag gus pàirt dhen dealbh agad a dhèanamh nas duirche."
@@ -998,7 +983,6 @@ msgid "Grass"
 msgstr "Feur"
 
 #: ../../magic/src/grass.c:118
-#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Briog is slaod gus feur a pheantadh. Na dìochuimhnich an talamh!"
 
@@ -1052,11 +1036,8 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Briog is slaod an luchag gus pàtran a chur thairis air an dealbh."
 
 #: ../../magic/src/kalidescope.c:142
-#| msgid ""
-#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
-#| "picture."
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr ""
 "Briog is slaod an luchag gus pàtran co-chothromach a pheantadh thairis air "
@@ -1107,8 +1088,6 @@ msgid "Mosaic"
 msgstr "Mosàig"
 
 #: ../../magic/src/mosaic.c:103
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
@@ -1133,8 +1112,6 @@ msgid "Irregular Mosaic"
 msgstr "Mosàig neo-riaghailteach"
 
 #: ../../magic/src/mosaic_shaped.c:156
-#| msgid ""
-#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
@@ -1148,9 +1125,6 @@ msgstr ""
 "gu lèir."
 
 #: ../../magic/src/mosaic_shaped.c:161
-#| msgid ""
-#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
@@ -1164,9 +1138,6 @@ msgstr ""
 "dealbh gu lèir."
 
 #: ../../magic/src/mosaic_shaped.c:166
-#| msgid ""
-#| "Click and move the mouse to add an irregular mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
@@ -1184,7 +1155,6 @@ msgid "Negative"
 msgstr "Ais-thionndaidh"
 
 #: ../../magic/src/negative.c:106
-#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Briog is slaod an luchag gus na dathan ann am pàirt dhen dealbh agad ais-"
@@ -1200,7 +1170,6 @@ msgid "Noise"
 msgstr "Riasladh"
 
 #: ../../magic/src/noise.c:66
-#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
 "Briog is slaod an luchag gus riasladh a thoirt air pàirt dhen dealbh agad."
@@ -1323,7 +1292,6 @@ msgid "Silhouette"
 msgstr "Sgàil-riochd"
 
 #: ../../magic/src/sharpen.c:78
-#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Briog is slaod gus oirean a nochdadh ann am pàirt dhen dealbh agad."
 
@@ -1332,7 +1300,6 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Briog is slaod gus oirean a nochdadh san dealbh gu lèir."
 
 #: ../../magic/src/sharpen.c:80
-#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Briog is slaod gus pàirt dhen dealbh agad a gheurachadh."
 
@@ -1341,7 +1308,6 @@ msgid "Click to sharpen the entire picture."
 msgstr "Briog is slaod gus an dealbh gu lèir a gheurachadh."
 
 #: ../../magic/src/sharpen.c:82
-#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Briog is slaod an luchag gus sgàil-riochd dubh is geal a chruthachadh."
 
@@ -1368,13 +1334,11 @@ msgid "Wet Paint"
 msgstr "Peant fliuch"
 
 #: ../../magic/src/smudge.c:115
-#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Briog is slaod an luchag mu thimcheall gus an dealbh a smalachadh."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus peantadh le peant fliuch is "
@@ -1434,9 +1398,6 @@ msgid "Color & White"
 msgstr "Dath ⁊ geal"
 
 #: ../../magic/src/tint.c:75
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
@@ -1448,9 +1409,6 @@ msgid "Click to change the color of your entire picture."
 msgstr "Briog gus an dath atharrachadh san dealbh gu lèir."
 
 #: ../../magic/src/tint.c:77
-#| msgid ""
-#| "Click and move the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."

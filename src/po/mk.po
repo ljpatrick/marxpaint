@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -1055,7 +1055,7 @@ msgstr "Кликнете и движете го глувчето наоколу 
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
 

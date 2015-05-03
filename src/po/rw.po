@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-02 12:33+0200\n"
+"POT-Creation-Date: 2015-05-03 09:18+0200\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1080,7 +1080,7 @@ msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 #: ../../magic/src/kalidescope.c:142
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw a pattern that it symmetric across the "
+"Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
