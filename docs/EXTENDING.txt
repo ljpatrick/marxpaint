@@ -625,7 +625,7 @@ Translations
        msgid "Smudge"
        msgstr "Manchar"
         
-       msgid "Click and move to draw large bricks."
+       msgid "Click and drag to draw large bricks."
        msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
      A graphical tool, called poEdit (http://www.poedit.net/), is available
