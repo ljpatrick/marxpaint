@@ -2492,6 +2492,8 @@ static void mainloop(void)
 	  else if (cur_tool == TOOL_ERASER)
 	    draw_erasers();
           
+	  update_screen_rect(&r_toolopt);
+	  update_screen_rect(&r_ttoolopt);
 	  magic_switchin(canvas);
 	}
 	else if (key == SDLK_s && (mod & KMOD_CTRL) && !noshortcuts)
