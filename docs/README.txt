@@ -1,15 +1,15 @@
                                    Tux Paint
-                                 version 0.9.22
+                                 version 0.9.23
 
   A simple drawing program for children
 
-                Copyright 2002-2014 by Bill Kendrick and others
+                Copyright 2002-2015 by Bill Kendrick and others
                          New Breed Software & Tux4Kids
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - August 5, 2014
+                          June 14, 2002 - May 6, 2015
 
      ----------------------------------------------------------------------
 

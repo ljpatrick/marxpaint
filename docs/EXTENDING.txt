@@ -2,13 +2,13 @@
                                  version 0.9.22
                               Extending Tux Paint
 
-                Copyright 2002-2009 by Bill Kendrick and others
+                Copyright 2002-2015 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - July 1, 2009
+                          June 14, 2002 - May 6, 2015
 
      ----------------------------------------------------------------------
 
