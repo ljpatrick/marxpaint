@@ -2605,6 +2605,10 @@ static void mainloop(void)
 	    /* Read IM, remember how many to redraw next iteration */
 	    redraw = im_read(&im_data, event.key.keysym);
 
+	    /* Korean Hangul needs this to refresh when buffered chars gets emptied */
+	    if (! *im_cp)
+	      do_render_cur_text(0);
+
 	    /* Queue each character to be displayed */
 	    while(*im_cp) {
 	      if (*im_cp == L'\b')
