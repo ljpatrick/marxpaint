@@ -21623,11 +21623,24 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     arg = strchr(str,'=');
     if(arg)
       *arg++ = '\0';
+
+#ifdef __linux__
+    /* Perform shell expansion */
+    wordexp_t result;
+
+    wordexp(arg, &result, 0);
+    arg = strdup(result.we_wordv[0]);
+    wordfree(&result);
+#endif
+
     // FIXME: leaking mem here, but the trouble is that these
     // strings get mixed in with ones from .data and .rodata
     // and free() isn't smart about the situation -- also some
     // of the strings end up being kept around
     parse_one_option(tmpcfg,str,strdup(arg),filename);
+#ifdef __linux__
+    free(arg);
+#endif
   }
   fclose(fi);
 
