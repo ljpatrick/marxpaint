@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-03 09:18+0200\n"
-"PO-Revision-Date: 2015-03-11 14:06-0500\n"
+"POT-Creation-Date: 2015-10-09 17:37+0200\n"
+"PO-Revision-Date: 2015-10-09 17:38+0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "Language: ga\n"
@@ -145,7 +145,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-msgid "`\\%_@$~#{<(^&*"
+#, fuzzy
+#| msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -420,7 +422,7 @@ msgstr "Nua"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7631
+#: ../tools.h:98 ../tuxpaint.c:7637
 msgid "Open"
 msgstr "Oscail"
 
@@ -653,80 +655,80 @@ msgid "Sound unmuted."
 msgstr "Le fuaim."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3065
+#: ../tuxpaint.c:3071
 msgid "Please wait…"
 msgstr "Fan go fóill…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7634
+#: ../tuxpaint.c:7640
 msgid "Erase"
 msgstr "Léirscrios"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7637
+#: ../tuxpaint.c:7643
 msgid "Slides"
 msgstr "Sleamhnáin"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7640
+#: ../tuxpaint.c:7646
 msgid "Back"
 msgstr "Siar"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7643
+#: ../tuxpaint.c:7649
 msgid "Next"
 msgstr "Ar Aghaidh"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7646
+#: ../tuxpaint.c:7652
 msgid "Play"
 msgstr "Seinn"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8355
+#: ../tuxpaint.c:8361
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11683
+#: ../tuxpaint.c:11689
 msgid "Yes"
 msgstr "Tá"
 
-#: ../tuxpaint.c:11687
+#: ../tuxpaint.c:11693
 msgid "No"
 msgstr "Níl"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12786
+#: ../tuxpaint.c:12792
 msgid "Replace the picture with your changes?"
 msgstr "Forscríobh an pictiúr le do chuid athruithe?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12790
+#: ../tuxpaint.c:12796
 msgid "Yes, replace the old one!"
 msgstr "Forscríobh é!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12794
+#: ../tuxpaint.c:12800
 msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
-#: ../tuxpaint.c:14039
+#: ../tuxpaint.c:14045
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
+#: ../tuxpaint.c:15076 ../tuxpaint.c:15404
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 "Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
 
-#: ../tuxpaint.c:22420
+#: ../tuxpaint.c:22439
 msgid "Pick a color."
 msgstr "Roghnaigh dath."
 
@@ -963,7 +965,8 @@ msgstr "Féar"
 
 #: ../../magic/src/grass.c:118
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
-msgstr "Cliceáil agus tarraing chun féar a dhearadh. Ná déan dearmad ar an ithir!"
+msgstr ""
+"Cliceáil agus tarraing chun féar a dhearadh. Ná déan dearmad ar an ithir!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
@@ -1072,8 +1075,8 @@ msgstr "Mósáic"
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun maisíocht mhósáice a dhéanamh ar chuid den "
-"phictiúr."
+"Cliceáil agus tarraing an luch chun maisíocht mhósáice a dhéanamh ar chuid "
+"den phictiúr."
 
 #: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
@@ -1095,8 +1098,8 @@ msgstr "Mósáic Neamhrialta"
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun mósáic chearnógach a dhéanamh ar chuid den "
-"phictiúr."
+"Cliceáil agus tarraing an luch chun mósáic chearnógach a dhéanamh ar chuid "
+"den phictiúr."
 
 #: ../../magic/src/mosaic_shaped.c:157
 msgid "Click to add a square mosaic to your entire picture."
@@ -1106,8 +1109,8 @@ msgstr "Cliceáil chun mósáic chearnógach a dhéanamh ar fud an phictiúir."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun mósáic heicseagánach a dhéanamh ar chuid den "
-"phictiúr."
+"Cliceáil agus tarraing an luch chun mósáic heicseagánach a dhéanamh ar chuid "
+"den phictiúr."
 
 #: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
@@ -1117,8 +1120,8 @@ msgstr "Cliceáil chun mósáic heicseagánach a dhéanamh ar fud an phictiúir.
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun mósáic neamhrialta a dhéanamh ar chuid den "
-"phictiúr."
+"Cliceáil agus tarraing an luch chun mósáic neamhrialta a dhéanamh ar chuid "
+"den phictiúr."
 
 #: ../../magic/src/mosaic_shaped.c:167
 msgid "Click to add an irregular mosaic to your entire picture."
@@ -1142,7 +1145,8 @@ msgstr "Torann"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and drag the mouse to add noise to parts of your picture."
-msgstr "Cliceáil agus tarraing an luch chun torann a chur le cuid den phictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun torann a chur le cuid den phictiúr."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
@@ -1261,7 +1265,8 @@ msgstr "Scáthphictiúr"
 #: ../../magic/src/sharpen.c:78
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
-"Cliceáil agus tarraing an luch chun ciumhaiseanna a rianú i gcuid de do phictiúr."
+"Cliceáil agus tarraing an luch chun ciumhaiseanna a rianú i gcuid de do "
+"phictiúr."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
@@ -1277,7 +1282,8 @@ msgstr "Cliceáil chun an pictiúr iomlán a ghéarú."
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and drag the mouse to create a black and white silhouette."
-msgstr "Cliceáil agus tarraing an luch chun scáthphictiúr dubh is bán a chruthú."
+msgstr ""
+"Cliceáil agus tarraing an luch chun scáthphictiúr dubh is bán a chruthú."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
@@ -1343,7 +1349,9 @@ msgstr "'V' Téadealaíne"
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
-msgstr "Cliceáil agus tarraing chun téadealaín a dhearadh. Tarraing aníos-anuas le níos mó nó níos lú línte a dhearadh, aniar-anoir le poll níos mó a dhéanamh."
+msgstr ""
+"Cliceáil agus tarraing chun téadealaín a dhearadh. Tarraing aníos-anuas le "
+"níos mó nó níos lú línte a dhearadh, aniar-anoir le poll níos mó a dhéanamh."
 
 #: ../../magic/src/string.c:140
 msgid "Click and drag to draw arrows made of string art."
@@ -1364,7 +1372,8 @@ msgstr "Dath agus Bán"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
-msgstr "Cliceáil agus tarraing an luch chun an dath a athrú i gcuid den phictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun an dath a athrú i gcuid den phictiúr."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
@@ -1375,8 +1384,8 @@ msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Cliceáil agus tarraing an luch chun bán agus do rogha datha a úsáid ar chuid de "
-"do phictiúr."
+"Cliceáil agus tarraing an luch chun bán agus do rogha datha a úsáid ar chuid "
+"de do phictiúr."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."

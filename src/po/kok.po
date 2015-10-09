@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-03 09:18+0200\n"
+"POT-Creation-Date: 2015-10-08 18:37+0200\n"
 "PO-Revision-Date: 2014-05-19 23:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -150,7 +150,7 @@ msgstr ",.?!"
 #: ../dirwalk.c:201
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
-msgid "`\\%_@$~#{<(^&*"
+msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
@@ -422,7 +422,7 @@ msgstr "नवें"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7631
+#: ../tools.h:98 ../tuxpaint.c:7637
 msgid "Open"
 msgstr "उगड"
 
@@ -660,78 +660,78 @@ msgid "Sound unmuted."
 msgstr "आवाज परत सुरू केला."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3065
+#: ../tuxpaint.c:3071
 msgid "Please wait…"
 msgstr "मात्शें रावचें..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7634
+#: ../tuxpaint.c:7640
 msgid "Erase"
 msgstr "फासचें"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7637
+#: ../tuxpaint.c:7643
 msgid "Slides"
 msgstr "स्लायडी"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7640
+#: ../tuxpaint.c:7646
 msgid "Back"
 msgstr "फाटीं"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7643
+#: ../tuxpaint.c:7649
 msgid "Next"
 msgstr "फुडें"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7646
+#: ../tuxpaint.c:7652
 msgid "Play"
 msgstr "चालू करचें"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8355
+#: ../tuxpaint.c:8361
 msgid "Aa"
 msgstr "आ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11683
+#: ../tuxpaint.c:11689
 msgid "Yes"
 msgstr "हय"
 
-#: ../tuxpaint.c:11687
+#: ../tuxpaint.c:11693
 msgid "No"
 msgstr "ना"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12786
+#: ../tuxpaint.c:12792
 msgid "Replace the picture with your changes?"
 msgstr "तुमी केल्ल्या बदला वरवीं पिंतुराचो बदल करूं ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12790
+#: ../tuxpaint.c:12796
 msgid "Yes, replace the old one!"
 msgstr "हय, पोरणें बदलचें !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12794
+#: ../tuxpaint.c:12800
 msgid "No, save a new file!"
 msgstr "ना, एक नवी फायल सुरक्षित करची !"
 
-#: ../tuxpaint.c:14039
+#: ../tuxpaint.c:14045
 msgid "Choose the picture you want, then click “Open”."
 msgstr "तुमकां जाय आशिल्लें पिंतुर निवडचें, आनी मागीर “उगडचें” क्लिक करचें."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15070 ../tuxpaint.c:15398
+#: ../tuxpaint.c:15076 ../tuxpaint.c:15404
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "तुमकां जाय आशिल्लीं पिंतुरां निवडचीं, आनी मागीर “चालू करचें” क्लिक करचें."
 
-#: ../tuxpaint.c:22420
+#: ../tuxpaint.c:22439
 msgid "Pick a color."
 msgstr "एक रंग वेंचचो."
 
