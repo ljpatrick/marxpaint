@@ -145,10 +145,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
-#| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*"
+msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
