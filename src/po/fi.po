@@ -1,17 +1,17 @@
 # Tux Paint messages in Finnish.
 # Copyright © 2002-2014 tuxpaint.
 # This file is distributed under the same license as the tuxpaint package.
-# Tarmo Toikkanen <tarmo@iki.fi>, 2002, 2009.
-# Jorma Karvonen <karvjorm@users.sf.net>, 2008.
-# Olli <ollinpostit@gmail.com>, 2014.
+# Tarmo Toikkanen <tarmo@iki.fi>, 2002, 2009. (inactive)
+# Jorma Karvonen <karvjorm@users.sf.net>, 2008. (inactive)
+# Olli <ollinpostit@gmail.com>, 2014. (inactive)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-08 18:37+0200\n"
-"PO-Revision-Date: 2014-06-07 18:00+0200\n"
-"Last-Translator: Olli <ollinpostit@gmail.com>\n"
+"PO-Revision-Date: 2015-10-09 18:00+0200\n"
+"Last-Translator: inactive\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
