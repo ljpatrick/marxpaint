@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 6, 2015
+June 17, 2002 - Oct 10, 2015
 
 $Id$
 
@@ -690,6 +690,7 @@ $Id$
     Dr. Nagy Elemér Kár oly
 
   * Icelandic
+    Sveinn í Felli <sv1@fellsnet.is>
     Pjetur G. Hjaltason <pjetur@pjetur.net>
 
   * Indonesian
