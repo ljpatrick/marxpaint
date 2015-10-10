@@ -2,21 +2,21 @@
 # Oversettelse av Tux Paint til bokmål.
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006, 2007, 2009, 2014.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006, 2007, 2009, 2014, 2015.
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-08 18:37+0200\n"
-"PO-Revision-Date: 2014-06-08 16:57+0200\n"
+"POT-Creation-Date: 2015-10-09 17:37+0200\n"
+"PO-Revision-Date: 2015-10-10 13:25+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 2.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -148,10 +148,8 @@ msgstr "«»,.?!-–"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
-#| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*"
+msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -280,7 +278,7 @@ msgstr "Åttekant"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "Stjerne"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -322,15 +320,15 @@ msgstr "En åttekant har åtte sider."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "En stjerne med tre tagger."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "En stjerne med fire tagger."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "En stjerne med fem tagger."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -476,12 +474,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an exist label, you can move it, edit it and change its text "
-#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -751,9 +743,6 @@ msgid "Color Shift"
 msgstr "Fargeskift"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å endre fargene på deler av tegningen."
@@ -787,23 +776,16 @@ msgid "Drip"
 msgstr "Drypping"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen «blokkete»."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen dryppende."
 
@@ -812,8 +794,6 @@ msgid "Blur"
 msgstr "Uklar"
 
 #: ../../magic/src/blur.c:83
-#, fuzzy
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
 
@@ -827,14 +807,10 @@ msgid "Bricks"
 msgstr "Murstein"
 
 #: ../../magic/src/bricks.c:131
-#, fuzzy
-#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Hold inne knappen og flytt rundt for å tegne store mursteiner."
 
 #: ../../magic/src/bricks.c:133
-#, fuzzy
-#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Hold inne knappen og flytt rundt for å tegne små mursteiner."
 
@@ -843,8 +819,6 @@ msgid "Calligraphy"
 msgstr "Kalligrafi"
 
 #: ../../magic/src/calligraphy.c:134
-#, fuzzy
-#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Hold inne knappen og flytt rundt for å tegne kalligrafisk."
 
@@ -853,8 +827,6 @@ msgid "Cartoon"
 msgstr "Forsterk"
 
 #: ../../magic/src/cartoon.c:113
-#, fuzzy
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre fargene klarere og strekene "
@@ -893,8 +865,6 @@ msgid "Darken"
 msgstr "Mørkere"
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
-#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre deler av tegningen lysere."
@@ -904,8 +874,6 @@ msgid "Click to lighten your entire picture."
 msgstr "Trykk for å gjøre hele tegningen lysere."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre deler av tegningen mørkere."
@@ -989,10 +957,8 @@ msgid "Grass"
 msgstr "Gress"
 
 #: ../../magic/src/grass.c:118
-#, fuzzy
-#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
-msgstr "Hold inne knappen og flytt rundt for å tegne gress. Ikke glem jorden!"
+msgstr "ŭHold inne knappen og flytt rundt for å tegne gress. Ikke glem jorden!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
@@ -1045,10 +1011,6 @@ msgstr ""
 "Hold inne knappen og flytt rundt for å tegne et mønster over tegningen."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
-#| "picture."
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -1101,9 +1063,6 @@ msgid "Mosaic"
 msgstr "Mosaikk"
 
 #: ../../magic/src/mosaic.c:103
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
@@ -1127,9 +1086,6 @@ msgid "Irregular Mosaic"
 msgstr "Uregelmessig mosaikk"
 
 #: ../../magic/src/mosaic_shaped.c:156
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
@@ -1141,10 +1097,6 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Trykk for å legge en kvadratisk mosaikk på hele tegningen."
 
 #: ../../magic/src/mosaic_shaped.c:161
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
@@ -1156,10 +1108,6 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Trykk for å legge en sekskantet mosaikk på hele tegningen."
 
 #: ../../magic/src/mosaic_shaped.c:166
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add an irregular mosaic to parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
@@ -1175,8 +1123,6 @@ msgid "Negative"
 msgstr "Negativ"
 
 #: ../../magic/src/negative.c:106
-#, fuzzy
-#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Hold inne knappen og flytt rundt for bytte om på fargene."
 
@@ -1189,8 +1135,6 @@ msgid "Noise"
 msgstr "Støy"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
-#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Hold inne knappen og flytt rundt for å legge støy på tegningen."
 
@@ -1310,8 +1254,6 @@ msgid "Silhouette"
 msgstr "Silhuett"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
-#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Hold inne knappen og flytt rundt for å markere kantene i tegningen."
 
@@ -1320,8 +1262,6 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Trykk for å markere kantene på hele tegningen."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
-#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen skarpere."
 
@@ -1330,8 +1270,6 @@ msgid "Click to sharpen the entire picture."
 msgstr "Trykk for å gjøre hele tegningen skarpere."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
-#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
 "Hold inne knappen og flytt rundt for å lage en silhuett i svart og hvitt."
@@ -1358,15 +1296,11 @@ msgid "Wet Paint"
 msgstr "Våt maling"
 
 #: ../../magic/src/smudge.c:115
-#, fuzzy
-#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Hold inne knappen og flytt rundt for å gni tegningen utover."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-#, fuzzy
-#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Hold inne knappen og flytt rundt for å tegne med våt maling."
 
@@ -1424,10 +1358,6 @@ msgid "Color & White"
 msgstr "Farge og hvitt"
 
 #: ../../magic/src/tint.c:75
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
@@ -1438,10 +1368,6 @@ msgid "Click to change the color of your entire picture."
 msgstr "Trykk for å endre fargene på hele tegningen."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
