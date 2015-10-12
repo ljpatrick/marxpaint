@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 17:37+0200\n"
-"PO-Revision-Date: 2015-10-08 21:14+0000\n"
+"POT-Creation-Date: 2015-10-08 18:37+0200\n"
+"PO-Revision-Date: 2015-10-12 12:58+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -150,7 +150,7 @@ msgstr ",.?!"
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
 msgid "`%_@$~#{<(^&*"
-msgstr "`%_@$~#{<(^&*"
+msgstr "€`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -169,19 +169,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:214
 msgid "<1>spare-1a"
-msgstr "<1>spare-1a"
+msgstr "aa"
 
 #: ../dirwalk.c:215
 msgid "<1>spare-1b"
-msgstr "<1>spare-1b"
+msgstr "AA"
 
 #: ../dirwalk.c:216
 msgid "<9>spare-9a"
-msgstr "<9>spare-9a"
+msgstr "ðéíóúþæö"
 
 #: ../dirwalk.c:217
 msgid "<9>spare-9b"
-msgstr "<9>spare-9b"
+msgstr "ÐÉÍÓÚÞÆÖ"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -398,7 +398,7 @@ msgstr "Texti"
 #. Label tool
 #: ../tools.h:77
 msgid "Label"
-msgstr "Merki"
+msgstr "Skýring"
 
 #. Undo last action
 #: ../tools.h:86
@@ -478,6 +478,11 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
+#| msgid ""
+#| "Choose a style of text. Click on your drawing and you can start typing. "
+#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
+#| "and clicking an exist label, you can move it, edit it and change its text "
+#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -485,9 +490,10 @@ msgid ""
 "style."
 msgstr ""
 "Veldu stíl á letur. Smelltu á myndina og þú getur byrjað að skrifa. Ýttu á "
-"[Enter] eða [Tab] til að ljúka texta. Með því að nota valhnappinn og smella "
-"á texta sem fyrir er, þá getur þú fært textann, breytt honum og breytt "
-"útliti og stíl."
+"[Enter] "
+"eða [Tab] til að ljúka texta. Með því að nota valhnappinn og smella á texta "
+"sem fyrir er, "
+"þá getur þú fært textann, breytt honum og breytt útliti og stíl."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -748,6 +754,8 @@ msgid "Color Shift"
 msgstr "Litskipti"
 
 #: ../../magic/src/alien.c:67
+#| msgid ""
+#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Smelltu og dragðu músina til að breyta litunum í hluta myndarinnar."
 
@@ -780,15 +788,19 @@ msgid "Drip"
 msgstr "Leka"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
+#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Smelltu og dragðu músina til að gera myndina alla í blokkum."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
 
 #: ../../magic/src/blocks_chalk_drip.c:156
+#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Smelltu og dragðu músina til að láta myndina leka."
 
@@ -797,6 +809,7 @@ msgid "Blur"
 msgstr "Móða"
 
 #: ../../magic/src/blur.c:83
+#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Smelltu og dragðu músina til að gera myndina óskýrari."
 
@@ -810,10 +823,12 @@ msgid "Bricks"
 msgstr "Kassar"
 
 #: ../../magic/src/bricks.c:131
+#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Smelltu og dragðu músina til að búa til stóra kassa."
 
 #: ../../magic/src/bricks.c:133
+#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Smelltu og dragðu músina til að búa til litla kassa."
 
@@ -822,6 +837,7 @@ msgid "Calligraphy"
 msgstr "Skrautritun"
 
 #: ../../magic/src/calligraphy.c:134
+#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Smelltu og dragðu músina til að teikna eins og skrautskrift."
 
@@ -830,6 +846,7 @@ msgid "Cartoon"
 msgstr "Teiknimynd"
 
 #: ../../magic/src/cartoon.c:113
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Smelltu og dragðu músina til að breyta myndinni í teiknimynd."
 
@@ -866,6 +883,7 @@ msgid "Darken"
 msgstr "Dekkja"
 
 #: ../../magic/src/fade_darken.c:134
+#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Smelltu og dragðu músina til að gera hluta myndarinnar bjartari."
 
@@ -874,6 +892,7 @@ msgid "Click to lighten your entire picture."
 msgstr "Smelltu til að gera myndina bjartari"
 
 #: ../../magic/src/fade_darken.c:141
+#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Smelltu og dragðu músina til að gera hluta myndarinnar dekkri."
 
@@ -953,6 +972,7 @@ msgid "Grass"
 msgstr "Gras"
 
 #: ../../magic/src/grass.c:118
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Smelltu og dragðu músina til að teikna gras. Ekki gleyma drullunni!"
 
@@ -1006,6 +1026,9 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Smelltu og dragðu músina til að draga mynstur yfir myndina."
 
 #: ../../magic/src/kalidescope.c:142
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -1040,7 +1063,7 @@ msgstr "Spegla"
 
 #: ../../magic/src/mirror_flip.c:119
 msgid "Flip"
-msgstr "Hvolfa"
+msgstr "Fletta"
 
 #: ../../magic/src/mirror_flip.c:130
 msgid "Click to make a mirror image."
@@ -1055,6 +1078,8 @@ msgid "Mosaic"
 msgstr "Tígulsteinar"
 
 #: ../../magic/src/mosaic.c:103
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
@@ -1078,6 +1103,8 @@ msgid "Irregular Mosaic"
 msgstr "Óreglulegur tígulsteinn"
 
 #: ../../magic/src/mosaic_shaped.c:156
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
@@ -1090,6 +1117,9 @@ msgstr ""
 "alla myndina þína."
 
 #: ../../magic/src/mosaic_shaped.c:161
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
@@ -1102,6 +1132,9 @@ msgstr ""
 "Smelltu til að bæta við sexhyrndum tígulsteina-áhrifum á alla myndina þína."
 
 #: ../../magic/src/mosaic_shaped.c:166
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
@@ -1118,6 +1151,7 @@ msgid "Negative"
 msgstr "Andhverfa"
 
 #: ../../magic/src/negative.c:106
+#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Smelltu og dragðu músina til að andhverfa litum myndarinnar."
 
@@ -1130,6 +1164,7 @@ msgid "Noise"
 msgstr "Óregla"
 
 #: ../../magic/src/noise.c:66
+#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Smelltu og dragðu músina til bæta við óreglu í myndina."
 
@@ -1249,6 +1284,7 @@ msgid "Silhouette"
 msgstr "Skuggamynd"
 
 #: ../../magic/src/sharpen.c:78
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
 "Smelltu og dragðu músina til að draga eftir jöðrum í hluta myndarinnar."
@@ -1258,6 +1294,7 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Smelltu til að teikna í jaðra á allri myndinni þinni."
 
 #: ../../magic/src/sharpen.c:80
+#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Smelltu og dragðu músina til að skerpa hluta myndarinnar þinnar."
 
@@ -1266,6 +1303,7 @@ msgid "Click to sharpen the entire picture."
 msgstr "Smelltu til að skerpa alla myndina."
 
 #: ../../magic/src/sharpen.c:82
+#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Smelltu og dragðu músina til að gera svart-hvítar skuggamyndir."
 
@@ -1291,11 +1329,13 @@ msgid "Wet Paint"
 msgstr "Blaut málning"
 
 #: ../../magic/src/smudge.c:115
+#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Smelltu og dragðu músina til að káma myndina."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr ""
 "Smelltu og dragðu músina til að líkja eftir fingramálun með blautri málningu."
@@ -1354,6 +1394,9 @@ msgid "Color & White"
 msgstr "Litur+Hvítt"
 
 #: ../../magic/src/tint.c:75
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Smelltu og dragðu músina um til að breyta litum á hluta myndarinnar."
@@ -1363,6 +1406,9 @@ msgid "Click to change the color of your entire picture."
 msgstr "Smelltu til að breyta litum myndarinnar."
 
 #: ../../magic/src/tint.c:77
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
