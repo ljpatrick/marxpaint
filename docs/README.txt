@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - May 6, 2015
+                        June 14, 2002 - October 12, 2015
 
      ----------------------------------------------------------------------
 
@@ -228,14 +228,20 @@ Available Tools
                  plants, outer space, vehicles, people, etc.). Use the Left
                  and Right arrows to cycle through the collections.
 
-                 Some stamps can be colored or tinted. If the color palette
-                 below the canvas is activated, you can click the colors to
-                 change the tint or color of the stamp before placing it in
-                 the picture.
+                 Prior to 'stamping' an image onto your drawing, various
+                 effects can sometimes be applied (depending on the stamp):
 
-                 Stamps can be shrunk and expanded, and many stamps can be
-                 flipped vertically, or displayed as a mirror-image, using
-                 controls at the bottom right of the screen.
+                    * Some stamps can be colored or tinted. If the color
+                      palette below the canvas is activated, you can click
+                      the colors to change the tint or color of the stamp
+                      before placing it in the picture.
+                    * Stamps can be shrunk and expanded, by clicking within
+                      the triangular-shaped series of bars at the bottom
+                      right; the larger the bar, the larger the stamp will
+                      appear in your picture.
+                    * Many stamps may be flipped vertically, or displayed as
+                      a mirror-image, using the control buttons at the bottom
+                      right.
 
                  Different stamps can have different sound effects and/or
                  descriptive (spoken) sounds. Buttons at the lower left (near

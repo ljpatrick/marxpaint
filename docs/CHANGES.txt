@@ -15,9 +15,13 @@ $Id$
     * Stars
       Pere Pujal i Carabantes
 
+  * Documentation updates
+    ---------------------
+    * Made stamp controls (size, flip, mirror) section clearer.
+      Fixes https://sourceforge.net/p/tuxpaint/bugs/182/
+
   * New locales
     -----------
-
     * Bengali
       Provided by chandrakant dhutadmal
 
@@ -37,7 +41,6 @@ $Id$
 
     * Urdu
       Provided by chandrakant dhutadmal
-
 
   * Localization Updates:
     ---------------------
