@@ -79,6 +79,7 @@ $Id$
   Perspective and Zoom Magic Tools
   Blind Magic Tool
   Mosaic hexagon, Mosaic irregular, Mosaic square Magic Tools
+  Color selector from draw (based on color picker)
   by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   Tornado Magic Tool

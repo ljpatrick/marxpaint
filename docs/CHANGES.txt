@@ -9,6 +9,9 @@ http://www.tuxpaint.org/
 $Id$
 
 201x.xxx.x (0.9.23)
+  * New color selector
+    ------------------
+      Pere Pujal i Carabantes
 
   * New shapes
     ----------
