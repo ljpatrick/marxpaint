@@ -80,6 +80,12 @@ $Id$
     * Thai translation
       Nudjaree <poonim_p@hotmail.com>
 
+  * Bug Fixes
+    ---------
+    * Crash if any "mosaic" magic tool used, Xubuntu 15.10
+      If the PNG patterns used to generate the effect were compressed the wrong(lossy) way,
+      the program will crash
+      (SF.net Bug #210)
 
 2014.August.5 (0.9.22)
 

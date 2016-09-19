@@ -81,6 +81,7 @@ $Id$
   Mosaic hexagon, Mosaic irregular, Mosaic square Magic Tools
   Color selector from draw (based on color picker)
   by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+  Fixes to mosaic by Lokesh Sharma
 
   Tornado Magic Tool
   (based on Flowers)
