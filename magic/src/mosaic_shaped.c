@@ -531,10 +531,10 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
         //make pattern more accurate
         api->putpixel(mosaic_shaped_pattern, 9 , 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
         api->putpixel(mosaic_shaped_pattern, 9 , 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+        api->putpixel(mosaic_shaped_pattern, 26 , 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+        api->putpixel(mosaic_shaped_pattern, 26 , 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+        api->putpixel(mosaic_shaped_pattern, 26 , 25, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
         api->putpixel(mosaic_shaped_pattern, 25 , 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-        api->putpixel(mosaic_shaped_pattern, 25 , 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-        api->putpixel(mosaic_shaped_pattern, 25 , 25, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-        api->putpixel(mosaic_shaped_pattern, 24 , 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
 
     }
 
