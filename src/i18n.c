@@ -485,6 +485,7 @@ static void show_lang_usage(int exitcode)
 /* iu */ "  inuktitut\n"
 /* it */ "  italian      italiano\n"
 /* ja */ "  japanese\n"
+/* kab */ "  kabyle       kabylian\n"
 /* kn */ "  kannada\n"
 /* ks@devanagari */ "  kashmiri-devanagari\n"
 /* ks */ "  kashmiri-perso-arabic\n"
