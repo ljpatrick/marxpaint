@@ -34,6 +34,9 @@ $Id$
     * Dogri
       Provided by chandrakant dhutadmal
 
+    * Kabyle (aka Kabylian)
+      Yacine Bouklif <yacine_tizi2003@yahoo.fr>
+
     * Kashmiri (Devanagari)
     * Kashmiri (Perso-Arabic)
       Provided by chandrakant dhutadmal

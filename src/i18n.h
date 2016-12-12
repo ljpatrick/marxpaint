@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - April 16, 2014
+  June 14, 2002 - December 11, 2016
 */
 
 
@@ -97,6 +97,7 @@ enum
   LANG_IU,                      /* Inuktitut */
   LANG_JA,			/* Japanese */
   LANG_KA,			/* Georgian */
+  LANG_KAB,                     /* Kabyle */
   LANG_KN,                      /* Kannada */
   LANG_KM,			/* Khmer */
   LANG_KOK_ROMAN,               /* Konkani (Roman) */

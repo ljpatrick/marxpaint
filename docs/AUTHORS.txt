@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2015 by Bill Kendrick and others
+Copyright (c) 2002-2016 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - Oct 10, 2015
+June 17, 2002 - December 11, 2016
 
 $Id$
 
@@ -716,6 +716,9 @@ $Id$
   * Japanese Input Method
     Mark K. Kim <mkkim214@gmail.com>
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Kabyle translation
+    Yacine Bouklif <yacine_tizi2003@yahoo.fr>
 
   * Kannada translation
     Savitha Shankar <savithasprasad@yahoo.com>

@@ -3,13 +3,13 @@
 
   A simple drawing program for children
 
-                Copyright 2002-2015 by Bill Kendrick and others
+                Copyright 2002-2016 by Bill Kendrick and others
                          New Breed Software & Tux4Kids
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                        June 14, 2002 - October 12, 2015
+                       June 14, 2002 - December 11, 2016
 
      ----------------------------------------------------------------------
 

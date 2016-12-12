@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 16, 2014
+  June 14, 2002 - December 11, 2016
 */
 
 #include <stdio.h>
@@ -111,6 +111,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "iu",
   "ja",
   "ka",
+  "kab",
   "kn",
   "km",
   "kok@roman",
@@ -329,6 +330,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"basque", "eu_ES.UTF-8"},
   {"euskara", "eu_ES.UTF-8"},
   {"georgian", "ka_GE"},
+  {"kabyle", "kab"},
+  {"kabylian", "kab"},
   {"kinyarwanda", "rw_RW.UTF-8"},
   {"klingon", "tlh.UTF-8"},
   {"tlhIngan", "tlh.UTF-8"},
