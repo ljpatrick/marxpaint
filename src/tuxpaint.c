@@ -22870,7 +22870,7 @@ static void setup_colors(void){
   color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
 
   color_names = (char **) realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
-  color_names[NUM_COLORS] = strdup(gettext("Select a color from your draw."));
+  color_names[NUM_COLORS] = strdup(gettext("Select a color from your drawing."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 0;
   color_hexes[NUM_COLORS][1] = 0;
