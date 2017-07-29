@@ -2,14 +2,14 @@
 # Oversettelse av Tux Paint til bokmål.
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006, 2007, 2009, 2014, 2015.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006, 2007, 2009, 2014, 2015, 2017.
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-10 13:25+0100\n"
+"PO-Revision-Date: 2017-07-29 15:50+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -724,7 +724,7 @@ msgstr "Vel tegningene du vil ha, og trykk sjå på «Kjør»."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Vel ein farge frå teikninga."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
