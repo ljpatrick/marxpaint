@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009-2014
+  Copyright (c) 2009-2017
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -156,6 +156,10 @@ int text_state;
 unsigned text_size = 4;         // initial text size
 
 int button_label_y_nudge;
+
+#ifdef FORKED_FONTS
+static void reliable_read(int fd, void *buf, size_t count);
+#endif
 
 
 #ifndef NO_SDLPANGO

@@ -648,18 +648,6 @@ static void debug(const char *const str)
 #endif
 }
 
-static const char *getfilename(const char *path)
-{
-  char *p;
-
-  if ((p = strrchr(path, '\\')) != NULL)
-    return p + 1;
-  if ((p = strrchr(path, '/')) != NULL)
-    return p + 1;
-  return path;
-}
-
-
 /* sizing */
 
 /* The old Tux Paint:
@@ -1876,7 +1864,6 @@ static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect * area1, SDL_Rect * area2);
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
-static char *remove_slash(char *path);
 
 /*static char *replace_tilde(const char* const path);*/
 #ifdef NO_SDLPANGO

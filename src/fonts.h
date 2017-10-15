@@ -1,7 +1,7 @@
 /*
   fonts.h
 
-  Copyright (c) 2009-2014
+  Copyright (c) 2009-2017
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -115,7 +115,6 @@ int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
 
 #ifdef FORKED_FONTS
 void reliable_write(int fd, const void *buf, size_t count);
-static void reliable_read(int fd, void *buf, size_t count);
 void run_font_scanner(SDL_Surface * screen, const char *restrict const locale);
 void receive_some_font_info(SDL_Surface * screen);
 #endif
