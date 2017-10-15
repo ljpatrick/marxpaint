@@ -162,6 +162,9 @@ static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
 
+/* This doesn't actually ever get used; see load_locale_font()
+   -bjk 2017.10.15 */
+/*
 #ifndef NO_SDLPANGO
 static TuxPaint_Font *try_alternate_font(int size)
 {
@@ -180,6 +183,7 @@ static TuxPaint_Font *try_alternate_font(int size)
   return NULL;
 }
 #endif
+*/
 
 #ifdef NO_SDLPANGO
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
@@ -218,6 +222,10 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
         }
 #endif
 
+/* Not sure why this is like this; we're in a function that's not
+   even defined, unless NO_SDLPANGO is set, so this can't happen
+   -bjk 2017.10.15 */
+/*
 #ifndef NO_SDLPANGO
       if (!ret)
         {
@@ -233,6 +241,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
             }
         }
 #endif
+*/
       return ret ? ret : fallback;
     }
 }
@@ -1050,7 +1059,11 @@ void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
       return;
     }
 #ifndef __HAIKU__
-  nice(42);                     // be nice, letting the main thread get the CPU
+  /* be nice, letting the main thread get the CPU */
+  if (nice(42) == -1)
+    {
+      fprintf(stderr, "Font scanner thread can't nice() itself\n");
+    }
 #endif
   sched_yield();                // try to let the parent run right now
   prctl(PR_SET_PDEATHSIG, 9);   // get killed if parent exits
