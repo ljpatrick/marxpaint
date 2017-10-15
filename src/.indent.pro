@@ -10,3 +10,4 @@
 --no-space-after-casts
 --no-space-after-function-call-names
 --no-space-after-parentheses
+--no-tabs
