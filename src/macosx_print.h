@@ -25,17 +25,16 @@
 
 #include "SDL.h"
 
-const char *SurfacePrint(SDL_Surface *surface, int showDialog);
-int DisplayPageSetup(const SDL_Surface *surface);
+const char *SurfacePrint(SDL_Surface * surface, int showDialog);
+int DisplayPageSetup(const SDL_Surface * surface);
 
 #ifdef OBJECTIVEC
 
-@interface PrintSheetController : NSObject
+@interface PrintSheetController:NSObject
 {
-	bool displayPrintSetupSheet;
-	bool displayPrintSheet;
+  bool displayPrintSetupSheet;
+  bool displayPrintSheet;
 }
--
-@end
 
-#endif OBJECTIVEC
+-@end
+#endif  /* OBJECTIVEC */
