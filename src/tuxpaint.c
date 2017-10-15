@@ -114,6 +114,7 @@
 
 static unsigned draw_colors(unsigned action);
 
+
 /* hide all scale-related values here */
 typedef struct scaleparams
 {
@@ -548,6 +549,10 @@ static void mtw(wchar_t * wtok, char *tok)
 )
 #endif
 #endif
+
+
+int TP_EventFilter(const SDL_Event * event);
+
 
 /* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
@@ -12879,7 +12884,10 @@ static void do_png_embed_data(png_structp png_ptr)
   unsigned char *chunk_data;
   Bytef *compressed_data;
 
-  char *ldata, *fname;
+#ifdef fmemopen_alternative
+  char *fname;
+#endif
+  char *ldata;
   FILE *lfi;
   int list_ctr = 0;
   Uint32 pix;
