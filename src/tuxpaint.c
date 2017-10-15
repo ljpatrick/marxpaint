@@ -1889,7 +1889,6 @@ static SDL_Surface *duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
 static int valid_click(Uint8 button);
-static int in_circle(int x, int y);
 static int in_circle_rad(int x, int y, int rad);
 static int paintsound(int size);
 static void load_magic_plugins(void);
@@ -16954,14 +16953,6 @@ static int valid_click(Uint8 button)
 }
 
 
-static int in_circle(int x, int y)
-{
-  if ((x * x) + (y * y) - (16 * 16) < 0)
-    return (1);
-  else
-    return (0);
-}
-
 static int in_circle_rad(int x, int y, int rad)
 {
   if ((x * x) + (y * y) - (rad * rad) < 0)
@@ -16969,6 +16960,7 @@ static int in_circle_rad(int x, int y, int rad)
   else
     return (0);
 }
+
 
 static int paintsound(int size)
 {
