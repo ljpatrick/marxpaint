@@ -21,5 +21,4 @@
 //  (See COPYING.txt)
 //
 
-void speak_string(const wchar_t *str);
-
+void speak_string(const wchar_t * str);

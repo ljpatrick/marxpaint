@@ -23,5 +23,5 @@
 
 #define MSG_FONT_CACHE  1
 
-void displayMessage( int msgId );
+void displayMessage(int msgId);
 void hideMessage();
