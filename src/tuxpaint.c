@@ -20948,7 +20948,7 @@ static void render_all_nodes_starting_at(struct label_node** node)
   struct label_node* current_node;
   if (*node!=NULL)
     {
-      current_node=*node;
+      current_node = *node;
       while (current_node!=first_label_node_in_redo_stack)
 	{
 	  if (current_node->is_enabled==TRUE)
