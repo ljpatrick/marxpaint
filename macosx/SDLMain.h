@@ -12,34 +12,37 @@
 #import <Cocoa/Cocoa.h>
 #import "TransparentTextView.h"
 
-@interface SDLMain : NSObject
+@ interface SDLMain:NSObject
 {
-    IBOutlet NSWindow *messagePanel;
-    IBOutlet NSTextField *messageText;
-    IBOutlet NSTextField *messageStatus;
-    IBOutlet NSProgressIndicator *messageProgress;
-    IBOutlet NSWindow *aboutWindow;
-    IBOutlet NSTextField *appnameText;
-    IBOutlet NSTextField *versionText;
-    IBOutlet TransparentTextView *acknowledgmentsText;
+  IBOutlet NSWindow *messagePanel;
+  IBOutlet NSTextField *messageText;
+  IBOutlet NSTextField *messageStatus;
+  IBOutlet NSProgressIndicator *messageProgress;
+  IBOutlet NSWindow *aboutWindow;
+  IBOutlet NSTextField *appnameText;
+  IBOutlet NSTextField *versionText;
+  IBOutlet TransparentTextView *acknowledgmentsText;
 }
 
-- (IBAction)onAbout:(id)sender;
-- (IBAction)onNew:(id)sender;
-- (IBAction)onOpen:(id)sender;
-- (IBAction)onSave:(id)sender;
-- (IBAction)onPrint:(id)sender;
-- (IBAction)onPageSetup:(id)sender;
-- (IBAction)onUndo:(id)sender;
-- (IBAction)onRedo:(id)sender;
-- (IBAction)onHelp:(id)sender;
-- (IBAction)onQuit:(id)sender;
+-(IBAction) onAbout:(id) sender;
+-(IBAction) onNew:(id) sender;
+-(IBAction) onOpen:(id) sender;
+-(IBAction) onSave:(id) sender;
+-(IBAction) onPrint:(id) sender;
+-(IBAction) onPageSetup:(id) sender;
+-(IBAction) onUndo:(id) sender;
+-(IBAction) onRedo:(id) sender;
+-(IBAction) onHelp:(id) sender;
+-(IBAction) onQuit:(id) sender;
 
-- (void) sendSDLControlKeystroke:(int)key;
-- (void) sendSDLControlShiftKeystroke:(int)key;
-- (void) setupBridge;
+-(void)sendSDLControlKeystroke:(int)key;
+-(void)sendSDLControlShiftKeystroke:(int)key;
+-(void)setupBridge;
 
-- (void) displayMessage:(NSString*)message andStatus:(NSString*)status withProgressIndicator:(BOOL)progress;
-- (void) hideMessage;
+-(void)displayMessage:(NSString *)
+     message andStatus:(NSString *)
+     status withProgressIndicator:(BOOL) progress;
+
+-(void)hideMessage;
 
 @end
