@@ -11344,10 +11344,12 @@ static void load_current(void)
     }
   else
     {
-      fgets(file_id, sizeof(file_id), fi);
-      if (strlen(file_id) > 0)
+      if (fgets(file_id, sizeof(file_id), fi))
         {
-          file_id[strlen(file_id) - 1] = '\0';
+          if (strlen(file_id) > 0)
+            {
+              file_id[strlen(file_id) - 1] = '\0';
+            }
         }
       fclose(fi);
     }
@@ -20644,6 +20646,7 @@ static void load_info_about_label_surface(FILE * lfi)
   int old_pos;
   int new_pos;
   int x, y, pix_size;
+  int tmp_fscanf_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -20662,9 +20665,9 @@ static void load_info_about_label_surface(FILE * lfi)
 //    lfi = fopen(lfname, "r");
   if (lfi == NULL)
     return;
-  fscanf(lfi, "%d\n", &list_ctr);
-  fscanf(lfi, "%d\n", &tmp_scale_w);
-  fscanf(lfi, "%d\n\n", &tmp_scale_h);
+  tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
+  tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
+  tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
 
   old_width = tmp_scale_w;
   old_height = tmp_scale_h;
@@ -20681,7 +20684,7 @@ static void load_info_about_label_surface(FILE * lfi)
     {
       new_node = malloc(sizeof(struct label_node));
 
-      fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
 #ifdef WIN32
       char *tmpstr;
       wchar_t *wtmpstr;
@@ -20698,20 +20701,20 @@ static void load_info_about_label_surface(FILE * lfi)
 #else
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
-          fscanf(lfi, "%lc", &tmp_char);
+          tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
           new_node->save_texttool_str[l] = tmp_char;
         }
-      fscanf(lfi, "\n");
+      tmp_fscanf_return = fscanf(lfi, "\n");
 #endif
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.g = (Uint8) l;
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.b = (Uint8) l;
-      fscanf(lfi, "%d\n", &new_node->save_width);
-      fscanf(lfi, "%d\n", &new_node->save_height);
-      fscanf(lfi, "%d\n", &tmp_pos);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
       old_pos = (int)tmp_pos;
 
       if (new_ratio < old_ratio)
@@ -20719,7 +20722,7 @@ static void load_info_about_label_surface(FILE * lfi)
           new_pos = (old_pos * new_to_old_ratio);
           tmp_pos = new_pos;
           new_node->save_x = tmp_pos;
-          fscanf(lfi, "%d\n", &tmp_pos);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
           old_pos = (int)tmp_pos;
           new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
           tmp_pos = new_pos;
@@ -20730,7 +20733,7 @@ static void load_info_about_label_surface(FILE * lfi)
           new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
           tmp_pos = new_pos;
           new_node->save_x = tmp_pos;
-          fscanf(lfi, "%d\n", &tmp_pos);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
           old_pos = (int)tmp_pos;
           new_pos = (old_pos * new_to_old_ratio);
           tmp_pos = new_pos;
@@ -20739,14 +20742,14 @@ static void load_info_about_label_surface(FILE * lfi)
 
       printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
 
-      fscanf(lfi, "%d\n", &new_node->save_cur_font);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
       new_node->save_cur_font = 0;
 
       new_node->save_font_type = malloc(64);
-      fgets(new_node->save_font_type, 64, lfi);
+      tmp_fscanf_return = fgets(new_node->save_font_type, 64, lfi);
 
-      fscanf(lfi, "%d\n", &new_node->save_text_state);
-      fscanf(lfi, "%u\n", &new_node->save_text_size);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
 
       label_node_surface = SDL_CreateRGBSurface(screen->flags,
                                                 new_node->save_width,
@@ -20789,7 +20792,7 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node->disables = NULL;
       new_node->next_to_down_label_node = NULL;
       new_node->next_to_up_label_node = NULL;
-      fscanf(lfi, "\n");
+      tmp_fscanf_return = fscanf(lfi, "\n");
 
       if (current_label_node == NULL)
         {
@@ -21819,7 +21822,13 @@ static void setup_config(char *argv[])
 #elif __APPLE__
       savedir = strdup(macosx.preferencesPath);
 #else
-      asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
+      int tmp;
+      tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
+      if (tmp < 0)
+        {
+          fprintf(stderr, "Can't set savedir\n");
+          exit(91);
+        }
 #endif
     }
 
@@ -22299,13 +22308,17 @@ application support folder */
 
 static void chdir_to_binary(char *argv0)
 {
+  /*
   char curdir[256];
+  */
   /* EP added this block to print out of current directory */
 
+  /*
   getcwd(curdir, sizeof(curdir));
 #ifdef DEBUG
   printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
 #endif
+  */
 
 #if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
@@ -22345,8 +22358,10 @@ static void chdir_to_binary(char *argv0)
           chdir(app_path);
         }
       free(app_path);
+      /*
       getcwd(curdir, sizeof(curdir));
       printf("New current directory for runtime: %s\n", curdir);
+      */
     }
 #else
   (void)argv0;
