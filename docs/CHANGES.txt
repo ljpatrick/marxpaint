@@ -10,6 +10,7 @@ $Id$
 
 2017.xxx.x (0.9.23)
   * New tools
+    ---------
     * Color selector
       Pere Pujal i Carabantes
 
@@ -95,6 +96,11 @@ $Id$
       If the PNG patterns used to generate the effect were compressed the wrong(lossy) way,
       the program will crash
       (SF.net Bug #210)
+
+  * Other Improvements:
+    -------------------
+    * Reformatted source code via GNU Indent tool; should
+      greatly increase code readability and formatting consistency.
 
 2014.August.5 (0.9.22)
 
