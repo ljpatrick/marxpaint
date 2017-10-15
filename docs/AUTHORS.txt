@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2016 by Bill Kendrick and others
+Copyright (c) 2002-2017 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - December 11, 2016
+June 17, 2002 - October 15, 2017
 
 $Id$
 
@@ -606,6 +606,7 @@ $Id$
     Michael de Rooij <micr@zeelandnet.nl>
     Bert Saal <bertsaal@gmail.com>
     Stephanie Schilling <stephanieschilling@online.de>
+    Willem Heppe <heppew@yahoo.com>
 
   * English (Australian)
     Caroline Ford

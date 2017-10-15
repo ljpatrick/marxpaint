@@ -2,15 +2,15 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2015 by Bill Kendrick and others
+Copyright (c) 2002-2017 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 $Id$
 
-201x.xxx.x (0.9.23)
-  * New color selector
-    ------------------
+2017.xxx.x (0.9.23)
+  * New tools
+    * Color selector
       Pere Pujal i Carabantes
 
   * New shapes
@@ -52,6 +52,9 @@ $Id$
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
+
+    * Dutch translation
+      Willem Heppe <heppew@yahoo.com>
 
     * Estonian translation
       Sven Ollino <sven.ollino@gmail.com>
