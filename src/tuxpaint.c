@@ -3365,9 +3365,13 @@ static void mainloop(void)
 	    SDL_Rect r_items;	/* = r_notcontrols; */
 	    int toolopt_changed;
             int select_changed = 0;
+	    grid_dims gd_controls; /* might become 2-by-2 */
+	    grid_dims gd_items; /* generally becoming 2-by-whatever */
 
-	    grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
-	    grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
+            gd_controls.rows = 0;
+            gd_controls.cols = 0;
+            gd_items.rows = 2;
+            gd_items.cols = 2;
 
 	    /* Note set of things we're dealing with */
 	    /* (stamps, brushes, etc.) */
@@ -3375,35 +3379,47 @@ static void mainloop(void)
 	    if (cur_tool == TOOL_STAMP)
 	    {
 	      if (!disable_stamp_controls)
-		gd_controls = (grid_dims)
-	      {
-	      3, 2}; /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+              {
+                /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+		gd_controls.rows = 3;
+		gd_controls.cols = 2;
+              }
               else
-		gd_controls = (grid_dims)
-	      {
-	      1, 2};  /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+              {
+                /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+		gd_controls.rows = 1;
+		gd_controls.cols = 2;
+	      }
 	    }
 	    else if (cur_tool == TOOL_TEXT)
 	    {
 	      if (!disable_stamp_controls)
-		gd_controls = (grid_dims)
-	      {
-	      2, 2};
+                {
+                  gd_controls.rows = 2;
+                  gd_controls.cols = 2;
+                }
 	    }
 	    else if (cur_tool == TOOL_LABEL)
 	      {
 		if (!disable_stamp_controls)
-		  gd_controls = (grid_dims) { 3 , 2 };
+                {
+                  gd_controls.rows = 3;
+                  gd_controls.cols = 2;
+                }
 		else
-		  gd_controls = (grid_dims) { 1 , 2};
+                {
+                  gd_controls.rows = 1;
+                  gd_controls.cols = 2;
+                }
 	      }
 
             else if (cur_tool == TOOL_MAGIC)
             {
               if (!disable_magic_controls)
-                gd_controls = (grid_dims)
               {
-              1, 2};
+                gd_controls.rows = 1;
+                gd_controls.cols = 2;
+              }
             }
 
 	    /* number of whole or partial rows that will be needed
@@ -4556,8 +4572,13 @@ static void mainloop(void)
 	  /* Right tool options scroll */
 	  else
 	      {
-	  grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
-	  grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
+	  grid_dims gd_controls;	/* might become 2-by-2 */
+	  grid_dims gd_items;	/* generally becoming 2-by-whatever */
+
+	  gd_controls.rows = 0;
+	  gd_controls.cols = 0;
+	  gd_items.rows = 2;
+	  gd_items.cols = 2;
 
 	  /* Note set of things we're dealing with */
 	  /* (stamps, brushes, etc.) */
@@ -4565,34 +4586,46 @@ static void mainloop(void)
           if (cur_tool == TOOL_STAMP)
           {
             if (!disable_stamp_controls)
-              gd_controls = (grid_dims)
             {
-            3, 2}; /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+              /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+              gd_controls.rows = 3;
+              gd_controls.cols = 2;
+            }
             else
-              gd_controls = (grid_dims)
             {
-            1, 2};  /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+              /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+              gd_controls.rows = 1;
+              gd_controls.cols = 2;
+            }
           }
 	  else if (cur_tool == TOOL_TEXT)
 	  {
 	    if (!disable_stamp_controls)
-	      gd_controls = (grid_dims)
-	    {
-	    2, 2};
+            {
+              gd_controls.rows = 2;
+              gd_controls.cols = 2;
+            }
 	  }
           else if(cur_tool == TOOL_LABEL)
 	      {
 	    if (!disable_stamp_controls)
-	      gd_controls = (grid_dims){ 3 , 2 };
+            {
+	      gd_controls.rows = 3;
+	      gd_controls.cols = 2;
+            }
 	    else
-                gd_controls = (grid_dims) { 1 , 2};
+            {
+	      gd_controls.rows = 1;
+	      gd_controls.cols = 2;
+            }
             }
           else if (cur_tool == TOOL_MAGIC)
           {
             if (!disable_magic_controls)
-              gd_controls = (grid_dims)
             {
-            1, 2};
+	      gd_controls.rows = 1;
+	      gd_controls.cols = 2;
+            }
           }
 
 	  /* number of whole or partial rows that will be needed
