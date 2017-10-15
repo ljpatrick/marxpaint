@@ -84,8 +84,8 @@ void do_setcursor(SDL_Cursor * c)
 void free_cursor(SDL_Cursor ** cursor)
 {
   if (*cursor)
-  {
-    SDL_FreeCursor(*cursor);
-    *cursor = NULL;
-  }
+    {
+      SDL_FreeCursor(*cursor);
+      *cursor = NULL;
+    }
 }
