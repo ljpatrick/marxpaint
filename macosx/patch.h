@@ -11,4 +11,4 @@
 
 #include <wchar.h>
 
-wchar_t* wcsdup(const wchar_t*);
+wchar_t *wcsdup(const wchar_t *);
