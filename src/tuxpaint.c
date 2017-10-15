@@ -1757,7 +1757,6 @@ static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
-static void reset_brush_counter_and_frame(void);
 static void reset_brush_counter(void);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
@@ -5500,12 +5499,6 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     {
       update_canvas(orig_x1 - (w >> 1), orig_y1 - (h >> 1), orig_x2 + (w >> 1), orig_y2 + (h >> 1));
     }
-}
-
-void reset_brush_counter_and_frame(void)
-{
-  brush_counter = 999;
-  brush_frame = 0;
 }
 
 void reset_brush_counter(void)
