@@ -6,3 +6,4 @@ obj/parse_step1.c
 src/tp_magic_api.h
 tp-magic-config
 trans/
+*~
