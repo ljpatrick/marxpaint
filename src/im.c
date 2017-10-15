@@ -567,7 +567,7 @@ static int charmap_load(CHARMAP * cm, const char *path)
         }
       else if (buf[0] == '#')
         {                       /* Comment */
-          fscanf(is, "%*[^\n]");
+          scanned = fscanf(is, "%*[^\n]");
           continue;
         }
       else
@@ -971,7 +971,7 @@ static int im_event_zh_tw(IM_DATA * im, SDL_keysym ks)
       /* Left-Alt & Right-Alt mapped to mode-switch */
     case SDLK_RALT:
     case SDLK_LALT:
-      cm.section = (++cm.section % SEC_TOTAL);  /* Change section */
+      cm.section = ((cm.section + 1) % SEC_TOTAL);  /* Change section */
       im_softreset(im);         /* Soft reset */
 
       /* Set tip text */
@@ -1190,7 +1190,7 @@ static int im_event_th(IM_DATA * im, SDL_keysym ks)
 
       /* Right-Alt mapped to mode-switch */
     case SDLK_RALT:
-      cm.section = (++cm.section % SEC_TOTAL);  /* Change section */
+      cm.section = ((cm.section + 1) % SEC_TOTAL);  /* Change section */
       im_softreset(im);         /* Soft reset */
 
       /* Set tip text */
@@ -1409,7 +1409,7 @@ static int im_event_ja(IM_DATA * im, SDL_keysym ks)
 
       /* Right-Alt mapped to mode-switch */
     case SDLK_RALT:
-      cm.section = (++cm.section % SEC_TOTAL);  /* Change section */
+      cm.section = ((cm.section + 1) % SEC_TOTAL);  /* Change section */
       im_softreset(im);         /* Soft reset */
 
       /* Set tip text */
@@ -1656,7 +1656,7 @@ static int im_event_ko(IM_DATA * im, SDL_keysym ks)
       /* Right-Alt mapped to mode-switch */
     case SDLK_LALT:
     case SDLK_RALT:
-      cm.section = (++cm.section % SEC_TOTAL);  /* Change section */
+      cm.section = ((cm.section + 1) % SEC_TOTAL);  /* Change section */
       im_softreset(im);         /* Soft reset */
 
       /* Set tip text */
