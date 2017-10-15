@@ -28,7 +28,8 @@
 extern const char *savedir;
 extern const char *datadir;
 
-enum {
+enum
+{
   DIR_SAVE,
   DIR_DATA
 };
