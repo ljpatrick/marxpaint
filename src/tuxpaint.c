@@ -16756,46 +16756,6 @@ static void handle_active(SDL_Event * event)
 }
 
 
-/* removes a single '\' or '/' from end of path */
-
-static char *remove_slash(char *path)
-{
-  int len = strlen(path);
-
-  if (!len)
-    return path;
-
-  if (path[len - 1] == '/' || path[len - 1] == '\\')
-    path[len - 1] = 0;
-
-  return path;
-}
-
-/* replace '~' at the beginning of a path with home directory */
-/*
-static char *replace_tilde(const char* const path)
-{
-    char *newpath;
-    int newlen;
-
-    int len = strlen(path);
-
-    if (!len)
-        return strdup("");
-
-    if (path[0] == '~')
-    {
-        newlen = strlen(getenv("HOME")) + len;
-        newpath = malloc(sizeof(char)*newlen);
-        sprintf(newpath, "%s%s", getenv("HOME"), path+1);
-    }
-    else
-        newpath = strdup(path);
-
-    return newpath;
-}
-*/
-
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
 
