@@ -63,10 +63,10 @@
 #define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
 #define SDL_Thread int
 #define SDL_mutex int
-#define SDL_CreateMutex() 0	// creates in released state
+#define SDL_CreateMutex() 0     // creates in released state
 #define SDL_DestroyMutex(lock)
-#define SDL_mutexP(lock)	// take lock
-#define SDL_mutexV(lock)	// release lock
+#define SDL_mutexP(lock)        // take lock
+#define SDL_mutexV(lock)        // release lock
 #endif
 
 #endif
@@ -91,21 +91,23 @@ TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize);
 
 /* Stuff that wraps either SDL_Pango or SDL_TTF for font rendering: */
 
-enum {
+enum
+{
 #ifndef NO_SDLPANGO
   FONT_TYPE_PANGO,
 #endif
   FONT_TYPE_TTF
 };
 
-typedef struct TuxPaint_Font_s {
+typedef struct TuxPaint_Font_s
+{
 #ifndef NO_SDLPANGO
-  SDLPango_Context * pango_context;
+  SDLPango_Context *pango_context;
 #endif
   int typ;
-  TTF_Font * ttf_font;
+  TTF_Font *ttf_font;
   int height;
-  char * desc;
+  char *desc;
 } TuxPaint_Font;
 
 int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
@@ -140,7 +142,7 @@ static int text_sizes[] = {
 #endif
   12, 18, 24, 36, 48,
   56, 64, 96, 112, 128, 160
-};				// point sizes
+};                              // point sizes
 
 #define MIN_TEXT_SIZE 0u
 #define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0] - 1)
@@ -150,12 +152,12 @@ typedef struct style_info
 {
   char *filename;
   char *directory;
-  char *family;			// name like "FooCorp Thunderstruck"
-  char *style;			// junk like "Oblique Demi-Bold"
+  char *family;                 // name like "FooCorp Thunderstruck"
+  char *style;                  // junk like "Oblique Demi-Bold"
   int italic;
   int boldness;
   int score;
-  int truetype;			// Is it? (TrueType gets priority)
+  int truetype;                 // Is it? (TrueType gets priority)
 } style_info;
 
 // user's notion of a font
@@ -183,15 +185,15 @@ TuxPaint_Font *getfonthandle(int desire);
 
 int charset_works(TuxPaint_Font * font, const char *s);
 
-TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttffilename, int size);
+TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size);
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf);
-const char * TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf);
-const char * TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf);
+const char *TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf);
+const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf);
 
 #ifdef NO_SDLPANGO
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
 #else
-void sdl_color_to_pango_color(SDL_Color sdl_color, SDLPango_Matrix *pango_color);
+void sdl_color_to_pango_color(SDL_Color sdl_color, SDLPango_Matrix * pango_color);
 #endif
 
 int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale);
