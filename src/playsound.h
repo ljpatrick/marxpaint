@@ -37,7 +37,6 @@
 extern Mix_Chunk *sounds[NUM_SOUNDS];
 extern int mute, use_sound;
 
-void playsound(SDL_Surface * screen, int chan, int s, int override, int x,
-	       int y);
+void playsound(SDL_Surface * screen, int chan, int s, int override, int x, int y);
 
 #endif
