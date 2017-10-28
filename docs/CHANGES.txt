@@ -90,11 +90,15 @@ $Id$
     * Thai translation
       Nudjaree <poonim_p@hotmail.com>
 
+    * Ukrainian translation
+      yurchor <yurchor@ukr.net> 
+      Sugar Labs i18n team <https://translate.sugarlabs.org/accounts/yurchor/>
+
   * Bug Fixes
     ---------
     * Crash if any "mosaic" magic tool used, Xubuntu 15.10
-      If the PNG patterns used to generate the effect were compressed the wrong(lossy) way,
-      the program will crash
+      If the PNG patterns used to generate the effect were compressed
+      the wrong(lossy) way, the program will crash
       (SF.net Bug #210)
 
   * Other Improvements:

@@ -1003,7 +1003,12 @@ $Id$
     Joana Portia Antwi-Danso <portnass2003@yahoo.com>
     Samuel Sarpong <srnsam@yahoo.com>
 
-  * Ukranian / Urkanian documentation
+  * Ukranian
+    Serhij Dubyk <serhijdubyk@gmail.com>
+    yurchor <yurchor@ukr.net>
+    Sugar Labs i18n team <https://translate.sugarlabs.org/accounts/yurchor/>
+
+  * Urkanian documentation
     Serhij Dubyk <serhijdubyk@gmail.com>
 
   * Urdu
