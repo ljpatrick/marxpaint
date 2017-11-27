@@ -101,6 +101,11 @@ $Id$
       the wrong(lossy) way, the program will crash
       (SF.net Bug #210)
 
+  * Ports
+    -----
+	* Rewrite the build system to be more Linux-like, with no XCode IDE.
+      Mark K. Kim <mkkim214@gmail.com>
+
   * Other Improvements:
     -------------------
     * Reformatted source code via GNU Indent tool; should

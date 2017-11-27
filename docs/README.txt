@@ -126,7 +126,7 @@ Loading Tux Paint
 
   Mac OS X Users
 
-         Simply double-click the "Tux Paint" icon.
+         Simply double-click the "TuxPaint.app" icon.
 
      ----------------------------------------------------------------------
 
@@ -591,17 +591,17 @@ Available Tools
 
                       Printer Settings
 
-                              (Windows and Mac OS X)
+                              (Windows)
 
                               By default, Tux Paint simply prints to the
                               default printer with default settings when the
                               'Print' button is pushed.
 
-                              However, if you hold the [Alt] (or [Option])
-                              key on the keyboard while pushing the button,
-                              as long as you're not in fullscreen mode, your
-                              operating system's printer dialog will appear,
-                              where you can change the settings.
+							  However, if you hold the [Alt] key on the
+							  keyboard while pushing the button, as long as
+							  you're not in fullscreen mode, your operating
+							  system's printer dialog will appear, where you
+							  can change the settings.
 
                               You can have the printer configuration changes
                               stored by using the "printcfg" option, either
@@ -743,7 +743,7 @@ Available Tools
      Mac OS X
              Inside the user's "Library" folder:
              "/Users/(user name)/Library/Application
-             Support/Tux Paint/saved/"
+             Support/TuxPaint/saved/"
 
      Linux/Unix
              Inside a hidden ".tuxpaint" directory, in the user's home

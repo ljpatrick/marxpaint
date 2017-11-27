@@ -37,6 +37,14 @@ As of this writing, the required libraries are:
 Tux Paint.
 
 
+  *** WARNING ***
+  ---------------
+  Having any UNIX-like toolset installed on your Mac besides MacPorts and
+  XCode, such as Fink or Brew, will prevent your app bundle from being
+  portable.  Be sure Fink and Brew are not accessible from your build
+  environment.
+
+
 HOW TO BUILD
 ------------
 Simply, run:

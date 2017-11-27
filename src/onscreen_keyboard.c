@@ -1,6 +1,3 @@
-#ifdef __APPLE__
-#include "patch.h"              //EP
-#endif
 #include "onscreen_keyboard.h"
 
 //#define DEBUG_OSK_COMPOSEMAP

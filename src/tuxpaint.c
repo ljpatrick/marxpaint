@@ -298,25 +298,9 @@ typedef struct safer_dirent
 
 #else /* __BEOS__ */
 
-/* Not BeOS */
-
-#ifdef __APPLE__
-
-/* Apple */
-
-#include "macosx_print.h"
-#include "message.h"
-#include "speech.h"
-#include "wrapperdata.h"
-extern WrapperData macosx;
-
-#else /* __APPLE__ */
-
-/* Not Windows, not BeOS, not Apple */
+/* Not Windows, not BeOS */
 
 #include "postscript_print.h"
-
-#endif /* __APPLE__ */
 
 #endif /* __BEOS__ */
 
@@ -359,6 +343,10 @@ static void mtw(wchar_t * wtok, char *tok)
 }
 
 #endif /* WIN32 */
+
+#ifdef __APPLE__
+#include "macos.h"
+#endif
 
 #include <errno.h>
 #include <sys/stat.h>
@@ -1280,7 +1268,7 @@ enum
 static magic_api *magic_api_struct;     /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -2495,14 +2483,6 @@ static void mainloop(void)
 
                   magic_switchin(canvas);
                 }
-#ifdef __APPLE__
-              else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts)
-                {
-                  /* Ctrl-Shft-P - Page Setup */
-                  if (!disable_print)
-                    DisplayPageSetup(canvas);
-                }
-#endif
               else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
                 {
                   /* Ctrl-P - Print */
@@ -15899,7 +15879,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
   const char *pcmd;
   FILE *pi;
 
@@ -15951,18 +15931,6 @@ void do_print(void)
   /* BeOS */
 
   SurfacePrint(save_canvas);
-#elif defined(__APPLE__)
-  /* Mac OS X */
-  int show = ((want_alt_printcommand || macosx.menuAction) && !fullscreen);
-
-  const char *error = SurfacePrint(save_canvas, show);
-
-  if (error)
-    {
-      fprintf(stderr, "Cannot print: %s\n", error);
-      do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
-    }
-
 #endif
 
 #endif
@@ -21531,7 +21499,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* ================================================================================== */
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;
@@ -21762,7 +21730,7 @@ static void setup_config(char *argv[])
       result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
-      savedir = strdup(macosx.preferencesPath);
+      savedir = strdup(macos_preferencesPath());
 #else
       int tmp;
       tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
@@ -21784,7 +21752,7 @@ static void setup_config(char *argv[])
   strcpy(str, "tuxpaint.cfg");
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_preferencesPath());
 
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
@@ -21815,7 +21783,7 @@ static void setup_config(char *argv[])
          folder & extension inconsistency with Tux Paint Config application) */
       /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
 application support folder */
-      snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.globalPreferencesPath);
+      snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_globalPreferencesPath());
       parse_file_options(&tmpcfg_sys, str);
 #else
       /* normally /etc/tuxpaint/tuxpaint.conf */
@@ -22277,10 +22245,11 @@ static void chdir_to_binary(char *argv0)
       char *slash = strrchr(app_path, '/');
 
 #if defined(__APPLE__)
-      /* EP added to fix 10.9 issue of current directory set by Finder
-         to something else than folder where app bundle resides */
-      /* typical path of app's binary on Mac OS : /Applications/Tux Paint.app/Contents/MacOS/Tux Paint */
-      int levels = 3; /* we need to back up 3 levels */
+      // On macOS, execution is deep inside the app bundle.
+      // E.g., "/Applications/TuxPaint.app/Contents/MacOS/tuxpaint"
+      // But we want to point somewhere higher up, say to "Contents", so we can access
+      // the resources in Resources folder. So move up one level.
+      int levels = 1; /* we need to back up 1 level */
 
       while ((levels-- > 0) && (slash))
         {
