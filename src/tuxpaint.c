@@ -7379,6 +7379,7 @@ static void load_stamps(SDL_Surface * screen)
   load_stamp_dir(screen, homedirdir);
   load_stamp_dir(screen, DATA_PREFIX "stamps");
 #ifdef __APPLE__
+  load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
 #endif
 #ifdef WIN32
