@@ -103,7 +103,7 @@ $Id$
 
   * Ports
     -----
-	* Rewrite the build system to be more Linux-like, with no XCode IDE.
+    * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
       Mark K. Kim <mkkim214@gmail.com>
 
   * Other Improvements:
@@ -238,14 +238,14 @@ $Id$
         motion.
       * The responsivity of the joystick can be configured via command
         line or config files:
-	* --joystick-slownes sets a delay at each axis motion event.
-	    Allowed values from 0 to 500, defaults to 15.
-	* --joystick-threshold sets the minimum value of axis motion to
-	  begin move the pointer.
-	    Allowed values from 0 to 32766, defaults to 3200.
-	* --joystick_maxsteps sets the maximum number of pixels that
-	  the pointer will move at a time.
-	    Allowed values from 1 to 7, defaults to 7.
+        * --joystick-slownes sets a delay at each axis motion event.
+            Allowed values from 0 to 500, defaults to 15.
+        * --joystick-threshold sets the minimum value of axis motion to
+          begin move the pointer.
+            Allowed values from 0 to 32766, defaults to 3200.
+        * --joystick_maxsteps sets the maximum number of pixels that
+          the pointer will move at a time.
+            Allowed values from 1 to 7, defaults to 7.
       * Joystick buttons can be assigned used to activate certain commands
         in Tux Paint (--joystick-btn-COMMAND options)
 
@@ -1147,7 +1147,7 @@ $Id$
       + Other misc. updates and efficiency improvements
       + Automatic testing for SVG, SDL_Pango, SDL_Mixer and libpng vs libpng12
         libraries; 'oldsvg' and 'nosvg' targets removed; new means for building
-	without sound, etc.
+        without sound, etc.
       Albert Cahalan <albert@users.sf.net>
 
     * Made sure Makefile works with NetBSD again.
