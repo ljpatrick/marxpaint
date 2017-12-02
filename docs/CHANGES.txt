@@ -75,6 +75,10 @@ $Id$
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
+    * Indonesian translation
+      Courtesy of SugarLabs and
+      T. Surya Fajri <kilelme@gmail.com>
+
     * Korean translation
       Mark K. Kim <mkkim214@gmail.com>
 

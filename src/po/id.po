@@ -1,22 +1,22 @@
-# Indonesian translation tuxpaint.
-# Copyright (c) 2015.
-# This file is distributed under the same license as the Tux Paint package.
-# Tedi Heriyanto <tedi_h@gmx.net>, 2003, 2004, 2005.
-# T. Surya Fajri <kilelme@gmail.com>, 2014, 2015.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-13 16:43+0700\n"
-"Last-Translator: T. Surya Fajri <tsuryafajri@gmail.com>\n"
-"Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2017-11-15 05:25+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.7\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1510723550.000000\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -323,15 +323,15 @@ msgstr "Sebuah Segi delapan memiliki delapan sisi yang sama."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr "Sebuah bintang dengan 3 point"
+msgstr "Sebuah bintang dengan 3 point."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr "Sebuah bintang dengan 4 point"
+msgstr "Sebuah bintang dengan 4 point."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr "Sebuah bintang dengan 5 point"
+msgstr "Sebuah bintang dengan 5 point."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -445,12 +445,12 @@ msgstr "Keluar"
 #. Paint tool instructions
 #: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Pilih sebuah warna dan bentuk kuas untuk menggambar"
+msgstr "Pilih sebuah warna dan bentuk kuas untuk menggambar."
 
 #. Stamp tool instructions
 #: ../tools.h:118
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Pilih sebuah gambar untuk stempel gambarmu"
+msgstr "Pilih sebuah gambar untuk stempel gambarmu."
 
 #. Line tool instructions
 #: ../tools.h:121
@@ -653,12 +653,12 @@ msgstr "Ingat untuk menggunakan tombol mouse kiri!"
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2314
 msgid "Sound muted."
-msgstr "Suara diredam"
+msgstr "Suara diredam."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2319
 msgid "Sound unmuted."
-msgstr "Suara tidak diredam"
+msgstr "Suara tidak diredam."
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:3072
@@ -734,7 +734,7 @@ msgstr "Pilih gambar yang kamu inginkan, lalu klik “Play”."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Pilih warna dari gambar anda."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -754,7 +754,7 @@ msgstr "Adalah sebuah program gambar untuk anak-anak."
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
-msgstr "Mengubah Warna."
+msgstr "Mengubah Warna"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and drag the mouse to change the colors in parts of your picture."
@@ -773,8 +773,8 @@ msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
-"Klik pada pinggir gambar anda untuk menarik window blind diatasnya.  "
-"Gerakkan secara tegak lurus untuk membuka atau menutup blind"
+"Klik pada pinggir gambar anda untuk menarik window blind diatasnya. Gerakkan "
+"secara tegak lurus untuk membuka atau menutup blind."
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
@@ -813,7 +813,7 @@ msgstr "Klik dan gerakkan mouse di sekitar gambar untuk mengaburkan gambar."
 
 #: ../../magic/src/blur.c:84
 msgid "Click to blur the entire image."
-msgstr "Klik untuk mengaburkan seluruh gambar"
+msgstr "Klik untuk mengaburkan seluruh gambar."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:124
@@ -946,7 +946,7 @@ msgstr "Ukiran"
 
 #: ../../magic/src/fretwork.c:180
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Klik dan tarik untuk menggambar pola yang berulang."
+msgstr "Klik dan tarik untuk menggambar pola yang berulang. "
 
 #: ../../magic/src/fretwork.c:182
 msgid "Click to surround your picture with repetitive patterns."
@@ -1050,7 +1050,7 @@ msgstr "Metal Paint"
 
 #: ../../magic/src/metalpaint.c:107
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Klik dan tarik mouse untuk mengecat dengan warna metalic"
+msgstr "Klik dan tarik mouse untuk mengecat dengan warna metalic."
 
 #: ../../magic/src/mirror_flip.c:117
 msgid "Mirror"
@@ -1142,7 +1142,7 @@ msgstr ""
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr "Klik untuk mengubah lukisan anda menjadi negatif"
+msgstr "Klik untuk mengubah lukisan anda menjadi negatif."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -1448,7 +1448,7 @@ msgid ""
 msgstr ""
 "Klik untuk membuat gambar horizontal bergelombang. Klik ke arah atas untuk "
 "gelombang pendek, ke bawah untuk gelombang tinggi, ke kiri untuk gelombang "
-"kecil, dan ke kanan untuk gelombang panjang"
+"kecil, dan ke kanan untuk gelombang panjang."
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1458,7 +1458,7 @@ msgid ""
 msgstr ""
 "Klik untuk membuat gambar vertikal bergelombang. Klik ke arah atas untuk "
 "gelombang pendek, ke bawah untuk gelombang tinggi, ke kiri untuk gelombang "
-"kecil, dan ke kanan untuk gelombang panjang"
+"kecil, dan ke kanan untuk gelombang panjang."
 
 # | msgid "Colors"
 #: ../../magic/src/xor.c:95
@@ -1471,129 +1471,4 @@ msgstr "Klik dan tarik untuk menggambar sebuah efek XOR"
 
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Klik untuk menggambarkan sebuah efek XOR pada seluruh gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw the blind, move left or right to open or close."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Mosaic square"
-#~ msgstr "Magic"
-
-#, fuzzy
-#~ msgid "Mosaic hexagon"
-#~ msgstr "Magic"
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
-#~ "picture."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid "Click to add a mosaic squared effect to your entire picture."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
-#~ "your picture."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr "Klik dan pindah mouse ke sekitar untuk mengubah warna gambar."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to add noise to the image."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to add noise to the entire image."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to trace the edges of objects in the image."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to sharpen the image."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to add snow to the entire image."
-#~ msgstr "Klik untuk membuat mirror gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse around to turn the image into pure color and "
-#~ "white regions."
-#~ msgstr ""
-#~ "Klik dan pindahkan mouse ke sekitar untuk mengubah gambar ke sebuah "
-#~ "kartun."
-
-#, fuzzy
-#~ msgid "Click and move the mouse around convert the image to greyscale."
-#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to change the entire picture’s color."
-#~ msgstr "Klik dan pindah mouse ke sekitar untuk mengubah warna gambar."
-
-#, fuzzy
-#~ msgid "Blur All"
-#~ msgstr "Blur"
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Klik dan pindahkan untuk mengaburkan warna."
-
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Klik dan pindahkan untuk menggelapkan warna."
-
-#~ msgid "Sparkles"
-#~ msgstr "Kilau"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Kamu kini memiliki kertas kosong untuk menggambar!"
-
-#, fuzzy
-#~ msgid "Start a new picture?"
-#~ msgstr "Hapus gambar ini?"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Klik dan pindahkan untuk menggambar kilau."
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Memulai gambar baru akan menghapus gambar sekarang!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "OK!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Lupakan Saja!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Simpan gambar ini ke versi yang lebih tua?"
+msgstr "Klik untuk menggambarkan sebuah efek XOR pada seluruh gambar"

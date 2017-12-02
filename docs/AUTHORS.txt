@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 15, 2017
+June 17, 2002 - December 2, 2017
 
 $Id$
 
@@ -698,7 +698,8 @@ $Id$
 
   * Indonesian
     Tedi Heriyanto <tedi_h@gmx.net>
-    T. Surya Fajri
+    T. Surya Fajri <kilelme@gmail.com>
+    Sugar Labs i18n team <https://translate.sugarlabs.org/>
 
   * Inuktitut
     Harvey Ginter <harveyginter@gmail.com>
