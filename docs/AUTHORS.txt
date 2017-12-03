@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - December 2, 2017
+June 17, 2002 - December 3, 2017
 
 $Id$
 
@@ -559,6 +559,7 @@ $Id$
 
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>
+    Robert Buj Gelonch <rbuj@users.sf.net>
 
   * Chinese (Simplified)
     Huang Zuzhen <zuzhenhuang@vip.sina.com>

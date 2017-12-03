@@ -51,6 +51,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Catalan translation
+      Robert Buj Gelonch <rbuj@users.sf.net>
+
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
 
