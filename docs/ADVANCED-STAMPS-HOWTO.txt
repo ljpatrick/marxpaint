@@ -79,7 +79,7 @@ Prepare the image:
 
      Bring that image up in your image editor. If you didn't crop it yet, you
      may find that your image editor is very slow. Rotate and crop the image
-     as needed. Save the image - choose whatever native format supports
+     as needed. Save the image — choose whatever native format supports
      layers, masks, alpha, etc. GIMP users should choose "XCF", and Adobe
      Photoshop users should choose "PSD", for example.
 
@@ -90,7 +90,7 @@ Prepare the image:
      top to bottom you will need something like this:
 
       1. unmodified image (write-protect this if you can)
-      2. an image you will modify - the "WIP" layer
+      2. an image you will modify — the "WIP" layer
       3. solid green (write-protect this if you can)
       4. solid magenta (write-protect this if you can)
       5. unmodified image (write-protect this if you can)

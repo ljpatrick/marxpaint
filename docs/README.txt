@@ -353,7 +353,7 @@ Available Tools
 
                               Tux Paint allows inputting characters in
                               different languages. Most Latin characters
-                              (A-Z, n, e, etc.) can by entered directly. Some
+                              (A-Z, ñ, è, etc.) can by entered directly. Some
                               languages require that Tux Paint be switched
                               into an alternate input mode before entering,
                               and some characters must be composed using
@@ -370,13 +370,13 @@ Available Tools
                               not include all characters for all languages,
                               so sometimes you'll need to change fonts to see
                               the characters you're trying to type.
-                                 * Japanese - Romanized Hiragana and
-                                   Romanized Katakana - right [Alt]
-                                 * Korean - Hangul 2-Bul - right [Alt] or
+                                 * Japanese — Romanized Hiragana and
+                                   Romanized Katakana — right [Alt]
+                                 * Korean — Hangul 2-Bul — right [Alt] or
                                    left [Alt]
-                                 * Traditional Chinese - right [Alt] or
+                                 * Traditional Chinese — right [Alt] or
                                    left [Alt]
-                                 * Thai - right [Alt]
+                                 * Thai — right [Alt]
 
      ----------------------------------------------------------------------
 
@@ -660,7 +660,7 @@ Available Tools
                  A sliding scale at the lower left of the screen (next to the
                  "Play" button) can be used to adjust the speed of the
                  slideshow, from slowest to fastest. Choose the leftmost
-                 setting to disable automatic advancement - you will need to
+                 setting to disable automatic advancement — you will need to
                  press a key or click to go to the next slide (see below).
 
                  Note: The slowest setting does not automatically advance

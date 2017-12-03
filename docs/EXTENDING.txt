@@ -613,7 +613,7 @@ Translations
      "pt_BR.po" for Brazilian Portuguese, versus "pt.po" or "pt_PT.po" for
      Portuguese spoken in Portugal.)
 
-     Open the newly-created ".po" file - you can edit in a plain text edtior,
+     Open the newly-created ".po" file — you can edit in a plain text edtior,
      such as Emacs, Pico or VI on Linux, or NotePad on Windows. The original
      English text used in Tux Paint is listed in lines starting with "msgid".
      Enter your translations of each of these pieces of text in the empty
@@ -705,7 +705,7 @@ Alternative Input Methods
        30AE   gi   -
 
      Note: Blank lines within the ".im" file will be ignored, as will any
-     text following a "#" (pound/hash) character - it can be used to denote
+     text following a "#" (pound/hash) character — it can be used to denote
      comments, as seen in the example above.
 
      Note: Meanings of the flags are locale-specific, and are processed by

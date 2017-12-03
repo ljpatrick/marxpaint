@@ -7,15 +7,12 @@
 # Bill Kendrick
 # bill@newbreedsoftware.com
 # 
-# Sept. 4, 2005 - August 19, 2014
+# Sept. 4, 2005 - December 3, 2017
 # $Id$
 
 # Bah, "-no-numbering" and "-no-references" went away recently!? -bjk 2008.04.28
-LINKS_OPTIONS:=-dump
+LINKS_OPTIONS:=-dump -codepage utf8
 LINKS:=links $(LINKS_OPTIONS)
-
-LYNX_OPTIONS:=-dump
-LYNX:=lynx $(LYNX_OPTIONS)
 
 # FIXME: Support finding files in ??/html/ and ??_??/html/)
 HTMLFILES:=$(wildcard html/*.html)
@@ -91,16 +88,16 @@ $(IT_TEXTFILES): it/%.txt: it/html/%.html
 	$(LINKS) $< > $@
 
 $(JA_TEXTFILES): ja/%.txt: ja/html/%.html  
-	$(LYNX) $< > $@
+	$(LINKS) $< > $@
 
 $(NL_TEXTFILES): nl/%.txt: nl/html/%.html  
 	$(LINKS) $< > $@
 
 $(RU_TEXTFILES): ru/%.txt: ru/html/%.html  
-	$(LYNX) $< > $@
+	$(LINKS) $< > $@
 
 $(ZH_CN_TEXTFILES): zh_cn/%.txt: zh_cn/html/%.html  
-	$(LYNX) $< > $@
+	$(LINKS) $< > $@
 
 $(ZH_TW_TEXTFILES): zh_tw/%.txt: zh_tw/html/%.html  
-	$(LYNX) $< > $@
+	$(LINKS) $< > $@
