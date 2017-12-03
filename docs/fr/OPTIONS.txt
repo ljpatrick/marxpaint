@@ -1,4 +1,9 @@
    Options de Tux Paint
+
+OUT OF DATE
+
+   See English version.
+
    Avec la version 0.9.14, un outil graphique vous permet de modifier les
    comportements de Tux Paint (Ha Bon! Où çà? personnellement, je ne l'ai pas
    trouvé. Il ne doit pas être dans le package de Mac OS X.) Toutefois si

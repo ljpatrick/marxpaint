@@ -11,6 +11,10 @@ Documentación de Opciones
 
                             24 de Setiembre de 2004
 
+OUT OF DATE
+
+                              See English version.
+
      ----------------------------------------------------------------------
 
                                Tux Paint Config.

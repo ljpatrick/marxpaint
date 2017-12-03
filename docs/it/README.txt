@@ -14,6 +14,10 @@
                Traduzione a cura di Flavio "Iron Bishop" Pastore
                                  23 Aprile 2004
 
+OUT OF DATE
+
+                              See English version.
+
      ----------------------------------------------------------------------
 
                                     Indice:

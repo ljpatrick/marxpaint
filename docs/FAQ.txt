@@ -2,13 +2,13 @@
                                  version 0.9.23
                            Frequently Asked Questions
 
-                Copyright 2002-2015 by Bill Kendrick and others
+                Copyright 2002-2017 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                        September 14, 2002 - May 6, 2015
+                      September 14, 2002 - December, 2017
 
 Drawing-related
 

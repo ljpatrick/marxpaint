@@ -3,6 +3,10 @@
 
   Un sinxelo programa de debuxo para nenos
 
+OUT OF DATE
+
+                              See English version.
+
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
 
