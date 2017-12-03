@@ -68,6 +68,9 @@ $Id$
     * French translation
       Chion Jacques <jacques.chion@orange.fr> 
 
+    * Fula translation
+      Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>
+
     * Gaelic (Irish) translation
       Kevin Scannell <kscanne@gmail.com>
 
