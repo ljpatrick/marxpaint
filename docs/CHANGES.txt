@@ -24,6 +24,8 @@ $Id$
     * Made stamp controls (size, flip, mirror) section clearer.
       Fixes https://sourceforge.net/p/tuxpaint/bugs/182/
 
+    * Cleaned up and reorganized docs subdirectory.
+
   * New locales
     -----------
     * Bengali

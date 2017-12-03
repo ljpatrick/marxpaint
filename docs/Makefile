@@ -1,6 +1,6 @@
 # Makefile for Tux Paint docs
 # 
-# Uses "links" (or "lynx") to convert docs from HTML to plain text.
+# Uses "links" to convert docs from HTML to plain text.
 # (Normally only ran by the developers after updating the HTML, prior to
 # release.)
 #
@@ -10,13 +10,12 @@
 # Sept. 4, 2005 - December 3, 2017
 # $Id$
 
-# Bah, "-no-numbering" and "-no-references" went away recently!? -bjk 2008.04.28
 LINKS_OPTIONS:=-dump -codepage utf8
 LINKS:=links $(LINKS_OPTIONS)
 
 # FIXME: Support finding files in ??/html/ and ??_??/html/)
-HTMLFILES:=$(wildcard html/*.html)
-TEXTFILES:=$(patsubst html/%.html,%.txt,$(HTMLFILES))
+EN_HTMLFILES:=$(wildcard en/html/*.html)
+EN_TEXTFILES:=$(patsubst en/html/%.html,en/%.txt,$(EN_HTMLFILES))
 
 ES_HTMLFILES:=$(wildcard es/html/*.html)
 ES_TEXTFILES:=$(patsubst es/html/%.html,es/%.txt,$(ES_HTMLFILES))
@@ -47,7 +46,7 @@ ZH_TW_TEXTFILES:=$(patsubst zh_tw/html/%.html,zh_tw/%.txt,$(ZH_TW_HTMLFILES))
 
 
 .PHONY: all
-all:	$(TEXTFILES) \
+all:	$(EN_TEXTFILES) \
 	$(ES_TEXTFILES) \
 	$(FR_TEXTFILES) \
 	$(GL_TEXTFILES) \
@@ -62,6 +61,7 @@ all:	$(TEXTFILES) \
 clean:
 	-rm \
 	$(TEXTFILES) \
+	$(EN_TEXTFILES) \
 	$(ES_TEXTFILES) \
 	$(FR_TEXTFILES) \
 	$(GL_TEXTFILES) \
@@ -72,32 +72,33 @@ clean:
 	$(ZH_CN_TEXTFILES) \
 	$(ZH_TW_TEXTFILES)
 
-$(TEXTFILES): %.txt: html/%.html  
+$(EN_TEXTFILES): en/%.txt: en/html/%.html
 	$(LINKS) $< > $@
 
-$(ES_TEXTFILES): es/%.txt: es/html/%.html  
+$(ES_TEXTFILES): es/%.txt: es/html/%.html
 	$(LINKS) $< > $@
 
-$(FR_TEXTFILES): fr/%.txt: fr/html/%.html  
+$(FR_TEXTFILES): fr/%.txt: fr/html/%.html
 	$(LINKS) $< > $@
 
-$(GL_TEXTFILES): gl/%.txt: gl/html/%.html  
+$(GL_TEXTFILES): gl/%.txt: gl/html/%.html
 	$(LINKS) $< > $@
 
-$(IT_TEXTFILES): it/%.txt: it/html/%.html  
+$(IT_TEXTFILES): it/%.txt: it/html/%.html
 	$(LINKS) $< > $@
 
-$(JA_TEXTFILES): ja/%.txt: ja/html/%.html  
+$(JA_TEXTFILES): ja/%.txt: ja/html/%.html
 	$(LINKS) $< > $@
 
-$(NL_TEXTFILES): nl/%.txt: nl/html/%.html  
+$(NL_TEXTFILES): nl/%.txt: nl/html/%.html
 	$(LINKS) $< > $@
 
-$(RU_TEXTFILES): ru/%.txt: ru/html/%.html  
+$(RU_TEXTFILES): ru/%.txt: ru/html/%.html
 	$(LINKS) $< > $@
 
-$(ZH_CN_TEXTFILES): zh_cn/%.txt: zh_cn/html/%.html  
+$(ZH_CN_TEXTFILES): zh_cn/%.txt: zh_cn/html/%.html
 	$(LINKS) $< > $@
 
-$(ZH_TW_TEXTFILES): zh_tw/%.txt: zh_tw/html/%.html  
+$(ZH_TW_TEXTFILES): zh_tw/%.txt: zh_tw/html/%.html
 	$(LINKS) $< > $@
+
