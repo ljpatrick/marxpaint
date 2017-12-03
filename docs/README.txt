@@ -3,13 +3,13 @@
 
   A simple drawing program for children
 
-                Copyright 2002-2016 by Bill Kendrick and others
+                Copyright 2002-2017 by Bill Kendrick and others
                          New Breed Software & Tux4Kids
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                       June 14, 2002 - December 11, 2016
+                        June 14, 2002 - December 3, 2017
 
      ----------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ Loading Tux Paint
 
   Mac OS X Users
 
-         Simply double-click the "TuxPaint.app" icon.
+         Simply double-click the "Tux Paint" icon.
 
      ----------------------------------------------------------------------
 
@@ -181,6 +181,12 @@ Main Screen
 
   [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
                               Purple, Brown, Grey]
+
+               On the far right are two special color options, the
+               "color picker", which has an outline of an eye-dropper, and
+               allows you to pick a color found within your drawing, and the
+               rainbow palette, which allows you to pick a color from within
+               a box containing thousands of colors.
 
                (NOTE: You can define your own colors for Tux Paint. See the
                "Options" documentation.)
@@ -591,17 +597,17 @@ Available Tools
 
                       Printer Settings
 
-                              (Windows)
+                              (Windows and Mac OS X)
 
                               By default, Tux Paint simply prints to the
                               default printer with default settings when the
                               'Print' button is pushed.
 
-							  However, if you hold the [Alt] key on the
-							  keyboard while pushing the button, as long as
-							  you're not in fullscreen mode, your operating
-							  system's printer dialog will appear, where you
-							  can change the settings.
+                              However, if you hold the [Alt] (or [Option])
+                              key on the keyboard while pushing the button,
+                              as long as you're not in fullscreen mode, your
+                              operating system's printer dialog will appear,
+                              where you can change the settings.
 
                               You can have the printer configuration changes
                               stored by using the "printcfg" option, either
@@ -743,7 +749,7 @@ Available Tools
      Mac OS X
              Inside the user's "Library" folder:
              "/Users/(user name)/Library/Application
-             Support/TuxPaint/saved/"
+             Support/Tux Paint/saved/"
 
      Linux/Unix
              Inside a hidden ".tuxpaint" directory, in the user's home
