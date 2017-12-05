@@ -1026,6 +1026,7 @@ install-bundlefiles:
 	@cp -p macos/Info.plist $(BUNDLE)/Contents
 	@cp -p macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@custom/macos.sh
+	@hdiutil create -volname "Tux Paint $(VER_VERSION)" -srcfolder $(BUNDLE) -ov -format UDBZ -o TuxPaint.dmg
 
 
 # Build the program!
