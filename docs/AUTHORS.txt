@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - December 3, 2017
+June 17, 2002 - December 14, 2017
 
 $Id$
 
@@ -1057,7 +1057,8 @@ $Id$
     Darrell Walisser <walisser@mac.com>  [retired]
     Eric Poncet <http://www.linguasoft.com/>
     Harvey Ginter <harveyginter@gmail.com>
-	Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <mkkim214@gmail.com>
+    Robert Buj Gelonch <rbuj@users.sf.net>
 
   * Maemo (Nokia 770 and N880) coding and builds
     Alessandro Pasotti <apasotti@gmail.com>

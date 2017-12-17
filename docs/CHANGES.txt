@@ -118,6 +118,9 @@ $Id$
     * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
       Mark K. Kim <mkkim214@gmail.com>
 
+    * Mac install creates a DMG
+      Robert Buj Gelonch <rbuj@users.sf.net>
+
   * Other Improvements:
     -------------------
     * Reformatted source code via GNU Indent tool; should
