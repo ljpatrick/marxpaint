@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - December 14, 2017
+June 17, 2002 - December 18, 2017
 
 $Id$
 
@@ -968,12 +968,13 @@ $Id$
     Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>
 
   * Swedish
-    Robin Rosenberg <robin.rosenberg@dewire.com>
-    Daniel Nylander <po@danielnylander.se>
-    Tomas Skäre <tomas@nocrew.org>
-    Magnus Dahl <magnus.dahl@bredband.net>
-    Henrik Holst <henrik.holst@millistream.com>
-    Daniel Andersson <daniel@septum.org> [retired]
+    Robin Rosenberg <robin.rosenberg@dewire.com> [inactive]
+    Daniel Nylander <po@danielnylander.se> [inactive]
+    Tomas Skäre <tomas@nocrew.org> [inactive]
+    Magnus Dahl <magnus.dahl@bredband.net> [inactive]
+    Henrik Holst <henrik.holst@millistream.com> 
+    Daniel Andersson <daniel@septum.org> [inactive]
+    Sebastian Rasmussen <sebras@gmail.com>
 
   * Tagalog
     Ricky Lontoc <gb_515_deme@hotmail.com>
