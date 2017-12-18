@@ -90,6 +90,12 @@ $Id$
     * Korean translation
       Mark K. Kim <mkkim214@gmail.com>
 
+    * Norwegian translation
+      Karl Ove Hufthammer
+
+    * Portuguese (Brazilian) translation
+      Fred Ulisses Maranhão <fred.maranhao@gmail.com>
+
     * Russian translaton
       Yuri Kozlov
 
@@ -98,6 +104,9 @@ $Id$
 
     * Scottish translation
       Fòram na Gàidhlig
+
+    * Swedish translation
+      Sebastian Rasmussen <sebras@gmail.com>
 
     * Thai translation
       Nudjaree <poonim_p@hotmail.com>
