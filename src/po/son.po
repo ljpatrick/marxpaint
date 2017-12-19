@@ -1,23 +1,23 @@
 # Songhay translation tuxpaint.
-# Copyright (C) 2015 tuxpaint.
+# Copyright (C) 2017 tuxpaint.
 # This file is distributed under the same license as the tuxpaint package.
 # Mohomodou Houssouba <mh@bollag-areal.ch>, 2014.
-# Abdoul Cisse <abdoulseydou@hotmail.com>, 2014, 2015.
+# Abdoul Cisse <abdoulseydou@hotmail.com>, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint-Songhay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-11 14:08+0100\n"
-"Last-Translator: Abdoul Cisse <abdoulseydou@hotmail.com>\n"
+"PO-Revision-Date: 2017-12-19 20:31+0000\n"
+"Last-Translator: Abdoul Cisse <abdou@songhay.org>\n"
 "Language-Team: Songhay Localization Team\n"
 "Language: son\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -529,7 +529,7 @@ msgstr "Ni biyoo kaŋ n' n'a tee cindi!"
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:157
 msgid "Printing…"
-msgstr "Karyaŋ..."
+msgstr "Karyan..."
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:160
@@ -731,7 +731,7 @@ msgstr "Biyey kaŋ n' ga bag'ey suuba, de ma \"Šintin\" naagu"
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Noone suuba ni biyey ra."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
