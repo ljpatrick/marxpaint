@@ -2,14 +2,14 @@
 # Copyright (C) 2015 the tuxpaint team.
 # This file is distributed under the same license as the tuxpaint package.
 # Κυριακή Σεραφείμ <pse04178@rhodes.aegean.gr>, 2009. (inactive)
-# Yannis Kaskamanidis <kiolalis@gmail.com>, 2014, 2015.
+# Yannis Kaskamanidis <kiolalis@gmail.com>, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-12 09:31+0300\n"
+"PO-Revision-Date: 2017-12-19 09:16+0200\n"
 "Last-Translator: Yannis Kaskamanidis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Bookmarks: 130,170,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -736,7 +736,7 @@ msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Επίλεξε ένα χρώμα από τη ζωγραφιά σου."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
