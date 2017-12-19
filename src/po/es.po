@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2017-12-17 20:50-0300\n"
+"PO-Revision-Date: 2017-12-18 20:31-0300\n"
 "Last-Translator: Matías Bellone <matiasbellone+debian@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -342,15 +342,15 @@ msgstr "Un octógono tiene ocho lados iguales."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr "Una estrella de 3 puntas"
+msgstr "Una estrella de 3 puntas."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr "Una estrella de 4 puntas"
+msgstr "Una estrella de 4 puntas."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr "Una estrella de 5 puntas"
+msgstr "Una estrella de 5 puntas."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -601,7 +601,7 @@ msgstr "Sí, ¡guárdalo!"
 
 #: ../tuxpaint.c:2066 ../tuxpaint.c:2071
 msgid "No, don’t bother saving!"
-msgstr "No, no me importa."
+msgstr "No, ¡no me importa!."
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:2069
@@ -740,7 +740,7 @@ msgstr "¡No, guarda un documento nuevo!"
 
 #: ../tuxpaint.c:14048
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Elige el dibujo que quieres y luego selecciona \"Abrir\""
+msgstr "Elige el dibujo que quieres y luego selecciona \"Abrir\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
@@ -1188,7 +1188,7 @@ msgstr "Zoom"
 
 #: ../../magic/src/perspective.c:151
 msgid "Click on the corners and drag where you want to stretch the picture."
-msgstr "Haz click en las esquinas y mueve el cursor para estrechar el dibujo. "
+msgstr "Haz click en las esquinas y mueve el cursor para estrechar el dibujo."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1205,7 +1205,7 @@ msgstr ""
 
 #: ../../magic/src/puzzle.c:113
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr "Haz click para convertir en un rompecabezas todo del dibujo"
+msgstr "Haz click para convertir en un rompecabezas todo del dibujo."
 
 #: ../../magic/src/rails.c:131
 msgid "Rails"
@@ -1365,7 +1365,7 @@ msgstr "Hilorama 90º"
 
 #: ../../magic/src/string.c:129
 msgid "String 'V'"
-msgstr "Hilorama en V"
+msgstr "Hilorama en 'V'"
 
 #: ../../magic/src/string.c:137
 msgid ""
@@ -1378,7 +1378,7 @@ msgstr ""
 
 #: ../../magic/src/string.c:140
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Haz click y mueve el ratón para dibujar hiloramas en ángulo recto. "
+msgstr "Haz click y mueve el ratón para dibujar hiloramas en ángulo recto."
 
 #: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
@@ -1487,4 +1487,4 @@ msgstr "Haz click y mueve el ratón para lograr un efecto excluyente («XOR»)."
 
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Haz click para lograr un efecto excluyente en todo el dibujo."
+msgstr "Haz click para lograr un efecto excluyente en todo el dibujo"
