@@ -1,16 +1,16 @@
 # Tux Paint Translation to Icelandic.
 # Íslensk þýðing á TuxPaint
-# Copyright (C) 2002-2015.
+# Copyright (C) 2002-2017.
 # This file is distributed under the same license as the tuxpaint package.
 #
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2002, 2003, 2004, 2014.
-# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-12 12:58+0000\n"
+"PO-Revision-Date: 2017-12-19 07:34+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -335,7 +335,7 @@ msgstr "Stjarna með 5 arma."
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
 msgid "Tools"
-msgstr "Tól"
+msgstr "Áhöld"
 
 #. Title of color palette (buttons across the bottom)
 #: ../titles.h:59
@@ -418,7 +418,7 @@ msgstr "Strokleður"
 #. Start a new picture
 #: ../tools.h:95
 msgid "New"
-msgstr "Ný"
+msgstr "Nýtt"
 
 #. Open a saved picture
 #. buttons for the file open dialog
@@ -729,7 +729,7 @@ msgstr "Veldu myndirnar sem þú vilt, og smelltu svo á \"Spila\"."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Veldu lit úr teikningunni þinni."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -773,7 +773,7 @@ msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Blocks"
-msgstr "Kassar"
+msgstr "Blokkir"
 
 #: ../../magic/src/blocks_chalk_drip.c:138
 msgid "Chalk"
