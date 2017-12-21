@@ -1018,13 +1018,13 @@ install-man:
 install-bundlefiles:
 	@echo
 	@echo "...Installing App Bundle Support Files..."
-	@mkdir -p $(BUNDLE)/Contents/MacOS
-	@mkdir -p $(BUNDLE)/Contents/Resources
-	@mkdir -p $(BUNDLE)/Contents/lib
-	@cp -p tuxpaint $(BUNDLE)/Contents/MacOS
-	@cp -p macos/PkgInfo $(BUNDLE)/Contents
-	@cp -p macos/Info.plist $(BUNDLE)/Contents
-	@cp -p macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
+	@install -d -m 755 $(BUNDLE)/Contents/MacOS
+	@install -d -m 755 $(BUNDLE)/Contents/Resources
+	@install -d -m 755 $(BUNDLE)/Contents/lib
+	@install -m 755 tuxpaint $(BUNDLE)/Contents/MacOS
+	@install -m 644 macos/PkgInfo $(BUNDLE)/Contents
+	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
+	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@custom/macos.sh
 
 
