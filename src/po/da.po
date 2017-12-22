@@ -1,10 +1,10 @@
 # Translation of Tux Paint to Danish.
-# Copyright (C) 2015 Tux Paint.
+# Copyright (C) 2017 Tux Paint.
 # This file is distributed under the same license as the tuxpaint package.
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
 # Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
-# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011, 2014, 2015.
+# Joe Hansen <joedalton2@yahoo.dk>, 2007, 2009, 2010, 2011, 2014, 2015, 2017.
 #
 # konventioner
 # blur -> sløre
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-09 12:38+0100\n"
+"PO-Revision-Date: 2017-12-05 12:38+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -733,7 +733,7 @@ msgstr "Vælg de ønskede billeder og tryk på »Afspil«."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Vælg en farve fra din tegning·"
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."

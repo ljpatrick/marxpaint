@@ -1,21 +1,21 @@
 # translation of fr.po to 
 # Tux Paint french messages.
-# Copyright (C) 2009.
-# Jacques Chion <Jacques.Chion_at_orange.fr>,2008
+# Copyright (C) 2017.
+# Jacques Chion <Jacques.Chion_at_orange.fr>, 2008-2017.
 # Charles Vidal <vidalc@club-internet.fr>, 2002.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-10 08:07+0100\n"
+"PO-Revision-Date: 2017-12-03 07:56+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
-"Language-Team:  <fr@li.org>\n"
+"Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -727,7 +727,7 @@ msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Sélectionne une couleur à partir de ton dessin."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
