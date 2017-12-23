@@ -92,8 +92,7 @@ linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
 windows_ARCH_CFLAGS:=
-# osx_ARCH_CFLAGS:=-isystem /opt/local/include -Wno-unused-variable -Wno-unused-function -Wno-unused-parameter -Wno-unused-result -Wno-deprecated-declarations -Wno-missing-braces -Wno-parentheses-equality -Wno-cast-align -Wno-incompatible-pointer-types-discards-qualifiers -Wno-missing-prototypes -Wno-incompatible-function-pointer-types -Wno-format -Wno-bitwise-op-parentheses -Wno-strict-prototypes -Wno-sign-compare -Wno-\#warnings -Wno-ignored-optimization-argument -Wno-implicit-function-declaration -Wno-tautological-pointer-compare -Wno-self-assign -Wno-absolute-value
-osx_ARCH_CFLAGS:=-DHAVE_STRCASESTR -isystem /opt/local/include -Wno-unused-variable -Wno-unused-function -Wno-unused-parameter -Wno-unused-result -Wno-sign-compare -Wno-ignored-optimization-argument -Wno-deprecated-declarations -Wno-absolute-value -Wno-missing-prototypes -Wno-cast-align -Wno-incompatible-pointer-types-discards-qualifiers -Wno-incompatible-function-pointer-types -Wno-bitwise-op-parentheses -Wno-format -Wno-implicit-function-declaration -Wno-self-assign -Wno-parentheses-equality -Wno-strict-prototypes
+osx_ARCH_CFLAGS:=-mmacosx-version-min=10.6 -isystem /opt/local/include -DHAVE_STRCASESTR -w
 beos_ARCH_CFLAGS:=
 linux_ARCH_CFLAGS:=
 ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
@@ -592,6 +591,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
+	@-rm -f TuxPaint.dmg
 	@echo
 
 # "make uninstall" should remove the various parts from their
