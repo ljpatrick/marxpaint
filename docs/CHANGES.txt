@@ -80,6 +80,10 @@ $Id$
     * Georgian translation
       Gia Shervashidze <giasher@gmail.com>
 
+    * German translation
+      Holger Wansing <hwansing@mailbox.org>
+      Helge Kreutzmann <debian@helgefjell.de> typos fixes and improvements for stamps
+
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
