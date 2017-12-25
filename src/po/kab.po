@@ -1,14 +1,14 @@
 # Tuxpaint kabyle translation.
-# Copyright (C) 2005 Bill Kendrick
+# Copyright (C) 2017 Bill Kendrick
 # This file is distributed under the same license as the Tuxpaint package.
-# Yacine Bouklif <yacine_tizi2003@yahoo.fr>, 2016.
-# 
+# Yacine Bouklif <yacine_tizi2003@yahoo.fr>, 2016, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2017-06-27 21:28+0100\n"
+"PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
 "Language: kab\n"
@@ -40,7 +40,7 @@ msgstr "Amlal !"
 #. Response to Red (255, 0, 0) color selected
 #: ../colors.h:98
 msgid "Red!"
-msgstr "Azgaɣ !"
+msgstr "Azeggaɣ !"
 
 #. Response to Orange (255, 128, 0) color selected
 #: ../colors.h:101
@@ -193,7 +193,7 @@ msgstr "Acekkit !"
 #. Congratulations #3
 #: ../great.h:43
 msgid "Keep it up!"
-msgstr "Ilha, kemmel !"
+msgstr "Yelha, kemmel !"
 
 #. Congratulations #4
 #: ../great.h:46
@@ -281,7 +281,7 @@ msgstr "Itri"
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
 msgid "A square is a rectangle with four equal sides."
-msgstr "Amkuẓ  d asrem yesɛan kuẓ n yidisan yugdan."
+msgstr "Amkuẓ d asrem yesɛan kuẓ n yidisan yugdan."
 
 #. Description of a rectangle
 #: ../shapes.h:294 ../shapes.h:295
@@ -306,7 +306,7 @@ msgstr "Akerdis yesɛa kraḍ n yidisan."
 #. Description of a pentagon
 #: ../shapes.h:312 ../shapes.h:313
 msgid "A pentagon has five sides."
-msgstr "Asemmusdis  yesɛa semus n yidisan."
+msgstr "Asemmusdis yesɛa semus n yidisan."
 
 #: ../shapes.h:317 ../shapes.h:319
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
@@ -459,10 +459,10 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Fren talɣa. Ssed anida tebɣiḍ ad yili wamas-is, semwwiwel taɣerdayt, sakin, "
-"mi tewweḍ talɣa-nni anect i tebɣiḍ, serreḥ i teqfalt n tɣerdayt. Semwwiwel "
-"taɣerdayt ma yella tebɣiḍ ad tezziḍ talɣa-nni. Mi tfukkeḍ ssed iwakken ad d-"
-"tt-tsunɣeḍ talɣa-nni."
+"Fren talɣa. Ssed anida tebɣiḍ ad yili wamas-is, selḥu taɣerdayt, sakin, mi "
+"tewweḍ talɣa-nni anect i tebɣiḍ, serreḥ i teqfalt n tɣerdayt. Selḥu "
+"taɣerdayt ma yella tebɣiḍ ad tezziḍ talɣa. Mi tfukkeḍ ssed iwakken ad d-tt-"
+"tsunɣeḍ talɣa."
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -482,9 +482,9 @@ msgid ""
 "style."
 msgstr ""
 "Fren aɣanib n uḍris. Ssed ɣef wunuɣ sakin sekcem aḍris. Mi tfukkeḍ ssed ɣef "
-"[Entrée] neɣ [Tab] iwakken ad yemmed weḍris. Ma tesdeḍ ɣef teqfalt n tefrayt "
-"sakin ɣef uḍris i yellan yakan, tzemreḍ ad t-tesmuttiḍ, ad t-tzergeḍ neɣ ad "
-"tbeddeleḍ aɣanib-ines."
+"[Entrée] neɣ [Tab] iwakken ad yemmed weḍris. Ma tessdeḍ ɣef teqfalt n "
+"tefrayt sakin ɣef uḍris i yellan yakan, tzemreḍ ad t-tesmuttiḍ, ad t-tzergeḍ "
+"neɣ ad tbeddeleḍ aɣanib-ines."
 
 #. Magic tool instruction
 #: ../tools.h:136
@@ -514,17 +514,17 @@ msgstr "Fren tugna neɣ ini swayes ara tebduḍ unuɣ amaynut."
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:151
 msgid "Open…"
-msgstr "Ldi.."
+msgstr "Ldi…"
 
 #. Response to 'save' action
 #: ../tools.h:154
 msgid "Your image has been saved!"
-msgstr "Tugna-inek tekles !"
+msgstr "Tugna-inek tettwasekles !"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:157
 msgid "Printing…"
-msgstr "Asiggez.."
+msgstr "Asiggez…"
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:160
@@ -545,12 +545,12 @@ msgstr "Ur ttserriḥ ara i teqfalt iwakken ad tesnejbadeḍ talɣa."
 #: ../tools.h:170
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
-"Semwwiwel taɣerdayt iwakken ad tezziḍ talɣa-agi. Ssed iwakken ad t-tesunɣeḍ."
+"Selḥu taɣerdayt iwakken ad tezziḍ talɣa-agi. Ssed iwakken ad tt-tesunɣeḍ."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:173
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ilha… Yan ihi ad nkemmel unuɣ-agi !"
+msgstr "Yelha… Yan ihi ad nkemmel unuɣ-agi !"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2054
@@ -628,15 +628,15 @@ msgstr "Ur tezmireḍ ara ad tsiggezeḍ tura !"
 #. Prompt to confirm erasing a picture in the Open dialog
 #: ../tuxpaint.c:2101
 msgid "Erase this picture?"
-msgstr "Ad tekkseḍ tugna-agi ?"
+msgstr "Ad tsefḍeḍ tugna-agi ?"
 
 #: ../tuxpaint.c:2102
 msgid "Yes, erase it!"
-msgstr "Ih, kkes-itt !"
+msgstr "Ih, sfeḍ-itt !"
 
 #: ../tuxpaint.c:2103
 msgid "No, don’t erase it!"
-msgstr "Ala, ur tt-ttekkes ara !"
+msgstr "Ala, ur tt-sfaḍ ara !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:2106
@@ -656,7 +656,7 @@ msgstr "Imesli yermed."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:3072
 msgid "Please wait…"
-msgstr "Ttxil-k arǧu .."
+msgstr "Ttxil-k arǧu…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7643
@@ -676,7 +676,7 @@ msgstr "Tuɣalin"
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7652
 msgid "Next"
-msgstr "Uḍfir"
+msgstr "Ɣer sdat"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:7655
@@ -701,7 +701,7 @@ msgstr "Ala"
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12795
 msgid "Replace the picture with your changes?"
-msgstr "Ad teskelseḍ tugna s ibeddilen-ik ?"
+msgstr "Ad tsemselsiḍ tugna s ibeddilen-inek ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
@@ -717,7 +717,7 @@ msgstr "Ala, sekles tugna tamaynutt !"
 
 #: ../tuxpaint.c:14048
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Fren tugna, sakin ssed ɣef “Ldi”."
+msgstr "Fren tugna i tebɣiḍ, sakin ssed ɣef “Ldi”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
@@ -727,7 +727,7 @@ msgstr "Fren tugniwin i tebɣiḍ, sakin ssed ɣef “Urar”"
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Fren ini seg wunuɣ-inek."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -749,13 +749,13 @@ msgstr "Ahil n usuneɣ i igerdan."
 msgid "Color Shift"
 msgstr "Initen"
 
-# 
+#
 #: ../../magic/src/alien.c:67
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tbeddeleḍ initen di kra n imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad tbeddeleḍ initen di kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
 msgstr "Ssed iwakken ad tbeddeleḍ initen di tugna merra."
@@ -778,7 +778,7 @@ msgstr "Iḥedran"
 
 #: ../../magic/src/blocks_chalk_drip.c:138
 msgid "Chalk"
-msgstr "Anegmires"
+msgstr "Anegmirs"
 
 #: ../../magic/src/blocks_chalk_drip.c:140
 msgid "Drip"
@@ -786,27 +786,27 @@ msgstr "Tiqqit"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
 msgid "Click and drag the mouse around to make the picture blocky."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad terreḍ tugna d iḥedran imecṭaḥ."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna d iḥedran imecṭaḥ."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad terreḍ tugna d unuɣ s unegmires."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna d unuɣ s unegmirs."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and drag the mouse around to make the picture drip."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad terreḍ tugna tettuddum."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna tettuddum."
 
 #: ../../magic/src/blur.c:80
 msgid "Blur"
 msgstr "Sluɣ"
 
-# 
+#
 #: ../../magic/src/blur.c:83
 msgid "Click and drag the mouse around to blur the image."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tesluɣeḍ tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tesluɣeḍ tugna."
 
-# 
+#
 #: ../../magic/src/blur.c:84
 msgid "Click to blur the entire image."
 msgstr "Ssed iwakken ad tesluɣeḍ tugna merra."
@@ -818,11 +818,11 @@ msgstr "Tibrikin"
 
 #: ../../magic/src/bricks.c:131
 msgid "Click and drag to draw large bricks."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tibrikin timeqranin."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tibrikin timeqranin."
 
 #: ../../magic/src/bricks.c:133
 msgid "Click and drag to draw small bricks."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tibrikin timeẓyanin."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tibrikin timeẓyanin."
 
 #: ../../magic/src/calligraphy.c:127
 msgid "Calligraphy"
@@ -830,7 +830,7 @@ msgstr "Aɣanab"
 
 #: ../../magic/src/calligraphy.c:134
 msgid "Click and drag the mouse around to draw in calligraphy."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunnɣeḍ s uɣanab."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s uɣanab."
 
 #: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
@@ -839,7 +839,7 @@ msgstr "Asaru n wunuɣ"
 #: ../../magic/src/cartoon.c:113
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad terreḍ tugna s talɣa n usaru n wunuɣ."
+"Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna s talɣa n usaru n wunuɣ."
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
@@ -855,7 +855,7 @@ msgstr "Azlag"
 
 #: ../../magic/src/distortion.c:150
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tgeḍ iɛwijen di tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tgeḍ izlagen di tugna."
 
 #: ../../magic/src/emboss.c:103
 msgid "Emboss"
@@ -863,7 +863,7 @@ msgstr "Azerzay"
 
 #: ../../magic/src/emboss.c:109
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad ternuḍ azerzay i tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad ternuḍ azerzay i tugna."
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
@@ -873,42 +873,42 @@ msgstr "Sfaw"
 msgid "Darken"
 msgstr "Ssibrik"
 
-# 
+#
 #: ../../magic/src/fade_darken.c:134
 msgid "Click and drag the mouse to lighten parts of your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tifiw tugna di kra n imukan."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tifiw tugna di kra n imukan."
 
-# 
+#
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
 msgstr "Ssed iwakken ad tifiw tugna merra."
 
-# 
+#
 #: ../../magic/src/fade_darken.c:141
 msgid "Click and drag the mouse to darken parts of your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tibrik tugna di kra n imukan."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tibrik tugna di kra n imukan."
 
-# 
+#
 #: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
 msgstr "Ssed iwakken ad tibrik tugna merra."
 
 #: ../../magic/src/fill.c:108
 msgid "Fill"
-msgstr "Ačar"
+msgstr "Aččar"
 
 #: ../../magic/src/fill.c:115
 msgid "Click in the picture to fill that area with color."
-msgstr "Ssed ɣef tugna iwakken ad tačareḍ tamnaḍt-nni s yini."
+msgstr "Ssed ɣef tugna iwakken ad taččareḍ tamnaḍt-nni s yini."
 
 #: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
-msgstr "Taṭuct n uslem"
+msgstr "Tiṭ n uslem"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:106
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Ssed di tugna iwakken ad tgeḍ asemdu \"taṭuct n uslem\"."
+msgstr "Ssed di tugna iwakken ad tgeḍ asemdu \"tiṭ n uslem\"."
 
 #: ../../magic/src/flower.c:150
 msgid "Flower"
@@ -917,7 +917,7 @@ msgstr "Tajeǧǧigt"
 #: ../../magic/src/flower.c:156
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tsuneɣeḍ tajeǧǧigt. Serreḥ i teqfalt "
+"Ssed u selḥu taɣerdayt iwakken ad tsuneɣeḍ tajeǧǧigt. Serreḥ i teqfalt "
 "iwakken ad tfakkeḍ tajeǧǧigt."
 
 #: ../../magic/src/foam.c:121
@@ -927,7 +927,7 @@ msgstr "Takuffta"
 #: ../../magic/src/foam.c:127
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tačareḍ tamnaḍt-nni s tkuffta n ṣabun."
+"Ssed u selḥu taɣerdayt iwakken ad taččareḍ tamnaḍt-nni s tkuffta n ṣabun."
 
 #: ../../magic/src/fold.c:105
 msgid "Fold"
@@ -944,10 +944,10 @@ msgstr "Skerṭeṭṭi"
 
 #: ../../magic/src/fretwork.c:180
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsuneɣeḍ izamulen yulsen. "
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsuneɣeḍ izamulen yulsen. "
 
-# 
-# 
+#
+#
 #: ../../magic/src/fretwork.c:182
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Ssed iwakken ad s-tezziḍ i wunuɣ s izamulen yulsen."
@@ -958,12 +958,12 @@ msgstr "Timkuẓin n zzǧaǧ"
 
 #: ../../magic/src/glasstile.c:114
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tgeḍ timkuẓin n zzǧaǧ di tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tgeḍ timkuẓin n zzǧaǧ di tugna."
 
-# 
+#
 #: ../../magic/src/glasstile.c:116
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Ssed iwakken ad tačareḍ merra tugna s temkuẓin n zzǧaǧ."
+msgstr "Ssed iwakken ad taččareḍ merra tugna s temkuẓin n zzǧaǧ."
 
 #: ../../magic/src/grass.c:112
 msgid "Grass"
@@ -971,16 +971,16 @@ msgstr "Tuga"
 
 #: ../../magic/src/grass.c:118
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tuga. Ur tettu ara aɣebbar !"
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tuga. Ur tettu ara aɣebbar !"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
 msgstr "Photogravure"
 
-# 
+#
 #: ../../magic/src/halftone.c:38
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tuɣal tugna-inek am tugna n uɣmis."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tuɣal tugna-inek am tugna n uɣmis."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -988,7 +988,7 @@ msgstr "Tajjurt Zelmaḍ/Yefus"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
-msgstr "Tajjurt Uksawen/Uksar"
+msgstr "Ajjur Uksawen/Uksar"
 
 #: ../../magic/src/kalidescope.c:124
 msgid "Pattern"
@@ -1008,33 +1008,33 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tsunnɣeḍ s sin imfezza s ujjuṛ (azelmaḍ/"
-"ayfus)."
+"Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s sin imfezza s ujjuṛ (azelmaḍ/"
+"ayefus)."
 
 #: ../../magic/src/kalidescope.c:138
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tsunnɣeḍ s sin imfezza s ujjuṛ (uksawen/"
-"uksar)."
+"Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s sin imfezza s ujjuṛ (uksawen/"
+"ukessar)."
 
 #: ../../magic/src/kalidescope.c:140
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ izamulen ɣef tugna merra."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ izamulen ɣef tugna merra."
 
 #: ../../magic/src/kalidescope.c:142
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ azamul s ujjur-ines."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ azamul s ujjur-ines."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tsunnɣeḍ s sin imfezza s ujjuṛ. "
+"Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s sin imfezza s ujjuṛ. "
 "(akaliduskup)."
 
 #: ../../magic/src/light.c:107
@@ -1043,7 +1043,7 @@ msgstr "Tafat"
 
 #: ../../magic/src/light.c:113
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsuneɣeḍ aẓenzar n tafat."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsuneɣeḍ aẓenzar n tafat."
 
 #: ../../magic/src/metalpaint.c:101
 msgid "Metal Paint"
@@ -1051,7 +1051,7 @@ msgstr "Taklut tamɣuzant"
 
 #: ../../magic/src/metalpaint.c:107
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tekluḍ s yini amɣuzan."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tekluḍ s yini amɣuzan."
 
 #: ../../magic/src/mirror_flip.c:117
 msgid "Mirror"
@@ -1069,19 +1069,19 @@ msgstr "Ssed iwakken ad twaliḍ unuɣ amzun di temrayt."
 msgid "Click to flip the picture upside-down."
 msgstr "Ssed iwakken ad tettiḍ tugna seg uksawen ɣer uksar."
 
-# 
+#
 #: ../../magic/src/mosaic.c:100
 msgid "Mosaic"
 msgstr "Iɛbanen"
 
-# 
+#
 #: ../../magic/src/mosaic.c:103
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ iɛebanen di kra n imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ iɛebanen di kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/mosaic.c:104
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Ssed iwakken ad tgeḍ isemda n uɛeban di tugna merra."
@@ -1090,7 +1090,7 @@ msgstr "Ssed iwakken ad tgeḍ isemda n uɛeban di tugna merra."
 msgid "Square Mosaic"
 msgstr "Aɛban amkuẓan"
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:140
 msgid "Hexagon Mosaic"
 msgstr "Aɛban aseddisan"
@@ -1099,43 +1099,43 @@ msgstr "Aɛban aseddisan"
 msgid "Irregular Mosaic"
 msgstr "Aɛban arlugan"
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:148
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ aɛban amkuẓ di kra n imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ aɛban amkuẓ di kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:149
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Ssed iwakken ad ternuḍ iɛebanen imkuẓen di tugna merra."
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:153
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ iɛbanen iseddisanen di kra n imukan "
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ iɛbanen iseddisanen di kra n imukan "
 "n tugna."
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:154
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Ssed iwakken ad ternuḍ iɛbanen iseddisanen di tugna merra."
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:158
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ iɛebanen irluganen di kra n imukan."
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ iɛebanen irluganen di kra n imukan."
 
-# 
+#
 #: ../../magic/src/mosaic_shaped.c:159
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ iɛbanen irluganen di tugna merra."
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ iɛbanen irluganen di tugna merra."
 
 #: ../../magic/src/negative.c:98
 msgid "Negative"
@@ -1144,31 +1144,31 @@ msgstr "Uzdir"
 #: ../../magic/src/negative.c:106
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad terreḍ unuɣ-inek d uzdir di kra n imukan."
+"Ssed u selḥu taɣerdayt iwakken ad terreḍ unuɣ-inek d uzdir di kra n imukan."
 
-# 
+#
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad terreḍ unuɣ-inek merra d uzdir."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ unuɣ-inek merra d uzdir."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr "Asxerxec"
 
-# 
+#
 #: ../../magic/src/noise.c:66
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad ternuḍ asxerxec di kra imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad ternuḍ asxerxec di kra imukan n tugna."
 
-# 
+#
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "Ssed iwakken ad ternuḍ asxerxec i tugna merra."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
-msgstr "Anmad"
+msgstr "Amnad"
 
 #: ../../magic/src/perspective.c:146
 msgid "Zoom"
@@ -1181,7 +1181,7 @@ msgstr "Ssed di teɣmert u zuɣer iwakken ad tgeḍ asemdu n umnad."
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
-"Ssed u zuɣer d asawen iwakken ad tsimɣureḍ tugna  neɣ d aksar iwakken ad "
+"Ssed u zuɣer d asawen iwakken ad tsimɣureḍ tugna neɣ d akessar iwakken ad "
 "tsimẓiyeḍ tugna."
 
 #: ../../magic/src/puzzle.c:105
@@ -1196,15 +1196,15 @@ msgstr "Ssed deg uḥric n tugna i tebɣiḍ ad terreḍ d adrug."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Ssed iwakken ad terreḍ tugna merra d adrug."
 
-# 
+#
 #: ../../magic/src/rails.c:131
 msgid "Rails"
 msgstr "Tirayin"
 
-# 
+#
 #: ../../magic/src/rails.c:133
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tirayin."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tirayin."
 
 #: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
@@ -1214,21 +1214,21 @@ msgstr "Tislit n wenẓar"
 msgid "You can draw in rainbow colors!"
 msgstr "Tzemreḍ ad tsunɣeḍ s yiniten n teslit n wenẓar !"
 
-# 
+#
 #: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Agfur"
 
-# 
+#
 #: ../../magic/src/rain.c:68
 msgid "Click to place a rain drop onto your picture."
 msgstr "Ssed iwakken ad tserseḍ tiqqit n ugfur ɣef tugna."
 
-# 
-# 
+#
+#
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
-msgstr "Ssed iwakken ad tačareḍ tugna s tmiqwa n ugfur."
+msgstr "Ssed iwakken ad taččareḍ tugna s tmiqwa n ugfur."
 
 #: ../../magic/src/realrainbow.c:110
 msgid "Real Rainbow"
@@ -1274,7 +1274,7 @@ msgstr "Tzemreḍ ad tsuneɣeḍ am Picasso !"
 msgid "Edges"
 msgstr "Iran"
 
-# 
+#
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
 msgstr "Sseblel"
@@ -1283,34 +1283,32 @@ msgstr "Sseblel"
 msgid "Silhouette"
 msgstr "Amanul"
 
-# 
+#
 #: ../../magic/src/sharpen.c:78
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad d-banen yiran di kra n imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad d-banen yiran di kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
 msgstr "Ssed iwakken ad d-banen yiran n tugna merra."
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and drag the mouse to sharpen parts of your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad blelen kra n imukan n tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad d-banen kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
-msgstr "Ssed iwakken ad teblel tugna merra."
+msgstr "Ssed iwakken ad d-tban tugna merra."
 
-# 
+#
 #: ../../magic/src/sharpen.c:82
 msgid "Click and drag the mouse to create a black and white silhouette."
-msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tuɣal tugna s umlal d uberkan di kra n "
-"imukan."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tuɣal tugna s uberkan d umlal."
 
-# 
+#
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Ssed iwakken ad tuɣal tugna merra s uberkan d umlal."
@@ -1321,7 +1319,7 @@ msgstr "Smutti"
 
 #: ../../magic/src/shift.c:115
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad temuttiḍ tugna deg ukatar."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tesmuttiḍ tugna deg ukatar."
 
 #: ../../magic/src/smudge.c:106
 msgid "Smudge"
@@ -1334,13 +1332,13 @@ msgstr "Taklut ibezgen"
 
 #: ../../magic/src/smudge.c:115
 msgid "Click and drag the mouse around to smudge the picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsebzgeḍ tugna."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsebzgeḍ tugna."
 
-# 
+#
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeɣ s umfezzu ibezgen, yerwin."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeɣ s umfezzu ibezgen, yerwin."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1360,7 +1358,7 @@ msgstr "Ssed iwakken ad ternuḍ iḥeḍḍufen n wedfel i tugna."
 
 #: ../../magic/src/string.c:123
 msgid "String edges"
-msgstr "String edges"
+msgstr "lexyuḍ"
 
 #: ../../magic/src/string.c:126
 msgid "String corner"
@@ -1375,17 +1373,17 @@ msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ s ijerriḍen. Zuɣer d assawen neɣ d "
-"akessar iwakken ad tsimɣureḍ neɣ ad tsimẓiyeḍ amḍan n ijerriḍen. Zuɣer ɣer "
+"Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s izirigen. Selḥu d assawen neɣ d "
+"akessar iwakken ad tsimẓiyeḍ neɣ ad tsimɣureḍ amḍan n izirigen. Selḥu ɣer "
 "zelmaḍ neɣ ɣer yefus iwakken ad tsimɣured amruj n telmast."
 
 #: ../../magic/src/string.c:140
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tinccabin s ijerriḍen."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tineccabin s izirigen."
 
 #: ../../magic/src/string.c:143
 msgid "Draw string art arrows with free angles."
-msgstr "Suneɣ tinccabin s teɣmar tilelliyin."
+msgstr "Suneɣ tineccabin s teɣmar tilelliyin."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1395,14 +1393,14 @@ msgstr "Klu"
 msgid "Color & White"
 msgstr "Ini aked umlal"
 
-# 
+#
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad tbeddeleḍ ini di kra n imukan n tugna."
+"Ssed u selḥu taɣerdayt iwakken ad tbeddeleḍ ini di kra n imukan n tugna."
 
-# 
+#
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
 msgstr "Ssed iwakken ad tbeddeleḍ ini n tugna merra."
@@ -1412,7 +1410,7 @@ msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwaken ad terreḍ kra n imukan d imlalen aked yini i "
+"Ssed u selḥu taɣerdayt iwaken ad terreḍ kra n imukan s umlal aked yini i "
 "tferneḍ yakan."
 
 #: ../../magic/src/tint.c:78
@@ -1425,31 +1423,31 @@ msgstr "Arekti n wuglan"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "Ssed u zuɣer taɣeradyt iwakken ad tserseḍ arekti n wuglan ɣef tugna."
+msgstr "Ssed u selḥu taɣeradyt iwakken ad tserseḍ arekti n wuglan ɣef tugna."
 
 #: ../../magic/src/tornado.c:157
 msgid "Tornado"
 msgstr "Tabuciṭant"
 
-# 
+#
 #: ../../magic/src/tornado.c:163
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ tabuciṭant."
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ tabuciṭant."
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
-msgstr "TV"
+msgstr "Tiliẓri"
 
-# 
+#
 #: ../../magic/src/tv.c:105
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Ssed u zuɣer taɣerdayt iwakken ad terreḍ kra n imukan n tugna am tugna n "
+"Ssed u selḥu taɣerdayt iwakken ad terreḍ kra n imukan n tugna am tugna n "
 "tiliẓri."
 
-# 
+#
 #: ../../magic/src/tv.c:108
 msgid "Click to make your picture look like it's on television."
 msgstr "Ssed iwakken ad terreḍ tugna merra am tugna n tiliẓri."
@@ -1484,16 +1482,16 @@ msgstr ""
 
 #: ../../magic/src/xor.c:95
 msgid "Xor Colors"
-msgstr "Initen Xor"
+msgstr "Initen n \"IGẒUR\""
 
 #: ../../magic/src/xor.c:101
 msgid "Click and drag to draw a XOR effect"
-msgstr "Ssed u zuɣer taɣerdayt iwakken ad tsunɣeḍ s usemdu Xor"
+msgstr "Ssed u selḥu taɣerdayt iwakken ad tsunɣeḍ s usemdu n \"IGẒUR\""
 
-# 
+#
 #: ../../magic/src/xor.c:103
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Ssed iwakken ad tgeḍ asemdu Xor di tugna merra."
+msgstr "Ssed iwakken ad tgeḍ asemdu n \"IGẒUR\" di tugna merra."
 
 #~ msgid "Black & White"
 #~ msgstr "Gris"
