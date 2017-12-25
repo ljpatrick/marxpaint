@@ -3,7 +3,9 @@
 BUNDLE=TuxPaint.app
 BINARY="$BUNDLE/Contents/MacOS/tuxpaint"
 LIBS=`find $BUNDLE/Contents/Resources/lib -type f`
-TARGET="$BUNDLE/Contents/lib"
+LIBDIR="$BUNDLE/Contents/lib"
+CONF_FILES="/opt/local/etc/fonts/fonts.conf"
+CONFDIR="$BUNDLE/Contents/Resources/etc"
 
 
 # Sanity check
@@ -17,8 +19,9 @@ if [ ! -d "$BUNDLE" ]; then
 	exit 1
 fi
 
-# Ensure the shared library folder exists
-mkdir -p "$TARGET"
+# Ensure the target folders exist
+install -d -m 755 "$LIBDIR"
+install -d -m 755 "$CONFDIR"
 
 # Copy there any shared libraries referenced by the tuxpaint binary, and any
 # shared libraries those shared libraries reference, and so on. We do this by
@@ -31,23 +34,30 @@ dylib="$BINARY $LIBS"
 count=0; last=-1
 echo "   * Copying Shared Libraries..."
 while [ $count -ne $last ]; do
-	cp -p `otool -L $dylib | grep '^\t[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/' | sort | uniq` $TARGET
-	dylib="$TARGET/*"
+	cp -p `otool -L $dylib | grep '^\t[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/' | sort | uniq` $LIBDIR
+	dylib="$LIBDIR/*"
 
 	last=$count
 	count=`ls -f $dylib | wc -l`
 done
-echo "     -> Copied" $count "files to $TARGET"
+echo "     -> Copied" $count "files to $LIBDIR"
 
 # We just copied over a bunch of shared libraries into a random folder in our
-# bundle, but the tuxpaint binary and the shared libraries won't know to look
-# in that folder unless we tell them. So we tell them.
+# app bundle, but the tuxpaint binary and the shared libraries won't know to
+# look in that folder unless we tell them. So we tell them.
 echo "   * Fixing Shared Library References..."
-for i in "$BINARY" $LIBS $TARGET/*; do
+for i in "$BINARY" $LIBS $LIBDIR/*; do
 	echo "     -> $i..."
 	for j in `otool -L $dylib | grep '^\t[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/'`; do
 		n=`echo "$j" | sed 's/^[/]opt[/]local[/]/@executable_path\/..\//'`
 		install_name_tool -change "$j" "$n" "$i"
 	done
+done
+
+# Some libraries require config files, so copy those...
+echo "   * Copying Shared Library Configuration Files..."
+for i in "$CONF_FILES"; do
+	echo "     -> $i..."
+	cp -p "$i" "$CONFDIR"
 done
 
