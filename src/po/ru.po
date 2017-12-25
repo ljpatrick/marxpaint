@@ -1,25 +1,25 @@
 # Tux Paint Russian messages.
-# Copyright (C) 2015 Tux Paint.
+# Copyright (C) 2017 Tux Paint.
 # This file is distributed under the same license as the tuxpaint package.
 # Translators: Dmitriy Ivanov <ace22b@myrealbox.com>
 #              Eugene Zelenko <greendeath@mail.ru>
 #
-# Yuri Kozlov <yuray@komyakino.ru>, 2014, 2015.
+# Yuri Kozlov <yuray@komyakino.ru>, 2014, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-10 07:43+0300\n"
+"PO-Revision-Date: 2017-12-23 10:13+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # При выборе чёрного (0, 0, 0) цвета
 #. Response to Black (0, 0, 0) color selected
@@ -761,7 +761,7 @@ msgstr "Выберите картинку, а потом нажмите \"Зап
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Выберите цвет для рисования."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
