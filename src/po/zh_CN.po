@@ -1,10 +1,11 @@
 # Chinese translation Tuxpaint.
-# Copyright (C) 2014 the tuxpaint team.
+# Copyright (C) 2017 the tuxpaint team.
 # This file is distributed under the same license as the tuxpaint package.
 # Wang Jian <lark@linux.net.cn>, 2003, 2004. (inactive)
 # Huang Zuzhen <zuzhenhuang@vip.sina.com>, 2008. (inactive)
 # Ijeal <tomorrow1881@sohu.com>, 2008. (inactive)"Fretwork"
 # hackergene <hackergene@gmail.com>, 2014.
+# Never Min <nevermin@gmail.com>, 2017.
 #
 # Special note from lark: Because it is for children, the translation
 # should not be cold.
@@ -14,7 +15,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2014-08-22 16:57+0800\n"
+"PO-Revision-Date: 2017-12-27 16:57+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
 "Language: zh_cn\n"
@@ -284,7 +285,7 @@ msgstr "八角形"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "星星"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -326,15 +327,15 @@ msgstr "八角形有八条边。"
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "星星有三个点"
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "星星有四个点"
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "星星有五个点"
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -731,7 +732,7 @@ msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "从绘画中选择一种颜色。"
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
