@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2017-12-24 18:10+0100\n"
+"PO-Revision-Date: 2017-12-29 10:04+0100\n"
 "Last-Translator: juanpabl <jpmart[arroba]unizar.es>\n"
 "Language-Team: softaragonés\n"
 "Language: an\n"
@@ -732,7 +732,7 @@ msgstr "Triga lo dibuixo que quieras y dimpués fe clic en \"Reproducir\"."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Triga una color d'o tuyo dibuixo."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
