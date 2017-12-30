@@ -569,7 +569,7 @@ msgstr "Níl, ba mhaith liom dul ar ais!"
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:2064
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
+msgstr "Má scoireann tú, caillfidh tú an pictiúr seo! Sábháil?"
 
 #: ../tuxpaint.c:2065 ../tuxpaint.c:2070
 msgid "Yes, save it!"
@@ -582,7 +582,7 @@ msgstr "Ná sábháil!"
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:2069
 msgid "Save your picture first?"
-msgstr "Sábháil ar dtús?"
+msgstr "Ar mhaith leat an pictiúr a shábháil ar dtús?"
 
 #. Error opening picture
 #: ../tuxpaint.c:2074
@@ -603,11 +603,11 @@ msgstr "Níl aon chomhad sábháilte ann!"
 #. Verification of print action
 #: ../tuxpaint.c:2085
 msgid "Print your picture now?"
-msgstr "Priontáil an pictiúr anois?"
+msgstr "Ar mhaith leat an pictiúr a phriontáil anois?"
 
 #: ../tuxpaint.c:2086
 msgid "Yes, print it!"
-msgstr "Priontáil!"
+msgstr "Ba mhaith!"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:2090
@@ -627,15 +627,15 @@ msgstr "Ní féidir leat priontáil fós!"
 #. Prompt to confirm erasing a picture in the Open dialog
 #: ../tuxpaint.c:2101
 msgid "Erase this picture?"
-msgstr "Léirscrios an pictiúr seo?"
+msgstr "Ar mhaith leat an pictiúr seo a scriosadh?"
 
 #: ../tuxpaint.c:2102
 msgid "Yes, erase it!"
-msgstr "Léirscrios!"
+msgstr "Ba mhaith, scrios é!"
 
 #: ../tuxpaint.c:2103
 msgid "No, don’t erase it!"
-msgstr "Ná léirscrios!"
+msgstr "Níor mhaith, ná scrios!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:2106
@@ -660,7 +660,7 @@ msgstr "Fan go fóill…"
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7643
 msgid "Erase"
-msgstr "Léirscrios"
+msgstr "Scrios"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:7646
@@ -728,7 +728,7 @@ msgstr ""
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Roghnaigh dath ón líníocht."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
