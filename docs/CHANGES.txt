@@ -156,6 +156,7 @@ $Id$
   * Ports
     -----
     * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
+      Build for older releases of macOS / Mac OS X (10.6 and later).
       Mark K. Kim <mkkim214@gmail.com>
 
     * Mac install creates a DMG
