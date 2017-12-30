@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2016 by Bill Kendrick and others
+# Copyright (c) 2002-2017 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 11, 2016
+# June 14, 2002 - December 30, 2017
 
 
 # The version number, for release:
@@ -894,7 +894,7 @@ install-dlls:
 	@cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX)
 	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
 	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
-	@cp `which libpthread-2.dll` $(BIN_PREFIX)
+	@cp `which libwinpthread-1.dll` $(BIN_PREFIX)
 	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
