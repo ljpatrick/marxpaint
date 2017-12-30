@@ -53,6 +53,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Various
+      Chris Leonard <cjlhomeaddress@gmail.com>
+
     * Aragnoes translation
       Juan Pablo Martinez Cortes <jpmart@unizar.es>
 
