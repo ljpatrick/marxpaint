@@ -53,8 +53,17 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Aragnoes translation
+      Juan Pablo Martinez Cortes <jpmart@unizar.es>
+
     * Catalan translation
       Robert Buj Gelonch <rbuj@users.sf.net>
+
+    * Chinese (Simplified) translation
+      Never Min <nevermin@gmail.com>
+
+    * Croatian translation
+      Paulo Pavačić <pavacic.p@gmail.com>
 
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
@@ -84,12 +93,21 @@ $Id$
       Holger Wansing <hwansing@mailbox.org>
       Helge Kreutzmann <debian@helgefjell.de> typos fixes and improvements for stamps
 
+    * Greek translation
+      Yannis Kaskamanidis <kiolalis@gmail.com>
+
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
     * Indonesian translation
       Courtesy of SugarLabs and
       T. Surya Fajri <kilelme@gmail.com>
+
+    * Italian translation
+      Flavio Pastore <ironbishop@fsfe.org>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Korean translation
       Mark K. Kim <mkkim214@gmail.com>
@@ -100,14 +118,23 @@ $Id$
     * Portuguese (Brazilian) translation
       Fred Ulisses Maranhão <fred.maranhao@gmail.com>
 
+    * Portuguese (Portugal) translation
+      Sérgio Marques <smarquespt@gmail.com>
+
     * Russian translaton
       Yuri Kozlov
 
-    * Spanish translaton
-      Matías Bellone
-
     * Scottish translation
       Fòram na Gàidhlig
+
+    * Slovenian
+      Matej Urbančič <mateju@svn.gnome.org>
+
+    * Songhay translation
+      Abdoul Cisse <abdoulseydou@hotmail.com>
+
+    * Spanish translaton
+      Matías Bellone
 
     * Swedish translation
       Sebastian Rasmussen <sebras@gmail.com>
