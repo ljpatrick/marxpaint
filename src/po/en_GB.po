@@ -11,14 +11,15 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2014-07-09 17:58+0100\n"
+"PO-Revision-Date: 2017-12-30 21:17+0000\n"
 "Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: none\n"
-"Language: en_gb\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -149,10 +150,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
-#| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*"
+msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -281,7 +280,7 @@ msgstr "Octagon"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "Star"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -324,15 +323,15 @@ msgstr "An octagon has eight equal sides."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "A star with 3 points."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "A star with 4 points."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "A star with 5 points."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -478,12 +477,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an exist label, you can move it, edit it and change its text "
-#| "style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -492,7 +485,7 @@ msgid ""
 msgstr ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an exist label, you can move it, edit it and change its text "
+"and clicking an existing label, you can move it, edit it and change its text "
 "style."
 
 #. Magic tool instruction
@@ -735,7 +728,7 @@ msgstr "Choose the pictures you want, then click ‘Play’."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Select a colour from your drawing."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -758,12 +751,9 @@ msgid "Color Shift"
 msgstr "Colour Shift"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
-"Click and move the mouse to change the colour of parts of your picture."
+"Click and move the mouse to change the colours in parts of your picture."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
@@ -794,23 +784,16 @@ msgid "Drip"
 msgstr "Drip"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Click and move the mouse around to make the picture blocky."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
-#, fuzzy
-#| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Click and move the mouse around to make the picture drip."
 
@@ -819,8 +802,6 @@ msgid "Blur"
 msgstr "Blur"
 
 #: ../../magic/src/blur.c:83
-#, fuzzy
-#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Click and move the mouse around to blur the image."
 
@@ -834,14 +815,10 @@ msgid "Bricks"
 msgstr "Bricks"
 
 #: ../../magic/src/bricks.c:131
-#, fuzzy
-#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Click and move to draw large bricks."
 
 #: ../../magic/src/bricks.c:133
-#, fuzzy
-#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Click and move to draw small bricks."
 
@@ -850,8 +827,6 @@ msgid "Calligraphy"
 msgstr "Calligraphy"
 
 #: ../../magic/src/calligraphy.c:134
-#, fuzzy
-#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Click and move the mouse around to draw in calligraphy."
 
@@ -860,8 +835,6 @@ msgid "Cartoon"
 msgstr "Cartoon"
 
 #: ../../magic/src/cartoon.c:113
-#, fuzzy
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
@@ -898,8 +871,6 @@ msgid "Darken"
 msgstr "Darken"
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
-#| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Click and move the mouse to lighten parts of your picture."
 
@@ -908,8 +879,6 @@ msgid "Click to lighten your entire picture."
 msgstr "Click to lighten your entire picture."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Click and move the mouse to darken parts of your picture."
 
@@ -989,8 +958,6 @@ msgid "Grass"
 msgstr "Grass"
 
 #: ../../magic/src/grass.c:118
-#, fuzzy
-#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Click and move to draw grass. Don’t forget the dirt!"
 
@@ -1044,23 +1011,17 @@ msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Click and drag the mouse to draw a pattern across the picture."
 
 #: ../../magic/src/kalidescope.c:142
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
-#| "picture."
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
-msgstr ""
-"Click and drag the mouse to draw a pattern plus its symmetric across the "
-"picture."
+msgstr "Click and drag the mouse to draw a pattern that is symmetrical."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+"Click and drag the mouse to draw with symmetrical brushes (a kaleidoscope)."
 
 #: ../../magic/src/light.c:107
 msgid "Light"
@@ -1099,9 +1060,6 @@ msgid "Mosaic"
 msgstr "Mosaic"
 
 #: ../../magic/src/mosaic.c:103
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
@@ -1301,8 +1259,6 @@ msgid "Silhouette"
 msgstr "Silhouette"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
-#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Click and move the mouse to trace edges in parts of your picture."
 
@@ -1311,8 +1267,6 @@ msgid "Click to trace edges in your entire picture."
 msgstr "Click to trace edges in your entire picture."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
-#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Click and move the mouse to sharpen parts of your picture."
 
@@ -1321,8 +1275,6 @@ msgid "Click to sharpen the entire picture."
 msgstr "Click to sharpen the entire picture."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
-#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Click and move the mouse to create a black and white silhouette."
 
@@ -1348,15 +1300,11 @@ msgid "Wet Paint"
 msgstr "Wet Paint"
 
 #: ../../magic/src/smudge.c:115
-#, fuzzy
-#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Click and move the mouse around to smudge the picture."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
-#, fuzzy
-#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Click and move the mouse around to draw with wet, smudgy paint."
 
@@ -1413,10 +1361,6 @@ msgid "Color & White"
 msgstr "Colour & White"
 
 #: ../../magic/src/tint.c:75
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
@@ -1428,10 +1372,6 @@ msgid "Click to change the color of your entire picture."
 msgstr "Click to change the colour of your entire picture."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."

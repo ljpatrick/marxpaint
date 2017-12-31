@@ -59,6 +59,9 @@ $Id$
     * Aragnoes translation
       Juan Pablo Martinez Cortes <jpmart@unizar.es>
 
+    * British English translation
+      Caroline Ford <caroline.ford.work@googlemail.com>
+
     * Catalan translation
       Robert Buj Gelonch <rbuj@users.sf.net>
 
