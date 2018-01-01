@@ -102,6 +102,9 @@ $Id$
     * Greek translation
       Yannis Kaskamanidis <kiolalis@gmail.com>
 
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>,
+
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
