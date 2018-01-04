@@ -82,8 +82,10 @@ SolidCompression=yes
 PrivilegesRequired=admin
 
 [Languages]
+Name: "arm"; MessagesFile: "compiler:Languages\Armenian.islu"
 Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
+Name: "cos"; MessagesFile: "compiler:Languages\Corsican.isl"
 Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
 Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"
@@ -112,22 +114,26 @@ Name: "ukr"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 ; Additional, Unofficial translations
 Name: "afr"; MessagesFile: "compiler:Languages\Afrikaans.isl"
 Name: "alb"; MessagesFile: "compiler:Languages\Albanian.isl"
-Name: "arm"; MessagesFile: "compiler:Languages\Armenian.islu"
+Name: "ara"; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: "ast"; MessagesFile: "compiler:Languages\Asturian.isl"
 Name: "baq"; MessagesFile: "compiler:Languages\Basque.isl"
 Name: "bel"; MessagesFile: "compiler:Languages\Belarusian.isl"
+Name: "ben"; MessagesFile: "compiler:Languages\Bengali.islu"
+Name: "bos"; MessagesFile: "compiler:Languages\Bosnian.isl"
 Name: "bul"; MessagesFile: "compiler:Languages\Bulgarian.isl"
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
-Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.11.isl"
+Name: "cht"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"
 Name: "scr"; MessagesFile: "compiler:Languages\Croatian.isl"
 Name: "enb"; MessagesFile: "compiler:Languages\EnglishBritish.isl"
 Name: "epo"; MessagesFile: "compiler:Languages\Esperanto.isl"
 Name: "est"; MessagesFile: "compiler:Languages\Estonian.isl"
+Name: "fas"; MessagesFile: "compiler:Languages\Farsi.isl"
 Name: "gal"; MessagesFile: "compiler:Languages\Galician.isl"
 Name: "geo"; MessagesFile: "compiler:Languages\Georgian.islu"
 Name: "hin"; MessagesFile: "compiler:Languages\Hindi.islu"
 Name: "ice"; MessagesFile: "compiler:Languages\Icelandic.isl"
 Name: "ind"; MessagesFile: "compiler:Languages\Indonesian.isl"
+Name: "kaz"; MessagesFile: "compiler:Languages\Kazakh.islu"
 Name: "kor"; MessagesFile: "compiler:Languages\Korean.isl"
 Name: "kur"; MessagesFile: "compiler:Languages\Kurdish.isl"
 Name: "lav"; MessagesFile: "compiler:Languages\Latvian.isl"
@@ -142,8 +148,9 @@ Name: "rum"; MessagesFile: "compiler:Languages\Romanian.isl"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovak.isl"
 Name: "swe"; MessagesFile: "compiler:Languages\Swedish.isl"
 Name: "tai"; MessagesFile: "compiler:Languages\Thai.isl"
+Name: "tat"; MessagesFile: "compiler:Languages\Tatar.isl"
+Name: "uzb"; MessagesFile: "compiler:Languages\Uzbek.isl"
 Name: "vie"; MessagesFile: "compiler:Languages\Vietnamese.isl"
-
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
@@ -366,6 +373,9 @@ begin
   if lang = 'alb' then
     lc := 'sq'
   else
+  if lang = 'ara' then
+    lc := 'ar'
+  else
   if lang = 'arm' then
     lc := 'hy'
   else
@@ -378,8 +388,14 @@ begin
   if lang = 'baq' then
     lc := 'eu'
   else
+  if lang = 'ben' then
+    lc := 'bn'
+  else
   if lang = 'bel' then
     lc := 'be'
+  else
+  if lang = 'bos' then
+    lc := 'bs'
   else
   if lang = 'bra' then
     if TwoLetter = true then
@@ -405,6 +421,9 @@ begin
     else
       lc := 'zh_tw'
   else
+  if lang = 'cos' then
+    lc := 'co'
+  else
   if lang = 'cze' then
     lc := 'cs'
   else
@@ -428,6 +447,9 @@ begin
   else
   if lang = 'est' then
     lc := 'et'
+  else
+  if lang = 'fas' then
+    lc := 'fa'
   else
   if lang = 'fin' then
     lc := 'fi'
@@ -470,6 +492,9 @@ begin
   else
   if lang = 'jpn' then
     lc := 'ja'
+  else
+  if lang = 'kaz' then
+    lc := 'kk'
   else
   if lang = 'kor' then
     lc := 'ko'
@@ -540,11 +565,17 @@ begin
   if lang = 'tai' then
     lc := 'th'
   else
+  if lang = 'tat' then
+    lc := 'tt'
+  else
   if lang = 'tur' then
     lc := 'tr'
   else
   if lang = 'ukr' then
     lc := 'uk'
+  else
+  if lang = 'uzb' then
+    lc := 'uz'
   else
   if lang = 'vie' then
     lc := 'vi'
