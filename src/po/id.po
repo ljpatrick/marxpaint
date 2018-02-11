@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2017-11-15 05:25+0000\n"
-"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"PO-Revision-Date: 2017-12-09 04:22+0000\n"
+"Last-Translator: Teuku Surya <tsuryafajri@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1510723550.000000\n"
+"X-POOTLE-MTIME: 1512793322.000000\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -101,7 +101,7 @@ msgstr "Tan!"
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
 msgid "Beige!"
-msgstr "Beige!"
+msgstr "Krem!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that

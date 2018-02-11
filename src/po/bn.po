@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-03-02 17:05+0530\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2017-12-30 18:24+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Bengali\n"
-"Language: \n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1514658248.000000\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -30,7 +32,7 @@ msgstr "Dark grey! কেউ কেউ বানান “dark gray” এইভ
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Light grey! কেউ কেউ বানান  “light gray” এইভাবে লেখেন."
+msgstr "Light grey! কেউ কেউ বানান “light gray” এইভাবে লেখেন."
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -146,10 +148,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
-#, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{<(^&*"
+msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:204
@@ -278,7 +279,7 @@ msgstr "অষ্টভূজ"
 #: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
 #: ../shapes.h:278 ../shapes.h:281
 msgid "Star"
-msgstr ""
+msgstr "তারা"
 
 #. Description of a square
 #: ../shapes.h:290 ../shapes.h:291
@@ -320,15 +321,15 @@ msgstr "অষ্টভূজে আটটি সমান বাহু থা�
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr ""
+msgstr "একটি তারা ৩ টি পয়েন্টের সাথে"
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr ""
+msgstr "একটি তারা ৪ টি পয়েন্টের সাথে"
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr ""
+msgstr "একটি তারা ৫ টি পয়েন্টের সাথে"
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -474,7 +475,6 @@ msgstr ""
 
 #. Label tool instructions
 #: ../tools.h:130
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -958,7 +958,6 @@ msgid "Fretwork"
 msgstr ""
 
 #: ../../magic/src/fretwork.c:180
-#, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns. "
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."

@@ -1,14 +1,14 @@
 # Tux Paint translation to Gujarati
-# Copyright (C) 2006
+# Copyright (C) 2017 the tuxpaint team
 # This file is distributed under the same license as the Tux Paint package.
-# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2013.
+# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2009-10-04 11:57+0530\n"
+"PO-Revision-Date: 2017-12-31 11:57+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
 "Language: gu\n"
@@ -722,7 +722,7 @@ msgstr "તમારે જોઇતું ચિત્ર પસંદ કર�
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "તમારા ચિત્રમાંથી રંગ પસંદ કરો."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."

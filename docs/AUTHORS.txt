@@ -564,6 +564,7 @@ $Id$
   * Chinese (Simplified)
     Huang Zuzhen <zuzhenhuang@vip.sina.com>
     Wang Jian <lark@linux.net.cn>
+    Never Min <nevermin@gmail.com>
 
   * Chinese (Simplified) README and FAQ documentation
     HackerGene <hackergene@gmail.com>, http://tuxpaint.cn/
@@ -669,7 +670,7 @@ $Id$
     Yannis Papatzikos <papatzikos@yahoo.gr>
     Sokratis Sofianopoulos <sokratis.sofianopoulos@gmail.com>
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
-    Yannis Kaskamanidis
+    Yannis Kaskamanidis <kiolalis@gmail.com>
 
   * Gujarati
     Kartik Mistry <kartik.mistry@gmail.com>
@@ -942,7 +943,7 @@ $Id$
   * Slovenian
     Urska Colner <urska.colner@agenda.si>
     Ines Kovacevic <ines@agenda.si>
-    Matej Urban <matej.urban@gmail.com>
+    Matej Urbančič <mateju@svn.gnome.org>
 
   * Songhay
     Abdoul Cisse <abdoulseydou@hotmail.com>
@@ -958,6 +959,7 @@ $Id$
     Ignacio Tike <ignaciotike@spymac.com>
     Daniel Illingworth <webmaster@intermagen.net>
     Luis C. Suárez <luiscsuarez@gmail.com>
+    Matías Bellone
 
   * Sundanese
     kumincir <ia.adnan@gmail.com>

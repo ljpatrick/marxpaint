@@ -1,18 +1,18 @@
 # translation of de.po to Deutsch
 # Tux Paint german messages.
-# Copyright (C) 2002-2014 Free Software Foundation, Inc.
+# Copyright (C) 2017 Free Software Foundation, Inc.
 # Fabian Franz <FabianFranz@gmx.de>, 2002.
 # Roland Illig <roland.illig@gmx.de>, 2004.
 # Burkhard Lück <lueck@hube-lueck.de>, 2005, 2006, 2007, 2008.
 # Stephanie Schilling <stephanieschilling@online.de>, 2010.
-# Holger Wansing <hwansing@mailbox.org>, 2014, 2015.
+# Holger Wansing <hwansing@mailbox.org>, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-09 21:13+0200\n"
+"PO-Revision-Date: 2017-12-25 21:13+0200\n"
 "Last-Translator: Holger Wansing <hwansing@mailbox.org>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -59,12 +59,12 @@ msgstr "Gelb!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr "Hell Grün!"
+msgstr "Hellgrün!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
 msgid "Dark green!"
-msgstr "Dunkel Grün!"
+msgstr "Dunkelgrün!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
@@ -354,7 +354,7 @@ msgstr "Pinsel"
 #. Title of eraser selector (buttons down the right for eraser tool)
 #: ../titles.h:65
 msgid "Erasers"
-msgstr "Radiergummi"
+msgstr "Radiergummies"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:68
@@ -391,7 +391,7 @@ msgstr "Stempel"
 #. Line drawing tool
 #: ../tools.h:68
 msgid "Lines"
-msgstr "Linie"
+msgstr "Linien"
 
 #. Text tool
 #: ../tools.h:74
@@ -545,7 +545,7 @@ msgstr "Lass die Maustaste los, wenn du mit der Linie zufrieden bist."
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:167
 msgid "Hold the button to stretch the shape."
-msgstr "Halt die Maustaste gedrückt, um die Form in der Größe zu verändern."
+msgstr "Halte die Maustaste gedrückt, um die Form in der Größe zu verändern."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:170
@@ -577,7 +577,7 @@ msgstr "Nein, ich möchte weitermachen!"
 #: ../tuxpaint.c:2064
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
-"Wenn du aufhörst, geht dein Bild verloren! Willst du es vorher noch "
+"Wenn du aufhörst, geht dein Bild verloren! Möchtest du es vorher noch "
 "speichern?"
 
 #: ../tuxpaint.c:2065 ../tuxpaint.c:2070
@@ -591,7 +591,7 @@ msgstr "Nein, nicht speichern!"
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:2069
 msgid "Save your picture first?"
-msgstr "Willst du dein Bild zuerst noch speichern?"
+msgstr "Möchtest du dein Bild zuerst noch speichern?"
 
 #. Error opening picture
 #: ../tuxpaint.c:2074
@@ -612,11 +612,11 @@ msgstr "Es gibt noch keine gespeicherten Bilder!"
 #. Verification of print action
 #: ../tuxpaint.c:2085
 msgid "Print your picture now?"
-msgstr "Willst du dein Bild jetzt ausdrucken?"
+msgstr "Möchtest du dein Bild jetzt ausdrucken?"
 
 #: ../tuxpaint.c:2086
 msgid "Yes, print it!"
-msgstr "Ja, drucke das Bild!"
+msgstr "Ja, jetzt drucken!"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:2090
@@ -640,7 +640,7 @@ msgstr "Möchtest du dieses Bild löschen?"
 
 #: ../tuxpaint.c:2102
 msgid "Yes, erase it!"
-msgstr "Ja, lösche das Bild!"
+msgstr "Ja, das Bild löschen!"
 
 #: ../tuxpaint.c:2103
 msgid "No, don’t erase it!"
@@ -715,17 +715,17 @@ msgstr "Möchtest du das Bild mit deinen Änderungen überschreiben?"
 #. (like a 'File:Save' action in other applications)
 #: ../tuxpaint.c:12799
 msgid "Yes, replace the old one!"
-msgstr "Ja, überschreibe das alte Bild!"
+msgstr "Ja, das alte Bild überschreiben!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
 #: ../tuxpaint.c:12803
 msgid "No, save a new file!"
-msgstr "Nein, speichere in eine neue Datei!"
+msgstr "Nein, in eine neue Datei speichern!"
 
 #: ../tuxpaint.c:14048
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Wähle ein Bild, dass du öffnen willst und klicke auf »Öffnen«."
+msgstr "Wähle ein Bild, dass du öffnen möchtest und klicke auf »Öffnen«."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
@@ -735,7 +735,7 @@ msgstr "Wähle ein Bild und klicke auf »Öffnen«."
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Wähle eine Farbe zum Zeichnen."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -837,7 +837,7 @@ msgstr "Kalligraphie "
 
 #: ../../magic/src/calligraphy.c:134
 msgid "Click and drag the mouse around to draw in calligraphy."
-msgstr "Klicke und ziehe die Maus, um in Kalligraphie-Schrift zu malen."
+msgstr "Klicke und ziehe die Maus, um in Schönschreibkunst zu malen."
 
 #: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
@@ -869,7 +869,7 @@ msgstr "Prägen"
 
 #: ../../magic/src/emboss.c:109
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Klicke und ziehe die Maus, um Teile des Bildes hervorzuheben."
+msgstr "Klicke und ziehe die Maus, um Teile des Bildes mit einer Hochprägung zu versehen."
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Lighten"
@@ -901,7 +901,7 @@ msgstr "Füllen"
 
 #: ../../magic/src/fill.c:115
 msgid "Click in the picture to fill that area with color."
-msgstr "Klicke in das Bild, um diesen Bereich mit Farbe zu füllen."
+msgstr "Klicke in das Bild, um einen Bereich mit Farbe zu füllen."
 
 #: ../../magic/src/fisheye.c:104
 msgid "Fisheye"
@@ -979,7 +979,7 @@ msgstr "Druckraster"
 
 #: ../../magic/src/halftone.c:38
 msgid "Click and drag to turn your drawing into a newspaper."
-msgstr "Klicke und ziehe die Maus, um dein Bild in eine Zeitung zu verwandeln."
+msgstr "Klicke und ziehe die Maus, um dein Bild nach Art einer Tageszeitung umzuwandeln."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1035,8 +1035,8 @@ msgstr ""
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
-"Klicke und ziehe die Maus, um mit symmetrischen Pinseln (ein Kaleidoskop) zu "
-"malen."
+"Klicke und ziehe die Maus, um mit symmetrischen Pinseln zu malen (ein "
+"Kaleidoskop)."
 
 #: ../../magic/src/light.c:107
 msgid "Light"
@@ -1168,7 +1168,7 @@ msgstr "Vergrößern"
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "Klicke auf die Ecken und ziehe in die Richtung, in die du das Bild strecken "
-"willst."
+"möchtest."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1195,7 +1195,7 @@ msgstr "Schienen"
 
 #: ../../magic/src/rails.c:133
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Klicke und ziehe, um Schienen auf dein Bild zu malen."
+msgstr "Klicke und ziehe, um Eisenbahnschienen auf dein Bild zu malen."
 
 #: ../../magic/src/rainbow.c:139
 msgid "Rainbow"
@@ -1311,7 +1311,7 @@ msgstr "Verwischen"
 #. if (which == 1)
 #: ../../magic/src/smudge.c:108
 msgid "Wet Paint"
-msgstr "Nass verschmieren"
+msgstr "Nass malen"
 
 #: ../../magic/src/smudge.c:115
 msgid "Click and drag the mouse around to smudge the picture."
