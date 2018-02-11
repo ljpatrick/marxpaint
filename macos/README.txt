@@ -23,6 +23,7 @@ As of this writing, the required libraries are:
 
   cairo
   fribidi
+  pkgconfig
   libpaper
   libpng
   librsvg
