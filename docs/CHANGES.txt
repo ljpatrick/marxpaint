@@ -61,6 +61,7 @@ $Id$
 
     * Basque translation
       Ander Elortondo <ander.elor@gmail.com>
+      Alexander Gabillondo <alexgabilondo@gmail.com>
 
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>

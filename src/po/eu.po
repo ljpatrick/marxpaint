@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2018-01-17 09:04+0100\n"
-"Last-Translator: etxondoko <ander.elor@gmail.com>\n"
+"PO-Revision-Date: 2018-01-20 18:19+0100\n"
+"Last-Translator: Alexander Gabilondo <alexgabi@irakasle.net>\n"
 "Language-Team: librezale@librezale.org\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -150,6 +150,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:201
+#, fuzzy
+#| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
@@ -324,15 +326,15 @@ msgstr "Oktogonoak zortzi alde berdin ditu."
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr "Hiru puntutako izarra"
+msgstr "3 puntako izarra."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr "Izarra lau punturekin"
+msgstr "4 puntako izarra."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr "Bost puntutako izarra"
+msgstr "5 puntako izarra."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -465,7 +467,7 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Aukeratu irudia. Egin klik erdia markatzeko, arrastatu, eta, nahi duzun "
-"tamainua duenean, askatu. Mugitu biratzeko eta klikatu marrazteko."
+"tamaina duenean, askatu. Mugitu biratzeko eta klikatu marrazteko."
 
 #. Text tool instructions
 #: ../tools.h:127
@@ -485,7 +487,7 @@ msgid ""
 "style."
 msgstr ""
 "Aukera ezazu testu estiloa. Egin klik zure irudian eta has zaitez idazten. "
-"Sakatu [enter] edo [tab] testua amaitzeko. Aukeratze botoiaz badagoen "
+"Sakatu [Intro] edo [Tab] testua amaitzeko. Aukeratze botoiaz badagoen "
 "etiketa baten klik eginez mugitzeko, aldatzeko eta testu estiloa aldatzeko "
 "aukera duzu."
 
@@ -542,7 +544,7 @@ msgstr "Aska ezazu botoia marra amaitzeko."
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:167
 msgid "Hold the button to stretch the shape."
-msgstr "Euki botoia sakatuta irudia luzatzeko."
+msgstr "Eutsi botoia sakatuta irudia luzatzeko."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:170
@@ -668,7 +670,7 @@ msgstr "Ezabatu"
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:7646
 msgid "Slides"
-msgstr "Filminak"
+msgstr "Diapositibak"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7649
@@ -730,7 +732,7 @@ msgstr "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoi
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr "Hautatu kolorea zure marrazkitik."
+msgstr "Hautatu zure marrazkiaren kolore bat"
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -755,7 +757,7 @@ msgstr "Kolore aldaketa"
 #: ../../magic/src/alien.c:67
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua irudiaren parte batzuetako koloreak aldatzeko"
+"Klik egin eta mugi ezazu sagua irudiaren parte batzuetako koloreak aldatzeko."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
@@ -786,27 +788,34 @@ msgid "Drip"
 msgstr "Busti"
 
 #: ../../magic/src/blocks_chalk_drip.c:150
+#, fuzzy
+#| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
-msgstr "Klik egin eta arrastatu sagua inguruan irudia laukitzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
 
 #: ../../magic/src/blocks_chalk_drip.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"Klik egin eta arrastatu sagua irudia klarionez eginda balego bezala "
+"Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
 "marrazteko."
 
 #: ../../magic/src/blocks_chalk_drip.c:156
 msgid "Click and drag the mouse around to make the picture drip."
-msgstr "Klik egin eta arrastatu sagua irudiari busti itxura emateko!"
+msgstr "Klik egin eta mugi ezazu sagua irudiari busti itxura emateko."
 
 #: ../../magic/src/blur.c:80
 msgid "Blur"
 msgstr "Desenfokatu"
 
 #: ../../magic/src/blur.c:83
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
-msgstr "Klik egin eta arrastatu sagua irudia desenfokatzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
 
 #: ../../magic/src/blur.c:84
 msgid "Click to blur the entire image."
@@ -818,28 +827,36 @@ msgid "Bricks"
 msgstr "Adreiluak"
 
 #: ../../magic/src/bricks.c:131
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
-msgstr "Egin klik eta arrastatu adreilu handiak marrazteko."
+msgstr "Egin klik eta mugitu adreilu handiak marrazteko."
 
 #: ../../magic/src/bricks.c:133
+#, fuzzy
+#| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
-msgstr "Egin klik eta arrastatu adreilu txikiak marrazteko."
+msgstr "Egin klik eta mugitu adreilu txikiak marrazteko."
 
 #: ../../magic/src/calligraphy.c:127
 msgid "Calligraphy"
 msgstr "Kaligrafia"
 
 #: ../../magic/src/calligraphy.c:134
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
-msgstr "Klik egin eta arrastatu sagua kaligrafia eran marrazteko."
+msgstr "Klik egin eta mugitu sagua kaligrafia eran marrazteko."
 
 #: ../../magic/src/cartoon.c:106
 msgid "Cartoon"
-msgstr "Komiki"
+msgstr "Bineta"
 
 #: ../../magic/src/cartoon.c:113
+#, fuzzy
+#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
-msgstr "Klik egin eta arrastatu ezazu sagua irudia komiki bihurtzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia bineta bihurtzeko."
 
 #: ../../magic/src/confetti.c:85
 msgid "Confetti"
@@ -875,7 +892,7 @@ msgstr "Ilundu"
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click and drag the mouse to lighten parts of your picture."
-msgstr "Klik egin eta arrastatu sagua irudiaren parte batzuk argitzeko"
+msgstr "Klik egin eta mugi ezazu sagua irudiaren parte batzuk argitzeko."
 
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
@@ -883,7 +900,7 @@ msgstr "Klik egin irudi osoa argitzeko"
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click and drag the mouse to darken parts of your picture."
-msgstr "Klik egin eta arrastatu sagua irudiaren parte batzuk iluntzeko"
+msgstr "Klik egin eta mugitu sagua irudiaren parte batzuk iluntzeko."
 
 #: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
@@ -918,12 +935,12 @@ msgstr ""
 
 #: ../../magic/src/foam.c:121
 msgid "Foam"
-msgstr "Bitza"
+msgstr "Aparra"
 
 #: ../../magic/src/foam.c:127
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
-"Klik egin eta arrastatu sagua irudiaren eremu bat bitz burbuilez estaltzeko."
+"Klik egin eta mugi ezazu sagua irudiaren eremu bat apar burbuilez estaltzeko."
 
 #: ../../magic/src/fold.c:105
 msgid "Fold"
@@ -945,7 +962,7 @@ msgstr "Klik egin eta arrastatu sare artistiko korapilatsua marrazteko."
 
 #: ../../magic/src/fretwork.c:182
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "Egizu klik zure irudia diseinu korapilatsuaz inguratzeko."
+msgstr "Egizu klik zure irudia diseinua errepikatzeko."
 
 #: ../../magic/src/glasstile.c:107
 msgid "Glass Tile"
@@ -966,8 +983,10 @@ msgid "Grass"
 msgstr "Belarra"
 
 #: ../../magic/src/grass.c:118
+#, fuzzy
+#| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
-msgstr "Egin klik eta arrastatu belarra marrazteko. Ez ahaztu lokatza!"
+msgstr "Egin klik eta mugi ezazu belarra marrazteko. Ez ahaztu lokatza!"
 
 #: ../../magic/src/halftone.c:34
 msgid "Halftone"
@@ -979,7 +998,7 @@ msgstr "Egin klik eta arrastatu egunkari paperera pasatzeko irudia."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
-msgstr "Simetrikoa ezker/eskuma"
+msgstr "Simetrikoa ezker/eskuin"
 
 #: ../../magic/src/kalidescope.c:122
 msgid "Symmetric Up/Down"
@@ -991,7 +1010,7 @@ msgstr "Diseinua"
 
 #: ../../magic/src/kalidescope.c:126
 msgid "Tiles"
-msgstr "Teilak"
+msgstr "Lauza"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:128
@@ -1003,22 +1022,26 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Klikatu eta arrastatu sagua irudiaren ezker eskuman simetrikoak diren bi "
-"pintzelekin marrazteko."
+"Klikatu eta arrastatu sagua irudiaren ezker eskuin simetrikoak diren bi "
+"pintzelez marrazteko."
 
 #: ../../magic/src/kalidescope.c:138
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Klikatu eta arrastatu sagua irudiaren goi azpian simetrikoak diren bi "
-"pintzelekin marrazteko."
+"Klikatu eta arrastatu sagua irudiaren goian behean simetrikoak diren bi "
+"pintzelez marrazteko."
 
 #: ../../magic/src/kalidescope.c:140
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klik egin eta mugitu sagua diseinua marrazteko irudian zehar."
 
 #: ../../magic/src/kalidescope.c:142
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse to draw a pattern plus its symmetric across the "
+#| "picture."
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -1070,10 +1093,13 @@ msgid "Mosaic"
 msgstr "Mosaikoa"
 
 #: ../../magic/src/mosaic.c:103
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua zure irudiaren parte batzuei mosaiko efektua "
+"Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko efektua "
 "emateko."
 
 #: ../../magic/src/mosaic.c:104
@@ -1093,10 +1119,13 @@ msgid "Irregular Mosaic"
 msgstr "Mosaiko irregularra"
 
 #: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a square mosaic to parts of your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua zure irudiaren parte batzuei mosaiko laukia "
+"Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko laukia "
 "gehitzeko."
 
 #: ../../magic/src/mosaic_shaped.c:149
@@ -1104,10 +1133,14 @@ msgid "Click to add a square mosaic to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko efektua emateko."
 
 #: ../../magic/src/mosaic_shaped.c:153
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a hexagonal mosaic to parts of your "
+#| "picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua zure irudiaren parte batzuei mosaiko hexagonal "
+"Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko hexagonal "
 "efektua emateko."
 
 #: ../../magic/src/mosaic_shaped.c:154
@@ -1115,10 +1148,14 @@ msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Egin klik irudi osoari mosaiko hexagonal efektua emateko."
 
 #: ../../magic/src/mosaic_shaped.c:158
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add an irregular mosaic to parts of your "
+#| "picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua zure irudiaren parte batzuei mosaiko irregular "
+"Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko irregular "
 "efektua emateko."
 
 #: ../../magic/src/mosaic_shaped.c:159
@@ -1130,8 +1167,10 @@ msgid "Negative"
 msgstr "Negatiboa"
 
 #: ../../magic/src/negative.c:106
+#, fuzzy
+#| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
-msgstr "Klik egin eta mugi arrastatu sagua irudiaren negatiboa marrazteko."
+msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
 #: ../../magic/src/negative.c:109
 msgid "Click to turn your painting into its negative."
@@ -1142,9 +1181,11 @@ msgid "Noise"
 msgstr "Zarata"
 
 #: ../../magic/src/noise.c:66
+#, fuzzy
+#| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu ezazu sagua irudiaren parte batzuei zarata gehitzeko."
+"Klik egin eta mugi ezazu sagua irudiaren parte batzuei zarata gehitzeko."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
@@ -1259,25 +1300,31 @@ msgid "Silhouette"
 msgstr "Silueta"
 
 #: ../../magic/src/sharpen.c:78
+#, fuzzy
+#| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr ""
-"Klik egin eta arrastatu sagua irudiaren eremu batzuetan ertzak marrazteko."
+"Klik egin eta mugitu sagua irudiaren eremu batzuetan ertzak marrazteko."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
 msgstr "Klik egin irudi osoan ertzak marrazteko"
 
 #: ../../magic/src/sharpen.c:80
+#, fuzzy
+#| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
-msgstr "Klik egin eta arrastatu sagua irudiaren eremu batzuk zorrozteko."
+msgstr "Klik egin eta mugitu sagua irudiaren eremu batzuk zorrozteko."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
 msgstr "Egin klik irudi osoa zorrozteko."
 
 #: ../../magic/src/sharpen.c:82
+#, fuzzy
+#| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
-msgstr "Klik egin eta arrastatu sagua zuri eta beltzeko silueta sortzeko."
+msgstr "Klik egin eta mugitu sagua zuri eta beltzeko silueta sortzeko."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
@@ -1301,13 +1348,17 @@ msgid "Wet Paint"
 msgstr "Pintura bustia"
 
 #: ../../magic/src/smudge.c:115
+#, fuzzy
+#| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
-msgstr "Klik egin eta arrastatu ezazu sagua irudia zirriborratzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia zirriborratzeko."
 
 #. if (which == 1)
 #: ../../magic/src/smudge.c:117
+#, fuzzy
+#| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
-msgstr "Klik egin eta arrastatu sagua pintura bustiaz zirriborratzeko."
+msgstr "Klik egin eta mugi ezazu sagua pintura bustiaz zirriborratzeko."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1365,19 +1416,22 @@ msgstr "Kolorea & Zuria"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
-msgstr ""
-"Klik egin eta arrastatu sagua irudiaren atal batzuetako kolorea aldatzeko"
+msgstr "Klik egin eta mugitu sagua irudiaren zonetako kolorea aldatzeko."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
 msgstr "Klik egin irudi osoaren kolorea aldatzeko."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Klik egin eta arrastatu sagua irudiaren atal batzuk zuk hautatzen duzun "
+"Klik egin eta mugitu sagua irudiaren eremu batzuk zuk hautatzen duzun "
 "kolorez eta zuriz margotzeko."
 
 #: ../../magic/src/tint.c:78
@@ -1402,7 +1456,7 @@ msgstr "Klik egin eta arrastatu zure irudian tornado tunela marrazteko."
 
 #: ../../magic/src/tv.c:100
 msgid "TV"
-msgstr "TV"
+msgstr "TB"
 
 #: ../../magic/src/tv.c:105
 msgid ""
@@ -1422,7 +1476,7 @@ msgstr "Uhinak"
 
 #: ../../magic/src/waves.c:104
 msgid "Wavelets"
-msgstr "Olatutxoak"
+msgstr "Uhintxoak"
 
 #: ../../magic/src/waves.c:111
 msgid ""
@@ -1446,7 +1500,7 @@ msgstr ""
 
 #: ../../magic/src/xor.c:95
 msgid "Xor Colors"
-msgstr "Xor Koloreak"
+msgstr "Xor koloreak"
 
 #: ../../magic/src/xor.c:101
 msgid "Click and drag to draw a XOR effect"
