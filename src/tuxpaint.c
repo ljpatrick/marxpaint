@@ -47,24 +47,25 @@
 #endif
 
 #ifndef VIDEO_BPP
-                                                                               /*# define VIDEO_BPP 15 *//* saves memory */
-                                                                               /*# define VIDEO_BPP 16 *//* causes discoloration */
-                                                                               /*# define VIDEO_BPP 24 *//* compromise */
+                           /*# define VIDEO_BPP 15 *//* saves memory */
+                           /*# define VIDEO_BPP 16 *//* causes discoloration */
+                           /*# define VIDEO_BPP 24 *//* compromise */
 #define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
 #endif
 
 
-                                                                                     /* #define CORNER_SHAPES *//* need major work! */
+                               /* #define CORNER_SHAPES *//* need major work! */
 
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                                                                                  /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
-                                                                                                          /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
+                                     /*#define PRINTMETHOD_PNM_PS*//* Output PNM, assuming it gets printed */
+                                     /*#define PRINTMETHOD_PNG_PNM_PS*//* Output PNG, assuming it gets printed */
 
 
 #define MAX_PATH 256
+
 
 /* Compile-time options: */
 
@@ -186,12 +187,7 @@ static scaleparams scaletable[] = {
 /* On Linux, we can use 'wordexp()' to expand env. vars. in settings
    pulled from config. files */
 #ifdef __linux__
-
-/* However, Android has __linux__ macro but does not support 'wordexp()'*/
-#ifndef __ANDROID__
 #include <wordexp.h>
-#endif
-
 #endif
 
 
@@ -243,7 +239,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <FindDirectory.h>
 #include <fs_info.h>
 #endif
-#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
+#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
 #include <wchar.h>
 #include <stdbool.h>
 #ifndef __HAIKU__
@@ -302,19 +298,9 @@ typedef struct safer_dirent
 
 #else /* __BEOS__ */
 
-#ifdef __ANDROID__
-
-#define AUTOSAVE_GOING_BACKGROUND
-#include "android_print.h"
-#include "android_assets.h"
-
-#else
-
-/* Not Windows, not BeOS, not Android */
+/* Not Windows, not BeOS */
 
 #include "postscript_print.h"
-
-#endif /* __ANDROID__ */
 
 #endif /* __BEOS__ */
 
@@ -365,9 +351,8 @@ static void mtw(wchar_t * wtok, char *tok)
 #include <errno.h>
 #include <sys/stat.h>
 
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_thread.h"
-
+#include "SDL.h"
+#include "SDL_thread.h"
 #if !defined(_SDL_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
@@ -376,8 +361,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL2/SDL_image.h"
-
+#include "SDL_image.h"
 #if !defined(_SDL_IMAGE_H) && !defined(_IMG_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
@@ -386,8 +370,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL2/SDL_ttf.h"
-
+#include "SDL_ttf.h"
 #if !defined(_SDL_TTF_H) && !defined(_SDLttf_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
@@ -418,7 +401,7 @@ static void mtw(wchar_t * wtok, char *tok)
  The renaming ends here.
  */
 
-#include "SDL2_Pango.h"
+#include "SDL_Pango.h"
 #if !defined(SDL_PANGO_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL_Pango from a package, be sure"
@@ -431,9 +414,7 @@ static void mtw(wchar_t * wtok, char *tok)
 
 
 #ifndef NOSOUND
-
-#include "SDL2/SDL_mixer.h"
-
+#include "SDL_mixer.h"
 #if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_mixer from a package, be sure"
@@ -441,7 +422,6 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "(e.g., 'libsdl-mixer1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
-
 #endif
 
 #ifndef NOSVG
@@ -488,8 +468,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "---------------------------------------------------"
 #endif
 
-#define AUTOSAVED_NAME "AUTOSAVED"
-//#include "SDL_getenv.h"
+#include "SDL_getenv.h"
 
 #include "i18n.h"
 #include "cursor.h"
@@ -560,12 +539,12 @@ static void mtw(wchar_t * wtok, char *tok)
 #endif
 
 
-int TP_EventFilter(void *data, const SDL_Event * event);
+int TP_EventFilter(const SDL_Event * event);
 
 
-                                                                     /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
+#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
 #endif
 
@@ -638,7 +617,7 @@ enum
   LABEL_OFF,
   LABEL_LABEL,
   LABEL_SELECT
-    /* , LABEL_ROTATE */
+  /* , LABEL_ROTATE */
 };
 
 
@@ -677,7 +656,7 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                                                                              /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+                                /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -689,8 +668,6 @@ static SDL_Rect r_ttoolopt;     /* was 96x40 @ 544,0 (title for tool options) */
 static SDL_Rect r_tuxarea;      /* was 640x56 */
 static SDL_Rect r_label;
 static SDL_Rect old_dest;
-static SDL_Rect r_tir;          /* Text input rectangle */
-static float render_scale;      /* Scale factor for the render */
 
 static int button_w;            /* was 48 */
 static int button_h;            /* was 48 */
@@ -704,7 +681,7 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                                                                                /* static grid_dims gd_open; *//* was 4x4 */
+                                  /* static grid_dims gd_open; *//* was 4x4 */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -859,76 +836,12 @@ static void setup_screen_layout(void)
 #endif
 }
 
-static SDL_Window *window_screen;
-static SDL_Renderer *renderer;
-static SDL_Texture *texture;
 static SDL_Surface *screen = NULL;
 static SDL_Surface *canvas = NULL;
 static SDL_Surface *label = NULL;
 static SDL_Surface *save_canvas = NULL;
 static SDL_Surface *canvas_back = NULL;
 static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
-
-/* This SDL 1.2 <-> 2.0 backward compatibility functions are focused to the main window */
-
-static Uint32 window_format;
-
-#define SDLKey SDL_Keycode
-#define SDLMod SDL_Keymod
-
-static void SDL_WarpMouse(Uint16 x, Uint16 y)
-{
-  SDL_WarpMouseInWindow(window_screen, x, y);
-}
-
-static SDL_Surface *SDL_DisplayFormat(SDL_Surface * surface)
-{
-  SDL_Surface *tmp;
-
-  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGB888, 0);
-  return (tmp);
-}
-
-static SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface * surface)
-{
-  SDL_Surface *tmp;
-
-  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_ARGB8888, 0);
-  return (tmp);
-}
-
-static void SDL_Flip(SDL_Surface * screen)
-{
-  //SDL_UpdateWindowSurface(window_screen);
-  SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
-  SDL_RenderClear(renderer);
-  SDL_RenderCopy(renderer, texture, NULL, NULL);
-  SDL_RenderPresent(renderer);
-}
-
-static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
-{
-  SDL_Rect r;
-
-  r.x = x;
-  r.y = y;
-  r.w = w;
-  r.h = h;
-
-  SDL_UpdateTexture(texture, &r, screen->pixels + (y * screen->pitch + x * 4), screen->pitch);
-
-  //  Docs says one must clear the renderer, even if this means a refresh of the whole thing.
-  SDL_RenderClear(renderer);
-  SDL_RenderCopy(renderer, texture, NULL, NULL);
-
-  SDL_RenderPresent(renderer);
-}
-
-static void show_progress_bar(SDL_Surface * screen)
-{
-  show_progress_bar_(screen, texture, renderer);
-}
-
 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
 static void update_screen(int x1, int y1, int x2, int y2)
@@ -1290,11 +1203,6 @@ static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmo
 
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools);
 
-#ifdef __ANDROID__
-static void start_motion_convert(SDL_Event event);
-static void convert_motion_to_wheel(SDL_Event event);
-static void stop_motion_convert(SDL_Event event);
-#endif
 
 /* Magic tools API and tool handles: */
 
@@ -1360,7 +1268,7 @@ enum
 static magic_api *magic_api_struct;     /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -1465,12 +1373,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
 #ifdef DEBUG
       printf("Calling SDLPango_SetText(\"%s\")\n", str);
       fflush(stdout);
-#endif
-
-#ifdef __ANDROID__
-      /* FIXME This extrange workaround helps in getting the translations working
-         on 4.3 4.4 */
-      SDLPango_SetLanguage(font->pango_context, "ca");
 #endif
 
       SDLPango_SetDefaultColor(font->pango_context, &pango_color);
@@ -1915,7 +1817,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
-static int do_save(int tool, int dont_show_success_results, int autosave);
+static int do_save(int tool, int dont_show_success_results);
 static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf, int embed);
 static void load_embedded_data(char *fname, SDL_Surface * org_surf);
 static int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown);
@@ -1951,7 +1853,7 @@ static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
-static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * area1, SDL_Rect * area2);
+static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect * area1, SDL_Rect * area2);
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
 
@@ -2012,6 +1914,8 @@ int file_exists(char *path);
 #define USEREVENT_TEXT_UPDATE 1
 #define USEREVENT_PLAYDESCSOUND 2
 
+#define TP_SDL_MOUSEBUTTONSCROLL (SDL_USEREVENT + 1)
+
 static int bypass_splash_wait;
 
 /* Wait for a keypress or mouse click.
@@ -2036,7 +1940,7 @@ static void do_wait(int counter)
 
               /* FIXME: Handle SDL_Quit better */
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -2076,7 +1980,7 @@ static void eat_sdl_events(void)
           SDL_Quit();
           exit(0);              /* can't safely use do_quit during start-up */
         }
-      else if (event.type == SDL_WINDOWEVENT)
+      else if (event.type == SDL_ACTIVEEVENT)
         handle_active(&event);
       else if (event.type == SDL_KEYDOWN)
         {
@@ -2198,14 +2102,6 @@ static void mainloop(void)
   int stamp_xored = 0;
 
   unsigned int i = 0;
-
-#ifdef AUTOSAVE_GOING_BACKGROUND
-  char *fname;
-  char tmp[1024];
-  FILE *fi;
-#endif
-
-  Uint32 TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key;
@@ -2244,10 +2140,7 @@ static void mainloop(void)
   valhat_y = 0;
   done = 0;
   keyglobal = 0;
-  r_tir.x = 0;
-  r_tir.y = 0;
-  r_tir.w = 0;
-  r_tir.h = 0;
+  kbd = NULL;
 
   if (NUM_TOOLS > 14 + TOOLOFFSET)
     {
@@ -2287,49 +2180,15 @@ static void mainloop(void)
                           SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                           update_screen_rect(&kbd_rect);
                         }
-
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          SDL_StartTextInput();
-                        }
                     }
                 }
             }
-#ifdef AUTOSAVE_GOING_BACKGROUND
-          else if (event.type == SDL_APP_DIDENTERBACKGROUND)
-            {
-              /* Triggers a save to a temporary file in case the app is killed later.
-                 That file should be deleted if tuxpaint continues without being killed but it contains unsaved data
-                 so it must be used as the next start drawing if tuxpaint is killed.
-                 Also a reference to the actual file being drawn should be kept and restored. */
-              if (!been_saved)
-                {
-                  do_save(cur_tool, 0, 1);
-                  save_current();
-                }
-            }
-          else if (event.type == SDL_APP_DIDENTERFOREGROUND)
-            {
-              /* Discard the temp file saved before as the user takes again control */
-              snprintf(tmp, sizeof(tmp), "saved/%s%s", AUTOSAVED_NAME, FNAME_EXTENSION);
-              fname = get_fname(tmp, DIR_SAVE);
-              fi = fopen(fname, "wb");
-              if (fi != NULL)
-                {
-                  fclose(fi);
-                  unlink(fname);
-                  free(fname);
-                }
-            }
-#endif
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               /* Reset Shapes tool and clean the canvas if we lose focus */
               if (mouseaccessibility && emulate_button_pressed &&
                   ((cur_tool == TOOL_SHAPES && shape_tool_mode != SHAPE_TOOL_MODE_DONE) || cur_tool == TOOL_LINES) &&
-                  event.window.event == SDL_WINDOWEVENT_FOCUS_LOST)
-                /* event.active.state & (SDL_APPINPUTFOCUS|SDL_APPACTIVE) &&
-                   event.active.gain == 0) */
+                  event.active.state & (SDL_APPINPUTFOCUS | SDL_APPACTIVE) && event.active.gain == 0)
                 {
                   do_undo();
                   tool_avail[TOOL_REDO] = 0;    /* Don't let them 'redo' to get preview back */
@@ -2343,9 +2202,11 @@ static void mainloop(void)
           else if (event.type == SDL_KEYUP)
             {
               key = event.key.keysym.sym;
+
               handle_keymouse(key, SDL_KEYUP, 16, NULL, NULL);
             }
-          else if (event.type == SDL_KEYDOWN || event.type == SDL_TEXTINPUT)
+
+          else if (event.type == SDL_KEYDOWN)
             {
               key = event.key.keysym.sym;
               mod = event.key.keysym.mod;
@@ -2356,9 +2217,9 @@ static void mainloop(void)
                       "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
                       (unsigned)key,
                       (unsigned)mod,
-                      (unsigned)event.text.text,
-                      (int)event.text.text,
-                      (key_unicode > ' ' && key_unicode < 127) ? (char)event.text.text : ' ',
+                      (unsigned)event.key.keysym.unicode,
+                      (int)event.key.keysym.unicode,
+                      (key_unicode > ' ' && key_unicode < 127) ? (char)event.key.keysym.unicode : ' ',
                       iswprint(key_unicode) ? "" : "not ", (unsigned)key_down);
 #endif
               if (cur_tool == TOOL_STAMP)
@@ -2378,7 +2239,7 @@ static void mainloop(void)
               handle_keymouse_buttons(key, &whicht, &whichc, real_r_tools);
 
 
-              if ((key == SDLK_ESCAPE || key == SDLK_AC_BACK) && !disable_quit)
+              if (key == SDLK_ESCAPE && !disable_quit)
                 {
                   magic_switchout(canvas);
                   done = do_quit(cur_tool);
@@ -2392,11 +2253,6 @@ static void mainloop(void)
                             {
                               SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                               update_screen_rect(&kbd_rect);
-                            }
-
-                          if (onscreen_keyboard && !kbd)
-                            {
-                              SDL_StartTextInput();
                             }
                         }
                     }
@@ -2424,7 +2280,7 @@ static void mainloop(void)
                     }
 #endif
                 }
-              else if ((key == SDLK_ESCAPE || key == SDLK_AC_BACK) && (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
+              else if (key == SDLK_ESCAPE && (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
                 {
                   magic_switchout(canvas);
                   done = do_quit(cur_tool);
@@ -2534,11 +2390,6 @@ static void mainloop(void)
                           SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                           update_screen_rect(&kbd_rect);
                         }
-
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          SDL_StartTextInput();
-                        }
                     }
                   else if (cur_tool == TOOL_SHAPES)
                     draw_shapes();
@@ -2594,11 +2445,6 @@ static void mainloop(void)
                           SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                           update_screen_rect(&kbd_rect);
                         }
-
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          SDL_StartTextInput();
-                        }
                     }
                   else if (cur_tool == TOOL_SHAPES)
                     draw_shapes();
@@ -2616,7 +2462,7 @@ static void mainloop(void)
                   magic_switchout(canvas);
                   hide_blinking_cursor();
 
-                  if (do_save(cur_tool, 0, 0))
+                  if (do_save(cur_tool, 0))
                     {
                       /* Only think it's been saved if it HAS been saved :^) */
 
@@ -2632,11 +2478,6 @@ static void mainloop(void)
                         {
                           SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                           update_screen_rect(&kbd_rect);
-                        }
-
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          SDL_StartTextInput();
                         }
                     }
 
@@ -2664,11 +2505,6 @@ static void mainloop(void)
                               SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                               update_screen_rect(&kbd_rect);
                             }
-
-                          if (onscreen_keyboard && !kbd)
-                            {
-                              SDL_StartTextInput();
-                            }
                         }
 
                       draw_toolbar();
@@ -2676,10 +2512,7 @@ static void mainloop(void)
                       update_screen_rect(&r_tools);
                     }
                 }
-              else if (event.type == SDL_TEXTINPUT ||
-                       (event.type == SDL_KEYDOWN &&
-                        (event.key.keysym.sym == SDLK_BACKSPACE ||
-                         event.key.keysym.sym == SDLK_RETURN || event.key.keysym.sym == SDLK_TAB)))
+              else
                 {
                   /* Handle key in text tool: */
 
@@ -2690,17 +2523,14 @@ static void mainloop(void)
                       wchar_t *im_cp = im_data.s;
 
 #ifdef DEBUG
-//          key_down = key;
-//          key_unicode = event.key.keysym.unicode;
-//          printf(
-//            "character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
-//            (unsigned)event.key.keysym.unicode,
-//            (int)event.key.keysym.unicode,
-//            (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
-//              (int)charsize(event.key.keysym.unicode),
-//              iswprint(key_unicode)?"":"not ",
-//              (unsigned)key_down
-//            );
+                      key_down = key;
+                      key_unicode = event.key.keysym.unicode;
+                      printf("character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
+                             (unsigned)event.key.keysym.unicode,
+                             (int)event.key.keysym.unicode,
+                             (key_unicode > ' ' && key_unicode < 127) ? (char)event.key.keysym.unicode : ' ',
+                             (int)charsize(event.key.keysym.unicode),
+                             iswprint(key_unicode) ? "" : "not ", (unsigned)key_down);
 #if 0
                       /* this doesn't work for some reason */
                       wprintf(L"character 0x%04x %d <%lc> is %d pixels, %lsprintable, key_down 0x%x\n",
@@ -2710,15 +2540,6 @@ static void mainloop(void)
                               charsize(event.key.keysym.unicode), iswprint(key_unicode) ? L"" : L"not ", key_down);
 #endif
 #endif
-                      /* Set the text input rectangle for system onscreen keyboards */
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          r_tir.y = (float)cursor_y / render_scale;
-                          r_tir.x = (float)cursor_x / render_scale;
-                          SDL_SetTextInputRect(&r_tir);
-                          SDL_StartTextInput();
-                        }
-
 
                       /* Discard previous # of redraw characters */
                       if ((int)texttool_len <= redraw)
@@ -2728,7 +2549,7 @@ static void mainloop(void)
                       texttool_str[texttool_len] = L'\0';
 
                       /* Read IM, remember how many to redraw next iteration */
-                      redraw = im_read(&im_data, event);
+                      redraw = im_read(&im_data, event.key.keysym);
 
                       /* Korean Hangul needs this to refresh when buffered chars gets emptied */
                       if (!*im_cp)
@@ -2743,7 +2564,7 @@ static void mainloop(void)
                               if (texttool_len > 0)
                                 {
                                   texttool_len--;
-                                  texttool_str[texttool_len] = L'\0';
+                                  texttool_str[texttool_len] = 0;
                                   playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
                                   do_render_cur_text(0);
@@ -2806,7 +2627,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -2920,7 +2741,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -2950,20 +2771,15 @@ static void mainloop(void)
 #endif
                               im_softreset(&im_data);
                             }
-                          else if (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL)
+                          else if (iswprint(*im_cp) && (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
                             {
-                              // iswprintf seems not supported well in Android
-#ifndef  __ANDROID__
-                              if (!iswprint(*im_cp))
-                                break;
-#endif
                               if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
                                 {
                                   int old_cursor_textwidth = cursor_textwidth;
 
 #ifdef DEBUG
-//                wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
-//                      key_down, key_unicode, key_unicode, key_unicode);
+                                  wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
+                                          key_down, key_unicode, key_unicode, key_unicode);
 #endif
 
                                   texttool_str[texttool_len++] = *im_cp;
@@ -3042,15 +2858,7 @@ static void mainloop(void)
                                         PROMPT_TIP_LEFTCLICK_YES,
                                         "", img_mouse, img_mouse_click, NULL, 1, event.button.x, event.button.y);
                   if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-                    {
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          r_tir.y = (float)event.button.y / render_scale;
-                          SDL_SetTextInputRect(&r_tir);
-                          SDL_StartTextInput();
-                        }
-                      do_render_cur_text(0);
-                    }
+                    do_render_cur_text(0);
                   draw_tux_text(TUX_BORED, "", 0);
                 }
             }
@@ -3114,7 +2922,7 @@ static void mainloop(void)
                           cur_tool = whicht;
                           draw_toolbar();
                           update_screen_rect(&r_tools);
-                          printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_tools.h);
+
                           playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 
                           /* FIXME: this "if" is just plain gross */
@@ -3165,24 +2973,37 @@ static void mainloop(void)
                             }
                           else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                             {
-                              if (onscreen_keyboard && kbd)
+                              if (onscreen_keyboard)
                                 {
-                                  kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
-                                  if (old_y > canvas->h / 2)
-                                    kbd_rect.y = 0;
+                                  if (kbd == NULL)
+                                    {
+                                      if (onscreen_keyboard_layout)
+                                        kbd =
+                                          osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down,
+                                                     img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel,
+                                                     img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
+                                                     onscreen_keyboard_disable_change);
+                                      else
+                                        kbd =
+                                          osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down,
+                                                     img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel,
+                                                     img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
+                                                     onscreen_keyboard_disable_change);
+                                    }
+                                  if (kbd == NULL)
+                                    printf("kbd = NULL\n");
                                   else
-                                    kbd_rect.y = canvas->h - kbd->surface->h;
-                                  kbd_rect.w = kbd->surface->w;
-                                  kbd_rect.h = kbd->surface->h;
-                                  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                                  update_screen_rect(&kbd_rect);
-                                }
-
-                              if (onscreen_keyboard && !kbd)
-                                {
-                                  r_tir.y = (float)event.button.y / render_scale;
-                                  SDL_SetTextInputRect(&r_tir);
-                                  SDL_StartTextInput();
+                                    {
+                                      kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
+                                      if (old_y > canvas->h / 2)
+                                        kbd_rect.y = 0;
+                                      else
+                                        kbd_rect.y = canvas->h - kbd->surface->h;
+                                      kbd_rect.w = kbd->surface->w;
+                                      kbd_rect.h = kbd->surface->h;
+                                      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+                                      update_screen_rect(&kbd_rect);
+                                    }
                                 }
                               if (!font_thread_done)
                                 {
@@ -3197,7 +3018,7 @@ static void mainloop(void)
 
                                   waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
-                                  receive_some_font_info(screen, texture, renderer);
+                                  receive_some_font_info(screen);
 #else
                                   while (!font_thread_done && !font_thread_aborted)
                                     {
@@ -3327,11 +3148,6 @@ static void mainloop(void)
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
                                     }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
-                                    }
                                 }
                               else if (cur_tool == TOOL_SHAPES)
                                 draw_shapes();
@@ -3340,7 +3156,7 @@ static void mainloop(void)
                             }
                           else if (cur_tool == TOOL_SAVE)
                             {
-                              if (do_save(old_tool, 0, 0))
+                              if (do_save(old_tool, 0))
                                 {
                                   been_saved = 1;
                                   tool_avail[TOOL_SAVE] = 0;
@@ -3352,11 +3168,6 @@ static void mainloop(void)
                                     {
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
-                                    }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
                                     }
                                 }
 
@@ -3405,12 +3216,6 @@ static void mainloop(void)
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
                                     }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
-
-                                    }
                                 }
                               else if (cur_tool == TOOL_SHAPES)
                                 draw_shapes();
@@ -3432,11 +3237,6 @@ static void mainloop(void)
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
                                     }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
-                                    }
                                 }
 
                               cur_tool = old_tool;
@@ -3454,12 +3254,6 @@ static void mainloop(void)
                                     {
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
-                                    }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
-
                                     }
                                 }
 
@@ -3657,9 +3451,11 @@ static void mainloop(void)
                                   old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
                                   stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
+                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
+                                       1
                                        /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                                      ) * (event.button.x - (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+                                       ) * (event.button.x -
+                                            (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                                   printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -3942,12 +3738,6 @@ static void mainloop(void)
                                                   SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                                   update_screen_rect(&kbd_rect);
                                                 }
-
-                                              if (onscreen_keyboard && !kbd)
-                                                {
-                                                  SDL_StartTextInput();
-
-                                                }
                                             }
                                           else
                                             {
@@ -4090,11 +3880,11 @@ static void mainloop(void)
 
                           /* FIXME */
                           /*
-                             snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
-                             TTF_FontFaceFamilyName(getfonthandle(cur_font)),
-                             TTF_FontFaceStyleName(getfonthandle(cur_font)));
-                             draw_tux_text(TUX_GREAT, font_tux_text, 1);
-                           */
+                          snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
+                              TTF_FontFaceFamilyName(getfonthandle(cur_font)),
+                              TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                          draw_tux_text(TUX_GREAT, font_tux_text, 1);
+                          */
 
                           if (do_draw)
                             draw_fonts();
@@ -4268,11 +4058,6 @@ static void mainloop(void)
                                     {
                                       SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                       update_screen_rect(&kbd_rect);
-                                    }
-
-                                  if (onscreen_keyboard && !kbd)
-                                    {
-                                      SDL_StartTextInput();
                                     }
                                 }
 
@@ -4491,13 +4276,6 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          r_tir.y = (float)old_y / render_scale;
-                          SDL_SetTextInputRect(&r_tir);
-                          SDL_StartTextInput();
-                        }
-
                       /* Text and Label Tools! */
                       if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                         {
@@ -4535,7 +4313,7 @@ static void mainloop(void)
                                 }
                               draw_fonts();
                               update_screen_rect(&r_toolopt);
-                              if (onscreen_keyboard && kbd)
+                              if (onscreen_keyboard)
                                 {
                                   if (old_y < r_canvas.h / 2)
                                     kbd_rect.y = r_canvas.h - kbd->surface->h;
@@ -4546,12 +4324,6 @@ static void mainloop(void)
                                   update_screen_rect(&kbd_rect);
                                 }
 
-                              if (onscreen_keyboard && !kbd)
-                                {
-                                  r_tir.y = (float)old_y / render_scale;
-                                  SDL_SetTextInputRect(&r_tir);
-                                  SDL_StartTextInput();
-                                }
                               do_render_cur_text(0);
                               draw_colors(COLORSEL_REFRESH);
                               draw_fonts();
@@ -4574,8 +4346,7 @@ static void mainloop(void)
                              }
                            */
                         }
-                      if (onscreen_keyboard && kbd && HIT(kbd_rect)
-                          && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+                      if (onscreen_keyboard && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
                         {
                           new_kbd = osk_clicked(kbd, old_x - kbd_rect.x + r_canvas.x, old_y - kbd_rect.y + r_canvas.y);
                           /* keyboard has changed, erase the old, note that the old kbd has yet been freed. */
@@ -4600,7 +4371,7 @@ static void mainloop(void)
                           cursor_y = old_y;
                           cursor_left = old_x;
 
-                          if (onscreen_keyboard && kbd && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+                          if (onscreen_keyboard && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
                             {
                               if (old_y < r_canvas.h / 2)
                                 {
@@ -4626,13 +4397,6 @@ static void mainloop(void)
                                       update_screen_rect(&kbd_rect);
                                     }
                                 }
-                            }
-
-                          if (onscreen_keyboard && !kbd)
-                            {
-                              r_tir.y = (float)cursor_y / render_scale;
-                              SDL_SetTextInputRect(&r_tir);
-                              SDL_StartTextInput();
                             }
                         }
 
@@ -4667,22 +4431,15 @@ static void mainloop(void)
                     }
 #endif
                 }
-
-#ifdef __ANDROID__
-              start_motion_convert(event);
-#endif
             }
 
-          else if (event.type == SDL_MOUSEWHEEL && wheely)
+          else if (event.type == SDL_MOUSEBUTTONDOWN && wheely && event.button.button >= 4 && event.button.button <= 5)
             {
               int most = 14;
               int num_rows_needed;
-              int xpos, ypos;
               SDL_Rect r_controls;
               SDL_Rect r_notcontrols;
               SDL_Rect r_items; /* = r_notcontrols; */
-
-              SDL_GetMouseState(&xpos, &ypos);
 
               /* Scroll wheel code.
                  WARNING: this must be kept in sync with the mouse-move
@@ -4694,9 +4451,9 @@ static void mainloop(void)
                 {
 
                   /* Left tools scroll */
-                  if (hit_test(&r_tools, xpos, ypos) && NUM_TOOLS > most + TOOLOFFSET)
+                  if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
                     {
-                      int is_upper = (event.wheel.y > 0);
+                      int is_upper = (event.button.button == 4);
 
                       if (is_upper && tool_scroll > 0)
                         {
@@ -4834,7 +4591,7 @@ static void mainloop(void)
                       else
                         {
                           /* scroll button */
-                          int is_upper = (event.wheel.y > (Sint32) 0);
+                          int is_upper = (event.button.button == 4);
 
                           if ((is_upper && *thing_scroll > 0)   /* upper arrow */
                               || (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows) /* lower arrow */
@@ -5109,36 +4866,21 @@ static void mainloop(void)
                                         update_rect.x + update_rect.w, update_rect.y + update_rect.h);
                         }
                     }
-                  else if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
+                  else if (onscreen_keyboard &&
+                           (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT)))
                     {
-                      if (onscreen_keyboard && kbd)
-                        {
-                          osk_released(kbd);
-                          SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                          update_screen_rect(&kbd_rect);
-                          //      SDL_Flip(screen);
-                        }
-
-                      if (onscreen_keyboard && !kbd)
-                        {
-                          SDL_StartTextInput();
-                        }
+                      osk_released(kbd);
+                      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+                      update_screen_rect(&kbd_rect);
+                      //      SDL_Flip(screen);
                     }
                 }
               button_down = 0;
-
-#ifdef __ANDROID__
-              stop_motion_convert(event);
-#endif
             }
           else if (event.type == SDL_MOUSEMOTION && !ignoring_motion)
             {
               new_x = event.button.x - r_canvas.x;
               new_y = event.button.y - r_canvas.y;
-
-#ifdef __ANDROID__
-              convert_motion_to_wheel(event);
-#endif
 
               oldpos_x = event.motion.x;
               oldpos_y = event.motion.y;
@@ -5180,7 +4922,6 @@ static void mainloop(void)
                         {
                           do_setcursor(cursor_arrow);
                         }
-
                     }
 
                   else
@@ -5255,6 +4996,7 @@ static void mainloop(void)
                   if (num_things > max + TOOLOFFSET)
                     {
                       /* Are there scroll buttons? */
+
                       if (event.button.y < 40 + 24)
                         {
                           /* Up button; is it available? */
@@ -5365,20 +5107,16 @@ static void mainloop(void)
                     {
                       /* Still pushing button, while moving:
                          Draw XOR where line will go: */
-
+                      update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
                       line_xor(line_start_x, line_start_y, old_x, old_y);
 
                       line_xor(line_start_x, line_start_y, new_x, new_y);
 
-#ifndef __ANDROID__
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, old_x + r_canvas.x, old_y + r_canvas.y);
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, new_x + r_canvas.x, new_y + r_canvas.y);
-#else
-                      /* Anyway SDL_UpdateRect() backward compatibility function refreshes all the screen on Android */
-                      SDL_UpdateRect(screen, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-#endif
+                      update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
                     }
                   else if (cur_tool == TOOL_SHAPES)
                     {
@@ -5529,11 +5267,12 @@ static void mainloop(void)
                       w = CUR_STAMP_W;
                       h = CUR_STAMP_H;
 
-                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size = (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
-                                                                                 /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                                                                                ) * (event.button.x -
-                                                                                     (WINDOW_WIDTH - 96))) / 96) +
-                        MIN_STAMP_SIZE;
+                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
+                        (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
+                           1
+                           /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
+                           ) * (event.button.x -
+                                (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                       printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -5607,14 +5346,6 @@ static void mainloop(void)
             {
               last_cursor_blink = SDL_GetTicks();
               draw_blinking_cursor();
-            }
-        }
-
-      if (cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL)
-        {
-          if (onscreen_keyboard && !kbd)
-            {
-              SDL_StopTextInput();
             }
         }
 
@@ -6435,8 +6166,6 @@ void show_version(int details)
   printf("  Built for Maemo  (NOKIA_770)\n");
 #elif OLPC_XO
   printf("  Built for XO  (OLPC_XO)\n");
-#elif __ANDROID__
-  printf("  Built for Android  (__ANDROID__)\n");
 #else
   printf("  Built for POSIX\n");
 #endif
@@ -6550,7 +6279,7 @@ void show_usage(int exitcode)
           "  %s [--printcfg | --noprintcfg]\n"
 #endif
           "  %s [--printdelay=SECONDS]\n" "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
           "  %s [--papersize PAPERSIZE | --papersize help]\n"
 #endif
           "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
@@ -6574,7 +6303,7 @@ void show_usage(int exitcode)
           blank,
 #endif
           blank, blank,
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
           blank,
 #endif
           blank, blank, blank, blank, blank, blank, blank, blank, blank, blank);
@@ -6613,8 +6342,6 @@ static unsigned compute_default_scale_factor(double ratio)
 /* directory walking... */
 
 static void loadbrush_callback(SDL_Surface * screen,
-                               SDL_Texture * texture,
-                               SDL_Renderer * renderer,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
@@ -6706,7 +6433,7 @@ static void load_brush_dir(SDL_Surface * screen, const char *restrict const dir)
   unsigned dirlen = strlen(dir);
 
   memcpy(buf, dir, dirlen);
-  tp_ftw(screen, texture, renderer, buf, dirlen, 0, loadbrush_callback, NULL);
+  tp_ftw(screen, buf, dirlen, 0, loadbrush_callback, NULL);
 }
 
 SDL_Surface *mirror_surface(SDL_Surface * s)
@@ -6719,7 +6446,6 @@ SDL_Surface *mirror_surface(SDL_Surface * s)
   /* Mirror surface: */
 
   new_surf = duplicate_surface(s);
-  SDL_SetSurfaceBlendMode(s, SDL_BLENDMODE_NONE);
 
   if (new_surf != NULL)
     {
@@ -6756,7 +6482,6 @@ SDL_Surface *flip_surface(SDL_Surface * s)
   /* Flip surface: */
 
   new_surf = duplicate_surface(s);
-  SDL_SetSurfaceBlendMode(s, SDL_BLENDMODE_NONE);
 
   if (new_surf != NULL)
     {
@@ -7506,8 +7231,6 @@ static void get_stamp_thumb(stamp_type * sd)
 
 
 static void loadstamp_callback(SDL_Surface * screen,
-                               SDL_Texture * texture,
-                               SDL_Renderer * renderer,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
@@ -7600,7 +7323,7 @@ static void loadstamp_callback(SDL_Surface * screen,
       show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
-          && (dotext - files[i].str + 1 + dirlen < (int)(sizeof fname))
+          && (dotext - files[i].str + 1 + dirlen < (int) (sizeof fname))
           && !strcasestr(files[i].str, mirror_ext)
           && !strcasestr(files[i].str, flip_ext) && !strcasestr(files[i].str, mirrorflip_ext))
         {
@@ -7643,7 +7366,7 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
 
   memcpy(buf, dir, dirlen);
   load_stamp_basedir = dir;
-  tp_ftw(screen, texture, renderer, buf, dirlen, 0, loadstamp_callback, NULL);
+  tp_ftw(screen, buf, dirlen, 0, loadstamp_callback, NULL);
 }
 
 
@@ -7654,11 +7377,7 @@ static void load_stamps(SDL_Surface * screen)
   default_stamp_size = compute_default_scale_factor(1.0);
 
   load_stamp_dir(screen, homedirdir);
-#ifndef __ANDROID__
   load_stamp_dir(screen, DATA_PREFIX "stamps");
-#else
-  load_stamp_dir(screen, ASSETS_STAMPS_DIR);
-#endif
 #ifdef __APPLE__
   load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
@@ -7682,7 +7401,7 @@ static void load_stamps(SDL_Surface * screen)
 #ifndef FORKED_FONTS
 static int load_user_fonts_stub(void *vp)
 {
-  return load_user_fonts(screen, texture, renderer, vp, NULL);
+  return load_user_fonts(screen, vp, NULL);
 }
 #endif
 
@@ -7701,9 +7420,7 @@ int generate_fontconfig_cache_spinner(SDL_Surface * screen)
 
       while (SDL_PollEvent(&event) > 0)
         {
-          if (event.type == SDL_QUIT ||
-              (event.type == SDL_KEYDOWN
-               && (event.key.keysym.sym == SDLK_ESCAPE || event.key.keysym.sym == SDLK_AC_BACK)))
+          if (event.type == SDL_QUIT || (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
             {
               printf("Aborting!\n");
               fflush(stdout);
@@ -7875,8 +7592,8 @@ static void seticon(void)
   memset(mask, 0xFF, masklen);
 
   /* Set icon: */
-  //  SDL_WM_SetIcon(icon, mask);
-  SDL_SetWindowIcon(window_screen, icon);
+  SDL_WM_SetIcon(icon, mask);
+
   /* Free icon surface & mask: */
   free(mask);
 #else
@@ -7891,7 +7608,7 @@ static void seticon(void)
   if (grab_input)
     {
       debug("Grabbing input!");
-      SDL_SetWindowGrab(window_screen, SDL_TRUE);
+      SDL_WM_GrabInput(SDL_GRAB_ON);
     }
 }
 
@@ -8293,6 +8010,7 @@ static unsigned draw_colors(unsigned action)
 #else
       dest.w = color_button_w;
       dest.h = color_button_h;
+
       if (colors_state == COLORSEL_ENABLE)
         SDL_FillRect(screen, &dest,
                      SDL_MapRGB(screen->format, color_hexes[i][0], color_hexes[i][1], color_hexes[i][2]));
@@ -9266,6 +8984,7 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
   Uint32(*getpixel) (SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
 
   /* Determine scale and centering offsets: */
+
   if (!keep_aspect)
     {
       yscale = (float)((float)src->h / (float)max_y);
@@ -10108,10 +9827,6 @@ static void reset_avail_tools(void)
     disallow_print = disable_print = 1;
 #endif
 
-#if defined __ANDROID__
-  if (!IsPrinterAvailable())
-    disallow_print = disable_print = 1;
-#endif
 
   /* Disable print? */
 
@@ -11362,9 +11077,6 @@ static void load_starter(char *img_id)
   if (tmp_surf != NULL)
     {
       img_starter = SDL_DisplayFormatAlpha(tmp_surf);
-      //SDL_SetSurfaceAlphaMod(img_starter, SDL_ALPHA_OPAQUE);
-      //SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
-      printf("QQQQ\n");
       SDL_FreeSurface(tmp_surf);
     }
 
@@ -11475,13 +11187,9 @@ static void load_starter(char *img_id)
                                          tmp_surf->format->Gmask, tmp_surf->format->Bmask, tmp_surf->format->Amask);
 
       /* 3rd arg ignored for RGBA surfaces */
-      //    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-      //SDL_SetSurfaceBlendMode(tmp_surf, SDL_BLENDMODE_BLEND);
-
+      SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
       autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
-      //    SDL_SetAlpha(img_starter, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-      SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
-
+      SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
     }
 
 
@@ -11576,12 +11284,16 @@ static void load_template(char *img_id)
 }
 
 
+/* Load current (if any) image: */
+
+static void load_current(void)
+{
+  SDL_Surface *tmp, *org_surf;
+  char *fname;
+  char ftmp[1024];
+  FILE *fi;
 
   /* Determine the current picture's ID: */
-static void determine_id(void)
-{
-  char *fname;
-  FILE *fi;
 
   fname = get_fname("current_id.txt", DIR_SAVE);
 
@@ -11608,39 +11320,7 @@ static void determine_id(void)
     }
 
   free(fname);
-}
 
-
-/* Load current (if any) image: */
-
-static void load_current(void)
-{
-  SDL_Surface *tmp, *org_surf;
-  char *fname;
-  char ftmp[1024];
-  FILE *fi;
-
-  int found_autosaved = 0;
-
-#ifdef AUTOSAVE_GOING_BACKGROUND
-  /* Look for an automatically saved file */
-
-  snprintf(ftmp, sizeof(ftmp), "saved/%s%s", AUTOSAVED_NAME, FNAME_EXTENSION);
-  fname = get_fname(ftmp, DIR_SAVE);
-
-  fi = fopen(fname, "r");
-  if (fi != NULL)
-    {
-      snprintf(file_id, sizeof(file_id), "%s", AUTOSAVED_NAME);
-      file_id[strlen(file_id)] = '\0';
-      found_autosaved = 1;
-      fclose(fi);
-      free(fname);
-    }
-#endif
-
-  if (!found_autosaved)
-    determine_id();
 
   /* Load that image: */
 
@@ -11696,25 +11376,6 @@ static void load_current(void)
         }
 
       free(fname);
-    }
-
-  if (!found_autosaved)
-    {
-      been_saved = 1;
-      tool_avail[TOOL_SAVE] = 0;
-    }
-  else
-    {
-      /* Set file_id to the draw that were edited when the autosave triggered */
-      determine_id();
-      snprintf(ftmp, sizeof(ftmp), "saved/%s%s", AUTOSAVED_NAME, FNAME_EXTENSION);
-      fname = get_fname(ftmp, DIR_SAVE);
-      unlink(fname);
-      free(fname);
-
-      /* The autosaved file comes from work that was not explicitely saved */
-      been_saved = 0;
-      tool_avail[TOOL_SAVE] = 1;
     }
 }
 
@@ -11900,7 +11561,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
 #ifndef NO_PROMPT_SHADOWS
-  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
                                     (PROMPT_W - 96 * 2) + (w - 4) * 2,
                                     (w - 4) * 2,
                                     screen->format->BitsPerPixel,
@@ -11909,10 +11570,8 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (alpha_surf != NULL)
     {
-
       SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
-
+      SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -12084,7 +11743,7 @@ static int do_prompt_image_flash_snd(const char *const text,
               ans = 0;
               done = 1;
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -12110,7 +11769,7 @@ static int do_prompt_image_flash_snd(const char *const text,
                   ans = 1;
                   done = 1;
                 }
-              else if (key == key_n || key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+              else if (key == key_n || key == SDLK_ESCAPE)
                 {
                   /* N or ESCAPE - No! */
 
@@ -12121,7 +11780,7 @@ static int do_prompt_image_flash_snd(const char *const text,
                     }
                   else
                     {
-                      if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+                      if (key == SDLK_ESCAPE)
                         {
                           /* ESCAPE also simply dismisses if there's no Yes/No
                              choice: */
@@ -12386,11 +12045,6 @@ static void cleanup(void)
       free_surface(&img_oskenter);
       free_surface(&img_oskcapslock);
       free_surface(&img_oskshift);
-
-      if (kbd)
-        osk_free(kbd);
-      else
-        SDL_StopTextInput();
     }
 
   free_surface(&screen);
@@ -12502,8 +12156,7 @@ static void cleanup(void)
 
   /* (Just in case...) */
 
-  //  SDL_WM_GrabInput(SDL_GRAB_OFF);
-  SDL_SetWindowGrab(window_screen, SDL_FALSE);
+  SDL_WM_GrabInput(SDL_GRAB_OFF);
 
 
   /* If we're using a lockfile, we can 'clear' it when we quit
@@ -12541,15 +12194,14 @@ static void cleanup(void)
       free(lock_fname);
     }
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__ANDROID__)
+  if (kbd)
+    osk_free(kbd);
+
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 //  if (papersize != NULL)
 //    free(papersize);
 #endif
 
-
-  SDL_DestroyTexture(texture);
-  SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window_screen);
 
   /* Close up! */
 
@@ -12931,7 +12583,7 @@ static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* Save the current image: */
 
-static int do_save(int tool, int dont_show_success_results, int autosave)
+static int do_save(int tool, int dont_show_success_results)
 {
   char *fname;
   char tmp[1024];
@@ -12939,7 +12591,8 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
   FILE *fi;
 
   /* Was saving completely disabled? */
-  if (disable_save && !autosave)
+
+  if (disable_save)
     return 0;
 
   tmp_apply_uncommited_text();
@@ -12947,11 +12600,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-  if (autosave)
-    {
-      /* No prompts, no progressbar, always save to autosave.png */
-    }
-  else if (promptless_save == SAVE_OVER_NO)
+  if (promptless_save == SAVE_OVER_NO)
     {
       /* Never save over - _always_ save a new file! */
 
@@ -12994,11 +12643,8 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 
   /* Make sure we have a ~/.tuxpaint directory: */
 
-  if (!autosave)
-    {
-      show_progress_bar(screen);
-      do_setcursor(cursor_watch);
-    }
+  show_progress_bar(screen);
+  do_setcursor(cursor_watch);
 
   if (!make_directory("", "Can't create user data directory"))
     {
@@ -13007,10 +12653,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
       return 0;
     }
 
-  if (!autosave)
-    {
-      show_progress_bar(screen);
-    }
+  show_progress_bar(screen);
 
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
@@ -13022,10 +12665,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
       return 0;
     }
 
-  if (!autosave)
-    {
-      show_progress_bar(screen);
-    }
+  show_progress_bar(screen);
 
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
@@ -13037,18 +12677,21 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
       return 0;
     }
 
-  if (!autosave)
+  show_progress_bar(screen);
+
+  /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
+
+  if (!make_directory("saved/.label", "Can't create label information directory"))
     {
-      show_progress_bar(screen);
+      fprintf(stderr, "Cannot save label information! SORRY!\n\n");
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
+      return 0;
     }
 
 
   /* Save the file: */
 
-  if (autosave)
-    snprintf(tmp, sizeof(tmp), "saved/AUTOSAVED%s", FNAME_EXTENSION);
-  else
-    snprintf(tmp, sizeof(tmp), "saved/%s%s", file_id, FNAME_EXTENSION);
+  snprintf(tmp, sizeof(tmp), "saved/%s%s", file_id, FNAME_EXTENSION);
   fname = get_fname(tmp, DIR_SAVE);
   debug(fname);
 
@@ -13072,10 +12715,6 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 
   free(fname);
 
-
-  if (autosave)
-    /* No more process needed */
-    return 1;
 
   show_progress_bar(screen);
 
@@ -13481,13 +13120,6 @@ static void do_png_embed_data(png_structp png_ptr)
                   conv[0] = '\0';
                   fprintf(lfi, "%s", conv2);
                 }
-#elif defined(__ANDROID__)
-              fprintf(lfi, "%u\n", current_node->save_texttool_len);
-
-              for (i = 0; i < current_node->save_texttool_len; i++)
-                {
-                  fprintf(lfi, "%d ", (int)current_node->save_texttool_str[i]);
-                }
 #else
               fprintf(lfi, "%u\n", current_node->save_texttool_len);
 
@@ -13768,7 +13400,7 @@ static int do_quit(int tool)
       if (autosave_on_quit ||
           do_prompt(PROMPT_QUIT_SAVE_TXT, PROMPT_QUIT_SAVE_YES, PROMPT_QUIT_SAVE_NO, screen->w / 2, screen->h / 2))
         {
-          if (do_save(tool, 1, 0))
+          if (do_save(tool, 1))
             {
               /* Don't bug user about successful save when quitting -bjk 2007.05.15 */
               /* do_prompt(tool_tips[TOOL_SAVE], "OK", ""); */
@@ -14316,7 +13948,7 @@ static int do_open(void)
 
                       /* FIXME: Handle SDL_Quit better */
                     }
-                  else if (event.type == SDL_WINDOWEVENT)
+                  else if (event.type == SDL_ACTIVEEVENT)
                     {
                       handle_active(&event);
                     }
@@ -14395,7 +14027,7 @@ static int do_open(void)
                           done = 1;
                           playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
                         }
-                      else if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+                      else if (key == SDLK_ESCAPE)
                         {
                           /* Go back: */
 
@@ -14524,21 +14156,13 @@ static int do_open(void)
 
                           want_erase = 1;
                         }
-#ifdef __ANDROID__
-                      start_motion_convert(event);
-#endif
                     }
-                  else if (event.type == SDL_MOUSEBUTTONUP)
-                    {
-#ifdef __ANDROID__
-                      stop_motion_convert(event);
-#endif
-                    }
-                  else if (event.type == SDL_MOUSEWHEEL && wheely)
+                  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+                           event.button.button >= 4 && event.button.button <= 5 && wheely)
                     {
                       /* Scroll wheel! */
 
-                      if (event.wheel.y > 0 && cur > 0)
+                      if (event.button.button == 4 && cur > 0)
                         {
                           cur = cur - 4;
                           update_list = 1;
@@ -14550,7 +14174,7 @@ static int do_open(void)
                           if (which >= cur + 16)
                             which = which - 4;
                         }
-                      else if (event.wheel.y < 0 && cur < num_files - 16)
+                      else if (event.button.button == 5 && cur < num_files - 16)
                         {
                           cur = cur + 4;
                           update_list = 1;
@@ -14614,11 +14238,6 @@ static int do_open(void)
 
                           do_setcursor(cursor_arrow);
                         }
-
-#ifdef __ANDROID__
-                      convert_motion_to_wheel(event);
-#endif
-
                       oldpos_x = event.button.x;
                       oldpos_y = event.button.y;
                     }
@@ -14771,7 +14390,7 @@ static int do_open(void)
                                               img_tools[TOOL_SAVE], NULL, NULL,
                                               SND_AREYOUSURE, screen->w / 2, screen->h / 2))
                         {
-                          do_save(TOOL_OPEN, 1, 0);
+                          do_save(TOOL_OPEN, 1);
                         }
                     }
 
@@ -15337,7 +14956,7 @@ static int do_slideshow(void)
 
               /* FIXME: Handle SDL_Quit better */
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -15373,7 +14992,7 @@ static int do_slideshow(void)
 
 
                 }
-              else if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+              else if (key == SDLK_ESCAPE)
                 {
                   /* Go back: */
 
@@ -15537,21 +15156,12 @@ static int do_slideshow(void)
                   done = 1;
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
-#ifdef __ANDROID__
-              start_motion_convert(event);
-#endif
             }
-          else if (event.type == SDL_MOUSEBUTTONUP)
-            {
-#ifdef __ANDROID__
-              stop_motion_convert(event);
-#endif
-            }
-          else if (event.type == SDL_MOUSEWHEEL && wheely)
+          else if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button >= 4 && event.button.button <= 5 && wheely)
             {
               /* Scroll wheel! */
 
-              if (event.wheel.y > 0 && cur > 0)
+              if (event.button.button == 4 && cur > 0)
                 {
                   cur = cur - 4;
                   update_list = 1;
@@ -15563,7 +15173,7 @@ static int do_slideshow(void)
                   if (which >= cur + 16)
                     which = which - 4;
                 }
-              else if (event.wheel.y < 0 && cur < num_files - 16)
+              else if (event.button.button == 5 && cur < num_files - 16)
                 {
                   cur = cur + 4;
                   update_list = 1;
@@ -15624,11 +15234,6 @@ static int do_slideshow(void)
 
                   do_setcursor(cursor_arrow);
                 }
-
-#ifdef __ANDROID__
-              convert_motion_to_wheel(event);
-#endif
-
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
             }
@@ -15789,7 +15394,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
                       next = 1;
                       done = 1;
                     }
-                  else if (event.type == SDL_WINDOWEVENT)
+                  else if (event.type == SDL_ACTIVEEVENT)
                     {
                       handle_active(&event);
                     }
@@ -15818,7 +15423,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
                           next = 1;
                           playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
                         }
-                      else if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+                      else if (key == SDLK_ESCAPE)
                         {
                           /* Go back: */
 
@@ -16275,7 +15880,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
   const char *pcmd;
   FILE *pi;
 
@@ -16327,40 +15932,6 @@ void do_print(void)
   /* BeOS */
 
   SurfacePrint(save_canvas);
-
-#elif defined(__ANDROID__)
-
-  int x, y;
-  Uint8 src_r, src_g, src_b, src_a;
-  SDL_Surface *save_canvas_and = SDL_CreateRGBSurface(0,
-                                                      WINDOW_WIDTH - (96 * 2),
-                                                      (48 * 7) + 40 + HEIGHTOFFSET,
-                                                      screen->format->BitsPerPixel,
-                                                      screen->format->Rmask,
-                                                      screen->format->Gmask,
-                                                      screen->format->Bmask, 0);
-
-
-  for (x = 0; x < save_canvas->w; x++)
-    for (y = 0; y < save_canvas->h; y++)
-      {
-        SDL_GetRGBA(getpixels[save_canvas->format->BytesPerPixel] (save_canvas, x, y),
-                    save_canvas->format, &src_r, &src_g, &src_b, &src_a);
-
-        putpixels[save_canvas_and->format->BytesPerPixel] (save_canvas_and, x, y,
-                                                           SDL_MapRGBA(save_canvas_and->format, src_r, src_g, src_b,
-                                                                       SDL_ALPHA_OPAQUE));
-      }
-
-  const char *error = SurfacePrint(save_canvas_and);
-
-  if (error)
-    {
-      fprintf(stderr, "Cannot print: %s\n", error);
-      do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
-    }
-  SDL_FreeSurface(save_canvas_and);
-
 #endif
 
 #endif
@@ -16431,8 +16002,6 @@ static void do_render_cur_text(int do_blit)
 
       w = tmp_surf->w;
       h = tmp_surf->h;
-      r_tir.h = (float)tmp_surf->h / render_scale;
-      r_tir.w = (float)tmp_surf->w / render_scale;
 
       cursor_textwidth = w;
     }
@@ -16822,7 +16391,7 @@ static void draw_image_title(int t, SDL_Rect dest)
 /* Handle keyboard events to control the mouse: */
 /* Move as many pixels as bigsteps outside the areas,
    in the areas and 5 pixels around, move 1 pixel at a time */
-static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * area1, SDL_Rect * area2)
+static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect * area1, SDL_Rect * area2)
 {
   int left, right, up, bottom;
   SDL_Event event;
@@ -16912,7 +16481,8 @@ static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * are
         {
           if (key == SDLK_INSERT || key == SDLK_F5 ||
               ((cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL) &&
-               (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP_5)))
+               (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP5)))
+
             {
               event.type = SDL_MOUSEBUTTONUP;
               event.button.x = oldpos_x;
@@ -16947,7 +16517,7 @@ static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * are
 
           else if (cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL)
             {
-              if (!button_down && (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP_5))
+              if (!button_down && (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP5))
                 {
                   event.type = SDL_MOUSEBUTTONDOWN;
                   event.button.x = oldpos_x;
@@ -16956,28 +16526,28 @@ static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * are
                   SDL_PushEvent(&event);
                 }
 
-              else if (key == SDLK_1 || key == SDLK_KP_1)
+              else if (key == SDLK_1 || key == SDLK_KP1)
                 SDL_WarpMouse(left, bottom);
 
-              else if (key == SDLK_3 || key == SDLK_KP_3)
+              else if (key == SDLK_3 || key == SDLK_KP3)
                 SDL_WarpMouse(right, bottom);
 
-              else if (key == SDLK_7 || key == SDLK_KP_7)
+              else if (key == SDLK_7 || key == SDLK_KP7)
                 SDL_WarpMouse(left, up);
 
-              else if (key == SDLK_9 || key == SDLK_KP_9)
+              else if (key == SDLK_9 || key == SDLK_KP9)
                 SDL_WarpMouse(right, up);
 
-              else if (key == SDLK_2 || key == SDLK_KP_2)
+              else if (key == SDLK_2 || key == SDLK_KP2)
                 SDL_WarpMouse(oldpos_x, bottom);
 
-              else if (key == SDLK_8 || key == SDLK_KP_8)
+              else if (key == SDLK_8 || key == SDLK_KP8)
                 SDL_WarpMouse(oldpos_x, up);
 
-              else if (key == SDLK_6 || key == SDLK_KP_6)
+              else if (key == SDLK_6 || key == SDLK_KP6)
                 SDL_WarpMouse(right, oldpos_y);
 
-              else if (key == SDLK_4 || key == SDLK_KP_4)
+              else if (key == SDLK_4 || key == SDLK_KP4)
                 SDL_WarpMouse(left, oldpos_y);
 
               /* FIXME: This is qwerty centric and interferes with gettexted reponses for yes/no,
@@ -17113,16 +16683,22 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
 
 static void handle_active(SDL_Event * event)
 {
-  if (event->window.event == SDL_WINDOWEVENT_EXPOSED || SDL_WINDOWEVENT_RESTORED)
+  if (event->active.state & SDL_APPACTIVE)
     {
-      //      if (fullscreen)
-      SDL_Flip(screen);
-    }
-  if (event->window.event == SDL_WINDOWEVENT_FOCUS_GAINED)
-    {
-      if (mouseaccessibility)
+      if (event->active.gain == 1)
         {
-          magic_switchin(canvas);
+          if (fullscreen)
+            SDL_Flip(screen);
+        }
+    }
+  if (event->active.state & SDL_APPINPUTFOCUS | SDL_APPACTIVE)
+    {
+      if (event->active.gain == 1)
+        {
+          if (mouseaccessibility)
+            {
+              magic_switchin(canvas);
+            }
         }
       else if (mouseaccessibility && emulate_button_pressed)
         {
@@ -17582,7 +17158,7 @@ static SDL_Surface *load_svg(char *file)
 #ifdef DEBUG
       fprintf(stderr, "Unable to allocate image buffer\n");
 #endif
-      rsvg_handle_close(rsvg_handle, &gerr);
+      g_object_unref(rsvg_handle);
       return (NULL);
     }
 
@@ -17596,7 +17172,7 @@ static SDL_Surface *load_svg(char *file)
 #ifdef DEBUG
       fprintf(stderr, "cairo_image_surface_create() failed\n");
 #endif
-      rsvg_handle_close(rsvg_handle, &gerr);
+      g_object_unref(rsvg_handle);
       free(image);
       return (NULL);
     }
@@ -17610,7 +17186,7 @@ static SDL_Surface *load_svg(char *file)
 #ifdef DEBUG
       fprintf(stderr, "cairo_create() failed\n");
 #endif
-      rsvg_handle_close(rsvg_handle, &gerr);
+      g_object_unref(rsvg_handle);
       cairo_surface_destroy(cairo_surf);
       free(image);
       return (NULL);
@@ -17644,7 +17220,7 @@ static SDL_Surface *load_svg(char *file)
 #ifdef DEBUG
       fprintf(stderr, "SDL_CreateRGBSurfaceFrom() failed\n");
 #endif
-      rsvg_handle_close(rsvg_handle, &gerr);
+      g_object_unref(rsvg_handle);
       cairo_surface_destroy(cairo_surf);
       free(image);
       cairo_destroy(cr);
@@ -17660,7 +17236,7 @@ static SDL_Surface *load_svg(char *file)
 #ifdef DEBUG
       fprintf(stderr, "SDL_DisplayFormatAlpha() failed\n");
 #endif
-      rsvg_handle_close(rsvg_handle, &gerr);
+      g_object_unref(rsvg_handle);
       cairo_surface_destroy(cairo_surf);
       free(image);
       cairo_destroy(cr);
@@ -17675,7 +17251,7 @@ static SDL_Surface *load_svg(char *file)
 
   /* Clean up: */
 
-  rsvg_handle_close(rsvg_handle, &gerr);
+  g_object_unref(rsvg_handle);
   cairo_surface_destroy(cairo_surf);
   free(image);
   cairo_destroy(cr);
@@ -17929,10 +17505,6 @@ static void load_magic_plugins(void)
                       strcpy(objname, f->d_name);
                       strcpy(strchr(objname, '.'), "");
 
-#if defined(__ANDROID__)
-                      // since Android compiles magic tools with name like "libxxx.so", here we shall exclude the prefix "lib".
-                      strcpy(objname, objname + 3);
-#endif
 
                       magic_handle[num_plugin_files] = SDL_LoadObject(fname);
 
@@ -18546,33 +18118,6 @@ static int do_new_dialog(void)
 
           closedir(d);
         }
-#ifdef __ANDROID__
-      else if (dirname[places_to_look][0] != "/")
-        {
-          /* Try inside android assets only if it is a relative path */
-
-          AAssetDir *ad = open_asset_dir(dirname[places_to_look]);
-          const char *afilename = (const char *)NULL;
-
-          while ((afilename = AAssetDir_getNextFileName(ad)) != NULL)
-            {
-              f = malloc(sizeof(struct dirent));
-              strncpy(f->d_name, afilename, sizeof(f->d_name));
-
-              memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
-              fs[num_files_in_dirs].place = places_to_look;
-              free(f);
-              num_files_in_dirs++;
-
-              if (num_files_in_dirs >= things_alloced)
-                {
-                  things_alloced = things_alloced + 32;
-
-                  fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
-                }
-            }
-        }
-#endif
     }
 
 
@@ -19092,7 +18637,7 @@ static int do_new_dialog(void)
 
               /* FIXME: Handle SDL_Quit better */
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -19171,7 +18716,7 @@ static int do_new_dialog(void)
                   done = 1;
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
                 }
-              else if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+              else if (key == SDLK_ESCAPE)
                 {
                   /* Go back: */
 
@@ -19267,21 +18812,12 @@ static int do_new_dialog(void)
                   done = 1;
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
-#ifdef __ANDROID__
-              start_motion_convert(event);
-#endif
             }
-          else if (event.type == SDL_MOUSEBUTTONUP)
-            {
-#ifdef __ANDROID__
-              stop_motion_convert(event);
-#endif
-            }
-          else if (event.type == SDL_MOUSEWHEEL && wheely)
+          else if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button >= 4 && event.button.button <= 5 && wheely)
             {
               /* Scroll wheel! */
 
-              if (event.wheel.y > 0 && cur > 0)
+              if (event.button.button == 4 && cur > 0)
                 {
                   cur = cur - 4;
                   update_list = 1;
@@ -19293,7 +18829,7 @@ static int do_new_dialog(void)
                   if (which >= cur + 16)
                     which = which - 4;
                 }
-              else if (event.wheel.y < 0 && cur < num_files - 16)
+              else if (event.button.button == 5 && cur < num_files - 16)
                 {
                   cur = cur + 4;
                   update_list = 1;
@@ -19357,11 +18893,6 @@ static int do_new_dialog(void)
 
                   do_setcursor(cursor_arrow);
                 }
-
-#ifdef __ANDROID__
-              convert_motion_to_wheel(event);
-#endif
-
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
             }
@@ -19400,7 +18931,7 @@ static int do_new_dialog(void)
                                   PROMPT_OPEN_SAVE_NO,
                                   img_tools[TOOL_SAVE], NULL, NULL, SND_AREYOUSURE, screen->w / 2, screen->h / 2))
             {
-              do_save(TOOL_NEW, 1, 0);
+              do_save(TOOL_NEW, 1);
             }
         }
 
@@ -19736,7 +19267,7 @@ static int do_color_sel(void)
 
 
 #ifndef NO_PROMPT_SHADOWS
-  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
                                     r_color_sel.w,
                                     r_color_sel.h,
                                     screen->format->BitsPerPixel,
@@ -19746,7 +19277,7 @@ static int do_color_sel(void)
   if (alpha_surf != NULL)
     {
       SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
+      SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -19830,11 +19361,8 @@ static int do_color_sel(void)
   done = 0;
   chose = 0;
   x = y = 0;
-#ifndef __ANDROID__
-  /* FIXME: Strangely, this SDL_WarpMouse makes further event.button.x/y to be 0 on Android, thus making the selector unresponsive.
-     Needs testing on other operating sistems with touchscreen.  */
   SDL_WarpMouse(r_color_sel.x + r_color_sel.w / 2, r_color_sel.y + r_color_sel.h / 2);
-#endif
+
   do
     {
       while (SDL_PollEvent(&event))
@@ -19844,7 +19372,7 @@ static int do_color_sel(void)
               chose = 0;
               done = 1;
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -20126,7 +19654,7 @@ static int do_color_picker(void)
   SDL_BlitSurface(backup, NULL, screen, NULL);
 
 #ifndef NO_PROMPT_SHADOWS
-  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
                                     (PROMPT_W - 96 * 2) + (w - 4) * 2,
                                     (w - 4) * 2,
                                     screen->format->BitsPerPixel,
@@ -20136,8 +19664,7 @@ static int do_color_picker(void)
   if (alpha_surf != NULL)
     {
       SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
-
+      SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -20279,7 +19806,7 @@ static int do_color_picker(void)
               chose = 0;
               done = 1;
             }
-          else if (event.type == SDL_WINDOWEVENT)
+          else if (event.type == SDL_ACTIVEEVENT)
             {
               handle_active(&event);
             }
@@ -20295,7 +19822,7 @@ static int do_color_picker(void)
 
               handle_keymouse(key, SDL_KEYDOWN, 24, &r_color_picker, NULL);
 
-              if (key == SDLK_ESCAPE || key == SDLK_AC_BACK)
+              if (key == SDLK_ESCAPE)
                 {
                   chose = 0;
                   done = 1;
@@ -20427,8 +19954,6 @@ static int do_color_picker(void)
       rh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][0]];
       gh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][1]];
       bh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][2]];
-      SDL_BlitSurface(tmp_btn_down, NULL, img_color_btns[NUM_COLORS - 1], NULL);
-      SDL_BlitSurface(tmp_btn_up, NULL, img_color_btns[NUM_COLORS - 1 + NUM_COLORS], NULL);
 
       SDL_LockSurface(img_color_btns[NUM_COLORS - 1]);
       SDL_LockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
@@ -21031,7 +20556,7 @@ static void load_info_about_label_surface(FILE * lfi)
   int new_pos;
   int x, y;
   int tmp_fscanf_return;
-  char *tmp_fgets_return;
+  char * tmp_fgets_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -21082,13 +20607,6 @@ static void load_info_about_label_surface(FILE * lfi)
           new_node->save_texttool_str[l] = wtmpstr[l];
         }
 
-#elif defined(__ANDROID__)
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        {
-          fscanf(lfi, "%d ", &tmp_char);
-          new_node->save_texttool_str[l] = tmp_char;
-        }
-      fscanf(lfi, "\n");
 #else
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
@@ -21710,10 +21228,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
           /* First we search for the things that usually were in the .dat file, so if a starter or a
              template is found and if it is not modified, we can load it clean (i.e. not rebluring a
-             blured when scaled one) */
+             blured when scaled one)*/
           for (u = 0; u < num_unknowns; u++)
             {
-              printf("%s, %d\n", unknowns[u].name, (int)unknowns[u].size);
+              printf("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
 
               if (chunk_is_valid("tpDT", unknowns[u]))
                 {
@@ -21964,11 +21482,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                                                          canvas->format->Gmask, canvas->format->Bmask, TPAINT_AMASK);
 
                       /* 3rd arg ignored for RGBA surfaces */
-                      //      SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-                      SDL_SetSurfaceBlendMode(aux_surf, SDL_BLENDMODE_NONE);
+                      SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
                       autoscale_copy_smear_free(aux_surf, img_starter, NondefectiveBlit);
-                      //      SDL_SetAlpha(img_starter, SDL_ALPHA_OPAQUE);
-                      SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_NONE);
+                      SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
 
                       free(unc_buff);
                     }
@@ -21984,7 +21500,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* ================================================================================== */
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;
@@ -22038,14 +21554,12 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
         *arg++ = '\0';
 
 #ifdef __linux__
-#ifndef __ANDROID__
       /* Perform shell expansion */
       wordexp_t result;
 
       wordexp(arg, &result, 0);
       arg = strdup(result.we_wordv[0]);
       wordfree(&result);
-#endif
 #endif
 
       /* FIXME: leaking mem here, but the trouble is that these
@@ -22054,9 +21568,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
          of the strings end up being kept around */
       parse_one_option(tmpcfg, str, strdup(arg), filename);
 #ifdef __linux__
-#ifndef __ANDROID__
       free(arg);
-#endif
 #endif
     }
   fclose(fi);
@@ -22166,7 +21678,7 @@ static void setup_config(char *argv[])
 {
   char str[128];
 
-#if !defined(_WIN32) && !defined(__ANDROID__)
+#ifndef _WIN32
   const char *home = getenv("HOME");
 #endif
 
@@ -22193,7 +21705,7 @@ static void setup_config(char *argv[])
 
   /* Set default options: */
 
-#if !defined(_WIN32) && !defined(__ANDROID__)
+#ifndef _WIN32
   if (!home)
     {
       /* Woah, don't know where $HOME is? */
@@ -22219,12 +21731,9 @@ static void setup_config(char *argv[])
       result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
-      savedir = strdup(macos.preferencesPath());
-#elif __ANDROID__
-      savedir = SDL_AndroidGetExternalStoragePath();
+      savedir = strdup(macos_preferencesPath());
 #else
       int tmp;
-
       tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
       if (tmp < 0)
         {
@@ -22244,11 +21753,8 @@ static void setup_config(char *argv[])
   strcpy(str, "tuxpaint.cfg");
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos.preferencesPath());
-#elif defined(__ANDROID__)
-  /* Try to find the user's config file */
-  /* This file is writed by the tuxpaint config activity when the user runs it */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", SDL_AndroidGetExternalStoragePath());
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_preferencesPath());
+
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
   /* it should it be "~/.tuxpaint/tuxpaintrc" instead, but too late now */
@@ -22277,13 +21783,8 @@ static void setup_config(char *argv[])
       /* EP added this conditional section for Mac to fix
          folder & extension inconsistency with Tux Paint Config application) */
       /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
-         application support folder */
+application support folder */
       snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_globalPreferencesPath());
-      parse_file_options(&tmpcfg_sys, str);
-#elif defined(__ANDROID__)
-      /* Load the config file we provide in assets/etc/tuxpaint.cfg */
-      snprintf(str, sizeof(str), "etc/tuxpaint.cfg");
-
       parse_file_options(&tmpcfg_sys, str);
 #else
       /* normally /etc/tuxpaint/tuxpaint.conf */
@@ -22393,9 +21894,9 @@ static void setup_config(char *argv[])
     }
   /* FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button) */
   if (tmpcfg.rotate_orientation)
-    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait");        /* alternative is "landscape" */
+    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); /* alternative is "landscape" */
   if (tmpcfg.colorfile)
-    strcpy(colorfile, tmpcfg.colorfile);        /* FIXME can overflow */
+    strcpy(colorfile, tmpcfg.colorfile); /* FIXME can overflow */
   if (tmpcfg.print_delay)
     {
       print_delay = atoi(tmpcfg.print_delay);
@@ -22415,7 +21916,7 @@ static void setup_config(char *argv[])
       else if (!strcmp(tmpcfg.alt_print_command_default, "never"))
         alt_print_command_default = ALTPRINT_NEVER;
       else
-        alt_print_command_default = ALTPRINT_MOD;       /* default ("mod") */
+        alt_print_command_default = ALTPRINT_MOD; /* default ("mod") */
     }
 #ifdef PAPER_H
   if (tmpcfg.papersize)
@@ -22718,16 +22219,16 @@ static void setup_config(char *argv[])
 static void chdir_to_binary(char *argv0)
 {
   /*
-     char curdir[256];
-   */
+  char curdir[256];
+  */
   /* EP added this block to print out of current directory */
 
   /*
-     getcwd(curdir, sizeof(curdir));
-     #ifdef DEBUG
-     printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
-     #endif
-   */
+  getcwd(curdir, sizeof(curdir));
+#ifdef DEBUG
+  printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
+#endif
+  */
 
 #if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
@@ -22749,12 +22250,12 @@ static void chdir_to_binary(char *argv0)
       // E.g., "/Applications/TuxPaint.app/Contents/MacOS/tuxpaint"
       // But we want to point somewhere higher up, say to "Contents", so we can access
       // the resources in Resources folder. So move up one level.
-      int levels = 1;           /* we need to back up 1 level */
+      int levels = 1; /* we need to back up 1 level */
 
       while ((levels-- > 0) && (slash))
         {
-          *slash = '\0';        /* this overwrites the \0 at end of string */
-          slash = strrchr(app_path, '/');       /* so we can carry on our back-pedaling... */
+          *slash = '\0'; /* this overwrites the \0 at end of string */
+          slash = strrchr(app_path, '/'); /* so we can carry on our back-pedaling... */
         }
 #endif
 
@@ -22769,9 +22270,9 @@ static void chdir_to_binary(char *argv0)
         }
       free(app_path);
       /*
-         getcwd(curdir, sizeof(curdir));
-         printf("New current directory for runtime: %s\n", curdir);
-       */
+      getcwd(curdir, sizeof(curdir));
+      printf("New current directory for runtime: %s\n", curdir);
+      */
     }
 #else
   (void)argv0;
@@ -23019,10 +22520,10 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
-int TP_EventFilter(void *data, const SDL_Event * event)
+int TP_EventFilter(const SDL_Event * event)
 {
   if (event->type == SDL_QUIT ||
-      event->type == SDL_WINDOWEVENT ||
+      event->type == SDL_ACTIVEEVENT ||
       event->type == SDL_JOYAXISMOTION ||
       event->type == SDL_JOYBALLMOTION ||
       event->type == SDL_JOYHATMOTION ||
@@ -23032,14 +22533,7 @@ int TP_EventFilter(void *data, const SDL_Event * event)
       event->type == SDL_KEYUP ||
       event->type == SDL_MOUSEBUTTONDOWN ||
       event->type == SDL_MOUSEBUTTONUP ||
-      event->type == SDL_MOUSEMOTION ||
-      event->type == SDL_QUIT ||
-      event->type == SDL_USEREVENT ||
-      event->type == SDL_MOUSEWHEEL ||
-      event->type == SDL_TEXTINPUT ||
-      event->type == SDL_APP_WILLENTERBACKGROUND ||
-      event->type == SDL_APP_WILLENTERFOREGROUND ||
-      event->type == SDL_APP_DIDENTERBACKGROUND || event->type == SDL_APP_DIDENTERFOREGROUND)
+      event->type == SDL_MOUSEMOTION || event->type == SDL_QUIT || event->type == SDL_USEREVENT)
     return 1;
 
   return 0;
@@ -23050,7 +22544,6 @@ int TP_EventFilter(void *data, const SDL_Event * event)
 static void setup(void)
 {
   int i;
-  int ww, hh;
   char *upstr;
   SDL_Color black = { 0, 0, 0, 0 };
   char *homedirdir;
@@ -23078,7 +22571,6 @@ static void setup(void)
   SDL_Thread *fontconfig_thread;
 #endif
 
-  render_scale = 1.0;
 
 
 #ifdef _WIN32
@@ -23102,7 +22594,9 @@ static void setup(void)
   if (disable_screensaver == 0)
     {
       putenv((char *)"SDL_VIDEO_ALLOW_SCREENSAVER=1");
-      if (SDL_MAJOR_VERSION < 2 || (SDL_MAJOR_VERSION == 2 && SDL_MINOR_VERSION == 0 && SDL_PATCHLEVEL < 2))
+      if (SDL_MAJOR_VERSION < 1 ||
+          (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
+          (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
         {
           fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
         }
@@ -23145,7 +22639,7 @@ static void setup(void)
 
   /* Set up event filter */
 
-  SDL_SetEventFilter(TP_EventFilter, NULL);
+  SDL_SetEventFilter(TP_EventFilter);
 
 
   /* Set up joystick */
@@ -23210,7 +22704,7 @@ static void setup(void)
 
 
   /* Set-up Key-Repeat: */
-  //  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
   /* Init TTF stuff: */
   if (TTF_Init() < 0)
@@ -23231,6 +22725,8 @@ static void setup(void)
 #ifndef __APPLE__
   seticon();
 #endif
+  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
+
   if (hide_cursor)
     SDL_ShowCursor(SDL_DISABLE);
 
@@ -23274,75 +22770,11 @@ static void setup(void)
   if (fullscreen)
     {
 #ifdef USE_HWSURFACE
-      /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-         VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE); */
-      window_screen = SDL_CreateWindow("Tux Paint", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                                       //0,0,
-                                       WINDOW_WIDTH, WINDOW_HEIGHT,
-                                       SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
-      printf("1\n");
-      if (window_screen == NULL)
-        printf("window_screen = NULL 1\n");
-
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);
 #else
-/*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
-      window_screen = SDL_CreateWindow(NULL,
-                                       //"Tux Paint",
-                                       SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                                       //0, 0,
-                                       WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
-      printf("2\n");
-      if (window_screen == NULL)
-        printf("window_screen = NULL 2\n");
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);
 #endif
 
-      renderer = SDL_CreateRenderer(window_screen, -1, 0);
-
-      if (native_screensize)
-        {
-          SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
-
-          /* Tuxpaint goes wrong under 500x480.
-             Scale it using SDL2 features */
-          if (ww < 500 || hh < 480)
-            {
-              float window_scale_w = 1.;
-              float window_scale_h = 1.;
-
-              window_scale_w = 501.f / ww;
-              window_scale_h = 481.f / hh;
-
-	      SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
-              if (window_scale_w > window_scale_h)
-                {
-                  /* Keep things squared */
-                  ww = window_scale_w * ww;
-                  hh = window_scale_w * hh;
-                  render_scale = window_scale_w;
-
-                  SDL_RenderSetScale(renderer, window_scale_w, window_scale_w);
-                }
-              else
-                {
-                  ww = window_scale_h * ww;
-                  hh = window_scale_h * hh;
-                  render_scale = window_scale_h;
-
-                  SDL_RenderSetScale(renderer, window_scale_h, window_scale_h);
-                }
-            }
-        }
-      else
-        {
-          ww = WINDOW_WIDTH;
-          hh = WINDOW_HEIGHT;
-        }
-
-      texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_STATIC, ww, hh);
-
-
-      screen = SDL_CreateRGBSurface(0, ww, hh, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
       if (screen == NULL)
         {
           fprintf(stderr,
@@ -23375,62 +22807,25 @@ static void setup(void)
         }
 
 #ifdef USE_HWSURFACE
-      /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-         VIDEO_BPP, SDL_HWSURFACE); */
-      window_screen = SDL_CreateWindow("Tux Paint",
-                                       SDL_WINDOWPOS_UNDEFINED,
-                                       SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_HWSURFACE);
-      printf("3\n");
-      if (window_screen == NULL)
-        printf("window_screen = NULL 3\n");
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, VIDEO_BPP, SDL_HWSURFACE);
 #else
-      window_screen = SDL_CreateWindow("Tux Paint",
-                                       SDL_WINDOWPOS_UNDEFINED,
-                                       SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, NULL);
-      /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-         s
-         VIDEO_BPP, SDL_SWSURFACE); */
-      printf("4\n");
-      if (window_screen == NULL)
-        printf("window_screen = NULL 4\n");
-
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, VIDEO_BPP, SDL_SWSURFACE);
 #endif
 
       if (set_window_pos)
         putenv((char *)"SDL_VIDEO_WINDOW_POS=nopref");
-
-      /* Note: Seems that this depends on the compliance by the window manager
-         currently this doesn't works under Fvwm */
-      SDL_SetWindowMinimumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
-      SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
-
-
-      renderer = SDL_CreateRenderer(window_screen, -1, 0);
-      SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
-      texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_STATIC, ww, hh);
-
-      screen = SDL_CreateRGBSurface(0, ww, hh, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
-
-
-      //screen = SDL_GetWindowSurface(window_screen);
-
-
-
-
-      if (screen == NULL)
-        {
-          fprintf(stderr,
-                  "\nError: 1 I could not open the display.\n"
-                  "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", SDL_GetError());
-
-          cleanup();
-          exit(1);
-        }
     }
 
-  SDL_RenderSetLogicalSize(renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
+  if (screen == NULL)
+    {
+      fprintf(stderr,
+              "\nError: I could not open the display.\n"
+              "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", SDL_GetError());
 
-  window_format = SDL_GetWindowPixelFormat(window_screen);
+      cleanup();
+      exit(1);
+    }
+
 
   /* (Need to do this after native screen resolution is handled) */
 
@@ -23522,7 +22917,7 @@ static void setup(void)
   fflush(stdout);
 #endif
 
-  fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, "fontconfig_thread", NULL);
+  fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, NULL);
   if (fontconfig_thread == NULL)
     {
       fprintf(stderr, "Failed to create Pango setup thread: %s\n", SDL_GetError());
@@ -23537,8 +22932,7 @@ static void setup(void)
         {
           printf("Pango thread aborted!\n");
           fflush(stdout);
-          // FIXME SDL2
-          //      SDL_KillThread(fontconfig_thread);
+          SDL_KillThread(fontconfig_thread);
           SDL_Quit();
           exit(0);
           /* FIXME: Let's be more graceful about exiting (e.g., clean up lockfile!) -bjk 2010.04.27 */
@@ -23556,7 +22950,7 @@ static void setup(void)
   printf("Now running font scanner\n");
   fflush(stdout);
 #endif
-  run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
 #endif
 
 #endif
@@ -23740,22 +23134,18 @@ static void setup(void)
   img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
   img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
 
-  img_black = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
                                    img_btn_off->w, img_btn_off->h,
                                    img_btn_off->format->BitsPerPixel,
                                    img_btn_off->format->Rmask,
                                    img_btn_off->format->Gmask, img_btn_off->format->Bmask, img_btn_off->format->Amask);
-  SDL_SetSurfaceAlphaMod(img_black, SDL_ALPHA_TRANSPARENT);
-
   SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
 
-  img_grey = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  img_grey = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
                                   img_btn_off->w, img_btn_off->h,
                                   img_btn_off->format->BitsPerPixel,
                                   img_btn_off->format->Rmask,
                                   img_btn_off->format->Gmask, img_btn_off->format->Bmask, img_btn_off->format->Amask);
-  SDL_SetSurfaceAlphaMod(img_grey, SDL_ALPHA_TRANSPARENT);
-
   SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
 
   show_progress_bar(screen);
@@ -23834,26 +23224,7 @@ static void setup(void)
       img_oskcapslock = loadimage(DATA_PREFIX "images/ui/osk_capslock.png");
       img_oskshift = loadimage(DATA_PREFIX "images/ui/osk_shift.png");
 
-      if (onscreen_keyboard_layout)
-        {
-          // use platform system onscreen keybord or tuxpaint onscreen keybord
-          if (strcmp(onscreen_keyboard_layout, "SYSTEM") == 0)
-            kbd = NULL;
-          else
-            kbd =
-              osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
-                         img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
-                         onscreen_keyboard_disable_change);
-        }
-      else
-        {
-          kbd =
-            osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
-                       img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
-                       onscreen_keyboard_disable_change);
-        }
     }
-
   show_progress_bar(screen);
 
 
@@ -24113,7 +23484,7 @@ static void setup(void)
 
   /* Enable Unicode support in SDL: */
 
-//  SDL_EnableUNICODE(1);
+  SDL_EnableUNICODE(1);
 
 #ifndef _WIN32
   /* Set up signal handler for SIGPIPE (in case printer command dies;
@@ -24156,9 +23527,8 @@ static void claim_to_be_ready(void)
 
   do_setcursor(cursor_arrow);
   playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-#if !defined (__ANDROID__)
   do_wait(50);                  /* about 5 seconds */
-#endif
+
 
   /* Set defaults! */
 
@@ -24209,6 +23579,9 @@ static void claim_to_be_ready(void)
   if (start_blank == 0)
     load_current();
 
+  been_saved = 1;
+  tool_avail[TOOL_SAVE] = 0;
+
 
   /* Draw the screen! */
 
@@ -24242,14 +23615,9 @@ int main(int argc, char *argv[])
   /* do not add code (slowness) here unless required for scanning fonts */
   progname = argv[0];
 
-#if defined(DEBUG)
-#if defined(__APPLE__)
+#if defined(DEBUG) && defined(__APPLE__)
   /* EP added block to log messages */
   freopen("/tmp/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
-#elif defined (__ANDROID__)
-  freopen("/mnt/sdcard/tuxpaint/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
-#endif
-
   dup2(fileno(stdout), fileno(stderr)); /* redirect stderr to stdout */
   setvbuf(stdout, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
   setvbuf(stderr, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
@@ -24272,7 +23640,7 @@ int main(int argc, char *argv[])
    * file may not exist on the runtime system, however, so we copy the file
    * into our app bundle at compile time, and tell Fontconfig here to look for
    * the file within the app bundle. */
-  putenv((char *)"FONTCONFIG_PATH=Resources/etc");
+  putenv((char*) "FONTCONFIG_PATH=Resources/etc");
 #endif
 
 #ifdef FORKED_FONTS
@@ -24283,7 +23651,7 @@ int main(int argc, char *argv[])
   printf("Running font scanner\n");
   fflush(stdout);
 #endif
-  run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
 #else
 #ifdef DEBUG
   printf("NOT running font scanner\n");
@@ -24829,106 +24197,3 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
   if (!ignore)
     SDL_PushEvent(&ev);
 }
-
-/*
- * When moving on some cases of supporting scroll wheel, including
- * the coming SDL_MOUSEMOTION events will be converted to SDL_MOUSEWHEEL
- *
- * Currently motion_dx is not used, since only scroll up and down is support.
- */
-int motion_convert;
-int motion_dx, motion_dy;
-
-static void start_motion_convert(SDL_Event event)
-{
-  if (event.type != SDL_MOUSEBUTTONDOWN)
-    return;
-
-  int scroll = 0;
-
-  if (HIT(r_tools))
-    scroll = 1;
-  else if (HIT(r_toolopt) && (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
-                              cur_tool == TOOL_LINES || cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
-                              cur_tool == TOOL_LABEL || cur_tool == TOOL_MAGIC))
-    scroll = 1;
-  else if ((cur_tool == TOOL_OPEN) && HIT(r_canvas))
-    scroll = 1;
-  else if ((cur_tool == TOOL_NEW) && HIT(r_canvas))
-    scroll = 1;
-
-  if (scroll != 1)
-    return;
-
-  motion_convert = 1;
-  motion_dx = motion_dy = 0;
-}
-
-#ifdef __ANDROID__
-static void stop_motion_convert(SDL_Event event)
-{
-  if (event.type != SDL_MOUSEBUTTONUP)
-    return;
-
-  motion_convert = 0;
-  motion_dx = motion_dy = 0;
-}
-
-static void convert_motion_to_wheel(SDL_Event event)
-{
-  if (event.type != SDL_MOUSEMOTION)
-    return;
-
-  if (motion_convert == 0)
-    return;
-
-  int scroll = 0;
-  int high = 0;
-
-  if (HIT(r_tools))
-    {
-      scroll = 1;
-      high = 48;
-    }
-  else if (HIT(r_toolopt) && (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
-                              cur_tool == TOOL_LINES || cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
-                              cur_tool == TOOL_LABEL || cur_tool == TOOL_MAGIC))
-    {
-      scroll = 1;
-      high = 48;
-    }
-  else if ((cur_tool == TOOL_OPEN) && HIT(r_canvas))
-    {
-      scroll = 1;
-      high = THUMB_H;
-    }
-  else if ((cur_tool == TOOL_NEW) && HIT(r_canvas))
-    {
-      scroll = 1;
-      high = THUMB_H;
-    }
-
-  if (scroll != 1)
-    return;
-
-  motion_dx += event.button.x - oldpos_x;
-  motion_dy += event.button.y - oldpos_y;
-
-  if (motion_dy > 0)
-    {
-      while (motion_dy - high > 0)
-        {
-          SDL_SendMouseWheel(NULL, event.motion.which, 0, 1);
-          motion_dy -= high;
-        }
-    }
-  else
-    {
-      while (motion_dy + high < 0)
-        {
-          SDL_SendMouseWheel(NULL, event.motion.which, 0, -1);
-          motion_dy += high;
-        }
-    }
-}
-#endif
