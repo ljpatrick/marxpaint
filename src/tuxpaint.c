@@ -318,6 +318,9 @@ typedef struct safer_dirent
 
 #define mkdir(path,access)    _mkdir(path)
 
+/**
+ * FIXME
+ */
 static void mtw(wchar_t * wtok, char *tok)
 {
   /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
@@ -553,6 +556,15 @@ int TP_EventFilter(const SDL_Event * event);
 
 FILE *my_fmemopen(unsigned char *data, size_t size, const char *mode);
 
+/**
+ * Open memory as a stream.  Some platforms do not support
+ * fmemopen(), so this simply dumps data to a temp file,
+ * then opens it back up and returns the FILE pointer.
+ *
+ * @param data Data to perform I/O on.
+ * @param size Size of the data
+ * @param mode I/O mode (as in fopen(3))
+ */
 FILE *my_fmemopen(unsigned char *data, size_t size, const char *mode)
 {
   unsigned int i;
@@ -631,6 +643,11 @@ static char **color_names;
 
 /* Show debugging stuff: */
 
+/**
+ * Echos debug info to STDERR, if debugging (DEBUG #define) is set.
+ *
+ * @param str text to echo
+ */
 static void debug(const char *const str)
 {
 #ifndef DEBUG
@@ -708,6 +725,11 @@ static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
 static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
 
 
+/**
+ * Sets a variety of screen layout globals, based on the
+ * size of the window/screen Tux Paint is being displayed on
+ * (WINDOW_WIDTH & WINDOW_HEIGHT).
+ */
 static void setup_normal_screen_layout(void)
 {
   int buttons_tall;
@@ -787,26 +809,45 @@ static void setup_normal_screen_layout(void)
   r_toolopt.y = r_ttoolopt.h + r_ttoolopt.y;
 
   /* TODO: dialog boxes */
-
 }
 
 #ifdef DEBUG
+/**
+ * Debug output that shows a layout rectangle's position & dimensions
+ * (Used as a #define macro, by print_layout(), below)
+ *
+ * @param r The rectange
+ * @param name The name of the rect object
+ */
 static void debug_rect(SDL_Rect * r, char *name)
 {
+  /* FIXME: Send to stderr, not stdout? */
   printf("%-12s %dx%d @ %d,%d\n", name, r->w, r->h, r->x, r->y);
 }
 
 #define DR(x) debug_rect(&x, #x)
 
+/**
+ * Debug output that shows a layout grid's dimensions
+ * (Used as a #define macro, by print_layout(), below)
+ *
+ * @param g The grid
+ * @param name The name of the grid object
+ */
 static void debug_dims(grid_dims * g, char *name)
 {
+  /* FIXME: Send to stderr, not stdout? */
   printf("%-12s %dx%d\n", name, g->cols, g->rows);
 }
 
 #define DD(x) debug_dims(&x, #x)
 
+/**
+ * Debug output that shows Tux Paint's layout
+ */
 static void print_layout(void)
 {
+  /* FIXME: Send to stderr, not stdout? */
   printf("\n--- layout ---\n");
   DR(r_canvas);
   DR(r_tools);
@@ -819,6 +860,7 @@ static void print_layout(void)
   DD(gd_tools);
   DD(gd_toolopt);
   DD(gd_colors);
+  /* FIXME: Send to stderr, not stdout? */
   printf("buttons are %dx%d\n", button_w, button_h);
   printf("color buttons are %dx%d\n", color_button_w, color_button_h);
 }
@@ -827,6 +869,10 @@ static void print_layout(void)
 #undef DR
 #endif
 
+/**
+ * Set up (and display, if debugging is enabled), the
+ * position, size, and layout of Tux Paint's UI
+ */
 static void setup_screen_layout(void)
 {
   /* can do right-to-left, colors at the top, extra tool option columns, etc. */
@@ -843,7 +889,15 @@ static SDL_Surface *save_canvas = NULL;
 static SDL_Surface *canvas_back = NULL;
 static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
-/* Update a rect. based on two x/y coords (not necessarly in order): */
+/**
+ * Update a rect. based on two x/y coords (not necessarly in order)
+ * (calls SDL_UpdateRect())
+ *
+ * @param x1 X of first coordinate
+ * @param y1 Y of first coordinate
+ * @param x2 X of second coordinate
+ * @param y2 Y of second coordinate
+ */
 static void update_screen(int x1, int y1, int x2, int y2)
 {
   int tmp;
@@ -890,11 +944,26 @@ static void update_screen(int x1, int y1, int x2, int y2)
 }
 
 
+/**
+ * Update a rect. area of the screen
+ * (calls SDL_UpdateRect())
+ *
+ * @param r The rect
+ */
 static void update_screen_rect(SDL_Rect * r)
 {
   SDL_UpdateRect(screen, r->x, r->y, r->w, r->h);
 }
 
+
+/**
+ * Test whether an x/y coordinate is within a given rect.
+ *
+ * @param r The rect
+ * @param x X coordinate
+ * @param y Y coordinate
+ * @return true if a hit, else false
+ */
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 {
   /* note the use of unsigned math: no need to check for negative */
@@ -904,30 +973,15 @@ static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 #define HIT(r) hit_test(&(r), event.button.x, event.button.y)
 
 
-/* "#if"ing out, since unused; bjk 2005.01.09 */
-
-#if 0
-
-/* x,y are pixel-wise screen-relative (mouse location), not grid-wise
-   w,h are the size of a grid item
-   Return the grid box.
-   NOTE: grid items must fill full SDL_Rect width exactly */
-static int grid_hit_wh(const SDL_Rect * const r, unsigned x, unsigned y, unsigned w, unsigned h)
-{
-  return (x - r->x) / w + (y - r->y) / h * (r->w / w);
-}
-
-/* test an SDL_Rect r containing an array of WxH items for a grid location */
-#define GRIDHIT_WH(r,W,H) grid_hit_wh(&(r), event.button.x, event.button.y, W,H)
-
-#endif
-
-/* test an SDL_Rect r containing an array of SDL_Surface surf for a grid location */
-#define GRIDHIT_SURF(r,surf) grid_hit_wh(&(r), event.button.x, event.button.y, (surf)->w, (surf)->h)
-
-/* x,y are pixel-wise screen-relative (mouse location), not grid-wise
-   Return the grid box.
-   NOTE: returns -1 if hit is below or to the right of the grid */
+/**
+ * Returns which item in a grid was clicked, if any.
+ *
+ * @param r The rectangle containing the grid on the scren
+ * @param x X coordinate (mouse location) of a click
+ * @param y Y coordinate (mouse location) of a click
+ * @param gd The grid of items
+ * @returns The item clicked, or -1 if click was outside the grid.
+ */
 static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y, grid_dims * gd)
 {
   unsigned item_w = r->w / gd->cols;
@@ -936,6 +990,7 @@ static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y, grid_di
   unsigned row = (y - r->y) / item_h;
 
 #ifdef DEBUG
+  /* FIXME: Send to stderr, not stdout? */
   printf("%d,%d resolves to %d,%d in a %dx%d grid, index is %d\n", x, y, col,
          row, gd->cols, gd->rows, col + row * gd->cols);
 #endif
@@ -955,7 +1010,19 @@ static int disable_label = 1;
 static int disable_label;
 #endif
 
-/* Update the contents of a region */
+/**
+ * Update the contents of a rectangular region of the drawing canvas.
+ * If overlaying Starter Image exists, and/or Labels are in
+ * the image, draw them over the picture.
+ *
+ * FIXME: Subtly different from update_canvas_ex(), below.
+ *
+ * @param x1 Left side of area to update
+ * @param y1 Top side of area to update
+ * @param x2 Right side of area to update
+ * @param y2 Bottom side of area to update
+ * @param screen_too If true, show updated canvas on the screen
+ */
 static void update_canvas_ex_r(int x1, int y1, int x2, int y2, int screen_too)
 {
   SDL_Rect src, dest;
@@ -991,6 +1058,19 @@ static void update_canvas_ex_r(int x1, int y1, int x2, int y2, int screen_too)
     update_screen(x1 + 96, y1, x2 + 96, y2);
 }
 
+/**
+ * Update the contents of a rectangular region of the drawing canvas.
+ * If overlaying Starter Image exists, and/or Labels are in
+ * the image, draw them over the picture.
+ *
+ * FIXME: Subtly different from update_canvas_ex_r(), above.
+ *
+ * @param x1 Left side of area to update
+ * @param y1 Top side of area to update
+ * @param x2 Right side of area to update
+ * @param y2 Bottom side of area to update
+ * @param screen_too If true, show updated canvas on the screen
+ */
 static void update_canvas_ex(int x1, int y1, int x2, int y2, int screen_too)
 {
   SDL_Rect src, dest;
@@ -1024,7 +1104,15 @@ static void update_canvas_ex(int x1, int y1, int x2, int y2, int screen_too)
     update_screen(x1 + 96, y1, x2 + 96, y2);
 }
 
-/* Update the screen with the new canvas: */
+/**
+ * Update the screen with the new canvas.
+ * (Wrapper for update_canvas_ex(), above, with `screen_too` = true)
+ *
+ * @param x1 Left side of area to update
+ * @param y1 Top side of area to update
+ * @param x2 Right side of area to update
+ * @param y2 Bottom side of area to update
+ */
 static void update_canvas(int x1, int y1, int x2, int y2)
 {
   update_canvas_ex(x1, y1, x2, y2, 1);
@@ -1348,7 +1436,14 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_x, int new_y);
 #endif
 
 
-
+/**
+ * Render some text (char's) as a bitmap
+ *
+ * @param font The font to use
+ * @param str The string of text to render
+ * @param color The color to draw it in
+ * @return A new surface, containing the rendered text
+ */
 static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restrict str, SDL_Color color)
 {
   SDL_Surface *ret = NULL;
@@ -1404,10 +1499,17 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
 }
 
 
-/* This conversion is required on platforms where Uint16 doesn't match wchar_t.
-   On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
-   Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
-   I guess wchar_t is really only suitable for internal use ... */
+/**
+ * Convert a wide-character string to string of Uint16's.
+ * 
+ * This conversion is required on platforms where Uint16 doesn't match wchar_t.
+ * On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
+ * Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
+ * I guess wchar_t is really only suitable for internal use ...
+ *
+ * @param str The wide-character string
+ * @return The string, as Uint16 characters.
+ */
 static Uint16 *wcstou16(const wchar_t * str)
 {
   unsigned int i, len = wcslen(str);
@@ -1427,6 +1529,14 @@ static Uint16 *wcstou16(const wchar_t * str)
 }
 
 
+/**
+ * Render some text (wide-characters) as a bitmap
+ *
+ * @param font The font to use
+ * @param str The string of text to render
+ * @param color The color to draw it in
+ * @return A new surface, containing the rendered text
+ */
 static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t * restrict str, SDL_Color color)
 {
   SDL_Surface *ret = NULL;
@@ -1589,18 +1699,28 @@ static stamp_type **stamp_data[MAX_STAMP_GROUPS];
 
 static SDL_Surface *active_stamp;
 
-/* Returns whether a particular stamp can be colored: */
+
+/**
+ * Returns whether a particular stamp can be colored.
+ *
+ * @param stamp Which stamp?
+ * @return True/false
+ */
 static int stamp_colorable(int stamp)
 {
   return stamp_data[stamp_group][stamp]->colorable;
 }
 
-/* Returns whether a particular stamp can be tinted: */
+/**
+ * Returns whether a particular stamp can be tinted.
+ *
+ * @param stamp Which stamp?
+ * @return True/false
+ */
 static int stamp_tintable(int stamp)
 {
   return stamp_data[stamp_group][stamp]->tintable;
 }
-
 
 
 #define SHAPE_BRUSH_NAME "aa_round_03.png"
@@ -1650,7 +1770,6 @@ static int brush_counter, brush_frame;
                                    from ERASER_MIN to _MAX as circles) */
 #define ERASER_MIN 13
 #define ERASER_MAX 128
-
 
 
 static unsigned cur_color;
@@ -1918,8 +2037,11 @@ int file_exists(char *path);
 
 static int bypass_splash_wait;
 
-/* Wait for a keypress or mouse click.
-   counter is in 1/10 second units */
+/**
+ * Wait for a keypress or mouse click.
+ *
+ * @param counter How long to wait (in 1/10th of seconds)
+ */
 static void do_wait(int counter)
 {
   SDL_Event event;
@@ -1959,57 +2081,6 @@ static void do_wait(int counter)
     }
   while (!done && counter > 0);
 }
-
-
-/* This lets us exit quickly; perhaps the system is swapping to death
-   or the user started Tux Paint by accident. It also lets the user
-   more easily bypass the splash screen wait. */
-
-/* Was used in progressbar.c, but is currently commented out!
-   -bjk 2006.06.02 */
-
-#if 0
-static void eat_sdl_events(void)
-{
-  SDL_Event event;
-
-  while (SDL_PollEvent(&event))
-    {
-      if (event.type == SDL_QUIT)
-        {
-          SDL_Quit();
-          exit(0);              /* can't safely use do_quit during start-up */
-        }
-      else if (event.type == SDL_ACTIVEEVENT)
-        handle_active(&event);
-      else if (event.type == SDL_KEYDOWN)
-        {
-          SDLKey key = event.key.keysym.sym;
-          SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
-          SDLMod alt = event.key.keysym.mod & KMOD_ALT;
-
-          if ((key == SDLK_c && ctrl) || (key == SDLK_F4 && alt))
-            {
-              SDL_Quit();
-              exit(0);
-            }
-          else if (key == SDLK_ESCAPE && waiting_for_fonts)
-            {
-              /* abort font loading! */
-
-              printf("Aborting font load!\n");
-
-              font_thread_aborted = 1;
-              /* waiting_for_fonts = 0; */
-            }
-          else
-            bypass_splash_wait = 1;
-        }
-      else if (event.type == SDL_MOUSEBUTTONDOWN)
-        bypass_splash_wait = 1;
-    }
-}
-#endif
 
 
 /* Prompt to confirm user wishes to quit */
@@ -2081,8 +2152,9 @@ int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_posit
   ide, activeflag, old_x, old_y;
 int cur_thing;
 
-/* --- MAIN LOOP! --- */
-
+/**
+ * --- MAIN LOOP! --- 
+ */
 static void mainloop(void)
 {
   int done, val_x, val_y, valhat_x, valhat_y, new_x, new_y,
@@ -5358,7 +5430,10 @@ static void mainloop(void)
   while (!done);
 }
 
-/* Draw using the text entry cursor/caret: */
+/**
+ * Hide the blinking text entry cursor (caret),
+ * if it was visible.
+ */
 static void hide_blinking_cursor(void)
 {
   if (cur_toggle_count & 1)
@@ -5367,6 +5442,11 @@ static void hide_blinking_cursor(void)
     }
 }
 
+/**
+ * Draw & hide the blinking text entry cursor (caret),
+ * via XOR.  (Also keeps track of whether the cursor
+ * is currently visible; used by hide_blinking_cursor(), above.)
+ */
 static void draw_blinking_cursor(void)
 {
   cur_toggle_count++;
@@ -5380,8 +5460,15 @@ static void draw_blinking_cursor(void)
                 cursor_y + r_canvas.y + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 }
 
-/* Draw using the current brush: */
-
+/**
+ * Draw a line on the canvas using the current paint brush.
+ *
+ * @param x1 Starting X coordinate
+ * @param y1 Starting Y coordinate
+ * @param x2 Ending X coordinate
+ * @param y2 Ending Y coordinate
+ * @param update Update the screen afterwards?
+ */
 static void brush_draw(int x1, int y1, int x2, int y2, int update)
 {
   int dx, dy, y, frame_w, w, h;
@@ -5486,14 +5573,29 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     }
 }
 
+
+/**
+ * Reset the brush counter, such that the next
+ * attempt to draw something is guaranteed to
+ * do so, regardless of the brushe's spacing.
+ */
 void reset_brush_counter(void)
 {
   brush_counter = 999;
 }
 
 
-/* Draw the current brush in the current color: */
-
+/**
+ * Draw into the canvas using the current paint brush.
+ * Adheres to:
+ *  - brush spacing (used by some brushes to avoid smearing)
+ *  - brush animation
+ *  - drawing direction
+ *
+ * @param x X coordinate
+ * @param y Y coordinate
+ * @param direction BRUSH_DIRECTION_... being drawn
+ */
 static void blit_brush(int x, int y, int direction)
 {
   SDL_Rect src, dest;
@@ -5593,6 +5695,9 @@ typedef struct multichan
 #define v0_prime ( (9.0 * Y0) / (X0 + 15.0*Y0 + 3.0*Z0) )
 
 
+/**
+ * FIXME
+ */
 static void fill_multichan(multichan * mc, double *up, double *vp)
 {
   double X, Y, Z, u, v;
@@ -5626,6 +5731,9 @@ static void fill_multichan(multichan * mc, double *up, double *vp)
 }
 
 
+/**
+ * FIXME
+ */
 static double tint_part_1(multichan * work, SDL_Surface * in)
 {
   int xx, yy;
@@ -5667,6 +5775,9 @@ static double tint_part_1(multichan * work, SDL_Surface * in)
 }
 
 
+/**
+ * FIXME
+ */
 static void change_colors(SDL_Surface * out, multichan * work, double hue_range, multichan * key_color_ptr)
 {
   double lower_hue_1, upper_hue_1, lower_hue_2, upper_hue_2;
@@ -5772,6 +5883,9 @@ static void change_colors(SDL_Surface * out, multichan * work, double hue_range,
 }
 
 
+/**
+ * FIXME
+ */
 static multichan *find_most_saturated(double initial_hue, multichan * work, unsigned num, double *hue_range_ptr)
 {
   /* find the most saturated pixel near the initial hue guess */
@@ -5846,6 +5960,9 @@ hue_range_retry:;
 }
 
 
+/**
+ * FIXME
+ */
 static void vector_tint_surface(SDL_Surface * out, SDL_Surface * in)
 {
   int xx, yy;
@@ -5879,6 +5996,12 @@ static void vector_tint_surface(SDL_Surface * out, SDL_Surface * in)
 }
 
 
+/**
+ * Tint a surface (e.g., a stamp) using the currently-selected color.
+ *
+ * @param tmp_surf Destination surface
+ * @param surf_ptr Source surface
+ */
 static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 {
   unsigned width = surf_ptr->w;
@@ -5896,12 +6019,14 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
       initial_hue = tint_part_1(work, surf_ptr);
 
 #ifdef DEBUG
+      /* FIXME: To stderr, not stdout? */
       printf("initial_hue = %f\n", initial_hue);
 #endif
 
       key_color_ptr = find_most_saturated(initial_hue, work, width * height, &hue_range);
 
 #ifdef DEBUG
+      /* FIXME: To stderr, not stdout? */
       printf("key_color_ptr = %d\n", (int)(intptr_t) key_color_ptr);    //EP added (intptr_t) to avoid warning on x64
 #endif
 
@@ -5925,15 +6050,19 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 
   /* Failed!  Fall back: */
 
-  fprintf(stderr, "Falling back to tinter=vector, " "this should be in the *.dat file\n");
+  fprintf(stderr, "Falling back to tinter=vector, this should be in the *.dat file\n");
 
   vector_tint_surface(tmp_surf, surf_ptr);
 }
 
 
 
-/* Draw using the current stamp: */
-
+/**
+ * Draw the current stamp onto the canvas.
+ *
+ * @param x X coordinate
+ * @param y Y coordinate
+ */
 static void stamp_draw(int x, int y)
 {
   SDL_Rect dest;
@@ -6054,8 +6183,9 @@ static void stamp_draw(int x, int y)
 }
 
 
-/* Store canvas or label into undo buffer: */
-
+/**
+ * Store canvas or label into undo buffer
+ */
 static void rec_undo_buffer(void)
 {
   int wanna_update_toolbar;
@@ -6075,6 +6205,7 @@ static void rec_undo_buffer(void)
   newest_undo = cur_undo;
 
 #ifdef DEBUG
+  /* FIXME: Stderr instead of stdout? */
   printf("DRAW: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo, newest_undo);
 #endif
 
@@ -6101,7 +6232,12 @@ static void rec_undo_buffer(void)
 }
 
 
-/* Show program version: */
+/**
+ * Show program version, build date, and (optionally) details,
+ * to stdout
+ *
+ * @param details Show details?
+ */
 void show_version(int details)
 {
   printf("\nTux Paint\n");
@@ -6230,8 +6366,12 @@ void show_version(int details)
 }
 
 
-/* Show usage display: */
-
+/**
+ * Show usage display and exit.
+ *
+ * @param exitcode What exit() code to give;
+ *   also determines stdout (0) vs stderr (non-zero) for output
+ */
 void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
@@ -6312,12 +6452,19 @@ void show_usage(int exitcode)
 }
 
 
-/* The original Tux Paint canvas was 448x376. The canvas can be
-   other sizes now, but many old stamps are sized for the small
-   canvas. So, with larger canvases, we must choose a good scale
-   factor to compensate. As the canvas size grows, the user will
-   want a balance of "more stamps on the screen" and "stamps not
-   getting tiny". This will calculate the needed scale factor. */
+/**
+ * Compute default scale factor for stamps.
+ *
+ * The original Tux Paint canvas was 448x376. The canvas can be
+ * other sizes now, but many old stamps are sized for the small
+ * canvas. So, with larger canvases, we must choose a good scale
+ * factor to compensate. As the canvas size grows, the user will
+ * want a balance of "more stamps on the screen" and "stamps not
+ * getting tiny". This will calculate the needed scale factor.
+ *
+ * @param ratio FIXME
+ * @return FIXME
+ */
 static unsigned compute_default_scale_factor(double ratio)
 {
   double old_diag = sqrt(448 * 448 + 376 * 376);
@@ -6339,8 +6486,16 @@ static unsigned compute_default_scale_factor(double ratio)
 }
 
 
-/* directory walking... */
-
+/**
+ * Callback for directory walking while loading brushes
+ *
+ * @param screen Screen/window surface, for drawing progress bar animation
+ * @param dir Directory path
+ * @param dirlen Length of directory path string (ignored)
+ * @param files List of files (being collected)
+ * @param i Counter
+ * @param locale UI's locale, for loading localized text (ignored)
+ */
 static void loadbrush_callback(SDL_Surface * screen,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
@@ -6426,7 +6581,9 @@ static void loadbrush_callback(SDL_Surface * screen,
 }
 
 
-
+/**
+ * FIXME
+ */
 static void load_brush_dir(SDL_Surface * screen, const char *restrict const dir)
 {
   char buf[TP_FTW_PATHSIZE];
@@ -6436,6 +6593,9 @@ static void load_brush_dir(SDL_Surface * screen, const char *restrict const dir)
   tp_ftw(screen, buf, dirlen, 0, loadbrush_callback, NULL);
 }
 
+/**
+ * FIXME
+ */
 SDL_Surface *mirror_surface(SDL_Surface * s)
 {
   SDL_Surface *new_surf;
@@ -6472,6 +6632,9 @@ SDL_Surface *mirror_surface(SDL_Surface * s)
     }
 }
 
+/**
+ * FIXME
+ */
 SDL_Surface *flip_surface(SDL_Surface * s)
 {
   SDL_Surface *new_surf;
@@ -6510,6 +6673,9 @@ SDL_Surface *flip_surface(SDL_Surface * s)
 
 static unsigned default_stamp_size;
 
+/**
+ * FIXME
+ */
 static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h, double ratio)
 {
   unsigned int upper = HARD_MAX_STAMP_SIZE;
@@ -6646,6 +6812,9 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h, double r
 }
 
 
+/**
+ * FIXME
+ */
 /* Note: must have read the *.dat file before calling this */
 static void set_active_stamp(void)
 {
@@ -6890,6 +7059,9 @@ static void set_active_stamp(void)
 #endif
 }
 
+/**
+ * FIXME
+ */
 static void get_stamp_thumb(stamp_type * sd)
 {
   SDL_Surface *bigimg = NULL;
@@ -7230,12 +7402,23 @@ static void get_stamp_thumb(stamp_type * sd)
 }
 
 
+/**
+ * Callback for directory walking while loading stamps
+ *
+ * @param screen Screen/window surface, for drawing progress bar animation
+ * @param dir Directory path
+ * @param dirlen Length of directory path string
+ * @param files List of files (being collected)
+ * @param i Counter
+ * @param locale UI's locale, for loading localized text (ignored)
+ */
 static void loadstamp_callback(SDL_Surface * screen,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
   (void)locale;
 #ifdef DEBUG
+  /* FIXME: Stderr instead of stdout? */
   printf("loadstamp_callback: %s\n", dir);
 #endif
 
@@ -7261,12 +7444,14 @@ static void loadstamp_callback(SDL_Surface * screen,
         {
           stamp_group++;
 #ifdef DEBUG
+          /* FIXME: Stderr instead of stdout? */
           printf("\n...counts as a new group! now: %d\n", stamp_group);
 #endif
         }
       else
         {
 #ifdef DEBUG
+          /* FIXME: Stderr instead of stdout? */
           printf("...is still part of group %d\n", stamp_group);
 #endif
         }
@@ -7357,8 +7542,9 @@ static void loadstamp_callback(SDL_Surface * screen,
   free(files);
 }
 
-
-
+/**
+ * FIXME
+ */
 static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
 {
   char buf[TP_FTW_PATHSIZE];
@@ -7369,7 +7555,9 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
   tp_ftw(screen, buf, dirlen, 0, loadstamp_callback, NULL);
 }
 
-
+/**
+ * FIXME
+ */
 static void load_stamps(SDL_Surface * screen)
 {
   char *homedirdir = get_fname("stamps", DIR_DATA);
@@ -7399,6 +7587,9 @@ static void load_stamps(SDL_Surface * screen)
 }
 
 #ifndef FORKED_FONTS
+/**
+ * FIXME
+ */
 static int load_user_fonts_stub(void *vp)
 {
   return load_user_fonts(screen, vp, NULL);
@@ -7408,6 +7599,9 @@ static int load_user_fonts_stub(void *vp)
 #ifndef NO_SDLPANGO
 volatile long fontconfig_thread_done = 0;
 
+/**
+ * FIXME
+ */
 int generate_fontconfig_cache_spinner(SDL_Surface * screen)
 {
   SDL_Event event;
@@ -7431,6 +7625,9 @@ int generate_fontconfig_cache_spinner(SDL_Surface * screen)
   return (0);
 }
 
+/**
+ * FIXME
+ */
 static int generate_fontconfig_cache_real(void)
 {
   TuxPaint_Font *tmp_font;
@@ -7485,6 +7682,9 @@ static int generate_fontconfig_cache_real(void)
   return (0);
 }
 
+/**
+ * FIXME
+ */
 static int generate_fontconfig_cache(void *vp)
 {
   return generate_fontconfig_cache_real();
@@ -7496,6 +7696,9 @@ static int generate_fontconfig_cache(void *vp)
   ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
+/**
+ * FIXME
+ */
 static void signal_handler(int sig)
 {
   (void)sig;
@@ -7503,6 +7706,9 @@ static void signal_handler(int sig)
 }
 #endif
 
+/**
+ * FIXME
+ */
 /* Render a button label using the appropriate string/font: */
 static SDL_Surface *do_render_button_label(const char *const label)
 {
@@ -7524,6 +7730,9 @@ static SDL_Surface *do_render_button_label(const char *const label)
   return surf;
 }
 
+/**
+ * FIXME
+ */
 static void create_button_labels(void)
 {
   int i;
@@ -7559,6 +7768,9 @@ static void create_button_labels(void)
 }
 
 
+/**
+ * FIXME
+ */
 static void seticon(void)
 {
 #ifndef WIN32
@@ -7613,8 +7825,10 @@ static void seticon(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Load a mouse pointer (cursor) shape: */
-
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
                               unsigned int width, unsigned int height, unsigned int x, unsigned int y)
 {
@@ -7653,16 +7867,20 @@ static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
 }
 
 
+/**
+ * FIXME
+ */
 /* Load an image (with errors): */
-
 static SDL_Surface *loadimage(const char *const fname)
 {
   return (do_loadimage(fname, 1));
 }
 
 
+/**
+ * FIXME
+ */
 /* Load an image: */
-
 static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 {
   SDL_Surface *s, *disp_fmt_s;
@@ -7720,8 +7938,10 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw the toolbar: */
-
 static void draw_toolbar(void)
 {
   int i, off_y, max, most, tool;
@@ -7828,8 +8048,10 @@ static void draw_toolbar(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw magic controls: */
-
 static void draw_magic(void)
 {
   int magic, i, max, off_y;
@@ -7967,10 +8189,12 @@ static void draw_magic(void)
 }
 
 
-/* Draw color selector: */
-
 static unsigned colors_state = COLORSEL_ENABLE | COLORSEL_CLOBBER;
 
+/**
+ * FIXME
+ */
+/* Draw color selector: */
 static unsigned draw_colors(unsigned action)
 {
   unsigned i;
@@ -8050,8 +8274,10 @@ static unsigned draw_colors(unsigned action)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw brushes: */
-
 static void draw_brushes(void)
 {
   int i, off_y, max, brush;
@@ -8144,6 +8370,9 @@ static void draw_brushes(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw fonts: */
 static void draw_fonts(void)
 {
@@ -8451,8 +8680,10 @@ static void draw_fonts(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw stamps: */
-
 static void draw_stamps(void)
 {
   int i, off_y, max, stamp, most;
@@ -8747,8 +8978,10 @@ static void draw_stamps(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw the shape selector: */
-
 static void draw_shapes(void)
 {
   int i, shape, max, off_y;
@@ -8830,8 +9063,10 @@ static void draw_shapes(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw the eraser selector: */
-
 static void draw_erasers(void)
 {
   int i, x, y, sz;
@@ -8936,8 +9171,10 @@ static void draw_erasers(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw no selectables: */
-
 static void draw_none(void)
 {
   int i;
@@ -8956,15 +9193,18 @@ static void draw_none(void)
     }
 }
 
-
-
+/**
+ * FIXME
+ */
 /* Create a thumbnail: */
-
 static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y, int keep_aspect)
 {
   return (thumbnail2(src, max_x, max_y, keep_aspect, 1));
 }
 
+/**
+ * FIXME
+ */
 static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep_aspect, int keep_alpha)
 {
   int x, y;
@@ -9134,9 +9374,11 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
 
 #ifndef NO_BILINEAR
 
+/**
+ * FIXME
+ */
 /* Based on code from: http://www.codeproject.com/cs/media/imageprocessing4.asp
    copyright 2002 Christian Graus */
-
 static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
 {
   SDL_Surface *s;
@@ -9295,6 +9537,9 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
 #endif
 
 
+/**
+ * FIXME
+ */
 /* XOR must show up on black, white, 0x7f grey, and 0x80 grey.
   XOR must be exactly 100% perfectly reversable. */
 static void xorpixel(int x, int y)
@@ -9333,8 +9578,10 @@ static void xorpixel(int x, int y)
 }
 
 
+/**
+ * FIXME
+ */
 /* Undo! */
-
 static void do_undo(void)
 {
   int wanna_update_toolbar;
@@ -9400,8 +9647,10 @@ static void do_undo(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Redo! */
-
 static void do_redo(void)
 {
   if (cur_undo != newest_undo)
@@ -9450,8 +9699,10 @@ static void do_redo(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Create the current brush in the current color: */
-
 static void render_brush(void)
 {
   Uint32 amask;
@@ -9542,8 +9793,10 @@ static void render_brush(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw a XOR line: */
-
 static void line_xor(int x1, int y1, int x2, int y2)
 {
   int dx, dy, y, num_drawn;
@@ -9620,8 +9873,10 @@ static void line_xor(int x1, int y1, int x2, int y2)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw a XOR rectangle: */
-
 static void rect_xor(int x1, int y1, int x2, int y2)
 {
   if (x1 < 0)
@@ -9655,8 +9910,10 @@ static void rect_xor(int x1, int y1, int x2, int y2)
 }
 
 
+/**
+ * FIXME
+ */
 /* Erase at the cursor! */
-
 static void do_eraser(int x, int y)
 {
   SDL_Rect dest;
@@ -9763,8 +10020,10 @@ static void do_eraser(int x, int y)
 }
 
 
+/**
+ * FIXME
+ */
 /* Reset available tools (for new image / starting out): */
-
 static void reset_avail_tools(void)
 {
   int i;
@@ -9842,8 +10101,10 @@ static void reset_avail_tools(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Save and disable available tools (for Open-Dialog) */
-
 static void disable_avail_tools(void)
 {
   int i;
@@ -9856,8 +10117,10 @@ static void disable_avail_tools(void)
     }
 }
 
+/**
+ * FIXME
+ */
 /* Restore and enable available tools (for End-Of-Open-Dialog) */
-
 static void enable_avail_tools(void)
 {
   int i;
@@ -9869,8 +10132,10 @@ static void enable_avail_tools(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* For qsort() call in do_open()... */
-
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 {
 #ifdef DEBUG
@@ -9884,8 +10149,10 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw tux's text on the screen: */
-
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left)
 {
   draw_tux_text_ex(which_tux, str, want_right_to_left, 0);
@@ -9896,11 +10163,17 @@ static const char *latest_tux_text;
 static int latest_r2l;
 static Uint8 latest_locale_text;
 
+/**
+ * FIXME
+ */
 static void redraw_tux_text(void)
 {
   draw_tux_text_ex(latest_tux, latest_tux_text, latest_r2l, latest_locale_text);
 }
 
+/**
+ * FIXME
+ */
 static void draw_tux_text_ex(int which_tux, const char *const str, int want_right_to_left, Uint8 locale_text)
 {
   SDL_Rect dest;
@@ -9987,11 +10260,17 @@ static void draw_tux_text_ex(int which_tux, const char *const str, int want_righ
 }
 
 
+/**
+ * FIXME
+ */
 static void wordwrap_text(const char *const str, SDL_Color color, int left, int top, int right, int want_right_to_left)
 {
   wordwrap_text_ex(str, color, left, top, right, want_right_to_left, 0);
 }
 
+/**
+ * FIXME
+ */
 static void wordwrap_text_ex(const char *const str, SDL_Color color,
                              int left, int top, int right, int want_right_to_left, Uint8 locale_text)
 {
@@ -10399,6 +10678,9 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
 #ifndef NOSOUND
 
+/**
+ * FIXME
+ */
 static void playstampdesc(int chan)
 {
   static SDL_Event playsound_event;
@@ -10422,6 +10704,9 @@ static void playstampdesc(int chan)
 
 #ifndef NOSOUND
 
+/**
+ * FIXME
+ */
 static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
 {
   char *snd_fname;
@@ -10517,11 +10802,17 @@ static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
 }
 
 
+/**
+ * FIXME
+ */
 static Mix_Chunk *loadsound(const char *const fname)
 {
   return (loadsound_extra(fname, ""));
 }
 
+/**
+ * FIXME
+ */
 static Mix_Chunk *loaddescsound(const char *const fname)
 {
   return (loadsound_extra(fname, "_desc"));
@@ -10532,6 +10823,9 @@ static Mix_Chunk *loaddescsound(const char *const fname)
 
 /* Strip any trailing spaces: */
 
+/**
+ * FIXME
+ */
 static void strip_trailing_whitespace(char *buf)
 {
   unsigned i = strlen(buf);
@@ -10547,6 +10841,9 @@ static void strip_trailing_whitespace(char *buf)
 
 /* Load a file's description: */
 
+/**
+ * FIXME
+ */
 static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
   char *txt_fname, *extptr;
@@ -10662,6 +10959,9 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 }
 
 
+/**
+ * FIXME
+ */
 /* Load a *.dat file */
 static double loadinfo(const char *const fname, stamp_type * inf)
 {
@@ -10774,6 +11074,9 @@ static double loadinfo(const char *const fname, stamp_type * inf)
 }
 
 
+/**
+ * FIXME
+ */
 static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect, SDL_Surface * dst, SDL_Rect * dstrect)
 {
   int dstx = 0;
@@ -10836,6 +11139,9 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect, SDL_S
 }
 
 
+/**
+ * FIXME
+ */
 /* For the 3rd arg, pass either NondefectiveBlit or SDL_BlitSurface. */
 static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
                                       int SDLCALL(*blit) (SDL_Surface * src,
@@ -10914,6 +11220,9 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 }
 
 
+/**
+ * FIXME
+ */
 static void load_starter_id(char *saved_id, FILE * fil)
 {
   char *rname;
@@ -11003,6 +11312,9 @@ static void load_starter_id(char *saved_id, FILE * fil)
 }
 
 
+/**
+ * FIXME
+ */
 static SDL_Surface *load_starter_helper(char *path_and_basename, char *extension, SDL_Surface * (*load_func) (char *))
 {
   char *ext;
@@ -11030,6 +11342,9 @@ static SDL_Surface *load_starter_helper(char *path_and_basename, char *extension
 }
 
 
+/**
+ * FIXME
+ */
 static void load_starter(char *img_id)
 {
   char *dirname;
@@ -11209,6 +11524,9 @@ static void load_starter(char *img_id)
 }
 
 
+/**
+ * FIXME
+ */
 static void load_template(char *img_id)
 {
   char *dirname;
@@ -11284,8 +11602,10 @@ static void load_template(char *img_id)
 }
 
 
+/**
+ * FIXME
+ */
 /* Load current (if any) image: */
-
 static void load_current(void)
 {
   SDL_Surface *tmp, *org_surf;
@@ -11380,8 +11700,10 @@ static void load_current(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Make sure we have a 'path' directory */
-
 static int make_directory(const char *path, const char *errmsg)
 {
   char *fname;
@@ -11400,8 +11722,10 @@ static int make_directory(const char *path, const char *errmsg)
   return 1;
 }
 
+/**
+ * FIXME
+ */
 /* Save the current image to disk: */
-
 static void save_current(void)
 {
   char *fname;
@@ -11434,20 +11758,27 @@ static void save_current(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Prompt the user with a yes/no question: */
-
 static int do_prompt(const char *const text, const char *const btn_yes, const char *const btn_no, int ox, int oy)
 {
   return (do_prompt_image(text, btn_yes, btn_no, NULL, NULL, NULL, ox, oy));
 }
 
-
+/**
+ * FIXME
+ */
 static int do_prompt_snd(const char *const text, const char *const btn_yes,
                          const char *const btn_no, int snd, int ox, int oy)
 {
   return (do_prompt_image_flash_snd(text, btn_yes, btn_no, NULL, NULL, NULL, 0, snd, ox, oy));
 }
 
+/**
+ * FIXME
+ */
 static int do_prompt_image(const char *const text, const char *const btn_yes,
                            const char *const btn_no, SDL_Surface * img1,
                            SDL_Surface * img2, SDL_Surface * img3, int ox, int oy)
@@ -11455,6 +11786,9 @@ static int do_prompt_image(const char *const text, const char *const btn_yes,
   return (do_prompt_image_snd(text, btn_yes, btn_no, img1, img2, img3, SND_NONE, ox, oy));
 }
 
+/**
+ * FIXME
+ */
 static int do_prompt_image_snd(const char *const text,
                                const char *const btn_yes,
                                const char *const btn_no, SDL_Surface * img1,
@@ -11463,6 +11797,9 @@ static int do_prompt_image_snd(const char *const text,
   return (do_prompt_image_flash_snd(text, btn_yes, btn_no, img1, img2, img3, 0, snd, ox, oy));
 }
 
+/**
+ * FIXME
+ */
 static int do_prompt_image_flash(const char *const text,
                                  const char *const btn_yes,
                                  const char *const btn_no, SDL_Surface * img1,
@@ -11474,6 +11811,9 @@ static int do_prompt_image_flash(const char *const text,
 #define PROMPT_LEFT 96
 #define PROMPT_W 440
 
+/**
+ * FIXME
+ */
 static int do_prompt_image_flash_snd(const char *const text,
                                      const char *const btn_yes,
                                      const char *const btn_no,
@@ -11903,8 +12243,10 @@ static int do_prompt_image_flash_snd(const char *const text,
 }
 
 
+/**
+ * FIXME
+ */
 /* Free memory and prepare to quit: */
-
 static void cleanup(void)
 {
   int i, j;
@@ -12223,6 +12565,9 @@ static void cleanup(void)
 }
 
 
+/**
+ * FIXME
+ */
 static void free_surface(SDL_Surface ** surface_array)
 {
   if (surface_array)            //EP added this line to avoid app crash
@@ -12234,6 +12579,9 @@ static void free_surface(SDL_Surface ** surface_array)
 }
 
 
+/**
+ * FIXME
+ */
 static void free_surface_array(SDL_Surface * surface_array[], int count)
 {
   int i;
@@ -12246,8 +12594,10 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 }
 
 
+/**
+ * FIXME
+ */
 /* Draw a shape! */
-
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
@@ -12531,8 +12881,10 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 }
 
 
+/**
+ * FIXME
+ */
 /* What angle is the mouse away from the center of a shape? */
-
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   int deg;
@@ -12557,8 +12909,10 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 }
 
 
+/**
+ * FIXME
+ */
 /* What angle is the mouse away from a brush drag or line draw? */
-
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   int deg;
@@ -12581,8 +12935,10 @@ static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file!")
 
 
+/**
+ * FIXME
+ */
 /* Save the current image: */
-
 static int do_save(int tool, int dont_show_success_results)
 {
   char *fname;
@@ -12795,6 +13151,9 @@ static int do_save(int tool, int dont_show_success_results)
   return 1;
 }
 
+/**
+ * FIXME
+ */
 static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, size_t uncompressed_size, Bytef * data,
                            size_t dataLen)
 {
@@ -12827,6 +13186,9 @@ static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, 
   free(headers);
 }
 
+/**
+ * FIXME
+ */
 static void do_png_embed_data(png_structp png_ptr)
 {
 
@@ -13251,6 +13613,9 @@ static void do_png_embed_data(png_structp png_ptr)
     }
 }
 
+/**
+ * FIXME
+ */
 /* Actually save the PNG data to the file stream: */
 static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf, int embed)
 {
@@ -13370,6 +13735,9 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf, i
   return 0;
 }
 
+/**
+ * FIXME
+ */
 /* Pick a new file ID: */
 static void get_new_file_id(void)
 {
@@ -13385,8 +13753,10 @@ static void get_new_file_id(void)
 }
 
 
+/**
+ * FIXME
+ */
 /* Handle quitting (and prompting to save, if necessary!) */
-
 static int do_quit(int tool)
 {
   int done, tmp_tool;
@@ -13446,7 +13816,9 @@ static int do_quit(int tool)
 
 /* FIXME: This, do_slideshow() and do_new_dialog() should be combined
    and modularized! */
-
+/**
+ * FIXME
+ */
 static int do_open(void)
 {
   SDL_Surface *img, *img1, *img2, *org_surf;
@@ -14521,8 +14893,10 @@ static int do_open(void)
 
 /* FIXME: This, do_open() and do_new_dialog() should be combined and modularized! */
 
+/**
+ * FIXME
+ */
 /* Slide Show Selection Screen: */
-
 static int do_slideshow(void)
 {
   SDL_Surface *img, *img1, *img2;
@@ -15281,6 +15655,9 @@ static int do_slideshow(void)
 }
 
 
+/**
+ * FIXME
+ */
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed)
 {
   int i, which, next, done;
@@ -15522,8 +15899,10 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
 
 
 
+/**
+ * FIXME
+ */
 /* Draws large, bitmap digits over thumbnails in slideshow selection screen: */
-
 static void draw_selection_digits(int right, int bottom, int n)
 {
   SDL_Rect src, dest;
@@ -15572,8 +15951,10 @@ static void draw_selection_digits(int right, int bottom, int n)
 }
 
 
+/**
+ * FIXME
+ */
 /* Let sound effects (e.g., "Save" sfx) play out before quitting... */
-
 static void wait_for_sfx(void)
 {
 #ifndef NOSOUND
@@ -15618,6 +15999,9 @@ static char stiple[] =
 static unsigned char *stamp_outline_data;
 static int stamp_outline_w, stamp_outline_h;
 
+/**
+ * FIXME
+ */
 static void update_stamp_xor(void)
 {
   int xx, yy, rx, ry;
@@ -15708,6 +16092,9 @@ static void update_stamp_xor(void)
   free(alphabits);
 }
 
+/**
+ * FIXME
+ */
 static void stamp_xor(int x, int y)
 {
   int xx, yy, sx, sy;
@@ -15731,6 +16118,9 @@ static void stamp_xor(int x, int y)
 
 #endif
 
+/**
+ * FIXME
+ */
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
 {
   float rgb_min, rgb_max, delta, r, g, b;
@@ -15771,6 +16161,9 @@ static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
 }
 
 
+/**
+ * FIXME
+ */
 static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8, Uint8 * b8)
 {
   int i;
@@ -15837,6 +16230,9 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8, Uint8 * 
   *b8 = (Uint8) (b * 255);
 }
 
+/**
+ * FIXME
+ */
 static void print_image(void)
 {
   int cur_time;
@@ -15874,6 +16270,9 @@ static void print_image(void)
     }
 }
 
+/**
+ * FIXME
+ */
 void do_print(void)
 {
   /* Assemble drawing plus any labels: */
@@ -15937,6 +16336,9 @@ void do_print(void)
 #endif
 }
 
+/**
+ * FIXME
+ */
 static void do_render_cur_text(int do_blit)
 {
   int w, h;
@@ -16154,8 +16556,10 @@ static void do_render_cur_text(int do_blit)
 }
 
 
+/**
+ * FIXME
+ */
 /* Return string as uppercase if that option is set: */
-
 static char *uppercase(const char *restrict const str)
 {
   unsigned int i, n;
@@ -16186,6 +16590,9 @@ static char *uppercase(const char *restrict const str)
   return ustr;
 }
 
+/**
+ * FIXME
+ */
 static wchar_t *uppercase_w(const wchar_t * restrict const str)
 {
   unsigned n = wcslen(str) + 1;
@@ -16208,8 +16615,10 @@ static wchar_t *uppercase_w(const wchar_t * restrict const str)
 }
 
 
+/**
+ * FIXME
+ */
 /* Return string in right-to-left mode, if necessary: */
-
 static char *textdir(const char *const str)
 {
   unsigned char *dstr;
@@ -16275,8 +16684,10 @@ static char *textdir(const char *const str)
 }
 
 
+/**
+ * FIXME
+ */
 /* Scroll Timer */
-
 static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 {
   /* printf("scrolltimer_callback(%d) -- ", interval); */
@@ -16294,8 +16705,10 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 }
 
 
+/**
+ * FIXME
+ */
 /* Controls the Text-Timer - interval == 0 removes the timer */
-
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text)
 {
   static int activated = 0;
@@ -16328,8 +16741,10 @@ static void control_drawtext_timer(Uint32 interval, const char *const text, Uint
 }
 
 
+/**
+ * FIXME
+ */
 /* Drawtext Timer */
-
 static Uint32 drawtext_callback(Uint32 interval, void *param)
 {
   (void)interval;
@@ -16339,9 +16754,10 @@ static Uint32 drawtext_callback(Uint32 interval, void *param)
 }
 
 
-
-
 #ifdef DEBUG
+/**
+ * FIXME
+ */
 static char *debug_gettext(const char *str)
 {
   if (strcmp(str, dgettext(NULL, str)) == 0)
@@ -16356,6 +16772,9 @@ static char *debug_gettext(const char *str)
 #endif
 
 
+/**
+ * FIXME
+ */
 static const char *great_str(void)
 {
   return (great_strs[rand() % (sizeof(great_strs) / sizeof(char *))]);
@@ -16363,6 +16782,9 @@ static const char *great_str(void)
 
 
 #ifdef DEBUG
+/**
+ * FIXME
+ */
 static int charsize(Uint16 c)
 {
   Uint16 str[2];
@@ -16377,6 +16799,9 @@ static int charsize(Uint16 c)
 }
 #endif
 
+/**
+ * FIXME
+ */
 static void draw_image_title(int t, SDL_Rect dest)
 {
   SDL_BlitSurface(img_title_on, NULL, screen, &dest);
@@ -16387,7 +16812,9 @@ static void draw_image_title(int t, SDL_Rect dest)
 }
 
 
-
+/**
+ * FIXME
+ */
 /* Handle keyboard events to control the mouse: */
 /* Move as many pixels as bigsteps outside the areas,
    in the areas and 5 pixels around, move 1 pixel at a time */
@@ -16571,6 +16998,9 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect * area
     }
 }
 
+/**
+ * FIXME
+ */
 /* A subset of keys that will move one button at a time and jump between r_canvas<->r_tools<->r_colors */
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools)
 {
@@ -16679,8 +17109,10 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
     }
 }
 
+/**
+ * FIXME
+ */
 /* Unblank screen in fullscreen mode, if needed: */
-
 static void handle_active(SDL_Event * event)
 {
   if (event->active.state & SDL_APPACTIVE)
@@ -16712,9 +17144,11 @@ static void handle_active(SDL_Event * event)
 }
 
 
+/**
+ * FIXME
+ */
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
-
 #ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top, int new_top, int cur_bot, int line_width)
 {
@@ -16746,6 +17180,9 @@ static void anti_carriage_return(int left, int right, int cur_top, int new_top, 
 #endif
 
 
+/**
+ * FIXME
+ */
 static SDL_Surface *duplicate_surface(SDL_Surface * orig)
 {
   /*
@@ -16767,6 +17204,9 @@ static SDL_Surface *duplicate_surface(SDL_Surface * orig)
   return (SDL_DisplayFormatAlpha(orig));
 }
 
+/**
+ * FIXME
+ */
 static void mirror_starter(void)
 {
   SDL_Surface *orig;
@@ -16834,6 +17274,9 @@ static void mirror_starter(void)
 }
 
 
+/**
+ * FIXME
+ */
 static void flip_starter(void)
 {
   SDL_Surface *orig;
@@ -16901,6 +17344,9 @@ static void flip_starter(void)
 }
 
 
+/**
+ * FIXME
+ */
 static int valid_click(Uint8 button)
 {
   if (button == 1 || ((button == 2 || button == 3) && no_button_distinction))
@@ -16910,6 +17356,9 @@ static int valid_click(Uint8 button)
 }
 
 
+/**
+ * FIXME
+ */
 static int in_circle_rad(int x, int y, int rad)
 {
   if ((x * x) + (y * y) - (rad * rad) < 0)
@@ -16919,6 +17368,9 @@ static int in_circle_rad(int x, int y, int rad)
 }
 
 
+/**
+ * FIXME
+ */
 static int paintsound(int size)
 {
   if (SND_PAINT1 + (size / 12) >= SND_PAINT4)
@@ -16932,10 +17384,12 @@ static int paintsound(int size)
 
 #ifdef OLD_SVG
 
+/**
+ * FIXME
+ */
 /* Old libcairo1, svg and svg-cairo based code
    Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
 */
-
 static SDL_Surface *load_svg(char *file)
 {
   svg_cairo_t *scr;
@@ -17091,6 +17545,9 @@ static SDL_Surface *load_svg(char *file)
 
 #else
 
+/**
+ * FIXME
+ */
 /* New libcairo2, rsvg and rsvg-cairo based code */
 static SDL_Surface *load_svg(char *file)
 {
@@ -17262,6 +17719,9 @@ static SDL_Surface *load_svg(char *file)
 #endif
 
 
+/**
+ * FIXME
+ */
 static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned int max_w, unsigned int max_h)
 {
   float aspect, scale, wscale, hscale;
@@ -17335,6 +17795,9 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
 
 #endif
 
+/**
+ * FIXME
+ */
 /* FIXME: we can remove this after SDL folks fix their bug at http://bugzilla.libsdl.org/show_bug.cgi?id=1485 */
 /* Try to load an image with IMG_Load(), if it fails, then try with RWops() */
 static SDL_Surface *myIMG_Load_RWops(char *file)
@@ -17364,6 +17827,9 @@ static SDL_Surface *myIMG_Load_RWops(char *file)
   return (surf);
 }
 
+/**
+ * FIXME
+ */
 /* Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
    if we notice it's an SVG file (if available!);
    call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
@@ -17386,6 +17852,9 @@ static SDL_Surface *myIMG_Load(char *file)
     }
 }
 
+/**
+ * FIXME
+ */
 static SDL_Surface *load_kpx(char *file)
 {
   SDL_RWops *data;
@@ -17414,6 +17883,9 @@ static SDL_Surface *load_kpx(char *file)
 }
 
 
+/**
+ * FIXME
+ */
 static void load_magic_plugins(void)
 {
   int res, n, i, plc;
@@ -17801,6 +18273,9 @@ static void load_magic_plugins(void)
 
 
 
+/**
+ * FIXME
+ */
 static int magic_sort(const void *a, const void *b)
 {
   magic_t *am = (magic_t *) a;
@@ -17810,11 +18285,17 @@ static int magic_sort(const void *a, const void *b)
 }
 
 
+/**
+ * FIXME
+ */
 static void update_progress_bar(void)
 {
   show_progress_bar(screen);
 }
 
+/**
+ * FIXME
+ */
 static void magic_line_func(void *mapi,
                             int which, SDL_Surface * canvas, SDL_Surface * last,
                             int x1, int y1, int x2, int y2, int step,
@@ -17893,9 +18374,11 @@ static void magic_line_func(void *mapi,
 }
 
 
+/**
+ * FIXME
+ */
 /* Handle special things that some magic tools do that
    need to affect more than just the current canvas: */
-
 static void special_notify(int flags)
 {
   int tmp_int;
@@ -17929,6 +18412,9 @@ static void special_notify(int flags)
     }
 }
 
+/**
+ * FIXME
+ */
 static void magic_stopsound(void)
 {
 #ifndef NOSOUND
@@ -17939,6 +18425,9 @@ static void magic_stopsound(void)
 #endif
 }
 
+/**
+ * FIXME
+ */
 static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
 {
 #ifndef NOSOUND
@@ -17981,28 +18470,42 @@ static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
 #endif
 }
 
+/**
+ * FIXME
+ */
 static Uint8 magic_linear_to_sRGB(float lin)
 {
   return (linear_to_sRGB(lin));
 }
 
+/**
+ * FIXME
+ */
 static float magic_sRGB_to_linear(Uint8 srgb)
 {
   return (sRGB_to_linear_table[srgb]);
 }
 
+/**
+ * FIXME
+ */
 static int magic_button_down(void)
 {
   return (button_down || emulate_button_pressed);
 }
 
+/**
+ * FIXME
+ */
 static SDL_Surface *magic_scale(SDL_Surface * surf, int w, int h, int aspect)
 {
   return (thumbnail2(surf, w, h, aspect, 1));
 }
 
+/**
+ * FIXME
+ */
 /* FIXME: This, do_open() and do_slideshow() should be combined and modularized! */
-
 static int do_new_dialog(void)
 {
   SDL_Surface *img, *img1, *img2;
@@ -19145,8 +19648,10 @@ static int do_new_dialog(void)
   return (which != -1);
 }
 
+/**
+ * FIXME
+ */
 /* FIXME: Use a bitmask! */
-
 static void reset_touched(void)
 {
   int x, y;
@@ -19160,6 +19665,9 @@ static void reset_touched(void)
     }
 }
 
+/**
+ * FIXME
+ */
 static Uint8 magic_touched(int x, int y)
 {
   Uint8 res;
@@ -19173,6 +19681,9 @@ static Uint8 magic_touched(int x, int y)
   return (res);
 }
 
+/**
+ * FIXME
+ */
 static int do_color_sel(void)
 {
 #ifndef NO_PROMPT_SHADOWS
@@ -19581,6 +20092,9 @@ static int do_color_sel(void)
   return (chose);
 }
 
+/**
+ * FIXME
+ */
 static int do_color_picker(void)
 {
 #ifndef NO_PROMPT_SHADOWS
@@ -20017,17 +20531,26 @@ static int do_color_picker(void)
 }
 
 
+/**
+ * FIXME
+ */
 static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
   putpixels[surface->format->BytesPerPixel] (surface, x, y, pixel);
 }
 
+/**
+ * FIXME
+ */
 static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 {
   return (getpixels[surface->format->BytesPerPixel] (surface, x, y));
 }
 
 
+/**
+ * FIXME
+ */
 static void magic_switchout(SDL_Surface * last)
 {
   int was_clicking = 0;
@@ -20057,6 +20580,9 @@ static void magic_switchout(SDL_Surface * last)
     }
 }
 
+/**
+ * FIXME
+ */
 static void magic_switchin(SDL_Surface * last)
 {
   if (cur_tool == TOOL_MAGIC)
@@ -20073,6 +20599,9 @@ static void magic_switchin(SDL_Surface * last)
     }
 }
 
+/**
+ * FIXME
+ */
 static int magic_modeint(int mode)
 {
   if (mode == MODE_PAINT || mode == MODE_ONECLICK || mode == MODE_PAINT_WITH_PREVIEW)
@@ -20083,6 +20612,9 @@ static int magic_modeint(int mode)
     return 0;
 }
 
+/**
+ * FIXME
+ */
 static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label_node_surface)
 {
   struct label_node *new_node = malloc(sizeof(struct label_node));
@@ -20155,6 +20687,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label
 }
 
 
+/**
+ * FIXME
+ */
 static struct label_node *search_label_list(struct label_node **ref_head, Uint16 x, Uint16 y, int hover)
 {
   struct label_node *current_node;
@@ -20271,6 +20806,9 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
   return NULL;
 }
 
+/**
+ * FIXME
+ */
 static void rec_undo_label(void)
 {
   if (first_label_node_in_redo_stack != NULL)
@@ -20309,6 +20847,9 @@ static void rec_undo_label(void)
     }
 }
 
+/**
+ * FIXME
+ */
 static void do_undo_label_node()
 {
   if (text_undo[(cur_undo + 1) % NUM_UNDO_BUFS] == 1)
@@ -20333,6 +20874,9 @@ static void do_undo_label_node()
   highlighted_label_node = current_label_node;
 }
 
+/**
+ * FIXME
+ */
 static void do_redo_label_node()
 {
   if ((text_undo[cur_undo] == 1) && (first_label_node_in_redo_stack != NULL))
@@ -20360,9 +20904,11 @@ static void do_redo_label_node()
 }
 
 
+/**
+ * FIXME
+ */
 static void simply_render_node(struct label_node *node)
 {
-
   SDL_Surface *tmp_surf;
   SDL_Rect dest, src;
   wchar_t *str;
@@ -20437,6 +20983,9 @@ static void simply_render_node(struct label_node *node)
     }
 }
 
+/**
+ * FIXME
+ */
 static void render_all_nodes_starting_at(struct label_node **node)
 {
   struct label_node *current_node;
@@ -20457,6 +21006,9 @@ static void render_all_nodes_starting_at(struct label_node **node)
     }
 }
 
+/**
+ * FIXME
+ */
 /* FIXME: This should search for the top-down of the overlaping labels and only re-render from it */
 static void derender_node(struct label_node **ref_head)
 {
@@ -20472,6 +21024,9 @@ static void derender_node(struct label_node **ref_head)
   render_all_nodes_starting_at(&start_label_node);
 }
 
+/**
+ * FIXME
+ */
 static void delete_label_list(struct label_node **ref_head)
 {
   struct label_node *current = *ref_head;
@@ -20491,6 +21046,9 @@ static void delete_label_list(struct label_node **ref_head)
   *ref_head = NULL;
 }
 
+/**
+ * FIXME
+ */
 /* A custom bliter that allows to put two transparent layers toghether without having to deal with colorkeys or SDL_SRCALPHA
    I am always reinventing the wheel. Hope this one is not squared. Pere */
 static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, SDL_Surface * dest_surf, SDL_Rect * dest_rect)
@@ -20532,6 +21090,9 @@ static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, SDL_Surface * de
       }
 }
 
+/**
+ * FIXME
+ */
 static void load_info_about_label_surface(FILE * lfi)
 {
   struct label_node *new_node;
@@ -20727,6 +21288,9 @@ static void load_info_about_label_surface(FILE * lfi)
     set_label_fonts();
 }
 
+/**
+ * FIXME
+ */
 static void set_label_fonts()
 {
   struct label_node *node;
@@ -20735,7 +21299,6 @@ static void set_label_fonts()
 
   node = current_label_node;
   while (node != NULL)
-
     {
       for (i = 0; i < num_font_families; i++)
         {
@@ -20781,11 +21344,13 @@ static void set_label_fonts()
       free(node->save_font_type);       /* Not needed anymore */
       node->save_font_type = NULL;
       node = node->next_to_down_label_node;
-
     }
 }
 
 
+/**
+ * FIXME
+ */
 static void tmp_apply_uncommited_text()
 {
   have_to_rec_label_node_back = have_to_rec_label_node;
@@ -20828,6 +21393,9 @@ static void tmp_apply_uncommited_text()
     }
 }
 
+/**
+ * FIXME
+ */
 static void undo_tmp_applied_text()
 {
   struct label_node *aux_label_node;
@@ -20863,6 +21431,9 @@ static void undo_tmp_applied_text()
 }
 
 
+/**
+ * FIXME
+ */
 /* Painting on the screen surface to avoid unnecessary complexity */
 static void highlight_label_nodes()
 {
@@ -20939,6 +21510,9 @@ static void highlight_label_nodes()
     }
 }
 
+/**
+ * FIXME
+ */
 static void cycle_highlighted_label_node()
 {
   struct label_node *aux_node;
@@ -20963,6 +21537,9 @@ static void cycle_highlighted_label_node()
 
 }
 
+/**
+ * FIXME
+ */
 static int are_labels()
 {
   struct label_node *aux_node;
@@ -20980,6 +21557,9 @@ static int are_labels()
   return (FALSE);
 }
 
+/**
+ * FIXME
+ */
 int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
 {
   unsigned int count, fields;
@@ -21048,6 +21628,9 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
   return (FALSE);
 }
 
+/**
+ * FIXME
+ */
 Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
                       png_infop info_ptr, const char *chunk_name, png_unknown_chunk unknown, int *unc_size)
 {
@@ -21148,6 +21731,9 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
 
 }
 
+/**
+ * FIXME
+ */
 void load_embedded_data(char *fname, SDL_Surface * org_surf)
 {
   FILE *fi, *fp;
@@ -21501,6 +22087,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 /* ================================================================================== */
 
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
+/**
+ * FIXME
+ */
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;
@@ -21535,6 +22124,9 @@ static void show_available_papersizes(int exitcode)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *filename)
 {
   char str[256];
@@ -21584,6 +22176,9 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     tmpcfg->parsertmp_lang = PARSE_CLOBBER;
 }
 
+/**
+ * FIXME
+ */
 static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
 {
   char *str, *arg;
@@ -21658,6 +22253,9 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     tmpcfg->parsertmp_lang = PARSE_CLOBBER;
 }
 
+/**
+ * FIXME
+ */
 /* merge two configs, with the winner taking priority */
 static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 {
@@ -21674,6 +22272,9 @@ static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
     }
 }
 
+/**
+ * FIXME
+ */
 static void setup_config(char *argv[])
 {
   char str[128];
@@ -22211,11 +22812,12 @@ application support folder */
     {
       promptless_save = SAVE_OVER_ALWAYS;
     }
-
-
 }
 
 
+/**
+ * FIXME
+ */
 static void chdir_to_binary(char *argv0)
 {
   /*
@@ -22281,6 +22883,9 @@ static void chdir_to_binary(char *argv0)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 static void setup_colors(void)
 {
   FILE *fi;
@@ -22441,6 +23046,9 @@ static void setup_colors(void)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 static void do_lock_file(void)
 {
   FILE *fi;
@@ -22520,6 +23128,9 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
+/**
+ * FIXME
+ */
 int TP_EventFilter(const SDL_Event * event)
 {
   if (event->type == SDL_QUIT ||
@@ -22541,6 +23152,9 @@ int TP_EventFilter(const SDL_Event * event)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 static void setup(void)
 {
   int i;
@@ -23497,6 +24111,9 @@ static void setup(void)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 static void claim_to_be_ready(void)
 {
   SDL_Rect dest;
@@ -23599,6 +24216,9 @@ static void claim_to_be_ready(void)
 
 /* ================================================================================== */
 
+/**
+ * FIXME
+ */
 int main(int argc, char *argv[])
 {
 #ifdef DEBUG
@@ -23697,10 +24317,11 @@ int main(int argc, char *argv[])
 }
 
 
-
-
 /* Moves a file to the trashcan (or deletes it) */
 
+/**
+ * FIXME
+ */
 static int trash(char *path)
 {
 #ifdef UNLINK_ONLY
@@ -23871,6 +24492,9 @@ static int trash(char *path)
 #endif /* UNLINK_ONLY */
 }
 
+/**
+ * FIXME
+ */
 int file_exists(char *path)
 {
   struct stat buf;
@@ -23880,6 +24504,9 @@ int file_exists(char *path)
   return (res == 0);
 }
 
+/**
+ * FIXME
+ */
 /* Don't move the mouse here as this is only called when an event triggers it
    and the joystick can be holded withouth sending any event. */
 static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int *val_y)
@@ -23923,6 +24550,9 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
     }
 }
 
+/**
+ * FIXME
+ */
 static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int *valhat_x, int *valhat_y,
                                 int *hatmotioner, Uint32 * old_hat_ticks)
 {
@@ -23974,6 +24604,9 @@ static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int
   *old_hat_ticks = SDL_GetTicks();
 }
 
+/**
+ * FIXME
+ */
 static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y)
 {
   int val_x, val_y;
@@ -23986,7 +24619,9 @@ static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y)
   SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
 }
 
-
+/**
+ * FIXME
+ */
 static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmotioner, int old_hat_ticks, int val_x,
                              int val_y, int valhat_x, int valhat_y)
 {
@@ -24015,11 +24650,17 @@ static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmo
 
 }
 
+/**
+ * FIXME
+ */
 static void handle_joybuttonupdown(SDL_Event event, int oldpos_x, int oldpos_y)
 {
   handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, r_tools);
 }
 
+/**
+ * FIXME
+ */
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools)
 {
   int i, ignore = 0;
@@ -24197,3 +24838,4 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
   if (!ignore)
     SDL_PushEvent(&ev);
 }
+
