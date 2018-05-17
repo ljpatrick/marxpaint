@@ -1,3 +1,6 @@
+/*
+ * FIXME
+ */
 #include <stdlib.h>
 #include "macos.h"
 
@@ -6,43 +9,50 @@
 #define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/TuxPaint"
 
 
+/**
+ * FIXME
+ */
 const char* macos_fontsPath()
 {
-	static char* p = NULL;
+  static char* p = NULL;
 
-	if(!p) {
-		const char* home = getenv("HOME");
+  if(!p) {
+    const char* home = getenv("HOME");
 
-		p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
+    p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
 
-		if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
-		else perror("macos_fontsPath");
-	}
+    if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
+    else perror("macos_fontsPath");
+  }
 
-	return p;
+  return p;
 }
 
 
+/**
+ * FIXME
+ */
 const char* macos_preferencesPath()
 {
-	static char* p = NULL;
+  static char* p = NULL;
 
-	if(!p) {
-		const char* home = getenv("HOME");
+  if(!p) {
+    const char* home = getenv("HOME");
 
-		p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
+    p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
 
-		if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
-		else perror("macos_preferencesPath");
-	}
+    if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
+    else perror("macos_preferencesPath");
+  }
 
-	return p;
+  return p;
 }
 
 
+/**
+ * FIXME
+ */
 const char* macos_globalPreferencesPath()
 {
-	return MACOS_GLOBAL_PREFERENCES_PATH;
+  return MACOS_GLOBAL_PREFERENCES_PATH;
 }
-
-

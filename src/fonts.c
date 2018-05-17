@@ -161,29 +161,6 @@ static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
 
-/* This doesn't actually ever get used; see load_locale_font()
-   -bjk 2017.10.15 */
-/*
-#ifndef NO_SDLPANGO
-static TuxPaint_Font *try_alternate_font(int size)
-{
-  char str[128];
-  char prefix[64];
-  char *p;
-
-  strcpy(prefix, lang_prefix);
-  if ((p = strrchr(prefix, '_')) != NULL)
-    {
-      *p = 0;
-      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf", DATA_PREFIX, prefix);
-
-      return TuxPaint_Font_OpenFont("", str, size);
-    }
-  return NULL;
-}
-#endif
-*/
-
 #ifdef NO_SDLPANGO
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 {
