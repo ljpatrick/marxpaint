@@ -7,3 +7,7 @@ src/tp_magic_api.h
 tp-magic-config
 trans/
 *~
+TuxPaint.app
+TuxPaint.dmg
+*.dylib
+*.dylib.dSYM

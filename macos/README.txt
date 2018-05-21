@@ -57,17 +57,22 @@ Simply, run:
   % make install
 
 ... to create the TuxPaint.app application bundle that can be run in-place or
-copied to /Applications.  Zip it up for distribution.
+copied to /Applications.  It also creates TuxPaint.dmg for distribution.
 
 
 KNOWN BUGS
 ----------
 On macOS 10.13 High Sierra:
-- The cursor appears with an invert-transparent background due to an issue
-  with SDL1 on macOS 10.13.  The following bug reports have been made:
+- The mouse cursor appears with an invert-transparent background due to an
+  issue with SDL1 on macOS 10.13.  A patch to SDL has been issued on May 16,
+  2018 to fix this issue.  Until this patch is officially relased and becomes a
+  part of the MacPorts package, SDL will need to be built from the source code
+  that includes the patch to display the mouse cursor correctly under macOS 10.13.
+  Here are more details:
 
-  MacPorts defect #55804 - https://trac.macports.org/ticket/55804
-  SDL bug #4076 - https://bugzilla.libsdl.org/show_bug.cgi?id=4076
+  Patch - https://github.com/kanjitalk755/SDL/commit/0296d5e601a5deb5ce2f540a8eafd64dd22dbe69
+  Source + patch - https://github.com/kanjitalk755/SDL/tree/forHighSierra
+  Full discussion - https://bugzilla.libsdl.org/show_bug.cgi?id=4076
 
 
 BACKWARD COMPATIBILITY
@@ -117,5 +122,5 @@ macOS.  As of this writing, 10.7 is the oldest version of macOS that can be
 targetted without errors when compiling the sources of MacPorts libraries
 required by Tux Paint.
 
-4th March 2018
+21st May 2018
 Mark K. Kim <mkkim214@gmail.com>

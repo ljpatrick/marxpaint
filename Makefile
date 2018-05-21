@@ -591,7 +591,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
-	@-rm -f TuxPaint.dmg
+	@-rm -f TuxPaint.dmg; rm -rf magic/*.dSYM
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1026,6 +1026,7 @@ install-bundlefiles:
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@custom/macos.sh
+	@echo "...Creating TuxPaint.dmg..."
 	@hdiutil create -volname "Tux Paint $(VER_VERSION)" -srcfolder $(BUNDLE) -ov -format UDBZ -o TuxPaint.dmg
 
 
