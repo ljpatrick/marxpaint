@@ -9,7 +9,7 @@ Linux application.
 
 REQUIREMENTS
 ------------
-Although Tux Paint is run without the XCode IDE, XCode itself is still required
+Although Tux Paint is built without the XCode IDE, XCode itself is still required
 to build Tux Paint.  Download it from the App Store, and launch it once to
 accept its license agreements.  Also install XCode command line tools using the
 command:

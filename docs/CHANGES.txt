@@ -166,9 +166,6 @@ $Id$
       the wrong(lossy) way, the program will crash
       (SF.net Bug #210)
 
-    * Fix text not displaying on systems without Fontconfig installed.
-      Mark K. Kim <mkkim214@gmail.com>
-
   * Ports
     -----
     * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
@@ -177,6 +174,7 @@ $Id$
 
     * Mac install creates a DMG
       Robert Buj Gelonch <rbuj@users.sf.net>
+      Mark K. Kim <mkkim214@gmail.com>
 
   * Other Improvements:
     -------------------
