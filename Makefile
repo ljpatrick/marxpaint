@@ -482,7 +482,8 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 	@if [ "x$(OS)" == "xosx" ]; then \
 		echo "All done! Now you can double click $(BUNDLE) to run the"; \
-		echo "program!!!"; \
+		echo "program!!! TuxPaint.dmg has also been created for"; \
+		echo "distribution."; \
 		echo; \
 		echo "For more information, see $(DOC_PREFIX)/README.txt"; \
 	else \
@@ -591,7 +592,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
-	@-rm -f TuxPaint.dmg; rm -rf magic/*.dSYM
+	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1013,7 +1014,7 @@ install-man:
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
 
 
-# Install the support files for macOS application bundle
+# Install the support files for macOS application bundle and create DMG
 .PHONY: install-bundlefiles
 install-bundlefiles:
 	@echo
@@ -1026,8 +1027,9 @@ install-bundlefiles:
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@custom/macos.sh
-	@echo "...Creating TuxPaint.dmg..."
-	@hdiutil create -volname "Tux Paint $(VER_VERSION)" -srcfolder $(BUNDLE) -ov -format UDBZ -o TuxPaint.dmg
+	@echo
+	@echo "...Creating DMG Distribution File..."
+	@custom/macos-mkdmg.sh
 
 
 # Build the program!

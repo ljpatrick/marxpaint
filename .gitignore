@@ -11,3 +11,4 @@ TuxPaint.app
 TuxPaint.dmg
 *.dylib
 *.dylib.dSYM
+.DS_Store
