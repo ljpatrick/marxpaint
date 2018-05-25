@@ -1,5 +1,13 @@
 #!/bin/sh
 
+##############################################################################
+# Script to generate TuxPaint.dmg from TuxPaint.app.
+#
+# Generating a pretty DMG file programmatically is a bit of an art.  Many
+# thanks to the appdmg project for showing how:
+# (https://github.com/LinusU/node-appdmg)
+#
+
 BUNDLE=TuxPaint.app
 TEMP_DMG=temp.dmg
 TEMP_DMG_SIZE=`expr \`du -sm "$BUNDLE" | cut -f1\` \* 15 / 10`m
