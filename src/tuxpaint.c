@@ -23289,6 +23289,10 @@ static void setup(void)
 
 
 #ifndef NOSOUND
+#ifdef DEBUG
+  printf("Initializing sound...\n");
+  fflush(stdout);
+#endif
 #ifndef WIN32
   if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
 #else
@@ -23317,9 +23321,17 @@ static void setup(void)
 #endif
 
 
+#ifdef DEBUG
+  printf("Enabling key repeat...\n");
+  fflush(stdout);
+#endif
   /* Set-up Key-Repeat: */
   SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
+#ifdef DEBUG
+  printf("Initializing TTF...\n");
+  fflush(stdout);
+#endif
   /* Init TTF stuff: */
   if (TTF_Init() < 0)
     {
@@ -23332,6 +23344,10 @@ static void setup(void)
     }
 
 
+#ifdef DEBUG
+  printf("Setting up colors...\n");
+  fflush(stdout);
+#endif
   setup_colors();
 
   /* Set window icon and caption: */
