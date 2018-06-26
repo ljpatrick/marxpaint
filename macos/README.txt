@@ -7,8 +7,8 @@ Starting with 0.9.23, however, Tux Paint for macOS is built as though it were a
 Linux application.
 
 
-REQUIREMENTS
-------------
+PREREQUISITES
+-------------
 Although Tux Paint is built without the XCode IDE, XCode itself is still required
 to build Tux Paint.  Download it from the App Store, and launch it once to
 accept its license agreements.  Also install XCode command line tools using the

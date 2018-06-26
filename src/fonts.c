@@ -900,7 +900,7 @@ static void groupfonts(void)
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
   //printf("groupfonts() qsort(user_font_families 2...)\n");
   //fflush(stdout);
-  if (user_font_families[0]->score < 0)
+  if (num_font_families > 0 && user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were unusable\n");
 #if 0
 // THREADED_FONTS
@@ -1007,7 +1007,17 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
   free(homedirdir);
 #endif
 
+#ifdef DEBUG
+  printf("Grouping fonts...\n");
+  fflush(stdout);
+#endif
+
   groupfonts();
+
+#ifdef DEBUG
+  printf("Finished loading the fonts\n");
+  fflush(stdout);
+#endif
 
   font_thread_done = 1;
   waiting_for_fonts = 0;
