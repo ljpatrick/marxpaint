@@ -11841,6 +11841,17 @@ static int do_prompt_image_flash_snd(const char *const text,
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
 
+#ifdef DEBUG
+  if(snd >= 0) {
+    printf("Prompt and play sound #%d: %s\n", snd, sound_fnames[snd]);
+    fflush(stdout);
+  }
+  else {
+    printf("Prompt without sound\n");
+    fflush(stdout);
+  }
+#endif
+
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
   emulate_button_pressed = 0;

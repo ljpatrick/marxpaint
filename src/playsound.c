@@ -54,6 +54,10 @@ void playsound(SDL_Surface * screen, int chan, int s, int override, int x, int y
 
   if (!mute && use_sound && s != SND_NONE)
     {
+#ifdef DEBUG
+  printf("playsound #%d in channel %d, pos (%d,%d), %soverride, ptr=%p\n", s, chan, x, y, override ? "" : "no ", sounds[s]);
+  fflush(stdout);
+#endif
       if (override || !Mix_Playing(chan))
         {
           Mix_PlayChannel(chan, sounds[s], 0);
@@ -91,8 +95,10 @@ void playsound(SDL_Surface * screen, int chan, int s, int override, int x, int y
               left = ((255 - dist) * ((screen->w - 1) - x)) / (screen->w - 1);
             }
 
-
-
+#ifdef DEBUG
+  printf("Panning of sound #%d in channel %d, left=%d, right=%d\n", s, chan, left, (255-dist)-left);
+  fflush(stdout);
+#endif
           Mix_SetPanning(chan, left, (255 - dist) - left);
         }
     }
