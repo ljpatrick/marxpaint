@@ -458,7 +458,7 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=
-osx_ARCH_INSTALL:=install-bundlefiles
+osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
 beos_ARCH_INSTALL:=install-haiku
 linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
@@ -1014,9 +1014,9 @@ install-man:
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
 
 
-# Install the support files for macOS application bundle and create DMG
-.PHONY: install-bundlefiles
-install-bundlefiles:
+# Install the support files for macOS application bundle
+.PHONY: install-macbundle
+install-macbundle:
 	@echo
 	@echo "...Installing App Bundle Support Files..."
 	@install -d -m 755 $(BUNDLE)/Contents/MacOS
@@ -1027,6 +1027,10 @@ install-bundlefiles:
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@custom/macos.sh
+
+
+# Create DMG for macOS
+TuxPaint.dmg:
 	@echo
 	@echo "...Creating DMG Distribution File..."
 	@custom/macos-mkdmg.sh
