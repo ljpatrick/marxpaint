@@ -10,7 +10,11 @@
 # The version number, for release:
 
 VER_VERSION:=0.9.23
-VER_DATE:=$(shell date +"%Y-%m-%d")
+ifdef SOURCE_DATE_EPOCH
+       VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
+else
+       VER_DATE=$(shell date "+%Y-%m-%d")
+endif
 MAGIC_API_VERSION:=0x00000003
 
 # Need to know the OS
