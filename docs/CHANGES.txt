@@ -166,6 +166,9 @@ $Id$
       the wrong(lossy) way, the program will crash
       (SF.net Bug #210)
 
+    * "Hat" started could not be drawn on.  Mended.
+      https://sourceforge.net/p/tuxpaint/bugs/202/
+
   * Ports & Building
     ----------------
     * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
