@@ -179,8 +179,25 @@ $Id$
       Robert Buj Gelonch <rbuj@users.sf.net>
       Mark K. Kim <mkkim214@gmail.com>
 
-    * Allow to override build date (in order to make builds reproducible)
+    * Allow override override build date (in order to make builds reproducible)
+      ("SOURCE_DATE_EPOCH")
       by Chris Lamb, pushed by Bernhard M. Wiedemann
+
+    * Allow specifying a suffix to the "lib" directory where
+      magic tools are installed.
+      ("LIBDIRSUFFIX")
+      Tim Dickson <dickson.tim@googlemail.com>
+
+    * Install Tux Paint docs into a version-numbered directory
+      (e.g., "/usr/local/share/doc/tuxpaint-0.9.23/")
+      Tim Dickson <dickson.tim@googlemail.com>
+
+    * Launcher icon installation location adjustments:
+      * .../X11R6/include/X11/pixmaps/ -> .../share/pixmaps/
+      * Using kde4config (vs kdeconfig); not putting things in "Graphics" subdir.
+      * Removed gnome-config stuff
+      Tim Dickson <dickson.tim@googlemail.com>
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Other Improvements:
     -------------------

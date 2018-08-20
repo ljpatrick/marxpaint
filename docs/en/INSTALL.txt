@@ -2,11 +2,11 @@ INSTALL.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2002-2007 by Bill Kendrick and others
-bill@newbreedsoftware.com
+Copyright (c) 2002-2018
+Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
-June 27, 2002 - July 12, 2007
+June 27, 2002 - August 19, 2018
 $Id$
 
 
@@ -17,7 +17,7 @@ Requirements:
     The Windows version of Tux Paint comes pre-packaged with the
     necessary pre-compiled libraries (in ".DLL" form), so no extra
     downloading is needed.
-    
+
   libSDL
   ------
     Tux Paint requires the Simple DirectMedia Layer Library (libSDL),
@@ -55,7 +55,7 @@ Requirements:
     free, LGPL'd libraries.  Under Linux, just like SDL, they should
     either already be installed, or are readily available for installation
     as part of your Linux distribution.
-    
+
     libPNG
     ------
       Tux Paint uses PNG (Portable Network Graphics) format for its
@@ -127,7 +127,7 @@ Requirements:
       tools.)
 
         http://netpbm.sourceforge.net/
-	
+
 
 Compiling and Installation:
 ---------------------------
@@ -141,25 +141,25 @@ Compiling and Installation:
     ----------
       Tux Paint comes pre-compiled for Windows, so no compilation is
       necessary.
-      
+
       As of February 2005 (starting with Tux Paint 0.9.15), the Makefile
       includes support for building on a Windows system using MinGW/MSYS.
       ( http://www.mingw.org/ )
-      
+
       After configuring the environment and building and installing all the 
       dependencies, use these commands, in MSYS, to build, install and run:
 
       Prior to version 0.9.20:
 
-	$ make win32
-	$ make install-win32
-	$ tuxpaint
+        $ make win32
+        $ make install-win32
+        $ tuxpaint
 
       Version 0.9.20 and beyond:
 
-	$ make
-	$ make install
-	$ tuxpaint
+        $ make
+        $ make install
+        $ tuxpaint
 
       Use the following command to build a version suitable for
       redistribution with the installer or in a zip-file:
@@ -176,7 +176,7 @@ Compiling and Installation:
       here:
 
         http://johnnypops.demon.co.uk/mingw/index.html
-      
+
       Read the relevant notes if building for Win9X/ME.
 
     Installer:
@@ -202,7 +202,7 @@ Compiling and Installation:
     -----------------------------------------
       To change program settings, right-click on the TuxPaint shortcut
       and select 'Properties' (at the bottom).
-       
+
       Make sure the 'Shortcut' tab is selected in the window that
       appears, and examine the 'Target:' field.  You should see
       something like this :
@@ -211,7 +211,7 @@ Compiling and Installation:
 
       You can now add command-line options which will be enabled when
       you double-click the icon.
-       
+
       For example, to make the game run in fullscreen mode,
       with simple shapes (no rotation option) and in French,
       add the options (after 'TuxPaint.exe'), like so:
@@ -219,11 +219,11 @@ Compiling and Installation:
         "C:\Program Files\TuxPaint\TuxPaint.exe" -f -s --lang french
 
       (See "README.txt" for a full list of available command-line options.)
-       
+
       If you make a mistake or it all disappears use Ctrl-Z to undo or
       just hit the [ESC] key and the box will close with no changes made
       (unless you pushed the "Apply" button!).
-       
+
       When you have finished, click "OK."
 
     If Something Goes Wrong
@@ -232,12 +232,12 @@ Compiling and Installation:
       nothing happens, it is probably because some of these command-line
       options are wrong. Open an Explorer like before, and look for a file
       called 'stderr.txt' in the TuxPaint folder.
-	
+
       It will contain a description of what was wrong. Usually it will
       just be due to incorrect character-case (capital 'Z' instead
       of lowercase 'z') or a missing (or extra) '-' (dash).
-  
-  
+
+
   Linux/Unix Users:
   -----------------
     Compiling:
@@ -276,6 +276,11 @@ Compiling and Installation:
       you can run "make" with "SDL_MIXER_LIB=" added:
 
         $ make SDL_MIXER_LIB=
+
+    Other options:
+    --------------
+    Various other options (e.g., installation paths) may be overridden;
+    see them in "Makefile" for further details.
 
     If you get errors:
     ------------------
@@ -328,40 +333,40 @@ Compiling and Installation:
 
         Other variables are:
           BIN_PREFIX
-	    Where the "tuxpaint" binary will be installed.
-	    (Set to "$(PREFIX)/bin" by default - e.g., "/usr/local/bin")
-	  
-	  DATA_PREFIX
-	    Where the data files (sound, graphics, brushes, stamps, fonts)
- 	    will go, and where Tux Paint will look for them when it's run.
-	    (Set to "$(PREFIX)/share/tuxpaint")
-	
-	  DOC_PREFIX
-	    Where the documentation text files (the "docs" directory) will go.
-	    (Set to "$(PREFIX)/share/doc/tuxpaint")
-	
-	  MAN_PREFIX
-	    Where the manual page for Tux Paint will go.
-	    (Set to "$(PREFIX)/share/man")
-	
-	  ICON_PREFIX                      $(PREFIX)/share/pixmaps
-	  X11_ICON_PREFIX                  $(PREFIX)/X11R6/include/X11/pixmaps
-	  GNOME_PREFIX                     $(PREFIX)/share/gnome/apps/Graphics
-	  KDE_PREFIX                       $(PREFIX)/share/applnk/Graphics
-	    Where the icons and launchers (for GNOME and KDE) will go.
-	
-	  LOCALE_PREFIX
-	    Where the translation files for Tux Paint will go, and where
-	    Tux Paint will look for them.
-	    (Set to "$(PREFIX)/share/locale/")
-	    (Final location of a translation file will be
-	    under the locale's directory (e.g., "es" for Spanish),
-	    within the "LC_MESSAGES" subdirectory.)
+            Where the "tuxpaint" binary will be installed.
+            (Set to "$(PREFIX)/bin" by default - e.g., "/usr/local/bin")
+
+          DATA_PREFIX
+            Where the data files (sound, graphics, brushes, stamps, fonts)
+            will go, and where Tux Paint will look for them when it's run.
+            (Set to "$(PREFIX)/share/tuxpaint")
+
+          DOC_PREFIX
+            Where the documentation text files (the "docs" directory) will go.
+            (Set to "$(PREFIX)/share/doc/tuxpaint")
+
+          MAN_PREFIX
+            Where the manual page for Tux Paint will go.
+            (Set to "$(PREFIX)/share/man")
+
+          ICON_PREFIX                      $(PREFIX)/share/pixmaps
+          X11_ICON_PREFIX                  $(PREFIX)/X11R6/include/X11/pixmaps
+          GNOME_PREFIX                     $(PREFIX)/share/gnome/apps/Graphics
+          KDE_PREFIX                       $(PREFIX)/share/applnk/Graphics
+            Where the icons and launchers (for GNOME and KDE) will go.
+
+          LOCALE_PREFIX
+            Where the translation files for Tux Paint will go, and where
+            Tux Paint will look for them.
+            (Set to "$(PREFIX)/share/locale/")
+            (Final location of a translation file will be
+            under the locale's directory (e.g., "es" for Spanish),
+            within the "LC_MESSAGES" subdirectory.)
 
         FIXME: This list is out of date.  See Makefile and Makefile-i18n for
         a complete list.
-	
-	
+
+
 Uninstalling Tux Paint:
 -----------------------
   Windows
@@ -404,4 +409,3 @@ Uninstalling Tux Paint:
     superuser mode:
 
       # exit
-

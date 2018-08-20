@@ -164,12 +164,11 @@ LIBDIR=$(PREFIX)
 
 # Magic Tool plug-ins
 INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
-MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib/tuxpaint/plugins
-
+MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
 
 # Docs and man page:
-DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)
+DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)/tuxpaint-dev
 MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
@@ -189,10 +188,10 @@ endif
 
 # Icons and launchers:
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
-X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
-GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
-KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
-KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
+X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
+
+KDE_PREFIX:=$(shell kde-config --install xdgdata-apps --expandvars 2> /dev/null)
+KDE_ICON_PREFIX:=$(shell kde4-config --install icon --expandvars 2> /dev/null)
 
 # Maemo flag
 MAEMOFLAG:=
@@ -464,7 +463,7 @@ trans:
 windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
 beos_ARCH_INSTALL:=install-haiku
-linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
+linux_ARCH_INSTALL:=install-kde install-kde-icons
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
@@ -604,15 +603,10 @@ clean:
 # are the same as they were when you installed, of course!!!
 .PHONY: uninstall
 uninstall:	uninstall-i18n
-	-if [ "x$(GNOME_PREFIX)" != "x" ]; then \
-	  rm $(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
-	  rm $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	else \
-	  rm /usr/share/applications/tuxpaint.desktop; \
-	  rm /usr/share/pixmaps/tuxpaint.png; \
-	fi
+	-rm /usr/share/applications/tuxpaint.desktop; \
+	-rm /usr/share/pixmaps/tuxpaint.png; \
 	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  rm $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	  rm $(KDE_PREFIX)/tuxpaint.desktop; \
 	fi
 	-rm $(ICON_PREFIX)/tuxpaint.png
 	-rm $(X11_ICON_PREFIX)/tuxpaint.xpm
@@ -757,21 +751,6 @@ echo-install-example-templates:
 install-example-templates: echo-install-example-templates install-example-template-dirs $(INSTALLED_TEMPLATES)
 
 
-# Install a launcher icon in the Gnome menu
-.PHONY: install-gnome
-install-gnome:
-	@echo
-	@echo "...Installing launcher icon into GNOME..."
-	@if [ "x$(GNOME_PREFIX)" != "x" ]; then \
-	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(DESTDIR)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/applications; \
-	 cp src/tuxpaint.desktop $(DESTDIR)$(GNOME_PREFIX)/share/applications/; \
-	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
-	fi
-
-
 # Install a launcher icon for the Nokia 770.
 .PHONY: install-nokia770
 install-nokia770:
@@ -803,10 +782,11 @@ install-kde:
 	@echo
 	@echo "...Installing launcher icon into KDE..."
 	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  install -d $(DESTDIR)$(KDE_PREFIX)/Graphics; \
-	  cp src/tuxpaint.desktop $(DESTDIR)$(KDE_PREFIX)/Graphics/; \
-	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	  install -d $(DESTDIR)$(KDE_PREFIX); \
+	  cp src/tuxpaint.desktop $(DESTDIR)$(KDE_PREFIX)/; \
+	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/tuxpaint.desktop; \
 	fi
+	kbuildsycoca4
 
 .PHONY: install-kde-icons
 install-kde-icons:
@@ -851,10 +831,8 @@ install-kde-icons:
 	fi
 
 
-# Install the PNG icon (for GNOME, KDE, etc.)
+# Install the PNG icon (for KDE desktop, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
-
-# FIXME: Should this also use $(DESTDIR)?
 .PHONY: install-icon
 install-icon:
 	@echo
