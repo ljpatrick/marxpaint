@@ -1,19 +1,19 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2017 by Bill Kendrick and others
-# bill@newbreedsoftware.com
+# Copyright (c) 2002-2018
+# Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 30, 2017
+# June 14, 2002 - August 19, 2018
 
 
 # The version number, for release:
 
 VER_VERSION:=0.9.23
 ifdef SOURCE_DATE_EPOCH
-       VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
+  VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
-       VER_DATE=$(shell date "+%Y-%m-%d")
+  VER_DATE=$(shell date "+%Y-%m-%d")
 endif
 MAGIC_API_VERSION:=0x00000003
 
@@ -21,30 +21,30 @@ MAGIC_API_VERSION:=0x00000003
 
 SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
-OS:=windows
-GPERF:=/usr/bin/gperf
+  OS:=windows
+  GPERF:=/usr/bin/gperf
 else
-ifeq ($(SYSNAME),Darwin)
-OS:=osx
-GPERF:=/usr/bin/gperf
-else
-ifeq ($(SYSNAME),BeOS)
-OS:=beos
-GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
-else
-ifeq ($(SYSNAME),Haiku)
-OS:=beos
-GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
-STDC_LIB:=-lstdc++
-ifeq ($(shell gcc --version | cut -c 1-6),2.95.3)
-STDC_LIB:=-lstdc++.r4
-endif
-else
-OS:=linux
-GPERF:=/usr/bin/gperf
-endif
-endif
-endif
+  ifeq ($(SYSNAME),Darwin)
+    OS:=osx
+    GPERF:=/usr/bin/gperf
+  else
+    ifeq ($(SYSNAME),BeOS)
+      OS:=beos
+      GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
+    else
+      ifeq ($(SYSNAME),Haiku)
+        OS:=beos
+        GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
+        STDC_LIB:=-lstdc++
+        ifeq ($(shell gcc --version | cut -c 1-6),2.95.3)
+          STDC_LIB:=-lstdc++.r4
+        endif
+      else
+        OS:=linux
+        GPERF:=/usr/bin/gperf
+      endif
+    endif
+  endif
 endif
 
 # change to sdl-console to build a console version on Windows
@@ -140,11 +140,11 @@ PREFIX:=$($(OS)_PREFIX)
 # macOS is set up as a bundle, with all files under 'Contents'.
 # "TuxPaint-1" is the OLPC XO name. Installing to ./ is bad!
 ifeq ($(OS),osx)
-DESTDIR:=$(BUNDLE)/Contents/
+  DESTDIR:=$(BUNDLE)/Contents/
 else ifeq ($(PREFIX),./)
-DESTDIR:=TuxPaint-1
+  DESTDIR:=TuxPaint-1
 else
-DESTDIR:=$(PKG_ROOT)
+  DESTDIR:=$(PKG_ROOT)
 endif
 
 # Program:
