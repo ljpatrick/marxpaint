@@ -3,13 +3,10 @@
 
 Options Documentation
 
-                Copyright 2002-2016 by Bill Kendrick and others
-                               New Breed Software
-
-                           bill@newbreedsoftware.com
+        Copyright (c) 2002-2018 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                               December 11, 2016
+                                August 28, 2018
 
      ----------------------------------------------------------------------
 
