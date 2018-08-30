@@ -42,14 +42,14 @@ $Id$
 
     * Kashmiri (Devanagari)
     * Kashmiri (Perso-Arabic)
-      Provided by chandrakant dhutadmal
+      Provided by Chandrakant Dhutadmal
 
     * Sindhi (Devanagari)
     * Sindhi (Perso-Arabic)
-      Provided by chandrakant dhutadmal
+      Provided by Chandrakant Dhutadmal
 
     * Urdu
-      Provided by chandrakant dhutadmal
+      Provided by Chandrakant Dhutadmal
 
   * Localization Updates:
     ---------------------
