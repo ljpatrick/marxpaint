@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - August 19, 2018
+# June 14, 2002 - August 30, 2018
 
 
 # The version number, for release:
@@ -963,10 +963,12 @@ install-osk:
 install-doc:
 	@echo
 	@echo "...Installing documentation..."
-	@install -d $(DOC_PREFIX)
-	@cp -R docs/* $(DOC_PREFIX)
-	@cp -R magic/magic-docs $(DOC_PREFIX)
-	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
+	install -d $(DOC_PREFIX)
+	cp -R docs/* $(DOC_PREFIX)
+	# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
+	install -d $(DOC_PREFIX)/en/magic-docs
+	cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
+	chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
 
 
 # Install the man page:
