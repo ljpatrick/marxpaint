@@ -1,11 +1,11 @@
-<?
+<?php
 /* This PHP file contains all the documentation for the various Magic Tools
 that are shipped with Tux Paint, as well as code and templates to generate
 individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* 2009.10.08 */
+/* Oct. 8, 2009 - August 30, 2018 */
 
 
 /* Authors of the Magic tools: */
