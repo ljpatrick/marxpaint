@@ -1,12 +1,9 @@
                      Creating Tux Paint Magic Tool Plugins
 
-                Copyright 2007-2008 by Bill Kendrick and others
-                               New Breed Software
-
-                           bill@newbreedsoftware.com
+          Copyright 2007-2018 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 19, 2008
+                         July 5, 2007 - August 30, 2018
 
      ----------------------------------------------------------------------
 
@@ -90,7 +87,7 @@ Interfaces
      header files) for building a plugin. (See "Compiling", below.)
 
      The C header file and command-line tool mentioned above are included
-     with Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
+     with Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
      Plugin Development package".
 
   'Magic' tool plugin functions
@@ -244,14 +241,18 @@ Interfaces
              contain (by your "get_tool_count()").
 
            * int modes(magic_api * api, int which)
-             This lets you tell Tux Paint what modes your tool can be used in
-             (either as a tool the user can paint with, or a tool that
-             affects the entire drawing at once)
+             This lets you tell Tux Paint what modes your tool can be used
+             in; either as a tool the user can paint with, or a tool that
+             affects the entire drawing at once.
 
              You must return a value that's some combination of one or more
              of available modes:
-                * MODE_PAINT
-                * MODE_FULLSCREEN
+                * MODE_PAINT - freehand paint (click and drag)
+                * MODE_FULLSCREEN - applies to full image with one click
+                * MODE_PAINT_WITH_PREVIEW - freehand paint, with preview
+                  (click and drag)
+                * MODE_ONECLICK - applies to an area around the mouse, with
+                  one click
              e.g., if your tool is only one that the user can paint with,
              return "MODE_PAINT". If the user can do both, return
              "MODE_PAINT | MODE_FULLSCREEN" to tell Tux Paint it can do both.
@@ -285,7 +286,7 @@ Interfaces
              of "Magic" tools when doing some other activity (i.e., using a
              different tool, such as "Text" or "Brush", activating a
              momentary tool, such as "Undo" and "Redo", or returning from a
-             dialog - possibly with a new picture when it switches back -
+             dialog — possibly with a new picture when it switches back —
              such as "Open", "New" or "Quit"). In this case, the same Magic
              tool is first 'switched-out', and then 'switched-back-in',
              usually moments later.
@@ -295,10 +296,10 @@ Interfaces
              switchout() is called for the old mode, then switchin() is
              called for the new mode.
 
-             These functions allow users to interact in complicated ways with
+             These functions allow users to interact in complicated was with
              Magic tools (for example, a tool that lets the user draw
              multiple freehand strokes, and then uses that as input such as
-             handwriting - normally, the user could click somewhere in the
+             handwriting — normally, the user could click somewhere in the
              canvas to tell the Magic tool they are 'finished', but if they
              switch to another tool, the Magic tool may want to undo any
              temporary changes to the canvas).
@@ -523,7 +524,7 @@ Interfaces
              This function notifies Tux Paint of special events. Various
              values defined in "tp_magic_api.h" can be 'or'ed together (using
              C's boolean 'or': "|") and sent to this function.
-                * SPECIAL_FLIP - The contents of the canvas has been flipped
+                * SPECIAL_FLIP — The contents of the canvas has been flipped
                   vertically.
 
                   If a 'Starter' image was used as the basis of this image,
@@ -533,7 +534,7 @@ Interfaces
                   (or unflipped) should be recorded on disk when the current
                   drawing is saved.
 
-                * SPECIAL_MIRROR - Similar to SPECIAL_FLIP, but for magic
+                * SPECIAL_MIRROR — Similar to SPECIAL_FLIP, but for magic
                   tools that mirror the contents of the canvas horizontally.
 
     Color Conversions
@@ -624,8 +625,8 @@ Compiling
        source code.
 
        Use the "tp-magic-config --cflags" command, supplied as part of
-       Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
-       Plugin Development package" - to provide additional command-line flags
+       Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" — to provide additional command-line flags
        to your C compiler that will help it build your plugin.
 
     Command-Line Example
@@ -647,12 +648,12 @@ Compiling
          A snippet from a Makefile to compile a Tux Paint "Magic" tool plugin
          might look like this:
 
-           +------------------------------------------------------+
-           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)   |
-           |                                                      |
-           | my_plugin.so: my_plugin.c                            |
-           |    gcc -shared $(CFLAGS) -o my_plugin.so my_plugin.c |
-           +------------------------------------------------------+
+           +----------------------------------------------------------------+
+           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)             |
+           |                                                                |
+           | my_plugin.so: my_plugin.c                                      |
+           |    gcc -shared $(CFLAGS) -o my_plugin.so my_plugin.c           |
+           +----------------------------------------------------------------+
 
          The first line sets up Makefile variable ("CFLAGS") that contains
          flags for the compiler. "-Wall" asks for all compiler warnings to be
@@ -682,15 +683,15 @@ Compiling
 
          An even more generalized Makefile might look like this:
 
-           +----------------------------------------------------+
-           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags) |
-           |                                                    |
-           | my_plugin_1.so: my_plugin_1.c                      |
-           |    $(CC) -shared $(CFLAGS) -o $@ $<                |
-           |                                                    |
-           | my_plugin_2.so: my_plugin_2.c                      |
-           |    $(CC) -shared $(CFLAGS) -o $@ $<                |
-           +----------------------------------------------------+
+           +----------------------------------------------------------------+
+           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)             |
+           |                                                                |
+           | my_plugin_1.so: my_plugin_1.c                                  |
+           |    $(CC) -shared $(CFLAGS) -o $@ $<                            |
+           |                                                                |
+           | my_plugin_2.so: my_plugin_2.c                                  |
+           |    $(CC) -shared $(CFLAGS) -o $@ $<                            |
+           +----------------------------------------------------------------+
 
          As before, there are lines that define the command "make" should run
          when it determines that it needs to (re)compile the ".so" file(s).
@@ -719,8 +720,8 @@ Installing
   Linux and other Unix-like Platforms
 
        Use the "tp-magic-config" command-line tool, supplied as part of
-       Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
-       Plugin Development package" - to determine where your plugins' files
+       Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" — to determine where your plugins' files
        should go.
 
     Shared Object
@@ -798,35 +799,35 @@ Installing
 
          A snippet from a more generalized Makefile might look like this:
 
-           +------------------------------------------------------------+
-           | PLUGINPREFIX=$(shell tp-magic-config --pluginprefix)       |
-           | PLUGINDOCPREFIX=$(shell tp-magic-config --plugindocprefix) |
-           | DATAPREFIX=$(shell tp-magic-config --dataprefix)           |
-           |                                                            |
-           | install:                                                   |
-           |    #                                                       |
-           |    # Install plugin                                        |
-           |    mkdir -p $(PLUGINPREFIX)                                |
-           |    cp *.so $(PLUGINPREFIX)/                                |
-           |    chmod 644 $(PLUGINPREFIX)/*.so                          |
-           |    #                                                       |
-           |    # Install icons                                         |
-           |    mkdir -p $(DATAPREFIX)/images/magic                     |
-           |    cp icons/*.png $(DATAPREFIX)/images/magic/              |
-           |    chmod 644 $(DATAPREFIX)/images/magic/*.png              |
-           |    #                                                       |
-           |    # Install sound effects                                 |
-           |    mkdir -p $(DATAPREFIX)/sounds/magic                     |
-           |    cp sounds/*.ogg $(DATAPREFIX)/sounds/magic/             |
-           |    chmod 644 $(DATAPREFIX)/sounds/magic/*.ogg              |
-           |    #                                                       |
-           |    # Install docs                                          |
-           |    mkdir -p $(PLUGINDOCPREFIX)/html                        |
-           |    cp docs/*.html $(PLUGINDOCPREFIX)/html/                 |
-           |    cp docs/*.txt $(PLUGINDOCPREFIX)/                       |
-           |    chmod 644 $(PLUGINDOCPREFIX)/html/*.html                |
-           |    chmod 644 $(PLUGINDOCPREFIX)/*.txt                      |
-           +------------------------------------------------------------+
+           +----------------------------------------------------------------+
+           | PLUGINPREFIX=$(shell tp-magic-config --pluginprefix)           |
+           | PLUGINDOCPREFIX=$(shell tp-magic-config --plugindocprefix)     |
+           | DATAPREFIX=$(shell tp-magic-config --dataprefix)               |
+           |                                                                |
+           | install:                                                       |
+           |    #                                                           |
+           |    # Install plugin                                            |
+           |    mkdir -p $(PLUGINPREFIX)                                    |
+           |    cp *.so $(PLUGINPREFIX)/                                    |
+           |    chmod 644 $(PLUGINPREFIX)/*.so                              |
+           |    #                                                           |
+           |    # Install icons                                             |
+           |    mkdir -p $(DATAPREFIX)/images/magic                         |
+           |    cp icons/*.png $(DATAPREFIX)/images/magic/                  |
+           |    chmod 644 $(DATAPREFIX)/images/magic/*.png                  |
+           |    #                                                           |
+           |    # Install sound effects                                     |
+           |    mkdir -p $(DATAPREFIX)/sounds/magic                         |
+           |    cp sounds/*.ogg $(DATAPREFIX)/sounds/magic/                 |
+           |    chmod 644 $(DATAPREFIX)/sounds/magic/*.ogg                  |
+           |    #                                                           |
+           |    # Install docs                                              |
+           |    mkdir -p $(PLUGINDOCPREFIX)/html                            |
+           |    cp docs/*.html $(PLUGINDOCPREFIX)/html/                     |
+           |    cp docs/*.txt $(PLUGINDOCPREFIX)/                           |
+           |    chmod 644 $(PLUGINDOCPREFIX)/html/*.html                    |
+           |    chmod 644 $(PLUGINDOCPREFIX)/*.txt                          |
+           +----------------------------------------------------------------+
 
          The first three lines set up Makefile variables that contain the
          paths returned by the "tp-magic-config" command-line tool. (The
