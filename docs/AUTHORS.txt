@@ -7,7 +7,7 @@ Various contributors (see below, and CHANGES.txt)
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - August 18, 2018
+June 17, 2002 - August 30, 2018
 
 $Id$
 
@@ -534,10 +534,10 @@ $Id$
     Pavel Shalamitski
 
   * Bengali
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Bodo
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Bosnian
     Samir Ribić
@@ -600,7 +600,7 @@ $Id$
     Mikkel Kirkgaard Nielsen <translation@mikini.dk> [retired]
 
   * Dogri
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Dutch
     Freek de Kruijf <f.de.kruijf@hetnet.nl>
@@ -731,7 +731,7 @@ $Id$
 
   * Kashmiri (Devanagari)
   * Kashmiri (Perso-Arabic)
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Khmer
     Khoem Sokhem <khoemsokhem@khmeros.info>
@@ -930,7 +930,7 @@ $Id$
 
   * Sindhi (Devanagari)
   * Sindhi (Perso-Arabic)
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Sinhala
     Menik Prasantha <manikprasantha@gmail.com>
@@ -1018,7 +1018,7 @@ $Id$
     Serhij Dubyk <serhijdubyk@gmail.com>
 
   * Urdu
-    Provided by chandrakant dhutadmal
+    Provided by Chandrakant Dhutadmal
 
   * Valencian
     Pilar Embid Giner <embid_mar@gva.es>
