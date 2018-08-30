@@ -963,12 +963,12 @@ install-osk:
 install-doc:
 	@echo
 	@echo "...Installing documentation..."
-	install -d $(DOC_PREFIX)
-	cp -R docs/* $(DOC_PREFIX)
-	# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
-	install -d $(DOC_PREFIX)/en/magic-docs
-	cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
-	chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
+	@install -d $(DOC_PREFIX)
+	@cp -R docs/* $(DOC_PREFIX)
+	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
+	@install -d $(DOC_PREFIX)/en/magic-docs
+	@cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
+	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
 
 
 # Install the man page:

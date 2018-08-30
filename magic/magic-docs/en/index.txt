@@ -34,8 +34,10 @@
    * Square Mosaic
    * Negative
    * Noise
+   * Pattern
    * Perspective
    * Picasso
+   * Puzzle
    * Rails
    * Rain
    * Rainbow
@@ -52,10 +54,15 @@
    * String V
    * String Corner
    * String Edges
-   * TV
+   * Symmetry Left/Right
+   * Symmetry Up/Down
+   * Tiles
    * Tint
+   * TV
    * Toothpaste
+   * Tornado
    * Waves
    * Wavelets
    * Wet Paint
+   * Xor Colors
    * Zoom
