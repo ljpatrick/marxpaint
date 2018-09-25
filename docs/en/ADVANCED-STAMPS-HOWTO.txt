@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.23
+                                version 0.9.23a
                              Advanced Stamps HOWTO
 
         Copyright 2006-2008 by Albert Cahalan for the Tux Paint project

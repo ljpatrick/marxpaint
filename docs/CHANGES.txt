@@ -8,6 +8,19 @@ http://www.tuxpaint.org/
 
 $Id$
 
+2018.Sept.24 (0.9.23a)
+  * Bug Fixes
+    ---------
+    * Reduce launch time by calling progress bar less frequently
+      while loading stamps.
+      Mark K. Kim <mkkim214@gmail.com>
+
+  * Misc
+    ----
+    * Verbose debugging, and "DEBUG_PRINTF()" macro now available;
+      see debugging options in INSTALL.txt.
+      Mark K. Kim <mkkim214@gmail.com>
+
 2018.August.30 (0.9.23)
   * New tools
     ---------

@@ -1,11 +1,11 @@
                                    Tux Paint
-                                 version 0.9.23
+                                version 0.9.23a
                            Frequently Asked Questions
 
         Copyright (c) 2002-2018 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                      September 14, 2002 - August 28, 2018
+                    September 14, 2002 - September 24, 2018
 
 Drawing-related
 

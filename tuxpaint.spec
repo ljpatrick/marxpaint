@@ -1,6 +1,6 @@
 Summary: A drawing program for young children
 Name: tuxpaint
-Version: 0.9.23
+Version: 0.9.23a
 Release: 1
 Epoch: 1
 License: GPL

@@ -6,7 +6,7 @@ Copyright (c) 2002-2018
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
-June 27, 2002 - August 19, 2018
+June 27, 2002 - September 24, 2018
 $Id$
 
 
@@ -365,6 +365,13 @@ Compiling and Installation:
 
         FIXME: This list is out of date.  See Makefile and Makefile-i18n for
         a complete list.
+
+
+Debugging:
+----------
+  Debugging (to stdout, e.g. terminal, or to a "stdout.txt" file, on Windows)
+  can be enabled by setting "DEBUG" (and, if verbose logging is wanted,
+  "VERBOSE") #define's in src/debug.h.
 
 
 Uninstalling Tux Paint:

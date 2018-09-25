@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 version 0.9.23
+                                version 0.9.23a
 
 Options Documentation
 
         Copyright (c) 2002-2018 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                                August 28, 2018
+                               September 24, 2018
 
      ----------------------------------------------------------------------
 
