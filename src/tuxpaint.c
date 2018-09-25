@@ -7419,7 +7419,7 @@ static void loadstamp_callback(SDL_Surface * screen,
   (void)locale;
 #ifdef DEBUG
   /* FIXME: Stderr instead of stdout? */
-  printf("loadstamp_callback: %s\n", dir);
+  printf("loadstamp_callback (%d): %s\n", i, dir);
 #endif
 
   if (num_stamps[stamp_group] > 0)
@@ -7459,7 +7459,6 @@ static void loadstamp_callback(SDL_Surface * screen,
 
 
   /* Sort and iterate the file list: */
-
   qsort(files, i, sizeof *files, compare_ftw_str);
   while (i--)
     {
@@ -7505,7 +7504,11 @@ static void loadstamp_callback(SDL_Surface * screen,
         }
 #endif
 
-      show_progress_bar(screen);
+      /*
+      * Showing the progress bar across the screen can be CPU-intensive, so
+      * update infrequently.
+      */
+      if((i % 32) == 0) show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
           && (dotext - files[i].str + 1 + dirlen < (int) (sizeof fname))
