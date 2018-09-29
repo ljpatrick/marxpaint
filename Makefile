@@ -90,7 +90,7 @@ linux_BUNDLE:=
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
-osx_ARCH_LIBS:=obj/postscript_print.o obj/macos.o
+osx_ARCH_LIBS:=src/macos_print.m obj/macos.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
@@ -116,7 +116,7 @@ FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lzdll -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv
-osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
+osx_ARCH_LINKS:=$(FRIBIDI_LIB)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB)
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)

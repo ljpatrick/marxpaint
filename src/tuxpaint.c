@@ -298,9 +298,21 @@ typedef struct safer_dirent
 
 #else /* __BEOS__ */
 
-/* Not Windows, not BeOS */
+/* Not BeOS */
+
+#ifdef __APPLE__
+
+/* Apple */
+
+#include "macos_print.h"
+
+#else /* __APPLE__ */
+
+/* Not Windows, not BeOS, not Apple */
 
 #include "postscript_print.h"
+
+#endif /* __APPLE__ */
 
 #endif /* __BEOS__ */
 
@@ -1356,7 +1368,7 @@ enum
 static magic_api *magic_api_struct;     /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -2555,6 +2567,14 @@ static void mainloop(void)
 
                   magic_switchin(canvas);
                 }
+#ifdef __APPLE__
+              else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts)
+                {
+                  /* Ctrl-Shft-P - Page Setup */
+                  if (!disable_print)
+                    DisplayPageSetup(canvas);
+                }
+#endif
               else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
                 {
                   /* Ctrl-P - Print */
@@ -16293,7 +16313,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__)
   const char *pcmd;
   FILE *pi;
 
@@ -16345,6 +16365,18 @@ void do_print(void)
   /* BeOS */
 
   SurfacePrint(save_canvas);
+#elif defined(__APPLE__)
+  /* Mac OS X */
+  int show = (want_alt_printcommand && !fullscreen);
+
+  const char *error = SurfacePrint(save_canvas, show);
+
+  if (error)
+    {
+      fprintf(stderr, "Cannot print: %s\n", error);
+      do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
+    }
+
 #endif
 
 #endif
@@ -22100,7 +22132,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* ================================================================================== */
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
 /**
  * FIXME
  */
