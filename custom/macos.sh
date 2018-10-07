@@ -52,6 +52,21 @@ for i in "$BINARY" $LIBS $LIBDIR/*; do
 		n=`echo "$j" | sed 's/^[/]opt[/]local[/]/@executable_path\/..\//'`
 		install_name_tool -change "$j" "$n" "$i"
 	done
+
+    # libSDL links to /System/Library/Frameworks/CoreGraphics.framework by
+    # default on newer versions of macOS, but this library is located under
+    # /System/Library/Frameworks/ApplicationServices.framework/Frameworks
+    # instead in macOS 10.7, and is a symlink to its real location in later
+    # versions of macOS.  For compatibility reasons, we tell libSDL to link to
+    # the former location instead.  See here for more information:
+    #
+    # https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7
+    #
+    if [ `otool -L "$i" | grep -c '^\t\/System\/Library\/Frameworks\/CoreGraphics\.framework\/Versions\/A\/CoreGraphics'` -gt 0 ]; then
+        defaultlib="/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
+        compatlib="/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
+		install_name_tool -change "$defaultlib" "$compatlib" "$i"
+    fi
 done
 
 # Some libraries require config files, so copy those...
