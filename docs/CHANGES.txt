@@ -8,9 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2018.Sept.30 (0.9.23a)
+2018.Oct.7 (0.9.23c)
   * Bug Fixes
     ---------
+    * Correct issue that prevented Tux Paint from lauching on Mac OS X 10.7.
+      (See https://sourceforge.net/p/tuxpaint/tuxpaint/ci/d2ef2e17d1962111d0f6f91394dce81e8706d48b/
+      and https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7)
+      Mark K. Kim <mkkim214@gmail.com>
+
     * Reduce launch time by calling progress bar less frequently
       while loading stamps.
       Mark K. Kim <mkkim214@gmail.com>
@@ -26,6 +31,11 @@ $Id$
     * Verbose debugging, and "DEBUG_PRINTF()" macro now available;
       see debugging options in INSTALL.txt.
       Mark K. Kim <mkkim214@gmail.com>
+
+  * Notes:
+    ------
+    * 0.9.23a & 0.9.23b were test versions for macOS that Mark produced
+      and sent to individual users for testing.
 
 2018.August.30 (0.9.23)
   * New tools
