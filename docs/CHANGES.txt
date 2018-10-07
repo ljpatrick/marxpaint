@@ -8,11 +8,17 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2018.Sept.24 (0.9.23a)
+2018.Sept.30 (0.9.23a)
   * Bug Fixes
     ---------
     * Reduce launch time by calling progress bar less frequently
       while loading stamps.
+      Mark K. Kim <mkkim214@gmail.com>
+
+    * Ability to bring up the print dialog from the macOS build was
+      removed in Tux Paint 0.9.23 to support the new build mechanism.
+      It has been re-added.  To access it, option-click the print icon,
+      or configure Tux Paint to always bring up the dialog upon print.
       Mark K. Kim <mkkim214@gmail.com>
 
   * Misc
