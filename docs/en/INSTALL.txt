@@ -6,7 +6,7 @@ Copyright (c) 2002-2018
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
-June 27, 2002 - September 24, 2018
+June 27, 2002 - December 8, 2018
 $Id$
 
 
@@ -175,7 +175,7 @@ Compiling and Installation:
       upon.  John Popplewell put together some instructions for doing that 
       here:
 
-        http://johnnypops.demon.co.uk/mingw/index.html
+        http://www.johnnypops.co.uk/tuxpaint/
 
       Read the relevant notes if building for Win9X/ME.
 

@@ -26,6 +26,11 @@ $Id$
       or configure Tux Paint to always bring up the dialog upon print.
       Mark K. Kim <mkkim214@gmail.com>
 
+  * Documentation updates
+    ---------------------
+    * Mended link to MinGW/MSYS instructions at John Popplewell's website.
+      (h/t "sechidis")
+
   * Misc
     ----
     * Verbose debugging, and "DEBUG_PRINTF()" macro now available;
