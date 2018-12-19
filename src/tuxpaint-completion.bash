@@ -8,6 +8,8 @@
 # FIXME: See http://www.debian-administration.org/articles/316 for an intro
 # to how we should be doing this... -bjk 2009.09.09
 
+# FIXME: Use the source to list all of the available options -bjk 2018.12.18
+
 have tuxpaint &&
 _tuxpaint()
 {
@@ -41,6 +43,7 @@ _tuxpaint()
 			--nobuttondistinction --buttondistinction \
 			--outlines --nooutlines \
 			--stamps --nostamps \
+                        --newcolorsfirst --newcolorslast \
 			--sysfonts --nosysfonts \
 			--nostampcontrols --stampcontrols \
 			--nomagiccontrols --magiccontrols \

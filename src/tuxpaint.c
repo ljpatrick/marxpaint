@@ -1203,6 +1203,7 @@ static int dont_load_stamps;
 static int mirrorstamps;
 static int disable_stamp_controls;
 static int stamp_size_override = -1;
+static int new_colors_last;
 
 #ifdef NOKIA_770
 static int simple_shapes = 1;
@@ -1958,6 +1959,7 @@ static void get_new_file_id(void);
 static int do_quit(int tool);
 static int do_open(void);
 static int do_new_dialog(void);
+static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(void);
 static int do_slideshow(void);
@@ -6395,7 +6397,6 @@ void show_version(int details)
 void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
-  unsigned i;
 
   fprintf(f,
           "\n"
@@ -6430,6 +6431,7 @@ void show_usage(int exitcode)
           "  [--nostampcontrols | --stampcontrols]\n"
           "  [--nomagiccontrols | --magiccontrols]\n"
           "  [--nolabel | --label]\n"
+          "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
           " Languages:\n"
           "  [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
@@ -18586,8 +18588,6 @@ static int do_new_dialog(void)
   int places_to_look;
   int tot;
   int first_starter, first_template;
-  int added;
-  Uint8 r, g, b;
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
@@ -18683,7 +18683,12 @@ static int do_new_dialog(void)
 
   /* (Re)allocate space for the information about these files: */
 
-  tot = num_files_in_dirs + NUM_COLORS;
+  tot = num_files_in_dirs;
+
+  /* And colors... */
+  if (!new_colors_last) {
+    tot += NUM_COLORS;
+  }
 
   thumbs = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * tot);
   d_places = (int *)malloc(sizeof(int) * tot);
@@ -18696,66 +18701,13 @@ static int do_new_dialog(void)
   qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
 
 
-  /* Throw the color palette at the beginning: */
+  /* Throw the color palette at the beginning (default): */
 
   white_in_palette = -1;
 
-  for (j = -1; j < NUM_COLORS; j++)
-    {
-      added = 0;
-
-      if (j < NUM_COLORS - 1)
-        {
-          if (j == -1 ||        /* (short circuit) */
-              color_hexes[j][0] != 255 ||       /* Ignore white, we'll have already added it */
-              color_hexes[j][1] != 255 || color_hexes[j][2] != 255)
-            {
-              /* Palette colors: */
-
-              thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
-                                                       THUMB_W - 20, THUMB_H - 20,
-                                                       screen->format->BitsPerPixel,
-                                                       screen->format->Rmask,
-                                                       screen->format->Gmask, screen->format->Bmask, 0);
-
-              if (thumbs[num_files] != NULL)
-                {
-                  if (j == -1)
-                    {
-                      r = g = b = 255;  /* White */
-                    }
-                  else
-                    {
-                      r = color_hexes[j][0];
-                      g = color_hexes[j][1];
-                      b = color_hexes[j][2];
-                    }
-                  SDL_FillRect(thumbs[num_files], NULL, SDL_MapRGB(thumbs[num_files]->format, r, g, b));
-                  added = 1;
-                }
-            }
-          else
-            {
-              white_in_palette = j;
-            }
-        }
-      else
-        {
-          /* Color picker: */
-
-          thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
-          added = 1;
-        }
-
-      if (added)
-        {
-          d_places[num_files] = PLACE_COLOR_PALETTE;
-          d_names[num_files] = NULL;
-          d_exts[num_files] = NULL;
-
-          num_files++;
-        }
-    }
+  if (!new_colors_last) {
+    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+  }
 
   first_starter = num_files;
   first_template = -1;          /* In case there are none... */
@@ -19058,10 +19010,15 @@ static int do_new_dialog(void)
         }
     }
 
+  /* Throw the color palette at the end (alternative option): */
+
+  if (new_colors_last) {
+    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+  }
 
 
 #ifdef DEBUG
-  printf("%d files were found!\n", num_files);
+  printf("%d files and colors were found!\n", num_files);
 #endif
 
 
@@ -19704,6 +19661,76 @@ static int do_new_dialog(void)
 
   return (which != -1);
 }
+
+/* Add colors to the "New" dialog's list of choices;
+   normally appears at the beginning (above Starts & Templates),
+   but may be placed at the end with the "--newcolorslast" option.
+*/
+static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette) {
+  int j;
+  int added;
+  Uint8 r, g, b;
+
+  for (j = -1; j < NUM_COLORS; j++)
+    {
+      added = 0;
+
+      if (j < NUM_COLORS - 1)
+        {
+          if (j == -1 ||        /* (short circuit) */
+              color_hexes[j][0] != 255 ||       /* Ignore white, we'll have already added it */
+              color_hexes[j][1] != 255 || color_hexes[j][2] != 255)
+            {
+              /* Palette colors: */
+
+              thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
+                                                       THUMB_W - 20, THUMB_H - 20,
+                                                       screen->format->BitsPerPixel,
+                                                       screen->format->Rmask,
+                                                       screen->format->Gmask, screen->format->Bmask, 0);
+
+              if (thumbs[num_files] != NULL)
+                {
+                  if (j == -1)
+                    {
+                      r = g = b = 255;  /* White */
+                    }
+                  else
+                    {
+                      r = color_hexes[j][0];
+                      g = color_hexes[j][1];
+                      b = color_hexes[j][2];
+                    }
+                  SDL_FillRect(thumbs[num_files], NULL, SDL_MapRGB(thumbs[num_files]->format, r, g, b));
+                  added = 1;
+                }
+            }
+          else
+            {
+              *white_in_palette = j;
+            }
+        }
+      else
+        {
+          /* Color picker: */
+
+          thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
+          added = 1;
+        }
+
+      if (added)
+        {
+          d_places[num_files] = PLACE_COLOR_PALETTE;
+          d_names[num_files] = NULL;
+          d_exts[num_files] = NULL;
+
+          num_files++;
+        }
+    }
+
+  return num_files;
+}
+
 
 /**
  * FIXME
@@ -22492,6 +22519,7 @@ application support folder */
   SETBOOL(keymouse);
   SETBOOL(mirrorstamps);
   SETBOOL(native_screensize);
+  SETBOOL(new_colors_last);
   SETBOOL(no_button_distinction);
   SETBOOL(no_fancy_cursors);
   SETBOOL(no_system_fonts);

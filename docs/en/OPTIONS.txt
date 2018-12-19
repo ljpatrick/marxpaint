@@ -1,12 +1,12 @@
                                    Tux Paint
-                                version 0.9.23c
+                                 version 0.9.24
 
 Options Documentation
 
         Copyright (c) 2002-2018 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                                October 7, 2018
+                               December 18, 2018
 
      ----------------------------------------------------------------------
 
@@ -357,6 +357,10 @@ Windows Users
        nolabel=yes
                Disables the Label tool: the tool that allows text entry which
                can be edited later.
+
+       newcolorslast=yes
+               Places the blank color options in the New dialog at the end,
+               so that any Starters and/or Templates are shown first.
 
        mirrorstamps=yes
 
@@ -980,6 +984,7 @@ Windows Users
          --nostampcontrols
          --nomagiccontrols
          --nolabel
+         --newcolorslast
          --mouse-accessibility
          --onscreen-keyboard
          --onscreen-keyboard-layout
@@ -1050,6 +1055,7 @@ Windows Users
          --stampcontrols
          --magiccontrols
          --label
+         --newcolorsfirst
          --nosysfonts
          --currentlocalefont
          --dontmirrorstamps

@@ -26,6 +26,14 @@ $Id$
       or configure Tux Paint to always bring up the dialog upon print.
       Mark K. Kim <mkkim214@gmail.com>
 
+  * Other Improvements
+    ------------------
+    * Added ability to move color palette options to the end of
+      the New dialog, for situations where users are meant to start
+      drawings with specific Starters or Templates.
+      Use "--newcolorslast" option.
+      (Suggested by Bernard Verhaeghe)
+
   * Documentation updates
     ---------------------
     * Mended link to MinGW/MSYS instructions at John Popplewell's website.
