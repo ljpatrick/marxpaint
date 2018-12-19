@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 28, 2018
+  June 14, 2002 - December 18, 2018
 */
 
 
@@ -6395,80 +6395,91 @@ void show_version(int details)
 void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
-  char *blank;
   unsigned i;
-
-  blank = strdup(progname);
-
-  for (i = 0; i < strlen(blank); i++)
-    blank[i] = ' ';
 
   fprintf(f,
           "\n"
           "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
           "\n"
-          "  %s [--windowed | --fullscreen]\n"
-          "  %s [--WIDTHxHEIGHT | --native]\n"
-          "  %s [--disablescreensaver | --allowscreensaver ]\n"
-          "  %s [--orient=landscape | --orient=portrait]\n"
-          "  %s [--startblank | --startlast]\n"
-          "  %s [--sound | --nosound]\n"
-          "  %s [--quit | --noquit]\n"
-          "  %s [--print | --noprint]\n"
-          "  %s [--complexshapes | --simpleshapes]\n"
-          "  %s [--mixedcase | --uppercase]\n"
-          "  %s [--fancycursors | --nofancycursors]\n"
-          "  %s [--hidecursor | --showcursor]\n"
-          "  %s [--mouse | --keyboard]\n"
-          "  %s [--dontgrab | --grab]\n"
-          "  %s [--noshortcuts | --shortcuts]\n"
-          "  %s [--wheelmouse | --nowheelmouse]\n"
-          "  %s [--nobuttondistinction | --buttondistinction]\n"
-          "  %s [--outlines | --nooutlines]\n"
-          "  %s [--stamps | --nostamps]\n"
-          "  %s [--sysfonts | --nosysfonts]\n"
-          "  %s [--nostampcontrols | --stampcontrols]\n"
-          "  %s [--nomagiccontrols | --magiccontrols]\n"
-          "  %s [--nolabel | --label]\n"
-          "  %s [--mirrorstamps | --dontmirrorstamps]\n"
-          "  %s [--stampsize=[0-10] | --stampsize=default]\n"
-          "  %s [--saveoverask | --saveover | --saveovernew]\n"
-          "  %s [--nosave | --save]\n"
-          "  %s [--autosave | --noautosave]\n" "  %s [--savedir DIRECTORY]\n" "  %s [--datadir DIRECTORY]\n"
+          " Config:\n"
+          "  [--nosysconfig]\n"
+          "\n"
+          " Video/Sound:\n"
+          "  [--windowed | --fullscreen]\n"
+          "  [--WIDTHxHEIGHT | --native]\n"
+          "  [--orient=landscape | --orient=portrait]\n"
+          "  [--disablescreensaver | --allowscreensaver ]\n"
+          "  [--sound | --nosound]\n"
+          "  [--colorfile FILE]\n"
+          "\n"
+          " Mouse/Keyboard:\n"
+          "  [--fancycursors | --nofancycursors]\n"
+          "  [--hidecursor | --showcursor]\n"
+          "  [--noshortcuts | --shortcuts]\n"
+          "  [--dontgrab | --grab]\n"
+          "  [--wheelmouse | --nowheelmouse]\n"
+          "  [--nobuttondistinction | --buttondistinction]\n"
+          "\n"
+          " Simplification:\n"
+          "  [--complexshapes | --simpleshapes]\n"
+          "  [--outlines | --nooutlines]\n"
+          "  [--mixedcase | --uppercase]\n"
+          "  [--stampsize=[0-10] | --stampsize=default]\n"
+          "  [--quit | --noquit]\n"
+          "  [--stamps | --nostamps]\n"
+          "  [--nostampcontrols | --stampcontrols]\n"
+          "  [--nomagiccontrols | --magiccontrols]\n"
+          "  [--nolabel | --label]\n"
+          "\n"
+          " Languages:\n"
+          "  [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
+          "  [--mirrorstamps | --dontmirrorstamps]\n"
+          "  [--sysfonts | --nosysfonts]\n"
+          "  [--currentlocalefont | --alllocalefonts]\n"
+          "\n"
+          " Printing:\n"
+          "  [--print | --noprint]\n"
+          "  [--printdelay=SECONDS]\n"
+          "  [--altprintmod | --altprintalways | --altprintnever]\n"
 #if defined(WIN32) || defined(__APPLE__)
-          "  %s [--printcfg | --noprintcfg]\n"
+          "  [--printcfg | --noprintcfg]\n"
 #endif
-          "  %s [--printdelay=SECONDS]\n" "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
-          "  %s [--papersize PAPERSIZE | --papersize help]\n"
+          "  [--printcommand=COMMAND]\n"
+          "  [--altprintcommand=COMMAND]\n"
+          "  [--papersize PAPERSIZE | --papersize help]\n"
 #endif
-          "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
-          "  %s [--nosysconfig]\n"
-          "  %s [--nolockfile]\n"
-          "  %s [--colorfile FILE]\n"
-          "  %s [--mouse-accessibility]\n"
-          "  %s [--onscreen-keyboard]\n"
-          "  %s [--joystick-dev N] (default=0)\n"
-          "  %s [--joystick-slowness N] (0-500; default value is 15)\n"
-          "  %s [--joystick-threshold N] (0-32766; default value is 3200)\n"
-          "  %s [--joystick-maxsteps N] (1-7; default value is 7)\n"
+          "\n"
+          " Saving:\n"
+          "  [--saveoverask | --saveover | --saveovernew]\n"
+          "  [--startblank | --startlast]\n"
+          "  [--savedir DIRECTORY]\n"
+          "  [--nosave | --save]\n"
+          "  [--autosave | --noautosave]\n"
+          "\n"
+          " Data:\n"
+          "  [--nolockfile]\n"
+          "  [--datadir DIRECTORY]\n"
+          "\n"
+          " Accessibility:\n"
+          "  [--mouse-accessibility]\n"
+          "  [--mouse | --keyboard]\n"
+          "  [--onscreen-keyboard]\n"
+          "  [--onscreen-keyboard-layout=LAYOUT]\n"
+          "  [--onscreen-keyboard-disable-change]\n"
+          "\n"
+          " Joystick:\n"
+          "  [--joystick-dev N] (default=0)\n"
+          "  [--joystick-slowness N] (0-500; default value is 15)\n"
+          "  [--joystick-threshold N] (0-32766; default value is 3200)\n"
+          "  [--joystick-maxsteps N] (1-7; default value is 7)\n"
+          "  [--joystick-hat-slowness N] (0-500; default value is 15)\n"
+          "  [--joystick-hat-timeout N] (0-3000; default value is 1000)\n"
+          "  [--joystick-buttons-ignore=BUTTON1,BUTTON2,...]\n"
+          "  [--joystick-btn-COMMAND=BUTTON]\n"
+          /* FIXME: "--joystick-btn-help" to list available commands, like "--lang help" */
           "\n",
-          progname, progname,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank,
-#ifdef WIN32
-          blank,
-#endif
-          blank, blank,
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
-          blank,
-#endif
-          blank, blank, blank, blank, blank, blank, blank, blank, blank, blank);
-
-  free(blank);
+          progname);
 }
 
 
