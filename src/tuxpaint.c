@@ -18682,13 +18682,10 @@ static int do_new_dialog(void)
 
 
   /* (Re)allocate space for the information about these files: */
-
   tot = num_files_in_dirs;
 
   /* And colors... */
-  if (!new_colors_last) {
-    tot += NUM_COLORS;
-  }
+  tot += NUM_COLORS;
 
   thumbs = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * tot);
   d_places = (int *)malloc(sizeof(int) * tot);
