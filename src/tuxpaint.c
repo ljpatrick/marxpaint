@@ -1197,6 +1197,7 @@ static int disable_save;
 static int ok_to_use_lockfile = 1;
 static int start_blank;
 static int autosave_on_quit;
+static int no_prompt_on_quit = 0;
 
 static int dont_do_xor;
 static int dont_load_stamps;
@@ -7732,13 +7733,19 @@ static int generate_fontconfig_cache(void *vp)
   ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
-/**
- * FIXME
- */
 static void signal_handler(int sig)
 {
-  (void)sig;
   // It is not legal to call printf or most other functions here!
+  if (sig == SIGUSR1 || sig == SIGUSR2) {
+    autosave_on_quit = 1;
+    no_prompt_on_quit = 1;
+    if (sig == SIGUSR1) {
+      promptless_save = SAVE_OVER_NO;
+    } else {
+      promptless_save = SAVE_OVER_ALWAYS;
+    }
+    raise(SIGTERM);
+  }
 }
 #endif
 
@@ -13808,9 +13815,16 @@ static int do_quit(int tool)
 {
   int done, tmp_tool;
 
-  done = do_prompt_snd(PROMPT_QUIT_TXT,
-                       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
-                       (TOOL_QUIT % 2) * 48 + 24, (TOOL_QUIT / 2) * 48 + 40 + 24);
+  if (!no_prompt_on_quit)
+    {
+      done = do_prompt_snd(PROMPT_QUIT_TXT,
+                           PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
+                           (TOOL_QUIT % 2) * 48 + 24, (TOOL_QUIT / 2) * 48 + 40 + 24);
+    }
+  else
+    {
+      done = 1;
+    }
 
   if (done && !been_saved && !disable_save)
     {
@@ -24209,6 +24223,10 @@ static void setup(void)
      instead of 'Ok') */
 
   signal(SIGPIPE, signal_handler);
+
+  /* Set up signal for no-questions-asked remote closing of app */
+  signal(SIGUSR1, signal_handler);
+  signal(SIGUSR2, signal_handler);
 #endif
 }
 

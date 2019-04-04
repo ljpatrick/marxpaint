@@ -2,13 +2,13 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2018
+Copyright (c) 2002-2019
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 $Id$
 
-2018.Dec.18 (0.9.24)
+2019.Apr.3 (0.9.24)
   * Bug Fixes
     ---------
     * Correct issue that prevented Tux Paint from lauching on Mac OS X 10.7.
@@ -34,12 +34,24 @@ $Id$
       Use "--newcolorslast" option.
       (Suggested by Bernard Verhaeghe)
 
+    * Recognize signals (SIGUSR1 and SIGUSR2) on POSIX systems,
+      which causes Tux Paint to quit, first saving the current drawing
+      (if unsaved) (like "--autosave"), either saving a new image
+      (like "--saveovernew") (via SIGUSR1), or overwritting the current
+      drawing (like "--saveover") (via SIGUSR2).
+      (Thanks to Flavio Airundo for the idea; closes
+      https://sourceforge.net/p/tuxpaint/feature-requests/188/)
+
   * Documentation updates
     ---------------------
     * Mended link to MinGW/MSYS instructions at John Popplewell's website.
       (h/t "sechidis")
 
     * Improved and expanded usage info (e.g., "tuxpaint --help" output)
+
+    * Documentation on POSIX signals recognized by Tux Paint (e.g.,
+      the new "SIGUSR1" & "SIGUSR2") added to a new doc file,
+      "SIGNALS.txt".
 
   * Misc
     ----

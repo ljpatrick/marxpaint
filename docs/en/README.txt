@@ -3,22 +3,22 @@
 
   A simple drawing program for children
 
-          Copyright 2002-2018 by various contributors; see AUTHORS.txt
+          Copyright 2002-2019 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                       June 14, 2002 - December 18, 2018
+                         June 14, 2002 - April 3, 2019
 
      ----------------------------------------------------------------------
 
-   +------------------------------------------------------------------------+
-   |Table of Contents                                                       |
-   |------------------------------------------------------------------------|
-   |  * About                                                               |
-   |  * Using Tux Paint                                                     |
-   |  * Loading Other Pictures into Tux Paint                               |
-   |  * Further Reading                                                     |
-   |  * How to Get Help                                                     |
-   +------------------------------------------------------------------------+
+   +-------------------------------------------+
+   |Table of Contents                          |
+   |-------------------------------------------|
+   |  * About                                  |
+   |  * Using Tux Paint                        |
+   |  * Loading Other Pictures into Tux Paint  |
+   |  * Further Reading                        |
+   |  * How to Get Help                        |
+   +-------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -97,8 +97,8 @@ Loading Tux Paint
 
   Windows Users
 
-                                                          [Icon]              
-                                                         Tux Paint            
+                                                                    [Icon]    
+                                                                   Tux Paint  
 
          If you installed Tux Paint on your computer using the
          'Tux Paint Installer,' it will have asked you whether you wanted a
@@ -876,6 +876,8 @@ Doing it Manually
          Notes on creating PNG format bitmapped images for use in Tux Paint.
        * SVG.txt
          Notes on creating SVG format vector images for use in Tux Paint.
+       * SIGNALS.txt
+         Information about POSIX signals Tux Paint responds to.
 
      ----------------------------------------------------------------------
 
