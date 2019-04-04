@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2018
+  Copyright (c) 2002-2019
   by various contributors; see AUTHORS.txt
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 18, 2018
+  June 14, 2002 - April 3, 2019
 */
 
 
@@ -18587,7 +18587,7 @@ static int do_new_dialog(void)
   int last_click_which, last_click_button;
   int places_to_look;
   int tot;
-  int first_starter, first_template;
+  int first_color, first_starter, first_template;
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
@@ -18703,6 +18703,7 @@ static int do_new_dialog(void)
   white_in_palette = -1;
 
   if (!new_colors_last) {
+    first_color = 0;
     num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
   }
 
@@ -19010,6 +19011,7 @@ static int do_new_dialog(void)
   /* Throw the color palette at the end (alternative option): */
 
   if (new_colors_last) {
+    first_color = num_files;
     num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
   }
 
@@ -19017,6 +19019,7 @@ static int do_new_dialog(void)
 #ifdef DEBUG
   printf("%d files and colors were found!\n", num_files);
 #endif
+  printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter, first_template, num_files);
 
 
   /* Let user choose a color or image: */
@@ -19460,7 +19463,7 @@ static int do_new_dialog(void)
         label_node_to_edit = NULL;
       have_to_rec_label_node = FALSE;
 
-      if (which >= first_starter && (first_template == -1 || which < first_template))
+      if (which >= first_starter && (first_template == -1 || which < first_template) && (!new_colors_last || which < first_color))
         {
           /* Load a starter: */
 
@@ -19519,7 +19522,7 @@ static int do_new_dialog(void)
               SDL_BlitSurface(img_starter, NULL, canvas, NULL);
             }
         }
-      else if (first_template != -1 && which >= first_template)
+      else if (first_template != -1 && which >= first_template && (!new_colors_last || which < first_color))
         {
           /* Load a template: */
 
@@ -19583,6 +19586,8 @@ static int do_new_dialog(void)
           starter_flipped = 0;
           starter_personal = 0;
           starter_modified = 0;
+
+	  which = which - first_color;
 
           /* Launch color picker if they chose that: */
 
