@@ -38,6 +38,8 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
+/* *INDENT-OFF* */
+
 #if defined(NOKIA_770)
 #define VIDEO_BPP 16
 #endif
@@ -47,22 +49,19 @@
 #endif
 
 #ifndef VIDEO_BPP
-                                                                                                                                   /*# define VIDEO_BPP 15 *//* saves memory */
-                                                                                                                                   /*# define VIDEO_BPP 16 *//* causes discoloration */
-                                                                                                                                   /*# define VIDEO_BPP 24 *//* compromise */
-#define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
+    /*# define VIDEO_BPP 15 *//* saves memory */
+    /*# define VIDEO_BPP 16 *//* causes discoloration */
+    /*# define VIDEO_BPP 24 *//* compromise */
+    #define VIDEO_BPP 32      /* might be fastest, if conversion funcs removed */
 #endif
 
-
-                                                                                                                                           /* #define CORNER_SHAPES *//* need major work! */
-
+/* #define CORNER_SHAPES *//* need major work! */
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                                                                                                                                                /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
-                                                                                                                                                                                /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
-
+/*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
+/*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
 
 #define MAX_PATH 256
 
@@ -111,6 +110,8 @@
 #else
 #define TPAINT_AMASK 0x000000ff
 #endif
+
+/* *INDENT-ON* */
 
 static unsigned draw_colors(unsigned action);
 
@@ -557,7 +558,9 @@ static void mtw(wchar_t * wtok, char *tok)
 int TP_EventFilter(const SDL_Event * event);
 
 
-                                                                                                                                         /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* *INDENT-OFF* */
+/* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* *INDENT-ON* */
 
 #if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
@@ -685,7 +688,10 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                                                                                                                                            /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+/* *INDENT-OFF* */
+/* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+/* *INDENT-ON* */
+
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -710,7 +716,9 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                                                                                                                                              /* static grid_dims gd_open; *//* was 4x4 */
+/* *INDENT-OFF* */
+/* static grid_dims gd_open; *//* was 4x4 */
+/* *INDENT-ON* */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
