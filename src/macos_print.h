@@ -37,4 +37,4 @@ int DisplayPageSetup(const SDL_Surface * surface);
 }
 
 -@end
-#endif  /* OBJECTIVEC */
+#endif /* OBJECTIVEC */
