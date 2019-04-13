@@ -979,7 +979,9 @@ static void mysetenv(const char *name, const char *value)
  * @param loc Locale
  * @return The Y-nudge value for font rendering in the language.
  */
+/* *INDENT-OFF* */
 static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
+/* *INDENT-ON* */
 
 static int set_current_language(const char *restrict loc)
 {

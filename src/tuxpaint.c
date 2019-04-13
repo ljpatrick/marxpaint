@@ -47,21 +47,21 @@
 #endif
 
 #ifndef VIDEO_BPP
-                           /*# define VIDEO_BPP 15 *//* saves memory */
-                           /*# define VIDEO_BPP 16 *//* causes discoloration */
-                           /*# define VIDEO_BPP 24 *//* compromise */
+                                                                                                                                   /*# define VIDEO_BPP 15 *//* saves memory */
+                                                                                                                                   /*# define VIDEO_BPP 16 *//* causes discoloration */
+                                                                                                                                   /*# define VIDEO_BPP 24 *//* compromise */
 #define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
 #endif
 
 
-                               /* #define CORNER_SHAPES *//* need major work! */
+                                                                                                                                           /* #define CORNER_SHAPES *//* need major work! */
 
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                     /*#define PRINTMETHOD_PNM_PS*//* Output PNM, assuming it gets printed */
-                                     /*#define PRINTMETHOD_PNG_PNM_PS*//* Output PNG, assuming it gets printed */
+                                                                                                                                                                /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
+                                                                                                                                                                                /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
 
 
 #define MAX_PATH 256
@@ -557,7 +557,7 @@ static void mtw(wchar_t * wtok, char *tok)
 int TP_EventFilter(const SDL_Event * event);
 
 
-/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+                                                                                                                                         /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
 #if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
@@ -641,7 +641,7 @@ enum
   LABEL_OFF,
   LABEL_LABEL,
   LABEL_SELECT
-  /* , LABEL_ROTATE */
+    /* , LABEL_ROTATE */
 };
 
 
@@ -685,7 +685,7 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+                                                                                                                                                            /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -710,7 +710,7 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                  /* static grid_dims gd_open; *//* was 4x4 */
+                                                                                                                                                              /* static grid_dims gd_open; *//* was 4x4 */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -1960,7 +1960,8 @@ static void get_new_file_id(void);
 static int do_quit(int tool);
 static int do_open(void);
 static int do_new_dialog(void);
-static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette);
+static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d_places, char * *d_names,
+                                    char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(void);
 static int do_slideshow(void);
@@ -2722,7 +2723,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -2836,7 +2837,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -3546,11 +3547,9 @@ static void mainloop(void)
                                   old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
                                   stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
-                                       1
+                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
                                        /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                                       ) * (event.button.x -
-                                            (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+                                      ) * (event.button.x - (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                                   printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -3975,11 +3974,11 @@ static void mainloop(void)
 
                           /* FIXME */
                           /*
-                          snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
-                              TTF_FontFaceFamilyName(getfonthandle(cur_font)),
-                              TTF_FontFaceStyleName(getfonthandle(cur_font)));
-                          draw_tux_text(TUX_GREAT, font_tux_text, 1);
-                          */
+                             snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
+                             TTF_FontFaceFamilyName(getfonthandle(cur_font)),
+                             TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                             draw_tux_text(TUX_GREAT, font_tux_text, 1);
+                           */
 
                           if (do_draw)
                             draw_fonts();
@@ -5362,12 +5361,11 @@ static void mainloop(void)
                       w = CUR_STAMP_W;
                       h = CUR_STAMP_H;
 
-                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-                        (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
-                           1
-                           /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                           ) * (event.button.x -
-                                (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size = (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
+                                                                                 /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
+                                                                                ) * (event.button.x -
+                                                                                     (WINDOW_WIDTH - 96))) / 96) +
+                        MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                       printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -6399,6 +6397,7 @@ void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
 
+  /* *INDENT-OFF* */
   fprintf(f,
           "\n"
           "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
@@ -6483,6 +6482,7 @@ void show_usage(int exitcode)
           /* FIXME: "--joystick-btn-help" to list available commands, like "--lang help" */
           "\n",
           progname);
+  /* *INDENT-ON* */
 }
 
 
@@ -7539,13 +7539,14 @@ static void loadstamp_callback(SDL_Surface * screen,
 #endif
 
       /*
-      * Showing the progress bar across the screen can be CPU-intensive, so
-      * update infrequently.
-      */
-      if((i % 32) == 0) show_progress_bar(screen);
+       * Showing the progress bar across the screen can be CPU-intensive, so
+       * update infrequently.
+       */
+      if ((i % 32) == 0)
+        show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
-          && (dotext - files[i].str + 1 + dirlen < (int) (sizeof fname))
+          && (dotext - files[i].str + 1 + dirlen < (int)(sizeof fname))
           && !strcasestr(files[i].str, mirror_ext)
           && !strcasestr(files[i].str, flip_ext) && !strcasestr(files[i].str, mirrorflip_ext))
         {
@@ -7736,16 +7737,20 @@ static int generate_fontconfig_cache(void *vp)
 static void signal_handler(int sig)
 {
   // It is not legal to call printf or most other functions here!
-  if (sig == SIGUSR1 || sig == SIGUSR2) {
-    autosave_on_quit = 1;
-    no_prompt_on_quit = 1;
-    if (sig == SIGUSR1) {
-      promptless_save = SAVE_OVER_NO;
-    } else {
-      promptless_save = SAVE_OVER_ALWAYS;
+  if (sig == SIGUSR1 || sig == SIGUSR2)
+    {
+      autosave_on_quit = 1;
+      no_prompt_on_quit = 1;
+      if (sig == SIGUSR1)
+        {
+          promptless_save = SAVE_OVER_NO;
+        }
+      else
+        {
+          promptless_save = SAVE_OVER_ALWAYS;
+        }
+      raise(SIGTERM);
     }
-    raise(SIGTERM);
-  }
 }
 #endif
 
@@ -11885,14 +11890,16 @@ static int do_prompt_image_flash_snd(const char *const text,
   int valhat_x, valhat_y, hatmotioner;
 
 #ifdef DEBUG
-  if(snd >= 0) {
-    printf("Prompt and play sound #%d: %s\n", snd, sound_fnames[snd]);
-    fflush(stdout);
-  }
-  else {
-    printf("Prompt without sound\n");
-    fflush(stdout);
-  }
+  if (snd >= 0)
+    {
+      printf("Prompt and play sound #%d: %s\n", snd, sound_fnames[snd]);
+      fflush(stdout);
+    }
+  else
+    {
+      printf("Prompt without sound\n");
+      fflush(stdout);
+    }
 #endif
 
   val_x = val_y = motioner = 0;
@@ -18716,10 +18723,11 @@ static int do_new_dialog(void)
 
   white_in_palette = -1;
 
-  if (!new_colors_last) {
-    first_color = 0;
-    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
-  }
+  if (!new_colors_last)
+    {
+      first_color = 0;
+      num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+    }
 
   first_starter = num_files;
   first_template = -1;          /* In case there are none... */
@@ -19024,16 +19032,18 @@ static int do_new_dialog(void)
 
   /* Throw the color palette at the end (alternative option): */
 
-  if (new_colors_last) {
-    first_color = num_files;
-    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
-  }
+  if (new_colors_last)
+    {
+      first_color = num_files;
+      num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+    }
 
 
 #ifdef DEBUG
   printf("%d files and colors were found!\n", num_files);
 #endif
-  printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter, first_template, num_files);
+  printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter,
+         first_template, num_files);
 
 
   /* Let user choose a color or image: */
@@ -19477,7 +19487,8 @@ static int do_new_dialog(void)
         label_node_to_edit = NULL;
       have_to_rec_label_node = FALSE;
 
-      if (which >= first_starter && (first_template == -1 || which < first_template) && (!new_colors_last || which < first_color))
+      if (which >= first_starter && (first_template == -1 || which < first_template)
+          && (!new_colors_last || which < first_color))
         {
           /* Load a starter: */
 
@@ -19601,7 +19612,7 @@ static int do_new_dialog(void)
           starter_personal = 0;
           starter_modified = 0;
 
-	  which = which - first_color;
+          which = which - first_color;
 
           /* Launch color picker if they chose that: */
 
@@ -19682,7 +19693,9 @@ static int do_new_dialog(void)
    normally appears at the beginning (above Starts & Templates),
    but may be placed at the end with the "--newcolorslast" option.
 */
-static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette) {
+static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d_places, char * *d_names,
+                                    char * *d_exts, int *white_in_palette)
+{
   int j;
   int added;
   Uint8 r, g, b;
@@ -21217,7 +21230,7 @@ static void load_info_about_label_surface(FILE * lfi)
   int new_pos;
   int x, y;
   int tmp_fscanf_return;
-  char * tmp_fgets_return;
+  char *tmp_fgets_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -21914,10 +21927,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
           /* First we search for the things that usually were in the .dat file, so if a starter or a
              template is found and if it is not modified, we can load it clean (i.e. not rebluring a
-             blured when scaled one)*/
+             blured when scaled one) */
           for (u = 0; u < num_unknowns; u++)
             {
-              printf("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
+              printf("%s, %d\n", unknowns[u].name, (int)unknowns[u].size);
 
               if (chunk_is_valid("tpDT", unknowns[u]))
                 {
@@ -22435,6 +22448,7 @@ static void setup_config(char *argv[])
       savedir = strdup(macos_preferencesPath());
 #else
       int tmp;
+
       tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
       if (tmp < 0)
         {
@@ -22484,7 +22498,7 @@ static void setup_config(char *argv[])
       /* EP added this conditional section for Mac to fix
          folder & extension inconsistency with Tux Paint Config application) */
       /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
-application support folder */
+         application support folder */
       snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_globalPreferencesPath());
       parse_file_options(&tmpcfg_sys, str);
 #else
@@ -22596,9 +22610,9 @@ application support folder */
     }
   /* FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button) */
   if (tmpcfg.rotate_orientation)
-    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); /* alternative is "landscape" */
+    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait");        /* alternative is "landscape" */
   if (tmpcfg.colorfile)
-    strcpy(colorfile, tmpcfg.colorfile); /* FIXME can overflow */
+    strcpy(colorfile, tmpcfg.colorfile);        /* FIXME can overflow */
   if (tmpcfg.print_delay)
     {
       print_delay = atoi(tmpcfg.print_delay);
@@ -22618,7 +22632,7 @@ application support folder */
       else if (!strcmp(tmpcfg.alt_print_command_default, "never"))
         alt_print_command_default = ALTPRINT_NEVER;
       else
-        alt_print_command_default = ALTPRINT_MOD; /* default ("mod") */
+        alt_print_command_default = ALTPRINT_MOD;       /* default ("mod") */
     }
 #ifdef PAPER_H
   if (tmpcfg.papersize)
@@ -22922,16 +22936,16 @@ application support folder */
 static void chdir_to_binary(char *argv0)
 {
   /*
-  char curdir[256];
-  */
+     char curdir[256];
+   */
   /* EP added this block to print out of current directory */
 
   /*
-  getcwd(curdir, sizeof(curdir));
-#ifdef DEBUG
-  printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
-#endif
-  */
+     getcwd(curdir, sizeof(curdir));
+     #ifdef DEBUG
+     printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
+     #endif
+   */
 
 #if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
@@ -22953,12 +22967,12 @@ static void chdir_to_binary(char *argv0)
       // E.g., "/Applications/TuxPaint.app/Contents/MacOS/tuxpaint"
       // But we want to point somewhere higher up, say to "Contents", so we can access
       // the resources in Resources folder. So move up one level.
-      int levels = 1; /* we need to back up 1 level */
+      int levels = 1;           /* we need to back up 1 level */
 
       while ((levels-- > 0) && (slash))
         {
-          *slash = '\0'; /* this overwrites the \0 at end of string */
-          slash = strrchr(app_path, '/'); /* so we can carry on our back-pedaling... */
+          *slash = '\0';        /* this overwrites the \0 at end of string */
+          slash = strrchr(app_path, '/');       /* so we can carry on our back-pedaling... */
         }
 #endif
 
@@ -22973,9 +22987,9 @@ static void chdir_to_binary(char *argv0)
         }
       free(app_path);
       /*
-      getcwd(curdir, sizeof(curdir));
-      printf("New current directory for runtime: %s\n", curdir);
-      */
+         getcwd(curdir, sizeof(curdir));
+         printf("New current directory for runtime: %s\n", curdir);
+       */
     }
 #else
   (void)argv0;
@@ -24381,7 +24395,7 @@ int main(int argc, char *argv[])
    * file may not exist on the runtime system, however, so we copy the file
    * into our app bundle at compile time, and tell Fontconfig here to look for
    * the file within the app bundle. */
-  putenv((char*) "FONTCONFIG_PATH=Resources/etc");
+  putenv((char *)"FONTCONFIG_PATH=Resources/etc");
 #endif
 
 #ifdef FORKED_FONTS
@@ -24959,4 +24973,3 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
   if (!ignore)
     SDL_PushEvent(&ev);
 }
-

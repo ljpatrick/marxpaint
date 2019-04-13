@@ -12,18 +12,21 @@
 /**
  * FIXME
  */
-const char* macos_fontsPath()
+const char *macos_fontsPath()
 {
-  static char* p = NULL;
+  static char *p = NULL;
 
-  if(!p) {
-    const char* home = getenv("HOME");
+  if (!p)
+    {
+      const char *home = getenv("HOME");
 
-    p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
+      p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
 
-    if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
-    else perror("macos_fontsPath");
-  }
+      if (p)
+        sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
+      else
+        perror("macos_fontsPath");
+    }
 
   return p;
 }
@@ -32,18 +35,21 @@ const char* macos_fontsPath()
 /**
  * FIXME
  */
-const char* macos_preferencesPath()
+const char *macos_preferencesPath()
 {
-  static char* p = NULL;
+  static char *p = NULL;
 
-  if(!p) {
-    const char* home = getenv("HOME");
+  if (!p)
+    {
+      const char *home = getenv("HOME");
 
-    p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
+      p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
 
-    if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
-    else perror("macos_preferencesPath");
-  }
+      if (p)
+        sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
+      else
+        perror("macos_preferencesPath");
+    }
 
   return p;
 }
@@ -52,7 +58,7 @@ const char* macos_preferencesPath()
 /**
  * FIXME
  */
-const char* macos_globalPreferencesPath()
+const char *macos_globalPreferencesPath()
 {
   return MACOS_GLOBAL_PREFERENCES_PATH;
 }
