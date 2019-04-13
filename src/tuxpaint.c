@@ -13590,12 +13590,11 @@ static void do_png_embed_data(png_structp png_ptr)
               for (x = 0; x < current_node->save_width; x++)
                 for (y = 0; y < current_node->save_height; y++)
                   {
-                    pix =
-                      getpixels[current_node->label_node_surface->format->BytesPerPixel] (current_node->
-                                                                                          label_node_surface, x, y);
+                    /* *INDENT-OFF* */
+                    pix = getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
+                    /* *INDENT-ON* */
                     SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
                     fwrite(&a, alpha_size, 1, lfi);
-
                   }
               SDL_UnlockSurface(current_node->label_node_surface);
               fprintf(lfi, "\n\n");
