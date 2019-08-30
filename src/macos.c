@@ -1,7 +1,9 @@
 /*
  * FIXME
  */
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "macos.h"
 
 #define MACOS_FONTS_PATH              "%s/Library/Fonts"
@@ -12,7 +14,7 @@
 /**
  * FIXME
  */
-const char *macos_fontsPath()
+const char *macos_fontsPath(void)
 {
   static char *p = NULL;
 
@@ -35,7 +37,7 @@ const char *macos_fontsPath()
 /**
  * FIXME
  */
-const char *macos_preferencesPath()
+const char *macos_preferencesPath(void)
 {
   static char *p = NULL;
 
@@ -58,7 +60,7 @@ const char *macos_preferencesPath()
 /**
  * FIXME
  */
-const char *macos_globalPreferencesPath()
+const char *macos_globalPreferencesPath(void)
 {
   return MACOS_GLOBAL_PREFERENCES_PATH;
 }

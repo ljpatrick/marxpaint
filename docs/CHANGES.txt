@@ -42,6 +42,8 @@ $Id$
       (Thanks to Flavio Airundo for the idea; closes
       https://sourceforge.net/p/tuxpaint/feature-requests/188/)
 
+    * Updated most parts of the code that were throwing warnings in GCC.
+
   * Documentation updates
     ---------------------
     * Mended link to MinGW/MSYS instructions at John Popplewell's website.

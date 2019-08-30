@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 3, 2019
+  June 14, 2002 - August 29, 2019
 */
 
 
@@ -457,9 +457,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-#include <librsvg/rsvg-cairo.h>
-/* #include "rsvg.h" */
-/* #include "rsvg-cairo.h" */
+
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
 #error "If you installed libRSVG from packages, be sure"
@@ -2040,16 +2038,18 @@ static char *debug_gettext(const char *str);
 static int charsize(Uint16 c);
 #endif
 
-static SDL_Surface *load_kpx(char *file);
+static SDL_Surface *load_kpx(const char *file);
 
 #ifndef NOSVG
-static SDL_Surface *load_svg(char *file);
+static SDL_Surface *load_svg(const char *file);
 static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned int max_w, unsigned int max_h);
 #endif
-static SDL_Surface *myIMG_Load_RWops(char *file);
-static SDL_Surface *myIMG_Load(char *file);
+static SDL_Surface *myIMG_Load_RWops(const char *file);
+static SDL_Surface *myIMG_Load(const char *file);
 static int trash(char *path);
 int file_exists(char *path);
+
+int generate_fontconfig_cache_spinner(SDL_Surface * screen);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -7731,7 +7731,7 @@ static int generate_fontconfig_cache_real(void)
 /**
  * FIXME
  */
-static int generate_fontconfig_cache(void *vp)
+static int generate_fontconfig_cache(__attribute__((unused)) void *vp)
 {
   return generate_fontconfig_cache_real();
 }
@@ -9344,13 +9344,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
       for (x = 0; x < max_x; x++)
         {
 #ifndef LOW_QUALITY_THUMBNAILS
-
-#ifdef GAMMA_CORRECTED_THUMBNAILS
-          /* per: http://www.4p8.com/eric.brasseur/gamma.html */
-          float gamma = 2.2;
-          float gamma_invert = 1.0 / gamma;
-#endif
-
           tr = 0;
           tg = 0;
           tb = 0;
@@ -9365,9 +9358,8 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
                   SDL_GetRGBA(getpixel(src, src_x, src_y), src->format, &r, &g, &b, &a);
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-//        tr = tr + pow((float)r, gamma);
-//        tb = tb + pow((float)b, gamma);
-//        tg = tg + pow((float)g, gamma);
+                  /* per: http://www.4p8.com/eric.brasseur/gamma.html */
+
                   tr = tr + sRGB_to_linear_table[r];
                   tg = tg + sRGB_to_linear_table[g];
                   tb = tb + sRGB_to_linear_table[b];
@@ -9390,9 +9382,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
               ta = ta / tmp;
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-//      tr = ceil(pow(tr, gamma_invert));
-//      tg = ceil(pow(tg, gamma_invert));
-//      tb = ceil(pow(tb, gamma_invert));
               tr = linear_to_sRGB(tr);
               tg = linear_to_sRGB(tg);
               tb = linear_to_sRGB(tb);
@@ -11285,7 +11274,8 @@ static void load_starter_id(char *saved_id, FILE * fil)
   char fname[FILENAME_MAX];
   FILE *fi;
   char color_tag;
-  int r, g, b, tmp;
+  int r, g, b, __attribute__((unused))tmp;
+  char * __attribute__((unused)) tmp_ptr;
 
   rname = NULL;
 
@@ -11343,7 +11333,7 @@ static void load_starter_id(char *saved_id, FILE * fil)
 
           if (!feof(fi) && color_tag == 'T')
             {
-              tmp = fgets(template_id, sizeof(template_id), fi);
+              tmp_ptr = fgets(template_id, sizeof(template_id), fi);
               template_id[strlen(template_id) - 1] = '\0';
               tmp = fscanf(fi, "%d", &template_personal);
               /* FIXME: Debug only? */
@@ -11371,12 +11361,12 @@ static void load_starter_id(char *saved_id, FILE * fil)
 /**
  * FIXME
  */
-static SDL_Surface *load_starter_helper(char *path_and_basename, char *extension, SDL_Surface * (*load_func) (char *))
+static SDL_Surface *load_starter_helper(char *path_and_basename, const char *extension, SDL_Surface * (*load_func) (const char *))
 {
   char *ext;
   char fname[256];
   SDL_Surface *surf;
-  int i;
+  unsigned int i;
 
   ext = strdup(extension);
   snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
@@ -11890,7 +11880,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   int i;
   SDL_Surface *alpha_surf;
 #endif
-  int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
+  int img1_w, img2_w, img3_w, max_img_w, img_y, offset;
   SDL_Surface *img1b;
   int free_img1b;
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
@@ -12071,7 +12061,6 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   /* Draw the images (if any, and if not animated): */
 
-  img_x = img_left;
   img_y = 100 + PROMPTOFFSETY + 4;
 
   if (img1b != NULL)
@@ -13236,9 +13225,9 @@ static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, 
 
   strcat(headers, "Tuxpaint\n");
   strcat(headers, "Tuxpaint_" VER_VERSION "\n");
-  sprintf(line, "%d%s", uncompressed_size, "\n");
+  sprintf(line, "%lu%s", uncompressed_size, "\n");
   strcat(headers, line);
-  sprintf(line, "%d%s", dataLen, "\n");
+  sprintf(line, "%lu%s", dataLen, "\n");
   strcat(headers, line);
 
   headersLen = strlen(headers);
@@ -17210,7 +17199,7 @@ static void handle_active(SDL_Event * event)
             SDL_Flip(screen);
         }
     }
-  if (event->active.state & SDL_APPINPUTFOCUS | SDL_APPACTIVE)
+  if (event->active.state & (SDL_APPINPUTFOCUS | SDL_APPACTIVE))
     {
       if (event->active.gain == 1)
         {
@@ -17477,7 +17466,7 @@ static int paintsound(int size)
 /* Old libcairo1, svg and svg-cairo based code
    Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
 */
-static SDL_Surface *load_svg(char *file)
+static SDL_Surface *load_svg(const char *file)
 {
   svg_cairo_t *scr;
   int bpp, btpp, stride;
@@ -17636,7 +17625,7 @@ static SDL_Surface *load_svg(char *file)
  * FIXME
  */
 /* New libcairo2, rsvg and rsvg-cairo based code */
-static SDL_Surface *load_svg(char *file)
+static SDL_Surface *load_svg(const char *file)
 {
   cairo_surface_t *cairo_surf;
   cairo_t *cr;
@@ -17887,7 +17876,7 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
  */
 /* FIXME: we can remove this after SDL folks fix their bug at http://bugzilla.libsdl.org/show_bug.cgi?id=1485 */
 /* Try to load an image with IMG_Load(), if it fails, then try with RWops() */
-static SDL_Surface *myIMG_Load_RWops(char *file)
+static SDL_Surface *myIMG_Load_RWops(const char *file)
 {
   SDL_Surface *surf;
   FILE *fi;
@@ -17921,7 +17910,7 @@ static SDL_Surface *myIMG_Load_RWops(char *file)
    if we notice it's an SVG file (if available!);
    call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
    otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
-static SDL_Surface *myIMG_Load(char *file)
+static SDL_Surface *myIMG_Load(const char *file)
 {
   if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
     {
@@ -17942,7 +17931,7 @@ static SDL_Surface *myIMG_Load(char *file)
 /**
  * FIXME
  */
-static SDL_Surface *load_kpx(char *file)
+static SDL_Surface *load_kpx(const char *file)
 {
   SDL_RWops *data;
   FILE *fi;
@@ -19819,7 +19808,7 @@ static int do_color_sel(void)
   int i, dx, dy;
   int done, chose;
   int back_left, back_top;
-  int color_sel_x, color_sel_y;
+  int color_sel_x = 0, color_sel_y = 0;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
 
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
@@ -21130,7 +21119,7 @@ static void render_all_nodes_starting_at(struct label_node **node)
  * FIXME
  */
 /* FIXME: This should search for the top-down of the overlaping labels and only re-render from it */
-static void derender_node(struct label_node **ref_head)
+static void derender_node(__attribute__((unused)) struct label_node **ref_head)
 {
   SDL_Rect r_tmp_derender;
 
@@ -22890,7 +22879,7 @@ static void setup_config(char *argv[])
     {
       char *token;
 
-      token = strtok(tmpcfg.joystick_buttons_ignore, ",");
+      token = strtok((char *) tmpcfg.joystick_buttons_ignore, ",");
       while (token != NULL)
         {
           if (strtof(token, NULL) < 0 || strtof(token, NULL) > 254)
