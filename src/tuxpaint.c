@@ -19809,6 +19809,7 @@ static int do_color_sel(void)
   int done, chose;
   int back_left, back_top;
   int color_sel_x = 0, color_sel_y = 0;
+  int want_animated_popups = 1;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
 
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
@@ -19829,7 +19830,6 @@ static int do_color_sel(void)
 
   /* FIXME this is the first step to make animated popups optional,
      to be removed from here when implemented in a more general way */
-  int want_animated_popups = 1;
 
   hide_blinking_cursor();
 
@@ -22438,7 +22438,7 @@ static void setup_config(char *argv[])
       char buffer[B_PATH_NAME_LENGTH + B_FILE_NAME_LENGTH];
       status_t result;
 
-      result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
+      result = find_directory(B_USER_SETTINGS_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
       savedir = strdup(macos_preferencesPath());

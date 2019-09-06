@@ -131,7 +131,6 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # For macOS, the prefix is relative to DESTDIR.
 windows_PREFIX:=/usr/local
 osx_PREFIX:=Resources
-beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
@@ -462,7 +461,6 @@ trans:
 
 windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-beos_ARCH_INSTALL:=install-haiku
 linux_ARCH_INSTALL:=install-kde install-kde-icons
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 

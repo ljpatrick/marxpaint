@@ -986,8 +986,10 @@ static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
 static int set_current_language(const char *restrict loc)
 {
   int i;
+  int j = 0;
   char *oldloc;
   char *env_language;
+  char *env_language_lang;
 
 
   if (strlen(loc) > 0)
@@ -1082,8 +1084,6 @@ static int set_current_language(const char *restrict loc)
         mysetenv("LANGUAGE", "C");
     }
   env_language = strdup(getenv("LANGUAGE"));
-  int j = 0;
-  char *env_language_lang;
 
   if (*env_language)
     {
