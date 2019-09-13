@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2018
+# Copyright (c) 2002-2019
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 18, 2018
+# June 14, 2002 - September 12, 2019
 
 
 # The version number, for release:
@@ -481,7 +481,7 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
-	@if [ "x$(OS)" == "xosx" ]; then \
+	@if [ "x$(OS)" = "xosx" ]; then \
 		echo "All done! Now you can double click $(BUNDLE) to run the"; \
 		echo "program!!! TuxPaint.dmg has also been created for"; \
 		echo "distribution."; \
@@ -876,7 +876,7 @@ install-dlls:
 	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
 	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
 	@cp `which libpthread-2.dll` $(BIN_PREFIX)
-	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
 	  cp `which libfontconfig-1.dll` $(BIN_PREFIX); \
@@ -898,7 +898,7 @@ install-dlls:
 	  cp `which bz2-1.dll` $(BIN_PREFIX); \
 	fi
 	@strip -s $(BIN_PREFIX)/*.dll
-	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
 	  echo; \
 	  echo "...Installing Configuration Files..."; \
 	  cp -R win32/etc/ $(BIN_PREFIX); \
@@ -1021,7 +1021,7 @@ TuxPaint.dmg:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
-		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o \
+		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o obj/fill.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
 		$(ARCH_LIBS)
 	@echo
@@ -1037,7 +1037,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c \
 		src/i18n.h src/im.h src/cursor.h src/pixels.h \
-		src/rgblinear.h src/playsound.h src/fonts.h \
+		src/rgblinear.h src/playsound.h src/fonts.h src/fill.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
@@ -1136,6 +1136,13 @@ obj/playsound.o:	src/playsound.c src/playsound.h \
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
+obj/fill.o:	src/fill.c src/fill.h \
+		src/rgblinear.h src/playsound.h src/pixels.h
+	@echo
+	@echo "...Compiling flood fill tool..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/fill.c -o obj/fill.o
+
 obj/progressbar.o:	src/progressbar.c src/progressbar.h \
 			src/compiler.h src/debug.h
 	@echo
@@ -1226,7 +1233,7 @@ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
 #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
-SHARED_FLAGS:=-shared -fpic
+SHARED_FLAGS:=-shared -fpic -lm
 
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))

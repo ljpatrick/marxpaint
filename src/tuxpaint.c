@@ -503,6 +503,8 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "tip_tux.h"
 #include "great.h"
 
+#include "fill.h"
+
 #include "im.h"
 
 
@@ -3065,6 +3067,12 @@ static void mainloop(void)
                               draw_brushes();
                               draw_colors(COLORSEL_ENABLE);
                             }
+                          else if (cur_tool == TOOL_FILL)
+                            {
+                              keybd_flag = 0;
+                              draw_none();
+                              draw_colors(COLORSEL_ENABLE);
+                            }
                           else if (cur_tool == TOOL_SHAPES)
                             {
                               keybd_flag = 0;
@@ -4376,6 +4384,24 @@ static void mainloop(void)
                       if (mouseaccessibility)
                         emulate_button_pressed = !emulate_button_pressed;
                     }
+		  else if (cur_tool == TOOL_FILL)
+                    {
+                      int x1, y1, x2, y2;
+
+                      /* Fill */
+		      x1 = x2 = old_x;
+		      y1 = y2 = old_y;
+
+                      do_flood_fill(canvas, old_x, old_y,
+                        SDL_MapRGB(canvas->format,
+			           color_hexes[cur_color][0],
+                                   color_hexes[cur_color][1],
+                                   color_hexes[cur_color][2]),
+                        getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y),
+			&x1, &y1, &x2, &y2);
+
+                      update_canvas(x1, y1, x2, y2);
+		    }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
                       /* Text and Label Tools! */
@@ -4549,7 +4575,8 @@ static void mainloop(void)
 
               if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
                   cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
-                  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT || cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
+                  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
+                  cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
                 {
 
                   /* Left tools scroll */
@@ -5151,7 +5178,7 @@ static void mainloop(void)
                     do_setcursor(cursor_brush);
                   else if (cur_tool == TOOL_STAMP)
                     do_setcursor(cursor_tiny);
-                  else if (cur_tool == TOOL_LINES)
+                  else if (cur_tool == TOOL_LINES || cur_tool == TOOL_FILL)
                     do_setcursor(cursor_crosshair);
                   else if (cur_tool == TOOL_SHAPES)
                     {
@@ -5182,7 +5209,6 @@ static void mainloop(void)
                             do_setcursor(cursor_arrow);
                         }
                     }
-
                   else if (cur_tool == TOOL_MAGIC)
                     do_setcursor(cursor_wand);
                   else if (cur_tool == TOOL_ERASER)
@@ -10108,11 +10134,6 @@ static void reset_avail_tools(void)
 
   if (disable_label)
     tool_avail[TOOL_LABEL] = 0;
-
-
-  /* TBD... */
-
-  tool_avail[TOOL_NA] = 0;
 
 
   /* Disable save? */

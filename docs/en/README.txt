@@ -6,7 +6,7 @@
           Copyright 2002-2019 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - April 3, 2019
+                       June 14, 2002 - September 12, 2019
 
      ----------------------------------------------------------------------
 
@@ -374,6 +374,16 @@ Available Tools
                                  * Traditional Chinese — right [Alt] or
                                    left [Alt]
                                  * Thai — right [Alt]
+
+     ----------------------------------------------------------------------
+
+         Fill
+
+                 The 'Fill' tool 'flood-fills' a contiguous area of your
+                 drawing with a solid color of your choice.
+
+                 Note: Prior to Tux Paint 0.9.24, this was a "Magic" tool
+                 (see below).
 
      ----------------------------------------------------------------------
 
