@@ -45,7 +45,6 @@
 #include "im.h"
 
 
-
 /* ***************************************************************************
 * I18N GETTEXT
 */
@@ -905,12 +904,12 @@ static int im_event_zh_tw(IM_DATA * im, SDL_keysym ks)
 
     case IM_REQ_FREE:          /* Free allocated resources */
       charmap_free(&cm);
-      // // __attribute__ ((fallthrough)); /* go onto full reset */
+      FALL_THROUGH; /* go onto full reset */
 
     case IM_REQ_RESET_FULL:    /* Full reset */
       cm.section = SEC_ENGLISH;
       im->tip_text = im_tip_text[IM_TIP_ENGLISH];
-      // __attribute__ ((fallthrough)); /* go onto soft reset */
+      FALL_THROUGH; /* go onto soft reset */
 
     case IM_REQ_RESET_SOFT:    /* Soft reset */
       im->s[0] = L'\0';
@@ -1124,12 +1123,12 @@ static int im_event_th(IM_DATA * im, SDL_keysym ks)
 
     case IM_REQ_FREE:          /* Free allocated resources */
       charmap_free(&cm);
-      // __attribute__ ((fallthrough)); /* go onto full reset */
+      FALL_THROUGH; /* go onto full reset */
 
     case IM_REQ_RESET_FULL:    /* Full reset */
       cm.section = SEC_ENGLISH;
       im->tip_text = im_tip_text[IM_TIP_ENGLISH];
-      // __attribute__ ((fallthrough)); /* go onto soft reset */
+      FALL_THROUGH; /* go onto soft reset */
 
     case IM_REQ_RESET_SOFT:    /* Soft reset */
       im->s[0] = L'\0';
@@ -1343,12 +1342,12 @@ static int im_event_ja(IM_DATA * im, SDL_keysym ks)
 
     case IM_REQ_FREE:          /* Free allocated resources */
       charmap_free(&cm);
-      // __attribute__ ((fallthrough)); /* go onto full reset */
+      FALL_THROUGH; /* go onto full reset */
 
     case IM_REQ_RESET_FULL:    /* Full reset */
       cm.section = SEC_ENGLISH;
       im->tip_text = im_tip_text[IM_TIP_ENGLISH];
-      // __attribute__ ((fallthrough)); /* go onto soft reset */
+      FALL_THROUGH; /* go onto soft reset */
 
     case IM_REQ_RESET_SOFT:    /* Soft reset */
       im->s[0] = L'\0';
@@ -1590,12 +1589,12 @@ static int im_event_ko(IM_DATA * im, SDL_keysym ks)
 
     case IM_REQ_FREE:          /* Free allocated resources */
       charmap_free(&cm);
-      // __attribute__ ((fallthrough)); /* go onto full reset */
+      FALL_THROUGH; /* go onto full reset */
 
     case IM_REQ_RESET_FULL:    /* Full reset */
       cm.section = SEC_ENGLISH;
       im->tip_text = im_tip_text[IM_TIP_ENGLISH];
-      // __attribute__ ((fallthrough)); /* go onto soft reset */
+      FALL_THROUGH; /* go onto soft reset */
 
     case IM_REQ_RESET_SOFT:    /* Soft reset */
       im->s[0] = L'\0';
@@ -1681,7 +1680,7 @@ static int im_event_ko(IM_DATA * im, SDL_keysym ks)
             im->redraw--;
           ks.unicode = L'\0';
         }
-      // __attribute__ ((fallthrough)); /* continue processing: */
+      FALL_THROUGH; /* continue processing: */
 
       /* Actual character processing */
     default:
