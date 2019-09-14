@@ -18777,7 +18777,8 @@ static int do_new_dialog(void)
                   /* Support legacy BMP files for load: */
                   || strcasestr(f->d_name, ".bmp") != NULL
                   /* Support for KPX (Kid Pix templates; just a JPEG with resource fork header): */
-                  || strcasestr(f->d_name, ".kpx") != NULL || strcasestr(f->d_name, ".jpg") != NULL
+                  || strcasestr(f->d_name, ".kpx") != NULL
+		  || strcasestr(f->d_name, ".jpg") != NULL
 #ifndef NOSVG
                   || strcasestr(f->d_name, ".svg") != NULL
 #endif
@@ -18915,8 +18916,6 @@ static int do_new_dialog(void)
                               /* Try to load a starter's background image, first!
                                  If it exists, it should give a better idea of what the
                                  starter looks like, compared to the overlay image... */
-
-                              /* FIXME: Add .jpg support -bjk 2007.03.22 */
 
                               /* (Try JPEG first) */
                               snprintf(fname, sizeof(fname), "%s/%s-back",

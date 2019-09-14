@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 12, 2019
+# June 14, 2002 - September 14, 2019
 
 
 # The version number, for release:
@@ -285,8 +285,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config
-# thumb-starters
+all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -475,9 +474,8 @@ install:	install-bin install-data install-man install-doc \
 		install-default-config install-example-stamps \
 		install-example-starters install-example-templates \
 		install-bash-completion \
-		install-osk \
+		install-osk install-thumb-starters \
 		$(ARCH_INSTALL)
-#install-thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -1056,8 +1054,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/$(MOUSEDIR)/watch.xbm src/$(MOUSEDIR)/watch-mask.xbm \
 		src/$(MOUSEDIR)/up.xbm src/$(MOUSEDIR)/up-mask.xbm \
 		src/$(MOUSEDIR)/down.xbm src/$(MOUSEDIR)/down-mask.xbm \
-		$(ARCH_HEADERS) \
-		Makefile
+		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
@@ -1170,7 +1167,7 @@ obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
-obj/postscript_print.o:	src/postscript_print.c Makefile \
+obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
@@ -1201,7 +1198,7 @@ src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@(echo "/*\n\n\n\n\n\n\n\nDO NOT EDIT ME!\n\n\n\n\n\n\n\n*/" ; cat src/tp_magic_api.h.in) | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
 
 
-tp-magic-config:	src/tp-magic-config.sh.in Makefile
+tp-magic-config:	src/tp-magic-config.sh.in
 	@echo
 	@echo "...Generating 'Magic' tool API configuration script..."
 	@sed -e s/__VERSION__/$(VER_VERSION)/ \
