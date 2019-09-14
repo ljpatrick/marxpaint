@@ -694,16 +694,18 @@ STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.png))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpeg))))
 
+CONVERT_OPTS:=-alpha Background -alpha Off -gamma 0.454545 +depth -resize !132x80 -background white -interlace none
+
 $(THUMB_STARTERS):
 	@echo -n "."
 	@mkdir -p starters/.thumbs
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp.png ; \
-		convert -scale !132x80 -background white -alpha Background -alpha Off obj/tmp.png $@ ; \
+		convert $(CONVERT_OPTS) obj/tmp.png $@ ; \
 		rm obj/tmp.png ; \
 	else \
-		convert -scale !132x80 -background white -alpha Background -alpha Off $(STARTER_NAME) $@ ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %

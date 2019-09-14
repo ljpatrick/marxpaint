@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2019.Sep.12 (0.9.24)
+2019.Sep.14 (0.9.24)
   * New tools
     ---------
     * Fill
@@ -54,6 +54,9 @@ $Id$
       https://sourceforge.net/p/tuxpaint/feature-requests/188/)
 
     * Updated most parts of the code that were throwing warnings in GCC.
+
+    * Build process generates thumbnails of included Starter images.
+      When installed, this greatly increases the speed of the "New" dialog.
 
   * Documentation updates
     ---------------------
