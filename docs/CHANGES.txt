@@ -55,7 +55,7 @@ $Id$
 
     * Updated most parts of the code that were throwing warnings in GCC.
 
-    * Build process generates thumbnails of included Starter images.
+    * Build process generates thumbnails of included Starters and Templates.
       When installed, this greatly increases the speed of the "New" dialog.
 
   * Documentation updates

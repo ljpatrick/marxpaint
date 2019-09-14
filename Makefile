@@ -276,6 +276,8 @@ DEBUG_FLAGS:=
 
 MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
+CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !132x80 -background white -interlace none
+
 .SUFFIXES:
 
 #############################################################################
@@ -285,7 +287,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters
+all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters thumb-templates
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -473,8 +475,9 @@ install:	install-bin install-data install-man install-doc \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters install-example-templates \
+		install-thumb-starters install-thumb-templates \
 		install-bash-completion \
-		install-osk install-thumb-starters \
+		install-osk \
 		$(ARCH_INSTALL)
 	@echo
 	@echo "--------------------------------------------------------------"
@@ -688,13 +691,13 @@ INSTALLED_THUMB_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(THUMB_STARTERS))
 
 STARTER_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.svg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.jpg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.jpeg))))
 
 STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.svg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpeg))))
-
-CONVERT_OPTS:=-alpha Background -alpha Off -gamma 0.454545 +depth -resize !132x80 -background white -interlace none
 
 $(THUMB_STARTERS):
 	@echo -n "."
@@ -747,6 +750,40 @@ echo-install-example-templates:
 # Install example templates
 .PHONY: install-example-templates
 install-example-templates: echo-install-example-templates install-example-template-dirs $(INSTALLED_TEMPLATES)
+
+THUMB_TEMPLATES:=$(sort $(patsubst templates%, templates/.thumbs%-t.png, $(basename $(subst -back.,.,$(TEMPLATES)))))
+INSTALLED_THUMB_TEMPLATES:=$(patsubst %,$(DATA_PREFIX)/%,$(THUMB_TEMPLATES))
+
+TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.svg))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.png))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpg))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpeg))))
+
+$(THUMB_TEMPLATES):
+	@echo -n "."
+	@mkdir -p templates/.thumbs
+	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ ; \
+
+$(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
+	@install -D -m 644 $< $@
+
+.PHONY: echo-thumb-templates
+echo-thumb-templates:
+	@echo
+	@echo "...Generating thumbnails for templates..."
+
+# Create thumbnails for templates
+.PHONY: thumb-templates
+thumb-templates: echo-thumb-templates $(THUMB_TEMPLATES)
+
+.PHONY: echo-install-thumb-templates
+echo-install-thumb-templates:
+	@echo
+	@echo "...Installing thumbnails for templates..."
+
+# Install thumb templates
+.PHONY: install-thumb-templates
+install-thumb-templates: echo-install-thumb-templates $(INSTALLED_THUMB_TEMPLATES)
 
 
 # Install a launcher icon for the Nokia 770.
