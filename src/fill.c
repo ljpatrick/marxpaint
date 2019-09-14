@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 12, 2019
+  Last updated: September 14, 2019
   $Id$
 */
 
@@ -77,6 +77,16 @@ int colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2)
     }
 }
 
+
+int would_flood_fill(SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr)
+{
+  if (cur_colr == old_colr || colors_close(canvas, cur_colr, old_colr))
+    {
+      return 0;
+    } else {
+      return 1;
+    }
+}
 
 void do_flood_fill(SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2)
 {

@@ -13,7 +13,10 @@ $Id$
     ---------
     * Fill
       Not actually a new tool, but promoted from a "Magic" tool
-      to a full-fledge tool in the "Tools" bar.
+      to a full-fledge tool in the "Tools" bar.  However, also
+      avoids filling "Undo" buffer with snapshots of the drawing,
+      if the fill does nothing (e.g., if you click the same spot
+      a second time).
 
   * Ports & Building
     ----------------

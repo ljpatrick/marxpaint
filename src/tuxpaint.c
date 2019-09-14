@@ -4384,24 +4384,35 @@ static void mainloop(void)
                       if (mouseaccessibility)
                         emulate_button_pressed = !emulate_button_pressed;
                     }
-		  else if (cur_tool == TOOL_FILL)
+                  else if (cur_tool == TOOL_FILL)
                     {
-                      int x1, y1, x2, y2;
+                      Uint32 draw_color, canv_color;
 
                       /* Fill */
-		      x1 = x2 = old_x;
-		      y1 = y2 = old_y;
 
-                      do_flood_fill(canvas, old_x, old_y,
-                        SDL_MapRGB(canvas->format,
-			           color_hexes[cur_color][0],
-                                   color_hexes[cur_color][1],
-                                   color_hexes[cur_color][2]),
-                        getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y),
-			&x1, &y1, &x2, &y2);
+                      draw_color = SDL_MapRGB(canvas->format,
+                                     color_hexes[cur_color][0],
+                                     color_hexes[cur_color][1],
+                                     color_hexes[cur_color][2]);
+                      canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
 
-                      update_canvas(x1, y1, x2, y2);
-		    }
+                      if (would_flood_fill(canvas, old_x, old_y, draw_color, canv_color))
+                        {
+                          /* We only bother recording an undo buffer
+                             (which may kill our redos) if we're about
+                             to actually change the picture */
+                          int x1, y1, x2, y2;
+
+                          rec_undo_buffer();
+
+                          x1 = x2 = old_x;
+                          y1 = y2 = old_y;
+
+                          do_flood_fill(canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2);
+
+                          update_canvas(x1, y1, x2, y2);
+                        }
+                    }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
                       /* Text and Label Tools! */
@@ -18778,7 +18789,7 @@ static int do_new_dialog(void)
                   || strcasestr(f->d_name, ".bmp") != NULL
                   /* Support for KPX (Kid Pix templates; just a JPEG with resource fork header): */
                   || strcasestr(f->d_name, ".kpx") != NULL
-		  || strcasestr(f->d_name, ".jpg") != NULL
+                  || strcasestr(f->d_name, ".jpg") != NULL
 #ifndef NOSVG
                   || strcasestr(f->d_name, ".svg") != NULL
 #endif
