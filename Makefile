@@ -699,6 +699,7 @@ STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpeg))))
 
+# FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_STARTERS):
 	@echo -n "."
 	@mkdir -p starters/.thumbs
@@ -759,6 +760,7 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpg))),\
 		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpeg))))
 
+# FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_TEMPLATES):
 	@echo -n "."
 	@mkdir -p templates/.thumbs

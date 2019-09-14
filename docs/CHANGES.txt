@@ -64,6 +64,9 @@ $Id$
     * Build process generates thumbnails of included Starters and Templates.
       When installed, this greatly increases the speed of the "New" dialog.
 
+    * Updated some Starter source images so they work better with
+      flood fill (Bald Eagle, World map, Gecko).
+
   * Documentation updates
     ---------------------
     * Mended link to MinGW/MSYS instructions at John Popplewell's website.
