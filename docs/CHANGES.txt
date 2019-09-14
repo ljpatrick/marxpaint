@@ -37,6 +37,9 @@ $Id$
       or configure Tux Paint to always bring up the dialog upon print.
       Mark K. Kim <mkkim214@gmail.com>
 
+    * Made sure "New" dialog created correct thumbnail subdirectories
+      for personal Starters & Templates (e.g., ~/.tuxpaint/starters/thumbs/)
+
   * Other Improvements
     ------------------
     * Added ability to move color palette options to the end of

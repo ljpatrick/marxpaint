@@ -18901,11 +18901,12 @@ static int do_new_dialog(void)
                         {
                           /* No thumbnail - load original: */
 
-                          /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory("saved", "Can't create user data directory"))
+                          /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
+                          if (make_directory(dirname[d_places[num_files]], "Can't create user data directory"))
                             {
-                              /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+                              /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
+                              snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
+                              make_directory(fname, "Can't create user data thumbnail directory");
                             }
 
                           img = NULL;
