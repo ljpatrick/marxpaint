@@ -19058,9 +19058,9 @@ static int do_new_dialog(void)
 
 #ifdef DEBUG
   printf("%d files and colors were found!\n", num_files);
-#endif
   printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter,
          first_template, num_files);
+#endif
 
 
   /* Let user choose a color or image: */
