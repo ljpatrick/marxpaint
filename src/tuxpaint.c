@@ -13334,7 +13334,9 @@ static void do_png_embed_data(png_structp png_ptr)
   /* Starter foreground */
   if (img_starter)
     {
+#ifdef DEBUG
       printf("Saving starter... %d\n", (int)(intptr_t) img_starter);    //EP added (intptr_t) to avoid warning on x64
+#endif
       sbk_pixs = malloc(img_starter->h * img_starter->w * 4);
       compressedLen = compressBound(img_starter->h * img_starter->w * 4);
 
