@@ -12,3 +12,4 @@ TuxPaint.dmg
 *.dylib
 *.dylib.dSYM
 .DS_Store
+*.thumbs
