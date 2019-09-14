@@ -4396,7 +4396,7 @@ static void mainloop(void)
                                      color_hexes[cur_color][2]);
                       canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
 
-                      if (would_flood_fill(canvas, old_x, old_y, draw_color, canv_color))
+                      if (would_flood_fill(canvas, draw_color, canv_color))
                         {
                           /* We only bother recording an undo buffer
                              (which may kill our redos) if we're about

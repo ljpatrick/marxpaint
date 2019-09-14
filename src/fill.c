@@ -78,7 +78,7 @@ int colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2)
 }
 
 
-int would_flood_fill(SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr)
+int would_flood_fill(SDL_Surface * canvas, Uint32 cur_colr, Uint32 old_colr)
 {
   if (cur_colr == old_colr || colors_close(canvas, cur_colr, old_colr))
     {
