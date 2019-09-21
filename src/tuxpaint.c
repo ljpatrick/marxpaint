@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 29, 2019
+  June 14, 2002 - September 21, 2019
 */
 
 
@@ -6456,6 +6456,7 @@ void show_usage(int exitcode)
           "  [--orient=landscape | --orient=portrait]\n"
           "  [--disablescreensaver | --allowscreensaver ]\n"
           "  [--sound | --nosound]\n"
+          "  [--stereo | --nostereo]\n"
           "  [--colorfile FILE]\n"
           "\n"
           " Mouse/Keyboard:\n"
@@ -18574,7 +18575,15 @@ static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
   else if (left_right > 255)
     left_right = 255;
 
-  left = ((255 - dist) * (255 - left_right)) / 255;
+  if (use_stereo)
+    {
+      left = ((255 - dist) * (255 - left_right)) / 255;
+    }
+  else
+    {
+      /* Stereo disabled; no panning (see playsound.c) */
+      left = (255 - dist) / 2;
+    }
 
   Mix_SetPanning(0, left, (255 - dist) - left);
 #endif
@@ -22590,6 +22599,7 @@ static void setup_config(char *argv[])
   SETBOOL(start_blank);
   SETBOOL(use_print_config);
   SETBOOL(use_sound);
+  SETBOOL(use_stereo);
   SETBOOL(wheely);
   SETBOOL(mouseaccessibility);
   SETBOOL(onscreen_keyboard);

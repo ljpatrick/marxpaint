@@ -54,6 +54,7 @@ struct cfginfo
   const char *start_blank;
   const char *use_print_config;
   const char *use_sound;
+  const char *use_stereo;
   const char *wheely;
   const char *mouseaccessibility;
   const char *onscreen_keyboard;

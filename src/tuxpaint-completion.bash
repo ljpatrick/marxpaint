@@ -30,6 +30,7 @@ _tuxpaint()
 			--orient=landscape --orient=portrait \
 			-b --startblank --startlast \
 			--sound -q --nosound \
+			--stereo --nostereo \
 			-x --noquit --quit
 			-p --print --noprint \
 			--complexshapes -s --simpleshapes \
