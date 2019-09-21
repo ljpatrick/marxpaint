@@ -276,7 +276,11 @@ DEBUG_FLAGS:=
 
 MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
-CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !132x80 -background white -interlace none
+# On an average-sized screen (e.g., 800x600 window), the thumbnails
+# are 132x80.  On larger screens, they will be bigger (since the New dialog
+# is always 4x4 thumbnails); therefore, generating larger thumbs, which can
+# be still be scaled down fairly quickly (esp. complicated SVG ones).
+CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !264x160 -background white -interlace none
 
 .SUFFIXES:
 
