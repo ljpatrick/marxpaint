@@ -13,3 +13,5 @@ TuxPaint.dmg
 *.dylib.dSYM
 .DS_Store
 *.thumbs
+src/po/POTFILES.in
+
