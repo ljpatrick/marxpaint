@@ -18853,7 +18853,7 @@ static int do_new_dialog(void)
                           f2 = &(fs[k].f);
                           strcpy(fname2, f2->d_name);
 
-                          if (strstr(fname, fname2) == fname2 && strcasestr(fname2, ".svg") != NULL)
+                          if (strstr(fname2, fname) == fname2 && strlen(fname) == strlen(fname2)- strlen(".svg") && strcasestr(fname2, ".svg") != NULL)
                             {
                               /* SVG of this bitmap exists; we'll skip it */
                               skip = 1;
