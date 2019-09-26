@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2019.09.21
-.TH TUXPAINT 1 "21 September 2019" "0.9.24" "Tux Paint"
+.\" tuxpaint.1 - 2019.09.25
+.TH TUXPAINT 1 "25 September 2019" "0.9.24" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -9,7 +9,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 
 .TP 9
 .B tuxpaint
-[\-\-fullscreen]
+[\-\-fullscreen {yes|native|no}]
 .br
 [\-\-allowscreensaver]
 .br
@@ -260,8 +260,11 @@ Show the license (GNU GPL) under which Tux Paint is released.
 They can be used along with, instead of, or to override options set in
 configuration files. (See below.)
 .TP 8
-.B \-\-fullscreen \-\-windowed
-Run \fITux Paint\fP in full-screen mode, or in a window (default).
+.B \-\-fullscreen=yes \-\-fullscreen=native \-\-fullscreen=no \-\-windowed
+Run \fITux Paint\fP in full-screen mode at its default -- or a specified
+-- screen resolution ("--fullscreen=yes"); or in full-screen mode at the
+system's native resolution ("--fullscreen=native"); or run in a window
+("--fullscreen=no" or "--windowed") (default).
 
 .TP 8
 .B \-\-allowscreensaver \-\-disablescreensaver
@@ -1171,9 +1174,8 @@ Pablo Pita,
 Milan Plzik,
 Sergei Popov,
 John Popplewell,
-Rodrigo Perez Ramirez and Indigenas Sin Fronteras,
 Adam 'foo-script' Rakowski,
-Rodrigo Perez Ramirez,
+Rodrigo Perez Ramirez and Indigenas Sin Fronteras,
 Robert Readman,
 Leandro Regueiro,
 Simona Riva,
