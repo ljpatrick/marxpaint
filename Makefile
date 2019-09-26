@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 14, 2019
+# June 14, 2002 - September 25, 2019
 
 
 # The version number, for release:
@@ -709,9 +709,9 @@ $(THUMB_STARTERS):
 	@mkdir -p starters/.thumbs
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
-		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp.png ; \
-		convert $(CONVERT_OPTS) obj/tmp.png $@ ; \
-		rm obj/tmp.png ; \
+		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp_$(notdir $(STARTER_NAME)).png ; \
+		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ ; \
+		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
 		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
 	fi
