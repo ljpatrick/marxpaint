@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 25, 2019
+# June 14, 2002 - October 29, 2019
 
 
 # The version number, for release:
@@ -188,9 +188,6 @@ endif
 # Icons and launchers:
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
-
-KDE_PREFIX:=$(shell kde-config --install xdgdata-apps --expandvars 2> /dev/null)
-KDE_ICON_PREFIX:=$(shell kde4-config --install icon --expandvars 2> /dev/null)
 
 # Maemo flag
 MAEMOFLAG:=
@@ -466,7 +463,7 @@ trans:
 
 windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-linux_ARCH_INSTALL:=install-kde install-kde-icons
+linux_ARCH_INSTALL:=install-xdg
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
@@ -606,24 +603,10 @@ clean:
 # are the same as they were when you installed, of course!!!
 .PHONY: uninstall
 uninstall:	uninstall-i18n
-	-rm /usr/share/applications/tuxpaint.desktop; \
-	-rm /usr/share/pixmaps/tuxpaint.png; \
-	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  rm $(KDE_PREFIX)/tuxpaint.desktop; \
-	fi
+	-rm /usr/share/applications/tuxpaint.desktop
+	-rm /usr/share/pixmaps/tuxpaint.png
 	-rm $(ICON_PREFIX)/tuxpaint.png
 	-rm $(X11_ICON_PREFIX)/tuxpaint.xpm
-	-if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  rm $(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
-	fi
 	-rm $(BIN_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tuxpaint-import
 	-rm -r $(DATA_PREFIX)
@@ -641,7 +624,22 @@ uninstall:	uninstall-i18n
 	-if [ "x$(BUNDLE)" != "x" ]; then \
 	  rm -rf $(BUNDLE); \
 	fi
-
+	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
+	  xdg-icon-resource uninstall --size 192 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 128 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 96 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 64 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 48 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 32 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 22 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 16 tux4kids-tuxpaint ; \
+	fi
+	@if [ "x$(shell which xdg-desktop-menu)" != "x" ]; then \
+	  xdg-desktop-menu uninstall tux4kids-tuxpaint.desktop ; \
+	fi
+	-if [ "x$(shell which update-desktop-database)" != "x" ]; then \
+	  update-desktop-database; \
+	fi
 
 # Install default config file:
 .PHONY: install-default-config
@@ -817,60 +815,31 @@ install-nokia770:
 
 
 
-# Install a launcher icon in the KDE menu...
-.PHONY: install-kde
-install-kde:
+# Install a launcher icon in the Linux desktop environment's (freedesktop.org) menus...
+# FIXME: No way to install SVG icons using `xdg-icon-resource`
+# (see https://bugs.launchpad.net/ubuntu/+source/xdg-utils/+bug/790449)
+.PHONY: install-xdg
+install-xdg:
 	@echo
-	@echo "...Installing launcher icon into KDE..."
-	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  install -d $(DESTDIR)$(KDE_PREFIX); \
-	  cp src/tuxpaint.desktop $(DESTDIR)$(KDE_PREFIX)/; \
-	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/tuxpaint.desktop; \
+	@echo "...Installing launcher icon into desktop environment..."
+	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
+	  xdg-icon-resource install --size 192 data/images/icon192x192.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 128 data/images/icon128x128.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 96 data/images/icon96x96.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 64 data/images/icon64x64.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 48 data/images/icon48x48.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 32 data/images/icon32x32.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 22 data/images/icon22x22.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 16 data/images/icon16x16.png tux4kids-tuxpaint ; \
 	fi
-	kbuildsycoca4
-
-.PHONY: install-kde-icons
-install-kde-icons:
-	@echo "...Installing launcher icon graphics into KDE..."
-	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
-	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
-	  cp data/images/tuxpaint-icon.svg \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
-	  cp data/images/icon192x192.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
-	  cp data/images/icon128x128.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
-	  cp data/images/icon96x96.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
-	  cp data/images/icon64x64.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
-	  cp data/images/icon48x48.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
-	  cp data/images/icon32x32.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
-	  cp data/images/icon22x22.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
-	  cp data/images/icon16x16.png \
-		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
-          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+	@if [ "x$(shell which xdg-desktop-menu)" != "x" ]; then \
+	  cp src/tuxpaint.desktop ./tux4kids-tuxpaint.desktop ; \
+	  xdg-desktop-menu install tux4kids-tuxpaint.desktop ; \
+	  rm ./tux4kids-tuxpaint.desktop ; \
 	fi
-
+	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
+	  update-desktop-database ; \
+	fi
 
 # Install the PNG icon (for KDE desktop, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
