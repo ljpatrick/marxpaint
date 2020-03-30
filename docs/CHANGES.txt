@@ -77,6 +77,10 @@ $Id$
     * Swahili
       Benson Muite <benson_muite@emailplus.org>
 
+    * Valencian
+      Pilar Embid Giner <embid_mar@gva.es>
+      via Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Bug Fixes
     ---------
     * Correct issue that prevented Tux Paint from lauching on Mac OS X 10.7.
