@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.Mar.29 (0.9.24)
+2020.Mar.30 (0.9.24)
   * New tools
     ---------
     * Fill
@@ -74,6 +74,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
     * Swahili
       Benson Muite <benson_muite@emailplus.org>
 
