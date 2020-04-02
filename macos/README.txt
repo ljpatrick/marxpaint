@@ -37,6 +37,11 @@ As of this writing, the required libraries are:
   libsdl_ttf
   zlib
 
+... and other non-library packages required by the Makefile are:
+
+  ImageMagick
+  pkgconfig
+
 ... but you should intall any package that is required by the latest version of
 Tux Paint.
 
@@ -62,28 +67,27 @@ copied to /Applications.  It also creates TuxPaint.dmg for distribution.
 
 KNOWN BUGS
 ----------
-On macOS 10.13 High Sierra:
-- The mouse cursor appears with an invert-transparent background due to an
-  issue with SDL1 on macOS 10.13.  A patch to SDL has been issued on May 16,
-  2018 to fix this issue.  Until this patch is officially relased and becomes a
-  part of the MacPorts package, SDL will need to be built from the source code
-  that includes the patch to display the mouse cursor correctly under macOS 10.13.
-  Here are more details:
-
-  Patch - https://github.com/kanjitalk755/SDL/commit/0296d5e601a5deb5ce2f540a8eafd64dd22dbe69
-  Source + patch - https://github.com/kanjitalk755/SDL/tree/forHighSierra
-  Full discussion - https://bugzilla.libsdl.org/show_bug.cgi?id=4076
+- It is no longer possible to build Tux Paint that is backward compatible with
+  older versions of macOS than the one on which it is built using the procedure
+  described in the below section, "BACKWARD COMPATIBILITY".  This limitation
+  appears to stem from some libraries required by Tux Paint now being built
+  using Rust that is unable to produce libraries that are backward compatible
+  with older versions of macOS.  The steps of the procedure are left intact
+  below anyway in case the situation changes in the near future, with the
+  exception that what once-referenced 10.7 now reference 10.8, believed to be
+  the oldest version of macOS that Tux Paint could be backward compatible with*
+  once the Rust issue has been addressed.
 
 
 BACKWARD COMPATIBILITY
 ----------------------
 Broadly speaking, a Mac binary built on macOS 10.12 Sierra (for example) runs
 only on macOS 10.12 and later.  To compile a binary that can also execute on an
-earlier version of macOS (say, 10.7 Lion and later), one of the following must
-be done:
+earlier version of macOS (say, 10.8 Mountain Lion and later), one of the
+following must be done:
 
-  (A) Pass the flag -mmacosx-version-min=10.7 to the compiler.
-  (B) Or set the environment variable MACOSX_DEPLOYMENT_TARGET to 10.7
+  (A) Pass the flag -mmacosx-version-min=10.8 to the compiler.
+  (B) Or set the environment variable MACOSX_DEPLOYMENT_TARGET to 10.8
 
 Tux Paint binary itself is built by doing (A) in the Makefile (by passing the
 parameter to osx_ARCH_CFLAGS).  However, the MacPorts libraries used by Tux
@@ -93,14 +97,14 @@ earlier than the macOS on which it is built.
 To build the Tux Paint package that can run on earlier versions of macOS, the
 MacPorts libraries also need to be built with either #1 or #2.  This is done by
 configuring MacPorts to install all packages from their sources and build them
-to run on macOS 10.7 and later:
+to run on macOS 10.8 and later:
 
   1. Install the MacPorts base normally.
   2. Before installing any MacPorts package, add the following settings to
      /opt/local/etc/macports/macports.conf:
 
      buildfromsource            always
-     macosx_deployment_target   10.7
+     macosx_deployment_target   10.8
 
   3. Install all packages normally.
 
@@ -118,9 +122,8 @@ packages and reinstall them after making system changes:
 
 Even when Tux Paint and MacPorts are built to run on a specific version of
 macOS, it is possible Tux Paint will not compile for or run on that version of
-macOS.  As of this writing, 10.7 is the oldest version of macOS that can be
+macOS.  As of this writing, 10.8 is the oldest version of macOS that can be
 targetted without errors when compiling the sources of MacPorts libraries
 required by Tux Paint.
 
-21st May 2018
-Mark K. Kim <mkkim214@gmail.com>
+Mark K. Kim <markuskimius@gmail.com>
