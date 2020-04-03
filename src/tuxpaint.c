@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 1, 2020
+  June 14, 2002 - April 2, 2020
 */
 
 
@@ -1477,7 +1477,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
 
   if (font == NULL)
     {
-      printf("render_text() received a NULL font!\n");
+      fprintf(stderr, "render_text() received a NULL font!\n");
       fflush(stdout);
       return NULL;
     }
@@ -2360,7 +2360,9 @@ static void mainloop(void)
 #ifndef NOSOUND
                   if (use_sound)
                     {
+#ifdef DEBUG
                       printf("modstate at mainloop %d, mod %d\n", SDL_GetModState(), mod);
+#endif
 
                       mute = !mute;
                       Mix_HaltChannel(-1);
@@ -3103,7 +3105,9 @@ static void mainloop(void)
                                                      onscreen_keyboard_disable_change);
                                     }
                                   if (kbd == NULL)
-                                    printf("kbd = NULL\n");
+                                    {
+                                      fprintf(stderr, "kbd = NULL\n");
+                                    }
                                   else
                                     {
                                       kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
@@ -7702,7 +7706,7 @@ int generate_fontconfig_cache_spinner(SDL_Surface * screen)
         {
           if (event.type == SDL_QUIT || (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
             {
-              printf("Aborting!\n");
+              fprintf(stderr, "Aborting!\n");
               fflush(stdout);
               return (1);
             }
@@ -8579,7 +8583,7 @@ static void draw_fonts(void)
 
           if (tmp_surf_1 == NULL)
             {
-              printf("render_text() returned NULL!\n");
+              fprintf(stderr, "render_text() returned NULL!\n");
               return;
             }
 
@@ -11372,8 +11376,9 @@ static void load_starter_id(char *saved_id, FILE * fil)
               tmp_ptr = fgets(template_id, sizeof(template_id), fi);
               template_id[strlen(template_id) - 1] = '\0';
               tmp = fscanf(fi, "%d", &template_personal);
-              /* FIXME: Debug only? */
+#ifdef DEBUG
               printf("template = %s\n (Personal=%d)", template_id, template_personal);
+#endif
             }
           if (!feof(fi) && color_tag == 'M')
             {
@@ -13440,13 +13445,17 @@ static void do_png_embed_data(png_structp png_ptr)
       if (SDL_MUSTLOCK(img_starter_bkgd))
         SDL_UnlockSurface(img_starter_bkgd);
 
+#ifdef DEBUG
       printf("%d \n", (int)compressedLen);
+#endif
 
       compress(compressed_data, &compressedLen, sbk_pixs, img_starter_bkgd->h * img_starter_bkgd->w * 3);
 
       set_chunk_data(&chunk_data, &chunk_data_len, img_starter_bkgd->w * img_starter_bkgd->h * 3, compressed_data,
                      compressedLen);
+#ifdef DEBUG
       printf("%d \n", (int)compressedLen);
+#endif
 
 
       tuxpaint_chunks[2].data = (png_byte *) chunk_data;
@@ -13627,7 +13636,9 @@ static void do_png_embed_data(png_structp png_ptr)
               fprintf(lfi, "\n\n");
             }
           current_node = current_node->next_to_up_label_node;
+#ifdef DEBUG
           printf("cur %p, red %p\n", current_node, first_label_node_in_redo_stack);
+#endif
         }
 
 #ifdef fmemopen_alternative
@@ -21365,7 +21376,9 @@ static void load_info_about_label_surface(FILE * lfi)
           new_node->save_y = tmp_pos;
         }
 
+#ifdef DEBUG
       printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
+#endif
 
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
       new_node->save_cur_font = 0;
@@ -21824,7 +21837,7 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
       if (f > 3)
         {
           comp_buff[i - count] = unknown.data[i];
-          //            printf("%d, %d, %d    ",i-count, comp_buff[i - count], unknown.data[i]);
+          // printf("%d, %d, %d    ",i-count, comp_buff[i - count], unknown.data[i]);
         }
 
       if (unknown.data[i] == '\n' && f < 4)
@@ -21870,13 +21883,13 @@ Bytef *get_chunk_data(FILE * fp, char *fname, png_structp png_ptr,
 
   if (unc_err != Z_STREAM_END)
     {
-      printf("\n error %d, unc %d, comp %d\n", unc_err, *unc_size, comp);
+      fprintf(stderr, "\n error %d, unc %d, comp %d\n", unc_err, *unc_size, comp);
       fclose(fp);
       png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
       free(comp_buff);
       free(unc_buff);
 
-      printf("Can't recover the embedded data in %s, error in uncompressing data from %s\n\n", fname, chunk_name);
+      fprintf(stderr, "Can't recover the embedded data in %s, error in uncompressing data from %s\n\n", fname, chunk_name);
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return (NULL);
     }
@@ -21910,8 +21923,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
   png_uint_32 ww, hh;
   png_uint_32 i, j;
 
+#ifdef DEBUG
   printf("Loading embedded data...\n");
   printf("%s\n", fname);
+#endif
 
   fp = fopen(fname, "rb");
   if (!fp)
@@ -21933,7 +21948,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
     }
   else
     {
+#ifdef DEBUG
       printf("%s\n", fname);
+#endif
 
       info_ptr = png_create_info_struct(png_ptr);
       if (info_ptr == NULL)
@@ -21958,7 +21975,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
       num_unknowns = (int)png_get_unknown_chunks(png_ptr, info_ptr, &unknowns);
 
+#ifdef DEBUG
       printf("num_unknowns %i\n", num_unknowns);
+#endif
       if (num_unknowns)
         {
           have_label_delta = have_label_data = have_background = have_foreground = FALSE;
@@ -21972,11 +21991,15 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
              blured when scaled one) */
           for (u = 0; u < num_unknowns; u++)
             {
+#ifdef DEBUG
               printf("%s, %d\n", unknowns[u].name, (int)unknowns[u].size);
+#endif
 
               if (chunk_is_valid("tpDT", unknowns[u]))
                 {
+#ifdef DEBUG
                   printf("Valid tpDT\n");
+#endif
                   fi = fmemopen(unknowns[u].data, unknowns[u].size, "r");
                   if (fi == NULL)
                     {
@@ -22037,7 +22060,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                 {
                   if (chunk_is_valid("tpLD", unknowns[u]))
                     {
+#ifdef DEBUG
                       printf("Valid tpLD\n");
+#endif
 
                       unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLD", unknowns[u], &unc_size);
                       if (unc_buff == NULL)
@@ -22076,7 +22101,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                   /* Label Data */
                   if (!disable_label && chunk_is_valid("tpLL", unknowns[u]))
                     {
+#ifdef DEBUG
                       printf("Valid tpLL\n");
+#endif
 
                       unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLL", unknowns[u], &unc_size);
                       if (unc_buff == NULL)
@@ -22089,7 +22116,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                           fi = fmemopen(unc_buff, unc_size, "rb");
                           if (fi == NULL)
                             {
-                              printf("Can't recover the label data embedded in %s, error in create file stream\n\n",
+                              fprintf(stderr, "Can't recover the label data embedded in %s, error in create file stream\n\n",
                                      fname);
                               fclose(fp);
                               png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
@@ -22105,7 +22132,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
                       free(unc_buff);
                       ldata = TRUE;
+#ifdef DEBUG
                       printf("Out of label data\n");
+#endif
                     }
                 }
             }
@@ -22130,8 +22159,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                                              canvas->format->Rmask, canvas->format->Gmask, canvas->format->Gmask, 0);
                       if (aux_surf == NULL)
                         {
-                          printf("Can't recover the background data embedded in %s, error in create aux image\n\n",
+#ifdef DEBUG
+                          fprintf(stderr, "Can't recover the background data embedded in %s, error in create aux image\n\n",
                                  fname);
+#endif
                           fclose(fp);
                           png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
                           free(unc_buff);
@@ -22143,7 +22174,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                         }
                       SDL_LockSurface(aux_surf);
 
+#ifdef DEBUG
                       printf("Bkgd!!!\n");
+#endif
                       for (j = 0; j < hh; j++)
                         for (i = 0; i < ww; i++)
                           putpixels[aux_surf->format->BytesPerPixel] (aux_surf, i, j,
@@ -22173,7 +22206,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
                   if ((starter_modified || !img_starter) && chunk_is_valid("tpFG", unknowns[u]))
                     {
+#ifdef DEBUG
                       printf("Frgd!!!\n");
+#endif
 
                       unc_buff = get_chunk_data(fp, fname, png_ptr, info_ptr, "tpFG", unknowns[u], &unc_size);
                       if (unc_buff == NULL)
@@ -22185,7 +22220,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                                                       canvas->format->Gmask, canvas->format->Gmask, TPAINT_AMASK);
                       if (aux_surf == NULL)
                         {
-                          printf("Can't recover the foreground data embedded in %s, error in create aux image\n\n",
+                          fprintf(stderr, "Can't recover the foreground data embedded in %s, error in create aux image\n\n",
                                  fname);
                           fclose(fp);
                           png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
@@ -22691,7 +22726,7 @@ static void setup_config(char *argv[])
         {
           if (strtof(tmpcfg.joystick_dev, NULL) < 0 || strtof(tmpcfg.joystick_dev, NULL) > 100)
             {
-              printf("Joystick dev (now %s) must be between 0 and 100.\n", tmpcfg.joystick_dev);
+              fprintf(stderr, "Joystick dev (now %s) must be between 0 and 100.\n", tmpcfg.joystick_dev);
               exit(1);
             }
           joystick_dev = strtof(tmpcfg.joystick_dev, NULL);
@@ -22701,7 +22736,7 @@ static void setup_config(char *argv[])
     {
       if (strtof(tmpcfg.joystick_slowness, NULL) < 0 || strtof(tmpcfg.joystick_slowness, NULL) > 500)
         {
-          printf("Joystick slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_slowness);
+          fprintf(stderr, "Joystick slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_slowness);
           exit(1);
         }
       joystick_slowness = strtof(tmpcfg.joystick_slowness, NULL);
@@ -22711,7 +22746,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_lowthreshold, NULL) < 0 || strtof(tmpcfg.joystick_lowthreshold, NULL) > 32766)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick lower threshold (now %s)  must be between 0 and 32766", tmpcfg.joystick_lowthreshold);
+          fprintf(stderr, "Joystick lower threshold (now %s)  must be between 0 and 32766", tmpcfg.joystick_lowthreshold);
           exit(1);
         }
       joystick_low_threshold = strtof(tmpcfg.joystick_lowthreshold, NULL);
@@ -22721,7 +22756,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_maxsteps, NULL) < 1 || strtof(tmpcfg.joystick_maxsteps, NULL) > 7)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick max steps (now %s)  must be between 1 and 7", tmpcfg.joystick_maxsteps);
+          fprintf(stderr, "Joystick max steps (now %s)  must be between 1 and 7", tmpcfg.joystick_maxsteps);
           exit(1);
         }
       joystick_maxsteps = strtof(tmpcfg.joystick_maxsteps, NULL);
@@ -22730,7 +22765,7 @@ static void setup_config(char *argv[])
     {
       if (strtof(tmpcfg.joystick_hat_slowness, NULL) < 0 || strtof(tmpcfg.joystick_hat_slowness, NULL) > 500)
         {
-          printf("Joystick hat slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_hat_slowness);
+          fprintf(stderr, "Joystick hat slowness (now %s) must be between 0 and 500.\n", tmpcfg.joystick_hat_slowness);
           exit(1);
         }
       joystick_hat_slowness = strtof(tmpcfg.joystick_hat_slowness, NULL);
@@ -22740,7 +22775,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_hat_timeout, NULL) < 0 || strtof(tmpcfg.joystick_hat_timeout, NULL) > 3000)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick hat timeout (now %s)  must be between 0 and 3000", tmpcfg.joystick_hat_timeout);
+          fprintf(stderr, "Joystick hat timeout (now %s)  must be between 0 and 3000", tmpcfg.joystick_hat_timeout);
           exit(1);
         }
       joystick_hat_timeout = strtof(tmpcfg.joystick_hat_timeout, NULL);
@@ -22750,7 +22785,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_escape, NULL) < 0 || strtof(tmpcfg.joystick_button_escape, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button escape shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_escape);
+          fprintf(stderr, "Joystick button escape shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_escape);
           exit(1);
         }
       joystick_button_escape = strtof(tmpcfg.joystick_button_escape, NULL);
@@ -22761,7 +22796,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectbrushtool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button brush tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button brush tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectbrushtool);
           exit(1);
         }
@@ -22773,7 +22808,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectstamptool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button stamp tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button stamp tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectstamptool);
           exit(1);
         }
@@ -22785,7 +22820,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectlinestool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button lines tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button lines tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectlinestool);
           exit(1);
         }
@@ -22797,7 +22832,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectshapestool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button shapes tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button shapes tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectshapestool);
           exit(1);
         }
@@ -22809,7 +22844,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selecttexttool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button text tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button text tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selecttexttool);
           exit(1);
         }
@@ -22821,7 +22856,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectlabeltool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button label tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button label tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectlabeltool);
           exit(1);
         }
@@ -22833,7 +22868,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selectmagictool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button magic tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button magic tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selectmagictool);
           exit(1);
         }
@@ -22844,7 +22879,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_undo, NULL) < 0 || strtof(tmpcfg.joystick_button_undo, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button undo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_undo);
+          fprintf(stderr, "Joystick button undo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_undo);
           exit(1);
         }
       joystick_button_undo = strtof(tmpcfg.joystick_button_undo, NULL);
@@ -22854,7 +22889,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_redo, NULL) < 0 || strtof(tmpcfg.joystick_button_redo, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button redo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_redo);
+          fprintf(stderr, "Joystick button redo shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_redo);
           exit(1);
         }
       joystick_button_redo = strtof(tmpcfg.joystick_button_redo, NULL);
@@ -22865,7 +22900,7 @@ static void setup_config(char *argv[])
           || strtof(tmpcfg.joystick_button_selecterasertool, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button eraser tool shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button eraser tool shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_selecterasertool);
           exit(1);
         }
@@ -22876,7 +22911,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_new, NULL) < 0 || strtof(tmpcfg.joystick_button_new, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button new shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_new);
+          fprintf(stderr, "Joystick button new shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_new);
           exit(1);
         }
       joystick_button_new = strtof(tmpcfg.joystick_button_new, NULL);
@@ -22886,7 +22921,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_open, NULL) < 0 || strtof(tmpcfg.joystick_button_open, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button open shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_open);
+          fprintf(stderr, "Joystick button open shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_open);
           exit(1);
         }
       joystick_button_open = strtof(tmpcfg.joystick_button_open, NULL);
@@ -22896,7 +22931,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_save, NULL) < 0 || strtof(tmpcfg.joystick_button_save, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button save shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_save);
+          fprintf(stderr, "Joystick button save shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_save);
           exit(1);
         }
       joystick_button_save = strtof(tmpcfg.joystick_button_save, NULL);
@@ -22906,7 +22941,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_pagesetup, NULL) < 0 || strtof(tmpcfg.joystick_button_pagesetup, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button page setup shortcurt (now %s)  must be between 0 and 254",
+          fprintf(stderr, "Joystick button page setup shortcurt (now %s)  must be between 0 and 254",
                  tmpcfg.joystick_button_pagesetup);
           exit(1);
         }
@@ -22917,7 +22952,7 @@ static void setup_config(char *argv[])
       if (strtof(tmpcfg.joystick_button_print, NULL) < 0 || strtof(tmpcfg.joystick_button_print, NULL) > 254)
         {
           /* FIXME: Find better exit code */
-          printf("Joystick button print shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_print);
+          fprintf(stderr, "Joystick button print shortcurt (now %s)  must be between 0 and 254", tmpcfg.joystick_button_print);
           exit(1);
         }
       joystick_button_print = strtof(tmpcfg.joystick_button_print, NULL);
@@ -22932,7 +22967,7 @@ static void setup_config(char *argv[])
           if (strtof(token, NULL) < 0 || strtof(token, NULL) > 254)
             {
               /* FIXME: Find better exit code */
-              printf("Joystick buttons must be between 0 and 254 (don't like %s)", tmpcfg.joystick_buttons_ignore);
+              fprintf(stderr, "Joystick buttons must be between 0 and 254 (don't like %s)", tmpcfg.joystick_buttons_ignore);
               exit(1);
             }
           joystick_buttons_ignore[joystick_buttons_ignore_len++] = strtof(token, NULL);
@@ -23418,11 +23453,11 @@ static void setup(void)
 
   if (joystick_dev == -1)
     {
-      printf("%i joystick(s) were found:\n", SDL_NumJoysticks());
+      fprintf(stderr, "%i joystick(s) were found:\n", SDL_NumJoysticks());
 
       for (i = 0; i < SDL_NumJoysticks(); i++)
         {
-          printf(" %d: %s\n", i, SDL_JoystickName(i));
+          fprintf(stderr, " %d: %s\n", i, SDL_JoystickName(i));
         }
 
       SDL_Quit();
@@ -23718,8 +23753,8 @@ static void setup(void)
 #endif
       if (generate_fontconfig_cache_spinner(screen))    /* returns 1 if aborted */
         {
-          printf("Pango thread aborted!\n");
-          fflush(stdout);
+          fprintf(stderr, "Pango thread aborted!\n");
+          fflush(stderr);
           SDL_KillThread(fontconfig_thread);
           SDL_Quit();
           exit(0);
@@ -24525,7 +24560,9 @@ static int trash(char *path)
       return (unlink(path));
     }
 
+#ifdef DEBUG
   printf("trash: basename=%s", basename(path)); /* EP */
+#endif
   strcpy(fname, basename(path));
 
   if (!file_exists(path))
