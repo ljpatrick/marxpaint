@@ -12,7 +12,7 @@ Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango
 Requires: libpng librsvg2 cairo libpaper fribidi
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
 BuildRequires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
-BuildRequires: libgsf-devel libxml2-devel gtk2-devel gperf gettext
+BuildRequires: gperf gettext ImageMagick
 
 %description
 "Tux Paint" is a drawing program for young children.
@@ -31,7 +31,7 @@ Group: Development/Libraries
 Requires: tuxpaint = %{version}
 Requires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
 Requires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
-Requires: libgsf-devel libxml2-devel gtk2-devel gperf gettext
+Requires: gperf gettext
 
 %description devel
 development files for tuxpaint plugins.
@@ -49,7 +49,16 @@ mkdir -p $RPM_BUILD_ROOT/%{_bindir}
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}
 mkdir -p $RPM_BUILD_ROOT/%{_mandir}
 
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
+	install-bin install-data install-man install-doc \
+	install-magic-plugins \
+	install-magic-plugin-dev \
+	install-icon install-gettext install-im install-importscript \
+	install-default-config install-example-stamps \
+	install-example-starters install-example-templates \
+	install-thumb-starters install-thumb-templates \
+	install-bash-completion \
+	install-osk
 
 find $RPM_BUILD_ROOT -name tuxpaint.desktop | sort | \
     sed -e "s@$RPM_BUILD_ROOT@@g" > filelist.icons
@@ -89,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Thu Mar 14 2020 <shin1@wmail.plala.or.jp> -
+- Disable target "install-xdg". Add ImageMagick for BuildReq.
+
 * Thu Sep 26 2019 <nbs@sonic.net> -
 - Set version number 0.9.24
 

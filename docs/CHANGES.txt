@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.April.10 (0.9.24)
+2020.April.24 (0.9.24)
   * New tools
     ---------
     * Fill
@@ -36,6 +36,9 @@ $Id$
       STDERR, rather than STDOUT.
 
     * Updates to build for Windows (using mingw/msys)
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Updates to 'spec' file for Linux RPM builds
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Other Improvements
