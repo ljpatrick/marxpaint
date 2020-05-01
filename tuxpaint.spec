@@ -36,11 +36,14 @@ development files for tuxpaint plugins.
 %setup -q
 
 %build
-make PREFIX=%{_prefix}
+make PREFIX=%{_prefix} DOC_PREFIX=%{_docdir}/tuxpaint/en
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make ARCH_INSTALL="" PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+make ARCH_INSTALL="" PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
+     DOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint \
+     DEVDOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint/devel \
+     install
 
 export XDG_DATA_DIRS=$RPM_BUILD_ROOT%{_datadir}
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/{icons/hicolor,applications,desktop-directories}
@@ -57,9 +60,6 @@ xdg-icon-resource install --mode system --noupdate --size 16 data/images/icon16x
 cp src/tuxpaint.desktop ./tux4kids-tuxpaint.desktop
 xdg-desktop-menu install --mode system --noupdate tux4kids-tuxpaint.desktop
 rm ./tux4kids-tuxpaint.desktop
-
-rm -rf $RPM_BUILD_ROOT/%{_datadir}/doc/tuxpaint-dev
-mv magic/magic-docs docs
 
 %post
 update-desktop-database
@@ -78,25 +78,32 @@ rm -rf $RPM_BUILD_ROOT
 
 %defattr(644,root,root,755)
 %config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
-%doc docs/*
+%{_sysconfdir}/bash_completion.d/tuxpaint-completion.bash
+%{_docdir}/tuxpaint/*
 %{_datadir}/tuxpaint/*
 %{_datadir}/pixmaps/tuxpaint.*
 %{_datadir}/applications/tux4kids-tuxpaint.desktop
 %{_datadir}/icons/hicolor/*/apps/tux4kids-tuxpaint.png
-%{_sysconfdir}/bash_completion.d/tuxpaint-completion.bash
 %{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
-%{_datadir}/man/man1/*
-%{_datadir}/man/*/man1/*
+%{_mandir}/man1/tuxpaint*.*
+%{_mandir}/*/man1/tuxpaint*.*
+%exclude %{_docdir}/tuxpaint/devel
+%exclude %{_docdir}/tuxpaint/Makefile
 
 %files devel
 %attr(755,root,root) %{_bindir}/tp-magic-config
 %defattr(644,root,root,755)
-%doc magic/docs/*
 %{_includedir}/tuxpaint/tp_magic_api.h
+%{_docdir}/tuxpaint/devel/*
+%{_docdir}/tuxpaint/Makefile
+%{_mandir}/man1/tp-magic-config.*
 
 %changelog
 * Fri May 1 2020 <shin1@wmail.plala.or.jp> -
 - Enabled using xdg-utils for installing icons.
+- Wrong date in %changelog
+- Re-organized %files section
+- Correct path for 'tp-magic-config --plugindocprefix'
 
 * Sat Mar 14 2020 <shin1@wmail.plala.or.jp> -
 - Disable target "install-xdg". Add ImageMagick for BuildReq.
