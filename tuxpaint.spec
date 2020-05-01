@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 * Fri May 1 2020 <shin1@wmail.plala.or.jp> -
 - Enabled using xdg-utils for installing icons.
 
-* Thu Mar 14 2020 <shin1@wmail.plala.or.jp> -
+* Sat Mar 14 2020 <shin1@wmail.plala.or.jp> -
 - Disable target "install-xdg". Add ImageMagick for BuildReq.
 
 * Thu Sep 26 2019 <nbs@sonic.net> -
@@ -137,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 - Included magic tools
 - Separated devel package
 
-* Sat Jun 01 2007  <shin1@wmail.plala.or.jp> -
+* Fri Jun 01 2007  <shin1@wmail.plala.or.jp> -
 - Requires librsvg2 and libpaper
 
 * Fri Sep 08 2006  <shin1@wmail.plala.or.jp> -
