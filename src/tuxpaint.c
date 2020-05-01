@@ -457,9 +457,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-#ifdef WIN32
 #include <librsvg/rsvg-cairo.h>
-#endif
 
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
