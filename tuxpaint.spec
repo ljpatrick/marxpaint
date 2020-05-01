@@ -2,17 +2,14 @@ Summary: A drawing program for young children
 Name: tuxpaint
 Version: 0.9.24
 Release: 1
-Epoch: 1
 License: GPL
 Group: Multimedia/Graphics
 URL: http://www.tuxpaint.org/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango
-Requires: libpng librsvg2 cairo libpaper fribidi
+Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango libpaper fribidi xdg-utils
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
-BuildRequires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
-BuildRequires: gperf gettext ImageMagick
+BuildRequires: librsvg2-devel libpaper-devel fribidi-devel gperf gettext ImageMagick xdg-utils
 
 %description
 "Tux Paint" is a drawing program for young children.
@@ -30,8 +27,7 @@ Summary: development files for tuxpaint plugins.
 Group: Development/Libraries
 Requires: tuxpaint = %{version}
 Requires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
-Requires: libpng-devel librsvg2-devel cairo-devel libpaper-devel fribidi-devel
-Requires: gperf gettext
+Requires: librsvg2-devel libpaper-devel fribidi-devel gperf
 
 %description devel
 development files for tuxpaint plugins.
@@ -44,60 +40,64 @@ make PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}
-mkdir -p $RPM_BUILD_ROOT/%{_mandir}
+make ARCH_INSTALL="" PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
-	install-bin install-data install-man install-doc \
-	install-magic-plugins \
-	install-magic-plugin-dev \
-	install-icon install-gettext install-im install-importscript \
-	install-default-config install-example-stamps \
-	install-example-starters install-example-templates \
-	install-thumb-starters install-thumb-templates \
-	install-bash-completion \
-	install-osk
+export XDG_DATA_DIRS=$RPM_BUILD_ROOT%{_datadir}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/{icons/hicolor,applications,desktop-directories}
 
-find $RPM_BUILD_ROOT -name tuxpaint.desktop | sort | \
-    sed -e "s@$RPM_BUILD_ROOT@@g" > filelist.icons
-find $RPM_BUILD_ROOT -name tuxpaint.png | sort | \
-    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
-find $RPM_BUILD_ROOT -name tuxpaint.svg | sort | \
-    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
-find $RPM_BUILD_ROOT -name tuxpaint.xpm | sort | \
-    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
+xdg-icon-resource install --mode system --noupdate --size 192 data/images/icon192x192.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 128 data/images/icon128x128.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 96 data/images/icon96x96.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 64 data/images/icon64x64.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 48 data/images/icon48x48.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 32 data/images/icon32x32.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 22 data/images/icon22x22.png tux4kids-tuxpaint
+xdg-icon-resource install --mode system --noupdate --size 16 data/images/icon16x16.png tux4kids-tuxpaint
 
-rm -rf $RPM_BUILD_ROOT/usr/share/doc/tuxpaint*
+cp src/tuxpaint.desktop ./tux4kids-tuxpaint.desktop
+xdg-desktop-menu install --mode system --noupdate tux4kids-tuxpaint.desktop
+rm ./tux4kids-tuxpaint.desktop
+
+rm -rf $RPM_BUILD_ROOT/%{_datadir}/doc/tuxpaint-dev
+mv magic/magic-docs docs
+
+%post
+update-desktop-database
+
+%postun
+update-desktop-database
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f filelist.icons
-%defattr(-,root,root,-)
+%files
+%defattr(755,root,root,755)
+%{_bindir}/tuxpaint
+%{_bindir}/tuxpaint-import
+%{_prefix}/lib/tuxpaint/*
+
+%defattr(644,root,root,755)
 %config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
 %doc docs/*
 %{_datadir}/tuxpaint/*
+%{_datadir}/pixmaps/tuxpaint.*
+%{_datadir}/applications/tux4kids-tuxpaint.desktop
+%{_datadir}/icons/hicolor/*/apps/tux4kids-tuxpaint.png
 %{_sysconfdir}/bash_completion.d/tuxpaint-completion.bash
-
-%defattr(0755, root, root)
-%{_bindir}/tuxpaint
-%{_bindir}/tuxpaint-import
-
-%{_prefix}/lib/tuxpaint/plugins/*.so
-
-%defattr(0644, root, root)
 %{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
 %{_datadir}/man/man1/*
-%{_datadir}/man/*/man1/tuxpaint.1.*
+%{_datadir}/man/*/man1/*
 
 %files devel
+%attr(755,root,root) %{_bindir}/tp-magic-config
+%defattr(644,root,root,755)
 %doc magic/docs/*
-%{_prefix}/include/tuxpaint/tp_magic_api.h
-%{_prefix}/bin/tp-magic-config
+%{_includedir}/tuxpaint/tp_magic_api.h
 
 %changelog
+* Fri May 1 2020 <shin1@wmail.plala.or.jp> -
+- Enabled using xdg-utils for installing icons.
+
 * Thu Mar 14 2020 <shin1@wmail.plala.or.jp> -
 - Disable target "install-xdg". Add ImageMagick for BuildReq.
 
