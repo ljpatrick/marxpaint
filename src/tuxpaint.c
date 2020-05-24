@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 10, 2020
+  June 14, 2002 - May 23, 2020
 */
 
 
@@ -457,7 +457,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-#include <librsvg/rsvg-cairo.h>
+/* #include <librsvg/rsvg-cairo.h> -- Deprecated */
 
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
