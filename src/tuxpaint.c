@@ -278,7 +278,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <dirent.h>
 #include <signal.h>
 
-#if defined __BEOS__
+#if defined __BEOS__ || defined __HAIKU__
 
 /* BeOS */
 

@@ -1069,10 +1069,11 @@ $Id$
   * Maemo (Nokia 770 and N880) coding and builds
     Alessandro Pasotti <apasotti@gmail.com>
 
-  * BeOS coding and builds
+  * BeOS and Haiku coding and builds
     Luc 'Begasus' Schrijvers <begasus@gmail.com>
     Scott McCreary <scottmc@users.sourceforge.net>
     Marcin 'Shard' Konicki <shard at beosjournal.org>  [retired]
+    Gerasim Troeglazov <3dEyes@gmail.com>
 
   * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>

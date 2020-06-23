@@ -9,7 +9,11 @@ http://www.tuxpaint.org/
 $Id$
 
 2020.June.22 (0.9.25)
-  * TBD
+  * Ports & Building
+    ----------------
+    * Corrections for Haiku not opening saved files.
+      (Ref: https://github.com/haikuports/haikuports/issues/3045)
+      Gerasim Troeglazov <3dEyes@gmail.com>
 
 2020.April.24 (0.9.24)
   * New tools
