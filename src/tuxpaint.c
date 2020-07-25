@@ -22620,9 +22620,6 @@ static void setup_config(char *argv[])
       exportdir = get_xdg_user_dir("PICTURES", "Pictures");
     }
     
-  printf("Export Dir = %s\n", exportdir);
-  exit(0);
-
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
 #if defined(_WIN32)
