@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 08:40-0700\n"
+"POT-Creation-Date: 2020-07-25 00:22-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -423,7 +423,7 @@ msgstr "Oshki"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:7846
+#: ../tools.h:98 ../tuxpaint.c:7857
 msgid "Open"
 msgstr "Nasaakose"
 
@@ -548,193 +548,205 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2113
+#: ../tuxpaint.c:2118
 msgid "Do you really want to quit?"
 msgstr "Boonitaan?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2116
+#: ../tuxpaint.c:2121
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Eha!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2119 ../tuxpaint.c:2146
+#: ../tuxpaint.c:2124 ../tuxpaint.c:2151
 msgid "No, take me back!"
 msgstr "Gaawin!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2123
+#: ../tuxpaint.c:2128
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Maawanjitoon?"
 
-#: ../tuxpaint.c:2124 ../tuxpaint.c:2129
+#: ../tuxpaint.c:2129 ../tuxpaint.c:2134
 msgid "Yes, save it!"
 msgstr "Eha, maawanjitoon!"
 
-#: ../tuxpaint.c:2125 ../tuxpaint.c:2130
+#: ../tuxpaint.c:2130 ../tuxpaint.c:2135
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Gaawin!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2128
+#: ../tuxpaint.c:2133
 msgid "Save your picture first?"
 msgstr "Maawanjitoon?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2133
+#: ../tuxpaint.c:2138
 msgid "Can’t open that picture!"
 msgstr ""
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2136 ../tuxpaint.c:2141 ../tuxpaint.c:2150 ../tuxpaint.c:2157
-#: ../tuxpaint.c:2166
+#: ../tuxpaint.c:2141 ../tuxpaint.c:2146 ../tuxpaint.c:2155 ../tuxpaint.c:2162
+#: ../tuxpaint.c:2171
 msgid "OK"
 msgstr "Haaw"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2140
+#: ../tuxpaint.c:2145
 msgid "There are no saved files!"
 msgstr ""
 
 #. Verification of print action
-#: ../tuxpaint.c:2144
+#: ../tuxpaint.c:2149
 msgid "Print your picture now?"
 msgstr "Mazinaakizan?"
 
-#: ../tuxpaint.c:2145
+#: ../tuxpaint.c:2150
 msgid "Yes, print it!"
 msgstr "Eha, mazinaakizan!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2149
+#: ../tuxpaint.c:2154
 msgid "Your picture has been printed!"
 msgstr "Mazinaakizigewin"
 
 #. We got an error printing
-#: ../tuxpaint.c:2153
+#: ../tuxpaint.c:2158
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Mazinaakizigewin"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2156
+#: ../tuxpaint.c:2161
 msgid "You can’t print yet!"
 msgstr ""
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2160
+#: ../tuxpaint.c:2165
 msgid "Erase this picture?"
 msgstr "Gaasiibii'an?"
 
-#: ../tuxpaint.c:2161
+#: ../tuxpaint.c:2166
 msgid "Yes, erase it!"
 msgstr "Eha, gaasiibii'an!"
 
-#: ../tuxpaint.c:2162
+#: ../tuxpaint.c:2167
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Gaawin!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2165
+#: ../tuxpaint.c:2170
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2371
+#: ../tuxpaint.c:2378
 msgid "Sound muted."
 msgstr "Bizaanabi'win"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2376
+#: ../tuxpaint.c:2383
 msgid "Sound unmuted."
 msgstr "Madwewechigewin"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3129
+#: ../tuxpaint.c:3138
 msgid "Please wait…"
 msgstr "Bekaa akawe"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7849
+#: ../tuxpaint.c:7860
 msgid "Erase"
 msgstr "Gaasiibii'an"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7852
+#: ../tuxpaint.c:7863
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7855
+#: ../tuxpaint.c:7866
 msgid "Back"
 msgstr "Neyaab"
 
-#. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7858
-msgid "Next"
-msgstr "Mii dash"
-
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7861
+#: ../tuxpaint.c:7869
 msgid "Play"
 msgstr "Mamaanjinojin"
 
+#. Slideshow: 'GIF Export' button, to create an animated GIF
+#: ../tuxpaint.c:7872
+msgid "GIF Export"
+msgstr ""
+
+#. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:7875
+msgid "Next"
+msgstr "Mii dash"
+
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8576
+#: ../tuxpaint.c:8590
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11944
+#: ../tuxpaint.c:11960
 msgid "Yes"
 msgstr "Haaw"
 
-#: ../tuxpaint.c:11948
+#: ../tuxpaint.c:11964
 msgid "No"
 msgstr "Gaawin"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13018
+#: ../tuxpaint.c:13034
 msgid "Replace the picture with your changes?"
 msgstr "Naabishkaw"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13022
+#: ../tuxpaint.c:13038
 msgid "Yes, replace the old one!"
 msgstr "Haaw, naabishkaw"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13026
+#: ../tuxpaint.c:13042
 msgid "No, save a new file!"
 msgstr "Gaawin, oshki!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:14270
+#: ../tuxpaint.c:14292
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:15266 ../tuxpaint.c:15586
+#: ../tuxpaint.c:15288 ../tuxpaint.c:15622
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
-#: ../tuxpaint.c:23179
+#. None selected? Too dangerous to select all.
+#. Only 1 selected?  No point in saving as GIF.
+#.
+#: ../tuxpaint.c:15671
+msgid "Select 2 or more drawings to turn into an animated GIF."
+msgstr ""
+
+#: ../tuxpaint.c:23277
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:23191
+#: ../tuxpaint.c:23289
 msgid "Pick a color."
 msgstr "Onaabandan"
 
