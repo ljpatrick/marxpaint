@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.24 (0.9.25)
+2020.July.25 (0.9.25)
   * New Features
     ------------
     * [WIP] GIF export option from Open -> Slideshow dialog.
@@ -17,6 +17,9 @@ $Id$
       * Depends on "libimagequant", from the "pngquant2" project:
         https://github.com/ImageOptim/libimagequant
         (GPL v3 or later, for Free/Libre Open Source Software)
+      * Uses XDG user dirs settings, if available, to determine
+        where to store them, or "~/Pictures", otherwise.
+        "--exportdir" option can be used to override this.
 
   * Ports & Building
     ----------------

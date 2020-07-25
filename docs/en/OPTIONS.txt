@@ -6,7 +6,7 @@ Options Documentation
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                                 June 22, 2020
+                                 July 25, 2020
 
      ----------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ Windows Users
 
        printcfg=yes
 
-               (Windows and Mac OS X only)
+               (Windows and macOS only)
 
                Tux Paint will use a printer configuration file when printing.
                Push the [Alt] key while clicking the 'Print' button in
@@ -224,7 +224,7 @@ Windows Users
        papersize=PAPERSIZE
 
                (Platforms that use Tux Paint's internal PostScript generator
-               — not Windows, Mac OS X or BeOS.)
+               — not Windows, macOS, BeOS, or Haiku.)
 
                Tell Tux Paint what size PostScript to generate. If none is
                specified, Tux Paint first checks your $PAPER environment
@@ -560,7 +560,7 @@ Windows Users
                     Example:
                     "C:\Documents and Settings\Username\Application Data\TuxPaint\saved\"
 
-                  * Mac OS X — Inside a folder named "TuxPaint" in your
+                  * macOS — Inside a folder named "TuxPaint" in your
                     "Application Support" folder.
                     Example:
                     "/Users/Username/Library/Application Support/TuxPaint/saved/"
@@ -576,15 +576,40 @@ Windows Users
 
                Example: savedir=Z:\tuxpaint\
 
+       exportdir=DIRECTORY
+
+               Use this option to change where Tux Paint exports files —
+               single images, or animated GIF slideshows — for external use.
+
+               If you do not override it, the default location is:
+                  * Linux & Unix — If available, wherever your desktop
+                    environment is configured for pictures to be stored,
+                    based on your XDG (X Desktop Group) configuration. (Try
+                    running the command-line "xdg-user-dir PICTURES" to find
+                    out.)
+
+                    Typically (in an English locale), this will be a
+                    "Pictures/" subdirectory in your home directory (i.e.,
+                    "$HOME/Pictures/" aka "~/Pictures").
+
+                    Tux Paint will fall back to using that typical directory,
+                    of no XDG configuration can be read, or nothing is set
+                    for "XDG_PICTURES_DIR".
+
+                  * Windows — TBD!
+                  * macOS — TBD!
+
+               Example: exportdir=/home/penguin/TuxPaintExports
+
        datadir=DIRECTORY
 
                Use this option to change where Tux Paint looks for personal
-               data files (brushes, stamps, starters and fonts specific to
-               the current user).
+               data files (brushes, stamps, starters, templates, and fonts
+               specific to the current user).
 
                Tux Paint will search for subdirectories/subfolders named
-               "brushes", "stamps", "starters" and "fonts" under the data
-               directory.
+               "brushes", "stamps", "starters", "templates", and "fonts"
+               under the specified data directory.
 
                If you do not override it, the default location is:
                   * Linux & Unix — Under a hidden directory named ".tuxpaint"
@@ -596,7 +621,7 @@ Windows Users
                     Example:
                     "C:\Documents and Settings\Username\Application Data\TuxPaint\brushes\"
 
-                  * Mac OS X — Inside a folder named "TuxPaint" in your
+                  * macOS — Inside a folder named "TuxPaint" in your
                     "Application Support" folder.
                     Example:
                     "/Users/Username/Library/Application Support/TuxPaint/brushes/"

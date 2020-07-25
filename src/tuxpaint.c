@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 23, 2020
+  June 14, 2002 - July 25, 2020
 */
 
 
@@ -1317,6 +1317,8 @@ static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmo
 
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools);
 
+char * get_xdg_user_dir(const char * dir_type, const char * fallback);
+
 
 /* Magic tools API and tool handles: */
 
@@ -1977,9 +1979,14 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
                                     char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(void);
+
 static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
 static void draw_selection_digits(int right, int bottom, int n);
+
+void do_export_gif(void);
+char * get_export_filepath(void);
+
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
 static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8, Uint8 * b8);
@@ -6517,6 +6524,9 @@ void show_usage(int exitcode)
           " Data:\n"
           "  [--nolockfile]\n"
           "  [--datadir DIRECTORY]\n"
+          "\n"
+          " Exporting:\n"
+          "  [--exportdir DIRECTORY]\n"
           "\n"
           " Accessibility:\n"
           "  [--mouse-accessibility]\n"
@@ -11799,12 +11809,12 @@ static void load_current(void)
  * FIXME
  */
 /* Make sure we have a 'path' directory */
-static int make_directory(const char *path, const char *errmsg)
+static int make_directory(int dir_type, const char *path, const char *errmsg)
 {
   char *fname;
   int res;
 
-  fname = get_fname(path, DIR_SAVE);
+  fname = get_fname(path, dir_type);
   res = mkdir(fname, 0755);
   if (res != 0 && errno != EEXIST)
     {
@@ -11826,7 +11836,7 @@ static void save_current(void)
   char *fname;
   FILE *fi;
 
-  if (!make_directory("", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
     {
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return;
@@ -13109,7 +13119,7 @@ static int do_save(int tool, int dont_show_success_results)
   show_progress_bar(screen);
   do_setcursor(cursor_watch);
 
-  if (!make_directory("", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
     {
       fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13121,7 +13131,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
 
-  if (!make_directory("saved", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13133,7 +13143,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
 
-  if (!make_directory("saved/.thumbs", "Can't create user data thumbnail directory"))
+  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13144,7 +13154,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
 
-  if (!make_directory("saved/.label", "Can't create label information directory"))
+  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory"))
     {
       fprintf(stderr, "Cannot save label information! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -14181,10 +14191,10 @@ static int do_open(void)
                           /* No thumbnail - load original: */
 
                           /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory("saved", "Can't create user data directory"))
+                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
                             {
                               /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
                             }
 
 
@@ -15202,10 +15212,10 @@ static int do_slideshow(void)
                       /* No thumbnail - load original: */
 
                       /* Make sure we have a ~/.tuxpaint/saved directory: */
-                      if (make_directory("saved", "Can't create user data directory"))
+                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
                         {
                           /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                          make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
                         }
 
                       snprintf(fname, sizeof(fname), "%s/%s", dirname, f->d_name);
@@ -15676,7 +15686,7 @@ static int do_slideshow(void)
 		    }
 		  else
 		    {
-		      /* FIXME: Do it */
+		      do_export_gif();
 		    }
                 }
               else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
@@ -18998,11 +19008,11 @@ static int do_new_dialog(void)
                           /* No thumbnail - load original: */
 
                           /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
-                          if (make_directory(dirname[d_places[num_files]], "Can't create user data directory"))
+                          if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory"))
                             {
                               /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
                               snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
-                              make_directory(fname, "Can't create user data thumbnail directory");
+                              make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory");
                             }
 
                           img = NULL;
@@ -19103,10 +19113,10 @@ static int do_new_dialog(void)
                                   snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                                            dirname[d_places[num_files]], d_names[num_files]);
 
-                                  if (!make_directory("starters", "Can't create user data directory") ||
-                                      !make_directory("templates", "Can't create user data directory") ||
-                                      !make_directory("starters/.thumbs", "Can't create user data directory") ||
-                                      !make_directory("templates/.thumbs", "Can't create user data directory"))
+                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory") ||
+                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory") ||
+                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory") ||
+                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory"))
                                     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                                   else
                                     {
@@ -22565,6 +22575,7 @@ static void setup_config(char *argv[])
     }
 #endif
 
+  /* == SAVEDIR == */
   if (tmpcfg_cmd.savedir)
     savedir = strdup(tmpcfg_cmd.savedir);
   else
@@ -22594,6 +22605,23 @@ static void setup_config(char *argv[])
         }
 #endif
     }
+
+  /* == EXPORTDIR == */
+  if (tmpcfg_cmd.exportdir)
+    exportdir = strdup(tmpcfg_cmd.exportdir);
+  else
+    {
+      /* FIXME: Need assist for:
+         * _WIN32
+         * __BEOS__
+         * __HAIKU__
+         * __APPLE__
+      */
+      exportdir = get_xdg_user_dir("PICTURES", "Pictures");
+    }
+    
+  printf("Export Dir = %s\n", exportdir);
+  exit(0);
 
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
@@ -24635,6 +24663,7 @@ static int trash(char *path)
 
   /* Move file into Trash folder */
 
+  /* FIXME: Use xdg function */
   if (getenv("XDG_DATA_HOME") != NULL)
     {
       sprintf(trashpath, "%s/Trash", getenv("XDG_DATA_HOME"));
@@ -25113,4 +25142,130 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
 
   if (!ignore)
     SDL_PushEvent(&ev);
+}
+
+/**
+ * Grab the user's XDG user dir for something (e.g., ~/Pictures)
+ *
+ * @param char * dir_type -- the thing to query, e.g. "PICTURES" or "VIDEOS"
+ *   (note: currently, Tux Paint only puts things in the PICTURES one)
+ * @param char * fallback -- path, under $HOME, to use instead (e.g., "Pictures")
+ * @return char * path (caller is expected to free() it)
+ */
+char * get_xdg_user_dir(const char * dir_type, const char * fallback) {
+  FILE * fi;
+  char * config_home, * found;
+  char tmp_path[MAX_PATH], config_path[MAX_PATH], line[MAX_PATH], search[MAX_PATH], return_path[MAX_PATH];
+  int found_it;
+
+  found_it = FALSE;
+
+  /* Figure out where XDG user-dirs config exists, and use it if possible */
+  if (getenv("XDG_CONFIG_HOME") != NULL) {
+    config_home = strdup(getenv("XDG_CONFIG_HOME"));
+  } else {
+#ifdef DEBUG
+    fprintf(stderr, "XDG_CONFIG_HOME not set, checking $HOME/.config/\n");
+#endif
+    if (getenv("HOME") != NULL) {
+      snprintf(tmp_path, MAX_PATH, "%s/.config", getenv("HOME"));
+      config_home = strdup(tmp_path);
+    } else {
+#ifdef DEBUG
+      fprintf(stderr, "No HOME, either?! Returing fallback in current directory\n");
+#endif
+      return strdup(fallback);
+    }
+  }
+
+  if (config_home[strlen(config_home) - 1] == '/') {
+    config_home[strlen(config_home) - 1] = '\0';
+  }
+  snprintf(config_path, MAX_PATH, "%s/user-dirs.dirs", config_home);
+  free(config_home);
+
+#ifdef DEBUG
+  fprintf(stderr, "User dirs config = %s\n", config_path);
+#endif
+
+  snprintf(search, MAX_PATH, "XDG_%s_DIR=\"", dir_type);
+
+  /* Read the config to find the path we want */
+  fi = fopen(config_path, "r");
+  if (fi != NULL) {
+    /* Search for a line in the form of either
+       either XDG_PICTURES_DIR="$HOME/Pictures"
+       or XDG_PICTURES_DIR="/Path/To/Pictures"
+    */
+#ifdef DEBUG
+    fprintf(stderr, "Searching it for: %s\n", search);
+#endif
+    while (fgets(line, MAX_PATH, fi) && !found_it) {
+      /* Trim trailing CR/LF */
+        if (line[strlen(line) - 1] == '\n' ||
+            line[strlen(line) - 1] == '\r') {
+          line[strlen(line) - 1] = '\0';
+        }
+
+      if (strstr(line, search) == line) {
+        found = line + strlen(search);
+#ifdef DEBUG
+        fprintf(stderr, "Found it: %s\n", found);
+#endif
+        if (strstr(found, "$HOME/") == found) {
+          snprintf(return_path, MAX_PATH, "%s/%s", getenv("HOME"), found + 6 /* skip '$HOME/' */);
+        } else {
+          strcpy(return_path, found);
+        }
+        
+        /* Trim trailing " */
+        if (return_path[strlen(return_path) - 1] == '\"') {
+          return_path[strlen(return_path) - 1] = '\0';
+        }
+  
+        found_it = TRUE;
+      }
+    }
+
+    fclose(fi);
+#ifdef DEBUG
+  } else {
+    fprintf(stderr, "%s doesn't exist\n", config_path);
+#endif
+  }
+
+  if (!found_it) {
+#ifdef DEBUG
+    fprintf(stderr, "Using fallback of $HOME/%s\n", fallback);
+#endif
+    snprintf(return_path, MAX_PATH, "%s/%s", getenv("HOME"), fallback);
+  }
+
+#ifdef DEBUG
+  fprintf(stderr, "Location for %s => %s\n", dir_type, return_path);
+#endif
+
+  return strdup(return_path);
+}
+
+/**
+ * After 2+ images have been selected in the Open->Slideshow
+ * dialog, they can be exported as an animated GIF.
+ */
+void do_export_gif(void) {
+}
+
+/**
+ * Returns the user's chosen export directory
+ * for animated GIFs, via Open->Slideshow dialog,
+ * and static PNGs, via Open dialog */
+char * get_export_filepath(void) {
+  char *rname;
+  char fname[FILENAME_MAX];
+
+  rname = NULL;
+/*
+  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
+  rname = get_fname(fname, DIR_SAVE);
+*/
 }

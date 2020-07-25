@@ -121,7 +121,7 @@ Loading Tux Paint
 
      ----------------------------------------------------------------------
 
-  Mac OS X Users
+  macOS Users
 
          Simply double-click the "Tux Paint" icon.
 
@@ -604,7 +604,7 @@ Available Tools
 
                       Printer Settings
 
-                              (Windows and Mac OS X)
+                              (Windows and macOS)
 
                               By default, Tux Paint simply prints to the
                               default printer with default settings when the
@@ -753,7 +753,7 @@ Available Tools
              Inside the user's "Application Data" folder, e.g.: "C:\Documents
              and Settings\(user name)\Application Data\TuxPaint\saved\"
 
-     Mac OS X
+     macOS
              Inside the user's "Library" folder:
              "/Users/(user name)/Library/Application
              Support/Tux Paint/saved/"
@@ -799,7 +799,7 @@ Using 'tuxpaint-import'
 
 Doing it Manually
 
-       Windows, Mac OS X and BeOS users must currently do the conversion
+       Windows, macOS, BeOS, and Haiku users must currently do the conversion
        manually.
 
        Load a graphics program that is capable of both loading your picture
