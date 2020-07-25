@@ -483,6 +483,8 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "---------------------------------------------------"
 #endif
 
+#include "libimagequant.h"
+
 #include "SDL_getenv.h"
 
 #include "i18n.h"
@@ -495,6 +497,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "dirwalk.h"
 #include "get_fname.h"
 #include "onscreen_keyboard.h"
+#include "gifenc.h"
 
 #include "tools.h"
 #include "titles.h"
@@ -1432,7 +1435,7 @@ static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
 static SDL_Surface *img_sfx, *img_speak;
 static SDL_Surface *img_open, *img_erase, *img_back, *img_trash;
-static SDL_Surface *img_slideshow, *img_play, *img_select_digits;
+static SDL_Surface *img_slideshow, *img_play, *img_gif_export, *img_select_digits;
 static SDL_Surface *img_printer, *img_printer_wait;
 static SDL_Surface *img_save_over, *img_popup_arrow;
 static SDL_Surface *img_cursor_up, *img_cursor_down;
@@ -1755,7 +1758,8 @@ static short *brushes_directional = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
-  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play, *img_openlabels_next;
+  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
+  *img_openlabels_gif_export, *img_openlabels_next;
 
 static SDL_Surface *img_tux[NUM_TIP_TUX];
 
@@ -7861,11 +7865,14 @@ static void create_button_labels(void)
   /* Open dialog: 'Back' button, to dismiss Open dialog without opening a picture */
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
 
-  /* Slideshow: 'Next' button, to load next slide (image) */
-  img_openlabels_next = do_render_button_label(gettext_noop("Next"));
-
   /* Slideshow: 'Play' button, to begin a slideshow sequence */
   img_openlabels_play = do_render_button_label(gettext_noop("Play"));
+
+  /* Slideshow: 'GIF Export' button, to create an animated GIF */
+  img_openlabels_gif_export = do_render_button_label(gettext_noop("GIF Export"));
+
+  /* Slideshow: 'Next' button, to load next slide (image) */
+  img_openlabels_next = do_render_button_label(gettext_noop("Next"));
 }
 
 
@@ -15029,7 +15036,7 @@ static int do_slideshow(void)
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
-  char *freeme;
+  char *freeme, *instructions;
   int speeds;
   float x_per, y_per;
   int xx, yy;
@@ -15278,9 +15285,8 @@ static int do_slideshow(void)
   /* Let user choose images: */
 
   /* Instructions for Slideshow file dialog (FIXME: Make a #define) */
-  freeme = textdir(gettext_noop("Choose the pictures you want, " "then click “Play”."));
-  draw_tux_text(TUX_BORED, freeme, 1);
-  free(freeme);
+  instructions = textdir(gettext_noop("Choose the pictures you want, " "then click “Play”."));
+  draw_tux_text(TUX_BORED, instructions, 1);
 
   /* NOTE: cur is now set above; if file_id'th file is found, it's
      set to that file's index; otherwise, we default to '0' */
@@ -15384,6 +15390,21 @@ static int do_slideshow(void)
           dest.x = 96 + (48 - img_openlabels_play->w) / 2;
           dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_play->h;
           SDL_BlitSurface(img_openlabels_play, NULL, screen, &dest);
+
+
+          /* "GIF Export" button: */
+
+          dest.x = WINDOW_WIDTH - 96 - 48 * 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+          dest.x = WINDOW_WIDTH - 96 - 48 * 2 + (48 - img_gif_export->w) / 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+          SDL_BlitSurface(img_gif_export, NULL, screen, &dest);
+
+          dest.x = WINDOW_WIDTH - 96 - 48 * 2 + (48 - img_openlabels_gif_export->w) / 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_gif_export->h;
+          SDL_BlitSurface(img_openlabels_gif_export, NULL, screen, &dest);
 
 
           /* "Back" button: */
@@ -15633,6 +15654,31 @@ static int do_slideshow(void)
                       update_list = 1;
                     }
                 }
+              else if (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
+                       event.button.x < (WINDOW_WIDTH - 96 - 48) &&
+                       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+                       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+                {
+                  /* GIF Export */
+
+                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+
+                  if (num_selected < 2)
+		    {
+	              /* None selected? Too dangerous to select all.
+		         Only 1 selected?  No point in saving as GIF.
+                      */
+                      freeme = textdir(gettext_noop("Select 2 or more drawings to turn into an animated GIF."));
+                      draw_tux_text(TUX_BORED, freeme, 1);
+                      free(freeme);
+
+                      control_drawtext_timer(2000, instructions, 0); /* N.B. It will draw instructions, regardless */
+		    }
+		  else
+		    {
+		      /* FIXME: Do it */
+		    }
+                }
               else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
                        event.button.x < (WINDOW_WIDTH - 96) &&
                        event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
@@ -15696,7 +15742,7 @@ static int do_slideshow(void)
                   do_setcursor(cursor_down);
                 }
               else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 96) ||
-                        (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+                        (event.button.x >= (WINDOW_WIDTH - 96 - 48 * 2) &&
                          event.button.x < (WINDOW_WIDTH - 96))) &&
                        event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
                        event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
@@ -15736,6 +15782,17 @@ static int do_slideshow(void)
 
           else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
             handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+
+          else if (event.type == SDL_USEREVENT)
+            {
+              if (event.user.code == USEREVENT_TEXT_UPDATE)
+                {
+                  if (event.user.data1 != NULL)
+                    {
+                      draw_tux_text(TUX_BORED, instructions, 1);
+                    }
+		}
+	    }
         }
 
       if (motioner | hatmotioner)
@@ -15764,6 +15821,8 @@ static int do_slideshow(void)
   free(d_exts);
   free(selected);
 
+  control_drawtext_timer(0, "", 0);
+  free(instructions);
 
   return go_back;
 }
@@ -23990,6 +24049,7 @@ static void setup(void)
 
   img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
   img_play = loadimage(DATA_PREFIX "images/ui/play.png");
+  img_gif_export = loadimage(DATA_PREFIX "images/ui/gif_export.png");
   img_select_digits = loadimage(DATA_PREFIX "images/ui/select_digits.png");
 
   img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
