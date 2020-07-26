@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 2, 2020
+  June 14, 2002 - July 26, 2020
 */
 
 #include <stdio.h>
@@ -239,7 +239,6 @@ int need_right_to_left;
 int need_right_to_left_word;
 const char *lang_prefix, *short_lang_prefix;
 
-int num_wished_langs = 0;
 w_langs wished_langs[255];
 
 /* Mappings from human-readable language names (found in
@@ -979,18 +978,17 @@ static void mysetenv(const char *name, const char *value)
  * @param loc Locale
  * @return The Y-nudge value for font rendering in the language.
  */
-/* *INDENT-OFF* */
-static int set_current_language(const char *restrict locale_choice) MUST_CHECK;
-/* *INDENT-ON* */
 
-static int set_current_language(const char *restrict loc)
+static int set_current_language(const char *restrict loc, int * ptr_num_wished_langs)
 {
   int i;
   int j = 0;
   char *oldloc;
   char *env_language;
   char *env_language_lang;
+  int num_wished_langs = 0;
 
+  *ptr_num_wished_langs = 0;
 
   if (strlen(loc) > 0)
     {
@@ -1140,6 +1138,8 @@ static int set_current_language(const char *restrict loc)
   printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
 #endif
 
+  *ptr_num_wished_langs = num_wished_langs;
+
   return wished_langs[0].lang_y_nudge;
 }
 
@@ -1150,11 +1150,12 @@ static int set_current_language(const char *restrict loc)
  * if asked (either 'locale' or 'lang' are "help"), or if the
  * given input is not recognized.
  *
- * @param lang Language name (or NULL)
- * @param locale Locale (or NULL)
+ * @param char * lang Language name (or NULL)
+ * @param char * locale Locale (or NULL)
+ * @param int * a place to return the number of languages we want to use, when scanning stamp descriptions 
  * @return Y-nudge
  */
-int setup_i18n(const char *restrict lang, const char *restrict locale)
+int setup_i18n(const char *restrict lang, const char *restrict locale, int * num_wished_langs)
 {
 #ifdef DEBUG
   printf("lang %p, locale %p\n", lang, locale);
@@ -1174,7 +1175,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
 
   if (lang)
     locale = language_to_locale(lang);
-  return set_current_language(locale);
+  return set_current_language(locale, num_wished_langs);
 }
 
 #ifdef NO_SDLPANGO
@@ -1183,6 +1184,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
  */
 int smash_i18n(void)
 {
-  return set_current_language("C");
+  int tmp;
+  return set_current_language("C", &tmp);
 }
 #endif

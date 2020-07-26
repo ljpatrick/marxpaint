@@ -1828,6 +1828,8 @@ static int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
 
 static Uint32 cur_toggle_count;
 
+static int num_wished_langs;
+
 typedef struct edge_type
 {
   int y_upper;
@@ -10985,14 +10987,26 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
     extptr = strcasestr(txt_fname, ".svg");
 #endif
 
+  printf("### txt_fname = %s\n", txt_fname);
+  printf("### extptr = %s\n", extptr);
+
+/*
+### txt_fname = /usr/local/share/tuxpaint/stamps/animals/amphibians//frog-1.png
+### extptr = .png
+'/usr/local/share/tuxpaint/stamps/animals/amphibians//frog-1.png' has no locale-specific translation, using English: '01��7'
+*/
+
   if (extptr != NULL)
     {
       found = 0;
+      strcpy(def_buf, ""); /* In case of total inability to find anything */
 
       /* Set the first available language */
       for (i = 0; i < num_wished_langs && !found; i++)
         {
-          strcpy((char *)extptr, ".txt"); /* safe; pointing into a safe spot within an existing string */
+          strcpy((char *)extptr, ".txt"); /* safe; pointing into a safe spot within an existing string (txt_fname) */
+
+          fprintf(stderr, "### txt_fname now '%s'\n", txt_fname);
 
           fi = fopen(txt_fname, "r");
 
@@ -11009,11 +11023,15 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
           do
             {
+              fprintf(stderr, "### reading...\n");
+
               if (fgets(buf, sizeof(buf), fi))
                 {
                   if (!feof(fi))
                     {
+                      fprintf(stderr, "### READ '%s'\n", buf);
                       strip_trailing_whitespace(buf);
+                      fprintf(stderr, "### TRIMMED '%s'\n", buf);
 
                       if (!got_first)
                         {
@@ -11021,8 +11039,8 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
                           strcpy(def_buf, buf); /* safe; both the same size */
                           got_first = 1;
+			  fprintf(stderr, "### THAT WAS FIRST, using as default!\n");
                         }
-
 
                       debug(buf);
 
@@ -11068,19 +11086,24 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
       if (found)
         {
           *locale_text = 1;
+          fprintf(stderr, "'%s' has a locale-specific translation, using it: '%s'\n", fname, buf + strlen(lang_prefix) + 6); /* FIXME Remove */
           return (strdup(buf + (strlen(lang_prefix)) + 6));
         }
       else
         {
           /* No locale-specific translation; use the default (English) */
 
+          fprintf(stderr, "'%s' has no locale-specific translation, using English: '%s'\n", fname, def_buf); /* FIXME Remove */
           return (strdup(def_buf));
         }
     }
   else
     {
+      fprintf(stderr, "Somehow, '%s' doesn't have a filename extension!?\n", fname);
       return NULL;
     }
+
+  printf("\n");
 }
 
 
@@ -22801,7 +22824,7 @@ static void setup_config(char *argv[])
     tmpcfg.parsertmp_lang = NULL;
   if (tmpcfg.parsertmp_locale == PARSE_CLOBBER)
     tmpcfg.parsertmp_locale = NULL;
-  button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale);
+  button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
 
 
   /* FIXME: most of this is not required before starting the font scanner */

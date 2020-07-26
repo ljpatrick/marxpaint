@@ -38,6 +38,12 @@ $Id$
     ----
     * Improved safety when copying things into string buffers.
 
+    * [WIP] Mending issue where stamp descriptions are not loading,
+      and making things safer when a problem occurs.
+      (Using gcc 9.3.0 compiler, this was happening in 0.9.25 during
+      development, but also affected 0.9.24 and 0.9.23, which worked
+      fine under earlier versions of gcc.)
+
 2020.April.24 (0.9.24)
   * New tools
     ---------
