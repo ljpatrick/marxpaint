@@ -22679,6 +22679,8 @@ static void setup_config(char *argv[])
 
   datadir = tmpcfg.datadir ? tmpcfg.datadir : savedir;
 
+  exportdir = tmpcfg.exportdir ? tmpcfg.exportdir : exportdir;
+
   if (tmpcfg.parsertmp_lang == PARSE_CLOBBER)
     tmpcfg.parsertmp_lang = NULL;
   if (tmpcfg.parsertmp_locale == PARSE_CLOBBER)
