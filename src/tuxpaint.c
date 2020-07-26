@@ -25500,6 +25500,10 @@ static int export_pict(char * fname) {
   size_t len;
   unsigned char buf[1024];
   char * pict_fname;
+  Uint32 time_before, time_after;
+
+  do_setcursor(cursor_watch);
+  show_progress_bar(screen);
 
   fi = fopen(fname, "rb");
   if (fi == NULL)
@@ -25508,6 +25512,7 @@ static int export_pict(char * fname) {
       return FALSE;
     }
 
+  time_before = SDL_GetTicks();
   pict_fname = get_export_filepath("png");
   if (pict_fname == NULL)
     {
@@ -25539,6 +25544,15 @@ static int export_pict(char * fname) {
   fclose(fo);
 
   free(pict_fname);
+
+  /* Unique filenames are timestamp-based, down to the second,
+     so ensure at least one second has elapsed */
+  time_after = SDL_GetTicks();
+  if (time_after - time_before < 1000)
+    {
+      show_progress_bar(screen);
+      SDL_Delay(time_after + 1000 - time_before);
+    }
 
   return TRUE;
 }
