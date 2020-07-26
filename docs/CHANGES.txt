@@ -34,6 +34,10 @@ $Id$
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
 
+  * Misc
+    ----
+    * Improved safety when copying things into string buffers.
+
 2020.April.24 (0.9.24)
   * New tools
     ---------
