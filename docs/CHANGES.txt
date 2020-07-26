@@ -11,15 +11,22 @@ $Id$
 2020.July.25 (0.9.25)
   * New Features
     ------------
-    * [WIP] GIF export option from Open -> Slideshow dialog.
-      * Utilizes "gifenc", public domain by Marcel Rodrigues:
-        https://github.com/lecram/gifenc
-      * Depends on "libimagequant", from the "pngquant2" project:
-        https://github.com/ImageOptim/libimagequant
-        (GPL v3 or later, for Free/Libre Open Source Software)
-      * Uses XDG user dirs settings, if available, to determine
-        where to store them, or "~/Pictures", otherwise.
-        "--exportdir" option can be used to override this.
+    * Export drawings:
+      * GIF export option from the Open -> Slideshow dialog.
+        * Utilizes "gifenc", public domain by Marcel Rodrigues:
+          https://github.com/lecram/gifenc
+        * Depends on "libimagequant", from the "pngquant2" project:
+          https://github.com/ImageOptim/libimagequant
+          (GPL v3 or later, for Free/Libre Open Source Software)
+        * WORK IN PROGRESS
+          (Closes https://sourceforge.net/p/tuxpaint/feature-requests/191/)
+      * Single image (PNG) export from the Open dialog.
+        (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
+      * Both utilize XDG user dirs settings, if available, to determine
+        where to store them, or "~/Pictures", otherwise.  In those cases,
+        files are stored in a new "TuxPaint" subdirectory.
+      * The "--exportdir" option can be used to override the default
+        location (but a "TuxPaint" subdir. will NOT be placed there).
 
   * Ports & Building
     ----------------

@@ -6,7 +6,7 @@ Options Documentation
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                                 July 25, 2020
+                                 July 26, 2020
 
      ----------------------------------------------------------------------
 
@@ -581,7 +581,8 @@ Windows Users
                Use this option to change where Tux Paint exports files —
                single images, or animated GIF slideshows — for external use.
 
-               If you do not override it, the default location is:
+               If you do not override it, the default location is determined
+               as follows:
                   * Linux & Unix — If available, wherever your desktop
                     environment is configured for pictures to be stored,
                     based on your XDG (X Desktop Group) configuration. (Try
@@ -598,6 +599,14 @@ Windows Users
 
                   * Windows — TBD!
                   * macOS — TBD!
+
+               Note: When the defaults are used, a new "TuxPaint"
+               subdirectory will be created and used. (e.g.,
+               "~/Pictures/TuxPaint") When the "--exportdir" option is used,
+               the exact path specified will be used (no "TuxPaint"
+               subdirectory is created). It is expected that the parent
+               directory exists. (The directory itself will be created, if it
+               doesn't.)
 
                Example: exportdir=/home/penguin/TuxPaintExports
 
@@ -1050,6 +1059,7 @@ Windows Users
          --keyboard
          --savedir DIRECTORY
          --datadir DIRECTORY
+         --exportdir DIRECTORY
          --saveover
          --saveovernew
          --nosave

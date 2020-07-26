@@ -1985,6 +1985,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
 static void draw_selection_digits(int right, int bottom, int n);
 
 static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
+static int export_pict(char * fname);
 static char * get_export_filepath(const char * ext);
 
 static void wait_for_sfx(void);
@@ -13989,7 +13990,8 @@ static int do_open(void)
   int *d_places;
   FILE *fi;
   char fname[1024];
-  int num_files, i, done, slideshow, update_list, want_erase, cur, which, num_files_in_dirs, j, any_saved_files;
+  int num_files, i, done, slideshow, update_list, want_erase, want_export;
+  int cur, which, num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
@@ -14323,16 +14325,15 @@ static int do_open(void)
           /* Let user choose an image: */
 
           /* Instructions for 'Open' file dialog */
-          char *freeme = textdir(gettext_noop("Choose the picture you want, " "then click “Open”."));
-
-          draw_tux_text(TUX_BORED, freeme, 1);
-          free(freeme);
+          char *instructions = textdir(gettext_noop("Choose the picture you want, then click “Open”."));
+          draw_tux_text(TUX_BORED, instructions, 1);
 
           /* NOTE: cur is now set above; if file_id'th file is found, it's
              set to that file's index; otherwise, we default to '0' */
 
           update_list = 1;
           want_erase = 0;
+          want_export = 0;
 
           done = 0;
           slideshow = 0;
@@ -14445,6 +14446,25 @@ static int do_open(void)
                   dest.x = WINDOW_WIDTH - 96 - 48 + (48 - img_openlabels_back->w) / 2;
                   dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_back->h;
                   SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
+
+
+                  /* "Export" button: */
+
+                  dest.x = WINDOW_WIDTH - 96 - 48 - 48 - 48;
+                  dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+
+                  if (d_places[which] != PLACE_STARTERS_DIR && d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
+                    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+                  else
+                    SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+                  dest.x = WINDOW_WIDTH - 96 - 48 - 48 - 48 + (48 - img_pict_export->w) / 2;
+                  dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+                  SDL_BlitSurface(img_pict_export, NULL, screen, &dest);
+
+                  dest.x = WINDOW_WIDTH - 96 - 48 - 48 - 48 + (48 - img_openlabels_pict_export->w) / 2;
+                  dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_pict_export->h;
+                  SDL_BlitSurface(img_openlabels_pict_export, NULL, screen, &dest);
 
 
                   /* "Erase" button: */
@@ -14683,6 +14703,16 @@ static int do_open(void)
 
                           want_erase = 1;
                         }
+                      else if (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48 - 48) &&
+                               event.button.x < (WINDOW_WIDTH - 48 - 48 - 96) &&
+                               event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+                               event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) &&
+                               d_places[which] != PLACE_STARTERS_DIR && d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
+                        {
+                          /* Export */
+
+                          want_export = 1;
+                        }
                     }
                   else if (event.type == SDL_MOUSEBUTTONDOWN &&
                            event.button.button >= 4 && event.button.button <= 5 && wheely)
@@ -14738,8 +14768,9 @@ static int do_open(void)
                       else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 48) ||
                                 (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
                                  event.button.x < (WINDOW_WIDTH - 96)) ||
-                                (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
+                                (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48 - 48) &&
                                  event.button.x < (WINDOW_WIDTH - 48 - 96) &&
+				 /* Both "Erase" and "Export" only work on our own files... */
                                  d_places[which] != PLACE_STARTERS_DIR &&
                                  d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
                                event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
@@ -14897,6 +14928,21 @@ static int do_open(void)
                       update_list = 1;
                     }
                 }
+
+              if (want_export)
+                {
+                  want_export = 0;
+
+                  snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
+                  rfname = get_fname(fname, DIR_SAVE);
+                  if (export_pict(rfname))
+                    do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+                  else
+                    do_prompt_snd(PROMPT_PICT_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
+
+                  draw_tux_text(TUX_BORED, instructions, 1);
+		  update_list = 1;
+                }
             }
           while (!done);
 
@@ -15011,6 +15057,8 @@ static int do_open(void)
 
 
           update_canvas(0, 0, WINDOW_WIDTH - 96 - 96, 48 * 7 + 40 + HEIGHTOFFSET);
+
+          free(instructions);
         }
 
 
@@ -15711,27 +15759,27 @@ static int do_slideshow(void)
 		    }
 		  else
 		    {
-		      export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed);
+                      export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed);
 
-              /* Redraw entire screen, after export: */
-              SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
-              draw_toolbar();
-              draw_colors(COLORSEL_CLOBBER_WIPE);
-              draw_none();
-
-              /* Show a message depending on success */
-              if (export_successful)
-                do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
-              else
-                do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
-
-              freeme = textdir(TUX_TIP_SLIDESHOW);
-              draw_tux_text(TUX_BORED, freeme, 1);
-              free(freeme);
-
-              SDL_Flip(screen);
-
-              update_list = 1;
+                      /* Redraw entire screen, after export: */
+                      SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
+                      draw_toolbar();
+                      draw_colors(COLORSEL_CLOBBER_WIPE);
+                      draw_none();
+        
+                      /* Show a message depending on success */
+                      if (export_successful)
+                        do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+                      else
+                        do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
+        
+                      freeme = textdir(TUX_TIP_SLIDESHOW);
+                      draw_tux_text(TUX_BORED, freeme, 1);
+                      free(freeme);
+        
+                      SDL_Flip(screen);
+        
+                      update_list = 1;
 		    }
                 }
               else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
@@ -19054,7 +19102,7 @@ static int do_new_dialog(void)
                           if (thumbs[num_files] == NULL)
                             {
                               fprintf(stderr,
-                                      "\nError: Couldn't create a thumbnail of " "saved image!\n" "%s\n", fname);
+                                      "\nError: Couldn't create a thumbnail of saved image!\n" "%s\n", fname);
                             }
 
                           num_files++;
@@ -19149,7 +19197,7 @@ static int do_new_dialog(void)
                               if (thumbs[num_files] == NULL)
                                 {
                                   fprintf(stderr,
-                                          "\nError: Couldn't create a thumbnail of " "saved image!\n" "%s\n", fname);
+                                          "\nError: Couldn't create a thumbnail of saved image!\n" "%s\n", fname);
                                 }
 
                               SDL_FreeSurface(img);
@@ -19682,7 +19730,7 @@ static int do_new_dialog(void)
               fprintf(stderr,
                       "\nWarning: Couldn't load the saved image! (3)\n"
                       "%s\n"
-                      "The Simple DirectMedia Layer error that occurred " "was:\n" "%s\n\n", fname, SDL_GetError());
+                      "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", fname, SDL_GetError());
 
               do_prompt(PROMPT_OPEN_UNOPENABLE_TXT, PROMPT_OPEN_UNOPENABLE_YES, "", 0, 0);
             }
@@ -19740,7 +19788,7 @@ static int do_new_dialog(void)
               fprintf(stderr,
                       "\nWarning: Couldn't load the saved image! (4)\n"
                       "%s\n"
-                      "The Simple DirectMedia Layer error that occurred " "was:\n" "%s\n\n", fname, SDL_GetError());
+                      "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", fname, SDL_GetError());
 
               do_prompt(PROMPT_OPEN_UNOPENABLE_TXT, PROMPT_OPEN_UNOPENABLE_YES, "", 0, 0);
             }
@@ -22594,6 +22642,7 @@ static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 static void setup_config(char *argv[])
 {
   char str[128];
+  char * picturesdir;
 
 #ifndef _WIN32
   const char *home = getenv("HOME");
@@ -22673,7 +22722,10 @@ static void setup_config(char *argv[])
          * __HAIKU__
          * __APPLE__
       */
-      exportdir = get_xdg_user_dir("PICTURES", "Pictures");
+      picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
+      snprintf(str, sizeof(str), "%s/TuxPaint", picturesdir);
+      free(picturesdir);
+      exportdir = strdup(str);
     }
     
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
@@ -24235,10 +24287,11 @@ static void setup(void)
 
   small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, DATA_PREFIX "fonts/default_font.ttf",
 #ifdef __APPLE__
-                                      12 - (only_uppercase * 2));
+                                      12 - (only_uppercase * 2)
 #else
-                                      13 - (only_uppercase * 2));
+                                      13 - (only_uppercase * 2)
 #endif
+  );
 
   if (small_font == NULL)
     {
@@ -24793,10 +24846,10 @@ static int trash(char *path)
         }
       while (!feof(fi))
         {
-          len = fread(buf, sizeof(buf), 1, fi);
+          len = fread(buf, sizeof(unsigned char), sizeof(buf), fi);
           if (len > 0)
             {
-              fwrite(buf, sizeof(buf), 1, fo);
+              fwrite(buf, sizeof(unsigned char), sizeof(buf), fo);
             }
         }
       fclose(fi);
@@ -25336,6 +25389,12 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   show_progress_bar(screen);
 
   gif_fname = get_export_filepath("gif");
+  if (gif_fname == NULL)
+    {
+      /* Can't create export dir! Abort! */
+      return FALSE;
+    }
+
   /* FIXME: Open GIF */
 
 
@@ -25427,8 +25486,68 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
 }
 
 /**
+ * Copy an image (just the main PNG) from Tux Paint's "saved"
+ * directory to the user's chosen export directory
+ * (e.g., ~/Pictures, or whatever "--exportdir" says).
+ *
+ * Used when exporting a single image from the Open dialog.
+ *
+ * @param char * fname -- full path to the image to export
+ * @return int 1 = success, 0 = failed
+ */
+static int export_pict(char * fname) {
+  FILE * fi, * fo;
+  size_t len;
+  unsigned char buf[1024];
+  char * pict_fname;
+
+  fi = fopen(fname, "rb");
+  if (fi == NULL)
+    {
+      fprintf(stderr, "Cannot export from saved Tux Paint file '%s'\nThe error that occurred was:\n%s\n\n", fname, strerror(errno));
+      return FALSE;
+    }
+
+  pict_fname = get_export_filepath("png");
+  if (pict_fname == NULL)
+    {
+      fclose(fi);
+      return FALSE;
+    }
+
+  fo = fopen(pict_fname, "wb");
+  if (fo == NULL)
+    {
+      fprintf(stderr, "Cannot export to new file '%s'\nThe error that occurred was:\n%s\n\n", pict_fname, strerror(errno));
+      free(pict_fname);
+      fclose(fi);
+      return FALSE;
+    }
+
+  while (!feof(fi))
+    {
+      len = fread(buf, sizeof(unsigned char), sizeof(buf), fi);
+      if (len > 0)
+        {
+          fwrite(buf, sizeof(unsigned char), sizeof(buf), fo);
+        }
+    }
+
+  /* FIXME: Probably good to check for errors here and respond accordingly -bjk 2020.07.26 */
+
+  fclose(fi);
+  fclose(fo);
+
+  free(pict_fname);
+
+  return TRUE;
+}
+
+/**
  * Returns the name of a new file, located in the user's chosen
- * export directory (e.g., ~/Pictures, or whatever "--exportdir" says).
+ * export directory (e.g., ~/Pictures/TuxPaint, or whatever "--exportdir" says).
+ *
+ * Also ensures that the directory exists, in the first place.
  *
  * Used when exporting animated GIFs (via "Export GIF" in the
  * Open->Slideshow dialog) and static PNGs (via "Export" in the
@@ -25436,7 +25555,8 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
  *
  * @param const char * ext -- extnesion of the file (e.g., "png" or "gif")
  * @return char * -- filepath for the new file to be created
- *   (e.g., /home/username/Pictures/2020072620110100.gif")
+ *   (e.g., /home/username/Pictures/TuxPaint/2020072620110100.gif")
+ *   Or NULL if the directory cannot be created.
  */
 static char * get_export_filepath(const char * ext) {
   char *rname;
@@ -25444,6 +25564,14 @@ static char * get_export_filepath(const char * ext) {
   char timestamp[16];
   time_t t;
 
+
+  /* Make sure the export dir exists */
+  if (!make_directory(DIR_EXPORT, "", "Can't create export directory"))
+    {
+      return NULL;
+    }
+
+  /* Create a unique filename, within that dir */
   t = time(NULL);
   strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t));
   snprintf(fname, sizeof(fname), "%s.%s", timestamp, ext);
