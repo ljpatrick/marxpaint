@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 25, 2020
+  June 14, 2002 - July 26, 2020
 */
 
 
@@ -1436,7 +1436,7 @@ static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
 static SDL_Surface *img_sfx, *img_speak;
-static SDL_Surface *img_open, *img_erase, *img_back, *img_trash;
+static SDL_Surface *img_open, *img_erase, *img_back, *img_trash, *img_pict_export;
 static SDL_Surface *img_slideshow, *img_play, *img_gif_export, *img_select_digits;
 static SDL_Surface *img_printer, *img_printer_wait;
 static SDL_Surface *img_save_over, *img_popup_arrow;
@@ -1761,7 +1761,7 @@ static short *brushes_directional = NULL;
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
   *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
-  *img_openlabels_gif_export, *img_openlabels_next;
+  *img_openlabels_gif_export, *img_openlabels_pict_export, *img_openlabels_next;
 
 static SDL_Surface *img_tux[NUM_TIP_TUX];
 
@@ -1984,8 +1984,8 @@ static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
 static void draw_selection_digits(int right, int bottom, int n);
 
-void do_export_gif(void);
-char * get_export_filepath(void);
+static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
+static char * get_export_filepath(const char * ext);
 
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
@@ -2176,6 +2176,19 @@ static void do_wait(int counter)
 /* Reminder that Mouse Button 1 is the button to use in Tux Paint */
 #define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
 #define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
+
+/* Confirmation of successful (we hope) image export */
+#define PROMPT_PICT_EXPORT_TXT gettext_noop("Your picture has been exported!")
+#define PROMPT_GIF_EXPORT_TXT gettext_noop("Your slideshow GIF has been exported!")
+#define PROMPT_EXPORT_YES gettext_noop("OK")
+
+/* We got an error exporting */
+#define PROMPT_PICT_EXPORT_FAILED_TXT gettext_noop("Sorry! Your picture could not be exported!")
+#define PROMPT_GIF_EXPORT_FAILED_TXT gettext_noop("Sorry! Your slideshow GIF could not be exported!")
+
+
+/* Slideshow instructions */
+#define TUX_TIP_SLIDESHOW gettext("Choose the pictures you want, then click “Play”.")
 
 
 enum
@@ -7872,6 +7885,9 @@ static void create_button_labels(void)
   /* Open dialog: 'Slides' button, to switch to slide show mode */
   img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
 
+  /* Open dialog: 'Export' button, to copy an image to an easily-accessible location */
+  img_openlabels_pict_export = do_render_button_label(gettext_noop("Export"));
+
   /* Open dialog: 'Back' button, to dismiss Open dialog without opening a picture */
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
 
@@ -11243,9 +11259,13 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect, SDL_S
 
 
 /**
- * FIXME
+ * Copy an image, scaling and smearing, as needed, into a new surface.
+ * Free the original surface.
+ * 
+ * @param SDL_Surface * src -- source surface (will be freed by this function!)
+ * @param SDL_Surface * dst -- destination surface
+ * @param int SDCALL(*blit) -- function for blitting; "NondefectiveBlit" or "SDL_BlitSurface"
  */
-/* For the 3rd arg, pass either NondefectiveBlit or SDL_BlitSurface. */
 static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
                                       int SDLCALL(*blit) (SDL_Surface * src,
                                                           SDL_Rect * srcrect, SDL_Surface * dst, SDL_Rect * dstrect))
@@ -12418,9 +12438,11 @@ static void cleanup(void)
   free_surface(&img_openlabels_open);
   free_surface(&img_openlabels_slideshow);
   free_surface(&img_openlabels_erase);
+  free_surface(&img_openlabels_pict_export);
   free_surface(&img_openlabels_back);
   free_surface(&img_openlabels_next);
   free_surface(&img_openlabels_play);
+  free_surface(&img_openlabels_gif_export);
 
   free_surface(&img_progress);
 
@@ -12440,11 +12462,13 @@ static void cleanup(void)
 
   free_surface(&img_open);
   free_surface(&img_erase);
+  free_surface(&img_pict_export);
   free_surface(&img_back);
   free_surface(&img_trash);
 
   free_surface(&img_slideshow);
   free_surface(&img_play);
+  free_surface(&img_gif_export);
   free_surface(&img_select_digits);
 
   free_surface(&img_dead40x40);
@@ -13860,9 +13884,12 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf, i
 }
 
 /**
- * FIXME
+ * Generate a new file ID.  Used when saving a picture for
+ * the first time (i.e., very first save, or saving as a new
+ * file, rather than overwriting/replacing the existing version).
+ *
+ * Affects "file_id" string.
  */
-/* Pick a new file ID: */
 static void get_new_file_id(void)
 {
   time_t t;
@@ -13871,9 +13898,6 @@ static void get_new_file_id(void)
 
   strftime(file_id, sizeof(file_id), "%Y%m%d%H%M%S", localtime(&t));
   debug(file_id);
-
-
-  /* FIXME: Show thumbnail and prompt for title: */
 }
 
 
@@ -15053,6 +15077,7 @@ static int do_slideshow(void)
   SDL_Surface *btn, *blnk;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
+  int export_successful;
 
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
@@ -15294,8 +15319,8 @@ static int do_slideshow(void)
 #endif
   /* Let user choose images: */
 
-  /* Instructions for Slideshow file dialog (FIXME: Make a #define) */
-  instructions = textdir(gettext_noop("Choose the pictures you want, " "then click “Play”."));
+  /* Instructions for Slideshow file dialog */
+  instructions = textdir(TUX_TIP_SLIDESHOW);
   draw_tux_text(TUX_BORED, instructions, 1);
 
   /* NOTE: cur is now set above; if file_id'th file is found, it's
@@ -15628,8 +15653,8 @@ static int do_slideshow(void)
                   draw_colors(COLORSEL_CLOBBER_WIPE);
                   draw_none();
 
-                  /* Instructions for Slideshow file dialog (FIXME: Make a #define) */
-                  freeme = textdir(gettext_noop("Choose the pictures you want, " "then click “Play”."));
+                  /* Instructions for Slideshow file dialog */
+                  freeme = textdir(TUX_TIP_SLIDESHOW);
                   draw_tux_text(TUX_BORED, freeme, 1);
                   free(freeme);
 
@@ -15675,7 +15700,7 @@ static int do_slideshow(void)
 
                   if (num_selected < 2)
 		    {
-	              /* None selected? Too dangerous to select all.
+	              /* None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 		         Only 1 selected?  No point in saving as GIF.
                       */
                       freeme = textdir(gettext_noop("Select 2 or more drawings to turn into an animated GIF."));
@@ -15686,7 +15711,27 @@ static int do_slideshow(void)
 		    }
 		  else
 		    {
-		      do_export_gif();
+		      export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed);
+
+              /* Redraw entire screen, after export: */
+              SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
+              /* Show a message depending on success */
+              if (export_successful)
+                do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+              else
+                do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
+
+              freeme = textdir(TUX_TIP_SLIDESHOW);
+              draw_tux_text(TUX_BORED, freeme, 1);
+              free(freeme);
+
+              SDL_Flip(screen);
+
+              update_list = 1;
 		    }
                 }
               else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
@@ -15839,7 +15884,16 @@ static int do_slideshow(void)
 
 
 /**
- * FIXME
+ * Play an animated slideshow within Tux Paint.
+ * Called by the Open->Slideshow dialog, once a set of images
+ * have been selected/chosen, and "Play" is clicked.
+ *
+ * @param int * selected -- array of selected images, in the order they should be played
+ * @param int num_selected -- count of how many images were selected
+ * @char * dirname -- path to the directory of saved images to be played
+ * @char ** d_names -- array of file basenames of the images to be played
+ * @char ** d_ext -- array of file exentions of the images to be played
+ * @int speed -- how fast to play the slideshow (0 = no automatic advance, 1 = slowest, 10 = as fast as possible)
  */
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed)
 {
@@ -15858,9 +15912,9 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
 
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
+
   /* Back up the current image's IDs, because they will get
      clobbered below! */
-
   tmp_starter_id = strdup(starter_id);
   tmp_template_id = strdup(template_id);
   tmp_file_id = strdup(file_id);
@@ -16066,6 +16120,8 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
     }
   while (!done);
 
+  /* Restore everything about the currently-active image
+     that got clobbered above */
   strcpy(starter_id, tmp_starter_id);
   free(tmp_starter_id);
 
@@ -24071,6 +24127,7 @@ static void setup(void)
 
   img_open = loadimage(DATA_PREFIX "images/ui/open.png");
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
+  img_pict_export = loadimage(DATA_PREFIX "images/ui/pict_export.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
   img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
 
@@ -25250,21 +25307,148 @@ char * get_xdg_user_dir(const char * dir_type, const char * fallback) {
 /**
  * After 2+ images have been selected in the Open->Slideshow
  * dialog, they can be exported as an animated GIF.
+ *
+ * Params the same as play_slideshow(), except...
+ *
+ * @param int speed -- how fast to play the slideshow (0 and 1 both = slowest, 10 = fasted)
+ * @return int -- 0 if export failed or was aborted, 1 if successful
  */
-void do_export_gif(void) {
+static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed) {
+  char * gif_fname;
+  char fname[MAX_PATH];
+  int i, done, which;
+  SDL_Event event;
+  SDLKey key;
+  SDL_Surface *img;
+  char *tmp_starter_id, *tmp_template_id, *tmp_file_id;
+  int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
+
+  /* Back up the current image's IDs, because they will get
+     clobbered below! */
+  tmp_starter_id = strdup(starter_id);
+  tmp_template_id = strdup(template_id);
+  tmp_file_id = strdup(file_id);
+  tmp_starter_mirrored = starter_mirrored;
+  tmp_starter_flipped = starter_flipped;
+  tmp_starter_personal = starter_personal;
+
+  do_setcursor(cursor_watch);
+  show_progress_bar(screen);
+
+  gif_fname = get_export_filepath("gif");
+  /* FIXME: Open GIF */
+
+
+  done = 0;
+
+  for (i = 0; i < num_selected && !done; i++)
+    {
+      which = selected[i];
+      show_progress_bar(screen);
+
+
+      /* Figure out filename: */
+
+      snprintf(fname, sizeof(fname), "%s/%s%s", dirname, d_names[which], d_exts[which]);
+
+
+      img = myIMG_Load(fname);
+
+      if (img != NULL)
+        {
+          autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
+
+          strcpy(file_id, d_names[which]);
+
+
+          /* See if this saved image was based on a 'starter' */
+          load_starter_id(d_names[which], NULL);
+          if (starter_id[0] != '\0')
+            {
+              load_starter(starter_id);
+
+              if (starter_mirrored)
+                mirror_starter();
+
+              if (starter_flipped)
+                flip_starter();
+            }
+          else
+            load_template(template_id);
+        } else {
+          /* Error loading !*/
+          fprintf(stderr, "Error loading %s!\n", fname);
+          /* FIXME */
+        }
+      SDL_Flip(screen);
+
+      while (SDL_PollEvent(&event))
+        {
+          if (event.type == SDL_QUIT)
+            {
+              done = 1;
+            }
+          else if (event.type == SDL_KEYDOWN)
+            {
+              key = event.key.keysym.sym;
+              if (key == SDLK_ESCAPE) {
+                done = 1;
+              }
+            }
+        }
+        SDL_Delay(10);
+    }
+
+  /* FIXME: Quantize */
+  /* FIXME: Export each frame */
+  /* FIXME: Close GIF */
+
+
+  /* Restore everything about the currently-active image
+     that got clobbered above */
+  strcpy(starter_id, tmp_starter_id);
+  free(tmp_starter_id);
+
+  strcpy(template_id, tmp_template_id);
+  free(tmp_template_id);
+
+  strcpy(file_id, tmp_file_id);
+  free(tmp_file_id);
+
+  starter_mirrored = tmp_starter_mirrored;
+  starter_flipped = tmp_starter_flipped;
+  starter_personal = tmp_starter_personal;
+
+  
+  free(gif_fname);
+
+  /* Success if we didn't have an error, and user didn't abort */
+  return(!done);
 }
 
 /**
- * Returns the user's chosen export directory
- * for animated GIFs, via Open->Slideshow dialog,
- * and static PNGs, via Open dialog */
-char * get_export_filepath(void) {
+ * Returns the name of a new file, located in the user's chosen
+ * export directory (e.g., ~/Pictures, or whatever "--exportdir" says).
+ *
+ * Used when exporting animated GIFs (via "Export GIF" in the
+ * Open->Slideshow dialog) and static PNGs (via "Export" in the
+ * main Open dialog).
+ *
+ * @param const char * ext -- extnesion of the file (e.g., "png" or "gif")
+ * @return char * -- filepath for the new file to be created
+ *   (e.g., /home/username/Pictures/2020072620110100.gif")
+ */
+static char * get_export_filepath(const char * ext) {
   char *rname;
   char fname[FILENAME_MAX];
+  char timestamp[16];
+  time_t t;
 
-  rname = NULL;
-/*
-  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
-  rname = get_fname(fname, DIR_SAVE);
-*/
+  t = time(NULL);
+  strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t));
+  snprintf(fname, sizeof(fname), "%s.%s", timestamp, ext);
+  rname = get_fname(fname, DIR_EXPORT);
+  debug(rname);
+
+  return(rname);
 }
