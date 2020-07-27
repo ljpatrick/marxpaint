@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 26, 2020
+  June 14, 2002 - July 27, 2020
 */
 
 
@@ -1987,6 +1987,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
 static void draw_selection_digits(int right, int bottom, int n);
 
 static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
+int export_gif_monitor_events(void);
 static int export_pict(char * fname);
 static char * get_export_filepath(const char * ext);
 
@@ -25371,14 +25372,23 @@ char * get_xdg_user_dir(const char * dir_type, const char * fallback) {
  * @return int -- 0 if export failed or was aborted, 1 if successful
  */
 static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed) {
-  char * gif_fname;
-  char fname[MAX_PATH];
-  int i, done, which;
-  SDL_Event event;
-  SDLKey key;
-  SDL_Surface *img;
   char *tmp_starter_id, *tmp_template_id, *tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
+  char * gif_fname;
+  char fname[MAX_PATH];
+  int i, j, done, which, x, y;
+  SDL_Surface *img;
+  int overall_w, overall_h, overall_area;
+  Uint8 * bitmap;
+  Uint8 r, g, b, a;
+  size_t pixels_size;
+  unsigned char *raw_8bit_pixels;
+  uint8_t gif_palette[768]; /* 256 x 3 */
+  liq_attr *liq_handle;
+  liq_image *input_image;
+  liq_result *quantization_result;
+  liq_error qtiz_status;
+  const liq_palette *palette;
 
   /* Back up the current image's IDs, because they will get
      clobbered below! */
@@ -25399,72 +25409,139 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
       return FALSE;
     }
 
-  /* FIXME: Open GIF */
+  /* For now, always saving GIF using the size of Tux Paint's window,
+     which is how images appear in the slide show */
+  overall_w = screen->w;
+  overall_h = screen->h;
+  overall_area = overall_w * overall_h;
 
-
-  done = 0;
-
-  for (i = 0; i < num_selected && !done; i++)
+  bitmap = malloc(num_selected * overall_area * 4);
+  if (bitmap != NULL)
     {
-      which = selected[i];
-      show_progress_bar(screen);
-
-
-      /* Figure out filename: */
-
-      safe_snprintf(fname, sizeof(fname), "%s/%s%s", dirname, d_names[which], d_exts[which]);
-
-
-      img = myIMG_Load(fname);
-
-      if (img != NULL)
+      done = 0;
+    
+      for (i = 0; i < num_selected && !done; i++)
         {
-          autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
-
-          safe_strncpy(file_id, d_names[which], sizeof(file_id));
-
-
-          /* See if this saved image was based on a 'starter' */
-          load_starter_id(d_names[which], NULL);
-          if (starter_id[0] != '\0')
+          which = selected[i];
+          show_progress_bar(screen);
+    
+    
+          /* Figure out filename: */
+          safe_snprintf(fname, sizeof(fname), "%s/%s%s", dirname, d_names[which], d_exts[which]);
+    
+          /* Load and scale the image */
+          img = myIMG_Load(fname);
+    
+          if (img != NULL)
             {
-              load_starter(starter_id);
-
-              if (starter_mirrored)
-                mirror_starter();
-
-              if (starter_flipped)
-                flip_starter();
+              autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
+    
+              safe_strncpy(file_id, d_names[which], sizeof(file_id));
+    
+              /* See if this saved image was based on a 'starter' */
+              load_starter_id(d_names[which], NULL);
+              if (starter_id[0] != '\0')
+                {
+                  load_starter(starter_id);
+    
+                  if (starter_mirrored)
+                    mirror_starter();
+    
+                  if (starter_flipped)
+                    flip_starter();
+                }
+              else
+                load_template(template_id);
+            } else {
+              /* Error loading !*/
+              fprintf(stderr, "Error loading %s!\n", fname);
+              /* FIXME Abort? */
             }
-          else
-            load_template(template_id);
-        } else {
-          /* Error loading !*/
-          fprintf(stderr, "Error loading %s!\n", fname);
-          /* FIXME */
+
+	  /* Record the raw RGB into a big strip, to be quantized and sliced later */
+          for (y = 0; y < overall_h; y++) {
+            for (x = 0; x < overall_w; x++) {
+              SDL_GetRGBA(getpixels[screen->format->BytesPerPixel](screen, x, y), screen->format, &r, &g, &b, &a);
+          
+              bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 0] = r;
+              bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 1] = g;
+              bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 2] = b;
+              bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 3] = 255;
+            }
+          }
+
+          SDL_Flip(screen);
+	  done = export_gif_monitor_events(); 
         }
-      SDL_Flip(screen);
 
-      while (SDL_PollEvent(&event))
+
+      if (!done)
         {
-          if (event.type == SDL_QUIT)
-            {
-              done = 1;
+          /* Quantize to max 256 (8bpp) colors and generate a suitable palette */
+          liq_handle = liq_attr_create();
+          input_image = liq_image_create_rgba(liq_handle, bitmap, overall_w, num_selected * overall_h, 0); 
+	  liq_set_max_colors(liq_handle, 256);
+
+          show_progress_bar(screen);
+	  done = export_gif_monitor_events();
+
+          qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
+	  done = (qtiz_status != LIQ_OK);
+
+          if (!done) {
+            // Use libimagequant to make new image pixels from the palette
+            pixels_size = num_selected * overall_area;
+            raw_8bit_pixels = malloc(pixels_size);
+            liq_set_dithering_level(quantization_result, 1.0);
+          
+            liq_write_remapped_image(quantization_result, input_image, raw_8bit_pixels, pixels_size);
+            palette = liq_get_palette(quantization_result);
+            free(bitmap);
+
+	    for (j = 0; j < (int) palette->count; j++) {
+              gif_palette[j * 3 + 0] = palette->entries[j].r;
+              gif_palette[j * 3 + 1] = palette->entries[j].g;
+              gif_palette[j * 3 + 2] = palette->entries[j].b;
             }
-          else if (event.type == SDL_KEYDOWN)
-            {
-              key = event.key.keysym.sym;
-              if (key == SDLK_ESCAPE) {
-                done = 1;
+
+            /* Open GIF */
+            ge_GIF *gif = ge_new_gif(
+                gif_fname,
+                overall_w, overall_h,
+                gif_palette,
+                8, /* 256 colors */
+                0 /* infinite loop */
+            );
+      
+            /* Export each frame */
+            for (i = 0; i < num_selected && !done; i++)
+              {
+                memcpy(gif->frame, raw_8bit_pixels + i * overall_area, overall_area);
+                ge_add_frame(gif, 100); // FIXME: Speed
+      
+                show_progress_bar(screen);
+	        done = export_gif_monitor_events(); 
               }
-            }
-        }
-        SDL_Delay(10);
+      
+            /* Close the GIF */
+            ge_close_gif(gif);
+          } else {
+            fprintf(stderr, "Quantization failed\n");
+	    done = 1;
+	  }
+    
+          if (done)
+            {
+              /* Aborted; discard the partially-saved GIF */
+              unlink(gif_fname);
+	    }
+	}
     }
-
-  /* FIXME: Quantize */
-  /* FIXME: Export each frame */
-  /* FIXME: Close GIF */
+  else
+    {
+      /* Out of memory! */
+      done = 1;
+    }
 
 
   /* Restore everything about the currently-active image
@@ -25487,6 +25564,38 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
 
   /* Success if we didn't have an error, and user didn't abort */
   return(!done);
+}
+
+/**
+ * Called by export_gif() while it's iterating through images
+ * in a few different ways, to monitor SDL event queue for
+ * any [Esc] keypress or quit event (e.g., closing window),
+ * which triggers an abort of the export.
+ *
+ * @return int 0 = keep going, 1 = abort
+ */
+int export_gif_monitor_events(void) {
+  int done;
+  SDL_Event event;
+  SDLKey key;
+
+  done = 0;
+  while (SDL_PollEvent(&event))
+    {
+      if (event.type == SDL_QUIT)
+        {
+          done = 1;
+        }
+      else if (event.type == SDL_KEYDOWN)
+        {
+          key = event.key.keysym.sym;
+          if (key == SDLK_ESCAPE) {
+            done = 1;
+          }
+        }
+    }
+  SDL_Delay(10);
+  return done;
 }
 
 /**

@@ -8,20 +8,22 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.26 (0.9.25)
+2020.July.27 (0.9.25)
   * New Features
     ------------
     * Export drawings:
       * GIF export option from the Open -> Slideshow dialog.
+        (Closes https://sourceforge.net/p/tuxpaint/feature-requests/191/)
         * Utilizes "gifenc", public domain by Marcel Rodrigues:
           https://github.com/lecram/gifenc
         * Depends on "libimagequant", from the "pngquant2" project:
           https://github.com/ImageOptim/libimagequant
           (GPL v3 or later, for Free/Libre Open Source Software)
-        * WORK IN PROGRESS
-          (Closes https://sourceforge.net/p/tuxpaint/feature-requests/191/)
+        * WORK IN PROGRESS -- Ignores speed
+        * WORK IN PROGRESS -- Needs documentation
       * Single image (PNG) export from the Open dialog.
         (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
+        * WORK IN PROGRESS -- Needs documentation
       * Both utilize XDG user dirs settings, if available, to determine
         where to store them, or "~/Pictures", otherwise.  In those cases,
         files are stored in a new "TuxPaint" subdirectory.
