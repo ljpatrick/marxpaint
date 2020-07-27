@@ -986,6 +986,7 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
   char *oldloc;
   char *env_language;
   char *env_language_lang;
+  char *env;
   int num_wished_langs = 0;
 
   *ptr_num_wished_langs = 0;
@@ -993,20 +994,50 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
   if (strlen(loc) > 0)
     {
       /* Got command line or config file language */
+      DEBUG_PRINTF("Language via config: %s\n", loc);
       mysetenv("LANGUAGE", loc);
     }
   else
     {
+      DEBUG_PRINTF("Language NOT set via config\n");
+
       /* Find what language to use from env vars */
-      if (getenv("LANGUAGE") == NULL)
+      env = getenv("LANGUAGE");
+      if (env == NULL || env[0] == '\0')
         {
-          if (getenv("LC_ALL"))
-            mysetenv("LANGUAGE", getenv("LC_ALL"));
-          else if (getenv("LC_MESSAGES"))
-            mysetenv("LANGUAGE", getenv("LC_MESSAGES"));
-          else if (getenv("LANG"))
-            mysetenv("LANGUAGE", getenv("LANG"));
+	  env = getenv("LC_ALL");
+          if (env != NULL && env[0] != '\0')
+	    {
+              DEBUG_PRINTF("Language via LC_ALL: %s\n", getenv("LC_ALL"));
+              mysetenv("LANGUAGE", getenv("LC_ALL"));
+	    }
+          else
+            {
+	      env = getenv("LC_MESSAGES");
+              if (env != NULL && env[0] != '\0')
+	        {
+                  DEBUG_PRINTF("Language via LC_MESSAGES: %s\n", getenv("LC_MESSAGES"));
+                  mysetenv("LANGUAGE", getenv("LC_MESSAGES"));
+	        }
+	      else
+	        {
+	          env = getenv("LANG");
+                  if (env != NULL && env[0] != '\0')
+        	    {
+                      DEBUG_PRINTF("Language via LANG: %s\n", getenv("LANG"));
+                      mysetenv("LANGUAGE", getenv("LANG"));
+        	    }
+		  else
+	            {
+                      DEBUG_PRINTF("No language set!\n");
+	            }
+		}
+	    }
         }
+      else
+        {
+          DEBUG_PRINTF("Language was set to '%s'\n", getenv("LANGUAGE"));
+	}
     }
 
   oldloc = strdup(loc);
@@ -1014,15 +1045,13 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
   /* First set the locale according to the environment, then try to overwrite with loc,
      after that, ctype_utf8() call will test the compatibility with utf8 and try to load
      a different locale if the resulting one is not compatible. */
-#ifdef DEBUG
-  printf("Locale BEFORE is: %s\n", setlocale(LC_ALL, NULL));    //EP
-#endif
+  DEBUG_PRINTF("Locale BEFORE is: %s\n", setlocale(LC_ALL, NULL));    //EP
+
   setlocale(LC_ALL, "");
   setlocale(LC_ALL, loc);
   ctype_utf8();
-#ifdef DEBUG
-  printf("Locale AFTER is: %s\n", setlocale(LC_ALL, NULL));     //EP
-#endif
+
+  DEBUG_PRINTF("Locale AFTER is: %s\n", setlocale(LC_ALL, NULL));     //EP
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -1134,9 +1163,7 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
   free(oldloc);
 
-#ifdef DEBUG
-  printf("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
-#endif
+  DEBUG_PRINTF("lang_prefixes[%d] is \"%s\"\n", get_current_language(), lang_prefixes[get_current_language()]);
 
   *ptr_num_wished_langs = num_wished_langs;
 
@@ -1157,10 +1184,8 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
  */
 int setup_i18n(const char *restrict lang, const char *restrict locale, int * num_wished_langs)
 {
-#ifdef DEBUG
-  printf("lang %p, locale %p\n", lang, locale);
-  printf("lang \"%s\", locale \"%s\"\n", lang, locale);
-#endif
+  DEBUG_PRINTF("lang %p, locale %p\n", lang, locale);
+  DEBUG_PRINTF("lang \"%s\", locale \"%s\"\n", lang, locale);
 
   if (locale)
     {

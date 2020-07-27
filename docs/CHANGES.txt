@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.25 (0.9.25)
+2020.July.26 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -34,15 +34,20 @@ $Id$
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
 
+  * Bug Fixes
+    ---------
+    * Mended issue where stamp descriptions were not loading
+      when "getenv()" (e.g., "getenv("LANGUAGE")") returned an
+      empty string, rather than a NULL.
+
+    * Mended bug where corrupt text would appear as stamp
+      descriptions, if we failed to know what language to use
+      (see above).
+
   * Misc
     ----
     * Improved safety when copying things into string buffers.
 
-    * [WIP] Mending issue where stamp descriptions are not loading,
-      and making things safer when a problem occurs.
-      (Using gcc 9.3.0 compiler, this was happening in 0.9.25 during
-      development, but also affected 0.9.24 and 0.9.23, which worked
-      fine under earlier versions of gcc.)
 
 2020.April.24 (0.9.24)
   * New tools
