@@ -15,6 +15,12 @@
    |-------------------------------------------|
    |  * About                                  |
    |  * Using Tux Paint                        |
+   |       * Loading Tux Paint                 |
+   |       * Title Screen                      |
+   |       * Main Screen                       |
+   |       * Available Tools                   |
+   |            * Drawing Tools                |
+   |            * Other Controls               |
    |  * Loading Other Pictures into Tux Paint  |
    |  * Further Reading                        |
    |  * How to Get Help                        |

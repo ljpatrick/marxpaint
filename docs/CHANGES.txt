@@ -38,6 +38,8 @@ $Id$
     ---------------------
     * Cleaned up HTML code of HTML-based documentation.
 
+    * Sub-section links within README's Table of Contents.
+
   * Bug Fixes
     ---------
     * Mended issue where stamp descriptions were not loading
