@@ -367,6 +367,7 @@ Available Tools
                               not include all characters for all languages,
                               so sometimes you'll need to change fonts to see
                               the characters you're trying to type.
+
                                  * Japanese — Romanized Hiragana and
                                    Romanized Katakana — right [Alt]
                                  * Korean — Hangul 2-Bul — right [Alt] or
@@ -842,6 +843,7 @@ Doing it Manually
 
          Calculating the height of Tux Paint's canvas requires multiple
          steps:
+
           1. Take the height of the window (e.g, 480, 600 or 768 pixels) and
              subtract 144
           2. Take the result of Step 1 and divide it by 48
@@ -851,6 +853,7 @@ Doing it Manually
           5. Finally, take the result of Step 4 and add 40
 
          Example: Tux Paint running at fullscreen on a 1440x900 display.
+
            * The canvas width is simply 1440 - 192, or 1248.
            * The canvas height is calculated as:
                1. 900 - 144, or 756
@@ -858,6 +861,7 @@ Doing it Manually
                3. 15.75 rounded down, or 15
                4. 15 * 48, or 720
                5. 720 + 40, or 760
+
          So the canvas within a 1440x900 Tux Paint window is 1248x760.
 
      ----------------------------------------------------------------------
