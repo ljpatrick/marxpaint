@@ -36,6 +36,10 @@ $Id$
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
 
+  * Documentation updates
+    ---------------------
+    * Cleaned up HTML code of HTML-based documentation.
+
   * Bug Fixes
     ---------
     * Mended issue where stamp descriptions were not loading

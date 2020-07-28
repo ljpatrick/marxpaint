@@ -147,8 +147,8 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
-   [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo,      
-                     Eraser, New, Open, Save, Print, Quit]
+  [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser,
+                         New, Open, Save, Print, Quit]
 
        Middle: Drawing Canvas
 
@@ -176,8 +176,8 @@ Main Screen
                A palette of available colors are shown near the bottom of the
                screen.
 
-  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
-                              Purple, Brown, Grey]
+ [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
+                                  Brown, Grey]
 
                On the far right are two special color options, the
                "color picker", which has an outline of an eye-dropper, and
@@ -193,9 +193,8 @@ Main Screen
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
- (For example: 'Pick a shape. Click to pick the center, drag, then       let go
-when it is the size you want.  Move around to rotate it, and       click to draw
-                                      it.)
+(For example: 'Pick a shape. Click to pick the center, drag, then let go when it
+     is the size you want. Move around to rotate it, and click to draw it.)
 
      ----------------------------------------------------------------------
 
