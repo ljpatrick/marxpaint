@@ -347,7 +347,7 @@
               The toolbar contains the drawing and editing
               controls.
             </p>
-            <!-- FIXME: Updated screenshot -->
+            <!-- FIXME: Update screenshot to add "Fill" tool -->
 
             <p align="center">
               <img src="../../html/images/tools.jpg"
@@ -1142,6 +1142,20 @@
                   </li>
 
                   <li>
+                    <img src="../../html/images/open_export.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the "Export" button near the lower right
+                      to export the image to your export folder.
+                      (e.g., "<code>~/Pictures/TuxPaint/</code>")
+                    </p>
+                    <br clear="all">
+                  </li>
+
+                  <li>
                     <img src="../../html/images/open_slides.png"
                         width="48"
                         height="48"
@@ -1466,64 +1480,114 @@
                   align="right">
               <p>
                 The "Slides" button is available in the "Open"
-                dialog. It displays a list of your saved files,
-                just like the "Open" dialog.
+                dialog. It can be used to play a simple animation
+                within Tux&nbsp;Paint, or a slideshow of pictures.
+                It can also export an animated GIF based on the
+                chosen images.
               </p>
 
-              <p>
-                Click each of the images you wish to display in a
-                slideshow-style presentation, one by one. A digit
-                will appear over each image, letting you know in
-                which order they will be displayed.
-              </p>
+              <dl>
+                <dt><b>Chosing pictures</b></dt>
+                <dd>
+                  <p>
+                    When you enter the "Slides" section of Tux&nbsp;Paint,
+                    it displays a list of your saved files, just like the
+                    "Open" dialog.
+                  </p>
 
-              <p>
-                You can click a selected image to unselect it (take
-                it out of your slideshow).
-              </p>
+                  <p>
+                    Click each of the images you wish to display in a
+                    slideshow-style presentation, one by one. A digit
+                    will appear over each image, letting you know in
+                    which order they will be displayed.
+                  </p>
 
-              <p>
-                A sliding scale at the lower left of the screen
-                (next to the "Play" button) can be used to adjust
-                the speed of the slideshow, from slowest to
-                fastest. Choose the leftmost setting to disable
-                automatic advancement — you will need to press a
-                key or click to go to the next slide (see below).
-              </p>
+                  <p>
+                    You can click a selected image to unselect it (take
+                    it out of your slideshow).  Click it again if you
+                    wish to add it to the end of the list.
+                  </p>
+                </dd>
 
-              <p>
-                <b>Note:</b> The slowest setting does not
-                automatically advance through the slides. Use it
-                for when you want to step through them manually.
-              </p>
+                <dt><b>Set playback speed</b></dt>
+                <dd>
+                  <p>
+                    A sliding scale at the lower left of the screen
+                    (next to the "Play" button) can be used to adjust
+                    the speed of the slideshow or animated GIF,
+                    from slowest to fastest.  Choose the leftmost setting
+                    to disable automatic advancement during playback within
+                    Tux&nbsp;Paint — you will need to press a key or click
+                    to go to the next slide (see below).
+                  </p>
 
-              <p>
-                When you're ready, click the "Play" button to begin
-                the slideshow. (Note: If you hadn't selected ANY
-                images, then ALL images will be played in the
-                slideshow.)
-              </p>
+                  <p>
+                    <b>Note:</b> The slowest setting does not
+                    automatically advance through the slides. Use it
+                    for when you want to step through them manually.
+                    (This does not apply to an exported animated GIF.)
+                  </p>
+                </dd>
 
-              <p>
-                During the slideshow, press <b>[Space]</b>,
-                <b>[Enter]</b> or <b>[Return]</b> or the
-                <b>[Right&nbsp;Arrow]</b>, or click the "Next"
-                button at the lower left, to manually advance to
-                the next slide. Press <b>[Left]</b> to go back to
-                the previous slide.
-              </p>
+                <dt><b>Playback in Tux Paint</b></dt>
+                <dd>
+                  <p>
+                    To play a slideshow within Tux&nbsp;Paint, click the
+                    "Play" button. (Note: If you hadn't selected ANY
+                    images, then ALL of your saved images will be played
+                    in the slideshow!)
+                  </p>
 
-              <p>
-                Press <b>[Escape]</b>, or click the "Back" button
-                at the lower right, to exit the slideshow and
-                return to the slideshow image selection screen.
-              </p>
+                  <p>
+                    During the slideshow, press <b>[Space]</b>,
+                    <b>[Enter]</b> or <b>[Return]</b>, or the
+                    <b>[Right&nbsp;Arrow]</b> &mdash; or click the "Next"
+                    button at the lower left &mdash; to manually advance to
+                    the next slide. Press <b>[Left]</b> to go back to
+                    the previous slide.
+                  </p>
+
+                  <p>
+                    Press <b>[Escape]</b>, or click the "Back" button
+                    at the lower right, to exit the slideshow and
+                    return to the slideshow image selection screen.
+                  </p>
+                </dd>
+
+                <dt><b>Exporting an animated GIF</b></dt>
+                <dd>
+                  <p>
+                    <img src="../../html/images/open_slides_export_gif.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    Click the "GIF Export" button near the lower right
+                    to have Tux&nbsp;Paint generate an animated GIF file
+                    based on the selected images.
+                  </p>
+                  <p>
+                    <b>Note:</b> At least two images must be selected.
+                    (To export a single image, use the "Export" option
+                    from the "Open" dialog.)  If no images are selected,
+                    Tux&nbsp;Paint will NOT attempt to generate a GIF
+                    based on all saved images.
+                  </p>
+                  <p>
+                    Pressing [Escape] during export will abort the process,
+                    and return you to the "Slideshow" dialog.
+                  </p>
+                  <br clear="all" />
+                </dd>
+              </dl>
 
               <p>
                 Click "Back" in the slideshow image selection
                 screen to return to the "Open" dialog.
               </p>
               <br clear="all">
+
+              <hr size="1">
             </dd>
 
             <dt>
@@ -1586,6 +1650,8 @@
                 "OPTIONS.html"><i>Options</i></a>" documentation.)
               </p>
               <br clear="all">
+
+              <hr size="1">
             </dd>
 
             <dt>

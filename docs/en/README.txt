@@ -497,6 +497,10 @@ Available Tools
                         Note: As of version 0.9.22, the picture will be
                         placed in your desktop's trash can, on Linux only.
 
+                      * Click the "Export" button near the lower right to
+                        export the image to your export folder. (e.g.,
+                        "~/Pictures/TuxPaint/")
+
                       * Click the blue "Slides" (slide projector) button at
                         the lower left to go to slideshow mode. See "Slides",
                         below, for details.
@@ -653,42 +657,79 @@ Available Tools
          Slides (under "Open")
 
                  The "Slides" button is available in the "Open" dialog. It
-                 displays a list of your saved files, just like the "Open"
-                 dialog.
+                 can be used to play a simple animation within Tux Paint, or
+                 a slideshow of pictures. It can also export an animated GIF
+                 based on the chosen images.
 
-                 Click each of the images you wish to display in a
-                 slideshow-style presentation, one by one. A digit will
-                 appear over each image, letting you know in which order they
-                 will be displayed.
+                      Chosing pictures
 
-                 You can click a selected image to unselect it (take it out
-                 of your slideshow).
+                              When you enter the "Slides" section of
+                              Tux Paint, it displays a list of your saved
+                              files, just like the "Open" dialog.
 
-                 A sliding scale at the lower left of the screen (next to the
-                 "Play" button) can be used to adjust the speed of the
-                 slideshow, from slowest to fastest. Choose the leftmost
-                 setting to disable automatic advancement — you will need to
-                 press a key or click to go to the next slide (see below).
+                              Click each of the images you wish to display in
+                              a slideshow-style presentation, one by one. A
+                              digit will appear over each image, letting you
+                              know in which order they will be displayed.
 
-                 Note: The slowest setting does not automatically advance
-                 through the slides. Use it for when you want to step through
-                 them manually.
+                              You can click a selected image to unselect it
+                              (take it out of your slideshow). Click it again
+                              if you wish to add it to the end of the list.
 
-                 When you're ready, click the "Play" button to begin the
-                 slideshow. (Note: If you hadn't selected ANY images, then
-                 ALL images will be played in the slideshow.)
+                      Set playback speed
 
-                 During the slideshow, press [Space], [Enter] or [Return] or
-                 the [Right Arrow], or click the "Next" button at the lower
-                 left, to manually advance to the next slide. Press [Left] to
-                 go back to the previous slide.
+                              A sliding scale at the lower left of the screen
+                              (next to the "Play" button) can be used to
+                              adjust the speed of the slideshow or animated
+                              GIF, from slowest to fastest. Choose the
+                              leftmost setting to disable automatic
+                              advancement during playback within Tux Paint —
+                              you will need to press a key or click to go to
+                              the next slide (see below).
 
-                 Press [Escape], or click the "Back" button at the lower
-                 right, to exit the slideshow and return to the slideshow
-                 image selection screen.
+                              Note: The slowest setting does not
+                              automatically advance through the slides. Use
+                              it for when you want to step through them
+                              manually. (This does not apply to an exported
+                              animated GIF.)
+
+                      Playback in Tux Paint
+
+                              To play a slideshow within Tux Paint, click the
+                              "Play" button. (Note: If you hadn't selected
+                              ANY images, then ALL of your saved images will
+                              be played in the slideshow!)
+
+                              During the slideshow, press [Space], [Enter] or
+                              [Return], or the [Right Arrow] — or click the
+                              "Next" button at the lower left — to manually
+                              advance to the next slide. Press [Left] to go
+                              back to the previous slide.
+
+                              Press [Escape], or click the "Back" button at
+                              the lower right, to exit the slideshow and
+                              return to the slideshow image selection screen.
+
+                      Exporting an animated GIF
+
+                              Click the "GIF Export" button near the lower
+                              right to have Tux Paint generate an animated
+                              GIF file based on the selected images.
+
+                              Note: At least two images must be selected. (To
+                              export a single image, use the "Export" option
+                              from the "Open" dialog.) If no images are
+                              selected, Tux Paint will NOT attempt to
+                              generate a GIF based on all saved images.
+
+                              Pressing [Escape] during export will abort the
+                              process, and return you to the "Slideshow"
+                              dialog.
 
                  Click "Back" in the slideshow image selection screen to
                  return to the "Open" dialog.
+
+     ----------------------------------------------------------------------
 
          Quit
 
@@ -719,6 +760,8 @@ Available Tools
                  If neither of those are possible, the key sequence of
                  [Shift] + [Control] + [Escape] may be used to quit. (See the
                  "Options" documentation.)
+
+     ----------------------------------------------------------------------
 
          Sound Muting
 

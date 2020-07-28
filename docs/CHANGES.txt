@@ -20,10 +20,8 @@ $Id$
           https://github.com/ImageOptim/libimagequant
           (GPL v3 or later, for Free/Libre Open Source Software)
         * WORK IN PROGRESS -- Ignores speed
-        * WORK IN PROGRESS -- Needs documentation
       * Single image (PNG) export from the Open dialog.
         (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
-        * WORK IN PROGRESS -- Needs documentation
       * Both utilize XDG user dirs settings, if available, to determine
         where to store them, or "~/Pictures", otherwise.  In those cases,
         files are stored in a new "TuxPaint" subdirectory.
