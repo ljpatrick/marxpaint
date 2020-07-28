@@ -21,7 +21,7 @@ Frequently Asked Questions</h1>
 
 <p>September 14, 2002 -
 
-                             June 22, 2020</p>
+                             July 27, 2020</p>
 </center>
 
 <h2>Drawing-related</h2>
@@ -34,6 +34,7 @@ Frequently Asked Questions</h1>
   (<a href="http://fontforge.sourceforge.net/"
   >http://fontforge.sourceforge.net/</a>) to convert it to an
   ISO-8859 format.  (Email us if you need help with special fonts.)</p>
+</li>
 
 <li><em>The Rubber Stamp tool is greyed out!</em>
   <p>This means that Tux&nbsp;Paint either couldn't find any stamp images,
@@ -61,7 +62,6 @@ Frequently Asked Questions</h1>
   "<code>nostamps=no</code>" or "<code>stamps=yes</code>" in a
   configuration file.</p>
 </li>
-
 
 <ul>
 <li><em>The Magic "Fill" Tool Looks Bad</em>
@@ -380,12 +380,12 @@ Frequently Asked Questions</h1>
   <ul>
   <li><em>First, check the obvious:</em>
     <ul>
-    <li>Are your speakers connected and turned on?
-    <li>Is the volume turned up on your speakers?
-    <li>Is the volume turned up in your Operating System's "mixer?"
-    <li>Are you certain you're using a computer with a sound card?
+    <li>Are your speakers connected and turned on?</li>
+    <li>Is the volume turned up on your speakers?</li>
+    <li>Is the volume turned up in your Operating System's "mixer?"</li>
+    <li>Are you certain you're using a computer with a sound card?</li>
     <li>Are any other programs running that use sound?  (They may be
-        'blocking' Tux&nbsp;Paint from accessing your sound device)
+        'blocking' Tux&nbsp;Paint from accessing your sound device)</li>
     <li>(Unix/Linux) Are you using a sound system, such as aRts, ESD or
       GStreamer?  If so, try setting the "SDL_AUDIODRIVER" environment variable
       before running Tux&nbsp;Paint (e.g.,
@@ -393,7 +393,7 @@ Frequently Asked Questions</h1>
       Or, run Tux&nbsp;Paint through the system's rerouter (e.g.,
       run "<code>artsdsp&nbsp;tuxpaint</code>" or
       "<code>esddsp&nbsp;tuxpaint</code>", instead of
-      simply "<code>tuxpaint</code>").
+      simply "<code>tuxpaint</code>").</li>
     </ul>
     
   <li><em>Is sound disabled in Tux Paint?</em>
@@ -417,12 +417,14 @@ Frequently Asked Questions</h1>
     <p>Alternatively, you can use Tux&nbsp;Paint&nbsp;Config. to change
     the configuration file.  Make sure "Enable Sound Effects" (under
     "Video &amp; Sound") is checked, then click "Apply".</p>
+  </li>
 
   <li><em>Were sounds temporarily disabled?</em>
     <p>Even if sounds are enabled in Tux&nbsp;Paint, it is possible to
     disable and re-enable them temporarily using the
     <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> key sequence.  Try pressing those
     keys to see if sounds begin working again.</p>
+  </li>
 
   <li><em>Was Tux Paint built without sound support?</em>
     <p>Tux Paint may have been compiled with sound support disabled.
@@ -438,7 +440,9 @@ Frequently Asked Questions</h1>
     Tux&nbsp;Paint, and be sure NOT to build the "nosound" target.
     (i.e., don't run "<code>make&nbsp;nosound</code>")  Be sure the SDL_mixer
     library and its development headers are available!</p>
+  </li>
   </ul>
+</li>
 
 <li><em>Tux Paint makes too much noise! Can I turn them off?</em>
   <p>Yes, there are a number of ways to disable sounds in Tux Paint:</p>
@@ -447,6 +451,7 @@ Frequently Asked Questions</h1>
   <li>Press <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> while in Tux&nbsp;Paint to
     temporarily disable sounds.  (Press that key sequence again to re-enable
     sounds.)
+  </li>
 
   <li>Run Tux&nbsp;Paint with the "no&nbsp;sound" option:
     <ul>
@@ -460,7 +465,9 @@ Frequently Asked Questions</h1>
     <li>Recompile Tux&nbsp;Paint with sound support disabled.
       (See above and <a href="../INSTALL.txt">INSTALL.txt</a>.)
     </ul>
+  </li>
   </ul>
+</li>
 
 <li><em>The sound effects sound strange</em>
   <p>This could have to do with how SDL and SDL_mixer were initialized.
@@ -479,6 +486,7 @@ Frequently Asked Questions</h1>
   black!</em>
 
   <p>This is apparently a bug in the SDL library.  Sorry.</p>
+</li>
 
 <li><em>When I run Tux&nbsp;Paint full-screen, it has large borders around
   it</em>
