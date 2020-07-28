@@ -597,7 +597,7 @@ Windows Users
                     of no XDG configuration can be read, or nothing is set
                     for "XDG_PICTURES_DIR".
 
-                  * Windows — TBD!
+                  * Windows — TBD! 
                   * macOS — TBD!
 
                Note: When the defaults are used, a new "TuxPaint"
