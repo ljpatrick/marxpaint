@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 27, 2020
+  June 14, 2002 - July 29, 2020
 */
 
 
@@ -25389,6 +25389,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   liq_result *quantization_result;
   liq_error qtiz_status;
   const liq_palette *palette;
+  int gif_speed;
 
   /* Back up the current image's IDs, because they will get
      clobbered below! */
@@ -25414,6 +25415,12 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   overall_w = screen->w;
   overall_h = screen->h;
   overall_area = overall_w * overall_h;
+
+  if (speed == 0)
+    {
+      gif_speed = 1;
+    }
+  gif_speed = (10 - speed) * 50;
 
   bitmap = malloc(num_selected * overall_area * 4);
   if (bitmap != NULL)
@@ -25517,7 +25524,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
             for (i = 0; i < num_selected && !done; i++)
               {
                 memcpy(gif->frame, raw_8bit_pixels + i * overall_area, overall_area);
-                ge_add_frame(gif, 100); // FIXME: Speed
+                ge_add_frame(gif, gif_speed);
       
                 show_progress_bar(screen);
 	        done = export_gif_monitor_events(); 

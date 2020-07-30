@@ -246,6 +246,14 @@ get_bbox(ge_GIF *gif, uint16_t *w, uint16_t *h, uint16_t *x, uint16_t *y)
     }
 }
 
+/* (From the docs)
+ * The `delay` parameter  specifies how long the frame will  be shown, in hundreths
+ * of a second. For example, `delay` ==  100 means "show this frame for one second"
+ * and `delay` == 25  means "show this frame for a quarter of  a second". Note that
+ * short delays may not be supported by  some GIF viewers: it's recommended to keep
+ * a minimum of `delay` == 6. If `delay` == 0, no delay information  will be stored
+ * for the frame. This can be used when creating still (single-frame) GIF images.
+ */
 static void
 set_delay(ge_GIF *gif, uint16_t d)
 {
