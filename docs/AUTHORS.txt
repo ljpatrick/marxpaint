@@ -529,7 +529,7 @@ $Id$
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
     Ander Elortondo <ander.elor@gmail.com> [retired]
-    Alexander Gabillondo <alexgabilondo@gmail.com>
+    Alexander Gabillondo <alexgabi@irakasle.eus>
 
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>

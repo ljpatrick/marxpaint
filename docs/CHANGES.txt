@@ -51,6 +51,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * Basque translation
+      Alexander Gabilondo <alexgabi@irakasle.eus>
+
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
 

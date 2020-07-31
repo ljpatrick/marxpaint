@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-29 23:01-0700\n"
-"PO-Revision-Date: 2018-08-09 11:17+0200\n"
+"PO-Revision-Date: 2020-07-30 16:43+0200\n"
 "Last-Translator: Alexander Gabilondo <alexgabi@irakasle.net>\n"
 "Language-Team: librezale@librezale.org\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -527,7 +527,7 @@ msgstr "Aukera ezazu irudi edo kolore bat marrazki berria hasteko."
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:154
 msgid "Open…"
-msgstr "Ireki..."
+msgstr "Ireki…"
 
 #. Response to 'save' action
 #: ../tools.h:157
@@ -537,7 +537,7 @@ msgstr "Zure irudia gordeta dago!"
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:160
 msgid "Printing…"
-msgstr "Inprimatzen..."
+msgstr "Inprimatzen…"
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:163
@@ -702,7 +702,7 @@ msgstr "Soinua gaituta."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:3165
 msgid "Please wait…"
-msgstr "Itxaron, mesedez..."
+msgstr "Itxaron, mesedez…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7890
@@ -717,7 +717,7 @@ msgstr "Diapositibak"
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:7896
 msgid "Export"
-msgstr ""
+msgstr "Esportatu"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7899
@@ -732,7 +732,7 @@ msgstr "Hasi"
 #. Slideshow: 'GIF Export' button, to create an animated GIF
 #: ../tuxpaint.c:7905
 msgid "GIF Export"
-msgstr ""
+msgstr "Esportatu GIF gisa"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7908
@@ -783,7 +783,7 @@ msgstr ""
 #.
 #: ../tuxpaint.c:15759
 msgid "Select 2 or more drawings to turn into an animated GIF."
-msgstr ""
+msgstr "Hautatu 2 marrazki edo gehiago GIF animatua bihurtzeko."
 
 #: ../tuxpaint.c:23417
 msgid "Select a color from your drawing."
@@ -989,7 +989,7 @@ msgstr "Sareta"
 
 #: ../../magic/src/fretwork.c:182
 msgid "Click and drag to draw repetitive patterns. "
-msgstr "Klik egin eta arrastatu ereduak errepikatzeko."
+msgstr "Klik egin eta arrastatu ereduak errepikatzeko. "
 
 #: ../../magic/src/fretwork.c:184
 msgid "Click to surround your picture with repetitive patterns."
