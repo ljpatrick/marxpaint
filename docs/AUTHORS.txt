@@ -654,7 +654,7 @@ $Id$
 
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>
-    Miguel Bouzada
+    Miguel Bouzada <mbouzada@gmail.com>
 
   * Georgian and Georgian TrueType Font (GPL)
     Gia Shervashidze <giasher@gmail.com>

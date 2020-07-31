@@ -54,6 +54,9 @@ $Id$
     * Basque translation
       Alexander Gabilondo <alexgabi@irakasle.eus>
 
+    * Galician translation
+      Miguel Bouzada <mbouzada@gmail.com>
+
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
 
@@ -274,7 +277,7 @@ $Id$
       Kevin Scannell <kscanne@gmail.com>
 
     * Galician translation
-      Miguel Bouzada
+      Miguel Bouzada <mbouzada@gmail.com>
 
     * Georgian translation
       Gia Shervashidze <giasher@gmail.com>
