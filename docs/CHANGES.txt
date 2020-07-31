@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.29 (0.9.25)
+2020.July.30 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -48,6 +48,11 @@ $Id$
     * Mended bug where corrupt text would appear as stamp
       descriptions, if we failed to know what language to use
       (see above).
+
+  * Translation Updates:
+    --------------------
+    * Santali translation (Ol-Chiki)
+      Prasanta Hembram <prasantahembram720@gmail.com>
 
   * Misc
     ----

@@ -7,7 +7,7 @@ Various contributors (see below, and CHANGES.txt)
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 29, 2020
+June 17, 2002 - July 30, 2020
 
 $Id$
 
@@ -916,6 +916,7 @@ $Id$
   * Santali translation (Ol-Chiki)
     Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>
     Ganesh Murmu <g_murmu_in@yahoo.com>
+    Prasanta Hembram <prasantahembram720@gmail.com>
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
