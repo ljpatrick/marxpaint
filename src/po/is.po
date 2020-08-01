@@ -4,20 +4,20 @@
 # This file is distributed under the same license as the tuxpaint package.
 #
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2002, 2003, 2004, 2014.
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-29 23:01-0700\n"
-"PO-Revision-Date: 2017-12-19 07:34+0000\n"
+"PO-Revision-Date: 2020-07-31 07:24+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -657,29 +657,25 @@ msgstr "Muna eftir að nota vinstri músarhnappinn!"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2188
-#, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
-msgstr "Búið að prenta myndina þína!"
+msgstr "Búið að flytja út myndina þína!"
 
 #: ../tuxpaint.c:2189
-#, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
-msgstr "Búið að prenta myndina þína!"
+msgstr "Búið að flytja út GIF-skyggnusýninguna þína!"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2193
-#, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
-msgstr "Því miður! Það var ekki hægt að prenta myndina þína!"
+msgstr "Því miður! Það var ekki hægt að flytja út myndina þína!"
 
 #: ../tuxpaint.c:2194
-#, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
-msgstr "Því miður! Það var ekki hægt að prenta myndina þína!"
+msgstr "Því miður! Það var ekki hægt að flytja út GIF-skyggnusýninguna þína!"
 
 #. Slideshow instructions
 #: ../tuxpaint.c:2198
@@ -714,7 +710,7 @@ msgstr "Myndasýning"
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:7896
 msgid "Export"
-msgstr ""
+msgstr "Flytja út"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7899
@@ -729,7 +725,7 @@ msgstr "Spila"
 #. Slideshow: 'GIF Export' button, to create an animated GIF
 #: ../tuxpaint.c:7905
 msgid "GIF Export"
-msgstr ""
+msgstr "GIF-útflutningur"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7908
@@ -779,7 +775,7 @@ msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 #.
 #: ../tuxpaint.c:15759
 msgid "Select 2 or more drawings to turn into an animated GIF."
-msgstr ""
+msgstr "Veldu 2 eða fleiri teikningar sem á að breyta í GIF-hreyfimynd."
 
 #: ../tuxpaint.c:23417
 msgid "Select a color from your drawing."

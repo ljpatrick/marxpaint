@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.30 (0.9.25)
+2020.July.31 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -56,6 +56,9 @@ $Id$
 
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
+
+    * Icelandic translation
+      Sveinn í Felli <sv1@fellsnet.is>
 
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
