@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.31 (0.9.25)
+2020.August.14 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -32,6 +32,14 @@ $Id$
     * Corrections for Haiku not opening saved files.
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
+
+  * New Brushes
+    -----------
+    * Footprints
+      * Human
+        Based on Openclipart by "netalloy"
+        (https://openclipart.org/artist/netalloy)
+        Creative Commons Zero 1.0 Public Domain License
 
   * Documentation updates
     ---------------------
@@ -692,8 +700,8 @@ $Id$
     * Frame - neon
       Made in inkscape and the gimp by Caroline Ford.
 
-  * New Templates
-    -------------
+  * New Templates:
+    --------------
     * Burnt bark
     * Cliff
     * Corn maze
@@ -715,8 +723,8 @@ $Id$
     * Wool mill machine
       Photographed by Bill Kendrick <bill@newbreedsoftware.com>
 
-  * New Brushes
-    ---------
+  * New Brushes:
+    ------------
     * Another flower brush
       Made out of some open clipart by C Ford.
 
