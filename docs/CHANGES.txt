@@ -41,6 +41,11 @@ $Id$
         (https://openclipart.org/artist/netalloy)
         Creative Commons Zero 1.0 Public Domain License
 
+      * Paw (dog or cat like)
+        Based on Openclipart by "alinager"
+        (https://openclipart.org/artist/alinager)
+        Creative Commons Zero 1.0 Public Domain License
+
   * Documentation updates
     ---------------------
     * Cleaned up HTML code of HTML-based documentation.
