@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.14 (0.9.25)
+2020.August.15 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -27,7 +27,7 @@ $Id$
       * The "--exportdir" option can be used to override the default
         location (but a "TuxPaint" subdir. will NOT be placed there).
 
-    * Shape controls: -- WORK IN PROGRESS
+    * Shape controls:
       * Draw shapes from the center (as in previous versions of Tux Paint)
         or from a corner (similar to the default mode of most other
         graphics tools).

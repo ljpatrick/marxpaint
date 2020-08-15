@@ -6,7 +6,7 @@
           Copyright 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - July 27, 2020
+                        June 14, 2002 - August 15, 2020
 
      ----------------------------------------------------------------------
 
@@ -285,10 +285,31 @@ Available Tools
                  Select a shape from the selector on the right (circle,
                  square, oval, etc.).
 
+                 Use the options at the bottom right to choose the shape
+                 tool's behavior:
+
+                      Shapes from center
+                              The shape will expand from where you initially
+                              clicked, and will be centered around that
+                              position. (This was Tux Paint's only behavior
+                              through version 0.9.24.)
+
+                      Shapes from corner
+                              The shape will extend with one corner starting
+                              from where you initially clicked. This is the
+                              default method of most other traditional
+                              drawing software. (This option was added
+                              starting with Tux Paint version 0.9.25.)
+
+                 Note: If shape controls are disabled (e.g., with the
+                 "--noshapecontrols" option), the controls will not be
+                 presented, and the "shapes from center" method will be used.
+
                  In the canvas, click the mouse and hold it to stretch the
                  shape out from where you clicked. Some shapes can change
-                 proportion (e.g., rectangle and oval), others cannot (e.g.,
-                 square and circle).
+                 proportion (e.g., rectangle and oval may be wider than tall,
+                 or taller than wide), others cannot (e.g., square and
+                 circle).
 
                  Let go of the mouse when you're done stretching.
 

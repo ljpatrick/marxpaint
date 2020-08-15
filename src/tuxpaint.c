@@ -12825,7 +12825,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
   float a1, a2, rotn_rad;
-  int xx, yy, offx, offy;
+  int xx, yy, offx, offy, max_x, max_y;
 
 
   /* Determine radius/shape of the shape to draw: */
@@ -12880,6 +12880,38 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
   angle_skip = 360 / shape_sides[cur_shape];
 
   init_ang = shape_init_ang[cur_shape];
+
+
+  if (shape_mode == SHAPEMODE_CORNER)
+    {
+      /* Get extent of shape based on it's vertices,
+         and scale up if we need to
+         (e.g., square's points are at 45, 135, 225 & 315 degrees,
+         which do not extend to the full radius).
+
+         This works well for square and rectangle; it mostly
+         works for triangle and 5-pointed star, but it seems
+         sufficient. -bjk 2020.08.15 */
+      max_x = 0;
+      max_y = 0;
+      for (side = 0; side < shape_sides[cur_shape]; side++)
+        {
+          a1 = (angle_skip * side + init_ang) * M_PI / 180;
+          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+          x1 = (int)(cos(a1) * rx);
+          y1 = (int)(-sin(a1) * ry);
+
+          if (abs(x1) > max_x)
+            max_x = abs(x1);
+          if (abs(y1) > max_y)
+            max_y = abs(y1);
+        }
+
+      if (max_x < rx)
+        rx = (rx * rx) / max_x;
+      if (max_y < ry)
+        ry = (ry * ry) / max_y;
+    }
 
 
   step = 1;
