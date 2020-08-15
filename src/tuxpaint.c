@@ -12834,6 +12834,11 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 
   rx = abs(nx - sx);
   ry = abs(ny - sy);
+  if (shape_mode == SHAPEMODE_CORNER)
+    {
+      rx = sqrt(rx * rx) / 2;
+      ry = sqrt(ry * ry) / 2;
+    }
 
   /* If the shape has a 1:1 ("locked") aspect ratio, use the larger radius: */
 
@@ -12853,6 +12858,11 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
       rx = 15;
       ry = 15;
     }
+
+  if (rx < 2)
+    rx = 2;
+  if (ry < 2)
+    ry = 2;
 
 
   /* Render a default brush: */
@@ -12889,9 +12899,26 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     offx = 0;
     offy = 0;
   } else {
-    /* FIXME: This needs help! */
     offx = (nx - sx) / 2;
     offy = (ny - sy) / 2;
+
+    if (shape_locked[cur_shape])
+      {
+        if (abs(offx) > abs(offy))
+          {
+            if (offy > 0)
+              offy = abs(offx);
+            else
+              offy = -abs(offx);
+          }
+        else
+          {
+            if (offx > 0)
+              offx = abs(offy);
+            else
+              offx = -abs(offy);
+          }
+      }
   }
 
   for (side = 0; side < shape_sides[cur_shape]; side = side + step)
