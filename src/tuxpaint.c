@@ -1966,7 +1966,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 
 /*static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
                           int fixed); */
-static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
+static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush);
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results);
@@ -12821,19 +12821,19 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
  * FIXME
  */
 /* Draw a shape! */
-static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
+static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
   float a1, a2, rotn_rad;
-  int xx, yy;
+  int xx, yy, offx, offy;
 
 
   /* Determine radius/shape of the shape to draw: */
 
   old_brush = 0;
 
-  rx = abs(ox - cx);
-  ry = abs(oy - cy);
+  rx = abs(nx - sx);
+  ry = abs(ny - sy);
 
   /* If the shape has a 1:1 ("locked") aspect ratio, use the larger radius: */
 
@@ -12884,6 +12884,16 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     }
 
 
+  /* Where is the object? */
+  if (shape_mode == SHAPEMODE_CENTER) {
+    offx = 0;
+    offy = 0;
+  } else {
+    /* FIXME: This needs help! */
+    offx = (nx - sx) / 2;
+    offy = (ny - sy) / 2;
+  }
+
   for (side = 0; side < shape_sides[cur_shape]; side = side + step)
     {
       a1 = (angle_skip * side + init_ang) * M_PI / 180;
@@ -12898,43 +12908,40 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       xv = (int)(cos((a1 + a2) / 2) * rx * shape_valley[cur_shape] / 100);
       yv = (int)(-sin((a1 + a2) / 2) * ry * shape_valley[cur_shape] / 100);
 
-
-
-
       /* Rotate the line: */
 
       if (rotn != 0)
         {
           rotn_rad = rotn * M_PI / 180;
 
-          xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
-          yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
+          xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+          yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
 
-          x1 = xp;
-          y1 = yp;
+          x1 = xp - offx;
+          y1 = yp - offy;
 
-          xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
-          yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
+          xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+          yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
 
-          x2 = xp;
-          y2 = yp;
+          x2 = xp - offx;
+          y2 = yp - offy;
 
-          xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
-          yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
+          xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+          yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
 
-          xv = xp;
-          yv = yp;
+          xv = xp - offx;
+          yv = yp - offy;
         }
 
 
       /* Center the line around the center of the shape: */
 
-      x1 = x1 + cx;
-      y1 = y1 + cy;
-      x2 = x2 + cx;
-      y2 = y2 + cy;
-      xv = xv + cx;
-      yv = yv + cy;
+      x1 = x1 + sx + offx;
+      y1 = y1 + sy + offy;
+      x2 = x2 + sx + offx;
+      y2 = y2 + sy + offy;
+      xv = xv + sx + offx;
+      yv = yv + sy + offy;
 
 
       /* Draw: */
@@ -13007,35 +13014,35 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
               if (rotn != 0)
                 {
                   rotn_rad = rotn * M_PI / 180;
-
-                  xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
-                  yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
-
-                  x1 = xp;
-                  y1 = yp;
-
-                  xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
-                  yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
-
-                  x2 = xp;
-                  y2 = yp;
-
-                  xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
-                  yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
-
-                  xv = xp;
-                  yv = yp;
+        
+                  xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+                  yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
+        
+                  x1 = xp - offx;
+                  y1 = yp - offy;
+        
+                  xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+                  yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
+        
+                  x2 = xp - offx;
+                  y2 = yp - offy;
+        
+                  xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+                  yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
+        
+                  xv = xp - offx;
+                  yv = yp - offy;
                 }
 
 
               /* Center the line around the center of the shape: */
 
-              x1 = x1 + cx;
-              y1 = y1 + cy;
-              x2 = x2 + cx;
-              y2 = y2 + cy;
-              xv = xv + cx;
-              yv = yv + cy;
+              x1 = x1 + sx + offx;
+              y1 = y1 + sy + offy;
+              x2 = x2 + sx + offx;
+              y2 = y2 + sy + offy;
+              xv = xv + sx + offx;
+              yv = yv + sy + offy;
 
 
               /* Draw: */
@@ -13064,7 +13071,7 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       else
         rmax = abs(ry) + 20;
 
-      update_canvas(cx - rmax, cy - rmax, cx + rmax, cy + rmax);
+      update_canvas(sx - rmax + offx, sy - rmax + offy, sx + rmax + offx, sy + rmax + offy);
     }
 
 
