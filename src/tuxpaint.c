@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 29, 2020
+  June 14, 2002 - August 14, 2020
 */
 
 
@@ -54,8 +54,6 @@
     /*# define VIDEO_BPP 24 *//* compromise */
     #define VIDEO_BPP 32      /* might be fastest, if conversion funcs removed */
 #endif
-
-/* #define CORNER_SHAPES *//* need major work! */
 
 /* Method for printing images: */
 
@@ -1226,6 +1224,9 @@ static int simple_shapes;
 static int only_uppercase;
 
 static int disable_magic_controls;
+static int disable_shape_controls;
+
+static int shape_mode = SHAPEMODE_CENTER;
 
 static int starter_mirrored;
 static int starter_flipped;
@@ -1446,6 +1447,7 @@ static SDL_Surface *img_scroll_up, *img_scroll_down;
 static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
+static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_label, *img_label_select;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel;
@@ -3511,6 +3513,15 @@ static void mainloop(void)
                             }
                         }
 
+                      else if (cur_tool == TOOL_SHAPES)
+                        {
+                          if (!disable_shape_controls)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
+
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
                       num_rows_needed = (num_things + gd_items.cols - 1) / gd_items.cols;
@@ -3716,6 +3727,17 @@ static void mainloop(void)
                                   update_screen_rect(&r_toolopt);
                                 }
                               /* FIXME: Sfx */
+                            }
+                          else if (cur_tool == TOOL_SHAPES)
+                            {
+                              /* Shape controls! */
+                              shape_mode = which;
+                              draw_shapes();
+			      update_screen_rect(&r_toolopt);
+                              draw_tux_text(TUX_GREAT, shapemode_tips[shape_mode], 1);
+                              playsound(screen, 0, SND_CLICK, 0, SNDPOS_RIGHT, SNDDIST_NEAR);
+                              update_screen_rect(&r_tuxarea);
+                              toolopt_changed = 0;
                             }
                           else if (cur_tool == TOOL_TEXT)
                             {
@@ -4137,8 +4159,8 @@ static void mainloop(void)
                               update_canvas(0, 0, canvas->w, canvas->h);
                             }
 
-
-                          draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
+                          if (toolopt_changed)
+                            draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
 
                           if (do_draw)
                             draw_shapes();
@@ -4731,6 +4753,14 @@ static void mainloop(void)
                               gd_controls.cols = 2;
                             }
                         }
+                      else if (cur_tool == TOOL_SHAPES)
+                        {
+                          if (!disable_shape_controls)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
 
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
@@ -5166,6 +5196,8 @@ static void mainloop(void)
                   if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
                     max = 10;
                   if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
+                    max = 12;
+                  if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
                     max = 12;
 
 
@@ -6512,6 +6544,7 @@ void show_usage(int exitcode)
           "  [--stamps | --nostamps]\n"
           "  [--nostampcontrols | --stampcontrols]\n"
           "  [--nomagiccontrols | --magiccontrols]\n"
+          "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
           "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
@@ -8280,7 +8313,7 @@ static void draw_magic(void)
     }
 
 
-  /* Draw text controls: */
+  /* Draw magic controls: */
 
   if (!disable_magic_controls)
     {
@@ -9126,17 +9159,20 @@ static void draw_stamps(void)
 /* Draw the shape selector: */
 static void draw_shapes(void)
 {
-  int i, shape, max, off_y;
+  int i, shape, max, off_y, most;
   SDL_Rect dest;
 
 
   draw_image_title(TITLE_SHAPES, r_ttoolopt);
 
+  most = 12;
+  if (disable_shape_controls)
+    most = 14;
 
-  if (NUM_SHAPES > 14 + TOOLOFFSET)
+  if (NUM_SHAPES > most + TOOLOFFSET)
     {
       off_y = 24;
-      max = 12 + TOOLOFFSET;
+      max = (most - 2) + TOOLOFFSET;
 
       dest.x = WINDOW_WIDTH - 96;
       dest.y = 40;
@@ -9151,9 +9187,9 @@ static void draw_shapes(void)
         }
 
       dest.x = WINDOW_WIDTH - 96;
-      dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+      dest.y = 40 + 24 + ((((most - 2) / 2) + TOOLOFFSET / 2) * 48);
 
-      if (shape_scroll < NUM_SHAPES - 12 - TOOLOFFSET)
+      if (shape_scroll < NUM_SHAPES - (most - 2) - TOOLOFFSET)
         {
           SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
         }
@@ -9165,7 +9201,7 @@ static void draw_shapes(void)
   else
     {
       off_y = 0;
-      max = 14 + TOOLOFFSET;
+      max = most + TOOLOFFSET;
     }
 
   for (shape = shape_scroll; shape < shape_scroll + max; shape++)
@@ -9201,6 +9237,48 @@ static void draw_shapes(void)
 
           SDL_BlitSurface(img_shape_names[shape], NULL, screen, &dest);
         }
+    }
+
+  /* Draw magic controls: */
+
+  if (!disable_shape_controls)
+    {
+      SDL_Surface *button_color;
+
+      /* Show shape-from-center button: */
+
+      if (shape_mode == SHAPEMODE_CENTER) 
+        button_color = img_btn_down;
+      else
+        button_color = img_btn_up;
+
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_shapes_center->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_shapes_center->h) / 2);
+
+      SDL_BlitSurface(img_shapes_center, NULL, screen, &dest);
+
+
+      /* Show shape-from-corner button: */
+
+      if (shape_mode == SHAPEMODE_CORNER) 
+        button_color = img_btn_down;
+      else
+        button_color = img_btn_up;
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_shapes_corner->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_shapes_corner->h) / 2);
+
+      SDL_BlitSurface(img_shapes_corner, NULL, screen, &dest);
     }
 }
 
@@ -12510,6 +12588,9 @@ static void cleanup(void)
   free_surface(&img_magic_paint);
   free_surface(&img_magic_fullscreen);
 
+  free_surface(&img_shapes_center);
+  free_surface(&img_shapes_corner);
+
   free_surface(&img_bold);
   free_surface(&img_italic);
 
@@ -12750,32 +12831,6 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   /* Determine radius/shape of the shape to draw: */
 
   old_brush = 0;
-
-#ifdef CORNER_SHAPES
-  int tmp = 0;
-
-  if (cx > ox)
-    {
-      tmp = cx;
-      cx = ox;
-      ox = tmp;
-    }
-
-  if (cy > oy)
-    {
-      tmp = cy;
-      cy = oy;
-      oy = tmp;
-    }
-
-  x1 = cx;
-  x2 = ox;
-  y1 = cy;
-  y2 = oy;
-
-  cx += ((x2 - x1) / 2);
-  cy += ((y2 - y1) / 2);
-#endif
 
   rx = abs(ox - cx);
   ry = abs(oy - cy);
@@ -22813,6 +22868,7 @@ static void setup_config(char *argv[])
   SETBOOL(autosave_on_quit);
   SETBOOL(disable_label);
   SETBOOL(disable_magic_controls);
+  SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
   SETBOOL(disable_quit);
   SETBOOL(disable_save);
@@ -24207,6 +24263,9 @@ static void setup(void)
 
   img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
   img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
+
+  img_shapes_center = loadimage(DATA_PREFIX "images/ui/shapes_center.png");
+  img_shapes_corner = loadimage(DATA_PREFIX "images/ui/shapes_corner.png");
 
   img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");

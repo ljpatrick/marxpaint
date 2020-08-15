@@ -27,6 +27,13 @@ $Id$
       * The "--exportdir" option can be used to override the default
         location (but a "TuxPaint" subdir. will NOT be placed there).
 
+    * Shape controls: -- WORK IN PROGRESS
+      * Draw shapes from the center (as in previous versions of Tux Paint)
+        or from a corner (similar to the default mode of most other
+        graphics tools).
+      * The controls to modify the drawing behavior can be removed,
+        for simplification of Tux Paint's interface (for younger users).
+
   * Ports & Building
     ----------------
     * Corrections for Haiku not opening saved files.
