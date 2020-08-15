@@ -36,7 +36,7 @@ $Id$
   * New Brushes
     -----------
     * Footprints
-      * Human
+      * Human feet
         Based on Openclipart by "netalloy"
         (https://openclipart.org/artist/netalloy)
         Creative Commons Zero 1.0 Public Domain License
@@ -44,6 +44,11 @@ $Id$
       * Paw (dog or cat like)
         Based on Openclipart by "alinager"
         (https://openclipart.org/artist/alinager)
+        Creative Commons Zero 1.0 Public Domain License
+
+      * Shoes
+        Based on Openclipart by "Tavin"
+        (https://openclipart.org/artist/Tavin)
         Creative Commons Zero 1.0 Public Domain License
 
   * Documentation updates
