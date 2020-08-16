@@ -39,6 +39,11 @@ $Id$
     * New, smaller sizes available in "Eraser" tool.
       (h/t Jackson Bray for the suggestion)
 
+    * "Eraser" tool now draws smoothly connected strokes,
+      like the "Brush" tool, when the mouse is moved quickly
+      (relative to the eraser size; especially useful for the
+      smallest erasers).
+
   * Ports & Building
     ----------------
     * Corrections for Haiku not opening saved files.

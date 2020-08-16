@@ -1922,7 +1922,9 @@ static void update_stamp_xor(void);
 
 static void set_active_stamp(void);
 
-static void do_eraser(int x, int y);
+static int calc_eraser_size(int which_eraser);
+static void do_eraser(int x, int y, int update);
+static void eraser_draw(int x1, int y1, int x2, int y2);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
@@ -4440,7 +4442,7 @@ static void mainloop(void)
                       if (!emulate_button_pressed)
                         rec_undo_buffer();
 
-                      do_eraser(old_x, old_y);
+                      do_eraser(old_x, old_y, 1);
 
                       if (mouseaccessibility)
                         emulate_button_pressed = !emulate_button_pressed;
@@ -5382,7 +5384,7 @@ static void mainloop(void)
                     {
                       /* Still pushing, and moving - Erase! */
 
-                      do_eraser(new_x, new_y);
+                      eraser_draw(old_x, old_y, new_x, new_y);
                     }
                 }
 
@@ -10122,24 +10124,26 @@ static void rect_xor(int x1, int y1, int x2, int y2)
 }
 
 
+static int calc_eraser_size(int which_eraser)
+{
+#define NUM_SIZES (NUM_ERASERS / 2)
+  if (which_eraser >= NUM_SIZES)
+    which_eraser -= NUM_SIZES;
+
+  return(((NUM_SIZES - 1 - which_eraser) * ((ERASER_MAX - ERASER_MIN) / (NUM_SIZES - 1))) + ERASER_MIN);
+}
+
 /**
  * FIXME
  */
 /* Erase at the cursor! */
-static void do_eraser(int x, int y)
+static void do_eraser(int x, int y, int update)
 {
   SDL_Rect dest;
-  int which_sz, sz;
+  int sz;
   int xx, yy, n, hit;
 
-#define NUM_SIZES (NUM_ERASERS / 2)
-
-  if (cur_eraser < NUM_SIZES)
-    which_sz = cur_eraser;
-  else
-    which_sz = cur_eraser - NUM_SIZES;
-
-  sz = ((NUM_SIZES - 1 - which_sz) * ((ERASER_MAX - ERASER_MIN) / (NUM_SIZES - 1))) + ERASER_MIN;
+  sz = calc_eraser_size(cur_eraser);
 
   if (cur_eraser < NUM_SIZES)
     {
@@ -10211,16 +10215,104 @@ static void do_eraser(int x, int y)
     }
 #endif
 
-  update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+  if (update)
+    {
+      update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-  rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+      rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
 #ifdef __APPLE__
-  /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
-  update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+      /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
+      update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 #endif
+    }
 }
 
+/**
+ * Draw a line on the canvas using the eraser.
+ *
+ * @param x1 Starting X coordinate
+ * @param y1 Starting Y coordinate
+ * @param x2 Ending X coordinate
+ * @param y2 Ending Y coordinate
+ */
+static void eraser_draw(int x1, int y1, int x2, int y2)
+{
+  int dx, dy, y;
+  int orig_x1, orig_y1, orig_x2, orig_y2, tmp, length;
+  float m, b;
+
+  orig_x1 = x1;
+  orig_y1 = y1;
+
+  orig_x2 = x2;
+  orig_y2 = y2;
+
+
+  dx = x2 - x1;
+  dy = y2 - y1;
+
+  if (dx != 0)
+    {
+      m = ((float)dy) / ((float)dx);
+      b = y1 - m * x1;
+
+      if (x2 >= x1)
+        dx = 1;
+      else
+        dx = -1;
+
+
+      while (x1 != x2)
+        {
+          y1 = m * x1 + b;
+          y2 = m * (x1 + dx) + b;
+
+          if (y1 > y2)
+            {
+              for (y = y1; y >= y2; y--)
+                do_eraser(x1, y, 0);
+            }
+          else
+            {
+              for (y = y1; y <= y2; y++)
+                do_eraser(x1, y, 0);
+            }
+
+          x1 = x1 + dx;
+        }
+    }
+  else
+    {
+      if (y1 > y2)
+        {
+          y = y1;
+          y1 = y2;
+          y2 = y;
+        }
+
+      for (y = y1; y <= y2; y++)
+        do_eraser(x1, y, 0);
+    }
+
+
+  if (orig_x1 > orig_x2)
+    {
+      tmp = orig_x1;
+      orig_x1 = orig_x2;
+      orig_x2 = tmp;
+    }
+
+  if (orig_y1 > orig_y2)
+    {
+      tmp = orig_y1;
+      orig_y1 = orig_y2;
+      orig_y2 = tmp;
+    }
+
+  length = (calc_eraser_size(cur_eraser) >> 1) + 1;
+  update_canvas(orig_x1 - length, orig_y1 - length, orig_x2 + length, orig_y2 + length);
+}
 
 /**
  * FIXME
