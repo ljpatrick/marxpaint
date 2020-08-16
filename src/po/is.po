@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-15 16:42-0700\n"
-"PO-Revision-Date: 2020-07-31 07:24+0000\n"
+"PO-Revision-Date: 2020-08-16 09:37+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -337,11 +337,11 @@ msgstr "Stjarna með 5 arma."
 
 #: ../shapes.h:372
 msgid "Draw shapes from the center."
-msgstr ""
+msgstr "Teikna form frá miðju."
 
 #: ../shapes.h:373
 msgid "Draw shapes from a corner."
-msgstr ""
+msgstr "Teikna form frá horni."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -474,7 +474,6 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Smelltu til að byrja línu. Slepptu til að enda línuna."
 
 #: ../tools.h:125
-#, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
 #| "size you want. Move around to rotate it, and click to draw it."
@@ -482,7 +481,8 @@ msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Veldu form. Smelltu til að setja miðju, dragðu músina til, slepptu þegar það "
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
+" það "
 "er af réttri stærð. Hreyfðu til að snúa forminu, og smelltu til að teikna "
 "það."
 

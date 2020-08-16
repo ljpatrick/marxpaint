@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-15 16:42-0700\n"
-"PO-Revision-Date: 2020-07-30 11:17+0200\n"
+"PO-Revision-Date: 2020-08-16 09:19+0200\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -337,11 +337,11 @@ msgstr "Unha estrela de 5 puntas."
 
 #: ../shapes.h:372
 msgid "Draw shapes from the center."
-msgstr ""
+msgstr "Debuxar formas dende o centro."
 
 #: ../shapes.h:373
 msgid "Draw shapes from a corner."
-msgstr ""
+msgstr "Debuxar formas dende un canto."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -473,16 +473,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Preme para comezar a debuxar unha liña. Solta o botón para debuxala."
 
 #: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Escolle unha figura. Preme para marcar o centro, arrastra e solta cando teña "
-"o tamaño que queiras. Move arredor para virala, e preme para debuxala."
+"Escolle unha figura. Preme para comezar a debuxar, arrastra e solta cando "
+"teña o tamaño que queiras. Move arredor para virala, e preme para debuxala."
 
 #: ../tools.h:129
 msgid ""
