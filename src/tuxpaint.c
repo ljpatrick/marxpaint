@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 15, 2020
+  June 14, 2002 - August 16, 2020
 */
 
 
@@ -1798,10 +1798,11 @@ static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
   img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
-#define NUM_ERASERS 12          /* How many sizes of erasers
+#define NUM_ERASERS 16          /* How many sizes of erasers
                                    (from ERASER_MIN to _MAX as squares, then again
-                                   from ERASER_MIN to _MAX as circles) */
-#define ERASER_MIN 13
+                                   from ERASER_MIN to _MAX as circles; best if a
+                                   multiple of 4, since selector is 2 buttons across) */
+#define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
 
@@ -10128,15 +10129,21 @@ static void rect_xor(int x1, int y1, int x2, int y2)
 static void do_eraser(int x, int y)
 {
   SDL_Rect dest;
-  int sz;
+  int which_sz, sz;
   int xx, yy, n, hit;
 
-  if (cur_eraser < NUM_ERASERS / 2)
+#define NUM_SIZES (NUM_ERASERS / 2)
+
+  if (cur_eraser < NUM_SIZES)
+    which_sz = cur_eraser;
+  else
+    which_sz = cur_eraser - NUM_SIZES;
+
+  sz = ((NUM_SIZES - 1 - which_sz) * ((ERASER_MAX - ERASER_MIN) / (NUM_SIZES - 1))) + ERASER_MIN;
+
+  if (cur_eraser < NUM_SIZES)
     {
       /* Square eraser: */
-
-      sz = (ERASER_MIN +
-            (((NUM_ERASERS / 2) - 1 - cur_eraser) * ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
 
       dest.x = x - (sz / 2);
       dest.y = y - (sz / 2);
@@ -10144,28 +10151,20 @@ static void do_eraser(int x, int y)
       dest.h = sz;
 
       if (img_starter_bkgd == NULL)
-        {
-          SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b));
-        }
+        SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b));
       else
-        {
-          SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-        }
+        SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
     }
   else
     {
       /* Round eraser: */
 
-      sz = (ERASER_MIN +
-            (((NUM_ERASERS / 2) - 1 - (cur_eraser - (NUM_ERASERS / 2))) *
-             ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-
-      for (yy = 0; yy < sz; yy++)
+      for (yy = 0; yy <= sz; yy++)
         {
           hit = 0;
           for (xx = 0; xx <= sz && hit == 0; xx++)
             {
-              n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
+              n = (xx * xx) + (yy * yy) - ((sz * sz) / 4);
 
               if (n >= -sz && n <= sz)
                 hit = 1;
@@ -10178,14 +10177,10 @@ static void do_eraser(int x, int y)
                   dest.h = 1;
 
                   if (img_starter_bkgd == NULL)
-                    {
-                      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
-                                                             canvas_color_r, canvas_color_g, canvas_color_b));
-                    }
+                    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+                                                           canvas_color_r, canvas_color_g, canvas_color_b));
                   else
-                    {
-                      SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-                    }
+                    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
 
 
                   dest.x = x - xx;
@@ -10194,14 +10189,10 @@ static void do_eraser(int x, int y)
                   dest.h = 1;
 
                   if (img_starter_bkgd == NULL)
-                    {
-                      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
-                                                             canvas_color_r, canvas_color_g, canvas_color_b));
-                    }
+                    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+                                                           canvas_color_r, canvas_color_g, canvas_color_b));
                   else
-                    {
-                      SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-                    }
+                    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
                 }
             }
         }

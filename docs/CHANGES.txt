@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.15 (0.9.25)
+2020.August.16 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -33,6 +33,11 @@ $Id$
         graphics tools).
       * The controls to modify the drawing behavior can be removed,
         for simplification of Tux Paint's interface (for younger users).
+
+  * Other Improvements
+    ------------------
+    * New, smaller sizes available in "Eraser" tool.
+      (h/t Jackson Bray for the suggestion)
 
   * Ports & Building
     ----------------
