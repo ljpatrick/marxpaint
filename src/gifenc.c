@@ -63,9 +63,10 @@ new_trie(int degree, int *nkeys)
 static void
 del_trie(Node *root, int degree)
 {
+  int i;
     if (!root)
         return;
-    for (int i = 0; i < degree; i++)
+    for (i = 0; i < degree; i++)
         del_trie(root->children[i], degree);
     free(root);
 }

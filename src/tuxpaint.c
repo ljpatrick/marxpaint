@@ -1319,7 +1319,9 @@ static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmo
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools);
 
 char * get_xdg_user_dir(const char * dir_type, const char * fallback);
-
+#ifdef WIN32
+extern char * GetUserImageDir(void);
+#endif
 
 /* Magic tools API and tool handles: */
 
@@ -22843,12 +22845,15 @@ static void setup_config(char *argv[])
   else
     {
       /* FIXME: Need assist for:
-         * _WIN32
          * __BEOS__
          * __HAIKU__
          * __APPLE__
       */
+#ifdef WIN32
+      picturesdir = GetUserImageDir();
+#else
       picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
+#endif
       safe_snprintf(str, sizeof(str), "%s/TuxPaint", picturesdir);
       free(picturesdir);
       exportdir = strdup(str);
