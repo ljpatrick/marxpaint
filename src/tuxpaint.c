@@ -25712,7 +25712,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
 	  done = (qtiz_status != LIQ_OK);
 #else
 	  quantization_result = liq_quantize_image(liq_handle, input_image);
-	  done = (quantization_result != NULL);
+	  done = (quantization_result == NULL);
 #endif
           if (!done) {
             // Use libimagequant to make new image pixels from the palette
