@@ -25600,7 +25600,9 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   liq_attr *liq_handle;
   liq_image *input_image;
   liq_result *quantization_result;
+#if LIQ_VERSION >= 20800
   liq_error qtiz_status;
+#endif
   const liq_palette *palette;
   int gif_speed;
 
@@ -25705,9 +25707,13 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           show_progress_bar(screen);
 	  done = export_gif_monitor_events();
 
-          qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
+#if LIQ_VERSION >= 20800
+	  qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
 	  done = (qtiz_status != LIQ_OK);
-
+#else
+	  quantization_result = liq_quantize_image(liq_handle, input_image);
+	  done = (quantization_result != NULL);
+#endif
           if (!done) {
             // Use libimagequant to make new image pixels from the palette
             pixels_size = num_selected * overall_area;
