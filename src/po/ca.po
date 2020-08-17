@@ -2,7 +2,7 @@
 # Traducció al català del Tuxpaint.
 # Copyright (C) 2002-2009
 # This file is distributed under the same license as the Tuxpaint package.
-# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015.
+# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015, 2020.
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
 #
@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-15 16:42-0700\n"
-"PO-Revision-Date: 2018-02-25 12:57+0100\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2020-08-17 22:43+0200\n"
+"Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -375,11 +375,11 @@ msgstr "Una estrela de cinc puntes."
 
 #: ../shapes.h:372
 msgid "Draw shapes from the center."
-msgstr ""
+msgstr "Dibuixa formes des del centre."
 
 #: ../shapes.h:373
 msgid "Draw shapes from a corner."
-msgstr ""
+msgstr "Dibuixa formes des d'una cantonada."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -513,17 +513,10 @@ msgstr ""
 "la."
 
 #: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Trieu una figura. Feu clic per seleccionar el centre, arrossegueu, llavors "
-"deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per "
-"girar-la i feu clic per dibuixar-la."
+msgstr "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per girar-la i feu clic per dibuixar-la."
 
 #: ../tools.h:129
 msgid ""
@@ -707,29 +700,21 @@ msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2190
-#, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
-msgstr "El vostre dibuix s'ha imprès!"
+msgstr "S'ha exportat el vostre dibuix!"
 
 #: ../tuxpaint.c:2191
-#, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
-msgstr "El vostre dibuix s'ha imprès!"
+msgstr "S'ha exportat la vostra animació en un fitxer GIF!"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2195
-#, fuzzy
-#| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
-msgstr "El vostre dibuix no s'ha pogut imprimir!"
+msgstr "El vostre dibuix no s'ha pogut exportar!"
 
 #: ../tuxpaint.c:2196
-#, fuzzy
-#| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
-msgstr "El vostre dibuix no s'ha pogut imprimir!"
+msgstr "La vostra animació no s'ha pogut exportar!"
 
 #. Slideshow instructions
 #: ../tuxpaint.c:2200
@@ -764,7 +749,7 @@ msgstr "Diapositives"
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:7929
 msgid "Export"
-msgstr ""
+msgstr "Exporta"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7932
@@ -779,7 +764,7 @@ msgstr "Reprodueix"
 #. Slideshow: 'GIF Export' button, to create an animated GIF
 #: ../tuxpaint.c:7938
 msgid "GIF Export"
-msgstr ""
+msgstr "Exporta a GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7941
@@ -829,7 +814,7 @@ msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 #.
 #: ../tuxpaint.c:15880
 msgid "Select 2 or more drawings to turn into an animated GIF."
-msgstr ""
+msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 
 #: ../tuxpaint.c:23539
 msgid "Select a color from your drawing."
