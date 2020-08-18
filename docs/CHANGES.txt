@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.16 (0.9.25)
+2020.August.17 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -19,6 +19,7 @@ $Id$
         * Depends on "libimagequant", from the "pngquant2" project:
           https://github.com/ImageOptim/libimagequant
           (GPL v3 or later, for Free/Libre Open Source Software)
+          (h/t TOYAMA Shin-ichi for adding support for versions < 2.8.0)
       * Single image (PNG) export from the Open dialog.
         (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
       * Both utilize XDG user dirs settings, if available, to determine
@@ -94,6 +95,9 @@ $Id$
 
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
