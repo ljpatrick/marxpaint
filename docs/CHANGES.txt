@@ -90,6 +90,9 @@ $Id$
     * Basque translation
       Alexander Gabilondo <alexgabi@irakasle.eus>
 
+    * Catalan translation
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
 
