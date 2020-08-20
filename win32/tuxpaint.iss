@@ -601,6 +601,12 @@ var
 begin
   lang := Lang2Gettext(false);
 
+  if lang = 'es' then
+    readme := 'es\html\LEEME.html'
+  else
+  if lang = 'fr' then
+    readme := 'fr\html\README.html'
+  else
   if lang = 'gl' then
     readme := 'gl\html\README.html'
   else
@@ -622,7 +628,7 @@ begin
   if lang = 'zh_tw' then
     readme := 'zh_tw\html\README.html'
   else
-    readme := 'html\README.html';
+    readme := 'en\html\README.html';
 
   Result := 'docs\'+readme
 end;
