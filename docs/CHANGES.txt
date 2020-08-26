@@ -45,6 +45,18 @@ $Id$
       (relative to the eraser size; especially useful for the
       smallest erasers).
 
+    * On-screen keyboard (visible when the feature is enabled, while
+      using the "Text" and "Label" tools) now appears with larger
+      (48x48 pixel, vs 24x24 pixel) buttons, when Tux Paint's window
+      (or fullscreen) size is large enough to fit them with the
+      chosen layout.
+      (h/t Anat & Aviv, who suggested it to help with users of
+      eye-tracking systems)
+
+    * On-screen keyboard buttons use a slightly larger font
+      (16pt vs 12pt, previously seen on the small keyboard;
+      32pt on the large keyboard).
+
   * Ports & Building
     ----------------
     * Corrections for Haiku not opening saved files.

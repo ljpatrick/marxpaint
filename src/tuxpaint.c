@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 16, 2020
+  June 14, 2002 - August 25, 2020
 */
 
 
@@ -1430,7 +1430,7 @@ static int text_undo[NUM_UNDO_BUFS];
 static int have_to_rec_label_node;
 static int have_to_rec_label_node_back;
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
-static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
+static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off, *img_btn_hold;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down, *img_btnsm_hold;
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
 static SDL_Surface *img_prev, *img_next;
@@ -3132,15 +3132,29 @@ static void mainloop(void)
                                     {
                                       if (onscreen_keyboard_layout)
                                         kbd =
-                                          osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down,
-                                                     img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel,
-                                                     img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
+                                          osk_create(onscreen_keyboard_layout, screen,
+                                                     img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
+                                                     img_btnsm_nav, img_btnsm_hold,
+                                                     /* FIXME */
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
                                                      onscreen_keyboard_disable_change);
                                       else
                                         kbd =
-                                          osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down,
-                                                     img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel,
-                                                     img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
+                                          osk_create(strdup("default.layout"), screen,
+                                                     img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
+                                                     img_btnsm_nav, img_btnsm_hold,
+                                                     /* FIXME */
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
                                                      onscreen_keyboard_disable_change);
                                     }
                                   if (kbd == NULL)
@@ -12644,6 +12658,7 @@ static void cleanup(void)
   free_surface(&img_btn_up);
   free_surface(&img_btn_down);
   free_surface(&img_btn_off);
+  free_surface(&img_btn_hold);
 
   free_surface(&img_btnsm_up);
   free_surface(&img_btnsm_off);
@@ -24355,6 +24370,7 @@ static void setup(void)
   img_btn_up = loadimage(DATA_PREFIX "images/ui/btn_up.png");
   img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
   img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
+  img_btn_hold = loadimage(DATA_PREFIX "images/ui/btn_hold.png");
 
   img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
   img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
