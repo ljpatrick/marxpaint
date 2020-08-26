@@ -127,7 +127,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
   printf("w %i, h %i\n", layout->width, layout->height);
 #endif
 
-  if (layout->width * LG_button_up->w >= canvas->w * 0.9 ||
+  if (layout->width * LG_button_up->w >= (canvas->w - 48 * 4) * 0.9 ||
       layout->height * LG_button_up->h >= canvas->h * 0.5) {
       /* Full-size buttons too large, use small buttons */
       button_up = SM_button_up;
