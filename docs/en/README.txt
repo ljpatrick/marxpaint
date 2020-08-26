@@ -6,7 +6,7 @@
           Copyright 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                        June 14, 2002 - August 15, 2020
+                        June 14, 2002 - August 25, 2020
 
      ----------------------------------------------------------------------
 
@@ -481,24 +481,35 @@ Available Tools
 
                  Clicking the "New" button will start a new drawing. A dialog
                  will appear where you may choose to start a new picture
-                 using a solid background color, or using a 'Starter' image
-                 (see below). You will first be asked whether you really want
-                 to do this.
+                 using a solid background color, or using a 'Starter' or
+                 'Template' image (see below). You will first be asked
+                 whether you really want to do this.
 
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
 
-                 'Starter' Images
+                 'Starter' & Template Images
 
-                   'Starters' can be like a page from a coloring book (a
+                   'Starters' can behave like a page from a coloring book — a
                    black-and-white outline of a picture, which you can then
-                   color in), or like a 3D photograph, where you draw the
-                   bits in between.
+                   color in, and the black outline remains intact — or like a
+                   3D photograph, where you draw in between a foreground and
+                   background layer.
 
-                   When you load a 'Starter,' draw on it, and then click
-                   'Save,' it creates a new picture file (it doesn't
-                   overwrite the original 'Starter,' so you can use it again
-                   later).
+                   'Templates' are similar, but simply provide a background
+                   drawing to work off of. Unlike 'Starters', there is no
+                   layer that remains in the foreground of anything you draw
+                   in the picture.
+
+                   When using the 'Eraser' tool, the original image from the
+                   'Starter' or 'Template' will reappear. The 'Flip' and
+                   'Mirror' Magic tools affect the orientation of the
+                   'Starter' or 'Template', as well.
+
+                   When you load a 'Starter' or 'Template', draw on it, and
+                   then click 'Save,' it creates a new picture file — it
+                   doesn't overwrite the original, so you can use it again
+                   later (by accessing it from the 'New' dialoge)..
 
      ----------------------------------------------------------------------
 
