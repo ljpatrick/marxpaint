@@ -2212,6 +2212,8 @@ enum
   SHAPE_TOOL_MODE_DONE
 };
 
+int shape_reverse;
+
 
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
@@ -5358,6 +5360,8 @@ static void mainloop(void)
                           do_shape(shape_start_x, shape_start_y, old_x, old_y, 0, 0);
 
                           do_shape(shape_start_x, shape_start_y, new_x, new_y, 0, 0);
+
+                          shape_reverse = (new_x < shape_start_x);
 
 
                           /* FIXME: Fix update shape function! */
@@ -13256,8 +13260,11 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   int deg;
 
-
   deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
+
+  if (shape_reverse && shape_mode == SHAPEMODE_CORNER) {
+    deg = (deg + 180) % 360;
+  }
 
   if (shape_radius < 50)
     deg = ((deg - 15) / 30) * 30;
