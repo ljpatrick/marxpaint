@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 25, 2020
+  June 14, 2002 - August 28, 2020
 */
 
 
@@ -5055,6 +5055,10 @@ static void mainloop(void)
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
                               draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+
+                              /* FIXME: Do something less intensive! */
+
+                              SDL_Flip(screen);
                             }
                         }
                     }
