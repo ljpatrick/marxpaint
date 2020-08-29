@@ -16,12 +16,12 @@
         alink="#FF00FF">
     <center>
       <h1>
+        Extending<br/>
         <img src="../../html/images/tuxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux&nbsp;Paint"><br>
-        version 0.9.25<br>
-        Extending Tux Paint
+            alt="Tux Paint"><br/>
+        version 0.9.25
       </h1>
 
       <p>
@@ -32,37 +32,142 @@
       </p>
 
       <p>
-        June 14, 2002 - July 27, 2020
+        June 14, 2002 - August 29, 2020
       </p>
     </center>
 
     <hr size="2"
         noshade>
 
+    <table border="2"
+           cellspacing="0"
+           cellpadding="2"
+           summary="Table of Contents">
+      <tr>
+        <th>
+          Table of Contents
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <ul>
+            <li>
+              <a href="#where_files_go">Where Files Go</a>
+              <ul>
+                <li>
+                  <a href="#standard_files">Standard Files</a>
+                </li>
+                <li>
+                  <a href="#personal_files">Personal Files</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#brushes">Brushes</a>
+              <ul>
+                <li>
+                  <a href="#brush_options">Brush Options</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#stamps">Stamps</a>
+              <ul>
+                <li>
+                  <a href="#stamps_images">Images</a>
+                </li>
+                <li>
+                  <a href="#description_text">Description Text</a>
+                </li>
+                <li>
+                  <a href="#sound_effects">Sound Effects</a>
+                </li>
+                <li>
+                  <a href="#descriptive_sound">Descriptive Sound</a>
+                </li>
+                <li>
+                  <a href="#stamp_options">Stamp Options</a>
+                </li>
+                <li>
+                  <a href="#pre_mirroed_and_flipped_images">Pre-Mirrored and Flipped Images</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#fonts">Fonts</a>
+            </li>
+
+            <li>
+              <a href="#starters">'Starters'</a>
+              <ul>
+                <li>
+                  <a href="#coloring_book_style">Coloring-Book Style</a>
+                </li>
+                <li>
+                  <a href="#scene_style">Scene-Style</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#templates">'Templates'</a>
+            </li>
+
+            <li>
+              <a href="#translations">Translations</a>
+            </li>
+
+            <li>
+              <a href="#input_methods">Alternative Input Methods</a>
+            </li>
+
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <hr size="2"
+        noshade>
+
     <p>
-      If you wish to add or change things like Brushes and Rubber
-      Stamps used by Tux&nbsp;Paint, you can do it fairly easily by
-      simply putting or removing files on your hard disk.
+      If you wish to add or change things like Brushes, Starters,
+      <span style="white-space: nowrap;">Rubber Stamps</span> and
+      other content used by
+      <cite style="white-space: nowrap;">Tux Paint</cite>,
+      you can do so fairly easily by simply adding, changing, or removing files
+      where <span style="white-space: nowrap;">Tux Paint</span> looks for them.
     </p>
 
     <p>
-      Note: You'll need to restart Tux&nbsp;Paint for the changes
-      to take effect.
+      Note: You'll need to restart
+      <cite style="white-space: nowrap;">Tux Paint</cite>
+      for the changes to take effect.
     </p>
+
+    <hr size="2"
+        noshade>
 
     <h2>
-      Where Files Go
+      <a name="where_files_go">
+        Where Files Go
+      </a>
     </h2>
 
     <blockquote>
       <h3>
-        Standard Files
+        <a name="standard_files">
+          Standard Files
+        </a>
       </h3>
 
       <blockquote>
         <p>
-          Tux&nbsp;Paint looks for its various data files in its
-          'data' directory.
+          <cite style="white-space: nowrap;">Tux Paint</cite> looks for its various data files in its
+          '<code>data</code>' directory.
         </p>
 
         <h4>
@@ -72,8 +177,8 @@
         <blockquote>
           <p>
             Where this directory goes depends on what value was set
-            for "<code>DATA_PREFIX</code>" when Tux&nbsp;Paint was
-            built. See INSTALL.txt for details.
+            for "<code>DATA_PREFIX</code>" when <cite style="white-space: nowrap;">Tux Paint</cite> was
+            built. See <a href="../INSTALL.txt">INSTALL.txt</a> for details.
           </p>
 
           <p>
@@ -100,86 +205,87 @@
 
         <blockquote>
           <p>
-            Tux&nbsp;Paint looks for a directory called 'data' in
+            <cite style="white-space: nowrap;">Tux Paint</cite> looks for a directory called 'data' in
             the same directory as the executable. This is the
             directory that the installer used when installing
-            Tux&nbsp;Paint e.g.:
+            <cite style="white-space: nowrap;">Tux Paint</cite> e.g.:
           </p>
 
           <blockquote>
-            <code>C:\Program&nbsp;Files\TuxPaint\data</code>
+            <code style="white-space: nowrap;">C:\Program Files\TuxPaint\data</code>
           </blockquote>
         </blockquote>
 
         <h4>
-          Mac OS X
+          macOS
         </h4>
 
         <blockquote>
           <p>
-            Tux&nbsp;Paint stores its data files inside the
-            "Tux&nbsp;Paint" application (which is actually a
-            special kind of folder on Mac&nbsp;OS&nbsp;X). The
-            following steps explain how to get to the folders
-            within:
+            <cite style="white-space: nowrap;">Tux Paint</cite> stores its data files inside the
+            "<code style="white-space: nowrap;">Tux Paint</code>" application icon
+            (which is actually a special kind of folder on macOS &amp;
+            <span style="white-space: nowrap;">Mac OS X</span> before it). The following steps explain how to get to the folders
+            within it:
           </p>
 
           <ol>
             <li>Bring up a 'context' menu by holding the [Control]
-            key and clicking the Tux&nbsp;Paint icon the in Finder.
+            key and clicking the <cite style="white-space: nowrap;">Tux Paint</cite> icon the in <cite>Finder</cite>.
             (If you have a mouse with more than one button, you can
             simply right-click the icon.)
             </li>
 
-            <li>Select "Show&nbsp;Contents" from the menu that
-            appears. A new Finder window will appear with a folder
-            inside called "Contents."
+            <li>Select "<span style="white-space: nowrap;">Show Contents</span>" from the menu that
+            appears. A new <cite>Finder</cite> window will appear with a folder
+            inside called "<code>Contents</code>."
             </li>
 
-            <li>Open the "Contents" folder and open the "Resources"
-            folder found inside.
+            <li>Open the "<code>Contents</code>" folder and open the
+            "<code>Resources</code>" folder found inside.
             </li>
 
-            <li>There, you will find the "starters", "stamps" and
-            "brushes" folders. Adding new content to these folders
+            <li>There, you will find various sub-folders, such as
+            "<code>starters</code>", "<code>stamps</code>", "<code>brushes</code>",
+            etc.  Adding new content to these folders
             will make the content available to any user that
-            launches this copy (icon) of Tux&nbsp;Paint.
+            launches this copy (icon) of <cite style="white-space: nowrap;">Tux Paint</cite>.
             </li>
           </ol>
 
           <p>
             <em>Note:</em> If you install a newer version of
-            Tux&nbsp;Paint and replace or discard the old version,
+            <cite style="white-space: nowrap;">Tux Paint</cite> and replace or discard the old version,
             you will lose changes made by following the
             instructions above, so keep backups of your new content
             (stamps, brushes, etc.).
           </p>
 
           <p>
-            Tux&nbsp;Paint also looks for files in a "TuxPaint"
+            <cite style="white-space: nowrap;">Tux Paint</cite> also looks for files in a "<code>TuxPaint</code>"
             folder that you can place in your system's
-            "Application&nbsp;Support" folder (found under
-            "Library" at the root of your hard disk):
+            "<code style="white-space: nowrap;">Application Support</code>" folder
+            (found under "<code>Library</code>" at the root of your filesystem):
           </p>
 
           <blockquote>
-            <code>/Library/Application&nbsp;Support/TuxPaint/</code>
+            <code style="white-space: nowrap;">/Library/Application Support/TuxPaint/</code>
           </blockquote>
 
           <p>
-            It also looks for files in the user's "Application
-            Support" folder:
+            It also looks for files in the user's
+            "<code style="white-space: nowrap;">Application Support</code>" folder:
           </p>
 
           <blockquote>
-            <code>/Users/<i>(user&nbsp;name)</i>/Library/Application
+            <code style="white-space: nowrap;">/Users/<i>(username)</i>/Library/Application
             Support/TuxPaint/</code>
           </blockquote>
 
           <p>
-            When you upgrade to a newer version of Tux Paint, the
-            contents of this TuxPaint folder will stay the same and
-            remain accessible by all users of Tux Paint.
+            When you upgrade to a newer version of <cite style="white-space: nowrap;">Tux Paint</cite>, the
+            contents of this <code>TuxPaint</code> folder will stay the same and
+            remain accessible by all users of <cite style="white-space: nowrap;">Tux Paint</cite>.
           </p>
         </blockquote>
       </blockquote>
@@ -188,13 +294,15 @@
           noshade>
 
       <h3>
-        Personal Files
+        <a name="personal_files">
+          Personal Files
+        </a>
       </h3>
 
       <blockquote>
         <p>
           You can also create brushes, stamps, fonts and 'starters'
-          in your own directory (folder) for Tux&nbsp;Paint to
+          in your own directory (folder) for <cite style="white-space: nowrap;">Tux Paint</cite> to
           find.
         </p>
 
@@ -204,14 +312,14 @@
 
         <blockquote>
           <p>
-            Your personal Tux&nbsp;Paint folder is stored in your
+            Your personal <cite style="white-space: nowrap;">Tux Paint</cite> folder is stored in your
             "Application Data". For example, on newer Windows (set
             up for an English-speaking user):
           </p>
 
           <blockquote>
-            <code>C:\Documents and
-            Settings\<i>(user&nbsp;name)</i>\Application
+            <code style="white-space: nowrap;">C:\Documents and
+            Settings\<i>(username)</i>\Application
             Data\TuxPaint\</code>
           </blockquote>
         </blockquote>
@@ -222,13 +330,13 @@
 
         <blockquote>
           <p>
-            Your personal Tux&nbsp;Paint folder is stored in your
+            Your personal <cite style="white-space: nowrap;">Tux Paint</cite> folder is stored in your
             "Application Support" folder:
           </p>
 
           <blockquote>
-            <code>/Users/<i>(user&nbsp;name)</i>/Library/Application
-            Support/ TuxPaint/</code>
+            <codestyle="white-space: nowrap;">/Users/<i>(username)</i>/Library/Application
+            Support/TuxPaint/</code>
           </blockquote>
         </blockquote>
 
@@ -238,14 +346,14 @@
 
         <blockquote>
           <p>
-            Your personal Tux&nbsp;Paint directory is
+            Your personal <cite style="white-space: nowrap;">Tux Paint</cite> directory is
             "<code>$(HOME)/.tuxpaint/</code>" (also known as
             "<code>~/.tuxpaint/</code>".
           </p>
 
           <p>
             That is, if your home directory is
-            "<code>/home/karl</code>", then your Tux&nbsp;Paint
+            "<code>/home/karl</code>", then your <cite style="white-space: nowrap;">Tux Paint</cite>
             directory is "<code>/home/karl/.tuxpaint/</code>".
           </p>
 
@@ -257,7 +365,7 @@
 
         <p>
           To add brushes, stamps fonts, and 'starters,' create
-          subdirectories under your personal Tux&nbsp;Paint
+          subdirectories under your personal <cite style="white-space: nowrap;">Tux Paint</cite>
           directory named "<code><b>brushes</b></code>",
           "<code><b>stamps</b></code>", "<code><b>fonts</b></code>"
           and "<code><b>starters</b></code>" respectively.
@@ -275,13 +383,15 @@
         noshade>
 
     <h2>
-      Brushes
+      <a name="brushes">
+        Brushes
+      </a>
     </h2>
 
     <blockquote>
       <p>
         The brushes used for drawing with the 'Brush' and 'Lines'
-        tools in Tux&nbsp;Paint are simply PNG image files.
+        tools in <cite style="white-space: nowrap;">Tux Paint</cite> are simply PNG image files.
       </p>
       <img src="../../html/images/brush_edit.png"
                   width="123"
@@ -296,25 +406,21 @@
 
       <p>
         Greyscale pixels in the brush PNG will be drawn using the
-        currently-selected color in Tux&nbsp;Paint. Color pixels
+        currently-selected color in <cite style="white-space: nowrap;">Tux Paint</cite>. Color pixels
         will be tinted.
       </p>
 
-      <p>
-        Brush images should be no wider than 40&nbsp;pixels across
-        and no taller than 40&nbsp;pixels high. (i.e., the maximum
-        size can be 40&nbsp;x&nbsp;40.)
-      </p>
-
       <h3>
-        Brush Options
+        <a name="brush_options">
+          Brush Options
+        </a>
       </h3>
 
       <blockquote>
         <p>
           Aside from a graphical shape, brushes can also be given
           other attributes. To do this, you need to create a
-          'data&nbsp;file' for the brush.
+          <span style="white-space: nowrap;">'data file'</span> for the brush.
         </p>
 
         <p>
@@ -335,7 +441,7 @@
 
         <blockquote>
           <p>
-            As of Tux&nbsp;Paint version 0.9.16, you can now
+            As of <cite style="white-space: nowrap;">Tux Paint</cite> version 0.9.16, you can now
             specify the spacing for brushes (that is, how often
             they are drawn). By default, the spacing will be the
             brush's height, divided by 4.
@@ -356,7 +462,7 @@
 
         <blockquote>
           <p>
-            As of Tux&nbsp;Paint version 0.9.16, you may now create
+            As of <cite style="white-space: nowrap;">Tux Paint</cite> version 0.9.16, you may now create
             animated brushes. As the brush is used, each frame of
             the animation is drawn.
           </p>
@@ -388,7 +494,7 @@
 
         <blockquote>
           <p>
-            As of Tux&nbsp;Paint version 0.9.16, you may now create
+            As of <cite style="white-space: nowrap;">Tux Paint</cite> version 0.9.16, you may now create
             directional brushes. As the brush is used, different
             shapes are drawn, depending on the direction the brush
             is going.
@@ -452,7 +558,9 @@
         noshade>
 
     <h2>
-      Stamps
+      <a name="stamps">
+        Stamps
+      </a>
     </h2>
 
     <blockquote>
@@ -467,12 +575,14 @@
       </p>
 
       <h3>
-        Images
+        <a name="stamps_images">
+          Images
+        </a>
       </h3>
 
       <blockquote>
         <p>
-          Rubber Stamps in Tux&nbsp;Paint can be made up of a
+          Rubber Stamps in <cite style="white-space: nowrap;">Tux Paint</cite> can be made up of a
           number of separate files. The one file that is required
           is, of course, the picture itself.
         </p>
@@ -482,7 +592,7 @@
                     alt=""
                     align="right">
         <p>
-          As of Tux&nbsp;Paint version 0.9.17, Stamps may be either
+          As of <cite style="white-space: nowrap;">Tux Paint</cite> version 0.9.17, Stamps may be either
           PNG bitmap images or SVG vector images. They can be
           full-color or greyscale. The alpha (transparency) channel
           of PNGs is used to determine the actual shape of the
@@ -491,14 +601,14 @@
         </p>
 
         <p>
-          PNGs can be any size, and Tux&nbsp;Paint (by default)
+          PNGs can be any size, and <cite style="white-space: nowrap;">Tux Paint</cite> (by default)
           provides a set of sizing buttons to let the user scale
           the stamp up (larger) and down (smaller).
         </p>
 
         <p>
           SVGs are vector-based, and will be scaled appropriately
-          for the canvas being used in Tux&nbsp;Paint.
+          for the canvas being used in <cite style="white-space: nowrap;">Tux Paint</cite>.
         </p>
 
         <p>
@@ -522,7 +632,7 @@
           <b>Advanced Users:</b> The <a href=
           "ADVANCED-STAMPS-HOWTO.html">Advanced Stamps HOWTO</a>
           describes, in detail, how to make PNG images which will
-          scale perfectly when used as stamps in Tux&nbsp;Paint.
+          scale perfectly when used as stamps in <cite style="white-space: nowrap;">Tux Paint</cite>.
         </p>
         <br clear="all">
       </blockquote>
@@ -531,7 +641,9 @@
           noshade>
 
       <h3>
-        Description Text
+        <a name="description_text">
+          Description Text
+        </a>
       </h3>
 
       <blockquote>
@@ -555,7 +667,7 @@
           <p>
             Additional lines can be added to the text file to
             provide translations of the description, to be
-            displayed when Tux&nbsp;Paint is running in a different
+            displayed when <cite style="white-space: nowrap;">Tux Paint</cite> is running in a different
             locale (like French or Spanish).
           </p>
 
@@ -578,7 +690,7 @@
 
           <p>
             If no translation is available for the language
-            Tux&nbsp;Paint is currently running in, the US English
+            <cite style="white-space: nowrap;">Tux Paint</cite> is currently running in, the US English
             text is used.
           </p>
         </blockquote>
@@ -589,9 +701,9 @@
 
         <blockquote>
           <p>
-            Use NotePad or WordPad to edit/create these files. Be
-            sure to save them as Plain Text, and make sure they
-            have "<code>.txt</code>" at the end of the filename...
+            Use <cite>NotePad</cite> or <cite>WordPad</cite> to edit/create these files.
+            Be sure to save them as plain-text, and make sure they
+            have a "<code>.txt</code>" extension at the end of the filename.
           </p>
         </blockquote>
       </blockquote>
@@ -600,12 +712,15 @@
           noshade>
 
       <h3>
-        Sound Effects
+        <a name="sound_effects">
+          Sound Effects
+        </a>
       </h3>
 
       <blockquote>
         <p>
-          WAVE (".wav") or OGG Vorbis (".ogg") files with the same
+          WAVE ("<code>.wav</code>") or <span style="white-space: nowrap;">OGG Vorbis</span>
+          ("<code>.ogg</code>") files with the same
           name as the PNG or SVG. (e.g.,
           "<code>picture.svg</code>"'s sound effect is the sound
           file "<code>picture.wav</code>" in the same directory.)
@@ -626,7 +741,7 @@
 
           <p>
             "<code>picture.png</code>"'s sound effect, when
-            Tux&nbsp;Paint is run in Spanish mode, would be
+            <cite style="white-space: nowrap;">Tux Paint</cite> is run in Spanish mode, would be
             "<code>picture_es.wav</code>". In French mode,
             "<code>picture_fr.wav</code>". In Brazilian Portuguese
             mode, "<code>picture_pt_BR.wav</code>". And so on...
@@ -634,7 +749,7 @@
 
           <p>
             If no localized sound effect can be loaded,
-            Tux&nbsp;Paint will attempt to load the 'default' sound
+            <cite style="white-space: nowrap;">Tux Paint</cite> will attempt to load the 'default' sound
             file. (e.g., "<code>picture.wav</code>")
           </p>
         </blockquote>
@@ -642,7 +757,7 @@
         <p>
           Note: For descriptive sounds (not sound effects, like a
           bang or a bird chirping), consider using the
-          Descriptive&nbsp;Sounds, described below.
+          <span style="white-space: nowrap;">Descriptive Sounds</span>, described below.
         </p>
       </blockquote>
 
@@ -650,7 +765,9 @@
           noshade>
 
       <h3>
-        Descriptive Sound
+        <a name="descriptive_sound">
+          Descriptive Sound
+        </a>
       </h3>
 
       <blockquote>
@@ -676,7 +793,7 @@
 
           <p>
             "<code>picture.png</code>"'s descriptive sound, when
-            Tux&nbsp;Paint is run in Spanish mode, would be
+            <cite style="white-space: nowrap;">Tux Paint</cite> is run in Spanish mode, would be
             "<code>picture_desc_es.wav</code>". In French mode,
             "<code>picture_desc_fr.wav</code>". In Brazilian
             Portuguese mode, "<code>picture_desc_br_PT.wav</code>".
@@ -685,7 +802,7 @@
 
           <p>
             If no localized descriptive sound can be loaded,
-            Tux&nbsp;Paint will attempt to load the 'default'
+            <cite style="white-space: nowrap;">Tux Paint</cite> will attempt to load the 'default'
             descriptive sound file. (e.g.,
             "<code>picture_desc.wav</code>")
           </p>
@@ -696,7 +813,9 @@
           noshade>
 
       <h3>
-        Stamp Options
+        <a name="stamp_options">
+          Stamp Options
+        </a>
       </h3>
 
       <blockquote>
@@ -794,7 +913,7 @@
             <blockquote>
               <p>
                 Depending on the contents of your stamp, you might
-                want to have Tux&nbsp;Paint use one of a number of
+                want to have <cite style="white-space: nowrap;">Tux Paint</cite> use one of a number of
                 methods when tinting it. Add one of the following
                 lines to the stamp's data file:
               </p>
@@ -850,7 +969,7 @@
             By default, a stamp can be flipped upside down, shown
             as a mirror image, or both. This is done using the
             control buttons below the stamp selector, at the lower
-            right side of the screen in Tux&nbsp;Paint.
+            right side of the screen in <cite style="white-space: nowrap;">Tux Paint</cite>.
           </p>
 
           <p>
@@ -878,10 +997,10 @@
 
         <blockquote>
           <p>
-            By default, Tux&nbsp;Paint assumes that your stamp is
+            By default, <cite style="white-space: nowrap;">Tux Paint</cite> assumes that your stamp is
             sized appropriately for unscaled display on a 608x472
-            canvas. This is the original Tux&nbsp;Paint canvas
-            size, provided by a 640x480 screen. Tux&nbsp;Paint will
+            canvas. This is the original <cite style="white-space: nowrap;">Tux Paint</cite> canvas
+            size, provided by a 640x480 screen. <cite style="white-space: nowrap;">Tux Paint</cite> will
             then adjust the stamp according to the current canvas
             size and, if enabled, the user's stamp size controls.
           </p>
@@ -913,7 +1032,9 @@
       </blockquote>
 
       <h3>
-        Pre-Mirrored and Flipped Images
+        <a name="pre_mirroed_and_flipped_images">
+          Pre-Mirrored and Flipped Images
+        </a>
       </h3>
 
       <blockquote>
@@ -928,7 +1049,7 @@
 
         <p>
           To create a mirrored version of a stamp that you want
-          Tux&nbsp;Paint to use, rather than mirroring one on its
+          <cite style="white-space: nowrap;">Tux Paint</cite> to use, rather than mirroring one on its
           own, simply create a second "<code>.png</code>" or
           "<code>.svg</code>" graphics file with the same name,
           except with "<code><b>_mirror</b></code>" before the
@@ -944,7 +1065,7 @@
         </p>
 
         <p>
-          As of Tux&nbsp;Paint 0.9.18, you may similarly provide a
+          As of <cite style="white-space: nowrap;">Tux Paint</cite> 0.9.18, you may similarly provide a
           pre-flipped image with "<code><b>_flip</b></code>" in the
           name, and/or an image that is both mirrored and flipped,
           by naming it "<code><b>_mirror_flip</b></code>".
@@ -964,7 +1085,9 @@
         noshade>
 
     <h2>
-      Fonts
+      <a name="fonts">
+        Fonts
+      </a>
     </h2>
 
     <blockquote>
@@ -974,13 +1097,13 @@
                   alt=""
                   align="right">
       <p>
-        The fonts used by Tux&nbsp;Paint are TrueType&nbsp;Fonts
+        The fonts used by <cite style="white-space: nowrap;">Tux Paint</cite> are TrueType&nbsp;Fonts
         (TTF).
       </p>
 
       <p>
         Simply place them in the "<code><b>fonts</b></code>"
-        directory. Tux&nbsp;Paint will load the font and provide
+        directory. <cite style="white-space: nowrap;">Tux Paint</cite> will load the font and provide
         four different sizes in the 'Letters' selector when using
         the 'Text' tool.
       </p>
@@ -991,7 +1114,9 @@
         noshade>
 
     <h2>
-      'Starters'
+      <a name="starters">
+        'Starters'
+      </a>
     </h2>
 
     <blockquote>
@@ -1003,23 +1128,29 @@
       <p>
         'Starter' images appear in the 'New' dialog, along with
         solid color background choices. (Note: In earlier versions
-        of Tux&nbsp;Paint, they appeared in the 'Open' dialog,
+        of <cite style="white-space: nowrap;">Tux Paint</cite>, they appeared in the 'Open' dialog,
         together with saved drawings.)
       </p>
 
       <p>
-        Unlike pictures drawn in Tux&nbsp;Paint by users and then
+        Unlike pictures drawn in <cite style="white-space: nowrap;">Tux Paint</cite> by users and then
         opened later, opening a 'starter' creates a new drawing.
         When you save, the 'starter' image is not overwritten.
         Additionally, as you edit your new picture, the contents of
         the original 'starter' affect it.
       </p>
-      <b>Coloring-Book Style</b>
+
+      <h3>
+        <a name="coloring_book_style">
+          Coloring-Book Style
+        </a>
+      </h3>
+
       <blockquote>
         <p>
           The most basic kind of 'starter' is similar to a picture
           in a coloring book. It's an outline of a shape which you
-          can then color in and add details to. In Tux&nbsp;Paint,
+          can then color in and add details to. In <cite style="white-space: nowrap;">Tux Paint</cite>,
           as you draw, type text, or stamp stamps, the outline
           remains 'above' what you draw. You can erase the parts of
           the drawing you made, but you can't erase the outline.
@@ -1029,7 +1160,7 @@
           To create this kind of 'starter' image, simply draw an
           outlined picture in a paint program, make the rest of the
           graphic transparent (that will come out as white in
-          Tux&nbsp;Paint), and save it as a PNG format file.
+          <cite style="white-space: nowrap;">Tux Paint</cite>), and save it as a PNG format file.
         </p>
 
         <p>
@@ -1048,7 +1179,13 @@
           JPEG within).
         </p>
       </blockquote>
-      <b>Scene-Style</b>
+
+      <h3>
+        <a name="scene_style">
+          Scene-Style
+        </a>
+      </h3>
+
       <blockquote>
         <p>
           Along with the 'coloring-book' style overlay, you can
@@ -1089,8 +1226,8 @@
 
       <p>
         The 'starter' images should be the same size as
-        Tux&nbsp;Paint's canvas. (See the "Loading Other Pictures
-        into Tux&nbsp;Paint" section of <a href=
+        <cite style="white-space: nowrap;">Tux Paint</cite>'s canvas. (See the "Loading Other Pictures
+        into <cite style="white-space: nowrap;">Tux Paint</cite>" section of <a href=
         "README.html">README</a> for details on sizing.) If they
         are not, they will be stretched, without affecting the
         shape ("aspect ratio"); however some smudging may be
@@ -1099,14 +1236,14 @@
 
       <p>
         Place them in the "<code><b>starters</b></code>" directory.
-        When the 'New' dialog is accessed in Tux&nbsp;Paint, the
+        When the 'New' dialog is accessed in <cite style="white-space: nowrap;">Tux Paint</cite>, the
         'starter' images will appear in the screen that appears,
         after the various solid color choices.
       </p>
 
       <p>
         <b>Note:</b> 'Starters' can't be saved over from within
-        Tux&nbsp;Paint, since loading a 'starter' is really like
+        <cite style="white-space: nowrap;">Tux Paint</cite>, since loading a 'starter' is really like
         creating a new image. (Instead of being blank, though
         there's already something there to work with.) The 'Save'
         command simply creates a new picture, like it would if the
@@ -1118,7 +1255,7 @@
         via a small text file that has the same name as the saved
         file, but with "<code>.dat</code>" as the extension. This
         allows the overlay and background, if any, to continue to
-        affect the drawing even after Tux&nbsp;Paint has been quit,
+        affect the drawing even after <cite style="white-space: nowrap;">Tux Paint</cite> has been quit,
         or another picture loaded or started. (In other words, if
         you base a drawing on a 'starter' image, it will always be
         affected by it.)
@@ -1130,7 +1267,9 @@
         noshade>
 
     <h2>
-      'Templates'
+      <a name="templates">
+        'Templates'
+      </a>
     </h2>
 
     <blockquote>
@@ -1142,12 +1281,12 @@
       <p>
         'Template' images also appear in the 'New' dialog, along
         with solid color background choices and 'Starters'. (Note:
-        Tux Paint prior to version 0.9.22 did not have the
+        <cite style="white-space: nowrap;">Tux Paint</cite> prior to version 0.9.22 did not have the
         'Template' feature.)
       </p>
 
       <p>
-        Unlike pictures drawn in Tux&nbsp;Paint by users and then
+        Unlike pictures drawn in <cite style="white-space: nowrap;">Tux Paint</cite> by users and then
         opened later, opening a 'template' creates a new drawing.
         When you save, the 'template' image is not overwritten.
         Unlike 'starters', there is no immutable 'layer' above the
@@ -1168,8 +1307,8 @@
 
       <p>
         The 'template' images should be the same size as
-        Tux&nbsp;Paint's canvas. (See the "Loading Other Pictures
-        into Tux&nbsp;Paint" section of <a href=
+        <cite style="white-space: nowrap;">Tux Paint</cite>'s canvas. (See the "Loading Other Pictures
+        into <cite style="white-space: nowrap;">Tux Paint</cite>" section of <a href=
         "README.html">README</a> for details on sizing.) If they
         are not, they will be stretched, without affecting the
         shape ("aspect ratio"); however some smudging may be
@@ -1179,14 +1318,14 @@
       <p>
         Place them in the "<code><b>templates</b></code>"
         directory. When the 'New' dialog is accessed in
-        Tux&nbsp;Paint, the 'template' images will appear in the
+        <cite style="white-space: nowrap;">Tux Paint</cite>, the 'template' images will appear in the
         screen that appears, after the various solid color choices
         and 'starters'.
       </p>
 
       <p>
         <b>Note:</b> 'Templates' can't be saved over from within
-        Tux&nbsp;Paint, since loading a 'template' is really like
+        <cite style="white-space: nowrap;">Tux Paint</cite>, since loading a 'template' is really like
         creating a new image. (Instead of being blank, though
         there's already something there to work with.) The 'Save'
         command simply creates a new picture, like it would if the
@@ -1199,7 +1338,7 @@
         file, but with "<code>.dat</code>" as the extension. This
         allows the background to continue to be available to the
         drawing (e.g., when using the 'Eraser' tool) even after
-        Tux&nbsp;Paint has been quit, or another picture loaded or
+        <cite style="white-space: nowrap;">Tux Paint</cite> has been quit, or another picture loaded or
         started. (In other words, if you base a drawing on a
         'template' image, it will always be affected by it.)
       </p>
@@ -1210,21 +1349,23 @@
         noshade>
 
     <h2>
-      Translations
+      <a name="translations">
+        Translations
+      </a>
     </h2>
 
     <blockquote>
       <p>
-        Tux Paint supports numerous languages, thanks to use of the
-        "gettext" localization library. (See <a href=
-        "OPTIONS.html">OPTIONS</a> for how to change locales in
-        Tux&nbsp;Paint.)
+        <cite style="white-space: nowrap;">Tux Paint</cite> supports numerous languages, thanks to use of the
+        "gettext" localization library. (See <a href="OPTIONS.html">OPTIONS</a>
+        for how to change locales in
+        <cite style="white-space: nowrap;">Tux Paint</cite>.)
       </p>
 
       <p>
-        To translate Tux&nbsp;Paint to a new language, copy the
+        To translate <cite style="white-space: nowrap;">Tux Paint</cite> to a new language, copy the
         translation template file, "<code>tuxpaint.pot</code>"
-        (found in Tux&nbsp;Paint's source code, in the folder
+        (found in <cite style="white-space: nowrap;">Tux Paint</cite>'s source code, in the folder
         "<code>src/po/</code>"). Rename the copy as a
         "<code>.po</code>" file, with an appropriate name for the
         locale you're translating to (e.g., "<code>es.po</code>"
@@ -1237,7 +1378,7 @@
         Open the newly-created "<code>.po</code>" file — you can
         edit in a <i>plain</i> text edtior, such as Emacs, Pico or
         VI on Linux, or NotePad on Windows. The original English
-        text used in Tux&nbsp;Paint is listed in lines starting
+        text used in <cite style="white-space: nowrap;">Tux Paint</cite> is listed in lines starting
         with "<code>msgid</code>". Enter your translations of each
         of these pieces of text in the empty "<code>msgstr</code>"
         lines directly below the corresponding "<code>msgid</code>"
@@ -1267,13 +1408,13 @@
 
       <p>
         <i>Note:</i> It is best to always work off of the
-        <i>latest</i> Tux&nbsp;Paint text catalog template
+        <i>latest</i> <cite style="white-space: nowrap;">Tux Paint</cite> text catalog template
         ("<code>tuxpaint.pot</code>"), since new text is added, and
         old text is occasionally changed. The text catalog for the
-        upcoming, unreleased version of Tux&nbsp;Paint can be found
-        in Tux&nbsp;Paint's CVS repository (see: <a href=
+        upcoming, unreleased version of <cite style="white-space: nowrap;">Tux Paint</cite> can be found
+        in <cite style="white-space: nowrap;">Tux Paint</cite>'s CVS repository (see: <a href=
         "http://www.tuxpaint.org/download/source/cvs/">http://www.tuxpaint.org/download/source/cvs/</a>),
-        and on the Tux&nbsp;Paint website at <a href=
+        and on the <cite style="white-space: nowrap;">Tux Paint</cite> website at <a href=
         "http://www.tuxpaint.org/help/po/">http://www.tuxpaint.org/help/po/</a>.
       </p>
 
@@ -1285,7 +1426,7 @@
 
       <p>
         You may send new or edited translation files to
-        Bill&nbsp;Kendrick, lead developer of Tux&nbsp;Paint, at:
+        Bill&nbsp;Kendrick, lead developer of <cite style="white-space: nowrap;">Tux Paint</cite>, at:
         <a href=
         "mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a>,
         or post them to the "tuxpaint-i18n" mailing list (see:
@@ -1303,7 +1444,7 @@
 
       <p>
         <i>Note:</i> Additional locale support also requires
-        additions to Tux&nbsp;Paint's source code
+        additions to <cite style="white-space: nowrap;">Tux Paint</cite>'s source code
         (<code>/src/i18n.h</code> and <code>/src/i18n.c</code>),
         and requires updates to the <code>Makefile</code>, to have
         the "<code>.po</code>" gettext catalog source files
@@ -1312,15 +1453,19 @@
       </p>
     </blockquote>
 
+    <hr size="2" noshade>
+
     <h2>
-      Alternative Input Methods
+      <a name="input_methods">
+        Alternative Input Methods
+      </a>
     </h2>
 
     <blockquote>
       <p>
-        As of version 0.9.17, Tux&nbsp;Paint's "Text" tool can
+        As of version 0.9.17, <cite style="white-space: nowrap;">Tux Paint</cite>'s "Text" tool can
         provide alternative input methods for some languages. For
-        example, when Tux&nbsp;Paint is running with a Japanese
+        example, when <cite style="white-space: nowrap;">Tux Paint</cite> is running with a Japanese
         locale, the <b>right&nbsp;[Alt]</b> key can be pressed to
         cycle between Latin, Romanized Hiragana and Romanized
         Katakana modes. This allows native characters and words to
@@ -1409,11 +1554,14 @@
 
       <p>
         <i>Note:</i> Additional input method support also requires
-        additions to Tux&nbsp;Paint's source code
+        additions to <cite style="white-space: nowrap;">Tux Paint</cite>'s source code
         (<code>/src/im.c</code>), and requires updates to the
         <code>Makefile</code>, to have the "<code>.im</code>" files
         installed, for use at runtime.
       </p>
     </blockquote>
+
+  <hr size="2" noshade>
+
   </body>
 </html>

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.25 (0.9.25)
+2020.August.29 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -90,6 +90,8 @@ $Id$
     * Cleaned up HTML code of HTML-based documentation.
 
     * Sub-section links within README's Table of Contents.
+
+    * EXTENDING docs cleaned up and Table of Contents added.
 
   * Bug Fixes
     ---------

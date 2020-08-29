@@ -1,19 +1,47 @@
+                                   Extending
                                    Tux Paint
                                  version 0.9.25
-                              Extending Tux Paint
 
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - July 27, 2020
+                        June 14, 2002 - August 29, 2020
 
      ----------------------------------------------------------------------
 
-   If you wish to add or change things like Brushes and Rubber Stamps used by
-   Tux Paint, you can do it fairly easily by simply putting or removing files
-   on your hard disk.
+   +------------------------------------------+
+   |Table of Contents                         |
+   |------------------------------------------|
+   |  * Where Files Go                        |
+   |       * Standard Files                   |
+   |       * Personal Files                   |
+   |  * Brushes                               |
+   |       * Brush Options                    |
+   |  * Stamps                                |
+   |       * Images                           |
+   |       * Description Text                 |
+   |       * Sound Effects                    |
+   |       * Descriptive Sound                |
+   |       * Stamp Options                    |
+   |       * Pre-Mirrored and Flipped Images  |
+   |  * Fonts                                 |
+   |  * 'Starters'                            |
+   |       * Coloring-Book Style              |
+   |       * Scene-Style                      |
+   |  * 'Templates'                           |
+   |  * Translations                          |
+   |  * Alternative Input Methods             |
+   +------------------------------------------+
+
+     ----------------------------------------------------------------------
+
+   If you wish to add or change things like Brushes, Starters, Rubber Stamps
+   and other content used by Tux Paint, you can do so fairly easily by simply
+   adding, changing, or removing files where Tux Paint looks for them.
 
    Note: You'll need to restart Tux Paint for the changes to take effect.
+
+     ----------------------------------------------------------------------
 
 Where Files Go
 
@@ -42,11 +70,12 @@ Where Files Go
 
            C:\Program Files\TuxPaint\data
 
-    Mac OS X
+    macOS
 
          Tux Paint stores its data files inside the "Tux Paint" application
-         (which is actually a special kind of folder on Mac OS X). The
-         following steps explain how to get to the folders within:
+         icon (which is actually a special kind of folder on macOS & Mac OS X
+         before it). The following steps explain how to get to the folders
+         within it:
 
           1. Bring up a 'context' menu by holding the [Control] key and
              clicking the Tux Paint icon the in Finder. (If you have a mouse
@@ -55,10 +84,10 @@ Where Files Go
              window will appear with a folder inside called "Contents."
           3. Open the "Contents" folder and open the "Resources" folder found
              inside.
-          4. There, you will find the "starters", "stamps" and "brushes"
-             folders. Adding new content to these folders will make the
-             content available to any user that launches this copy (icon) of
-             Tux Paint.
+          4. There, you will find various sub-folders, such as "starters",
+             "stamps", "brushes", etc. Adding new content to these folders
+             will make the content available to any user that launches this
+             copy (icon) of Tux Paint.
 
          Note: If you install a newer version of Tux Paint and replace or
          discard the old version, you will lose changes made by following the
@@ -67,13 +96,13 @@ Where Files Go
 
          Tux Paint also looks for files in a "TuxPaint" folder that you can
          place in your system's "Application Support" folder (found under
-         "Library" at the root of your hard disk):
+         "Library" at the root of your filesystem):
 
            /Library/Application Support/TuxPaint/
 
          It also looks for files in the user's "Application Support" folder:
 
-           /Users/(user name)/Library/Application Support/TuxPaint/
+           /Users/(username)/Library/Application Support/TuxPaint/
 
          When you upgrade to a newer version of Tux Paint, the contents of
          this TuxPaint folder will stay the same and remain accessible by all
@@ -91,14 +120,14 @@ Where Files Go
          Your personal Tux Paint folder is stored in your "Application Data".
          For example, on newer Windows (set up for an English-speaking user):
 
-           C:\Documents and Settings\(user name)\Application Data\TuxPaint\
+           C:\Documents and Settings\(username)\Application Data\TuxPaint\
 
     Mac OS X
 
          Your personal Tux Paint folder is stored in your "Application
          Support" folder:
 
-           /Users/(user name)/Library/Application Support/ TuxPaint/
+           /Users/(username)/Library/Application Support/TuxPaint/
 
     Linux and Unix
 
@@ -121,8 +150,8 @@ Where Files Go
 
 Brushes
 
-     The brushes used for drawing with the 'Brush' and 'Lines' tools in
-     Tux Paint are simply PNG image files.
+     The brushes used for drawing with the 'Brush' and 'Lines' tools in Tux
+     Paint are simply PNG image files.
 
      The alpha (transparency) of the PNG image is used to determine the shape
      of the brush, which means that the shape can be 'anti-aliased' and even
@@ -130,9 +159,6 @@ Brushes
 
      Greyscale pixels in the brush PNG will be drawn using the
      currently-selected color in Tux Paint. Color pixels will be tinted.
-
-     Brush images should be no wider than 40 pixels across and no taller than
-     40 pixels high. (i.e., the maximum size can be 40 x 40.)
 
   Brush Options
 
@@ -245,8 +271,8 @@ Stamps
        information and tips.
 
        Advanced Users: The Advanced Stamps HOWTO describes, in detail, how to
-       make PNG images which will scale perfectly when used as stamps in
-       Tux Paint.
+       make PNG images which will scale perfectly when used as stamps in Tux
+       Paint.
 
      ----------------------------------------------------------------------
 
@@ -281,8 +307,8 @@ Stamps
     Windows Users
 
          Use NotePad or WordPad to edit/create these files. Be sure to save
-         them as Plain Text, and make sure they have ".txt" at the end of the
-         filename...
+         them as plain-text, and make sure they have a ".txt" extension at
+         the end of the filename.
 
      ----------------------------------------------------------------------
 
@@ -415,9 +441,9 @@ Stamps
     Initial Stamp Size
 
          By default, Tux Paint assumes that your stamp is sized appropriately
-         for unscaled display on a 608x472 canvas. This is the original
-         Tux Paint canvas size, provided by a 640x480 screen. Tux Paint will
-         then adjust the stamp according to the current canvas size and, if
+         for unscaled display on a 608x472 canvas. This is the original Tux
+         Paint canvas size, provided by a 640x480 screen. Tux Paint will then
+         adjust the stamp according to the current canvas size and, if
          enabled, the user's stamp size controls.
 
          If your stamp would be too big or too small, you can specify a scale
@@ -480,7 +506,7 @@ Fonts
      image is not overwritten. Additionally, as you edit your new picture,
      the contents of the original 'starter' affect it.
 
-     Coloring-Book Style
+  Coloring-Book Style
 
        The most basic kind of 'starter' is similar to a picture in a coloring
        book. It's an outline of a shape which you can then color in and add
@@ -503,7 +529,7 @@ Fonts
        graphics) or KPX (templates from Kid Pix, another childrens' drawing
        program; they are special files which simply contain a JPEG within).
 
-     Scene-Style
+  Scene-Style
 
        Along with the 'coloring-book' style overlay, you can also provide a
        separate background image as part of a 'starter' picture. The overlay
@@ -600,8 +626,8 @@ Fonts
 Translations
 
      Tux Paint supports numerous languages, thanks to use of the "gettext"
-     localization library. (See OPTIONS for how to change locales in
-     Tux Paint.)
+     localization library. (See OPTIONS for how to change locales in Tux
+     Paint.)
 
      To translate Tux Paint to a new language, copy the translation template
      file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
@@ -651,6 +677,8 @@ Translations
      source code (/src/i18n.h and /src/i18n.c), and requires updates to the
      Makefile, to have the ".po" gettext catalog source files compiled into
      ".mo" files, and installed, for use at runtime.
+
+     ----------------------------------------------------------------------
 
 Alternative Input Methods
 
@@ -710,6 +738,8 @@ Alternative Input Methods
      used in Korean to handle Batchim, which may carry over to the next
      character.
 
-     Note: Additional input method support also requires additions to
-     Tux Paint's source code (/src/im.c), and requires updates to the
-     Makefile, to have the ".im" files installed, for use at runtime.
+     Note: Additional input method support also requires additions to Tux
+     Paint's source code (/src/im.c), and requires updates to the Makefile,
+     to have the ".im" files installed, for use at runtime.
+
+     ----------------------------------------------------------------------
