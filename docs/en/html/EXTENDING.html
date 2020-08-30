@@ -1594,7 +1594,7 @@
         the QWERTY keyboard as an example:
       </p>
 
-      <h3><code>qwerty.layout</code></h3>
+      <h3>Layout overview file ("<code>qwerty.layout")</code></h3>
       <blockquote>
         <p>
           This is a text file that specifies the other files used to describe the
@@ -1605,7 +1605,7 @@
             <code>
               layout qwerty.h_layout<br/>
               keymap us-intl-altgr-dead-keys.keymap<br/>
-              dead_keys_map dead_keys.map<br/>
+              <!-- dead_keys_map dead_keys.map --><!-- br/ -->
               composemap en_US.UTF-8_Compose<br/>
               keysymdefs keysymdef.h<br/>
               keyboardlist qwerty.layout default.layout
@@ -1618,9 +1618,15 @@
           "<code>#</code>" (pound/hash) character — it can be used to
           denote comments, as seen in the example above.
         </p>
+        <p>
+          The "<code>keyboardlist</code>" line describes which
+          layouts to switch to, when the user clicks the
+          left and right buttons on the keyboard.
+          (See below.)
+        </p>
       </blockquote>
 
-      <h3><code>qwerty.h_layout</code></h3>
+      <h3>Keyboard layout file ("<code>qwerty.h_layout</code>")</h3>
       <blockquote>
         <p>
           This describes how big the keyboard is (as a W&times;H grid),
@@ -1689,9 +1695,26 @@
           (<b>[1]</b>, <b>[2]</b>, etc.), <b>[Space]</b>, and so on,
           will not.
         </p>
+        <p>
+          Keycodes up to "<code>8</code>" are reserved for internal use.
+          The ones currently used are described below.
+        </p>
+        <ul>
+          <li>
+            <code>0</code> &mdash; empty button
+          </li>
+          <li>
+            <code>1</code> &mdash; next layout
+            (per the layout file's "<code>keyboardlist</code>" setting)
+          </li>
+          <li>
+            <code>2</code> &mdash; previous layout
+            (per the layout file's "<code>keyboardlist</code>" setting)
+          </li>
+        </ul>
       </blockquote>
 
-      <h3><code>us-intl-altgr-dead-keys.keymap</code></h3>
+      <h3>Keymap file ("<code>us-intl-altgr-dead-keys.keymap</code>")</h3>
       <blockquote>
         <p>
           This file defines which numeric keycodes (seen in the
@@ -1734,10 +1757,37 @@
         </blockquote>
       </blockquote>
 
-      <p>
-        ...Work in progress...
-      </p>
+      <h3>Composemap file ("<code>en_US.UTF-8_Compose</code>")</h3>
+      <blockquote>
+        <p>
+          This file describes characters that can be composed by multiple
+          inputs. For example, "<b>[Compose]</b>" followed by "<b>[A]</b>" and
+          "<b>[E]</b>" can be used to create the "<code>æ</code>" character.
+        </p>
+        <p>
+          The file that comes with <cite span="white-space: nowrap;">Tux Paint</cite>
+          is based on the US English UTF-8 (Unicode) composemap that
+          comes with X.Org's <cite style="white-space: nowrap;">X Window system</cite>.
+          The current version from the <cite>Xlib</cite> library as a web page at
+          <a href="https://www.x.org/releases/current/doc/libX11/i18n/compose/en_US.UTF-8.html">https://www.x.org/releases/current/doc/libX11/i18n/compose/en_US.UTF-8.html</a>).
+      </blockquote>
 
+      <h3>Keysym definitions file ("<code>keysymdef.h</code>")</h3>
+      <blockquote>
+        <p>
+          This file (which is a <cite>C</cite> programming language
+          header file) is also from the
+          <cite style="white-space: nowrap;">X Window System</cite>.
+          It defines the Unicode values of each keycap
+          (e.g., "<code>XK_equal</code>" corresponds to
+          "<code>U+003D</code>", for the character "<code>=</code>"
+          ("<code style="white-space: nowrap;">EQUALS SIGN</code>").
+        </p>
+        <p>
+          It is unlikely that any modification will be required of
+          this file.
+        </p>
+      </blockquote>
     </blockquote>
 
     <hr size="2" noshade>

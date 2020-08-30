@@ -754,14 +754,13 @@ On-screen Keyboard
      be shared by different layouts). We'll use the QWERTY keyboard as an
      example:
 
-  qwerty.layout
+  Layout overview file ("qwerty.layout")
 
        This is a text file that specifies the other files used to describe
        the layout and key mappings.
 
          layout qwerty.h_layout
          keymap us-intl-altgr-dead-keys.keymap
-         dead_keys_map dead_keys.map
          composemap en_US.UTF-8_Compose
          keysymdefs keysymdef.h
          keyboardlist qwerty.layout default.layout
@@ -770,7 +769,10 @@ On-screen Keyboard
        any text following a "#" (pound/hash) character — it can be used to
        denote comments, as seen in the example above.
 
-  qwerty.h_layout
+       The "keyboardlist" line describes which layouts to switch to, when the
+       user clicks the left and right buttons on the keyboard. (See below.)
+
+  Keyboard layout file ("qwerty.h_layout")
 
        This describes how big the keyboard is (as a W×H grid), and lists each
        key with its numeric keycode (see the "keymap" file, below), the width
@@ -827,7 +829,14 @@ On-screen Keyboard
        [CapsLock], while numeric keys ([1], [2], etc.), [Space], and so on,
        will not.
 
-  us-intl-altgr-dead-keys.keymap
+       Keycodes up to "8" are reserved for internal use. The ones currently
+       used are described below.
+
+         * 0 — empty button
+         * 1 — next layout (per the layout file's "keyboardlist" setting)
+         * 2 — previous layout (per the layout file's "keyboardlist" setting)
+
+  Keymap file ("us-intl-altgr-dead-keys.keymap")
 
        This file defines which numeric keycodes (seen in the keyboard layout
        files, such as "qwerty.h_layout" described above) should be mapped to
@@ -869,6 +878,24 @@ On-screen Keyboard
          keycode 62 = Shift_R NoSymbol Shift_R Shift_R
          ...
 
-     ...Work in progress...
+  Composemap file ("en_US.UTF-8_Compose")
+
+       This file describes characters that can be composed by multiple
+       inputs. For example, "[Compose]" followed by "[A]" and "[E]" can be
+       used to create the "æ" character.
+
+       The file that comes with Tux Paint is based on the US English UTF-8
+       (Unicode) composemap that comes with X.Org's X Window system. The
+       current version from the Xlib library as a web page at
+       https://www.x.org/releases/current/doc/libX11/i18n/compose/en_US.UTF-8.html).
+
+  Keysym definitions file ("keysymdef.h")
+
+       This file (which is a C programming language header file) is also from
+       the X Window System. It defines the Unicode values of each keycap
+       (e.g., "XK_equal" corresponds to "U+003D", for the character "="
+       ("EQUALS SIGN").
+
+       It is unlikely that any modification will be required of this file.
 
      ----------------------------------------------------------------------
