@@ -748,8 +748,127 @@ On-screen Keyboard
 
      As of version 0.9.22, Tux Paint's "Text" and "Label" tools can present
      an on-screen keyboard that allows the pointer (via a mouse, eye-tracking
-     systems, etc.) to be used to input characters.
+     systems, etc.) to be used to input characters. Files that describe the
+     layout and available keys are stored in Tux Paint's "osk" directory.
+     Each keyboard layout is defined by a number of files (some of which may
+     be shared by different layouts). We'll use the QWERTY keyboard as an
+     example:
 
-     Details forthcoming
+  qwerty.layout
+
+       This is a text file that specifies the other files used to describe
+       the layout and key mappings.
+
+         layout qwerty.h_layout
+         keymap us-intl-altgr-dead-keys.keymap
+         dead_keys_map dead_keys.map
+         composemap en_US.UTF-8_Compose
+         keysymdefs keysymdef.h
+         keyboardlist qwerty.layout default.layout
+
+       Note: Blank lines within the ".layout" file will be ignored, as will
+       any text following a "#" (pound/hash) character — it can be used to
+       denote comments, as seen in the example above.
+
+  qwerty.h_layout
+
+       This describes how big the keyboard is (as a W×H grid), and lists each
+       key with its numeric keycode (see the "keymap" file, below), the width
+       it should be drawn at (typically "1.0", to take one space on the
+       keyboard, but in the example below, notice the "TAB" and "SPACE" keys
+       are much wider), the character or text to display on the key,
+       depending on which modifier keys have been pressed (one each for: no
+       modifiers, [Shift], [AltGr], and [Shift]+[AltGr]), and finally whether
+       or not the key is affected by the [CapsLock] key (use "1") or [AltGr]
+       (alternate graphics) key (use "2"), or not at all (use "0").
+
+         WIDTH 15
+         HEIGHT 5
+
+         KEY 49 1.0 ` ~ ` ~ 0
+         KEY 10 1.0 1 ! ¡ ¹ 0
+         KEY 11 1.0 2 @ ² ˝ 0
+         KEY 12 1.0 3 # · ³ 0
+         KEY 13 1.0 4 $ ¤ £ 0
+         KEY 14 1.0 5 % € ¸ 0
+         KEY 15 1.0 6 ^ ¼ ^ 0
+         ...
+         KEY 21 1.0 = + × ÷ 0
+         KEY 22 2.0 DELETE DELETE DELETE DELETE 0
+
+         NEWLINE
+
+         KEY 23 1.5 TAB TAB TAB TAB 0
+         KEY 24 1.0 q Q ä Ä 1
+         KEY 25 1.0 w W å Å 1
+         KEY 26 1.0 e E é É 1
+         KEY 27 1.0 r R ® ® 1
+         ...
+
+         NEWLINE
+
+         # Arrow to left will change to the previous keyboard
+         KEY 2 1.0 <- <- <- <- 0
+
+         KEY 133 2.0 Cmp Cmp Cmp Cmp 0
+
+         # The ALT or ALTGR keys are used in im to switch the input mode.
+         KEY 64 2.0 Alt Alt Alt Alt 0
+
+         # Space
+         KEY 65 7.0 SPACE SPACE SPACE SPACE 0
+
+         KEY 108 2.0 AltGr AltGr AltGr AltGr 0
+
+         # Arrow to right will change to the next keyboard
+         KEY 1 1.0 -> -> -> -> 0
+
+       Notice here that alphabetic keys ([Q], [W], etc.) will be affected by
+       [CapsLock], while numeric keys ([1], [2], etc.), [Space], and so on,
+       will not.
+
+  us-intl-altgr-dead-keys.keymap
+
+       This file defines which numeric keycodes (seen in the keyboard layout
+       files, such as "qwerty.h_layout" described above) should be mapped to
+       which actual characters that an application such as Tux Paint expects
+       to receive when keys (e.g., on a real keyboard) are pressed.
+
+       If you're using an operating system such as Linux, which runs X-Window
+       and has the "xmodmap" command-line tool available, you can run it with
+       the ("print keymap expressions" option, "-pke", to generate a keymap
+       file.
+
+         keycode 9 = Escape NoSymbol Escape Escape
+         keycode 10 = 1 exclam exclamdown onesuperior 1 exclam 1 exclam
+         NoSymbol onesuperior
+         keycode 11 = 2 at twosuperior dead_doubleacute 2 at 2 at onehalf
+         twosuperior
+         keycode 12 = 3 numbersign periodcentered threesuperior dead_macron
+         periodcentered
+         ...
+         keycode 52 = z Z ae AE Arabic_hamzaonyeh asciitilde guillemotright
+         NoSymbol Greek_zeta Greek_ZETA U037D U03FF
+         keycode 53 = x X x X Arabic_hamza Arabic_sukun guillemotleft
+         NoSymbol Greek_chi Greek_CHI rightarrow leftarrow
+         keycode 54 = c C copyright cent Arabic_hamzaonwaw braceright
+         Greek_psi Greek_PSI copyright
+         keycode 55 = v V v V Arabic_ra braceleft Greek_omega Greek_OMEGA
+         U03D6
+         keycode 56 = b B b B UFEFB UFEF5 Greek_beta Greek_BETA U03D0
+         keycode 57 = n N ntilde Ntilde Arabic_alefmaksura Arabic_maddaonalef
+         Greek_nu Greek_NU U0374 U0375
+         keycode 58 = m M mu mu Arabic_tehmarbuta apostrophe Greek_mu
+         Greek_MU U03FB U03FA
+         keycode 59 = comma less ccedilla Ccedilla Arabic_waw comma comma
+         less guillemotleft
+         keycode 60 = period greater dead_abovedot dead_caron Arabic_zain
+         period period greater guillemotright periodcentered
+         keycode 61 = slash question questiondown dead_hook Arabic_zah
+         Arabic_question_mark slash question
+         keycode 62 = Shift_R NoSymbol Shift_R Shift_R
+         ...
+
+     ...Work in progress...
 
      ----------------------------------------------------------------------

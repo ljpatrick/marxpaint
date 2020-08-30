@@ -1586,11 +1586,158 @@
         As of version 0.9.22, <cite style="white-space: nowrap;">Tux Paint's</cite>
         "Text" and "Label" tools can present an on-screen keyboard that allows
         the pointer (via a mouse, eye-tracking systems, etc.) to be used to
-        input characters.
+        input characters.  Files that describe the layout and available keys
+        are stored in
+        <cite span="white-space: nowrap;">Tux Paint's</cite>
+        "<code>osk</code>" directory.  Each keyboard layout is defined by a number
+        of files (some of which may be shared by different layouts).  We'll use
+        the QWERTY keyboard as an example:
       </p>
+
+      <h3><code>qwerty.layout</code></h3>
+      <blockquote>
+        <p>
+          This is a text file that specifies the other files used to describe the
+          layout and key mappings.
+        </p>
+        <blockquote>
+          <p>
+            <code>
+              layout qwerty.h_layout<br/>
+              keymap us-intl-altgr-dead-keys.keymap<br/>
+              dead_keys_map dead_keys.map<br/>
+              composemap en_US.UTF-8_Compose<br/>
+              keysymdefs keysymdef.h<br/>
+              keyboardlist qwerty.layout default.layout
+            </code>
+          </p>
+        </blockquote>
+        <p>
+          <i>Note:</i> Blank lines within the "<code>.layout</code>" file
+          will be ignored, as will any text following a
+          "<code>#</code>" (pound/hash) character — it can be used to
+          denote comments, as seen in the example above.
+        </p>
+      </blockquote>
+
+      <h3><code>qwerty.h_layout</code></h3>
+      <blockquote>
+        <p>
+          This describes how big the keyboard is (as a W&times;H grid),
+          and lists each key with its numeric keycode (see the "keymap"
+          file, below), the width it should be drawn at (typically
+          "<code>1.0</code>", to take one space on the keyboard,
+          but in the example below, notice the "<code>TAB</code>" and
+          "<code>SPACE</code>" keys are much wider), the character or
+          text to display on the key, depending on which modifier
+          keys have been pressed (one each for: no modifiers,
+          <b>[Shift]</b>, <b>[AltGr]</b>, and <b>[Shift]+[AltGr]</b>),
+          and finally whether or not the key is affected by the
+          <b>[CapsLock]</b> key (use "<code>1</code>") or
+          <b>[AltGr]</b> (alternate graphics) key (use "<code>2</code>"),
+          or not at all (use "<code>0</code>").
+        </p>
+        <blockquote>
+          <p>
+            <code>
+              WIDTH 15<br/>
+              HEIGHT 5<br/>
+              <br/>
+              KEY 49 1.0 ` ~ ` ~ 0<br/>
+              KEY 10 1.0 1 ! ¡ ¹ 0<br/>
+              KEY 11 1.0 2 @ ² ˝ 0<br/>
+              KEY 12 1.0 3 # · ³ 0<br/>
+              KEY 13 1.0 4 $ ¤ £ 0<br/>
+              KEY 14 1.0 5 % € ¸ 0<br/>
+              KEY 15 1.0 6 ^ ¼ ^ 0<br/>
+              ...<br/>
+              KEY 21 1.0 = + × ÷ 0<br/>
+              KEY 22 2.0 DELETE DELETE DELETE DELETE 0<br/>
+              <br/>
+              NEWLINE<br/>
+              <br/>
+              KEY 23 1.5 TAB TAB TAB TAB 0<br/>
+              KEY 24 1.0 q Q ä Ä 1<br/>
+              KEY 25 1.0 w W å Å 1<br/>
+              KEY 26 1.0 e E é É 1<br/>
+              KEY 27 1.0 r R ® ® 1<br/>
+              ...<br/>
+              <br/>
+              NEWLINE<br/>
+              <br/>
+              # Arrow to left will change to the previous keyboard<br/>
+              KEY 2 1.0 &lt;- &lt;- &lt;- &lt;- 0<br/>
+              <br/>
+              KEY 133 2.0 Cmp Cmp Cmp Cmp 0<br/>
+              <br/>
+              # The ALT or ALTGR keys are used in im to switch the input mode.<br/>
+              KEY 64 2.0 Alt Alt Alt Alt 0<br/>
+              <br/>
+              # Space<br/>
+              KEY 65 7.0 SPACE SPACE SPACE SPACE 0<br/>
+              <br/>
+              KEY 108 2.0 AltGr AltGr AltGr AltGr 0<br/>
+              <br/>
+              # Arrow to right will change to the next keyboard<br/>
+              KEY 1 1.0 -&gt; -&gt; -&gt; -&gt; 0
+            </code>
+          </p>
+        </blockquote>
+        <p>
+          Notice here that alphabetic keys (<b>[Q]</b>, <b>[W]</b>, etc.)
+          will be affected by <b>[CapsLock]</b>, while numeric keys
+          (<b>[1]</b>, <b>[2]</b>, etc.), <b>[Space]</b>, and so on,
+          will not.
+        </p>
+      </blockquote>
+
+      <h3><code>us-intl-altgr-dead-keys.keymap</code></h3>
+      <blockquote>
+        <p>
+          This file defines which numeric keycodes (seen in the
+          keyboard layout files, such as "<code>qwerty.h_layout</code>"
+          described above) should be mapped to which actual characters
+          that an application such as
+          <cite style="white-space: nowrap;">Tux Paint</cite>
+          expects to receive when keys (e.g., on a real keyboard)
+          are pressed.
+        </p>
+        <p>
+          If you're using an operating system such as <cite>Linux</cite>,
+          which runs <cite>X-Window</cite> and has the
+          "<code>xmodmap</code>" command-line tool available, you can run
+          it with the ("<span style="white-space: nowrap;">print keymap expressions</span>"
+          option, "<code>-pke</code>", to generate a keymap file.
+        </p>
+        <blockquote>
+          <p>
+            <code>
+              keycode   9 = Escape NoSymbol Escape Escape<br/>
+              keycode  10 = 1 exclam exclamdown onesuperior 1 exclam 1 exclam NoSymbol onesuperior<br/>
+              keycode  11 = 2 at twosuperior dead_doubleacute 2 at 2 at onehalf twosuperior<br/>
+              keycode  12 = 3 numbersign periodcentered threesuperior dead_macron periodcentered<br/>
+              ...<br/>
+              keycode  52 = z Z ae AE Arabic_hamzaonyeh asciitilde guillemotright NoSymbol Greek_zeta Greek_ZETA U037D U03FF<br/>
+              keycode  53 = x X x X Arabic_hamza Arabic_sukun guillemotleft NoSymbol Greek_chi Greek_CHI rightarrow leftarrow<br/>
+              keycode  54 = c C copyright cent Arabic_hamzaonwaw braceright Greek_psi Greek_PSI copyright<br/>
+              keycode  55 = v V v V Arabic_ra braceleft Greek_omega Greek_OMEGA U03D6<br/>
+              keycode  56 = b B b B UFEFB UFEF5 Greek_beta Greek_BETA U03D0<br/>
+              keycode  57 = n N ntilde Ntilde Arabic_alefmaksura Arabic_maddaonalef Greek_nu Greek_NU U0374 U0375<br/>
+              keycode  58 = m M mu mu Arabic_tehmarbuta apostrophe Greek_mu Greek_MU U03FB U03FA<br/>
+              keycode  59 = comma less ccedilla Ccedilla Arabic_waw comma comma less guillemotleft<br/>
+              keycode  60 = period greater dead_abovedot dead_caron Arabic_zain period period greater guillemotright periodcentered<br/>
+              keycode  61 = slash question questiondown dead_hook Arabic_zah Arabic_question_mark slash question<br/>
+              keycode  62 = Shift_R NoSymbol Shift_R Shift_R<br/>
+              ...<br/>
+            </code>
+          </p>
+        </blockquote>
+      </blockquote>
+
       <p>
-        <i>Details forthcoming</i>
+        ...Work in progress...
       </p>
+
     </blockquote>
 
     <hr size="2" noshade>
