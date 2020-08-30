@@ -125,6 +125,10 @@
               <a href="#input_methods">Alternative Input Methods</a>
             </li>
 
+            <li>
+              <a href="#on_screen_keyboard">On-screen Keyboard</a>
+            </li>
+
           </ul>
         </td>
       </tr>
@@ -823,7 +827,7 @@
           Aside from a graphical shape, a textual description, and
           a sound effect, stamps can also be given other
           attributes. To do this, you need to create a
-          'data&nbsp;file' for the stamp.
+          '<span style="white-space: nowrap;">data file</span>' for the stamp.
         </p>
 
         <p>
@@ -925,7 +929,7 @@
 
                 <dd>
                   This is the normal tinting mode. (Hue range is
-                  +/-&nbsp;18&nbsp;degrees, 27 replace.)
+                  &plusmn;18&deg;, 27 replace.)
                 </dd>
 
                 <dt>
@@ -934,7 +938,7 @@
 
                 <dd>
                   This remaps all hues in the stamp. (Hue range is
-                  +/-&nbsp;180&nbsp;degrees.)
+                  &plusmn;180&deg;.)
                 </dd>
 
                 <dt>
@@ -942,8 +946,8 @@
                 </dt>
 
                 <dd>
-                  This like 'anyhue', but a narrower hue angle.
-                  (Hue range is +/-&nbsp;6&nbsp;degrees, 9
+                  This like '<code>anyhue</code>', but a narrower hue angle.
+                  (Hue range is &plusmn;6&deg;, 9
                   replace.)
                 </dd>
 
@@ -952,8 +956,7 @@
                 </dt>
 
                 <dd>
-                  This is map 'black through white' to 'black
-                  through destination'.
+                  This maps 'black through white' to 'black through destination'.
                 </dd>
               </dl>
             </blockquote>
@@ -1009,10 +1012,11 @@
             If your stamp would be too big or too small, you can
             specify a scale factor. If your stamp would be 2.5
             times as wide (or tall) as it should be, add the option
-            "<code><b>scale 40%</b></code>" or "<code><b>scale
-            5/2</b></code>" or "<code><b>scale 2.5</b></code>" or
-            "<code><b>scale 2:5</b></code>" to your image. You may
-            include an "<code><b>=</b></code>" if you wish, as in
+            "<code style="white-space: nowrap;"><b>scale 40%</b></code>" or
+            "<code style="white-space: nowrap;"><b>scale 5/2</b></code>" or
+            "<code style="white-space: nowrap;"><b>scale 2.5</b></code>" or
+            "<code style="white-space: nowrap;"><b>scale 2:5</b></code>" to your image.
+            You may include an "<code><b>=</b></code>" if you wish, as in
             "<code><b>scale=40%</b></code>".
           </p>
         </blockquote>
@@ -1042,7 +1046,7 @@
           In some cases, you may wish to provide a pre-drawn
           version of a stamp's mirror-image, flipped image, or even
           both. For example, imagine a picture of a fire&nbsp;truck
-          with the words "<i>Fire&nbsp;Department</i>" written
+          with the words "<i style="white-space: nowrap;">Fire Department</i>" written
           across the side. You probably do not want that text to
           appear backwards when the image is flipped!
         </p>
@@ -1097,7 +1101,8 @@
                   alt=""
                   align="right">
       <p>
-        The fonts used by <cite style="white-space: nowrap;">Tux Paint</cite> are TrueType&nbsp;Fonts
+        The fonts used by <cite style="white-space: nowrap;">Tux Paint</cite> are
+        <span style="white-space: nowrap;">TrueType Fonts</span>
         (TTF).
       </p>
 
@@ -1226,9 +1231,10 @@
 
       <p>
         The 'starter' images should be the same size as
-        <cite style="white-space: nowrap;">Tux Paint</cite>'s canvas. (See the "Loading Other Pictures
-        into <cite style="white-space: nowrap;">Tux Paint</cite>" section of <a href=
-        "README.html">README</a> for details on sizing.) If they
+        <cite style="white-space: nowrap;">Tux Paint's</cite> canvas.
+        (See the "Loading Other Pictures into
+        <cite style="white-space: nowrap;">Tux Paint</cite>" section of
+        <a href="README.html">README</a> for details on sizing.) If they
         are not, they will be stretched, without affecting the
         shape ("aspect ratio"); however some smudging may be
         applied to the edges.
@@ -1307,9 +1313,9 @@
 
       <p>
         The 'template' images should be the same size as
-        <cite style="white-space: nowrap;">Tux Paint</cite>'s canvas. (See the "Loading Other Pictures
-        into <cite style="white-space: nowrap;">Tux Paint</cite>" section of <a href=
-        "README.html">README</a> for details on sizing.) If they
+        <cite style="white-space: nowrap;">Tux Paint's</cite> canvas.
+        (See the "Loading Other Pictures into <cite style="white-space: nowrap;">Tux Paint</cite>"
+        section of <a href="README.html">README</a> for details on sizing.) If they
         are not, they will be stretched, without affecting the
         shape ("aspect ratio"); however some smudging may be
         applied to the edges.
@@ -1365,12 +1371,13 @@
       <p>
         To translate <cite style="white-space: nowrap;">Tux Paint</cite> to a new language, copy the
         translation template file, "<code>tuxpaint.pot</code>"
-        (found in <cite style="white-space: nowrap;">Tux Paint</cite>'s source code, in the folder
+        (found in <cite style="white-space: nowrap;">Tux Paint's</cite> source code, in the folder
         "<code>src/po/</code>"). Rename the copy as a
         "<code>.po</code>" file, with an appropriate name for the
         locale you're translating to (e.g., "<code>es.po</code>"
         for Spanish; or "<code>pt_BR.po</code>" for
-        Brazilian&nbsp;Portuguese, versus "<code>pt.po</code>" or
+        <span style="white-space: nowrap;">Brazilian Portuguese</span>,
+        versus "<code>pt.po</code>" or
         "<code>pt_PT.po</code>" for Portuguese spoken in Portugal.)
       </p>
 
@@ -1391,12 +1398,12 @@
 
       <blockquote>
         <p>
-          <code>msgid "Smudge"<br>
+          <code>
+          msgid "Smudge"<br>
           msgstr "<u>Manchar</u>"<br>
-          &nbsp;<br>
+          <br>
           msgid "Click and drag to draw large bricks."<br>
-          msgstr "<u>Haz clic y arrastra para dibujar ladrillos
-          grandes.</u>"</code>
+          msgstr "<u>Haz clic y arrastra para dibujar ladrillos grandes.</u>"</code>
         </p>
       </blockquote>
 
@@ -1412,7 +1419,7 @@
         ("<code>tuxpaint.pot</code>"), since new text is added, and
         old text is occasionally changed. The text catalog for the
         upcoming, unreleased version of <cite style="white-space: nowrap;">Tux Paint</cite> can be found
-        in <cite style="white-space: nowrap;">Tux Paint</cite>'s Git repository (see: <a href=
+        in <cite style="white-space: nowrap;">Tux Paint's</cite> Git repository (see: <a href=
         "http://www.tuxpaint.org/download/source/git/">http://www.tuxpaint.org/download/source/git/</a>),
         and on the <cite style="white-space: nowrap;">Tux Paint</cite> website at <a href=
         "http://www.tuxpaint.org/help/po/">http://www.tuxpaint.org/help/po/</a>.
@@ -1426,7 +1433,8 @@
 
       <p>
         You may send new or edited translation files to
-        Bill&nbsp;Kendrick, lead developer of <cite style="white-space: nowrap;">Tux Paint</cite>, at:
+        <span style="white-space: nowrap;">Bill Kendrick</span>,
+        lead developer of <cite style="white-space: nowrap;">Tux Paint</cite>, at:
         <a href=
         "mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a>,
         or post them to the "tuxpaint-i18n" mailing list (see:
@@ -1444,7 +1452,7 @@
 
       <p>
         <i>Note:</i> Additional locale support also requires
-        additions to <cite style="white-space: nowrap;">Tux Paint</cite>'s source code
+        additions to <cite style="white-space: nowrap;">Tux Paint's</cite> source code
         (<code>/src/i18n.h</code> and <code>/src/i18n.c</code>),
         and requires updates to the <code>Makefile</code>, to have
         the "<code>.po</code>" gettext catalog source files
@@ -1453,7 +1461,7 @@
       </p>
     </blockquote>
 
-    <hr size="2" noshade>
+    <hr size="1" noshade>
 
     <h2>
       <a name="input_methods">
@@ -1463,14 +1471,15 @@
 
     <blockquote>
       <p>
-        As of version 0.9.17, <cite style="white-space: nowrap;">Tux Paint</cite>'s "Text" tool can
+        As of version 0.9.17, <cite style="white-space: nowrap;">Tux Paint's</cite> "Text" tool can
         provide alternative input methods for some languages. For
         example, when <cite style="white-space: nowrap;">Tux Paint</cite> is running with a Japanese
-        locale, the <b>right&nbsp;[Alt]</b> key can be pressed to
+        locale, the <b style="white-space: nowrap;">right [Alt]</b> key can be pressed to
         cycle between Latin, Romanized Hiragana and Romanized
         Katakana modes. This allows native characters and words to
         be entered into the "Text" tool by typing one or more keys
-        on a keyboard with Latin characters (e.g., a US&nbsp;QWERTY
+        on a keyboard with Latin characters (e.g., a
+        <span style="white-space: nowrap;">US QWERTY</span>
         keyboard).
       </p>
 
@@ -1485,9 +1494,10 @@
         The "<code>.im</code>" file can have multiple character
         mapping sections for different character mapping modes. For
         example, on a Japanese typing system, typing
-        <b>[K]</b>&nbsp;<b>[A]</b> in Hiragana mode generates a
+        <span style="white-space: nowrap;"><b>[K]</b> <b>[A]</b></span>
+        in Hiragana mode generates a
         different Unicode character than typing
-        <b>[K]</b>&nbsp;<b>[A]</b> in Katakana mode.
+        <span style="white-space: nowrap;"><b>[K]</b> <b>[A]</b></span> in Katakana mode.
       </p>
 
       <p>
@@ -1521,19 +1531,19 @@
       <blockquote>
         <p>
           <code># Hiragana<br>
-          304B &nbsp; ka &nbsp; -<br>
-          304C &nbsp; ga &nbsp; -<br>
-          304D &nbsp; ki &nbsp; -<br>
-          304E &nbsp; gi &nbsp; -<br>
-          304D:3083 &nbsp; kya &nbsp; -<br>
-          3063:305F &nbsp; tta &nbsp; -<br>
-          &nbsp;<br>
+          304B ka -<br>
+          304C ga -<br>
+          304D ki -<br>
+          304E gi -<br>
+          304D:3083 kya -<br>
+          3063:305F tta -<br>
+         <br>
           # Katakana<br>
           section<br>
-          30AB &nbsp; ka &nbsp; -<br>
-          30AC &nbsp; ga &nbsp; -<br>
-          30AD &nbsp; ki &nbsp; -<br>
-          30AE &nbsp; gi &nbsp; -</code>
+          30AB ka -<br>
+          30AC ga -<br>
+          30AD ki -<br>
+          30AE gi -</code>
         </p>
       </blockquote>
 
@@ -1554,14 +1564,36 @@
 
       <p>
         <i>Note:</i> Additional input method support also requires
-        additions to <cite style="white-space: nowrap;">Tux Paint</cite>'s source code
+        additions to <cite style="white-space: nowrap;">Tux Paint's</cite> source code
         (<code>/src/im.c</code>), and requires updates to the
         <code>Makefile</code>, to have the "<code>.im</code>" files
         installed, for use at runtime.
       </p>
+
     </blockquote>
 
-  <hr size="2" noshade>
+    <hr size="1"
+        noshade>
+
+    <h2>
+      <a name="on_screen_keyboard">
+        On-screen Keyboard
+      </a>
+    </h2>
+
+    <blockquote>
+      <p>
+        As of version 0.9.22, <cite style="white-space: nowrap;">Tux Paint's</cite>
+        "Text" and "Label" tools can present an on-screen keyboard that allows
+        the pointer (via a mouse, eye-tracking systems, etc.) to be used to
+        input characters.
+      </p>
+      <p>
+        <i>Details forthcoming</i>
+      </p>
+    </blockquote>
+
+    <hr size="2" noshade>
 
   </body>
 </html>

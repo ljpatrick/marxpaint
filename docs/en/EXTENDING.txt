@@ -31,6 +31,7 @@
    |  * 'Templates'                           |
    |  * Translations                          |
    |  * Alternative Input Methods             |
+   |  * On-screen Keyboard                    |
    +------------------------------------------+
 
      ----------------------------------------------------------------------
@@ -406,19 +407,18 @@ Stamps
              one of the following lines to the stamp's data file:
 
              "tinter=normal" (default)
-                     This is the normal tinting mode. (Hue range is
-                     +/- 18 degrees, 27 replace.)
+                     This is the normal tinting mode. (Hue range is ±18°, 27
+                     replace.)
 
              "tinter=anyhue"
-                     This remaps all hues in the stamp. (Hue range is
-                     +/- 180 degrees.)
+                     This remaps all hues in the stamp. (Hue range is ±180°.)
 
              "tinter=narrow"
                      This like 'anyhue', but a narrower hue angle. (Hue range
-                     is +/- 6 degrees, 9 replace.)
+                     is ±6°, 9 replace.)
 
              "tinter=vector"
-                     This is map 'black through white' to 'black through
+                     This maps 'black through white' to 'black through
                      destination'.
 
     Unalterable Stamps
@@ -647,7 +647,7 @@ Translations
 
        msgid "Smudge"
        msgstr "Manchar"
-        
+
        msgid "Click and drag to draw large bricks."
        msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
@@ -687,8 +687,8 @@ Alternative Input Methods
      with a Japanese locale, the right [Alt] key can be pressed to cycle
      between Latin, Romanized Hiragana and Romanized Katakana modes. This
      allows native characters and words to be entered into the "Text" tool by
-     typing one or more keys on a keyboard with Latin characters (e.g., a
-     US QWERTY keyboard).
+     typing one or more keys on a keyboard with Latin characters (e.g., a US
+     QWERTY keyboard).
 
      To create an input method for a new locale, create a text file with a
      name based on the locale (e.g., "ja" for Japanese), with ".im" as the
@@ -715,19 +715,19 @@ Alternative Input Methods
      Example:
 
        # Hiragana
-       304B   ka   -
-       304C   ga   -
-       304D   ki   -
-       304E   gi   -
-       304D:3083   kya   -
-       3063:305F   tta   -
-        
+       304B ka -
+       304C ga -
+       304D ki -
+       304E gi -
+       304D:3083 kya -
+       3063:305F tta -
+
        # Katakana
        section
-       30AB   ka   -
-       30AC   ga   -
-       30AD   ki   -
-       30AE   gi   -
+       30AB ka -
+       30AC ga -
+       30AD ki -
+       30AE gi -
 
      Note: Blank lines within the ".im" file will be ignored, as will any
      text following a "#" (pound/hash) character — it can be used to denote
@@ -741,5 +741,15 @@ Alternative Input Methods
      Note: Additional input method support also requires additions to Tux
      Paint's source code (/src/im.c), and requires updates to the Makefile,
      to have the ".im" files installed, for use at runtime.
+
+     ----------------------------------------------------------------------
+
+On-screen Keyboard
+
+     As of version 0.9.22, Tux Paint's "Text" and "Label" tools can present
+     an on-screen keyboard that allows the pointer (via a mouse, eye-tracking
+     systems, etc.) to be used to input characters.
+
+     Details forthcoming
 
      ----------------------------------------------------------------------
