@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 28, 2020
+  June 14, 2002 - August 30, 2020
 */
 
 
@@ -13262,7 +13262,7 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 
   deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
 
-  if (shape_reverse && shape_mode == SHAPEMODE_CORNER) {
+  if (shape_reverse) {
     deg = (deg + 180) % 360;
   }
 
