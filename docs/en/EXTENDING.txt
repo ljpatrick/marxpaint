@@ -657,8 +657,8 @@ Translations
      Note: It is best to always work off of the latest Tux Paint text catalog
      template ("tuxpaint.pot"), since new text is added, and old text is
      occasionally changed. The text catalog for the upcoming, unreleased
-     version of Tux Paint can be found in Tux Paint's CVS repository (see:
-     http://www.tuxpaint.org/download/source/cvs/), and on the Tux Paint
+     version of Tux Paint can be found in Tux Paint's Git repository (see:
+     http://www.tuxpaint.org/download/source/git/), and on the Tux Paint
      website at http://www.tuxpaint.org/help/po/.
 
      To edit an existing translation, download the latest ".po" file for that
@@ -670,7 +670,7 @@ Translations
 
      Alternatively, if you have an account with SourceForge.net, you can
      request to be added to the "tuxpaint" project and receive write-access
-     to the CVS source code repository so that you may commit your changes
+     to the Git source code repository so that you may commit your changes
      directly.
 
      Note: Additional locale support also requires additions to Tux Paint's
