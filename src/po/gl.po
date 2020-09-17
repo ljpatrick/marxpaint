@@ -1,16 +1,18 @@
 # Galician translation Tux Paint.
 # Copyright (C) 2015 Tux Paint.
 # This file is distributed under the same license as the Tux Paint package.
+#
 # Translators:
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2005-2006
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2015
-# Miguel A. Bouzada <mbouzada@gmail.com>, 2017.
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2017
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-15 16:42-0700\n"
-"PO-Revision-Date: 2020-08-16 09:19+0200\n"
+"PO-Revision-Date: 2020-09-03 18:31+0200\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -18,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -533,7 +535,7 @@ msgstr "Escolle unha cor ou unha imaxe coa que iniciar un novo debuxo."
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:154
 msgid "Open…"
-msgstr "Abrir..."
+msgstr "Abrir…"
 
 #. Response to 'save' action
 #: ../tools.h:157
@@ -543,7 +545,7 @@ msgstr "Gardouse a túa imaxe!"
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:160
 msgid "Printing…"
-msgstr "Imprimindo..."
+msgstr "Imprimindo…"
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:163
@@ -697,7 +699,7 @@ msgstr "Son sen silenciar."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:3167
 msgid "Please wait…"
-msgstr "Agarda un chisco..."
+msgstr "Agarda un chisco…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7923
@@ -822,7 +824,7 @@ msgid ""
 "perpendicularly to open or close the blinds."
 msgstr ""
 "Preme preto do bordo do debuxo para poñer unha persiana sobre el. Move o "
-"rato perpendicularmente para abrir ou pechas as persianas. "
+"rato perpendicularmente para abrir ou pechas as persianas."
 
 #: ../../magic/src/blocks_chalk_drip.c:129
 msgid "Blocks"
@@ -900,7 +902,7 @@ msgstr "Confeti"
 
 #: ../../magic/src/confetti.c:88
 msgid "Click to throw confetti!"
-msgstr "Preme para lanzar confeti"
+msgstr "Preme para lanzar confeti."
 
 #: ../../magic/src/distortion.c:134
 msgid "Distortion"
@@ -932,7 +934,7 @@ msgstr "Preme e arrastra o rato para clarexar algunhas partes do debuxo."
 
 #: ../../magic/src/fade_darken.c:129
 msgid "Click to lighten your entire picture."
-msgstr "Preme para clarexar todo o debuxo"
+msgstr "Preme para clarexar todo o debuxo."
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click and drag the mouse to darken parts of your picture."
@@ -1042,7 +1044,7 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Preme e arrastra o rato para debuxar con dous pinceis simétricos da dereita "
+"Preme e arrastra o rato para debuxar con dous pinceis simétricos á dereita e "
 "á esquerda do debuxo."
 
 #: ../../magic/src/kalidescope.c:152
@@ -1050,7 +1052,7 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Preme e arrastra o rato para debuxar con dous pinceis simétricos de arriba a "
+"Preme e arrastra o rato para debuxar con dous pinceis simétricos  arriba e "
 "abaixo do debuxo."
 
 #: ../../magic/src/kalidescope.c:156
@@ -1089,7 +1091,7 @@ msgstr "Preme e arrastra o rato para pintar cunha cor metalizada."
 
 #: ../../magic/src/mirror_flip.c:110
 msgid "Mirror"
-msgstr "Reflectir"
+msgstr "Espello"
 
 #: ../../magic/src/mirror_flip.c:112
 msgid "Flip"
@@ -1179,7 +1181,7 @@ msgstr "Preme para converter a negativo o debuxo."
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
-msgstr "Noise"
+msgstr "Ruído"
 
 #: ../../magic/src/noise.c:70
 msgid "Click and drag the mouse to add noise to parts of your picture."
@@ -1188,7 +1190,7 @@ msgstr ""
 
 #: ../../magic/src/noise.c:71
 msgid "Click to add noise to your entire picture."
-msgstr "Preme para engadirlle ruído a todo o debuxo"
+msgstr "Preme para engadirlle ruído a todo o debuxo."
 
 #: ../../magic/src/perspective.c:147
 msgid "Perspective"
@@ -1266,11 +1268,11 @@ msgstr ""
 
 #: ../../magic/src/ripples.c:102
 msgid "Ripples"
-msgstr "Ondulacións"
+msgstr "Rizos"
 
 #: ../../magic/src/ripples.c:108
 msgid "Click to make ripples appear over your picture."
-msgstr "Preme para facer que aparezan unhas ondas no debuxo."
+msgstr "Preme para facer que aparezan unhas ondas rizadas no debuxo."
 
 #: ../../magic/src/rosette.c:115
 msgid "Rosette"
@@ -1354,7 +1356,7 @@ msgstr ""
 
 #: ../../magic/src/snow.c:71
 msgid "Snow Ball"
-msgstr "Cerellos"
+msgstr "Bolas de neve"
 
 #: ../../magic/src/snow.c:72
 msgid "Snow Flake"
@@ -1362,11 +1364,11 @@ msgstr "Folerpas"
 
 #: ../../magic/src/snow.c:76
 msgid "Click to add snow balls to your picture."
-msgstr "Preme para engadirlle cerellos ao debuxo"
+msgstr "Preme para engadirlle cerellos ao debuxo."
 
 #: ../../magic/src/snow.c:77
 msgid "Click to add snow flakes to your picture."
-msgstr "Preme para engadirlle folerpas ao debuxo"
+msgstr "Preme para engadirlle folerpas ao debuxo."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
@@ -1395,7 +1397,7 @@ msgstr "Preme e arrastra o rato para debuxar frechas feitas con cadenetas."
 
 #: ../../magic/src/string.c:153
 msgid "Draw string art arrows with free angles."
-msgstr "Debuxa cadenetas con forma de frecha de varios ángulos. "
+msgstr "Debuxa cadenetas con forma de frecha de varios ángulos."
 
 #: ../../magic/src/tint.c:74
 msgid "Tint"
@@ -1496,7 +1498,7 @@ msgstr "Preme e arrastra o rato para obter un efecto excluínte (XOR)"
 
 #: ../../magic/src/xor.c:101
 msgid "Click to draw a XOR effect on the whole picture"
-msgstr "Preme para obter un efecto excluínte (XOR) en todo o debuxo."
+msgstr "Preme para obter un efecto excluínte (XOR) en todo o debuxo"
 
 #~ msgid "`\\%_@$~#{<(^&*"
 #~ msgstr "`\\%_@$~#{<(^&*"
