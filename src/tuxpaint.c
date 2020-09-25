@@ -8082,6 +8082,11 @@ static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
  */
 static SDL_Surface *loadimagerb(const char *const fname)
 {
+  /* For the vaste majority of users return as soon as possible and touch the image as less as we can. */
+  if (button_h == ORIGINAL_BUTTON_SIZE)
+    return(loadimage(fname));
+
+  /* Going to resize the button */
   int w,h;
   SDL_Surface *aux_surf;
   SDL_Surface *aux2_surf;
@@ -10560,7 +10565,7 @@ static void draw_tux_text_ex(int which_tux, const char *const str, int want_righ
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
   /* Wide enough for Tux, or two stamp sound buttons (whichever's wider) */
-  w = max(img_tux[which_tux]->w, img_btnsm_up->w) + 5;
+  w = max(img_tux[which_tux]->w, img_btnsm_up->w * 2) + 5;
 
   wordwrap_text_ex(str, black, w, r_tuxarea.y, r_tuxarea.w, want_right_to_left, locale_text);
 
