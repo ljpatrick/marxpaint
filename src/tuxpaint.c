@@ -708,7 +708,7 @@ static SDL_Rect old_dest;
 
 static int button_w;            /* was 48 */
 static int button_h;            /* was 48 */
-static float button_scale = 2; /* To be set from user preferences, should default to 1 Change to 1.5, 2, 2.5, etc to test for now */
+static float button_scale;      /* scale factor to be applied to the  size of buttons */
 static int color_button_w;      /* was 32 */
 static int color_button_h;      /* was 48 */
 
@@ -23151,6 +23151,17 @@ static void setup_config(char *argv[])
         native_screensize = 1;
       fullscreen = strcmp(tmpcfg.parsertmp_fullscreen_native, "no");
     }
+  if (tmpcfg.button_size)
+    {
+      if (strtof(tmpcfg.button_size, NULL) < 24 || strtof(tmpcfg.button_size, NULL) > 192)
+        {
+          fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
+          exit(1);
+        }
+      button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
+    }
+  else
+    button_scale = 1;
   if (tmpcfg.stamp_size_override)
     {
       if (!strcmp(tmpcfg.stamp_size_override, "default"))
