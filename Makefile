@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 24, 2020
+# June 14, 2002 - October 14, 2020
 
 
 # The version number, for release:
