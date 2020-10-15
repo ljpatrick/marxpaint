@@ -23,13 +23,11 @@ SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
   OS:=windows
   GPERF:=/usr/bin/gperf
-  LIBGCC_S_DLL:=libgcc_s_dw2-1.dll
   MINGW_DIR:=/mingw32
 else
   ifeq ($(findstring MINGW64, $(SYSNAME)),MINGW64)
     OS:=windows
     GPERF:=/usr/bin/gperf
-    LIBGCC_S_DLL:=libgcc_s_seh-1.dll
     MINGW_DIR:=/mingw64
   else
     ifeq ($(SYSNAME),Darwin)
