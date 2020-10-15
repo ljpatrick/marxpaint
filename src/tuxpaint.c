@@ -12162,8 +12162,8 @@ static int do_prompt_image_flash(const char *const text,
   return (do_prompt_image_flash_snd(text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE, ox, oy));
 }
 
-#define PROMPT_LEFT 96
-#define PROMPT_W 440
+#define PROMPT_W (min(canvas->w, 440 * button_scale))
+#define PROMPT_LEFT (r_tools.w - PROMPTOFFSETX + canvas->w / 2 - PROMPT_W / 2 - 4)
 
 /**
  * FIXME
@@ -12176,7 +12176,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 {
   int oox, ooy, nx, ny;
   SDL_Event event;
-  SDL_Rect dest;
+  SDL_Rect dest, dest_back;
   int done, ans, w, counter;
   SDL_Color black = { 0, 0, 0, 0 };
   SDLKey key;
@@ -12245,13 +12245,13 @@ static int do_prompt_image_flash_snd(const char *const text,
       ooy = oy - w;
 
       nx = PROMPT_LEFT + r_ttools.w - w + PROMPTOFFSETX;
-      ny = 94 + r_ttools.w - w + PROMPTOFFSETY;
+      ny = 2 + canvas->h / 2 - w;
 
       dest.x = ((nx * w) + (oox * (r_ttools.w - w))) / r_ttools.w;
       dest.y = ((ny * w) + (ooy * (r_ttools.w - w))) / r_ttools.w;
       dest.w = (PROMPT_W - r_ttools.w * 2) + w * 2;
       dest.h = w * 2;
-      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 224 - w /gd_tools.cols, 224 - w / gd_tools.cols, 244 - w / gd_tools.cols));
+      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 224 - (int)(w / button_scale), 224 - (int)(w / button_scale), 244 - (int)(w / button_scale)));
 
       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
@@ -12259,7 +12259,9 @@ static int do_prompt_image_flash_snd(const char *const text,
         SDL_Delay(1);
 
       if (w == r_ttools.w - 2)
+	{
         SDL_BlitSurface(backup, NULL, screen, NULL);
+	}
     }
 
   SDL_FreeSurface(backup);
@@ -12283,10 +12285,10 @@ static int do_prompt_image_flash_snd(const char *const text,
       for (i = 8; i > 0; i = i - 2)
         {
           dest.x = PROMPT_LEFT + r_ttools.w - (w - 4) + i + PROMPTOFFSETX;
-          dest.y = 94 + r_ttools.w - (w - 4) + i + PROMPTOFFSETY;
+          dest.y = 94 / button_scale + r_ttools.w / button_scale - (w - 4) + i + PROMPTOFFSETY;
           dest.w = (PROMPT_W - r_ttools.w * 2) + (w - 4) * 2;
           dest.h = (w - 4) * 2;
-
+	  dest.y = canvas->h / 2 - dest.h / 2 + i + 2;
           SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
         }
 
@@ -12297,12 +12299,11 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   w = w - 6;
 
-  dest.x = PROMPT_LEFT + r_ttools.w - w + PROMPTOFFSETX;
-  dest.y = 94 + r_ttools.w - w + PROMPTOFFSETY;
-  dest.w = (PROMPT_W - r_ttools.w * 2) + w * 2;
-  dest.h = w * 2;
+  dest_back.x =  dest.x = PROMPT_LEFT + r_ttools.w - w + PROMPTOFFSETX;
+  dest_back.w = dest.w = (PROMPT_W - r_ttools.w * 2) + w * 2;
+  dest_back.h = dest.h = w * 2;
+  dest_back.y = dest.y = canvas->h / 2 - dest.h / 2 + 2;
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
-
 
   /* Make sure image on the right isn't too tall!
      (Thumbnails in Open dialog are larger on larger displays, and can
@@ -12313,9 +12314,9 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (img1 != NULL)
     {
-      if (img1->h > 64 && img2 != NULL /* Only scale if it matters */ )
+      if (img1->h > 64 * button_scale && img2 != NULL /* Only scale if it matters */ )
         {
-          img1b = thumbnail(img1, 80, 64, 1);
+          img1b = thumbnail(img1, 80 * button_scale, 64 * button_scale, 1);
           free_img1b = 1;
         }
       else
@@ -12364,12 +12365,12 @@ static int do_prompt_image_flash_snd(const char *const text,
       txt_btn_right = btn_left;
     }
 
-  wordwrap_text(text, black, txt_left, 100 + PROMPTOFFSETY, txt_right, 1);
+  wordwrap_text(text, black, txt_left, dest.y + 2 , txt_right, 1);
 
 
   /* Draw the images (if any, and if not animated): */
 
-  img_y = 100 + PROMPTOFFSETY + 4;
+   img_y = dest_back.y + 6;
 
   if (img1b != NULL)
     {
@@ -12409,7 +12410,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   /* Draw yes button: */
 
   dest.x = btn_left;
-  dest.y = 178 + PROMPTOFFSETY;
+  dest.y = dest_back.y + dest_back.h - 4 - button_h - 4 - button_h;
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
 
@@ -12501,13 +12502,15 @@ static int do_prompt_image_flash_snd(const char *const text,
             {
               if (event.button.x >= btn_left && event.button.x < btn_left + img_yes->w)
                 {
-                  if (event.button.y >= 178 + PROMPTOFFSETY && event.button.y < 178 + PROMPTOFFSETY + img_yes->h)
+                  if (event.button.y >= dest_back.y + dest_back.h - 4 - button_h - 4 - button_h &&
+		      event.button.y < dest_back.y + dest_back.h - 4 - button_h - 4 - button_h + img_yes->h)
                     {
                       ans = 1;
                       done = 1;
                     }
                   else if (strlen(btn_no) != 0 &&
-                           event.button.y >= 178 + PROMPTOFFSETY + img_yes->h + 5 && event.button.y < 178 + PROMPTOFFSETY + img_yes->h + 5 + img_no->h)
+                           event.button.y >= dest_back.y + dest_back.h - 4 - button_h &&
+			   event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)
                     {
                       ans = 0;
                       done = 1;
@@ -12518,10 +12521,11 @@ static int do_prompt_image_flash_snd(const char *const text,
             {
               if (event.button.x >= btn_left &&
                   event.button.x < btn_left + img_yes->w &&
-                  ((event.button.y >= 178 + PROMPTOFFSETY &&
-                    event.button.y < 178 + img_yes->h + PROMPTOFFSETY) ||
+                  ((event.button.y >= dest_back.y + dest_back.h - 4 - button_h - 4 - button_h &&
+                    event.button.y < dest_back.y + dest_back.h - 4 - button_h - 4 - button_h + img_yes->h) ||
                    (strlen(btn_no) != 0 &&
-                    event.button.y >=  178 + PROMPTOFFSETY + img_yes->h + 5 && event.button.y < 178 + PROMPTOFFSETY + img_yes->h + 5 + img_no->h)))
+                    event.button.y >=  dest_back.y + dest_back.h - 4 - button_h &&
+		    event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)))
                 {
                   do_setcursor(cursor_hand);
                 }
@@ -13358,6 +13362,7 @@ static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
 /* Save the current image: */
 static int do_save(int tool, int dont_show_success_results)
 {
+  int scroll;
   char *fname;
   char tmp[1024];
   SDL_Surface *thm;
@@ -13368,6 +13373,7 @@ static int do_save(int tool, int dont_show_success_results)
   if (disable_save)
     return 0;
 
+  scroll = (NUM_TOOLS > buttons_tall * gd_tools.cols) ? img_scroll_down->h : 0;
   tmp_apply_uncommited_text();
 
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
@@ -13391,7 +13397,8 @@ static int do_save(int tool, int dont_show_success_results)
                                   PROMPT_SAVE_OVER_YES,
                                   PROMPT_SAVE_OVER_NO,
                                   img_save_over, NULL, NULL, SND_AREYOUSURE,
-                                  (TOOL_SAVE % 2) * 48 + 24, (TOOL_SAVE / 2) * 48 + 40 + 24) == 0)
+                                  (TOOL_SAVE % 2) * button_w + button_w / 2,
+				  (TOOL_SAVE / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll) == 0)
             {
               /* No - Let's save a new picture! */
 
@@ -14188,13 +14195,15 @@ static void get_new_file_id(void)
 /* Handle quitting (and prompting to save, if necessary!) */
 static int do_quit(int tool)
 {
-  int done, tmp_tool;
+  int done, tmp_tool, scroll;
 
   if (!no_prompt_on_quit)
     {
+      scroll = (NUM_TOOLS > buttons_tall * gd_tools.cols) ? img_scroll_down->h : 0;
       done = do_prompt_snd(PROMPT_QUIT_TXT,
                            PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
-                           (TOOL_QUIT % 2) * 48 + 24, (TOOL_QUIT / 2) * 48 + 40 + 24);
+                           (TOOL_QUIT % 2) * button_w + button_w / 2,
+			   (TOOL_QUIT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll);
     }
   else
     {
@@ -14598,7 +14607,9 @@ static int do_open(void)
       if (num_files == 0)
         {
           do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
-                        SND_YOUCANNOT, (TOOL_OPEN % 2) * 48 + 24, (TOOL_OPEN / 2) * 48 + 40 + 24);
+                        SND_YOUCANNOT,
+			(TOOL_OPEN % 2) * button_w + button_w / 2,
+			(TOOL_OPEN / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols);
         }
       else
         {
@@ -16802,9 +16813,10 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8, Uint8 * 
  */
 static void print_image(void)
 {
-  int cur_time;
+  int cur_time, scroll;
 
   cur_time = SDL_GetTicks() / 1000;
+  scroll = (NUM_TOOLS > buttons_tall * gd_tools.cols) ? img_scroll_down->h : 0;
 
 #ifdef DEBUG
   printf("Current time = %d\n", cur_time);
@@ -16823,7 +16835,8 @@ static void print_image(void)
                               PROMPT_PRINT_NOW_YES,
                               PROMPT_PRINT_NOW_NO,
                               img_printer, NULL, NULL, SND_AREYOUSURE,
-                              (TOOL_PRINT % 2) * 48 + 24, (TOOL_PRINT / 2) * 48 + 40 + 24))
+                              (TOOL_PRINT % 2) * button_w + button_w / 2,
+			      (TOOL_PRINT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll))
         {
           do_print();
 
@@ -20725,6 +20738,7 @@ static int do_color_picker(void)
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
+  int stop;
 
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
@@ -20735,12 +20749,12 @@ static int do_color_picker(void)
   int done, chose;
   SDL_Event event;
   SDLKey key;
-  int color_picker_left, color_picker_top;
+  int color_picker_left, color_picker_top, color_picker_width, color_picker_height;
   int back_left, back_top;
   SDL_Rect color_example_dest;
   SDL_Surface *backup;
   SDL_Rect r_color_picker;
-
+  SDL_Rect r_final;
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
   hide_blinking_cursor();
@@ -20759,24 +20773,27 @@ static int do_color_picker(void)
 
   SDL_BlitSurface(screen, NULL, backup, NULL);
 
-  ox = screen->w;
+  ox = screen->w - color_button_w / 2;
   oy = r_colors.y + r_colors.h / 2;
 
-  for (w = 0; w <= 128 + 6 + 4; w = w + 4)
+  r_final.x = r_canvas.x + r_canvas.w / 2 - img_color_picker->w - 4;
+  r_final.y = r_canvas.h / 2 - img_color_picker->h / 2 - 2;
+  r_final.w = img_color_picker->w * 2;
+  r_final.h = img_color_picker->h;
+
+  stop = r_final.h / 2 + 6 + 4;
+
+  for (w = 0; w <= stop; w = w + 4)
     {
-      oox = ox - w;
-      ooy = oy - w;
+      nx = PROMPT_LEFT + r_tools.w - w + PROMPTOFFSETX;
+      ny = 2 + canvas->h / 2 - w;
 
-      nx = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
-      ny = 94 + 96 - w + PROMPTOFFSETY;
-
-      dest.x = ((nx * w) + (oox * (128 - w))) / 128;
-      dest.y = ((ny * w) + (ooy * (128 - w))) / 128;
-
-      dest.w = (PROMPT_W - 96 * 2) + w * 2;
+      dest.x = ox - ((ox -r_final.x) * w) / stop;
+      dest.y = oy - ((oy -r_final.y) * w) / stop;
+      dest.w = w * 4;
       dest.h = w * 2;
-      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255 - w, 255 - w, 255 - w));
 
+      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255 - (int)(w / button_scale) , 255 -(int)( w / button_scale), 255 - (int)(w / button_scale)));
 
       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
       if (w % 16 == 0)
@@ -20787,8 +20804,8 @@ static int do_color_picker(void)
 
 #ifndef NO_PROMPT_SHADOWS
   alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
-                                    (PROMPT_W - 96 * 2) + (w - 4) * 2,
-                                    (w - 4) * 2,
+                                    r_final.w + 8,
+                                    r_final.h + 16,
                                     screen->format->BitsPerPixel,
                                     screen->format->Rmask,
                                     screen->format->Gmask, screen->format->Bmask, screen->format->Amask);
@@ -20800,10 +20817,10 @@ static int do_color_picker(void)
 
       for (i = 8; i > 0; i = i - 2)
         {
-          dest.x = PROMPT_LEFT + 96 - (w - 4) + i + PROMPTOFFSETX;
-          dest.y = 94 + 96 - (w - 4) + i + PROMPTOFFSETY;
-          dest.w = (PROMPT_W - 96 * 2) + (w - 4) * 2;
-          dest.h = (w - 4) * 2;
+          dest.x = r_final.x + i - 4;
+	  dest.y = r_final.y + i - 4;
+          dest.w = r_final.w + 8;
+          dest.h = r_final.h + 16;
 
           SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
         }
@@ -20816,18 +20833,17 @@ static int do_color_picker(void)
   /* Draw prompt box: */
 
   w = w - 6;
-
-  dest.x = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
-  dest.y = 94 + 96 - w + PROMPTOFFSETY;
-  dest.w = (PROMPT_W - 96 * 2) + w * 2;
+  dest.x = r_final.x - 2;
+  dest.w = r_final.w + 4;
   dest.h = w * 2;
+  dest.y = r_final.y - 2;
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
 
   /* Draw color palette: */
 
-  color_picker_left = PROMPT_LEFT + 96 - w + PROMPTOFFSETX + 2;
-  color_picker_top = 94 + 96 - w + PROMPTOFFSETY + 2;
+  color_picker_left = r_final.x;
+  color_picker_top = r_final.y;
 
   dest.x = color_picker_left;
   dest.y = color_picker_top;
@@ -20875,8 +20891,8 @@ static int do_color_picker(void)
 
   color_example_dest.x = color_picker_left + img_color_picker->w + 2;
   color_example_dest.y = color_picker_top + 2;
-  color_example_dest.w = (PROMPT_W - 96 * 2) + w * 2 - img_color_picker->w - 6;
-  color_example_dest.h = 124;
+  color_example_dest.w = r_final.w / 2 - 2;
+  color_example_dest.h = r_final.h / 2 - 4;
 
 
   SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, 0, 0, 0));
@@ -24441,10 +24457,10 @@ static void setup(void)
   img_btnsm_hold = loadimagerb(DATA_PREFIX "images/ui/btnsm_hold.png");
 
   img_btn_nav = loadimagerb(DATA_PREFIX "images/ui/btn_nav.png");
-  img_btnsm_nav = loadimage(DATA_PREFIX "images/ui/btnsm_nav.png");
+  img_btnsm_nav = loadimagerb(DATA_PREFIX "images/ui/btnsm_nav.png");
 
-  img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
-  img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
+  img_sfx = loadimagerb(DATA_PREFIX "images/tools/sfx.png");
+  img_speak = loadimagerb(DATA_PREFIX "images/tools/speak.png");
 
   img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
                                    img_btn_off->w, img_btn_off->h,
@@ -24477,34 +24493,34 @@ static void setup(void)
   img_back = loadimagerb(DATA_PREFIX "images/ui/back.png");
   img_trash = loadimagerb(DATA_PREFIX "images/ui/trash.png");
 
-  img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
-  img_play = loadimage(DATA_PREFIX "images/ui/play.png");
-  img_gif_export = loadimage(DATA_PREFIX "images/ui/gif_export.png");
-  img_select_digits = loadimage(DATA_PREFIX "images/ui/select_digits.png");
+  img_slideshow = loadimagerb(DATA_PREFIX "images/ui/slideshow.png");
+  img_play = loadimagerb(DATA_PREFIX "images/ui/play.png");
+  img_gif_export = loadimagerb(DATA_PREFIX "images/ui/gif_export.png");
+  img_select_digits = loadimagerb(DATA_PREFIX "images/ui/select_digits.png");
 
-  img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
+  img_popup_arrow = loadimagerb(DATA_PREFIX "images/ui/popup_arrow.png");
 
-  img_dead40x40 = loadimage(DATA_PREFIX "images/ui/dead40x40.png");
+  img_dead40x40 = loadimagerb(DATA_PREFIX "images/ui/dead40x40.png");
 
-  img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
-  img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
+  img_printer = loadimagerb(DATA_PREFIX "images/ui/printer.png");
+  img_printer_wait = loadimagerb(DATA_PREFIX "images/ui/printer_wait.png");
 
-  img_save_over = loadimage(DATA_PREFIX "images/ui/save_over.png");
+  img_save_over = loadimagerb(DATA_PREFIX "images/ui/save_over.png");
 
-  img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
-  img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
+  img_grow = loadimagerb(DATA_PREFIX "images/ui/grow.png");
+  img_shrink = loadimagerb(DATA_PREFIX "images/ui/shrink.png");
 
-  img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
-  img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
+  img_magic_paint = loadimagerb(DATA_PREFIX "images/ui/magic_paint.png");
+  img_magic_fullscreen = loadimagerb(DATA_PREFIX "images/ui/magic_fullscreen.png");
 
-  img_shapes_center = loadimage(DATA_PREFIX "images/ui/shapes_center.png");
-  img_shapes_corner = loadimage(DATA_PREFIX "images/ui/shapes_corner.png");
+  img_shapes_center = loadimagerb(DATA_PREFIX "images/ui/shapes_center.png");
+  img_shapes_corner = loadimagerb(DATA_PREFIX "images/ui/shapes_corner.png");
 
-  img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
-  img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
+  img_bold = loadimagerb(DATA_PREFIX "images/ui/bold.png");
+  img_italic = loadimagerb(DATA_PREFIX "images/ui/italic.png");
 
-  img_label = loadimage(DATA_PREFIX "images/tools/label.png");
-  img_label_select = loadimage(DATA_PREFIX "images/tools/label_select.png");
+  img_label = loadimagerb(DATA_PREFIX "images/tools/label.png");
+  img_label_select = loadimagerb(DATA_PREFIX "images/tools/label_select.png");
 
   show_progress_bar(screen);
 
@@ -24568,7 +24584,7 @@ static void setup(void)
   /* Load system fonts: */
 
   large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-                                      DATA_PREFIX "fonts/default_font.ttf", 30 - (only_uppercase * 3));
+                                      DATA_PREFIX "fonts/default_font.ttf", 30 * button_scale - (only_uppercase * 3));
 
   if (large_font == NULL)
     {
@@ -24584,9 +24600,9 @@ static void setup(void)
 
   small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, DATA_PREFIX "fonts/default_font.ttf",
 #ifdef __APPLE__
-                                      12 - (only_uppercase * 2)
+                                      12 * button_scale - (only_uppercase * 2)
 #else
-                                      13 - (only_uppercase * 2)
+                                      13 * button_scale - (only_uppercase * 2)
 #endif
   );
 
@@ -24630,7 +24646,6 @@ static void setup(void)
     {
       SDL_Surface *aux_surf = loadimage(shape_img_fnames[i]);
       img_shapes[i] = thumbnail2(aux_surf, (aux_surf->w * button_w) / ORIGINAL_BUTTON_SIZE, (aux_surf->h * button_h) / ORIGINAL_BUTTON_SIZE, 0, 1);
-      printf("fname %d x %d -> %d -> %d\n", aux_surf->w, aux_surf->h, img_shapes[i]->w, img_shapes[i]->h); 
       SDL_FreeSurface(aux_surf);
     }
 
@@ -24638,16 +24653,16 @@ static void setup(void)
 
   /* Load tip tux images: */
   for (i = 0; i < NUM_TIP_TUX; i++)
-    img_tux[i] = loadimage(tux_img_fnames[i]);
+    img_tux[i] = loadimagerb(tux_img_fnames[i]);
 
   show_progress_bar(screen);
 
-  img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
-  img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
+  img_mouse = loadimagerb(DATA_PREFIX "images/ui/mouse.png");
+  img_mouse_click = loadimagerb(DATA_PREFIX "images/ui/mouse_click.png");
 
   show_progress_bar(screen);
 
-  img_color_picker = loadimage(DATA_PREFIX "images/ui/color_picker.png");
+  img_color_picker = loadimagerb(DATA_PREFIX "images/ui/color_picker.png");
 
   /* Create toolbox and selector labels: */
 
