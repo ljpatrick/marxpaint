@@ -720,7 +720,7 @@ $(THUMB_STARTERS):
 		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ ; \
 		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
-		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ || ( echo "IT FAILED" ; rm -v $@ ) ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -775,7 +775,7 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 $(THUMB_TEMPLATES):
 	@echo -n "."
 	@mkdir -p templates/.thumbs
-	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ ; \
+	convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ || ( echo "IT FAILED" ; rm -v $@ ) ; \
 
 $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
 	@install -D -m 644 $< $@
