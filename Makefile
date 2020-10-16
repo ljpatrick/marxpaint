@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - October 14, 2020
+# June 14, 2002 - October 15, 2020
 
 
 # The version number, for release:
@@ -715,14 +715,14 @@ $(THUMB_STARTERS):
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp_$(notdir $(STARTER_NAME)).png ; \
-		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ ; \
+		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ 2> /dev/null ; \
 		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
-		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ || ( echo "IT FAILED" ; rm -v $@ ) ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@
+	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 
 .PHONY: echo-thumb-starters
 echo-thumb-starters:
@@ -773,10 +773,10 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 $(THUMB_TEMPLATES):
 	@echo -n "."
 	@mkdir -p templates/.thumbs
-	convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ || ( echo "IT FAILED" ; rm -v $@ ) ; \
+	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 
 $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@
+	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 
 .PHONY: echo-thumb-templates
 echo-thumb-templates:
