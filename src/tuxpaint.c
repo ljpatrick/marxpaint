@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 30, 2020
+  June 14, 2002 - October 15, 2020
 */
 
 
@@ -12042,7 +12042,7 @@ static void save_current(void)
   char *fname;
   FILE *fi;
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E001)"))
     {
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return;
@@ -13376,7 +13376,7 @@ static int do_save(int tool, int dont_show_success_results)
   show_progress_bar(screen);
   do_setcursor(cursor_watch);
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E002)"))
     {
       fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13388,7 +13388,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
 
-  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E003)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13400,7 +13400,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
 
-  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory"))
+  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E004)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13411,7 +13411,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
 
-  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory"))
+  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory (E005)"))
     {
       fprintf(stderr, "Cannot save label information! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -14454,10 +14454,10 @@ static int do_open(void)
                           /* No thumbnail - load original: */
 
                           /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E006)"))
                             {
                               /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E007)");
                             }
 
 
@@ -15522,10 +15522,10 @@ static int do_slideshow(void)
                       /* No thumbnail - load original: */
 
                       /* Make sure we have a ~/.tuxpaint/saved directory: */
-                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E008)"))
                         {
                           /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E009)");
                         }
 
                       safe_snprintf(fname, sizeof(fname), "%s/%s", dirname, f->d_name);
@@ -19348,12 +19348,16 @@ static int do_new_dialog(void)
                         {
                           /* No thumbnail - load original: */
 
-                          /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
-                          if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory"))
+                          if (d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR ||
+                              d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
                             {
-                              /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
-                              safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
-                              make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory");
+                              /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
+                              if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory (for starters/templates) (E010)"))
+                                {
+                                  /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
+                                  safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
+                                  make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory (for starters/templates) (E011)");
+                                }
                             }
 
                           img = NULL;
@@ -19454,10 +19458,10 @@ static int do_new_dialog(void)
                                   safe_snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                                            dirname[d_places[num_files]], d_names[num_files]);
 
-                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory"))
+                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory (for starters) (E012)") ||
+                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory (for templates) (E013)") ||
+                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory (for starters) (E014)") ||
+                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory (for templates) (E015)"))
                                     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                                   else
                                     {
@@ -25946,7 +25950,7 @@ static char * get_export_filepath(const char * ext) {
 
 
   /* Make sure the export dir exists */
-  if (!make_directory(DIR_EXPORT, "", "Can't create export directory"))
+  if (!make_directory(DIR_EXPORT, "", "Can't create export directory (E016)"))
     {
       return NULL;
     }
