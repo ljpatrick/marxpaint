@@ -1,6 +1,20 @@
 #!/bin/sh
 
-for dll in `ldd tuxpaint.exe $1/tuxpaint-config.exe 2>&1 | grep /mingw | awk '{print $3}' | sort | uniq`
-do
-  cp $dll $2
-done
+find_depends(){
+  for dllpath in `ntldd $@ | grep mingw | awk '{print $3}' | sort | uniq`
+  do
+    dllname=`basename $dllpath`
+    if ! grep -q $dllname dlllist; then
+      echo $dllpath >> dlllist
+      echo -n .
+      cp $dllpath $DESTDIR/
+      find_depends $dllpath
+    fi
+  done
+}
+
+DESTDIR=$3
+echo > dlllist
+
+find_depends $1 $2
+echo
