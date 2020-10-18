@@ -1,15 +1,15 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2020
+# Copyright (c) 2002-2019
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - October 15, 2020
+# June 14, 2002 - October 29, 2019
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.25
+VER_VERSION:=0.9.24
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
@@ -23,14 +23,12 @@ SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
   OS:=windows
   GPERF:=/usr/bin/gperf
-  MINGW_DIR:=/mingw32
-  LIBGCC_S_DLL=libgcc_s_dw2-1.dll
+  MINGW_DIR=/mingw32
 else
   ifeq ($(findstring MINGW64, $(SYSNAME)),MINGW64)
     OS:=windows
     GPERF:=/usr/bin/gperf
-    MINGW_DIR:=/mingw64
-    LIBGCC_S_DLL=libgcc_s_seh-1.dll
+    MINGW_DIR=/mingw64
   else
     ifeq ($(SYSNAME),Darwin)
       OS:=osx
@@ -124,10 +122,10 @@ PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
-windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
-osx_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant
-beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
-linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
+windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv
+osx_ARCH_LINKS:=$(FRIBIDI_LIB)
+beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB)
+linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h
@@ -717,14 +715,14 @@ $(THUMB_STARTERS):
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp_$(notdir $(STARTER_NAME)).png ; \
-		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ 2> /dev/null ; \
+		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ ; \
 		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
-		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
+	@install -D -m 644 $< $@
 
 .PHONY: echo-thumb-starters
 echo-thumb-starters:
@@ -775,10 +773,10 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 $(THUMB_TEMPLATES):
 	@echo -n "."
 	@mkdir -p templates/.thumbs
-	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
+	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ ; \
 
 $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
+	@install -D -m 644 $< $@
 
 .PHONY: echo-thumb-templates
 echo-thumb-templates:
@@ -873,69 +871,23 @@ install-bin:
 	@cp tuxpaint$(EXE_EXT) $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
-# Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
+# Install the required Windows DLLs into the 'bdist' directory
 .PHONY: install-dlls
 install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
 	@cp $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/imagequant.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libbrotlicommon.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libbrotlidec.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libbz2-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libcairo-2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libcairo-gobject-2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libdatrie-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libexpat-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libffi-7.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libfontconfig-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libfribidi-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/$(LIBGCC_S_DLL) $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libgdk_pixbuf-2.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libglib-2.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libgmodule-2.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libgobject-2.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libgraphite2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libharfbuzz-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libiconv-2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libintl-8.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libjpeg-8.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/liblzma-5.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libmad-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpango-1.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpangocairo-1.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpangoft2-1.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpangowin32-1.0-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpcre-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpixman-1-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libpng16-16.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/librsvg-2-2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libSDL_mixer-1-2-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libSDL_Pango-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libstdc++-6.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libthai-0.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libtiff-5.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libwebp-7.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libwinpthread-1.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libxml2-2.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/libzstd.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/mgwfltknox-1.3.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX)
-	@cp $(MINGW_DIR)/bin/zlib1.dll $(BIN_PREFIX)
+	@src/install-dlls.sh $(TPCONF_PATH) $(BIN_PREFIX)
 	@strip -s $(BIN_PREFIX)/*.dll
-	@echo
-	@echo "...Installing Configuration Files..."
-	@cp -R win32/etc/ $(BIN_PREFIX)
-	@echo
-	@echo "...Installing Library Modules..."
-	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
-	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
-	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
+	echo; \
+	echo "...Installing Configuration Files..."; \
+	cp -R win32/etc/ $(BIN_PREFIX); \
+	echo; \
+	echo "...Installing Library Modules..."; \
+	mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders; \
+	cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders; \
+	strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll; \
 
 # Install symlink:
 .PHONY: install-haiku
@@ -1045,7 +997,6 @@ TuxPaint.dmg:
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o obj/fill.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
-		obj/gifenc.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
@@ -1066,7 +1017,6 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/sounds.h src/tip_tux.h src/great.h \
 		src/tp_magic_api.h src/parse.h src/onscreen_keyboard.h \
-		src/gifenc.h \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
 		src/$(MOUSEDIR)/insertion.xbm \
@@ -1151,12 +1101,6 @@ obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h src/debug.h
 	@echo "...Compiling pixel functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/pixels.c -o obj/pixels.o
-
-obj/gifenc.o:	src/gifenc.c src/gifenc.h
-	@echo
-	@echo "...Compiling animated GIF export libary..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
-		-c src/gifenc.c -o obj/gifenc.o
 
 obj/playsound.o:	src/playsound.c src/playsound.h \
 			src/compiler.h src/debug.h
