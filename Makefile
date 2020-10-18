@@ -24,11 +24,13 @@ ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
   OS:=windows
   GPERF:=/usr/bin/gperf
   MINGW_DIR:=/mingw32
+  LIBGCC_S_DLL=libgcc_s_dw2-1.dll
 else
   ifeq ($(findstring MINGW64, $(SYSNAME)),MINGW64)
     OS:=windows
     GPERF:=/usr/bin/gperf
     MINGW_DIR:=/mingw64
+    LIBGCC_S_DLL=libgcc_s_seh-1.dll
   else
     ifeq ($(SYSNAME),Darwin)
       OS:=osx
@@ -878,7 +880,53 @@ install-dlls:
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
 	@cp $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
-	@src/install-dlls.sh $(TPCONF_PATH) $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/imagequant.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libbrotlicommon.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libbrotlidec.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libbz2-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libcairo-2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libcairo-gobject-2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libdatrie-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libexpat-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libffi-7.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libfontconfig-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libfribidi-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/$(LIBGCC_S_DLL) $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libgdk_pixbuf-2.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libglib-2.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libgmodule-2.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libgobject-2.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libgraphite2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libharfbuzz-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libiconv-2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libintl-8.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libjpeg-8.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/liblzma-5.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libmad-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpango-1.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpangocairo-1.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpangoft2-1.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpangowin32-1.0-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpcre-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpixman-1-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libpng16-16.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/librsvg-2-2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libSDL_mixer-1-2-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libSDL_Pango-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libstdc++-6.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libthai-0.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libtiff-5.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libwebp-7.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libwinpthread-1.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libxml2-2.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/libzstd.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/mgwfltknox-1.3.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX)
+	@cp $(MINGW_DIR)/bin/zlib1.dll $(BIN_PREFIX)
 	@strip -s $(BIN_PREFIX)/*.dll
 	@echo
 	@echo "...Installing Configuration Files..."
