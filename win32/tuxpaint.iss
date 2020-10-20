@@ -73,7 +73,7 @@ OutputDir=.\
   LicenseFile={#BdistDir}\docs\COPYING-OC.txt
   OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer-opencandy
 #else
-  LicenseFile={#BdistDir}\docs\COPYING.txt
+  LicenseFile={#BdistDir}\docs\COPYING\COPYING-en.txt
   OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
 #endif
 SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
@@ -82,7 +82,7 @@ SolidCompression=yes
 PrivilegesRequired=admin
 
 [Languages]
-Name: "arm"; MessagesFile: "compiler:Languages\Armenian.islu"
+Name: "arm"; MessagesFile: "compiler:Languages\Armenian.isl"
 Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
 Name: "cos"; MessagesFile: "compiler:Languages\Corsican.isl"
@@ -129,7 +129,7 @@ Name: "epo"; MessagesFile: "compiler:Languages\Esperanto.isl"
 Name: "est"; MessagesFile: "compiler:Languages\Estonian.isl"
 Name: "fas"; MessagesFile: "compiler:Languages\Farsi.isl"
 Name: "gal"; MessagesFile: "compiler:Languages\Galician.isl"
-Name: "geo"; MessagesFile: "compiler:Languages\Georgian.islu"
+Name: "geo"; MessagesFile: "compiler:Languages\Georgian.isl"
 Name: "hin"; MessagesFile: "compiler:Languages\Hindi.islu"
 Name: "ice"; MessagesFile: "compiler:Languages\Icelandic.isl"
 Name: "ind"; MessagesFile: "compiler:Languages\Indonesian.isl"
@@ -640,38 +640,38 @@ begin
   lang := Lang2Gettext(false);
 
   if lang = 'pt_br' then
-    licence := 'pt_br\COPYING_pt_BR.txt'
+    licence := 'COPYING_pt_BR.txt'
   else
   if lang = 'ca' then
-    licence := 'ca\COPYING.txt'
+    licence := 'COPYING-ca.txt'
   else
   if lang = 'cs' then
-    licence := 'cs\COPYING.txt'
+    licence := 'COPYING-cs.txt'
   else
   if lang = 'da' then
-    licence := 'da\COPYING.txt'
+    licence := 'COPYING-da.txt'
   else
   if lang = 'nl' then
-    licence := 'nl\COPYING_nl.txt'
+    licence := 'COPYING-nl.txt'
   else
   if lang = 'fr' then
-    licence := 'fr\COPIER.txt'
+    licence := 'COPYING-fr-COPIER.txt'
   else
   if lang = 'de' then
-    licence := 'de\KOPIE.txt'
+    licence := 'COPYING-de-KOPIE.txt'
   else
   if lang = 'it' then
-    licence := 'it\COPIATURA.txt'
+    licence := 'COPYING-COPIATURA.txt'
   else
   if lang = 'pl' then
-    licence := 'pl\LICENCJA-GNU.txt'
+    licence := 'COPYING-pl-LICENCJA-GNU.txt'
   else
   if lang = 'es' then
-    licence := 'es\COPIADO.txt'
+    licence := 'COPYING-es-COPIADO.txt'
   else
-    licence := 'COPYING.txt';
+    licence := 'COPYING-en.txt';
 
-  Result := 'docs\'+licence
+  Result := 'docs\COPYING\'+licence
 end;
 
 function MyPublisherURL(Default: String): String;
