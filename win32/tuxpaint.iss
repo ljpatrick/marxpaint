@@ -77,78 +77,83 @@ OutputDir=.\
   OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
 #endif
 SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
-Compression=lzma
+WizardStyle=modern
+Compression=lzma2
 SolidCompression=yes
 PrivilegesRequired=admin
 
 [Languages]
-Name: "arm"; MessagesFile: "compiler:Languages\Armenian.isl"
-Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
-Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
-Name: "cos"; MessagesFile: "compiler:Languages\Corsican.isl"
-Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
-Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
-Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"
-Name: "eng"; MessagesFile: "compiler:Default.isl"
-Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"
-Name: "fin"; MessagesFile: "compiler:Languages\Finnish.isl"
-Name: "fre"; MessagesFile: "compiler:Languages\French.isl"
-Name: "ger"; MessagesFile: "compiler:Languages\German.isl"
-Name: "gla"; MessagesFile: "compiler:Languages\ScottishGaelic.isl"
-Name: "gre"; MessagesFile: "compiler:Languages\Greek.isl"
-Name: "heb"; MessagesFile: "compiler:Languages\Hebrew.isl"
-Name: "hun"; MessagesFile: "compiler:Languages\Hungarian.isl"
-Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"
-Name: "jpn"; MessagesFile: "compiler:Languages\Japanese.isl"
-Name: "nep"; MessagesFile: "compiler:Languages\Nepali.islu"
-Name: "nor"; MessagesFile: "compiler:Languages\Norwegian.isl"
-Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"
-Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
-Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "scc"; MessagesFile: "compiler:Languages\SerbianCyrillic.isl"
-Name: "scl"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
-Name: "slv"; MessagesFile: "compiler:Languages\Slovenian.isl"
-Name: "tur"; MessagesFile: "compiler:Languages\Turkish.isl"
-Name: "ukr"; MessagesFile: "compiler:Languages\Ukrainian.isl"
-
-; Additional, Unofficial translations
 Name: "afr"; MessagesFile: "compiler:Languages\Afrikaans.isl"
 Name: "alb"; MessagesFile: "compiler:Languages\Albanian.isl"
 Name: "ara"; MessagesFile: "compiler:Languages\Arabic.isl"
+Name: "arm"; MessagesFile: "compiler:Languages\Armenian.isl"
 Name: "ast"; MessagesFile: "compiler:Languages\Asturian.isl"
 Name: "baq"; MessagesFile: "compiler:Languages\Basque.isl"
 Name: "bel"; MessagesFile: "compiler:Languages\Belarusian.isl"
 Name: "ben"; MessagesFile: "compiler:Languages\Bengali.islu"
 Name: "bos"; MessagesFile: "compiler:Languages\Bosnian.isl"
+Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "bul"; MessagesFile: "compiler:Languages\Bulgarian.isl"
+Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 Name: "cht"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"
-Name: "scr"; MessagesFile: "compiler:Languages\Croatian.isl"
+Name: "cnr"; MessagesFile: "compiler:Languages\Montenegrin.isl"
+Name: "cos"; MessagesFile: "compiler:Languages\Corsican.isl"
+Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
+Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
+Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "enb"; MessagesFile: "compiler:Languages\EnglishBritish.isl"
+Name: "eng"; MessagesFile: "compiler:Default.isl"
 Name: "epo"; MessagesFile: "compiler:Languages\Esperanto.isl"
+Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "est"; MessagesFile: "compiler:Languages\Estonian.isl"
 Name: "fas"; MessagesFile: "compiler:Languages\Farsi.isl"
+Name: "fin"; MessagesFile: "compiler:Languages\Finnish.isl"
+Name: "fre"; MessagesFile: "compiler:Languages\French.isl"
 Name: "gal"; MessagesFile: "compiler:Languages\Galician.isl"
 Name: "geo"; MessagesFile: "compiler:Languages\Georgian.isl"
+Name: "ger"; MessagesFile: "compiler:Languages\German.isl"
+Name: "gla"; MessagesFile: "compiler:Languages\ScottishGaelic.isl"
+Name: "gre"; MessagesFile: "compiler:Languages\Greek.isl"
+Name: "heb"; MessagesFile: "compiler:Languages\Hebrew.isl"
 Name: "hin"; MessagesFile: "compiler:Languages\Hindi.islu"
+Name: "hun"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "ice"; MessagesFile: "compiler:Languages\Icelandic.isl"
 Name: "ind"; MessagesFile: "compiler:Languages\Indonesian.isl"
+Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "jpn"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "kaz"; MessagesFile: "compiler:Languages\Kazakh.islu"
 Name: "kor"; MessagesFile: "compiler:Languages\Korean.isl"
 Name: "kur"; MessagesFile: "compiler:Languages\Kurdish.isl"
 Name: "lav"; MessagesFile: "compiler:Languages\Latvian.isl"
+Name: "lij"; MessagesFile: "compiler:Languages\Ligurian.isl"
 Name: "lit"; MessagesFile: "compiler:Languages\Lithuanian.isl"
 Name: "ltz"; MessagesFile: "compiler:Languages\Luxemburgish.isl"
 Name: "mac"; MessagesFile: "compiler:Languages\Macedonian.isl"
+Name: "mar"; MessagesFile: "compiler:Languages\Marathi.islu"
 Name: "may"; MessagesFile: "compiler:Languages\Malaysian.isl"
 Name: "mon"; MessagesFile: "compiler:Languages\Mongolian.isl"
+Name: "nep"; MessagesFile: "compiler:Languages\Nepali.islu"
 Name: "nno"; MessagesFile: "compiler:Languages\NorwegianNynorsk.isl"
+Name: "nor"; MessagesFile: "compiler:Languages\Norwegian.isl"
 Name: "occ"; MessagesFile: "compiler:Languages\Occitan.isl"
+Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"
+Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "rum"; MessagesFile: "compiler:Languages\Romanian.isl"
+Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
+Name: "scc"; MessagesFile: "compiler:Languages\SerbianCyrillic.isl"
+Name: "scl"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
+Name: "scr"; MessagesFile: "compiler:Languages\Croatian.isl"
+Name: "sin"; MessagesFile: "compiler:Languages\Sinhala.islu"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovak.isl"
+Name: "slv"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "swe"; MessagesFile: "compiler:Languages\Swedish.isl"
 Name: "tai"; MessagesFile: "compiler:Languages\Thai.isl"
 Name: "tat"; MessagesFile: "compiler:Languages\Tatar.isl"
+Name: "tur"; MessagesFile: "compiler:Languages\Turkish.isl"
+Name: "uig"; MessagesFile: "compiler:Languages\Uyghur.islu"
+Name: "ukr"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+Name: "urd"; MessagesFile: "compiler:Languages\Urdu.isl"
 Name: "uzb"; MessagesFile: "compiler:Languages\Uzbek.isl"
 Name: "vie"; MessagesFile: "compiler:Languages\Vietnamese.isl"
 
@@ -514,6 +519,9 @@ begin
   if lang = 'mac' then
     lc := 'mk'
   else
+  if lang = 'mar' then
+    lc := 'mr'
+  else
   if lang = 'may' then
     lc := 'ms'
   else
@@ -556,6 +564,9 @@ begin
   if lang = 'scr' then
     lc := 'hr'
   else
+  if lang = 'sin' then
+    lc := 'si'
+  else
   if lang = 'slo' then
     lc := 'sk'
   else
@@ -571,8 +582,14 @@ begin
   if lang = 'tur' then
     lc := 'tr'
   else
+  if lang = 'uig' then
+    lc := 'ug'
+  else
   if lang = 'ukr' then
     lc := 'uk'
+  else
+  if lang = 'urd' then
+    lc := 'ur'
   else
   if lang = 'uzb' then
     lc := 'uz'
@@ -642,32 +659,80 @@ begin
   if lang = 'pt_br' then
     licence := 'COPYING_pt_BR.txt'
   else
+  if lang = 'be' then
+    licence := 'COPYING-be.txt'
+  else
+  if lang = 'bg' then
+    licence := 'COPYING-bg.txt'
+  else
   if lang = 'ca' then
     licence := 'COPYING-ca.txt'
   else
   if lang = 'cs' then
     licence := 'COPYING-cs.txt'
   else
+  if lang = 'cy' then
+    licence := 'COPYING-cy.txt'
+  else
   if lang = 'da' then
     licence := 'COPYING-da.txt'
   else
-  if lang = 'nl' then
-    licence := 'COPYING-nl.txt'
+  if lang = 'de' then
+    licence := 'COPYING-de-COPIE.txt'
+  else
+  if lang = 'el' then
+    licence := 'COPYING-el.txt'
+  else
+  if lang = 'es' then
+    licence := 'COPYING-es-COPIADO.txt'
+  else
+  if lang = 'fi' then
+    licence := 'COPYING-fi.txt'
   else
   if lang = 'fr' then
     licence := 'COPYING-fr-COPIER.txt'
   else
-  if lang = 'de' then
-    licence := 'COPYING-de-KOPIE.txt'
+  if lang = 'he' then
+    licence := 'COPYING-he.txt'
+  else
+  if lang = 'id' then
+    licence := 'COPYING-id.txt'
   else
   if lang = 'it' then
     licence := 'COPYING-COPIATURA.txt'
   else
+  if lang = 'ja' then
+    licence := 'COPYING-ja.txt'
+  else
+  if lang = 'ko' then
+    licence := 'COPYING-ko.txt'
+  else
+  if lang = 'lt' then
+    licence := 'COPYING-lt.txt'
+  else
+  if lang = 'nl' then
+    licence := 'COPYING-nl.txt'
+  else
   if lang = 'pl' then
     licence := 'COPYING-pl-LICENCJA-GNU.txt'
   else
-  if lang = 'es' then
-    licence := 'COPYING-es-COPIADO.txt'
+  if lang = 'ro' then
+    licence := 'COPYING-ro.txt'
+  else
+  if lang = 'sr' then
+    licence := 'COPYING-sr.txt'
+  else
+  if lang = 'sv' then
+    licence := 'COPYING-sv.txt'
+  else
+  if lang = 'tr' then
+    licence := 'COPYING-tr.txt'
+  else
+  if lang = 'zh_cn' then
+    licence := 'COPYING-zh_cn.txt'
+  else
+  if lang = 'zh_tw' then
+    licence := 'COPYING-zh_tw_GNU_GPL_Chinese.txt'
   else
     licence := 'COPYING-en.txt';
 
