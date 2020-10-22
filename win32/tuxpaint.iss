@@ -426,6 +426,12 @@ begin
     else
       lc := 'zh_tw'
   else
+  if lang = 'cnr' then
+    if TwoLetter = true then
+      lc := 'sr'
+    else
+      lc := 'sr_latin'
+  else
   if lang = 'cos' then
     lc := 'co'
   else
@@ -570,6 +576,9 @@ begin
   if lang = 'slo' then
     lc := 'sk'
   else
+  if lang = 'slv' then
+    lc := 'sl'
+  else
   if lang = 'swe' then
     lc := 'sv'
   else
@@ -678,7 +687,7 @@ begin
     licence := 'COPYING-da.txt'
   else
   if lang = 'de' then
-    licence := 'COPYING-de-COPIE.txt'
+    licence := 'COPYING-de-KOPIE.txt'
   else
   if lang = 'el' then
     licence := 'COPYING-el.txt'
@@ -699,7 +708,7 @@ begin
     licence := 'COPYING-id.txt'
   else
   if lang = 'it' then
-    licence := 'COPYING-COPIATURA.txt'
+    licence := 'COPYING-it-COPIATURA.txt'
   else
   if lang = 'ja' then
     licence := 'COPYING-ja.txt'
