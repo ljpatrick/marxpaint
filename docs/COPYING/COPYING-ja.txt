@@ -1,4 +1,4 @@
-COPYING-ja.txt for Tux Paint
+﻿COPYING-ja.txt for Tux Paint
 
 Tux Paint - 子供向けのシンプルなお絵かきプログラム
 
