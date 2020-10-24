@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.October.14 (0.9.25)
+2020.October.23 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -66,6 +66,7 @@ $Id$
     * Windows build changes
       * Enabling PowerTools repositry to install additional SDL* packages
       * Corrected README launcher for English, after install completes
+      * Updated translation files and ensure license text appears
       * Support for Mingw64 for 64-bit builds
       * Ability to find Mingw DLLs by examining EXEs
         (new shell script replaces hard-coded list in Makefile)
@@ -88,6 +89,12 @@ $Id$
         Based on Openclipart by "Tavin"
         (https://openclipart.org/artist/Tavin)
         Creative Commons Zero 1.0 Public Domain License
+
+  * Starter & Template updates
+    --------------------------
+    * Added margins to elephant, fish_icon and frame_hearts
+      starters, to avoid smearing on edges in Tux Paint.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   * Documentation updates
     ---------------------
