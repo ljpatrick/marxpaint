@@ -68,7 +68,6 @@ AppUpdatesURL={#PublisherURL}
 DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
 OutputDir=.\
-;FIXME - It would be good if we showed the localized license -bjk 2011.06.15
 #ifdef OpenCandy
   LicenseFile={#BdistDir}\docs\COPYING-OC.txt
   OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer-opencandy

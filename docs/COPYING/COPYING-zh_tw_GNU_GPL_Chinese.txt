@@ -1,4 +1,21 @@
-﻿GNU通用公共授權合約
+﻿COPYING.txt for Tux Paint
+
+Tux Paint - A simple drawing program for children.
+
+Copyright (c) 2005 by Bill Kendrick and others
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/tuxpaint/
+
+
+Note: Also see the respective "COPYING.txt" license documentation
+included with the TrueType Fonts that come with Tux Paint.
+See: ../fonts/locale/LL_docs/, where "LL" corresponds to a font filename.
+
+Bill Kendrick, 2005.October.10
+$Id$
+
+----------------------------------------
+GNU通用公共授權合約
 第二版，1991年6月
 版權所有（C）1989, 1991 自由軟體基金會
 51 Franklin Street, Fifth Floor, Boston, MA 02110‐1301, USA
