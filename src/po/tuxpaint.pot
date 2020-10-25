@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -107,19 +107,19 @@ msgstr ""
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
 #. same (but not nice -- such fonts get a low score later).
-#.
+#. 
 #. Most locales leave the blacklist strings alone: "QX" and "qx"
 #. (it is less destructive to use the scoring strings instead)
-#.
+#. 
 #. Locales that absolutely require all fonts to have some
 #. extra characters should use "QX..." and "qx...", where "..."
 #. are some characters you absolutely require in all fonts.
-#.
+#. 
 #. Locales with absolutely NO use for ASCII may use "..." and "...",
 #. where "..." are some characters you absolutely require in
 #. all fonts. This would be the case for a locale in which it is
 #. impossible for a user to type ASCII letters.
-#.
+#. 
 #. Most translators should use scoring instead.
 #: ../dirwalk.c:177
 msgid "qx"
@@ -762,7 +762,7 @@ msgstr ""
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
-#.
+#. 
 #: ../tuxpaint.c:15880
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.October.23 (0.9.25)
+2020.October.25 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -132,6 +132,7 @@ $Id$
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Santali translation (Ol-Chiki)
+	 Updated Santali Traslation, corrected some spelling mistakes.
       Prasanta Hembram <prasantahembram720@gmail.com>
 
   * Misc

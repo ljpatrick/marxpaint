@@ -2,7 +2,7 @@
 # Íslensk þýðing á TuxPaint
 # Copyright (C) 2002-2017.
 # This file is distributed under the same license as the tuxpaint package.
-#
+# 
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2002, 2003, 2004, 2014.
 # Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2020.
 msgid ""
@@ -110,19 +110,19 @@ msgstr "Fölbrúnt!"
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
 #. same (but not nice -- such fonts get a low score later).
-#.
+#. 
 #. Most locales leave the blacklist strings alone: "QX" and "qx"
 #. (it is less destructive to use the scoring strings instead)
-#.
+#. 
 #. Locales that absolutely require all fonts to have some
 #. extra characters should use "QX..." and "qx...", where "..."
 #. are some characters you absolutely require in all fonts.
-#.
+#. 
 #. Locales with absolutely NO use for ASCII may use "..." and "...",
 #. where "..." are some characters you absolutely require in
 #. all fonts. This would be the case for a locale in which it is
 #. impossible for a user to type ASCII letters.
-#.
+#. 
 #. Most translators should use scoring instead.
 #: ../dirwalk.c:177
 msgid "qx"
@@ -474,17 +474,13 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Smelltu til að byrja línu. Slepptu til að enda línuna."
 
 #: ../tools.h:125
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
-" það "
-"er af réttri stærð. Hreyfðu til að snúa forminu, og smelltu til að teikna "
-"það."
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar "
+"það er af réttri stærð. Hreyfðu til að snúa forminu, og smelltu til að "
+"teikna það."
 
 #: ../tools.h:129
 msgid ""
@@ -780,7 +776,7 @@ msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
-#.
+#. 
 #: ../tuxpaint.c:15880
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Veldu 2 eða fleiri teikningar sem á að breyta í GIF-hreyfimynd."
