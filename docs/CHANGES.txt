@@ -132,7 +132,6 @@ $Id$
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Santali translation (Ol-Chiki)
-	 Updated Santali Traslation, corrected some spelling mistakes.
       Prasanta Hembram <prasantahembram720@gmail.com>
 
   * Misc
