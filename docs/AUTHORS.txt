@@ -918,6 +918,9 @@ $Id$
     Ganesh Murmu <g_murmu_in@yahoo.com>
     Prasanta Hembram <prasantahembram720@gmail.com>
 
+  * Sardinian translation
+    Flavia Floris <flavia.efloris@gmail.com>
+
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
     Michael "Akerbeltz" Bauer <fios@akerbeltz.org>

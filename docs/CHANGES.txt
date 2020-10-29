@@ -114,6 +114,12 @@ $Id$
       descriptions, if we failed to know what language to use
       (see above).
 
+  * New Translations:
+    -----------------
+
+    * Sardinian translation
+      Flavia Floris <flavia.efloris@gmail.com>
+
   * Translation Updates:
     --------------------
     * Basque translation
