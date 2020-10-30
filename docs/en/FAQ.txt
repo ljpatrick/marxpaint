@@ -5,7 +5,7 @@
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                       September 14, 2002 - July 27, 2020
+                     September 14, 2002 - October 30, 2020
 
 Drawing-related
 
@@ -394,6 +394,17 @@ Audio Problems
                  or desktop icon.
                * Recompile Tux Paint with sound support disabled. (See above
                  and INSTALL.txt.)
+     * The stereo panning of sound effects is bothersome; can sound effects
+       be monophonic?
+
+       Run Tux Paint with the "no stereo" option:
+
+          * Use Tux Paint Config to uncheck the "Enable Stereo Sound" option
+            (under "Video & Sound").
+          * Edit Tux Paint's configuration file (see OPTIONS for details) and
+            add a line containing "nostereo=yes".
+          * Run "tuxpaint --nostereo" from the command line or shortcut or
+            desktop icon.
      * The sound effects sound strange
 
        This could have to do with how SDL and SDL_mixer were initialized.
