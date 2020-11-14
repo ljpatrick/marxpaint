@@ -116,6 +116,10 @@ $Id$
       descriptions, if we failed to know what language to use
       (see above).
 
+    * Mended bug where a personal Template could not be loaded
+      due to how we tracked which entry in the "New" dialog
+      was the first template image.
+
   * New Translations:
     -----------------
 
