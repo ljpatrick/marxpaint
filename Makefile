@@ -23,7 +23,12 @@ SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
   OS:=windows
   GPERF:=/usr/bin/gperf
-  MINGW_DIR:=/mingw32
+  ifeq ($(findstring NT-6.2, $(SYSNAME)),NT-6.2)
+    BDIST_2KXP:=True
+    MINGW_DIR:=/usr/local
+  else
+    MINGW_DIR:=/mingw32
+  endif
 else
   ifeq ($(findstring MINGW64, $(SYSNAME)),MINGW64)
     OS:=windows
@@ -888,6 +893,11 @@ install-dlls:
 	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
+	@if [ "x$(BDIST_2KXP)" = "xTrue" ]; then \
+	  mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
+	fi
 
 # Install symlink:
 .PHONY: install-haiku

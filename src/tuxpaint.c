@@ -455,7 +455,9 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-/* #include <librsvg/rsvg-cairo.h> -- Deprecated */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+#include <librsvg/rsvg-cairo.h>
+#endif
 
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
@@ -16915,8 +16917,11 @@ static void do_render_cur_text(int do_blit)
     {
 #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
       //FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
-      //FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+      FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#else
       FriBidiParType baseDir = FRIBIDI_TYPE_WL; //EP to avoid warning on types in now commented line above
+#endif
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;
 
