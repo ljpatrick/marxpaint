@@ -883,7 +883,50 @@ install-dlls:
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
 	@cp $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
-	@src/install-dlls.sh tuxpaint.exe $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
+	@if [ "x$(BDIST_2KXP)" = "xTrue" ]; then \
+	  cp $(MINGW_DIR)/bin/libintl-8.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libiconv-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpng12.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_mixer.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/zlib1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libogg-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libvorbis-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libvorbisfile-3.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libjpeg-8.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfribidi-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libxml2-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libcairo-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfontconfig-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libSDL_Pango-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgobject-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgthread-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/librsvg-2-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libcroco-0.6-3.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgdk_pixbuf-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libglib-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgsf-1-114.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpango-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangocairo-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangoft2-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgmodule-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangowin32-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpixman-1-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/bz2-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libimagequant.dll $(BIN_PREFIX); \
+	  cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX); \
+	  cp `which libstdc++-6.dll` $(BIN_PREFIX); \
+	  cp `which libpthread-2.dll` $(BIN_PREFIX); \
+	  mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
+	else \
+	  src/install-dlls.sh tuxpaint.exe $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX); \
+	fi
 	@strip -s $(BIN_PREFIX)/*.dll
 	@echo
 	@echo "...Installing Configuration Files..."
@@ -893,11 +936,6 @@ install-dlls:
 	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
-	@if [ "x$(BDIST_2KXP)" = "xTrue" ]; then \
-	  mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
-	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
-	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
-	fi
 
 # Install symlink:
 .PHONY: install-haiku
