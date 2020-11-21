@@ -19071,6 +19071,7 @@ static int do_new_dialog(void)
   DIR *d;
   struct dirent *f;
   struct dirent2 *fs;
+  struct stat sbuf;
   int place;
   char *dirname[NUM_PLACES_TO_LOOK];
   char **d_names = NULL, **d_exts = NULL;
@@ -19157,18 +19158,22 @@ static int do_new_dialog(void)
             {
               f = readdir(d);
 
-              if (f != NULL && f->d_type != DT_DIR)
+              if (f !=NULL)
                 {
-                  memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
-                  fs[num_files_in_dirs].place = places_to_look;
-
-                  num_files_in_dirs++;
-
-                  if (num_files_in_dirs >= things_alloced)
+                  safe_snprintf(fname, sizeof(fname), "%s/%s", dirname[places_to_look], f->d_name);
+                  if (!stat(fname, &sbuf) && S_ISREG(sbuf.st_mode))
                     {
-                      things_alloced = things_alloced + 32;
+                      memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+                      fs[num_files_in_dirs].place = places_to_look;
 
-                      fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                      num_files_in_dirs++;
+
+                      if (num_files_in_dirs >= things_alloced)
+                        {
+                          things_alloced = things_alloced + 32;
+
+                          fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                        }
                     }
                 }
             }
