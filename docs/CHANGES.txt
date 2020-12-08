@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.November.21 (0.9.25)
+2020.December.8 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -133,6 +133,9 @@ $Id$
 
     * Catalan translation
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * French translation
+      Chion Jacques <jacques.chion@orange.fr> 
 
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
