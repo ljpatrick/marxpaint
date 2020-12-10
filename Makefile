@@ -715,7 +715,7 @@ STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-
 
 # FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_STARTERS):
-	@echo -n "."
+	@printf "."
 	@mkdir -p starters/.thumbs
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
@@ -776,7 +776,7 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 
 # FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_TEMPLATES):
-	@echo -n "."
+	@printf "."
 	@mkdir -p templates/.thumbs
 	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 
