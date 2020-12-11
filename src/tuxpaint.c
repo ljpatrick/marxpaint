@@ -9396,10 +9396,10 @@ static void draw_erasers(void)
             {
               /* Square */
 
-              sz = (2 + (((NUM_ERASERS / 2) - 1 - i) * (38 / ((NUM_ERASERS / 2) - 1))));
+              sz = (2 + (((NUM_ERASERS / 2) - 1 - i) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
-              x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 - sz / 2;
-              y = ((i / 2) * button_h) + 40 + 24 - sz / 2;
+              x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
+              y = ((i / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2;
 
               dest.x = x;
               dest.y = y;
@@ -9433,10 +9433,10 @@ static void draw_erasers(void)
             {
               /* Circle */
 
-              sz = (2 + (((NUM_ERASERS / 2) - 1 - (i - NUM_ERASERS / 2)) * (38 / ((NUM_ERASERS / 2) - 1))));
+              sz = (2 + (((NUM_ERASERS / 2) - 1 - (i - NUM_ERASERS / 2)) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
-              x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 - sz / 2;
-              y = ((i / 2) * button_h) + 40 + 24 - sz / 2;
+              x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale- sz / 2;
+              y = ((i / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2;
 
               for (yy = 0; yy <= sz; yy++)
                 {
