@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 24, 2020
+# June 14, 2002 - October 15, 2020
 
 
 # The version number, for release:
@@ -23,25 +23,37 @@ SYSNAME:=$(shell uname -s)
 ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
   OS:=windows
   GPERF:=/usr/bin/gperf
-else
-  ifeq ($(SYSNAME),Darwin)
-    OS:=osx
-    GPERF:=/usr/bin/gperf
+  ifeq ($(findstring NT-6.2, $(SYSNAME)),NT-6.2)
+    BDIST_2KXP:=True
+    MINGW_DIR:=/usr/local
   else
-    ifeq ($(SYSNAME),BeOS)
-      OS:=beos
-      GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
+    MINGW_DIR:=/mingw32
+  endif
+else
+  ifeq ($(findstring MINGW64, $(SYSNAME)),MINGW64)
+    OS:=windows
+    GPERF:=/usr/bin/gperf
+    MINGW_DIR:=/mingw64
+  else
+    ifeq ($(SYSNAME),Darwin)
+      OS:=macos
+      GPERF:=/usr/bin/gperf
     else
-      ifeq ($(SYSNAME),Haiku)
+      ifeq ($(SYSNAME),BeOS)
         OS:=beos
-        GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
-        STDC_LIB:=-lstdc++
-        ifeq ($(shell gcc --version | cut -c 1-6),2.95.3)
-          STDC_LIB:=-lstdc++.r4
-        endif
+        GPERF:=$(shell finddir B_USER_BIN_DIRECTORY)/gperf
       else
-        OS:=linux
-        GPERF:=/usr/bin/gperf
+        ifeq ($(SYSNAME),Haiku)
+          OS:=beos
+          GPERF:=$(shell finddir B_SYSTEM_BIN_DIRECTORY)/gperf
+          STDC_LIB:=-lstdc++
+          ifeq ($(shell gcc --version | cut -c 1-6),2.95.3)
+            STDC_LIB:=-lstdc++.r4
+          endif
+        else
+          OS:=linux
+          GPERF:=/usr/bin/gperf
+        endif
       endif
     endif
   endif
@@ -72,7 +84,7 @@ beos_MIMESET_CMD:=mimeset -f tuxpaint
 MIMESET_CMD:=$($(OS)_MIMESET_CMD)
 
 windows_SO_TYPE:=dll
-osx_SO_TYPE:=dylib
+macos_SO_TYPE:=dylib
 beos_SO_TYPE:=so
 linux_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
@@ -84,25 +96,25 @@ windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
 windows_BUNDLE:=
-osx_BUNDLE=./TuxPaint.app
+macos_BUNDLE=./TuxPaint.app
 beos_BUNDLE:=
 linux_BUNDLE:=
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
-osx_ARCH_LIBS:=src/macos_print.m obj/macos.o
+macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
 windows_ARCH_CFLAGS:=
-osx_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
+macos_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
 beos_ARCH_CFLAGS:=
 linux_ARCH_CFLAGS:=
 ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
 
 windows_ARCH_LDFLAGS:=
-osx_ARCH_LDFLAGS:=-L/opt/local/lib
+macos_ARCH_LDFLAGS:=-L/opt/local/lib
 beos_ARCH_LDFLAGS:=
 linux_ARCH_LDFLAGS:=
 ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
@@ -115,14 +127,14 @@ PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
-windows_ARCH_LINKS:=-lintl $(PNG) -lzdll -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
-osx_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant
+windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
+macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h
-osx_ARCH_HEADERS:=src/macos.h
+macos_ARCH_HEADERS:=src/macos.h
 beos_ARCH_HEADERS:=src/BeOS_print.h
 linux_ARCH_HEADERS:=
 ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
@@ -130,7 +142,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # Where things will go when ultimately installed:
 # For macOS, the prefix is relative to DESTDIR.
 windows_PREFIX:=/usr/local
-osx_PREFIX:=Resources
+macos_PREFIX:=Resources
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
@@ -138,7 +150,7 @@ PREFIX:=$($(OS)_PREFIX)
 # PKG_ROOT is the old name for this, and should be undefined.
 # macOS is set up as a bundle, with all files under 'Contents'.
 # "TuxPaint-1" is the OLPC XO name. Installing to ./ is bad!
-ifeq ($(OS),osx)
+ifeq ($(OS),macos)
   DESTDIR:=$(BUNDLE)/Contents/
 else ifeq ($(PREFIX),./)
   DESTDIR:=TuxPaint-1
@@ -462,7 +474,7 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=
-osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
+macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
 linux_ARCH_INSTALL:=install-xdg
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
@@ -483,7 +495,7 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
-	@if [ "x$(OS)" = "xosx" ]; then \
+	@if [ "x$(OS)" = "xmacos" ]; then \
 		echo "All done! Now you can double click $(BUNDLE) to run the"; \
 		echo "program!!! TuxPaint.dmg has also been created for"; \
 		echo "distribution."; \
@@ -703,19 +715,19 @@ STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-
 
 # FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_STARTERS):
-	@echo -n "."
+	@printf "."
 	@mkdir -p starters/.thumbs
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp_$(notdir $(STARTER_NAME)).png ; \
-		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ ; \
+		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ 2> /dev/null ; \
 		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
-		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@
+	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 
 .PHONY: echo-thumb-starters
 echo-thumb-starters:
@@ -764,12 +776,12 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 
 # FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_TEMPLATES):
-	@echo -n "."
+	@printf "."
 	@mkdir -p templates/.thumbs
-	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ ; \
+	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 
 $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
-	@install -D -m 644 $< $@
+	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 
 .PHONY: echo-thumb-templates
 echo-thumb-templates:
@@ -864,68 +876,66 @@ install-bin:
 	@cp tuxpaint$(EXE_EXT) $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
-# Install the required Windows DLLs into the 'bdist' directory
+# Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
 .PHONY: install-dlls
 install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
-	@cp `which tuxpaint-config.exe` $(BIN_PREFIX)
-	@cp `which libintl-8.dll` $(BIN_PREFIX)
-	@cp `which libiconv-2.dll` $(BIN_PREFIX)
-	@cp `which libpng12.dll` $(BIN_PREFIX)
-	@cp `which SDL.dll` $(BIN_PREFIX)
-	@cp `which SDL_image.dll` $(BIN_PREFIX)
-	@cp `which SDL_mixer.dll` $(BIN_PREFIX)
-	@cp `which SDL_ttf.dll` $(BIN_PREFIX)
-	@cp `which libfreetype-6.dll` $(BIN_PREFIX)
-	@cp `which zlib1.dll` $(BIN_PREFIX)
-	@cp `which libogg-0.dll` $(BIN_PREFIX)
-	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
-	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
-	@cp `which libjpeg-8.dll` $(BIN_PREFIX)
-	@cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX)
-	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
-	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
-	@cp `which libpthread-2.dll` $(BIN_PREFIX)
-	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
-	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
-	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
-	  cp `which libfontconfig-1.dll` $(BIN_PREFIX); \
-	  cp `which libSDL_Pango-1.dll` $(BIN_PREFIX); \
-	  cp `which libgobject-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libgthread-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which librsvg-2-2.dll` $(BIN_PREFIX); \
-	  cp `which libcroco-0.6-3.dll` $(BIN_PREFIX); \
-	  cp `which libgdk_pixbuf-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libglib-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libgsf-1-114.dll` $(BIN_PREFIX); \
-	  cp `which libpango-1.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libpangocairo-1.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libpangoft2-1.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libgmodule-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libpangowin32-1.0-0.dll` $(BIN_PREFIX); \
-	  cp `which libpixman-1-0.dll` $(BIN_PREFIX); \
-	  cp `which libgio-2.0-0.dll` $(BIN_PREFIX); \
-	  cp `which bz2-1.dll` $(BIN_PREFIX); \
-	fi
-	@strip -s $(BIN_PREFIX)/*.dll
-	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
-	  echo; \
-	  echo "...Installing Configuration Files..."; \
-	  cp -R win32/etc/ $(BIN_PREFIX); \
-	  echo; \
-	  echo "...Installing Library Modules..."; \
-	  mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders; \
-	  cp /usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders; \
-	  strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll; \
-	  mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders; \
-	  cp /usr/local/lib/gtk-2.0/loaders/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders; \
-	  strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders/*.dll; \
+	@cp $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
+	@if [ "x$(BDIST_2KXP)" = "xTrue" ]; then \
+	  cp $(MINGW_DIR)/bin/libintl-8.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libiconv-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpng12.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_mixer.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/zlib1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libogg-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libvorbis-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libvorbisfile-3.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libjpeg-8.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfribidi-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libxml2-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libcairo-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libfontconfig-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libSDL_Pango-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgobject-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgthread-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/librsvg-2-2.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libcroco-0.6-3.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgdk_pixbuf-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libglib-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgsf-1-114.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpango-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangocairo-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangoft2-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgmodule-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpangowin32-1.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libpixman-1-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/bz2-1.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libimagequant.dll $(BIN_PREFIX); \
+	  cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX); \
+	  cp `which libstdc++-6.dll` $(BIN_PREFIX); \
+	  cp `which libpthread-2.dll` $(BIN_PREFIX); \
 	  mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
 	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
 	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
+	else \
+	  src/install-dlls.sh tuxpaint.exe $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX); \
 	fi
+	@strip -s $(BIN_PREFIX)/*.dll
+	@echo
+	@echo "...Installing Configuration Files..."
+	@cp -R win32/etc/ $(BIN_PREFIX)
+	@echo
+	@echo "...Installing Library Modules..."
+	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
+	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
+	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
 
 # Install symlink:
 .PHONY: install-haiku
@@ -1245,7 +1255,7 @@ MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME)
 MAGIC_ARCH_LINKS:=-lintl $(PNG)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
-osx_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
+macos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
 PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)

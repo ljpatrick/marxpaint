@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.29 (0.9.25)
+2020.December.8 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -66,6 +66,11 @@ $Id$
     * Windows build changes
       * Enabling PowerTools repositry to install additional SDL* packages
       * Corrected README launcher for English, after install completes
+      * Updated translation files and ensure license text appears
+      * Support for Mingw64 for 64-bit builds
+      * Ability to find Mingw DLLs by examining EXEs
+        (new shell script replaces hard-coded list in Makefile)
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * New Brushes
     -----------
@@ -85,6 +90,12 @@ $Id$
         (https://openclipart.org/artist/Tavin)
         Creative Commons Zero 1.0 Public Domain License
 
+  * Starter & Template updates
+    --------------------------
+    * Added margins to elephant, fish_icon and frame_hearts
+      starters, to avoid smearing on edges in Tux Paint.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
   * Documentation updates
     ---------------------
     * Cleaned up HTML code of HTML-based documentation.
@@ -92,6 +103,8 @@ $Id$
     * Sub-section links within README's Table of Contents.
 
     * EXTENDING docs cleaned up and Table of Contents added.
+
+    * Converted FAQ from bullet lists to definition lists.
 
   * Bug Fixes
     ---------
@@ -103,6 +116,16 @@ $Id$
       descriptions, if we failed to know what language to use
       (see above).
 
+    * Mended bug where a personal Template could not be loaded
+      due to how we tracked which entry in the "New" dialog
+      was the first template image.
+
+  * New Translations:
+    -----------------
+
+    * Sardinian translation
+      Flavia Floris <flavia.efloris@gmail.com>
+
   * Translation Updates:
     --------------------
     * Basque translation
@@ -110,6 +133,9 @@ $Id$
 
     * Catalan translation
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * French translation
+      Chion Jacques <jacques.chion@orange.fr> 
 
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
@@ -829,7 +855,7 @@ $Id$
       Savitha <savithasprasad@yahoo.com>
       Provided by Vrundesh Waghmare <vrundesh.waghmare@gmail.com>
 
-    * Konkani (Devaganari and Roman)
+    * Konkani (Devanagari and Roman)
       Rahul Borade <rahulborade01@gmail.com>
 
     * Luganda translation
@@ -906,7 +932,7 @@ $Id$
     * Sanskrit translation
       Babita Shinde <babitagaikwad@gmail.com>
 
-    * Santali translation (Devaganari)
+    * Santali translation (Devanagari)
       Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>
       Ganesh Murmu <g_murmu_in@yahoo.com>
 

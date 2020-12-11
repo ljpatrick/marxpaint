@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 30, 2020
+  June 14, 2002 - November 21, 2020
 */
 
 
@@ -455,7 +455,9 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-/* #include <librsvg/rsvg-cairo.h> -- Deprecated */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+#include <librsvg/rsvg-cairo.h>
+#endif
 
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
@@ -1533,7 +1535,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
 
 /**
  * Convert a wide-character string to string of Uint16's.
- * 
+ *
  * This conversion is required on platforms where Uint16 doesn't match wchar_t.
  * On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
  * Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
@@ -2220,7 +2222,7 @@ int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_posit
 int cur_thing;
 
 /**
- * --- MAIN LOOP! --- 
+ * --- MAIN LOOP! ---
  */
 static void mainloop(void)
 {
@@ -9317,7 +9319,7 @@ static void draw_shapes(void)
 
       /* Show shape-from-center button: */
 
-      if (shape_mode == SHAPEMODE_CENTER) 
+      if (shape_mode == SHAPEMODE_CENTER)
         button_color = img_btn_down;
       else
         button_color = img_btn_up;
@@ -9335,7 +9337,7 @@ static void draw_shapes(void)
 
       /* Show shape-from-corner button: */
 
-      if (shape_mode == SHAPEMODE_CORNER) 
+      if (shape_mode == SHAPEMODE_CORNER)
         button_color = img_btn_down;
       else
         button_color = img_btn_up;
@@ -11490,7 +11492,7 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect, SDL_S
 /**
  * Copy an image, scaling and smearing, as needed, into a new surface.
  * Free the original surface.
- * 
+ *
  * @param SDL_Surface * src -- source surface (will be freed by this function!)
  * @param SDL_Surface * dst -- destination surface
  * @param int SDCALL(*blit) -- function for blitting; "NondefectiveBlit" or "SDL_BlitSurface"
@@ -11678,6 +11680,7 @@ static SDL_Surface *load_starter_helper(char *path_and_basename, const char *ext
 
   ext = strdup(extension);
   safe_snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
+
   surf = (*load_func) (fname);
 
   if (surf == NULL)
@@ -12085,7 +12088,7 @@ static void save_current(void)
   char *fname;
   FILE *fi;
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E001)"))
     {
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return;
@@ -13228,22 +13231,22 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
               if (rotn != 0)
                 {
                   rotn_rad = rotn * M_PI / 180;
-        
+
                   xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
                   yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
-        
+
                   x1 = xp - offx;
                   y1 = yp - offy;
-        
+
                   xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
                   yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
-        
+
                   x2 = xp - offx;
                   y2 = yp - offy;
-        
+
                   xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
                   yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
-        
+
                   xv = xp - offx;
                   yv = yp - offy;
                 }
@@ -13318,6 +13321,10 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
   else if (shape_radius < 100)
     deg = ((deg - 7) / 15) * 15;
 
+  /* Disabled b/c it adversely affected shape_locked shapes (square & octagon)
+     with corner-dragged shapes; disabling doesn't seem to cause problems
+     with any shape, in either drag mode... -bjk 2020-11-10 */
+/*
   if (shape_locked[cur_shape])
     {
       int angle_skip;
@@ -13325,6 +13332,7 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
       angle_skip = 360 / shape_sides[cur_shape];
       deg = deg % angle_skip;
     }
+*/
 
   return (deg);
 }
@@ -13426,7 +13434,7 @@ static int do_save(int tool, int dont_show_success_results)
   show_progress_bar(screen);
   do_setcursor(cursor_watch);
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E002)"))
     {
       fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13438,7 +13446,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
 
-  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E003)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13450,7 +13458,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
 
-  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory"))
+  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E004)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13461,7 +13469,7 @@ static int do_save(int tool, int dont_show_success_results)
 
   /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
 
-  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory"))
+  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory (E005)"))
     {
       fprintf(stderr, "Cannot save label information! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -14506,10 +14514,10 @@ static int do_open(void)
                           /* No thumbnail - load original: */
 
                           /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E006)"))
                             {
                               /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E007)");
                             }
 
 
@@ -15576,10 +15584,10 @@ static int do_slideshow(void)
                       /* No thumbnail - load original: */
 
                       /* Make sure we have a ~/.tuxpaint/saved directory: */
-                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E008)"))
                         {
                           /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E009)");
                         }
 
                       safe_snprintf(fname, sizeof(fname), "%s/%s", dirname, f->d_name);
@@ -16057,19 +16065,19 @@ static int do_slideshow(void)
                       draw_toolbar();
                       draw_colors(COLORSEL_CLOBBER_WIPE);
                       draw_none();
-        
+
                       /* Show a message depending on success */
                       if (export_successful)
                         do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
                       else
                         do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
-        
+
                       freeme = textdir(TUX_TIP_SLIDESHOW);
                       draw_tux_text(TUX_BORED, freeme, 1);
                       free(freeme);
-        
+
                       SDL_Flip(screen);
-        
+
                       update_list = 1;
 		    }
                 }
@@ -16243,6 +16251,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
   SDL_Surface *img;
   char *tmp_starter_id, *tmp_template_id, *tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
+  /* FIXME: Do we want to keep `template_personal` safe, too? */
   char fname[1024];
   SDL_Event event;
   SDLKey key;
@@ -16260,6 +16269,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
   tmp_starter_mirrored = starter_mirrored;
   tmp_starter_flipped = starter_flipped;
   tmp_starter_personal = starter_personal;
+  /* FIXME: Do we want to keep `template_personal` safe, too? */
 
   do_setcursor(cursor_tiny);
 
@@ -16963,8 +16973,11 @@ static void do_render_cur_text(int do_blit)
     {
 #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
       //FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
-      //FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+      FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#else
       FriBidiParType baseDir = FRIBIDI_TYPE_WL; //EP to avoid warning on types in now commented line above
+#endif
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;
 
@@ -19114,7 +19127,8 @@ static int do_new_dialog(void)
   DIR *d;
   struct dirent *f;
   struct dirent2 *fs;
-  int place, oldplace;
+  struct stat sbuf;
+  int place;
   char *dirname[NUM_PLACES_TO_LOOK];
   char **d_names = NULL, **d_exts = NULL;
   int *d_places;
@@ -19200,18 +19214,22 @@ static int do_new_dialog(void)
             {
               f = readdir(d);
 
-              if (f != NULL)
+              if (f !=NULL)
                 {
-                  memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
-                  fs[num_files_in_dirs].place = places_to_look;
-
-                  num_files_in_dirs++;
-
-                  if (num_files_in_dirs >= things_alloced)
+                  safe_snprintf(fname, sizeof(fname), "%s/%s", dirname[places_to_look], f->d_name);
+                  if (!stat(fname, &sbuf) && S_ISREG(sbuf.st_mode))
                     {
-                      things_alloced = things_alloced + 32;
+                      memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+                      fs[num_files_in_dirs].place = places_to_look;
 
-                      fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                      num_files_in_dirs++;
+
+                      if (num_files_in_dirs >= things_alloced)
+                        {
+                          things_alloced = things_alloced + 32;
+
+                          fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                        }
                     }
                 }
             }
@@ -19255,18 +19273,13 @@ static int do_new_dialog(void)
 
   /* Read directory of images and build thumbnails: */
 
-  oldplace = -1;
-
   for (j = 0; j < num_files_in_dirs; j++)
     {
       f = &(fs[j].f);
       place = fs[j].place;
 
-      if ((place == PLACE_PERSONAL_TEMPLATES_DIR || place == PLACE_TEMPLATES_DIR) && oldplace != place)
+      if ((place == PLACE_PERSONAL_TEMPLATES_DIR || place == PLACE_TEMPLATES_DIR) && first_template == -1)
         first_template = num_files;
-
-      oldplace = place;
-
 
       show_progress_bar(screen);
 
@@ -19404,12 +19417,16 @@ static int do_new_dialog(void)
                         {
                           /* No thumbnail - load original: */
 
-                          /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
-                          if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory"))
+                          if (d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR ||
+                              d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
                             {
-                              /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
-                              safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
-                              make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory");
+                              /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
+                              if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory (for starters/templates) (E010)"))
+                                {
+                                  /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
+                                  safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
+                                  make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory (for starters/templates) (E011)");
+                                }
                             }
 
                           img = NULL;
@@ -19510,10 +19527,10 @@ static int do_new_dialog(void)
                                   safe_snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                                            dirname[d_places[num_files]], d_names[num_files]);
 
-                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory"))
+                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory (for starters) (E012)") ||
+                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory (for templates) (E013)") ||
+                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory (for starters) (E014)") ||
+                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory (for templates) (E015)"))
                                     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                                   else
                                     {
@@ -23024,7 +23041,7 @@ static void setup_config(char *argv[])
       free(picturesdir);
       exportdir = strdup(str);
     }
-    
+
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
 #if defined(_WIN32)
@@ -25643,12 +25660,12 @@ char * get_xdg_user_dir(const char * dir_type, const char * fallback) {
         } else {
           safe_strncpy(return_path, found, MAX_PATH);
         }
-        
+
         /* Trim trailing " */
         if (return_path[strlen(return_path) - 1] == '\"') {
           return_path[strlen(return_path) - 1] = '\0';
         }
-  
+
         found_it = TRUE;
       }
     }
@@ -25740,34 +25757,34 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   if (bitmap != NULL)
     {
       done = 0;
-    
+
       for (i = 0; i < num_selected && !done; i++)
         {
           which = selected[i];
           show_progress_bar(screen);
-    
-    
+
+
           /* Figure out filename: */
           safe_snprintf(fname, sizeof(fname), "%s/%s%s", dirname, d_names[which], d_exts[which]);
-    
+
           /* Load and scale the image */
           img = myIMG_Load(fname);
-    
+
           if (img != NULL)
             {
               autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
-    
+
               safe_strncpy(file_id, d_names[which], sizeof(file_id));
-    
+
               /* See if this saved image was based on a 'starter' */
               load_starter_id(d_names[which], NULL);
               if (starter_id[0] != '\0')
                 {
                   load_starter(starter_id);
-    
+
                   if (starter_mirrored)
                     mirror_starter();
-    
+
                   if (starter_flipped)
                     flip_starter();
                 }
@@ -25783,7 +25800,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           for (y = 0; y < overall_h; y++) {
             for (x = 0; x < overall_w; x++) {
               SDL_GetRGBA(getpixels[screen->format->BytesPerPixel](screen, x, y), screen->format, &r, &g, &b, &a);
-          
+
               bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 0] = r;
               bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 1] = g;
               bitmap[((i * overall_area) + (y * overall_w) + x) * 4 + 2] = b;
@@ -25792,7 +25809,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           }
 
           SDL_Flip(screen);
-	  done = export_gif_monitor_events(); 
+	  done = export_gif_monitor_events();
         }
 
 
@@ -25800,7 +25817,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
         {
           /* Quantize to max 256 (8bpp) colors and generate a suitable palette */
           liq_handle = liq_attr_create();
-          input_image = liq_image_create_rgba(liq_handle, bitmap, overall_w, num_selected * overall_h, 0); 
+          input_image = liq_image_create_rgba(liq_handle, bitmap, overall_w, num_selected * overall_h, 0);
 	  liq_set_max_colors(liq_handle, 256);
 
           show_progress_bar(screen);
@@ -25818,7 +25835,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
             pixels_size = num_selected * overall_area;
             raw_8bit_pixels = malloc(pixels_size);
             liq_set_dithering_level(quantization_result, 1.0);
-          
+
             liq_write_remapped_image(quantization_result, input_image, raw_8bit_pixels, pixels_size);
             palette = liq_get_palette(quantization_result);
             free(bitmap);
@@ -25837,24 +25854,24 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
                 8, /* 256 colors */
                 0 /* infinite loop */
             );
-      
+
             /* Export each frame */
             for (i = 0; i < num_selected && !done; i++)
               {
                 memcpy(gif->frame, raw_8bit_pixels + i * overall_area, overall_area);
                 ge_add_frame(gif, gif_speed);
-      
+
                 show_progress_bar(screen);
-	        done = export_gif_monitor_events(); 
+	        done = export_gif_monitor_events();
               }
-      
+
             /* Close the GIF */
             ge_close_gif(gif);
           } else {
             fprintf(stderr, "Quantization failed\n");
 	    done = 1;
 	  }
-    
+
           if (done)
             {
               /* Aborted; discard the partially-saved GIF */
@@ -25884,7 +25901,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   starter_flipped = tmp_starter_flipped;
   starter_personal = tmp_starter_personal;
 
-  
+
   free(gif_fname);
 
   /* Success if we didn't have an error, and user didn't abort */
@@ -26018,7 +26035,7 @@ static char * get_export_filepath(const char * ext) {
 
 
   /* Make sure the export dir exists */
-  if (!make_directory(DIR_EXPORT, "", "Can't create export directory"))
+  if (!make_directory(DIR_EXPORT, "", "Can't create export directory (E016)"))
     {
       return NULL;
     }

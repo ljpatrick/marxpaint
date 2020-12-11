@@ -155,6 +155,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "sat@olchiki",
   "sat",
   "sa",
+  "sc",
   "sd",
   "sd@devanagari",
   "shs",
@@ -362,7 +363,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"luganda", "lg_UG.UTF-8"},
   {"luxembourgish", "lb_LU.UTF-8"},
   {"letzebuergesch", "lb_LU.UTF-8"},
-  {"konkani-devaganari", "kok_IN.UTF-8"},
+  {"konkani-devanagari", "kok_IN.UTF-8"},
   {"konkani-roman", "kok@roman"},
   {"maithili", "mai_IN.UTF-8"},
   {"macedonian", "mk_MK.UTF-8"},
@@ -398,8 +399,10 @@ static const language_to_locale_struct language_to_locale_array[] = {
   {"russian", "ru_RU.UTF-8"},
   {"russkiy", "ru_RU.UTF-8"},
   {"sanskrit", "sa_IN.UTF-8"},
-  {"santali-devaganari", "sat_IN.UTF-8"},
+  {"santali-devanagari", "sat_IN.UTF-8"},
   {"santali-ol-chiki", "sat@olchiki"},
+  {"sardinian", "sc_IT"},
+  {"sardu", "sc_IT"},
   {"serbian", "sr_RS.UTF-8"},   /* Was sr_YU, but that's not in /usr/share/i18n/SUPPORTED, and sr_RS is -bjk 2014.08.04 */
   {"serbian-latin", "sr_RS@latin"},
   {"shuswap", "shs_CA.UTF-8"},
@@ -513,7 +516,7 @@ static void show_lang_usage(int exitcode)
 /* cgg */ "  kiga         chiga\n"
 /* rw */ "  kinyarwanda\n"
 /* tlh */ "  klingon      tlhIngan\n"
-/* kok */ "  konkani-devaganari\n"
+/* kok */ "  konkani-devanagari\n"
 /* kok@roman */ "  konkani-roman\n"
 /* ko */ "  korean\n"
 /* ku */ "  kurdish\n"
@@ -544,8 +547,9 @@ static void show_lang_usage(int exitcode)
 /* ro */ "  romanian\n"
 /* ru */ "  russian      russkiy\n"
 /* sa */ "  sanskrit\n"
-/* sat */ "  santali-devaganari\n"
+/* sat */ "  santali-devanagari\n"
 /* sat@olchiki */ "  santali-ol-chiki\n"
+/* sc */ "  sardinian    sardu\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
 /* sr@latin */ "  serbian-latin\n"
@@ -670,7 +674,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  lb_LU   (Luxembourgish Letzebuergesch)\n"
           "  lv_LV   (Latvian)\n"
           "  lt_LT   (Lithuanian   Lietuviu)\n"
-          "  kok_IN  (Konkani (Devaganari))\n"
+          "  kok_IN  (Konkani (Devanagari))\n"
           "  kok@roman  (Konkani (Roman))\n"
           "  mai_IN  (Maithili)\n"
           "  mk_MK   (Macedonian)\n"
@@ -694,6 +698,7 @@ static void show_locale_usage(FILE * f, const char *const prg)
           "  sa_IN   (Sanskrit)\n"
           "  sat_IN  (Santali)\n"
           "  sat@olchiki  (Santali (Ol-Chiki))\n"
+          "  sc_IT   (Sardinian)\n"
           "  sd_IN@devanagari  (Sindhi (Devanagari))\n"
           "  sd_IN  (Sindhii (Perso-Arabic))\n"
           "  shs_CA  (Shuswap      Secwepemctin)\n"

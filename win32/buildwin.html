@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<HTML LANG="en">
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Compiling Tux Paint using MinGW/MSYS2</TITLE>
+<META HTTP-EQUIV="CONTENT-STYLE-TYPE" CONTENT="text/css">
+<style type="text/css">
+<!--
+div.level1 {margin: 0em 2em 0em 2em;}
+div.level2 {margin: 0em 0em 0em 2em;}
+div.level3 {margin: 0em 0em 0em 2em;}
+div.level4 {margin: 0em 0em 0em 2em;}
+div.level5 {margin: 0em 0em 0em 2em;}
+div.footer {text-align: right; margin: 0em 0em 2em 0em;}
+A:Link,A:Visited,A:Active{color:#4169E1;}
+A:Hover{background-color:pink;color:navy;}
+pre{color: #aa0000;background-color:#e0ffff;line-height:1.5em;margin:0.5em 0em 0.5em 0em;padding:1em;}
+hr {margin: 2em 0em 1em 0em;}
+-->
+</style>
+</HEAD>
+<BODY>
+
+<div class="level1">
+
+<H1>Compiling Tux Paint using MinGW/MSYS2</H1>
+<p>This document provides how to compile <a href="http://www.tuxpaint.org/">Tux Paint</a> with MinGW/MSYS2 on Microsoft Windows.</p>
+
+<HR>
+<H2>MinGW/MSYS2 toolchains and required libraries</H2>
+<p>So many tools and libraries are required to build Tux Paint. The package management system "pacman" helps you install them automatically solving complicated dependencies.</p>
+<div class="level2">
+
+<hr>
+<h3>MSYS2</h3>
+<p>First of all, you have to install latest MSYS2 as follows.</p>
+<UL>
+<LI>Download the installer "msys2-x86_64-xxxxxxxx.exe from <a href="https://sourceforge.net/projects/msys2/">Sourceforge.net</a></LI>
+<LI>Install MSYS2 into your favorite directory (default to "C:\msys64")</LI>
+</UL>
+<p>Open the msys2 shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MSYS" and execute following command.</p>
+<pre>
+$ pacman -Syu
+# (press &lt;ENTER&gt; for all inquiry)
+</pre>
+<p>This will update core system and the window will close automatically.</p>
+<p>Open the msys2 shell again and execute following command to finish remaining updating process.</p>
+<pre>
+$ pacman -Syu
+# (press &lt;ENTER&gt; for all inquiry)
+</pre>
+<p>Install basic development tools as follows.
+<pre>
+$ pacman -S base-devel msys2-devel git
+# (press &lt;ENTER&gt; for all inquiry)
+</pre>
+<p>Proceed to the next "<a href="#64bit">MinGW 64bit (x86_64) toolchains</a>" section or skip to the "<a href="#32bit">MinGW 32bit (i686) toolchains</a>" section if you need only a 32bit build environment.</p>
+
+<hr>
+<H3><a name=64bit>MinGW 64bit (x86_64) toolchains</a></H3>
+<p>Open the msys2 shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MSYS" and install basic 64bit development tools as follows.</p>
+<pre>
+$ pacman -S mingw-w64-x86_64-toolchain
+# (press &lt;ENTER&gt; for all inquiry)
+</pre>
+
+<H3>64bit (x86_64) dependency libraries for Tux Paint</a></H3>
+<p>You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "pacman" except for SDL_Pango.</p>
+<p>"ntldd" is a small tool which examine windows executable files to list dynamic link library (.dll) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required .dll files.</p>
+<pre>
+$ pacman -S mingw-w64-x86_64-SDL_{image,mixer,ttf}
+$ pacman -S mingw-w64-x86_64-librsvg
+$ pacman -S mingw-w64-x86_64-fribidi
+$ pacman -S mingw-w64-x86_64-libimagequant
+$ pacman -S mingw-w64-x86_64-fltk
+$ pacman -S mingw64/mingw-w64-x86_64-ntldd-git
+</pre>
+<p>Close the shell before proceeding to the remaining process.</p>
+
+<H3>Install SDL_Pango and re-install SDL on the 64bit environment.</H3>
+<p>SDL_Pango should be installed manually. In addition, you have to re-install SDL from the source code or you will see unnecessary blank window opens when starting Tux Paint.</p>
+<p>This time, use the MinGW "64bit" shell. Open the shell from the "Start Menu" -> "MSYS2 64bit -> "MSYS2 MinGW 64-bit"</p>
+
+<div class="level3">
+<H4>SDL_Pango</H4>
+<p>At first, you have to prepare source tar-ball and a patch required in the same directory.</p>
+<UL>
+<LI>Download <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">source tar-ball</a> from <a href="https://sourceforge.net/projects/sdlpango/">SDL_Pango's page on Sourceforge.net</a>.</LI>
+<LI>Download <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">a patch file</a> which adds some extra (required) functionality to SDL_Pango from <a href="http://www.johnnypops.co.uk/tuxpaint/">"Tux Paint - MinGW/MSYS build instructions"</a>.
+</UL>
+<p>Build and install SDL_Pango as follows.</p>
+<pre>
+$ tar zxvf SDL_Pango-0.1.2.tar.gz
+$ cd SDL_Pango-0.1.2/
+$ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+$ ./configure --prefix=/mingw64 && make && make install
+</pre>
+
+<H4>SDL</H4>
+<p>Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball</a> from "<a href="http://www.libsdl.org/">libsdl.org</a>" and re-install SDL as follows.
+<pre>
+$ tar zxvf SDL-1.2.15.tar.gz
+$ cd SDL-1.2.15
+$ ./configure --prefix=/mingw64 && make && make install
+</pre>
+</div>
+<p>Proceed to the next "<a href="#32bit">MinGW 32bit (i686) toolchains</a>" section or skip to the "<a href="#imagemagick">ImageMagick</a>" section if you need only a 64bit build environment.</p>
+
+<hr>
+<H3><a name=32bit>MinGW 32bit (i686) toolchains</a></H3>
+<p>Open the msys2 shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MSYS" and install basic 32bit development tools as follows.</p>
+<pre>
+$ pacman -S mingw-w64-i686-toolchain
+# (press &lt;ENTER&gt; for all inquiry)
+</pre>
+
+<H3>32bit (i686) dependency libraries for Tux Paint</a></H3>
+<p>You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "pacman" except for SDL_Pango.</p>
+<p>"ntldd" is a small tool which examin windows executable files to list dynamic link library (.dll) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required .dll files.</p>
+<pre>
+$ pacman -S mingw-w64-i686-SDL_{image,mixer,ttf}
+$ pacman -S mingw-w64-i686-librsvg
+$ pacman -S mingw-w64-i686-fribidi
+$ pacman -S mingw-w64-i686-libimagequant
+$ pacman -S mingw-w64-i686-fltk
+$ pacman -S mingw-w64-i686-ntldd-git
+</pre>
+<p>Close the shell before proceeding to the remaining process.</p>
+
+<H3>Install SDL_Pango and re-install SDL on the 32bit environment.</H3>
+<p>SDL_Pango should be installed manually. In addition, you have to re-install SDL from the source code or you will see unnecessary blank window opens when starting Tux Paint.</p>
+<p>This time, use the MinGW "32bit" shell. Open the shell from the "Start Menu" -> "MSYS2 64bit -> "MSYS2 MinGW 32-bit"</p>
+
+<div class="level3">
+<H4>SDL_Pango</H4>
+<p>At first, you have to prepare source tar-ball and a patch required in the same directory.</p>
+<UL>
+<LI>Download <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">source tar-ball</a> from <a href="https://sourceforge.net/projects/sdlpango/">SDL_Pango's page on Sourceforge.net</a>.</LI>
+<LI>Download <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">a patch file</a> which adds some extra (required) functionality to SDL_Pango from <a href="http://www.johnnypops.co.uk/tuxpaint/">"Tux Paint - MinGW/MSYS build instructions"</a>.
+</UL>
+<p>Build and install SDL_Pango as follows.</p>
+<pre>
+$ tar zxvf SDL_Pango-0.1.2.tar.gz
+$ cd SDL_Pango-0.1.2/
+$ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+$ ./configure --prefix=/mingw32 && make && make install
+</pre>
+
+<H4>SDL</H4>
+<p>Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball</a> from "<a href="http://www.libsdl.org/">libsdl.org</a>" and re-install SDL as follows.
+<pre>
+$ tar zxvf SDL-1.2.15.tar.gz
+$ cd SDL-1.2.15
+$ ./configure --prefix=/mingw32 && make && make install
+</pre>
+</div>
+<p>Proceed to the next <a href="#imagemagick">ImageMagick</a> section.</p>
+</div>
+
+<HR>
+<H2><a name="imagemagick">ImageMagick</a></H2>
+<p><a href="https://imagemagick.org">ImageMagick</a> is a compilation of command line tools to create, edit, compose, or convert bitmap images supporting quite a large number of image formats. Tux Paint uses two functions ("convert" and "composite") in it to generate thumbnails for startar images and  templates in the build process.</p>
+<p>Using official binary release available from "<a href="https://imagemagick.org/script/download.php#windowsand">Windows Binary Release</a>" is recommended because its commands installed using "pacman" on MinGW/MSYS do not work as expected.</p>
+<p>Do not forget to enable "Install legacy utilities (e.g. convert)" while installing it because Tux Paint's build process uses them.</p>
+<p>Add the path to the directory in which ImageMagick is installed at the top of the "PATH" environment variable. For example;</p>
+<pre>
+$ export PATH=/c/Program\ Files/ImageMagick-7.0.10-Q16-HDRI:$PATH</pre>
+<p>You make it default by describing above in the bash configuration file "~/.bash_profile".</p>
+<HR>
+<H2><a name="tuxpaint">Tux Paint</a></H2>
+<p>You are able to compile 64bit binaries using MSYS2 64bit shell and 32bit binaries using 32bit shell respectively.</p>
+<UL>
+<LI>Select "MSYS2 64bit -&gt; "MSYS2 MinGW 64-bit" from the "Start Menu" to open the 64bit shell.</LI>
+<LI>Select "MSYS2 64bit -&gt; "MSYS2 MinGW 32-bit" from the "Start Menu" to open the 32bit shell.</LI>
+</UL>
+
+<div class="level2">
+<hr>
+<h3>Tux Paint Config</h3>
+<p>"Tux Paint Config" is a useful graphical tool for tweaking Tux Paint's behavior. You have to build this component before compiling Tux Paint if you want to have it included in your package.</p>
+<p>You can use any of [a] <u>stable tar-ball release</u> or [b] <u>developing source tree</u>.<p>
+<div class="level3">
+<p>[a] Using stable tar-ball release.</p>
+<div class="level4">
+<UL>
+<LI>Download <a href="http://sourceforge.net/projects/tuxpaint/files/tuxpaint-config/0.0.16/tuxpaint-config-0.0.16.tar.gz/download">source tar-ball</a> from <a href="http://sourceforge.net/projects/tuxpaint/">Tux Paint's page on Sourceforge.net</a>.</LI>
+</UL>
+<p>Expand the tar-ball and change the directory name so that the final packaging process can find related files.</p>
+<pre>
+$ tar zxvf tuxpaint-config-0.0.16.tar.gz
+$ mv tuxpaint-config-0.0.16 tuxpaint-config
+</pre>
+</div>
+<p>[b] Using developing source tree</p>
+<div class="level4">
+<p>Fetch the developing source tree from git repository.</p>
+<pre>
+$ git clone https://git.code.sf.net/p/tuxpaint/tuxpaint-config tuxpaint-config
+</pre>
+</div>
+</div>
+<p>Now you can build tuxpaint-config as follows.</p>
+<pre>
+$ cd tuxpaint-config
+$ make win32
+</pre>
+
+<hr>
+<h3>Tux Paint</h3>
+<p>You can use any of [a] <u>stable tar-ball release</u> or [b] <u>developing source tree</u>.<p>
+<div class="level3">
+<p>[a] Using stable tar-ball release.</p>
+<div class="level4">
+<UL>
+<LI>Download <a href="http://sourceforge.net/projects/tuxpaint/files/tuxpaint/0.9.25/tuxpaint-0.9.25.tar.gz/download">source tar-ball</a> from <a href="http://sourceforge.net/projects/tuxpaint/">Tux Paint's page on Sourceforge.net</a>.</LI>
+</UL>
+<p>Expand the tar-ball and enter to the top of the source tree.</p>
+<pre>
+$ tar zxvf tuxpaint-0.9.25.tar.gz
+$ cd tuxpaint-0.9.25
+</pre>
+</div>
+<p>[b] Using developing source tree</p>
+<div class="level4">
+<p>Fetch the developing source tree from git repository and enter to the top of the source tree.</p>
+<pre>
+$ git clone https://git.code.sf.net/p/tuxpaint/tuxpaint tuxpaint
+$ cd tuxpaint
+</pre>
+</div>
+</div>
+<p>Now you can build Tux Paint as follows.</p>
+<pre>
+$ make bdist-win32
+</pre>
+<p>All the files needed for starting Tux Paint and Tux Paint Config are collected in the directory for binary distribution "bdist" directory under "win32". You can start them by double-clicking .exe files in the "bdist" directory.</p>
+
+<hr>
+<h3>Tux Paint installer</h3>
+<p><a href="https://jrsoftware.org/isinfo.php">Inno Setup</a> is used to build executable installer for Tux Paint. Therefore you have to install it in the first place.</p>
+<p>Inno Setup officially supports translations for only about 20 languages. However, one of the great points of Tux Paint is it supports so many languages. Therefore, the set up script "tuxpaint.iss" to build the installer is written to use much more translations including unofficial one which are available on "<a href="https://jrsoftware.org/files/istrans/">Inno Setup Translations</a>". You have to download translation files (.isl) required and put them in "Languages" directory under the directory in which Inno Setup is installed.</p>
+<p>Then, you can easily build an executable installer just as follows.</p>
+<UL>
+<LI>Right-click on the "tuxpaint.iss" icon in the "win32" directory and select "Compile" on the list.</LI>
+</UL>
+<p>It takes for a while and you will find tuxpaint-x.x.xx-win32-installer.exe in the same directory.</p>
+</div>
+
+<hr>
+<div class="footer">
+Oct. 25, 2020<br>
+Shin-ichi TOYAMA shin1@wmail.plala.or.jp
+</div>
+</div>
+</BODY>
+</HTML>
