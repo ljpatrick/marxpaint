@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.December.8 (0.9.25)
+2020.December.12 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -122,7 +122,6 @@ $Id$
 
   * New Translations:
     -----------------
-
     * Sardinian translation
       Flavia Floris <flavia.efloris@gmail.com>
 
@@ -145,6 +144,12 @@ $Id$
 
     * Japanese translation & Japanese README documentation
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Norwegian Bokmål translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
 
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
