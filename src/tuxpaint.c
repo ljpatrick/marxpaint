@@ -24300,7 +24300,7 @@ static void setup(void)
 #endif
 
   medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-                                       DATA_PREFIX "fonts/default_font.ttf", 18 - (only_uppercase * 3));
+                                       DATA_PREFIX "fonts/default_font.ttf", (18 - (only_uppercase * 3)) * button_scale);
 
   if (medium_font == NULL)
     {
@@ -24601,7 +24601,7 @@ static void setup(void)
   /* Load system fonts: */
 
   large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-                                      DATA_PREFIX "fonts/default_font.ttf", 30 * button_scale - (only_uppercase * 3));
+                                      DATA_PREFIX "fonts/default_font.ttf", (30 - (only_uppercase * 3)) * button_scale);
 
   if (large_font == NULL)
     {
@@ -24617,9 +24617,9 @@ static void setup(void)
 
   small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, DATA_PREFIX "fonts/default_font.ttf",
 #ifdef __APPLE__
-                                      12 * button_scale - (only_uppercase * 2)
+                                      (12 - (only_uppercase * 2)) * button_scale
 #else
-                                      13 * button_scale - (only_uppercase * 2)
+                                      (13 - (only_uppercase * 2)) * button_scale
 #endif
   );
 
@@ -24696,7 +24696,7 @@ static void setup(void)
           free(td_str);
           tmp_surf = render_text(myfont, upstr, black);
           free(upstr);
-          img_title_names[i] = thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
+          img_title_names[i] = thumbnail(tmp_surf, min(84 * button_scale, tmp_surf->w), tmp_surf->h, 0);
           SDL_FreeSurface(tmp_surf);
         }
       else
