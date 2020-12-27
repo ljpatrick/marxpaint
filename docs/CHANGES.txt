@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.December.12 (0.9.25)
+2020.December.27 (0.9.25)
   * New Features
     ------------
     * Export drawings:

@@ -6,7 +6,7 @@ Options Documentation
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                               December 25, 2020
+                               December 27, 2020
 
      ----------------------------------------------------------------------
 
