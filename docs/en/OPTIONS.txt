@@ -48,7 +48,7 @@ Linux and Unix Users
 
            --nosysconfig
 
-Mac OS X Users
+macOS Users
 
        The file you should create is called "tuxpaint.cfg" and it should be
        placed in your home folder, under the sub-folder: Library/Application
@@ -179,7 +179,7 @@ Windows Users
              the 'Print' button is clicked while the [Alt] modifier key is
              being held. (This is typically used for providing a print
              dialog, similar to when pressing [Alt]+'Print' in Windows and
-             Mac OS X.)
+             macOS.)
 
              If this option is not specifically not set, the default command
              is KDE's graphical print dialog:

@@ -267,7 +267,7 @@ Saving
                         e.g., C:\Documents and Settings\Username\Application
                         Data\TuxPaint\saved
 
-                Mac OS X
+                macOS
                         In the user's "Application Support" folder:
                         e.g., /Users/Username/Library/Applicaton
                         Support/TuxPaint/saved/
