@@ -95,3 +95,5 @@ Time to release:
 
    [repeat for tuxpaint-config and tuxpaint-stamps]
 
+ * Copy latest release's documentation to the tuxpaint.org website.
+
