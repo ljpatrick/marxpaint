@@ -83,6 +83,9 @@ RSRC_CMD:=$($(OS)_RSRC_CMD)
 beos_MIMESET_CMD:=mimeset -f tuxpaint
 MIMESET_CMD:=$($(OS)_MIMESET_CMD)
 
+macos_RAD_CMD:=[[ ! -d Resources/share ]] && mkdir -p Resources/share && ln -s ../../data Resources/share/tuxpaint || :
+RAD_CMD:=$($(OS)_RAD_CMD)
+
 windows_SO_TYPE:=dll
 macos_SO_TYPE:=dylib
 beos_SO_TYPE:=so
@@ -607,7 +610,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
-	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM
+	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1052,6 +1055,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
+	@$(RAD_CMD)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
 
