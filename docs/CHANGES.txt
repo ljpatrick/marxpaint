@@ -8,6 +8,11 @@ http://www.tuxpaint.org/
 
 $Id$
 
+2020.December.27 (0.9.26)
+  * Documentation updates
+    ---------------------
+    * Expanded the steps for making and posting releases.
+
 2020.December.27 (0.9.25)
   * New Features
     ------------
