@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2020-12-27 -bjk
+Last updated 2020-12-30 -bjk
 
 Preparing
 ---------
@@ -96,4 +96,57 @@ Time to release:
    [repeat for tuxpaint-config and tuxpaint-stamps]
 
  * Copy latest release's documentation to the tuxpaint.org website.
+
+Announcements
+-------------
+ * Managed by Tux Paint
+
+   + Tux Paint website
+     - Site: http://www.tuxpaint.org/
+     - Submissions: [add announcement to /latest/]
+
+   + Tux Paint on Facebook
+     - Site: https://www.facebook.com/TuxPaint
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Twitter
+     - Site: https://www.facebook.com/TuxPaint
+     - Submissions: [currently managed by Bill K.]
+
+ * News sites & magazines
+
+   + Linux Today
+     - Site: https://www.linuxtoday.com/
+     - Twitter: https://twitter.com/linuxtoday
+     - Submissions: https://www.linuxtoday.com/contribute.html
+
+   + Fossbytes
+     - Site: https://fossbytes.com/
+     - Twitter: https://twitter.com/Fossbytes14
+     - Submissions: admin [at] fossbytes.com
+
+   + EdTech K12 Magazine
+     - Site: https://edtechmagazine.com/k12/
+     - Twitter: https://twitter.com/EdTech_K12
+     - Submissions: https://edtechmagazine.com/k12/contact-us (?)
+
+ * Software databases
+
+   + MacUpdate
+     - Site: https://www.macupdate.com/
+     - Submissions: [currently managed by Bill K.]
+
+ * Linux repositories
+
+   + Fedora -- process TBD
+   + openSUSE -- process TBD
+   + Debian -- process TBD
+   + Ubuntu -- process TBD
+   + Slackware -- process TBD
+   + ...others?
+
+ * Paid promotions
+
+   + Facebook boost
+   + Newswire.com
 
