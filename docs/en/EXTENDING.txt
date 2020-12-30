@@ -1,11 +1,11 @@
                                    Extending
                                    Tux Paint
-                                 version 0.9.25
+                                 version 0.9.26
 
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                        June 14, 2002 - August 29, 2020
+                       June 14, 2002 - December 27, 2020
 
      ----------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ Where Files Go
 
            C:\Documents and Settings\(username)\Application Data\TuxPaint\
 
-    Mac OS X
+    macOS
 
          Your personal Tux Paint folder is stored in your "Application
          Support" folder:
@@ -652,7 +652,7 @@ Translations
        msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
      A graphical tool, called poEdit (http://www.poedit.net/), is available
-     for Linux, Windows and Mac OS X.
+     for Linux, Windows and macOS.
 
      Note: It is best to always work off of the latest Tux Paint text catalog
      template ("tuxpaint.pot"), since new text is added, and old text is

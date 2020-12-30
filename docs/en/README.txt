@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 version 0.9.25
+                                 version 0.9.26
 
   A simple drawing program for children
 
           Copyright 2002-2020 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                       June 14, 2002 - November 21, 2020
+                       June 14, 2002 - December 27, 2020
 
      ----------------------------------------------------------------------
 

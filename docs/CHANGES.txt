@@ -8,7 +8,15 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.December.12 (0.9.25)
+2020.December.27 (0.9.26)
+  * Documentation updates
+    ---------------------
+    * Expanded the steps for making and posting releases.
+
+    * Mended some broken relative links in README.html that
+      pointed to other parts of the docs.
+
+2020.December.27 (0.9.25)
   * New Features
     ------------
     * Export drawings:
