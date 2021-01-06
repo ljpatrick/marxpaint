@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2020-12-30 -bjk
+Last updated 2021-01-05 -bjk
 
 Preparing
 ---------
@@ -119,6 +119,11 @@ Announcements
      - Site: https://www.linuxtoday.com/
      - Twitter: https://twitter.com/linuxtoday
      - Submissions: https://www.linuxtoday.com/contribute.html
+
+   + 9to5Linux
+     - Site: https://9to5linux.com/
+     - Twitter: https://twitter.com/9to5linux
+     - Submissions: https://9to5linux.com/contact-us
 
    + Fossbytes
      - Site: https://fossbytes.com/
