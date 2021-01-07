@@ -2,13 +2,17 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2020
+Copyright (c) 2002-2021
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 $Id$
 
-2020.December.27 (0.9.26)
+2021.January.6 (0.9.26)
+  * New Magic Tools:
+    ----------------
+    * Pixels
+
   * Documentation updates
     ---------------------
     * Expanded the steps for making and posting releases.
