@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.6 (0.9.26)
+2021.January.9 (0.9.26)
   * New Magic Tools:
     ----------------
     * Pixels
@@ -19,6 +19,9 @@ $Id$
 
     * Mended some broken relative links in README.html that
       pointed to other parts of the docs.
+
+    * Documented how to build Tux Paint using old macOS
+      Mark K. Kim <markuskimius@gmail.com>
 
 2020.December.27 (0.9.25)
   * New Features
