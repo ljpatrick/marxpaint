@@ -1,6 +1,6 @@
 WHAT IS THIS
 ------------
-This document describes how to build Tux Paint for macOS 10.12 Sierra and later.
+This document describes how to build Tux Paint 0.9.23 or later on macOS.
 
 Tux Paint 0.9.22 and earlier required building Tux Paint from the Xcode IDE.
 Starting with 0.9.23, however, Tux Paint for macOS is built as though it were a
@@ -96,13 +96,13 @@ Some old versions of macOS can be downloaded from Apple's support page:
   https://support.apple.com/en-us/HT211683
 
 macOS does allow dual booting of multiple versions of the OS, but it's safer
-and easier to install the old macOS onto a flash drive.  But wherever you're
+and easier to install the old macOS onto a flash drive.  Wherever you're
 installing it, the target drive's partitioniong scheme and partition type must
 match what the old macOS expects, so use the Disk Utility to partition and
 format the flash drive accordingly.
 
 As of this writing, the oldest version of macOS available on Apple's support
-site is Yosemite 10.10, which expects GPT (GUID Partition Table) partitioning
+site is Yosemite 10.10, which expects `GPT (GUID Partition Table)` partitioning
 scheme instead of the older MBR scheme, and `Mac OS Extended (Journaled)` as
 the partition type instead of the newer APFS partition type.
 
@@ -126,7 +126,7 @@ registration:
 The list of macOS versions and the last version of Xcode compatible with them
 are laid out nicely on the Wikipedia page on Xcode:
 
-  https://en.wikipedia.org/wiki/Xcode
+  https://en.wikipedia.org/wiki/Xcode#Version_comparison_table
 
 And because Xcode is being installed manually, you can skip the step to install the Xcode
 command line tools (do not run `xcode-select --install`) but otherwise build Tux Paint
