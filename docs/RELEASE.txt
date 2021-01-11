@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2021-01-05 -bjk
+Last updated 2021-01-11 -bjk
 
 Preparing
 ---------
@@ -42,6 +42,8 @@ a .tar.gz source tarball, and making the tarball available for download.
    Make certain it looks okay, and stil renders properly in a browser.
    If not, correct the issues!  Then replace the original with the new
    version 'tidy' created.
+
+ * Rebuild 'tuxpaint.desktop' by running "make" in "src/po/")
 
  * Don't forget to commit the changes!  (git add ... / git commit / git push)
 
