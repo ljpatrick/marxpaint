@@ -2,6 +2,6 @@
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
-   This tool draws squares on the canvas in a grid, simulating large pixels
-   seen on older computer displays, and allowing simple "pixel art" to be
-   created in Tux Paint.
+   Draw large square "pixels" on the canvas.
+
+   See also: Bricks

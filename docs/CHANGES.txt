@@ -8,10 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.9 (0.9.26)
+2021.January.10 (0.9.26)
   * New Magic Tools:
     ----------------
     * Pixels
+      Draws large squares, for classic computer 'pixel art' style drawings.
+
+    * Clone
+      Clones (copies, via painting) part of a drawing to another position.
 
   * Documentation updates
     ---------------------
