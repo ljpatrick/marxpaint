@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2021-01-11 -bjk
+Last updated 2021-01-13 -bjk
 
 Preparing
 ---------
@@ -98,6 +98,12 @@ Time to release:
    [repeat for tuxpaint-config and tuxpaint-stamps]
 
  * Copy latest release's documentation to the tuxpaint.org website.
+
+Website updates
+---------------
+ * List new features on http://www.tuxpaint.org/features/
+
+ * Add any new requirements to http://www.tuxpaint.org/requirements/
 
 Announcements
 -------------
