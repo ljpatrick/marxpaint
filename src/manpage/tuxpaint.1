@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2020.12.27
-.TH TUXPAINT 1 "27 December 2020" "0.9.26" "Tux Paint"
+.\" tuxpaint.1 - 2021.01.13
+.TH TUXPAINT 1 "13 January 2021" "0.9.26" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -130,6 +130,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-alllocalefonts]
 .br
 [\-\-savedir \fIDIR\fP]
+.br
+[\-\-exportdir \fIDIR\fP]
 .br
 [\-\-datadir \fIDIR\fP]
 .br
@@ -484,7 +486,11 @@ Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
-Specify where \fITux Paint\fP should save files.
+Specify where \fITux Paint\fP should save and load its drawings.
+
+.TP 8
+.B \-\-exportdir \fIDIR\fP
+Specify where \fITux Paint\fP should export drawings and animations.
 
 .TP 8
 .B \-\-datadir \fIDIR\fP

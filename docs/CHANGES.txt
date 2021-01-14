@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.10 (0.9.26)
+2021.January.13 (0.9.26)
   * New Magic Tools:
     ----------------
     * Pixels
@@ -26,6 +26,15 @@ $Id$
 
     * Documented how to build Tux Paint using old macOS
       Mark K. Kim <markuskimius@gmail.com>
+
+  * Other Improvements
+    ------------------
+    * If parent of export directory doesn't exist, Tux Paint will
+      try to create it as well.
+      (Only one level up; e.g., with an export location like
+      /path/to/Pictures/TuxPaint/, it will try to create
+      /path/to/Pictures/ if it doesn't exist, but not its parents).
+      h/t Tim Dickson
 
 2020.December.27 (0.9.25)
   * New Features

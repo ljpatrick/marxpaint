@@ -3,7 +3,7 @@
 
 Options Documentation
 
-        Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
+        Copyright (c) 2002-2021 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
                                December 27, 2020
@@ -607,9 +607,14 @@ Windows Users
              Note: When the defaults are used, a new "TuxPaint" subdirectory
              will be created and used. (e.g., "~/Pictures/TuxPaint") When the
              "--exportdir" option is used, the exact path specified will be
-             used (no "TuxPaint" subdirectory is created). It is expected
-             that the parent directory exists. (The directory itself will be
-             created, if it doesn't.)
+             used (no "TuxPaint" subdirectory is created).
+
+             The directory itself (e.g., "~/Pictures/TuxPaint") will be
+             created, if it doesn't exist.
+
+             If the parent directory (e.g., "~/Pictures") also does not
+             exist, Tux Paint will attempt to create it as well (but not any
+             directories higher than that).
 
              Example: exportdir=/home/penguin/TuxPaintExports
 
