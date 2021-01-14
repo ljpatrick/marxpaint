@@ -1033,14 +1033,14 @@ install-macbundle:
 	@install -m 644 macos/PkgInfo $(BUNDLE)/Contents
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
-	@custom/macos.sh
+	@macos/build-app.sh
 
 
 # Create DMG for macOS
 TuxPaint.dmg:
 	@echo
 	@echo "...Creating DMG Distribution File..."
-	@custom/macos-mkdmg.sh
+	@macos/build-dmg.sh
 
 
 # Build the program!
