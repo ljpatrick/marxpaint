@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-11 09:03-0800\n"
-"PO-Revision-Date: 2020-09-03 18:31+0200\n"
+"PO-Revision-Date: 2021-01-14 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -898,13 +898,15 @@ msgstr ""
 
 #: ../../magic/src/clone.c:121
 msgid "Clone"
-msgstr ""
+msgstr "Clonar"
 
 #: ../../magic/src/clone.c:127
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
+"Preme unha vez para escoller un lugar para comezar a clonación. Preme de "
+"novo e arrastra para clonar esa parte da imaxe."
 
 #: ../../magic/src/confetti.c:83
 msgid "Confetti"
@@ -1223,13 +1225,11 @@ msgstr ""
 #. Both are named "Pixels", at the moment:
 #: ../../magic/src/pixels.c:108
 msgid "Pixels"
-msgstr ""
+msgstr "Píxeles"
 
 #: ../../magic/src/pixels.c:114
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw large pixels."
-msgstr "Preme e arrastra o rato para debuxar ladrillos grandes."
+msgstr "Preme e arrastra o rato para debuxar píxeles grandes."
 
 #: ../../magic/src/puzzle.c:103
 msgid "Puzzle"
