@@ -25,7 +25,7 @@
       </h2>
 
       <p>
-        Copyright (c) 2002-2020 by various contributors; see
+        Copyright (c) 2002-2021 by various contributors; see
         AUTHORS.txt<br>
         <a href=
         "http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
@@ -1274,9 +1274,16 @@
             and used. (e.g., "<code>~/Pictures/TuxPaint</code>")
             When the "<code>--exportdir</code>" option is used, the
             exact path specified will be used (no
-            "<code>TuxPaint</code>" subdirectory is created). It is
-            expected that the parent directory exists. (The
-            directory itself will be created, if it doesn't.)
+            "<code>TuxPaint</code>" subdirectory is created).
+          </p>
+          <p>
+            The directory itself (e.g., "<code>~/Pictures/TuxPaint</code>")
+            will be created, if it doesn't exist.
+          </p>
+          <p>
+            If the <em>parent</em> directory (e.g., "<code>~/Pictures</code>")
+            also does not exist, Tux&nbsp;Paint will attempt to create it
+            as well (but not any directories higher than that).
           </p>
 
           <p>

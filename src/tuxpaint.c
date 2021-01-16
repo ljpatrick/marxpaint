@@ -26035,9 +26035,16 @@ static char * get_export_filepath(const char * ext) {
 
 
   /* Make sure the export dir exists */
-  if (!make_directory(DIR_EXPORT, "", "Can't create export directory (E016)"))
+  if (!make_directory(DIR_EXPORT, "", "Can't create export directory; will try to make its parent (E016)"))
     {
-      return NULL;
+      /* See if perhaps we need to try and make its parent directory first? */
+      if (make_directory(DIR_EXPORT_PARENT, "", "Can't create export directory parent (E016b)")) {
+        if (!make_directory(DIR_EXPORT, "", "Can't create export directory (E016c)")) {
+          return NULL;
+        }
+      } else {
+        return NULL;
+      }
     }
 
   /* Create a unique filename, within that dir */

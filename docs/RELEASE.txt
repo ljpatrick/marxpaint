@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2020-12-27 -bjk
+Last updated 2021-01-13 -bjk
 
 Preparing
 ---------
@@ -42,6 +42,8 @@ a .tar.gz source tarball, and making the tarball available for download.
    Make certain it looks okay, and stil renders properly in a browser.
    If not, correct the issues!  Then replace the original with the new
    version 'tidy' created.
+
+ * Rebuild 'tuxpaint.desktop' by running "make" in "src/po/")
 
  * Don't forget to commit the changes!  (git add ... / git commit / git push)
 
@@ -96,4 +98,68 @@ Time to release:
    [repeat for tuxpaint-config and tuxpaint-stamps]
 
  * Copy latest release's documentation to the tuxpaint.org website.
+
+Website updates
+---------------
+ * List new features on http://www.tuxpaint.org/features/
+
+ * Add any new requirements to http://www.tuxpaint.org/requirements/
+
+Announcements
+-------------
+ * Managed by Tux Paint
+
+   + Tux Paint website
+     - Site: http://www.tuxpaint.org/
+     - Submissions: [add announcement to /latest/]
+
+   + Tux Paint on Facebook
+     - Site: https://www.facebook.com/TuxPaint
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Twitter
+     - Site: https://www.facebook.com/TuxPaint
+     - Submissions: [currently managed by Bill K.]
+
+ * News sites & magazines
+
+   + Linux Today
+     - Site: https://www.linuxtoday.com/
+     - Twitter: https://twitter.com/linuxtoday
+     - Submissions: https://www.linuxtoday.com/contribute.html
+
+   + 9to5Linux
+     - Site: https://9to5linux.com/
+     - Twitter: https://twitter.com/9to5linux
+     - Submissions: https://9to5linux.com/contact-us
+
+   + Fossbytes
+     - Site: https://fossbytes.com/
+     - Twitter: https://twitter.com/Fossbytes14
+     - Submissions: admin [at] fossbytes.com
+
+   + EdTech K12 Magazine
+     - Site: https://edtechmagazine.com/k12/
+     - Twitter: https://twitter.com/EdTech_K12
+     - Submissions: https://edtechmagazine.com/k12/contact-us (?)
+
+ * Software databases
+
+   + MacUpdate
+     - Site: https://www.macupdate.com/
+     - Submissions: [currently managed by Bill K.]
+
+ * Linux repositories
+
+   + Fedora -- process TBD
+   + openSUSE -- process TBD
+   + Debian -- process TBD
+   + Ubuntu -- process TBD
+   + Slackware -- process TBD
+   + ...others?
+
+ * Paid promotions
+
+   + Facebook boost
+   + Newswire.com
 

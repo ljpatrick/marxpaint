@@ -2,19 +2,44 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2020
+Copyright (c) 2002-2021
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 $Id$
 
-2020.December.27 (0.9.26)
+2021.January.15 (0.9.26)
+  * New Magic Tools:
+    ----------------
+    * Pixels
+      Draws large squares, for classic computer 'pixel art' style drawings.
+
+    * Clone
+      Clones (copies, via painting) part of a drawing to another position.
+
   * Documentation updates
     ---------------------
     * Expanded the steps for making and posting releases.
 
     * Mended some broken relative links in README.html that
       pointed to other parts of the docs.
+
+    * Documented how to build Tux Paint using old macOS
+      Mark K. Kim <markuskimius@gmail.com>
+
+  * Other Improvements
+    ------------------
+    * If parent of export directory doesn't exist, Tux Paint will
+      try to create it as well.
+      (Only one level up; e.g., with an export location like
+      /path/to/Pictures/TuxPaint/, it will try to create
+      /path/to/Pictures/ if it doesn't exist, but not its parents).
+      h/t Tim Dickson
+
+  * Translation Updates:
+    --------------------
+    * Galician translation
+      Miguel Bouzada <mbouzada@gmail.com>
 
 2020.December.27 (0.9.25)
   * New Features
