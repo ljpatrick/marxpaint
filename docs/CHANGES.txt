@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.15 (0.9.26)
+2021.January.16 (0.9.26)
   * New Magic Tools:
     ----------------
     * Pixels
@@ -29,6 +29,14 @@ $Id$
 
   * Other Improvements
     ------------------
+    * Reduce CPU usage by increasing delay in main loop
+      from 1ms to 10ms, and only using SDL's Timer subsystem
+      when scrolling happens.
+      (Details at
+      https://sourceforge.net/p/tuxpaint/tuxpaint/ci/7727b995c53df208596eff89ac1acb954a16098c/)
+      Mark K. Kim <markuskimius@gmail.com>
+      (h/t @bbugwong on Twitter for reporting the issue)
+
     * If parent of export directory doesn't exist, Tux Paint will
       try to create it as well.
       (Only one level up; e.g., with an export location like
