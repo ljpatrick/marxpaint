@@ -4013,18 +4013,25 @@ static void mainloop(void)
 
                               if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
                                 {
-                                  /* printf("Starting scrolling\n"); */
+                                  DEBUG_PRINTF("Starting scrolling\n");
                                   memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
                                   scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-                                  scrolling = 1;
+                                  /*
+                                  * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                                  * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                                  * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                                  * energy impact on the Mac.
+                                  */
 
+                                  scrolling = 1;
+                                  SDL_InitSubSystem(SDL_INIT_TIMER);
                                   scrolltimer =
                                     SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void *)&scrolltimer_event);
                                 }
                               else
                                 {
-                                  /* printf("Continuing scrolling\n"); */
+                                  DEBUG_PRINTF("Continuing scrolling\n");
                                   scrolltimer =
                                     SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void *)&scrolltimer_event);
                                 }
@@ -4040,6 +4047,7 @@ static void mainloop(void)
                                           scrolltimer = NULL;
                                         }
                                       scrolling = 0;
+                                      SDL_QuitSubSystem(SDL_INIT_TIMER);
                                     }
                                 }
                             }
@@ -4931,6 +4939,7 @@ static void mainloop(void)
                       scrolltimer = NULL;
                     }
                   scrolling = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
 
                   /* printf("Killing scrolling\n"); */
                 }
@@ -5589,7 +5598,7 @@ static void mainloop(void)
         handle_motioners(oldpos_x, oldpos_y, motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y);
 
 
-      SDL_Delay(1);
+      SDL_Delay(10);
     }
   while (!done);
 }
@@ -17298,13 +17307,13 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
   /* printf("scrolltimer_callback(%d) -- ", interval); */
   if (scrolling)
     {
-      /* printf("(Still scrolling)\n"); */
+      DEBUG_PRINTF("(Still scrolling)\n");
       SDL_PushEvent((SDL_Event *) param);
       return interval;
     }
   else
     {
-      /* printf("(all done)\n"); */
+      DEBUG_PRINTF("(all done scrolling)\n");
       return 0;
     }
 }
@@ -23933,7 +23942,7 @@ static void setup(void)
   if (joystick_dev != -1)
     do_lock_file();
 
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_JOYSTICK;
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_JOYSTICK;
   if (use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if (!fullscreen)
