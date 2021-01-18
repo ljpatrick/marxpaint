@@ -7940,7 +7940,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
     myfont = locale_font;
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
-  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min(18 + button_label_y_nudge, tmp_surf->h), 0);
+  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min(18 * button_scale + button_label_y_nudge, tmp_surf->h), 0);
   SDL_FreeSurface(tmp_surf);
 
   return surf;
