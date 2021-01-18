@@ -8,7 +8,12 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.16 (0.9.26)
+2021.January.18 (0.9.26)
+  * New Features
+    ------------
+    * [WIP] Larger UI buttons
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+      
   * New Magic Tools:
     ----------------
     * Pixels
