@@ -6,7 +6,7 @@ Options Documentation
         Copyright (c) 2002-2021 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
-                               December 27, 2020
+                                January 18, 2021
 
      ----------------------------------------------------------------------
 
@@ -115,6 +115,17 @@ Windows Users
              When running Tux Paint in fullscreen mode, this assumes the
              screen's current resolution (overriding any "windowsize"
              option), as set by the operating system.
+
+     buttonsize=SIZE
+
+             Set the pixel size of buttons in Tux Paint's user interface
+             (overriding the default of "48"). Useful when using very
+             high-density displays or coarse input devices, such as eye gaze
+             trackers.
+
+             The SIZE value should be presented in pixels, and can be
+             anything between 24 and 192, inclusive. Most buttons are square,
+             and this will affect their width and height.
 
      allowscreensaver=yes
 
