@@ -801,6 +801,11 @@ static void setup_normal_screen_layout(void)
 
   /* need 56 minimum for the Tux area */
   buttons_tall = (WINDOW_HEIGHT - r_ttoolopt.h - 56 * button_scale - r_colors.h) / button_h;
+  if (buttons_tall < 2) {
+    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable.\n", button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
+    exit(93);
+  }
+
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
 
