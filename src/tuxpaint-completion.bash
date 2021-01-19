@@ -3,7 +3,7 @@
 # Bill Kendrick <bill@newbreedsoftware.com>; http://www.tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2020-08-15
+# Last modified 2021-01-18
 #
 # $Id$
 
@@ -30,6 +30,7 @@ _tuxpaint()
 			--native \
 			--disablescreensaver --allowscreensaver \
 			--orient=landscape --orient=portrait \
+			--buttonsize \
 			-b --startblank --startlast \
 			--sound -q --nosound \
 			--stereo --nostereo \
@@ -99,7 +100,7 @@ _tuxpaint()
 #        else
 #                _filedir '@(ai|ani|bmp|cur|dia|eps|gif|ggr|ico|jpe|jpeg|jpg|pbm|pcx|pdf|pgm|png|ppm|pnm|ps|ras|sk|svg|svgz|targa|tga|tif|tiff|txt|wbmp|wmf|xbm|xpm)'
 #
-# FIXME: Allwo tab completion to show options after --lang (though may need to add support for --lang= for that to work?) -bjk 2009.09.09
+# FIXME: Allow tab completion to show options after --lang (though may need to add support for --lang= for that to work?) -bjk 2009.09.09
         fi
 
 }
