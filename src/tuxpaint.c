@@ -9221,11 +9221,11 @@ static void draw_stamps(void)
           /* FIXME: Check for NULL! */
 
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8;
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale;
           SDL_BlitSurface(blnk, NULL, screen, &dest);
 
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 - (y_per * i);
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale - (y_per * i);
           SDL_BlitSurface(btn, NULL, screen, &dest);
 
           SDL_FreeSurface(btn);
