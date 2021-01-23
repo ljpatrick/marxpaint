@@ -3,7 +3,7 @@
 # Bill Kendrick <bill@newbreedsoftware.com>; http://www.tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2021-01-18
+# Last modified 2021-01-23
 #
 # $Id$
 
@@ -23,7 +23,7 @@ _tuxpaint()
         if [[ "$cur" == -* ]]; then
                 COMPREPLY=( $( compgen -W '\
 			-h --help \
-			-v --version -vv --version-verbose \
+			-v --version -vv --verbose-version \
 			-c --copying \
 			-u --usage \
 			-w --windowed -f --fullscreen \
