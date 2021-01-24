@@ -1828,7 +1828,7 @@ static char template_id[FILENAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll, tool_scroll;
-static int eraser_scroll, shape_scroll; /* dummy variables for now */
+static int eraser_scroll, shape_scroll;
 
 static int eraser_sound;
 
@@ -5225,28 +5225,28 @@ static void mainloop(void)
                     {
                     }
 
-                  max = 14;
+		  int control_rows = 0;
                   if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-                    max = 8;    /* was 10 before left/right group buttons -bjk 2007.05.03 */
+		    control_rows = 3;
                   if (cur_tool == TOOL_LABEL)
                     {
-                      max = 12;
+		      control_rows = 1;
                       if (!disable_stamp_controls)
-                        max = 8;
+			control_rows = 3;
                     }
 
                   if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
-                    max = 10;
+		    control_rows = 2;
                   if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
-                    max = 12;
+		    control_rows = 1;
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
-                    max = 12;
+		    control_rows = 1;
+		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
 
-
-                  if (num_things > max + TOOLOFFSET)
+                  if (num_things > num_places)
                     {
                       /* Are there scroll buttons? */
-
+		      num_places = num_places - gd_toolopt.cols; /* Two scroll buttons occupy one row */
                       if (event.button.y < r_ttoolopt.h + img_scroll_up->h)
                         {
                           /* Up button; is it available? */
@@ -5257,12 +5257,12 @@ static void mainloop(void)
                             do_setcursor(cursor_arrow);
                         }
                       else if (event.button.y >
-                               (button_h * ((max - 2) / 2 + TOOLOFFSET / 2)) + r_ttoolopt.h + img_scroll_up->h
-                               && event.button.y <= (button_h * ((max - 2) / 2 + TOOLOFFSET / 2)) + r_ttoolopt.h + img_scroll_up->h + img_scroll_up->h)
+                               (button_h * (num_places / gd_toolopt.cols) + r_ttoolopt.h + img_scroll_up->h)
+                               && event.button.y <= (button_h * (num_places / gd_toolopt.cols) + r_ttoolopt.h + img_scroll_up->h + img_scroll_up->h))
                         {
                           /* Down button; is it available? */
 
-                          if (*thing_scroll < num_things - (max - 2))
+                          if (*thing_scroll < num_things - num_places)
                             do_setcursor(cursor_down);
                           else
                             do_setcursor(cursor_arrow);
@@ -9375,20 +9375,65 @@ static void draw_shapes(void)
 /* Draw the eraser selector: */
 static void draw_erasers(void)
 {
-  int i, x, y, sz;
+  int i, j, x, y, sz;
   int xx, yy, n;
   void (*putpixel) (SDL_Surface *, int, int, Uint32);
   SDL_Rect dest;
+  int most, off_y, max;
 
   putpixel = putpixels[screen->format->BytesPerPixel];
 
   draw_image_title(TITLE_ERASERS, r_ttoolopt);
 
-  for (i = 0; i < 14 + TOOLOFFSET; i++)
-    {
-      dest.x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w;
-      dest.y = ((i / 2) * button_h) + r_ttoolopt.h;
+  /* Space for buttons, was 14 */
+  most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
 
+
+    /* Do we need scrollbars? */
+
+  if (NUM_ERASERS > most + TOOLOFFSET)
+    {
+      most = most - gd_toolopt.cols; /* was 12 */
+      off_y = img_scroll_up->h;
+      max = most + TOOLOFFSET;
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h;
+
+      if (eraser_scroll > 0)
+        {
+          SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+        }
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h + img_scroll_up->h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+
+      if (eraser_scroll < NUM_ERASERS - most - TOOLOFFSET)
+        {
+          SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+        }
+    }
+  else
+    {
+      off_y = 0;
+      max = most + TOOLOFFSET;
+    }
+
+  for (j = 0; j < most + TOOLOFFSET; j++)
+    {
+      i = j;
+      dest.x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = ((i / 2) * button_h) + r_ttoolopt.h + off_y;
+
+      i = j + eraser_scroll;
 
       if (i == cur_eraser)
         {
@@ -9403,7 +9448,6 @@ static void draw_erasers(void)
           SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
         }
 
-
       if (i < NUM_ERASERS)
         {
           if (i < NUM_ERASERS / 2)
@@ -9413,7 +9457,7 @@ static void draw_erasers(void)
               sz = (2 + (((NUM_ERASERS / 2) - 1 - i) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
               x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
-              y = ((i / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2;
+              y = ((j / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2 + off_y;
 
               dest.x = x;
               dest.y = y;
@@ -9450,7 +9494,7 @@ static void draw_erasers(void)
               sz = (2 + (((NUM_ERASERS / 2) - 1 - (i - NUM_ERASERS / 2)) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
               x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale- sz / 2;
-              y = ((i / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2;
+              y = ((j / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2 + off_y;
 
               for (yy = 0; yy <= sz; yy++)
                 {
@@ -24946,6 +24990,7 @@ static void claim_to_be_ready(void)
   font_scroll = 0;
   magic_scroll = 0;
   tool_scroll = 0;
+  eraser_scroll = 0;
 
   reset_avail_tools();
 
