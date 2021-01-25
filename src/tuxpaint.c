@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 18, 2021
+  June 14, 2002 - January 24, 2021
 */
 
 
@@ -5421,9 +5421,14 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_ERASER)
                     {
+                      int sz;
+
                       /* Still pushing, and moving - Erase! */
 
                       eraser_draw(old_x, old_y, new_x, new_y);
+
+                      sz = calc_eraser_size(cur_eraser);
+                      rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
                     }
                 }
 
