@@ -4041,7 +4041,7 @@ static void mainloop(void)
                                     SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void *)&scrolltimer_event);
                                 }
 
-                              if (*thing_scroll == 0)
+                              if (*thing_scroll == 0 || *thing_scroll / gd_items.cols ==  num_rows_needed - gd_items.rows)
                                 {
                                   do_setcursor(cursor_arrow);
                                   if (scrolling)
