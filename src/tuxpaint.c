@@ -1771,7 +1771,7 @@ static int stamp_tintable(int stamp)
 
 #define SHAPE_BRUSH_NAME "aa_round_03.png"
 static int num_brushes, num_brushes_max, shape_brush = 0;
-static SDL_Surface **img_brushes;
+static SDL_Surface **img_brushes, **img_brushes_thumbs;
 static int *brushes_frames = NULL;
 static int *brushes_spacing = NULL;
 static short *brushes_directional = NULL;
@@ -6711,6 +6711,8 @@ static void loadbrush_callback(SDL_Surface * screen,
   FILE *fi;
   char buf[64];
   int want_rand;
+  int brush_w, brush_h;
+  float scale;
 
   (void)dirlen;
   (void)locale;
@@ -6732,12 +6734,12 @@ static void loadbrush_callback(SDL_Surface * screen,
             {
               num_brushes_max = num_brushes_max * 5 / 4 + 4;
               img_brushes = realloc(img_brushes, num_brushes_max * sizeof *img_brushes);
+              img_brushes_thumbs = realloc(img_brushes_thumbs, num_brushes_max * sizeof *img_brushes_thumbs);
               brushes_frames = realloc(brushes_frames, num_brushes_max * sizeof(int));
               brushes_directional = realloc(brushes_directional, num_brushes_max * sizeof(short));
               brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
             }
           img_brushes[num_brushes] = loadimage(fname);
-
 
           /* Load brush metadata, if any: */
 
@@ -6780,6 +6782,30 @@ static void loadbrush_callback(SDL_Surface * screen,
               if (want_rand)
                 brushes_frames[num_brushes] *= -1;
             }
+
+          /* Generate thumbnail */
+          brush_w = ((img_brushes[num_brushes]->w / abs(brushes_frames[num_brushes])) / (brushes_directional[num_brushes] ? 3 : 1));
+          brush_h = (img_brushes[num_brushes]->h / (brushes_directional[num_brushes] ? 3 : 1));
+
+          if (brush_w <= button_w && brush_h <= button_h
+          ) {
+            img_brushes_thumbs[num_brushes] = duplicate_surface(img_brushes[num_brushes]);
+          } else {
+            if (brush_w > brush_h) {
+              scale = (float) ((float)button_w / (float)brush_w);
+            } else {
+              scale = (float) ((float)button_h / (float)brush_h);
+            }
+
+            img_brushes_thumbs[num_brushes] =
+              thumbnail2(
+                img_brushes[num_brushes],
+                img_brushes[num_brushes]->w * scale,
+                img_brushes[num_brushes]->h * scale,
+                0, /* no need to ask to keep aspect; already kept */
+                1  /* keep alpha */
+              );
+          }
 
           num_brushes++;
         }
@@ -8621,19 +8647,19 @@ static void draw_brushes(void)
       if (brush < num_brushes)
         {
           if (brushes_directional[brush])
-            src.x = (img_brushes[brush]->w / abs(brushes_frames[brush])) / 3;
+            src.x = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / 3;
           else
             src.x = 0;
 
-          src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
+          src.y = brushes_directional[brush] ? (img_brushes_thumbs[brush]->h / 3) : 0;
 
-          src.w = (img_brushes[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
-          src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
+          src.w = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
+          src.h = (img_brushes_thumbs[brush]->h / (brushes_directional[brush] ? 3 : 1));
 
           dest.x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w) + ((button_w - src.w) >> 1);
           dest.y = ((i / 2) * button_h) + r_ttoolopt.h + ((button_h - src.h) >> 1) + off_y;
 
-          SDL_BlitSurface(img_brushes[brush], &src, screen, &dest);
+          SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
         }
     }
 }
@@ -12727,6 +12753,7 @@ static void cleanup(void)
   free_surface(&active_stamp);
 
   free_surface_array(img_brushes, num_brushes);
+  free_surface_array(img_brushes_thumbs, num_brushes);
   free(brushes_frames);
   free(brushes_directional);
   free(brushes_spacing);
