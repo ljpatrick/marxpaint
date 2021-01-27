@@ -802,7 +802,14 @@ static void setup_normal_screen_layout(void)
   /* need 56 minimum for the Tux area */
   buttons_tall = (WINDOW_HEIGHT - r_ttoolopt.h - 56 * button_scale - r_colors.h) / button_h;
   if (buttons_tall < 5) {
-    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable.\n", button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
+    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not tall enough).\n",
+      button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
+    exit(93);
+  }
+
+  if (r_canvas.w < button_w * 9) {
+    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not wide enough).\n",
+      button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
     exit(93);
   }
 
