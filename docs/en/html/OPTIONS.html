@@ -1,11 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <meta name="generator"
-          content="HTML Tidy for HTML5 for Linux version 5.6.0">
     <title>
-      Tux Paint Options Documentation
-    </title>
+      Tux Paint Options Documentation    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -16,97 +13,65 @@
         alink="#FF00FF">
     <center>
       <h1>
-        Tux&nbsp;Paint<br>
-        version 0.9.26
-      </h1>
+        <span style="white-space: nowrap;">Tux Paint</span><br>
+        version 0.9.26      </h1>
 
       <h2>
-        Options Documentation
-      </h2>
+        Options Documentation      </h2>
 
       <p>
-        Copyright (c) 2002-2021 by various contributors; see
-        AUTHORS.txt<br>
-        <a href=
-        "http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        Copyright &copy; 2002-2021 by various contributors; see AUTHORS.<br>
+        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
       </p>
 
       <p>
-        January 18, 2021
-      </p>
+        22 January 2021      </p>
     </center>
 
     <hr size="2"
         noshade>
 
     <h1>
-      Tux Paint Config.
-    </h1>
+      Tux Paint Config.    </h1>
 
     <blockquote>
       <p>
-        As of Tux&nbsp;Paint version&nbsp;0.9.14, a graphical tool
-        is available that allows you to change Tux&nbsp;Paint's
-        behavior. However, if you'd rather not install and use this
-        tool, or want a better understanding of the available
-        options, please continue reading.
-      </p>
+        A graphical tool is available that allows you to change Tux Paint's behavior. However, if you'd rather not install and use this tool, or want a better understanding of the available options, please continue reading.      </p>
     </blockquote>
 
     <hr size="2"
         noshade>
 
     <h1>
-      Configuration File
-    </h1>
+      Configuration File    </h1>
 
     <blockquote>
       <p>
-        You can create a simple configuration file for
-        Tux&nbsp;Paint, which it will read each time you start it
-        up.
-      </p>
+        You can create a simple configuration file for Tux Paint, which it will read each time you start it up.      </p>
 
       <p>
-        The file is simply a plain text file containing the options
-        you want enabled:
-      </p>
+        The file is simply a plain text file containing the options you want enabled:      </p>
 
       <h2>
-        Linux and Unix Users
-      </h2>
+        Linux and Unix Users      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called
-          "<code><b>.tuxpaintrc</b></code>" and it should be placed
-          in your home directory. (a.k.a.
-          "<code>~/.tuxpaintrc</code>" or
-          "<code>$HOME/.tuxpaintrc</code>")
-        </p>
+          The file you should create is called "<code><b>.tuxpaintrc</b></code>" and it should be placed in your home directory. (a.k.a. "<code>~/.tuxpaintrc</code>" or "<code>$HOME/.tuxpaintrc</code>")        </p>
 
         <h3>
-          System-Wide Configuration File
-        </h3>
+          System-Wide Configuration File        </h3>
 
         <blockquote>
           <p>
-            Before this file is read, a system-wide configuration
-            file is read. (By default, this configuration has no
-            settings enabled.) It is located at:
-          </p>
+            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is located at:          </p>
 
           <blockquote>
             <code>/etc/tuxpaint/tuxpaint.conf</code>
           </blockquote>
 
           <p>
-            You can disable reading of this file altogether,
-            leaving the settings as defaults (which can then be
-            overridden by your "<code>.tuxpaintrc</code>" file
-            and/or command-line arguments) by using the
-            command-line option:
-          </p>
+            You can disable reading of this file altogether, leaving the settings as defaults (which can then be overridden by your "<code>.tuxpaintrc</code>" file and/or command-line arguments) by using the command-line option:          </p>
 
           <blockquote>
             <code>--nosysconfig</code>
@@ -115,51 +80,34 @@
       </blockquote>
 
       <h2>
-        macOS Users
-      </h2>
+        macOS Users      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called
-          "<code><b>tuxpaint.cfg</b></code>" and it should be
-          placed in your home folder, under the sub-folder:
-          <code>Library/Application Support/TuxPaint</code>
-        </p>
+          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in your home folder, under the sub-folder: <code>Library/Application Support/TuxPaint</code>        </p>
 
         <h3>
-          System-Wide Configuration File
-        </h3>
+          System-Wide Configuration File        </h3>
 
         <blockquote>
           <p>
-            Before this file is read, a system-wide configuration
-            file is read. (By default, this configuration has no
-            settings enabled.) It is located at:
-          </p>
+            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is located at:          </p>
 
           <blockquote>
-            <code>/Library/Application
-            Support/TuxPaint/tuxpaint.cfg</code>
+            <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
           </blockquote>
         </blockquote>
       </blockquote>
 
       <h2>
-        Windows Users
-      </h2>
+        Windows Users      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called
-          "<code><b>tuxpaint.cfg</b></code>" and it should be
-          placed in Tux&nbsp;Paint's folder.
-        </p>
+          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in Tux Paint's folder.        </p>
 
         <p>
-          You can use NotePad or WordPad to create this file. Be
-          sure to save it as Plain Text, and make sure the filename
-          doesn't have ".txt" at the end...
-        </p>
+          You can use NotePad or WordPad to create this file. Be sure to save it as Plain Text, and make sure the filename doesn't have ".txt" at the end...        </p>
       </blockquote>
     </blockquote>
 
@@ -167,16 +115,11 @@
         noshade>
 
     <h1>
-      Available Options
-    </h1>
+      Available Options    </h1>
 
     <blockquote>
       <p>
-        The following settings can be set in the configuration
-        file. (Command-line settings will override these. See the
-        "<a href="#command_line"><i>Command-Line Options</i></a>"
-        section, below.)
-      </p>
+        The following settings can be set in the configuration file. (Command-line settings will override these. See the "<a href="#command_line"><i>Command-Line Options</i></a>" section, below.)      </p>
 
       <dl>
         <dt>
@@ -184,19 +127,14 @@
         </dt>
 
         <dd>
-          Run the program in full screen mode, rather than in a
-          window.
-        </dd>
+          Run the program in full screen mode, rather than in a window.        </dd>
 
         <dt>
           <code><b>fullscreen=native</b></code>
         </dt>
 
         <dd>
-          Run the program in full screen mode. Additionally, assume
-          the screen's current resolution (set by the operating
-          system).
-        </dd>
+          Run the program in full screen mode. Additionally, assume the screen's current resolution (set by the operating system).        </dd>
 
         <dt>
           <code><b>windowsize=<i>SIZE</i></b></code>
@@ -204,22 +142,13 @@
 
         <dd>
           <p>
-            Run the program at a different size (in windowed mode)
-            or at a different screen resolution (in fullscreen
-            mode), rather than the default (usually 800x600).
-          </p>
+            Run the program at a different size (in windowed mode) or at a different screen resolution (in fullscreen mode), rather than the default (usually 800x600).          </p>
 
           <p>
-            The <i>SIZE</i> value should be presented in pixels, in
-            'width-by-height' format, with an "x"
-            (lowercase&nbsp;X) between the values. The size can be
-            anything that's at least 640 wide, and at least 480
-            tall.
-          </p>
+            The <i>SIZE</i> value should be presented in pixels, in 'width-by-height' format, with an "x" (lowercase X) between the values. The size can be anything that's at least 640 wide, and at least 480 tall.          </p>
 
           <p>
-            Some examples:
-          </p>
+            Some examples:          </p>
 
           <ul>
             <li>640x480
@@ -242,10 +171,7 @@
 
         <dd>
           <p>
-            Swaps the width/height options given to Tux&nbsp;Paint,
-            useful for rotating the window on portait displays,
-            such as a tablet&nbsp;PC that's in tablet orientation.
-          </p>
+            Swaps the width/height options given to Tux Paint, useful for rotating the window on portait displays, such as a tablet PC that's in tablet orientation.          </p>
         </dd>
 
         <dt>
@@ -254,11 +180,7 @@
 
         <dd>
           <p>
-            When running <i>Tux&nbsp;Paint</i> in fullscreen mode,
-            this assumes the screen's current resolution
-            (overriding any "<code>windowsize</code>" option), as
-            set by the operating system.
-          </p>
+            When running Tux Paint in fullscreen mode, this assumes the screen's current resolution (overriding any "<code>windowsize</code>" option), as set by the operating system.          </p>
         </dd>
 
         <dt>
@@ -267,18 +189,10 @@
 
         <dd>
           <p>
-            Set the pixel size of buttons in <i>Tux&nbsp;Paint's</i>
-            user interface (overriding the default of "48").
-            Useful when using very high-density displays or coarse input
-            devices, such as eye gaze trackers.
-          </p>
+            Set the pixel size of buttons in Tux Paint's user interface (overriding the default of "48"). Useful when using very high-density displays or coarse input devices, such as eye gaze trackers.          </p>
 
           <p>
-            The <i>SIZE</i> value should be presented in pixels,
-            and can be anything between 24 and 192, inclusive.
-            Most buttons are square, and this will affect their
-            width and height.
-          </p>
+            The <i>SIZE</i> value should be presented in pixels, and can be anything between 24 and 192, inclusive. Most buttons are square, and this will affect their width and height.          </p>
         </dd>
 
         <dt>
@@ -287,14 +201,7 @@
 
         <dd>
           <p>
-            By default, <i>Tux&nbsp;Paint</i> prevents your
-            system's screensaver from starting up. You can override
-            this by using the "<code>allowscreensaver</code>"
-            option. Note: This requires version 1.2.12 or higher of
-            the SDL library. (You can also do this by setting the
-            "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment
-            variable on your system to "<code>1</code>".)
-          </p>
+            By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. Note: This requires version 1.2.12 or higher of the SDL library. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)          </p>
         </dd>
 
         <dt>
@@ -302,20 +209,14 @@
         </dt>
 
         <dd>
-          Disable sound effects. (Note: Pressing
-          <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> cannot be used to
-          reenable sounds if they were disabled using this option.)
-        </dd>
+          Disable sound effects. (Note: Pressing <b>[Alt]</b> + <b>[S]</b> cannot be used to reenable sounds if they were disabled using this option.)        </dd>
 
         <dt>
           <code><b>nostereo=yes</b></code>
         </dt>
 
         <dd>
-          Disable stereo panning support. (Useful for users with
-          hearing impairment in one ear, or places where a single
-          speaker or headphone is being used.)
-        </dd>
+          Disable stereo panning support. (Useful for users with hearing impairment in one ear, or places where a single speaker or headphone is being used.)        </dd>
 
         <dt>
           <code><b>noquit=yes</b></code>
@@ -323,23 +224,13 @@
 
         <dd>
           <p>
-            Disable the on-screen "Quit" button and prevent the
-            <b>[Escape]</b> key from quitting
-            <i>Tux&nbsp;Paint</i>.
-          </p>
+            Disable the on-screen "Quit" button and prevent the <b>[Escape]</b> key from quitting Tux Paint.          </p>
 
           <p>
-            Using the <b>[Alt]</b>&nbsp;+&nbsp;<b>[F4]</b> keyboard
-            combination or clicking the window's close button
-            (assuming you're not in fullscreen mode) still works to
-            quit <i>Tux&nbsp;Paint</i>.
-          </p>
+            Using the <b>[Alt]</b> + <b>[F4]</b> keyboard combination or clicking the window's close button (assuming you're not in fullscreen mode) still works to quit Tux Paint.          </p>
 
           <p>
-            You can also use the following keyboard combination to
-            quit:
-            <b>[Shift]</b>&nbsp;+&nbsp;<b>[Control]</b>&nbsp;+&nbsp;<b>[Escape]</b>.
-          </p>
+            You can also use the following keyboard combination to quit: <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b>.          </p>
         </dd>
 
         <dt>
@@ -347,17 +238,14 @@
         </dt>
 
         <dd>
-          Disable the printing feature.
-        </dd>
+          Disable the printing feature.        </dd>
 
         <dt>
           <code><b>printdelay=<i>SECONDS</i></b></code>
         </dt>
 
         <dd>
-          Restrict printing so that printing can occur only once
-          every <i>SECONDS</i> seconds.
-        </dd>
+          Restrict printing so that printing can occur only once every <i>SECONDS</i> seconds.        </dd>
 
         <dt>
           <code><b>printcommand=<i>COMMAND</i></b></code>
@@ -369,29 +257,17 @@
           </p>
 
           <p>
-            Use the command <i>COMMAND</i> to print a PostScript
-            format file when the 'Print' button is clicked. If this
-            option is not specifically not set, the default command
-            is:
-          </p>
+            Use the command <i>COMMAND</i> to print a PostScript format file when the 'Print' button is clicked. If this option is not specifically not set, the default command is:          </p>
 
           <blockquote>
             <code>lpr</code>
           </blockquote>
 
           <p>
-            <b>Note:</b> Versions of <i>Tux&nbsp;Paint</i> prior to
-            0.9.15 sent PNG format data to the print command (which
-            defaulted to
-            "<code>pngtopnm&nbsp;|&nbsp;pnmtops&nbsp;|&nbsp;lpr</code>").
-          </p>
+            <b>Note:</b> Versions of Tux Paint prior to 0.9.15 sent PNG format data to the print command (which defaulted to "<code>pngtopnm | pnmtops | lpr</code>").          </p>
 
           <p>
-            If you set an alternative
-            <code><b>printcommand</b></code> in the configuration
-            file prior to version 0.9.15, you will need to change
-            it.
-          </p>
+            If you set an alternative <code><b>printcommand</b></code> in the configuration file prior to version 0.9.15, you will need to change it.          </p>
         </dd>
 
         <dt>
@@ -404,18 +280,10 @@
           </p>
 
           <p>
-            Use the command <i>COMMAND</i> to print a PostScript
-            format file when the 'Print' button is clicked while
-            the <b>[Alt]</b> modifier key is being held. (This is
-            typically used for providing a print dialog, similar to
-            when pressing <b>[Alt]</b>+'Print' in Windows and
-            macOS.)
-          </p>
+            Use the command <i>COMMAND to print a PostScript format file when the 'Print' button is clicked while the </i> modifier key is being held. (This is typically used for providing a print dialog, similar to when pressing <b>[Alt]</b>+'Print' in Windows and macOS.)          </p>
 
           <p>
-            If this option is not specifically not set, the default
-            command is KDE's graphical print dialog:
-          </p>
+            If this option is not specifically not set, the default command is KDE's graphical print dialog:          </p>
 
           <blockquote>
             <code>kprinter</code>
@@ -432,19 +300,10 @@
           </p>
 
           <p>
-            Tux&nbsp;Paint will use a printer configuration file
-            when printing. Push the <b>[Alt]</b> key while clicking
-            the 'Print' button in Tux&nbsp;Paint to cause a Windows
-            print dialog window to appear.
-          </p>
+            Tux Paint will use a printer configuration file when printing. Push the <b>[Alt]</b> key while clicking the 'Print' button in Tux Paint to cause a Windows print dialog window to appear.          </p>
 
           <p>
-            (Note: This only works when not running Tux&nbsp;Paint
-            in fullscreen mode.) Any configuration changes made in
-            this dialog will be saved to the file
-            "<code>userdata/print.cfg</code>", and used again, as
-            long as the "printcfg" option is set.
-          </p>
+            (Note: This only works when not running Tux Paint in fullscreen mode.) Any configuration changes made in this dialog will be saved to the file "<code>userdata/print.cfg</code>" , and used again, as long as the "printcfg" option is set.          </p>
         </dd>
 
         <dt>
@@ -453,12 +312,7 @@
 
         <dd>
           <p>
-            This causes Tux&nbsp;Paint to always show the printer
-            dialog (or, on Linux/Unix, run the "altprintcommand")
-            when the 'Print' button is clicked. In other words,
-            it's like clicking 'Print' while holding <b>[Alt]</b>,
-            except you don't need to hold <b>[Alt]</b> every time.
-          </p>
+            This causes Tux Paint to always show the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it's like clicking 'Print' while holding <b>[Alt]</b>, except you don't need to hold <b>[Alt]</b> every time.          </p>
         </dd>
 
         <dt>
@@ -467,12 +321,7 @@
 
         <dd>
           <p>
-            This prevents Tux&nbsp;Paint from <i>ever</i> showing
-            the printer dialog (or, on Linux/Unix, run the
-            "altprintcommand") when the 'Print' button is clicked.
-            In other words, it makes the <b>[Alt]</b> key have no
-            effect when clicking the 'Print' button.
-          </p>
+            This prevents Tux Paint from <i>ever</i> showing the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it makes the <b>[Alt]</b> key have no effect when clicking the 'Print' button.          </p>
         </dd>
 
         <dt>
@@ -481,13 +330,7 @@
 
         <dd>
           <p>
-            This is the normal, default behavior. Tux&nbsp;Paint
-            shows a printer dialog (or, on Linux/Unix, runs the
-            "altprintcommand"), when the <b>[Alt]</b> key is
-            pressed while the 'Print' button is clicked. Clicking
-            'Print' without holding <b>[Alt]</b> prints without
-            showing a dialog.
-          </p>
+            This is the normal, default behavior. Tux Paint shows a printer dialog (or, on Linux/Unix, runs the "altprintcommand"), when the <b>[Alt]</b> key is pressed while the 'Print' button is clicked. Clicking 'Print' without holding <b>[Alt]</b> prints without showing a dialog.          </p>
         </dd>
 
         <dt>
@@ -496,27 +339,14 @@
 
         <dd>
           <p>
-            <i>(Platforms that use Tux&nbsp;Paint's internal
-            PostScript generator — not Windows, macOS, BeOS, or
-            Haiku.)</i>
+            <i>(Platforms that use Tux Paint's internal PostScript generator — not Windows, macOS, BeOS, or Haiku.)</i>
           </p>
 
           <p>
-            Tell Tux&nbsp;Paint what size PostScript to generate.
-            If none is specified, Tux&nbsp;Paint first checks your
-            <code>$PAPER</code> environment variable, then the file
-            <code>/etc/papersize</code>, then uses the the
-            'libpaper' library's default paper size.
-          </p>
+            Tell Tux Paint what size PostScript to generate. If none is specified, Tux Paint first checks your <code>$PAPER</code> environment variable, then the file <code>/etc/papersize</code>, then uses the the 'libpaper' library's default paper size.          </p>
 
           <p>
-            Valid paper sizes include: letter, legal, tabloid,
-            executive, note, statement, a0, a1, a2, a3, a4, a5, a6,
-            a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17,
-            halfletter, halfexecutive, halfnote, folio, quarto,
-            ledger, archA, archB, archC, archD, archE, flsa, flse,
-            csheet, dsheet, esheet.
-          </p>
+            Valid paper sizes include: letter, legal, tabloid, executive, note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive, halfnote, folio, quarto, ledger, archA, archB, archC, archD, archE, flsa, flse, csheet, dsheet, esheet.          </p>
         </dd>
 
         <dt>
@@ -525,27 +355,13 @@
 
         <dd>
           <p>
-            By default, Tux&nbsp;Paint uses what's known as a
-            'lockfile' to prevent it from being launched more than
-            once in 30&nbsp;seconds. (This is to avoid accidentally
-            running multiple copies; for example, by
-            double-clicking a single-click launcher, or simply
-            impatiently clicking the icon multiple times.)
-          </p>
+            By default, Tux Paint uses what's known as a 'lockfile' to prevent it from being launched more than once in 30 seconds. (This is to avoid accidentally running multiple copies; for example, by double-clicking a single-click launcher, or simply impatiently clicking the icon multiple times.)          </p>
 
           <p>
-            To make Tux&nbsp;Paint ignore the lockfile, allowing it
-            to run again, even if it was just launched less than
-            30&nbsp;seconds ago, enable this setting in the
-            configuration file, or run Tux&nbsp;Paint with the
-            '<code>--nolockfile</code>' option on the command-line.
-          </p>
+            To make Tux Paint ignore the lockfile, allowing it to run again, even if it was just launched less than 30 seconds ago, enable this setting in the configuration file, or run Tux Paint with the <code>--nolockfile</code> option on the command-line.          </p>
 
           <p>
-            By default, the lockfile is stored in
-            "<code>~/.tuxpaint/</code>" under Linux and Unix, and
-            "<code>userdata\</code>" under Windows.
-          </p>
+            By default, the lockfile is stored in "<code>~/.tuxpaint/</code>" under Linux and Unix, and "<code>userdata\</code>" under Windows.          </p>
         </dd>
 
         <dt>
@@ -553,20 +369,14 @@
         </dt>
 
         <dd>
-          Disable the rotation step of the 'Shape' tool. Click,
-          drag and release is all that will be needed to draw a
-          shape.
-        </dd>
+          Disable the rotation step of the 'Shape' tool. Click, drag and release is all that will be needed to draw a shape.        </dd>
 
         <dt>
           <code><b>uppercase=yes</b></code>
         </dt>
 
         <dd>
-          All text will be rendered only in uppercase (e.g.,
-          "Brush" will be "BRUSH"). Useful for children who can
-          read, but who have only learned uppercase letters so far.
-        </dd>
+          All text will be rendered only in uppercase (e.g., "Brush" will be "BRUSH"). Useful for children who can read, but who have only learned uppercase letters so far.        </dd>
 
         <dt>
           <code><b>grab=yes</b></code>
@@ -574,19 +384,10 @@
 
         <dd>
           <p>
-            Tux&nbsp;Paint will attempt to 'grab' the mouse and
-            keyboard, so that the mouse is confined to
-            Tux&nbsp;Paint's window, and nearly all keyboard input
-            is passed directly to it.
-          </p>
+            Tux Paint will attempt to 'grab' the mouse and keyboard, so that the mouse is confined to Tux Paint's window, and nearly all keyboard input is passed directly to it.          </p>
 
           <p>
-            This is useful to disable operating system actions that
-            could get the user out of Tux&nbsp;Paint
-            <b>[Alt]-[Tab]</b> window cycling,
-            <b>[Ctrl]-[Escape]</b>, etc. This is especially useful
-            in fullscreen mode.
-          </p>
+            This is useful to disable operating system actions that could get the user out of Tux Paint <b>[Alt]-[Tab]</b> window cycling, <b>[Ctrl]-[Escape]</b>, etc. This is especially useful in fullscreen mode.          </p>
         </dd>
 
         <dt>
@@ -595,16 +396,10 @@
 
         <dd>
           <p>
-            This disable keyboard shortcuts (e.g.,
-            <b>[Ctrl]-[S]</b> for save, <b>[Ctrl]-[N]</b> for a new
-            image, etc.)
-          </p>
+            This disable keyboard shortcuts (e.g., <b>[Ctrl]-[S]</b> for save, <b>[Ctrl]-[N]</b> for a new image, etc.)          </p>
 
           <p>
-            This is useful to prevent unwanted commands from being
-            activated by children who aren't experienced with
-            keyboards.
-          </p>
+            This is useful to prevent unwanted commands from being activated by children who aren't experienced with keyboards.          </p>
         </dd>
 
         <dt>
@@ -612,10 +407,7 @@
         </dt>
 
         <dd>
-          This disables support for the wheel on mice that have it.
-          (Normally, the wheel will scroll the selector menu on the
-          right.)
-        </dd>
+          This disables support for the wheel on mice that have it. (Normally, the wheel will scroll the selector menu on the right.)        </dd>
 
         <dt>
           <code><b>nobuttondistinction=yes</b></code>
@@ -623,19 +415,10 @@
 
         <dd>
           <p>
-            Prior to Tux&nbsp;Paint 0.9.15, the middle and right
-            buttons on a mouse could also be used for clicking. In
-            version 0.9.15, it was changed so that <i>only</i> the
-            left mouse button worked, so as to not train children
-            to use the wrong button.
-          </p>
+            Prior to Tux Paint 0.9.15, the middle and right buttons on a mouse could also be used for clicking. In version 0.9.15, it was changed so that <i>only</i> the left mouse button worked, so as to not train children to use the wrong button.          </p>
 
           <p>
-            However, for children who have trouble with the mouse,
-            this distinction between the two or three buttons on a
-            mouse can be disabled (returning Tux&nbsp;Paint to its
-            old behavior) by using this option.
-          </p>
+            However, for children who have trouble with the mouse, this distinction between the two or three buttons on a mouse can be disabled (returning Tux Paint to its old behavior) by using this option.          </p>
         </dd>
 
         <dt>
@@ -644,15 +427,10 @@
 
         <dd>
           <p>
-            This disables the fancy mouse pointer shapes in
-            Tux&nbsp;Paint, and uses your environment's normal
-            mouse pointer.
-          </p>
+            This disables the fancy mouse pointer shapes in Tux Paint, and uses your environment's normal mouse pointer.          </p>
 
           <p>
-            In some enviornments, the fancy cursors cause problems.
-            Use this option to avoid them.
-          </p>
+            In some enviornments, the fancy cursors cause problems. Use this option to avoid them.          </p>
         </dd>
 
         <dt>
@@ -661,14 +439,10 @@
 
         <dd>
           <p>
-            This completely hides the mouse pointer shapes in
-            Tux&nbsp;Paint.
-          </p>
+            This completely hides the mouse pointer shapes in Tux Paint.          </p>
 
           <p>
-            This is useful for touchscreen devices, such as tablet
-            PCs.
-          </p>
+            This is useful for touchscreen devices, such as tablet PCs.          </p>
         </dd>
 
         <dt>
@@ -677,15 +451,10 @@
 
         <dd>
           <p>
-            In this mode, much simpler outlines and 'rubber-band'
-            lines are displayed when using the <b>Lines</b>,
-            <b>Shapes</b>, <b>Stamps</b> and <b>Eraser</b> tools.
-          </p>
+            In this mode, much simpler outlines and 'rubber-band' lines are displayed when using the <b>Lines</b>, <b>Shapes</b>, <b>Stamps</b> and <b>Eraser</b> tools.          </p>
 
           <p>
-            This can help when Tux&nbsp;Paint is run on very slow
-            computers, or displayed on a remote X-Window display.
-          </p>
+            This can help when Tux Paint is run on very slow computers, or displayed on a remote X-Window display.          </p>
         </dd>
 
         <dt>
@@ -694,11 +463,7 @@
 
         <dd>
           <p>
-            This option causes Tux&nbsp;Paint to attempt to load
-            fonts (for use in the <b>Text</b> tool) from your
-            operating system. Normally, Tux&nbsp;Paint will only
-            load the ones that came bundled with Tux&nbsp;Paint.
-          </p>
+            This option causes Tux Paint to attempt to load fonts (for use in the <b>Text</b> tool) from your operating system. Normally, Tux Paint will only load the ones that came bundled with Tux Paint.          </p>
         </dd>
 
         <dt>
@@ -707,19 +472,10 @@
 
         <dd>
           <p>
-            Prior to version 0.9.21, Tux&nbsp;Paint loaded all
-            fonts in its own fonts directory, including
-            locale-specific ones (e.g., the one for Tibetan, which
-            had no latin characters). As of 0.9.21, the only font
-            loaded from the locale-specific subdirectory, if any,
-            is one matching the locale Tux&nbsp;Paint is running
-            on.
-          </p>
+            Prior to version 0.9.21, Tux Paint loaded all fonts in its own fonts directory, including locale-specific ones (e.g., the one for Tibetan, which had no latin characters). As of 0.9.21, the only font loaded from the locale-specific subdirectory, if any, is one matching the locale Tux Paint is running on.          </p>
 
           <p>
-            To load all locale-specific fonts (the old behavior),
-            set this option.
-          </p>
+            To load all locale-specific fonts (the old behavior), set this option.          </p>
         </dd>
 
         <dt>
@@ -728,16 +484,10 @@
 
         <dd>
           <p>
-            This option tells Tux&nbsp;Paint to not load any rubber
-            stamp images, which in turn ends up disabling the
-            <b>Stamps</b> tool.
-          </p>
+            This option tells Tux Paint to not load any rubber stamp images, which in turn ends up disabling the <b>Stamps</b> tool.          </p>
 
           <p>
-            This can speed up Tux&nbsp;Paint when it first loads
-            up, and reduce memory usage while it's running. Of
-            course, no stamps will be available at all.
-          </p>
+            This can speed up Tux Paint when it first loads up, and reduce memory usage while it's running. Of course, no stamps will be available at all.          </p>
         </dd>
 
         <dt>
@@ -745,52 +495,35 @@
         </dt>
 
         <dd>
-          Some images in the <b>Stamps</b> tool can be mirrored,
-          flipped, and/or have their size changed. This option
-          disables the controls, and only provides the basic
-          stamps.
-        </dd>
+          Some images in the <b>Stamps</b> tool can be mirrored, flipped, and/or have their size changed. This option disables the controls, and only provides the basic stamps.        </dd>
 
         <dt>
           <code><b>nomagiccontrols=yes</b></code>
         </dt>
 
         <dd>
-          Some <b>Magic</b> tools have the option of acting like a
-          paintbrush, or affecting the entire canvas at once. This
-          option disables the controls, and only provides the
-          default functionality (usually paint-mode).
-        </dd>
+          Some <b>Magic</b> tools have the option of acting like a paintbrush, or affecting the entire canvas at once. This option disables the controls, and only provides the default functionality (usually paint-mode).        </dd>
 
         <dt>
           <code><b>noshapecontrols=yes</b></code>
         </dt>
 
         <dd>
-          Disable the control buttons shown when using the
-          <b>Shapes</b> tool that allow changing how shapes are
-          drawn — centered around the initial mouse click, or with
-          a corner at the initial mouse click.
-        </dd>
+          Disable the control buttons shown when using the <b>Shapes</b> tool that allow changing how shapes are drawn — centered around the initial mouse click, or with a corner at the initial mouse click.        </dd>
 
         <dt>
           <code><b>nolabel=yes</b></code>
         </dt>
 
         <dd>
-          Disables the <b>Label</b> tool: the tool that allows text
-          entry which can be edited later.
-        </dd>
+          Disables the <b>Label</b> tool: the tool that allows text entry which can be edited later.        </dd>
 
         <dt>
           <code><b>newcolorslast=yes</b></code>
         </dt>
 
         <dd>
-          Places the blank color options in the <b>New</b> dialog
-          at the end, so that any Starters and/or Templates are
-          shown first.
-        </dd>
+          Places the blank color options in the <b>New</b> dialog at the end, so that any Starters and/or Templates are shown first.        </dd>
 
         <dt>
           <code><b>mirrorstamps=yes</b></code>
@@ -798,14 +531,10 @@
 
         <dd>
           <p>
-            For stamps that can be mirrored, this option sets them
-            to their mirrored shape by default.
-          </p>
+            For stamps that can be mirrored, this option sets them to their mirrored shape by default.          </p>
 
           <p>
-            This can be useful for people who prefer things
-            right-to-left, rather than left-to-right.
-          </p>
+            This can be useful for people who prefer things right-to-left, rather than left-to-right.          </p>
         </dd>
 
         <dt>
@@ -813,277 +542,190 @@
         </dt>
 
         <dd>
-          In this mode, instead of clicking, dragging and releasing
-          (e.g., to draw), you click, move, and click again to end
-          the motion.
-        </dd>
+          In this mode, instead of clicking, dragging and releasing (e.g., to draw), you click, move, and click again to end the motion.        </dd>
 
         <dt>
           <code><b>onscreen-keyboard=yes</b></code>
         </dt>
 
         <dd>
-          Presents a clickable on-screen keyboard when using the
-          <b>Text</b> and <b>Label</b> tools.
-        </dd>
+          Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.        </dd>
 
         <dt>
           <code><b>onscreen-keyboard-layout=<i>LAYOUTNAME</i></b></code>
         </dt>
 
         <dd>
-          Selects the initial layout for the on-screen keyboard
-          when using the <b>Text</b> and <b>Label</b> tools.<br>
-          Note: Using this option implies automatically
-          <b>onscreen-keyboard=yes</b>, so setting both is
-          redundant.
-        </dd>
+          Selects the initial layout for the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.<br> Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.        </dd>
 
         <dt>
           <code><b>onscreen-keyboard-disable-change=yes</b></code>
         </dt>
 
         <dd>
-          Disables the possibility for changing the layout of the
-          on-screen keyboard when using the <b>Text</b> and
-          <b>Label</b> tools, useful for simplifying things for the
-          small children.<br>
-          Note: Using this option implies automatically
-          <b>onscreen-keyboard=yes</b>, so setting both is
-          redundant.
-        </dd>
+          Disables the possibility for changing the layout of the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools, useful for simplifying things for the small children.<br>
+          Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.        </dd>
 
         <dt>
           <code><b>joystick-dev=<i>N</i></b></code>
         </dt>
 
         <dd>
-          Specify which joystick device should be used by Tux
-          Paint. Default value is 0 (the first joystick).
-        </dd>
+          Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).        </dd>
 
         <dt>
           <code><b>joystick-slowness=<i>SPEED</i></b></code>
         </dt>
 
         <dd>
-          Sets a delay at each axis motion, allowing to slow the
-          joystick. Allowed values are from 0 to 500. Default value
-          is 15.
-        </dd>
+          Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.        </dd>
 
         <dt>
           <code><b>joystick-threshold=<i>THRESHOLD</i></b></code>
         </dt>
 
         <dd>
-          Sets the minimum level of axis motion to start moving the
-          pointer. Allowed values are from 0 to 32766. Default
-          value is 3200.
-        </dd>
+          Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.        </dd>
 
         <dt>
           <code><b>joystick-maxsteps=<i>STEPS</i></b></code>
         </dt>
 
         <dd>
-          Sets the maximum pixels the pointer will move at once.
-          Allowed values are from 1 to 7. Default value is 7.
-        </dd>
+          Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.        </dd>
 
         <dt>
           <code><b>joystick-hat-timeout=<i>MILLISECONDS</i></b></code>
         </dt>
 
         <dd>
-          Sets the delay after wich the pointer will start moving
-          automatically if the hat is keeped pushed. Allowed values
-          are from 0 to 3000. Default value is 1000.
-        </dd>
+          Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.        </dd>
 
         <dt>
           <code><b>joystick-hat-slowness=<i>SPEED</i></b></code>
         </dt>
 
         <dd>
-          Sets a delay at each automatic motion, allowing to slow
-          the speed of the hat. Allowed values are from 0 to 500.
-          Default value is 15.
-        </dd>
+          Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.        </dd>
 
         <dt>
-          <code><b>joystick-btn-escape=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-escape=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be used to generate a escape event. Useful to
-          dismiss dialogs and quit.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.        </dd>
 
         <dt>
-          <code><b>joystick-btn-brush=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-brush=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the brush tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the brush tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-stamp=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-stamp=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the stamp tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the stamp tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-lines=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-lines=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the lines tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the lines tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-shapes=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-shapes=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the shapes tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the shapes tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-text=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-text=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the text tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the text tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-label=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-label=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the label tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the label tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-magic=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-magic=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to select the magic tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select the magic tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-undo=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-undo=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to the undo tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to invoke the undo tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-redo=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-redo=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to the redo tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select redo tool.        </dd>
 
         <dt>
-          <code><b>joystick-btn-eraser=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-eraser=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt for selecting the eraser tool.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to select eraser tool.        </dd>
 
         <dt>
           <code><b>joystick-btn-new=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to launch the dialog for opening a
-          new draw.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for creating a new drawing.        </dd>
 
         <dt>
-          <code><b>joystick-btn-open=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-open=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to launch the dialog for opening an
-          existing draw.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for opening an existing drawing.        </dd>
 
         <dt>
-          <code><b>joystick-btn-save=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-save=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt for saving the draw.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to save the drawing.        </dd>
 
         <dt>
-          <code><b>joystick-btn-pgsetup=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-pgsetup=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to launch the page setup dialog for
-          printing.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the page setup dialog for printing.        </dd>
 
         <dt>
-          <code><b>joystick-btn-print=<i>BUTTON
-          NUMBER</i></b></code>
+          <code><b>joystick-btn-print=<i>BUTTON NUMBER</i></b></code>
         </dt>
 
         <dd>
-          Selects the joystick button number, as seen by SDL, that
-          will be a shortcurt to print.
-        </dd>
+          Selects the joystick button number, as seen by SDL, that will be a shortcut to print.        </dd>
 
         <dt>
           <code><b>joystick-buttons-ignore=<i>BUTTON1,BUTTON2,...</i></b></code>
         </dt>
 
         <dd>
-          A set of joystick button numbers, as seen by SDL, that
-          should be ignored. Otherwise, unless they are used by one
-          of the "<code>joystick-btn-</code>" options above,
-          buttons will be seen as a mouse left-click.
-        </dd>
+          A set of joystick button numbers, as seen by SDL, that should be ignored. Otherwise, unless they are used by one of the "<code>joystick-btn-</code>" options above, buttons will be seen as a mouse left-click.        </dd>
 
         <dt>
           <code><b>stampsize=<i>SIZE</i></b></code>
@@ -1091,18 +733,10 @@
 
         <dd>
           <p>
-            Use this option to force Tux&nbsp;Paint to set the
-            starting size of all stamps. The <code>SIZE</code>
-            value should be between 0 (smallest) and 10 (largest).
-            The size is relative to the available sizes of the
-            stamp, which depends on the stamp itself, and
-            Tux&nbsp;Paint's current canvas size.
-          </p>
+            Use this option to force Tux Paint to set the starting size of all stamps. The <code>SIZE</code> value should be between 0 (smallest) and 10 (largest). The size is relative to the available sizes of the stamp, which depends on the stamp itself, and Tux Paint's current canvas size.          </p>
 
           <p>
-            Specifc "<code>default</code>" to let Tux&nbsp;Paint
-            decide (it's standard behavior).
-          </p>
+            Specify "<code>default</code>" to let Tux Paint decide (its standard behavior).          </p>
         </dd>
 
         <dt>
@@ -1111,73 +745,40 @@
 
         <dd>
           <p>
-            This allows the keyboard arrow keys to be used to
-            control the mouse pointer. (e.g., for mouseless
-            environments, or handicapped/accessibility purposes)
-          </p>
+            This allows the keyboard arrow keys to be used to control the mouse pointer. (e.g., for mouseless environments, or handicapped/accessibility purposes)          </p>
 
           <p>
-            Features:
-          </p>
+            Features:          </p>
 
           <ul>
-            <li>Fine movement within canvas, or coarse movement if
-            [Shift] is held.
-            </li>
+            <li>Fine movement within canvas, or coarse movement if <code>default</code> is held.            </li>
 
-            <li>Coarse movement within tool button areas.
-            </li>
+            <li>Coarse movement within tool button areas.            </li>
 
-            <li>Key controls:
-              <ul>
-                <li>[Left]/[Right]/[Up]/[Down], numpad [1] thru
-                [9]: Move mouse
-                </li>
+            <li>Key controls:              <ul>
+                <li>[Left]/[Right]/[Up]/[Down], numpad <b>[1]</b> thru <b>[9]</b>: Move mouse                </li>
 
-                <li>[Space]/[5]: Click mouse (except when using
-                "Text" or "Label" tools)
-                </li>
+                <li>[Space]/<b>[5]</b>: Click mouse (except when using "Text" or "Label" tools)                </li>
 
-                <li>[Insert]/[F5]: Click mouse (always)
-                </li>
+                <li>[Insert]/<b>[F5]</b>: Click mouse (always)                </li>
 
-                <li>[F4] jump mouse between "Tools", "Colors" and
-                canvas areas
-                </li>
+                <li><b>[F4]</b> jump mouse between "Tools", "Colors" and canvas areas                </li>
 
-                <li>If mouse is within "Tools" section on the left,
-                or "Colors" secton at the bottom:
-                  <ul>
-                    <li>[F7], [F8]: Move down/up between buttons,
-                    respectively (Tools section, only)
-                    </li>
+                <li>If mouse is within "Tools" section on the left, or "Colors" secton at the bottom:                  <ul>
+                    <li><b>[F7]</b>, <b>[F8]</b>: Move down/up between buttons, respectively (Tools section, only)                    </li>
 
-                    <li>[F11], [F12]: Move to previous/next button,
-                    respectively
-                    </li>
+                    <li><b>[F11]</b>, <b>[F12]</b>: Move to previous/next button, respectively                    </li>
                   </ul>
                 </li>
               </ul>
             </li>
 
-            <li>To click-and-drag, hold one of the 'click' keys
-            (e.g., [Insert]), and use the movement keys (e.g.,
-            [Left]).
-              <ul>
-                <li>Note: The "mouse accessibility" feature works
-                with the keyboard mouse controls. With both options
-                enabled, painting tools can be used to draw by
-                pressing a 'click' key to start clicking, movement
-                keys to move around (which will draw), and another
-                'click' key to end the click (stop drawing).
-                </li>
+            <li>To click-and-drag, hold one of the 'click' keys (e.g., [Insert]), and use the movement keys (e.g., [Left]).              <ul>
+                <li>Note: The "mouse accessibility" feature works with the keyboard mouse controls. With both options enabled, painting tools can be used to draw by pressing a 'click' key to start clicking, movement keys to move around (which will draw), and another 'click' key to end the click (stop drawing).                </li>
               </ul>
             </li>
 
-            <li>A regular mouse and/or joystick may still be used
-            (so you can, e.g., move with the mouse, and click with
-            the keyboard, or vice-versa)
-            </li>
+            <li>A regular mouse and/or joystick may still be used (so you can, e.g., move with the mouse, and click with the keyboard, or vice-versa)            </li>
           </ul>
         </dd>
 
@@ -1187,62 +788,31 @@
 
         <dd>
           <p>
-            Use this option to change where Tux&nbsp;Paint's
-            "<code>saved</code>" directory/folder is located, which
-            is where Tux&nbsp;Paint saves and opens pictures.
-          </p>
+            Use this option to change where Tux Paint's "<code>saved</code>" directory/folder is located, which is where Tux Paint saves and opens pictures.          </p>
 
           <p>
-            If you do not override it, the <b><i>default</i></b>
-            location is:
-          </p>
+            If you do not override it, the <b><i>default</i></b> location is:          </p>
 
           <ul>
-            <li>Linux &amp; Unix — Under a hidden directory named
-            "<code>.tuxpaint</code>" in your home directory (aka
-            "<code>~</code>" or "<code>$HOME</code>")<br>
-              Example:
-              "<code>/home/<i>username</i>/.tuxpaint/saved/</code>"<br>
+            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>.tuxpaint</code>" or "<code>~</code>")<br>
+                Example: <code>/home/<i>username</i>/.tuxpaint/saved/</code>            </li>
 
-              <br>
+            <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
+                Example: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved\</code>              <br>
             </li>
 
-            <li>Windows — Inside a folder named
-            "<code>TuxPaint</code>" in your
-            "<code>Application&nbsp;Data</code>" folder.<br>
-              Example:
-              "<code>C:\Documents&nbsp;and&nbsp;Settings\<i>Username</i>\Application&nbsp;Data\TuxPaint\saved\</code>"<br>
-
-              <br>
-            </li>
-
-            <li>macOS — Inside a folder named
-            "<code>TuxPaint</code>" in your
-            "<code>Application&nbsp;Support</code>" folder.<br>
-              Example:
-              "<code>/Users/<i>Username</i>/Library/Application&nbsp;Support/TuxPaint/saved/</code>"<br>
-            </li>
+            <li>macOS — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Support</code>" folder.<br>
+                Example: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>            </li>
           </ul>
 
           <p>
-            <b>Note:</b> When specifying a Windows drive (e.g.,
-            "<code>H:\</code>"), you must also specify a
-            subdirectory.
-          </p>
+            <b>Note:</b> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.          </p>
 
           <p>
-            <b>Note:</b> Prior to version 0.9.18, Tux&nbsp;Paint
-            would also use the setting or default for
-            "<code>savedir</code>" as the place to search for
-            personal data files (brushes, stamps, starters and
-            fonts). As of version 0.9.18, they may be specified
-            separately (see the "<code>datadir</code>" option,
-            below).
-          </p>
+            <b>Note:</b> Prior to version 0.9.18, Tux Paint would also use the setting or default for "<code>savedir</code>" as the place to search for personal data files (brushes, stamps, starters and fonts). As of version 0.9.18, they may be specified separately (see the "<code>datadir</code>" option, below).          </p>
 
           <p>
-            <b>Example:</b> <code>savedir=Z:\tuxpaint\</code>
-          </p>
+            Example: <code>savedir=Z:\tuxpaint\</code>          </p>
         </dd>
 
         <dt>
@@ -1251,65 +821,32 @@
 
         <dd>
           <p>
-            Use this option to change where Tux&nbsp;Paint exports
-            files — single images, or animated GIF slideshows — for
-            external use.
-          </p>
+            Use this option to change where Tux Paint exports files — single images, or animated GIF slideshows — for external use.          </p>
 
           <p>
-            If you do not override it, the <b><i>default</i></b>
-            location is determined as follows:
-          </p>
+            If you do not override it, the <b><i>default</i></b> location is:          </p>
 
           <ul>
-            <li>Linux &amp; Unix — If available, wherever your
-            desktop environment is configured for pictures to be
-            stored, based on your XDG (X&nbsp;Desktop&nbsp;Group)
-            configuration. (Try running the command-line
-            "<code style="white-space: nowrap;">xdg-user-dir
-            PICTURES</code>" to find out.)<br>
-              <br>
-              Typically (in an English locale), this will be a
-              "<code>Pictures/</code>" subdirectory in your home
-              directory (i.e., "<code>$HOME/Pictures/</code>" aka
-              "<code>~/Pictures</code>").<br>
-              <br>
-              Tux&nbsp;Paint will fall back to using that typical
-              directory, of no XDG configuration can be read, or
-              nothing is set for
-              "<code>XDG_PICTURES_DIR</code>".<br>
-              <br>
+            <li>Linux &amp; Unix — If available, wherever your desktop environment is configured for pictures to be stored, based on your XDG (X Desktop Group) configuration. (Try running the command-line "<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" to find out.)<br>
+              Typically (in an English locale), this will be a "<code>Pictures</code>" subdirectory in your home directory (i.e., "<code>$HOME/Pictures</code>" aka "<code>~/Pictures</code>").<br>
+              Tux Paint will fall back to using that typical directory, of no XDG configuration can be read, or nothing is set for "<code>XDG_PICTURES_DIR</code>".            </li>
+
+                        <li>Windows — TBD! <!-- FIXME -->
             </li>
 
-            <li>Windows — TBD! <!-- FIXME -->
-            </li>
-
-            <li>macOS — TBD! <!-- FIXME -->
+                        <li>macOS — TBD! <!-- FIXME -->
             </li>
           </ul>
 
           <p>
-            <b>Note:</b> When the defaults are used, a new
-            "<code>TuxPaint</code>" subdirectory will be created
-            and used. (e.g., "<code>~/Pictures/TuxPaint</code>")
-            When the "<code>--exportdir</code>" option is used, the
-            exact path specified will be used (no
-            "<code>TuxPaint</code>" subdirectory is created).
-          </p>
+            <b>Note:</b> When the defaults are used, a new "<code>TuxPaint</code>" subdirectory will be created and used. (e.g., "<code>~/Pictures/TuxPaint</code>") When the "<code>--exportdir</code>" option is used, the exact path specified will be used (no "<code>TuxPaint</code>" subdirectory is created).          </p>
           <p>
-            The directory itself (e.g., "<code>~/Pictures/TuxPaint</code>")
-            will be created, if it doesn't exist.
-          </p>
+            The directory itself (e.g., "<code>~/Pictures/TuxPaint</code>") will be created, if it doesn't exist.          </p>
           <p>
-            If the <em>parent</em> directory (e.g., "<code>~/Pictures</code>")
-            also does not exist, Tux&nbsp;Paint will attempt to create it
-            as well (but not any directories higher than that).
-          </p>
+            If the <em>parent</em> directory (e.g., "<code>~/Pictures/TuxPaint</code>") also does not exist, Tux Paint will attempt to create it as well (but not any directories higher than that).          </p>
 
           <p>
-            <b>Example:</b>
-            <code>exportdir=/home/penguin/TuxPaintExports</code>
-          </p>
+            Example: <code>exportdir=/home/penguin/TuxPaintExports</code>          </p>
         </dd>
 
         <dt>
@@ -1318,68 +855,33 @@
 
         <dd>
           <p>
-            Use this option to change where Tux&nbsp;Paint looks
-            for personal data files (brushes, stamps, starters,
-            templates, and fonts specific to the current user).
-          </p>
+            Use this option to change where Tux Paint looks for personal data files (brushes, stamps, starters, templates, and fonts specific to the current user).          </p>
 
           <p>
-            Tux&nbsp;Paint will search for
-            subdirectories/subfolders named "<code>brushes</code>",
-            "<code>stamps</code>", "<code>starters</code>",
-            "<code>templates</code>", and "<code>fonts</code>"
-            under the specified data directory.
-          </p>
+            Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "3$<code>brushes</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.          </p>
 
           <p>
-            If you do not override it, the <b><i>default</i></b>
-            location is:
-          </p>
+            If you do not override it, the <b><i>default</i></b> location is:          </p>
 
           <ul>
-            <li>Linux &amp; Unix — Under a hidden directory named
-            "<code>.tuxpaint</code>" in your home directory (aka
-            "<code>~</code>" or "<code>$HOME</code>")<br>
-              Example:
-              "<code>/home/<i>username</i>/.tuxpaint/brushes/</code>"<br>
+            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>.tuxpaint</code>" or "<code>~</code>")<br>
+                Example: <code>/home/<i>username</i>/.tuxpaint/brushes/</code>            </li>
 
-              <br>
-            </li>
+            <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
+                Example: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\brushes\</code>            </li>
 
-            <li>Windows — Inside a folder named
-            "<code>TuxPaint</code>" in your
-            "<code>Application&nbsp;Data</code>" folder.<br>
-              Example:
-              "<code>C:\Documents&nbsp;and&nbsp;Settings\<i>Username</i>\Application&nbsp;Data\TuxPaint\brushes\</code>"<br>
-
-              <br>
-            </li>
-
-            <li>macOS — Inside a folder named
-            "<code>TuxPaint</code>" in your
-            "<code>Application&nbsp;Support</code>" folder.<br>
-              Example:
-              "<code>/Users/<i>Username</i>/Library/Application&nbsp;Support/TuxPaint/brushes/</code>"<br>
-            </li>
+            <li>macOS — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Support</code>" folder.<br>
+                Example: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/brushes/</code>            </li>
           </ul>
 
           <p>
-            <b>Note:</b> Prior to version 0.9.18, Tux&nbsp;Paint
-            would use the same setting or default as for
-            "<code>savedir</code>" to search for data files. As of
-            version 0.9.18, they may be specified separately.
-          </p>
+            <b>Note:</b> Prior to version 0.9.18, Tux Paint would use the same setting or default as for "<code>savedir</code>" to search for data files. As of version 0.9.18, they may be specified separately.          </p>
 
           <p>
-            <b>Note:</b> When specifying a Windows drive (e.g.,
-            "<code>H:\</code>"), you must also specify a
-            subdirectory.
-          </p>
+            <b>Note:</b> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.          </p>
 
           <p>
-            <b>Example:</b>
-            <code>datadir=/home/johnny/tuxpaint-data/</code>
-          </p>
+            Example: <code>datadir=/home/johnny/tuxpaint-data/</code>          </p>
         </dd>
 
         <dt>
@@ -1387,22 +889,14 @@
         </dt>
 
         <dd>
-          This disables the "<i>Save over the old version...?</i>"
-          prompt when saving an existing file. With this option,
-          the older version will always be replaced by the new
-          version, automatically.
-        </dd>
+          This disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. With this option, the older version will always be replaced by the new version, automatically.        </dd>
 
         <dt>
           <code><b>saveover=new</b></code>
         </dt>
 
         <dd>
-          This also disables the "<i>Save over the old
-          version...?</i>" prompt when saving an existing file.
-          This option, however, will always save a new file, rather
-          than overwrite the older version.
-        </dd>
+          This also disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. This option, however, will always save a new file, rather than overwrite the older version.        </dd>
 
         <dt>
           <code><b>saveover=ask</b></code>
@@ -1410,43 +904,30 @@
 
         <dd>
           <p>
-            <i>(This option is redundant, since this is the
-            default.)</i>
+            <i>(This option is redundant, since this is the default.)</i>
           </p>
-          When saving an existing drawing, you will be first asked
-          whether to save over the older version or not.
-        </dd>
+          When saving an existing drawing, you will be first asked whether to save over the older version or not.        </dd>
 
         <dt>
           <code><b>nosave=yes</b></code>
         </dt>
 
         <dd>
-          This disables Tux&nbsp;Paint's ability to save files (and
-          therefore disables the on-screen "Save" button). It can
-          be used in situations where the program is only being
-          used for fun, or in a test environment.
-        </dd>
+          This disables Tux Paint's ability to save files (and therefore disables the on-screen "Save" button). It can be used in situations where the program is only being used for fun, or in a test environment.        </dd>
 
         <dt>
           <code><b>autosave=yes</b></code>
         </dt>
 
         <dd>
-          This prevents Tux&nbsp;Paint from asking whether you want
-          to save the current picture when quitting, and assumes
-          you do.
-        </dd>
+          This prevents Tux Paint from asking whether you want to save the current picture when quitting, and assumes you do.        </dd>
 
         <dt>
           <code><b>startblank=yes</b></code>
         </dt>
 
         <dd>
-          This causes Tux&nbsp;Paint to display a blank canvas when
-          it first starts up, rather than loading the last image
-          that was being edited.
-        </dd>
+          This causes Tux Paint to display a blank canvas when it first starts up, rather than loading the last image that was being edited.        </dd>
 
         <dt>
           <code><b>colorfile=<i>FILENAME</i></b></code>
@@ -1454,49 +935,22 @@
 
         <dd>
           <p>
-            You may override Tux&nbsp;Paint's default color palette
-            by creating a plain ASCII text file that describes the
-            colors you want, and pointing to that file using the
-            <code>colorfile</code> option.
-          </p>
+            You may override Tux Paint's default color palette by creating a plain ASCII text file that describes the colors you want, and pointing to that file using the "<code>colorfile</code>" option.          </p>
 
           <p>
-            The file should list one color per line. Colors are
-            defined in terms of their Red, Green and Blue values,
-            each from 0 (off) to 255 (brightest). (For more
-            information, try Wikipedia's "<a href=
-            "http://en.wikipedia.org/wiki/Rgb">RGB color model</a>"
-            article.)
-          </p>
+            The file should list one color per line. Colors are defined in terms of their Red, Green and Blue values, each from 0 (off) to 255 (brightest). (For more information, try Wikipedia's "<a href="http://en.wikipedia.org/wiki/Rgb">RGB color model</a>" article.)          </p>
 
           <p>
-            Colors may be listed using three decimal numbers (e.g.,
-            "<code>255&nbsp;68&nbsp;136</code>") or a 6- or
-            3-digit-long hexadecimal 'triplet' (e.g.,
-            "<code>#ff4488</code>" or "<code>#F48</code>").
-          </p>
+            Colors may be listed using three decimal numbers (e.g., "<code>255 68 136</code>") or a 6- or 3-digit-long hexadecimal 'triplet' (e.g., "<code>#ff4488</code>" or "<code>#F48</code>").          </p>
 
           <p>
-            After the color definition (on the same line) you may
-            enter text to describe the color. Tux will display this
-            text when the color is clicked. (For example,
-            "<code>#FFF&nbsp;White&nbsp;as&nbsp;snow.</code>")
-          </p>
+            After the color definition (on the same line) you may enter text to describe the color. Tux will display this text when the color is clicked. (For example, "<code>#FFF White as snow.</code>")          </p>
 
           <p>
-            As an example, you can see the default colors currently
-            used in Tux&nbsp;Paint in: "<a href=
-            "../../default_colors.txt"><code>default_colors.txt</code></a>".
-          </p>
+            As an example, you can see the default colors currently used in Tux Paint in: "<a href="../../default_colors.txt"><code>default_colors.txt</code></a>".          </p>
 
           <p>
-            NOTES: You must separate decimal values with spaces,
-            and begin hexadecimal values with a pound/number-sign
-            character ("<code>#</code>"). In 3-digit hexadecimal,
-            each digit is used for both the high and low halves of
-            the byte, so "<code>#FFF</code>" is the same as
-            "<code>#FFFFFF</code>", not "<code>#F0F0F0</code>".
-          </p>
+            NOTES: You must separate decimal values with spaces, and begin hexadecimal values with a pound/number-sign character ("<code>#</code>"). In 3-digit hexadecimal, each digit is used for both the high and low halves of the byte, so "<code>#FFF</code>" is the same as "<code>#FFFFFF</code>", not "<code>#F0F0F0</code>".          </p>
         </dd>
 
         <dt>
@@ -1505,10 +959,9 @@
 
         <dd>
           <p>
-            Run Tux&nbsp;Paint in one of the supported languages.
-            Possible choice for <i>LANGUAGE</i> currently include:
-          </p>
+            Run Tux Paint in one of the supported languages. Possible choice for <i>LANGUAGE</i> currently include:          </p>
 
+          
           <blockquote>
             <table border="1"
                    cellspacing="0"
@@ -1523,7 +976,7 @@
                   <code>american-english</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1535,7 +988,7 @@
                   <code>acoli</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1544,10 +997,10 @@
                   <code>afrikaans</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1559,7 +1012,7 @@
                   <code>twi-fante</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1568,10 +1021,10 @@
                   <code>albanian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1580,10 +1033,10 @@
                   <code>amharic</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1592,10 +1045,10 @@
                   <code>arabic</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1604,10 +1057,10 @@
                   <code>aragones</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1619,7 +1072,7 @@
                   <code>hayeren</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1628,10 +1081,10 @@
                   <code>assamese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1640,10 +1093,10 @@
                   <code>asturian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1652,10 +1105,10 @@
                   <code>australian-english</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1664,10 +1117,10 @@
                   <code>azerbaijani</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1676,10 +1129,10 @@
                   <code>bambara</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1691,7 +1144,7 @@
                   <code>euskara</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1703,7 +1156,7 @@
                   <code>bielaruskaja</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1712,10 +1165,10 @@
                   <code>bengali</code>
                 </td>
                 <td>
-                  <code>&nbsp;</code>
+                  <code> </code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1724,10 +1177,10 @@
                   <code>bodo</code>
                 </td>
                 <td>
-                  <code>&nbsp;</code>
+                  <code> </code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1736,10 +1189,10 @@
                   <code>bokmal</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1748,10 +1201,10 @@
                   <code>bosnian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1775,7 +1228,7 @@
                   <code>brezhoneg</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1787,7 +1240,7 @@
                   <code>british</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1796,10 +1249,10 @@
                   <code>bulgarian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1808,10 +1261,10 @@
                   <code>canadian-english</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1823,7 +1276,7 @@
                   <code>catala</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1835,7 +1288,7 @@
                   <code>simplified-chinese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1847,7 +1300,7 @@
                   <code>hrvatski</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1859,7 +1312,7 @@
                   <code>cesky</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1871,19 +1324,19 @@
                   <code>dansk</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <code>&nbsp;</code>
+                  <code> </code>
                 </td>
                 <td>
                   <code>dogri</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1895,7 +1348,7 @@
                   <code>nederlands</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1904,10 +1357,10 @@
                   <code>esperanto</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1916,10 +1369,10 @@
                   <code>estonian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1928,10 +1381,10 @@
                   <code>faroese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1943,7 +1396,7 @@
                   <code>suomi</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1955,7 +1408,7 @@
                   <code>francais</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -1991,7 +1444,7 @@
                   <code>galego</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2000,10 +1453,10 @@
                   <code>georgian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2015,7 +1468,7 @@
                   <code>deutsch</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2024,10 +1477,10 @@
                   <code>greek</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2039,7 +1492,7 @@
                   <code>zudelk-veenkelonioals</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2048,10 +1501,10 @@
                   <code>gujarati</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2060,10 +1513,10 @@
                   <code>hebrew</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2072,10 +1525,10 @@
                   <code>hindi</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2087,7 +1540,7 @@
                   <code>magyar</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2099,7 +1552,7 @@
                   <code>islenska</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2111,7 +1564,7 @@
                   <code>bahasa-indonesia</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2120,10 +1573,10 @@
                   <code>inuktitut</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2135,7 +1588,7 @@
                   <code>italiano</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2144,10 +1597,10 @@
                   <code>japanese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2156,7 +1609,7 @@
                   <code>kabyle</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
                   <code>kabylian</code>
@@ -2168,10 +1621,10 @@
                   <code>kannada</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2180,10 +1633,10 @@
                   <code>kashmiri-devanagari</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2192,10 +1645,10 @@
                   <code>kashmiri-perso-arabic</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2204,10 +1657,10 @@
                   <code>khmer</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2219,7 +1672,7 @@
                   <code>chiga</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2228,10 +1681,10 @@
                   <code>kinyarwanda</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2243,7 +1696,7 @@
                   <code>tlhIngan</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2252,10 +1705,10 @@
                   <code>konkani-devanagari</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2264,10 +1717,10 @@
                   <code>konkani-roman</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2276,10 +1729,10 @@
                   <code>korean</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2288,10 +1741,10 @@
                   <code>kurdish</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2300,10 +1753,10 @@
                   <code>latvian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2315,7 +1768,7 @@
                   <code>lietuviu</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2324,10 +1777,10 @@
                   <code>luganda</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2339,7 +1792,7 @@
                   <code>letzebuergesch</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2348,10 +1801,10 @@
                   <code>macedonian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2360,10 +1813,10 @@
                   <code>maithili</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2372,10 +1825,10 @@
                   <code>malay</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2384,10 +1837,10 @@
                   <code>malayalam</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2396,10 +1849,10 @@
                   <code>manipuri-bengali</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2408,10 +1861,10 @@
                   <code>manipuri-meitei-mayek</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2420,10 +1873,10 @@
                   <code>marathi</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2444,10 +1897,10 @@
                   <code>mongolian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2456,10 +1909,10 @@
                   <code>ndebele</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2468,10 +1921,10 @@
                   <code>nepali</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2483,7 +1936,7 @@
                   <code>sesotho-sa-leboa</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2504,10 +1957,10 @@
                   <code>occitan</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2519,7 +1972,7 @@
                   <code>oriya</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2531,7 +1984,7 @@
                   <code>ojibway</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2540,10 +1993,10 @@
                   <code>persian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2555,7 +2008,7 @@
                   <code>polski</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2567,7 +2020,7 @@
                   <code>portugues</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2579,7 +2032,7 @@
                   <code>panjabi</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2588,10 +2041,10 @@
                   <code>romanian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2603,7 +2056,7 @@
                   <code>russkiy</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2612,10 +2065,10 @@
                   <code>sanskrit</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2624,10 +2077,10 @@
                   <code>santali-devanagari</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2636,10 +2089,10 @@
                   <code>santali-ol-chiki</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2660,10 +2113,10 @@
                   <code>serbian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2672,10 +2125,10 @@
                   <code>serbian-latin</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2687,7 +2140,7 @@
                   <code>secwepemctin</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2696,10 +2149,10 @@
                   <code>sindhi-devanagari</code>
                 </td>
                 <td>
-                  <code>&nbsp;</code>
+                  <code> </code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2708,10 +2161,10 @@
                   <code>sindhi-perso-arabic</code>
                 </td>
                 <td>
-                  <code>&nbsp;</code>
+                  <code> </code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2720,10 +2173,10 @@
                   <code>slovak</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2735,7 +2188,7 @@
                   <code>slovensko</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2744,10 +2197,10 @@
                   <code>songhay</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2756,10 +2209,10 @@
                   <code>southafrican-english</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2771,7 +2224,7 @@
                   <code>espanol</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2780,10 +2233,10 @@
                   <code>sundanese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2792,10 +2245,10 @@
                   <code>swahili</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2807,7 +2260,7 @@
                   <code>svenska</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2816,10 +2269,10 @@
                   <code>tagalog</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2828,10 +2281,10 @@
                   <code>tamil</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2840,10 +2293,10 @@
                   <code>telugu</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2852,10 +2305,10 @@
                   <code>thai</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2864,10 +2317,10 @@
                   <code>tibetan</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2876,10 +2329,10 @@
                   <code>traditional-chinese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2888,10 +2341,10 @@
                   <code>turkish</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2900,10 +2353,10 @@
                   <code>twi</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2912,10 +2365,10 @@
                   <code>ukrainian</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2924,10 +2377,10 @@
                   <code>urdu</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2936,10 +2389,10 @@
                   <code>venda</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2951,7 +2404,7 @@
                   <code>veneto</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2960,10 +2413,10 @@
                   <code>vietnamese</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2975,7 +2428,7 @@
                   <code>walon</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2987,7 +2440,7 @@
                   <code>cymraeg</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -2996,10 +2449,10 @@
                   <code>wolof</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -3008,10 +2461,10 @@
                   <code>xhosa</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
               </tr>
 
@@ -3020,7 +2473,7 @@
                   <code>miahuatlan-zapotec</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
                   <code>zapotec</code>
@@ -3032,7 +2485,7 @@
                   <code>zulu</code>
                 </td>
                 <td>
-                  &nbsp;
+                   
                 </td>
                 <td>
                   <code>zulu</code>
@@ -3048,9 +2501,7 @@
         noshade>
 
     <h1>
-      Overriding System Config. Options using
-      <code>.tuxpaintrc</code>
-    </h1>
+      Overriding System Config. Options    </h1>
 
     <blockquote>
       <p>
@@ -3058,17 +2509,10 @@
       </p>
 
       <p>
-        If any of the above options are set in
-        "<code>/etc/tuxpaint/tuxpaint.config</code>", you can
-        override them in your own "<code>~/.tuxpaintrc</code>"
-        file.
-      </p>
+        If any of the above options are set in "<code>/etc/tuxpaint/tuxpaint.config</code>", you can override them in your own "<code>~/.tuxpaintrc</code>" file.      </p>
 
       <p>
-        For true/false options, like "<code>noprint</code>" and
-        "<code>grab</code>", you can simply say they equal 'no' in
-        your "<code>~/.tuxpaintrc</code>" file:
-      </p>
+        For true/false options, like "<code>noprint</code>" and "<code>grab</code>", you can simply say they equal 'no' in your "<code>~/.tuxpaintrc</code>" file:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -3076,9 +2520,7 @@
       </blockquote>
 
       <p>
-        Or, you can use options similar to the command-line
-        override options described below. For example:
-      </p>
+        Or, you can use options similar to the command-line override options described below. For example:      </p>
 
       <blockquote>
         <code>print=yes<br>
@@ -3095,9 +2537,7 @@
     </h1>
 
     <blockquote>
-      Options can also be issued on the command-line when you start
-      Tux&nbsp;Paint.
-      <blockquote>
+      Options can also be issued on the command-line when you start Tux Paint.      <blockquote>
         <dl>
           <dt>
             <code><b>--fullscreen<br>
@@ -3163,21 +2603,19 @@
             --mirrorstamps<br>
             --stampsize=<i>SIZE</i><br>
             --keyboard<br>
-            --savedir&nbsp;<i>DIRECTORY</i><br>
-            --datadir&nbsp;<i>DIRECTORY</i><br>
-            --exportdir&nbsp;<i>DIRECTORY</i><br>
+            --savedir <i>DIRECTORY</i><br>
+            --datadir <i>DIRECTORY</i><br>
+            --exportdir <i>DIRECTORY</i><br>
             --saveover<br>
             --saveovernew<br>
             --nosave<br>
             --autosave<br>
-            --lang&nbsp;<i>LANGUAGE</i><br>
-            --colorfile&nbsp;<i>FILE</i><br></b></code>
+            --lang <i>LANGUAGE</i><br>
+            --colorfile <i>FILE</i><br></b></code>
           </dt>
 
           <dd>
-            These enable or correspond to the configuration file
-            options described above.
-
+            These enable or correspond to the configuration file options described above.
             <hr size="1"
                 noshade
                 width="50%">
@@ -3223,11 +2661,7 @@
           </dt>
 
           <dd>
-            These options can be used to override any settings made
-            in the configuration file. (If the option isn't set in
-            the configuration file(s), no overriding option is
-            necessary.)
-
+            These options can be used to override any settings made in the configuration file. (If the option isn't set in the configuration file(s), no overriding option is necessary.)
             <hr size="1"
                 noshade
                 width="50%">
@@ -3240,19 +2674,10 @@
 
           <dd>
             <p>
-              Run Tux&nbsp;Paint in one of the support languages.
-              See the "<i><a href="#different_language">Choosing a
-              Different Language</a></i>" section below for the
-              locale strings (e.g., "<code>de_DE</code>" for
-              German) to use.
-            </p>
+              Run Tux Paint in one of the support languages. See the "<i><a href="#different_language">Choosing a Different Language</a></i>" section below for the locale strings (e.g., "<code>de_DE</code>" for German) to use.            </p>
 
             <p>
-              (If your locale is already set, e.g. with the
-              "<code>$LANG</code>" environment variable, this
-              option is not necessary, since Tux&nbsp;Paint honors
-              your environment's setting, if possible.)
-            </p>
+              (If your locale is already set, e.g. with the "<code>$LANG</code>" environment variable, this option is not necessary, since Tux Paint honors your environment's setting, if possible.)            </p>
           </dd>
 
           <dt>
@@ -3261,17 +2686,10 @@
 
           <dd>
             <p>
-              Under Linux and Unix, this prevents the system-wide
-              configuration file,
-              "<code>/etc/tuxpaint/tuxpaint.conf</code>", from
-              being read.
-            </p>
+              Under Linux and Unix, this prevents the system-wide configuration file, "<code>/etc/tuxpaint/tuxpaint.conf</code>", from being read.            </p>
 
             <p>
-              Only your own configuration file,
-              "<code>~/.tuxpaintrc</code>", if it exists, will be
-              used.
-            </p>
+              Only your own configuration file, "<code>~/.tuxpaintrc</code>", if it exists, will be used.            </p>
           </dd>
         </dl>
       </blockquote>
@@ -3280,15 +2698,11 @@
           noshade>
 
       <h2>
-        Command-Line Informational Options
-      </h2>
+        Command-Line Informational Options      </h2>
 
       <blockquote>
         <p>
-          The following options display some informative text on
-          the screen. Tux&nbsp;Paint doesn't actually start up and
-          run afterwards, however.
-        </p>
+          The following options display some informative text on the screen. Tux Paint doesn't actually start up and run afterwards, however.        </p>
 
         <blockquote>
           <dl>
@@ -3298,54 +2712,42 @@
             </dt>
 
             <dd>
-              Display the version number and date of the copy of
-              Tux&nbsp;Paint you are running. The
-              "--verbose-version" also lists what compile-time
-              options were set. (See INSTALL.txt and FAQ.txt).
-            </dd>
+              Display the version number and date of the copy of Tux Paint you are running. The "--verbose-version" also lists what compile-time options were set. (See INSTALL and FAQ).            </dd>
 
             <dt>
               <code><b>--copying</b></code>
             </dt>
 
             <dd>
-              Show brief license information about copying
-              Tux&nbsp;Paint.
-            </dd>
+              Show brief license information about copying Tux Paint.            </dd>
 
             <dt>
               <code><b>--usage</b></code>
             </dt>
 
             <dd>
-              Display the list of available command-line options.
-            </dd>
+              Display the list of available command-line options.            </dd>
 
             <dt>
               <code><b>--help</b></code>
             </dt>
 
             <dd>
-              Display brief help on using Tux&nbsp;Paint.
-            </dd>
+              Display brief help on using Tux Paint.            </dd>
 
             <dt>
               <code><b>--lang help</b></code>
             </dt>
 
             <dd>
-              Display a list of available languages in
-              Tux&nbsp;Paint.
-            </dd>
+              Display a list of available languages in Tux Paint.            </dd>
 
             <dt>
               <code><b>--joystick-dev list</b></code>
             </dt>
 
             <dd>
-              Display list of attached joysticks available to
-              Tux&nbsp;Paint.
-            </dd>
+              Display list of attached joysticks available to Tux Paint.            </dd>
           </dl>
         </blockquote>
       </blockquote>
@@ -3361,30 +2763,18 @@
 
     <blockquote>
       <p>
-        Tux&nbsp;Paint has been translated into a number of
-        languages. To access the translations, you can use the
-        "<code>--lang</code>" option on the command-line to set the
-        language (e.g. "<code>--lang&nbsp;spanish</code>") or use
-        the "<code>lang=</code>" setting in the configuration file
-        (e.g., "<code>lang=spanish</code>").
-      </p>
+        Tux Paint has been translated into a number of languages. To access the translations, you can use the "<code>--lang</code>" option on the command-line to set the language (e.g. "<code>--lang spanish</code>") or use the "<code>lang=</code>" setting in the configuration file (e.g., "<code>lang=spanish</code>").      </p>
 
       <p>
-        Tux&nbsp;Paint also honors your environment's current
-        locale. (You can override it on the command-line using the
-        "<code>--locale</code>" option; see <a href=
-        "#locale">above</a>.)
-      </p>
+        Tux Paint also honors your environment's current locale. (You can override it on the command-line using the "<code>--locale</code>" option; see <a href="#locale">above</a>.)      </p>
 
       <p>
-        Use the option "<code>--lang&nbsp;help</code>" to list the
-        available language options available.
-      </p>
+        Use the option "<code>--lang help</code>" to list the available language options available.      </p>
 
       <h2>
-        Available Languages
-      </h2>
+        Available Languages      </h2>
 
+      
       <blockquote>
         <table border="1"
                cellspacing="0"
@@ -3393,19 +2783,13 @@
                "Locale values and the languages they represent.">
           <tr>
             <th>
-              Locale Code
-            </th>
+              Locale Code            </th>
             <th>
-              Language<br>
-              (native name)
-            </th>
+              Language<br>(native name)            </th>
             <th>
-              Language<br>
-              (English name)
-            </th>
+              Language<br>(English name)            </th>
             <th>
-              Input Method Cycle Key Combination
-            </th>
+              Input Method Cycle Key Combination            </th>
           </tr>
 
           <tr>
@@ -3413,13 +2797,13 @@
               <code>C</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               English
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3434,7 +2818,7 @@
               Acholi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3443,13 +2827,13 @@
               <code>af_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Afrikaans
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3458,13 +2842,13 @@
               <code>ak_GH</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Akan
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3473,13 +2857,13 @@
               <code>am_ET</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Amharic
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3488,13 +2872,13 @@
               <code>an_ES</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Aragones
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3503,13 +2887,13 @@
               <code>ar_SA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Arabic
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3518,13 +2902,13 @@
               <code>as_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Assamese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3533,13 +2917,13 @@
               <code>ast_ES</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Asturian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3548,13 +2932,13 @@
               <code>az_AZ</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Azerbaijani
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3563,13 +2947,13 @@
               <code>bm_ML</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Bambara
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3578,13 +2962,13 @@
               <code>bn_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Bengali
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3599,7 +2983,7 @@
               Belarusian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3608,13 +2992,13 @@
               <code>bg_BG</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Bulgarian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3623,13 +3007,13 @@
               <code>bo_CN</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Tibetan
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3644,7 +3028,7 @@
               Breton
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3653,13 +3037,13 @@
               <code>brx_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Bodo
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3668,13 +3052,13 @@
               <code>bs_BA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Bosnian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3689,7 +3073,7 @@
               Catalan
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3704,7 +3088,7 @@
               Valencian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3719,7 +3103,7 @@
               Kiga
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3734,7 +3118,7 @@
               Czech
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3749,7 +3133,7 @@
               Welsh
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3764,7 +3148,7 @@
               Danish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3779,7 +3163,7 @@
               German
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3788,13 +3172,13 @@
               <code>doi_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Dogri
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3803,13 +3187,13 @@
               <code>et_EE</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Estonian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3818,13 +3202,13 @@
               <code>el_GR</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Greek
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3833,13 +3217,13 @@
               <code>en_AU</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Australian English
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3848,13 +3232,13 @@
               <code>en_CA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Canadian English
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3863,13 +3247,13 @@
               <code>en_GB</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               British English
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3878,13 +3262,13 @@
               <code>en_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               South African English
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3893,13 +3277,13 @@
               <code>eo</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Esperanto
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3914,7 +3298,7 @@
               Spanish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3929,7 +3313,7 @@
               Mexican Spanish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3944,7 +3328,7 @@
               Basque
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3953,13 +3337,13 @@
               <code>fa_IR</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Persian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3974,7 +3358,7 @@
               Fula
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3989,7 +3373,7 @@
               Finnish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -3998,13 +3382,13 @@
               <code>fo_FO</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Faroese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4019,7 +3403,7 @@
               French
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4034,7 +3418,7 @@
               Irish Gaelic
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4049,7 +3433,7 @@
               Scottish Gaelic
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4064,7 +3448,7 @@
               Galician
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4079,7 +3463,7 @@
               Gronings
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4088,13 +3472,13 @@
               <code>gu_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Gujarati
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4103,13 +3487,13 @@
               <code>he_IL</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Hebrew
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4118,13 +3502,13 @@
               <code>hi_IN</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Hindi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4139,7 +3523,7 @@
               Croatian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4154,7 +3538,7 @@
               Hungarian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4169,7 +3553,7 @@
               Armenian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4184,7 +3568,7 @@
               Indonesian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4199,7 +3583,7 @@
               Icelandic
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4214,7 +3598,7 @@
               Italian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4223,13 +3607,13 @@
               <code>iu_CA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Inuktitut
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4238,7 +3622,7 @@
               <code>ja_JP</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Japanese
@@ -4253,13 +3637,13 @@
               <code>ka_GE</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Georgian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4268,13 +3652,13 @@
               <code>kab</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kabyle
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4283,13 +3667,13 @@
               <code>km_KH</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Khmer
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4298,13 +3682,13 @@
               <code>kn_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kannada
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4313,7 +3697,7 @@
               <code>ko_KR</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Korean
@@ -4328,13 +3712,13 @@
               <code>kok_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Konkani (Devanagari)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4343,13 +3727,13 @@
               <code>kok@roman</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Konkani (Roman)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4358,13 +3742,13 @@
               <code>ks_IN@devanagari</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kashmiri (Devanagari)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4373,13 +3757,13 @@
               <code>ks_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kashmiri (Perso-Arabic)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4388,13 +3772,13 @@
               <code>ku_TR</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kurdish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4409,7 +3793,7 @@
               Luxembourgish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4418,13 +3802,13 @@
               <code>lg_UG</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Luganda
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4439,7 +3823,7 @@
               Lithuanian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4448,13 +3832,13 @@
               <code>lv_LV</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Latvian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4463,13 +3847,13 @@
               <code>mk_MK</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Macedonian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4478,13 +3862,13 @@
               <code>mai_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Maithili
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4493,13 +3877,13 @@
               <code>ml_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Malayalam
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4508,13 +3892,13 @@
               <code>mn_MN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Mongolian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4523,13 +3907,13 @@
               <code>mni_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Manipuri (Bengali)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4538,13 +3922,13 @@
               <code>mni@meiteimayek</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Manipuri (Meitei Mayek)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4553,13 +3937,13 @@
               <code>mr_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Marathi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4568,13 +3952,13 @@
               <code>ms_MY</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Malay
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4589,7 +3973,7 @@
               Norwegian Bokmål
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4601,10 +3985,10 @@
               Nepali
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4613,13 +3997,13 @@
               <code>nl_NL</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Dutch
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4634,7 +4018,7 @@
               Norwegian Nynorsk
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4643,13 +4027,13 @@
               <code>nr_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Ndebele
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4664,7 +4048,7 @@
               Northern Sotho
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4673,13 +4057,13 @@
               <code>oc_FR</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Occitan
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4688,7 +4072,7 @@
               <code>oj_CA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Ojibwe
@@ -4703,13 +4087,13 @@
               <code>pa_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Punjabi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4718,7 +4102,7 @@
               <code>or_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Odia
@@ -4739,7 +4123,7 @@
               Polish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4754,7 +4138,7 @@
               Brazilian Portuguese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4769,7 +4153,7 @@
               Portuguese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4778,13 +4162,13 @@
               <code>ro_RO</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Romanian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4799,7 +4183,7 @@
               Russian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4808,13 +4192,13 @@
               <code>rw_RW</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Kinyarwanda
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4823,13 +4207,13 @@
               <code>sa_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Sanskrit
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4838,13 +4222,13 @@
               <code>sat_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Santali (Devanagari)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4853,13 +4237,13 @@
               <code>sat@olchiki</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Santali (Ol-Chikii)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4874,7 +4258,7 @@
               Shuswap
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4883,13 +4267,13 @@
               <code>si_LK</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Sinhala
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4898,13 +4282,13 @@
               <code>sd_IN@devanagari</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Sindhi (Devanagari)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4913,13 +4297,13 @@
               <code>sd_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Sindhi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4928,13 +4312,13 @@
               <code>sk_SK</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Slovak
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4943,13 +4327,13 @@
               <code>sl_SI</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Slovenian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4958,13 +4342,13 @@
               <code>son</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Songhay
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4973,13 +4357,13 @@
               <code>sq_AL</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Albanian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -4988,13 +4372,13 @@
               <code>sr_YU</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Serbian (cyrillic)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5003,13 +4387,13 @@
               <code>sr_RS@latin</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Serbian (latin)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5018,13 +4402,13 @@
               <code>su_ID</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Sundanese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5039,7 +4423,7 @@
               Swedish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5048,13 +4432,13 @@
               <code>sw_TZ</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Swahili
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5063,13 +4447,13 @@
               <code>ta_IN</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Tamil
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5078,13 +4462,13 @@
               <code>te_IN</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Telugu
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5093,13 +4477,13 @@
               <code>th_TH</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Thai
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5108,13 +4492,13 @@
               <code>tl_PH</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Tagalog
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5129,7 +4513,7 @@
               Klingon
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5138,13 +4522,13 @@
               <code>tr_TR</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Turkish
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5153,13 +4537,13 @@
               <code>tw_GH</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Twi
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5168,13 +4552,13 @@
               <code>uk_UA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Ukrainian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5183,13 +4567,13 @@
               <code>ur_IN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Urdu
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5198,13 +4582,13 @@
               <code>ve_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Venda
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5219,7 +4603,7 @@
               Venetian
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5228,13 +4612,13 @@
               <code>vi_VN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Vietnamese
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5243,13 +4627,13 @@
               <code>wa_BE</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Walloon
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5258,13 +4642,13 @@
               <code>wo_SN</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Wolof
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5273,13 +4657,13 @@
               <code>xh_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Xhosa
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5288,13 +4672,13 @@
               <code>zh_CN</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Chinese (Simplified)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5303,13 +4687,13 @@
               <code>zh_TW</code> (*)
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Chinese (Traditional)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5318,13 +4702,13 @@
               <code>zam</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Zapotec (Miahuatlan)
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
 
@@ -5333,107 +4717,63 @@
               <code>zu_ZA</code>
             </td>
             <td>
-              &nbsp;
+               
             </td>
             <td>
               Zulu
             </td>
             <td>
-              &nbsp;
+               
             </td>
           </tr>
         </table>
 
         <p>
-          <b>(*)</b> - These languages require their own fonts,
-          since they are not represented using a Latin character
-          set, like the others. See the "<a href=
-          "#special_fonts"><i>Special&nbsp;Fonts</i></a>" section,
-          below.
-        </p>
+          <b>(*)</b> - These languages require their own fonts, since they are not represented using a Latin character set, like the others. See the "<a href="#special_fonts"><i>Special Fonts</i></a>" section, below.        </p>
 
         <p>
-          <i>Note:</i> Tux Paint provides an alternative input
-          method for entering characters with the <b>Text</b> tool
-          in some locales. The key comibation(s) listed can be used
-          to cycle through the supported input methods while the
-          <b>Text</b> tool is active.
-        </p>
+          <i>Note:</i> Tux Paint provides an alternative input method for entering characters with the <b>Text</b> tool in some locales. The key comibation(s) listed can be used to cycle through the supported input methods while the <b>Text</b> tool is active.        </p>
       </blockquote>
 
       <h2>
-        Setting Your Environment's Locale
-      </h2>
+        Setting Your Environment's Locale      </h2>
 
       <blockquote>
         <p>
-          Changing your locale will affect much of your
-          environment.
-        </p>
+          Changing your locale will affect much of your environment.        </p>
 
         <p>
-          As stated above, along with letting you choose the
-          language at runtime using command-line options
-          ("<code>--lang</code>" and "<code>--locale</code>"),
-          Tux&nbsp;Paint honors the global locale setting in your
-          environment.
-        </p>
+          As stated above, along with letting you choose the language at runtime using command-line options ("<code>--lang</code>" and "<code>--locale</code>"), Tux Paint honors the global locale setting in your environment.        </p>
 
         <p>
-          If you haven't already set your environment's locale, the
-          following will briefly explain how:
-        </p>
+          If you haven't already set your environment's locale, the following will briefly explain how:        </p>
 
         <h3>
-          Linux/Unix Users
-        </h3>
+          Linux/Unix Users        </h3>
 
         <blockquote>
           <p>
-            First, be sure the locale you want to use is enabled by
-            editing the file "<code>/etc/locale.gen</code>" on your
-            system and then running the program
-            "<code>locale-gen</code>" as root.
-          </p>
+            First, be sure the locale you want to use is enabled by editing the file "<code>/etc/locale.gen</code>" on your system and then running the program "<code>locale-gen</code>" as root.          </p>
 
           <p>
-            <i>Note: Debian users may be able to simply run the
-            command "<code>dpkg-reconfigure&nbsp;locales</code>" as
-            root to bring up a configuration dialog. Ubuntu users
-            may be able to run
-            "<code>sudo&nbsp;dpkg-reconfigure&nbsp;localeconf</code>"
-            (the "localeconf" package may need to be installed
-            first), or may need to edit the file
-            "<code>/var/lib/locales/supported.d/local</code>"
-            first, and add locales they want, from the list found
-            in "<code>/usr/share/i18n/SUPPORTED</code>".</i>
-          </p>
+            <i>Note: Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>dpkg-reconfigure locales</code>" first, and add locales they want, from the list found in "<code>/var/lib/locales/supported.d/local</code>".</i>          </p>
 
           <p>
-            Then, before running Tux&nbsp;Paint, set your
-            "<code>$LANG</code>" environment variable to one of the
-            locales listed above. (If you want all programs that
-            can be translated to be, you may wish to place the
-            following in your login script; e.g.
-            <code>~/.profile</code>, <code>~/.bashrc</code>,
-            <code>~/.cshrc</code>, etc.)
-          </p>
+            Then, before running Tux Paint, set your "<code>$LANG</code>" environment variable to one of the locales listed above. (If you want all programs that can be translated to be, you may wish to place the following in your login script; e.g. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>
 
           <p>
-            For example, in a Bourne Shell (like BASH):
-          </p>
+            For example, in a Bourne Shell (like BASH):          </p>
 
           <blockquote>
-            <code>export&nbsp;LANG=es_ES&nbsp;;&nbsp;\<br>
+            <code>export LANG=es_ES ; \<br>
             tuxpaint</code>
           </blockquote>
 
           <p>
-            And in a C Shell (like TCSH):
-          </p>
+            And in a C Shell (like TCSH):          </p>
 
           <blockquote>
-            <code>setenv&nbsp;LANG&nbsp;es_ES&nbsp;;&nbsp;\<br>
+            <code>setenv LANG es_ES ; \<br>
             tuxpaint</code>
           </blockquote>
         </blockquote>
@@ -5442,95 +4782,25 @@
             noshade>
 
         <h3>
-          Windows Users
-        </h3>
+          Windows Users        </h3>
 
         <blockquote>
           <p>
-            Tux&nbsp;Paint will recognize the current locale and
-            use the appropriate files by default. So this section
-            is only for people trying different languages.
-          </p>
+            Tux Paint will recognize the current locale and use the appropriate files by default. So this section is only for people trying different languages.          </p>
 
           <p>
-            The simplest thing to do is to use the
-            '<code>--lang</code>' switch in the shortcut (see
-            "INSTALL.txt"). However, by using an MSDOS&nbsp;Prompt
-            window, it is also possible to issue a command like
-            this:
-          </p>
+            The simplest thing to do is to use the "<code>--lang</code>" switch in the shortcut (see "INSTALL"). However, by using an MSDOS Prompt window, it is also possible to issue a command like this:          </p>
 
           <blockquote>
             <code>set LANG=es_ES</code>
           </blockquote>
 
           <p>
-            ...which will set the language for the lifetime of that
-            DOS window.
-          </p>
+            ...which will set the language for the lifetime of that DOS window.          </p>
 
           <p>
-            For something more permanent, try editing your
-            computer's '<code>autoexec.bat</code>' file using
-            Windows' "<b>sysedit</b>" tool:
-          </p>
+            For something more permanent, try editing your computer's "<code>autoexec.bat</code>" file using Windows' "<b>sysedit</b>" tool:          </p>
 
-          <h6>
-            Windows 95/98
-          </h6>
-
-          <ol>
-            <li>Click on the 'Start' button, and select 'Run...'.
-            </li>
-
-            <li>Type "sysedit" into the 'Open:' box (with or
-            without quotes).
-            </li>
-
-            <li>Click 'OK'.
-            </li>
-
-            <li>Locate the AUTOEXEC.BAT window in the System
-            Configuration Editor.
-            </li>
-
-            <li>Add the following at the bottom of the file:
-              <blockquote>
-                <code>set LANG=es_ES</code>
-              </blockquote>
-            </li>
-
-            <li>Close the System Configuration Editor, answering
-            yes to save the changes.
-            </li>
-
-            <li>Restart your machine.
-            </li>
-          </ol>
-
-          <blockquote>
-            To affect the <b>entire machine</b>, and <b>all
-            applications</b>, it is possible to use the "Regional
-            Settings" control panel:
-          </blockquote>
-
-          <ol>
-            <li>Click on the 'Start' button, and select
-            'Settings&nbsp;|&nbsp;Control&nbsp;Panel'.
-            </li>
-
-            <li>Double click on the "Regional&nbsp;Settings" globe.
-            </li>
-
-            <li>Select a language/region from the drop down list.
-            </li>
-
-            <li>Click 'OK'.
-            </li>
-
-            <li>Restart your machine when prompted.
-            </li>
-          </ol>
         </blockquote>
       </blockquote>
 
@@ -5541,40 +4811,16 @@
 
       <blockquote>
         <p>
-          Some languages require special fonts be installed. These
-          font files (which are in TrueType format (TTF)), are much
-          too large to include with the Tux&nbsp;Paint download,
-          and are available separately. (See the table above, under
-          the "<a href="#different_language"><i>Choosing a
-          Different Language</i></a>" section.)
-        </p>
+          Some languages require special fonts be installed. These font files (which are in TrueType format (TTF)), are much too large to include with the Tux Paint download, and are available separately. (See the table above, under the "<a href="#different_language"><i>Choosing a Different Language</i></a>" section.)        </p>
 
         <p>
-          <b>Note:</b> As of version 0.9.18, Tux&nbsp;Paint uses
-          the "SDL_Pango" library, which utilizes the "Pango"
-          library to render text in the user interface, rather than
-          using "SDL_ttf" directly. Unless your copy of
-          Tux&nbsp;Paint was built without Pango support, special
-          fonts should <b><i>no longer be necessary</i></b>.
-        </p>
+          <b>Note:</b> As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which utilizes the "Pango" library to render text in the user interface, rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was built without Pango support, special fonts should <b><i>no longer be necessary</i></b>.        </p>
 
         <p>
-          When running Tux&nbsp;Paint in a language that requires
-          its own font, Tux&nbsp;Paint will try to load the font
-          file from its system-wide "<code><b>fonts</b></code>"
-          directory (under a "<code><b>locale</b></code>"
-          subdirectory). The name of the file corresponds to the
-          first two letters in the 'locale' code of the language
-          (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for
-          Traditional Chinese).
-        </p>
+          When running Tux Paint in a language that requires its own font, Tux Paint will try to load the font file from its system-wide "<code><b>fonts</b></code>" directory (under a "<code><b>locale</b></code>" subdirectory). The name of the file corresponds to the first two letters in the 'locale' code of the language (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for Traditional Chinese).        </p>
 
         <p>
-          For example, under Linux or Unix, when Tux&nbsp;Paint is
-          run in Korean (e.g., with the option
-          "<code>--lang&nbsp;korean</code>"), Tux&nbsp;Paint will
-          attempt to load the following font file:
-        </p>
+          For example, under Linux or Unix, when Tux Paint is run in Korean (e.g., with the option "<code>--lang korean</code>"), Tux Paint will attempt to load the following font file:        </p>
 
         <blockquote>
           <p>
@@ -5583,17 +4829,10 @@
         </blockquote>
 
         <p>
-          You can download fonts for supported languages from
-          Tux&nbsp;Paint's website, <a href=
-          "http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>.
-          (Look in the 'Fonts' section under 'Download.')
-        </p>
+          You can download fonts for supported languages from Tux Paint's website, <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>. (Look in the 'Fonts' section under 'Download.')        </p>
 
         <p>
-          Under Unix and Linux, you can use the
-          <code>Makefile</code> that comes with the font to install
-          the font in the appropriate location.
-        </p>
+          Under Unix and Linux, you can use the <code>Makefile</code> that comes with the font to install the font in the appropriate location.        </p>
       </blockquote>
     </blockquote>
 

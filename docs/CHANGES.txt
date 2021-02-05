@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.January.18 (0.9.26)
+2021.February.5 (0.9.26)
   * New Features
     ------------
     * [WIP] Larger UI buttons
@@ -24,10 +24,14 @@ $Id$
 
   * Documentation updates
     ---------------------
-    * Expanded the steps for making and posting releases.
+    * Documentation is now maintained in a separate source repository,
+      'tuxpaint-docs', which allows for easier and more consisten
+      translation of the documentation.  Pulling in initial version of
+      these docs, which contain a variety of minor updates (and also a
+      few which had previously only been available as plain TXT are now
+      available as HTML).
 
-    * Mended some broken relative links in README.html that
-      pointed to other parts of the docs.
+    * Expanded the steps for making and posting releases.
 
     * Documented how to build Tux Paint using old macOS
       Mark K. Kim <markuskimius@gmail.com>
