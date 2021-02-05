@@ -713,6 +713,7 @@ static int button_h;            /* was 48 */
 static float button_scale;      /* scale factor to be applied to the  size of buttons */
 static int color_button_w;      /* was 32 */
 static int color_button_h;      /* was 48 */
+static int colors_rows;
 
 static int buttons_tall;        /* promoted to a global variable from setup_normal_screen_layout() */
 
@@ -774,10 +775,10 @@ static void setup_normal_screen_layout(void)
   r_ttoolopt.x = WINDOW_WIDTH - r_ttoolopt.w;
   r_ttoolopt.y = 0;
 
-  gd_colors.rows = 1;
+  gd_colors.rows = colors_rows;
   gd_colors.cols = (NUM_COLORS + gd_colors.rows - 1) / gd_colors.rows;
 
-  r_colors.h = 48 * button_scale;
+  r_colors.h = 48 * button_scale * gd_colors.rows;
   color_button_h = r_colors.h / gd_colors.rows;
   r_tcolors.h = r_colors.h;
 
@@ -8546,6 +8547,10 @@ static unsigned draw_colors(unsigned action)
   /* if only the color changed, no need to draw the title */
   if (colors_state == old_colors_state)
     return old_colors_state;
+
+  /* If more than one colors rows, fill the parts of the r_tcolors not covered by the title. */
+  if (gd_colors.rows > 1)
+    SDL_FillRect(screen, &r_tcolors, SDL_MapRGBA(screen->format, 255,255,255,255));
 
   if (colors_state == COLORSEL_ENABLE)
     {
@@ -23293,6 +23298,17 @@ static void setup_config(char *argv[])
     }
   else
     button_scale = 1;
+  if (tmpcfg.colors_rows)
+    {
+      if (strtof(tmpcfg.colors_rows, NULL) > 3)
+        {
+          fprintf(stderr, "Color rows (now %s) must be between 1 and 3.\n", tmpcfg.colors_rows);
+          exit(1);
+        }
+      colors_rows = strtof(tmpcfg.colors_rows, NULL);
+    }
+  else
+    colors_rows = 1;
   if (tmpcfg.stamp_size_override)
     {
       if (!strcmp(tmpcfg.stamp_size_override, "default"))
