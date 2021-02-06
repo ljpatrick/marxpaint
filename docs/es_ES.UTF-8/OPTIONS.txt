@@ -565,7 +565,7 @@ Windows Users
              If you do not override it, the default location is:
 
                 * Linux & Unix — Under a hidden directory named ".tuxpaint"
-                  in your home directory (aka ".tuxpaint" or "~")
+                  in your home directory (aka "~" or "$HOME")
                   Example: /home/username/.tuxpaint/saved/
                 * Windows — Inside a folder named "TuxPaint" in your
                   "Application Data" folder.
@@ -628,13 +628,13 @@ Windows Users
              specific to the current user).
 
              Tux Paint will search for subdirectories/subfolders named
-             "brushes", "stamps", "3$brushes", "templates", and "fonts" under
+             "brushes", "stamps", "starters", "templates", and "fonts" under
              the specified data directory.
 
              If you do not override it, the default location is:
 
                 * Linux & Unix — Under a hidden directory named ".tuxpaint"
-                  in your home directory (aka ".tuxpaint" or "~")
+                  in your home directory (aka "~" or "$HOME")
                   Example: /home/username/.tuxpaint/brushes/
                 * Windows — Inside a folder named "TuxPaint" in your
                   "Application Data" folder.
@@ -1497,9 +1497,9 @@ Setting Your Environment's Locale
          "dpkg-reconfigure locales" as root to bring up a configuration
          dialog. Ubuntu users may be able to run "sudo dpkg-reconfigure
          localeconf" (the "localeconf" package may need to be installed
-         first), or you may need to edit the file "dpkg-reconfigure locales"
-         first, and add locales they want, from the list found in
-         "/var/lib/locales/supported.d/local".
+         first), or you may need to edit the file
+         "/var/lib/locales/supported.d/local" first, and add locales they
+         want, from the list found in "/usr/share/i18n/SUPPORTED".
 
          Then, before running Tux Paint, set your "$LANG" environment
          variable to one of the locales listed above. (If you want all

@@ -794,7 +794,7 @@
             If you do not override it, the <b><i>default</i></b> location is:          </p>
 
           <ul>
-            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>.tuxpaint</code>" or "<code>~</code>")<br>
+            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>" or "<code>$HOME</code>")<br>
                 Example: <code>/home/<i>username</i>/.tuxpaint/saved/</code>            </li>
 
             <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
@@ -858,13 +858,13 @@
             Use this option to change where Tux Paint looks for personal data files (brushes, stamps, starters, templates, and fonts specific to the current user).          </p>
 
           <p>
-            Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "3$<code>brushes</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.          </p>
+            Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.          </p>
 
           <p>
             If you do not override it, the <b><i>default</i></b> location is:          </p>
 
           <ul>
-            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>.tuxpaint</code>" or "<code>~</code>")<br>
+            <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>" or "<code>$HOME</code>")<br>
                 Example: <code>/home/<i>username</i>/.tuxpaint/brushes/</code>            </li>
 
             <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
@@ -4756,7 +4756,7 @@
             First, be sure the locale you want to use is enabled by editing the file "<code>/etc/locale.gen</code>" on your system and then running the program "<code>locale-gen</code>" as root.          </p>
 
           <p>
-            <i>Note: Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>dpkg-reconfigure locales</code>" first, and add locales they want, from the list found in "<code>/var/lib/locales/supported.d/local</code>".</i>          </p>
+            <i>Note: Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".</i>          </p>
 
           <p>
             Then, before running Tux Paint, set your "<code>$LANG</code>" environment variable to one of the locales listed above. (If you want all programs that can be translated to be, you may wish to place the following in your login script; e.g. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>

@@ -563,7 +563,7 @@ Available Tools
                  been saved, you will be prompted as to whether you want to
                  save it or not. (See "Save," below.)
 
-                 Note: You can also press [Control] + [N] on the keyboard to
+                 Note: You can also press [Control] + [O] on the keyboard to
                  bring up the 'Open' dialog.
 
      ----------------------------------------------------------------------
@@ -682,10 +682,9 @@ Available Tools
 
                               By default, Tux Paint only shows the printer
                               dialog (or, on Linux/Unix, runs the
-                              "altprintcommand"; e.g., "altprintcommand"
-                              instead of "kprinter") if the [Alt] (or
-                              [Option]) key is held while clicking the
-                              'Print' button.
+                              "altprintcommand"; e.g., "kprinter" instead of
+                              "lpr") if the [Alt] (or [Option]) key is held
+                              while clicking the 'Print' button.
 
                               However, this behavior can be changed. You can
                               have the printer dialog always appear by using
@@ -875,7 +874,7 @@ Using the import script, "tuxpaint-import"
        Example:
 
          $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20210204223210.png
+         grandma.jpg -> /home/username/.tuxpaint/saved/20210205160922.png
          jpegtopnm: WRITING A PPM FILE
 
        The first line ("tuxpaint-import grandma.jpg") is the command to run.
@@ -917,7 +916,7 @@ Importing Pictures Manually
          * mm = Minute (two digits, "00"-"59")
          * ss = Seconds (two digits, "00"-"59")
 
-       Example: "20210204223210.png", for 4 février 2021 at 22:32:10.
+       Example: "20210205160922.png", for 5 février 2021 at 16:09:22.
 
        Place this PNG file in your Tux Paint "saved" directory/folder. (See
        above.)
