@@ -1,144 +1,82 @@
-PNG.txt de Tux Paint
+                                   Tux Paint
+                                 versiÃ³n 0.9.26
+                               DocumentaciÃ³n PNG
 
-Tux Paint - Un sinxelo programa de debuxo para os nenos.
+    Copyright Â© 2007-2021 por varios colaboradores; vexa AUTORES (AUTHORS).
+                            http://www.tuxpaint.org/
 
-Copyright 2002 by Bill Kendrick
-bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+                                30 Xaneiro 2021
 
-27 de Xuño de 2002 - 7 de Novembro de 2002
+     ----------------------------------------------------------------------
 
+Sobre os PNG
 
-Acerca dos PNGs
-----------
-  PNG é o formato Portable Network Graphic.  É un estándar aberto, e sen
-  patentes (coma os GIFs).  É un formato moi comprimido (ainda que non perde
-  tanta calidade coma os JPEGs - a perda de calidade permite que os ficheiros
-  sexan máis pequenos, pero introduce 'erros' na imaxe ó gardala), e soporta cor
-  de 24 bits (16,7 millóns de cores) e tamén unha "canle alfa" - cada pixel
-  pode ter un grado de transparencia variable.
+   PNG is the Portable Network Graphic format. It is an open standard, not
+   burdened by patents (like GIFs). It is a highly compressed format (though
+   not "lossy" like JPEGs - lossiness allows files to be much smaller, but
+   introduces 'mistakes' in the image when saved), and supports 24-bit color
+   (16.7 million colors) as well as a full "alpha channel" - that is, each
+   pixel can have a varying degree of transparency.
 
-  Para obter máis información, visite:  http://www.libpng.org/
+   For more information, visit: http://www.libpng.org/
 
-  Estas características (código aberto, pouca perda de calidade, compresión,
-  transparencia/alfa) convírteno na mellor elección para Tux Paint. (O soporte
-  do formato PNG de Tux Paint ven da librería de Código Aberto SDL_Image, que á
-  súa vez o obtén da librería libPNG).
+   These features (openness, losslessness, compression, transparency/alpha)
+   make it the best choice for Tux Paint. (Tux Paint's support for the PNG
+   format comes from the Open Source SDL_Image library, which in turn gets it
+   from the libPNG library.)
 
-  O soporte para moitas cores permite crear imaxes con calidade fotográfica para
-  as "estampas de goma" que se usan no Tux Paint, e a transparencia alfa
-  permite crear "pinceis" para debuxar de alta calidade.
+   Support for many colors allows photo-quality "rubber stamp" images to be
+   used in Tux Paint, and alpha transparency allows for high-quality brushes.
 
+How To Make PNGs
 
-Como Facer PNGs
-----------------
-  A seguinte é unha _pequena_ lista de programas para crear PNGs ou converter
-  imaxes xa existentes en PNGs.
+   The following is a very brief list of ways to create PNGs or convert
+   existing images into PNGs.
 
+  GIMP & Krita
 
-  Usuarios de Linux/Unix
-  ----------------
-    O GIMP
-    --------
-      A mellor ferramenta ca crear imaxes PNG images para usar en Tux Paint é o
-      GNU Image Manipulation Program ("O GIMP"), un programa interactivo de alta
-      calidade e de Código Aberto para a editar fotografías e debuxar.
+   Excellent tools with which to create PNG images for use in Tux Paint are
+   GIMP and Krita, both high-quality Open Source interactive drawing and
+   photo editing programs.
 
-      É probable que xa estea instalado no seu sistema Linux.  Se non o está, é
-      case seguro que está no CD de instalación ou no sitio de descarga da súa
-      distribución.  Senón:
+   It is likely that one or both are already installed on your system. If
+   not, they should be readily available from your Linux distribution's
+   software repository. If not, or to learn more, visit http://www.gimp.org/
+   and http://www.krita.org/, respectively.
 
-        http://www.gimp.org/
-
-
-    Krita
-    -----
-      Krita é unha aplicación de debuxo e edición de imaxe de KOffice.
-
-        http://koffice.kde.org/krita/
-
+  Ferramentas da liÃ±a de ordes
 
     NetPBM
-    ------
-      As ferramentas Portable Bitmap (coñecidas colectivamente coma "NetPBM") é
-      unha colección de ferramentas de liña de comandos de Código Aberto que
-      converten dende e a, varios formatos, incluindo GIF, TIFF, BMP, PNG,
-      e moitos máis.
 
-      NOTA: Os formatos NetPBM (Portable Bitmap: PBM, Portable Greymap: PGM,
-      Portable Pixmap: PPM, e o xenérico Portable Any Map: PNM) non soportan
-      alfa, así que calquera información de transparencia (p.ex. dun GIF)
-      perderase!  Use O GIMP!
+   The Portable Bitmap tools (collectively known as "NetPBM") is a collection
+   of Open Source command-line tools which convert to and from various
+   formats, including GIF, TIFF, BMP, PNG, and many more.
 
-      É probable que xa estea instalado no seu sistema Linux.  Se non o está, é
-      case seguro que está no CD de instalación ou no sitio de descarga da súa
-      distribución.  Senón:
-
-        http://netpbm.sourceforge.net/
-
+   It is possible that it's already installed on your system. If not, they it
+   be readily available from your Linux distribution's software repository.
+   If not, or to learn more, visit http://netpbm.sourceforge.net/.
 
     cjpeg/djpeg
-    -----------
-      Os programas de liña de comandos "cjpeg" e "djpeg" converten entre o
-      formato NetPBM Portable Any Map (PNM) e JPEG.
 
-      É probable que xa estea instalado no seu sistema Linux.  Se non o está, é
-      case seguro que está no CD de instalación ou no sitio de descarga da súa
-      distribución.  Senón:
-
-        ftp://ftp.uu.net/graphics/jpeg/
-
+   The "cjpeg" and "djpeg" command-line programs convert between the NetPBM
+   Portable Any Map (PNM) format and JPEGs. It is possible that it's already
+   installed on your system. If not, they it be readily available from your
+   Linux distribution's software repository. If not, or to learn more, visit
+   https://jpegclub.org/.
 
   Usuarios de Windows
-  -------------
-    O Gimp
-      http://www.gimp.org/~tml/gimp/win32/
 
-    Canvas (Deneba)
-      http://www.deneba.com/products/canvas8/default2.html
-
-    CorelDRAW (Corel)
-      http://www.corel.com/
-
-    Fireworks (Macromedia)
-      http://macromedia.com/software/fireworks/
-      
-    Illustrator (Adobe)
-      http://www.adobe.com/products/illustrator/main.html
-
-    Paint Shop Pro (Jasc)
-      http://www.jasc.com/products/psp/
-    
-    Photoshop (Adobe)
-      http://www.adobe.com/products/photoshop/main.html
-
+     * CorelDRAW (Corel) â€” http://www.corel.com/
+     * Illustrator (Adobe) â€” http://www.adobe.com/products/illustrator.html
+     * Paint Shop Pro (Corel) â€” https://www.paintshoppro.com/
+     * Photoshop (Adobe) â€” http://www.adobe.com/products/photoshop.html
+     * PIXresizer (Bluefive software) â€”
+       http://bluefive.pair.com/pixresizer.htm
 
   Usuarios de Macintosh
-  ---------------
-    Canvas (Deneba)
-      http://www.deneba.com/products/canvas8/default2.html
 
-    CorelDRAW (Corel)
-      http://www.corel.com/
-
-    Fireworks (Macromedia)
-      http://macromedia.com/software/fireworks/
-
-    GraphicConverter (Lemke Software)
-      http://www.lemkesoft.de/us_gcabout.html
-
-    Illustrator (Adobe)
-      http://www.adobe.com/products/illustrator/main.html
-      
-    Photoshop (Adobe)
-      http://www.adobe.com/products/photoshop/main.html
-
-
-Máis Información.
-----------
-  O sitio web de libPNG ten unha lista cos editores de imaxe e convertedores de
-  imaxe que soportan o formato PNG:
-
-    http://www.libpng.org/pub/png/pngaped.html
-    http://www.libpng.org/pub/png/pngapcv.html
-
+     * CorelDRAW (Corel) â€” http://www.corel.com/
+     * GraphicConverter (Lemke Software) â€”
+       https://www.lemkesoft.de/mac-fotobearbeitung-mac-diashow-mac-grafikprogramm-mac-bildbetrachter/
+     * Illustrator (Adobe) â€” http://www.adobe.com/products/illustrator.html
+     * Photoshop (Adobe) â€” http://www.adobe.com/products/photoshop.html

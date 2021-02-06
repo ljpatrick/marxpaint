@@ -1,1391 +1,1468 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>Ficheiro LEME de Tux Paint</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-
-<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF0000"
-alink="#FF00FF">
-
-<center>
-<h1><img src="images/tuxpaint-title.png" width=205 height=210
-alt="Tux&nbsp;Paint"><br>
-
-versión
-
-0.9.14
-
-</h1>
-<h3>Un sinxelo programa de debuxo para nenos</h3>
-
-<h2>OUT OF DATE</h2>
-<p>See <a href="../../html/README.html">English version</a>.</p>
-
-<p>Copyright 2004 by Bill Kendrick<br>
-New Breed Software</p>
-
-<p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
-<a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
-
-<p>14 de Xuño de 2002 - 24 de Outubro de 2004</p>
-</center>
-
-<hr size=2 noshade>
-
-<h1>Acerca de</h1>
-<blockquote>
-
-  <h2>Que é "Tux Paint"?</h2>
-  <blockquote>
-    <p>Tux Paint é un programa de debuxo libre deseñado para os nenos pequenos
-       (rapaces de 3 e máis). Ten unha interface sinxela e fácil de usar,
-       efectos de son divertidos, e unha mascota animada que guia e axuda ós
-       nenos a usar o programa. Proporciona un lenzo en branco e unha chea de
-       ferramentas de debuxo que lle axudan ós nenos a ser creativos.</p>
-  </blockquote>
-
-  <h2>Licenza:</h2>
-  <blockquote>
-    <p>Tux Paint é un proxecto de Código Aberto, Software Libre que se libera
-       baixo a GNU General Public License (GPL). é libre, e o "código fonte" do
-       programa está dispoñible. (Isto permítelle a outras persoas engadir
-       funcionalidades, arranxar erros, e usar partes do programa no seu propio
-       software GPL).</p>
-
-    <p>Mire o ficheiro <a href="../COPYING.txt">COPYING.txt</a> para obter o
-       texto completo da licenza GPL.</p>
-  </blockquote>
-
-  <h2>Obxectivos:</h2>
-  <blockquote>
-  <dl>
-    <dt><b>Sinxelo e Divertido</b></dt>
-    <dd>
-      Tux Paint está pensado para ser un programa de debuxo sinxelo
-      para nenos pequenos. Non está pensado para ser unha ferramenta de
-      debuxo de propósito xeral. <i>Está</i> pensado para ser divertido e
-      fácil de usar. Os efectos de son e un personaxe animado axudan ó
-      usuario a enterarse de que está ocorrendo, e a mantelo entretido.
-      Tamén hai punteiros grandes para o rato.
-    </dd>
-
-    <dt><b>Extensibilidade</b></dt>
-    <dd>
-      Tux Paint é extensible. Os pinceis e as estampas poden poñerse
-      (droppped in) e sacarse (pulled out). Por exemplo, un profesor
-      pode poñer unha colección de formas de animais e dicirlle ós seus
-      estudiantes que debuxen un ecosistema. Cada forma pode ter un son
-      que se reproduce, e mensaxes de texto que se amosan cando os
-      nenos seleccionan a forma.
-    </dd>
-
-    <dt><b>Portabilidade</b></dt>
-    <dd>
-      Tux Paint portouse a varias plataformas de ordenador: Windows,
-      Macintosh, Linux, etc. A interface é a mesma en todas elas. Tux
-      Paint execútase ben en sistemas vellos (coma os Pentium 133), e
-      pode compilarse para que se execute mellor en sistemas lentos.
-    </dd>
-
-    <dt><b>Simplicidade</b></dt>
-    <dd>
-      Non hai acceso directo a elementos internos do ordenador. A imaxe
-      actual gárdase cando se sae do programa, e volve aparecer cando
-      se volve executar. Para gardar imaxes non cómpre crear nomes de
-      ficheiro ou usar o teclado. As imaxes ábrense seleccionándoas
-      dunha colección de miniaturas das imaxes. O acceso a outros
-      ficheiros do ordenador está limitado.
-    </dd>
-  </dl>
-  </blockquote>
-</blockquote>
-
-<hr size=2 noshade>
-
-
-<h1>Usando Tux Paint</h1>
-<blockquote>
-
-  <h2>Executar Tux Paint</h2>
-  <blockquote>
-    <h3>Usuarios de Linux/Unix</h3>
-    <blockquote>
-      <p>Tux Paint debería ter posto unha icona de lanzamento nos menús de KDE
-      e/ou GNOME, en 'Gráficos.'</p>
-
-      <p>Tamén se pode executar o seguinte comando nunha liña de comandos
-      (p.ex., "$"):</p>
-
-      <blockquote>
-	<code>$ tuxpaint</code>
-      </blockquote>
-
-      <p>Se ocorre algún erro, amosarase na terminal (para "stderr").</p>
-    </blockquote>
-
-    <hr size=1 noshade>
-
-
-    <h3>Usuarios de Windows</h3>
-    <blockquote>
-      <table border=0 cellspacing=0 cellpadding=4 bgcolor="#AAAAFF"
-      align=right summary=""><tr><td align=center>
-	<img src="images/icon-win32.png" width=32 height=32 alt="[Icona]"><br>
-	Tux&nbsp;Paint
-      </td></tr></table>
-      
-      <p>Se instalou Tux Paint no seu ordenador usando 'Instalador de Tux Paint',
-      este preguntaríalle se desexaba unha entrada no menú 'Inicio', e/ou un
-      acceso directo no escritorio. Se aceptou, soamente ten que executar
-      Tux Paint dende a sección 'Tux Paint' do menú 'Inicio' (p.ex., en
-      "Tódolos programas" en Windows XP), ou facendo dobre clic na icona de
-      "Tux Paint" no escritorio.</p>
-     
-      <p>Se instalou Tux Paint usando a descarga do 'ficheiro ZIP', ou se usou o
-      'Instalador de Tux Paint', pero escolleu non poñer accesos directos,
-      necesitará facer dobre clic na icona de "<code>tuxpaint.exe</code>" dentro do
-      cartafol de 'Tux Paint'.</p>
-
-      <p>Por defecto, o 'Instalador de Tux Paint' porá o cartafol de Tux Paint
-      en "<code>C:\Archivos de programa\</code>", ainda que vostede puido ter trocado isto
-      cando executou o instalador.</p>
-
-      <p>Se usou a descarga do 'ficheiro ZIP', o cartafol de Tux Paint estará
-      onde o puxo cando descomprimiu o ficheiro ZIP.</p>
-
-      <br clear=all>
-    </blockquote>
-      
-    <hr size=1 noshade>
-
-
-    <h3>Usuarios de Mac OS X</h3>
-    <blockquote>
-      Faga dobre clic na icona de "Tux Paint".<p>
-    </blockquote>
-  </blockquote>
-
-  <hr size=1 noshade>
-
-
-  <h2>Pantalla de Título</h2>
-  <blockquote>
-    <p>Cando Tux Paint carga por primeira vez, aparecerá unha pantalla de
-    título/créditos.</p>
-
-    <center><img src="images/tuxpaint-title.jpg" width=324 height=254
-    alt="[Captura da Pantalla de Título]"></center>
-
-    <p>Unha vez que se completou a carga, prema unha tecla ou clique co rato
-    para continuar. (Ou, despois de aproximadamente 30 segundos, a pantalla
-    de título desaparecerá automáticamente).</p>
-  </blockquote>
- 
-  <hr size=1 noshade>
-
-
-  <h2>Pantalla Principal</h2>
-  <blockquote>
-    A pantalla principal está dividida nas seguintes seccións:
-
-    <dl>
-    <dt>Lado Esquerdo: Barra de Ferramentas</dt>
-    <dd>
-      <p>A barra de ferramentas contén os controis de debuxo e edición.</p>
-
-      <center><img src="images/tools.jpg" width=324 height=254
-      alt="[Ferramentas: Pintar, Estampa, Liñas, Formas, Texto, Máxicos, Desfacer, Refacer, Borrador, Novo, Abrir, Gardar, Imprimir, Saír]"></center>
-    </dd>
-
-    <dt>Centro: Lenzo de Debuxo</dt>
-    <dd>
-      <p>A parte máis grande da pantalla, no centro, é o lenzo de debuxo.
-      Aquí é, obviamente, onde se debuxa!</p>
-
-      <center><img src="images/canvas.jpg" width=324 height=254
-      alt="[(Lenzo)]"></center>
-    </dd>
-
-
-    <dt>Lado Dereito: Selector</dt>
-    <dd>
-      <p>Dependendo da ferramenta actual, o selector amosa cousas
-      diferentes. Por exemplo, cando está seleccionada a ferramenta
-      Pincel, amosa tódolos pinceis dispoñibles. Cando está
-      seleccionada a ferramenta Estampa, amosa as diferentes formas que
-      se poden usar.</p>
-
-      <center><img src="images/selector.jpg" width=324 height=254
-      alt="[Selectores - Pinceis, Letras, Formas, Estampas]"></center>
-    </dd>
-
-
-    <dt>Máis abaixo: Cores</dt>
-    <dd>
-      <p>Hai unha paleta cas cores dispoñibles preto do fondo da pantalla.</p>
-
-      <center><img src="images/colors.jpg" width=324 height=254
-      alt="[Cores: Negro, Branco, Vermello, Rosa, Laranxa, Amarelo, Verde, Azul Celeste, Azul, Púrpura, Marrón, Gris]"></center>
-    </dd>
-
-
-    <dt>Inferior: área de Axuda</dt>
-    <dd>
-      <p>Na parte inferior da pantalla, Tux, o Pingüin de Linux, da
-      consellos e outra información mentres se debuxa.</p>
-
-      <center><img src="images/tips.jpg" width=324 height=254
-      alt="(Por exemplo: 'Escolle unha figura. Clica para marcar o centro, arrastra e solta cando teña o tamaño que queiras. Move arredor para virala, e clica para debuxala.)"></center>
-    </dd>
-    </dl>
-  </blockquote>
-
-  <hr size=1 noshade>
-
-
-  <h2>Ferramentas Dispoñibles</h2>
-  <blockquote>
-    <h3>Ferramentas de Debuxo</h3>
-    <blockquote>
-      <dl>
-      <dt><b>Pintar (Pincel)</b></dt>
-      <dd>
-	<img src="images/tool_paint.png" width=48 height=48 alt="" align=right>
-
-	<p>A ferramenta Pincel permite debuxar a man alzada, usando
-	diferentes pinceis (pódense elixir no Selector da dereita) e
-	cores (pódense elixir na paleta de cores do fondo).</p>
-
-	<p>Se mantén premido o botón do rato, e move o rato, debuxará
-	mentres o move.</p>
-
-	<p>Mentres debuxa, reprodúcese un son. Canto máis grande sexa o
-	pincel, máis grave será o ton.</p>
-
-	<br clear=all>
-
-	<center><img src="images/ex_paint.png" width=120 height=95
-	alt=""></center>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Estampa (Estampas de Goma)</b></dt>
-      <dd>
-	<img src="images/tool_stamp.png" width=48 height=48 alt="" align=right>
-
-	<p>A ferramenta Estampa é coma un estampa de goma, ou unha
-	pegatina. Permite pegar imaxes fotográficas ou predeseñadas
-	(coma un debuxo dun cabalo, dunha árbore ou da lúa) no debuxo.</p>
-
-	<p>Mentres move o rato, unha liña seguirá ó rato, sinalando onde
-	se porá a estampa.</p>
-
-	<p>As estampas poden ter diferentes efectos de son. Algunhas
-	estampas poden colorearse ou tinguirse.</p>
-	
-	<p>As Estampas poden reducirse e expandirse, e moitas das estampas
-	poden inverterse verticalmente, ou amosarse coma unha imaxe
-	espellada, usando os controis da dereita no fondo da pantalla.</p>
-	
-	<p>(NOTA: Se está establecida a opción "nostampcontrols",
-	Tux Paint non amosará os controis Espellar, Inverter, Reducir e
-	Aumentar para as estampas. Mire a documentación
-	"<a href="OPTIONS.html"><i>Options</i></a>").</p>
-
-	<br clear=all>
-
-	<center><img src="images/ex_stamps.png" width=182 height=156
-	alt=""></center>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Liñas</b></dt>
-      <dd>
-	<img src="images/tool_lines.png" width=48 height=48 alt="" align=right>
-
-	<p>Esta ferramenta permite debuxar liñas rectas usando os
-	diferentes pinceis e cores que se usan normalmente co Pincel.</p>
-
-	<p>Clique e manteña o botón premido para elixir o punto de comezo
-	da liña. Mentres move o rato, amosarase unha liña onde se vai
-	debuxar a liña.</p>
-
-	<p>Solte o botón para completar a liña. Reproducirase un son.</p>
-
-	<br clear=all>
-
-	<center><img src="images/ex_lines.png" width=76 height=103
-	alt=""></center>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Formas</b></dt>
-      <dd>
-	<img src="images/tool_shapes.png" width=48 height=48 alt=""
-	align=right>
-
-	<p>Esta ferramenta permite debuxar algunhas formas recheas ou non.</p>
-
-	<p>Seleccione unha forma do selector da dereita (circulo, cadrado,
-	óvalo, etc.).</p>
-
-	<p>No lenxo, clique e manteña o botón premido para estirar a forma
-	dende onde clicou. Nalgunhas formas pode cambiarse a proporción
-	(p.ex., o rectángulo e o óvalo), e outras non (p.ex., o cadrado
-	e o circulo).</p>
-
-	<p>Solte o botón cando remate de estirar.</p>
-
-	<dl>
-	  <dt>Modo Normal</dt>
-	  <dd>
-	    <p>Agora pode mover o rato polo lenzo para vira-la forma.</p>
-
-	    <p>Clique outra vez e debuxarase a forma ca cor actual.</p>
-	  </dd>
-
-	  <dt>Modo Formas Simples</dt>
-	  <dd>
-	    Se están activadas as formas simples (p.ex., ca
-	    opción "<code>--simpleshapes<code>"), a forma debuxarase no
-	    lenzo cando solte o botón. (Non hai o paso no que
-	    se pode virar.)
-	  </dd>
-	</dl>
-
-	<br clear=all>
-
-	<center><img src="images/ex_shapes.png" width=177 height=104
-	alt=""></center>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Texto</b></dt>
-      <dd>
-	<img src="images/tool_text.png" width=48 height=48 alt="" align=right>
-
-	<p>Escolla unha fonte (das 'Letras' dispoñibles na dereita) e unha
-	cor (da paleta de cores do fondo). Clique na pantalla e
-	aparecerá un cursor. Escriba o texto e aparecerá na pantalla.</p>
-	
-	<p>Prema <b>[Intro]</b> ou <b>[Retorno]</b> e debuxarase o texto no
-	debuxo e o cursor moverase unha liña para abaixo.</p>
-	
-	<p>Clique na parte do debuxo que queira e a liña de texto que está
-	escribindo moverase ali, onde pode continuar editándoa.</p>
-
-	<br clear=all>
-
-	<center><img src="images/ex_text.png" width=139 height=69
-	alt=""></center>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Maxia (Efectos Especiais)</b></dt>
-      <dd>
-	<img src="images/tool_magic.png" width=48 height=48 alt="" align=right>
-
-	<p>A ferramenta 'Maxia' é actualmente un conxunto de ferramentas
-	especiais. Seleccione un dos efectos máxicos do seleccionador
-	da dereita e despois clique no debuxo e arrastre para aplicar o efecto.</p>
-
-	<br clear=all>
-
-	<dl>
-	<dt><b>Arco iris</b></dt>
-	<dd>
-	  Esta é semellante ó pincel, pero mentres move o
-	  rato, debuxa tódalas cores do arco da vella.
-	</dd>
-
-	<dt><b>Escintileos</b></dt>
-	<dd>
-	  Debuxa escintileos amarelos brillantes no debuxo.
-	</dd>
-
-	<dt><b>Espellar</b></dt>
-	<dd>
-	  Cando se clica no debuxo co efecto máxico
-	  "Espellar" seleccionado, invertirase
-	  horizontalmente toda a imaxe (o da esquerda queda
-	  na dereita e o da dereita pasa á esquerda),
-	  converténdoa nunha imaxe espellada.
-	</dd>
-	  
-	<dt><b>Inverter</b></dt>
-	<dd>
-	  Similar a "Espellar." Se se clica, invertirase
-	  verticalmente toda a imaxe (o de arriba para
-	  abaixo e o de abaixo para arriba).
-	</dd>
-	  
-	<dt><b>Desenfocar</b></dt>
-	<dd>
-	  Isto fai que o debuxo se desdebuxe nas zonas polas
-	  que arrastre o rato.
-	</dd>
-
-	<dt><b>Cuadrícula</b></dt>
-	<dd>
-	  Isto fai que o debuxo se cuadricule ("pixelice")
-	  onde queira que arrastre o rato.
-	</dd>
-
-	<dt><b>Negativo</b></dt>
-	<dd>
-	  Isto invirte as cores nas partes do debuxo nas que
-	  arrastre o rato. (p.ex., o branco convírtese en
-	  negro, e viceversa.)
-	</dd>
-
-	<dt><b>Esvaecer</b></dt>
-	<dd>
-	  Isto esvaece as cores nas zonas polas
-	  que arrastre o rato. (Se o fai no mesmo sitio
-	  moitas veces, e ó final quedará en branco.)
-	</dd>
-	
-	<dt><b>Xiz</b></dt>
-	<dd>
-	  Isto fai que partes do debuxo (onde mova o rato)
-	  parezan debuxadas con xiz.
-	</dd>
-	
-	<dt><b>Pingar</b></dt>
-	<dd>
-	  Isto fai que as cores "pinguen" nas zonas do
-	  debuxo onde mova o rato.
-	</dd>
-	 
-	<dt><b>Engrosar</b></dt>
-	<dd>
-	  Isto fai que as cores máis escuras do debuxo se
-	  fagan máis grosas nas partes nas que arrastre o rato.
-	</dd>
-
-	<dt><b>Afinar</b></dt>
-	<dd>
-	  Similar a "Engrosar", excepto que as cores escuras
-	  se volven máis finas (as cores máis claras fanse
-	  máis grosas).
-	</dd>
-	
-	<dt><b>Encher</b></dt>
-	<dd>
-	  Isto enche o debuxo cunha cor. Permite encher
-	  rapidamente partes do debuxo, coma se fora un
-	  libro de debuxos (coloring book).
-	</dd>
-	</dl>
-
-	<hr size=1>
-      </dd>
-	
-	
-      <dt><b>Goma</b></dt>
-      <dd>
-	<img src="images/tool_eraser.png" width=48 height=48 alt=""
-	align=right>
-
-	<p>Esta ferramenta é semellante ó Pincel. Onde queira que clique
-	(clique ou arrastre), borrarase o debuxo e quedará en branco,
-	ou ca cor de fondo do debuxo, se comezou o debuxo actual cunha
-	imaxe "Inicial".</p>
-
-	<p>Hai dispoñibles varios tamaños de goma.</p>
-
-	<p>Mentres move o rato, un cadrado segue ó punteiro, sinalando que
-	parte do debuxo se borrará e quedará en branco.</p>
-
-	<p>Mentres borra, reproducirase un son de limpado.</p>
-
-	<br clear=all>
-      </dd>
-      </dl>
-    </blockquote>
-
-    <hr size=1 noshade>
-
-
-    <h3>Outros Controis</h3>
-    <blockquote>
-      <dl>
-      <dt><b>Desfacer</b></dt>
-      <dd>
-	<img src="images/tool_undo.png" width=48 height=48 alt="" align=right>
-
-	<p>Se clica nesta ferramenta desfarase a última acción de debuxo
-	que fixo. Pode desfacer máis dunha vez!</p>
-	
-	<p>Nota: Tamén se pode premer <b>[Control]-[Z]</b> no teclado para
-	desfacer.</p>
-	
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Refacer</b></dt>
-      <dd>
-	<img src="images/tool_redo.png" width=48 height=48 alt="" align=right>
-
-	<p>Se clica nesta ferramenta refarase a acción de debuxo que acaba
-	de "desfacer" ca ferramenta 'Desfacer'.</p>
-
-	<p>Mentres non volva debuxar outra vez, pode refacer tantas veces
-	coma "desfixo"!</p>
-	
-	<p>Nota: Tamén se pode premer <b>[Control]-[R]</b> no teclado para
-	refacer.</p>
-	
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Novo</b></dt>
-      <dd>
-	<img src="images/tool_new.png" width=48 height=48 alt="" align=right>
-
-	<p>Se se clica no botón "Novo" comezarase un novo debuxo. Primeiro
-	preguntaráselle se desexa facer isto.</p>
-
-	<p>Nota: Tamén pode premer <b>[Control]-[N]</b> no teclado para comezar
-	un novo debuxo.</p>
-	
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Abrir</b></dt>
-      <dd>
-	<img src="images/tool_open.png" width=48 height=48 alt="" align=right>
-
-	<p>Isto amosará unha lista de tódalos debuxos que gardou. Se hai
-	máis debuxos dos que collen na pantalla, pode usar as frechas
-	"Arriba" e "Abaixo" que están na cima e no fondo da lista para
-	desprazarse pola lista de debuxos.</p>
-
-	<br clear=all>
-
-	<center><img src="images/open_dialog.jpg" width=194 height=152
-	alt=""></center>
-
-	<p>Clique nun debuxo para seleccionalo, e despois...</p>
-
-	<blockquote>
-	<ul>
-	<li>
-	    <img src="images/open_open.png" width=48 height=48 alt=""
-	    align=right>
-
-	    <p>Clique no botón verde "Abrir" na parte inferior esquerda
-	    da lista para cargar o debuxo seleccionado.</p>
-
-	    <p>(Tamén pode facer dobre clic na icona dun debuxo para
-	    cargalo.)</p>
-
-	    <br clear=all>
-
-	<li>
-	    <img src="images/open_erase.png" width=48 height=48 alt=""
-	    align=right>
-
-	    <p>Clique no botón marrón "Borrar" (cubo do lixo) na parte
-	    inferior dereita da lista para borrar o debuxo
-	    seleccionado. (Pediráselle que confirme o borrado).</p>
-
-	    <br clear=all>
-
-	<li>
-	    <img src="images/open_back.png" width=48 height=48 alt=""
-	    align=right>
-
-	    <p>Ou clique no botón vermello con frecha "Atrás" na parte
-	    inferior dereita da lista para cancelar e voltar ó
-	    debuxo que estaba debuxando.</p>
-
-	    <br clear=all>
-	</ul>
-	</blockquote>
-
-	<b>Imaxes 'Iniciais'</b>
-
-	<blockquote>
-	  <p>Xunto cos debuxos que creou vostede, Tux Paint proporciónalle
-	  as imaxes 'Iniciais'. Abrilas é coma crear un novo debuxo,
-	  excepto porque o debuxo non está en branco. As imaxes
-	  'Iniciais' poden ser coma unha páxina dun caderno de debuxo
-	  (coloring book) (cun bosquexo do debuxo en branco e negro,
-	  que despois se pode colorear), ou coma unha fotografía 3D,
-	  na se poden debuxar os bits.</p>
-
-	  <p>As imaxes 'Iniciais' teñen un fondo verde na pantalla 'Abrir'.
-	  (As imaxes normais teñen un fondo azul). Cando carga unha
-	  imaxe 'Inicial', debuxa nela, e despois clica en 'Gardar',
-	  créase un novo debuxo (non sobrescribe a imaxe 'Inicial'
-	  orixinal, así que poderá volver usala outra vez).</p>
-	</blockquote>
-
-	<p>Se escolleu abrir un debuxo, e o seu debuxo actual non se
-	gardou, preguntaráselle se desexa gardalo ou non. (Mire
-	"<a href="#save">Gardar</a>," debaixo.)</p>
-	
-	<p>Nota: Tamén pode premer <b>[Control]-[O]</b> no teclado para obter o
-	diálogo 'Abrir'.</p>
-	
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b><a name="save">Gardar</a></b></dt>
-      <dd>
-	<img src="images/tool_save.png" width=48 height=48 alt="" align=right>
-
-	<p>Isto garda o debuxo actual.</p>
-	
-	<p>Se non o gardou antes, crearase unha nova entrada na lista de
-	imaxes gardadas (ou sexa, crearase un novo ficheiro).</p>
-
-	<p>Nota: Non se lle preguntará nada (p.ex., o nome do ficheiro).
-	Soamente se gardará o debuxo, e reproducirase un efecto de son
-	de "disparador de cámara".</p>
-
-	<p>Se xa GARDOU antes o debuxo, ou se é un debuxo que cargou
-	usando o comando "Abrir", preguntaráselle primeiro se desexa
-	sobrescribi-la versión antiga, ou se desexa crear unha nova
-	entrada (un novo ficheiro).</p>
-
-	<center><img src="images/saveover.png" width=177 height=110
-	alt=""></center>
-
-	<p>((NOTA: Se está establecida unha das opcións <code>"saveover"</code> ou
-	<code>"saveovernew"</code>, non se lle preguntará antes sobrescribir a
-	versión antiga. Mire a documentación
-	"<a href="OPTIONS.html"><i>Options</i></a>".)</p>
-	
-	<p>Nota: Tamén pode premer <b>[Control]-[S]</b> no teclado para gardar.</p>
-	
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Imprimir</b></dt>
-      <dd>
-	<img src="images/tool_print.png" width=48 height=48 alt="" align=right>
-
-	<p>Clique neste botón e imprimirase o seu debuxo!</p>
-
-	<dl>
-	<dt>Deshabilitar a Impresión</dt>
-	<dd>
-	  <p>Se está establecida a opción "<code>noprint</code>" (xa sexa
-	  con "<code>noprint=yes</code>" no ficheiro de configuración de
-	  Tux Paint, ou usando "--noprint" na liña de
-	  comandos), deshabilitarase o botón "Imprimir".</p>
-
-	  <p>Mire a documentación "<a href="OPTIONS.html"><i>Options</i></a>".</p>
-	</dd>
-	  
-	
-	<dt>Limitar a Impresión</dt>
-	<dd>
-	  <p>Se se usa a opción "printdelay" (xa sexa con
-	  "<code>printdelay=<i>SEGUNDOS</i></code>" no ficheiro de configuración
-	  de, ou usando "<code>--printdelay=<i>SEGUNDOS</i></code>" na liña de
-	  comandos), só poderá imprimir unha vez cada
-	  <i>SEGUNDOS</i> segundos.</p>
-
-	  <p>Por exemplo, con "<code>printdelay=60</code>", só pode imprimir
-	  unha vez por minuto (1 minuto=60 segundos).</p>
-
-	  <p>Mire a documentación "<a href="OPTIONS.html"><i>Options</i></a>".</p>
-	</dd>
-
-	
-	<dt>Comando de Impresión</dt>
-	<dd>
-	  <p><i>(Só en Linux e Unix)</i></p>
-
-	  <p>O comando que se usa para imprimir é actualmente
-	  un conxunto de comandos que convirten un PNG nun
-	  PostScript e o envian á impresora:</p>
-
-	  <blockquote><code>
-	    pngtopnm | pnmtops | lpr
-	  </code></blockquote>
-
-	  <p>Este comando pode cambiarse establecendo o valor
-	  de "printcommand" no ficheiro de configuración de
-	  Tux Paint.</p>
-
-	  <p>Mire a documentación "<a href="OPTIONS.html"><i>Options</i></a>".</p>
-	</dd>
-
-
-	<dt>Opcións de Impresión</dt>
-	<dd>
-	  <p><i>(Só para Windows)</i></p>
-
-	  <p>Por defecto, Tux Paint só imprime na impresora
-	  predeterminada cas opcións predeterminadas cando
-	  se preme o botón 'Imprimir'.</p>
-
-	  <p>Sen embargo, se preme a tecla [ALT] do teclado
-	  mentres preme o botón, e se non está no modo
-	  pantalla completa, aparecerá o diálogo de
-	  impresión de Windows, onde poderá trocar as
-	  opcións.</p>
-
-	  <p>Pode almacenar os trocos na configuración de
-	  impresora usando a opción "printcfg", xa sexa
-	  usando "<code>--printcfg</code>" na liña de comandos, ou
-	  "<code>printcfg=yes</code>" no propio ficheiro de configuración
-	  de Tux Paint ("<code>tuxpaint.cfg</code>").</p>
-
-	  <p>Se se usa a opción "printcfg", as opcións de
-	  impresión cargaranse dende o ficheiro
-	  "<code>userdata/print.cfg</code>". Calquera troco gardarase
-	  aquí tamén.</p>
-	  
-	  <p>Mire a documentación "<a href="OPTIONS.html"><i>Options</i></a>".</p>
-	</dd>
-	
-	</dl>
-	<br clear=all>
-
-	<hr size=1>
-      </dd>
-
-
-      <dt><b>Saír</b></dt>
-      <dd>
-	<img src="images/tool_quit.png" width=48 height=48 alt="" align=right>
-
-	<p>Se clica no botón "Saír", pecha a ventá de Tux Paint, ou preme
-	a tecla "Escape" sairá de Tux Paint.</p>
-
-	<p>(NOTA: O botón "Saír" pode deshabilitarse (p.ex., ca opción de
-	liña de comandos "<code>--noquit</code>"), pero a tecla <b>[Escape]</b> ainda
-	funcionará. Mire a documentación "<a href="OPTIONS.html"><i>Options</i></a>".</p>
-	
-	<p>Primeiro preguntaráselle se desexa saír.</p>
-
-	<p>Se escolle saír, e non gardou o debuxo actual, preguntaráselle
-	primeiro se desexa gardalo. Se non é unha imaxe nova, entón
-	preguntaráselle se desexa sobrescribir a versión antiga, ou
-	crear unha nova entrada. (Mire "<a href="#save">Gardar</a>" enriba.)</p>
-	
-	<p>NOTA: Se se garda a imaxe, cargarase automáticamente a seguinte
-	vez que execute Tux Paint!</p>
-	
-	<br clear=all>
-      </dd>
-      </dl>
-    </blockquote>
-  </blockquote>
-</blockquote>
-
-<hr size=2 noshade>
-
-
-<h1>Cargar Outros Debuxos en Tux Paint</h1>
-<blockquote>
-  <p>Xa que o diálogo 'Abrir' de Tux Paint só mostra os debuxos que ti creaches
-     con Tux Paint, ¿que ocorre se queres cargar algún outro debuxo ou
-     fotografía en Tux Paint para editar?</p>
-
-  <p>TPara facer isto, simplemente tes que converter o debuxo nun ficheiro de
-     imaxe PNG (Portable Network Graphic), e poñelo no directorio "saved" de Tux
-     Paint. ("<code>~/.tuxpaint/saved/</code>" en Linux e Unix, "<code>userdata\saved\</code>"
-     en Windows, "<code>Library/Preferences/tuxpaint/saved/</code>" en Mac OS X.)
-  </p>
-  
-
-  <h2>Usando '<code>tuxpaint-import</code>'</h2>
-  <blockquote>
-    <p>Os usuarios de Linux e Unix poden usar o script para shell
-       "<code><b>tuxpaint-import</b></code>" que se instalou ó instala-lo Tux Paint. Este usa
-       algunhas das ferramentas NetPBM para converter a imaxe ("<code>anytopnm</code>"),
-       redimensionala de xeito que colla no lenzo de Tux Paint ("<code>pnmscale</code>"), e
-       convertela a PNG ("<code>pnmtopng</code>").</p>
-
-    <p>Tamén usa o comando "<code>date</code>" para obter a data e a hora actual, que é a
-       convención de nomenclatura de ficheiros que usa Tux Paint para os
-       ficheiros gardados. (Lembra que nunca se che pide un 'nome de ficheiro'
-       cando vas gardar ou Abrir debuxos!)</p>
-
-    <p>Para usar '<code>tuxpaint-import</code>', simplemente executa o comando dende unha
-       liña de comandos e proporciónalle o nome do(s) ficheiro(s) que desexas
-       converter.</p>
-
-    <p>Converterá os debuxos e poñeraos no directorio 'saved' de Tux Paint.
-       (Nota: Se estás facendo isto para un usuario diferente - p.ex., o teu
-       neno, executa o comando usando a súa conta.)</p>
-
-    <p>Exemplo:</p>
-
-    <blockquote><code>
-      $ <b>tuxpaint-import avoa.jpg</b><br>
-      avoa.jpg -&gt; /home/username/.tuxpaint/saved/20020921123456.png<br>
-      jpegtopnm: WRITING A PPM FILE
-    </code></blockquote>
-
-    <p>A primeira liña ("<code>tuxpaint-import avoa.jpg</code>") é o comando a executar. As
-       dúas liñas seguintes son a saída do programa mentres está traballando.</p>
-    
-    <p>Agora podes abrir o Tux Paint, e estará dispoñible unha versión dese
-       debuxo orixinal no diálogo 'Abrir'. ¡Simplemente fai dobre clic na súa
-       icona!</p>
-  </blockquote>
-
-
-  <h2>Facéndoo Manualmente</h2>
-  <blockquote>
-    <p>Os usuarios de Windows, Mac OS X e BeOS deben facer actualmente a
-       conversión manualmente.</p>
-
-    <p>Executa un programa de gráficos que sexa capaz de cargar o debuxo e
-       gardalo coma un ficheiro de formato PNG. (Mira o ficheiro de
-       documentación "PNG.txt" para obter unha lista de software suxerido, e
-       outras referencias).</p>
-
-    <p>Reduce o tamaño da imaxe a un ancho máximo de 448 pixels de lado a lado e
-       un alto máximo de 376 pixels altura (ou sexa, o tamaño máximo é 448 x 376
-       pixels).</p>
-
-    <p>Garda o debuxo con formato PNG. É <b>moi</b> recomendable que o nomees o
-       ficheiro usando a data e a hora actual, xa que é a convención que usa
-       Tux Paint:</p>
-
-    <blockquote>
-      <code><b>YYYYMMDDhhmmss</b>.png</code>
-    </blockquote>
-
-    <ul>
-    <li>YYYY = Ano
-    <li>MM = Mes (01-12)
-    <li>DD = Día (01-31)
-    <li>HH = Hora, en formato de 24 horas (00-23)
-    <li>mm = Minuto (00-59)
-    <li>ss = Segundo (00-59)
-    </ul>
-
-    <p>p.ex.:</p>
-
-    <blockquote>
-      <code>20020921130500</code> - para o 21 de Setembro de 2002, 1:05:00pm
-    </blockquote>
-
-    <p>Pon este ficheiro PNG no directorio 'saved' de Tux Paint. (Mira enriba.)</p>
-
-    <p>En Windows, está no cartafol "<code>userdata</code>". En Mac OS X, está en
-       "<code>Library/Preferences/tuxpaint/</code>" no teu directorio persoal.</p>
-  </blockquote>
-</blockquote>
-
-<hr size=2 noshade>
-
-
-<h1>Extendendo Tux Paint</h1>
-<blockquote>
-  <p>Se desexas engadir ou trocar cousas coma os Pinceis e as Estampas de Goma
-     que se usan no Tux Paint, podes facelo de maneira sinxela poñendo ou
-     eliminando ficheiros no disco duro.</p>
-  
-  <p>Nota: Cómpre reiniciar o Tux Paint para que os trocos teñan efecto.</p>
-
-  <h2>Onde Están Os Ficheiros</h2>
-  <blockquote>
-    <h3>Ficheiros Estándar</h3>
-    <blockquote>
-      <p>Tux Paint busca os seus múltiples ficheiros de datos no seu directorio
-	 'data'.</p>
-
-      <h4>Linux e Unix</h4>
-      <blockquote>
-	<p>O sitio onde está este directorio depende de que valor se estableceu
-	   para "<code>DATA_PREFIX</code>" cando se compilou o Tux Paint. Mira INSTALL.txt
-	   para obter máis detalles.</p>
-
-	<p>Por defecto, o directorio é:</p>
-
-	<blockquote><code>
-	  /usr/local/share/tuxpaint/
-	</code></blockquote>
-	
-	<p>Se o instalou dende un paquete, é máis probable que sexa:</p>
-
-	<blockquote><code>
-	  /usr/share/tuxpaint/
-	</code></blockquote>
-	
-      </blockquote>
-
-
-      <h4>Windows</h4>
-      <blockquote>
-	<p>Tux Paint busca un directorio chamado 'data' no mesmo directorio no
-	   que está o executable. Este é o directorio que o instalador usou
-	   cando se instalou o Tux Paint, p.ex.:</p>
-
-	<blockquote><code>
-	  C:\Archivos de programa\TuxPaint\data
-	</code></blockquote>
-	
-      </blockquote>
-
-
-      <h4>Mac OS X</h4>
-      <blockquote>
-	<p>Tux Paint almacena os ficheiros no teu cartafol "Libraries" da túa
-	   conta, en "Preferences", p.ex.:</p>
-
-	<blockquote><code>
-	  /Users/Joe/Library/Preferences/
-	</code></blockquote>
-
-      </blockquote>
-      
-    </blockquote>
-
-    <hr size=1 noshade>
-    
-
-    <h3>Ficheiros Persoais</h3>
-    <blockquote>
-      <p>Tamén podes crear pinceis, estampas, fontes e imaxes 'iniciais' no teu
-	 propio directorio para que Tux Paint ós atope.</p>
-
-      <h4>Linux e Unix</h4>
-      <blockquote>
-	<p>O teu directorio persoal de Tux Paint é
-	"<code>~/.tuxpaint/</code>".</p>
-	
-	<p>Ou sexa, se o teu directorio persoal é "<code>/home/karl</code>", entón o teu
-	   directorio de Tux Paint é
-	"<code>/home/karl/.tuxpaint/</code>".</p>
-	
-	<p>Non esquezas o punto ("<code>.</code>") antes de
-	'<code>tuxpaint</code>'!</p>
-      </blockquote>
-      
-
-      <h4>Windows</h4>
-      <blockquote>
-	<p>O teu directorio persoal de Tux Paint chámase "userdata" e está no
-	   mesmo directorio có executable, p.ex.:</p>
-	
-	<blockquote><code>
-	  C:\Archivos de programa\TuxPaint\userdata
-	</code></blockquote>
-	
-      </blockquote>
-
-    
-      <p>Para engadir pinceis, estampas, fontes, e imaxes 'iniciais', crea
-	 subdirectorios no teu directorio persoal de Tux Paint que se chamen
-	 "<code><b>brushes</b></code>", "<code><b>stamps</b></code>", "<code><b>fonts</b></code>" e "<code><b>starters</b></code>" respectivamente.
+<html>
+  <head>
+    <title>
+      DocumentaciÃ³n de Tux Paint (Â«LÃ‰EMEÂ»)    </title>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF"
+        text="#000000"
+        link="#0000FF"
+        vlink="#FF0000"
+        alink="#FF00FF">
+    <center>
+      <h1>
+        <img src="../../html/images/tuxpaint-title.png"
+            width="205"
+            height="210"
+            alt="Tux Paint"><br>
+        versiÃ³n 0.9.26      </h1>
+
+      <h3>
+        Un sinxelo programa de debuxo para cativos      </h3>
+
+      <p>
+        Copyright &copy; 2002-2021 por varios colaboradores; vexa AUTORES (AUTHORS).<br>
+        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
       </p>
 
-      <p>(Por exemplo, se creaches un pincel que se chama "<code>flower.png</code>", deberías
-	 poñelo en "<code>~/.tuxpaint/brushes/</code>" en Linux ou Unix.)</p>
-    </blockquote>
-  </blockquote>
+      <p>
+         2 Febreiro 2021      </p>
+    </center>
 
-  <hr size=1 noshade>
+    <hr size="2"
+        noshade>
 
+    <table border="2"
+           cellspacing="0"
+           cellpadding="2"
+           summary="Ãndice">
+      <tr>
+        <th>
+          Ãndice        </th>
+      </tr>
 
-  <h2>Pinceis</h2>
-  <blockquote>
-    <p>Os pinceis que se usan para debuxar cas ferramentas 'Pintar' e 'Liñas' de
-       Tux Paint son simplemente imaxes PNG en escala de grises.</p>
+      <tr>
+        <td>
+          <ul>
+            <li>
+              <a href="#about">Sobre Tux Paint</a>
+            </li>
 
-    <img src="images/brush_edit.png" width=123 height=147 alt="" align=right>
+            <li>
+              <a href="#using">Uso  de Tux Paint:</a>
+              <ul>
+                <li>
+                  <a href="#using_loading">Inicio de Tux Paint</a>
+                </li>
 
-    <p>A alfa (transparencia) da imaxe PNG úsase para determinar a forma do
-       pincel, o que significa que a forma pode ser 'anti-aliased' e incluso
-       parcialmente transparente!</p>
+                <li>
+                  <a href="#using_title">Title Screen</a>
+                </li>
 
-    <p>As imaxes dos pinceis non deben ter máis de 40 pixels ó ancho e non deben
-       ter máis de 40 pixels de alto. (ou sexa, o tamaño máximo é 40 x 40.)</p>
+                <li>
+                  <a href="#using_main">Main Screen</a>
+                </li>
 
-    <p>Simplemente ponas no directorio "<code><b>brushes</b></code>".</p>
+                <li>
+                  <a href="#using_tools">Ferramentas dispoÃ±Ã­beis</a>
+                  <ul>
+                    <li>
+                      <a href="#using_tools_drawing">Drawing Tools</a>
+                    </li>
 
-    <p>Nota: Se tódolos teus novos pinceis aparecen coma cadrados ou rectángulos
-       sólidos, é porque esqueciches usar a transparencia alfa! Mira o ficheiro
-       de documentación "PNG.txt" para obter máis información e consellos.</p>
-    
-    <br clear=all>
-  </blockquote>
+                    <li>
+                      <a href="#using_tools_other">Outros controis</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
 
-  <hr size=1 noshade>
+            <li>
+              <a href="#loading_into">Carga doutras imaxes en Tux Paint</a>
+            </li>
 
+            <li>
+              <a href="#further">Further Reading</a>
+            </li>
 
-  <h2>Estampas</h2>
-  <blockquote>
-    <p>Tódolos ficheiros relacionados cas estampas están no directorio "<code><b>stamps</b></code>".
-       É útil crear subdirectorios e sub-subdirectorios para organizar as
-       estampas. (Por exemplo, podes ter un cartafol "<code>vacacións</code>" cos
-       subcartafoles "<code>halloween</code>" e "<code>nadal</code>").</p>
+            <li>
+              <a href="#help">How to Get Help</a>
+            </li>
 
-    <h3>Imaxes</h3>
+            <li>
+              <a href="#participate">How to Participate</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <hr size="2"
+        noshade>
+
+    <h1>
+      <a name="about"
+          id="about">Sobre Tux Paint</a>
+    </h1>
+
     <blockquote>
-      <p>As Estampas de Goma en Tux Paint poden estar compostas por varios
-	 ficheiros independentes. O único ficheiro que é imprescindible é, dende
-	 logo, o debuxo.</p>
+      <h2>
+        Que Ã© Â«Tux PaintÂ»?      </h2>
 
-      <img src="images/stamp_edit.png" width=128 height=147 alt="" align=right>
-   
-      <p>As Estampas que usa Tux Paint son imaxes PNG. Poden ser de cores ou de
-	 escala de grises. A alfa (transparencia) do PNG úsase para determinar a
-	 forma real do debuxo (doutra maneira, estamparás un rectángulo grande
-	 nos debuxos).</p>
-
-      <p>Os PNGs poden ser de calquera tamaño, pero na práctica, unha de 100
-	 pixels de ancho por 100 pixels de alto (100 x 100) é grande de máis
-	 para Tux Paint.</p>
-
-      <p>Nota: Se tódalas túas novas estampas teñen un contorno sólido de forma
-	 rectangular dunha cor sólida (p.ex. branco ou negro), é porque
-	 esqueciches usar a transparencia alfa! Mira o ficheiro de documentación
-	 "PNG.txt" para obter máis detalles e consellos.</p>
-
-      <br clear=all>
-    </blockquote>
-
-    <hr size=1 noshade>
-
-    <h3>Texto de Descrición</h3>
-    <blockquote>
-      <p>Ficheiros de texto (".TXT") co mesmo nome có PNG. (p.ex. a descrición
-	 de "<code>debuxo.png</code>" almacénase en "<code>debuxo.txt</code>" que está no mesmo
-	 directorio).</p>
-      
-      <p>A primeira liña do ficheiro de texto usarase para a descrición da imaxe
-	 de estampa en Inglés de Estados Unidos. Debe estar codificado en UTF-8.</p>
-
-      <h4>Soporte de Linguas</h4>
       <blockquote>
-	<p>Poden engadirse liñas adicionais o ficheiro de texto para
-	   proporcionar traduccións da descrición, para amosalas cando Tux Paint
-	   se está executando nunha lingua diferente (coma o Francés ou o
-	   Español).</p>
+        <p>
+          Tux Paint is a free drawing program designed for young children (kids ages 3 and up). It has a simple, easy-to-use interface, fun sound effects, and an encouraging cartoon mascot who helps guide children as they use the program. It provides a blank canvas and a variety of drawing tools to help your child be creative.        </p>
+      </blockquote>
 
-	<p>O comezo da liña debe corresponder co código da lingua en cuestión
-	   (p.ex. "<code>fr</code>" para o Francés, e "<code>zh_tw</code>" para o Chinés Tradicional),
-	   seguido por "<code>.utf8=</code>" e a descrición traducida (codificada en UTF-8).
-	</p>
-	
-	<p>Hai scripts no directorio "<code>po</code>" para converti-los ficheiros de texto a
-	   formato PO (e ó revés) para traducir fácilmente a diferentes linguas.
-	   Polo tanto nunca debes engadir ou cambiar as traduccións dos
-	   ficheiros .txt directamente.</p>
+      <h2>
+        Licenza:      </h2>
 
-	<p>Se non hai traducción dispoñible para a lingua na que se está
-	   executando Tux Paint, usarase o texto en Inglés de Estados Unidos.</p>
-     </blockquote>
-
-      <h4>Usuarios de Windows</h4>
       <blockquote>
-	<p>Usa o Bloc de Notas (NotePad) ou o WordPad para editar/crear estes
-	   ficheiros. Asegúrate de gardalos coma Texto Plano, e asegúrate de que
-	   teñen a extensión "<code>.txt</code>" (o nome do ficheiro remata en ".txt")...</p>
+        <p>
+          Tux Paint is an Open Source project, Free Software released under the GNU General Public License (GPL). It is free, and the 'source code' behind the program is available. (This allows others to add features, fix bugs, and use parts of the program in their own GPL'd software.)        </p>
+
+        <p>
+          See <a href="../COPYING.txt">COPYING.txt</a> for the full text of the GPL license.        </p>
+      </blockquote>
+
+      <h2>
+        Objectives:      </h2>
+
+      <blockquote>
+        <dl>
+          <dt>
+            <strong>Easy and Fun</strong>
+          </dt>
+
+          <dd>
+            Tux Paint is meant to be a simple drawing program for young children. It is not meant as a general-purpose drawing tool. It <em>is</em> meant to be fun and easy to use. Sound effects and a cartoon character help let the user know what's going on, and keeps them entertained. There are also extra-large cartoon-style mouse pointer shapes.          </dd>
+
+          <dt>
+            <strong>Extensibility</strong>
+          </dt>
+
+          <dd>
+            Tux Paint is extensible. Brushes and 'rubber stamp' shapes can be dropped in and pulled out. For example, a teacher can drop in a collection of animal shapes and ask their students to draw an ecosystem. Each shape can have a sound which is played, and textual facts which are displayed, when the child selects the shape.          </dd>
+
+          <dt>
+            <strong>Portability</strong>
+          </dt>
+
+          <dd>
+            Tux Paint is portable among various computer platforms: Windows, Macintosh, Linux, etc. The interface looks the same among them all. Tux Paint runs suitably well on older systems, and can be built to run better on slow systems.          </dd>
+
+          <dt>
+            <strong>Simplicidade</strong>
+          </dt>
+
+          <dd>
+            There is no direct access to the computer's underlying intricacies. The current image is kept when the program quits, and reappears when it is restarted. Saving images requires no need to create filenames or use the keyboard. Opening an image is done by selecting it from a collection of thumbnails. Access to other files on the computer is restricted.          </dd>
+        </dl>
       </blockquote>
     </blockquote>
 
-    <hr size=1 noshade>
+    <hr size="2"
+        noshade>
 
-    <h3>Efectos de Son</h3>
+    <h1>
+      <a name="using"
+          id="using">Uso  de Tux Paint:</a>
+    </h1>
+
     <blockquote>
-      <p>Ficheiros WAVE (".WAV") co mesmo nome có PNG. (p.ex. o efecto de son de
-	 "<code>debuxo.png</code>" é o ficheiro de son "<code>debuxo.wav</code>" que está no mesmo
-	 directorio).</p>
-      
-      <h4>Soporte de Linguas</h4>
+      <h2>
+        <a name="using_loading"
+            id="using_loading">Inicio de Tux Paint</a>
+      </h2>
+
       <blockquote>
-	<p>Para ter sons para idiomas diferentes (p.ex., se o son é alguén
-	   dicindo unha palabra, e queres versións traducidas da palabra), tamén
-	   podes crear ficheiros WAV co mesmo código de idioma no nome do
-	   ficheiro, da forma: "<code><b>ESTAMPA_CODIGO</b>.wav</code>"</p>
-	
-	<p>O efecto de son de "<code>debuxo.png</code>", cando Tux Paint se está executando
-	   en Español, debería ser "<code>debuxo_es.wav</code>". En Francés, "<code>debuxo_fr.wav</code>".
-	   Etc...</p>
+        <h3>
+          Usuarios de Linux/Unix        </h3>
+
+        <blockquote>
+          <p>
+            Tux Paint should have placed a laucher icon in your KDE and/or GNOME menus, under 'Graphics.'          </p>
+
+          <p>
+            Alternatively, you can run the following command at a shell prompt (e.g., "<code>$</code>"):          </p>
+
+          <blockquote>
+            <code>$ tuxpaint</code>
+          </blockquote>
+
+          <p>
+            If any errors occur, they will be displayed on the terminal (to <code>STDERR</code>).          </p>
+        </blockquote>
+
+        <hr size="1"
+            noshade>
+
+        <h3>
+          Usuarios de Windows        </h3>
+
+        <blockquote>
+          <table border="0"
+                 cellspacing="0"
+                 cellpadding="4"
+                 bgcolor="#AAAAFF"
+                 align="right"
+                 summary="">
+            <tr>
+              <td align="center">
+                <img src="../../html/images/icon-win32.png"
+                    width="32"
+                    height="32"
+                    alt="[Icona de Tux Paint]"><br>
+                Tux Paint
+              </td>
+            </tr>
+          </table>
+
+          <p>
+            If you installed Tux Paint on your computer using the 'Tux Paint Installer,' it will have asked you whether you wanted a 'Start' menu short-cut, and/or a desktop shortcut. If you agreed, you can simply run Tux Paint from the 'Tux Paint' section of your 'Start' menu (e.g., under 'All Programs'), or by double-clicking the 'Tux Paint' icon on your desktop, if you had the installer place one there.          </p>
+
+          <p>
+            If you're using the 'portable' (ZIP-file) version of Tux Paint, or if you used the 'Tux Paint Installer,' but chose not to have shortcuts installed, you'll need to double-click the "<code>tuxpaint.exe</code>" icon in the "<code>Tux Paint</code>" folder on your computer.          </p>
+
+          <p>
+            By default, the 'Tux Paint Installer' will put Tux Paint's folder in "<code>C:\Program Files\</code>", though you may have changed this when you ran the installer.          </p>
+
+          <p>
+            If you used the 'ZIP-file' download, Tux Paint's folder will be wherever you extracted the contents of the ZIP file.          </p>
+          <br clear="all">
+        </blockquote>
+
+        <hr size="1"
+            noshade>
+
+        <h3>
+          Usuarios de macOS        </h3>
+
+        <blockquote>
+          <p>
+            Simply double-click the "<code>Tux Paint</code>" icon.          </p>
+        </blockquote>
+      </blockquote>
+
+      <hr size="1"
+          noshade>
+
+      <h2>
+        <a name="using_title"
+            id="using_title">Title Screen</a>
+      </h2>
+
+      <blockquote>
+        <p>
+          When Tux Paint first loads, a title/credits screen will appear.        </p>
+
+        <p align="center">
+          <img src="../../html/images/tuxpaint-title.jpg"
+             width="324"
+             height="254"
+             alt="[Pantalla de tÃ­tulo]">
+        </p>
+
+        <p>
+          Once loading is complete, press a key or click or tap in the Tux Paint window to continue. (Or, after about 5 seconds, the title screen will go away automatically.)        </p>
+      </blockquote>
+
+      <hr size="1"
+          noshade>
+
+      <h2>
+        <a name="using_main"
+            id="using_main">Main Screen</a>
+      </h2>
+
+      <blockquote>
+        The main screen is divided into the following sections:        <dl>
+          <dt>
+            <strong>Left Side: Toolbar</strong>
+          </dt>
+
+          <dd>
+            <p>
+              The toolbar contains the drawing and editing controls.            </p>
+            <!-- FIXME: Update screenshot to add "Fill" tool -->
+
+            <p align="center">
+              <img src="../../html/images/tools.jpg"
+                 width="324"
+                 height="254"
+                 alt=
+                 "[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser, New, Open, Save, Print, Quit]">
+            </p>
+          </dd>
+
+          <dt>
+            <strong>Middle: Drawing Canvas</strong>
+          </dt>
+
+          <dd>
+            <p>
+              The largest part of the screen, in the center, is the drawing canvas. This is, obviously, where you draw!            </p>
+
+            <p align="center">
+              <img src="../../html/images/canvas.jpg"
+                 width="324"
+                 height="254"
+                 alt="[Canvas]">
+            </p>
+
+            <p>
+              <strong>Note:</strong> The size of the drawing canvas depends on the size of Tux Paint. You can change the size of Tux Paint using the <em>Tux Paint Config.</em> configuration tool, or by other means. See the <a href="OPTIONS.html"><em>Options</em></a> documentation for more details.            </p>
+          </dd>
+
+          <dt>
+            <strong>Right Side: Selector</strong>
+          </dt>
+
+          <dd>
+            <p>
+              Depending on the current tool, the selector shows different things. e.g., when the Paint Brush or Line tool is selected, it shows the various brushes available. When the Rubber Stamp tool is selected, it shows the different shapes you can use. When the Text or Label tool is selected, it shows various fonts.            </p>
+
+            <p align="center">
+              <img src="../../html/images/selector.jpg"
+                 width="324"
+                 height="254"
+                 alt=
+                 "[Selectors - Brushes, Letters, Shapes, Stamps]">
+            </p>
+          </dd>
+
+          <dt>
+            <strong>Lower: Colors</strong>
+          </dt>
+
+          <dd>
+            <p>
+              A palette of available colors are shown near the bottom of the screen.            </p>
+
+            <p align="center">
+              <img src="../../html/images/colors.jpg"
+                 width="324"
+                 height="254"
+                 alt=
+                 "[Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple, Brown, Grey]">
+            </p>
+
+            <p>
+              On the far right are two special color options, the "color picker", which has an outline of an eye-dropper, and allows you to pick a color found within your drawing, and the rainbow palette, which allows you to pick a color from within a box containing thousands of colors.            </p>
+
+            <p>
+              (<strong>Note:</strong> You can define your own colors for Tux Paint. See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.)            </p>
+          </dd>
+
+          <dt>
+            <strong>Bottom: Help Area</strong>
+          </dt>
+
+          <dd>
+            <p>
+              At the very bottom of the screen, <em>Tux</em>, the Linux Penguin, provides tips and other information while you use Tux Paint.            </p>
+
+            <p align="center">
+              <img src="../../html/images/tips.jpg"
+                 width="324"
+                 height="254"
+                 alt=
+                 "(Example tip: 'Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it.')">
+            </p>
+          </dd>
+        </dl>
+      </blockquote>
+
+      <hr size="1"
+          noshade>
+
+      <h2>
+        <a name="using_tools"
+            id="using_tools">Ferramentas dispoÃ±Ã­beis</a>
+      </h2>
+
+      <blockquote>
+        <h3>
+          <a name="using_tools_drawing"
+              id="using_tools_drawing">Drawing Tools</a>
+        </h3>
+
+        <blockquote>
+          <dl>
+            <dt>
+              <strong>"Paint" Tool (Brush)</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_paint.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                The Paint Brush tool lets you draw freehand, using various brushes (chosen in the Selector on the right) and colors (chosen in the Color palette towards the bottom).              </p>
+
+              <p>
+                If you hold the mouse button down, and move the mouse, it will draw as you move.              </p>
+
+              <p>
+                As you draw, a sound is played. The bigger the brush, the lower the pitch.              </p>
+              <br clear="all">
+
+              <p align="center">
+                <img src="../../html/images/ex_paint.png"
+                   width="120"
+                   height="95"
+                   alt="">
+              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Stamp" Tool (Rubber Stamps)</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_stamp.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                The Stamp tool is like a set of rubber stamps or stickers. It lets you paste pre-drawn or photographic images (like a picture of a horse, or a tree, or the moon) in your picture.              </p>
+
+              <p>
+                As you move the mouse around the canvas, an outline follows the mouse, showing where the stamp will be placed, and how big it will be. Click to place the stamp.              </p>
+
+              <p align="center">
+                <img src="../../html/images/ex_stamps.png"
+                   width="182"
+                   height="156"
+                   alt="">
+              </p>
+              <img src=
+              "../../html/images/tool_stamp_categories.png"
+                  width="96"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                There can be numerous categories of stamps (e.g., animals, plants, outer space, vehicles, people, etc.). Use the Left and Right arrows near the bottom of the Selector to cycle through the collections.              </p>
+
+              <p>
+                Prior to 'stamping' an image onto your drawing, various effects can sometimes be applied (depending on the stamp):              </p>
+
+              <ul>
+                <li>Some stamps can be colored or tinted. If the color palette below the canvas is activated, you can click the colors to change the tint or color of the stamp before placing it in the picture.                </li>
+
+                <li>Stamps can be shrunk and expanded, by clicking within the triangular-shaped series of bars at the bottom right; the larger the bar, the larger the stamp will appear in your picture.                </li>
+
+                <li>Many stamps may be flipped vertically, or displayed as a mirror-image, using the control buttons at the bottom right.                </li>
+              </ul>
+
+              <p align="center">
+                <img src=
+                "../../html/images/tool_stamp_controls.png"
+                   width="96"
+                   height="96"
+                   alt="">
+              </p>
+              <img src="../../html/images/tool_sfx.png"
+                  width="48"
+                  height="24"
+                  alt=""
+                  align="right">
+              <p>
+                Different stamps can have different sound effects and/or descriptive (spoken) sounds. Buttons in the Help Area at the lower left (near <em>Tux</em>, the Linux penguin) allow you to re-play the sound effects and descriptive sounds for the currently-selected stamp.              </p>
+
+              <p>
+                (<strong>Note</strong>: If the "<code>nostampcontrols</code>" option is set, Tux Paint won't display the Mirror, Flip, Shrink and Grow controls for stamps. See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.)              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Lines" Tool</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_lines.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                This tool lets you draw straight lines using the various brushes and colors you normally use with the Paint Brush.              </p>
+
+              <p>
+                Click the mouse and hold it to choose the starting point of the line. As you move the mouse around, a thin 'rubber-band' line will show where the line will be drawn.              </p>
+
+              <p>
+                Let go of the mouse to complete the line. A "sproing!" sound will play.              </p>
+              <br clear="all">
+
+              <p align="center">
+                <img src="../../html/images/ex_lines.png"
+                   width="76"
+                   height="103"
+                   alt="">
+              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Shapes" Tool</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_shapes.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                This tool lets you draw some simple filled, and un-filled shapes.              </p>
+
+              <p>
+                Select a shape from the selector on the right (circle, square, oval, etc.).              </p>
+
+              <p>
+                Use the options at the bottom right to choose the shape tool's behavior:              </p>
+
+              <dl>
+                <dt>
+                  <strong>Shapes from center</strong>
+                </dt>
+
+                <dd>
+                  The shape will expand from where you initially clicked, and will be centered around that position. (This was Tux Paint's only behavior through version 0.9.24.)                </dd>
+
+                <dt>
+                  <strong>Shapes from corner</strong>
+                </dt>
+
+                <dd>
+                  The shape will extend with one corner starting from where you initially clicked. This is the default method of most other traditional drawing software. (This option was added starting with Tux Paint version 0.9.25.)                </dd>
+              </dl>
+
+              <p>
+                <strong>Note:</strong> If shape controls are disabled (e.g., with the "<code>noshapecontrols</code>" option), the controls will not be presented, and the "shapes from center" method will be used.              </p>
+
+              <p>
+                In the canvas, click the mouse and hold it to stretch the shape out from where you clicked. Some shapes can change proportion (e.g., rectangle and oval may be wider than tall, or taller than wide), others cannot (e.g., square and circle).              </p>
+
+              <p>
+                Let go of the mouse when you're done stretching.              </p>
+
+              <dl>
+                <dt>
+                  <strong>Normal Shapes Mode</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    Now you can move the mouse around the canvas to rotate the shape.                  </p>
+
+                  <p>
+                    Click the mouse button again and the shape will be drawn in the current color.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Simple Shapes Mode</strong>
+                </dt>
+
+                <dd>
+                  If simple shapes are enabled (e.g., with the "<code>simpleshapes</code>" option), the shape will be drawn on the canvas when you let go of the mouse button. (There's no rotation step.)                </dd>
+              </dl>
+              <br clear="all">
+
+              <p align="center">
+                <img src="../../html/images/ex_shapes.png"
+                   width="177"
+                   height="104"
+                   alt="">
+              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Text" and "Label" Tools</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_text.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Choose a font (from the 'Letters' available on the right) and a color (from the color palette near the bottom). Click on the screen and a cursor will appear. Type text and it will show up on the screen.              </p>
+
+              <p>
+                Press <strong><code>[Enter]</code></strong> or <strong><code>[Return]</code></strong> and the text will be drawn onto the picture and the cursor will move down one line.              </p>
+
+              <p>
+                Alternatively, press <strong><code>[Tab]</code></strong> and the text will be drawn onto the picture, but the cursor will move to the right of the text, rather than down a line, and to the left. (This can be useful to create a line of text with mixed colors, fonts, styles and sizes.)              </p>
+
+              <p>
+                Clicking elsewhere in the picture while the text entry is still active causes the current line of text to move to that location (where you can continue editing it).              </p>
+
+              <p align="center">
+                <img src="../../html/images/ex_text.png"
+                   width="139"
+                   height="69"
+                   alt="">
+              </p>
+
+              <dl>
+                <dt>
+                  <strong>"Text" versus "Label"</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    The <strong>Text</strong> tool is the original text-entry tool in Tux Paint. Text entered using this tool can't be modified or moved later, since it becomes part of the drawing. However, because the text becomes part of the picture, it can be drawn over or modified using <strong>Magic</strong> tool effects (e.g., smudged, tinted, embossed, etc.)                  </p>
+
+                  <p>
+                    When using the <strong>Label</strong> tool (which was added to Tux Paint in version 0.9.22), the text 'floats' over the image, and the details of the label (the text, the position of the label, the font choice and the color) get stored separately. This allows the label to be repositioned or edited later.                  </p>
+
+                  <p>
+                    The <strong>Label</strong> tool can be disabled (e.g., by selecting "Disable 'Label' Tool" in <em>Tux Paint Config.</em> or running <em>Tux Paint</em> with the "<code>nolabel</code>" option).                  </p>
+                </dd>
+
+                <dt>
+                  <strong>International Character Input</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    Tux Paint allows inputting characters in different languages. Most Latin characters (<em>A</em>-<em>Z</em>, <em>Ã±</em>, <em>Ã¨</em>, etc.) can by entered directly. Some languages require that Tux Paint be switched into an alternate input mode before entering, and some characters must be composed using numerous keypresses.                  </p>
+
+                  <p>
+                    When Tux Paint's locale is set to one of the languages that provide alternate input modes, a key is used to cycle through normal (Latin character) and locale-specific mode or modes.                  </p>
+
+                  <p>
+                    Currently supported locales, the input methods available, and the key to toggle or cycle modes, are listed below. <strong>Note:</strong> Many fonts do not include all characters for all languages, so sometimes you'll need to change fonts to see the characters you're trying to type.                  </p>
+
+                  <ul>
+                    <li>Japanese â€” Romanized Hiragana and Romanized Katakana â€” right <code><b>[Alt]</b></code> key                    </li>
+
+                    <li>Korean â€” Hangul 2-Bul â€” right <code><b>[Alt]</b></code> key or left <code><b>[Alt]</b></code> key                    </li>
+
+                    <li>Traditional Chinese â€” right <code><b>[Alt]</b></code> key or left <code><b>[Alt]</b></code> key                    </li>
+
+                    <li>Thai â€” right <code><b>[Alt]</b></code> key                    </li>
+                  </ul>
+                </dd>
+
+                <dt>
+                  <strong>Teclado en pantalla</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "Ã¦"). See the "<a href="OPTIONS.html"><em>Options</em></a>" and "<a href="EXTENDING.html"><em>Extending Tux Paint</em></a>" documentation for more information.                  </p>
+                </dd>
+              </dl>
+            </dd>
+
+            <dd>
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>Ferramenta de Â«encherÂ»</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_fill.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                The 'Fill' tool 'flood-fills' a contiguous area of your drawing with a solid color of your choice.              </p>
+
+              <p>
+                Note: Prior to Tux Paint 0.9.24, this was a Magic tool (see below).              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Magic" Tool (Special Effects)</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_magic.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                The Magic tool is actually a set of special tools. Select one of the 'magic' effects from the selector on the right. Then, depending on the tool, you can either click and drag around the picture, and/or simply click the picture once, to apply the effect.              </p>
+
+              <p>
+                If the tool can be used by clicking and dragging, a 'painting' button will be available on the left, below the list of Magic tools on the right side of the screen. If the tool can affect the entire picture at once, an 'entire picture' button will be available on the right.              </p>
+              <br clear="all">
+
+              <p>
+                See the <a href="../magic-docs/html/index.html">instructions for each Magic tool</a> (in the 'magic-docs' folder).              </p>
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>Ferramenta de Â«gomaÂ»</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_eraser.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                This tool is similar to the Paint Brush. Wherever you click (or click and drag), the picture will be erased. (This may be white, some other color, or to a background picture, depending on the picture.)              </p>
+
+              <p>
+                A number of eraser sizes are available, both round and square.              </p>
+
+              <p>
+                As you move the mouse around, a square outline follows the pointer, showing what part of the picture will be erased to white.              </p>
+
+              <p>
+                As you erase, a 'squeaky clean' eraser wiping sound is played.              </p>
+              <br clear="all">
+            </dd>
+          </dl>
+        </blockquote>
+
+        <hr size="1"
+            noshade>
+
+        <h3>
+          <a name="using_tools_other"
+              id="using_tools_other">Outros controis</a>
+        </h3>
+
+        <blockquote>
+          <dl>
+            <dt>
+              <strong>"Undo" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_undo.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Clicking this tool will undo the last drawing action. You can even undo more than once!              </p>
+
+              <p>
+                <strong>Note:</strong> You can also press <b><code>[Control]</code></b> + <code><b>[Z]</b></code> on the keyboard to Undo.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Redo" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_redo.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Clicking this tool will redo the drawing action you just un-did with the 'Undo' button.              </p>
+
+              <p>
+                As long as you don't draw again, you can redo as many times as you had undone!              </p>
+
+              <p>
+                <strong>Note:</strong> You can also press <b><code>[Control]</code></b> + <code><b>[R]</b></code> on the keyboard to Redo.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"New" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_new.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Clicking the 'New' button will start a new drawing. A dialog will appear where you may choose to start a new picture using a solid background color, or using a 'Starter' or 'Template' image (see below). You will first be asked whether you really want to do this.              </p>
+
+              <p>
+                <strong>Note:</strong> You can also press <b><code>[Control]</code></b> + <code><b>[N]</b></code> on the keyboard to iniciar un novo debuxo.              </p>
+              <strong>Imaxes Â«de inicioÂ» e de Â«modeloÂ»</strong>
+              <blockquote>
+                <p>
+                  'Starters' can behave like a page from a coloring book â€” a black-and-white outline of a picture, which you can then color in, and the black outline remains intact â€” or like a 3D photograph, where you draw in between a foreground and background layer.                </p>
+
+                <p>
+                  'Templates' are similar, but simply provide a background drawing to work off of. Unlike 'Starters', there is no layer that remains in the foreground of anything you draw in the picture.                </p>
+
+                <p>
+                  When using the 'Eraser' tool, the original image from the 'Starter' or 'Template' will reappear. The 'Flip' and 'Mirror' Magic tools affect the orientation of the 'Starter' or 'Template', as well.                </p>
+
+                <p>
+                  When you load a 'Starter' or 'Template', draw on it, and then click 'Save,' it creates a new picture file â€” it doesn't overwrite the original, so you can use it again later (by accessing it from the 'New' dialog).                </p>
+              </blockquote>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Open" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_open.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                This shows you a list of all of the pictures you've saved. If there are more than can fit on the screen, use the up and down arrows at the top and bottom of the list to scroll through the list of pictures.              </p>
+              <br clear="all">
+
+              <p align="center">
+                <img src="../../html/images/open_dialog.jpg"
+                   width="194"
+                   height="152"
+                   alt="">
+              </p>
+
+              <p>
+                Click a picture to select it, and then...              </p>
+
+              <blockquote>
+                <ul>
+                  <li>
+                    <img src="../../html/images/open_open.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the green 'Open' button at the lower left of the list to load the selected picture.                    </p>
+
+                    <p>
+                      (Alternatively, you can double-click a picture's icon to load it.)                    </p>
+                    <br clear="all">
+                  </li>
+
+                  <li>
+                    <img src="../../html/images/open_erase.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the brown 'Erase' (trash can) button at the lower right of the list to erase the selected picture. (You will be asked to confirm.)                    </p>
+
+                    <p>
+                      <strong>Note:</strong> As of version 0.9.22, the picture will be placed in your desktop's trash can, on Linux only.                    </p>
+                    <br clear="all">
+                  </li>
+
+                  <li>
+                    <img src="../../html/images/open_export.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the 'Export' button near the lower right to export the image to your export folder. (e.g., "<code>~/Pictures/TuxPaint/</code>")                    </p>
+                    <br clear="all">
+                  </li>
+
+                  <li>
+                    <img src="../../html/images/open_slides.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the blue 'Slides' (slide projector) button at the lower left to go to slideshow mode. See "<a href="#slides">Slides</a>", below, for details.                    </p>
+                    <br clear="all">
+                  </li>
+
+                  <li>
+                    <img src="../../html/images/open_back.png"
+                        width="48"
+                        height="48"
+                        alt=""
+                        align="right">
+                    <p>
+                      Click the red 'Back' arrow button at the lower right of the list to cancel and return to the picture you were drawing.                    </p>
+                    <br clear="all">
+                  </li>
+                </ul>
+              </blockquote>
+
+              <p>
+                If choose to open a picture, and your current drawing hasn't been saved, you will be prompted as to whether you want to save it or not. (See "<a href="#save">Save</a>," below.)              </p>
+
+              <p>
+                <strong>Note:</strong> You can also press <b><code>[Control]</code></b> + <code><b>[O]</b></code> on the keyboard to bring up the 'Open' dialog.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong><a name="save"
+                 id="save">"Save" Command</a></strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_save.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                This saves your current picture.              </p>
+
+              <p>
+                If you haven't saved it before, it will create a new entry in the list of saved images. (i.e., it will create a new file)              </p>
+
+              <p>
+                <strong>Note:</strong> It won't ask you anything (e.g., for a filename). It will simply save the picture, and play a "camera shutter" sound effect.              </p>
+
+              <p>
+                If you <em>have</em> saved the picture before, or this is a picture you just loaded using the "Open" command, you will first be asked whether you want to save over the old version, or create a new entry (a new file).              </p>
+
+              <p align="center">
+                <img src="../../html/images/saveover.png"
+                   width="177"
+                   height="110"
+                   alt="">
+              </p>
+
+              <p>
+                <strong>Note:</strong> If either the "<code>saveover</code>" or "<code>saveovernew</code>" options are set, it won't ask before saving over. See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.              </p>
+
+              <p>
+                <strong>Note:</strong> You can also press <b><code>[Control]</code></b> + <code><b>[S]</b></code> on the keyboard to save.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Print" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_print.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Click this button and your picture will be printed!              </p>
+
+              <p>
+                On most platforms, you can also hold the <b><code>[Alt]</code></b> key (called <b><code>[OpciÃ³n]</code></b> on Macs) while clicking the 'Print' button to get a printer dialog. Note that this may not work if you're running Tux Paint in fullscreen mode. See below.              </p>
+
+              <dl>
+                <dt>
+                  <strong>Desactivar a impresiÃ³n</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    The "<code>noprint</code>" option can be set, which will disable Tux Paint's 'Print' button.                  </p>
+
+                  <p>
+                    See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Restricting Printing</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    The "<code>printdelay</code>" option can be set, which will only allow occasional printing &mdash; once every so many seconds, as configured by you.                  </p>
+
+                  <p>
+                    For example, with "<code>printdelay=60</code>" in Tux Paint's configuration file, printing can only occur once per minute (60 seconds).                  </p>
+
+                  <p>
+                    See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Ordes de impresiÃ³n</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    <em>(SÃ³ Linux e Unix)</em>
+                  </p>
+
+                  <p>
+                    Tux Paint imprime creando unha representaciÃ³n PostScript da imaxe e envÃ­aa a un programa externo. De xeito predeterminado, o programa Ã©:                  </p>
+
+                  <blockquote>
+                    <code>lpr</code>
+                  </blockquote>
+
+                  <p>
+                    This command can be changed by setting a "<code>printcommand</code>" option in Tux Paint's configuration file.                  </p>
+
+                  <p>
+                    An alternative print command can be invoked by holding the "<b><code>[Alt]</code></b>" key on the keyboard while clicking clicking the 'Print' button, as long as you're not in fullscreen mode, an alternative program is run. By default, the program is KDE's graphical print dialog:                  </p>
+
+                  <blockquote>
+                    <code>kprinter</code>
+                  </blockquote>
+
+                  <p>
+                    This command can be changed by setting a "<code>altprintcommand</code>" option in Tux Paint's configuration file.                  </p>
+
+                  <p>
+                    See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Axustes de impresiÃ³n</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    <em>(Windows e macOS)</em>
+                  </p>
+
+                  <p>
+                    By default, Tux Paint simply prints to the default printer with default settings when the 'Print' button is pushed.                  </p>
+
+                  <p>
+                    However, if you hold the <b><code>[Alt]</code></b> (or <b><code>[OpciÃ³n]</code></b>) key on the keyboard while clicking the 'Print' button, as long as you're not in fullscreen mode, your operating system's printer dialog will appear, where you can change the settings.                  </p>
+
+                  <p>
+                    You can have the printer configuration changes stored between Tux Paint sessions by setting the "<code>printcfg</code>" option.                  </p>
+
+                  <p>
+                    If the "<code>printcfg</code>" option is used, printer settings will be loaded from the file "<code>printcfg.cfg</code>" in your personal folder (see below). Any changes will be saved there as well.                  </p>
+
+                  <p>
+                    See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Dialogo de opciÃ³ns da impresora</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    By default, Tux Paint only shows the printer dialog (or, on Linux/Unix, runs the "<code>altprintcommand</code>"; e.g., "<code>kprinter</code>" instead of "<code>lpr</code>") if the <b><code>[Alt]</code></b> (or <b><code>[OpciÃ³n]</code></b>) key is held while clicking the 'Print' button.                  </p>
+
+                  <p>
+                    However, this behavior can be changed. You can have the printer dialog always appear by using "<code>--altprintalways</code>" on the command-line, or "<code>altprint=always</code>" in Tux Paint's configuration file. Conversely, you can prevent the <b><code>[Alt]</code></b>/<b><code>[OpciÃ³n]</code></b> key from having any effect by using "<code>--altprintnever</code>", or "<code>altprint=never</code>".                  </p>
+
+                  <p>
+                    See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.                  </p>
+                </dd>
+              </dl>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <a name="slides"
+                  id="slides"><strong>"Slides" Command (under "Open")</strong></a>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/open_slides.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                The 'Slides' button is available in the 'Open' dialog. It can be used to play a simple animation within Tux Paint, or a slideshow of pictures. It can also export an animated GIF based on the chosen images.              </p>
+
+              <dl>
+                <dt>
+                  <strong>Chosing pictures</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    When you enter the 'Slides' section of Tux Paint, it displays a list of your saved files, just like the 'Open' dialog.                  </p>
+
+                  <p>
+                    Click each of the images you wish to display in a slideshow-style presentation, one by one. A digit will appear over each image, letting you know in which order they will be displayed.                  </p>
+
+                  <p>
+                    You can click a selected image to unselect it (take it out of your slideshow). Click it again if you wish to add it to the end of the list.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Set playback speed</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    A sliding scale at the lower left of the screen (next to the 'Play' button) can be used to adjust the speed of the slideshow or animated GIF, from slowest to fastest. Choose the leftmost setting to disable automatic advancement during playback within Tux Paint â€” you will need to press a key or click to go to the next slide (see below).                  </p>
+
+                  <p>
+                    <strong>Note:</strong> The slowest setting does not automatically advance through the slides. Use it for when you want to step through them manually. (This does not apply to an exported animated GIF.)                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Playback in Tux Paint</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    To play a slideshow within Tux Paint, click the 'Play' button. (Note: If you hadn't selected ANY images, then ALL of your saved images will be played in the slideshow!)                  </p>
+
+                  <p>
+                    During the slideshow, press <b><code>[Espazo]</code></b>, <b><code>[Enter]</code></b> or <b><code>[Return]</code></b>, or the <b><code>[Right arrow]</code></b> â€” or click the 'Next' button at the lower left â€” to manually advance to the next slide. Press <b><code>[Left arrow]</code></b> to go back to the previous slide.                  </p>
+
+                  <p>
+                    Press <b><code>[Escape]</code></b>, or click the 'Back' button at the lower right, to exit the slideshow and return to the slideshow image selection screen.                  </p>
+                </dd>
+
+                <dt>
+                  <strong>Exporting an animated GIF</strong>
+                </dt>
+
+                <dd>
+                  <p>
+                    <img src=
+                    "../../html/images/open_slides_export_gif.png"
+                       width="48"
+                       height="48"
+                       alt=""
+                       align="right">
+                       Click the 'GIF Export' button near the lower right to have Tux Paint generate an animated GIF file based on the selected images.                  </p>
+
+                  <p>
+                    <strong>Note:</strong> At least two images must be selected. (To export a single image, use the 'Export' option from the main 'Open' dialog.) If no images are selected, Tux Paint will NOT attempt to generate a GIF based on all saved images.                  </p>
+
+                  <p>
+                    Pressing <b><code>[Escape]</code></b> during the export process will abort the process, and return you to the 'Slideshow' dialog.                  </p>
+                  <br clear="all">
+                </dd>
+              </dl>
+
+              <p>
+                Click 'Back' in the slideshow image selection screen to return to the 'Open' dialog.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>"Quit" Command</strong>
+            </dt>
+
+            <dd>
+              <img src="../../html/images/tool_quit.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  align="right">
+              <p>
+                Clicking the 'Quit' button, closing the Tux Paint window, or pushing the <b><code>[Escape]</code></b> key will quit Tux Paint.              </p>
+
+              <p>
+                You will first be prompted as to whether you really want to quit.              </p>
+
+              <p>
+                If you choose to quit, and you haven't saved the current picture, you will first be asked if wish to save it. If it's not a new image, you will then be asked if you want to save over the old version, or create a new entry. (See "<a href="#save">Save</a>" above.)              </p>
+
+              <p>
+                <strong>Note:</strong> If the image is saved, it will be reloaded automatically the next time you run Tux Paint -- unless the "<code>startblank</code>" option is set.              </p>
+
+              <p>
+                <strong>Note:</strong> The 'Quit' button within Tux Paint, and quitting via the <b><code>[Escape]</code></b> key, may be disabled, via the "<code>noquit</code>" option.              </p>
+
+              <p>
+                In that case, the "window close" button on Tux Paint's title bar (if not in fullscreen mode) or the <b><code>[Alt]</code></b> + <b><code>[F4]</code></b> key sequence may be used to quit.              </p>
+
+              <p>
+                If neither of those are possible, the key sequence of <b><code>[MaiÃºsculas]</code></b> + <b><code>[Control]</code></b> + <b><code>[Escape]</code></b> may be used to quit.              </p>
+
+              <p>
+                See the "<a href="OPTIONS.html"><em>Options</em></a>" documentation.              </p>
+              <br clear="all">
+
+              <hr size="1">
+            </dd>
+
+            <dt>
+              <strong>Sound Muting</strong>
+            </dt>
+
+            <dd>
+              <p>
+                There is no on-screen control button at this time, but by using the <b><code>[Alt]</code></b> + <b><code>[S]</code></b> keyboard sequence, sound effects can be disabled and re-enabled (muted and unmuted) while the program is running.              </p>
+
+              <p>
+                Note that if sounds are completely disabled via the "<code>nosound</code>" option, the <b><code>[Alt]</code></b> + <b><code>[S]</code></b> key combination has no effect. (i.e., it cannot be used to turn on sounds when the parent/teacher wants them disabled.)              </p>
+            </dd>
+          </dl>
+        </blockquote>
       </blockquote>
     </blockquote>
 
-    <hr size=1 noshade>
+    <hr size="2"
+        noshade>
 
-    <h3>Opcións das Estampas</h3>
+    <h1>
+      <a name="loading_into"
+          id="loading_into">Carga doutras imaxes en Tux Paint</a>
+    </h1>
+
     <blockquote>
-      <p>Ademais dunha forma gráfica, un descrición, e un efecto de son, as
-	 estampas tamén poden ter outros atributos. Para facer isto, cómpre
-	 crear un ficheiro de 'datos' para a estampa.</p>
-      
-      <p>Un ficheiro de datos dunha estampa é soamente un ficheiro de texto que
-	 contén as opcións.</p>
-      
-      <p>O ficheiro ten o mesmo nome cá imaxe PNG, pero con extensión "<code>.dat</code>".
-	 (p.ex., o ficheiro de datos de "<code>debuxo.png</code>" é o ficheiro de texto
-	 "<code>debuxo.dat</code>" que está no mesmo directorio).</p>
+      <p>
+        Tux Paint's 'Open' dialog only displays pictures you created with Tux Paint. So what do you do if you want to load some other drawinng or even a photograph into Tux Paint, so you can edit or draw on it?      </p>
 
-      <h4>Estampas de Cor</h4>
+      <p>
+        You can simply convert the picture to the format Tux Paint uses &mdash; PNG (Portable Network Graphic) &mdash; and place it in Tux Paint's "<code>saved</code>" directory/folder. Here is where to find it (by default):      </p>
+
+      <dl>
+        <dt>
+          <strong>Windows 10, 8, 7, Vista</strong>
+        </dt>
+
+        <dd>
+          Inside the user's "<code>AppData</code>" folder, e.g.: "<code>C:\Users\<em>nome de usuario</em>\AppData\Roaming\TuxPaint\saved\</code>".        </dd>
+
+        <dt>
+          <strong>Windows 2000, XP</strong>
+        </dt>
+
+        <dd>
+          Inside the user's "<code>Application Data</code>" folder, e.g.: "<code>C:\Documents and Settings\<em>nome de usuario</em>\Application Data\TuxPaint\saved\</code>".        </dd>
+
+        <dt>
+          <strong>macOS</strong>
+        </dt>
+
+        <dd>
+          Inside the user's "<code>Library</code>" folder, e.g.: "<code>/Users/<em>nome de usuario</em>/Library/Application Support/Tux Paint/saved/</code>".        </dd>
+
+        <dt>
+          <strong>Linux/Unix</strong>
+        </dt>
+
+        <dd>
+          Dentro dun directorio agochado Â«<code>.tuxpaint</code>Â», no seu directorio persoal (Â«<code>$HOME</code>Â»), p. ex.: Â«<code>/home/<em>nome de usuario</em>/.tuxpaint/saved/</code>Â».        </dd>
+      </dl>
+
+      <p>
+        <strong>Note:</strong> It is also from this folder that you can copy or open pictures drawn in Tux Paint using <em>other</em> applications, though the 'Export' option from Tux Paint's 'Open' dialog can be used to copy them to a location that's easier and safer to access.      </p>
+
+      <h2>
+        Using the import script, "<code>tuxpaint-import</code>"      </h2>
+
       <blockquote>
-	<p>As estampas poden ser feitas para ser "colorables" ou "tinguibles".</p>
-      
-	<h5>Colorables</h5>
-	<blockquote>
-	  <p>As estampas "colorables" son coma pinceis - colles a estampa para
-	     conseguir a forma, e despois colles a cor que queres que teña. (As
-	     estampas de símbolos, coma os matemáticos e os musicais son un
-	     exemplo).</p>
+        <p>
+          Linux and Unix users can use the "<code>tuxpaint-import</code>" shell script which gets installed when you install Tux Paint. It uses some NetPBM tools to convert the image ("<code>anytopnm</code>"), resize it so that it will fit in Tux Paint's canvas ("<code>pnmscale</code>"), and convert it to a PNG ("<code>pnmtopng</code>").        </p>
 
-	  <p>Non se usa nada da imaxe orixinal agás a transparencia (canle
-	     "alfa"). A cor da estampa é unha cor sólida.</p>
+        <p>
+          It also uses the "<code>date</code>" command to get the current time and date, which is the file-naming convention Tux Paint uses for saved files. (Remember, you are never asked for a 'filename' when you go to save or open pictures!)        </p>
 
-	  <center><img src="images/ex_colorable.png" width=74 height=92
-	  alt=""></center>
-	
-	  <p>Engade a palabra "<code><b>colorable</b></code>" ó ficheiro de datos da estampa.</p>
-	</blockquote>
+        <p>
+          To use this script, simply run it from a command-line prompt, and provide it the name(s) of the file(s) you wish to convert.        </p>
 
-	<h5>Tinguibles</h5>
-	<blockquote>
-	  <p>As estampas "tinguibles" son similares ás "colorables", excepto por
-	     que se conservan os detalles da imaxe orixinal. (Expresándoo
-	     técnicamente, úsase a imaxe orixinal, pero o seu matiz cámbiase,
-	     baseándose na cor seleccionada).</p>
+        <p>
+          They will be converted and placed in your Tux Paint "<code>saved</code>" directory. (Note: If you're doing this for a different user (e.g., your child) you'll need to make sure to run the command under <em>their</em> account.)        </p>
 
-	  <center><img src="images/ex_tintable.png" width=151 height=78
-	  alt=""></center>
+        <p>
+          Exemplo:        </p>
 
-	  <p>Engade a palabra "<code><b>tintable</b></code>" ó ficheiro de datos da estampa.</p>
+        <blockquote>
+          <code>$ <strong>tuxpaint-import grandma.jpg</strong><br>
+          grandma.jpg -&gt;
+          /home/username/.tuxpaint/saved/20210205160922.png<br>
+          jpegtopnm: WRITING A PPM FILE</code>
+        </blockquote>
 
-	  <p>Algunhas veces non queres tinguir as partes en branco ou gris dunha
-	     imaxe (mira, por exemplo, a estampa do rotulador imborrable no
-	     paquete predeterminado de estampas). Podes engadir a palabra
-	     "<code><b>notintgray</b></code>" ó ficheiro de datos da estampa para conseguir isto.
-	     Deste xeito só se tinguirán as áreas cunha saturación superior ó
-	     25%.</p>
+        <p>
+          The first line ("<code>tuxpaint-import grandma.jpg</code>") is the command to run. The following two lines are output from the program while it's working.        </p>
 
-	</blockquote>
+        <p>
+          Now you can load Tux Paint, and a version of that original picture will be available under the 'Open' dialog. Just double-click its icon!        </p>
       </blockquote>
 
-      <h4>Estampas Inalterables</h4>
+      <h2>
+        Importing Pictures Manually      </h2>
+
       <blockquote>
-	<p>Por defecto, unha estampa pode ser invertida co de riba para abaixo,
-	   espellada, ou as dúas cousas a un tempo.
-	   Isto faise usando os botóns de control debaixo do selector de
-	   estampas, na parte inferior esquerda da ventá de Tux Paint.</p>
+        <p>
+          Windows, macOS, and Haiku users who wish to import arbitrary images into Tux Paint must do so via a manual process.        </p>
 
-	<p>Algunhas veces, non ten sentido que unha estampa poida inverterse ou
-	   espellarse; por exemplo, as estampas de letras ou números. A veces as
-	   estampas son simétricas, así que deixarlle ó usuario invertelas ou
-	   espellalas non é útil.</p>
+        <p>
+          Load a graphics program that is capable of both loading your picture and saving a PNG format file. (See the documentation file "<a href="PNG.html">PNG.html</a>" for a list of suggested software, and other references.)        </p>
 
-	<p>Para facer que non se poida inverter unha estampa, engade a opción
-	"<code><b>noflip</b></code>" ó ficheiro de datos da estampa.</p>
+        <p>
+          When Tux Paint loads an image that's not the same size as its drawing canvas, it scales (and sometimes smears the edges of) the image so that it fits within the canvas.        </p>
 
-	<p>Para evitar que unha estampa poida ser espellada, engade a opción
-	"<code><b>nomirror</b></code>" ó ficheiro de datos da estampa.</p>
+        <p>
+          To avoid having the image stretched or smeared, you can resize it to Tux Paint's canvas size. This size depends on the size of the Tux Paint window, or resolution at which Tux Paint is run, if in fullscreen. (<strong>Note:</strong> The default resolution is 800x600.) See "Calculating Image Dimensions", below.        </p>
+
+        <p>
+          Save the picture in PNG format. It is <strong>highly</strong>
+          recommended that you name the filename using the current
+          date and time, since that's the convention Tux Paint
+          uses:
+        </p>
+
+        <blockquote>
+          <code><strong>AAAAMMDDhhmmss</strong>.png</code>
+        </blockquote>
+
+        <ul>
+          <li><code>AAAA</code> = Ano</li>
+          <li><code>MM</code> = Month (two digits, "01"-"12")</li>
+          <li><code>DD</code> = Day of month (two digits, "01"-"31")</li>
+          <li><code>HH</code> = Hour (two digits, in 24-hour format, "00"-"23")</li>
+          <li><code>mm</code> = Minute (two digits, "00"-"59")</li>
+          <li><code>ss</code> = Seconds (two digits, "00"-"59")</li>
+        </ul>
+
+        <p>
+          Example: "<code>20210205160922</code>.png", for  5 Febreiro 2021 at 16:09:22.        </p>
+
+        <p>
+          Place this PNG file in your Tux Paint "<code>saved</code>" directory/folder. (See above.)        </p>
+
+        <h3>
+          Calculating Image Dimensions        </h3>
+
+        <blockquote>
+          <p>
+            This part of the documentation needs to be rewritten, since the new "<code>buttonsize</code>" option was added. For now, try drawing and saving an image within Tux Paint, then determine what size (pixel width and height) it came out to, and try to match that when scaling the picture(s) you're importing into Tux Paint.          </p>
+        </blockquote>
       </blockquote>
-
-
-      <h4>Usuarios de Windows</h4>
-      <blockquote>
-	<p>Podes usar o Bloc de Notas (NotePad) ou o WordPad para crear estes
-	   ficheiros. Asegúrate de gardalos coma Texto Plano, e de que o seu
-	   nome de ficheiro ten "<code>.dat</code>" no remate, e non "<code>.txt</code>"...</p>
-      </blockquote>
     </blockquote>
 
-    <h3>Imaxes Pre-Espelladas</h3>
-    <blockquote>
-      <p>Nalgúns casos, poderías querer proporcionar unha versión pre-debuxada
-	 dunha imaxes espellada dunha estampa. Por exemplo, imaxina un debuxo
-	 dun camión de bombeiros cas palabras "<i>Bombeiros</i>" escritas nun lado.
-	 ¡Probablementes non quererás que o texto apareza ó revés cando se
-	 espelle a imaxe!</p>
+    <hr size="2"
+        noshade>
 
-      <p>Para crear unha versión espellada dunha estampa que queres que use Tux
-	 Paint, mellor ca espellala, simplemente crea un segundo ficheiro "<code>.png</code>"
-	 co mesmo nome, excepto que levará a cadea "<code><b>_mirror</b></code>" antes da extensión.</p>
-      
-      <p>Por exemplo, para a estampa "<code><b>camion.png</b></code>" poderías crear outro ficheiro
-	 chamado "<code><b>camion_mirror.png</b></code>", que se usará cando se espelle a estampa
-	 (mellor ca usar unha versión ó revés de '<code>camion.png</code>').</p>
-    </blockquote>
-    
-  </blockquote>
-  
-  <hr size=1 noshade>
-
-
-  <h2>Fontes</h2>
-  <blockquote>
-    <img src="images/fontsizes.png" width=48 height=48 alt="" align=right>
-
-    <p>As fontes que usa Tux Paint son as TrueType Fonts (TTF).</p>
-    
-    <p>Simplemente ponas no directorio "<code><b>fonts</b></code>". Tux Paint cargará a fonte e
-       proporcionará catro tamaños diferentes no selector 'Letras' cando se use
-       a ferramenta 'Texto'.</p>
-
-    <br clear=all>
-  </blockquote>
-
-  <hr size=1 noshade>
-
-
-  <h2>Imaxes 'Iniciais'</h2>
-  <blockquote>
-    <img src="images/open_open.png" width=48 height=48 alt="" align=right>
-
-    <p>As imaxes 'Iniciais' aparecen no diálogo 'Abrir', xunto cos debuxos que
-       creaches. Teñen un botón verde de fondo, en vez de azul.</p>
-    
-    <p>A diferencia dos teus debuxos gardados, cando seleccionas e abres unha
-       imaxe 'inicial', realmente estás creando un novo debuxo. No canto de
-       estar en branco, o novo debuxo contén o contido da imaxe 'inicial'.
-       Ademais, cando editas o teu novo debuxo, o contido da imaxe 'inicial'
-       orixinal aféctalle.</p>
-
-    <b>Estilo Caderno de Debuxo (Coloring-Book Style)</b>
-    
-    <blockquote>
-      <p>O tipo de imaxe 'inicial' máis básico é semellante a un debuxo dun
-	 caderno de debuxo (coloring book). É o contorno dunha forma que se pode
-	 colorear e engadirlle detalles. En Tux Paint, mentres debuxas, escribes
-	 texto, ou pos estampas, o contorno permanece 'enriba' do que debuxas.
-	 Podes borrar as partes do debuxo que fixeches, pero non podes borrar o
-	 contorno.</p>
-
-      <p>Para crear este tipo de imaxe 'inicial', simplemente debuxa un debuxo
-	 sen contornos (outlined) nun programa de debuxo, fai que o resto do
-	 gráfico sexa transparente (isto aparecerá en branco no Tux Paint), e
-	 gárdao coma un ficheiro de imaxe con formato PNG.</p>
-    </blockquote>
-
-    <b>Estilo Escenario</b>
+    <h1>
+      <a name="further"
+          id="further">Further Reading</a>
+    </h1>
 
     <blockquote>
-      <p>Xunto ca capa (overlay) de estilo 'caderno de debuxo' (coloring-book
-	 style), tamén podes proporcionar unha imaxe de fondo distinta coma
-	 parte dunha imaxe 'inicial'. A capa actúa do mesmo xeito: non se pode
-	 debuxar enriba dela, borrarse, nin lle afectan as ferramentas 'Máxicas'.
-	 ¡Sen embargo, no fondo si que se pode!</p>
+      Other documentation included with Tux Paint (found in the "<code>docs</code>" folder/directory) includes:      <ul>
+        <li>
+          <a href="../magic-docs/html/index.html">DocumentaciÃ³n da ferramenta Â«MaxiaÂ»  (Â«<code>magic-docs</code>Â»)</a><br>
+          Documentation for each of the currently-installed 'Magic' tools.        </li>
 
-      <p>Cando se usa a ferramenta 'Goma' nun debuxo baseado neste tipo de imaxe
-	 'inicial', no canto de poñer o lenzo en branco, volve aparecer nesa
-	 parte do lenzo o debuxo do fondo orixinal.</p>
+        <li>
+          <a href="../../AUTHORS.txt">AUTHORS.txt</a><br>
+          Lista de autores e colaboradores        </li>
 
-      <p>Creando unha capa e un fondo, podes crear unha imaxe 'inicial' que
-	 simule profundidade. Imaxina un fondo que amosa o océano, e unha capa
-	 que é o debuxo dun arrecife. Entón podes debuxar (ou estampar) peixes
-	 no debuxo. Estes aparecerán no océano, pero nunca 'diante' do arrecife.</p>
+        <li>
+          <a href="../../CHANGES.txt">CHANGES.txt</a><br>
+          Summary of what has changed between releases of Tux Paint.        </li>
 
-      <p>Para crear este tipo de imaxe 'inicial', simplemente crea unha capa
-	 (con transparencia alfa) como se describe enriba, e gárdaa coma unha
-	 imaxe PNG. Despois crea outra imaxe (sen transparencia), e gárdaa co
-	 mesmo nome de ficheiro, pero con "<code>-back</code>" no final do nome. (p.ex.,
-	 "<code>arrecife-back.png</code>" sería o debuxo do océano do fondo que lle
-	 corresponde á capa "<code>arrecife.png</code>", ou primeiro plano).</p>
+        <li>
+          <a href="../../COPYING.txt">COPYING.txt</a><br>
+          Tux Paint's software license, the <em>GNU General Public License</em> (GPL)        </li>
+
+        <li>
+          <a href="INSTALL.html">INSTALL.html</a><br>
+          Instructions for compiling and installing Tux Paint, when applicable.        </li>
+
+        <li>
+          <a href="EXTENDING.html">EXTENDING.html</a><br>
+          Detailed instructions on extending Tux Paint: creating brushes, stamps, starters, and templates; adding fonts; and creating new on-screen keyboard layouts and input methods.        </li>
+
+        <li>
+          <a href="OPTIONS.html">OPTIONS.html</a><br>
+          Detailed instructions on command-line and configuration-file options, for those who don't want to use the Tux Paint Config. tool to manage Tux Paint's configuration.        </li>
+
+        <li>
+          <a href="PNG.html">PNG.html</a><br>
+          Notes on creating PNG format bitmapped (raster) images for use in Tux Paint.        </li>
+
+        <li>
+          <a href="SVG.html">SVG.html</a><br>
+          Notes on creating SVG format vector images for use in Tux Paint.        </li>
+
+        <li>
+          <a href="SIGNALS.html">SIGNALS.html</a><br>
+          Information about the POSIX signals that Tux Paint responds to.        </li>
+      </ul>
     </blockquote>
-    
-    <p>As imaxes 'iniciais' deben ter o mesmo tamaño có lenzo de Tux Paint. No
-       modo predeterminado 640x480, sería de 448x376 pixels. Se estás usando o
-       modo 800x600 mode, debe ser de 608x496. (Debe ter 192 pixels menos ó
-       ancho, e 104 pixels menos ó alto cá resolución).</p>
-    
-    <p>Ponas no directorio "<code><b>starters</b></code>". Cando se acceda ó diálogo 'Abrir' en Tux
-       Paint, as imaxes 'iniciais' aparecerán cun fondo verde no comezo da lista.</p>
-    
-    <p><b>Nota:</b> Nota: As imaxes 'iniciais' non poden sobrescribirse dende Tux Paint, xa
-       que cargar unha imaxe 'inicial' é en realidade crear unha imaxe nova. (
-       Pero non está en branco, xa que hai algo co que traballar). O comando
-       'Gardar' simplemente crea un novo debuxo, coma se se usara o comando
-       'Novo'.</p>
 
-    <p><b>Nota:</b> As imaxes 'iniciais' están 'ligadas' ós debuxos gardados, usando
-       un pequeno ficheiro de texto que ten o mesmo nome có ficheiro gardado,
-       pero con "<code>.dat</code>" coma extensión. Isto permite que a capa superior e fondo,
-       se hai algún, continuen afectando ó debuxo incluso despois de que pechar
-       o Tux Paint, ou se cargue ou comece outro debuxo. (Noutras palabras, se
-       baseas un debuxo nunha imaxe 'inicial', esta sempre lle afectará).</p>
+    <hr size="2"
+        noshade>
 
-    <br clear=all>
-  </blockquote>
-</blockquote>
+    <h1>
+      <a name="help"
+          id="help">How to Get Help</a>
+    </h1>
 
-<hr size=2 noshade>
+    <blockquote>
+      <p>
+        If you need help, there are numerous ways to interact with Tux Paint developers and other users.      </p>
+      <ul>
+        <li>Report bugs or request new features via the project's bug-tracking system</li>
+        <li>Participate in the various project mailing lists</li>
+        <li>Chat with developers and other users over IRC</li>
+        <li>Ou pÃ³Ã±ase en contacto directamente cos desenvolvedores</li>
+      </ul>
 
+      <p>
+        To learn more, visit the "Contacto" page of the official Tux Paint website: <a href="http://tuxpaint.org/contact/">http://tuxpaint.org/contact/</a>      </p>
+    </blockquote>
 
-<h1>Lecturas Adicionais</h1>
-<blockquote>
-  A outra documentación incluída con (no cartafol/directorio "<code>docs</code>":
+    <hr size="2"
+        noshade>
 
-  <ul>
-  <li><a href="../AUTHORS.txt">AUTHORS.txt</a><br>
-    Lista de autores e contribuíntes
-  
-  <li><a href="../CHANGES.txt">CHANGES.txt</a><br>
-    Resumo dos trocos entre versións
+    <h1>
+      <a name="participate"
+          id="participate">How to Participate</a>
+    </h1>
 
-  <li><a href="../COPYING.txt">COPYING.txt</a><br>
-    Licenza (A GNU General Public License)
+    <blockquote>
+      <p>
+        Tux Paint is a volunteer-driven project, and we're happy to accept your help in a variety of ways.      </p>
 
-  <li><a href="../INSTALL.txt">INSTALL.txt</a><br>
-    Instruccións para compilar/instalar, cando sexa posible
+      <ul>
+        <li>Traducir Tux Paint a outro idioma</li>
+        <li>Improve existing translations</li>
+        <li>Create artwork (stamps, starters, templates, brushes)</li>
+        <li>Add or improve features or magic tools</li>
+        <li>Create classroom curriculum</li>
+        <li>Promote or help support others using Tux Paint</li>
+      </ul>
 
-  <li><a href="OPTIONS.html">OPTIONS.html</a><br>
-    Instruccións detalladas sobre as opcións da liña de comandos e do
-    ficheiro de configuración, para aqueles que non queren usar Tux Paint
-    Config.
-    
-  <li><a href="../PNG.txt">PNG.txt</a><br>
-    Notas para crear imaxes de formato PNG para usar en Tux Paint
-
-  <li><a href="../TODO.txt">TODO.txt</a><br>
-    Unha lista das características pendentes ou erros que necesitan solución
-  </ul>
-</blockquote>
-
-<hr size=2 noshade>
-
-
-<h1>Como Conseguir Axuda</h1>
-<blockquote>
-  <p>Se necesitas axuda, síntete libre de contactar con New Breed Software:</p>
-
-  <blockquote>
-    <a href="http://www.newbreedsoftware.com/">http://www.newbreedsoftware.com/</a>
-  </blockquote>
-
-  <p>Tamén podes participar nas múltiples listas de correo de Tux Paint:</p>
-
-  <blockquote>
-    <a href="http://www.newbreedsoftware.com/tuxpaint/lists/">http://www.newbreedsoftware.com/tuxpaint/lists/</a>
-  </blockquote>
-  
-</blockquote>
-
-</body></html>
-
+      <p>
+        To learn more, visit the "Help Us" page of the official Tux Paint website: <a href="http://tuxpaint.org/help/">http://tuxpaint.org/help/</a>      </p>
+    </blockquote>
+  </body>
+</html>

@@ -25,8 +25,8 @@ ES_TEXTFILES:=$(patsubst es_ES.UTF-8/html/%.html,es_ES.UTF-8/%.txt,$(ES_HTMLFILE
 FR_HTMLFILES:=$(wildcard fr_FR.UTF-8/html/*.html)
 FR_TEXTFILES:=$(patsubst fr_FR.UTF-8/html/%.html,fr_FR.UTF-8/%.txt,$(FR_HTMLFILES))
 
-GL_HTMLFILES:=$(wildcard gl/html/*.html)
-GL_TEXTFILES:=$(patsubst gl/html/%.html,gl/%.txt,$(GL_HTMLFILES))
+GL_HTMLFILES:=$(wildcard gl_ES.UTF-8/html/*.html)
+GL_TEXTFILES:=$(patsubst gl_ES.UTF-8/html/%.html,gl_ES.UTF-8/%.txt,$(GL_HTMLFILES))
 
 IT_HTMLFILES:=$(wildcard it/html/*.html)
 IT_TEXTFILES:=$(patsubst it/html/%.html,it/%.txt,$(IT_HTMLFILES))
@@ -87,7 +87,7 @@ $(ES_TEXTFILES): es_ES.UTF-8/%.txt: es_ES.UTF-8/html/%.html
 $(FR_TEXTFILES): fr_FR.UTF-8/%.txt: fr_FR.UTF-8/html/%.html
 	$(LINKS) $< > $@
 
-$(GL_TEXTFILES): gl/%.txt: gl/html/%.html
+$(GL_TEXTFILES): gl_ES.UTF-8/%.txt: gl_ES.UTF-8/html/%.html
 	$(LINKS) $< > $@
 
 $(IT_TEXTFILES): it/%.txt: it/html/%.html
