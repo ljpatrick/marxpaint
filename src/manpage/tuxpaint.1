@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.01.18
-.TH TUXPAINT 1 "18 January 2021" "0.9.26" "Tux Paint"
+.\" tuxpaint.1 - 2021.02.05
+.TH TUXPAINT 1 "5 February 2021" "0.9.26" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -70,6 +70,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-newcolorslast]
 .br
 [\-\-mirrorstamps]
+.br
+[\-\-colorsrows=ROWS]
 .br
 [\-\-mouse-accessibility]
 .br
@@ -449,6 +451,12 @@ text which can be altered or moved later.
 .B \-\-newcolorslast \-\-newcolorsfirst
 List solid (blank) colors at the end, or beginning (default) of the
 options displayed when using the \fINew\fP tool to start a new picture.
+
+.TP 8
+.B \-\-colorsrows=\fIrows\fP
+How many rows of color palette buttons to show; useful when using
+a large color palette, and/or for use with coarse input devices
+(like eyegaze trackers).
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps

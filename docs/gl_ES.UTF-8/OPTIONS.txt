@@ -6,7 +6,7 @@ Documentación de opcións
     Copyright © 2002-2021 por varios colaboradores; vexa AUTORES (AUTHORS).
                             http://www.tuxpaint.org/
 
-                                22 Xaneiro 2021
+                                5 Febreiro 2021
 
      ----------------------------------------------------------------------
 
@@ -735,6 +735,12 @@ Usuarios de Windows
              3-digit hexadecimal, each digit is used for both the high and
              low halves of the byte, so "#FFF" is the same as "#FFFFFF", not
              "#F0F0F0".
+
+     colorsrows=ROWS
+
+             How many rows of color palette buttons to show; useful when
+             using a large color palette (see "colorfile", above), and/or for
+             use with coarse input devices (like eyegaze trackers).
 
      lang=IDIOMA
 

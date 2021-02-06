@@ -13,6 +13,11 @@ $Id$
     ------------
     * [WIP] Larger UI buttons
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * It's now possible to increase how many rows of buttons are shown
+      for the color palette at the bottom of the screen.
+      (Use the "colorsrows" option.)
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
       
   * New Magic Tools:
     ----------------

@@ -3,7 +3,7 @@
 # Bill Kendrick <bill@newbreedsoftware.com>; http://www.tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2021-01-23
+# Last modified 2021-02-05
 #
 # $Id$
 
@@ -48,6 +48,7 @@ _tuxpaint()
 			--outlines --nooutlines \
 			--stamps --nostamps \
                         --newcolorsfirst --newcolorslast \
+                        --colorsrows= \
 			--sysfonts --nosysfonts \
 			--nostampcontrols --stampcontrols \
 			--nomagiccontrols --magiccontrols \

@@ -6,7 +6,7 @@ Options Documentation
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                22 janvier 2021
+                                 5 février 2021
 
      ----------------------------------------------------------------------
 
@@ -713,6 +713,12 @@ Windows Users
              3-digit hexadecimal, each digit is used for both the high and
              low halves of the byte, so "#FFF" is the same as "#FFFFFF", not
              "#F0F0F0".
+
+     colorsrows=ROWS
+
+             How many rows of color palette buttons to show; useful when
+             using a large color palette (see "colorfile", above), and/or for
+             use with coarse input devices (like eyegaze trackers).
 
      lang=LANGUAGE
 
