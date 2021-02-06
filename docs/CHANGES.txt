@@ -30,6 +30,8 @@ $Id$
       these docs, which contain a variety of minor updates (and also a
       few which had previously only been available as plain TXT are now
       available as HTML).
+      + Galician
+        Miguel Anxo Bouzada <mbouzada@gmail.com>
 
     * Expanded the steps for making and posting releases.
 
