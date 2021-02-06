@@ -48,7 +48,8 @@ _tuxpaint()
 			--outlines --nooutlines \
 			--stamps --nostamps \
                         --newcolorsfirst --newcolorslast \
-                        --colorsrows= \
+                        --colorsrows=1 --colorsrows=2 \
+                        --colorsrows=3 \
 			--sysfonts --nosysfonts \
 			--nostampcontrols --stampcontrols \
 			--nomagiccontrols --magiccontrols \

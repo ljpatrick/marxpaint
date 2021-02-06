@@ -740,7 +740,8 @@ Usuarios de Windows
 
              How many rows of color palette buttons to show; useful when
              using a large color palette (see "colorfile", above), and/or for
-             use with coarse input devices (like eyegaze trackers).
+             use with coarse input devices (like eyegaze trackers). "ROWS"
+             may be between "1" (the default) and "3".
 
      lang=IDIOMA
 
