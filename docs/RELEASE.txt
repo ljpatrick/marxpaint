@@ -1,5 +1,14 @@
 Release checklist for Tux Paint
-Last updated 2021-01-13 -bjk
+Last updated 2021-02-05 -bjk
+
+During development
+------------------
+
+Make sure any new options are documented in the "OPTIONS" docs
+(now maintained in the "tuxpaint-docs" repository; see below),
+the manpage (see below), and listed in the shell completion file
+(src/tuxpaint-completion.bash), as appropriate.
+
 
 Preparing
 ---------
@@ -19,11 +28,19 @@ a .tar.gz source tarball, and making the tarball available for download.
      * macos/Info.plist (macOS build)
      * win32/resources.rc (Windows mingw/msys build)
 
-   * Documentation
-     (For HTML variants, be sure to run "make" in "docs/", to
-     produce plaintext alternatives!)
-
+   * Changelog
      * docs/CHANGES.txt
+
+   * Other Documentation
+
+     NOTE: As of Tux Paint 0.9.26, most of the documentation
+     is now maintained in a separate source-code repository,
+     "tuxpaint-docs".  Updates should be made there, and
+     then copied over to the "tuxpaint" repository.
+
+     Here, be sure to run "make" in "docs/", to produce plaintext
+     alternatives of the HTML files.
+
      * docs/en/html/README.html
      * docs/en/html/FAQ.html
      * docs/en/html/OPTIONS.html
@@ -32,16 +49,6 @@ a .tar.gz source tarball, and making the tarball available for download.
 
    * Manual page (manpage)
      * src/manpage/tuxpaint.1
-
- * Tidy the HTML documentation
-
-   (Be sure to run "make" in "docs/", to produce plaintext alternatives!)
-
-     tidy -i --markup yes --vertical-space yes --indent yes --indent-attributes yes INFILE.html > OUTFILE.html
-
-   Make certain it looks okay, and stil renders properly in a browser.
-   If not, correct the issues!  Then replace the original with the new
-   version 'tidy' created.
 
  * Rebuild 'tuxpaint.desktop' by running "make" in "src/po/")
 
