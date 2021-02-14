@@ -39,7 +39,7 @@ What Is "Tux Paint"?
        they use the program. It provides a blank canvas and a variety of
        drawing tools to help your child be creative.
 
-License:
+Licence :
 
        Tux Paint is an Open Source project, Free Software released under the
        GNU General Public License (GPL). It is free, and the 'source code'
@@ -874,7 +874,7 @@ Using the import script, "tuxpaint-import"
        Example:
 
          $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20210212093342.png
+         grandma.jpg -> /home/username/.tuxpaint/saved/20210214005741.png
          jpegtopnm: WRITING A PPM FILE
 
        The first line ("tuxpaint-import grandma.jpg") is the command to run.
@@ -916,7 +916,7 @@ Importing Pictures Manually
          * mm = Minute (two digits, "00"-"59")
          * ss = Seconds (two digits, "00"-"59")
 
-       Example: "20210212093342.png", for 12 février 2021 at 09:33:42.
+       Example: "20210214005741.png", for 14 février 2021 at 00:57:41.
 
        Place this PNG file in your Tux Paint "saved" directory/folder. (See
        above.)
