@@ -8908,7 +8908,8 @@ static void draw_fonts(void)
       SDL_BlitSurface(img_italic, NULL, screen, &dest);
 
       most = most + gd_toolopt.cols;
-      printf("most %d\n", most);
+      // printf("most %d\n", most);
+
       /* Show shrink button: */
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
