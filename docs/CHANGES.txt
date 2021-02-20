@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.February.15 (0.9.26)
+2021.February.21 (0.9.26)
   * New Features
     ------------
     * [WIP] Larger UI buttons
@@ -69,6 +69,11 @@ $Id$
     --------------------
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
+
+  * Bug Fixes:
+    ----------
+    * Halftone magic tool wasn't loading due to a problem
+      with its sound effect file.
 
 2020.December.27 (0.9.25)
   * New Features
