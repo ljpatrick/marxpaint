@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 26, 2021
+  June 14, 2002 - February 20, 2021
 */
 
 
@@ -751,6 +751,7 @@ static int WINDOW_HEIGHT = 600;
 
 static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
 static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
+static void magic_xorpixel(SDL_Surface * surface, int x, int y);
 
 /**
  * Sets a variety of screen layout globals, based on the
@@ -1915,6 +1916,7 @@ static void draw_none(void);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
+static void _xorpixel(SDL_Surface * surf, int x, int y);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
@@ -9920,32 +9922,26 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
 #endif
 
 
-/**
- * FIXME
- */
 /* XOR must show up on black, white, 0x7f grey, and 0x80 grey.
   XOR must be exactly 100% perfectly reversable. */
-static void xorpixel(int x, int y)
+static void _xorpixel(SDL_Surface * surf, int x, int y)
 {
   Uint8 *p;
   int BytesPerPixel;
 
   /* if outside the canvas, return */
-  if ((unsigned)x >= (unsigned)canvas->w || (unsigned)y >= (unsigned)canvas->h)
+  if (x < 0 || x >= surf->w || y < 0 || y >= surf->h)
     return;
-  /* now switch to screen coordinates */
-  x += r_canvas.x;
-  y += r_canvas.y;
 
   /* Always 4, except 3 when loading a saved image. */
-  BytesPerPixel = screen->format->BytesPerPixel;
+  BytesPerPixel = surf->format->BytesPerPixel;
 
   /* Set a pointer to the exact location in memory of the pixel */
-  p = (Uint8 *) (((Uint8 *) screen->pixels) +   /* Start: beginning of RAM */
-                 (y * screen->pitch) +  /* Go down Y lines */
+  p = (Uint8 *) (((Uint8 *) surf->pixels) +   /* Start: beginning of RAM */
+                 (y * surf->pitch) +  /* Go down Y lines */
                  (x * BytesPerPixel));  /* Go in X pixels */
 
-  /* XOR the (correctly-sized) piece of data in the screen's RAM */
+  /* XOR the (correctly-sized) piece of data in the surface's RAM */
   if (likely(BytesPerPixel == 4))
     *(Uint32 *) p ^= 0x80808080u;       /* 32-bit display */
   else if (BytesPerPixel == 1)
@@ -9958,6 +9954,21 @@ static void xorpixel(int x, int y)
       p[1] ^= 0x80;
       p[2] ^= 0x80;
     }
+}
+
+/**
+ * FIXME
+ */
+static void xorpixel(int x, int y) {
+  /* if outside the canvas, return */
+  if ((unsigned)x >= (unsigned)canvas->w || (unsigned)y >= (unsigned)canvas->h)
+    return;
+
+  /* now switch to screen coordinates */
+  x += r_canvas.x;
+  y += r_canvas.y;
+
+  _xorpixel(screen, x, y);
 }
 
 
@@ -18655,6 +18666,7 @@ static void load_magic_plugins(void)
           magic_api_struct->in_circle = in_circle_rad;
           magic_api_struct->getpixel = magic_getpixel;
           magic_api_struct->putpixel = magic_putpixel;
+          magic_api_struct->xorpixel = magic_xorpixel;
           magic_api_struct->line = magic_line_func;
           magic_api_struct->playsound = magic_playsound;
           magic_api_struct->stopsound = magic_stopsound;
@@ -21299,6 +21311,14 @@ static void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 {
   return (getpixels[surface->format->BytesPerPixel] (surface, x, y));
+}
+
+/**
+ * FIXME
+ */
+static void magic_xorpixel(SDL_Surface * surface, int x, int y)
+{
+  _xorpixel(surface, x, y);
 }
 
 

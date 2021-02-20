@@ -18,6 +18,8 @@ $Id$
       for the color palette at the bottom of the screen.
       (Use the "colorsrows" option.)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * A new "xorpixel()" function has been added to the Magic Tools API.
       
   * New Magic Tools:
     ----------------

@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2020
+# Copyright (c) 2002-2021
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 27, 2020
+# June 14, 2002 - January 2, 2020
 
 
 # The version number, for release:
@@ -15,7 +15,7 @@ ifdef SOURCE_DATE_EPOCH
 else
   VER_DATE=$(shell date "+%Y-%m-%d")
 endif
-MAGIC_API_VERSION:=0x00000003
+MAGIC_API_VERSION:=0x00000004
 
 # Need to know the OS
 
