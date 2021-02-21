@@ -11,7 +11,7 @@ $Id$
 2021.February.21 (0.9.26)
   * New Features
     ------------
-    * [WIP] Larger UI buttons
+    * Larger UI buttons
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * It's now possible to increase how many rows of buttons are shown
@@ -19,10 +19,13 @@ $Id$
       (Use the "colorsrows" option.)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-    * [WIP] Adding sub-tools to the Fill tool.
-      + Solid (the classic fill tool)
-      + [WIP] Linear Gradient
-      + [WIP] Radial Gradient
+    * Adding sub-tools to the Fill tool:
+      + Solid -- the classic fill tool, click to fill 
+      + [WIP] Linear -- A linear gradient, click and drag to adjust,
+        release mouse to finish
+      + Radial -- A radial gradient, click to fill
+      (The gradients transition from the current color to the
+      background that's being filled.)
 
   * New Magic Tools:
     ----------------

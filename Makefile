@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - January 2, 2020
+# June 14, 2002 - February 20, 2021
 
 
 # The version number, for release:
@@ -1064,7 +1064,8 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c \
 		src/i18n.h src/im.h src/cursor.h src/pixels.h \
-		src/rgblinear.h src/playsound.h src/fonts.h src/fill.h \
+		src/rgblinear.h src/playsound.h src/fonts.h \
+		src/fill.h src/fill_tools.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \

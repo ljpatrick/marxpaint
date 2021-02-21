@@ -1253,6 +1253,8 @@ static int starter_modified;
 
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 *touched;
+static Uint8 *sim_flood_touched;
+int sim_flood_x1 = 0, sim_flood_y1 = 0, sim_flood_x2 = 0, sim_flood_y2 = 0;
 static int last_print_time = 0;
 
 static int shape_radius;
@@ -4528,29 +4530,69 @@ static void mainloop(void)
 
                       /* Fill */
 
-                      /* FIXME: Depends on fill mode */
-
                       draw_color = SDL_MapRGB(canvas->format,
                                      color_hexes[cur_color][0],
                                      color_hexes[cur_color][1],
                                      color_hexes[cur_color][2]);
                       canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
-
+    
                       if (would_flood_fill(canvas, draw_color, canv_color))
                         {
+                          int x1, y1, x2, y2;
+    
                           /* We only bother recording an undo buffer
                              (which may kill our redos) if we're about
                              to actually change the picture */
-                          int x1, y1, x2, y2;
-
                           rec_undo_buffer();
-
                           x1 = x2 = old_x;
                           y1 = y2 = old_y;
+    
+                          if (cur_fill == FILL_FLOOD)
+                            {
+                              /* Flood fill a solid color */
+                              do_flood_fill(canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2);
+    
+                              update_canvas(x1, y1, x2, y2);
+                            }
+                          else
+                            {
+                              SDL_Surface * tmp_canvas;
 
-                          do_flood_fill(canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2);
+                              for (y1 = 0; y1 < canvas->h; y1++) {
+                                for (x1 = 0; x1 < canvas->w; x1++) {
+                                  sim_flood_touched[(y1 * canvas->w) + x1] = 0;
+                                }
+                              }
 
-                          update_canvas(x1, y1, x2, y2);
+                              tmp_canvas = SDL_CreateRGBSurface(canvas->flags,
+                                canvas->w, canvas->h, canvas->format->BitsPerPixel,
+                                canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+                              SDL_BlitSurface(canvas, NULL, tmp_canvas, NULL);
+
+                              simulate_flood_fill(tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                              SDL_FreeSurface(tmp_canvas);
+
+                              sim_flood_x1 = x1;
+                              sim_flood_y1 = y1;
+                              sim_flood_x2 = x2;
+                              sim_flood_y2 = y2;
+
+                              if (cur_fill == FILL_GRADIENT_RADIAL)
+                                {
+                                  /* Radial gradient */
+                                  draw_radial_gradient(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+                                    old_x, old_y, draw_color, sim_flood_touched);
+                                }
+//                              else if (cur_fill == FILL_GRADIENT_LINEAR)
+//                                {
+//                                  /* Start a linear gradient */
+//    
+//                                  draw_linear_gradient(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+//                                    old_x, old_y, old_x, old_y + 1, draw_color, sim_flood_touched);
+//                                }
+
+                              update_canvas(x1, y1, x2, y2);
+                            }
                         }
                     }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
@@ -13035,6 +13077,12 @@ static void cleanup(void)
     {
       free(touched);
       touched = NULL;
+    }
+
+  if (sim_flood_touched != NULL)
+    {
+      free(sim_flood_touched);
+      sim_flood_touched = NULL;
     }
 
   if (medium_font != NULL)
@@ -24678,7 +24726,16 @@ static void setup(void)
   touched = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
   if (touched == NULL)
     {
-      fprintf(stderr, "\nError: Can't build drawing touch mask!\n");
+      fprintf(stderr, "\nError: Can't build drawing touch mask for Magic!\n");
+
+      cleanup();
+      exit(1);
+    }
+
+  sim_flood_touched = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
+  if (sim_flood_touched == NULL)
+    {
+      fprintf(stderr, "\nError: Can't build drawing touch mask for Fill!\n");
 
       cleanup();
       exit(1);
