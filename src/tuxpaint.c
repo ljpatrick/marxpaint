@@ -508,6 +508,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "great.h"
 
 #include "fill.h"
+#include "fill_tools.h"
 
 #include "im.h"
 
@@ -1779,6 +1780,7 @@ static int *brushes_spacing = NULL;
 static short *brushes_directional = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
+static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
   *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
   *img_openlabels_gif_export, *img_openlabels_pict_export, *img_openlabels_next;
@@ -1826,7 +1828,7 @@ static unsigned cur_color;
 static int cur_tool, cur_brush, old_tool;
 static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
-static int cur_font, cur_eraser;
+static int cur_font, cur_eraser, cur_fill;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;   /* canvas-relative */
 static int old_cursor_x, old_cursor_y;
 static int cur_label, cur_select;
@@ -1837,7 +1839,7 @@ static char template_id[FILENAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll, tool_scroll;
-static int eraser_scroll, shape_scroll;
+static int eraser_scroll, shape_scroll, fill_scroll;
 
 static int eraser_sound;
 
@@ -1911,6 +1913,7 @@ static void draw_stamps(void);
 static void draw_shapes(void);
 static void draw_erasers(void);
 static void draw_fonts(void);
+static void draw_fills(void);
 static void draw_none(void);
 
 static void do_undo(void);
@@ -2553,6 +2556,8 @@ static void mainloop(void)
                     draw_shapes();
                   else if (cur_tool == TOOL_ERASER)
                     draw_erasers();
+                  else if (cur_tool == TOOL_FILL)
+                    draw_fills();
 
                   draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
@@ -2608,6 +2613,8 @@ static void mainloop(void)
                     draw_shapes();
                   else if (cur_tool == TOOL_ERASER)
                     draw_erasers();
+                  else if (cur_tool == TOOL_FILL)
+                    draw_fills();
 
                   update_screen_rect(&r_toolopt);
                   update_screen_rect(&r_ttoolopt);
@@ -3131,7 +3138,10 @@ static void mainloop(void)
                           else if (cur_tool == TOOL_FILL)
                             {
                               keybd_flag = 0;
-                              draw_none();
+                              cur_thing = cur_fill;
+                              num_things = NUM_FILLS;
+                              thing_scroll = &fill_scroll;
+                              draw_fills();
                               draw_colors(COLORSEL_ENABLE);
                             }
                           else if (cur_tool == TOOL_SHAPES)
@@ -3267,6 +3277,15 @@ static void mainloop(void)
                               draw_erasers();
                               draw_colors(COLORSEL_DISABLE);
                             }
+                          else if (cur_tool == TOOL_FILL)
+                            {
+                              keybd_flag = 0;
+                              cur_thing = cur_fill;
+                              num_things = NUM_FILLS;
+                              thing_scroll = &fill_scroll;
+                              draw_fills();
+                              draw_colors(COLORSEL_DISABLE);
+                            }
                           else if (cur_tool == TOOL_UNDO)
                             {
                               if (cur_undo == newest_undo)
@@ -3342,6 +3361,8 @@ static void mainloop(void)
                                 draw_shapes();
                               else if (cur_tool == TOOL_ERASER)
                                 draw_erasers();
+                              else if (cur_tool == TOOL_FILL)
+                                draw_fills();
                             }
                           else if (cur_tool == TOOL_SAVE)
                             {
@@ -3410,6 +3431,8 @@ static void mainloop(void)
                                 draw_shapes();
                               else if (cur_tool == TOOL_ERASER)
                                 draw_erasers();
+                              else if (cur_tool == TOOL_FILL)
+                                draw_fills();
                             }
                           else if (cur_tool == TOOL_PRINT)
                             {
@@ -3487,7 +3510,8 @@ static void mainloop(void)
                   if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
                       cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
                       cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
-                      cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
+                      cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL ||
+                      cur_tool == TOOL_FILL)
                     {
                       int num_rows_needed;
                       SDL_Rect r_controls;
@@ -4086,6 +4110,13 @@ static void mainloop(void)
                           if (do_draw)
                             draw_erasers();
                         }
+                      else if (cur_tool == TOOL_FILL)
+                        {
+                          cur_fill = cur_thing;
+
+                          if (do_draw)
+                            draw_fills();
+                        }
                       else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                         {
                           /* FIXME */
@@ -4296,6 +4327,8 @@ static void mainloop(void)
                                 draw_shapes();
                               else if (cur_tool == TOOL_ERASER)
                                 draw_erasers();
+                              else if (cur_tool == TOOL_FILL)
+                                draw_fills();
 
                               playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
@@ -4495,6 +4528,8 @@ static void mainloop(void)
 
                       /* Fill */
 
+                      /* FIXME: Depends on fill mode */
+
                       draw_color = SDL_MapRGB(canvas->format,
                                      color_hexes[cur_color][0],
                                      color_hexes[cur_color][1],
@@ -4692,7 +4727,8 @@ static void mainloop(void)
               if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
                   cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
                   cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
-                  cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
+                  cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL ||
+                  cur_tool == TOOL_FILL)
                 {
 
                   /* Left tools scroll */
@@ -4872,6 +4908,11 @@ static void mainloop(void)
                         {
                           if (do_draw)
                             draw_erasers();
+                        }
+                      else if (cur_tool == TOOL_FILL)
+                        {
+                          if (do_draw)
+                            draw_fills();
                         }
                       else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                         {
@@ -8000,16 +8041,23 @@ static void create_button_labels(void)
 {
   int i;
 
+  /* Main tools */
   for (i = 0; i < NUM_TOOLS; i++)
     img_tool_names[i] = do_render_button_label(tool_names[i]);
 
+  /* Magic Tools */
   for (i = 0; i < num_magics; i++)
     magics[i].img_name = do_render_button_label(magics[i].name);
 
+  /* Shapes for Shape Tool */
   for (i = 0; i < NUM_SHAPES; i++)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
 
-  /* buttons for the file open dialog */
+  /* Fill methods for Fill Tool */
+  for (i = 0; i < NUM_FILLS; i++)
+    img_fill_names[i] = do_render_button_label(fill_names[i]);
+
+  /* Buttons for the file open dialog */
 
   /* Open dialog: 'Open' button, to load the selected picture */
   img_openlabels_open = do_render_button_label(gettext_noop("Open"));
@@ -9372,7 +9420,7 @@ static void draw_shapes(void)
         }
     }
 
-  /* Draw magic controls: */
+  /* Draw shape tool controls: */
 
   if (!disable_shape_controls)
     {
@@ -9435,10 +9483,9 @@ static void draw_erasers(void)
   /* Space for buttons, was 14 */
   most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
 
+  /* Do we need scrollbars? */
 
-    /* Do we need scrollbars? */
-
-  if (NUM_ERASERS > most + TOOLOFFSET)
+  if (NUM_FILLS > most + TOOLOFFSET)
     {
       most = most - gd_toolopt.cols; /* was 12 */
       off_y = img_scroll_up->h;
@@ -9588,6 +9635,96 @@ static void draw_none(void)
 
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     }
+}
+
+/* Draw Fill sub-tools */
+static void draw_fills(void)
+{
+  int i, j, x, y, sz;
+  int xx, yy, n;
+  void (*putpixel) (SDL_Surface *, int, int, Uint32);
+  SDL_Rect dest;
+  int most, off_y, max;
+
+  draw_image_title(TITLE_FILLS, r_ttoolopt);
+
+  /* Space for buttons, was 14 */
+  most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
+
+
+  /* Do we need scrollbars? */
+
+  if (NUM_FILLS > most + TOOLOFFSET)
+    {
+      most = most - gd_toolopt.cols; /* was 12 */
+      off_y = img_scroll_up->h;
+      max = most + TOOLOFFSET;
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h;
+
+      if (fill_scroll > 0)
+        {
+          SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+        }
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h + img_scroll_up->h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+
+      if (fill_scroll < NUM_FILLS - most - TOOLOFFSET)
+        {
+          SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+        }
+    }
+  else
+    {
+      off_y = 0;
+      max = most + TOOLOFFSET;
+    }
+
+  for (j = 0; j < most + TOOLOFFSET; j++)
+    {
+      i = j;
+      dest.x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = ((i / 2) * button_h) + r_ttoolopt.h + off_y;
+
+      i = j + fill_scroll;
+
+      if (i == cur_fill)
+        {
+          SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+        }
+      else if (i < NUM_FILLS)
+        {
+          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        }
+
+      if (i < NUM_FILLS)
+        {
+          dest.x = ((i % 2) * button_w) + (4 * button_w) / ORIGINAL_BUTTON_SIZE + WINDOW_WIDTH - r_ttoolopt.w;
+          dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + off_y;
+
+          SDL_BlitSurface(img_fills[i], NULL, screen, &dest);
+
+          dest.x = ((i % 2) * button_w) + (4 * button_w) / ORIGINAL_BUTTON_SIZE + WINDOW_WIDTH - r_ttoolopt.w + ((40 * button_w) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->w) / 2;
+	  dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->h) + off_y;
+
+          SDL_BlitSurface(img_fill_names[i], NULL, screen, &dest);
+        }
+    }
+
 }
 
 /**
@@ -12784,6 +12921,8 @@ static void cleanup(void)
     }
   free_surface_array(img_shapes, NUM_SHAPES);
   free_surface_array(img_shape_names, NUM_SHAPES);
+  free_surface_array(img_fills, NUM_FILLS);
+  free_surface_array(img_fill_names, NUM_FILLS);
   free_surface_array(img_tux, NUM_TIP_TUX);
 
   free_surface(&img_openlabels_open);
@@ -24803,6 +24942,16 @@ static void setup(void)
 
   show_progress_bar(screen);
 
+  /* Load fill sub-tool icons: */
+  for (i = 0; i < NUM_FILLS; i++)
+    {
+      SDL_Surface *aux_surf = loadimage(fill_img_fnames[i]);
+      img_fills[i] = thumbnail2(aux_surf, (aux_surf->w * button_w) / ORIGINAL_BUTTON_SIZE, (aux_surf->h * button_h) / ORIGINAL_BUTTON_SIZE, 0, 1);
+      SDL_FreeSurface(aux_surf);
+    }
+
+  show_progress_bar(screen);
+
   /* Load tip tux images: */
   for (i = 0; i < NUM_TIP_TUX; i++)
     img_tux[i] = loadimagerb(tux_img_fnames[i]);
@@ -25068,6 +25217,7 @@ static void claim_to_be_ready(void)
   magic_scroll = 0;
   tool_scroll = 0;
   eraser_scroll = 0;
+  fill_scroll = 0;
 
   reset_avail_tools();
 

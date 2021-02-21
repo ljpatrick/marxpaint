@@ -1,7 +1,7 @@
 /*
-  fill.h
+  fill_tools.h
 
-  Fill tool
+  Fill tool -- tool variations (for selector)
   Tux Paint - A simple drawing program for children.
 
   Copyright (c) 2002-2019 by Bill Kendrick and others; see AUTHORS.txt
@@ -31,13 +31,37 @@
   $Id$
 */
 
-#ifndef FILL_H
-#define FILL_H
+#ifndef FILL_TOOLS_H
+#define FILL_TOOLS_H
 
-#include "SDL.h"
+#ifndef gettext_noop
+#define gettext_noop(String) String
+#endif
 
-int would_flood_fill(SDL_Surface * canvas, Uint32 cur_colr, Uint32 old_colr);
-void do_flood_fill(SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2);
+enum {
+  FILL_FLOOD,
+  // FILL_GRADIENT_LINEAR,
+  // FILL_GRADIENT_RADIAL,
+  NUM_FILLS
+};
+
+const char *const fill_names[NUM_FILLS] = {
+  gettext_noop("Solid Color") /* ,
+  gettext_noop("Gradient (Line)"),
+  gettext_noop("Gradient (Radial)") */
+};
+
+const char *const fill_tips[NUM_FILLS] = {
+  gettext_noop("Click to fill an area with a solid color.") /* ,
+  gettext_noop("Click and drag to fill an area with a gradient from the chosen color to transparent."),
+  gettext_noop("Click to fill an area with a radial gradient from the chosen color to transparent.") */
+};
+
+const char *const fill_img_fnames[NUM_FILLS] = {
+  DATA_PREFIX "images/fills/solid.png" /* ,
+  DATA_PREFIX "images/fills/gradient_linear.png",
+  DATA_PREFIX "images/fills/gradient_radial.png" */
+};
 
 #endif
 

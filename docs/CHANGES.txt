@@ -19,8 +19,11 @@ $Id$
       (Use the "colorsrows" option.)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-    * A new "xorpixel()" function has been added to the Magic Tools API.
-      
+    * [WIP] Adding sub-tools to the Fill tool.
+      + Solid (the classic fill tool)
+      + [WIP] Linear Gradient
+      + [WIP] Radial Gradient
+
   * New Magic Tools:
     ----------------
     * Checkerboard
@@ -41,6 +44,9 @@ $Id$
       these docs, which contain a variety of minor updates (and also a
       few which had previously only been available as plain TXT are now
       available as HTML).
+
+      + French translation
+        Chion Jacques <jacques.chion@orange.fr>
 
       + Galician
         Miguel Anxo Bouzada <mbouzada@gmail.com>
@@ -71,6 +77,10 @@ $Id$
     --------------------
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
+
+  * Magic Tool Improvememnts:
+    -------------------------
+    * A new "xorpixel()" function has been added to the Magic Tools API.
 
   * Bug Fixes:
     ----------
