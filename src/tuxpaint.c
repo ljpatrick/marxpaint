@@ -1255,6 +1255,7 @@ static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 *touched;
 static Uint8 *sim_flood_touched;
 int sim_flood_x1 = 0, sim_flood_y1 = 0, sim_flood_x2 = 0, sim_flood_y2 = 0;
+int fill_x, fill_y;
 static int last_print_time = 0;
 
 static int shape_radius;
@@ -4535,6 +4536,9 @@ static void mainloop(void)
                                      color_hexes[cur_color][1],
                                      color_hexes[cur_color][2]);
                       canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
+
+                      fill_x = old_x;
+                      fill_y = old_y;
     
                       if (would_flood_fill(canvas, draw_color, canv_color))
                         {
@@ -4583,13 +4587,12 @@ static void mainloop(void)
                                   draw_radial_gradient(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
                                     old_x, old_y, draw_color, sim_flood_touched);
                                 }
-//                              else if (cur_fill == FILL_GRADIENT_LINEAR)
-//                                {
-//                                  /* Start a linear gradient */
-//    
-//                                  draw_linear_gradient(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
-//                                    old_x, old_y, old_x, old_y + 1, draw_color, sim_flood_touched);
-//                                }
+                              else if (cur_fill == FILL_GRADIENT_LINEAR)
+                                {
+                                  /* Start a linear gradient */
+                                  draw_linear_gradient(canvas, canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+                                    fill_x, fill_y, old_x, old_y + 1, draw_color, sim_flood_touched);
+                                }
 
                               update_canvas(x1, y1, x2, y2);
                             }
@@ -5427,7 +5430,6 @@ static void mainloop(void)
                     do_setcursor(cursor_wand);
                   else if (cur_tool == TOOL_ERASER)
                     do_setcursor(cursor_tiny);
-
                 }
               else
                 {
@@ -5522,6 +5524,30 @@ static void mainloop(void)
 
                       sz = calc_eraser_size(cur_eraser);
                       rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+                    }
+                  else if (cur_tool == TOOL_FILL && cur_fill == FILL_GRADIENT_LINEAR)
+                    {
+                      Uint32 draw_color, canv_color;
+                      int undo_ctr;
+                      SDL_Surface * last;
+
+                      if (cur_undo > 0)
+                        undo_ctr = cur_undo - 1;
+                      else
+                        undo_ctr = NUM_UNDO_BUFS - 1;
+        
+                      last = undo_bufs[undo_ctr];
+
+                      /* Pushing button and moving: Update the gradient: */
+
+                      draw_color = SDL_MapRGB(canvas->format,
+                                     color_hexes[cur_color][0],
+                                     color_hexes[cur_color][1],
+                                     color_hexes[cur_color][2]);
+                      draw_linear_gradient(canvas, last, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+                        fill_x, fill_y, new_x, new_y, draw_color, sim_flood_touched);
+
+                      update_canvas(sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2);
                     }
                 }
 

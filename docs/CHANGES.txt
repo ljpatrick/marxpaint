@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.February.21 (0.9.26)
+2021.February.20 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -20,10 +20,10 @@ $Id$
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Adding sub-tools to the Fill tool:
-      + Solid -- the classic fill tool, click to fill 
-      + [WIP] Linear -- A linear gradient, click and drag to adjust,
+      + Solid -- The classic fill tool; click to fill 
+      + Linear -- A linear gradient; click and drag to adjust,
         release mouse to finish
-      + Radial -- A radial gradient, click to fill
+      + Radial -- A radial gradient; click to fill
       (The gradients transition from the current color to the
       background that's being filled.)
 
