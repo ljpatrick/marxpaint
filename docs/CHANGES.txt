@@ -46,7 +46,7 @@ $Id$
       available as HTML).
 
       + French translation
-        Chion Jacques <jacques.chion@orange.fr>
+        Jacques Chion <jacques.chion@orange.fr>
 
       + Galician
         Miguel Anxo Bouzada <mbouzada@gmail.com>
