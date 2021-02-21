@@ -40,8 +40,8 @@ Le choix de l'image est crucial
        référence. (Demandez à un avocat si vous pensez que vous avez besoin
        d'un avis faisant autorité).
 
-       For personal use, any image you can legitimately modify and use for
-       your own personal use should be fine.
+       Pour un usage personnel, toute image que vous pouvez légalement
+       modifier et utiliser pour vous-même, devrait convenir.
 
   Taille de l'image et orientation
 
@@ -62,13 +62,15 @@ Le choix de l'image est crucial
        work with. Choose an image with an object that is over 1000 pixels
        across if you can. You can shrink this later to hide your mistakes.
 
-       Be sure that the image is not too grainy, dim, or washed out.
+       Vérifiez bien que l'image ne soit pas trop granuleuse, pâle ou
+       délavée.
 
-       Pay attention to feet and wheels. If they are buried in something, you
-       will need to draw new ones. If only one is buried, you might be able
-       to copy the other one as a replacement.
+       Faites attention aux pieds et aux roues. Si elles sont camouflées par
+       quelque chose, vous devrez en dessiner de nouvelles. Si une seule est
+       camouflée, vous devriez pouvoir effectuer un copié-collé pour le
+       remplacement.
 
-Prepare the image
+Préparez l'image
 
      First of all, be sure to avoid re-saving the image as a JPEG. This
      causes quality loss. There is a special tool called jpegtran that lets

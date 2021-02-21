@@ -40,26 +40,26 @@
 
 enum {
   FILL_FLOOD,
-  // FILL_GRADIENT_LINEAR,
+  FILL_GRADIENT_LINEAR,
   FILL_GRADIENT_RADIAL,
   NUM_FILLS
 };
 
 const char *const fill_names[NUM_FILLS] = {
   gettext_noop("Solid"),
-  // gettext_noop("Linear"),
+  gettext_noop("Linear"),
   gettext_noop("Radial")
 };
 
 const char *const fill_tips[NUM_FILLS] = {
   gettext_noop("Click to fill an area with a solid color."),
-  // gettext_noop("Click and drag to fill an area with a linear gradient (from the chosen color to transparent)."),
+  gettext_noop("Click and drag to fill an area with a linear gradient (from the chosen color to transparent)."),
   gettext_noop("Click to fill an area with a radial gradient (from the chosen color to transparent).")
 };
 
 const char *const fill_img_fnames[NUM_FILLS] = {
   DATA_PREFIX "images/fills/solid.png",
-  // DATA_PREFIX "images/fills/gradient_linear.png",
+  DATA_PREFIX "images/fills/gradient_linear.png",
   DATA_PREFIX "images/fills/gradient_radial.png"
 };
 
