@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.February.20 (0.9.26)
+2021.March.2 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -53,6 +53,9 @@ $Id$
 
       + Galician
         Miguel Anxo Bouzada <mbouzada@gmail.com>
+
+      + Japanese
+        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Expanded the steps for making and posting releases.
 
