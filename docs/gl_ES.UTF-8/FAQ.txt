@@ -175,7 +175,7 @@ Impresión
            e enviándoa a unha orde externa. De xeito predeterminado, esta
            orde é a ferramenta de impresión «lpr».
 
-           Se ese programa non está dispoñible (por exemplo, está a usar
+           Se ese programa non está dispoñíble (por exemplo, está a usar
            CUPS, o Sistema Común de Impresión Unix e non ten instalado
            «cups-lpr»), terá que especificar unha orde apropiada usando a
            opción «printcommand» no ficheiro de configuración de Tux Paint.

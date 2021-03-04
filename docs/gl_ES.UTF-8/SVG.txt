@@ -17,7 +17,7 @@ Sobre os SVG
    instructions on how to make an image. This means that they can be resized
    without looking pixelated or blocky.
 
-   For more information, visit: https://www.w3.org/Graphics/SVG/
+   Para obter máis información, visite:https://www.w3.org/Graphics/SVG/
 
 Como facer imaxes SVG
 

@@ -12,7 +12,7 @@
    Tux Paint responds to the following signals (which can be sent to the
    program's process via `kill` or `killall`, for example).
 
-   SIGTERM (also, [Ctrl] + [C] from a terminal running `tuxpaint`)
+   SIGTERM (tamén, [Ctrl] + [C] dende un terminal executando «tuxpaint»)
 
            Tux Paint responds as if the "Quit" button were pressed, or the
            desktop environment was told to close Tux Paint (e.g., by clicking
