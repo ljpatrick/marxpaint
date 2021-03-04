@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   20 2月 2021
+                                  3 March 2021
 
      ----------------------------------------------------------------------
 
@@ -617,7 +617,7 @@ Tux Paint の起動
        Example:
 
          $ tuxpaint-import おばあちゃん.jpg
-         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210302005546.png
+         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210303230300.png
          jpegtopnm: WRITING A PPM FILE
 
        1行目 ("tuxpaint-import おばあちゃん.jpg") が実行するコマンドで、続く2行がプログラムの実行中の出力です。
@@ -652,7 +652,7 @@ Tux Paint の起動
          * mm = 分 (2桁, "00"-"59")
          * ss = 秒 (2桁, "00"-"59")
 
-       例： 2 3月 2021 00:55:46 の場合 "20210302005546.png".
+       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
 
        PNG file を Tux Paint の "saved" ディレクトリにコピーします。（上記参照）
 

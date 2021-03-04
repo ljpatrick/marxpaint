@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                                20 Febreiro 2021
+                                  3 March 2021
 
      ----------------------------------------------------------------------
 
@@ -900,7 +900,7 @@ Uso do script de importación, «tuxpaint-import»
        Exemplo:
 
          $ tuxpaint-import avoa.jpg
-         avoa.jpg -> /home/username/.tuxpaint/saved/20210303223927.png
+         avoa.jpg -> /home/username/.tuxpaint/saved/20210303230300.png
          jpegtopnm: WRITING A PPM FILE
 
        The first line ("tuxpaint-import avoa.jpg") is the command to run. The
@@ -941,7 +941,7 @@ Importar imaxes manualmente
          * mm = Minuto (dous díxitos, «00»-«59»)
          * ss = Segundo (dous díxitos, «00»-«59»)
 
-       Exemplo: «20210303223927.png», para 3 Marzo 2021 en 22:39:27.
+       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
 
        Coloque este ficheiro PNG no seu directorio/cartafol «saved» de Tux
        Paint. (Ver arriba.)

@@ -6,7 +6,7 @@ Options Documentation
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   5 2月 2021
+                                  3 March 2021
 
      ----------------------------------------------------------------------
 
