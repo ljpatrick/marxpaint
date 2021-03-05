@@ -6,7 +6,7 @@ Documentación de opcións
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                                  3 March 2021
+                                  3 Marzo 2021
 
      ----------------------------------------------------------------------
 
@@ -120,7 +120,7 @@ Usuarios de Windows
 
      buttonsize=TAMAÑO
 
-             Estableza o tamaño dos píxeles dos botóns na interface de
+             Estabeleza o tamaño dos píxeles dos botóns na interface de
              usuario de Tux Paint (substituíndo o predeterminado de «48»).
              Útil cando se usan pantallas de alta densidade ou dispositivos
              de entrada groseiros, como rastrexadores de ollos.
@@ -278,8 +278,8 @@ Usuarios de Windows
 
      uppercase=yes
              Todo o texto renderizarase só con maiúscula (por exemplo,
-             «Pincel» será «PINCEL»). Útil para os nenos que saben ler, pero
-             que ata agora só aprenderon maiúsculas.
+             «Pincel» será «PINCEL»). Útil para os cativos que saben ler,
+             pero que ata agora só aprenderon maiúsculas.
 
      grab=yes
 
@@ -298,7 +298,7 @@ Usuarios de Windows
              para gardar, [Ctrl]-[N] para unha nova imaxe, etc.)
 
              Isto é útil para evitar que ordes non desexadas sexan activadas
-             por nenos que non teñen experiencia con teclados.
+             por cativos que non teñen experiencia con teclados.
 
      nowheelmouse=yes
              Isto desactiva a compatibilidade para a roda dos ratos que a
@@ -310,9 +310,9 @@ Usuarios de Windows
              Antes do Tux Paint 0.9.15, tamén se podían empregar os botóns
              medio e dereito do rato para premer. Na versión 0.9.15,
              cambiouse para que só funcionase o botón esquerdo do rato para
-             non adestrar aos nenos a usar o botón incorrecto.
+             non adestrar aos cativos a usar o botón incorrecto.
 
-             Porén, para os nenos que teñen problemas co rato, pódese
+             Porén, para os cativos que teñen problemas co rato, pódese
              desactivar esta distinción entre os dous ou tres botóns do rato
              (devolvendo Tux Paint ao seu antigo comportamento) usando esta
              opción.
@@ -359,8 +359,9 @@ Usuarios de Windows
              configuración local, se o hai, é o que coincide coa
              configuración local en que se está a executar Tux Paint.
 
-             Para cargar todos os tipos de letra específicos de idiomas (o
-             comportamento antigo), configure esta opción.
+             Para cargar todos os tipos de letra específicos das
+             configuracións locais (o comportamento antigo), configure esta
+             opción.
 
      nostamps=yes
 
@@ -373,7 +374,7 @@ Usuarios de Windows
              suposto, ningún selo estará dispoñíbel.
 
      nostampcontrols=yes
-             Algunhas imaxes da ferramenta Selos pódense reflectir, virar
+             Algunhas imaxes da ferramenta Selos pódense reflectir, inverter
              e/ou cambiar o seu tamaño. Esta opción desactiva os controis e
              só fornece os selos básicos.
 
@@ -399,8 +400,8 @@ Usuarios de Windows
 
      mirrorstamps=yes
 
-             Para os selos que se poden relectir, esta opción estabeleceos de
-             xeito predeterminado na súa forma reflectida.
+             Para os selos que se poden reflectir, esta opción estabeléceos
+             de xeito predeterminado na súa forma reflectida.
 
              Isto pode ser útil para as persoas que prefiren as cousas de
              dereita a esquerda no canto de de esquerda a dereita.
@@ -424,7 +425,7 @@ Usuarios de Windows
      onscreen-keyboard-disable-change=yes
              Desactiva a posibilidade de cambiar o deseño do teclado en
              pantalla cando se usan as ferramentas Texto e Etiqueta, útil
-             para simplificar as cousas para os nenos pequenos.
+             para simplificar as cousas para os máis pequechos.
              Nota: Usar esta opción implica automaticamente
              onscreen-keyboard=yes, polo que estabelecer ambas as cousas é
              redundante.
@@ -449,12 +450,12 @@ Usuarios de Windows
              valores permitidos van do 1 ao 7. O valor predeterminado é 7.
 
      joystick-hat-timeout=MILISEGUNDOS
-             Establece o atraso após de que o punteiro comezará a moverse
+             Estabelece o atraso após de que o punteiro comezará a moverse
              automaticamente se se mantén premido o sombreiro. Os valores
              permitidos van de 0 a 3000. O valor predeterminado é 1000.
 
      joystick-hat-slowness=VELOCIDADE
-             Establece un atraso en cada movemento automático, o que permite
+             Estabelece un atraso en cada movemento automático, o que permite
              diminuír a velocidade do sombreiro. Os valores permitidos van de
              0 a 500. O valor predeterminado é 15.
 
@@ -614,8 +615,8 @@ Usuarios de Windows
              configuración ou o valor predeterminado para «savedir» como o
              lugar onde buscar ficheiros de datos persoais (pinceis, selos,
              imaxes de comezo e tipos de letra) . A partir da versión 0.9.18,
-             pódense especificar por separado (consulte a opción «datadir»,
-             máis abaixo).
+             pódense especificar por separado (consulte a opción «datadir», a
+             continuación).
 
              Exemplo: savedir=Z:\tuxpaint\
 
@@ -632,9 +633,9 @@ Usuarios de Windows
                   almacenen imaxes, en función da configuración XDG (X
                   Desktop Group). (Probe a executar a liña de ordes
                   «xdg-user-dir PICTURES» para descubrilo.)
-                  Normalmente (no idioma inglés), este será un subdirectorio
-                  «Imaxes» no seu directorio persoal (é dicir, «$HOME/Imaxes»
-                  tamén coñecido como «~/Imaxes»).
+                  Normalmente (na configuración local inglesa), este será un
+                  subdirectorio «Imaxes» no seu directorio persoal (é dicir,
+                  «$HOME/Imaxes» tamén coñecido como «~/Imaxes»).
                   Tux Paint volverá usar ese directorio habitual, se non se
                   pode ler a configuración XDG, ou non se estabelece nada
                   «XDG_PICTURES_DIR».
@@ -643,7 +644,7 @@ Usuarios de Windows
 
              Nota: Cando se empregan os valores predeterminados, crearase e
              usarase un novo subdirectorio «TuxPaint». (p. ex.:
-             «~/Imaxes/TuxPaintx) Cando se usa a opción «--exportdir»,
+             «~/Imaxes/TuxPaint») Cando se usa a opción «--exportdir»,
              empregarase a ruta exacta especificada (non se crea ningún
              subdirectorio «TuxPaint»).
 
@@ -1181,7 +1182,7 @@ Usuarios de Windows
                alemán) que debe usar.
 
                (Se a súa configuración local xa está configurada, por
-               exemplo, coa variable de contorno «$LANG», esta opción non é
+               exemplo, coa variábel de contorno «$LANG», esta opción non é
                necesaria, xa que Tux Paint respecta a configuración do seu
                contorno, se é posíbel).
 
@@ -1529,41 +1530,45 @@ Idiomas dispoñíbeis
        demais. Vexa a sección «Tipos de letra especiais», a continuación.
 
        Nota: Tux Paint fornece un método de entrada alternativo para
-       introducir caracteres coa ferramenta Texto nalgunhas rexións. A(s)
-       combinación(s) de teclas indicada(s) pode usarse para percorrer os
-       métodos de entrada admitidos mentres a ferramenta Texto está activa.
+       introducir caracteres coa ferramenta Texto nalgunhas configuracións
+       locais. A(s) combinación(s) de teclas indicada(s) pode usarse para
+       percorrer os métodos de entrada admitidos mentres a ferramenta Texto
+       está activa.
 
-Axustando o idioma do seu contorno
+Axustar o idioma do seu contorno
 
-       Cambiar o seu idioma afectará a gran parte do seu contorno.
+       Cambiar a súa configuración local afectará a gran parte do seu
+       contorno.
 
        Como se indicou anteriormente, ademais de permitirche escoller o
        idioma en tempo de execución empregando opcións de liña de ordes
-       («--lang» e «--locale»), Tux Paint respecta o axuste de idioma do seu
-       contorno.
+       («--lang» e «--locale»), Tux Paint respecta o axuste da configuración
+       local do seu contorno.
 
-       Se aínda non estabeleceu a configuración rexional do seu contorno, o
+       Se aínda non estabeleceu a configuración local do seu contorno, o
        seguinte explicará brevemente como:
 
   Usuarios de Linux/Unix
 
-         Primeiro, asegúrese de que a configuración rexional que quere usar
-         está activada editando o ficheiro «/etc/locale.gen» no seu sistema e
-         logo executando o programa «locale-gen» como superusuario «root».
+         Primeiro, asegúrese de que a configuración local que quere usar está
+         activada editando o ficheiro «/etc/locale.gen» no seu sistema e logo
+         executando o programa «locale-gen» como superusuario «root».
 
          Nota: os usuarios de Debian poden executar a orde «dpkg-reconfigure
          locales» como superusuario (root) para abrir un diálogo de
          configuración. Os usuarios de Ubuntu poden executar «sudo
          dpkg-reconfigure localeconf» (é posíbel que teña que instalar antes
          o paquete «localeconf») ou pode que teña que editar primeiro o
-         ficheiro «/var/lib/locales/supported.d/local» e engadir os idiomas
-         que queiran, da lista que se atopa en «/usr/share/i18n/SUPPORTED».
+         ficheiro «/var/lib/locales/supported.d/local» e engadir as
+         configuracións locais que queiran, da lista que se atopa en
+         «/usr/share/i18n/SUPPORTED».
 
          Após, antes de executar Tux Paint, configure a súa variábel de
-         contorno «$LANG» a unha das rexións mencionadas anteriormente. (Se
-         quere que todos os programas que se poidan traducir o sexan, pode
-         que queira colocar o seguinte no seu script de inicio de sesión; por
-         exemplo, «~/.profile», «~/.bashrc», «~/.cshrc», etc.)
+         contorno «$LANG» a unha das configuracións locais mencionadas
+         anteriormente. (Se quere que todos os programas que se poidan
+         traducir o sexan, pode que queira colocar o seguinte no seu script
+         de inicio de sesión; por exemplo, «~/.profile», «~/.bashrc»,
+         «~/.cshrc», etc.)
 
          Por exemplo, nunha consola Bourne (como BASH):
 
@@ -1579,7 +1584,7 @@ Axustando o idioma do seu contorno
 
   Usuarios de Windows
 
-         Tux Paint recoñecerá a configuración rexional actual e empregará de
+         Tux Paint recoñecerá a configuración local actual e empregará de
          xeito predeterminado os ficheiros apropiados. Polo tanto, esta
          sección é só para persoas que proban idiomas diferentes.
 

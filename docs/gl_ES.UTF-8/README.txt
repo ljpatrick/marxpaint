@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                                  3 March 2021
+                                  3 Marzo 2021
 
      ----------------------------------------------------------------------
 
@@ -36,8 +36,8 @@ Que é «Tux Paint»?
        Tux Paint é un programa de debuxo libre e de balde deseñado para
        cativos (3 ou máis anos). Ten unha interface sinxela e doada de usar,
        divertidos efectos de son e unha mascota de debuxos animados que axuda
-       a guiar aos nenos mentres usan o programa. Ofrece un lenzo en branco e
-       unha ampla variedade de ferramentas de debuxo para axudar ao seu
+       a guiar aos cativos mentres usan o programa. Ofrece un lenzo en branco
+       e unha ampla variedade de ferramentas de debuxo para axudar ao seu
        cativo a ser creativo.
 
 Licenza:
@@ -54,7 +54,7 @@ Obxectivos:
 
        Doado e divertido
                Tux Paint pretende ser un sinxelo programa de debuxo para
-               nenos pequenos. Non está pensado como unha ferramenta de
+               cativos pequenos. Non está pensado como unha ferramenta de
                debuxo de uso xeral. Preténdese que sexa divertido e doado de
                usar. Os efectos de son e un personaxe de debuxos animados
                permiten que o usuario saiba o que está pasando e o mantén
@@ -164,7 +164,7 @@ Pantalla principal
        Medio: Lenzo de debuxo
 
                A parte máis grande da pantalla, no centro, é o lenzo de
-               debuxo. Aquí é, obviamente, onde debuxas.
+               debuxo. Aquí é, obviamente, onde debuxa.
 
                                     [Lenzo]
 
@@ -208,8 +208,8 @@ Pantalla principal
                consellos e outra información mentres usa Tux Paint.
 
 (Consello de exemplo: «Escolle unha figura. Preme para marcar o centro, arrastra
-e solta cando teña o tamaño que queiras. Move arredor para virala, e preme para
-                                  debuxala.»)
+ e solta cando teña o tamaño que queiras. Move arredor para invertela, e preme
+                                para debuxala.»)
 
      ----------------------------------------------------------------------
 
@@ -250,17 +250,17 @@ Ferramentas dispoñíbeis
                  Antes de «estampar» unha imaxe no seu debuxo, ás veces
                  pódense aplicar varios efectos (dependendo do selo):
 
-                    * Algúns selos pódense colorer ou matizar. Se a paleta de
-                      cores debaixo do lenzo está activada, pode premer nas
+                    * Algúns selos pódense colorea ou matizar. Se a paleta de
+                      cores baixo o lenzo está activada, pode premer nas
                       cores para cambiar o ton ou a cor do selo antes de
                       colocalo na imaxe.
                     * Os selos poden reducirse e expandirse premendo dentro
                       da serie de barras de forma triangular na parte
                       inferior dereita; canto maior sexa a barra, máis grande
                       aparecerá o selo na súa imaxe.
-                    * Moitos selos poden virarse verticalmente ou amosarse
-                      como unha imaxe espello, usando os botóns de control na
-                      parte inferior dereita.
+                    * Moitos selos poden inverterse verticalmente ou amosarse
+                      como unha imaxe reflectida, usando os botóns de control
+                      na parte inferior dereita.
 
                  Diferentes selos poden ter diferentes efectos sonoros e/ou
                  sons descritivos (falados). Os botóns da área de axuda na
@@ -434,20 +434,21 @@ Ferramentas dispoñíbeis
 
          Ferramenta «Encher»
 
-                 The 'Fill' tool 'flood-fills' a contiguous area of your
-                 drawing with a color of your choice. Three fill options are
-                 offered:
-                    * Solid — click once to fill an area with a solid color.
-                    * Linear — click and then drag to fill the area with
-                      color that fades away (a gradient) towards where you
-                      drag the mouse.
-                    * Radial — click once to fill an area with a color that
-                      fades away (a gradient) radially, centered on where you
-                      clicked.
+                 A ferramenta «Encher» inunda unha área contigua do seu
+                 debuxo cunha cor da súa escolla. Ofrécense tres opcións de
+                 recheo:
+                    * Sólida: prema unha vez para encher unha área cunha cor
+                      sólida.
+                    * Lineal: prema e arrastra para encher a área cunha cor
+                      que se esvae (un gradiente) cara a onde arrastra o
+                      rato.
+                    * Radial: prema unha vez para encher unha área cunha cor
+                      que se esvae (un gradiente) radialmente, centrado no
+                      lugar onde premeu.
 
                  Nota: Antes do Tux Paint 0.9.24, esta era unha ferramenta
-                 Máxica (ver máis abaixo). Note: Prior to Tux Paint 0.9.26,
-                 this tool only offered the 'Solid' method of filling.
+                 Máxica (ver máis abaixo). Nota: Antes do Tux Paint 0.9.26,
+                 esta era ferramenta só ofrecia o método de enchido «Sólido».
 
      ----------------------------------------------------------------------
 
@@ -460,10 +461,10 @@ Ferramentas dispoñíbeis
                  unha vez para aplicar o efecto.
 
                  Se a ferramenta pode usarse premendo e arrastrando, estará
-                 dispoñíbel un botón de «pintura» á esquerda, debaixo da
-                 lista de ferramentas Maxia na parte dereita da pantalla. Se
-                 a ferramenta pode afectar toda a imaxe á vez, haberá un
-                 botón «imaxe completa» á dereita.
+                 dispoñíbel un botón de «pintura» á esquerda, baixo a lista
+                 de ferramentas Maxia na parte dereita da pantalla. Se a
+                 ferramenta pode afectar toda a imaxe á vez, haberá un botón
+                 «imaxe completa» á dereita.
 
                  Consulte as instrucións de cada ferramenta Máxica (no
                  cartafol «magic-docs»).
@@ -494,7 +495,7 @@ Ferramentas dispoñíbeis
                  debuxo. Vostede pode incluso desfacer máis dunha vez.
 
                  Nota: Tamén pode premer [Control] + [Z] no teclado para
-                 desfacer.
+                 Desfacer.
 
      ----------------------------------------------------------------------
 
@@ -507,7 +508,7 @@ Ferramentas dispoñíbeis
                  teña desfeito.
 
                  Nota: Tamén pode premer [Control] + [R] no teclado para
-                 refacer.
+                 Refacer.
 
      ----------------------------------------------------------------------
 
@@ -582,9 +583,9 @@ Ferramentas dispoñíbeis
                         parte inferior dereita da lista para cancelar e
                         volver á imaxe que debuxaba.
 
-                 If choose to open a picture, and your current drawing hasn't
-                 been saved, you will be prompted as to whether you want to
-                 save it or not. (See "Save," below.)
+                 Se escolle abrir unha imaxe e o seu debuxo actual non foi
+                 gardado, preguntaráselle se quere gardala ou non. (Vexa
+                 «Gardar» a continuación).
 
                  Nota: Tamén pode premer [Control] + [O] no teclado para
                  activar o diálogo «Abrir».
@@ -595,22 +596,21 @@ Ferramentas dispoñíbeis
 
                  Isto garda a súa imaxe actual.
 
-                 If you haven't saved it before, it will create a new entry
-                 in the list of saved images. (i.e., it will create a new
-                 file)
+                 Se non o gardou antes, creará unha nova entrada na lista de
+                 imaxes gardadas. (é dicir, creará un novo ficheiro)
 
-                 Note: It won't ask you anything (e.g., for a filename). It
-                 will simply save the picture, and play a "camera shutter"
-                 sound effect.
+                 Nota: Non lle pedirá nada (por exemplo, un nome de
+                 ficheiro). Simplemente gardará a imaxe e reproducirá un
+                 efecto de son «obturador de cámara».
 
-                 If you have saved the picture before, or this is a picture
-                 you just loaded using the "Open" command, you will first be
-                 asked whether you want to save over the old version, or
-                 create a new entry (a new file).
+                 Se xa gardou a imaxe antes, ou esta é unha imaxe que acaba
+                 de cargar coa orde «Abrir», primeiro preguntaráselle se
+                 quere gardar sobre a versión antiga ou crear unha nova
+                 entrada (un novo ficheiro).
 
-                 Note: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "Options"
-                 documentation.
+                 Nota: Se foron estabelecidas as opcións «saveover» ou
+                 «saveovernew», non preguntará antes de gardar. Vexa a
+                 documentación de «Opcións».
 
                  Nota: Tamén pode premer [Control] + [S] no teclado para
                  gardar.
@@ -621,10 +621,11 @@ Ferramentas dispoñíbeis
 
                  Prema neste botón e imprimirase a súa imaxe.
 
-                 On most platforms, you can also hold the [Alt] key (called
-                 [Opción] on Macs) while clicking the 'Print' button to get a
-                 printer dialog. Note that this may not work if you're
-                 running Tux Paint in fullscreen mode. See below.
+                 Na maioría das plataformas, tamén pode manter premida a
+                 tecla [Alt] (chamada [Opción] en Mac) ao premer no botón
+                 «Imprimir» para obter unhja caixa de diálogo coa impresora.
+                 Teña en conta que isto pode non funcionar se está a executar
+                 Tux Paint en modo de pantalla completa. Vexa a continuación.
 
                       Desactivar a impresión
 
@@ -635,13 +636,13 @@ Ferramentas dispoñíbeis
 
                       Restrición da impresión
 
-                              The "printdelay" option can be set, which will
-                              only allow occasional printing — once every so
-                              many seconds, as configured by you.
+                              Pódese estabelecer a opción «printdelay», que
+                              só permitirá imprimir ocasionalmente, cada
+                              tantos segundos, segundo o configure vostede.
 
-                              For example, with "printdelay=60" in Tux
-                              Paint's configuration file, printing can only
-                              occur once per minute (60 seconds).
+                              Por exemplo, con «printdelay=60» no ficheiro de
+                              configuración de Tux Paint, a impresión só pode
+                              producirse unha vez por minuto (60 segundos).
 
                               Vexa a documentación de «Opcións.
 
@@ -655,22 +656,23 @@ Ferramentas dispoñíbeis
 
                                 lpr
 
-                              This command can be changed by setting a
-                              "printcommand" option in Tux Paint's
-                              configuration file.
+                              Esta orde pódese cambiar axustando unha opción
+                              «printcommand» no ficheiro de configuración de
+                              Tux Paint.
 
-                              An alternative print command can be invoked by
-                              holding the "[Alt]" key on the keyboard while
-                              clicking clicking the 'Print' button, as long
-                              as you're not in fullscreen mode, an
-                              alternative program is run. By default, the
-                              program is KDE's graphical print dialog:
+                              Pódese invocar unha orde de impresión
+                              alternativa mantendo premida a tecla «[Alt]» ao
+                              premer no botón «Imprimir», sempre que non
+                              estea en modo de pantalla completa, execútase
+                              un programa alternativo. De xeito
+                              predeterminado, o programa é o diálogo de
+                              impresión gráfica de KDE:
 
                                 kprinter
 
-                              This command can be changed by setting a
-                              "altprintcommand" option in Tux Paint's
-                              configuration file.
+                              Esta orde pódese cambiar axustando unha opción
+                              «altprintcommand» no ficheiro de configuración
+                              de Tux Paint.
 
                               Vexa a documentación de «Opcións.
 
@@ -678,25 +680,27 @@ Ferramentas dispoñíbeis
 
                               (Windows e macOS)
 
-                              By default, Tux Paint simply prints to the
-                              default printer with default settings when the
-                              'Print' button is pushed.
+                              De xeito predeterminado, Tux Paint simplemente
+                              imprime na impresora predeterminada cos axustes
+                              predeterminados cando se preme o botón
+                              «Imprimir».
 
-                              However, if you hold the [Alt] (or [Opción])
-                              key on the keyboard while clicking the 'Print'
-                              button, as long as you're not in fullscreen
-                              mode, your operating system's printer dialog
-                              will appear, where you can change the settings.
+                              Non obstante, se mantén premida a tecla [Alt]
+                              (ou [Opción]) mentres preme no botón
+                              «Imprimir», sempre que non estea en modo de
+                              pantalla completa, aparecerá o diálogo da
+                              impresora do seu sistema operativo no que
+                              poderá cambiar os axustes.
 
-                              You can have the printer configuration changes
-                              stored between Tux Paint sessions by setting
-                              the "printcfg" option.
+                              Pode gardar os cambios na configuración da
+                              impresora entre as sesións de Tux Paint
+                              axustando a opción «printcfg».
 
-                              If the "printcfg" option is used, printer
-                              settings will be loaded from the file
-                              "printcfg.cfg" in your personal folder (see
-                              below). Any changes will be saved there as
-                              well.
+                              Se se usa a opción «printcfg», os axustes da
+                              impresora cargaranse dende o ficheiro
+                              «printcfg.cfg» no seu cartafol persoal (ver a
+                              continuación). Calquera cambio tamén se gardará
+                              alí.
 
                               Vexa a documentación de «Opcións.
 
@@ -709,13 +713,14 @@ Ferramentas dispoñíbeis
                               [Alt] (ou [Opción]) ao premer no botón
                               «Imprimir».
 
-                              However, this behavior can be changed. You can
-                              have the printer dialog always appear by using
-                              "--altprintalways" on the command-line, or
-                              "altprint=always" in Tux Paint's configuration
-                              file. Conversely, you can prevent the
-                              [Alt]/[Opción] key from having any effect by
-                              using "--altprintnever", or "altprint=never".
+                              Non obstante, este comportamento pódese
+                              cambiar. Pode facer que o diálogo da impresora
+                              apareza sempre usando «--altprintalways» na
+                              liña de ordes ou «altprint=always» no ficheiro
+                              de configuración de Tux Paint. Pola contra,
+                              pode evitar que a tecla [Alt]/[Opción] teña
+                              ningún efecto empregando «--altprintnever» ou
+                              «altprint=never».
 
                               Vexa a documentación de «Opcións.
 
@@ -723,108 +728,114 @@ Ferramentas dispoñíbeis
 
          Orde «Diapositivas» (en «Abrir»)
 
-                 The 'Slides' button is available in the 'Open' dialog. It
-                 can be used to play a simple animation within Tux Paint, or
-                 a slideshow of pictures. It can also export an animated GIF
-                 based on the chosen images.
+                 O botón «Diapositivas» está dispoñíbel no diálogo «Abrir».
+                 Pode usarse para reproducir unha animación sinxela dentro de
+                 Tux Paint ou un diaporama. Tamén pode exportar un GIF
+                 animado baseado nas imaxes escollidas.
 
                       Escolla de imaxes
 
-                              When you enter the 'Slides' section of Tux
-                              Paint, it displays a list of your saved files,
-                              just like the 'Open' dialog.
+                              Cando entra na sección «Diapositivas» de Tux
+                              Paint, amosase unha lista dos seus ficheiros
+                              gardados, do mesmo xeito que o diálogo «Abrir».
 
-                              Click each of the images you wish to display in
-                              a slideshow-style presentation, one by one. A
-                              digit will appear over each image, letting you
-                              know in which order they will be displayed.
+                              Prema en cada unha das imaxes que quere amosar
+                              nun diaporama ao modo de presentación de
+                              diapositivas, unha por unha. Aparecerá un
+                              díxito sobre cada imaxe, indicándolle en que
+                              orde se amosarán.
 
-                              You can click a selected image to unselect it
-                              (take it out of your slideshow). Click it again
-                              if you wish to add it to the end of the list.
+                              Pode premer nunha imaxe seleccionada para
+                              desmarcala (sacala do diaporama). Prema de novo
+                              se quere engadila ao final da lista.
 
                       Estabelecer a velocidade de reprodución
 
-                              A sliding scale at the lower left of the screen
-                              (next to the 'Play' button) can be used to
-                              adjust the speed of the slideshow or animated
-                              GIF, from slowest to fastest. Choose the
-                              leftmost setting to disable automatic
-                              advancement during playback within Tux Paint —
-                              you will need to press a key or click to go to
-                              the next slide (see below).
+                              Pódese usar unha escala desprazábel na parte
+                              inferior esquerda da pantalla (xunto ao botón
+                              «Reproducir») para axustar a velocidade do
+                              diaporama ou do GIF animado, de máis lenta a
+                              máis rápida. Escolla o axuste máis á esquerda
+                              para desactivar o avance automático durante a
+                              reprodución dentro de Tux Paint; terá que
+                              premer unha tecla ou facer clic para ir á
+                              seguinte diapositiva (ver a continuación).
 
-                              Note: The slowest setting does not
-                              automatically advance through the slides. Use
-                              it for when you want to step through them
-                              manually. (This does not apply to an exported
-                              animated GIF.)
+                              Nota: O axuste máis lento non avanza
+                              automaticamente entre as diapositivas. Úseo
+                              para cando queira percorrelas manualmente.
+                              (Isto non se aplica a un GIF animado
+                              exportado).
 
                       Reprodución en Tux Paint
 
-                              To play a slideshow within Tux Paint, click the
-                              'Play' button. (Note: If you hadn't selected
-                              ANY images, then ALL of your saved images will
-                              be played in the slideshow!)
+                              Para reproducir un diaporama dentro de Tux
+                              Paint, prema no botón «Reproducir». (Nota: Se
+                              non seleccionases NINGUNHA imaxe, entón TODAS
+                              as súas imaxes gardadas reproduciranse no
+                              diaporama.)
 
-                              During the slideshow, press [Espazo], [Intro]
-                              or [Retorno], or the [Frecha cara á dereita] —
-                              or click the 'Next' button at the lower left —
-                              to manually advance to the next slide. Press
-                              [Frecha cara arriba] to go back to the previous
-                              slide.
+                              Durante a presentación de diapositivas, prema
+                              [Espazo], [Intro] ou [Retorno] ou o [Frecha
+                              cara á dereita] —ou prema no botón «Seguinte»—
+                              na parte inferior esquerda para avanzar
+                              manualmente á seguinte diapositiva. Prema
+                              [Frecha cara arriba] para volver á diapositiva
+                              anterior.
 
-                              Press [Escape], or click the 'Back' button at
-                              the lower right, to exit the slideshow and
-                              return to the slideshow image selection screen.
+                              Prema [Escape] ou prema no botón «Atrás» na
+                              parte inferior dereita para saír do diaporama e
+                              volver á pantalla de selección de imaxes do
+                              diaporama.
 
-                      Exportando un GIF animado
+                      Exportar un GIF animado
 
-                              Click the 'GIF Export' button near the lower
-                              right to have Tux Paint generate an animated
-                              GIF file based on the selected images.
+                              Prema no botón «Exportar GIF» preto da parte
+                              inferior dereita para que Tux Paint xere un
+                              ficheiro GIF animado baseado nas imaxes
+                              seleccionadas.
 
-                              Note: At least two images must be selected. (To
-                              export a single image, use the 'Export' option
-                              from the main 'Open' dialog.) If no images are
-                              selected, Tux Paint will NOT attempt to
-                              generate a GIF based on all saved images.
+                              Nota: Hai que seleccionar polo menos dúas
+                              imaxes. (Para exportar unha única imaxe, use a
+                              opción «Exportar» no diálogo principal
+                              «Abrir»). Se non hai ningunha imaxe
+                              seleccionada, Tux Paint NON intentará xerar un
+                              GIF baseado en todas as imaxes gardadas.
 
-                              Pressing [Escape] during the export process
-                              will abort the process, and return you to the
-                              'Slideshow' dialog.
+                              Ao premer [Escape] durante o proceso de
+                              exportación abortarase e volverá ao diálogo
+                              «Diaporama».
 
-                 Click 'Back' in the slideshow image selection screen to
-                 return to the 'Open' dialog.
+                 Prema en «Atrás» na pantalla de selección de imaxes de
+                 diapositivas para volver ao diálogo «Abrir».
 
      ----------------------------------------------------------------------
 
          Orde «Saír»
 
-                 Clicking the 'Quit' button, closing the Tux Paint window, or
-                 pushing the [Escape] key will quit Tux Paint.
+                 Ao premer no botón «Saír», pechando a xanela de Tux Paint ou
+                 premendo a tecla [Escape] sairase de Tux Paint.
 
                  Primeiro preguntaráselle se realmente quere saír.
 
-                 If you choose to quit, and you haven't saved the current
-                 picture, you will first be asked if wish to save it. If it's
-                 not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "Save"
-                 above.)
+                 Se elixe saír e non gardou a imaxe actual, primeiro
+                 preguntaráselle se quere gardala. Se non é unha nova imaxe,
+                 preguntaráselle se quere gardar sobre a versión antiga ou
+                 crear unha nova entrada. (Vexa «Gardar» máis arriba).
 
-                 Note: If the image is saved, it will be reloaded
-                 automatically the next time you run Tux Paint -- unless the
-                 "startblank" option is set.
+                 Nota: Se se garda a imaxe, volverá cargarse automaticamente
+                 a próxima vez que execute Tux Paint, a non ser que estea
+                 configurada a opción «startblank».
 
-                 Note: The 'Quit' button within Tux Paint, and quitting via
-                 the [Escape] key, may be disabled, via the "noquit" option.
+                 Nota: O botón «Saír» de Tux Paint e saír a través da tecla
+                 [Escape] pode estar desactivado mediante a opción «noquit».
 
-                 In that case, the "window close" button on Tux Paint's title
-                 bar (if not in fullscreen mode) or the [Alt] + [F4] key
-                 sequence may be used to quit.
+                 Nese caso, pódese usar o botón «pechar a xanela» na barra de
+                 título de Tux Paint (se non está en modo pantalla completa)
+                 ou a secuencia de teclas [Alt] + [F4] para saír.
 
-                 If neither of those are possible, the key sequence of
-                 [Maiúsculas] + [Control] + [Escape] may be used to quit.
+                 Se ningún das dúas é posíbel, pódese usar a secuencia de
+                 teclas [Maiúsculas] + [Control] + [Escape] para saír.
 
                  Vexa a documentación de «Opcións.
 
@@ -832,23 +843,24 @@ Ferramentas dispoñíbeis
 
          Silenciar o son
 
-                 There is no on-screen control button at this time, but by
-                 using the [Alt] + [S] keyboard sequence, sound effects can
-                 be disabled and re-enabled (muted and unmuted) while the
-                 program is running.
+                 Non hai ningún botón de control na pantalla neste momento,
+                 pero ao usar a secuencia de teclado [Alt] + [S], os efectos
+                 de son pódense desactivar e volver activar (silenciado e
+                 sactivado) mentres o programa está en execución.
 
-                 Note that if sounds are completely disabled via the
-                 "nosound" option, the [Alt] + [S] key combination has no
-                 effect. (i.e., it cannot be used to turn on sounds when the
-                 parent/teacher wants them disabled.)
+                 Teña en conta que se os sons están completamente
+                 desactivados mediante a opción «nosound», a combinación de
+                 teclas [Alt] + [S] non ten efecto. (é dicir, non se pode
+                 usar para activar os sons cando o pai ou o profesor quere
+                 que estean desactivados).
 
      ----------------------------------------------------------------------
 
                        Carga doutras imaxes en Tux Paint
 
-     Tux Paint's 'Open' dialog only displays pictures you created with Tux
-     Paint. So what do you do if you want to load some other drawinng or even
-     a photograph into Tux Paint, so you can edit or draw on it?
+     O diálogo «Abrir» de Tux Paint só amosa as imaxes que creou con Tux
+     Paint. Entón, que facer se quere cargar algún outro debuxo ou incluso
+     unha fotografía en Tux Paint para poder editala ou debuxar sobre ela?
 
      Pode simplemente converter a imaxe ao formato que usa Tux Paint –PNG
      (Portable Network Graphics – Gráficos de Rede Portátiles)– e colocala no
@@ -873,64 +885,67 @@ Ferramentas dispoñíbeis
              persoal («$HOME»), p. ex.: «/home/nome de
              usuario/.tuxpaint/saved/».
 
-     Note: It is also from this folder that you can copy or open pictures
-     drawn in Tux Paint using other applications, though the 'Export' option
-     from Tux Paint's 'Open' dialog can be used to copy them to a location
-     that's easier and safer to access.
+     Nota: É tamén dende este cartafol dende onde pode copiar ou abrir imaxes
+     debuxadas en Tux Paint usando outras aplicacións, aínda que pode usar a
+     opción «Exportar» do diálogo «Abrir» de Tux Paint para copialas a unha
+     localización de acceso máis doado e seguro.
 
 Uso do script de importación, «tuxpaint-import»
 
-       Linux and Unix users can use the "tuxpaint-import" shell script which
-       gets installed when you install Tux Paint. It uses some NetPBM tools
-       to convert the image ("anytopnm"), resize it so that it will fit in
-       Tux Paint's canvas ("pnmscale"), and convert it to a PNG ("pnmtopng").
+       Os usuarios de Linux e Unix poden usar o script «tuxpaint-import» que
+       se instala ao instalar Tux Paint. Emprega algunhas ferramentas NetPBM
+       para converter a imaxe («anytopnm»), redimensionala de xeito que poida
+       caber no lenzo de Tux Paint («pnmscale») e convertela a PNG
+       («pnmtopng»).
 
-       It also uses the "date" command to get the current time and date,
-       which is the file-naming convention Tux Paint uses for saved files.
-       (Remember, you are never asked for a 'filename' when you go to save or
-       open pictures!)
+       Tamén usa a orde «date» para obter a hora e a data actual, que é a
+       convención de nomes de ficheiros que usa Tux Paint para os ficheiros
+       gardados. (Lembre que nunca se lle pide un «nome de ficheiro» cando
+       vai gardar ou abrir imaxes.)
 
-       To use this script, simply run it from a command-line prompt, and
-       provide it the name(s) of the file(s) you wish to convert.
+       Para usar este script, abonda con executalo dende unha liña de ordes e
+       fornecerlle o nome do ficheiro que quere converter.
 
-       They will be converted and placed in your Tux Paint "saved" directory.
-       (Note: If you're doing this for a different user (e.g., your child)
-       you'll need to make sure to run the command under their account.)
+       Converteranse e colocaranse no directorio de Tux Paint «saved». (Nota:
+       Se está a facer isto por un usuario diferente (por exemplo, o seu
+       fillo ou filla) terá que asegurarse de executar a orde na súa conta).
 
        Exemplo:
 
          $ tuxpaint-import avoa.jpg
-         avoa.jpg -> /home/username/.tuxpaint/saved/20210303230300.png
+         avoa.jpg -> /home/username/.tuxpaint/saved/20210305010409.png
          jpegtopnm: WRITING A PPM FILE
 
-       The first line ("tuxpaint-import avoa.jpg") is the command to run. The
-       following two lines are output from the program while it's working.
+       A primeira liña («tuxpaint-import avoa.jpg») é a orde a executar. As
+       dúas liñas seguintes son a saída do programa mentres funciona.
 
-       Now you can load Tux Paint, and a version of that original picture
-       will be available under the 'Open' dialog. Just double-click its icon!
+       Agora pode cargar Tux Paint e unha versión desa imaxe orixinal estará
+       dispoñíbel no diálogo «Abrir». Só ten que premer dúas veces na súa
+       icona.
 
 Importar imaxes manualmente
 
-       Windows, macOS, and Haiku users who wish to import arbitrary images
-       into Tux Paint must do so via a manual process.
+       Os usuarios de Windows, macOS e Haiku que queiran importar imaxes
+       arbitrarias a Tux Paint deben facelo mediante un proceso manual.
 
-       Load a graphics program that is capable of both loading your picture
-       and saving a PNG format file. (See the documentation file "PNG.html"
-       for a list of suggested software, and other references.)
+       Cargue un programa gráfico que sexa quen tanto de cargar a súa imaxe
+       como de gardar un ficheiro en formato PNG. (Vexa o ficheiro de
+       documentación «PNG.html» para obter unha lista do software suxerido e
+       outras referencias.)
 
-       When Tux Paint loads an image that's not the same size as its drawing
-       canvas, it scales (and sometimes smears the edges of) the image so
-       that it fits within the canvas.
+       Cando Tux Paint carga unha imaxe que non ten o mesmo tamaño que o seu
+       lenzo de debuxo, escala (e ás veces mancha os bordos) da imaxe para
+       que se axuste ao lenzo.
 
-       To avoid having the image stretched or smeared, you can resize it to
-       Tux Paint's canvas size. This size depends on the size of the Tux
-       Paint window, or resolution at which Tux Paint is run, if in
-       fullscreen. (Note: The default resolution is 800x600.) See "Cálculo
-       das dimensións da imaxe", below.
+       Para evitar que a imaxe se estire ou manche, pode redimensionala ao
+       tamaño do lenzo de Tux Paint. Este tamaño depende do tamaño da xanela
+       de Tux Paint ou da resolución coa que se executa Tux Paint, se está en
+       pantalla completa. (Nota: A resolución predeterminada é 800x600.) Vexa
+       «Cálculo das dimensións da imaxe», a continuación.
 
-       Save the picture in PNG format. It is highly recommended that you name
-       the filename using the current date and time, since that's the
-       convention Tux Paint uses:
+       Gardar a imaxe en formato PNG. Recoméndase encarecidamente que nomee o
+       ficheiro usando a data e hora actuais, xa que esa é a convención que
+       usa Tux Paint:
 
          AAAAMMDDhhmmss.png
 
@@ -941,25 +956,25 @@ Importar imaxes manualmente
          * mm = Minuto (dous díxitos, «00»-«59»)
          * ss = Segundo (dous díxitos, «00»-«59»)
 
-       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+       Exemplo: «20210731110500.png», para o 31 de xullo de 2021 ás 11:05am.
 
        Coloque este ficheiro PNG no seu directorio/cartafol «saved» de Tux
        Paint. (Ver arriba.)
 
   Cálculo das dimensións da imaxe
 
-         This part of the documentation needs to be rewritten, since the new
-         "buttonsize" option was added. For now, try drawing and saving an
-         image within Tux Paint, then determine what size (pixel width and
-         height) it came out to, and try to match that when scaling the
-         picture(s) you're importing into Tux Paint.
+         É preciso reescribir esta parte da documentación xa que se engadiu a
+         nova opción «buttonsize». Polo de agora, tente debuxar e gardar unha
+         imaxe dentro de Tux Paint, logo determine o tamaño (largo e alto en
+         píxeles) que obtivo e tente igualar iso ao escalar a(s) imaxe(s) que
+         está a importar en Tux Paint.
 
      ----------------------------------------------------------------------
 
                                 Máis información
 
-     Other documentation included with Tux Paint (found in the "docs"
-     folder/directory) includes:
+     Outra documentación incluída con Tux Paint (que se atopa no
+     cartafol/directorio «docs») inclúe:
        * Documentación da ferramenta «Maxia» («magic-docs»)
          Documentación para cada unha das ferramentas de «Maxia» instaladas
          actualmente.
@@ -968,20 +983,22 @@ Importar imaxes manualmente
        * CHANGES.txt
          Resumo do que cambiou entre as versións de Tux Paint.
        * COPYING.txt
-         Tux Paint's software license, the GNU General Public License (GPL)
+         A licenza de software de Tux Paint, aLicenza Pública Xeral de GNU
+         (GPL)
        * INSTALL.html
          Instrucións para compilar e instalar Tux Paint, cando proceda.
        * EXTENDING.html
-         Detailed instructions on extending Tux Paint: creating brushes,
-         stamps, starters, and templates; adding fonts; and creating new
-         on-screen keyboard layouts and input methods.
+         Instrucións detalladas sobre a ampliación de Tux Paint: creación de
+         pinceis, selos, imaxes de inicio e modelos; engadir fontes; e crear
+         novos deseños de teclado en pantalla e métodos de entrada.
        * OPTIONS.html
-         Detailed instructions on command-line and configuration-file
-         options, for those who don't want to use the Tux Paint Config. tool
-         to manage Tux Paint's configuration.
+         Instrucións detalladas sobre a liña de ordes e as opcións do
+         ficheiro de configuración para aqueles que non queiran usar a
+         ferramenta Tux Paint Config. para xestionar a configuración de Tux
+         Paint.
        * PNG.html
-         Notes on creating PNG format bitmapped (raster) images for use in
-         Tux Paint.
+         Notas sobre a creación de imaxes de mapa de bits (ráster) en formato
+         PNG para usar en Tux Paint.
        * SVG.html
          Notas sobre a creación de imaxes vectoriais en formato SVG para usar
          en Tux Paint.
@@ -992,24 +1009,24 @@ Importar imaxes manualmente
 
                                 Como obter axuda
 
-     If you need help, there are numerous ways to interact with Tux Paint
-     developers and other users.
+     Se precisa axuda, hai moitas formas de interactuar cos desenvolvedores
+     de Tux Paint e outros usuarios.
 
-       * Report bugs or request new features via the project's bug-tracking
-         system
+       * Informar dos erros ou solicitar novas funcións a través do sistema
+         de seguimento de erros do proxecto
        * Participe nas distintas listas de correo do proxecto
        * Converse con desenvolvedores e outros usuarios a través de IRC
        * Ou póñase en contacto directamente cos desenvolvedores
 
-     To learn more, visit the "Contacto" page of the official Tux Paint
-     website: http://tuxpaint.org/contact/
+     Para obter máis información, visite a páxina «Contacto» do sitio web
+     oficial de Tux Paint: http://tuxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
                                 Como participar
 
-     Tux Paint is a volunteer-driven project, and we're happy to accept your
-     help in a variety of ways.
+     Tux Paint é un proxecto impulsado por voluntarios e estamos encantados
+     de aceptar a súa axuda de diversas maneiras.
 
        * Traducir Tux Paint a outro idioma
        * Mellorar as traducións existentes
@@ -1018,5 +1035,5 @@ Importar imaxes manualmente
        * Crear un currículo na aula
        * Promover ou axudar a outras persoas a usar Tux Paint
 
-     To learn more, visit the "Colabora connosco" page of the official Tux
-     Paint website: http://tuxpaint.org/help/
+     Para obter máis información, visite a páxina «Colabora connosco» do
+     sitio web oficial de Tux Paint: http://tuxpaint.org/help/
