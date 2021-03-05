@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                                  3 Marzo 2021
+                                  5 Marzo 2021
 
      ----------------------------------------------------------------------
 
@@ -913,7 +913,7 @@ Uso do script de importación, «tuxpaint-import»
        Exemplo:
 
          $ tuxpaint-import avoa.jpg
-         avoa.jpg -> /home/username/.tuxpaint/saved/20210305010409.png
+         avoa.jpg -> /home/username/.tuxpaint/saved/20210305101553.png
          jpegtopnm: WRITING A PPM FILE
 
        A primeira liña («tuxpaint-import avoa.jpg») é a orde a executar. As
