@@ -250,8 +250,10 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_rig
   Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
 
   /* Calculate the max radius of the filled area */
-  xd = (x_right - x_left + 1);
-  yd = (y_bottom - y_top + 1);
+  //xd = (x_right - x_left + 1);
+  //yd = (y_bottom - y_top + 1);
+  xd = max(abs(x - x_right), abs(x - x_left));
+  yd = max(abs(y - y_bottom), abs(y - y_top));
   rad = sqrt(xd * xd + yd * yd);
   if (rad == 0) {
     return;
@@ -269,18 +271,20 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_rig
         xd = (float) abs(xx - x);
         yd = (float) abs(yy - y);
         dist = sqrt(xd * xd + yd * yd);
-        ratio = (dist / rad);
+        if (dist < rad) {
+          ratio = (dist / rad);
 
-        /* Get the old color, and blend it (with a distance-based ratio) with the target color */
-        old_colr = getpixels[canvas->format->BytesPerPixel] (canvas, xx, yy);
-        SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
+          /* Get the old color, and blend it (with a distance-based ratio) with the target color */
+          old_colr = getpixels[canvas->format->BytesPerPixel] (canvas, xx, yy);
+          SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
 
-        new_r = (Uint8) (((float) old_r) * ratio + ((float) draw_r * (1.00 - ratio)));
-        new_g = (Uint8) (((float) old_g) * ratio + ((float) draw_g * (1.00 - ratio)));
-        new_b = (Uint8) (((float) old_b) * ratio + ((float) draw_b * (1.00 - ratio)));
+          new_r = (Uint8) (((float) old_r) * ratio + ((float) draw_r * (1.00 - ratio)));
+          new_g = (Uint8) (((float) old_g) * ratio + ((float) draw_g * (1.00 - ratio)));
+          new_b = (Uint8) (((float) old_b) * ratio + ((float) draw_b * (1.00 - ratio)));
 
-        new_colr = SDL_MapRGB(canvas->format, new_r, new_g, new_b);
-        putpixels[canvas->format->BytesPerPixel] (canvas, xx, yy, new_colr);
+          new_colr = SDL_MapRGB(canvas->format, new_r, new_g, new_b);
+          putpixels[canvas->format->BytesPerPixel] (canvas, xx, yy, new_colr);
+        }
       }
     }
   }
