@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 20, 2021
+  June 14, 2002 - March 7, 2021
 */
 
 
@@ -4550,30 +4550,30 @@ static void mainloop(void)
                           rec_undo_buffer();
                           x1 = x2 = old_x;
                           y1 = y2 = old_y;
-    
+
+                          for (y1 = 0; y1 < canvas->h; y1++) {
+                            for (x1 = 0; x1 < canvas->w; x1++) {
+                              sim_flood_touched[(y1 * canvas->w) + x1] = 0;
+                            }
+                          }
+
                           if (cur_fill == FILL_FLOOD)
                             {
                               /* Flood fill a solid color */
-                              do_flood_fill(canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2);
-    
+                              do_flood_fill(screen, canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+
                               update_canvas(x1, y1, x2, y2);
                             }
                           else
                             {
                               SDL_Surface * tmp_canvas;
 
-                              for (y1 = 0; y1 < canvas->h; y1++) {
-                                for (x1 = 0; x1 < canvas->w; x1++) {
-                                  sim_flood_touched[(y1 * canvas->w) + x1] = 0;
-                                }
-                              }
-
                               tmp_canvas = SDL_CreateRGBSurface(canvas->flags,
                                 canvas->w, canvas->h, canvas->format->BitsPerPixel,
                                 canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
                               SDL_BlitSurface(canvas, NULL, tmp_canvas, NULL);
 
-                              simulate_flood_fill(tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                              simulate_flood_fill(screen, tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
                               SDL_FreeSurface(tmp_canvas);
 
                               sim_flood_x1 = x1;
@@ -4596,6 +4596,8 @@ static void mainloop(void)
 
                               update_canvas(x1, y1, x2, y2);
                             }
+
+                            draw_tux_text(TUX_GREAT, tool_tips[TOOL_FILL], 1);
                         }
                     }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
@@ -4725,7 +4727,6 @@ static void mainloop(void)
                         }
 
                       do_render_cur_text(0);
-
                     }
 
                   button_down = 1;

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.3 (0.9.26)
+2021.March.7 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -64,6 +64,9 @@ $Id$
 
   * Other Improvements
     ------------------
+    * [WIP] Fill tools do a better job at filling around
+      antialiased edges, and apply some blending.
+
     * Reduce CPU usage by increasing delay in main loop
       from 1ms to 10ms, and only using SDL's Timer subsystem
       when scrolling happens.
