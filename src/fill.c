@@ -244,7 +244,6 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
       }
 
       px_colr = getpixels[last->format->BytesPerPixel] (last, fillR, y);
-printf("%f\n", in_line);
       putpixels[canvas->format->BytesPerPixel] (canvas, fillR, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
       fillR++;
 
