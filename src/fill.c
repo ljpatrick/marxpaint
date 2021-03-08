@@ -191,7 +191,7 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
       }
 
       px_colr = getpixels[last->format->BytesPerPixel] (last, fillL, y);
-      putpixels[canvas->format->BytesPerPixel] (canvas, fillL, y, blend(canvas, cur_colr, px_colr, (3.0 - in_line) / 3.0));
+      putpixels[canvas->format->BytesPerPixel] (canvas, fillL, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
       fillL--;
 
       px_colr = getpixels[last->format->BytesPerPixel] (last, fillL, y);
@@ -206,9 +206,15 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
         }
     }
 
-  if (touched != NULL && fillL >= 0)
+  if (fillL >= 0)
     {
-      touched[(y * canvas->w) + fillL] = (255 - ((Uint8) (in_line * 85)));
+      if (touched != NULL)
+        {
+          touched[(y * canvas->w) + fillL] = (255 - ((Uint8) (in_line * 85)));
+        }
+
+      px_colr = getpixels[last->format->BytesPerPixel] (last, fillL, y);
+      putpixels[canvas->format->BytesPerPixel] (canvas, fillL, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
     }
 
 
@@ -236,8 +242,10 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
       if (touched != NULL) {
         touched[(y * canvas->w) + fillR] = (255 - ((Uint8) (in_line * 85)));
       }
+
       px_colr = getpixels[last->format->BytesPerPixel] (last, fillR, y);
-      putpixels[canvas->format->BytesPerPixel] (canvas, fillR, y, blend(canvas, cur_colr, px_colr, (3.0 - in_line) / 3.0));
+printf("%f\n", in_line);
+      putpixels[canvas->format->BytesPerPixel] (canvas, fillR, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
       fillR++;
 
       px_colr = getpixels[last->format->BytesPerPixel] (last, fillR, y);
@@ -252,9 +260,15 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
         }
     }
 
-  if (touched != NULL && fillR < canvas->w)
+  if (fillR < canvas->w)
     {
-      touched[(y * canvas->w) + fillR] = (255 - ((Uint8) (in_line * 85)));
+      if (touched != NULL)
+        {
+          touched[(y * canvas->w) + fillR] = (255 - ((Uint8) (in_line * 85)));
+        }
+
+      px_colr = getpixels[last->format->BytesPerPixel] (last, fillR, y);
+      putpixels[canvas->format->BytesPerPixel] (canvas, fillR, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
     }
 
   if (fillR > *x2)

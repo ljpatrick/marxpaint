@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.7 (0.9.26)
+2021.March.8 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -64,7 +64,7 @@ $Id$
 
   * Other Improvements
     ------------------
-    * [WIP] Fill tools do a better job at filling around
+    * Fill tools do a better job at filling around
       antialiased edges, and apply some blending.
 
     * Reduce CPU usage by increasing delay in main loop
