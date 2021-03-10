@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  5 March 2021
+                                 marzo 9, 2021
 
      ----------------------------------------------------------------------
 
@@ -883,7 +883,7 @@ Using the import script, "tuxpaint-import"
        Example:
 
          $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20210305101553.png
+         grandma.jpg -> /home/username/.tuxpaint/saved/20210309212248.png
          jpegtopnm: WRITING A PPM FILE
 
        The first line ("tuxpaint-import grandma.jpg") is the command to run.

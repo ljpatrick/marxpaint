@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                  5 March 2021
+                                   3月 9, 2021
 
      ----------------------------------------------------------------------
 
@@ -617,7 +617,7 @@ Tux Paint の起動
        Example:
 
          $ tuxpaint-import おばあちゃん.jpg
-         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210305101553.png
+         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210309212248.png
          jpegtopnm: WRITING A PPM FILE
 
        1行目 ("tuxpaint-import おばあちゃん.jpg") が実行するコマンドで、続く2行がプログラムの実行中の出力です。
