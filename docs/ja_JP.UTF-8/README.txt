@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   3月 9, 2021
+                                   2021年3月 9日
 
      ----------------------------------------------------------------------
 
@@ -617,7 +617,7 @@ Tux Paint の起動
        Example:
 
          $ tuxpaint-import おばあちゃん.jpg
-         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210309212248.png
+         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210310223804.png
          jpegtopnm: WRITING A PPM FILE
 
        1行目 ("tuxpaint-import おばあちゃん.jpg") が実行するコマンドで、続く2行がプログラムの実行中の出力です。
@@ -639,9 +639,8 @@ Tux Paint の起動
        Paint のウィンドウサイズや、フルスクリーン動作時の画面解像度に依存します。(注: 標準の解像度は 800x600 です)。 以下の
        "イメージサイズの計算方法" をごらんください。
 
-       Save the picture in PNG format. It is highly recommended that you name
-       the filename using the current date and time, since that's the
-       convention Tux Paint uses:
+       画像は PNG 形式で保存してください。また、以下のように、Tux Paint
+       における命名規則である、現在の日付と時刻を用いたファイル名を使用することを強くお勧めします。
 
          YYYYMMDDhhmmss.png
 
@@ -652,9 +651,9 @@ Tux Paint の起動
          * mm = 分 (2桁, "00"-"59")
          * ss = 秒 (2桁, "00"-"59")
 
-       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+       例：2021年7月31日 午前11時5分であれば、20210731110500.png のようになります。
 
-       PNG file を Tux Paint の "saved" ディレクトリにコピーします。（上記参照）
+       PNG ファイルを Tux Paint の "saved" ディレクトリにコピーします。（上記参照）
 
   イメージサイズの計算方法
 

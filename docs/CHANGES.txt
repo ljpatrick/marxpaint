@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.8 (0.9.26)
+2021.March.10 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
