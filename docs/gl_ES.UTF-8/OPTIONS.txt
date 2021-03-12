@@ -190,8 +190,8 @@ Usuarios de Windows
 
              Usa a orde ORDE para imprimir un ficheiro en formato PostScript
              cando se preme no botón «Imprimir» mentres se mantén premida a
-             tecla modificadora . (Iso utilizase normalmente para fornecer un
-             diálogo de impresión, semellante a cando se preme
+             tecla modificadora [Alt]. (Iso utilizase normalmente para
+             fornecer un diálogo de impresión, semellante a cando se preme
              [Alt]+«Imprimir» en Windows e macOS.)
 
              Se esta opción non está especificamente definida, a orde

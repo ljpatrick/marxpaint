@@ -187,9 +187,10 @@ Windows Users
              (Linux and Unix only)
 
              Use the command COMMAND to print a PostScript format file when
-             the 'Print' button is clicked while the modifier key is being
-             held. (This is typically used for providing a print dialog,
-             similar to when pressing [Alt]+'Print' in Windows and macOS.)
+             the 'Print' button is clicked while the [Alt] modifier key is
+             being held. (This is typically used for providing a print
+             dialog, similar to when pressing [Alt]+'Print' in Windows and
+             macOS.)
 
              If this option is not specifically not set, the default command
              is KDE's graphical print dialog:
