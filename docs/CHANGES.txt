@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.10 (0.9.26)
+2021.March.15 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -84,6 +84,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * Albanian
+      Besnik Bleta <besnik@programeshqip.org>
+
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
 
