@@ -32,7 +32,7 @@
            back to the main interface), as if a "Back" button in Tux Paint
            were clicked, or the [Esc] was key pressed.
 
-           Example: killall tuxpaint
+           例：killall tuxpaint
 
    SIGUSR1 & SIGUSR2
 
@@ -52,4 +52,4 @@
            it may be necessary to send this signal to Tux Paint a few times,
            for it to quit completely.
 
-           Example: killall -s SIGUSR1 tuxpaint
+           例：killall -s SIGUSR1 tuxpaint
