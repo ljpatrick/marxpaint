@@ -581,7 +581,7 @@ Windows Users
                      * [F4] jump mouse between "Tools", "Colors" and canvas
                        areas
                      * If mouse is within "Tools" section on the left, or
-                       "Colors" secton at the bottom:
+                       "Colors" section at the bottom:
                           * [F7], [F8]: Move down/up between buttons,
                             respectively (Tools section, only)
                           * [F11], [F12]: Move to previous/next button,
