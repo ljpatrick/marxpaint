@@ -1354,6 +1354,7 @@ obj:
 ######
 
 MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
+<<<<<<< HEAD
 MAGIC_SDL_LIBS:=$(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 windows_MAGIC_ARCH_LINKS=-lintl $(PNG)
 macos_MAGIC_ARCH_LINKS=-lintl $(PNG)
@@ -1362,6 +1363,17 @@ iphonesimulator_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --li
 beos_MAGIC_ARCH_LINKS=-lintl $(PNG)
 linux_MAGIC_ARCH_LINKS=-lintl $(PNG)
 MAGIC_ARCH_LINKS=$($(OS)_MAGIC_ARCH_LINKS)
+=======
+MAGIC_SDL_LIBS:=$(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
+windows_MAGIC_ARCH_LINKS:=-lintl $(PNG)
+macos_MAGIC_ARCH_LINKS:=-lintl $(PNG)
+iphoneos_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
+iphonesimulator_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
+beos_MAGIC_ARCH_LINKS:=-lintl $(PNG)
+linux_MAGIC_ARCH_LINKS:=-lintl $(PNG)
+MAGIC_ARCH_LINKS:=$($(OS)_MAGIC_ARCH_LINKS)
+
+>>>>>>> b05f75f1 (Lazy resolution of iphone*_ARCH_LINKS)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 macos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
