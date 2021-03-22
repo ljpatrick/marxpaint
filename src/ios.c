@@ -1,5 +1,5 @@
 /*
-  macos.c
+  ios.c
 
   Copyright (c) 2021
   http://www.tuxpaint.org/
@@ -22,63 +22,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "macos.h"
+#include "ios.h"
 
-#define MACOS_FONTS_PATH              "%s/Library/Fonts"
-#define MACOS_PREFERENCES_PATH        "%s/Library/Application Support/TuxPaint"
-#define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/TuxPaint"
+#define IOS_FONTS_PATH              "../Library/Fonts"
+#define IOS_PREFERENCES_PATH        "../Library/Application Support/TuxPaint"
 
 
-/**
- * FIXME
- */
 const char *apple_fontsPath(void)
 {
-  static char *p = NULL;
-
-  if (!p)
-    {
-      const char *home = getenv("HOME");
-
-      p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
-
-      if (p)
-        sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
-      else
-        perror("apple_fontsPath");
-    }
-
-  return p;
+    return IOS_FONTS_PATH;
 }
 
 
-/**
- * FIXME
- */
 const char *apple_preferencesPath(void)
 {
-  static char *p = NULL;
-
-  if (!p)
-    {
-      const char *home = getenv("HOME");
-
-      p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
-
-      if (p)
-        sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
-      else
-        perror("apple_preferencesPath");
-    }
-
-  return p;
+    return IOS_PREFERENCES_PATH;
 }
 
 
-/**
- * FIXME
- */
 const char *apple_globalPreferencesPath(void)
 {
-  return MACOS_GLOBAL_PREFERENCES_PATH;
+    return IOS_PREFERENCES_PATH;
 }

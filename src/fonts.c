@@ -56,6 +56,7 @@
 	The renaming ends here.
 */
 
+#include "platform.h"
 #include "fonts.h"
 #include "i18n.h"
 #include "progressbar.h"
@@ -67,8 +68,10 @@
 #include "win32_print.h"
 #endif
 
-#ifdef __APPLE__
+#if defined(__MACOS__)
 #include "macos.h"
+#elif defined(__IOS__)
+#include "ios.h"
 #endif
 
 #ifdef __HAIKU__
@@ -193,7 +196,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 
       if (!ret)
         {
-          snprintf(str, sizeof(str), "%s/%s.ttf", macos_fontsPath(), lang_prefix);
+          snprintf(str, sizeof(str), "%s/%s.ttf", apple_fontsPath(), lang_prefix);
           ret = TuxPaint_Font_OpenFont("", str, size);
         }
 #endif
@@ -979,7 +982,7 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
 #elif defined(__APPLE__)
       loadfonts(screen, "/System/Library/Fonts");
       loadfonts(screen, "/Library/Fonts");
-      loadfonts(screen, macos_fontsPath());
+      loadfonts(screen, apple_fontsPath());
       loadfonts(screen, "/usr/share/fonts");
       loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__sun__)
