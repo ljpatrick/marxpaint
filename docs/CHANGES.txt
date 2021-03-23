@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.15 (0.9.26)
+2021.March.22 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -98,6 +98,11 @@ $Id$
     ----------
     * Halftone magic tool wasn't loading due to a problem
       with its sound effect file.
+
+  * Ports & Building
+    ----------------
+    * [WIP] Apple iOS port
+      Mark K. Kim <markuskimius@gmail.com>
 
 2020.December.27 (0.9.25)
   * New Features
