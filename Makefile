@@ -88,16 +88,20 @@ ifdef HOST
   endif
 
   ifeq ($(HOST),iphoneos)
-    OS:=iphoneos
+    OS:=ios
     CC:=$(shell xcrun --sdk iphoneos -f clang)
+    SDK:=iphoneos
     ARCHS:=arm64 armv7s armv7
     MINVER:=9.0
+    MINVEROPT:=-miphoneos-version-min=$(MINVER)
     SDKROOT:=$(shell xcrun --sdk iphoneos --show-sdk-path)
   else ifeq ($(HOST),iphonesimulator)
-    OS:=iphonesimulator
+    OS:=ios
     CC:=$(shell xcrun --sdk iphonesimulator -f clang)
+    SDK:=iphonesimulator
     ARCHS:=$(shell uname -m)
     MINVER:=9.0
+    MINVEROPT:=-mios-simulator-version-min=$(MINVER)
     SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
   else
     $(error Invalid HOST: $(HOST))
@@ -145,8 +149,7 @@ RAD_CMD:=$($(OS)_RAD_CMD)
 
 windows_SO_TYPE:=dll
 macos_SO_TYPE:=dylib
-iphoneos_SO_TYPE:=dylib
-iphonesimulator_SO_TYPE:=dylib
+ios_SO_TYPE:=dylib
 beos_SO_TYPE:=so
 linux_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
@@ -158,30 +161,26 @@ windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
 macos_BUNDLE:=./TuxPaint.app
-iphoneos_BUNDLE:=./TuxPaint-iphoneos.app
-iphonesimulator_BUNDLE:=./TuxPaint-iphonesimulator.app
+ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
 macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
-iphoneos_ARCH_LIBS:=src/ios_print.m obj/ios.o
-iphonesimulator_ARCH_LIBS:=src/ios_print.m obj/ios.o
+ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
 windows_ARCH_CFLAGS:=
 macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
-iphoneos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -miphoneos-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
-iphonesimulator_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mios-simulator-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
+ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
 beos_ARCH_CFLAGS:=
 linux_ARCH_CFLAGS:=
 ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
 
 windows_ARCH_LDFLAGS:=
 macos_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS))
-iphoneos_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib -miphoneos-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS))
-iphonesimulator_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib -mios-simulator-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS))
+ios_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS))
 beos_ARCH_LDFLAGS:=
 linux_ARCH_LDFLAGS:=
 ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
@@ -196,8 +195,7 @@ FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
 macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant
-iphoneos_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
-iphonesimulator_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
+ios_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
@@ -212,8 +210,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # For macOS and iOS, the prefix is relative to DESTDIR.
 windows_PREFIX:=/usr/local
 macos_PREFIX:=Resources
-iphoneos_PREFIX:=Resources
-iphonesimulator_PREFIX:=Resources
+ios_PREFIX:=.
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
@@ -223,9 +220,7 @@ PREFIX:=$($(OS)_PREFIX)
 # "TuxPaint-1" is the OLPC XO name. Installing to ./ is bad!
 ifeq ($(OS),macos)
   DESTDIR:=$(BUNDLE)/Contents/
-else ifeq ($(OS),iphoneos)
-  DESTDIR:=$(BUNDLE)/
-else ifeq ($(OS),iphonesimulator)
+else ifeq ($(OS),ios)
   DESTDIR:=$(BUNDLE)/
 else ifeq ($(PREFIX),./)
   DESTDIR:=TuxPaint-1
@@ -554,8 +549,7 @@ trans:
 
 windows_ARCH_INSTALL:=
 macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-iphoneos_ARCH_INSTALL:=install-iosbundle
-iphonesimulator_ARCH_INSTALL:=install-iosbundle
+ios_ARCH_INSTALL:=install-iosbundle
 linux_ARCH_INSTALL:=install-xdg
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
@@ -1121,7 +1115,6 @@ install-iosbundle:
 	install -m 755 tuxpaint $(BUNDLE)
 	install -m 644 ios/PkgInfo $(BUNDLE)
 	install -m 644 ios/Info.plist $(BUNDLE)
-	install -m 644 ios/Info.plist $(BUNDLE)/Resources
 	install -m 644 ios/tuxpaint.icns $(BUNDLE)
 	install -m 644 ios/tuxpaint.cfg $(BUNDLE)
 	install -m 644 ios/Splash.png $(BUNDLE)
@@ -1354,31 +1347,17 @@ obj:
 ######
 
 MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
-<<<<<<< HEAD
 MAGIC_SDL_LIBS:=$(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 windows_MAGIC_ARCH_LINKS=-lintl $(PNG)
 macos_MAGIC_ARCH_LINKS=-lintl $(PNG)
-iphoneos_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
-iphonesimulator_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
+ios_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
 beos_MAGIC_ARCH_LINKS=-lintl $(PNG)
 linux_MAGIC_ARCH_LINKS=-lintl $(PNG)
 MAGIC_ARCH_LINKS=$($(OS)_MAGIC_ARCH_LINKS)
-=======
-MAGIC_SDL_LIBS:=$(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
-windows_MAGIC_ARCH_LINKS:=-lintl $(PNG)
-macos_MAGIC_ARCH_LINKS:=-lintl $(PNG)
-iphoneos_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
-iphonesimulator_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
-beos_MAGIC_ARCH_LINKS:=-lintl $(PNG)
-linux_MAGIC_ARCH_LINKS:=-lintl $(PNG)
-MAGIC_ARCH_LINKS:=$($(OS)_MAGIC_ARCH_LINKS)
-
->>>>>>> b05f75f1 (Lazy resolution of iphone*_ARCH_LINKS)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 macos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
-iphoneos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
-iphonesimulator_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
+ios_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
 PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
