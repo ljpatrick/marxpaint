@@ -23396,7 +23396,7 @@ static void setup_config(char *argv[])
 #ifdef WIN32
       picturesdir = GetUserImageDir();
 #elif __APPLE__
-      picturesdir = apple_picturesPath();
+      picturesdir = strdup(apple_picturesPath());
 #else
       picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
 #endif
