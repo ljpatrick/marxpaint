@@ -19,14 +19,28 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 */
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <libgen.h>
+#include <limits.h>
 #include "ios.h"
 
 #define IOS_FONTS_PATH              "../Library/Fonts"
 #define IOS_PREFERENCES_PATH        "../Library/Application Support/TuxPaint"
 #define IOS_PICTURES_PATH           "../Documents"
+
+
+/* Recursively mkdir */
+static int _mkdir_r(const char *path)
+{
+    const char parent[PATH_MAX];
+
+    if(!dirname_r(path, parent)) return 1;   /* parent = dirname(path)   */
+    if(strcmp(parent, ".") == 0) return 0;   /* if(parent == ".") return */
+
+    _mkdir_r(parent);                        /* mkdir_r(parent) */
+    return mkdir(path, 0777);                /* mkdir(path)     */
+}
 
 
 const char *apple_fontsPath(void)
@@ -37,13 +51,22 @@ const char *apple_fontsPath(void)
 
 const char *apple_preferencesPath(void)
 {
+    static int init = 0;
+
+    /* Ensure the preferences path exists */
+    if(!init) {
+        _mkdir_r(IOS_PREFERENCES_PATH);
+
+        init = 1;
+    }
+
     return IOS_PREFERENCES_PATH;
 }
 
 
 const char *apple_globalPreferencesPath(void)
 {
-    return IOS_PREFERENCES_PATH;
+    return apple_preferencesPath();
 }
 
 

@@ -36,9 +36,9 @@ const char *apple_fontsPath(void)
 
     if(!p) {
         const char *home = getenv("HOME");
-        
+
         p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
-        
+
         if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
         else perror("apple_fontsPath");
     }
@@ -50,16 +50,16 @@ const char *apple_fontsPath(void)
 const char *apple_preferencesPath(void)
 {
     static char *p = NULL;
-    
+
     if(!p) {
         const char *home = getenv("HOME");
-        
+
         p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
-        
+
         if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
         else perror("apple_preferencesPath");
     }
-    
+
     return p;
 }
 
@@ -73,15 +73,15 @@ const char *apple_globalPreferencesPath(void)
 const char *apple_picturesPath(void)
 {
     static char *p = NULL;
-    
+
     if(!p) {
         const char *home = getenv("HOME");
-        
+
         p = malloc(strlen(home) + strlen(MACOS_PICTURES_PATH) + 1);
-        
+
         if(p) sprintf(p, MACOS_PICTURES_PATH, getenv("HOME"));
         else perror("apple_picturesPath");
     }
-    
+
     return p;
 }
