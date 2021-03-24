@@ -26,6 +26,7 @@
 
 #define IOS_FONTS_PATH              "../Library/Fonts"
 #define IOS_PREFERENCES_PATH        "../Library/Application Support/TuxPaint"
+#define IOS_PICTURES_PATH           "../Documents"
 
 
 const char *apple_fontsPath(void)
@@ -43,4 +44,10 @@ const char *apple_preferencesPath(void)
 const char *apple_globalPreferencesPath(void)
 {
     return IOS_PREFERENCES_PATH;
+}
+
+
+const char *apple_picturesPath(void)
+{
+    return IOS_PICTURES_PATH;
 }

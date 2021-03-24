@@ -23392,10 +23392,11 @@ static void setup_config(char *argv[])
       /* FIXME: Need assist for:
          * __BEOS__
          * __HAIKU__
-         * __APPLE__
       */
 #ifdef WIN32
       picturesdir = GetUserImageDir();
+#elif __APPLE__
+      picturesdir = apple_picturesPath();
 #else
       picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
 #endif

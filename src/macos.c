@@ -27,58 +27,61 @@
 #define MACOS_FONTS_PATH              "%s/Library/Fonts"
 #define MACOS_PREFERENCES_PATH        "%s/Library/Application Support/TuxPaint"
 #define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/TuxPaint"
+#define MACOS_PICTURES_PATH           "%s/Pictures"
 
 
-/**
- * FIXME
- */
 const char *apple_fontsPath(void)
 {
-  static char *p = NULL;
+    static char *p = NULL;
 
-  if (!p)
-    {
-      const char *home = getenv("HOME");
-
-      p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
-
-      if (p)
-        sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
-      else
-        perror("apple_fontsPath");
+    if(!p) {
+        const char *home = getenv("HOME");
+        
+        p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
+        
+        if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
+        else perror("apple_fontsPath");
     }
 
-  return p;
+    return p;
 }
 
 
-/**
- * FIXME
- */
 const char *apple_preferencesPath(void)
 {
-  static char *p = NULL;
-
-  if (!p)
-    {
-      const char *home = getenv("HOME");
-
-      p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
-
-      if (p)
-        sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
-      else
-        perror("apple_preferencesPath");
+    static char *p = NULL;
+    
+    if(!p) {
+        const char *home = getenv("HOME");
+        
+        p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
+        
+        if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
+        else perror("apple_preferencesPath");
     }
-
-  return p;
+    
+    return p;
 }
 
 
-/**
- * FIXME
- */
 const char *apple_globalPreferencesPath(void)
 {
-  return MACOS_GLOBAL_PREFERENCES_PATH;
+    return MACOS_GLOBAL_PREFERENCES_PATH;
+}
+
+
+const char *apple_picturesPath(void)
+{
+    static char *p = NULL;
+    
+    if(!p) {
+        const char *home = getenv("HOME");
+        
+        p = malloc(strlen(home) + strlen(MACOS_PICTURES_PATH) + 1);
+        
+        if(p) sprintf(p, MACOS_PICTURES_PATH, getenv("HOME"));
+        else perror("apple_picturesPath");
+    }
+    
+    return p;
 }

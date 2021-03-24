@@ -25,6 +25,7 @@
 const char *apple_fontsPath(void);
 const char *apple_preferencesPath(void);
 const char *apple_globalPreferencesPath(void);
+const char *apple_picturesPath(void);
 
 
 #endif /* __IOS_H__ */
