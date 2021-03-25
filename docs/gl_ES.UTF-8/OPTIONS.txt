@@ -1653,16 +1653,17 @@ Axustar o idioma do seu contorno
 
          ...que estabelecerá o idioma para toda a vida desa xanela DOS.
 
-         For something more permanent, you can set environment variable using
-         "System properties" dialogue as follows:
+         For something more permanent, you can set an 'environment variable'
+         using the "System properties" dialogue as follows:
 
-           * Press "[Windows]+[R]" key to open "Run ..." dialogue.
-           * Enter "sysdm.cpl" in the text box and push "[OK]" button to open
-             "System properties" dialogue.
-           * Select "Advanced" tab.
-           * Click "Environment Variables..." button.
-           * Edit the value of the parameter "LANG" (should be newly created
-             if not exists).
+           * Press the "[Windows]+[R]" key combination to open the "Run ..."
+             dialogue.
+           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
+             open the "System properties" dialogue.
+           * Select the "Advanced" tab.
+           * Click the "Environment Variables..." button.
+           * Edit the value of the parameter "LANG" (create it, if it doesn't
+             exists).
 
   Tipos de letra especiais
 
