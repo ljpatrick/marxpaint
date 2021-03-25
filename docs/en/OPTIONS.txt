@@ -412,7 +412,7 @@ Windows Users
      onscreen-keyboard=yes
 
              Presents a clickable on-screen keyboard when using the Text and
-             < b>Label tools.
+             Label tools.
 
      onscreen-keyboard-layout=LAYOUTNAME
 
@@ -646,7 +646,12 @@ Windows Users
                   Tux Paint will fall back to using that typical directory,
                   of no XDG configuration can be read, or nothing is set for
                   "XDG_PICTURES_DIR".
-                * Windows — TBD! 
+                * Windows - "My Pictures" directory for each user (normaly
+                  "c:\Users\USERNAME\Pictures").
+                  You can directly open the folder as follows:
+                     * Press "[Windows]+[R]" key to open "Run ..." dialogue.
+                     * Enter "Shell:My Pictures" in the text box and push
+                       [OK].
                 * macOS — TBD!
 
              Note: When the defaults are used, a new "TuxPaint" subdirectory
@@ -1594,8 +1599,16 @@ Setting Your Environment's Locale
 
          ...which will set the language for the lifetime of that DOS window.
 
-         For something more permanent, try editing your computer's
-         "autoexec.bat" file using Windows' "sysedit" tool:
+         For something more permanent, you can set environment variable using
+         "System properties" dialogue as follows:
+
+           * Press "[Windows]+[R]" key to open "Run ..." dialogue.
+           * Enter "sysdm.cpl" in the text box and push "[OK]" button to open
+             "System properties" dialogue.
+           * Select "Advanced" tab.
+           * Click "Environment Variables..." button.
+           * Edit the value of the parameter "LANG" (should be newly created
+             if not exists).
 
   Special Fonts
 
