@@ -580,8 +580,7 @@
 
         <dd>
           <p>
-            Presents a clickable on-screen keyboard when using the <b>Text</b> and <
-b>Label</b> tools.          </p>
+            Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.          </p>
         </dd>
 
         <dt>
@@ -913,8 +912,10 @@ b>Label</b> tools.          </p>
             <li>Linux および Unix — XDG (X Desktop Group) 標準に基づく設定が利用可能な場合、個々のデスクトップ環境において画像保存用として設定されているディレクトリ（"<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" コマンドで確認できます）<br>
               英語環境では一般的にユーザーのホームディレクトリ（"<code>$HOME/Pictures</code>" あるいは "<code>~/Pictures</code>"）以下の "<code>Pictures</code>" ディレクトリになります。（日本語環境では "画像"）<br>
               XDGの設定が読み取れない場合や、"<code>XDG_PICTURES_DIR</code> "に何も設定されていない場合は、上記の英語環境で一般的なディレクトリ（~/Pictures）を使用します。            </li>
-
-                        <li>Windows — TBD! <!-- FIXME -->
+            <li>Windows — 各ユーザーの "ピクチャ" ディレクトリ（通常は "C:\Users\<i>ユーザー名</i>\Pictures"）。<br>また、次のようにして、フォルダを直接開くこともできます：              <ul>
+                <li>"[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイアログを開く。</li>
+                <li>テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。</li>
+              </ul>
             </li>
 
                         <li>macOS — TBD! <!-- FIXME -->
@@ -4917,8 +4918,14 @@ b>Label</b> tools.          </p>
             ... この言語指定は、実行したコマンドプロンプトウィンドウが終了するまでの間だけ有効となります。          </p>
 
           <p>
-            恒久的に言語環境を変更したい場合は、Windows の "<b>sysedit</b>" ツールを用いて "<code>autoexec.bat</code>" ファイルを編集する方法があります。          </p>
-
+            For something more permanent, you can set an 'environment variable' using the "システムのプロパティ" dialogue as follows:          </p>
+          <ul>
+            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "ファイル名を指定して実行" dialogue.</li>
+            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "システムのプロパティ" dialogue.</li>
+            <li>Select the "詳細設定" tab.</li>
+            <li>Click the "環境変数(N)..." button.</li>
+            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+          </ul>
         </blockquote>
       </blockquote>
 

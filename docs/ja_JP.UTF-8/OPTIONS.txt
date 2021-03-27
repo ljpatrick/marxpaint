@@ -322,7 +322,7 @@ Windows のユーザー
      onscreen-keyboard=yes
 
              Presents a clickable on-screen keyboard when using the Text and
-             < b>Label tools.
+             Label tools.
 
      onscreen-keyboard-layout=レイアウト名
 
@@ -501,7 +501,11 @@ Windows のユーザー
                   "~/Pictures"）以下の "Pictures" ディレクトリになります。（日本語環境では "画像"）
                   XDGの設定が読み取れない場合や、"XDG_PICTURES_DIR
                   "に何も設定されていない場合は、上記の英語環境で一般的なディレクトリ（~/Pictures）を使用します。
-                * Windows — TBD! 
+                * Windows — 各ユーザーの "ピクチャ" ディレクトリ（通常は
+                  "C:\Users\ユーザー名\Pictures"）。
+                  また、次のようにして、フォルダを直接開くこともできます：
+                     * "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイアログを開く。
+                     * テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
                 * macOS — TBD!
 
              注：標準の設定を用いる場合は、画像用のディレクトリにサブディレクトリ "TuxPaint"
@@ -1393,8 +1397,17 @@ Windows のユーザー
 
          ... この言語指定は、実行したコマンドプロンプトウィンドウが終了するまでの間だけ有効となります。
 
-         恒久的に言語環境を変更したい場合は、Windows の "sysedit" ツールを用いて "autoexec.bat"
-         ファイルを編集する方法があります。
+         For something more permanent, you can set an 'environment variable'
+         using the "システムのプロパティ" dialogue as follows:
+
+           * Press the "[Windows]+[R]" key combination to open the
+             "ファイル名を指定して実行" dialogue.
+           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
+             open the "システムのプロパティ" dialogue.
+           * Select the "詳細設定" tab.
+           * Click the "環境変数(N)..." button.
+           * Edit the value of the parameter "LANG" (create it, if it doesn't
+             exists).
 
   言語固有のフォント
 

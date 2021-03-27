@@ -580,8 +580,7 @@
 
         <dd>
           <p>
-            Presents a clickable on-screen keyboard when using the <b>Text</b> and <
-b>Label</b> tools.          </p>
+            Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.          </p>
         </dd>
 
         <dt>
@@ -913,8 +912,10 @@ b>Label</b> tools.          </p>
             <li>Linux &amp; Unix — If available, wherever your desktop environment is configured for pictures to be stored, based on your XDG (X Desktop Group) configuration. (Try running the command-line "<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" to find out.)<br>
               Typically (in an English locale), this will be a "<code>Pictures</code>" subdirectory in your home directory (i.e., "<code>$HOME/Pictures</code>" aka "<code>~/Pictures</code>").<br>
               Tux Paint will fall back to using that typical directory, of no XDG configuration can be read, or nothing is set for "<code>XDG_PICTURES_DIR</code>".            </li>
-
-                        <li>Windows — TBD! <!-- FIXME -->
+            <li>Windows - "My Pictures" directory for each user (normaly "c:\Users\<i>USERNAME</i>\Pictures").<br>You can directly open the folder as follows:              <ul>
+                <li>Press "[Windows]+[R]" key to open "Run ..." dialogue.</li>
+                <li>Enter "Shell:My Pictures" in the text box and push [OK].</li>
+              </ul>
             </li>
 
                         <li>macOS — TBD! <!-- FIXME -->
@@ -4917,8 +4918,14 @@ b>Label</b> tools.          </p>
             ...which will set the language for the lifetime of that DOS window.          </p>
 
           <p>
-            For something more permanent, try editing your computer's "<code>autoexec.bat</code>" file using Windows' "<b>sysedit</b>" tool:          </p>
-
+            For something more permanent, you can set an 'environment variable' using the "System properties" dialogue as follows:          </p>
+          <ul>
+            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Run ..." dialogue.</li>
+            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
+            <li>Select the "Advanced" tab.</li>
+            <li>Click the "Environment Variables..." button.</li>
+            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+          </ul>
         </blockquote>
       </blockquote>
 

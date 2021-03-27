@@ -429,7 +429,7 @@ Usuarios de Windows
      onscreen-keyboard=yes
 
              Presents a clickable on-screen keyboard when using the Text and
-             < b>Label tools.
+             Label tools.
 
      onscreen-keyboard-layout=NOME DA DISPOSICIÓN
 
@@ -680,7 +680,12 @@ Usuarios de Windows
                   Tux Paint volverá usar ese directorio habitual, se non se
                   pode ler a configuración XDG, ou non se estabelece nada
                   «XDG_PICTURES_DIR».
-                * Windows — TBD! 
+                * Windows - "My Pictures" directory for each user (normaly
+                  "c:\Users\USERNAME\Pictures").
+                  You can directly open the folder as follows:
+                     * Press "[Windows]+[R]" key to open "Run ..." dialogue.
+                     * Enter "Shell:My Pictures" in the text box and push
+                       [OK].
                 * macOS — TBD!
 
              Nota: Cando se empregan os valores predeterminados, crearase e
@@ -1648,9 +1653,17 @@ Axustar o idioma do seu contorno
 
          ...que estabelecerá o idioma para toda a vida desa xanela DOS.
 
-         Para obter algo máis permanente, probe a editar o ficheiro
-         «autoexec.bat» do seu computador usando a ferramenta «sysedit» de
-         Windows:
+         For something more permanent, you can set an 'environment variable'
+         using the "System properties" dialogue as follows:
+
+           * Press the "[Windows]+[R]" key combination to open the "Run ..."
+             dialogue.
+           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
+             open the "System properties" dialogue.
+           * Select the "Advanced" tab.
+           * Click the "Environment Variables..." button.
+           * Edit the value of the parameter "LANG" (create it, if it doesn't
+             exists).
 
   Tipos de letra especiais
 
