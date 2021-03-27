@@ -7949,6 +7949,9 @@ static void load_stamps(SDL_Surface * screen)
   load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
 #endif
+#ifdef __IOS__
+  load_stamp_dir(screen, "stamps");
+#endif
 #ifdef WIN32
   free(homedirdir);
   homedirdir = get_fname("data/stamps", DIR_DATA);
