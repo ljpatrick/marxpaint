@@ -569,8 +569,8 @@ Windows Users
 
              Features:
 
-                * Fine movement within canvas, or coarse movement if default
-                  is held.
+                * Fine movement within canvas, or coarse movement if Shift is
+                  held.
                 * Coarse movement within tool button areas.
                 * Key controls:
                      * [Left]/[Right]/[Up]/[Down], numpad [1] thru [9]: Move

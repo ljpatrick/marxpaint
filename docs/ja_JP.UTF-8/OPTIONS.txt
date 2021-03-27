@@ -321,8 +321,7 @@ Windows のユーザー
 
      onscreen-keyboard=yes
 
-             Presents a clickable on-screen keyboard when using the Text and
-             Label tools.
+             「もじ」ツールと「ラベル」ツールで、画面キーボードを表示します。
 
      onscreen-keyboard-layout=レイアウト名
 
@@ -444,8 +443,7 @@ Windows のユーザー
 
              使用方法：
 
-                * キャンバスエリアでは、通常はなめらかに、default キー（Windows では Shift
-                  キー）を押しながらでは飛び飛びにカーソルが動きます。
+                * キャンバスエリアでは、通常はなめらかに、Shift キーを押しながらでは飛び飛びにカーソルが動きます。
                 * ツールボタンのエリアでは、飛び飛びにカーソルが動きます。
                 * 各キーの動作：
                      * [Left]/[Right]/[Up]/[Down], テンキーの [1] から [9]：
@@ -1397,17 +1395,13 @@ Windows のユーザー
 
          ... この言語指定は、実行したコマンドプロンプトウィンドウが終了するまでの間だけ有効となります。
 
-         For something more permanent, you can set an 'environment variable'
-         using the "システムのプロパティ" dialogue as follows:
+         常にこの言語設定を有効にするには、以下のようにして、"システムのプロパティ" ダイアログで環境変数を設定します：
 
-           * Press the "[Windows]+[R]" key combination to open the
-             "ファイル名を指定して実行" dialogue.
-           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
-             open the "システムのプロパティ" dialogue.
-           * Select the "詳細設定" tab.
-           * Click the "環境変数(N)..." button.
-           * Edit the value of the parameter "LANG" (create it, if it doesn't
-             exists).
+           * "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイアログを開く。
+           * テキストボックスに "sysdm.cpl" と入力して "[OK]" ボタンを押し、"システムのプロパティ" ダイアログを開く。
+           * "詳細設定" タブを選択。
+           * "環境変数(N)..." ボタンをクリック。
+           * 環境変数 "LANG" の値を編集。（変数が設定されていなければ新たに作成）
 
   言語固有のフォント
 

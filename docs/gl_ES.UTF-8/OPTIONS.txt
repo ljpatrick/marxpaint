@@ -597,7 +597,7 @@ Usuarios de Windows
              Funcionalidades:
 
                 * Movemento fino dentro do lenzo ou movemento groseiro se se
-                  mantén premida default.
+                  mantén premida Shift.
                 * Movemento groseiro dentro das áreas dos botóns da
                   ferramenta.
                 * Principais controis:
