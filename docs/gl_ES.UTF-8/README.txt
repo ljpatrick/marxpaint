@@ -913,7 +913,7 @@ Uso do script de importación, «tuxpaint-import»
        Exemplo:
 
          $ tuxpaint-import avoa.jpg
-         avoa.jpg -> /home/username/.tuxpaint/saved/20210321122132.png
+         avoa.jpg -> /home/username/.tuxpaint/saved/20210325090553.png
          jpegtopnm: WRITING A PPM FILE
 
        A primeira liña («tuxpaint-import avoa.jpg») é a orde a executar. As
