@@ -764,6 +764,23 @@ static Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
 static void magic_xorpixel(SDL_Surface * surface, int x, int y);
 
 /**
+ * Sets button_scale to the maximum Tux Paint can handle
+ */
+static void set_max_buttonscale(void)
+{
+  float max_w, max_h;
+
+  /* WINDOW_WIDTH / original size of tools columnss + 9 buttons + tooloption columns */
+  max_w = (float)WINDOW_WIDTH / (gd_tools.cols * 48 + 9 * 48 + gd_toolopt.cols * 48);
+
+  /* WINDOW_HEIGHT / original size of r_ttools.h + 5 buttons + colors rows + tux area */
+  max_h = (float)WINDOW_HEIGHT / (40 + 5 * 48 + gd_colors.rows * 48 + 56);
+
+  button_scale = min(max_w, max_h);
+  fprintf(stderr, "Will use a button size of %d\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE));
+}
+
+/**
  * Sets a variety of screen layout globals, based on the
  * size of the window/screen Tux Paint is being displayed on
  * (WINDOW_WIDTH & WINDOW_HEIGHT).
@@ -816,13 +833,15 @@ static void setup_normal_screen_layout(void)
   if (buttons_tall < 5) {
     fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not tall enough).\n",
       button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
-    exit(93);
+    set_max_buttonscale();
+    setup_normal_screen_layout();
   }
 
   if (r_canvas.w < button_w * 9) {
     fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not wide enough).\n",
       button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
-    exit(93);
+    set_max_buttonscale();
+    setup_normal_screen_layout();
   }
 
   gd_tools.rows = buttons_tall;
