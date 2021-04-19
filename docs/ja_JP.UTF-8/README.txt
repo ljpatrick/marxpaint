@@ -617,7 +617,7 @@ Tux Paint の起動
        Example:
 
          $ tuxpaint-import おばあちゃん.jpg
-         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20210321122132.png
+         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
          jpegtopnm: WRITING A PPM FILE
 
        1行目 ("tuxpaint-import おばあちゃん.jpg") が実行するコマンドで、続く2行がプログラムの実行中の出力です。
