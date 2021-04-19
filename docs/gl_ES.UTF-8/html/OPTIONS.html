@@ -25,7 +25,7 @@
       </p>
 
       <p>
-         9 de Marzo de 2021      </p>
+        19 de Abril de 2021      </p>
     </center>
 
     <hr size="2"
@@ -197,6 +197,9 @@
 
           <p>
             O valor <i>TAMAÑO</i> debería presentarse en píxeles e pode estar entre 24 e 192, inclusive. A maioría dos botóns son cadrados e isto afectará ao seu largo e alto.          </p>
+
+          <p>
+            Note: If the chosen button size would cause the buttons to be too large for all required UI elements to appear under Tux Paint's chosen window size, the largest possible button size will be used. (A note will appear in <code>stderr</code>.)          </p>
         </dd>
 
         <dt>
@@ -269,7 +272,7 @@
           </p>
 
           <p>
-            Use a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir». Se esta opción non está especificamente definida, o comando predeterminado é:          </p>
+            Use a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir». Se esta opción non está especificamente definida, a orde predeterminada é:          </p>
 
           <blockquote>
             <code>lpr</code>
@@ -279,7 +282,7 @@
             <b>Nota:</b> As versións de Tux Paint anteriores ao 0.9.15 enviaban datos en formato PNG á orde de impresión (de xeito predeterminado era «<code>pngtopnm | pnmtops | lpr</code>»).          </p>
 
           <p>
-            Se estabeleceu unha alternativa <code><b>printcommand</b></code> no ficheiro de configuración antes da versión 0.9.15, terá que cambialo.          </p>
+            Se estabeleceu unha alternativa <code><b>printcommand</b></code> no ficheiro de configuración antes da versión 0.9.15, terá que cambiala.          </p>
         </dd>
 
         <dt>
@@ -292,7 +295,7 @@
           </p>
 
           <p>
-            Usa a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir» mentres se mantén premida a tecla modificadora <b>[Alt]</b>. (Iso utilizase normalmente para fornecer un diálogo de impresión, semellante a cando se preme <b>[Alt]</b>+«Imprimir» en Windows e macOS.)          </p>
+            Use a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir» mentres se mantén premida a tecla modificadora <b>[Alt]</b>. (Iso utilizase normalmente para fornecer un diálogo de impresión, semellante a cando se preme <b>[Alt]</b>+«Imprimir» en Windows e macOS.)          </p>
 
           <p>
             Se esta opción non está especificamente definida, a orde predeterminada é o diálogo gráfico de impresión de KDE:          </p>
@@ -312,7 +315,7 @@
           </p>
 
           <p>
-            Tux Paint empregará un ficheiro de configuración da impresora cando imprima. Prema a tecla <b>[Alt]</b> mentres preme no botón «Imprimir» en Tux Paint para que apareza unha xanela de diálogo de impresión de Windows.          </p>
+            Tux Paint empregará un ficheiro de configuración da impresora cando imprima. Prema a tecla <b>[Alt]</b> mentres fai clic no botón «Imprimir» en Tux Paint para que apareza unha xanela de diálogo de impresión de Windows.          </p>
 
           <p>
             (Nota: Isto só funciona cando non se está a executar Tux Paint en modo de pantalla completa.) Calquera cambio de configuración feito neste diálogo gardarase no ficheiro «<code>userdata/print.cfg</code>» e volverase a usar, sempre que estea configurada a opción «printcfg».          </p>
@@ -580,7 +583,7 @@
 
         <dd>
           <p>
-            Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.          </p>
+            Presenta un teclado en pantalla sobre que se pode premer cando empregan as ferramentas <b>Texto</b> e <b>Etiqueta</b>.          </p>
         </dd>
 
         <dt>
@@ -912,9 +915,9 @@
             <li>Linux e Unix: se está dispoñíbel, onde queira que o seu contorno de escritorio estea configurado para que se almacenen imaxes, en función da configuración XDG (X Desktop Group). (Probe a executar a liña de ordes «<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>» para descubrilo.)<br>
               Normalmente (na configuración local inglesa), este será un subdirectorio «<code>Imaxes</code>» no seu directorio persoal (é dicir, «<code>$HOME/Imaxes</code>» tamén coñecido como «<code>~/Imaxes</code>»).<br>
               Tux Paint volverá usar ese directorio habitual, se non se pode ler a configuración XDG, ou non se estabelece nada «<code>XDG_PICTURES_DIR</code>».            </li>
-            <li>Windows - "My Pictures" directory for each user (normaly "c:\Users\<i>USERNAME</i>\Pictures").<br>You can directly open the folder as follows:              <ul>
-                <li>Press "[Windows]+[R]" key to open "Run ..." dialogue.</li>
-                <li>Enter "Shell:My Pictures" in the text box and push [OK].</li>
+            <li>Windows: Directorio «As miñas imaxes» para cada usuario (normalmente «c:\Users\<i>NOME_DE_USUARIO</i>\Pictures»). <br>Pode abrir directamente o cartafol do seguinte xeito:              <ul>
+                <li>Prema a tecla «[Windows]+[R]» para abrir o diálogo «Executar...».</li>
+                <li>Escriba «Shell: As miñas imaxes« na caixa de texto e prema en [Aceptar.]</li>
               </ul>
             </li>
 
@@ -4908,7 +4911,7 @@
             Tux Paint recoñecerá a configuración local actual e empregará de xeito predeterminado os ficheiros apropiados. Polo tanto, esta sección é só para persoas que proban idiomas diferentes.          </p>
 
           <p>
-            O máis sinxelo é empregar o interruptor «<code>--lang</code>» no atallo (ver «INSTALL [INSTALAR]»). Non obstante, usando unha xanela de indicador do sistema de MSDOS, tamén é posíbel emitir un comando coma este:          </p>
+            O máis sinxelo é empregar o interruptor «<code>--lang</code>» no atallo (ver «INSTALL [INSTALAR]»). Non obstante, usando unha xanela de indicador do sistema de MSDOS, tamén é posíbel emitir unha orde coma esta:          </p>
 
           <blockquote>
             <code>set LANG=es_ES</code>
@@ -4918,13 +4921,13 @@
             ...que estabelecerá o idioma para toda a vida desa xanela DOS.          </p>
 
           <p>
-            For something more permanent, you can set an 'environment variable' using the "System properties" dialogue as follows:          </p>
+            Para obter algo máis permanente, pode estabelecer unha «variábel de contorno» usando o diálogo «Propiedades do sistema» do seguinte xeito:          </p>
           <ul>
-            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Run ..." dialogue.</li>
-            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
-            <li>Select the "Advanced" tab.</li>
-            <li>Click the "Environment Variables..." button.</li>
-            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+            <li>Prema a combinación de teclas «<b>[Windows]+[R]</b>» para abrir o diálogo «Executar...».</li>
+            <li>Escriba «<code>sysdm.cpl</code>» na caixa de texto e prema no botón «<b>[OK]</b>» para abrir o diálogo «Propiedades do sistema».</li>
+            <li>Seleccione a lapela «Avanzado».</li>
+            <li>Prema no botón «Variábeis de contorno...».</li>
+            <li>Edite o valor do parámetr «<code>LANG</code>») (créeo, se non existe).</li>
           </ul>
         </blockquote>
       </blockquote>
