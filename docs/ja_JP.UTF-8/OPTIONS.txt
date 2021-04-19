@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年3月 9日
+                                   2021年4月19日
 
      ----------------------------------------------------------------------
 
@@ -102,6 +102,11 @@ Windows のユーザー
 
              SIZE
              の値は24から192までのピクセル値で指定します。ほとんどのボタンは正方形となっており、この設定はボタンの幅と高さの両方に影響します。
+
+             Note: If the chosen button size would cause the buttons to be
+             too large for all required UI elements to appear under Tux
+             Paint's chosen window size, the largest possible button size
+             will be used. (A note will appear in stderr.)
 
      allowscreensaver=yes
 

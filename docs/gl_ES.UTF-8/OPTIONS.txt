@@ -6,7 +6,7 @@ Documentación de opcións
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                               9 de Marzo de 2021
+                              19 de Abril de 2021
 
      ----------------------------------------------------------------------
 
@@ -131,6 +131,11 @@ Usuarios de Windows
              24 e 192, inclusive. A maioría dos botóns son cadrados e isto
              afectará ao seu largo e alto.
 
+             Note: If the chosen button size would cause the buttons to be
+             too large for all required UI elements to appear under Tux
+             Paint's chosen window size, the largest possible button size
+             will be used. (A note will appear in stderr.)
+
      allowscreensaver=yes
 
              De xeito predeterminado, Tux Paint impide que o protector de
@@ -179,7 +184,7 @@ Usuarios de Windows
 
              Use a orde ORDE para imprimir un ficheiro en formato PostScript
              cando se preme no botón «Imprimir». Se esta opción non está
-             especificamente definida, o comando predeterminado é:
+             especificamente definida, a orde predeterminada é:
 
                lpr
 
@@ -188,13 +193,13 @@ Usuarios de Windows
              predeterminado era «pngtopnm | pnmtops | lpr»).
 
              Se estabeleceu unha alternativa printcommand no ficheiro de
-             configuración antes da versión 0.9.15, terá que cambialo.
+             configuración antes da versión 0.9.15, terá que cambiala.
 
      altprintcommand=ORDE
 
              (Só Linux e Unix)
 
-             Usa a orde ORDE para imprimir un ficheiro en formato PostScript
+             Use a orde ORDE para imprimir un ficheiro en formato PostScript
              cando se preme no botón «Imprimir» mentres se mantén premida a
              tecla modificadora [Alt]. (Iso utilizase normalmente para
              fornecer un diálogo de impresión, semellante a cando se preme
@@ -210,7 +215,7 @@ Usuarios de Windows
              (Só Windows e macOS)
 
              Tux Paint empregará un ficheiro de configuración da impresora
-             cando imprima. Prema a tecla [Alt] mentres preme no botón
+             cando imprima. Prema a tecla [Alt] mentres fai clic no botón
              «Imprimir» en Tux Paint para que apareza unha xanela de diálogo
              de impresión de Windows.
 
@@ -428,8 +433,8 @@ Usuarios de Windows
 
      onscreen-keyboard=yes
 
-             Presents a clickable on-screen keyboard when using the Text and
-             Label tools.
+             Presenta un teclado en pantalla sobre que se pode premer cando
+             empregan as ferramentas Texto e Etiqueta.
 
      onscreen-keyboard-layout=NOME DA DISPOSICIÓN
 
@@ -680,12 +685,13 @@ Usuarios de Windows
                   Tux Paint volverá usar ese directorio habitual, se non se
                   pode ler a configuración XDG, ou non se estabelece nada
                   «XDG_PICTURES_DIR».
-                * Windows - "My Pictures" directory for each user (normaly
-                  "c:\Users\USERNAME\Pictures").
-                  You can directly open the folder as follows:
-                     * Press "[Windows]+[R]" key to open "Run ..." dialogue.
-                     * Enter "Shell:My Pictures" in the text box and push
-                       [OK].
+                * Windows: Directorio «As miñas imaxes» para cada usuario
+                  (normalmente «c:\Users\NOME_DE_USUARIO\Pictures»).
+                  Pode abrir directamente o cartafol do seguinte xeito:
+                     * Prema a tecla «[Windows]+[R]» para abrir o diálogo
+                       «Executar...».
+                     * Escriba «Shell: As miñas imaxes« na caixa de texto e
+                       prema en [Aceptar.]
                 * macOS — TBD!
 
              Nota: Cando se empregan os valores predeterminados, crearase e
@@ -1647,23 +1653,23 @@ Axustar o idioma do seu contorno
 
          O máis sinxelo é empregar o interruptor «--lang» no atallo (ver
          «INSTALL [INSTALAR]»). Non obstante, usando unha xanela de indicador
-         do sistema de MSDOS, tamén é posíbel emitir un comando coma este:
+         do sistema de MSDOS, tamén é posíbel emitir unha orde coma esta:
 
            set LANG=es_ES
 
          ...que estabelecerá o idioma para toda a vida desa xanela DOS.
 
-         For something more permanent, you can set an 'environment variable'
-         using the "System properties" dialogue as follows:
+         Para obter algo máis permanente, pode estabelecer unha «variábel de
+         contorno» usando o diálogo «Propiedades do sistema» do seguinte
+         xeito:
 
-           * Press the "[Windows]+[R]" key combination to open the "Run ..."
-             dialogue.
-           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
-             open the "System properties" dialogue.
-           * Select the "Advanced" tab.
-           * Click the "Environment Variables..." button.
-           * Edit the value of the parameter "LANG" (create it, if it doesn't
-             exists).
+           * Prema a combinación de teclas «[Windows]+[R]» para abrir o
+             diálogo «Executar...».
+           * Escriba «sysdm.cpl» na caixa de texto e prema no botón «[OK]»
+             para abrir o diálogo «Propiedades do sistema».
+           * Seleccione a lapela «Avanzado».
+           * Prema no botón «Variábeis de contorno...».
+           * Edite o valor do parámetr «LANG») (créeo, se non existe).
 
   Tipos de letra especiais
 

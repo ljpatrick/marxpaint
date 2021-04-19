@@ -6,7 +6,7 @@ Documentation sur les options
            Copyright © 2002-2021 by various contributors; cf AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  mars 9, 2021
+                                 avril 19, 2021
 
      ----------------------------------------------------------------------
 
@@ -128,6 +128,11 @@ Windows Users
              The SIZE value should be presented in pixels, and can be
              anything between 24 and 192, inclusive. Most buttons are square,
              and this will affect their width and height.
+
+             Note: If the chosen button size would cause the buttons to be
+             too large for all required UI elements to appear under Tux
+             Paint's chosen window size, the largest possible button size
+             will be used. (A note will appear in stderr.)
 
      allowscreensaver=yes
 
