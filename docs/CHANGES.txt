@@ -8,10 +8,15 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.March.23 (0.9.26)
+2021.April.19 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
+      Override the ages-old default 48x48 size for UI buttons
+      (via a new "buttonsize" option).  Note: If the button size
+      would be too large for the required parts of the UI to appear
+      within Tux Paint's window size, the largest possible size will
+      be used.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * It's now possible to increase how many rows of buttons are shown
