@@ -131,10 +131,11 @@ Usuarios de Windows
              24 e 192, inclusive. A maioría dos botóns son cadrados e isto
              afectará ao seu largo e alto.
 
-             Note: If the chosen button size would cause the buttons to be
-             too large for all required UI elements to appear under Tux
-             Paint's chosen window size, the largest possible button size
-             will be used. (A note will appear in stderr.)
+             Nota: Se o tamaño do botón escollido fai que os botóns sexan
+             demasiado grandes para que aparezan todos os elementos da
+             interface de usuario requiridos dentro do tamaño de xanela
+             escollido por Tux Paint, empregarase o tamaño de botón máis
+             grande posíbel. (Aparecerá unha nota en stderr.)
 
      allowscreensaver=yes
 
