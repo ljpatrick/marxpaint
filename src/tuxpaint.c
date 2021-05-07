@@ -4144,6 +4144,7 @@ static void mainloop(void)
                       else if (cur_tool == TOOL_FILL)
                         {
                           cur_fill = cur_thing;
+                          draw_tux_text(TUX_GREAT, fill_tips[cur_fill], 1);
 
                           if (do_draw)
                             draw_fills();
@@ -4636,7 +4637,7 @@ static void mainloop(void)
                               update_canvas(x1, y1, x2, y2);
                             }
 
-                            draw_tux_text(TUX_GREAT, tool_tips[TOOL_FILL], 1);
+                            draw_tux_text(TUX_GREAT, fill_tips[cur_fill], 1);
                         }
                     }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
