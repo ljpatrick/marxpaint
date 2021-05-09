@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.May.3 (0.9.26)
+2021.May.9 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -91,6 +91,9 @@ $Id$
     --------------------
     * Albanian
       Besnik Bleta <besnik@programeshqip.org>
+
+    * Catalan
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Galician
       Miguel Bouzada <mbouzada@gmail.com>
