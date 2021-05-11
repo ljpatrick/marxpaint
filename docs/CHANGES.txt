@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.May.9 (0.9.26)
+2021.May.11 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -61,6 +61,9 @@ $Id$
 
       + Japanese
         TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Adding documentation that covers some of the
+      environment variables that Tux Paint utilizes.
 
     * Expanded the steps for making and posting releases.
 
