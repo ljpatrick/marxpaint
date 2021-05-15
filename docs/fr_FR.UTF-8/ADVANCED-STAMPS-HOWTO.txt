@@ -6,24 +6,24 @@
 
 À propos de ce 'guide pratique'
 
-     Ce 'guide pratique' suppose que vous vouliez réalisr un excellent tampon
+     Ce 'guide pratique' suppose que vous vouliez créer un excellent tampon
      pou Tux Paint, au format bitmap PNG, à partir d'une image JPEG (par ex.
-     une photographie digitale). Il existe des méthodes faciles et rapides
-     donnant de moins bons résultats.
+     une photographie digitale). Il existe des méthodes plus faciles et plus
+     rapides donnant de moins bons résultats.
 
      Ce 'guide pratique' suppose que vous travaillez avec des objets
      normalement opaques. Pour des objets semi-transparents (flamme, hélice
      de ventilateur en mouvement) ou des objets luminescents (feu, ampoule,
      soleil) il vaut mieux travailler avec un logiciel adapté. Des images
-     avec de parfaits arrière-plans de couleur unie sont mieux faites avec un
-     logiciel adapté, mais ne posent pas de problèmes avec ce qui suit.
+     avec de parfaits arrière-plans de couleur unie sont mieux réalisées avec
+     un logiciel adapté, mais ne posent pas de problèmes avec ce qui suit.
 
 Le choix de l'image est crucial
 
   Licence
 
-       Si vous voulez présenter une oeuvre d'art aux développeurs de Tux
-       Paint pour être incluse dans le projet officiel, ou si vous voulez
+       Si vous voulez présenter une oeuvre aux développeurs de Tux Paint
+       destinée à être incluse dans le projet officiel, ou si vous voulez
        faire une version de Tux Paint pour votre seul usage avec vos propre
        graphiques, vous devez avoir une image compatible avec la Licence
        Publique Générale GNU utilisée par Tux Paint.
@@ -32,8 +32,8 @@ Le choix de l'image est crucial
        public, mais faites attention car le gouvernement US utilise parfois
        des images provenant du web. Une demande incluant soit site:gov soit
        site:mil sur Google image vous donnera beaucoup d'images qui
-       conviendront. Note : les sites *.mil peuvent avoir des contenus
-       non-militaires, également !)
+       conviendront. Note : les sites *.mil peuvent avoir aussi des contenus
+       non-militaires !)
 
        Vos propres images peuvent être placées dans le domaine public, ou
        sous une licence adéquate, telle que Google image en y faisant
@@ -41,26 +41,30 @@ Le choix de l'image est crucial
        d'un avis faisant autorité).
 
        Pour un usage personnel, toute image que vous pouvez légalement
-       modifier et utiliser pour vous-même, devrait convenir.
+       modifier et utiliser pour vous-même devrait convenir.
 
-  Taille de l'image et orientation
+  Taille et orientation de l'image
 
-       You need an image that has a useful orientation. Perspective is an
-       enemy. Images that show an object from the corner are difficult to fit
-       into a nice drawing. As a general rule, telephoto side views are the
-       best. The impossible ideal is that, for example, two wheels of a car
-       are perfectly hidden behind the other two.
+       Vous aurez besoin d'une image ayant une bonne orientation. La
+       perspective est notre ennemie. Les images montrant un objet à partir
+       d'un coin sont difficiles à intégrer pour obtenir un dessin correct.
+       En règle générale, les photos prises au téléobjectif sont les
+       meilleures. L'idéal, impossible à tenir, serait que deux roues d'une
+       même voiture soient cachées derrière les deux autres.
 
-       Rotating an image can make it blurry, especially if you only rotate by
-       a few degrees. Images that don't need rotation are best, images that
-       need lots of rotation (30 to 60 degrees) are next best, and images
-       that need just a few degrees are worst. Rotation will also make an
-       image darker because most image editing software is very bad about
-       gamma handling. (Rotation is only legitimate for gamma=1.0 images.)
+       Effectuer une rotation sur une image peut la rendre floue, surtout si
+       vous ne la pivotez que de quelques degrés. Les meilleures images sont
+       celles où il n'y a pas de rotation, et celles qui nécessitent beaucoup
+       de rotation (30à 60 degrés) ne sont pas loin des meilleures, et celles
+       qui ne nécessitent que quelques degrés sont les pires. La rotation
+       rendra également l'image plus sombre car la plupart des logiciels de
+       manipulation d'images sont très mauvais quant au traitement du gamma.
+       (Le rotation ne se justifie qu'avec des images ayant un gamma de 1.0)
 
-       Very large images are more forgiving of mistakes, and thus easier to
-       work with. Choose an image with an object that is over 1000 pixels
-       across if you can. You can shrink this later to hide your mistakes.
+       De très grandes images pardonnent plus facilement les erreurs, et sont
+       donc plus faciles pour travailler. Choisissez une image avec un objet
+       de plus de 1 000 pixels si possible. Vous pourrez ainsi la réduire et
+       cacher vos erreurs.
 
        Vérifiez bien que l'image ne soit pas trop granuleuse, pâle ou
        délavée.
@@ -72,100 +76,112 @@ Le choix de l'image est crucial
 
 Préparez l'image
 
-     First of all, be sure to avoid re-saving the image as a JPEG. This
-     causes quality loss. There is a special tool called jpegtran that lets
-     you crop an image without the normal quality loss.
+     Tout d'abord, ne re-sauvegardez pas une image au format JPEG. Cela
+     induit une perte de qualité. Il existe un outil spécial appelé jpegtran
+     qui vous permet de découper une image sans la perte de qualité
+     habituelle.
 
        jpegtran -trim -copy none -crop 512x1728+160+128 < src.jpg >
        cropped.jpg
 
-     Bring that image up in your image editor. If you didn't crop it yet, you
-     may find that your image editor is very slow. Rotate and crop the image
-     as needed. Save the image — choose whatever native format supports
-     layers, masks, alpha, etc. GIMP users should choose "XCF", and Adobe
-     Photoshop users should choose "PSD", for example.
+     Importez votre image dans votre éditeur d'image. Si vous n'avez pas
+     encore recadrer votre image, vous pouvez trouver que votre éditeur est
+     très lent. Faites une rotation et recadrer l'image comme vous voulez.
+     Sauvegardez l'image -- choisissez tout format supportant les calques,
+     les masques, alpha, etc... Les utilisateurs de GIMP choisiront le format
+     XCF, et les utilisateurs de Adobe Photoshop choisiront PSD, à titre
+     d'exemple.
 
-     If you have rotated or cropped the image in your image editor, flatten
-     it now. You need to have just one RGB layer without mask or alpha.
+     Si vous avez effectué une rotation et un recadrage de votre image,
+     applatissez-la. Vous n'avez besoin que d'un seul calque RGB sans masque
+     ou canal alpha.
 
-     Open the layers dialog box. Replicate the one layer several times. From
-     top to bottom you will need something like this:
+     Ouvrez la boîte de dialogue qui concerne les calques. Reproduisez une
+     couche plusieurs fois. Du haut jusqu'en bas vous aurez besoin de quelque
+     chose comme cela :
 
-      1. unmodified image (write-protect this if you can)
-      2. an image you will modify — the "work in progress" layer
-      3. solid green (write-protect this if you can)
-      4. solid magenta (write-protect this if you can)
-      5. unmodified image (write-protect this if you can)
+      1. image non-modifiée (protégez la en écriture, si possible)
+      2. une image que vous modifierez -- avec la couche "travail en cours"
+      3. vert uni (si possible protégé en écriture)
+      4. magenta uni (si possible protégé en écriture)
+      5. image non-modifiée (protégez la en écriture, si possible)
 
-     Give the work in progress (WIP) layer a rough initial mask. You might
-     start with a selection, or by using the grayscale value of the WIP
-     layer. You might invert the mask.
+     Donnez au calque 'travail en cours' (WIP) un masque initial
+     approximatif. Vous pouvez démarrer avec une sélection, ou en utilisant
+     la valeur de niveaux de gris du calque WIP. Vous pouvez inverser le
+     masque.
 
-     Warning: once you have the mask, you may not rotate or scale the image
-     normally. This would cause data loss. You will be given special scaling
-     instructions later.
+     Attention : une fois que avez le masque, vous ne plus tourner ou
+     modifier la taille de l'image de manière habituelle. Cela entraînerait
+     des pertes de données. On vous donnera plus tard des instructions pour
+     la mise à l'échelle.
 
-Prepare the mask
+Préparez le masque
 
-     Get used to doing [Ctrl]-click and [Alt]-click on the thumbnail images
-     in the layers dialog. You will need this to control what you are looking
-     at and what you are editing. Sometimes you will be editing things you
-     can't see. For example, you might edit the mask of the WIP layer while
-     looking at the unmodified image. Pay attention so you don't screw up.
-     Always verify that you are editing the right thing.
+     Prenez l'habitude de faire un [Ctrl]-clic et un [Alt]-clic sur les
+     images-vignettes dans la boîte de dialogue des calques. Vous devez le
+     faire pour vérifier ce que vous voyez et ce que vous éditez. Parfois
+     vous éditerez des choses que vous ne pouvez pas voir. Par exemple, vous
+     pouvez éditer le masque du masque WIP, tout en regardant l'image non
+     modifiée. Faites attention à ne pas vous tromper. Vérifiez toujours que
+     vous éditez ce qu'il faut.
 
-     Set an unmodified image as what you will view (the top one is easiest).
-     Set the WIP mask as what you will edit. At some point, perhaps not
-     immediately, you should magnify the image to about 400% (each pixel of
-     the image is seen and edited as a 4x4 block of pixels on your screen).
+     Définissez une image non-modifiée comme étant celle que vous voulez
+     afficher (celle du haut est la plus facile). Définissez le masque WIP
+     comme étant ce que vous allez éditer. À un moment donné, vous devriez
+     agrandir l'image à à environ 400 % (chaque pixel de l'image est vu et
+     représenté par un bloc de 4x4 pixels sur votre écran.
 
-     Select parts of the image that need to be 100% opaque or 0% opaque. If
-     you can select the object or background somewhat accurately by color, do
-     so. As needed to avoid selecting any pixels that should be partially
-     opaque (generally at the edge of the object) you should grow, shrink,
-     and invert the selection.
+     Sélectionnez les parties de l'image devant être 100 % opaques, ou bien 0
+     % opaques.Si vous pouvez sélectionner l'objet ou l'arrière-plan avec une
+     bonne précision, faites le. Si nécessaire, pour éviter de sélectionner
+     des pixels devant être partiellement opaques (en général sur les bords
+     de l'objet), vous devriez agrandir, réduire et inverser la sélection.
 
-     Fill the 100% opaque areas with white, and the 0% opaque areas with
-     black. This is most easily done by drag-and-drop from the
-     foreground/background color indicator. You should not see anything
-     happen, because you are viewing the unmodified image layer while editing
-     the mask of the WIP layer. Large changes might be noticable in the
-     thumbnail.
+     Remplissez les zones 100 % opaques avec du blanc, et les 0 % opaques
+     avec du noir. On le fait facilement en glissant-déposant depuis
+     l'indicateur de couleur de premier plan. Vous ne devriez rien voir se
+     produire, car vous voyez le calque de l'image non modifiée quand vous
+     éditez le masque du calque WIP. Les changements importants peuvent être
+     vus sur la vignette.
 
-     Now you must be zoomed in.
+     Maintenant vous devez zoomer.
 
-     Check your work. Hide the top unmodified image layer. Display just the
-     mask, which should be a white object on a black background (probably
-     with unedited grey at the edge). Now display the WIP layer normally, so
-     that the mask is active. This should show your object over top of the
-     next highest enabled layer, which should be green or magenta as needed
-     for maximum contrast. You might wish to flip back and forth between
-     those backgrounds by repeatedly clicking to enable/disable the green
-     layer. Fix any obvious and easy problems by editing the mask while
-     viewing the mask.
+     Vérifiez votre travail. Cacher le calque supérieur d'image non-modifiée.
+     N'affichez que le masque, qui devrait être un objet blanc sur un fond
+     noir (probablement avec du gris non édité sur les bords). Maintenant
+     affichez le calque WIP normalement, pour que le masque soit actif. Cela
+     devrait montrer montrer votre objet par dessus le prochain calque activé
+     le plus élevé, et qui devrait vert ou magenta suivant la nécessité
+     d'avoir un contraste maximum. Vous pourriez basculer entre ces
+     arrière-plans en cliquant plusieurs fois pour activer/désactiver le
+     calque vert. Corrigez tous les problèmes évidents et faciles en éditant
+     le masque.
 
-     Go back to viewing the top unmodified layer while editing the WIP mask.
-     Set your drawing tool the paintbrush. For the brush, choose a small
-     fuzzy circle. The 5x5 size is good for most uses.
+     Revenez à l'affichage du calque supérieur non modifié lors de l'édition
+     du masque WIP. Ajustez le pinceau dans l'outil de dessin. Pour la
+     brosse, choisissez un petit cercle flou. Une taille de 5x5 convient dans
+     tous les cas.
 
-     With a steady hand, trace around the image. Use black around the
-     outside, and white around the inside. Avoid making more than one pass
-     without switching colors (and thus sides).
+     Avec une main sûre, tracez autour de l'image. Utilisez du noir à
+     l'extérieur et du blanc à l'intérieur. Évitez de faire plus d'un passage
+     par couleur.
 
-     Flip views a bit, checking to see that the mask is working well. When
-     the WIP layer is composited over the green or magenta, you should see a
-     tiny bit of the original background as an ugly fringe around the edge.
-     If this fringe is missing, then you made the object mask too small. The
-     fringe consists of pixels that are neither 100% object nor 0% object.
-     For them, the mask should be neither 100% nor 0%. The fringe gets
-     removed soon.
+     Inversez un peu les vues, pour vérifier que le masque fonctionne
+     bien.Lorsque le calque WIP est fait de vert ou de magenta, vous devriez
+     voir un tout petit peu de l'arrière-plan initial ressemblant à une
+     vilaine frange près du bord. Si la frange est absente, c'est que le
+     masque d'objet est trop petit. La frange est constituée de pixels qui ne
+     sont ni à un objet à 100 % ni un objet à 0 %. Pour eux, le masque ne
+     devrait être ni à 100 % ni à 0 %. La frange disparaîtra bientôt.
 
-     View and edit the mask. Select by color, choosing either black or white.
-     Most likely you will see unselected specks that are not quite the
-     expected color. Invert the selection, then paint these away using the
-     pencil tool. Do this operation for both white and black.
+     Affichez et modifiez le masque. Sélectionnez par couleur, en choisissant
+     le noir ou le blanc. Sûrement vous verrez des tâches non sélectionnées
+     qui ne sont pas tout à fait à la couleur attendue. Inversez la
+     sélection, et coloriez les avec l'outil crayon. Faites ces opérations
+     pour le blanc et le noir.
 
-Replace the fringe and junk pixels
+Remplacer la frange et les pixels indésirables
 
      Still viewing the mask, select by color. Choose black. Shrink the
      selection by several pixels, being sure to NOT shrink from the edges of
@@ -185,10 +201,10 @@ Replace the fringe and junk pixels
      editing and viewing the WIP image. Frequent layer visibility changes
      will help you to see what you are doing. You are likely to use all of:
 
-       * composited over green (mask enabled)
+       * composited over vert (mask enabled)
        * composited over magenta (mask enabled)
        * original (the top or bottom layer)
-       * composited over the original (mask enabled)
+       * composited over l'original (mask enabled)
        * raw WIP layer (mask disabled)
 
      To reduce accidents, you may wish to select only those pixels that are

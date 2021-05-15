@@ -134,7 +134,7 @@ Compiling and Installation:
          the dependencies, use these commands, in MSYS, to build, install and
          run:
 
-      Avant la version 0.9.20
+      Avant la version 0.9.20 :
 
            $ make win32
            $ make install-win32
