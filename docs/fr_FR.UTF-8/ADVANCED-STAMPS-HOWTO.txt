@@ -183,106 +183,121 @@ Préparez le masque
 
 Remplacer la frange et les pixels indésirables
 
-     Still viewing the mask, select by color. Choose black. Shrink the
-     selection by several pixels, being sure to NOT shrink from the edges of
-     the mask (the shrink helps you avoid and recover from mistakes).
+     Toujours en regardant le masque, sélectionnez par couleur. Choisissez le
+     noir. Réduisez la sélection de plusieurs pixels, en veillant à NE PAS
+     rétrécir par rapport aux bords du masque (le rétrécissement vous aide à
+     éviter et à récupérer des erreurs).
 
-     Now disable the mask. View and edit the unmasked WIP layer. Using the
-     color picker tool, choose a color that is average for the object.
-     Drag-and-drop this color into the selection, thus removing most of the
-     non-object pixels.
+     Désactivez maintenant le masque. Affichez et modifiez la couche WIP non
+     masquée. À l'aide de l'outil de sélection de couleur, choisissez une
+     couleur moyenne pour l'objet. Faites glisser et déposez cette couleur
+     dans la sélection, supprimant ainsi la plupart des pixels non-objets.
 
-     This solid color will compress well and will help prevent ugly color
-     fringes when Tux Paint scales the image down. If the edge of the object
-     has multiple colors that are very different, you should split up your
-     selection so that you can color the nearby background to be similar.
+     Cette couleur unie se compressera bien et aidera à éviter les franges de
+     couleur laides lorsque Tux Paint redimensionnera l'image. Si le bord de
+     l'objet a plusieurs couleurs très différentes, vous devriez diviser
+     votre sélection afin de pouvoir colorer l'arrière-plan voisin d'une
+     teinte similaire.
 
-     Now you will paint away the existing edge fringe. Be sure that you are
-     editing and viewing the WIP image. Frequent layer visibility changes
-     will help you to see what you are doing. You are likely to use all of:
+     Vous allez maintenant peindre la frange de bord existante. Assurez-vous
+     que vous modifiez et visualisez l'image WIP. En changeant fréquemment de
+     calque, vous verrez mieux à voir ce que vous faites. Vous êtes
+     susceptible d'utiliser tous ceux-ci :
 
-       * composited over vert (mask enabled)
-       * composited over magenta (mask enabled)
-       * original (the top or bottom layer)
-       * composited over l'original (mask enabled)
-       * raw WIP layer (mask disabled)
+       * composite sur vert (masque activé)
+       * composite sur magenta (masque activé)
+       * original (calque supérieur ou inférieur)
+       * composite sur l'original (masque activé)
+       * calque WIP brut (masque désactivé
 
-     To reduce accidents, you may wish to select only those pixels that are
-     not grey in the mask. (Select by color from the mask, choose black, add
-     mode, choose white, invert. Alternately: Select all, select by color
-     from the mask, subtract mode, choose black, choose white.) If you do
-     this, you'll probably want to expand the selection a bit and/or hide the
-     "crawling ants" line that marks the selection.
+     Pour réduire les accidents, vous souhaiterez peut-être sélectionner
+     uniquement les pixels qui ne sont pas gris dans le masque. (Sélectionnez
+     par couleur dans le masque, choisissez le noir, ajoutez le mode,
+     choisissez le blanc, inversez. Ou bien : sélectionnez tout, sélectionnez
+     par couleur dans le masque, soustrayez le mode, choisissez le noir,
+     choisissez le blanc.) Si vous faites cela, vous voudrez probablement
+     élargir un peu la sélection et / ou masquer la ligne "fourmis rampantes"
+     qui marque la sélection.
 
-     Use the clone tool and the brush tool. Vary the opacity as needed. Use
-     small round brushes mostly, perhaps 3x3 or 5x5, fuzzy or not. (It is
-     generally nice to pair up fuzzy brushes with 100% opacity and non-fuzzy
-     brushes with about 70% opacity.) Unusual drawing modes can be helpful
-     with semi-transparent objects.
+     Utilisez l'outil de clonage et l'outil de pinceau. Faites varier
+     l'opacité selon vos besoins. Utilisez principalement des petites brosses
+     rondes, peut-être de 3x3 ou 5x5, floues ou non. (Il est généralement
+     agréable d'associer des pinceaux flous avec une opacité de 100% et des
+     pinceaux non flous avec une opacité d'environ 70%). On peut utiliser des
+     modes de dessin inhabituels avec des objets semi-transparents.
 
-     The goal is to remove the edge fringe, both inside and outside of the
-     object. The inside fringe, visible when the object is composited over
-     magenta or green, must be removed for obvious reasons. The outside
-     fringe must also be removed because it will become visible when the
-     image is scaled down. As an example, consider a 2x2 region of pixels at
-     the edge of a sharp-edged object. The left half is black and 0% opaque.
-     The right half is white and 100% opaque. That is, we have a white object
-     on a black background. When Tux Paint scales this to 50% (a 1x1 pixel
-     area), the result will be a grey 50% opaque pixel. The correct result
-     would be a white 50% opaque pixel. To get this result, we would paint
-     away the black pixels. They matter, despite being 0% opaque.
+     Le but est de supprimer la frange de bord, à la fois à l'intérieur et à
+     l'extérieur de l'objet. La frange intérieure, visible lorsque l'objet
+     est composé de magenta ou de vert, doit être supprimée pour des raisons
+     évidentes. La frange extérieure doit également être supprimée car elle
+     deviendra visible lorsque l'image sera réduite. À titre d'exemple,
+     considérons une région avec 2x2 de pixels au bord d'un objet aux arêtes
+     vives. La moitié gauche est noire et opaque à 0%. La moitié droite est
+     blanche et 100% opaque. Autrement dit, nous avons un objet blanc sur
+     fond noir. Lorsque Tux Paint redimensionne cela à 50% (une zone de 1 x 1
+     pixel), le résultat sera un pixel opaque gris à 50%. Le résultat correct
+     devrait être un pixel blanc opaque à 50%. Pour obtenir ce résultat, nous
+     peindrions les pixels noirs. Ils comptent, bien qu'ils soient à 0 %
+     d'opacité.
 
-     Tux Paint can scale images down by a very large factor, so it is
-     important to extend the edge of your object outward by a great deal.
-     Right at the edge of your object, you should be very accurate about
-     this. As you go outward away from the object, you can get a bit sloppy.
-     It is reasonable to paint outward by a dozen pixels or more. The farther
-     you go, the more Tux Paint can scale down without creating ugly color
-     fringes. For areas that are more than a few pixels away from the object
-     edge, you should use the pencil tool (or sloppy select with
-     drag-and-drop color) to ensure that the result will compress well.
+     Tux Paint peut réduire considérablement la taille des images, il est
+     donc important d'étendre considérablement le bord de votre objet vers
+     l'extérieur. Juste au bord de votre objet, vous devez être très précis à
+     ce sujet. Lorsque vous vous éloignez de l'objet, cela risque de faire
+     négligé. Il est raisonnable de peindre vers l'extérieur sur une douzaine
+     de pixels ou plus. Plus vous irez loin, plus Tux Paint pourra réduire la
+     taille sans créer de franges avec des couleurs moches. Pour les zones
+     situées à plus de quelques pixels du bord, vous devez utiliser l'outil
+     Crayon (ou une vague sélection avec une couleur en glisser-déposer) pour
+     vous assurer que le résultat se compressera bien.
 
-Save the image for Tux Paint
+Sauvegarder l'image pour Tux Paint
 
-     It is very easy to ruin your hard work. Image editors can silently
-     destroy pixels in 0% opaque areas. The conditions under which this
-     happens may vary from version to version. If you are very trusting, you
-     can try saving your image directly as a PNG. Be sure to read it back in
-     again to verify that the 0% opaque areas didn't turn black or white,
-     which would create fringes when Tux Paint scales the image down. If you
-     need to scale your image to save space (and hide your mistakes), you are
-     almost certain to destroy all the 0% opaque areas. So here is a better
-     way...
+     Il est très facile de gâcher votre travail, lui qui vous a demandé
+     beaucoup d'efforts. Les éditeurs d'images peuvent détruire
+     silencieusement les pixels dans les zones 0 % opaques. Les conditions
+     dans lesquelles cela se produit peuvent varier d'une version à l'autre.
+     Si vous êtes très confiant, vous pouvez essayer d'enregistrer votre
+     image directement au format PNG. Assurez-vous de le relire pour vérifier
+     que les zones opaques à 0 % ne deviennent ni noires ni blanches, ce qui
+     créerait des franges lorsque Tux Paint réduira l'image. Si vous devez
+     redimensionner votre image pour gagner de la place (et cacher vos
+     erreurs), vous êtes presque certain de détruire toutes les zones opaques
+     à 0%. Alors, voici une meilleure façon...
 
-  A Safer Way to Save
+  Une façon sûre pour sauvegarder
 
-       Drag the mask from the layers dialog to the unused portion of the
-       toolbar (right after the last drawing tool). This will create a new
-       image consisting of one layer that contains the mask data. Scale this
-       as desired, remembering the settings you use. Often you should start
-       with an image that is about 700 to 1500 pixels across, and end up with
-       one that is 300 to 400.
+       Faites glisser le masque de la boîte de dialogue des calques vers la
+       partie inutilisée de la barre d'outils (juste après le dernier outil
+       de dessin). Cela créera une nouvelle image composée d'un calque
+       contenant les données du masque. Mettez-le à l'échelle comme vous le
+       souhaitez, en vous souvenant des paramètres que vous utilisez.
+       Souvent, vous devriez commencer par une image d'environ 700 à 1500
+       pixels de diamètre et finir par une image de 300 à 400.
 
-       Save the mask image as a NetPBM portable greymap (".pgm") file. (If
-       you are using an old release of The GIMP, you might need to convert
-       the image to greyscale before you can save it.) Choose the more
-       compact "RAW PGM" format. (The second character of the file should be
-       the ASCII digit "5", hex byte 0x35.)
+       Enregistrez l'image de masque en tant que fichier de carte grise
+       portable NetPBM (".pgm"). (Si vous utilisez une ancienne version de
+       The GIMP, vous devrez peut-être convertir l'image en niveaux de gris
+       avant de pouvoir l'enregistrer.) Choisissez le format "RAW PGM" le
+       plus compact. (Le deuxième caractère du fichier doit être le chiffre
+       ASCII "5", octet hexadécimal 0x35.)
 
-       You may close the mask image.
+       Vous pouvez fermer l'image du masque.
 
-       Going back to the multi-layer image, now select the WIP layer. As you
-       did with the mask, drag this from the layers dialog to the toolbar.
-       You should get a single-layer image of your WIP data. If the mask came
-       along too, get rid of it. You should be seeing the object and the
-       painted-away surroundings, without any mask thumbnail in the layers
-       dialog. If you scaled the mask, then scale this image in exactly the
-       same way. Save this image as a NetPBM portable pixmap (".ppm") file.
-       (Note: .ppm, not .pgm.) (If you choose the RAW PPM format, the second
-       byte of the file should be the ASCII digit "6", hex byte 0x36.)
+       Pour revenir à l'image multicouche, sélectionnez maintenant le calque
+       WIP. Comme vous l'avez fait avec le masque, faites-le glisser de la
+       boîte de dialogue des calques vers la barre d'outils. Vous devriez
+       obtenir une image monocouche de vos données WIP. Si le masque est venu
+       aussi, débarrassez-vous-en. Vous devriez voir l'objet et les environs
+       peints, sans aucune vignette de masque dans la boîte de dialogue des
+       calques. Si vous avez mis à l'échelle le masque, mettez cette image à
+       l'échelle exactement de la même manière. Enregistrez cette image en
+       tant que pixmap portable NetPBM (".ppm"). (Remarque : .ppm, .pgm.) (Si
+       vous choisissez le format RAW PPM, le deuxième octet du fichier doit
+       être le chiffre ASCII «6», octet hexadécimal 0x36.)
 
-       Now you need to merge the two files into one. Do that with the
-       pnmtopng command, like this:
+       Vous devez maintenant fusionner les deux fichiers en un seul. Faites
+       cela avec la commande pnmtopng, comme ceci :
 
          pnmtopng -force -compression 9 -alpha mask.pgm fg.ppm >
          final-stamp.png

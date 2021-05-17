@@ -3,7 +3,7 @@
 
   A simple drawing program for children
 
-           Copyright © 2002-2021 by various contributors; cf AUTHORS.
+           Copyright © 2002-2021 by divers contributeurs; cf AUTHORS.
                             http://www.tuxpaint.org/
 
                                   mars 9, 2021
@@ -31,54 +31,60 @@
 
                                 About Tux Paint
 
-What Is "Tux Paint"?
+Qu'est-ce que "Tux Paint" ?
 
-       Tux Paint is a free drawing program designed for young children (kids
-       ages 3 and up). It has a simple, easy-to-use interface, fun sound
-       effects, and an encouraging cartoon mascot who helps guide children as
-       they use the program. It provides a blank canvas and a variety of
-       drawing tools to help your child be creative.
+       Tux Paint est un programme de dessin gratuit conçu pour les jeunes
+       enfants (enfants de 3 ans et plus). Il possède une interface simple et
+       facile à utiliser, des effets sonores amusants et une mascotte de
+       dessin animé pour encourager et guider les enfants lorsqu'ils
+       utilisent le programme. Sont fournis une toile vierge et un ensemble
+       d'outils de dessin pour aider votre enfant à être créatif.
 
 Licence :
 
-       Tux Paint is an Open Source project, Free Software released under the
-       GNU General Public License (GPL). It is free, and the 'source code'
-       behind the program is available. (This allows others to add features,
-       fix bugs, and use parts of the program in their own GPL'd software.)
+       Tux Paint est un projet Open Source, un logiciel libre publié sous la
+       licence publique générale GNU (GPL). Il est gratuit et le «code
+       source» du programme est disponible. (Cela permet à d'autres d'ajouter
+       des fonctionnalités, de corriger des bogues et d'utiliser des parties
+       du programme dans leur propre logiciel sous GPL.)
 
        See COPYING.txt for the full text of the GPL license.
 
-Objectives:
+Objectifs :
 
-       Easy and Fun
-               Tux Paint is meant to be a simple drawing program for young
-               children. It is not meant as a general-purpose drawing tool.
-               It is meant to be fun and easy to use. Sound effects and a
-               cartoon character help let the user know what's going on, and
-               keeps them entertained. There are also extra-large
-               cartoon-style mouse pointer shapes.
+       Facile et amusant
+               Tux Paint se veut un simple programme de dessin pour les
+               jeunes enfants. Il ne s'agit pas d'un programme de dessin à
+               usage général. Il se veut amusant et facile à utiliser. Les
+               effets sonores et un personnage de dessin animé permettent à
+               l'utilisateur de savoir ce qui se passe tout en le
+               divertissant. Il existe également des pointeurs de souris, de
+               style dessin animé, extra-larges.
 
-       Extensibility
-               Tux Paint is extensible. Brushes and 'rubber stamp' shapes can
-               be dropped in and pulled out. For example, a teacher can drop
-               in a collection of animal shapes and ask their students to
-               draw an ecosystem. Each shape can have a sound which is
-               played, and textual facts which are displayed, when the child
-               selects the shape.
+       Flexibilité
+               Tux Paint est extensible. Les brosses et les formes de "tampon
+               en caoutchouc" peuvent être déposées et retirées. Par exemple,
+               un enseignant peut apporter une collection de formes animales
+               et demander à ses élèves de dessiner un écosystème. Chaque
+               forme peut avoir un son qui l'accompagne et un texte est
+               affiché lorsque l'enfant sélectionne la forme.
 
-       Portability
-               Tux Paint is portable among various computer platforms:
-               Windows, Macintosh, Linux, etc. The interface looks the same
-               among them all. Tux Paint runs suitably well on older systems,
-               and can be built to run better on slow systems.
+       Portabilité
+               Tux Paint est portable sur diverses plates-formes
+               informatiques: Windows, Macintosh, Linux, etc. L'interface est
+               la même sur toutes. Tux Paint fonctionne correctement sur les
+               systèmes plus anciens (comme un Pentium 133), et peut être
+               modifié pour mieux fonctionner sur des systèmes lents.
 
-       Simplicity
-               There is no direct access to the computer's underlying
-               intricacies. The current image is kept when the program quits,
-               and reappears when it is restarted. Saving images requires no
-               need to create filenames or use the keyboard. Opening an image
-               is done by selecting it from a collection of thumbnails.
-               Access to other files on the computer is restricted.
+       Simplicité
+               Il n'y a pas d'accès direct à la complexité sous-jacente de
+               l'ordinateur. L'image en cours est conservée lorsque le
+               programme se ferme et réapparaît au redémarrage.
+               L'enregistrement d'images ne nécessite pas la création de noms
+               de fichiers ou l'utilisation du clavier. L'ouverture d'une
+               image se fait en la sélectionnant dans une collection de
+               vignettes. L'accès à d'autres fichiers sur l'ordinateur est
+               restreint.
 
      ----------------------------------------------------------------------
 
@@ -88,16 +94,16 @@ Launching Tux Paint
 
   Linux/Unix Users
 
-         Tux Paint should have placed a laucher icon in your KDE and/or GNOME
-         menus, under 'Graphics.'
+         Tux Paint devrait avoir mis une icône de lanceur dans vos menus KDE
+         et / ou GNOME, sous «Graphiques».
 
-         Alternatively, you can run the following command at a shell prompt
-         (e.g., "$"):
+         Autrement, vous pouvez exécuter la commande suivante à une invite du
+         shell (par exemple, "$") :
 
            $ tuxpaint
 
-         If any errors occur, they will be displayed on the terminal (to
-         STDERR).
+         Si des erreurs se produisent, elles seront affichées sur le terminal
+         ("stderr").
 
      ----------------------------------------------------------------------
 
@@ -106,103 +112,111 @@ Launching Tux Paint
                                                       [Icône pour Tux Paint]  
                                                             Tux Paint         
 
-         If you installed Tux Paint on your computer using the 'Tux Paint
-         Installer,' it will have asked you whether you wanted a 'Start' menu
-         short-cut, and/or a desktop shortcut. If you agreed, you can simply
-         run Tux Paint from the 'Tux Paint' section of your 'Start' menu
-         (e.g., under 'All Programs'), or by double-clicking the 'Tux Paint'
-         icon on your desktop, if you had the installer place one there.
+         Si vous avez installé Tux Paint sur votre ordinateur en utilisant le
+         'Tux Paint Installer', il vous aura demandé si vous vouliez un
+         raccourci de menu 'Démarrer' et / ou un raccourci sur le bureau. Si
+         vous avez accepté, vous pouvez simplement exécuter Tux Paint à
+         partir de la section 'Tux Paint' de votre menu 'Démarrer' (par
+         exemple, sous «Tous les programmes» sous Windows XP), ou en
+         double-cliquant sur l'icône «Tux Paint» sur votre bureau .
 
-         If you're using the 'portable' (ZIP-file) version of Tux Paint, or
-         if you used the 'Tux Paint Installer,' but chose not to have
-         shortcuts installed, you'll need to double-click the "tuxpaint.exe"
-         icon in the "Tux Paint" folder on your computer.
+         Si vous avez installé Tux Paint en utilisant le téléchargement
+         'ZIP-file', ou si vous avez utilisé 'Tux Paint Installer', mais que
+         vous avez choisi de ne pas installer de raccourcis, vous devrez
+         double-cliquer sur l'icône "tuxpaint.exe" dans le dossier "Tux
+         Paint" de votre ordinateur.
 
-         By default, the 'Tux Paint Installer' will put Tux Paint's folder in
-         "C:\Program Files\", though you may have changed this when you ran
-         the installer.
+         Par défaut, le 'Tux Paint Installer' mettra le dossier de Tux Paint
+         dans "C:\Program Files\",ou bien vous avez pu changer cela lors de
+         l'exécution du programme d'installation.
 
-         If you used the 'ZIP-file' download, Tux Paint's folder will be
-         wherever you extracted the contents of the ZIP file.
+         Si vous avez utilisé le téléchargement de 'ZIP-file', le dossier de
+         Tux Paint sera là où vous l'avez placé lorsque vous avez décompressé
+         le fichier ZIP.
 
      ----------------------------------------------------------------------
 
   macOS Users
 
-         Simply double-click the "Tux Paint" icon.
+         Double-cliquez simplement sur l'icône "Tux Paint".
 
      ----------------------------------------------------------------------
 
 Title Screen
 
-       When Tux Paint first loads, a title/credits screen will appear.
+       Lors du premier chargement de Tux Paint, un écran avec titre et
+       crédits apparaîtra.
 
-                                 [Title screen]
+                                 [Écran-titre]
 
-       Once loading is complete, press a key or click or tap in the Tux Paint
-       window to continue. (Or, after about 5 seconds, the title screen will
-       go away automatically.)
+       Une fois le chargement terminé, appuyez sur une touche ou cliquez sur
+       la souris pour continuer. (Ou, après environ 30 secondes,
+       l'écran-titre disparaîtra automatiquement.)
 
      ----------------------------------------------------------------------
 
 Main Screen
 
-       The main screen is divided into the following sections:
+       L'écran principal est divisé en plusieurs sections :
 
-       Left Side: Toolbar
+       Côté gauche : la barre d'outils
 
-               The toolbar contains the drawing and editing controls.
+               La barre d'outils contient les commandes pour dessiner et
+               éditer.
 
-  [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser,
-                         New, Open, Save, Print, Quit]
+  [Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie, Étiquette, Défaire,
+        Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]
 
-       Middle: Drawing Canvas
+       Milieu : Toile pour Dessiner
 
-               The largest part of the screen, in the center, is the drawing
-               canvas. This is, obviously, where you draw!
+               La plus grande partie de l'écran, au centre, est la toile de
+               dessin. C'est évidemment là que vous dessinerez !
 
-                                    [Canvas]
+                                    [Toile]
 
-               Note: The size of the drawing canvas depends on the size of
-               Tux Paint. You can change the size of Tux Paint using the Tux
-               Paint Config. configuration tool, or by other means. See the
-               Options documentation for more details.
+               Remarque: la taille de la toile de dessin dépend de la taille
+               de Tux Paint. Vous pouvez modifier la taille de Tux Paint à
+               l'aide de l'outil de configuration tuxpaint-config, ou par
+               d’autres moyens. Consultez la documentation OPTIONS pour plus
+               de détails.
 
-       Right Side: Selector
+       Côté droit : sélecteur
 
-               Depending on the current tool, the selector shows different
-               things. e.g., when the Paint Brush or Line tool is selected,
-               it shows the various brushes available. When the Rubber Stamp
-               tool is selected, it shows the different shapes you can use.
-               When the Text or Label tool is selected, it shows various
-               fonts.
+               En fonction de l'outil en cours d'utilisation, le sélecteur
+               affiche différentes choses. Par exemple, lorsque l'outil
+               Pinceau est sélectionné, il affiche les différents pinceaux
+               disponibles. Lorsque l'outil Tampon en caoutchouc est
+               sélectionné, il affiche les différentes formes que vous pouvez
+               utiliser.
 
                  [Selectors - Brushes, Letters, Shapes, Stamps]
 
-       Lower: Colors
+       En bas : couleurs
 
-               A palette of available colors are shown near the bottom of the
-               screen.
+               Une palette de couleurs disponibles s'affiche en bas de
+               l'écran.
 
  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
                                   Brown, Grey]
 
-               On the far right are two special color options, the "color
-               picker", which has an outline of an eye-dropper, and allows
-               you to pick a color found within your drawing, and the rainbow
-               palette, which allows you to pick a color from within a box
-               containing thousands of colors.
+               À l'extrême droite se trouvent deux options de choix de
+               couleur, le "sélecteur de couleurs", qui a le contour d'un
+               compte-gouttes, et vous permet de choisir une couleur trouvée
+               dans votre dessin, et la palette arc-en-ciel, qui vous permet
+               de choisir une couleur dans une boîte contenant des milliers
+               de couleurs.
 
-               (Note: You can define your own colors for Tux Paint. See the
-               "Options" documentation.)
+               (REMARQUE: vous pouvez définir vos propres couleurs. Voir la
+               documentation " Options ".)
 
-       Bottom: Help Area
+       En bas : zone d'aide
 
-               At the very bottom of the screen, Tux, the Linux Penguin,
-               provides tips and other information while you use Tux Paint.
+               Tout en bas de l'écran, Tux, le pingouin Linux, fournit des
+               conseils et d'autres informations pendant que vous dessinez.
 
-(Example tip: 'Pick a shape. Click to pick the center, drag, then let go when it
-    is the size you want. Move around to rotate it, and click to draw it.')
+(Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais glisser
+  et continue jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et
+                             clique pour dessiner.)
 
      ----------------------------------------------------------------------
 

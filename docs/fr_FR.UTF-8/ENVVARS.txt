@@ -1,8 +1,8 @@
                                    Tux Paint
                                  version 0.9.26
-                      Environment Variables Documentation
+                Documentation sur les variables d'environnement
 
-           Copyright © 2021-2021 by various contributors; cf AUTHORS.
+           Copyright © 2021-2021 by divers contributeurs; cf AUTHORS.
                             http://www.tuxpaint.org/
 
                                   mai 11, 2021
