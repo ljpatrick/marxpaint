@@ -287,136 +287,152 @@ Available Tools
 
      ----------------------------------------------------------------------
 
-         "Lines" Tool
+         Outil "Lignes"
 
-                 This tool lets you draw straight lines using the various
-                 brushes and colors you normally use with the Paint Brush.
+                 Cet outil vous permet de dessiner des lignes droites à
+                 l'aide des différents pinceaux et couleurs que vous utilisez
+                 habituellement.
 
-                 Click the mouse and hold it to choose the starting point of
-                 the line. As you move the mouse around, a thin 'rubber-band'
-                 line will show where the line will be drawn.
+                 Cliquez sur la souris et maintenez-la enfoncée pour choisir
+                 le point de départ de la ligne. Au fur et à mesure que vous
+                 déplacez la souris, une fine ligne «élastique» indiquera là
+                 où la ligne sera dessinée.
 
-                 Let go of the mouse to complete the line. A "sproing!" sound
-                 will play.
-
-     ----------------------------------------------------------------------
-
-         "Shapes" Tool
-
-                 This tool lets you draw some simple filled, and un-filled
-                 shapes.
-
-                 Select a shape from the selector on the right (circle,
-                 square, oval, etc.).
-
-                 Use the options at the bottom right to choose the shape
-                 tool's behavior:
-
-                      Shapes from center
-                              The shape will expand from where you initially
-                              clicked, and will be centered around that
-                              position. (This was Tux Paint's only behavior
-                              through version 0.9.24.)
-
-                      Shapes from corner
-                              The shape will extend with one corner starting
-                              from where you initially clicked. This is the
-                              default method of most other traditional
-                              drawing software. (This option was added
-                              starting with Tux Paint version 0.9.25.)
-
-                 Note: If shape controls are disabled (e.g., with the
-                 "noshapecontrols" option), the controls will not be
-                 presented, and the "shapes from center" method will be used.
-
-                 In the canvas, click the mouse and hold it to stretch the
-                 shape out from where you clicked. Some shapes can change
-                 proportion (e.g., rectangle and oval may be wider than tall,
-                 or taller than wide), others cannot (e.g., square and
-                 circle).
-
-                 Let go of the mouse when you're done stretching.
-
-                      Normal Shapes Mode
-
-                              Now you can move the mouse around the canvas to
-                              rotate the shape.
-
-                              Click the mouse button again and the shape will
-                              be drawn in the current color.
-
-                      Simple Shapes Mode
-                              If simple shapes are enabled (e.g., with the
-                              "simpleshapes" option), the shape will be drawn
-                              on the canvas when you let go of the mouse
-                              button. (There's no rotation step.)
+                 Relâchez la souris pour terminer la ligne. On entend alors
+                 le son "sproing !".
 
      ----------------------------------------------------------------------
 
-         "Text" and "Label" Tools
+         Outil "Formes"
 
-                 Choose a font (from the 'Letters' available on the right)
-                 and a color (from the color palette near the bottom). Click
-                 on the screen and a cursor will appear. Type text and it
-                 will show up on the screen.
+                 Cet outil vous permet de dessiner des formes simples
+                 remplies ou non remplies.
 
-                 Press [Enter] or [Return] and the text will be drawn onto
-                 the picture and the cursor will move down one line.
+                 Choisissez une forme dans le sélecteur de droite (cercle,
+                 carré,ovale, etc.).
 
-                 Alternatively, press [Tab] and the text will be drawn onto
-                 the picture, but the cursor will move to the right of the
-                 text, rather than down a line, and to the left. (This can be
-                 useful to create a line of text with mixed colors, fonts,
-                 styles and sizes.)
+                 Utilisez les options en bas à droite pour choisir le
+                 comportement de l'outil :
 
-                 Clicking elsewhere in the picture while the text entry is
-                 still active causes the current line of text to move to that
-                 location (where you can continue editing it).
+                      Formes à partir du centre
+                              La forme se développe à partir de l'endroit où
+                              vous avez cliqué initialement et sera centrée
+                              autour de cette position (C'était le seul
+                              comportement de Tux Paint jusqu'à la version
+                              0.9.24.)
 
-                      "Text" versus "Label"
+                      Formes à partir d'un coin
+                              La forme se développe à partir d'un coin depuis
+                              l'endroit où vous avez cliqué initialement. Il
+                              s'agit de la méthode par défaut de la plupart
+                              des autres logiciels de dessin traditionnels.
+                              (Cette option a été ajoutée à partir de la
+                              version 0.9.25 de Tux Paint.)
 
-                              The Text tool is the original text-entry tool
-                              in Tux Paint. Text entered using this tool
-                              can't be modified or moved later, since it
-                              becomes part of the drawing. However, because
-                              the text becomes part of the picture, it can be
-                              drawn over or modified using Magic tool effects
-                              (e.g., smudged, tinted, embossed, etc.)
+                 Remarque : si les contrôles de forme sont désactivés (par
+                 exemple, avec l'option "noshapecontrols"), il n'y aura pas
+                 de contrôle et la méthode "formes à partir du centre" sera
+                 utilisée.
 
-                              When using the Label tool (which was added to
-                              Tux Paint in version 0.9.22), the text 'floats'
-                              over the image, and the details of the label
-                              (the text, the position of the label, the font
-                              choice and the color) get stored separately.
-                              This allows the label to be repositioned or
-                              edited later.
+                 Dans le dessin, cliquez sur la souris et maintenez-la pour
+                 étirer la forme à partir de l'endroit où vous avez cliqué.
+                 Certaines formes peuvent changer de proportion (par exemple,
+                 le rectangle et l'ovale peuvent être plus larges que hauts
+                 ou plus hauts que larges), d'autres pas (par exemple, carré
+                 et cercle).
 
-                              The Label tool can be disabled (e.g., by
-                              selecting "Disable 'Label' Tool" in Tux Paint
-                              Config. or running Tux Paint with the "nolabel"
-                              option).
+                 Relâchez la souris lorsque vous avez terminé l'étirement.
 
-                      International Character Input
+                      Mode normal
 
-                              Tux Paint allows inputting characters in
-                              different languages. Most Latin characters
-                              (A-Z, ñ, è, etc.) can by entered directly. Some
-                              languages require that Tux Paint be switched
-                              into an alternate input mode before entering,
-                              and some characters must be composed using
-                              numerous keypresses.
+                              Vous pouvez maintenant déplacer la souris sur
+                              le dessin pour faire pivoter la forme.
 
-                              When Tux Paint's locale is set to one of the
-                              languages that provide alternate input modes, a
-                              key is used to cycle through normal (Latin
-                              character) and locale-specific mode or modes.
+                              Cliquez à nouveau sur le bouton de la souris et
+                              la forme sera dessinée avec la couleur en
+                              cours.
 
-                              Currently supported locales, the input methods
-                              available, and the key to toggle or cycle
-                              modes, are listed below. Note: Many fonts do
-                              not include all characters for all languages,
-                              so sometimes you'll need to change fonts to see
-                              the characters you're trying to type.
+                      Mode de Formes Simples
+                              Si les formes simples sont activées (par ex.
+                              avec l'option "simpleshapes"), la forme sera
+                              dessinée sur lorsque vous relâcherez le bouton
+                              de la souris. (Il n'y a pas de rotation.)
+
+     ----------------------------------------------------------------------
+
+         Outils "Texte" et "Étiquette"
+
+                 Choisissez une police (parmi les «Lettres» disponibles sur
+                 la droite) et une couleur (dans la palette de couleurs en
+                 bas). Cliquez sur l'écran et un curseur apparaîtra. Tapez un
+                 texte et il apparaîtra à l'écran.
+
+                 Appuyez sur [Enter] ou [Return] et le texte sera inclus dans
+                 l'image et le curseur se déplacera d'une ligne vers le bas.
+
+                 Sinon, appuyez sur [Tab] et le texte sera inclus dans
+                 l'image, mais le curseur se déplacera vers la droite du
+                 texte, plutôt que vers le bas d'une ligne et vers la gauche.
+                 (Cela peut être utile pour créer une ligne de texte avec des
+                 couleurs, des polices, des styles et des tailles variés.)
+
+                 Cliquer ailleurs dans l'image alors que l'entrée de texte
+                 est toujours active entraîne le déplacement de la ligne de
+                 texte actuelle vers cet emplacement (et vous pouvez
+                 continuer à la modifier).
+
+                      "Texte" par rapport à "Étiquette"
+
+                              L' outil Texte est l'outil de saisie de texte
+                              original de Tux Paint. Le texte saisi à l'aide
+                              de cet outil ne peut pas être modifié ou
+                              déplacé ultérieurement, car il fait partie du
+                              dessin. Cependant, comme le texte fait partie
+                              de l'image, il peut être dessiné ou modifié à
+                              l'aide des effets de l'outil Magie (par
+                              exemple, taché, teinté, gaufré, etc.)
+
+                              Lors de l'utilisation de l' outil Étiquette
+                              (qui a été ajouté à Tux Paint dans la version
+                              0.9.22), le texte `` flotte '' sur l'image, et
+                              les détails de l'étiquette (le texte, la
+                              position de l'étiquette, le choix de la police
+                              et la couleur ) sont stockés séparément. Cela
+                              permet à l'étiquette d'être repositionnée ou
+                              modifiée ultérieurement.
+
+                              L' outil Étiquette peut être désactivé (par
+                              exemple, en sélectionnant "Désactiver l'outil
+                              'Label'" dans Tux Paint Config ou bien en
+                              exécutant Tux Paint en ligne de commande avec
+                              l'option "nolabel").
+
+                      Saisie de caractères internationaux
+
+                              Tux Paint permet de saisir des caractères dans
+                              différentes langues. La plupart des caractères
+                              latins ( A - Z , ñ , è , etc...) peuvent être
+                              saisis directement. Certaines langues exigent
+                              que Tux Paint soit commuté dans un mode
+                              d'entrée alternatif avant la saisie, et
+                              certains caractères doivent être composés en
+                              utilisant plusieurs touches.
+
+                              Lorsque les paramètres régionaux de Tux Paint
+                              sont définis sur l'une des langues fournissant
+                              des modes de saisie alternatifs, une touche est
+                              utilisée pour parcourir le ou les modes soit
+                              normaux (caractère latin) soit spécifiques aux
+                              paramètres régionaux.
+
+                              Les paramètres régionaux actuellement pris en
+                              charge, les méthodes de saisie disponibles et
+                              la touche pour basculer ou faire défiler les
+                              modes sont répertoriés ci-dessous. Remarque :
+                              de nombreuses polices n'incluent pas tous les
+                              caractères pour toutes les langues, vous
+                              devriez donc parfois changer de police pour
+                              voir les caractères que vous essayez de saisir.
 
                                  * Japanese — Romanized Hiragana and
                                    Romanized Katakana — right [Alt] key
@@ -437,469 +453,510 @@ Available Tools
 
      ----------------------------------------------------------------------
 
-         "Fill" Tool
+         Outil "Remplir"
 
-                 The 'Fill' tool 'flood-fills' a contiguous area of your
-                 drawing with a color of your choice. Three fill options are
-                 offered:
-                    * Solid — click once to fill an area with a solid color.
-                    * Linear — click and then drag to fill the area with
-                      color that fades away (a gradient) towards where you
-                      drag the mouse.
-                    * Radial — click once to fill an area with a color that
-                      fades away (a gradient) radially, centered on where you
-                      clicked.
+                 L'outil «Remplir» «remplit» une zone contiguë de votre
+                 dessin avec une couleur unie de votre choix. Trois options
+                 de remplissage sont offertes :
+                    * Solide — cliquez une fois pour remplir une zone avec
+                      une couleur unie.
+                    * Linéaire—cliquez et faites glisser pour remplir une
+                      zone avec une couleur qui s'atténue au fur et à mesure
+                      dans la direction où vous déplacez la souris.
+                    * Radial—cliquez une fois pour remplir une zone avec une
+                      couleur qui s'atténue graduellement, à partir de
+                      l'endroit où vous avez cliqué.
 
-                 Note: Prior to Tux Paint 0.9.24, this was a Magic tool (see
-                 below). Note: Prior to Tux Paint 0.9.26, this tool only
-                 offered the 'Solid' method of filling.
-
-     ----------------------------------------------------------------------
-
-         "Magic" Tool (Special Effects)
-
-                 The Magic tool is actually a set of special tools. Select
-                 one of the 'magic' effects from the selector on the right.
-                 Then, depending on the tool, you can either click and drag
-                 around the picture, and/or simply click the picture once, to
-                 apply the effect.
-
-                 If the tool can be used by clicking and dragging, a
-                 'painting' button will be available on the left, below the
-                 list of Magic tools on the right side of the screen. If the
-                 tool can affect the entire picture at once, an 'entire
-                 picture' button will be available on the right.
-
-                 See the instructions for each Magic tool (in the
-                 'magic-docs' folder).
+                 Remarque: avant Tux Paint 0.9.24, il s'agissait d'un outil
+                 "magique" (voir ci-dessous). Remarque : avant Tux Paint
+                 0.9.26, cet outil n'offrait que la méthode 'Solide' pour le
+                 remplissage.
 
      ----------------------------------------------------------------------
 
-         "Eraser" Tool
+         Outil "Magie" (Effets spéciaux)
 
-                 This tool is similar to the Paint Brush. Wherever you click
-                 (or click and drag), the picture will be erased. (This may
-                 be white, some other color, or to a background picture,
-                 depending on the picture.)
+                 L'outil «Magie» est en fait un ensemble d'outils spéciaux.
+                 Sélectionnez l'un des effets «magiques» dans le sélecteur de
+                 droite. Ensuite, selon l'outil, vous pouvez soit cliquer et
+                 faire glisser dans l'image, et / ou simplement cliquer une
+                 fois sur l'image pour appliquer l'effet.
 
-                 A number of eraser sizes are available, both round and
-                 square.
+                 Si l'outil peut être utilisé en cliquant et en faisant
+                 glisser, un bouton «peinture» sera disponible sur la gauche,
+                 sous la liste des outils «magiques» sur le côté droit de
+                 l'écran. Si l'outil peut affecter toute l'image en entier,
+                 un bouton «Image entière» sera disponible sur la droite.
 
-                 As you move the mouse around, a square outline follows the
-                 pointer, showing what part of the picture will be erased to
-                 white.
+                 Voir les instructions pour chaque outil 'Magie' (dans le
+                 dossier 'magic-docs').
 
-                 As you erase, a 'squeaky clean' eraser wiping sound is
-                 played.
+     ----------------------------------------------------------------------
+
+         Outil "Gomme"
+
+                 Cet outil est similaire au pinceau. Partout où vous cliquez
+                 (ou cliquez et faites glisser), l'image sera effacée. (Cela
+                 peut être du blanc, une autre couleur ou une image
+                 d'arrière-plan, selon l'image.)
+
+                 Un certain nombre de tailles de gommes sont disponibles,
+                 soit rondes soit carrées.
+
+                 Lorsque vous déplacez la souris, un contour carré suit le
+                 pointeur, indiquant quelle partie de l'image sera effacée en
+                 blanc.
+
+                 Au fur et à mesure que vous effacez, un grincement est émis.
 
      ----------------------------------------------------------------------
 
   Other Controls
 
-         "Undo" Command
+         Commande "Défaire"
 
-                 Clicking this tool will undo the last drawing action. You
-                 can even undo more than once!
+                 En cliquant cet outil annulera la dernière action. Vous
+                 pouvez même annuler plus d'une fois !
 
-                 Note: You can also press [Control] + [Z] on the keyboard to
-                 Undo.
-
-     ----------------------------------------------------------------------
-
-         "Redo" Command
-
-                 Clicking this tool will redo the drawing action you just
-                 un-did with the 'Undo' button.
-
-                 As long as you don't draw again, you can redo as many times
-                 as you had undone!
-
-                 Note: You can also press [Control] + [R] on the keyboard to
-                 Redo.
+                 Remarque : vous pouvez également appuyer [Control] + [Z] sur
+                 le clavier pour Défaire.
 
      ----------------------------------------------------------------------
 
-         "New" Command
+         Commande "Refaire"
 
-                 Clicking the 'New' button will start a new drawing. A dialog
-                 will appear where you may choose to start a new picture
-                 using a solid background color, or using a 'Starter' or
-                 'Template' image (see below). You will first be asked
-                 whether you really want to do this.
+                 Cliquez sur cet outil pour refaire l'action de dessin que
+                 vous venez de «annuler» avec le bouton «Défaire».
 
-                 Note: You can also press [Control] + [N] on the keyboard to
-                 start a new drawing.
+                 Tant que vous ne dessinez plus, vous pouvez refaire autant
+                 de fois que vous avez défait !
 
-                 'Starter' & Template Images
-
-                   'Starters' can behave like a page from a coloring book — a
-                   black-and-white outline of a picture, which you can then
-                   color in, and the black outline remains intact — or like a
-                   3D photograph, where you draw in between a foreground and
-                   background layer.
-
-                   'Templates' are similar, but simply provide a background
-                   drawing to work off of. Unlike 'Starters', there is no
-                   layer that remains in the foreground of anything you draw
-                   in the picture.
-
-                   When using the 'Eraser' tool, the original image from the
-                   'Starter' or 'Template' will reappear. The 'Flip' and
-                   'Mirror' Magic tools affect the orientation of the
-                   'Starter' or 'Template', as well.
-
-                   When you load a 'Starter' or 'Template', draw on it, and
-                   then click 'Save,' it creates a new picture file — it
-                   doesn't overwrite the original, so you can use it again
-                   later (by accessing it from the 'New' dialog).
+                 Remarque : vous pouvez également appuyer [Control] + [R] sur
+                 le clavier pour Refaire.
 
      ----------------------------------------------------------------------
 
-         "Open" Command
+         Commande "Nouveau"
 
-                 This shows you a list of all of the pictures you've saved.
-                 If there are more than can fit on the screen, use the up and
-                 down arrows at the top and bottom of the list to scroll
-                 through the list of pictures.
+                 Cliquez sur le bouton "Nouveau" pour démarrer un nouveau
+                 dessin. Une boîte de dialogue apparaîtra, avec laquelle vous
+                 pouvez choisir de commencer une nouvelle image en utilisant
+                 une couleur d'arrière-plan unie, ou en utilisant une image
+                 'Starter' ou 'Template' (voir ci-dessous). On vous demandera
+                 d'abord si vous voulez vraiment faire cela.
 
-                 Click a picture to select it, and then...
+                 Remarque : vous pouvez également appuyer [Control] + [N] sur
+                 le clavier pour commencer un nouveau dessin.
 
-                      * Click the green 'Open' button at the lower left of
-                        the list to load the selected picture.
+                 Images de "Démarrage" et images "Modèle"
 
-                        (Alternatively, you can double-click a picture's icon
-                        to load it.)
+                   Les "Images de démarrage" se comportent comme une page
+                   d'un livre de coloriage - un contour noir et blanc d'une
+                   image, que vous pouvez ensuite colorier, et le contour
+                   noir reste intact - ou comme une photographie 3D, où vous
+                   dessinez entre une couche de premier plan et une
+                   d'arrière-plan.
 
-                      * Click the brown 'Erase' (trash can) button at the
-                        lower right of the list to erase the selected
-                        picture. (You will be asked to confirm.)
+                   Les "Images modèle" sont semblables, mais fournissent
+                   simplement un dessin d'arrière-plan sur lequel travailler.
+                   Contrairement aux «Images de démarrage», rien de ce que
+                   vous dessinerez ne restera au premier plan.
 
-                        Note: As of version 0.9.22, the picture will be
-                        placed in your desktop's trash can, on Linux only.
+                   Lorsque vous utiliserez l'outil «Gomme», l'image d'origine
+                   du «Démarrage» ou du «Modèle» réapparaîtra. Les outils
+                   magiques "Retourner" et "Miroir" affecteront aussi bien
+                   l'orientation de "l'image de démarrage" que celle de
+                   "l'image Modèle".
 
-                      * Click the 'Export' button near the lower right to
-                        export the image to your export folder. (e.g.,
+                   Lorsque vous chargez une 'Image modèle' ou 'image modèle',
+                   dessinez dessus, puis cliquez sur 'Sauvegarder', cela crée
+                   un nouveau fichier image - il n'écrase pas l'original,
+                   vous pouvez donc l'utiliser à nouveau plus tard (en y
+                   accédant depuis la boîte de dialogue 'Nouveau').
+
+     ----------------------------------------------------------------------
+
+         Commande "Ouvrir"
+
+                 Cela vous montre une liste de toutes les images que vous
+                 avez enregistrées. S'il y en a plus que ce que peut contenir
+                 l'écran, utilisez les flèches «Haut» et «Bas» en haut et en
+                 bas de la liste pour faire défiler la liste des images.
+
+                 Cliquez sur une image pour la sélectionner, puis ...
+
+                      * Cliquez sur le bouton vert "Ouvrir" en bas à gauche
+                        de la liste pour charger l'image sélectionnée.
+
+                        (Vous pouvez également double-cliquer sur l'icône
+                        d'une image pour la charger.)
+
+                      * Cliquez sur le bouton marron "Effacer" (poubelle) en
+                        bas à droite de la liste pour effacer l'image
+                        sélectionnée. (Il vous sera demandé de confirmer.)
+
+                        Remarque : à partir de la version 0.9.22, l'image
+                        sera placée dans la corbeille de votre bureau,
+                        uniquement sous Linux.
+
+                      * Cliquez sur le bouton "Exporter" près du coin
+                        inférieur droit pour exporter l'image vers votre
+                        dossier d'exportation. (par exemple,
                         "~/Pictures/TuxPaint/")
 
-                      * Click the blue 'Slides' (slide projector) button at
-                        the lower left to go to slideshow mode. See "Slides",
-                        below, for details.
+                      * Cliquez sur le bouton bleu "Diapositives" (projecteur
+                        de diapositives) en bas à gauche pour passer en mode
+                        diaporama. Voir «Diapositives », ci-dessous, pour
+                        plus de détails.
 
-                      * Click the red 'Back' arrow button at the lower right
-                        of the list to cancel and return to the picture you
-                        were drawing.
+                      * Ou cliquez sur le bouton fléché rouge «Retour» en bas
+                        à droite de la liste pour annuler et revenir à
+                        l'image que vous étiez en train de dessiner.
 
-                 If choose to open a picture, and your current drawing hasn't
-                 been saved, you will be prompted as to whether you want to
-                 save it or not. (See "Save," below.)
+                 Si vous choisissez d'ouvrir une image et que votre dessin
+                 actuel n'a pas été enregistré, il vous sera demandé si vous
+                 souhaitez l'enregistrer ou non. (Voir "Enregistrer,"
+                 ci-dessous.)
 
-                 Note: You can also press [Control] + [O] on the keyboard to
-                 bring up the 'Open' dialog.
-
-     ----------------------------------------------------------------------
-
-         "Save" Command
-
-                 This saves your current picture.
-
-                 If you haven't saved it before, it will create a new entry
-                 in the list of saved images. (i.e., it will create a new
-                 file)
-
-                 Note: It won't ask you anything (e.g., for a filename). It
-                 will simply save the picture, and play a "camera shutter"
-                 sound effect.
-
-                 If you have saved the picture before, or this is a picture
-                 you just loaded using the "Open" command, you will first be
-                 asked whether you want to save over the old version, or
-                 create a new entry (a new file).
-
-                 Note: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "Options"
-                 documentation.
-
-                 Note: You can also press [Control] + [S] on the keyboard to
-                 save.
+                 Remarque : vous pouvez également appuyer [Control] + [O] sur
+                 le clavier pour bring up the 'Open' dialog.
 
      ----------------------------------------------------------------------
 
-         "Print" Command
+         Commande "Sauvegarder"
 
-                 Click this button and your picture will be printed!
+                 Pour sauvegarder votre image en cours.
 
-                 On most platforms, you can also hold the [Alt] key (called
-                 [Option] on Macs) while clicking the 'Print' button to get a
-                 printer dialog. Note that this may not work if you're
-                 running Tux Paint in fullscreen mode. See below.
+                 Si vous ne l'avez pas enregistré auparavant, il créera une
+                 nouvelle entrée dans la liste des images enregistrées.
+                 (c'est-à-dire qu'il créera un nouveau fichier)
 
-                      Disabling Printing
+                 Remarque : il ne vous demandera rien (par exemple, un nom de
+                 fichier). Il enregistrera simplement l'image et fera le
+                 bruit d'un obturateur d'appareil photographique.
 
-                              The "noprint" option can be set, which will
-                              disable Tux Paint's 'Print' button.
+                 Si vous avez déjà enregistré l'image, ou s'il s'agit d'une
+                 image que vous venez de charger à l'aide de la commande
+                 "Ouvrir", il vous sera d'abord demandé si vous voulez
+                 écraser l'ancienne version ou bien créer une nouvelle entrée
+                 (un nouveau fichier).
 
-                              See the "Options" documentation.
+                 Remarque : si les options " saveover" ou " saveovernew" sont
+                 déjà définies, il ne sera rien demandé avant de sauvegarder.
+                 Voir la documentation Options.
 
-                      Restricting Printing
+                 Remarque : vous pouvez également appuyer [Control] + [S] sur
+                 le clavier pour save.
 
-                              The "printdelay" option can be set, which will
-                              only allow occasional printing — once every so
-                              many seconds, as configured by you.
+     ----------------------------------------------------------------------
 
-                              For example, with "printdelay=60" in Tux
-                              Paint's configuration file, printing can only
-                              occur once per minute (60 seconds).
+         Commande "Imprimer"
 
-                              See the "Options" documentation.
+                 Cliquez sur ce bouton et votre image sera imprimée !
 
-                      Printing Commands
+                 Sur la plupart des plates-formes, vous pouvez également
+                 maintenir la touche [Alt] (appelée [Option] sur Mac) tout en
+                 cliquant sur le bouton «Imprimer» pour obtenir une boîte de
+                 dialogue d'impression. Notez que cela pourrait ne pas
+                 fonctionner si vous exécutez Tux Paint en mode plein écran.
+                 Voir ci-dessous.
+
+                      Désactivation de l'impression
+
+                              On peut définir une option "noprint", ce qui
+                              entraînera la désactivation du bouton
+                              "Imprimer".
+
+                              Voir la documentation sur "Options".
+
+                      Restreindre l'impression
+
+                              Si l'option "printdelay" a été utilisée, vous
+                              ne pouvez imprimer — qu'une fois toutes les x
+                              secondes, tel que vous l'avez défini.
+
+                              Par exemple, avec "printdelay=60" dans le
+                              fichier de configuration de Tux Paint, vous ne
+                              pouvez imprimer qu'une fois par minute.
+
+                              Voir la documentation sur "Options".
+
+                      Commandes d'impression
 
                               (Linux and Unix only)
 
-                              Tux Paint prints by generating a PostScript
-                              representation of the drawing and sending it to
-                              an external program. By default, the program
-                              is:
+                              Tux Paint imprime en générant une
+                              représentation PostScript du dessin et en
+                              l'envoyant à un programme externe. Par défaut,
+                              le programme est :
 
                                 lpr
 
-                              This command can be changed by setting a
-                              "printcommand" option in Tux Paint's
-                              configuration file.
+                              Cette commande peut être modifiée en
+                              définissant la valeur "printcommand" dans le
+                              fichier de configuration de Tux Paint.
 
-                              An alternative print command can be invoked by
-                              holding the "[Alt]" key on the keyboard while
-                              clicking clicking the 'Print' button, as long
-                              as you're not in fullscreen mode, an
-                              alternative program is run. By default, the
-                              program is KDE's graphical print dialog:
+                              Si la touche "[Alt]" du clavier est enfoncée
+                              tout en cliquant sur le bouton «Imprimer», et
+                              tant que vous n'êtes pas en mode plein écran,
+                              un programme alternatif est exécuté. Par
+                              défaut, le programme est la boîte de dialogue
+                              d'impression graphique de KDE :
 
                                 kprinter
 
-                              This command can be changed by setting a
-                              "altprintcommand" option in Tux Paint's
-                              configuration file.
+                              Cette commande peut être modifiée en
+                              définissant la valeur "altprintcommand" dans le
+                              fichier de configuration de Tux Paint.
 
-                              See the "Options" documentation.
+                              Voir la documentation sur "Options".
 
-                      Printer Settings
+                      Réglages pour l'impression
 
-                              (Windows and macOS)
+                              (Windows et macOS)
 
-                              By default, Tux Paint simply prints to the
-                              default printer with default settings when the
-                              'Print' button is pushed.
+                              Par défaut, Tux Paint imprime simplement sur
+                              l'imprimante par défaut avec les paramètres par
+                              défaut lorsque le bouton «Imprimer» est
+                              enfoncé.
 
-                              However, if you hold the [Alt] (or [Option])
-                              key on the keyboard while clicking the 'Print'
-                              button, as long as you're not in fullscreen
-                              mode, your operating system's printer dialog
-                              will appear, where you can change the settings.
+                              Cependant, si vous maintenez la touche [Alt]
+                              (ou [Option]) du clavier tout en appuyant sur
+                              le bouton "Imprimer, et ceci tant que vous
+                              n'êtes pas en mode plein écran, la boîte de
+                              dialogue de l'imprimante de votre système
+                              d'exploitation apparaît, et vous pouvez
+                              modifier les réglages.
 
-                              You can have the printer configuration changes
-                              stored between Tux Paint sessions by setting
-                              the "printcfg" option.
+                              Vous pouvez stocker les changements de
+                              configuration, entre les sessions de Tux Paint,
+                              en paramétrant l'option "printcfg".
 
-                              If the "printcfg" option is used, printer
-                              settings will be loaded from the file
-                              "printcfg.cfg" in your personal folder (see
-                              below). Any changes will be saved there as
-                              well.
+                              Si l'option "printcfg" est utilisée, les
+                              réglages d'impression seront chargés à partir
+                              du fichier "printcfg.cfg" de votre répertoire
+                              personnel (voir ci-dessous). Tout changement y
+                              sera ernregistré.
 
-                              See the "Options" documentation.
+                              Voir la documentation sur "Options".
 
-                      Printer Dialog Options
+                      Options de la boîte de dialogue de l'imprimante
 
-                              By default, Tux Paint only shows the printer
-                              dialog (or, on Linux/Unix, runs the
-                              "altprintcommand"; e.g., "kprinter" instead of
-                              "lpr") if the [Alt] (or [Option]) key is held
-                              while clicking the 'Print' button.
+                              Par défaut, Tux Paint affiche uniquement la
+                              boîte de dialogue de l'imprimante (ou, sous
+                              Linux / Unix, exécute "altprintcommand", par
+                              exemple, "kprinter" au lieu de "lpr") si la
+                              touche [Alt] (ou [Option] ) est maintenue
+                              pendant en cliquant sur le bouton «Imprimer».
 
-                              However, this behavior can be changed. You can
-                              have the printer dialog always appear by using
-                              "--altprintalways" on the command-line, or
-                              "altprint=always" in Tux Paint's configuration
-                              file. Conversely, you can prevent the
-                              [Alt]/[Option] key from having any effect by
-                              using "--altprintnever", or "altprint=never".
+                              Cependant, ce comportement peut être modifié.
+                              Vous pouvez toujours faire apparaître la boîte
+                              de dialogue de l'imprimante en utilisant
+                              "--altprintalways" sur la ligne de commande ou
+                              "altprint=always" dans le fichier de
+                              configuration de Tux Paint. Inversement vous
+                              pouvez empêcher la touche [Alt] / [Option]
+                              d'avoir un effet en utilisant "--altprintnever"
+                              ou "altprint=never".
 
-                              See the "Options" documentation.
-
-     ----------------------------------------------------------------------
-
-         "Slides" Command (under "Open")
-
-                 The 'Slides' button is available in the 'Open' dialog. It
-                 can be used to play a simple animation within Tux Paint, or
-                 a slideshow of pictures. It can also export an animated GIF
-                 based on the chosen images.
-
-                      Chosing pictures
-
-                              When you enter the 'Slides' section of Tux
-                              Paint, it displays a list of your saved files,
-                              just like the 'Open' dialog.
-
-                              Click each of the images you wish to display in
-                              a slideshow-style presentation, one by one. A
-                              digit will appear over each image, letting you
-                              know in which order they will be displayed.
-
-                              You can click a selected image to unselect it
-                              (take it out of your slideshow). Click it again
-                              if you wish to add it to the end of the list.
-
-                      Set playback speed
-
-                              A sliding scale at the lower left of the screen
-                              (next to the 'Play' button) can be used to
-                              adjust the speed of the slideshow or animated
-                              GIF, from slowest to fastest. Choose the
-                              leftmost setting to disable automatic
-                              advancement during playback within Tux Paint —
-                              you will need to press a key or click to go to
-                              the next slide (see below).
-
-                              Note: The slowest setting does not
-                              automatically advance through the slides. Use
-                              it for when you want to step through them
-                              manually. (This does not apply to an exported
-                              animated GIF.)
-
-                      Playback in Tux Paint
-
-                              To play a slideshow within Tux Paint, click the
-                              'Play' button. (Note: If you hadn't selected
-                              ANY images, then ALL of your saved images will
-                              be played in the slideshow!)
-
-                              During the slideshow, press [Space], [Enter] or
-                              [Return], or the [Right arrow] — or click the
-                              'Next' button at the lower left — to manually
-                              advance to the next slide. Press [Left arrow]
-                              to go back to the previous slide.
-
-                              Press [Escape], or click the 'Back' button at
-                              the lower right, to exit the slideshow and
-                              return to the slideshow image selection screen.
-
-                      Exporting an animated GIF
-
-                              Click the 'GIF Export' button near the lower
-                              right to have Tux Paint generate an animated
-                              GIF file based on the selected images.
-
-                              Note: At least two images must be selected. (To
-                              export a single image, use the 'Export' option
-                              from the main 'Open' dialog.) If no images are
-                              selected, Tux Paint will NOT attempt to
-                              generate a GIF based on all saved images.
-
-                              Pressing [Escape] during the export process
-                              will abort the process, and return you to the
-                              'Slideshow' dialog.
-
-                 Click 'Back' in the slideshow image selection screen to
-                 return to the 'Open' dialog.
+                              Voir la documentation sur "Options".
 
      ----------------------------------------------------------------------
 
-         "Quit" Command
+         Commande "Diapos" (sous "Ouvrir")
 
-                 Clicking the 'Quit' button, closing the Tux Paint window, or
-                 pushing the [Escape] key will quit Tux Paint.
+                 Le bouton "Diapositives" est disponible dans la boîte de
+                 dialogue "Ouvrir". Il peut être utilisé pour lire une simple
+                 animation dans Tux Paint, ou un diaporama. Il peut également
+                 exporter un GIF animé basé sur les images choisies.
 
-                 You will first be prompted as to whether you really want to
-                 quit.
+                      Choisir des images
 
-                 If you choose to quit, and you haven't saved the current
-                 picture, you will first be asked if wish to save it. If it's
-                 not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "Save"
-                 above.)
+                              Lorsque vous entrez dans la section "Diapos" de
+                              Tux Paint, il affiche une liste de vos fichiers
+                              enregistrés, tout comme la boîte de dialogue
+                              "Ouvrir".
 
-                 Note: If the image is saved, it will be reloaded
-                 automatically the next time you run Tux Paint -- unless the
-                 "startblank" option is set.
+                              Cliquez sur chacune des images que vous
+                              souhaitez afficher dans une présentation de
+                              style diaporama, une par une. Un chiffre
+                              apparaîtra sur chaque image, vous indiquant
+                              dans quel ordre elles seront affichées.
 
-                 Note: The 'Quit' button within Tux Paint, and quitting via
-                 the [Escape] key, may be disabled, via the "noquit" option.
+                              Vous pouvez cliquer sur une image sélectionnée
+                              pour la désélectionner (la retirer de votre
+                              diaporama). Cliquez à nouveau dessus si vous
+                              souhaitez l'ajouter à la fin de la liste.
 
-                 In that case, the "window close" button on Tux Paint's title
-                 bar (if not in fullscreen mode) or the [Alt] + [F4] key
-                 sequence may be used to quit.
+                      Régler la vitesse de lecture
 
-                 If neither of those are possible, the key sequence of
-                 [Shift] + [Control] + [Escape] may be used to quit.
+                              Une échelle mobile en bas à gauche de l'écran
+                              (à côté du bouton "Lecture") peut être utilisée
+                              pour régler la vitesse du diaporama ou du GIF
+                              animé, du plus lent au plus rapide. Choisissez
+                              le paramètre le plus à gauche pour désactiver
+                              l'avancement automatique pendant la lecture
+                              dans Tux Paint - vous devrez appuyer sur une
+                              touche ou cliquer pour passer à la diapositive
+                              suivante (voir ci-dessous).
 
-                 See the "Options" documentation.
+                              Remarque : le paramètre le plus lent ne fait
+                              pas automatiquement avancer les diapositives.
+                              Utilisez-le lorsque vous souhaitez les
+                              parcourir manuellement. (Cela ne s'applique pas
+                              à un GIF animé exporté.)
+
+                      Lecture dans Tux Paint
+
+                              Pour lire un diaporama dans Tux Paint, cliquez
+                              sur le bouton "Départ". (Remarque : si vous
+                              n'avez sélectionné AUCUNE image, TOUTES vos
+                              images enregistrées seront lues dans le
+                              diaporama !)
+
+                              Pendant le diaporama, appuyez sur [Space],
+                              [Entrée] ou [Retour] , ou sur [Flèche droite] -
+                              ou cliquez sur le bouton "Suivant" en bas à
+                              gauche - pour passer manuellement à la
+                              diapositive suivante. Appuyez sur [Flèche
+                              gauche] pour revenir à la diapositive
+                              précédente.
+
+                              Appuyez sur [Escape] , ou cliquez sur le bouton
+                              "Retour" en bas à droite, pour quitter le
+                              diaporama et revenir à l'écran de sélection
+                              d'image du diaporama.
+
+                      Exporter un GIF animé
+
+                              Cliquez sur le bouton "Exporter GIF" en bas à
+                              droite pour que Tux Paint génère un fichier GIF
+                              animé basé sur les images sélectionnées.
+
+                              Remarque : On doit sélectionner au moins deux
+                              images. (Pour exporter une seule image,
+                              utilisez l'option "Exporter" de la boîte de
+                              dialogue "Ouvrir".) Si aucune image n'est
+                              sélectionnée, Tux Paint n'essaiera PAS de
+                              générer un GIF basé sur toutes les images
+                              enregistrées.
+
+                              Appuyer sur [Escape] pendant l'exportation
+                              annulera le processus et vous ramènera à la
+                              boîte de dialogue "Diaporama".
+
+                 Cliquez sur "Retour" dans l'écran de sélection d'image du
+                 diaporama pour revenir à la boîte de dialogue "Ouvrir".
 
      ----------------------------------------------------------------------
 
-         Sound Muting
+         Commande "Quitter"
 
-                 There is no on-screen control button at this time, but by
-                 using the [Alt] + [S] keyboard sequence, sound effects can
-                 be disabled and re-enabled (muted and unmuted) while the
-                 program is running.
+                 Cliquez sur le bouton "Quitter", fermez la fenêtre de Tux
+                 Paint ou appuyez sur la touche [Escape] pour quitter Tux
+                 Paint.
 
-                 Note that if sounds are completely disabled via the
-                 "nosound" option, the [Alt] + [S] key combination has no
-                 effect. (i.e., it cannot be used to turn on sounds when the
-                 parent/teacher wants them disabled.)
+                 On vous demandera d'abord si vous voulez vraiment arrêter.
+
+                 Si vous choisissez de quitter et que vous n'avez pas
+                 enregistré l'image actuelle, il vous sera d'abord demandé si
+                 vous souhaitez l'enregistrer. S'il ne s'agit pas d'une
+                 nouvelle image, il vous sera alors demandé si vous souhaitez
+                 enregistrer sur l'ancienne version ou créer une nouvelle
+                 entrée. (Voir Sauvegarder ci-dessus.)
+
+                 Remarque :: Si l'image est enregistrée, elle sera rechargée
+                 automatiquement la prochaine fois que vous exécuterez Tux
+                 Paint -- à moins que l'option"startblank" ait été activée.
+
+                 Remarque :: Le bouton "Quitter" et la touche [Escape]
+                 peuvent être désactivés par le biais de option "noquit".
+
+                 Dans ce cas, le bouton "Fermer la fenêtre" sur la barre de
+                 titre de Tux Paint (si vous n'êtes pas en mode plein écran)
+                 ou la touche [Alt] + [F4] peut être utilisée pour quitter.
+
+                 Si aucune de ces options n'est possible, la séquence de
+                 touches [Shift] + [Control] + [Escape] peut être utilisée
+                 pour quitter.
+
+                 Voir la documentation sur "Options".
+
+     ----------------------------------------------------------------------
+
+         Coupure du son
+
+                 Il n'y a pas de bouton de commande à l'écran pour le moment,
+                 mais en appuyant sur les touches [Alt] + [S] , les effets
+                 sonores peuvent être désactivés et réactivés pendant que le
+                 programme est en cours d'exécution.
+
+                 Notez que si les sons sont complètement désactivés via
+                 l'option "nosound, la combinaison des touches [Alt] + [S]
+                 n'a pas d'effet (c'est-à-dire qu'il ne peut pas être utilisé
+                 pour activer les sons lorsque le parent / enseignant veut
+                 qu'ils soient désactivés.)
 
      ----------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
-     Tux Paint's 'Open' dialog only displays pictures you created with Tux
-     Paint. So what do you do if you want to load some other drawinng or even
-     a photograph into Tux Paint, so you can edit or draw on it?
+     Étant donné que la boîte de dialogue «Ouvrir» de Tux Paint n'affiche que
+     les images que vous avez créées avec Tux Paint, que se passe-t-il si
+     vous souhaitez charger une autre image ou photo dans Tux Paint pour les
+     éditer et dessiner par-dessus ?
 
-     You can simply convert the picture to the format Tux Paint uses — PNG
-     (Portable Network Graphic) — and place it in Tux Paint's "saved"
-     directory/folder. Here is where to find it (by default):
+     Pour ce faire, il vous suffit de convertir l'image dans le format
+     utilisé par Tux Paint, qui est —PNG (Portable Network Graphic), et de la
+     placer dans le répertoire "saved" de Tux Paint. C'est là où on les
+     trouve (par défaut) :
 
      Windows 10, 8, 7, Vista
-             Inside the user's "AppData" folder, e.g.:
+             Dans le dossier utilisateurs "AppData", par ex.
              "C:\Users\username\AppData\Roaming\TuxPaint\saved\".
 
      Windows 2000, XP
-             Inside the user's "Application Data" folder, e.g.: "C:\Documents
-             and Settings\username\Application Data\TuxPaint\saved\".
+             Dans le dossier utilisateurs "Application Data", par ex.
+             "C:\Documents and Settings\username\Application
+             Data\TuxPaint\saved\".
 
      macOS
-             Inside the user's "Library" folder, e.g.:
+             Dans le dossier utilisateurs "Library", par ex.
              "/Users/username/Library/Application Support/Tux Paint/saved/".
 
      Linux/Unix
-             Inside a hidden ".tuxpaint" directory, in the user's home
-             directory ("$HOME"), e.g. "/home/username/.tuxpaint/saved/".
+             Dans un répertoire caché ".tuxpaint" qui est dans le répertoire
+             personnel de l'utilisateur ("$HOME"), par ex.
+             "/home/username/.tuxpaint/saved/".
 
-     Note: It is also from this folder that you can copy or open pictures
-     drawn in Tux Paint using other applications, though the 'Export' option
-     from Tux Paint's 'Open' dialog can be used to copy them to a location
-     that's easier and safer to access.
+     Remarque : C'est également à partir de ce dossier que vous pouvez copier
+     ou ouvrir des images dessinées dans Tux Paint à l'aide d'autres
+     applications, ainsi l'option 'Export' de la boîte de dialogue 'Ouvrir'
+     de Tux Paint peut être utilisée pour les copier dans un endroit plus
+     facile d'accès plus sûr.
 
-Using the import script, "tuxpaint-import"
+Utilisation du script d'importation "tuxpaint-import"
 
-       Linux and Unix users can use the "tuxpaint-import" shell script which
-       gets installed when you install Tux Paint. It uses some NetPBM tools
-       to convert the image ("anytopnm"), resize it so that it will fit in
-       Tux Paint's canvas ("pnmscale"), and convert it to a PNG ("pnmtopng").
+       Les utilisateurs Linux et Unix peuvent utiliser script shell
+       "tuxpaint-import" qui s'installe lorsque vous installez Tux Paint. Il
+       utilise certains outils NetPBM pour convertir l'image ("anytopnm"), la
+       redimensionner pour qu'elle tienne dans le canevas de Tux Paint
+       ("pnmscale") et la convertir en PNG ("pnmtopng").
 
-       It also uses the "date" command to get the current time and date,
-       which is the file-naming convention Tux Paint uses for saved files.
-       (Remember, you are never asked for a 'filename' when you go to save or
-       open pictures!)
+       Il utilise également la commande "date" pour obtenir l'heure et la
+       date actuelles, qui sont la convention de dénomination des fichiers
+       utilisée par Tux Paint pour les fichiers enregistrés. (N'oubliez pas
+       que vous n'êtes jamais invité à entrer un "nom de fichier " lorsque
+       vous allez enregistrer ou ouvrir des images !)
 
-       To use this script, simply run it from a command-line prompt, and
-       provide it the name(s) of the file(s) you wish to convert.
+       Pour utiliser ce script, exécutez simplement la commande à partir
+       d'une invite de ligne de commande et indiquez-lui le (s) nom (s) du ou
+       des fichiers que vous voulez convertir.
 
-       They will be converted and placed in your Tux Paint "saved" directory.
-       (Note: If you're doing this for a different user (e.g., your child)
-       you'll need to make sure to run the command under their account.)
+       Ils seront convertis et placés dans votre répertoire "saved" de Tux
+       Paint. (Remarque: si vous faites cela pour un autre utilisateur - par
+       exemple, votre enfant, vous devrez vous assurer d'exécuter la commande
+       sous son compte.)
 
        Example:
 
@@ -907,101 +964,106 @@ Using the import script, "tuxpaint-import"
          grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
          jpegtopnm: WRITING A PPM FILE
 
-       The first line ("tuxpaint-import grandma.jpg") is the command to run.
-       The following two lines are output from the program while it's
-       working.
+       La première ligne ("tuxpaint-import grandma.jpg") est la commande à
+       exécuter. Les deux lignes suivantes sont les sorties du programme
+       pendant qu'il fonctionne.
 
-       Now you can load Tux Paint, and a version of that original picture
-       will be available under the 'Open' dialog. Just double-click its icon!
+       Vous pouvez maintenant charger Tux Paint, et une version de cette
+       image originale sera disponible dans la boîte de dialogue «Ouvrir».
+       Double-cliquez simplement sur son icône !
 
-Importing Pictures Manually
+Importer des images manuellement
 
-       Windows, macOS, and Haiku users who wish to import arbitrary images
-       into Tux Paint must do so via a manual process.
+       Les utilisateurs de Windows, macOS et Haiku désirant importer des
+       images dans Tux Paint doivent le faire manuellement.
 
-       Load a graphics program that is capable of both loading your picture
-       and saving a PNG format file. (See the documentation file "PNG.html"
-       for a list of suggested software, and other references.)
+       Chargez un programme graphique capable à la fois de charger votre
+       image et d'enregistrer un fichier au format PNG. (Voir le fichier de
+       documentation "PNG.html" pour une liste des logiciels suggérés et
+       d'autres références.)
 
-       When Tux Paint loads an image that's not the same size as its drawing
-       canvas, it scales (and sometimes smears the edges of) the image so
-       that it fits within the canvas.
+       Lorsque Tux Paint charge une image qui n'a pas la même taille que son
+       canevas de dessin, il met à l'échelle (et parfois en coloriant les
+       bords) l'image pour qu'elle tienne dans le canevas.
 
-       To avoid having the image stretched or smeared, you can resize it to
-       Tux Paint's canvas size. This size depends on the size of the Tux
-       Paint window, or resolution at which Tux Paint is run, if in
-       fullscreen. (Note: The default resolution is 800x600.) See
-       "Calculating Image Dimensions", below.
+       Pour éviter que l'image ne soit étirée ou maculée, vous pouvez la
+       redimensionner à la taille de la toile de Tux Paint. Cette taille
+       dépend de la taille de la fenêtre Tux Paint, ou de la résolution à
+       laquelle Tux Paint est exécuté, si il est en plein écran. (Remarque :
+       la résolution par défaut est de 800x600.) Voir "Calculer les
+       dimensions des images" ci-dessous.
 
-       Save the picture in PNG format. It is highly recommended that you name
-       the filename using the current date and time, since that's the
-       convention Tux Paint uses:
+       Sauvegarder l'image au format PNG. Il est fortement recommandé que
+       vous nommiez le fichier en utilisant la date et l'heure courante,
+       puisque c'est ce que Tux Paint utilise :
 
          YYYYMMDDhhmmss.png
 
          * YYYY = Year
-         * MM = Month (two digits, "01"-"12")
-         * DD = Day of month (two digits, "01"-"31")
-         * HH = Hour (two digits, in 24-hour format, "00"-"23")
-         * mm = Minute (two digits, "00"-"59")
-         * ss = Seconds (two digits, "00"-"59")
+         * MM = Mois (deux chiffres, "01"-"12")
+         * DD = Jour du mois (deux chiffres, "01"-"31")
+         * HH = Heure (deux chiffres,au format 24h, "00"-"23")
+         * mm = Minute (deux chiffres, "00"-"59")
+         * ss = Secondes (deux chiffres, "00"-"59")
 
-       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+       Exemple: "20210731110500.png",pour le 31 juillet 2021 à 11:05 du
+       matin.
 
-       Place this PNG file in your Tux Paint "saved" directory/folder. (See
-       above.)
+       Mettez cd fichier PNG dans votre répertoire Tux Paint "saved". (Voir
+       ci-dessus)
 
-  Calculating Image Dimensions
+  Calculer les dimensions des images
 
-         This part of the documentation needs to be rewritten, since the new
-         "buttonsize" option was added. For now, try drawing and saving an
-         image within Tux Paint, then determine what size (pixel width and
-         height) it came out to, and try to match that when scaling the
-         picture(s) you're importing into Tux Paint.
+         Cette partie de documentation doit être réécrite puisque la nouvelle
+         option "buttonsize" a été ajoutée. Pour l'heure, essayer de dessiner
+         et de sauvegarder l'image dans Tux Paint, et ensuite déterminer
+         quelle taille (largeur et hauteur en pixels) elle possède, et
+         essayez de l'adapter lors de la mise à l'échelle en l'important dans
+         Tux Paint.
 
      ----------------------------------------------------------------------
 
                                 Further Reading
 
-     Other documentation included with Tux Paint (found in the "docs"
-     folder/directory) includes:
+     Les autres documents inclus avec Tux Paint (dans le répertoire "docs")
+     incluent :
        * Documentation sur l'outil 'Magie' ("magic-docs")
-         Documentation for each of the currently-installed 'Magic' tools.
+         Documentation pour chacun des outils "Magic" actuellement installés.
        * AUTHORS.txt
-         List of authors and contributors.
+         Liste des auteurs et contributeurs.
        * CHANGES.txt
-         Summary of what has changed between releases of Tux Paint.
+         Résumé des changements entre chaque version de Tux Paint
        * COPYING.txt
-         Tux Paint's software license, the GNU General Public License (GPL)
+         Licencd de copie, la GNU General Public License (GPL)
        * INSTALL.html
-         Instructions for compiling and installing Tux Paint, when
-         applicable.
+         Instructions pour compiler et installer Tux Paint, le cas échéant.
        * EXTENDING.html
-         Detailed instructions on extending Tux Paint: creating brushes,
-         stamps, starters, and templates; adding fonts; and creating new
-         on-screen keyboard layouts and input methods.
+         Des instructions détaillées sur la création de pinceaux, de tampons,
+         d'images de démarrage et de modèles; et l'ajout de polices; et créer
+         un nouveau clavier virtuel et des méthodes de saisie.
        * OPTIONS.html
-         Detailed instructions on command-line and configuration-file
-         options, for those who don't want to use the Tux Paint Config. tool
-         to manage Tux Paint's configuration.
+         Instructions détaillées sur les options en ligne de commande et les
+         fichiers de configuration, pour ceux qui ne veulent pas utiliser
+         l'outil Tux Paint Config.
        * PNG.html
-         Notes on creating PNG format bitmapped (raster) images for use in
-         Tux Paint.
+         Remarques sur la création d'images bitmap au format PNG à utiliser
+         dans Tux Paint.
        * SVG.html
-         Notes on creating SVG format vector images for use in Tux Paint.
+         Remarques sur la création d'images vectorielles au format SVG à
+         utiliser dans Tux Paint.
        * SIGNALS.html
-         Information about the POSIX signals that Tux Paint responds to.
+         Informations sur les signaux POSIX auxquels répond Tux Paint.
 
      ----------------------------------------------------------------------
 
                                 How to Get Help
 
-     If you need help, there are numerous ways to interact with Tux Paint
-     developers and other users.
+     Si vous avez besoin d'aide, il existe de nombreux moyens d'interagir
+     avec les développeurs de Tux Paint et les autres utilisateurs.
 
        * Report bugs or request new features via the project's bug-tracking
          system
-       * Participate in the various project mailing lists
+       * Participer aux nombreuses listes de diffusion de Tux Paint
        * Chat with developers and other users over IRC
        * Contact the developers directly
 
