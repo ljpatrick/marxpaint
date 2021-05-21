@@ -136,7 +136,7 @@ Launching Tux Paint
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  Utilisateurs de macOS
 
          Double-cliquez simplement sur l'icône "Tux Paint".
 
@@ -683,7 +683,7 @@ Available Tools
 
                       Commandes d'impression
 
-                              (Linux and Unix only)
+                              (Linux et Unix uniquement)
 
                               Tux Paint imprime en générant une
                               représentation PostScript du dessin et en
@@ -1032,7 +1032,7 @@ Importer des images manuellement
        * AUTHORS.txt
          Liste des auteurs et contributeurs.
        * CHANGES.txt
-         Résumé des changements entre chaque version de Tux Paint
+         Résumé des changements entre chaque version de Tux Paint.
        * COPYING.txt
          Licencd de copie, la GNU General Public License (GPL)
        * INSTALL.html
