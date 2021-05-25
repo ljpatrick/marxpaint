@@ -92,7 +92,7 @@ Objectifs :
 
 Launching Tux Paint
 
-  Linux/Unix Users
+  Utilisateurs de Linux/Unix
 
          Tux Paint devrait avoir mis une icône de lanceur dans vos menus KDE
          et / ou GNOME, sous «Graphiques».

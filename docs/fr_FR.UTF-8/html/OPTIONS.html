@@ -2911,7 +2911,7 @@
             <th>
               Langue<br>Nom anglais            </th>
             <th>
-              Combinaison de touches             </th>
+              Combinaison de touches            </th>
           </tr>
 
           <tr>
@@ -4862,29 +4862,29 @@
 
       <blockquote>
         <p>
-          Changing your locale will affect much of your environment.        </p>
+          La modification de vos paramètres régionaux affectera une grande partie de votre environnement.        </p>
 
         <p>
-          As stated above, along with letting you choose the language at runtime using command-line options ("<code>--lang</code>" and "<code>--locale</code>"), Tux Paint honors the global locale setting in your environment.        </p>
+          Comme indiqué ci-dessus, en plus de vous permettre de choisir la langue au moment de l'exécution en utilisant les options de ligne de commande ("<code>--lang</code>" et "<code>--locale</code>"), Tux Paint respecte les paramètres régionaux globaux de votre environnement.        </p>
 
         <p>
-          If you haven't already set your environment's locale, the following will briefly explain how:        </p>
+          Si vous n'avez pas encore défini les paramètres régionaux de votre environnement, ce qui suit explique brièvement comment :        </p>
 
         <h3>
-          Linux/Unix Users        </h3>
+          Utilisateurs de Linux/Unix        </h3>
 
         <blockquote>
           <p>
-            First, be sure the locale you want to use is enabled by editing the file "<code>/etc/locale.gen</code>" on your system and then running the program "<code>locale-gen</code>" as root.          </p>
+            Tout d'abord, assurez-vous que les paramètres régionaux que vous souhaitez utiliser sont activés en éditant le fichier "<code>/etc/locale.gen</code>" sur votre système, puis en exécutant le programme "<code>locale-gen</code>" en tant que root.          </p>
 
           <p>
-            <i>Note: Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".</i>          </p>
+            <i>Remarque: les utilisateurs Debian peuvent simplement exécuter la commande "<code>dpkg-reconfigure locales</code>" en tant que root pour afficher une boîte de dialogue de configuration. Les utilisateurs d'Ubuntu peuvent exécuter "<code>sudo dpkg-reconfigure localeconf</code>" (le package "localeconf" peut avoir besoin d'être installé en premier), ou bien peuvent avoir besoin d'éditer le fichier "<code>/var/lib/locales/supported.d/local</code>" d'abord, et d'ajouter les paramètres régionaux qu'ils veulent, à partir de la liste trouvée dans "<code>/usr/share/i18n/SUPPORTED</code>"</i>          </p>
 
           <p>
-            Then, before running Tux Paint, set your "<code>$LANG</code>" environment variable to one of the locales listed above. (If you want all programs that can be translated to be, you may wish to place the following in your login script; e.g. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>
+            Ensuite, avant d'exécuter Tux Paint, définissez votre variable d'environnement "<code>$LANG</code>" sur l'un des paramètres régionaux répertoriés ci-dessus. (Si vous voulez que tous les programmes qui peuvent être traduits le soient, vous voudrez peut - être placer les éléments suivants dans script de connexion, par ex. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc...)          </p>
 
           <p>
-            For example, in a Bourne Shell (like BASH):          </p>
+            Par exemple, pour un Bourne Shell (tel que BASH) :          </p>
 
           <blockquote>
             <code>export LANG=es_ES ; \<br>
@@ -4892,7 +4892,7 @@
           </blockquote>
 
           <p>
-            And in a C Shell (like TCSH):          </p>
+            Et un C Shell (tel que TCSH) :          </p>
 
           <blockquote>
             <code>setenv LANG es_ES ; \<br>
@@ -4908,20 +4908,20 @@
 
         <blockquote>
           <p>
-            Tux Paint will recognize the current locale and use the appropriate files by default. So this section is only for people trying different languages.          </p>
+            Tux Paint reconnaîtra les paramètres régionaux en cours et utilisera les fichiers appropriés par défaut. Cette section est donc réservée aux personnes essayant différentes langues.          </p>
 
           <p>
-            The simplest thing to do is to use the "<code>--lang</code>" switch in the shortcut (see "INSTALL"). However, by using an MSDOS Prompt window, it is also possible to issue a command like this:          </p>
+            La chose la plus simple à faire est d'utiliser le commutateur '<code>--lang</code>' dans le raccourci (voir "INSTALL"). Cependant, en utilisant une fenêtre d'invite MSDOS, il est également possible de taper une commande comme celle-ci :          </p>
 
           <blockquote>
             <code>set LANG=es_ES</code>
           </blockquote>
 
           <p>
-            ...which will set the language for the lifetime of that DOS window.          </p>
+            ... qui définira la langue pour la durée de vie de cette fenêtre DOS.          </p>
 
           <p>
-            For something more permanent, you can set an 'environment variable' using the "System properties" dialogue as follows:          </p>
+            Pour quelque chose de plus permanent, vous pouvez mettre un 'variable d'environnement' en utilisant la boîte de dialogue "System properties" comme suit :          </p>
           <ul>
             <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Run ..." dialogue.</li>
             <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
@@ -4934,21 +4934,21 @@
 
       <h3>
         <a name="special_fonts"
-            id="special_fonts">Special Fonts</a>
+            id="special_fonts">Polices spéciales</a>
       </h3>
 
       <blockquote>
         <p>
-          Some languages require special fonts be installed. These font files (which are in TrueType format (TTF)), are much too large to include with the Tux Paint download, and are available separately. (See the table above, under the "<a href="#different_language"><i>Choosing a Different Language</i></a>" section.)        </p>
+          Certaines langues nécessitent l'installation de polices spéciales. Ces fichiers de polices (qui sont au format TrueType (TTF)), sont beaucoup trop volumineux pour être inclus avec le téléchargement de Tux Paint et sont disponibles séparément. (Voir le tableau ci-dessus, dans la section « Choisir une autre langue ».)        </p>
 
         <p>
-          <b>Note:</b> As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which utilizes the "Pango" library to render text in the user interface, rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was built without Pango support, special fonts should <b><i>no longer be necessary</i></b>.        </p>
+          Remarque: Depuis la version 0.9.18, Tux Paint utilise la bibliothèque "SDL_Pango", qui utilise la bibliothèque "Pango" pour afficher le texte dans l'interface utilisateur, plutôt que d'utiliser directement "SDL_ttf". À moins que votre copie de Tux Paint n'ait été construite sans le support de Pango, les polices spéciales <b><i>ne devraient plus être nécessaires</i></b> .        </p>
 
         <p>
-          When running Tux Paint in a language that requires its own font, Tux Paint will try to load the font file from its system-wide "<code><b>fonts</b></code>" directory (under a "<code><b>locale</b></code>" subdirectory). The name of the file corresponds to the first two letters in the 'locale' code of the language (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for Traditional Chinese).        </p>
+          Lors de l'exécution de Tux Paint dans une langue nécessitant sa propre police, Tux Paint essaiera de charger le fichier de police à partir de son répertoire système "<code><b>fonts</b></code>" (sous un sous- répertoire "<code><b>locale</b></code>"). Le nom du fichier correspond aux deux premières lettres du code 'locale' de la langue (par exemple, "ko" pour le coréen, "ja" pour le japonais, "zh_tw" pour le chinois traditionnel).        </p>
 
         <p>
-          For example, under Linux or Unix, when Tux Paint is run in Korean (e.g., with the option "<code>--lang korean</code>"), Tux Paint will attempt to load the following font file:        </p>
+          Par exemple, sous Linux ou Unix, lorsque Tux Paint est exécuté en coréen (par exemple, avec l'option "<code>--lang korean</code>"), Tux Paint tentera de charger le fichier de police suivant :        </p>
 
         <blockquote>
           <p>
@@ -4957,10 +4957,10 @@
         </blockquote>
 
         <p>
-          You can download fonts for supported languages from Tux Paint's website, <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>. (Look in the 'Fonts' section under 'Download.')        </p>
+          Vous pouvez télécharger des polices pour les langues prises en charge sur le site Web de Tux Paint, <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a> . (Regardez dans la section "Polices" sous "Télécharger".)        </p>
 
         <p>
-          Under Unix and Linux, you can use the <code>Makefile</code> that comes with the font to install the font in the appropriate location.        </p>
+          Sous Unix et Linux, vous pouvez utiliser le <code>Makefile</code> qui est fourni avec la police pour installer la police à l'emplacement approprié.        </p>
       </blockquote>
     </blockquote>
 
