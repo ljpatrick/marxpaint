@@ -3,14 +3,14 @@
 
 Documentation sur les options
 
-           Copyright © 2002-2021 by divers contributeurs; cf AUTHORS.
+      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
                                  avril 19, 2021
 
      ----------------------------------------------------------------------
 
-                               Tux Paint Config.
+                          Configuration de Tux Paint.
 
      Un outil graphique est disponible qui vous permet de changer le
      comportement de Tux Paint. Cependant, si vous préférez ne pas installer
@@ -62,7 +62,7 @@ Utilisateurs de macOS
 
            /Library/Application Support/TuxPaint/tuxpaint.cfg
 
-Windows Users
+Utilisateurs de Windows
 
        Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
        être placé dans dans le dossier de Tux Paint.
@@ -711,34 +711,37 @@ Windows Users
                 * Windows - "Mes images" répertoire de chaque utilisateur
                   (normalement "c:\Users\USERNAME\Pictures").
                   Vous pouvez ouvrir directement le répertoire comme ceci :
-                     * Press "[Windows]+[R]" key to open "Run ..." dialogue.
-                     * Enter "Shell:My Pictures" in the text box and push
-                       [OK].
+                     * Pressez la touche "[Windows]+[R]" pour ouvrir la boîte
+                       de dialogue "Exécuter ...".
+                     * Tapez "Shell:My Pictures" dans la zone de saisie et
+                       cliquez sur OK.
                 * macOS — TBD!
 
-             Note: When the defaults are used, a new "TuxPaint" subdirectory
-             will be created and used. (e.g., "~/Images/TuxPaint") When the
-             "--exportdir" option is used, the exact path specified will be
-             used (no "TuxPaint" subdirectory is created).
+             Remarque :Quand les réglages par défaut sont utilisés, un
+             nouveau sous-répertoire "TuxPaint" sera créé puis utilisé(par ex
+             "~/Images/TuxPaint"). Quand l'option "--exportdir" est utilisée,
+             le chemin exact qui a été spécifié sera utilisé (pas
+             sous-répertoire "TuxPaint" créé).
 
-             The directory itself (e.g., "~/Images/TuxPaint") will be
-             created, if it doesn't exist.
+             Le répertoire lui-même (par ex. "~/Images/TuxPaint") sera créé,
+             s'il n'existe pas.
 
-             If the parent directory (e.g., "~/Images/TuxPaint") also does
-             not exist, Tux Paint will attempt to create it as well (but not
-             any directories higher than that).
+             Si le répertoire parent (par ex "~/Images/TuxPaint") n'existe
+             pas non plus, Tux Paint essayera aussi de le créer (mais de
+             répertoire plus haut que celui-là).
 
              Exemple: exportdir=/home/penguin/TuxPaintExports
 
      datadir=DIRECTORY
 
-             Use this option to change where Tux Paint looks for personal
-             data files (brushes, stamps, starters, templates, and fonts
-             specific to the current user).
+             Utilisez cette option pour changer l'endroit où Tux Paint ira
+             rechercher les fichiers de données personnelles (pinceaux,
+             tampons, images de démarrage, modèles et fontes spécifiques pour
+             l'utilisateur actuel).
 
-             Tux Paint will search for subdirectories/subfolders named
-             "brushes", "stamps", "starters", "templates", and "fonts" under
-             the specified data directory.
+             Tux Paint va chercher des sous-répertoires nommés "brushes",
+             "stamps", "starters", "templates", et "fonts" sous le répertoire
+             spécifié.
 
              Si vous ne le changez pas, l' emplacement par défaut est :
 
@@ -754,9 +757,9 @@ Windows Users
                   Exemple: /Users/Username/Library/Application
                   Support/TuxPaint/brushes/
 
-             Note: Prior to version 0.9.18, Tux Paint would use the same
-             setting or default as for "savedir" to search for data files. As
-             of version 0.9.18, they may be specified separately.
+             Remarque :Avant la version 0.9.18, Tux Paint utlisait les mêmes
+             réglages que "savedir" pour chercher les fichiers de données.
+             Depuis la version 0.9.18, ils peuvent être spécifiés séparément.
 
              Remarque : lorsque vous spécifiez un lecteur Windows (par ex.
              "H:\"), vous devez également spécifier un sous-répertoire.
@@ -765,39 +768,42 @@ Windows Users
 
      saveover=yes
 
-             This disables the "Save over the old version...?" prompt when
-             saving an existing file. With this option, the older version
-             will always be replaced by the new version, automatically.
+             Ceci élimine le message "Écraser l'ancienne version ...? quand
+             on voulait sauvegarder un fichier déjà existant. Avec cette
+             option, l'ancienne version sera écrasée par la nouvelle,
+             automatiquement.
 
      saveover=new
 
-             This also disables the "Save over the old version...?" prompt
-             when saving an existing file. This option, however, will always
-             save a new file, rather than overwrite the older version.
+             Ceci aussi élimine le message "Écraser l'ancienne version ...?
+             quand on sauvegarde un fichier déjà existant. Cette option,
+             cependant, enregistrera un nouveau fichier plutôt que d'écraser
+             l'ancienne version.
 
      saveover=ask
 
-             (This option is redundant, since this is the default.) When
-             saving an existing drawing, you will be first asked whether to
-             save over the older version or not.
+             (Cette option est redondante puisque c'est celle par défaut.)
+             Quand vous sauvegardez un dessin déjà existant, on vous
+             demandera d'abord si vous voulez écraser l'ancienne version ou
+             non.
 
      nosave=yes
 
-             This disables Tux Paint's ability to save files (and therefore
-             disables the on-screen "Save" button). It can be used in
-             situations where the program is only being used for fun, or in a
-             test environment.
+             Ceci désactive la possibilité de sauvegarder les fichiers par
+             Tux Paint (et par conséquent ôte le bouton "Sauvegarder" sur
+             l'écran). On peut l'utiliser dans le cas où le programme est
+             utilisé juste pour le fun, ou dans un environnement de tests.
 
      autosave=yes
 
-             This prevents Tux Paint from asking whether you want to save the
-             current picture when quitting, and assumes you do.
+             Ceci empêche Tux Paint de vous demander si vous voulez
+             sauvegarder l'image quand vous quittez, et suppose que vous le
+             faites.
 
      startblank=yes
 
-             This causes Tux Paint to display a blank canvas when it first
-             starts up, rather than loading the last image that was being
-             edited.
+             Ceci oblige Tux Paint à afficher une toile vide au démarrage,
+             plutôt que la dernière image qui a été éditée.
 
      colorfile=FILENAME
 
@@ -834,10 +840,11 @@ Windows Users
 
      colorsrows=ROWS
 
-             How many rows of color palette buttons to show; useful when
-             using a large color palette (see "colorfile", above), and/or for
-             use with coarse input devices (like eyegaze trackers). "ROWS"
-             may be between "1" (the default) and "3".
+             Combien de rangées de boutons pour les couleurs peuvent être
+             montrées; utile quand on a une grande palette (voir "colorfile
+             ci-dessus), et/ou pour utiliser avec des dispositifs de pointage
+             peu précis (par ex avec oculomètres). "ROWS" peut être entre "1"
+             (par défaut) et "3".
 
      lang=LANGUAGE
 
@@ -1669,7 +1676,7 @@ Définition des paramètres régionaux de votre environnement
 
      ----------------------------------------------------------------------
 
-  Windows Users
+  Utilisateurs de Windows
 
          Tux Paint reconnaîtra les paramètres régionaux en cours et utilisera
          les fichiers appropriés par défaut. Cette section est donc réservée
@@ -1686,17 +1693,17 @@ Définition des paramètres régionaux de votre environnement
          DOS.
 
          Pour quelque chose de plus permanent, vous pouvez mettre un
-         'variable d'environnement' en utilisant la boîte de dialogue "System
-         properties" comme suit :
+         'variable d'environnement' en utilisant la boîte de dialogue
+         "Propriétés du système" comme suit :
 
-           * Press the "[Windows]+[R]" key combination to open the "Run ..."
-             dialogue.
-           * Enter "sysdm.cpl" in the text box and click the "[OK]" button to
-             open the "System properties" dialogue.
-           * Select the "Advanced" tab.
-           * Click the "Environment Variables..." button.
-           * Edit the value of the parameter "LANG" (create it, if it doesn't
-             exists).
+           * Entrez "la combinaison de touches [Windows]+[R]" pour ouvrir la
+             boîte de dialogue "Exécuter ...".
+           * Entrez "sysdm.cpl" dans la boîte de dialogue et cliquez sur le
+             bouton '[OK]" pour ouvrir la boîte de dialogue "Propriétés du
+             système'.
+           * Sélectionner l'onglet "Avancé".
+           * Cliquez sur le bouton "Variables d'environnement ...".
+           * Édite la valeur du paramètre "LANG" (le crée s'il n'existe pas).
 
   Polices spéciales
 

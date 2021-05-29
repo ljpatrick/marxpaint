@@ -1,35 +1,35 @@
                                    Tux Paint
                                  version 0.9.26
 
-  A simple drawing program for children
+  Un programme simple pour les enfants
 
-           Copyright © 2002-2021 by divers contributeurs; cf AUTHORS.
+      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
                                   mars 9, 2021
 
      ----------------------------------------------------------------------
 
-   +-------------------------------------------+
-   |Table of Contents                          |
-   |-------------------------------------------|
-   |  * About Tux Paint                        |
-   |  * Using Tux Paint                        |
-   |       * Launching Tux Paint               |
-   |       * Title Screen                      |
-   |       * Main Screen                       |
-   |       * Available Tools                   |
-   |            * Outils de dessin             |
-   |            * Other Controls               |
-   |  * Loading Other Pictures into Tux Paint  |
-   |  * Further Reading                        |
-   |  * How to Get Help                        |
-   |  * How to Participate                     |
-   +-------------------------------------------+
+   +-----------------------------------------------+
+   |Table des matières                             |
+   |-----------------------------------------------|
+   |  * À propos de Tux Paint                      |
+   |  * Utiliser Tux Paint                         |
+   |       * Lancement de Tux Paint                |
+   |       * Écran titre                           |
+   |       * Écran principal                       |
+   |       * Outils disponibles                    |
+   |            * Outils de dessin                 |
+   |            * Autres contrôles                 |
+   |  * Chargement d'autres images dans Tux Paint  |
+   |  * Lectures complémentaires                   |
+   |  * Comment obtenir de l'aide                  |
+   |  * Comment participer                         |
+   +-----------------------------------------------+
 
      ----------------------------------------------------------------------
 
-                                About Tux Paint
+                             À propos de Tux Paint
 
 Qu'est-ce que "Tux Paint" ?
 
@@ -48,7 +48,7 @@ Licence :
        des fonctionnalités, de corriger des bogues et d'utiliser des parties
        du programme dans leur propre logiciel sous GPL.)
 
-       See COPYING.txt for the full text of the GPL license.
+       Voir COPYING.txt pour le texte complet de la licence GPL.
 
 Objectifs :
 
@@ -88,9 +88,9 @@ Objectifs :
 
      ----------------------------------------------------------------------
 
-                                Using Tux Paint
+                               Utiliser Tux Paint
 
-Launching Tux Paint
+Lancement de Tux Paint
 
   Utilisateurs de Linux/Unix
 
@@ -107,7 +107,7 @@ Launching Tux Paint
 
      ----------------------------------------------------------------------
 
-  Windows Users
+  Utilisateurs de Windows
 
                                                       [Icône pour Tux Paint]  
                                                             Tux Paint         
@@ -142,7 +142,7 @@ Launching Tux Paint
 
      ----------------------------------------------------------------------
 
-Title Screen
+Écran titre
 
        Lors du premier chargement de Tux Paint, un écran avec titre et
        crédits apparaîtra.
@@ -155,7 +155,7 @@ Title Screen
 
      ----------------------------------------------------------------------
 
-Main Screen
+Écran principal
 
        L'écran principal est divisé en plusieurs sections :
 
@@ -189,15 +189,15 @@ Main Screen
                sélectionné, il affiche les différentes formes que vous pouvez
                utiliser.
 
-                 [Selectors - Brushes, Letters, Shapes, Stamps]
+               [Sélecteurs - Pinceaux, Lettres, Formes, Tampons]
 
        En bas : couleurs
 
                Une palette de couleurs disponibles s'affiche en bas de
                l'écran.
 
- [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
-                                  Brown, Grey]
+[Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu, Pourpre,
+                                  Brun, Gris]
 
                À l'extrême droite se trouvent deux options de choix de
                couleur, le "sélecteur de couleurs", qui a le contour d'un
@@ -220,7 +220,7 @@ Main Screen
 
      ----------------------------------------------------------------------
 
-Available Tools
+Outils disponibles
 
   Outils de dessin
 
@@ -434,22 +434,23 @@ Available Tools
                               devriez donc parfois changer de police pour
                               voir les caractères que vous essayez de saisir.
 
-                                 * Japanese — Romanized Hiragana and
-                                   Romanized Katakana — right [Alt] key
-                                 * Korean — Hangul 2-Bul — right [Alt] key or
-                                   left [Alt] key
-                                 * Traditional Chinese — right [Alt] key or
-                                   left [Alt] key
-                                 * Thai — right [Alt] key
+                                 * Japonais -- Hiragana romanisé et Katakana
+                                   romanisé -- touche [Alt] droite
+                                 * Korean — Hangul 2-Bul — touche [Alt]
+                                   droite or touche [Alt] gauche
+                                 * Chinois traditionnel — touche [Alt] droite
+                                   or touche [Alt] gauche
+                                 * Thai — touche [Alt] droite
 
-                      On-screen Keyboard
+                      Clavier virtuel
 
-                              An optional on-screen keyboard is available for
-                              the Text and Label tools, which can provide a
-                              variety of layouts and character composition
-                              (e.g., composing "a" and "e" into "æ"). See the
-                              "Options" and "Extending Tux Paint"
-                              documentation for more information.
+                              Un clavier virtuel sur écran (optionnel) est
+                              disponible pour les outils "Texte" et
+                              "Étiquette", qui peut présenter une palette de
+                              dispositions et de création de caractères (par
+                              ex "a" et "e" pour "æ"). Voir les documents
+                              "Options" et "Extension de Tux Paint" pour plus
+                              d'informations.
 
      ----------------------------------------------------------------------
 
@@ -511,7 +512,7 @@ Available Tools
 
      ----------------------------------------------------------------------
 
-  Other Controls
+  Autres contrôles
 
          Commande "Défaire"
 
@@ -619,7 +620,7 @@ Available Tools
                  ci-dessous.)
 
                  Remarque : vous pouvez également appuyer [Control] + [O] sur
-                 le clavier pour bring up the 'Open' dialog.
+                 le clavier pour afficher la boîte de dialogue "Ouvrir".
 
      ----------------------------------------------------------------------
 
@@ -646,7 +647,7 @@ Available Tools
                  Voir la documentation Options.
 
                  Remarque : vous pouvez également appuyer [Control] + [S] sur
-                 le clavier pour save.
+                 le clavier pour sauvegarde.
 
      ----------------------------------------------------------------------
 
@@ -814,7 +815,7 @@ Available Tools
                               images enregistrées seront lues dans le
                               diaporama !)
 
-                              Pendant le diaporama, appuyez sur [Space],
+                              Pendant le diaporama, appuyez sur [Espace],
                               [Entrée] ou [Retour] , ou sur [Flèche droite] -
                               ou cliquez sur le bouton "Suivant" en bas à
                               gauche - pour passer manuellement à la
@@ -899,7 +900,7 @@ Available Tools
 
      ----------------------------------------------------------------------
 
-                     Loading Other Pictures into Tux Paint
+                   Chargement d'autres images dans Tux Paint
 
      Étant donné que la boîte de dialogue «Ouvrir» de Tux Paint n'affiche que
      les images que vous avez créées avec Tux Paint, que se passe-t-il si
@@ -912,22 +913,22 @@ Available Tools
      trouve (par défaut) :
 
      Windows 10, 8, 7, Vista
-             Dans le dossier utilisateurs "AppData", par ex.
-             "C:\Users\username\AppData\Roaming\TuxPaint\saved\".
+             Dans le dossier utilisateurs "AppData", par ex. "C:\Users\nom
+             d'utilisateur\AppData\Roaming\TuxPaint\saved\".
 
      Windows 2000, XP
              Dans le dossier utilisateurs "Application Data", par ex.
-             "C:\Documents and Settings\username\Application
+             "C:\Documents and Settings\nom d'utilisateur\Application
              Data\TuxPaint\saved\".
 
      macOS
-             Dans le dossier utilisateurs "Library", par ex.
-             "/Users/username/Library/Application Support/Tux Paint/saved/".
+             Dans le dossier utilisateurs "Library", par ex. "/Users/nom
+             d'utilisateur/Library/Application Support/Tux Paint/saved/".
 
      Linux/Unix
              Dans un répertoire caché ".tuxpaint" qui est dans le répertoire
-             personnel de l'utilisateur ("$HOME"), par ex.
-             "/home/username/.tuxpaint/saved/".
+             personnel de l'utilisateur ("$HOME"), par ex. "/home/nom
+             d'utilisateur/.tuxpaint/saved/".
 
      Remarque : C'est également à partir de ce dossier que vous pouvez copier
      ou ouvrir des images dessinées dans Tux Paint à l'aide d'autres
@@ -958,7 +959,7 @@ Utilisation du script d'importation "tuxpaint-import"
        exemple, votre enfant, vous devrez vous assurer d'exécuter la commande
        sous son compte.)
 
-       Example:
+       Exemple :
 
          $ tuxpaint-import grandma.jpg
          grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
@@ -1023,7 +1024,7 @@ Importer des images manuellement
 
      ----------------------------------------------------------------------
 
-                                Further Reading
+                            Lectures complémentaires
 
      Les autres documents inclus avec Tux Paint (dans le répertoire "docs")
      incluent :
@@ -1056,33 +1057,33 @@ Importer des images manuellement
 
      ----------------------------------------------------------------------
 
-                                How to Get Help
+                           Comment obtenir de l'aide
 
      Si vous avez besoin d'aide, il existe de nombreux moyens d'interagir
      avec les développeurs de Tux Paint et les autres utilisateurs.
 
-       * Report bugs or request new features via the project's bug-tracking
-         system
+       * Mentionner des bogues, ou demander de nouvelles fonctionnalités via
+         le système de suivi des bogues
        * Participer aux nombreuses listes de diffusion de Tux Paint
-       * Chat with developers and other users over IRC
-       * Contact the developers directly
+       * Chatter avec les développeurs et d'autres utilisateurs via IRC
+       * Contacter les développeurs directement
 
-     To learn more, visit the "Contact" page of the official Tux Paint
-     website: http://tuxpaint.org/contact/
+     Pour en savoir plus, visitez la page "Contact" du site officiel de Tux
+     Paint : http://tuxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
-                               How to Participate
+                               Comment participer
 
-     Tux Paint is a volunteer-driven project, and we're happy to accept your
-     help in a variety of ways.
+     Tux Paint est un projet mené par des volontaires, et nous serions
+     heureux d'accepter votre aide dans des tas de domaines.
 
-       * Translate Tux Paint to another language
-       * Improve existing translations
-       * Create artwork (stamps, starters, templates, brushes)
-       * Add or improve features or magic tools
-       * Create classroom curriculum
-       * Promote or help support others using Tux Paint
+       * Traduire Tux Paint dans une autre langue
+       * Améliorer les traductions existantes
+       * Créer des oeuvres (tampons, images de démarrage, modèles, pinceaux)
+       * Ajouter ou améliorer des caractéristiques ou bien des outils "Magie"
+       * Créer un programme d'étude en classe
+       * Promouvoir ou aider ceux qui utilisent Tux Paint
 
-     To learn more, visit the "Help Us" page of the official Tux Paint
-     website: http://tuxpaint.org/help/
+     Pour en savoir plus, visitez la page "Nous aider" du site officiel de
+     Tux Paint : http://tuxpaint.org/help/

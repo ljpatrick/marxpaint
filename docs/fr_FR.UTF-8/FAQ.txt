@@ -1,7 +1,7 @@
                                    Tux Paint
                   version 0.9.26 Questions fréquemment posées
 
-           Copyright © 2002-2021 by divers contributeurs; cf AUTHORS.
+      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
                                   mars 9, 2021
@@ -63,9 +63,10 @@ Liées au dessin
 
            dans le fichier "tuxpaint.c" du répertoire "src".
 
-   Stamp outlines are always rectangles
+   Les contours des tampons sont toujours des rectangles
 
-           Tux Paint was built with low-quality (but faster) stamp outlines.
+           Tux Paint a été élaboré avec des contours de basse qualité (mais
+           plus rapides).
 
            Pour changer cela, vous devez reconstruire Tux Paint à partir des
            sources. Assurez-vous de supprimer ou de commenter toute ligne qui
@@ -153,22 +154,23 @@ Problèmes d'interface
 
               * Si vous utilisez l'option en ligne de commande "--locale"
 
-                If this doesn't work, please e-mail us regarding your
-                trouble.
+                Si ça ne marche pas, envoyez nous un courriel pour expliquer
+                vos soucis.
 
-              * If you're trying to use your Operating System's locale
+              * Si vous essayez d'utiliser la langue utilisée par votre
+                système d'exploitation
 
-                If this doesn't work, please e-mail us regarding your
-                trouble.
+                Si ça ne marche pas, envoyez nous un courriel pour expliquer
+                vos soucis.
 
-              * Make sure you have the necessary font
+              * Soyez certains d'avoir la police nécessaire
 
-                Some translations require their own font. Chinese and Korean,
-                for example, need Chinese and Korean TrueType Fonts installed
-                and placed in the proper location, respectively.
+                Certaines traductions ont besoin de leurs propres polices. Le
+                Chinois et le Coréen, par exemple, ont besoin de fontes True
+                Type installées et placées au bon endroit pour chacune.
 
-                The appropriate fonts for such locales can be downloaded from
-                the Tux Paint website:
+                Les fontes adéquates pour de telles langues peuvent être
+                téléchargées depuis le site de Tux Paint :
 
                   http://www.tuxpaint.org/download/fonts/
 
@@ -244,7 +246,7 @@ Impression
            paramètre du fichier de configuration.
 
            Ou utilisez Tux Paint Config. et assurez-vous que "Autoriser
-           l'impression" (sous "Impression") is checked.
+           l'impression" (sous "Impression") est vérifié.
 
      ----------------------------------------------------------------------
 
@@ -303,7 +305,7 @@ Sauvegarde
            le paramètre du fichier de configuration.
 
            Ou utilisez Tux Paint Config. et assurez-vous que "Demander avant
-           d'écraser" (sous "Sauvegarde") is checked.
+           d'écraser" (sous "Sauvegarde") est vérifié.
 
            Également voyez "Tux Paint sauvegarde toujours avec une nouvelle
            image !", ci-dessous.
@@ -329,7 +331,7 @@ Sauvegarde
            le paramètre du fichier de configuration.
 
            Ou utilisez Tux Paint Config. et assurez-vous que "Demander avant
-           d'écraser" (sous "Sauvegarde") is checked.
+           d'écraser" (sous "Sauvegarde") est vérifié.
 
            Also, see "Tux Paint always saves over my old picture!", above.
 
@@ -621,7 +623,7 @@ Autres problèmes
                   ~/.tuxpaintrc
 
                 Et finalement, toutes les options envoyées en tant
-                qu'arguments de ligne de commande sont utilisées
+                qu'arguments de ligne de commande sont utilisées.
 
               * Windows
 
@@ -631,7 +633,7 @@ Autres problèmes
                   tuxpaint.cfg
 
                 Et finalement, toutes les options envoyées en tant
-                qu'arguments de ligne de commande sont utilisées
+                qu'arguments de ligne de commande sont utilisées.
 
            Cela signifie que si quelque chose est défini dans un fichier de
            configuration que vous ne souhaitez pas activer, vous devrez soit

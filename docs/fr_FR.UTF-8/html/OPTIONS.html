@@ -20,7 +20,7 @@
         Documentation sur les options      </h2>
 
       <p>
-        Copyright &copy; 2002-2021 by divers contributeurs; cf AUTHORS.<br>
+        Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.<br>
         <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
       </p>
 
@@ -32,7 +32,7 @@
         noshade>
 
     <h1>
-      Tux Paint Config.    </h1>
+      Configuration de Tux Paint.    </h1>
 
     <blockquote>
       <p>
@@ -100,7 +100,7 @@
       </blockquote>
 
       <h2>
-        Windows Users      </h2>
+        Utilisateurs de Windows      </h2>
 
       <blockquote>
         <p>
@@ -916,8 +916,8 @@
               Typiquement (dans un environnement local anglais), ce sera  "<code>Images</code>" dans votre répertoire personnel (c'est-à-dire "<code>$HOME/Images</code>" aka "<code>~/Images</code>").<br>
               Tux Paint utilisera ce répertoire typique, si aucune configuration XDG ne peut être lue, ou rien n'est défini pour "<code>XDG_PICTURES_DIR</code>".            </li>
             <li>Windows - "Mes images" répertoire de chaque utilisateur (normalement "c:\Users\<i>USERNAME</i>\Pictures").<br>Vous pouvez ouvrir directement le répertoire comme ceci :              <ul>
-                <li>Press "[Windows]+[R]" key to open "Run ..." dialogue.</li>
-                <li>Enter "Shell:My Pictures" in the text box and push [OK].</li>
+                <li>Pressez la touche "[Windows]+[R]" pour ouvrir la boîte de dialogue "Exécuter ...".</li>
+                <li>Tapez "Shell:My Pictures" dans la zone de saisie et cliquez sur OK.</li>
               </ul>
             </li>
 
@@ -926,11 +926,11 @@
           </ul>
 
           <p>
-            <b>Note:</b> When the defaults are used, a new "<code>TuxPaint</code>" subdirectory will be created and used. (e.g., "<code>~/Images/TuxPaint</code>") When the "<code>--exportdir</code>" option is used, the exact path specified will be used (no "<code>TuxPaint</code>" subdirectory is created).          </p>
+            <b>Remarque :</b>Quand les réglages par défaut sont utilisés, un nouveau sous-répertoire "<code>TuxPaint</code>" sera créé puis utilisé(par ex "<code>~/Images/TuxPaint</code>"). Quand l'option "<code>--exportdir</code>" est utilisée, le chemin exact qui a été spécifié sera utilisé (pas sous-répertoire "<code>TuxPaint</code>" créé).          </p>
           <p>
-            The directory itself (e.g., "<code>~/Images/TuxPaint</code>") will be created, if it doesn't exist.          </p>
+            Le répertoire lui-même (par ex. "<code>~/Images/TuxPaint</code>") sera créé, s'il n'existe pas.          </p>
           <p>
-            If the <em>parent</em> directory (e.g., "<code>~/Images/TuxPaint</code>") also does not exist, Tux Paint will attempt to create it as well (but not any directories higher than that).          </p>
+            Si le répertoire <em>parent</em> (par ex "<code>~/Images/TuxPaint</code>") n'existe pas non plus, Tux Paint essayera aussi de le créer (mais de répertoire plus haut que celui-là).          </p>
 
           <p>
             Exemple: <code>exportdir=/home/penguin/TuxPaintExports</code>          </p>
@@ -942,10 +942,10 @@
 
         <dd>
           <p>
-            Use this option to change where Tux Paint looks for personal data files (brushes, stamps, starters, templates, and fonts specific to the current user).          </p>
+            Utilisez cette option pour changer l'endroit où Tux Paint ira rechercher les fichiers de données personnelles (pinceaux, tampons, images de démarrage, modèles et fontes spécifiques pour l'utilisateur actuel).          </p>
 
           <p>
-            Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.          </p>
+            Tux Paint va chercher des sous-répertoires nommés "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>", et "<code>fonts</code>" sous le répertoire spécifié.          </p>
 
           <p>
             Si vous ne le changez pas, l' emplacement par défaut est :          </p>
@@ -962,7 +962,7 @@
           </ul>
 
           <p>
-            <b>Note:</b> Prior to version 0.9.18, Tux Paint would use the same setting or default as for "<code>savedir</code>" to search for data files. As of version 0.9.18, they may be specified separately.          </p>
+            <b>Remarque :</b>Avant la version 0.9.18, Tux Paint utlisait les mêmes réglages que "<code>savedir</code>" pour chercher les fichiers de données. Depuis la version 0.9.18, ils peuvent être spécifiés séparément.          </p>
 
           <p>
             <b>Remarque :</b> lorsque vous spécifiez un lecteur Windows (par ex. "<code>H:\</code>"), vous devez également spécifier un sous-répertoire.          </p>
@@ -977,7 +977,7 @@
 
         <dd>
           <p>
-            This disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. With this option, the older version will always be replaced by the new version, automatically.          </p>
+            Ceci élimine le message "<i>Écraser l'ancienne version ...?</i> quand on voulait sauvegarder un fichier déjà existant. Avec cette option, l'ancienne version sera écrasée par la nouvelle, automatiquement.          </p>
         </dd>
 
         <dt>
@@ -986,7 +986,7 @@
 
         <dd>
           <p>
-            This also disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. This option, however, will always save a new file, rather than overwrite the older version.          </p>
+            Ceci aussi élimine le message "<i>Écraser l'ancienne version ...?</i> quand on sauvegarde un fichier déjà existant. Cette option, cependant, enregistrera un nouveau fichier plutôt que d'écraser l'ancienne version.          </p>
         </dd>
 
         <dt>
@@ -995,8 +995,8 @@
 
         <dd>
           <p>
-            <i>(This option is redundant, since this is the default.)</i>
-          When saving an existing drawing, you will be first asked whether to save over the older version or not.          </p>
+            <i>(Cette option est redondante puisque c'est celle par défaut.)</i>
+          Quand vous sauvegardez un dessin déjà existant, on vous demandera d'abord si vous voulez écraser l'ancienne version ou non.          </p>
         </dd>
 
         <dt>
@@ -1005,7 +1005,7 @@
 
         <dd>
           <p>
-            This disables Tux Paint's ability to save files (and therefore disables the on-screen "Save" button). It can be used in situations where the program is only being used for fun, or in a test environment.          </p>
+            Ceci désactive la possibilité de sauvegarder les fichiers par Tux Paint (et par conséquent ôte le bouton "Sauvegarder" sur l'écran). On peut l'utiliser dans le cas où le programme est utilisé juste pour le fun, ou dans un environnement de tests.          </p>
         </dd>
 
         <dt>
@@ -1014,7 +1014,7 @@
 
         <dd>
           <p>
-            This prevents Tux Paint from asking whether you want to save the current picture when quitting, and assumes you do.          </p>
+            Ceci empêche Tux Paint de vous demander si vous voulez sauvegarder l'image quand vous quittez, et suppose que vous le faites.          </p>
         </dd>
 
         <dt>
@@ -1023,7 +1023,7 @@
 
         <dd>
           <p>
-            This causes Tux Paint to display a blank canvas when it first starts up, rather than loading the last image that was being edited.          </p>
+            Ceci oblige Tux Paint à afficher une toile vide au démarrage, plutôt que la dernière image qui a été éditée.          </p>
         </dd>
 
         <dt>
@@ -1056,7 +1056,7 @@
 
         <dd>
           <p>
-            How many rows of color palette buttons to show; useful when using a large color palette (see "<code>colorfile</code>", above), and/or for use with coarse input devices (like eyegaze trackers).  "<code>ROWS</code>" may be between "1" (the default) and "3".          </p>
+            Combien de rangées de boutons pour les couleurs peuvent être montrées; utile quand on a une grande palette (voir "<code>colorfile</code> ci-dessus), et/ou pour utiliser avec des dispositifs de pointage peu précis (par ex avec oculomètres). "<code>ROWS</code>" peut être entre "1" (par défaut) et "3".          </p>
         </dd>
 
         <dt>
@@ -2902,7 +2902,7 @@
                cellspacing="0"
                cellpadding="2"
                summary=
-               "Locale values and the languages they represent.">
+               "Valeurs des locales, et les langues qu'elles représentent.">
           <tr>
             <th>
               Code ISO 639-1            </th>
@@ -4904,7 +4904,7 @@
             noshade>
 
         <h3>
-          Windows Users        </h3>
+          Utilisateurs de Windows        </h3>
 
         <blockquote>
           <p>
@@ -4921,13 +4921,13 @@
             ... qui définira la langue pour la durée de vie de cette fenêtre DOS.          </p>
 
           <p>
-            Pour quelque chose de plus permanent, vous pouvez mettre un 'variable d'environnement' en utilisant la boîte de dialogue "System properties" comme suit :          </p>
+            Pour quelque chose de plus permanent, vous pouvez mettre un 'variable d'environnement' en utilisant la boîte de dialogue "Propriétés du système" comme suit :          </p>
           <ul>
-            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Run ..." dialogue.</li>
-            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
-            <li>Select the "Advanced" tab.</li>
-            <li>Click the "Environment Variables..." button.</li>
-            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+            <li>Entrez "la combinaison de touches <b>[Windows]+[R]</b>" pour ouvrir la boîte de dialogue "Exécuter ...".</li>
+            <li>Entrez "<code>sysdm.cpl</code>" dans la boîte de dialogue et cliquez sur le bouton '<b>[OK]</b>" pour ouvrir la boîte de dialogue "Propriétés du système'.</li>
+            <li>Sélectionner l'onglet "Avancé".</li>
+            <li>Cliquez sur le bouton "Variables d'environnement ...".</li>
+            <li>Édite la valeur du paramètre "<code>LANG</code>" (le crée s'il n'existe pas).</li>
           </ul>
         </blockquote>
       </blockquote>

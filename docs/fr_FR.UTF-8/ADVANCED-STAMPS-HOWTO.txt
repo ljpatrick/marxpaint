@@ -1,7 +1,7 @@
                                    Tux Paint
        version 0.9.26 'Guide pratique" pour les tampons de haute qualité
 
-         Copyright © 2006-2021 by Albert Cahalan et autres; cf AUTHORS.
+    Copyright &copie; 2006-2021 par Albert Cahalan et autres; voir AUTHORS.
                             http://www.tuxpaint.org/
 
 À propos de ce 'guide pratique'
