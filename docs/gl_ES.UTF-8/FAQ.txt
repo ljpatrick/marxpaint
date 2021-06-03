@@ -308,13 +308,13 @@ Gardar
            Se está a executar Tux Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--saveovernew».
 
-           If you're running Tux Paint by double-clicking an icon, check the
-           properties of the icon to see if "--saveovernew" is listed as an
-           argument.
+           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           comprobe as propiedades da icona para ver se «--saveovernew»
+           aparece como un argumento da liña de ordes.
 
-           If "--saveovernew" isn't on the command-line, check Tux Paint's
-           configuration file ("~/.tuxpaintrc" under Linux and Unix,
-           "tuxpaint.cfg" under Windows) for a line reading: "saveover=new".
+           Se non se está a enviar a opción «--saveovernew» na liña de ordes,
+           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           unha liña que diga: «saveover=new».
 
            Retire esa liña ou simplemente execute Tux Paint co argumento da
            liña de ordes «--saveoverask», que anulará o axuste do ficheiro de

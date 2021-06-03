@@ -318,13 +318,13 @@ Sauvegarde
            Si vous exécutez Tux Paint à partir d'une ligne de commande,
            assurez-vous de ne pas lui donner l'option "--saveovernew".
 
-           If you're running Tux Paint by double-clicking an icon, check the
-           properties of the icon to see if "--saveovernew" is listed as an
-           argument.
+           Si vous exécutez Tux Paint en double-cliquant sur une icône,
+           vérifiez les propriétés de l'icône pour voir si "--saveovernew"
+           est répertorié comme argument de ligne de commande.
 
-           If "--saveovernew" isn't on the command-line, check Tux Paint's
-           configuration file ("~/.tuxpaintrc" under Linux and Unix,
-           "tuxpaint.cfg" under Windows) for a line reading: "saveover=new".
+           Si une option "--saveovernew" n'est pas mise sur la ligne de
+           commande, vérifiez si le fichier de configuration de Tux Paint
+           possède une ligne comportant : "saveover=new.".
 
            Supprimez cette ligne ou exécutez simplement Tux Paint avec
            l'argument de ligne de commande : "--saveoverask", qui remplacera
