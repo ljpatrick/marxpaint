@@ -214,8 +214,8 @@ Impression
            est répertorié comme argument de ligne de commande.
 
            Si une option "--printdelay=..." n'est pas mise sur la ligne de
-           commande, vérifiez si le fichier de configuration de Tux Paint a
-           une ligne comportany : "printdelay=....".
+           commande, vérifiez si le fichier de configuration de Tux Paint
+           possède une ligne comportant : "printdelay=....".
 
            Soit vous supprimez cette ligne, soit vous mettez la valeur du
            délai à 0 (aucun délai) oubien réduisez le délai à la valeur que
@@ -238,8 +238,8 @@ Impression
            répertorié comme argument de ligne de commande.
 
            Si une option "--noprint" n'est pas mise sur la ligne de commande,
-           vérifiez si le fichier de configuration de Tux Paint a une ligne
-           comportany : "noprint=yes.".
+           vérifiez si le fichier de configuration de Tux Paint possède une
+           ligne comportant : "noprint=yes.".
 
            Supprimez cette ligne ou exécutez simplement Tux Paint avec
            l'argument de ligne de commande : "--print", qui remplacera le
@@ -297,8 +297,8 @@ Sauvegarde
            répertorié comme argument de ligne de commande.
 
            Si une option "--saveover" n'est pas mise sur la ligne de
-           commande, vérifiez si le fichier de configuration de Tux Paint a
-           une ligne comportany : "saveover=yes.".
+           commande, vérifiez si le fichier de configuration de Tux Paint
+           possède une ligne comportant : "saveover=yes.".
 
            Supprimez cette ligne ou exécutez simplement Tux Paint avec
            l'argument de ligne de commande : "--saveoverask", qui remplacera
@@ -373,7 +373,7 @@ Problèmes audio
 
                 Si une option "--nosound" n'est pas mise sur la ligne de
                 commande, vérifiez si le fichier de configuration de Tux
-                Paint a une ligne comportany : "nosound=yes.".
+                Paint possède une ligne comportant : "nosound=yes.".
 
                 Supprimez cette ligne ou exécutez simplement Tux Paint avec
                 l'argument de ligne de commande : "--sound", qui remplacera
@@ -506,8 +506,8 @@ Problèmes en mode plein écran
            répertorié comme argument de ligne de commande.
 
            Si une option "--fullscreen" n'est pas mise sur la ligne de
-           commande, vérifiez si le fichier de configuration de Tux Paint a
-           une ligne comportany : "fullscreen=yes.".
+           commande, vérifiez si le fichier de configuration de Tux Paint
+           possède une ligne comportant : "fullscreen=yes.".
 
            Supprimez cette ligne ou exécutez simplement Tux Paint avec
            l'argument de ligne de commande : "--windowed", qui remplacera le
@@ -578,8 +578,8 @@ Autres problèmes
            répertorié comme argument de ligne de commande.
 
            Si une option "--noquit" n'est pas mise sur la ligne de commande,
-           vérifiez si le fichier de configuration de Tux Paint a une ligne
-           comportany : "noquit=yes.".
+           vérifiez si le fichier de configuration de Tux Paint possède une
+           ligne comportant : "noquit=yes.".
 
            Supprimez cette ligne ou exécutez simplement Tux Paint avec
            l'argument de ligne de commande : "--quit", qui remplacera le

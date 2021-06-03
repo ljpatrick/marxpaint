@@ -242,11 +242,11 @@ Utilisateurs de Windows
 
      altprint=never
 
-             Cela Tux Paint de ne jamais montrer la boîte de dialogue de l'
-             imprimante (ou, sous Linux / Unix, exécuter « altprintcommand »)
-             lorsque le bouton « Imprimer » est cliqué. En d'autres termes,
-             cela rend la touche [Alt] sans effet lorsque vous cliquez sur le
-             bouton «Imprimer».
+             Cela empêche Tux Paint de ne jamais montrer la boîte de dialogue
+             de l' imprimante (ou, sous Linux / Unix, exécuter «
+             altprintcommand ») lorsque le bouton « Imprimer » est cliqué. En
+             d'autres termes, cela rend la touche [Alt] sans effet lorsque
+             vous cliquez sur le bouton «Imprimer».
 
      altprint=mod
 
@@ -295,7 +295,7 @@ Utilisateurs de Windows
 
      simpleshapes=yes
 
-             Désactive la possibilté de rotation avec l'outil «Forme».
+             Désactive la possibilité de rotation avec l'outil «Forme».
              Cliquer, faire glisser et relâcher, voilà tout ce qui sera
              possible pour dessiner une forme.
 
@@ -374,7 +374,7 @@ Utilisateurs de Windows
      sysfonts=yes
 
              Cette option oblige Tux Paint à essayer de charger des polices
-             (à utiliser dans l' outil Texte ) à partir de votre système
+             (à utiliser dans l'outil Texte ) à partir de votre système
              d'exploitation. Normalement, Tux Paint ne chargera que ceux
              fournis avec Tux Paint.
 
@@ -1109,7 +1109,7 @@ Utilisateurs de Windows
 
      ----------------------------------------------------------------------
 
-                   Changer la configuration système. Options
+                      Écrasez des options de System Config
 
      (Pour les utilisateurs Linux et Unix)
 

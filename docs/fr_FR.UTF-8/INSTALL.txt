@@ -39,7 +39,7 @@ Exigences :
          logiciels comme la commande apt de Debian).
 
          Remarque ;lors de l'installation à partir de packages, assurez-vous
-         d'installer AUSSI les versions de dévelo^ement des paquets (Par ex.
+         d'installer AUSSI les versions de développement des paquets (Par ex.
          installez les deux "SDL-1.2.4.rpm" et "SDL-1.2.4-devel.rpm".)
 
   Autres bibliothèques
@@ -76,11 +76,11 @@ Exigences :
     FriBiDi
 
          Les outils "Texte" et "Étiquette" de Tux Paint supportent les
-         langues bidirectionnelles, grâce à la bibliothèque "Fribdi".
+         langues bidirectionnelles, grâce à la bibliothèque "FriBidi".
 
          http://fribidi.org/
 
-    Support des grapismes SVG
+    Support des graphismes SVG
 
          À partir de Tux Paint 0.9.17, Tux Paint peut prendre en charge les
          images SVG (Scalable Vector Graphics) pour les tampons. Deux

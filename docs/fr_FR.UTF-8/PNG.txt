@@ -11,14 +11,14 @@
 
 À propos des PNG
 
-   PNG veut dire Portable Network Portable ( format graphique portable pour
-   réseau). C'est un standard ouvert, pas sous le poids des brevets (comme
-   les GIF). C'est un format hautement compressé (mais pas "avec perte" comme
-   les JPEG - la perte permet aux fichiers d'être plus petit, mais introduit
-   des `` erreurs '' dans l'image lors de l'enregistrement), et prend en
-   charge la couleur 24 bits (16,7 millions de couleurs) ainsi qu'un "canal
-   alpha", c'est-à-dire que chaque pixel peut avoir un degré variable de
-   transparence.
+   PNG veut dire Portable Network Portable (format graphique portable pour
+   réseau). C'est un standard ouvert, qui n'est pas sous le poids des brevets
+   (comme les GIF). C'est un format hautement compressé (mais pas "avec
+   perte" comme les JPEG - la perte permet aux fichiers d'être plus petit,
+   mais introduit des `` erreurs '' dans l'image lors de l'enregistrement),
+   et prend en charge la couleur 24 bits (16,7 millions de couleurs) ainsi
+   qu'un "canal alpha", c'est-à-dire que chaque pixel peut avoir un degré
+   variable de transparence.
 
    Pour plus d'informations, voir : http://www.libpng.org/
 
