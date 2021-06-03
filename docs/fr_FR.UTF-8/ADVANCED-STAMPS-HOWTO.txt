@@ -1,22 +1,22 @@
                                    Tux Paint
        version 0.9.26 'Guide pratique" pour les tampons de haute qualité
 
-    Copyright &copie; 2006-2021 par Albert Cahalan et autres; voir AUTHORS.
+   Copyright &copie; 2006-2021 par Albert Cahalan et d'autres; voir AUTHORS.
                             http://www.tuxpaint.org/
 
 À propos de ce 'guide pratique'
 
      Ce 'guide pratique' suppose que vous vouliez créer un excellent tampon
-     pou Tux Paint, au format bitmap PNG, à partir d'une image JPEG (par ex.
+     pour Tux Paint, au format bitmap PNG, à partir d'une image JPEG (par ex.
      une photographie digitale). Il existe des méthodes plus faciles et plus
      rapides donnant de moins bons résultats.
 
      Ce 'guide pratique' suppose que vous travaillez avec des objets
      normalement opaques. Pour des objets semi-transparents (flamme, hélice
      de ventilateur en mouvement) ou des objets luminescents (feu, ampoule,
-     soleil) il vaut mieux travailler avec un logiciel adapté. Des images
-     avec de parfaits arrière-plans de couleur unie sont mieux réalisées avec
-     un logiciel adapté, mais ne posent pas de problèmes avec ce qui suit.
+     soleil) mieux vaut travailler avec un logiciel adapté. Des images avec
+     de parfaits arrière-plans de couleur unie sont mieux réalisées avec un
+     logiciel adapté, mais ne posent pas de problèmes avec ce qui suit.
 
 Le choix de l'image est crucial
 
@@ -24,7 +24,7 @@ Le choix de l'image est crucial
 
        Si vous voulez présenter une oeuvre aux développeurs de Tux Paint
        destinée à être incluse dans le projet officiel, ou si vous voulez
-       faire une version de Tux Paint pour votre seul usage avec vos propre
+       faire une version de Tux Paint pour votre seul usage avec vos propres
        graphiques, vous devez avoir une image compatible avec la Licence
        Publique Générale GNU utilisée par Tux Paint.
 
@@ -129,7 +129,7 @@ Préparez le masque
      Définissez une image non-modifiée comme étant celle que vous voulez
      afficher (celle du haut est la plus facile). Définissez le masque WIP
      comme étant ce que vous allez éditer. À un moment donné, vous devriez
-     agrandir l'image à à environ 400 % (chaque pixel de l'image est vu et
+     agrandir l'image à environ 400 % (chaque pixel de l'image est vu et
      représenté par un bloc de 4x4 pixels sur votre écran.
 
      Sélectionnez les parties de l'image devant être 100 % opaques, ou bien 0
@@ -147,20 +147,20 @@ Préparez le masque
 
      Maintenant vous devez zoomer.
 
-     Vérifiez votre travail. Cacher le calque supérieur d'image non-modifiée.
+     Vérifiez votre travail. Cachez le calque supérieur d'image non-modifiée.
      N'affichez que le masque, qui devrait être un objet blanc sur un fond
      noir (probablement avec du gris non édité sur les bords). Maintenant
      affichez le calque WIP normalement, pour que le masque soit actif. Cela
      devrait montrer votre objet par dessus le prochain calque activé le plus
-     élevé, et qui devrait vert ou magenta suivant la nécessité d'avoir un
-     contraste maximum. Vous pourriez basculer entre ces arrière-plans en
+     élevé, et qui devrait être vert ou magenta, suivant le cas, pour avoir
+     un contraste maximum. Vous pourriez basculer entre ces arrière-plans en
      cliquant plusieurs fois pour activer/désactiver le calque vert. Corrigez
      tous les problèmes évidents et faciles en éditant le masque.
 
      Revenez à l'affichage du calque supérieur non modifié lors de l'édition
      du masque WIP. Ajustez le pinceau dans l'outil de dessin. Pour la
      brosse, choisissez un petit cercle flou. Une taille de 5x5 convient dans
-     tous les cas.
+     la plupart des cas.
 
      Avec une main sûre, tracez autour de l'image. Utilisez du noir à
      l'extérieur et du blanc à l'intérieur. Évitez de faire plus d'un passage
@@ -175,7 +175,7 @@ Préparez le masque
      devrait être ni à 100 % ni à 0 %. La frange disparaîtra bientôt.
 
      Affichez et modifiez le masque. Sélectionnez par couleur, en choisissant
-     le noir ou le blanc. Sûrement vous verrez des tâches non sélectionnées
+     le noir ou le blanc. Vous verrez sûrement des tâches non sélectionnées
      qui ne sont pas tout à fait à la couleur attendue. Inversez la
      sélection, et coloriez les avec l'outil crayon. Faites ces opérations
      pour le blanc et le noir.
@@ -236,19 +236,19 @@ Remplacer la frange et les pixels indésirables
      fond noir. Lorsque Tux Paint redimensionne cela à 50% (une zone de 1 x 1
      pixel), le résultat sera un pixel opaque gris à 50%. Le résultat correct
      devrait être un pixel blanc opaque à 50%. Pour obtenir ce résultat, nous
-     peindrions les pixels noirs. Ils comptent, bien qu'ils soient à 0 %
-     d'opacité.
+     devrions peindre les pixels noirs. Ils comptent, bien qu'ils soient à 0
+     % d'opacité.
 
      Tux Paint peut réduire considérablement la taille des images, il est
      donc important d'étendre considérablement le bord de votre objet vers
-     l'extérieur. Juste au bord de votre objet, vous devez être très précis à
-     ce sujet. Lorsque vous vous éloignez de l'objet, cela risque de faire
-     négligé. Il est raisonnable de peindre vers l'extérieur sur une douzaine
-     de pixels ou plus. Plus vous irez loin, plus Tux Paint pourra réduire la
-     taille sans créer de franges avec des couleurs moches. Pour les zones
-     situées à plus de quelques pixels du bord, vous devez utiliser l'outil
-     Crayon (ou une vague sélection avec une couleur en glisser-déposer) pour
-     vous assurer que le résultat se compressera bien.
+     l'extérieur. Juste au bord de votre objet, vous devez être très précis
+     sur ce point. Lorsque vous vous éloignez de l'objet, cela risque de
+     faire négligé. Il est raisonnable de peindre vers l'extérieur sur une
+     douzaine de pixels ou plus. Plus vous irez loin, plus Tux Paint pourra
+     réduire la taille sans créer de franges avec des couleurs moches. Pour
+     les zones situées à plus de quelques pixels du bord, vous devez utiliser
+     l'outil Crayon (ou une vague sélection avec une couleur en
+     glisser-déposer) pour vous assurer que le résultat se compressera bien.
 
 Sauvegarder l'image pour Tux Paint
 
