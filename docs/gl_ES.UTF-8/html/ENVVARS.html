@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Environment Variables Documentation    </title>
+      Documentación de variábeis de contorno de Tux Paint    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -18,7 +18,7 @@
             height="210"
             alt="Tux Paint"><br>
         versión 0.9.26<br/>
-        Environment Variables Documentation      </h1>
+        Documentación de variábeis de contorno      </h1>
 
       <p>
         Copyright &copy; 2021-2021 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
@@ -32,10 +32,10 @@
     <hr>
 
     <p>
-      Tux Paint understands a number of environment variables, either directly, or indirectly by the libraries that it utilizes.    </p>
+      Tux Paint comprende unha serie de variábeis de contorno, ben directamente ou indirectamente polas bibliotecas que emprega.    </p>
 
     <h2>
-      Storage-related environment variables    </h2>
+      Variábeis de contorno relacionadas co almacenamento    </h2>
     <dl>
       <dt>
         <code>HOME</code>
@@ -43,15 +43,15 @@
 
       <dd>
         <p>
-          Specifies the user's "home directory", which is used to locate numerous other files or directories. In some cases, it is utilized as part of a fall-back location, when other environment variables (elsewhere in this documentation) are not set. Sometimes, the location to use can be overridden by options provided on the command-line or via Tux Paint's configuration file. See the "OPTIONS" documentation for details.        </p>
+          Especifica o «directorio persoal» do usuario, que se usa para localizar outros ficheiros ou directorios. Nalgúns casos, úsase como parte dunha situación alternativa, cando non se configuran outras variábeis de contorno (noutros lugares desta documentación). Ás veces, a localización a empregar pode ser anulada polas opcións fornecidas na liña de ordes ou a través do ficheiro de configuración de Tux Paint. Consulte a documentación de «OPCIÓNS» (OPTIONS) para máis detalles.        </p>
 
         <p>
-          A few examples of where "<code>$HOME</code>" is used include:        </p>
+          Algúns exemplos de onde se usa «<code>$HOME</code>» inclúen:        </p>
 
         <ul>
-          <li>The location of Tux Paint's configuration file</li>
-          <li>The basis of where Tux Paint saves and loads users' drawings</li>
-          <li>The location of a user's private collection of data files &mdash; stamps, brushes, etc. &mdash; (versus those available system wide)</li>
+          <li>A localización do ficheiro de configuración de Tux Paint</li>
+          <li>A base de onde Tux Paint garda e carga os debuxos dos usuarios</li>
+          <li>A localización da colección privada de ficheiros de datos dun usuario &mdash; selos, pinceis, etc. &mdash; (fronte aos dispoñíbeis no sistema)</li>
         </ul>
       </dd>
 
@@ -61,7 +61,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Tux Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Tux Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
+          En Linux e noutras plataformas onde se usan os estándares X Desktop Group, a localización dos ficheiros de configuración do usuario. Especificamente, onde atopar «<code>user-dirs.dirs</code>», onde se podería definir o «<code>XDG_PICTURES_DIR</code>». Úsase para exportar debuxos e GIF animados. Xeralmente estabelecese en algo así como «<code>$HOME/Pictures/</code>». Se non se especifica, Tux Paint comproba no directorio «<code>$HOME/.config/</code>». Se non se pode atopar a configuración, Tux Paint simplemente exporta debuxos e GIF a «<code>$HOME</code>».        </p>
       </dd>
 
       <dt>
@@ -70,7 +70,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's data directories. Specifically, where to find the "<code>Trash</code>" directory. It is used when deleting images from Tux Paint's "Open" dialog. If not set, the location "<code>$HOME/.local/share/Trash/</code>" is used, if available. If not, images are simply deleted, rather than moved anywhere.        </p>
+          En Linux e noutras plataformas onde se usan os estándares X Desktop Group, a localización dos directorios de datos do usuario. En concreto, onde atopar o directorio «<code>Trash</code>». Úsase cando se eliminan imaxes do diálogo «Abrir» de Tux Paint. Se non se define, úsase a localización «<code>$HOME/.local/share/Trash/</code>», se está dispoñíbel. Se non, as imaxes bórranse simplemente no canto de movelas a calquera outro lugar.        </p>
       </dd>
 
       <dt>
@@ -79,12 +79,12 @@
 
       <dd>
         <p>
-          Specifies the location where temporary files may be created. Only used by Tux Paint on Microsoft Windows OSes. Uses "<code>userdata</code>" if not set.        </p>
+          Especifica a localización onde se poden crear ficheiros temporais. Só o usa Tux Paint nos sistemas operativos Microsoft Windows. Emprega «<code>userdata</code>» se non se define.        </p>
     </dl>
 
 
     <h2>
-      Language-related environment variables    </h2>
+      Variábeis de contorno relacionadas co idioma    </h2>
     <dl>
       <dt>
         <code>LANG</code>
@@ -101,30 +101,30 @@
 
       <dd>
         <p>
-          Specify the language Tux Paint should utilize in its user interface. Overridde by the "<code>--lang</code>" and "<code>--locale</code>" command-line options or their configuration file counterparts. The "<code>LANGUAGE</code>" environment variable is used, if set. If not, "<code>LC_ALL</code>" is used as a fallback. Then "<code>LC_MESSAGES</code>", and finally "<code>LANG</code>".        </p>
+          Especifica o idioma que debe empregar Tux Paint na súa interface de usuario. Anulada polas opcións da liña de ordes «<code>--lang</code>» e «<code>--locale</code>» ou as súas equivalentes do ficheiro de configuración. Utilízase a variábel de contorno '<code>LANGUAGE</code>', se está definida. Se non, «<code>LC_ALL</code>» úsase como alternativa. Após «<code>LC_MESSAGES</code>» e, finalmente, «<code>LANG</code>».        </p>
       </dd>
 
     </dl>
 
     <h2>
-      Display-related environment variables    </h2>
+      Variábeisbles de contorno relacionadas co que se amosa    </h2>
 
     <p>
-      The following are a few of the environment variables supported by Simple DirectMedia Layer (libSD) &mdash; which Tux Paint utilizes for displaying graphics, playing sounds, and receiving mouse, keyboard, and joystick input &mdash; and which may be useful to users of Tux Paint.
+      A seguir amósanse algunhas das variábeis de contorno compatíbeis con Simple DirectMedia Layer (libSD) &mdash; que Tux Paint utiliza para amosar gráficos, reproducir sons e recibir entrada do rato, teclado e joystick &mdash; e que poden ser útiles para os usuarios de Tux Paint.
     <dl>
       <dt>
         <code>SDL_VIDEO_ALLOW_SCREENSAVER</code>
       </dt>
       <dd>
         <p>
-          Specifies whether Tux Paint should allow a screensaver to run. Can be set to '1' (true) by Tux Paint itself by issuing the command-line option "<code>--allowscreensaver</code>" or its configuration file counterpart.        </p>
+          Especifica se Tux Paint debería permitir a execución dun protector de pantalla. Pode ser definido como «1» (verdadeiro) polo propio Tux Paint emitindo a opción de liña de ordes «<code>--allowscreensaver</code>» ou o seu equivaente no ficheiro de configuración.        </p>
       </dd>
       <dt>
         <code>SDL_VIDEO_WINDOW_POS</code>
       </dt>
       <dd>
         <p>
-          Requests where to position Tux Paint's window. Normally set to "<code>center</code>" by Tux Paint itself, unless the environment variable is already set (e.g., to "<code>nopref</code>", meaning "no preference").        </p>
+          Solicita onde colocar a xanela de Tux Paint. Normalmente estabelécese en «<code>center</code>» polo propio Tux Paint, a menos que a variábel de contorno xa estea estabelecida (por exemplo, en «<code>nopref</code>», que significa «sen preferencia»).        </p>
       </dd>
 
     </dl>
