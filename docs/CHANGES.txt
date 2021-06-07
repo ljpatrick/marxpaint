@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.June.2 (0.9.26)
+2021.June.6 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -103,6 +103,9 @@ $Id$
 
     * Icelandic
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Occitan
+      Quentin PAGÈS <quentinantonin@free.fr>
 
   * Magic Tool Improvememnts:
     -------------------------
