@@ -9,30 +9,30 @@
 
      ----------------------------------------------------------------------
 
-   +------------------------------------------------------------+
-   |Table des matières                                          |
-   |------------------------------------------------------------|
-   |  * Où vont les fichiers                                    |
-   |       * Fichiers standards                                 |
-   |       * Fichiers personnels                                |
-   |  * Pinceaux                                                |
-   |       * Options de pinceau                                 |
-   |  * Tampons                                                 |
-   |       * Images des tampons                                 |
-   |       * Texte de description des tampons                   |
-   |       * Effets sonores des tampons                         |
-   |       * Son descriptif du tampon                           |
-   |       * Options des tampons                                |
-   |       * Mise en miroir et retournement                     |
-   |  * Polices                                                 |
-   |  * 'Images de démarrage'                                   |
-   |       * Images de démarrage avec style livre de coloriage  |
-   |       * Images de démarrage avec style scénique            |
-   |  * 'Modèles'                                               |
-   |  * Traductions                                             |
-   |  * Méthodes alternatives de saisie                         |
-   |  * Clavier virtuel                                         |
-   +------------------------------------------------------------+
+   +--------------------------------------------------------------+
+   |Table des matières                                            |
+   |--------------------------------------------------------------|
+   |  * Où vont les fichiers                                      |
+   |       * Fichiers standards                                   |
+   |       * Fichiers personnels                                  |
+   |  * Pinceaux                                                  |
+   |       * Options de pinceau                                   |
+   |  * Tampons                                                   |
+   |       * Images des tampons                                   |
+   |       * Texte de description des tampons                     |
+   |       * Effets sonores des tampons                           |
+   |       * Son descriptif du tampon                             |
+   |       * Options des tampons                                  |
+   |       * Mise en miroir et retournement                       |
+   |  * Polices                                                   |
+   |  * 'Images de démarrage'                                     |
+   |       * Images de démarrage avec style 'livre de coloriage'  |
+   |       * Images de démarrage avec 'style scénique'            |
+   |  * 'Modèles'                                                 |
+   |  * Traductions                                               |
+   |  * Méthodes alternatives de saisie                           |
+   |  * Clavier virtuel sur écran                                 |
+   +--------------------------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -222,7 +222,7 @@ Pinceaux
 
          Les formes orientables sont divisées en carrés de 3x3 dans une image
          PNG. Par exemple, si votre pinceau fait 30x30, l'image doit être de
-         90x90n et chacune des formes orientables est placée dans une grille
+         90x90 et chacune des formes orientables est placée dans une grille
          de 3x3. La région centrale n'est pas orientable. Le haut à droite
          est utilisé pour le mouvement vers le haut, et vers la droite. Etc
          ...
@@ -327,7 +327,7 @@ Tampons
          les traductions dans les fichiers ".txt".
 
          Si aucune traduction n'est disponible pour la langue dans laquelle
-         Tux Paint est en cours d'exécution, le texte anglais américain est
+         Tux Paint est en cours d'exécution, le texte anglais américain sera
          utilisé.
 
     Utilisateurs de Windows
@@ -364,8 +364,8 @@ Tampons
          "stamp.wav")
 
        Remarque : pour les sons descriptifs (pas les effets sonores, comme un
-       bang ou un gazouillis d'oiseau), pensez à utiliser les sons
-       descriptifs; voir 'Son descriptif du tampon' ci-dessous.
+       bang ou un gazouillis d'oiseau), pensez à les utiliser; voir 'Son
+       descriptif du tampon' ci-dessous.
 
      ----------------------------------------------------------------------
 
@@ -413,14 +413,14 @@ Tampons
 
     Tampons colorés
 
-         Les tampons peuvent soit "colorables" soit '"teintables"
+         Les tampons peuvent être soit "colorables" soit '"teintables"
 
       Colorable
 
            Les tampons "colorables" fonctionnent comme des pinceaux - vous
            choisissez le tampon pour obtenir la forme, puis choisissez la
-           couleur que vous voulez qu'il soit. (Les tampons de symboles,
-           comme les tampons mathématiques et musicaux, en sont un exemple.)
+           couleur que vous voulez. (Les tampons de symboles, comme les
+           tampons mathématiques et musicaux, en sont un exemple.)
 
            Rien sur l'image d'origine n'est utilisé à l'exception de la
            transparence (du canal "alpha"). La couleur du tampon ressort
@@ -558,7 +558,7 @@ Polices
      vous éditez votre nouvelle image, les contenus de 'l'image de démarrage'
      initiale peuvent l'affecter.
 
-  Images de démarrage avec style livre de coloriage
+  Images de démarrage avec style 'livre de coloriage'
 
        Le type le plus élémentaire "d'image de démarrage" est similaire à une
        image dans un livre de coloriage. C'est le contour d'une forme que
@@ -574,7 +574,7 @@ Polices
        optionellement rendre l'image noire et transparente, plutôt que noire
        et blanche, mais ceci (depuis Tux Paint 0.9.21) n'est pas requis.
 
-  Images de démarrage avec style scénique
+  Images de démarrage avec 'style scénique'
 
        En plus de la superposition de style `` livre de coloriage '', vous
        pouvez également fournir une image d'arrière-plan séparée dans le
@@ -802,7 +802,7 @@ Méthodes alternatives de saisie
 
      ----------------------------------------------------------------------
 
-Clavier virtuel
+Clavier virtuel sur écran
 
      Depuis la version 0.9.22, les outils «Texte» et «Étiquette» de Tux Paint
      peuvent présenter un clavier à l'écran qui permet d'utiliser le pointeur

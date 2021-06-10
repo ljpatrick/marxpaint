@@ -442,7 +442,7 @@ Outils disponibles
                                    or touche [Alt] gauche
                                  * Thai — touche [Alt] droite
 
-                      Clavier virtuel
+                      Clavier virtuel sur écran
 
                               Un clavier virtuel sur écran (optionnel) est
                               disponible pour les outils "Texte" et
