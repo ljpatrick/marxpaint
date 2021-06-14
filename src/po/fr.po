@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 21:06-0700\n"
-"PO-Revision-Date: 2020-12-08 10:39+0100\n"
+"PO-Revision-Date: 2021-06-14 11:03+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -182,35 +182,35 @@ msgstr "<9>spare-9b"
 
 #: ../fill_tools.h:49
 msgid "Solid"
-msgstr ""
+msgstr "Unie"
 
 #: ../fill_tools.h:50
-#, fuzzy
-#| msgid "Lines"
 msgid "Linear"
-msgstr "Lignes"
+msgstr "Linéaire"
 
 #: ../fill_tools.h:51
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 #: ../fill_tools.h:55
-#, fuzzy
-#| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
-msgstr "Clique sur l'image pour remplir la surface choisie avec une couleur."
+msgstr "Clique pour remplir une surface avec une couleur unie."
 
 #: ../fill_tools.h:56
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
+"Clique et déplace la souris pour remplir une surface avec un dégradé "
+"linéaire (depuis la couleur choisie jusqu'à la transparence)."
 
 #: ../fill_tools.h:57
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
 msgstr ""
+"Clique pour remplir une surface avec un dégradé radial (depuis la couleur "
+"choisie jusqu'à la transparence)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -417,8 +417,6 @@ msgstr "Magie"
 
 #. Title of fill selector (buttons down the right for fill tool)
 #: ../titles.h:81
-#, fuzzy
-#| msgid "Fill"
 msgid "Fills"
 msgstr "Remplir"
 
@@ -940,23 +938,24 @@ msgstr ""
 
 #: ../../magic/src/checkerboard.c:99
 msgid "Checkerboard"
-msgstr ""
+msgstr "Damier"
 
 #: ../../magic/src/checkerboard.c:106
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
-msgstr "Clique et promène la souris pour dessiner des motifs répétitifs."
+msgstr ""
+"Clique et promène la souris pour remplir l'image avec un damier comme motif."
 
 #: ../../magic/src/clone.c:132
 msgid "Clone"
-msgstr ""
+msgstr "Clone"
 
 #: ../../magic/src/clone.c:138
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
+"Clique une fois sur un endroit à cloner. Clique encore une fois et promène "
+"la souris pour cloner cet endroit."
 
 #: ../../magic/src/confetti.c:83
 msgid "Confetti"
@@ -1308,13 +1307,11 @@ msgstr ""
 #. Both are named "Pixels", at the moment:
 #: ../../magic/src/pixels.c:108
 msgid "Pixels"
-msgstr ""
+msgstr "Pixels"
 
 #: ../../magic/src/pixels.c:114
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw large pixels."
-msgstr "Clique et déplace la souris pour dessiner des grandes briques."
+msgstr "Clique et déplace la souris pour dessiner de grands pixels."
 
 #: ../../magic/src/puzzle.c:103
 msgid "Puzzle"
