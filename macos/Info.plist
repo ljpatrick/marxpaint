@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>tuxpaint</string>
 	<key>CFBundleGetInfoString</key>
-	<string>0.9.26, Copyright 2009-2020, Tux Paint Development Team</string>
+	<string>0.9.26, Copyright 2009-2021, Tux Paint Development Team</string>
 	<key>CFBundleIconFile</key>
 	<string>tuxpaint.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -23,6 +23,6 @@
 	<key>CFBundleSignature</key>
 	<string>TXPT</string>
 	<key>CFBundleVersion</key>
-	<string>2020-12-27</string>
+	<string>2021-06-13</string>
 </dict>
 </plist>
