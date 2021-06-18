@@ -626,19 +626,19 @@ begin
   lang := Lang2Gettext(false);
 
   if lang = 'es' then
-    readme := 'es\html\LEEME.html'
+    readme := 'es_ES.UTF-8\html\README.html'
   else
   if lang = 'fr' then
-    readme := 'fr\html\README.html'
+    readme := 'fr_FR.UTF8\html\README.html'
   else
   if lang = 'gl' then
-    readme := 'gl\html\README.html'
+    readme := 'gl_GL.UTF-8\html\README.html'
   else
   if lang = 'it' then
     readme := 'it\html\README.html'
   else
   if lang = 'ja' then
-    readme := 'ja\html\README.html'
+    readme := 'ja_JP.UTF-8\html\README.html'
   else
   if lang = 'nl' then
     readme := 'nl\html\README.html'
