@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 versión 0.9.26
+                                 versión 0.9.27
 
   Un sinxelo programa de debuxo para cativos
 
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                               28 de Xuño de 2021
+                              8 de Agosto de 2021
 
      ----------------------------------------------------------------------
 

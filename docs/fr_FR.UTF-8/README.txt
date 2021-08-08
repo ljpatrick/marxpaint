@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 version 0.9.26
+                                 version 0.9.27
 
   Un programme simple pour les enfants
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 juin 28, 2021
+                                  août 8, 2021
 
      ----------------------------------------------------------------------
 

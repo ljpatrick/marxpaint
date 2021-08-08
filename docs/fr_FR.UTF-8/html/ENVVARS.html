@@ -17,7 +17,7 @@
             width="205"
             height="210"
             alt="Tux Paint"><br>
-        version 0.9.26<br/>
+        version 0.9.27<br/>
         Documentation sur les variables d'environnement      </h1>
 
       <p>
@@ -26,7 +26,7 @@
       </p>
 
       <p>
-        mai 11, 2021      </p>
+        août  8, 2021      </p>
     </center>
 
     <hr>
@@ -61,7 +61,7 @@
 
       <dd>
         <p>
-          Sur Linux et d'autres plateformes où les standards du XDG (X Desktop Group) sont appliqués, c'est l'endroit où se trouvent les fichiers de configuration de l'utilisateur. Plus précisément, c'est où trouver "<code>user-dirs.dirs</code>", où le "<code>XDG_PICTURES_DIR</code>" devrait être défini. Il est utilisé pour exporter les dessins et GIF animés. En général, il est égal à quelque chose comme "<code>$HOME/Pictures/</code>". S'il n'est pas spécifié, Tux Paint vérifie le répertoire "<code>$HOME/.config/</code>". Si la configuration ne peut être trouvée, Tux Paint exporte simplement les dessins et GIF animés vers "<code>$HOME</code>".        </p>
+          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Tux Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Tux Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
       </dd>
 
       <dt>
@@ -70,7 +70,7 @@
 
       <dd>
         <p>
-          Sur Linux et d'autres plateformes où les standards du XDG (X Desktop Group) sont appliqués, c'est l'endroit où se trouvent les fichiers de données de l'utilisateur. Plus précisément, c'est où trouver le répertoire "<code>Trash</code>". Il est utilisé quand on supprime des images à partir de la boîte de dialogue "Ouvrir". Si ce n'est pas défini, le répertoire "<code>$HOME/.local/share/Trash/</code>" est utilisé, s'il existe. Sinon, les images sont simplement supprimées, plutôt que déplacées quelque part.        </p>
+          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's data directories. Specifically, where to find the "<code>Trash</code>" directory. It is used when deleting images from Tux Paint's "Open" dialog. If not set, the location "<code>$HOME/.local/share/Trash/</code>" is used, if available. If not, images are simply deleted, rather than moved anywhere.        </p>
       </dd>
 
       <dt>
@@ -101,7 +101,7 @@
 
       <dd>
         <p>
-          Spécifie la langue utilisée par Tux Paint sur l'interface utilisateur. Remplacé par les options en ligne de commande "<code>--lang</code>" et <code>--locale</code>, ou bien leurs équivalents dans le fichier de configuration. La variable d'environnement "<code>LANGUAGE</code>" est utilisée (si elle est activée. Sinon, "<code>LC_ALL</code>' est utilisé comme solution de repli. Puis "<code>LC_MESSAGES</code>" et enfin "<code>LANG</code>".        </p>
+          Specify the language Tux Paint should utilize in its user interface. Overridde by the "<code>--lang</code>" and "<code>--locale</code>" command-line options or their configuration file counterparts. The "<code>LANGUAGE</code>" environment variable is used, if set. If not, "<code>LC_ALL</code>" is used as a fallback. Then "<code>LC_MESSAGES</code>", and finally "<code>LANG</code>".        </p>
       </dd>
 
     </dl>
@@ -124,7 +124,7 @@
       </dt>
       <dd>
         <p>
-          Indique où positionner la fenêtre de Tux Paint. Normalement positionnée à "<code>center</code>" par Tux Paint lui-même, à moins que la variable d'environnement n'ait déjà une valeur (par ex. "<code>nopref</code>" signifie pas de préférence).        </p>
+          Requests where to position Tux Paint's window. Normally set to "<code>center</code>" by Tux Paint itself, unless the environment variable is already set (e.g., to "<code>nopref</code>", meaning "no preference").        </p>
       </dd>
 
     </dl>
