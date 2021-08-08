@@ -8,6 +8,9 @@ http://www.tuxpaint.org/
 
 $Id$
 
+2021.August.7 (0.9.27)
+  * ...
+
 2021.June.28 (0.9.26)
   * New Features
     ------------
