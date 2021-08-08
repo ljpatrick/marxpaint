@@ -16,6 +16,10 @@ $Id$
       tab-completion list, and "OPTIONS" documentation all cover
       the full set of Tux Paint options.
 
+    * Reorganized the "Available Options" section of "OPTIONS"
+      documentation (to match the organization found in the UI
+      of "Tux Paint Config.")
+
 2021.June.28 (0.9.26)
   * New Features
     ------------
