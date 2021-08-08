@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.08.07
-.TH TUXPAINT 1 "7 August 2021" "0.9.27" "Tux Paint"
+.\" tuxpaint.1 - 2021.08.08
+.TH TUXPAINT 1 "8 August 2021" "0.9.27" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -39,6 +39,10 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-papersize \fIPAPERSIZE\fP | \-\-papersize help]
 .br
+[\-\-printcommand \fICOMMAND\fP]
+.br
+[\-\-altprintcommand \fICOMMAND\fP]
+.br
 [\-\-simpleshapes]
 .br
 [\-\-uppercase]
@@ -76,6 +80,10 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-mouse-accessibility]
 .br
 [\-\-onscreen-keyboard]
+.br
+[\-\-onscreen-keyboard-layout \fILAYOUT\fP]
+.br
+[\-\-onscreen-keyboard-disable-change]
 .br
 [\-\-joystick-dev=\fIDEVICE\fP]
 .br
@@ -359,6 +367,18 @@ Ask \fITux Paint\fP to generate PostScript of a particular paper size.
 Valid sizes are those supported by libpaper.  See papersize(5).
 
 .TP 8
+.B \-\-printcommand \fICOMMAND\fP
+(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+Have Tux Paint print via an alternate command, rather than lpr(1).
+
+.TP 8
+.B \-\-altprintcommand \fICOMMAND\fP
+(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+Have Tux Paint print via an alternate command, when a dialog is expect
+(e.g., when holding \fI[ALT]\fP while clicking "Print"; see above),
+rather than kprinter.
+
+.TP 8
 .B \-\-simpleshapes \-\-complexshapes
 Disable or enable (default) the \fIrotation\fP step when using the
 \fIShape\fP tool within \fITux Paint\fP.  When disabled, shapes cannot be
@@ -373,7 +393,7 @@ yet comfortable with the lowercase characterset.  Default mode is
 \fImixed case\fP.
 
 .TP 8
-.B \-\-grab \-\-nograb
+.B \-\-grab \-\-dontgrab
 Grab the mouse and keyboard input (if possible), so that the mouse is
 confined to the \fITux Paint\fP window.  Default is to not grab.
 
@@ -473,6 +493,80 @@ you click, move, and click again to end the motion.
 .B \-\-onscreen-keyboard
 Presents a clickable on-screen keyboard when using the \fIText\fP and
 \fILabel\fP tools.
+
+.TP 8
+.B \-\-onscreen-keyboard-layout \fILAYOUT\fP
+Specify the default layout for the on-screen keyboard (see above).
+
+.TP 8
+-B \-\-onscreen-keyboard-disable-change
+Disallow switching between on-screen keyboard layouts.
+
+.TP 8
+\-\-joystick-dev=\fIDEVICE\fP
+Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).
+
+.TP 8
+\-\-joystick-dev=list
+List available joysticks and exit.
+
+.TP 8
+\-\-joystick-slowness=\fISPEED\fP
+Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.
+
+.TP 8
+\-\-joystick-threshold=\fITHRESHOLD\fP
+Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.
+
+.TP 8
+\-\-joystick-maxsteps=\fISTEPS\fP
+Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.
+
+.TP 8
+\-\-joystick-hat-timeout=\fIMILLISECONDS\fP
+Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.
+
+.TP 8
+\-\-joystick-hat-slowness=\fISPEED\fP
+Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.
+
+.TP 8
+\-\-joystick-btn-escape=\fIBUTTON\fP
+Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.
+
+.TP 8
+\-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
+Selects the joystick button number, as seen by SDL, that will be a shortcut to
+various tools within Tux Paint.
+
+.PP
+.RS
+.PD 0
+.TP 2
+-
+brush | Brush
+lines | Lines
+shapes | Shapes
+text | Text
+label | Label
+magic | Magic
+undo | Undo
+redo | Redo
+eraser | Eraser
+new | New
+open | Open
+save | Save
+pgsetup | Print (dialog)
+print | Print (immediate)
+.RE
+.PD
+
+.TP 8
+\-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
+A set of joystick button numbers, as seen by SDL, that should
+be ignored. Otherwise, unless they are used by one of the
+\-\-joystick-btn-... options above, buttons will be seen as a mouse
+left-click.  Comma-separated.
 
 .TP 8
 .B \-\-stampsize=\fIsize\fP \-\-stampsize=default

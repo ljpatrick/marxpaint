@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 19, 2021
+  June 14, 2002 - August 8, 2021
 */
 
 #include "platform.h"
@@ -6738,6 +6738,8 @@ void show_usage(int exitcode)
           "  [--disablescreensaver | --allowscreensaver ]\n"
           "  [--sound | --nosound]\n"
           "  [--stereo | --nostereo]\n"
+          "  [--buttonsize=N] (24-192; default=48)\n"
+          "  [--colorsrows=N] (1-3; default=1)\n"
           "  [--colorfile FILE]\n"
           "\n"
           " Mouse/Keyboard:\n"
