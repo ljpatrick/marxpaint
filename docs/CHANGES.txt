@@ -13,8 +13,8 @@ $Id$
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
       Unix manual ("man page"), and command-line option
-      tab-completion list all cover the full set of Tux Paint
-      options.
+      tab-completion list, and "OPTIONS" documentation all cover
+      the full set of Tux Paint options.
 
 2021.June.28 (0.9.26)
   * New Features

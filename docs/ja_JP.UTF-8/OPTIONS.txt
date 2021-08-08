@@ -1,12 +1,12 @@
                                    Tux Paint
-                                  バージョン 0.9.26
+                                  バージョン 0.9.27
 
 各種設定について
 
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年6月28日
+                                   2021年8月 8日
 
      ----------------------------------------------------------------------
 
@@ -67,6 +67,11 @@ Windows のユーザー
 
              プログラムを、ウィンドウ内ではなく、フルスクリーンモードで起動します。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "fullscreen=no". In both cases, may be overridden by the
+             command-line option "--windowed".
+
      fullscreen=native
 
              プログラムをフルスクリーンモードで起動します。その際、画面の解像度をオペレーティングシステムの設定から推定します。
@@ -89,6 +94,11 @@ Windows のユーザー
      orient=portrait
 
              ウィンドウの幅と高さの設定を入れ替えます。これは、タブレットパソコンのような縦型のディスプレイでウィンドウを回転させる際に便利なオプションです。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "orient=landscape". In both cases, may be overridden by the
+             command-line option "--orient=landscape".
 
      native=yes
 
@@ -116,13 +126,29 @@ Windows のユーザー
              以降の場合に有効なオプションであることに注意して下さい。（環境変数 "SDL_VIDEO_ALLOW_SCREENSAVER"
              の値を "1" に設定しても、同様のことができます）
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "allowscreensaver=no" or "disablescreensaver=yes". In both
+             cases, may be overridden by the command-line option
+             "--disablescreensaver".
+
      nosound=yes
 
              効果音を無効にします。（注：このオプションを設定すると、[Alt] + [S] を押しても、効果音を有効化することはできません
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nosound=no"
+             or "sound=yes". In both cases, may be overridden by the
+             command-line option "--sound".
+
      nostereo=yes
 
              ステレオの効果音を無効にする。（片耳イヤホンや１台のスピーカーで使用する場合に役に立ちます）
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nostereo=no"
+             or "stereo=yes". In both cases, may be overridden by the
+             command-line option "--stereo".
 
      noquit=yes
 
@@ -134,6 +160,11 @@ Windows のユーザー
              また、[Shift] + [Control] + [Escape].
              というキーの組み合わせでもプログラムを終了することができます。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "noquit=no" or
+             "quit=yes". In both cases, may be overridden by the command-line
+             option "--quit".
+
      noprint=yes
 
              印刷を無効にします。
@@ -141,6 +172,11 @@ Windows のユーザー
      printdelay=SECONDS
 
              SECONDS で設定した秒数ごとに１回だけしか印刷できなくなります。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "printdelay=0". In both cases, may be overridden by the
+             command-line option "--printdelay=0".
 
      printcommand=COMMAND
 
@@ -180,6 +216,11 @@ Windows のユーザー
              をフルスクリーンモードで起動している場合にのみ有効であることに注意してください。）"printcfg"
              オプションが設定されていれば、変更した印刷の設定は "userdata/print.cfg"
              ファイルに記録され、再利用されます。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "printcfg=no"
+             or "noprintcfg=yes". In both cases, may be overridden by the
+             command-line option "--noprintcfg".
 
      altprint=always
 
@@ -221,13 +262,28 @@ Windows のユーザー
              標準では、Linux および Unix では "~/.tuxpaint/" に、Windows では "userdata\"
              にロックファイルが保存されます。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nolockfile=no" or "lockfile=yes". In both cases, may be
+             overridden by the command-line option "--lockfile".
+
      simpleshapes=yes
 
              「ずけい」ツールで、形を決めたあとに回転させるステップを省略します。クリックして、ドラッグして、ボタンを離すだけで、図形を描くことができます。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "simpleshapes=no" or "complexshapes=yes". In both cases, may be
+             overridden by the command-line option "--complexshapes".
+
      uppercase=yes
 
              すべてのテキストが大文字で表記されます（例：「Brush」は「BRUSH」）。まだ大文字しか習っていない子供たちにとって役に立つオプションです。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "uppercase=no"
+             or "mixedcase=yes". In both cases, may be overridden by the
+             command-line option "--mixedcase".
 
      grab=yes
 
@@ -237,15 +293,30 @@ Windows のユーザー
              によるウィンドウの切り替えや、[Ctrl]-[Escape]
              キーによる操作が無効になります。このオプションは、特にフルスクリーンモード時に有効です。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "grab=no" or
+             "dontgrab=yes". In both cases, may be overridden by the
+             command-line option "--dontgrab".
+
      noshortcuts=yes
 
              キーボードショートカット（保存: [Ctrl]-[S]、新規作成: [Ctrl]-[N] など）を無効にします。
 
              これは、キーボードの操作に慣れていない子供が不用意にコマンドを実行してしまうことを防ぐために有効です。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "noshortcuts=no" or "shortcuts=yes". In both cases, may be
+             overridden by the command-line option "--shortcuts".
+
      nowheelmouse=yes
 
              マウスでのホイールによる操作が無効になります。(通常、ホイールは右のセレクターメニューをスクロールします)。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nowheelmouse=no" or "wheelmouse=yes". In both cases, may be
+             overridden by the command-line option "--wheelmouse".
 
      nobuttondistinction=yes
 
@@ -254,6 +325,12 @@ Windows のユーザー
 
              マウス操作が苦手なお子さんの場合、このオプションを使用することで、マウスの2つまたは3つのボタンの区別を無効にすることができます。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nobuttondistinction=no" or "buttondistinction=yes". In both
+             cases, may be overridden by the command-line option
+             "--buttondistinction".
+
      nofancycursors=yes
 
              Tux Paint 独自のマウスポインタを無効にし、システム標準のマウスポインタを使用するようにします。
@@ -261,11 +338,21 @@ Windows のユーザー
              環境によっては Tux Paint
              のマウスカーソルが原因で不具合が起こることがあります。そういった場合にこのオプションを有効にして下さい。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nofancycursors=no" or "fancycursors=yes". In both cases, may be
+             overridden by the command-line option "--fancycursors".
+
      hidecursor=yes
 
              マウスカーソルを表示しないようにします。
 
              タブレットＰＣなどのタッチスクリーンを用いるデバイスのためのオプションです。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "hidecursor=no" or "showcursor=yes". In both cases, may be
+             overridden by the command-line option "--showcursor".
 
      nooutlines=yes
 
@@ -274,10 +361,20 @@ Windows のユーザー
              Tux Paint を非常に遅いパソコンで使いたい場合や、リモートの X-Window
              ディスプレイで使う場合に、速度を改善します。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nooutlines=no" or "outlines=yes". In both cases, may be
+             overridden by the command-line option "--outlines".
+
      sysfonts=yes
 
              もじツールで、オペレーティングシステムのフォントを使用します。通常では、Tux Paint
              はパッケージに付属するフォントだけを使用します。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "sysfonts=no"
+             or "nosysfonts=yes". In both cases, may be overridden by the
+             command-line option "--nosysfonts".
 
      alllocalefonts=yes
 
@@ -288,37 +385,78 @@ Windows のユーザー
 
              以前のバージョンのように全てのフォントを読み込むようにするには、このオプションを有効にします。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "alllocalefonts=no" or "currentlocalefont=yes". In both cases,
+             may be overridden by the command-line option
+             "--currentlocalefont".
+
      nostamps=yes
 
              「はんこ」の画像を読み込まず、「はんこ」ツールを無効にします。
 
              これによって、初回起動時のプログラムの読み込みが高速になります。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nostamps=no"
+             or "stamps=yes". In both cases, may be overridden by the
+             command-line option "--stamps".
+
      nostampcontrols=yes
 
              「はんこ」ツールの画像には、上下または左右に反転できたり、大きさを変更したりできるものがあります。このオプションを設定すると、このような操作を無効にします。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nostampcontrols=no" or "stampcontrols=yes". In both cases, may
+             be overridden by the command-line option "--stampcontrols".
 
      nomagiccontrols=yes
 
              「まほう」ツールの中には、「ふで」ツールのように画像の一部分だけに効果を及ぼすか、キャンバス全体に効果を及ぼすかを選択できるものがあります。このオプションを設定すると、「まほう」ツールの動作の選択を無効にして、ツールごとに標準の動作だけをするようにします。（たいていは「ふで」のような動作になります）
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nomagiccontrols=no" or "magiccontrols=yes". In both cases, may
+             be overridden by the command-line option "--magiccontrols".
+
      noshapecontrols=yes
 
              「かたち」ツールでの２つの動作モード－マウスをクリックした箇所を中心として図形を拡大するか、マウスをクリックした箇所をコーナーとして図形を拡大するか－を選択するボタンを無効にします。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "noshapecontrols=no" or "shapecontrols=yes". In both cases, may
+             be overridden by the command-line option "--shapecontrols".
 
      nolabel=yes
 
              「ラベル」ツールを無効にします。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nolabel=no"
+             or "label=yes". In both cases, may be overridden by the
+             command-line option "--label".
+
      newcolorslast=yes
 
              「さいしょから」でキャンバスを選択する際、単色のキャンバスが末尾に、スターター画像やテンプレートが先頭になるよう、表示順序を変更します。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "newcolorslast=no" or "newcolorsfirst=yes". In both cases, may
+             be overridden by the command-line option "--newcolorsfirst".
 
      mirrorstamps=yes
 
              反転可能なスタンプは、はじめから反転されるようにします。
 
              左から右ではなく右から左に向かって描き進むことを好むユーザーに役に立つオプションです。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "mirrorstamps=no" or "dontmirrorstamps=yes". In both cases, may
+             be overridden by the command-line option "--dontmirrorstamps".
 
      mouse-accessibility=yes
 
@@ -337,6 +475,12 @@ Windows のユーザー
 
              画面キーボードの変更をできないようにします。小さな子供向けにシンプルにしたい場合に設定します。
              このオプションが設定されると onscreen-keyboard=yes も設定されているとみなします。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "onscreen-keyboard-disable-change=no". In both cases, may be
+             overridden by the command-line option
+             "--onscreen-keyboard-disable-change=no".
 
      joystick-dev=N
 
@@ -464,6 +608,11 @@ Windows のユーザー
                      * 注：「mouse-accessibility」オプションの機能は、キーボードの操作にも連動します。両方のオプションを有効にした場合、例えば線を引く場合は、「クリック」のキーを一度押してから「移動」のキーで描画し、最後にもう一度「クリック」キーを押して描画を完了します。
                 * 通常のマウスやジョイスティックも同時に使用することができます（例えば、マウスで移動してキーボードでクリックしたり、その逆も可能です）。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "keyboard=no"
+             or "2$keyboard=no". In both cases, may be overridden by the
+             command-line option "--mouse".
+
      savedir=DIRECTORY
 
              Tux Paint が、作品を保存する "saved" ディレクトリの場所を変更します。
@@ -568,13 +717,28 @@ Windows のユーザー
              絵の保存ができないようにします（"セーブ"
              ボタンも無効になります）。一時的なお遊びに使う場合や、テスト環境で使えるオプションです。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nosave=no" or
+             "save=yes". In both cases, may be overridden by the command-line
+             option "--save".
+
      autosave=yes
 
              プログラムを終了するときに、絵を保存するかどうか尋ねずに、自動的に保存します。
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "autosave=no"
+             or "noautosave=yes". In both cases, may be overridden by the
+             command-line option "--noautosave".
+
      startblank=yes
 
              Tux Paint を起動する際、前回最後に開いていた絵を読み込む代わりに、毎回、空のキャンバスで開始します。
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "startblank=no" or "startlast=yes". In both cases, may be
+             overridden by the command-line option "--startlast".
 
      colorfile=FILENAME
 
@@ -891,6 +1055,8 @@ Windows のユーザー
 
        --fullscreen
        --WIDTHxHEIGHT
+       --buttonsize=SIZE
+       --colorsrows=ROWS
        --orient=portrait
        --native
        --allowscreensaver
@@ -904,6 +1070,8 @@ Windows のユーザー
        --altprintnever
        --altprintalways
        --papersize=PAPERSIZE
+       --printcommand=COMMAND
+       --altprintcommand=COMMAND
        --nolockfile
        --simpleshapes
        --uppercase

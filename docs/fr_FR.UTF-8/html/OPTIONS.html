@@ -14,7 +14,7 @@
     <center>
       <h1>
         <span style="white-space: nowrap;">Tux Paint</span><br>
-        version 0.9.26      </h1>
+        version 0.9.27      </h1>
 
       <h2>
         Documentation sur les options      </h2>
@@ -25,7 +25,7 @@
       </p>
 
       <p>
-        juin 28, 2021      </p>
+        août  8, 2021      </p>
     </center>
 
     <hr size="2"
@@ -129,6 +129,8 @@
         <dd>
           <p>
             Le programme tourne en plein écran plutôt que dans une fenêtre.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>fullscreen=no</code>". In both cases, may be overridden by the command-line option "<code>--windowed</code>".          </p>
         </dd>
 
         <dt>
@@ -176,6 +178,8 @@
         <dd>
           <p>
             Permute les options de largeur / hauteur données à Tux Paint, utile pour faire pivoter la fenêtre pour les affichages de portait, comme un écran PC orientée comme une tablette.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>orient=landscape</code>". In both cases, may be overridden by the command-line option "<code>--orient=landscape</code>".          </p>
         </dd>
 
         <dt>
@@ -209,6 +213,8 @@
         <dd>
           <p>
             Par défaut, Tux Paint empêche l'économiseur d'écran de votre système de démarrer. Vous pouvez remplacer cela en utilisant l'option "<code>allowscreensaver</code>". Remarque : Cela nécessite la version 1.2.12 ou supérieure de la bibliothèque SDL. (Vous pouvez également le faire en définissant la variable d'environnement "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" de votre système égale à "<code>1</code>".)          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".          </p>
         </dd>
 
         <dt>
@@ -218,6 +224,8 @@
         <dd>
           <p>
             Désactive les effets sonores. (Remarque: le fait d'appuyer sur <b>[Alt]</b> + <b>[S]</b> ne peut pas être utilisé pour réactiver les sons s'ils ont été désactivés à l'aide de cette option.)          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosound=no</code>" or "<code>sound=yes</code>". In both cases, may be overridden by the command-line option "<code>--sound</code>".          </p>
         </dd>
 
         <dt>
@@ -227,6 +235,8 @@
         <dd>
           <p>
             Désactive la prise en charge de la stéréo. (Utile pour les utilisateurs ayant une déficience auditive avec une oreille ou dans les endroits où un seul haut-parleur ou casque est utilisé.)          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostereo=no</code>" or "<code>stereo=yes</code>". In both cases, may be overridden by the command-line option "<code>--stereo</code>".          </p>
         </dd>
 
         <dt>
@@ -242,6 +252,9 @@
 
           <p>
             Vous pouvez également utiliser la combinaison de touches suivante pour quitter : <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b>.          </p>
+
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noquit=no</code>" or "<code>quit=yes</code>". In both cases, may be overridden by the command-line option "<code>--quit</code>".          </p>
         </dd>
 
         <dt>
@@ -260,6 +273,9 @@
         <dd>
           <p>
             Limite l'impression afin que l'impression ne puisse avoir lieu qu'une fois toutes les <i>SECONDES</i> secondes.          </p>
+
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printdelay=0</code>". In both cases, may be overridden by the command-line option "<code>--printdelay=0</code>".          </p>
         </dd>
 
         <dt>
@@ -319,6 +335,9 @@
 
           <p>
             (Remarque : cela ne fonctionne que si vous n'exécutez pas Tux Paint en mode plein écran.) Toutes les modifications de configuration apportées dans cette boîte de dialogue seront enregistrées dans le fichier "<code>userdata/print.cfg</code>", et réutilisées, tant que l'option "printcfg" reste définie.          </p>
+
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printcfg=no</code>" or "<code>noprintcfg=yes</code>". In both cases, may be overridden by the command-line option "<code>--noprintcfg</code>".          </p>
         </dd>
 
         <dt>
@@ -377,6 +396,9 @@
 
           <p>
             Par défaut, le fichier de verrouillage est stocké dans "<code>~/.tuxpaint/</code>" sous Linux et Unix, et "<code>userdata\</code>" sous Windows.          </p>
+
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolockfile=no</code>" or "<code>lockfile=yes</code>". In both cases, may be overridden by the command-line option "<code>--lockfile</code>".          </p>
         </dd>
 
         <dt>
@@ -386,6 +408,8 @@
         <dd>
           <p>
             Désactive la possibilité de rotation avec l'outil «Forme». Cliquer, faire glisser et relâcher, voilà tout ce qui sera possible pour dessiner une forme.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>simpleshapes=no</code>" or "<code>complexshapes=yes</code>". In both cases, may be overridden by the command-line option "<code>--complexshapes</code>".          </p>
         </dd>
 
         <dt>
@@ -395,6 +419,8 @@
         <dd>
           <p>
             Tout le texte sera rendu uniquement en majuscules (par exemple, "Boule" deviendra "BOULE"). Utile pour les enfants qui savent lire, mais qui n'ont appris que les majuscules jusqu'à présent.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>uppercase=no</code>" or "<code>mixedcase=yes</code>". In both cases, may be overridden by the command-line option "<code>--mixedcase</code>".          </p>
         </dd>
 
         <dt>
@@ -407,6 +433,8 @@
 
           <p>
             Ceci est utile pour désactiver les actions du système d'exploitation qui pourraient faire sortir l'utilisateur de Tux Paint <b>[Alt]-[Tab]</b> (changement  de fenêtre), <b>[Ctrl]-[Escape]</b>, etc. Ceci est particulièrement utile en mode plein écran.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>grab=no</code>" or "<code>dontgrab=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontgrab</code>".          </p>
         </dd>
 
         <dt>
@@ -419,6 +447,8 @@
 
           <p>
             Ceci est utile pour éviter que des commandes indésirables ne soient activées par des enfants qui n'ont pas d'expérience avec les claviers.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshortcuts=no</code>" or "<code>shortcuts=yes</code>". In both cases, may be overridden by the command-line option "<code>--shortcuts</code>".          </p>
         </dd>
 
         <dt>
@@ -428,6 +458,8 @@
         <dd>
           <p>
             Cela désactive la prise en charge de la molette pour les souris qui en ont. (Normalement, la molette fait défiler le menu du sélecteur sur la droite.)          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nowheelmouse=no</code>" or "<code>wheelmouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--wheelmouse</code>".          </p>
         </dd>
 
         <dt>
@@ -440,6 +472,8 @@
 
           <p>
             Cependant, pour les enfants qui ont des problèmes avec la souris, cette distinction entre les deux ou trois boutons d'une souris peut être désactivée (ramenant Tux Paint à son ancien comportement) grâce à cette option.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobuttondistinction=no</code>" or "<code>buttondistinction=yes</code>". In both cases, may be overridden by the command-line option "<code>--buttondistinction</code>".          </p>
         </dd>
 
         <dt>
@@ -452,6 +486,8 @@
 
           <p>
             Dans certains environnements, les curseurs sophistiqués posent des problèmes. Utilisez cette option pour les éviter.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nofancycursors=no</code>" or "<code>fancycursors=yes</code>". In both cases, may be overridden by the command-line option "<code>--fancycursors</code>".          </p>
         </dd>
 
         <dt>
@@ -464,6 +500,8 @@
 
           <p>
             Ceci est utile pour les appareils à écran tactile, tels que les tablettes PC.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>hidecursor=no</code>" or "<code>showcursor=yes</code>". In both cases, may be overridden by the command-line option "<code>--showcursor</code>".          </p>
         </dd>
 
         <dt>
@@ -476,6 +514,8 @@
 
           <p>
             Cela peut aider lorsque Tux Paint est exécuté sur des ordinateurs très lents ou affiché sur un écran X-Window distant.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nooutlines=no</code>" or "<code>outlines=yes</code>". In both cases, may be overridden by the command-line option "<code>--outlines</code>".          </p>
         </dd>
 
         <dt>
@@ -485,6 +525,8 @@
         <dd>
           <p>
             Cette option oblige Tux Paint à essayer de charger des polices (à utiliser dans l'outil Texte ) à partir de votre système d'exploitation. Normalement, Tux Paint ne chargera que ceux fournis avec Tux Paint.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>sysfonts=no</code>" or "<code>nosysfonts=yes</code>". In both cases, may be overridden by the command-line option "<code>--nosysfonts</code>".          </p>
         </dd>
 
         <dt>
@@ -497,6 +539,8 @@
 
           <p>
             Pour charger toutes les polices spécifiques aux paramètres régionaux (l'ancien comportement), utilisez cette option.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>alllocalefonts=no</code>" or "<code>currentlocalefont=yes</code>". In both cases, may be overridden by the command-line option "<code>--currentlocalefont</code>".          </p>
         </dd>
 
         <dt>
@@ -509,6 +553,8 @@
 
           <p>
             Cela peut accélérer Tux Paint au démarrage et réduire l'utilisation de la mémoire pendant son exécution. Bien entendu, aucun timbre ne sera disponible.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostamps=no</code>" or "<code>stamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--stamps</code>".          </p>
         </dd>
 
         <dt>
@@ -518,6 +564,8 @@
         <dd>
           <p>
             Certaines images de l' outil <b>Tampon</b> peuvent être mises en miroir, inversées et / ou voir leur taille modifiée. Cette option désactive ces contrôles et ne fournit que les tampons de base.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostampcontrols=no</code>" or "<code>stampcontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--stampcontrols</code>".          </p>
         </dd>
 
         <dt>
@@ -527,6 +575,8 @@
         <dd>
           <p>
             Certains outils <b>Magie</b> ont la possibilité d'agir comme un pinceau ou d'affecter la toile entière. Cette option désactive les contrôles et ne fournit que la fonctionnalité par défaut (généralement en mode peinture).          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nomagiccontrols=no</code>" or "<code>magiccontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--magiccontrols</code>".          </p>
         </dd>
 
         <dt>
@@ -536,6 +586,8 @@
         <dd>
           <p>
             Désactive les boutons de contrôle affichés lors de l'utilisation de l' outil <b>Formes</b> qui permettent de modifier la façon dont les formes sont dessinées - centrées autour du clic initial de la souris ou à partir d'un coin au clic de la souris.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshapecontrols=no</code>" or "<code>shapecontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--shapecontrols</code>".          </p>
         </dd>
 
         <dt>
@@ -545,6 +597,8 @@
         <dd>
           <p>
             Désactive l'outil Étiquette : l'outil qui permet la saisie de texte pouvant être édité plus tard.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolabel=no</code>" or "<code>label=yes</code>". In both cases, may be overridden by the command-line option "<code>--label</code>".          </p>
         </dd>
 
         <dt>
@@ -554,6 +608,8 @@
         <dd>
           <p>
             Place les options de couleur dans la boîte de dialogue <b>Nouveau</b> en dernier, ainsi tous les démarreurs et / ou modèles seront affichés en premier.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>newcolorslast=no</code>" or "<code>newcolorsfirst=yes</code>". In both cases, may be overridden by the command-line option "<code>--newcolorsfirst</code>".          </p>
         </dd>
 
         <dt>
@@ -566,6 +622,8 @@
 
           <p>
             Cela peut être utile pour les personnes qui préfèrent voir les choses de droite à gauche plutôt que de gauche à droite.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>mirrorstamps=no</code>" or "<code>dontmirrorstamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontmirrorstamps</code>".          </p>
         </dd>
 
         <dt>
@@ -575,7 +633,7 @@
         <dd>
           <p>
             Dans ce mode, au lieu de cliquer, de faire glisser et de relâcher (par exemple, pour dessiner), vous cliquez, déplacez et cliquez à nouveau pour terminer le mouvement.          </p>
-        </dd>
+                  </dd>
 
         <dt>
           <code><b>onscreen-keyboard=yes</b></code>
@@ -584,7 +642,7 @@
         <dd>
           <p>
             Présente un clavier à l'écran cliquable lors de l'utilisation des outils Texte et Étiquette .          </p>
-        </dd>
+                  </dd>
 
         <dt>
           <code><b>onscreen-keyboard-layout=<i>LAYOUTNAME</i></b></code>
@@ -603,6 +661,8 @@
           <p>
             Désactive la possibilité de modifier la disposition du clavier à l'écran lors de l'utilisation des outils <b>Texte</b> et <b>Étiquette</b> , utile pour simplifier les choses pour les petits enfants.<br>
           Remarque: l'utilisation de cette option implique automatiquement <b>onscreen-keyboard=yes</b> , la configuration des deux est donc redondante.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>onscreen-keyboard-disable-change=no</code>". In both cases, may be overridden by the command-line option "<code>--onscreen-keyboard-disable-change=no</code>".          </p>
         </dd>
 
         <dt>
@@ -865,6 +925,9 @@
 
             <li>Une souris et / ou un joystick standard peuvent toujours être utilisés (vous pouvez donc, par exemple, vous déplacer avec la souris et cliquer avec le clavier, ou vice-versa)            </li>
           </ul>
+
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>keyboard=no</code>" or "2$<code>keyboard=no</code>". In both cases, may be overridden by the command-line option "<code>--mouse</code>".          </p>
         </dd>
 
         <dt>
@@ -1006,6 +1069,8 @@
         <dd>
           <p>
             Ceci désactive la possibilité de sauvegarder les fichiers par Tux Paint (et par conséquent ôte le bouton "Sauvegarder" sur l'écran). On peut l'utiliser dans le cas où le programme est utilisé juste pour le fun, ou dans un environnement de tests.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosave=no</code>" or "<code>save=yes</code>". In both cases, may be overridden by the command-line option "<code>--save</code>".          </p>
         </dd>
 
         <dt>
@@ -1015,6 +1080,8 @@
         <dd>
           <p>
             Ceci empêche Tux Paint de vous demander si vous voulez sauvegarder l'image quand vous quittez, et suppose que vous le faites.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".          </p>
         </dd>
 
         <dt>
@@ -1024,6 +1091,8 @@
         <dd>
           <p>
             Ceci oblige Tux Paint à afficher une toile vide au démarrage, plutôt que la dernière image qui a été éditée.          </p>
+          <p>
+            Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>startblank=no</code>" or "<code>startlast=yes</code>". In both cases, may be overridden by the command-line option "<code>--startlast</code>".          </p>
         </dd>
 
         <dt>
@@ -2648,6 +2717,8 @@
           <dt>
             <code><b>--fullscreen<br>
             --<i>WIDTH</i>x<i>HEIGHT</i><br>
+            --buttonsize=<i>SIZE</i><br>
+            --colorsrows=<i>ROWS</i><br>
             --orient=portrait<br>
             --native<br>
             --allowscreensaver<br>
@@ -2661,6 +2732,8 @@
             --altprintnever<br>
             --altprintalways<br>
             --papersize=<i>PAPERSIZE</i><br>
+            --printcommand=<i>COMMAND</i><br>
+            --altprintcommand=<i>COMMAND</i><br>
             --nolockfile<br>
             --simpleshapes<br>
             --uppercase<br>

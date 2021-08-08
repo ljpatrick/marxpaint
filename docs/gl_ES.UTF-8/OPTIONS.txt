@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 versión 0.9.26
+                                 versión 0.9.27
 
 Documentación de opcións
 
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                               28 de Xuño de 2021
+                              8 de Agosto de 2021
 
      ----------------------------------------------------------------------
 
@@ -84,6 +84,11 @@ Usuarios de Windows
              Executar o programa en modo de pantalla completa en vez de nunha
              xanela.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "fullscreen=no". In both cases, may be overridden by the
+             command-line option "--windowed".
+
      fullscreen=native
 
              Executar o programa en modo de pantalla completa. Ademais, asume
@@ -113,6 +118,11 @@ Usuarios de Windows
              Cambia as opcións de largo/alto dadas a Tux Paint, útiles para
              xirar a xanela nas pantallas verticais, como unha tableta que
              está en orientación de tableta.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "orient=landscape". In both cases, may be overridden by the
+             command-line option "--orient=landscape".
 
      native=yes
 
@@ -146,17 +156,33 @@ Usuarios de Windows
              variábel de contorno «SDL_VIDEO_ALLOW_SCREENSAVER» do seu
              sistema en «1».)
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "allowscreensaver=no" or "disablescreensaver=yes". In both
+             cases, may be overridden by the command-line option
+             "--disablescreensaver".
+
      nosound=yes
 
              Desactivar os efectos de son. (Nota: Ao premer [Alt] + [S] non
              se poden volver activar os sons se se desactivaron usando esta
              opción).
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nosound=no"
+             or "sound=yes". In both cases, may be overridden by the
+             command-line option "--sound".
+
      nostereo=yes
 
              Desactivar a compatibilidade con panorama estéreo. (Útil para
              usuarios con discapacidade auditiva nun oído ou lugares onde se
              está a empregar un só altofalante ou auricular.)
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nostereo=no"
+             or "stereo=yes". In both cases, may be overridden by the
+             command-line option "--stereo".
 
      noquit=yes
 
@@ -170,6 +196,11 @@ Usuarios de Windows
              Tamén pode usar a seguinte combinación de teclado para saír:
              [Maiúsculas] + [Control] + [Escape].
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "noquit=no" or
+             "quit=yes". In both cases, may be overridden by the command-line
+             option "--quit".
+
      noprint=yes
 
              Desactivar a función de impresión.
@@ -178,6 +209,11 @@ Usuarios de Windows
 
              Restrinxir a impresión para que só poida producirse unha vez
              cada SEGUNDOS segundos.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "printdelay=0". In both cases, may be overridden by the
+             command-line option "--printdelay=0".
 
      printcommand=ORDE
 
@@ -225,6 +261,11 @@ Usuarios de Windows
              feito neste diálogo gardarase no ficheiro «userdata/print.cfg» e
              volverase a usar, sempre que estea configurada a opción
              «printcfg».
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "printcfg=no"
+             or "noprintcfg=yes". In both cases, may be overridden by the
+             command-line option "--noprintcfg".
 
      altprint=always
 
@@ -283,17 +324,32 @@ Usuarios de Windows
              De xeito predeterminado, o ficheiro de bloqueo almacénase en
              «~/.tuxpaint/» en Linux e Unix e en «userdata\» en Windows.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nolockfile=no" or "lockfile=yes". In both cases, may be
+             overridden by the command-line option "--lockfile".
+
      simpleshapes=yes
 
              Desactive o paso de rotación da ferramenta «Forma». Prema,
              arrastra e solte é todo o que se necesita para debuxar unha
              forma.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "simpleshapes=no" or "complexshapes=yes". In both cases, may be
+             overridden by the command-line option "--complexshapes".
+
      uppercase=yes
 
              Todo o texto renderizarase só con maiúscula (por exemplo,
              «Pincel» será «PINCEL»). Útil para os cativos que saben ler,
              pero que ata agora só aprenderon maiúsculas.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "uppercase=no"
+             or "mixedcase=yes". In both cases, may be overridden by the
+             command-line option "--mixedcase".
 
      grab=yes
 
@@ -306,6 +362,11 @@ Usuarios de Windows
              [Alt]-[Tab], [Ctrl]-[Escape], etc. Isto é especialmente útil no
              modo de pantalla completa.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "grab=no" or
+             "dontgrab=yes". In both cases, may be overridden by the
+             command-line option "--dontgrab".
+
      noshortcuts=yes
 
              Isto desactiva os atallos de teclado (por exemplo,[Ctrl]-[S]
@@ -314,11 +375,21 @@ Usuarios de Windows
              Isto é útil para evitar que ordes non desexadas sexan activadas
              por cativos que non teñen experiencia con teclados.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "noshortcuts=no" or "shortcuts=yes". In both cases, may be
+             overridden by the command-line option "--shortcuts".
+
      nowheelmouse=yes
 
              Isto desactiva a compatibilidade para a roda dos ratos que a
              teñen. (Normalmente, a roda desprazará o menú do selector á
              dereita.)
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nowheelmouse=no" or "wheelmouse=yes". In both cases, may be
+             overridden by the command-line option "--wheelmouse".
 
      nobuttondistinction=yes
 
@@ -332,6 +403,12 @@ Usuarios de Windows
              (devolvendo Tux Paint ao seu antigo comportamento) usando esta
              opción.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nobuttondistinction=no" or "buttondistinction=yes". In both
+             cases, may be overridden by the command-line option
+             "--buttondistinction".
+
      nofancycursors=yes
 
              Isto desactiva as fantásticas formas do punteiro do rato en Tux
@@ -340,6 +417,11 @@ Usuarios de Windows
              Nalgúns contornos, os cursores de fantasía causan problemas. Use
              esta opción para evitalos.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nofancycursors=no" or "fancycursors=yes". In both cases, may be
+             overridden by the command-line option "--fancycursors".
+
      hidecursor=yes
 
              Isto agocha completamente as formas do punteiro do rato en Tux
@@ -347,6 +429,11 @@ Usuarios de Windows
 
              Isto é útil para dispositivos con pantalla táctil, como as
              tabletas.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "hidecursor=no" or "showcursor=yes". In both cases, may be
+             overridden by the command-line option "--showcursor".
 
      nooutlines=yes
 
@@ -357,12 +444,22 @@ Usuarios de Windows
              Isto pode axudar cando Tux Paint se executa en computadores moi
              lentos ou se amosa nunha pantalla remota de X-Window.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nooutlines=no" or "outlines=yes". In both cases, may be
+             overridden by the command-line option "--outlines".
+
      sysfonts=yes
 
              Esta opción fai que Tux Paint tente cargar tipos de letra (para
              usalos na ferramenta Texto) dende o seu sistema operativo.
              Normalmente, Tux Paint só cargará os que foron incluídos con Tux
              Paint.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "sysfonts=no"
+             or "nosysfonts=yes". In both cases, may be overridden by the
+             command-line option "--nosysfonts".
 
      alllocalefonts=yes
 
@@ -378,6 +475,12 @@ Usuarios de Windows
              configuracións locais (o comportamento antigo), configure esta
              opción.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "alllocalefonts=no" or "currentlocalefont=yes". In both cases,
+             may be overridden by the command-line option
+             "--currentlocalefont".
+
      nostamps=yes
 
              Esta opción dille a Tux Paint que non cargue ningunha imaxe de
@@ -388,11 +491,21 @@ Usuarios de Windows
              reducir o uso de memoria mentres se está a executar. Por
              suposto, ningún selo estará dispoñíbel.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nostamps=no"
+             or "stamps=yes". In both cases, may be overridden by the
+             command-line option "--stamps".
+
      nostampcontrols=yes
 
              Algunhas imaxes da ferramenta Selos pódense reflectir, inverter
              e/ou cambiar o seu tamaño. Esta opción desactiva os controis e
              só fornece os selos básicos.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nostampcontrols=no" or "stampcontrols=yes". In both cases, may
+             be overridden by the command-line option "--stampcontrols".
 
      nomagiccontrols=yes
 
@@ -401,6 +514,11 @@ Usuarios de Windows
              controis e só fornece a funcionalidade predeterminada
              (normalmente en modo pintura).
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nomagiccontrols=no" or "magiccontrols=yes". In both cases, may
+             be overridden by the command-line option "--magiccontrols".
+
      noshapecontrols=yes
 
              Desactivar os botóns de control que se amosan cando se usa a
@@ -408,15 +526,30 @@ Usuarios de Windows
              formas: centradas arredor do clic inicial do rato ou cun canto
              co clic inicial do rato.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "noshapecontrols=no" or "shapecontrols=yes". In both cases, may
+             be overridden by the command-line option "--shapecontrols".
+
      nolabel=yes
 
              Desactiva a ferramenta Etiqueta: a ferramenta que permite a
              entrada de texto que se pode editar máis tarde.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nolabel=no"
+             or "label=yes". In both cases, may be overridden by the
+             command-line option "--label".
+
      newcolorslast=yes
 
              Coloca as opcións de cor en branco no diálogo Novo ao final, de
              xeito que se amosen primeiro os iniciadores e/ou modelos.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "newcolorslast=no" or "newcolorsfirst=yes". In both cases, may
+             be overridden by the command-line option "--newcolorsfirst".
 
      mirrorstamps=yes
 
@@ -425,6 +558,11 @@ Usuarios de Windows
 
              Isto pode ser útil para as persoas que prefiren as cousas de
              dereita a esquerda no canto de de esquerda a dereita.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "mirrorstamps=no" or "dontmirrorstamps=yes". In both cases, may
+             be overridden by the command-line option "--dontmirrorstamps".
 
      mouse-accessibility=yes
 
@@ -453,6 +591,12 @@ Usuarios de Windows
              Nota: Usar esta opción implica automaticamente
              onscreen-keyboard=yes, polo que estabelecer ambas as cousas é
              redundante.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "onscreen-keyboard-disable-change=no". In both cases, may be
+             overridden by the command-line option
+             "--onscreen-keyboard-disable-change=no".
 
      joystick-dev=N
 
@@ -635,6 +779,11 @@ Usuarios de Windows
                   (joystick) normais (para que poida, por exemplo, moverse co
                   rato e premer co teclado ou viceversa)
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "keyboard=no"
+             or "2$keyboard=no". In both cases, may be overridden by the
+             command-line option "--mouse".
+
      savedir=DIRECTORIO
 
              Use esta opción para cambiar onde se atopa o directorio/cartafol
@@ -772,16 +921,31 @@ Usuarios de Windows
              usarse en situacións nas que o programa só se usa para
              divertirse ou nun contorno de proba.
 
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nosave=no" or
+             "save=yes". In both cases, may be overridden by the command-line
+             option "--save".
+
      autosave=yes
 
              Isto impide a Tux Paint preguntar se quere gardar a imaxe actual
              ao saír e supón que si.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "autosave=no"
+             or "noautosave=yes". In both cases, may be overridden by the
+             command-line option "--noautosave".
 
      startblank=yes
 
              Isto fai que Tux Paint amose un lenzo en branco cando se inicia
              por vez primeira, no canto de cargar a última imaxe que se
              estaba a editar.
+
+             Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "startblank=no" or "startlast=yes". In both cases, may be
+             overridden by the command-line option "--startlast".
 
      colorfile=NOME_DE_FICHEIRO
 
@@ -1112,6 +1276,8 @@ Usuarios de Windows
 
        --fullscreen
        --LARGOxALTO
+       --buttonsize=TAMAÑO
+       --colorsrows=FILAS
        --orient=portrait
        --native
        --allowscreensaver
@@ -1125,6 +1291,8 @@ Usuarios de Windows
        --altprintnever
        --altprintalways
        --papersize=TAMAÑO_DO_PAPEL
+       --printcommand=ORDE
+       --altprintcommand=ORDE
        --nolockfile
        --simpleshapes
        --uppercase
