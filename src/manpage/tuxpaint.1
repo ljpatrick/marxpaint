@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.08.08
-.TH TUXPAINT 1 "8 August 2021" "0.9.27" "Tux Paint"
+.\" tuxpaint.1 - 2021.08.09
+.TH TUXPAINT 1 "9 August 2021" "0.9.27" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -279,17 +279,14 @@ Show the license (GNU GPL) under which Tux Paint is released.
 \fItuxpaint\fP accepts the following options to alter the interface.
 They can be used along with, instead of, or to override options set in
 configuration files. (See below.)
+
+.SS VIDEO
 .TP 8
 .B \-\-fullscreen=yes \-\-fullscreen=native \-\-fullscreen=no \-\-windowed
 Run \fITux Paint\fP in full-screen mode at its default -- or a specified
 -- screen resolution ("--fullscreen=yes"); or in full-screen mode at the
 system's native resolution ("--fullscreen=native"); or run in a window
 ("--fullscreen=no" or "--windowed") (default).
-
-.TP 8
-.B \-\-allowscreensaver \-\-disablescreensaver
-Normally, \fItuxpaint\fP disables your screensaver. Use \-\-allowscreensaver
-to prevent this from happening.
 
 .TP 8
 .B \-\-native
@@ -311,11 +308,11 @@ command-line. (This is useful on devices where the screen can be rotated,
 e.g. tablet PCs.)
 
 .TP 8
-.B \-\-buttonsize SIZE
-Adjust the size of the buttons in \fITux Paint's\fP user interface,
-between 24 and 192 pixels (48 is the default, and suitable for displays
-with 96 to 120dpi pixel density).
+.B \-\-allowscreensaver \-\-disablescreensaver
+Normally, \fItuxpaint\fP disables your screensaver. Use \-\-allowscreensaver
+to prevent this from happening.
 
+.SS SOUND
 .TP 8
 .B \-\-nosound \-\-sound
 Disable or enable (default) sound.
@@ -324,60 +321,20 @@ Disable or enable (default) sound.
 .B \-\-nostereo \-\-stereo
 Disable or enable (default) stereo panning support.
 
+.SS INTERFACE SIZE
 .TP 8
-.B \-\-noquit \-\-quit
-Disable or enable (default) the on-screen \fIQuit\fP button and \fIEscape\fP
-key sequence for quitting \fITux Paint\fP.  Instead, use the window close
-button in the titlebar, the \fIAlt+F4\fP key sequence, or the
-\fIShift+Control+Escape\fP key sequence.
+.B \-\-buttonsize SIZE
+Adjust the size of the buttons in \fITux Paint's\fP user interface,
+between 24 and 192 pixels (48 is the default, and suitable for displays
+with 96 to 120dpi pixel density).
 
 .TP 8
-.B \-\-noprint \-\-print
-Disable or enable (default) the \fIPrint\fP command within \fITux Paint\fP.
+.B \-\-colorsrows=\fIrows\fP
+How many rows of color palette buttons to show; useful when using
+a large color palette, and/or for use with coarse input devices
+(like eyegaze trackers).  It can be between 1 (default) and 3.
 
-.TP 8
-.B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
-Only allow printing (via the \fIPrint\fP command) once every \fISECONDS\fP
-seconds.  Default is 0 (no limitation).
-
-.TP 8
-.B \-\-printcfg \-\-noprintcfg
-(Windows and Mac OS X only.)  Enable or disable loading and saving of
-printer settings.  By default, \fITux Paint\fP will print to the default
-printer with default settings.  Pressing \fI[ALT]\fP while pushing the
-\fIPrint\fP button will cause a printer dialog to appear (as long as you're
-not in fullscreen mode; see also \-\-altprintalways and \-\-altprintnever,
-below.)  Unless \-\-noprintcfg is used, your previous settings will
-be loaded when \fITux Paint\fP starts up, and setting changes will be saved
-for next time.
-
-.TP 8
-.B \-\-altprintmod \-\-altprintnever \-\-altprintalways
-These options control whether an system printer dialog appears when the
-user clicks the \fIPrint\fP button.  By default (\-\-altprintmod), pressing
-\fI[ALT]\fP while clicking \fIPrint\fP will bring up a dialog (unless you're
-in fullscreen mode).  With \-\-altprintalways, the dialog will always appear,
-even if \fI[ALT]\fP is not being held.  With \-\-altprintnever, the dialog
-will never appear, even if \fI[ALT]\fP is being held.
-
-.TP 8
-.B \-\-papersize \fIPAPERSIZE\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
-Ask \fITux Paint\fP to generate PostScript of a particular paper size.
-Valid sizes are those supported by libpaper.  See papersize(5).
-
-.TP 8
-.B \-\-printcommand \fICOMMAND\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
-Have Tux Paint print via an alternate command, rather than lpr(1).
-
-.TP 8
-.B \-\-altprintcommand \fICOMMAND\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
-Have Tux Paint print via an alternate command, when a dialog is expect
-(e.g., when holding \fI[ALT]\fP while clicking "Print"; see above),
-rather than kprinter.
-
+.SS INTERFACE SIMPLIFICATION
 .TP 8
 .B \-\-simpleshapes \-\-complexshapes
 Disable or enable (default) the \fIrotation\fP step when using the
@@ -386,56 +343,47 @@ rotated; however, the interface is easier (click, drag, release), which can
 be useful for younger or disabled children.
 
 .TP 8
+.B \-\-nooutlines \-\-outlines
+In \fInooutlines\fP mode, much simpler outlines and 'rubber-band' lines are
+displayed when using the \fILines\fP, \fIShapes\fP, \fIStamps\fP and
+\fIEraser\fP tools. (This can help when \fITux Paint\fP is run on slower
+computers, or displayed on a remote X display.)
+
+.TP 8
 .B \-\-uppercase \-\-mixedcase
 In \fIuppercase\fP mode, all text prompts and the \fIText\fP drawing tool
 will display only uppercase letters.  This is useful for children who are not
 yet comfortable with the lowercase characterset.  Default mode is
 \fImixed case\fP.
 
+.SS INITIAL STAMP SIZE
 .TP 8
-.B \-\-grab \-\-dontgrab
-Grab the mouse and keyboard input (if possible), so that the mouse is
-confined to the \fITux Paint\fP window.  Default is to not grab.
+.B \-\-stampsize=\fIsize\fP \-\-stampsize=default
+Sets the default size of all stamps, relative to their possible sizes
+(determined by \fITux Paint\fP, based on the dimensions of both the stamps
+themselves, and the drawing canvas).  Valid values are from 0 (smallest)
+to 10 (largest).  Use \fIdefault\fP to let \fITux Paint\fP choose
+(this is the default setting).
+
+.SS STARTING OUT
+.TP 8
+.B \-\-startblank \-\-startlast
+When you start \fITux Paint\fP, it loads the last image that was being worked
+on.  The \fI\-\-startblank\fP option disables this, so it always starts with
+a blank canvas.  The default behavior is \fI\-\-startlast\fP.
 
 .TP 8
-.B \-\-noshortcuts \-\-shortcuts
-If \fInoshortcuts\fP mode, keyboard shortcuts (e.g., Ctrl+S for Save)
-will be disabled.  Default mode is \fIshortcuts enabled\fP.
+.B \-\-newcolorslast \-\-newcolorsfirst
+List solid (blank) colors at the end, or beginning (default) of the
+options displayed when using the \fINew\fP tool to start a new picture.
 
+.SS CONTROL SIMPLIFICATION
 .TP 8
-.B \-\-nowheelmouse \-\-wheelmouse
-By default, the wheel (jog dial) on a mouse will be used to scroll the
-\fIselector\fP on the right of the screen.  This can be disabled, and the
-wheel completely ignored, with the \fI\-\-nowheelmouse\fP option.
-This is useful for children who aren't yet comfortable with the mouse.
-Default is to support the wheel.
-
-.TP 8
-.B \-\-nobuttondistinction \-\-buttondistinction
-By default, only mouse button #1 (typically the leftmost mouse button
-on mice with more than one button) can be used for interacting with
-\fITux Paint\fP.  With the \fI\-\-nobuttondistinction\fP option,
-mouse buttons #2 (middle) and #3 (right) can be used, as well.
-This is useful for children who aren't yet comfortable with the mouse.
-Default is to only recognize button #1.
-
-.TP 8
-.B \-\-nofancycursors \-\-fancycursors
-Disable or enable (default) the 'fancy' mouse pointer shapes in \fITux Paint\fP.
-While the shapes are larger, and context sensitive, some environments have
-trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
-
-.TP 8
-.B \-\-hidecursor \-\-showcursor
-Completely hide, or enable (default) the mouse pointer in \fITux Paint\fP.
-This can be useful on touchscreen devices, such as tablet PCs.
-
-.TP 8
-.B \-\-nooutlines \-\-outlines
-In \fInooutlines\fP mode, much simpler outlines and 'rubber-band' lines are
-displayed when using the \fILines\fP, \fIShapes\fP, \fIStamps\fP and
-\fIEraser\fP tools. (This can help when \fITux Paint\fP is run on slower
-computers, or displayed on a remote X display.)
+.B \-\-noquit \-\-quit
+Disable or enable (default) the on-screen \fIQuit\fP button and \fIEscape\fP
+key sequence for quitting \fITux Paint\fP.  Instead, use the window close
+button in the titlebar, the \fIAlt+F4\fP key sequence, or the
+\fIShift+Control+Escape\fP key sequence.
 
 .TP 8
 .B \-\-nostamps \-\-stamps
@@ -467,28 +415,60 @@ initially clicked.
 Disable or enable (default) the \fILabel\fP tool, which lets you create
 text which can be altered or moved later.
 
+.SH OPTIONS - CONTROLLING TUX PAINT
+.SS CURSOR
 .TP 8
-.B \-\-newcolorslast \-\-newcolorsfirst
-List solid (blank) colors at the end, or beginning (default) of the
-options displayed when using the \fINew\fP tool to start a new picture.
+.B \-\-nofancycursors \-\-fancycursors
+Disable or enable (default) the 'fancy' mouse pointer shapes in \fITux Paint\fP.
+While the shapes are larger, and context sensitive, some environments have
+trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
 
 .TP 8
-.B \-\-colorsrows=\fIrows\fP
-How many rows of color palette buttons to show; useful when using
-a large color palette, and/or for use with coarse input devices
-(like eyegaze trackers).  It can be between 1 (default) and 3.
+.B \-\-hidecursor \-\-showcursor
+Completely hide, or enable (default) the mouse pointer in \fITux Paint\fP.
+This can be useful on touchscreen devices, such as tablet PCs.
+
+.SS KEYBOARD
+.TP 8
+.B \-\-noshortcuts \-\-shortcuts
+If \fInoshortcuts\fP mode, keyboard shortcuts (e.g., Ctrl+S for Save)
+will be disabled.  Default mode is \fIshortcuts enabled\fP.
+
+.SS MOUSE AND ACCESSIBILITY
+.TP 8
+.B \-\-grab \-\-dontgrab
+Grab the mouse and keyboard input (if possible), so that the mouse is
+confined to the \fITux Paint\fP window.  Default is to not grab.
 
 .TP 8
-.B \-\-mirrorstamps \-\-dontmirrorstamps
-With \fImirrorstamps\fP set, stamps which can be mirrored will appear
-mirrored by default.  This can be useful when used by people who prefer
-things right-to-left over left-to-right.
+.B \-\-nowheelmouse \-\-wheelmouse
+By default, the wheel (jog dial) on a mouse will be used to scroll the
+\fIselector\fP on the right of the screen.  This can be disabled, and the
+wheel completely ignored, with the \fI\-\-nowheelmouse\fP option.
+This is useful for children who aren't yet comfortable with the mouse.
+Default is to support the wheel.
 
 .TP 8
 .B \-\-mouse-accessibility
 In this mode, instead of clicking, dragging and releasing (e.g., to draw),
 you click, move, and click again to end the motion.
 
+.TP 8
+.B \-\-keyboard \-\-mouse
+The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
+controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
+\fISpacebar\fP acts as the mouse button.
+
+.TP 8
+.B \-\-nobuttondistinction \-\-buttondistinction
+By default, only mouse button #1 (typically the leftmost mouse button
+on mice with more than one button) can be used for interacting with
+\fITux Paint\fP.  With the \fI\-\-nobuttondistinction\fP option,
+mouse buttons #2 (middle) and #3 (right) can be used, as well.
+This is useful for children who aren't yet comfortable with the mouse.
+Default is to only recognize button #1.
+
+.SS ONSCREEN KEYBOARD
 .TP 8
 .B \-\-onscreen-keyboard
 Presents a clickable on-screen keyboard when using the \fIText\fP and
@@ -499,43 +479,44 @@ Presents a clickable on-screen keyboard when using the \fIText\fP and
 Specify the default layout for the on-screen keyboard (see above).
 
 .TP 8
--B \-\-onscreen-keyboard-disable-change
+.B \-\-onscreen-keyboard-disable-change
 Disallow switching between on-screen keyboard layouts.
 
+.SS JOYSTICK
 .TP 8
-\-\-joystick-dev=\fIDEVICE\fP
+.B \-\-joystick-dev=\fIDEVICE\fP
 Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).
 
 .TP 8
-\-\-joystick-dev=list
+.B \-\-joystick-dev=list
 List available joysticks and exit.
 
 .TP 8
-\-\-joystick-slowness=\fISPEED\fP
+.B \-\-joystick-slowness=\fISPEED\fP
 Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.
 
 .TP 8
-\-\-joystick-threshold=\fITHRESHOLD\fP
+.B \-\-joystick-threshold=\fITHRESHOLD\fP
 Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.
 
 .TP 8
-\-\-joystick-maxsteps=\fISTEPS\fP
+.B \-\-joystick-maxsteps=\fISTEPS\fP
 Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.
 
 .TP 8
-\-\-joystick-hat-timeout=\fIMILLISECONDS\fP
+.B \-\-joystick-hat-timeout=\fIMILLISECONDS\fP
 Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.
 
 .TP 8
-\-\-joystick-hat-slowness=\fISPEED\fP
+.B \-\-joystick-hat-slowness=\fISPEED\fP
 Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.
 
 .TP 8
-\-\-joystick-btn-escape=\fIBUTTON\fP
+.B \-\-joystick-btn-escape=\fIBUTTON\fP
 Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.
 
 .TP 8
-\-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
+.B \-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
 Selects the joystick button number, as seen by SDL, that will be a shortcut to
 various tools within Tux Paint.
 
@@ -562,53 +543,67 @@ print | Print (immediate)
 .PD
 
 .TP 8
-\-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
+.B \-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
 A set of joystick button numbers, as seen by SDL, that should
 be ignored. Otherwise, unless they are used by one of the
 \-\-joystick-btn-... options above, buttons will be seen as a mouse
 left-click.  Comma-separated.
 
+.SH OPTIONS - PRINTING
+.SS PRINT PERMISSIONS
 .TP 8
-.B \-\-stampsize=\fIsize\fP \-\-stampsize=default
-Sets the default size of all stamps, relative to their possible sizes
-(determined by \fITux Paint\fP, based on the dimensions of both the stamps
-themselves, and the drawing canvas).  Valid values are from 0 (smallest)
-to 10 (largest).  Use \fIdefault\fP to let \fITux Paint\fP choose
-(this is the default setting).
+.B \-\-noprint \-\-print
+Disable or enable (default) the \fIPrint\fP command within \fITux Paint\fP.
 
 .TP 8
-.B \-\-keyboard \-\-mouse
-The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
-controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
-\fISpacebar\fP acts as the mouse button.
+.B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
+Only allow printing (via the \fIPrint\fP command) once every \fISECONDS\fP
+seconds.  Default is 0 (no limitation).
+
+.SS SHOW PRINTER DIALOG
+.TP 8
+.B \-\-altprintmod \-\-altprintnever \-\-altprintalways
+These options control whether an system printer dialog appears when the
+user clicks the \fIPrint\fP button.  By default (\-\-altprintmod), pressing
+\fI[ALT]\fP while clicking \fIPrint\fP will bring up a dialog (unless you're
+in fullscreen mode).  With \-\-altprintalways, the dialog will always appear,
+even if \fI[ALT]\fP is not being held.  With \-\-altprintnever, the dialog
+will never appear, even if \fI[ALT]\fP is being held.
+
+.SS SAVE PRINTER CONFIGURATION
+.TP 8
+.B \-\-printcfg \-\-noprintcfg
+(Windows and Mac OS X only.)  Enable or disable loading and saving of
+printer settings.  By default, \fITux Paint\fP will print to the default
+printer with default settings.  Pressing \fI[ALT]\fP while pushing the
+\fIPrint\fP button will cause a printer dialog to appear (as long as you're
+not in fullscreen mode; see also \-\-altprintalways and \-\-altprintnever,
+below.)  Unless \-\-noprintcfg is used, your previous settings will
+be loaded when \fITux Paint\fP starts up, and setting changes will be saved
+for next time.
+
+.SS PRINT COMMANDS
+.TP 8
+.B \-\-printcommand \fICOMMAND\fP
+(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+Have Tux Paint print via an alternate command, rather than lpr(1).
 
 .TP 8
-.B \-\-nosysfonts \-\-sysfonts
-\fITux Paint\fP normally attempts to search for additional TrueType Fonts
-installed in common places on your system.  If this causes trouble, or you'd
-prefer to only make fonts installed in \fITux Paint\fP's directory available,
-use the \fInosysfonts\fP option to disable this feature.
+.B \-\-altprintcommand \fICOMMAND\fP
+(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+Have Tux Paint print via an alternate command, when a dialog is expect
+(e.g., when holding \fI[ALT]\fP while clicking "Print"; see above),
+rather than kprinter.
 
+.SS PAPER SIZE
 .TP 8
-.B \-\-alllocalefonts \-\-currentlocalefont
-Tux Paint avoids loading any fonts in its 'locale' font subdirectory,
-except any that match the current locale \fITux Paint\fP is running under.
-Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
-"Text" tool. (This is the old behavior, prior to version 0.9.21.)
+.B \-\-papersize \fIPAPERSIZE\fP
+(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+Ask \fITux Paint\fP to generate PostScript of a particular paper size.
+Valid sizes are those supported by libpaper.  See papersize(5).
 
-.TP 8
-.B \-\-savedir \fIDIR\fP
-Specify where \fITux Paint\fP should save and load its drawings.
-
-.TP 8
-.B \-\-exportdir \fIDIR\fP
-Specify where \fITux Paint\fP should export drawings and animations.
-
-.TP 8
-.B \-\-datadir \fIDIR\fP
-Specify where \fITux Paint\fP should look for personal data files
-(brushes, stamps, etc.).
-
+.SH OPTIONS - SAVING
+.SS SAVE OVER EARLIER WORK
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
 If, when saving a picture, an older version of the file will be overwritten,
@@ -618,6 +613,16 @@ can be disabled with \fI\-\-saveover\fP (which always saves over older versions
 of pictures) or \fI\-\-saveovernew\fP (which always saves a new file).
 The default is to prompt (\fI\-\-saveoverask\fP).
 
+.SS SAVE AND EXPORT DIRECTORIES
+.TP 8
+.B \-\-savedir \fIDIR\fP
+Specify where \fITux Paint\fP should save and load its drawings.
+
+.TP 8
+.B \-\-exportdir \fIDIR\fP
+Specify where \fITux Paint\fP should export drawings and animations.
+
+.SS MORE SAVING OPTIONS
 .TP 8
 .B \-\-nosave \-\-save
 The \fInosave\fP option disables \fITux Paint's\fP ability to save files.
@@ -629,11 +634,11 @@ fun, or in a test environment.
 The \fIautosave\fP option prevents \fITux Paint\fP from asking whether you
 want to save the current picture when quitting, and assumes you do.
 
+.SH OPTIONS - DATA FILES
 .TP 8
-.B \-\-startblank \-\-startlast
-When you start \fITux Paint\fP, it loads the last image that was being worked
-on.  The \fI\-\-startblank\fP option disables this, so it always starts with
-a blank canvas.  The default behavior is \fI\-\-startlast\fP.
+.B \-\-datadir \fIDIR\fP
+Specify where \fITux Paint\fP should look for personal data files
+(brushes, stamps, etc.).
 
 .TP 8
 .B \-\-colorfile \fIFILE\fP
@@ -1066,6 +1071,27 @@ zulu
 .TP 8
 .B \-\-lang help
 Display a lists of all supported languages.
+
+.TP 8
+.B \-\-mirrorstamps \-\-dontmirrorstamps
+With \fImirrorstamps\fP set, stamps which can be mirrored will appear
+mirrored by default.  This can be useful when used by people who prefer
+things right-to-left over left-to-right.
+
+.SS FONTS
+.TP 8
+.B \-\-nosysfonts \-\-sysfonts
+\fITux Paint\fP normally attempts to search for additional TrueType Fonts
+installed in common places on your system.  If this causes trouble, or you'd
+prefer to only make fonts installed in \fITux Paint\fP's directory available,
+use the \fInosysfonts\fP option to disable this feature.
+
+.TP 8
+.B \-\-alllocalefonts \-\-currentlocalefont
+Tux Paint avoids loading any fonts in its 'locale' font subdirectory,
+except any that match the current locale \fITux Paint\fP is running under.
+Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
+"Text" tool. (This is the old behavior, prior to version 0.9.21.)
 
 .SH OPTIONS - MISCELLANEOUS
 .TP 8

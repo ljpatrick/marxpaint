@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.August.7 (0.9.27)
+2021.August.9 (0.9.27)
   * Documentation updates
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
@@ -19,6 +19,10 @@ $Id$
     * Reorganized the "Available Options" section of "OPTIONS"
       documentation (to match the organization found in the UI
       of "Tux Paint Config.")
+
+    * Reorganized the options listed in Tux Paint's man page,
+      to more closely (but not precisely) match the organization
+      noted above.
 
 2021.June.28 (0.9.26)
   * New Features
