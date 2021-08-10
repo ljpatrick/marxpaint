@@ -258,6 +258,11 @@ toolset. However, it provides a much simpler interface, and has entertaining,
 child-oriented additions such as sound effects.
 
 .SH OPTIONS - INFORMATIONAL
+.l
+\fItuxpaint\fP accepts the following options to emit information
+about the program.  It then exits immediately (without opening
+a graphical window).
+
 .TP 8
 .B \-\-help
 Display short, helpful information about Tux Paint.
@@ -416,6 +421,11 @@ Disable or enable (default) the \fILabel\fP tool, which lets you create
 text which can be altered or moved later.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
+.l
+\fItuxpaint\fP accepts the following options to alter how you control
+Tux Paint.  They can be used along with, instead of, or to override options
+set in configuration files. (See below.)
+
 .SS CURSOR
 .TP 8
 .B \-\-nofancycursors \-\-fancycursors
@@ -550,6 +560,11 @@ be ignored. Otherwise, unless they are used by one of the
 left-click.  Comma-separated.
 
 .SH OPTIONS - PRINTING
+.l
+\fItuxpaint\fP accepts the following options to alter how Tux Paint
+handles printing.  They can be used along with, instead of, or to
+override options set in configuration files. (See below.)
+
 .SS PRINT PERMISSIONS
 .TP 8
 .B \-\-noprint \-\-print
@@ -603,6 +618,11 @@ Ask \fITux Paint\fP to generate PostScript of a particular paper size.
 Valid sizes are those supported by libpaper.  See papersize(5).
 
 .SH OPTIONS - SAVING
+.l
+\fItuxpaint\fP accepts the following options to alter how Tux Paint
+operates when saving or exporting drawings.  They can be used along with,
+instead of, or to override options set in configuration files. (See below.)
+
 .SS SAVE OVER EARLIER WORK
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
@@ -635,6 +655,11 @@ The \fIautosave\fP option prevents \fITux Paint\fP from asking whether you
 want to save the current picture when quitting, and assumes you do.
 
 .SH OPTIONS - DATA FILES
+.l
+\fItuxpaint\fP accepts the following options to alter where Tux Paint
+loads data (stamps, brushes, etc.)  They can be used along with, instead
+of, or to override options set in configuration files. (See below.)
+
 .TP 8
 .B \-\-datadir \fIDIR\fP
 Specify where \fITux Paint\fP should look for personal data files
@@ -649,6 +674,12 @@ containing one color description per line. Colors may be in decimal or
 "\fI#000 Black\fP" and "\fI255 192 64 Orange\fP".)
 
 .SH OPTIONS - LANGUAGE
+.l
+\fItuxpaint\fP accepts the following options to alter the language used
+by Tux Paint's interface, and other related settings.  They can be used
+along with, instead of, or to override options set in configuration
+files. (See below.)
+
 .l
 Various parts of \fITux Paint\fP have been translated into numerous languages.
 \fITux Paint\fP will try its best to honor your \fIlocale\fP setting
@@ -1094,6 +1125,11 @@ Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
 "Text" tool. (This is the old behavior, prior to version 0.9.21.)
 
 .SH OPTIONS - MISCELLANEOUS
+.l
+\fItuxpaint\fP accepts the following options to alter its behavior.
+They can be used along with, instead of, or to override options set in
+configuration files. (See below.)
+
 .TP 8
 .B \-\-nosysconfig
 With this option, \fITux Paint\fP will not attempt to read the
