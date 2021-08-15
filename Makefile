@@ -1074,15 +1074,15 @@ install-man:
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1
 	@# tuxpaint.1
-	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
+	@cp man/tuxpaint.1 $(MAN_PREFIX)/man1
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	@# tuxpaint-import.1
-	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+	@cp man/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	@# tp-magic-config.1
-	@cp src/manpage/tp-magic-config.1 $(MAN_PREFIX)/man1/
+	@cp man/tp-magic-config.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tp-magic-config.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
 
