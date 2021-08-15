@@ -24,6 +24,8 @@ $Id$
       to more closely (but not precisely) match the organization
       noted above.
 
+    * Remove the very outdated Polish translation of Tux Paint's man page.
+
 2021.June.28 (0.9.26)
   * New Features
     ------------
