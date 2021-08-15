@@ -699,9 +699,11 @@ uninstall:	uninstall-i18n
 	-rm -r $(DATA_PREFIX)
 	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
-	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tuxpaint-import.1.gz
 	-rm $(MAN_PREFIX)/man1/tp-magic-config.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tp-magic-config.1.gz
 	-rm -f -r $(CONFDIR)
 	-rm $(COMPLETIONDIR)/tuxpaint-completion.bash
 	-rm -r $(MAGIC_PREFIX)
@@ -1070,22 +1072,31 @@ install-doc:
 .PHONY: install-man
 install-man:
 	@echo
-	@echo "...Installing man pages..."
+	@echo "...Installing English man pages..."
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1
 	@# tuxpaint.1
-	@cp man/tuxpaint.1 $(MAN_PREFIX)/man1
+	@cp man/en/tuxpaint.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	@# tuxpaint-import.1
-	@cp man/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+	@cp man/en/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	@# tp-magic-config.1
-	@cp man/tp-magic-config.1 $(MAN_PREFIX)/man1/
+	@cp man/en/tp-magic-config.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tp-magic-config.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
-
+	@echo
+	for l in `ls -d man/*.UTF-8 | cut -d '/' -f 2`; do \
+		DEST=$(MAN_PREFIX)/$$l/man1 ; \
+		echo "...Installing $$l man pages into $$DEST..." ; \
+		install -d $$DEST ; \
+		cp man/$$l/tuxpaint.1 $$DEST ; \
+		gzip -f $$DEST/tuxpaint.1 ; \
+		chmod a+rx,g-w,o-w $$DEST/tuxpaint.1.gz ; \
+	done
+	@# FIXME: The other man pages aren't localizable yet -bjk 2021.08.14
 
 # Install the support files for macOS application bundle
 .PHONY: install-macbundle

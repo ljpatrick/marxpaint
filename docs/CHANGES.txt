@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.August.9 (0.9.27)
+2021.August.14 (0.9.27)
   * Documentation updates
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
@@ -24,7 +24,9 @@ $Id$
       to more closely (but not precisely) match the organization
       noted above.
 
-    * Remove the very outdated Polish translation of Tux Paint's man page.
+    * WIP - tuxpaint(1) manpage is now managed & translatable
+      via `tuxpaint-docs` project, just like the HTML & plaintext
+      documentation files.
 
 2021.June.28 (0.9.26)
   * New Features
