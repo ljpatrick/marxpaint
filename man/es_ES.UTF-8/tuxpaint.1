@@ -377,22 +377,22 @@ blank canvas.  The default behavior is "\-\-startlast".
 
 .TP 8
 .B \-\-newcolorslast \-\-newcolorsfirst
-List solid (blank) colors at the end, or beginning (default) of the
-options displayed when using the \fINew\fP tool to start a new picture.
+List solid (blank) colors at the end, or beginning (default) of the options
+displayed when using the New tool to start a new picture.
 
 .SS CONTROL SIMPLIFICATION
 .TP 8
 .B \-\-noquit \-\-quit
-Disable or enable (default) the on-screen Quit button and [Escape]
-key for quitting Tux Paint.  Instead, use the window close
-button in the titlebar, the [Al]+[F4] key sequence, or the
-[Shift]+[Control]+[Escape] key sequence.
+Disable or enable (default) the on-screen Quit button and [Escape] key for
+quitting Tux Paint.  Instead, use the window close button in the titlebar,
+the [Alt]+[F4] key sequence, or the [Shift]+[Control]+[Escape] key
+sequence.
 
 .TP 8
 .B \-\-nostamps \-\-stamps
-With "--nostamps" set, Rubber Stamp images are not loaded, so the
-Stamps tool will not be available.  This option can be used to reduce
-the time Tux Paint takes to load, and reduce the amount of RAM it requires.
+With "--nostamps" set, Rubber Stamp images are not loaded, so the Stamps
+tool will not be available.  This option can be used to reduce the time Tux
+Paint takes to load, and reduce the amount of RAM it requires.
 
 .TP 8
 .B \-\-nostampcontrols \-\-stampcontrols
@@ -402,9 +402,9 @@ in all ways.)
 
 .TP 8
 .B \-\-nomagiccontrols \-\-magiccontrols
-Disable or enable (default) buttons to control Magic tools.  Controls include
-controlling whether a Magic tool is used like a paint brush, or if it
-affects the entire image at once.  (Note: Not all Magic tools will be
+Disable or enable (default) buttons to control Magic tools.  Controls
+include controlling whether a Magic tool is used like a paint brush, or if
+it affects the entire image at once.  (Note: Not all Magic tools will be
 controllable.)
 
 .TP 8
@@ -415,14 +415,14 @@ initially clicked.
 
 .TP 8
 .B \-\-nolabel \-\-label
-Disable or enable (default) the Label tool, which lets you create
-text which can be altered or moved later.
+Disable or enable (default) the Label tool, which lets you create text
+which can be altered or moved later.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l
-\fItuxpaint\fP accepts the following options to alter how you control
-Tux Paint.  They can be used along with, instead of, or to override options
-set in configuration files. (See below.)
+\fItuxpaint\fP accepts the following options to alter how you control Tux
+Paint.  They can be used along with, instead of, or to override options set
+in configuration files. (See below.)
 
 .SS CURSOR
 .TP 8
@@ -433,14 +433,13 @@ trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
 
 .TP 8
 .B \-\-hidecursor \-\-showcursor
-Completely hide, or enable (default) the mouse pointer in Tux Paint.
-This can be useful on touchscreen devices, such as tablet PCs.
+Completely hide, or enable (default) the mouse pointer in Tux Paint. This
+can be useful on touchscreen devices, such as tablet PCs.
 
 .SS KEYBOARD
 .TP 8
 .B \-\-noshortcuts \-\-shortcuts
-If \fInoshortcuts\fP mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save)
-will be disabled.  Default mode is for shortcuts to be enabled.
+<? /* --[no]shortcuts */ wordwrap(sprintf(gettext(If \"%s\" mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save) will be disabled.  Default mode is for shortcuts to be enabled."), "--noshortcuts")) . "\n" ?>
 
 .SS MOUSE AND ACCESSIBILITY
 .TP 8
@@ -451,10 +450,10 @@ confined to the Tux Paint window.  Default is to not grab.
 .TP 8
 .B \-\-nowheelmouse \-\-wheelmouse
 By default, the wheel (jog dial) on a mouse will be used to scroll the
-'selector' on the right of the screen.  This can be disabled, and the
-wheel completely ignored, with the \fI\-\-nowheelmouse\fP option.
-This is useful for children who aren't yet comfortable with the mouse.
-Default is to support the wheel.
+'selector' on the right of the screen.  This can be disabled, and the wheel
+completely ignored, with the "--nowheelmouse" option. This is useful for
+children who aren't yet comfortable with the mouse. Default is to support
+the wheel.
 
 .TP 8
 .B \-\-mouse-accessibility
@@ -463,24 +462,23 @@ you click, move, and click again to end the motion.
 
 .TP 8
 .B \-\-keyboard \-\-mouse
-The "--keyboard" option lets the mouse pointer in Tux Paint be
-controlled with the keyboard.  The [Up], [Down], [Left], and [Right]
-arrow keys move the pointer. [Spacebar] acts as the mouse button.
+The "--keyboard" option lets the mouse pointer in Tux Paint be controlled
+with the keyboard.  The [Up], [Down], [Left], and [Right] arrow keys move
+the pointer. [Spacebar] acts as the mouse button.
 
 .TP 8
 .B \-\-nobuttondistinction \-\-buttondistinction
-By default, only mouse button #1 (typically the leftmost mouse button
-on mice with more than one button) can be used for interacting with
-Tux Paint.  With the "--nobuttondistinction" option,
-mouse buttons #2 (middle) and #3 (right) can be used, as well.
-This is useful for children who aren't yet comfortable with the mouse.
-Default is to only recognize button #1.
+By default, only mouse button #1 (typically the leftmost mouse button on
+mice with more than one button) can be used for interacting with Tux Paint.
+ With the "--nobuttondistinction" option, mouse buttons #2 (middle) and #3
+(right) can be used, as well. This is useful for children who aren't yet
+comfortable with the mouse. Default is to only recognize button #1.
 
 .SS ONSCREEN KEYBOARD
 .TP 8
 .B \-\-onscreen-keyboard
-Presents a clickable on-screen keyboard when using the Text and
-Label tools.
+Presents a clickable on-screen keyboard when using the Text and Label
+tools.
 
 .TP 8
 .B \-\-onscreen-keyboard-layout \fILAYOUT\fP
@@ -494,40 +492,49 @@ which are used to switch between the available on-screen keyboard layouts.
 .SS JOYSTICK
 .TP 8
 .B \-\-joystick-dev=\fIDEVICE\fP
-Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).
+Specify which joystick device should be used by Tux Paint. Default value is
+0 (the first joystick).
 
 .TP 8
 .B \-\-joystick-dev=list
-List the system's available joysticks and exit. (Does not launch Tux Paint.)
+List the system's available joysticks and exit. (Does not launch Tux
+Paint.)
 
 .TP 8
 .B \-\-joystick-slowness=\fISPEED\fP
-Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.
+Sets a delay at each axis motion, allowing to slow the joystick. Allowed
+values are from 0 to 500. Default value is 15.
 
 .TP 8
 .B \-\-joystick-threshold=\fITHRESHOLD\fP
-Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.
+Sets the minimum level of axis motion to start moving the pointer. Allowed
+values are from 0 to 32766. Default value is 3200.
 
 .TP 8
 .B \-\-joystick-maxsteps=\fISTEPS\fP
-Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.
+Sets the maximum pixels the pointer will move at once. Allowed values are
+from 1 to 7. Default value is 7.
 
 .TP 8
 .B \-\-joystick-hat-timeout=\fIMILLISECONDS\fP
-Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.
+Sets the delay after wich the pointer will start moving automatically if
+the hat is keeped pushed. Allowed values are from 0 to 3000. Default value
+is 1000.
 
 .TP 8
 .B \-\-joystick-hat-slowness=\fISPEED\fP
-Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.
+Sets a delay at each automatic motion, allowing to slow the speed of the
+hat. Allowed values are from 0 to 500. Default value is 15.
 
 .TP 8
 .B \-\-joystick-btn-escape=\fIBUTTON\fP
-Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.
+Selects the joystick button number, as seen by SDL, that will be used to
+generate a escape event. Useful to dismiss dialogs and quit.
 
 .TP 8
 .B \-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
-Selects the joystick button number, as seen by SDL, that will be a shortcut to
-various tools within Tux Paint.
+Selects the joystick button number, as seen by SDL, that will be a shortcut
+to various tools within Tux Paint.
 
 .PP
 .RS
@@ -579,16 +586,15 @@ print | Print (immediate)
 
 .TP 8
 .B \-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
-A set of joystick button numbers, as seen by SDL, that should
-be ignored. Otherwise, unless they are used by one of the
-"--joystick-btn-..." options above, buttons will be seen as a mouse
-left-click.  Comma-separated.
+A set of joystick button numbers, as seen by SDL, that should be ignored.
+Otherwise, unless they are used by one of the "--joystick-btn-..." options
+above, buttons will be seen as a mouse left-click.  Comma-separated.
 
 .SH OPTIONS - PRINTING
 .l
-\fItuxpaint\fP accepts the following options to alter how Tux Paint
-handles printing.  They can be used along with, instead of, or to
-override options set in configuration files. (See below.)
+\fItuxpaint\fP accepts the following options to alter how Tux Paint handles
+printing.  They can be used along with, instead of, or to override options
+set in configuration files. (See below.)
 
 .SS PRINT PERMISSIONS
 .TP 8
@@ -597,50 +603,48 @@ Disable or enable (default) the Print command within Tux Paint.
 
 .TP 8
 .B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
-Only allow printing (via the \fIPrint\fP command) once every \fISECONDS\fP
-seconds.  Default is 0 (no limitation).
+Only allow printing (via the Print command) once every SECONDS seconds. 
+Default is 0 (no limitation).
 
 .SS SHOW PRINTER DIALOG
 .TP 8
 .B \-\-altprintmod \-\-altprintnever \-\-altprintalways
 These options control whether an system printer dialog appears when the
-user clicks the \fIPrint\fP button.  By default (\-\-altprintmod), pressing
-\fI[Alt]\fP while clicking \fIPrint\fP will bring up a dialog (unless you're
-in fullscreen mode).  With \-\-altprintalways, the dialog will always appear,
-even if \fI[Alt]\fP is not being held.  With \-\-altprintnever, the dialog
-will never appear, even if \fI[Alt]\fP is being held.
+user clicks the Print button.  By default ("--altprintmod"), pressing [Alt]
+while clicking Print will bring up a dialog (unless you're in fullscreen
+mode).  With "--altprintalways", the dialog will always appear, even if
+[Alt] is not being held.  With "--altprintnever", the dialog will never
+appear, even if [Alt] is being held.
 
 .SS SAVE PRINTER CONFIGURATION
 .TP 8
 .B \-\-printcfg \-\-noprintcfg
 (Windows and Mac OS X only.)  Enable or disable loading and saving of
-printer settings.  By default, \fITux Paint\fP will print to the default
-printer with default settings.  Pressing \fI[Alt]\fP while pushing the
-\fIPrint\fP button will cause a printer dialog to appear (as long as you're
-not in fullscreen mode; see also \-\-altprintalways and \-\-altprintnever,
-below.)  Unless \-\-noprintcfg is used, your previous settings will
-be loaded when \fITux Paint\fP starts up, and setting changes will be saved
-for next time.
+printer settings.  By default, Tux Paint will print to the default printer
+with default settings.  Pressing [Alt] while pushing the Print button will
+cause a printer dialog to appear (as long as you're not in fullscreen mode;
+see also "--altprintalways" and "--altprintnever", below.)  Unless
+"--noprintcfg" is used, your previous settings will be loaded when Tux
+Paint starts up, and setting changes will be saved for next time.
 
 .SS PRINT COMMANDS
 .TP 8
 .B \-\-printcommand \fICOMMAND\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
+(Only when PostScript printing is used.)
 Have Tux Paint print via an alternate command, rather than lpr(1).
 
 .TP 8
 .B \-\-altprintcommand \fICOMMAND\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
-Have Tux Paint print via an alternate command, when a dialog is expect
-(e.g., when holding \fI[Alt]\fP while clicking "Print"; see above),
-rather than kprinter.
+(Only when PostScript printing is used.) Have Tux Paint print via an
+alternate command, when a dialog is expect (e.g., when holding [Alt] while
+clicking Print; see above), rather than kprinter.
 
 .SS PAPER SIZE
 .TP 8
 .B \-\-papersize \fIPAPERSIZE\fP
-(Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
-Ask \fITux Paint\fP to generate PostScript of a particular paper size.
-Valid sizes are those supported by libpaper.  See papersize(5).
+(Only when PostScript printing is used.) Ask Tux Paint to generate
+PostScript of a particular paper size. Valid sizes are those supported by
+libpaper.  See papersize(5).
 
 .SH OPTIONS - SAVING
 .l
@@ -651,86 +655,82 @@ instead of, or to override options set in configuration files. (See below.)
 .SS SAVE OVER EARLIER WORK
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
-If, when saving a picture, an older version of the file will be overwritten,
-\fITux Paint\fP will, by default, ask for confirmation: either
-\fIsave over\fP the old file, or \fIcreate\fP a new file.  This prompt
-can be disabled with \fI\-\-saveover\fP (which always saves over older versions
-of pictures) or \fI\-\-saveovernew\fP (which always saves a new file).
-The default is to prompt (\fI\-\-saveoverask\fP).
+If, when saving a picture, an older version of the file will be
+overwritten, Tux Paint will, by default, ask for confirmation: either save
+over the old file, or create a new file.  This prompt can be disabled with
+"--saveover" (which always saves over older versions of pictures) or
+"--saveovernew" (which always saves a new file). The default is to prompt
+("--saveover").
 
 .SS SAVE AND EXPORT DIRECTORIES
 .TP 8
 .B \-\-savedir \fIDIR\fP
-Specify where \fITux Paint\fP should save and load its drawings.
+Specify where Tux Paint should save and load its drawings.
 
 .TP 8
 .B \-\-exportdir \fIDIR\fP
-Specify where \fITux Paint\fP should export drawings and animations.
+Specify where Tux Paint should export drawings and animations.
 
 .SS MORE SAVING OPTIONS
 .TP 8
 .B \-\-nosave \-\-save
-The \fInosave\fP option disables \fITux Paint's\fP ability to save files.
-This can be used in situations where the program is only being used for
-fun, or in a test environment.
+The --nosave option disables Tux Paint's ability to save files. This can be
+used in situations where the program is only being used for fun, or in a
+test environment.
 
 .TP 8
 .B \-\-autosave \-\-noautosave
-The \fIautosave\fP option prevents \fITux Paint\fP from asking whether you
-want to save the current picture when quitting, and assumes you do.
+The --autosave option prevents ITux PaintP from asking whether you want
+to save the current picture when quitting, and assumes you do.
 
 .SH OPTIONS - DATA FILES
 .l
-\fItuxpaint\fP accepts the following options to alter where Tux Paint
-loads data (stamps, brushes, etc.)  They can be used along with, instead
-of, or to override options set in configuration files. (See below.)
+\fItuxpaint\fP accepts the following options to alter where Tux Paint loads
+data (stamps, brushes, etc.)  They can be used along with, instead of, or
+to override options set in configuration files. (See below.)
 
 .TP 8
 .B \-\-datadir \fIDIR\fP
-Specify where \fITux Paint\fP should look for personal data files
-(brushes, stamps, etc.).
+Specify where Tux Paint should look for personal data files (brushes,
+stamps, etc.).
 
 .TP 8
 .B \-\-colorfile \fIFILE\fP
-This option allows you to override the default color palette in \fITux Paint\fP
+This option allows you to override the default color palette in Tux Paint
 and replace it with your own. The file should be a plain ASCII text file
-containing one color description per line. Colors may be in decimal or
-6- or 3-digit hexadecimal, and followed by a description. (For example,
+containing one color description per line. Colors may be in decimal or 6-
+or 3-digit hexadecimal, and followed by a description. (For example,
 "\fI#000 Black\fP" and "\fI255 192 64 Orange\fP".)
 
 .SH OPTIONS - LANGUAGE
 .l
-\fItuxpaint\fP accepts the following options to alter the language used
-by Tux Paint's interface, and other related settings.  They can be used
-along with, instead of, or to override options set in configuration
+\fItuxpaint\fP accepts the following options to alter the language used by
+Tux Paint's interface, and other related settings.  They can be used along
+with, instead of, or to override options set in configuration
 files. (See below.)
 
 .l
-Various parts of \fITux Paint\fP have been translated into numerous languages.
-\fITux Paint\fP will try its best to honor your \fIlocale\fP setting
-(i.e., the \fILANG\fP environment variable), if possible.
-You can also specifically set the language using options on the command-line
-or in a configuration file.
+Various parts of Tux Paint have been translated into numerous languages.
+Tux Paint will try its best to honor your locale setting (i.e., the "LANG"
+environment variable), if possible. You can also specifically set the
+language using options on the command-line or in a configuration file.
 
 .TP 8
 .B \-\-locale \fILOCALE\fP
-Specify the language to use, based on locale name (which is typically of the
-form \fIlanguage\fP[_\fIterritory\fP][.\fIcodeset\fP][@\fImodifier\fP],
-where \fIlanguage\fP is an ISO 639 language code,
-\fIterritory\fP is an ISO 3166 country code, and
-\fIcodeset\fP is a character set or encoding identifier like ISO-8859-1 or
-UTF-8.)
+Specify the language to use, based on locale name (which is typically of
+the form "language[_territory][.codeset][@modifier], where "language" is an
+ISO 639 language code, "territory" is an ISO 3166 country code, and
+"codeset" is a character set or encoding identifier like "ISO-8859-1" or
+"UTF-8".)
 .PP
 .RS
-For example, \fIde_DE@euro\fP for German, or \fIpt_BR\fP
-for Brazilian Portuguese.
+For example, "de_DE@euro" for German, or "pt_BR" for Brazilian Portuguese.
 .RE
 
 .TP 8
 .B \-\-lang \fILANGUAGE\fP
-Specify the language to use, based on the language's name
-(as recognized by \fITux Paint\fP).  Choose one of the language names
-listed below:
+Specify the language to use, based on the language's name (as recognized by
+Tux Paint).  Choose one of the language names listed below:
 .PP
 .RS
 .PD 0
@@ -1130,107 +1130,130 @@ Display a lists of all supported languages.
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps
-With \fImirrorstamps\fP set, stamps which can be mirrored will appear
+With "--mirrorstamps" set, stamps which can be mirrored will appear
 mirrored by default.  This can be useful when used by people who prefer
 things right-to-left over left-to-right.
 
 .SS FONTS
 .TP 8
 .B \-\-nosysfonts \-\-sysfonts
-\fITux Paint\fP normally attempts to search for additional TrueType Fonts
-installed in common places on your system.  If this causes trouble, or you'd
-prefer to only make fonts installed in \fITux Paint\fP's directory available,
-use the \fInosysfonts\fP option to disable this feature.
+Tux Paint normally attempts to search for additional TrueType Fonts
+installed in common places on your system.  If this causes trouble, or
+you'd prefer to only make fonts installed in Tux Paint's directory
+available, use the "--nosysfonts" option to disable this feature.
 
 .TP 8
 .B \-\-alllocalefonts \-\-currentlocalefont
-Tux Paint avoids loading any fonts in its 'locale' font subdirectory,
-except any that match the current locale \fITux Paint\fP is running under.
-Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
-"Text" tool. (This is the old behavior, prior to version 0.9.21.)
+Tux Paint avoids loading any fonts found in its "locale" font subdirectory,
+except any that match the current locale Tux Paint is running under. Use
+the "--alllocalefonts" option to load all such fonts, for use in the Text
+and Label tools. (This was the default behavior, prior to version 0.9.21.)
 
 .SH OPTIONS - MISCELLANEOUS
 .l
-\fItuxpaint\fP accepts the following options to alter its behavior.
-They can be used along with, instead of, or to override options set in
+\fItuxpaint\fP accepts the following options to alter its behavior. They
+can be used along with, instead of, or to override options set in
 configuration files. (See below.)
 
 .TP 8
 .B \-\-nosysconfig
-With this option, \fITux Paint\fP will not attempt to read the
-system-wide configuration file (typically \fI/etc/tuxpaint/tuxpaint.conf\fP).
+With this option, Tux Paint will not attempt to read the system-wide
+configuration file (typically "/etc/tuxpaint/tuxpaint.conf" or
+"/usr/local/etc/tuxpaint/tuxpaint.conf").
 
 .TP 8
 .B \-\-nolockfile
-By default, \fITux Paint\fP uses a lockfile (stored in the user's
-local Tux Paint directory) which prevents it from being launched more than
-once in 30 seconds. (Sometimes children get too eager, or user interfaces
-only require one click, but users think they need to double-click.)
-This option makes \fITux Paint\fP ignore the current lockfile.
+By default, Tux Paint uses a lockfile (stored in the user's local Tux Paint directory) which prevents it from being launched more than once in 30 seconds. (Sometimes children get too eager, or user interfaces only require one click, but users think they need to double-click.) This option makes Tux Paint ignore the current lockfile.
 
 .SH ENVIRONMENT
 .ad l
-While \fITux Paint\fP may refer to a number of environment variables indirectly
-(e.g., via \fISDL(3)\fP), it only directly accesses the following:
+While Tux Paint may refer to a number of environment variables indirectly
+(e.g., via SDL(3)), it directly accesses the following: (See "FILES" below,
+as well.)
 .PP
 .TP 8
 .B HOME
-to determine where picture files go when using the \fISave\fP and \fIOpen\fP
-commands within \fITux Paint\fP, to keep track of the current image,
-when quitting and restarting \fITux Paint\fP, and to get the user's
-configuration file. 
+to determine where picture files go when using the Save and Open commands
+within Tux Paint, to keep track of the current image, when quitting and
+restarting Tux Paint, and to get the user's configuration file.
 
 .TP 8
-.B LANG
-to determine language to use, if \fIsetlocale(3)\fP refers to 'LC_MESSAGES'.
+.B LANG, LC_ALL, LANGUAGE, and LC_MESSAGES
+to determine language to use, if setlocale(3) refers to "LC_MESSAGES".
+
+.TP 8
+.B SDL_VIDEO_ALLOW_SCREENSAVER
+Set this environment variable to '1' to allow a screensaver to appear while
+Tux Paint is running. This can also be done via the "--allowscreensaver"
+option.
+
+.TP 8
+.B SDL_VIDEO_WINDOW_POS
+If this is NOT set, Tux Paint will set it to "center", to attempt to place
+the Tux Paint window in the center of a display. If it IS set (e.g., to
+"nopref", meaning "no preference"), Tux Paint will not override it.
 
 .SH FILES
 .TP 8
-.B /etc/tuxpaint/tuxpaint.conf
-System-wide configuration file.  It is read first
-(unless the \fI\-\-nosysconfig\fP option was given on the command-line).
+.B [/usr/local/]/etc/tuxpaint/tuxpaint.conf
+System-wide configuration file.  It is read first (unless the
+"--nosysconfig" option was given on the command-line).
 .RS
 .PP
 (Created during installation.)
 .RE
 .TP 8
 .B $HOME/.tuxpaintrc
-User's configuration file.  It can be used to set default options
-(rather than setting them on the command-line every time), and/or to
-override any settings in the system-wide configuration file.
+User's configuration file.  It can be used to set default options (rather
+than setting them on the command-line every time), and/or to override any
+settings in the system-wide configuration file.
 .RS
 .PP
-(Not created or edited automatically; must be created manually.
-You can do this by hand, or use '\fITux Paint Config.\fP.')
+(Not created or edited automatically; must be created manually. You can do
+this by hand, or use tuxpaint-config(1).)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/saved/
-A directory of previously-saved images (and thumbnails).  Only files in this
-directory will be made available using the \fIOpen\fP command within
-\fITux Paint\fP.  (See \fItuxpaint-import(1)\fP.)
+A directory of previously-saved images (and thumbnails).  Only files in
+this directory will be made available using the Open command within Tux
+Paint.  Overridden via the "--savedir" option.
 .RS
 .PP
-(Created when \fISave\fP command is used.)
+(Created when Save command is used.)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/current_id.txt
-A reference to the image which was being edited when \fITux Paint\fP was
-last quit.  (This image is automatically loaded the next time \fITux Paint\fP
-is re-run.)
+A reference to the image which was being edited when Tux Paint was last
+quit.  (This image is automatically loaded the next time Tux Paint is
+re-run, unless the "--startblank" option is set.)
 .RS
 .PP
-(Created when \fITux Paint\fP is \fIQuit\fP.)
+(Created when Tux Paint is Quit.)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/lockfile.dat
-A lockfile that prevents \fITux Paint\fP from being launched more than once
-every 30 seconds.  Disable checking the lockfile by using the
-\'\-\-nolockfile\' command-line argument.
+A lockfile that prevents Tux Paint from being launched more than once every
+30 seconds.  Disable checking the lockfile by using the "--nolockfile"
+option.
 .RS
 .PP
 (There's no reason to delete the lockfile, as it contains a timestamp
 inside which causes it to expire after 30 seconds.)
 .RE
+.TP 8
+.B $XDG_CONFIG_HOME[XDG_PICTURES_DIR]/TuxPaint/
+A directory where images and animations should be exported (via options
+found in Tux Paint's Open dialog), if the "--exportdir" option is not used
+to override it.  If "$XDG_CONFIG_HOME" is set, a configuration file
+"user-dirs.dirs" will be scanned within the directory it points to; if not,
+Tux Paint will attempt to do so within "$HOME/.config/".  If a setting
+named "XDG_PICTURES_DIR" is found, it will be used as the location to
+export images. If all else fails, then "$HOME/Pictures/" will be used.  A
+"TuxPaint" subdirectory will be created.
+.TP 8
+.B $XDG_DATA_HOME/Trash/ or $HOME/.local/share/Trash/
+A directory where images are placed when the Erase option is used from the
+Open dialog.
 
 .SH COPYRIGHT
 This program is free software; you can redistribute it and/or modify it
@@ -1515,4 +1538,4 @@ Huang Zuzhen.
 .BR krita (1),
 .BR gcompris (1)
 .PP
-
+And documentation within /usr/[local/]share/doc/tuxpaint/.
