@@ -1,6 +1,6 @@
 /* win32_print.h */
 
-/* printing support for Tux Paint */
+/* printing support for Marx Paint */
 /* John Popplewell <john@johnnypops.demon.co.uk> */
 
 /* Sept. 30, 2002 - Oct. 1, 2002 */

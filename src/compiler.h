@@ -2,12 +2,12 @@
   compiler.h
 
   Compiler-specific #defines and such
-  for Tux Paint
+  for Marx Paint
 
   Mostly by Albert Cahalan <albert@users.sf.net>
   Copyright (c) 2002-2019
 
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.newbreedsoftware.com/marxpaint/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

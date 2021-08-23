@@ -2,11 +2,11 @@
   tornado.c
 
   Tornado Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   Some modifications to convert the flower plugin in to a tornado
   plugin by Pere Pujal i Carabantes
@@ -434,7 +434,7 @@ void tornado_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     SDL_FreeSurface(tornado_cloud_colorized);
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void tornado_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
   tornado_r = r;

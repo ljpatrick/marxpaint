@@ -1,13 +1,13 @@
-# Traditional Chinese Messages for tuxpaint.
-# Copyright (C) 2014 Tuxpaint.
-# This file is distributed under the same license as the tuxpaint package.
+# Traditional Chinese Messages for marxpaint.
+# Copyright (C) 2014 Marxpaint.
+# This file is distributed under the same license as the marxpaint package.
 # OLS3 <ols3@lxer.idv.tw>, 2004.
 # Wei-Lun Chao <chaoweilun@gmail.com>, 2005, 2007.
 # Song Huang <song@ossacc.org>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint\n"
+"Project-Id-Version: marxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 21:06-0700\n"
 "PO-Revision-Date: 2014-06-24 14:46+0800\n"
@@ -126,7 +126,7 @@ msgstr "棕褐色!"
 msgid "Beige!"
 msgstr "米黃色!"
 
-#  First, the blacklist. We list font families that can crash Tux Paint
+#  First, the blacklist. We list font families that can crash Marx Paint
 #  via bugs in the SDL_ttf library. We also test fonts to be sure that
 #  they have both uppercase and lowercase letters. Note that we do not
 #  test for "Aa", because it is OK if uppercase and lowercase are the
@@ -137,7 +137,7 @@ msgstr "米黃色!"
 #  and the ASCII-only fonts should be given bad scores in the scoring
 #  code below (the best scores going to fonts that support both).
 #  Line X
-#. First, the blacklist. We list font families that can crash Tux Paint
+#. First, the blacklist. We list font families that can crash Marx Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
@@ -572,7 +572,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../marxpaint.c:8179
 msgid "Open"
 msgstr "打開"
 
@@ -588,9 +588,9 @@ msgstr "儲存"
 msgid "Print"
 msgstr "列印"
 
-#  Quit/exit Tux Paint application
-#  Quit/exit Tux Paint application
-#. Quit/exit Tux Paint application
+#  Quit/exit Marx Paint application
+#  Quit/exit Marx Paint application
+#. Quit/exit Marx Paint application
 #: ../tools.h:107
 msgid "Quit"
 msgstr "離開"
@@ -740,7 +740,7 @@ msgstr "很好，讓我們繼續來畫這張圖吧!"
 
 #  Prompt to confirm user wishes to quit
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../marxpaint.c:2190
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
@@ -748,69 +748,69 @@ msgstr "你確定要離開嗎?"
 #  msgid "Yes, I'm done!"
 #  Quit prompt positive response (quit)
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../marxpaint.c:2193
 msgid "Yes, I’m done!"
 msgstr "好，我做完了!"
 
 #  Quit prompt negative response (don't quit)
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../marxpaint.c:2196 ../marxpaint.c:2223
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
 #  Current picture is not saved; user is quitting
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../marxpaint.c:2200
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../marxpaint.c:2201 ../marxpaint.c:2206
 msgid "Yes, save it!"
 msgstr "好，把它存起來!"
 
 #  msgid "No, don't bother saving!"
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../marxpaint.c:2202 ../marxpaint.c:2207
 msgid "No, don’t bother saving!"
 msgstr "不，別存了!"
 
 #  Current picture is not saved; user is opening another picture
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../marxpaint.c:2205
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
 
 #  Error opening picture
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../marxpaint.c:2210
 msgid "Can’t open that picture!"
 msgstr "沒辦法打開這個圖畫!"
 
 #  Generic dialog dismissal
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../marxpaint.c:2213 ../marxpaint.c:2218 ../marxpaint.c:2227 ../marxpaint.c:2234
+#: ../marxpaint.c:2243 ../marxpaint.c:2248
 msgid "OK"
 msgstr "好的"
 
 #  Notification that 'Open' dialog has nothing to show
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../marxpaint.c:2217
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
 #  Verification of print action
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../marxpaint.c:2221
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
 
-#: ../tuxpaint.c:2222
+#: ../marxpaint.c:2222
 msgid "Yes, print it!"
 msgstr "好，印出它來!"
 
 #  Confirmation of successful (we hope) printing
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../marxpaint.c:2226
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
 
@@ -818,47 +818,47 @@ msgstr "你的圖畫已經印出來了!"
 #  msgid "Your picture has been printed!"
 #  We got an error printing
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../marxpaint.c:2230
 msgid "Sorry! Your picture could not be printed!"
 msgstr "不好意思，你的圖畫不能列印!"
 
 #  Notification that it's too soon to print again (--printdelay option is in effect)
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../marxpaint.c:2233
 msgid "You can’t print yet!"
 msgstr "你還沒辦法列印喔!"
 
 #  Prompt to confirm erasing a picture in the Open dialog
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../marxpaint.c:2237
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
-#: ../tuxpaint.c:2238
+#: ../marxpaint.c:2238
 msgid "Yes, erase it!"
 msgstr "好，刪除它吧!"
 
 #  msgid "No, don't erase it!"
-#: ../tuxpaint.c:2239
+#: ../marxpaint.c:2239
 msgid "No, don’t erase it!"
 msgstr "不，別刪除它!"
 
-#  Reminder that Mouse Button 1 is the button to use in Tux Paint
-#. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#  Reminder that Mouse Button 1 is the button to use in Marx Paint
+#. Reminder that Mouse Button 1 is the button to use in Marx Paint
+#: ../marxpaint.c:2242
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
 #  Confirmation of successful (we hope) printing
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../marxpaint.c:2246
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "你的圖畫已經印出來了!"
 
 #  Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2247
+#: ../marxpaint.c:2247
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
@@ -868,7 +868,7 @@ msgstr "你的圖畫已經印出來了!"
 #  msgid "Your picture has been printed!"
 #  We got an error printing
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../marxpaint.c:2251
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
@@ -877,7 +877,7 @@ msgstr "不好意思，你的圖畫不能列印!"
 #  We got an error printing
 #  msgid "Your picture has been printed!"
 #  We got an error printing
-#: ../tuxpaint.c:2252
+#: ../marxpaint.c:2252
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
@@ -886,73 +886,73 @@ msgstr "不好意思，你的圖畫不能列印!"
 #  Let user choose images:
 #  Instructions for Slideshow file dialog (FIXME: Make a #define)
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../marxpaint.c:2256
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
 #  Sound has been muted (silenced) via keyboard shortcut
 #  Sound has been muted (silenced) via keyboard shortcut
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../marxpaint.c:2465
 msgid "Sound muted."
 msgstr "靜音"
 
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../marxpaint.c:2470
 msgid "Sound unmuted."
 msgstr "取消靜音"
 
 #  Wait while Text tool finishes loading fonts
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../marxpaint.c:3247
 msgid "Please wait…"
 msgstr "請等一下…"
 
 #  Open dialog: 'Erase' button, to erase/deleted the selected picture
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../marxpaint.c:8182
 msgid "Erase"
 msgstr "刪除"
 
 #  Open dialog: 'Slides' button, to switch to slide show mode
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../marxpaint.c:8185
 msgid "Slides"
 msgstr "投影片"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../marxpaint.c:8188
 msgid "Export"
 msgstr ""
 
 #  Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../marxpaint.c:8191
 msgid "Back"
 msgstr "上一個"
 
 #  Slideshow: 'Play' button, to begin a slideshow sequence
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../marxpaint.c:8194
 msgid "Play"
 msgstr "播放"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../marxpaint.c:8197
 msgid "GIF Export"
 msgstr ""
 
 #  Slideshow: 'Next' button, to load next slide (image)
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../marxpaint.c:8200
 msgid "Next"
 msgstr "下一個"
 
 #  Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../marxpaint.c:8948
 msgid "Aa"
 msgstr "A中"
 
@@ -960,17 +960,17 @@ msgstr "A中"
 #  positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../marxpaint.c:12589
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:12593
+#: ../marxpaint.c:12593
 msgid "No"
 msgstr "不"
 
 #  Prompt to ask whether user wishes to save over old version of their file
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../marxpaint.c:13732
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
@@ -978,7 +978,7 @@ msgstr "用你所做的改變來取代圖畫嗎?"
 #  (like a 'File:Save' action in other applications)
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../marxpaint.c:13736
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
@@ -986,41 +986,41 @@ msgstr "好，取代舊的!"
 #  (like a 'File:Save As...' action in other applications)
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../marxpaint.c:13740
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../marxpaint.c:15003
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../marxpaint.c:16429
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../marxpaint.c:24135
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../marxpaint.c:24147
 msgid "Pick a color."
 msgstr "挑選一個顏色"
 
-#: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
+#: ../marxpaint.desktop.in.h:1
+msgid "Marx Paint"
 msgstr "企鵝小畫家"
 
-#: ../tuxpaint.desktop.in.h:2
+#: ../marxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "畫圖程式"
 
-#: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
+#: ../marxpaint.desktop.in.h:3
+msgid "A drawing program for communists."
 msgstr "適合兒童的畫圖程式"
 
 #  msgid "Shift"

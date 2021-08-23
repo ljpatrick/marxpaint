@@ -1,9 +1,9 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.27
-                      Documentation sur PNG pour Tux Paint
+                      Documentation sur PNG pour Marx Paint
 
       Copyright &copie; 2007-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                   mars 9, 2021
 
@@ -23,12 +23,12 @@
    Pour plus d'informations, voir : http://www.libpng.org/
 
    Ces fonctionnalités (format ouvert, pas de perte, compression,
-   transparence/alpha) en font le meileur choix pour Tux Paint (La prise en
-   charge du format PNG par Tux Paint vient de la bibliothèque Open Source
+   transparence/alpha) en font le meileur choix pour Marx Paint (La prise en
+   charge du format PNG par Marx Paint vient de la bibliothèque Open Source
    SDL_Image, qui à son tour l'a obtenue de la bibliothèque libPNG.)
 
    La prise en charge de nombreuses couleurs permet aux images "tampons de
-   caoutchouc" de qualité photo d'être utilisable dans Tux Paint, et la
+   caoutchouc" de qualité photo d'être utilisable dans Marx Paint, et la
    transparence alpha permet une haute qualité pour les pinceaux.
 
 Comment créer des PNG
@@ -38,7 +38,7 @@ Comment créer des PNG
 
   GIMP & Krita
 
-   D'excellents outils pour créer des images PNG utilisables dans Tux Paint
+   D'excellents outils pour créer des images PNG utilisables dans Marx Paint
    sont Gimp et Krita, tous deux programmes interactifs de dessin et
    d'édition de photos Open Source et de grande qualité.
 

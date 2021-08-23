@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Clone
+                         Marx Paint "Magic" Tool: Clone
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

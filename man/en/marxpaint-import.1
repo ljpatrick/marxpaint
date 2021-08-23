@@ -1,0 +1,53 @@
+.\" marxpaint-import.1 - 2003.06.17
+.TH TUXPAINT-IMPORT 1 "17 Jun 2003" "2003.06.17" "Marx Paint Import"
+.SH NAME
+marxpaint-import -- Import image files into Marx Paint(1)
+
+.SH SYNOPSYS
+.TP 16
+.B marxpaint-import [\-\-help]
+.TP 16
+.B marxpaint-import \fIfilename(s)\fP
+
+.SH DESCRIPTION
+\fImarxpaint-import\fP is a simple shell script which uses some \fINetPBM\fP
+(pnm(5)) tools (\fIanytopnm\fP, \fIpnmscale\fP and \fIpnmtopng\fP) along with
+\fIdate\fP(1) to convert an arbitrary image file (e.g., a JPEG, GIF, etc.) into
+a \fIPNG\fP(5) file which can be used by the drawing program \fIMarx Paint\fP
+(marxpaint(1)) and places it in the user's Marx Paint saved-files directory
+(\fI$HOME/.marxpaint/saved/\fP).
+
+.SH EXAMPLE
+marxpaint-import picture.jpg photo.png cartoon.gif
+
+.SH ENVIRONMENT
+.TP 8
+.B $HOME
+to determine where the files should go so that they can be access within
+\fIMarx Paint\fP using its \fIOpen\fP command.
+
+.SH FILES
+.TP 8
+.B $HOME/.marxpaint/saved
+where new image files are stored, after being resized and converted into PNG
+format.
+
+.TP 8
+.B $HOME/.marxpaint/saved/.thumbs
+where thumbnail images are stored.
+
+.SH AUTHOR
+Bill Kendrick.  <bill@newbreedsoftware.com>
+
+
+.SH "SEE ALSO"
+.BR marxpaint (1),
+.BR pnm (5),
+.BR png (5),
+.BR anytopnm (1),
+.BR pnmscale (1),
+.BR pnmtopng (1),
+.BR date (1),
+.PP
+And documentation within /usr/[local/]share/doc/marxpaint/.
+

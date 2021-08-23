@@ -2,13 +2,13 @@
 
 # tp-magic-config
 
-# "Tux Paint Magic Config"
+# "Marx Paint Magic Config"
 # Tool that reports compiler options used when buidling Magic Tool
-# shared objects for Tux Paint
+# shared objects for Marx Paint
 
 # (c) Copyright 2007, by Bill Kendrick
 # bill@newbreedsoftware.com
-# http://www.tuxpaint.org/
+# http://www.marxpaint.org/
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 
 # Note: "__VERSION__", "__APIVERSION__", "__INCLUDE__",
 # "__PLUGINPREFIX__", "__PLUGINDOCPREFIX__" and "__DATAPREFIX__" are replaced
-# by values in Tux Paint's Makefile, via 'sed', by the 'make tp-magic-config'
+# by values in Marx Paint's Makefile, via 'sed', by the 'make tp-magic-config'
 # target.
 
 # July 5, 2007 - August 2, 2007
@@ -51,7 +51,7 @@ if [ $# -ne 0 ]; then
     exit
   fi
   if [ $1 = "--localdataprefix" ]; then
-    echo "$HOME/.tuxpaint/plugins/data"
+    echo "$HOME/.marxpaint/plugins/data"
     exit
   fi
   if [ $1 = "--pluginprefix" ]; then
@@ -59,7 +59,7 @@ if [ $# -ne 0 ]; then
     exit
   fi
   if [ $1 = "--localpluginprefix" ]; then
-    echo "$HOME/.tuxpaint/plugins"
+    echo "$HOME/.marxpaint/plugins"
     exit
   fi
   if [ $1 = "--plugindocprefix" ]; then

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Documentación de variábeis de contorno de Tux Paint    </title>
+      Documentación de variábeis de contorno de Marx Paint    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -13,16 +13,16 @@
         alink="#FF00FF">
     <center>
       <h1>
-        <img src="../../html/images/tuxpaint-title.png"
+        <img src="../../html/images/marxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux Paint"><br>
+            alt="Marx Paint"><br>
         versión 0.9.27<br/>
         Documentación de variábeis de contorno      </h1>
 
       <p>
         Copyright &copy; 2021-2021 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        <a href="http://www.marxpaint.org/">http://www.marxpaint.org/</a>
       </p>
 
       <p>
@@ -32,7 +32,7 @@
     <hr>
 
     <p>
-      Tux Paint comprende unha serie de variábeis de contorno, ben directamente ou indirectamente polas bibliotecas que emprega.    </p>
+      Marx Paint comprende unha serie de variábeis de contorno, ben directamente ou indirectamente polas bibliotecas que emprega.    </p>
 
     <h2>
       Variábeis de contorno relacionadas co almacenamento    </h2>
@@ -43,14 +43,14 @@
 
       <dd>
         <p>
-          Especifica o «directorio persoal» do usuario, que se usa para localizar outros ficheiros ou directorios. Nalgúns casos, úsase como parte dunha situación alternativa, cando non se configuran outras variábeis de contorno (noutros lugares desta documentación). Ás veces, a localización a empregar pode ser anulada polas opcións fornecidas na liña de ordes ou a través do ficheiro de configuración de Tux Paint. Consulte a documentación de «OPCIÓNS» (OPTIONS) para máis detalles.        </p>
+          Especifica o «directorio persoal» do usuario, que se usa para localizar outros ficheiros ou directorios. Nalgúns casos, úsase como parte dunha situación alternativa, cando non se configuran outras variábeis de contorno (noutros lugares desta documentación). Ás veces, a localización a empregar pode ser anulada polas opcións fornecidas na liña de ordes ou a través do ficheiro de configuración de Marx Paint. Consulte a documentación de «OPCIÓNS» (OPTIONS) para máis detalles.        </p>
 
         <p>
           Algúns exemplos de onde se usa «<code>$HOME</code>» inclúen:        </p>
 
         <ul>
-          <li>A localización do ficheiro de configuración de Tux Paint</li>
-          <li>A base de onde Tux Paint garda e carga os debuxos dos usuarios</li>
+          <li>A localización do ficheiro de configuración de Marx Paint</li>
+          <li>A base de onde Marx Paint garda e carga os debuxos dos usuarios</li>
           <li>A localización da colección privada de ficheiros de datos dun usuario &mdash; selos, pinceis, etc. &mdash; (fronte aos dispoñíbeis no sistema)</li>
         </ul>
       </dd>
@@ -61,7 +61,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Tux Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Tux Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
+          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Marx Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Marx Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
       </dd>
 
       <dt>
@@ -70,7 +70,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's data directories. Specifically, where to find the "<code>Trash</code>" directory. It is used when deleting images from Tux Paint's "Open" dialog. If not set, the location "<code>$HOME/.local/share/Trash/</code>" is used, if available. If not, images are simply deleted, rather than moved anywhere.        </p>
+          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's data directories. Specifically, where to find the "<code>Trash</code>" directory. It is used when deleting images from Marx Paint's "Open" dialog. If not set, the location "<code>$HOME/.local/share/Trash/</code>" is used, if available. If not, images are simply deleted, rather than moved anywhere.        </p>
       </dd>
 
       <dt>
@@ -79,7 +79,7 @@
 
       <dd>
         <p>
-          Especifica a localización onde se poden crear ficheiros temporais. Só o usa Tux Paint nos sistemas operativos Microsoft Windows. Emprega «<code>userdata</code>» se non se define.        </p>
+          Especifica a localización onde se poden crear ficheiros temporais. Só o usa Marx Paint nos sistemas operativos Microsoft Windows. Emprega «<code>userdata</code>» se non se define.        </p>
     </dl>
 
 
@@ -101,7 +101,7 @@
 
       <dd>
         <p>
-          Specify the language Tux Paint should utilize in its user interface. Overridde by the "<code>--lang</code>" and "<code>--locale</code>" command-line options or their configuration file counterparts. The "<code>LANGUAGE</code>" environment variable is used, if set. If not, "<code>LC_ALL</code>" is used as a fallback. Then "<code>LC_MESSAGES</code>", and finally "<code>LANG</code>".        </p>
+          Specify the language Marx Paint should utilize in its user interface. Overridde by the "<code>--lang</code>" and "<code>--locale</code>" command-line options or their configuration file counterparts. The "<code>LANGUAGE</code>" environment variable is used, if set. If not, "<code>LC_ALL</code>" is used as a fallback. Then "<code>LC_MESSAGES</code>", and finally "<code>LANG</code>".        </p>
       </dd>
 
     </dl>
@@ -110,21 +110,21 @@
       Variábeisbles de contorno relacionadas co que se amosa    </h2>
 
     <p>
-      A seguir amósanse algunhas das variábeis de contorno compatíbeis con Simple DirectMedia Layer (libSD) &mdash; que Tux Paint utiliza para amosar gráficos, reproducir sons e recibir entrada do rato, teclado e joystick &mdash; e que poden ser útiles para os usuarios de Tux Paint.
+      A seguir amósanse algunhas das variábeis de contorno compatíbeis con Simple DirectMedia Layer (libSD) &mdash; que Marx Paint utiliza para amosar gráficos, reproducir sons e recibir entrada do rato, teclado e joystick &mdash; e que poden ser útiles para os usuarios de Marx Paint.
     <dl>
       <dt>
         <code>SDL_VIDEO_ALLOW_SCREENSAVER</code>
       </dt>
       <dd>
         <p>
-          Especifica se Tux Paint debería permitir a execución dun protector de pantalla. Pode ser definido como «1» (verdadeiro) polo propio Tux Paint emitindo a opción de liña de ordes «<code>--allowscreensaver</code>» ou o seu equivaente no ficheiro de configuración.        </p>
+          Especifica se Marx Paint debería permitir a execución dun protector de pantalla. Pode ser definido como «1» (verdadeiro) polo propio Marx Paint emitindo a opción de liña de ordes «<code>--allowscreensaver</code>» ou o seu equivaente no ficheiro de configuración.        </p>
       </dd>
       <dt>
         <code>SDL_VIDEO_WINDOW_POS</code>
       </dt>
       <dd>
         <p>
-          Requests where to position Tux Paint's window. Normally set to "<code>center</code>" by Tux Paint itself, unless the environment variable is already set (e.g., to "<code>nopref</code>", meaning "no preference").        </p>
+          Requests where to position Marx Paint's window. Normally set to "<code>center</code>" by Marx Paint itself, unless the environment variable is already set (e.g., to "<code>nopref</code>", meaning "no preference").        </p>
       </dd>
 
     </dl>

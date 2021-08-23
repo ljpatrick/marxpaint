@@ -2,7 +2,7 @@
   ios.c
 
   Copyright (c) 2021
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #include "ios.h"
 
 #define IOS_FONTS_PATH              "../Library/Fonts"
-#define IOS_PREFERENCES_PATH        "../Library/Application Support/TuxPaint"
+#define IOS_PREFERENCES_PATH        "../Library/Application Support/MarxPaint"
 #define IOS_PICTURES_PATH           "../Documents"
 
 

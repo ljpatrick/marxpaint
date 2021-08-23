@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Marx Paint
+Type=Application
+Exec=/usr/bin/marxpaint
+Icon=marxpaint
+Terminal=false
+GenericName=Drawing program
+Comment=A drawing program for communists.
+StartupWMClass=MarxPaint.MarxPaint
+X-Icon-path=/usr/share/pixmaps/
+X-Window-Icon=marxpaint
+X-Window-Icon-Dimmed=marxpaint
+X-HildonDesk-ShowInToolbar=true

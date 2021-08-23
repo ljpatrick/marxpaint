@@ -3,7 +3,7 @@ Vemana 2000
 -----------
 GPLed Telugu font from http://www.kavya-nandanam.com
 
-Packaged for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+Packaged for Marx Paint by Bill Kendrick <bill@newbreedsoftware.com>
 2007.04.24
 
 

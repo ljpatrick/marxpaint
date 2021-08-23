@@ -1,9 +1,9 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.27
                              Documentation sur SVG
 
       Copyright &copie; 2007-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                   mars 9, 2021
 
@@ -22,7 +22,7 @@
 
 Comment fabriquer des SVG
 
-   Un excellent outil pouvant servir à créer des images SVG pour Tux Paint
+   Un excellent outil pouvant servir à créer des images SVG pour Marx Paint
    est Inlscape, un programme de dessin interactif d'excellente qualité, et
    Open Source.
 

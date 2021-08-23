@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Emboss
+                         Marx Paint "Magic" Tool: Emboss
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

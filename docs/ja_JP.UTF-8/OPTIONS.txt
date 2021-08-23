@@ -1,58 +1,58 @@
-                                   Tux Paint
+                                   Marx Paint
                                   バージョン 0.9.27
 
 各種設定について
 
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                    2021年8月 8日
 
      ----------------------------------------------------------------------
 
-                                Tux Paint 設定ツール
+                                Marx Paint 設定ツール
 
-     Tux Paint
+     Marx Paint
      の動作をカスタマイズするには、グラフィカルな操作で設定が変更できるツールがご利用いただけます。しかしながら、このツールをインストールしたくない場合や、利用可能なオプションについて、さらに詳細を知りたいという方は、以下の説明を参照して下さい。
 
      ----------------------------------------------------------------------
 
                                    設定ファイルについて
 
-     簡単な設定ファイルを作成して、Tux Paint の起動時に読み込ませることができます。
+     簡単な設定ファイルを作成して、Marx Paint の起動時に読み込ませることができます。
 
      設定ファイルは、有効にしたいオプションを記述した、シンプルなテキストファイルです。
 
 Linux 及び Unix のユーザー
 
-       ユーザー毎の設定ファイルは、ホームディレクトリに ".tuxpaintrc" というファイル名で作成します。（"~/.tuxpaintrc"
-       あるいは "$HOME/.tuxpaintrc"）
+       ユーザー毎の設定ファイルは、ホームディレクトリに ".marxpaintrc" というファイル名で作成します。（"~/.marxpaintrc"
+       あるいは "$HOME/.marxpaintrc"）
 
   システム全体の設定ファイル
 
          上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）
 
-           /etc/tuxpaint/tuxpaint.conf
+           /etc/marxpaint/marxpaint.conf
 
-         以下のコマンドラインオプションを指定すると、システム全体の設定ファイルは無視され、設定ファイル ".tuxpaintrc"
+         以下のコマンドラインオプションを指定すると、システム全体の設定ファイルは無視され、設定ファイル ".marxpaintrc"
          やコマンドラインオプションによる変更のみが反映されます。
 
            --nosysconfig
 
 macOS のユーザー
 
-       ユーザー毎の設定ファイルは、ホームフォルダ以下のサブフォルダ Library/Application Support/TuxPaint 内に
-       "tuxpaint.cfg" というファイル名で作成します。
+       ユーザー毎の設定ファイルは、ホームフォルダ以下のサブフォルダ Library/Application Support/MarxPaint 内に
+       "marxpaint.cfg" というファイル名で作成します。
 
   システム全体の設定ファイル
 
          上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）
 
-           /Library/Application Support/TuxPaint/tuxpaint.cfg
+           /Library/Application Support/MarxPaint/marxpaint.cfg
 
 Windows のユーザー
 
-       設定ファイルは、Tux Paint をインストールしたフォルダに "tuxpaint.cfg" というファイル名で作成します。
+       設定ファイルは、Marx Paint をインストールしたフォルダに "marxpaint.cfg" というファイル名で作成します。
 
        設定ファイルはメモ帳やワードパッドで作成できますが、必ずテキストファイルとして保存するよう注意して下さい。また、ファイル名に ".txt"
        という拡張子をつけないようにします。
@@ -108,12 +108,12 @@ Video/Sound
 
          native=yes
 
-                 Tux Paint をフルスクリーンモードで起動する際、"windowsize"
+                 Marx Paint をフルスクリーンモードで起動する際、"windowsize"
                  オプションの設定を無視して、オペレーティングシステムが設定する画面解像度に従います。
 
          allowscreensaver=yes
 
-                 標準では、Tux Paint の起動中は
+                 標準では、Marx Paint の起動中は
                  スクリーンセーバーが起動しない設定になっていますが、"allowscreensaver"
                  オプションを指定すると、スクリーンセーバーが有効になります。これはSDLライブラリのバージョンが 1.2.12
                  以降の場合に有効なオプションであることに注意して下さい。（環境変数
@@ -150,7 +150,7 @@ Video/Sound
 
          buttonsize=SIZE
 
-                 Tux Paint のユーザーインターフェースの各種ボタンのサイズを標準の "48"
+                 Marx Paint のユーザーインターフェースの各種ボタンのサイズを標準の "48"
                  から変更します。非常に高解像度のディスプレイや、視線入力といった分解能の低い操作デバイスを使用する場合に有効です。
 
                  SIZE
@@ -158,7 +158,7 @@ Video/Sound
 
                  Note: If the chosen button size would cause the buttons to
                  be too large for all required UI elements to appear under
-                 Tux Paint's chosen window size, the largest possible button
+                 Marx Paint's chosen window size, the largest possible button
                  size will be used. (A note will appear in stderr.)
 
          colorsrows=ROWS
@@ -175,9 +175,9 @@ Mouse/Keyboard
 
          nofancycursors=yes
 
-                 Tux Paint 独自のマウスポインタを無効にし、システム標準のマウスポインタを使用するようにします。
+                 Marx Paint 独自のマウスポインタを無効にし、システム標準のマウスポインタを使用するようにします。
 
-                 環境によっては Tux Paint
+                 環境によっては Marx Paint
                  のマウスカーソルが原因で不具合が起こることがあります。そういった場合にこのオプションを有効にして下さい。
 
                  Note: If used in a system-wide configuration file, may be
@@ -216,7 +216,7 @@ Mouse/Keyboard
 
                  タックスペイントがマウスとキーボードを「独占」します。マウスカーソルがタックスペイントのウィンドウ内に限定され、ほとんどすべてのキーボード入力が直接タックスペイントに渡されます。
 
-                 これは、ユーザーが Tux Paint から抜け出すことができないようにするのに便利です。 [Alt]-[Tab]
+                 これは、ユーザーが Marx Paint から抜け出すことができないようにするのに便利です。 [Alt]-[Tab]
                  によるウィンドウの切り替えや、[Ctrl]-[Escape]
                  キーによる操作が無効になります。このオプションは、特にフルスクリーンモード時に有効です。
 
@@ -236,7 +236,7 @@ Mouse/Keyboard
 
          nobuttondistinction=yes
 
-                 Tux Paint 0.9.15
+                 Marx Paint 0.9.15
                  以前では、マウスの中ボタンと右ボタンでもクリックが可能でしたが、バージョン0.9.15からは、子供たちが間違ったボタン押さないように、マウスの左ボタンだけが使えるように変更しました。
 
                  マウス操作が苦手なお子さんの場合、このオプションを使用することで、マウスの2つまたは3つのボタンの区別を無効にすることができます。
@@ -266,7 +266,7 @@ Simplification
 
                  このモードでは、「せん」ツール、「かたち」ツール、「はんこ」ツールそしてけしゴムを使うときに、アウトラインをシンプルな線で表示します。
 
-                 Tux Paint を非常に遅いパソコンで使いたい場合や、リモートの X-Window
+                 Marx Paint を非常に遅いパソコンで使いたい場合や、リモートの X-Window
                  ディスプレイで使う場合に、速度を改善します。
 
                  Note: If used in a system-wide configuration file, may be
@@ -290,7 +290,7 @@ Simplification
                  すべてのスタンプの初期の大きさを 0（最小）から 10（最大）の間で設定します。SIZE
                  の値はスタンプ自体の大きさとタックスペイントのキャンバスサイズによって決まる大きさに対する相対的な指定になります。
 
-                 SIZE の値に default を指定すると、Tux Paint
+                 SIZE の値に default を指定すると、Marx Paint
                  がスタンプの大きさを自動的に決定します。（これが標準の動作です）
 
   Control Simplification
@@ -368,7 +368,7 @@ Languages
 
          lang=LANGUAGE
 
-                 サポートされている言語の中から、Tux Paint
+                 サポートされている言語の中から、Marx Paint
                  で使用する言語を指定します。現時点でLANGUAGEに指定できる言語は以下のとおりです：
 
                    +-----------------------------------------------------------+
@@ -629,7 +629,7 @@ Languages
 
          --locale LOCALE
 
-                 Tux Paint で使用する言語を指定します。使用する言語ごとの言語コードの設定（例えば、ドイツ語では
+                 Marx Paint で使用する言語を指定します。使用する言語ごとの言語コードの設定（例えば、ドイツ語では
                  "de_DE"）については、以下の "使用する言語を変更する" の項もごらん下さい。
 
                  （環境変数 "$LANG"
@@ -651,7 +651,7 @@ Languages
 
          sysfonts=yes
 
-                 もじツールで、オペレーティングシステムのフォントを使用します。通常では、Tux Paint
+                 もじツールで、オペレーティングシステムのフォントを使用します。通常では、Marx Paint
                  はパッケージに付属するフォントだけを使用します。
 
                  Note: If used in a system-wide configuration file, may be
@@ -661,9 +661,9 @@ Languages
 
          alllocalefonts=yes
 
-                 バージョン0.9.21以前では、Tux
+                 バージョン0.9.21以前では、Marx
                  Paintは、特定の言語のみに固有のもの（例えば、ラテン文字を持たないチベット語のフォントなど）も含めて、fonts
-                 ディレクトリにあるすべてのフォントを読み込んでいました。0.9.21 以降では、Tux Paint
+                 ディレクトリにあるすべてのフォントを読み込んでいました。0.9.21 以降では、Marx Paint
                  が動作している言語環境に合ったフォントだけが読み込まれます。
 
                  以前のバージョンのように全てのフォントを読み込むようにするには、このオプションを有効にします。
@@ -722,7 +722,7 @@ Printing
                  印刷の設定をファイルから読み込みます。[Alt] キーを押しながら "いんさつ" ボタンを押すと、Windows
                  の印刷ダイアログが起動します。
 
-                 （注：これは、Tux Paint
+                 （注：これは、Marx Paint
                  をフルスクリーンモードで起動している場合にのみ有効であることに注意してください。）"printcfg"
                  オプションが設定されていれば、変更した印刷の設定は "userdata/print.cfg"
                  ファイルに記録され、再利用されます。
@@ -802,7 +802,7 @@ Saving
 
          startblank=yes
 
-                 Tux Paint を起動する際、前回最後に開いていた絵を読み込む代わりに、毎回、空のキャンバスで開始します。
+                 Marx Paint を起動する際、前回最後に開いていた絵を読み込む代わりに、毎回、空のキャンバスで開始します。
 
                  Note: If used in a system-wide configuration file, may be
                  overridden by the user's configuration file using
@@ -823,21 +823,21 @@ Saving
 
          savedir=DIRECTORY
 
-                 Tux Paint が、作品を保存する "saved" ディレクトリの場所を変更します。
+                 Marx Paint が、作品を保存する "saved" ディレクトリの場所を変更します。
 
                  特に設定していなければ、標準のディレクトリは次の場所にあります：
 
                     * Linux および Unix — ユーザーのホームディレクトリ（"~" または
-                      "$HOME"）にある隠しディレクトリ ".tuxpaint" 以下
-                      例：/home/username/.tuxpaint/saved/
+                      "$HOME"）にある隠しディレクトリ ".marxpaint" 以下
+                      例：/home/username/.marxpaint/saved/
                     * Windows — ユーザーごとの "Application Data" フォルダーにある
-                      "TuxPaint" フォルダー以下
+                      "MarxPaint" フォルダー以下
                       例：C:\Documents and Settings\Username\Application
-                      Data\TuxPaint\saved\
+                      Data\MarxPaint\saved\
                     * macOS — ユーザーごとの "Application Support" フォルダーにある
-                      "TuxPaint" フォルダー以下
+                      "MarxPaint" フォルダー以下
                       例：/Users/Username/Library/Application
-                      Support/TuxPaint/saved/
+                      Support/MarxPaint/saved/
 
                  注：Windowsのドライブ（例："H:\"）を指定する際は、サブディレクトリも指定する必要があります。
 
@@ -846,7 +846,7 @@ Saving
                  の設定を使用していました。バージョン 0.9.18
                  からは、これらのディレクトリの場所を別途指定することができます（後述の "datadir" オプションを参照）。
 
-                 例：savedir=Z:\tuxpaint\
+                 例：savedir=Z:\marxpaint\
 
          exportdir=DIRECTORY
 
@@ -868,15 +868,15 @@ Saving
                          * テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
                     * macOS — TBD!
 
-                 注：標準の設定を用いる場合は、画像用のディレクトリにサブディレクトリ "TuxPaint"
-                 が作成されます。（例："~/Pictures/TuxPaint"）一方、"--exportdir"
-                 オプションを用いると、指定されたパスがそのまま使用されます（サブディレクトリ "TuxPaint" は作成されません）。
+                 注：標準の設定を用いる場合は、画像用のディレクトリにサブディレクトリ "MarxPaint"
+                 が作成されます。（例："~/Pictures/MarxPaint"）一方、"--exportdir"
+                 オプションを用いると、指定されたパスがそのまま使用されます（サブディレクトリ "MarxPaint" は作成されません）。
 
-                 ディレクトリ（例: "~/Pictures/TuxPaint"）が存在しない場合は新たに作成されます。
+                 ディレクトリ（例: "~/Pictures/MarxPaint"）が存在しない場合は新たに作成されます。
 
-                 一つ上の親ディレクトリ（例："~/Pictures/TuxPaint"）が存在しない場合もディレクトリの作成を試みますが、それ以上の階層のディレクトリを作成することはありません。
+                 一つ上の親ディレクトリ（例："~/Pictures/MarxPaint"）が存在しない場合もディレクトリの作成を試みますが、それ以上の階層のディレクトリを作成することはありません。
 
-                 例：exportdir=/home/penguin/TuxPaintExports
+                 例：exportdir=/home/penguin/MarxPaintExports
 
   More Saving Options
 
@@ -910,9 +910,9 @@ Data
                  標準では、タックスペイントは「ロックファイル」と呼ばれるものを使用して、30秒間に1回以上起動できないようになっています。これは、シングルクリックのランチャーをダブルクリックしたり、アイコンをせわしなく何度もクリックしたりして、誤って複数回起動してしまうことを防ぐためです。
 
                  ロックファイルを無視して、起動してから30秒以内であっても再びすぐに実行できるようにするには、設定ファイルでこの設定を有効にするか、コマンドラインで
-                 --nolockfile オプションを指定して Tux Paint を実行してください。
+                 --nolockfile オプションを指定して Marx Paint を実行してください。
 
-                 標準では、Linux および Unix では "~/.tuxpaint/" に、Windows では
+                 標準では、Linux および Unix では "~/.marxpaint/" に、Windows では
                  "userdata\" にロックファイルが保存されます。
 
                  Note: If used in a system-wide configuration file, may be
@@ -926,30 +926,30 @@ Data
 
                  個人用データファイル（ペイントブラシ、スタンプ、スターター、テンプレート、個人用のフォント）を検索する場所を変更します。
 
-                 Tux Paint は、ここで指定されたディレクトリ以下の "brushes", "stamps",
+                 Marx Paint は、ここで指定されたディレクトリ以下の "brushes", "stamps",
                  "starters", "templates", and "fonts"
                  という名前のサブディレクトリをそれぞれ検索します。
 
                  特に設定していなければ、標準のディレクトリは次の場所にあります：
 
                     * Linux および Unix — ユーザーのホームディレクトリ（"~" または
-                      "$HOME"）にある隠しディレクトリ ".tuxpaint" 以下
-                      例：/home/username/.tuxpaint/brushes/
+                      "$HOME"）にある隠しディレクトリ ".marxpaint" 以下
+                      例：/home/username/.marxpaint/brushes/
                     * Windows — ユーザーごとの "Application Data" フォルダーにある
-                      "TuxPaint" フォルダー以下
+                      "MarxPaint" フォルダー以下
                       例：C:\Documents and Settings\Username\Application
-                      Data\TuxPaint\brushes\
+                      Data\MarxPaint\brushes\
                     * macOS — ユーザーごとの "Application Support" フォルダーにある
-                      "TuxPaint" フォルダー以下
+                      "MarxPaint" フォルダー以下
                       例：/Users/Username/Library/Application
-                      Support/TuxPaint/brushes/
+                      Support/MarxPaint/brushes/
 
                  注：バージョン 0.9.18 以前は "savedir" の指定と同じディレクトリを使用していました。0.9.18
                  以降では個別に設定できるようになりました。
 
                  注：Windowsのドライブ（例："H:\"）を指定する際は、サブディレクトリも指定する必要があります。
 
-                 例：datadir=/home/johnny/tuxpaint-data/
+                 例：datadir=/home/johnny/marxpaint-data/
 
   Color Palette File
 
@@ -964,7 +964,7 @@ Data
                  各行の色は、３つの十進数の組み（例："255 68 136"）、あるいは、3つの16
                  進数の組からなる6桁または3桁の表記（例："#ff4488" または "#F48”）で指定します。
 
-                 色の定義に続いて、色の説明を同じ行に書いておけば、カラーパレットでその色をクリックしたときに Tux
+                 色の定義に続いて、色の説明を同じ行に書いておけば、カラーパレットでその色をクリックしたときに Marx
                  がその説明文を表示します。（例："#FFF 雪のような白。"）
 
                  参考となる例として、標準で使われているカラーパレット "default_colors.txt" をご確認ください。
@@ -1162,10 +1162,10 @@ Joystick
 
      （Linux および Unix ユーザー向け）
 
-     "/etc/tuxpaint/tuxpaint.config" でオプションが設定されている場合でも、ユーザー各自の
-     "~/.tuxpaintrc" ファイルの設定が優先されます。
+     "/etc/marxpaint/marxpaint.config" でオプションが設定されている場合でも、ユーザー各自の
+     "~/.marxpaintrc" ファイルの設定が優先されます。
 
-     "noprint" や "grab" のように、真か偽で設定するオプションでは、ユーザー毎の "~/.tuxpaintrc"
+     "noprint" や "grab" のように、真か偽で設定するオプションでは、ユーザー毎の "~/.marxpaintrc"
      ファイルで、例えば次のように、単純に 「'no' に等しい」と設定することができます：
 
        noprint=no
@@ -1180,7 +1180,7 @@ Joystick
 
                                   コマンドラインオプション
 
-     各種オプションは、Tux Paint を起動する際のコマンドラインでもできます。
+     各種オプションは、Marx Paint を起動する際のコマンドラインでもできます。
 
        --fullscreen
        --WIDTHxHEIGHT
@@ -1307,26 +1307,26 @@ Joystick
        --nosysconfig
 
                Linux および Unix において、システム全体の設定ファイル
-               "/etc/tuxpaint/tuxpaint.conf" から設定を読み込まないようにします。
+               "/etc/marxpaint/marxpaint.conf" から設定を読み込まないようにします。
 
-               ユーザーごとの設定ファイル "~/.tuxpaintrc" が存在すれば、このファイルのみから設定を読み込みます。
+               ユーザーごとの設定ファイル "~/.marxpaintrc" が存在すれば、このファイルのみから設定を読み込みます。
 
      ----------------------------------------------------------------------
 
 情報を表示するためのコマンドラインオプション
 
-       以下の各オプションは、Tux Paint を起動せず、情報をテキスト画面に表示して終了します。
+       以下の各オプションは、Marx Paint を起動せず、情報をテキスト画面に表示して終了します。
 
          --version
          --verbose-version
 
                  プログラムのバージョンとリリース日を表示します。"--verbose-version"
-                 オプションでは、コンパイル時のオプションも追加で表示します。（ドキュメント "Tux Paint のインストール"
+                 オプションでは、コンパイル時のオプションも追加で表示します。（ドキュメント "Marx Paint のインストール"
                  および "よくある質問" もごらんください。）
 
          --copying
 
-                 Tux Paint のライセンスについての情報を表示します。
+                 Marx Paint のライセンスについての情報を表示します。
 
          --usage
 
@@ -1334,25 +1334,25 @@ Joystick
 
          --help
 
-                 Tux Paint の使い方についての簡単な説明を表示します。
+                 Marx Paint の使い方についての簡単な説明を表示します。
 
          --lang help
 
-                 Tux Paint で利用可能な言語の一覧を表示します。
+                 Marx Paint で利用可能な言語の一覧を表示します。
 
          --joystick-dev list
 
-                 接続されているジョイスティックについて、Tux Paint で利用可能なものの一覧を表示します。
+                 接続されているジョイスティックについて、Marx Paint で利用可能なものの一覧を表示します。
 
      ----------------------------------------------------------------------
 
                                    使用する言語の選択
 
-     Tux Paint は非常に多くの言語に翻訳されています。翻訳された言語で Tux Paint を使うには、コマンドラインオプション
+     Marx Paint は非常に多くの言語に翻訳されています。翻訳された言語で Marx Paint を使うには、コマンドラインオプション
      "--lang" を用いて、"--lang spanish" のように指定するか、設定ファイル中の "lang=" オプションを用いて
      "lang=spanish" のように指定します。
 
-     また、Tux Paint はお使いの環境の言語設定にも従います。（"--locale"
+     また、Marx Paint はお使いの環境の言語設定にも従います。（"--locale"
      オプションにより環境の設定を上書きすることができます。前述の説明もごらんください）
 
      "--lang help" オプションを用いれば、利用可能な全ての言語の一覧が表示されます。
@@ -1646,7 +1646,7 @@ Joystick
        システムの言語を変更すると環境に大きな影響があります。
 
        ここまでで説明したとおり、コマンドラインオプション（"--lang" および
-       "--locale"）を用いて実行時に言語を選択できるほか、Tux Paint は、お使いのシステムの言語環境の設定を参照します。
+       "--locale"）を用いて実行時に言語を選択できるほか、Marx Paint は、お使いのシステムの言語環境の設定を参照します。
 
        言語環境を設定するやり方は以下のとおりです：
 
@@ -1662,19 +1662,19 @@ Joystick
          ファイルにある言語のリストの中から、使用したい言語を "/var/lib/locales/supported.d/local"
          ファイルに追加するという方法もあります。
 
-         次に、Tux Paint を起動する前に、環境変数 "$LANG"
+         次に、Marx Paint を起動する前に、環境変数 "$LANG"
          を上記のリストの言語コードのいずれかに設定します。（言語の設定を、全てのプログラムに適用したい場合は、以下の設定をログインスクリプト（"~/.profile",
          "~/.bashrc", "~/.cshrc" など）に記述する方法もあります。
 
          BASH などの Bourne Shell 系列の環境の場合：
 
            export LANG=es_ES ; \
-           tuxpaint
+           marxpaint
 
          TCSH などの C Shell 系列の場合：
 
            setenv LANG es_ES ; \
-           tuxpaint
+           marxpaint
 
      ----------------------------------------------------------------------
 
@@ -1682,7 +1682,7 @@ Joystick
 
          何もしなくても、利用している言語環境に応じて適切な設定が用いられますので、以下は、他の言語で利用したい場合のための説明になります。
 
-         ショートカットに "--lang" スイッチを記述するのが最も簡単です（"Tux Paint
+         ショートカットに "--lang" スイッチを記述するのが最も簡単です（"Marx Paint
          のインストール"のドキュメントを参照）。また、コマンドプロンプトで、以下のようなコマンドを実行する方法もあります：
 
            set LANG=es_ES
@@ -1699,23 +1699,23 @@ Joystick
 
   言語固有のフォント
 
-       いくつかの言語では、専用のフォントが必要になります。TrueType（TTF）形式のフォントファイルは、サイズが非常に大きいので、Tux
+       いくつかの言語では、専用のフォントが必要になります。TrueType（TTF）形式のフォントファイルは、サイズが非常に大きいので、Marx
        Paint のダウンロードファイルには含めず、個別にダウンロードできるようにしています。（"使用する言語の選択"の項の表を参照してください）
 
-       注：バージョン 0.9.18 の時点で、Tux Paint では SDL_ttf ライブラリを直接には使わず、テキストレンダリングライブラリ
-       "Pango" をSDL経由で使うための "SDL_Pango" ライブラリを用いています。お使いの Tux Paint が Pango
+       注：バージョン 0.9.18 の時点で、Marx Paint では SDL_ttf ライブラリを直接には使わず、テキストレンダリングライブラリ
+       "Pango" をSDL経由で使うための "SDL_Pango" ライブラリを用いています。お使いの Marx Paint が Pango
        のサポートを無効にしてコンパイルされていない限り、言語固有のフォントは必要ありません
 
-       固有のフォントを必要とする言語で Tux Paint を使用する場合、システム全体の "fonts" ディレクトリ（"locale"
+       固有のフォントを必要とする言語で Marx Paint を使用する場合、システム全体の "fonts" ディレクトリ（"locale"
        以下にあります）からフォントファイルを読み込みます。フォントファイルのファイル名は、言語コードの最初の2文字と対応します（例えば、韓国語では
        "ko"、日本語では "ja"、繁体中国語では "zh_tw" となります）。
 
-       例えば、Linux や Unix では、（例えば "--lang korean" オプションをつけて）韓国語で Tux Paint
+       例えば、Linux や Unix では、（例えば "--lang korean" オプションをつけて）韓国語で Marx Paint
        を使う場合、次のファイルを読み込もうとします。
 
-         /usr/share/tuxpaint/fonts/locale/ko.ttf
+         /usr/share/marxpaint/fonts/locale/ko.ttf
 
-       サポートされる言語用のフォントファイルは、Tux Paint のウェブサイト http://www.tuxpaint.org/
+       サポートされる言語用のフォントファイルは、Marx Paint のウェブサイト http://www.marxpaint.org/
        からダウンロードできます。（'ダウンロード' ページの 'フォント' セクションにあります）
 
        Unix や Linux では、同梱の Makefile を使って、適切な場所にフォントをインストールすることができます。

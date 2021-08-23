@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>tuxpaint</string>
+	<string>marxpaint</string>
 	<key>CFBundleGetInfoString</key>
-	<string>0.9.26, Copyright 2009-2021, Tux Paint Development Team</string>
+	<string>0.9.26, Copyright 2009-2021, Marx Paint Development Team</string>
 	<key>CFBundleIconFile</key>
-	<string>tuxpaint.icns</string>
+	<string>marxpaint.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.newbreedsoftware.tuxpaint</string>
+	<string>com.newbreedsoftware.marxpaint</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Tux Paint</string>
+	<string>Marx Paint</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

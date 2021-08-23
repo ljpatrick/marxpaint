@@ -1,4 +1,4 @@
-# Makefile for Tux Paint docs
+# Makefile for Marx Paint docs
 # 
 # Uses "links" to convert docs from HTML to plain text.
 # (Normally only ran by the developers after updating the HTML, prior to

@@ -1,14 +1,14 @@
 *.o
 *.so
-tuxpaint
+marxpaint
 obj/parse.c
 obj/parse_step1.c
 src/tp_magic_api.h
 tp-magic-config
 trans/
 *~
-TuxPaint.app
-TuxPaint.dmg
+MarxPaint.app
+MarxPaint.dmg
 *.dylib
 *.dylib.dSYM
 .DS_Store

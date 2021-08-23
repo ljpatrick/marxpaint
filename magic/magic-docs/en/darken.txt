@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Darken
+                         Marx Paint "Magic" Tool: Darken
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

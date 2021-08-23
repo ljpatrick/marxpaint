@@ -1,22 +1,22 @@
 WHAT IS THIS
 ------------
-This document describes how to build Tux Paint 0.9.23 or later on macOS.
+This document describes how to build Marx Paint 0.9.23 or later on macOS.
 
-Tux Paint 0.9.22 and earlier required building Tux Paint from the Xcode IDE.
-Starting with 0.9.23, however, Tux Paint for macOS is built as though it were a
+Marx Paint 0.9.22 and earlier required building Marx Paint from the Xcode IDE.
+Starting with 0.9.23, however, Marx Paint for macOS is built as though it were a
 Linux application.
 
 
 PREREQUISITES
 -------------
-Although Tux Paint is built without the Xcode IDE, Xcode itself is still required
-to build Tux Paint.  Download it from the App Store, and launch it once to
+Although Marx Paint is built without the Xcode IDE, Xcode itself is still required
+to build Marx Paint.  Download it from the App Store, and launch it once to
 accept its license agreements.  You may also need to install the Xcode command
 line tools using the command:
 
   xcode-select --install
 
-Building Tux Paint also requires various libraries.  We install them from
+Building Marx Paint also requires various libraries.  We install them from
 MacPorts where possible, source code otherwise.  Install MacPorts to the
 default /opt/local path according to the instructions found on their website:
 
@@ -43,13 +43,13 @@ As of this writing, the following packages need to be installed:
   * - Not available from MacPorts as of this writing, see below
 
 ... but you should install any package that is required by the latest version of
-Tux Paint.
+Marx Paint.
 
   libimagequant
   -------------
   libimagequant is not available from MacPorts as of this writing.  It can be
   installed from the source code as follows.  It should be installed to
-  /opt/local (same as MacPorts) for the library to be included in TuxPaint.dmg.
+  /opt/local (same as MacPorts) for the library to be included in MarxPaint.dmg.
 
     $ git clone https://github.com/ImageOptim/libimagequant.git
     $ cd libimagequant
@@ -73,20 +73,20 @@ Simply, run:
   % make
   % make install
 
-... to create the TuxPaint.app application bundle that can be run in-place or
-copied to /Applications.  It also creates TuxPaint.dmg for distribution.
+... to create the MarxPaint.app application bundle that can be run in-place or
+copied to /Applications.  It also creates MarxPaint.dmg for distribution.
 
 
 KNOWN ISSUES
 ------------
 - A macOS binary built on a specific version of macOS only runs on that version
-  of macOS or later.  To ensure Tux Paint can run on the oldest version of
+  of macOS or later.  To ensure Marx Paint can run on the oldest version of
   macOS possible, build it on the oldest version of macOS available.  As of
-  this writing we know Tux Paint cannot be built to run on macOS 10.7 or
+  this writing we know Marx Paint cannot be built to run on macOS 10.7 or
   earlier.
 
   See "OLD VERSIONS OF MACOS" below for best-effort instructions on how to
-  obtain, install, and build Tux Paint on an old version of macOS.
+  obtain, install, and build Marx Paint on an old version of macOS.
 
 
 OLD VERSIONS OF MACOS
@@ -129,7 +129,7 @@ are laid out nicely on the Wikipedia page on Xcode:
   https://en.wikipedia.org/wiki/Xcode#Version_comparison_table
 
 And because Xcode is being installed manually, you can skip the step to install the Xcode
-command line tools (do not run `xcode-select --install`) but otherwise build Tux Paint
+command line tools (do not run `xcode-select --install`) but otherwise build Marx Paint
 using the same steps described in the earlier part of this document.
 
 

@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Toothpaste
+                       Marx Paint "Magic" Tool: Toothpaste
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

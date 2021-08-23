@@ -1,7 +1,7 @@
 # Derived from the output of xmodmap -pk  with the keyboard set to 
 # US intl altgr plus dead keys and some editing.
 
-# Adapted to the use in Tuxpaint, to roughly follow the layout
+# Adapted to the use in Marxpaint, to roughly follow the layout
 # of my computer. No functions keys, no esc key,
 # no menu or windows keys, no multimedia keys and so on.
 

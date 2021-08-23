@@ -1,4 +1,4 @@
-                    Tux Paint "Magic" Tool: Color and White
+                    Marx Paint "Magic" Tool: Color and White
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

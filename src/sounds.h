@@ -1,12 +1,12 @@
 /*
   sounds.h
 
-  For Tux Paint
+  For Marx Paint
   List of sound effects.
 
   Copyright (c) 2002-2019 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -106,7 +106,7 @@ static const char *sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/italic_off.wav",
   DATA_PREFIX "sounds/areyousure.wav",
   DATA_PREFIX "sounds/youcannot.wav",
-  DATA_PREFIX "sounds/tuxok.wav",
+  DATA_PREFIX "sounds/marxok.wav",
   DATA_PREFIX "sounds/thick.wav",
   DATA_PREFIX "sounds/thin.wav",
   DATA_PREFIX "sounds/fill.wav"

@@ -2,7 +2,7 @@
   macos.c
 
   Copyright (c) 2021
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
 #include "macos.h"
 
 #define MACOS_FONTS_PATH              "%s/Library/Fonts"
-#define MACOS_PREFERENCES_PATH        "%s/Library/Application Support/TuxPaint"
-#define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/TuxPaint"
+#define MACOS_PREFERENCES_PATH        "%s/Library/Application Support/MarxPaint"
+#define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/MarxPaint"
 #define MACOS_PICTURES_PATH           "%s/Pictures"
 
 

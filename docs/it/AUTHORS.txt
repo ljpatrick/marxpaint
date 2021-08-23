@@ -1,10 +1,10 @@
-AUTHORS.it.txt di Tux Paint
+AUTHORS.it.txt di Marx Paint
 
-Tux Paint - Un semplice programma di disegno per bambini.
+Marx Paint - Un semplice programma di disegno per bambini.
 
 Copyright (c) 2002-2006 by Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 
 17 Giugno 2002 - 5 settembre 2006
@@ -37,9 +37,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Icone UI - create da Bill Kendrick usando The GIMP
 
-  * Rappresentazione fumettosa di "Tux," il pinguino Linux
+  * Rappresentazione fumettosa di "Marx," il pinguino Linux
     create da Sam "Criswell" Hart  <criswell@geekcomix.com>
-    Tux disegnato originariamente da Larry Ewing <lewing@isc.tamue.edu>
+    Marx disegnato originariamente da Larry Ewing <lewing@isc.tamue.edu>
     http://www.isc.tamu.edu/~lewing/linux/
 
   * Pennelli creati usando The GIMP
@@ -67,7 +67,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Credit: Florida Keys National Marine Sanctuary
 
   * Shipwreck
-  * Tux the Farmer
+  * Marx the Farmer
     Jim Trice <jimtrice@linuxmail.org>
 
   * Street
@@ -94,8 +94,8 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Schiarisci -  Rana canterina.
     * Acquarello -  Effetto vocale.
     
-  * Voce di Tux il pinguino
-    Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+  * Voce di Marx il pinguino
+    Daniel 'MarxthePenguin' Alston <supermarxfansite@gmail.com>
   
   * Fumetto
     * "cartoon6.wav" from http://www.grsites.com/
@@ -129,7 +129,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Eugene Zelenko <greendeath@mail.ru>
   
   * Breton
-    Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
+    Korvigelloï¿½ An Drouizi (Philippe) <drouizig@drouizig.org>
 
   * British English
     Gareth Owen <gowen72@yahoo.com>
@@ -158,7 +158,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
-    Mogens Jæger <mogensjaeger@get2net.dk> [current maintainer]
+    Mogens Jï¿½ger <mogensjaeger@get2net.dk> [current maintainer]
 
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
@@ -169,7 +169,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Henrik Pihl <henrik@saarlane.ee>
 
   * Faroese
-    Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+    Lis Gï¿½the ï¿½ Jï¿½kupsstovu <morshus@gmail.com>
 
   * Finnish
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
@@ -178,7 +178,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal
-    Jérôme Chantreau <plovemax@hotmail.com> [documentation]
+    Jï¿½rï¿½me Chantreau <plovemax@hotmail.com> [documentation]
 
   * Gaelic
     Kevin Patrick Scannell <scannell@SLU.EDU>
@@ -193,7 +193,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Fabian Franz <FabianFranz@gmx.de>
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
-    Burkhard Lück <lueck@hube-lueck.de>
+    Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
   * Gronings
     J.F.M. Lange <jfm.lange@hky.de>
@@ -208,7 +208,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Ankit Malik <ankitmalik@gmail.com>
 
   * Hungarian
-    Török Gábor <gabo@linuxportal.hu>
+    Tï¿½rï¿½k Gï¿½bor <gabo@linuxportal.hu>
     Gabor Kelemen <kelemeng@gnome.hu>
 
   * Hebrew
@@ -246,7 +246,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Mark K. Kim <mkkim214@gmail.com>
   
   * Kurdish
-    Amed Ç. Jiyan <amed@pckurd.net>
+    Amed ï¿½. Jiyan <amed@pckurd.net>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
@@ -272,7 +272,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Portuguese (Brazilian)
     Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
-    Daniel José Viana <danjovic@vespanet.com.br>
+    Daniel Josï¿½ Viana <danjovic@vespanet.com.br>
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
  
@@ -308,7 +308,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Spanish (Mexico)
     Ignacio Tike <ignaciotike@spymac.com>
     Daniel Illingworth <webmaster@intermagen.net>
-    Luis C. Suárez <luiscsuarez@gmail.com>
+    Luis C. Suï¿½rez <luiscsuarez@gmail.com>
 
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>
@@ -316,7 +316,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Swedish
     Daniel Nylander <po@danielnylander.se>
-    Tomas Skäre <tomas@nocrew.org>
+    Tomas Skï¿½re <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
 
@@ -374,7 +374,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 * Supporto / Test
 
-  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
+  Marx4Kids.org, Sam Hart  (Marx4Kids project manager)
   Molti altri nella community!  (Test, correzione bug, commenti)
 
 

@@ -2,14 +2,14 @@
   postscript_print.h
 
 
-  For Tux Paint
+  For Marx Paint
   PostScript(r) printing routine.
   (for non-Windows, non-Mac OS X, non-BeOS platforms, e.g. Linux)
-  (moved from tuxpaint.c in 0.9.17)
+  (moved from marxpaint.c in 0.9.17)
 
   Copyright (c) 2008 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

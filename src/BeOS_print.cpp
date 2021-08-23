@@ -1,6 +1,6 @@
 /* BeOS_print.cpp */
 
-/* printing support for Tux Paint */
+/* printing support for Marx Paint */
 /* Marcin 'Shard' Konicki <shard at beosjournal.org> */
 
 /*
@@ -39,7 +39,7 @@
 class PrintView:public BView
 {
 public:
-  PrintView(BBitmap * bitmap):BView(bitmap->Bounds(), "TuxPaint Print", B_FOLLOW_NONE, B_WILL_DRAW)
+  PrintView(BBitmap * bitmap):BView(bitmap->Bounds(), "MarxPaint Print", B_FOLLOW_NONE, B_WILL_DRAW)
   {
     b = bitmap;
   };
@@ -127,14 +127,14 @@ int IsPrinterAvailable(void)
 int SurfacePrint(SDL_Surface * surf)
 {
   BWindow *window =
-    new BWindow(BRect(0, 0, surf->w, surf->h), "TuxPaint Print", B_NO_BORDER_WINDOW_LOOK, B_NORMAL_WINDOW_FEEL,
+    new BWindow(BRect(0, 0, surf->w, surf->h), "MarxPaint Print", B_NO_BORDER_WINDOW_LOOK, B_NORMAL_WINDOW_FEEL,
                 B_NOT_MOVABLE | B_NOT_CLOSABLE | B_NOT_ZOOMABLE | B_NOT_RESIZABLE | B_AVOID_FRONT | B_AVOID_FOCUS);
   PrintView *view = new PrintView(SurfaceToBBitmap(surf));
 
   window->AddChild(view);
   window->Run();
 
-  BPrintJob job("TuxPaint");
+  BPrintJob job("MarxPaint");
 
   if (job.ConfigPage() == B_OK)
     {

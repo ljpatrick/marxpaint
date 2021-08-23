@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Waves
+                         Marx Paint "Magic" Tool: Waves
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

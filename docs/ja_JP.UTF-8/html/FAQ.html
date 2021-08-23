@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Frequently Asked Questions    </title>
+      Marx Paint Frequently Asked Questions    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -13,15 +13,15 @@
         alink="#FF00FF">
     <center>
       <h1>
-        <img src="../../html/images/tuxpaint-title.png"
+        <img src="../../html/images/marxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux Paint"><br>
+            alt="Marx Paint"><br>
         バージョン 0.9.27        Frequently Asked Questions      </h1>
 
       <p>
         Copyright &copy; 2002-2021 by various contributors; "AUTHORS" 参照.<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        <a href="http://www.marxpaint.org/">http://www.marxpaint.org/</a>
       </p>
 
       <p>
@@ -35,7 +35,7 @@
 
     <dl>
       <dt>
-        Fonts I added to Tux Paint only show squares      </dt>
+        Fonts I added to Marx Paint only show squares      </dt>
 
       <dd>
         The TrueType Font you're using might have the wrong encoding. If it's 'custom' encoded, for example, you can try running it through FontForge (<a href="http://fontforge.sourceforge.net/">http://fontforge.sourceforge.net/</a>) to convert it to an ISO-8859 format. (Email us if you need help with special fonts.)      </dd>
@@ -45,16 +45,16 @@
 
       <dd>
         <p>
-          This means that Tux Paint either couldn't find any stamp images, or was asked not to load them.        </p>
+          This means that Marx Paint either couldn't find any stamp images, or was asked not to load them.        </p>
 
         <p>
-          If you installed Tux Paint, but did not install the separate, optional "Stamps" collection, quit Tux Paint and install it now. It should be available from the same place you got the main Tux Paint program. <i>(Note: As of version 0.9.14, Tux Paint comes with a small collection of example stamps.)</i>        </p>
+          If you installed Marx Paint, but did not install the separate, optional "Stamps" collection, quit Marx Paint and install it now. It should be available from the same place you got the main Marx Paint program. <i>(Note: As of version 0.9.14, Marx Paint comes with a small collection of example stamps.)</i>        </p>
 
         <p>
-          If you don't want to install the default collection of stamps, you can just create your own. See the "Extending Tux Paint" documentation for more on creating PNG and SVG image files, TXT text description files, Ogg Vorbis, MP3 or WAV sound files, and DAT text data files that make up stamps.        </p>
+          If you don't want to install the default collection of stamps, you can just create your own. See the "Extending Marx Paint" documentation for more on creating PNG and SVG image files, TXT text description files, Ogg Vorbis, MP3 or WAV sound files, and DAT text data files that make up stamps.        </p>
 
         <p>
-          Finally, if you installed stamps, and think they should be loading, check to see that the "nostamps" option isn't being set. (Either via a "<code>--nostamps</code>" option to Tux Paint's command line, or "<code>nostamps=yes</code>" in the configuration file.)        </p>
+          Finally, if you installed stamps, and think they should be loading, check to see that the "nostamps" option isn't being set. (Either via a "<code>--nostamps</code>" option to Marx Paint's command line, or "<code>nostamps=yes</code>" in the configuration file.)        </p>
 
         <p>
           Either change/remove the "nostamps" option, or you can override it with "<code>--stamps</code>" on the command line or either "<code>nostamps=no</code>" or "<code>stamps=yes</code>" in a configuration file.        </p>
@@ -65,10 +65,10 @@
 
       <dd>
         <p>
-          Tux Paint is probably comparing exact pixel colors when filling. This is faster, but looks worse. Run the command "<code>tuxpaint --verbose-version</code>" from a command line, and you should see, amongst the other output: "Low Quality Flood Fill enabled".        </p>
+          Marx Paint is probably comparing exact pixel colors when filling. This is faster, but looks worse. Run the command "<code>marxpaint --verbose-version</code>" from a command line, and you should see, amongst the other output: "Low Quality Flood Fill enabled".        </p>
 
         <p>
-          To change this, you must rebuild Tux Paint from source. Be sure to remove or comment out any line that says:        </p>
+          To change this, you must rebuild Marx Paint from source. Be sure to remove or comment out any line that says:        </p>
 
         <blockquote>
           <p>
@@ -77,7 +77,7 @@
         </blockquote>
 
         <p>
-          in the "tuxpaint.c" file in the "src" directory.        </p>
+          in the "marxpaint.c" file in the "src" directory.        </p>
       </dd>
 
       <dt>
@@ -85,10 +85,10 @@
 
       <dd>
         <p>
-          Tux Paint was built with low-quality (but faster) stamp outlines.        </p>
+          Marx Paint was built with low-quality (but faster) stamp outlines.        </p>
 
         <p>
-          To change this, you must rebuild Tux Paint from source. Be sure to remove or comment out any line that says:        </p>
+          To change this, you must rebuild Marx Paint from source. Be sure to remove or comment out any line that says:        </p>
 
         <blockquote>
           <p>
@@ -97,7 +97,7 @@
         </blockquote>
 
         <p>
-          in the "tuxpaint.c" file in the "src" directory.        </p>
+          in the "marxpaint.c" file in the "src" directory.        </p>
       </dd>
     </dl>
 
@@ -112,10 +112,10 @@
 
       <dd>
         <p>
-          Tux Paint was probably compiled with the faster, lower quality thumbnail code enabled. Run the command: "<code>tuxpaint --verbose-version</code>" from a command line. If, amongst the other output, you see the text: "Low Quality Thumbnails enabled", then this is what's happening.        </p>
+          Marx Paint was probably compiled with the faster, lower quality thumbnail code enabled. Run the command: "<code>marxpaint --verbose-version</code>" from a command line. If, amongst the other output, you see the text: "Low Quality Thumbnails enabled", then this is what's happening.        </p>
 
         <p>
-          To change this, you must rebuild Tux Paint from source. Be sure to remove or comment out any line that says:        </p>
+          To change this, you must rebuild Marx Paint from source. Be sure to remove or comment out any line that says:        </p>
 
         <blockquote>
           <p>
@@ -124,7 +124,7 @@
         </blockquote>
 
         <p>
-          in the "tuxpaint.c" file in the "src" directory.        </p>
+          in the "marxpaint.c" file in the "src" directory.        </p>
       </dd>
 
       <dt>
@@ -138,10 +138,10 @@
 
       <dd>
         <p>
-          Tux Paint was probably compiled with the nice looking color selector buttons disabled. Run the command: "<code>tuxpaint --verbose-version</code>" from a command line. If, amongst the other output, you see the text: "Low Quality Color Selector enabled", then this is what's happening.        </p>
+          Marx Paint was probably compiled with the nice looking color selector buttons disabled. Run the command: "<code>marxpaint --verbose-version</code>" from a command line. If, amongst the other output, you see the text: "Low Quality Color Selector enabled", then this is what's happening.        </p>
 
         <p>
-          To change this, you must rebuild Tux Paint from source. Be sure to remove or comment out any line that says:        </p>
+          To change this, you must rebuild Marx Paint from source. Be sure to remove or comment out any line that says:        </p>
 
         <blockquote>
           <p>
@@ -150,7 +150,7 @@
         </blockquote>
 
         <p>
-          in the "tuxpaint.c" file in the "src" directory.        </p>
+          in the "marxpaint.c" file in the "src" directory.        </p>
       </dd>
 
       <dt>
@@ -164,20 +164,20 @@
            Either change/remove the "uppercase" option, or you can override it with "<code>--mixedcase</code>" on the command line or either "<code>uppercase=no</code>" or "<code>mixedcase=yes</code>" in a configuration file.      </dd>
 
       <dt>
-        Tux Paint is in a different language      </dt>
+        Marx Paint is in a different language      </dt>
 
       <dd>
-        Make sure your locale setting is correct. See "Tux Paint won't switch to my language", below.      </dd>
+        Make sure your locale setting is correct. See "Marx Paint won't switch to my language", below.      </dd>
 
       <dt>
-        Tux Paint won't switch to my language      </dt>
+        Marx Paint won't switch to my language      </dt>
 
       <dd>
         <ul>
           <li>
             <i>Linux and Unix users: Make sure the locale is available</i>
             <p>
-              Make sure the locale you want is available. Check your "/etc/locale.gen" file. See the "Options Documentation" for the locales Tux Paint uses (especially when using the "<code>--lang</code>" option).            </p>
+              Make sure the locale you want is available. Check your "/etc/locale.gen" file. See the "Options Documentation" for the locales Marx Paint uses (especially when using the "<code>--lang</code>" option).            </p>
 
             <p>
               Note: Debian and derivative (e.g., Ubuntu) users can simply run "<code>dpkg-reconfigure locales</code>" if the locales are managed by "dpkg".            </p>
@@ -199,12 +199,12 @@
               Some translations require their own font. Chinese and Korean, for example, need Chinese and Korean TrueType Fonts installed and placed in the proper location, respectively.            </p>
 
             <p>
-              The appropriate fonts for such locales can be downloaded from the Tux Paint website:            </p>
+              The appropriate fonts for such locales can be downloaded from the Marx Paint website:            </p>
 
             <blockquote>
               <p>
                 <a href=
-                "http://www.tuxpaint.org/download/fonts/">http://www.tuxpaint.org/download/fonts/</a>
+                "http://www.marxpaint.org/download/fonts/">http://www.marxpaint.org/download/fonts/</a>
               </p>
             </blockquote>
           </li>
@@ -219,20 +219,20 @@
 
     <dl>
       <dt>
-        Tux Paint won't print, gives an error, or prints garbage (Unix/Linux)      </dt>
+        Marx Paint won't print, gives an error, or prints garbage (Unix/Linux)      </dt>
 
       <dd>
         <p>
-          Tux Paint prints by creating a PostScript rendition of the picture and sending it to an external command. By default, this command is the "<code>lpr</code>" printing tool.        </p>
+          Marx Paint prints by creating a PostScript rendition of the picture and sending it to an external command. By default, this command is the "<code>lpr</code>" printing tool.        </p>
 
         <p>
-          If that program is not available (for example, you're using CUPS, the Common Unix Printing System, and do not have "<code>cups-lpr</code>" installed), you will need to specify an appropriate command using the "<code>printcommand</code>" option in Tux Paint's configuration file. (See the "Options Documentation".)        </p>
+          If that program is not available (for example, you're using CUPS, the Common Unix Printing System, and do not have "<code>cups-lpr</code>" installed), you will need to specify an appropriate command using the "<code>printcommand</code>" option in Marx Paint's configuration file. (See the "Options Documentation".)        </p>
 
         <p>
-          <i>Note:</i> Versions of Tux Paint prior to 0.9.15 used a different default command for printing, "<code>pngtopnm | pnmtops | lpr</code>", as Tux Paint output PNG format, rather than PostScript.        </p>
+          <i>Note:</i> Versions of Marx Paint prior to 0.9.15 used a different default command for printing, "<code>pngtopnm | pnmtops | lpr</code>", as Marx Paint output PNG format, rather than PostScript.        </p>
 
         <p>
-          If you had changed your "printcommand" option prior to Tux Paint 0.9.15, you will need to go back and alter it to accept PostScript.        </p>
+          If you had changed your "printcommand" option prior to Marx Paint 0.9.15, you will need to go back and alter it to accept PostScript.        </p>
       </dd>
 
       <dt>
@@ -243,19 +243,19 @@
           The "print delay" option is on. You can only print once every <i>X</i> seconds.        </p>
 
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "<code>--printdelay=...</code>" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "<code>--printdelay=...</code>" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--printdelay=...</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--printdelay=...</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "<code>--printdelay=...</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>printdelay=...</code>".        </p>
+          If a "<code>--printdelay=...</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>printdelay=...</code>".        </p>
 
         <p>
           Either remove that line, set the delay value to 0 (no delay), or decrease the delay to a value you prefer. (See the "Options Documentation".)        </p>
 
         <p>
-          Or, you can simply run Tux Paint with the command-line argument: "<code>--printdelay=0</code>", which will override the configuration file's setting, and allow unlimited printing. (You won't have to wait between prints.)        </p>
+          Or, you can simply run Marx Paint with the command-line argument: "<code>--printdelay=0</code>", which will override the configuration file's setting, and allow unlimited printing. (You won't have to wait between prints.)        </p>
       </dd>
 
       <dt>
@@ -266,19 +266,19 @@
           The "no print" option is on.        </p>
 
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "<code>--noprint</code>" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "<code>--noprint</code>" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--noprint</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--noprint</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "<code>--noprint</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>noprint=yes</code>".        </p>
+          If a "<code>--noprint</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>noprint=yes</code>".        </p>
 
         <p>
-          Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--print</code>", which will override the configuration file's setting.        </p>
+          Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--print</code>", which will override the configuration file's setting.        </p>
 
         <p>
-          Or use Tux Paint Config. and make sure "Allow Printing" (under "Printing") is checked.        </p>
+          Or use Marx Paint Config. and make sure "Allow Printing" (under "Printing") is checked.        </p>
       </dd>
     </dl>
 
@@ -289,11 +289,11 @@
 
     <dl>
       <dt>
-        Where does Tux Paint save my drawings?      </dt>
+        Where does Marx Paint save my drawings?      </dt>
 
       <dd>
         <p>
-          Unless you asked Tux Paint to save into a specific location (using the "savedir" option), Tux Paint saves into a standard location on your local drive:        </p>
+          Unless you asked Marx Paint to save into a specific location (using the "savedir" option), Marx Paint saves into a standard location on your local drive:        </p>
 
         <dl>
           <dt>
@@ -301,28 +301,28 @@
           </dt>
 
           <dd>
-            In the user's "AppData" folder:<br> e.g., <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
+            In the user's "AppData" folder:<br> e.g., <code>C:\Users\<i>Username</i>\AppData\Roaming\MarxPaint\saved</code>          </dd>
 
           <dt>
             Windows 95, 98, ME, 2000, XP
           </dt>
 
           <dd>
-            In the user's "Application Data" folder:<br> e.g., <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved</code>          </dd>
+            In the user's "Application Data" folder:<br> e.g., <code>C:\Documents and Settings\<i>Username</i>\Application Data\MarxPaint\saved</code>          </dd>
 
           <dt>
             macOS
           </dt>
 
           <dd>
-            In the user's "Application Support" folder:<br> e.g., <code>/Users/<i>Username</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
+            In the user's "Application Support" folder:<br> e.g., <code>/Users/<i>Username</i>/Library/Applicaton Support/MarxPaint/saved/</code>          </dd>
 
           <dt>
             Linux / Unix
           </dt>
 
           <dd>
-            In the user's home directory ("<code>$HOME</code>"), under a ".tuxpaint" subfolder:<br> e.g., <code>/home/<i>username</i>/.tuxpaint/saved/</code>          </dd>
+            In the user's home directory ("<code>$HOME</code>"), under a ".marxpaint" subfolder:<br> e.g., <code>/home/<i>username</i>/.marxpaint/saved/</code>          </dd>
         </dl>
 
         <p>
@@ -330,55 +330,55 @@
       </dd>
 
       <dt>
-        Tux Paint always saves over my old picture      </dt>
+        Marx Paint always saves over my old picture      </dt>
 
       <dd>
         <p>
           The "save over" option is enabled. (This disables the prompt that would appear when you click 'Save.')        </p>
 
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "<code>--saveover</code>" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "<code>--saveover</code>" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--saveover</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--saveover</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "--saveover" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "saveover=yes".        </p>
+          If a "--saveover" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "saveover=yes".        </p>
 
         <p>
-          Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--saveoverask</code>", which will override the configuration file's setting.        </p>
+          Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--saveoverask</code>", which will override the configuration file's setting.        </p>
 
         <p>
-          Or use Tux Paint Config. and make sure "Ask Before Overwriting" (under "Saving") is checked.        </p>
+          Or use Marx Paint Config. and make sure "Ask Before Overwriting" (under "Saving") is checked.        </p>
 
         <p>
-          Also, see "Tux Paint always saves a new picture!", below.        </p>
+          Also, see "Marx Paint always saves a new picture!", below.        </p>
       </dd>
 
       <dt>
-        Tux Paint always saves a new picture!      </dt>
+        Marx Paint always saves a new picture!      </dt>
 
       <dd>
         <p>
           The "never save over" option is enabled. (This disables the prompt that would appear when you click 'Save.')        </p>
 
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "<code>--saveovernew</code>" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "<code>--saveovernew</code>" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--saveovernew</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--saveovernew</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "<code>--saveovernew</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>saveover=new</code>".        </p>
+          If a "<code>--saveovernew</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>saveover=new</code>".        </p>
 
         <p>
-          Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--saveoverask</code>", which will override the configuration file's setting.        </p>
+          Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--saveoverask</code>", which will override the configuration file's setting.        </p>
 
         <p>
-          Or use Tux Paint Config. and make sure "Ask Before Overwriting" (under "Saving") is checked.        </p>
+          Or use Marx Paint Config. and make sure "Ask Before Overwriting" (under "Saving") is checked.        </p>
 
         <p>
-          Also, see "Tux Paint always saves over my old picture!", above.        </p>
+          Also, see "Marx Paint always saves over my old picture!", above.        </p>
       </dd>
     </dl>
 
@@ -404,75 +404,75 @@
 
               <li>Are you certain you're using a computer with a sound card?</li>
 
-              <li>Are any other programs running that use sound? (They may be 'blocking' Tux Paint from accessing your sound device)</li>
+              <li>Are any other programs running that use sound? (They may be 'blocking' Marx Paint from accessing your sound device)</li>
 
-              <li>(Unix/Linux) Are you using a sound system, such as aRts, ESD or GStreamer? If so, try setting the "SDL_AUDIODRIVER" environment variable before running Tux Paint (e.g., "<code>export SDL_AUDIODRIVER=arts</code>"). Or, run Tux Paint through the system's rerouter (e.g., run "<code>artsdsp tuxpaint</code>" or "<code>esddsp tuxpaint</code>", instead of simply "<code>tuxpaint</code>").              </li>
+              <li>(Unix/Linux) Are you using a sound system, such as aRts, ESD or GStreamer? If so, try setting the "SDL_AUDIODRIVER" environment variable before running Marx Paint (e.g., "<code>export SDL_AUDIODRIVER=arts</code>"). Or, run Marx Paint through the system's rerouter (e.g., run "<code>artsdsp marxpaint</code>" or "<code>esddsp marxpaint</code>", instead of simply "<code>marxpaint</code>").              </li>
             </ul>
           </li>
 
           <li>
-            <em>Is sound disabled in Tux Paint?</em>
+            <em>Is sound disabled in Marx Paint?</em>
             <p>
-              If sound seems to work otherwise (and you're sure no other program is "blocking" the sound device), then Tux Paint may be running with a "no sound" option.            </p>
+              If sound seems to work otherwise (and you're sure no other program is "blocking" the sound device), then Marx Paint may be running with a "no sound" option.            </p>
 
             <p>
-              If you're running Tux Paint from a command-line, make sure you're not giving it a "--nosound" option.            </p>
+              If you're running Marx Paint from a command-line, make sure you're not giving it a "--nosound" option.            </p>
 
             <p>
-              If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "--nosound" is listed as a command-line argument.            </p>
+              If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "--nosound" is listed as a command-line argument.            </p>
 
-            If a "<code>--nosound</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>nosound=yes</code>".            </p>
-
-            <p>
-              Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--sound</code>", which will override the configuration file's setting.            </p>
+            If a "<code>--nosound</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>nosound=yes</code>".            </p>
 
             <p>
-              Or, you can simply run Tux Paint with the command-line argument: "Enable Sound Effects", which will override the configuration file's setting, and allow unlimited printing. (You won't have to wait between prints.)            </p>
+              Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--sound</code>", which will override the configuration file's setting.            </p>
+
+            <p>
+              Or, you can simply run Marx Paint with the command-line argument: "Enable Sound Effects", which will override the configuration file's setting, and allow unlimited printing. (You won't have to wait between prints.)            </p>
           </li>
 
           <li>
             <em>Were sounds temporarily disabled?</em>
             <p>
-              Even if sounds are enabled in Tux Paint, it is possible to disable and re-enable them temporarily using the <b>[Alt]</b> + <b>[S]</b> key sequence. Try pressing those keys to see if sounds begin working again.            </p>
+              Even if sounds are enabled in Marx Paint, it is possible to disable and re-enable them temporarily using the <b>[Alt]</b> + <b>[S]</b> key sequence. Try pressing those keys to see if sounds begin working again.            </p>
           </li>
 
           <li>
-            <em>Was Tux Paint built without sound support?</em>
+            <em>Was Marx Paint built without sound support?</em>
             <p>
-              Tux Paint may have been compiled with sound support disabled. To test whether sound support was enabled when Tux Paint was compiled, run Tux Paint from a command line, like so:            </p>
+              Marx Paint may have been compiled with sound support disabled. To test whether sound support was enabled when Marx Paint was compiled, run Marx Paint from a command line, like so:            </p>
 
             <blockquote>
               <p>
-                <code>tuxpaint --verbose-version</code>
+                <code>marxpaint --verbose-version</code>
               </p>
             </blockquote>
 
             <p>
-              If, amongst the other information, you see "Sound disabled", then the version of Tux Paint you're running has sound disabled. Recompile Tux Paint, and be sure NOT to build the "nosound" target. (i.e., don't run "<code>make nosound</code>") Be sure the SDL_mixer library and its development headers are available!            </p>
+              If, amongst the other information, you see "Sound disabled", then the version of Marx Paint you're running has sound disabled. Recompile Marx Paint, and be sure NOT to build the "nosound" target. (i.e., don't run "<code>make nosound</code>") Be sure the SDL_mixer library and its development headers are available!            </p>
           </li>
         </ul>
       </dd>
 
       <dt>
-        Tux Paint makes too much noise! Can I turn them off?      </dt>
+        Marx Paint makes too much noise! Can I turn them off?      </dt>
 
       <dd>
         <p>
-          Yes, there are a number of ways to disable sounds in Tux Paint:        </p>
+          Yes, there are a number of ways to disable sounds in Marx Paint:        </p>
 
         <ul>
-          <li>Press <b>[Alt]</b> + <b>[S]</b> while in Tux Paint to temporarily disable sounds. (Press that key sequence again to re-enable sounds.)          </li>
+          <li>Press <b>[Alt]</b> + <b>[S]</b> while in Marx Paint to temporarily disable sounds. (Press that key sequence again to re-enable sounds.)          </li>
 
-          <li>Run Tux Paint with the "no sound" option:            <ul>
-              <li>Run "<code>tuxpaint --nosound</code>" from the command line or shortcut or desktop icon.              </li>
+          <li>Run Marx Paint with the "no sound" option:            <ul>
+              <li>Run "<code>marxpaint --nosound</code>" from the command line or shortcut or desktop icon.              </li>
 
-              <li>Edit Tux Paint's configuration file (see "Options Documentation" for details) and add a line containing "<code>nosound=yes</code>".              </li>
-
-              <li>
-                  Or use Tux Paint Config. and make sure "Enable Sound Effects" (under "Video &amp; Sound") is not checked.              </li>
+              <li>Edit Marx Paint's configuration file (see "Options Documentation" for details) and add a line containing "<code>nosound=yes</code>".              </li>
 
               <li>
-                  Alternatively, recompile Tux Paint with sound support disabled. (See above, and the 'Install' documentation.              </li>
+                  Or use Marx Paint Config. and make sure "Enable Sound Effects" (under "Video &amp; Sound") is not checked.              </li>
+
+              <li>
+                  Alternatively, recompile Marx Paint with sound support disabled. (See above, and the 'Install' documentation.              </li>
             </ul>
           </li>
         </ul>
@@ -483,15 +483,15 @@
 
       <dd>
         <p>
-          Run Tux Paint with the "no stereo" option:        </p>
+          Run Marx Paint with the "no stereo" option:        </p>
 
         <ul>
-          <li>Run "<code>tuxpaint --nostereo</code>" from the command line or shortcut or desktop icon.          </li>
+          <li>Run "<code>marxpaint --nostereo</code>" from the command line or shortcut or desktop icon.          </li>
 
-          <li>Edit Tux Paint's configuration file (see "Options Documentation" for details) and add a line containing "<code>nostereo=yes</code>".          </li>
+          <li>Edit Marx Paint's configuration file (see "Options Documentation" for details) and add a line containing "<code>nostereo=yes</code>".          </li>
 
           <li>
-              Or use Tux Paint Config. and make sure "Enable Stereo Effects" (under "Video &amp; Sound") is not checked.          </li>
+              Or use Marx Paint Config. and make sure "Enable Stereo Effects" (under "Video &amp; Sound") is not checked.          </li>
         </ul>
       </dd>
 
@@ -503,7 +503,7 @@
           This could have to do with how SDL and SDL_mixer were initialized. (The buffer size chosen.)        </p>
 
         <p>
-          Please e-mail us with details about your computer system. (Operating system and version, sound card, which version of Tux Paint you're running (run "<code>tuxpaint --version</code>" to verify), and so on.)        </p>
+          Please e-mail us with details about your computer system. (Operating system and version, sound card, which version of Marx Paint you're running (run "<code>marxpaint --version</code>" to verify), and so on.)        </p>
       </dd>
     </dl>
 
@@ -514,17 +514,17 @@
 
     <dl>
       <dt>
-        When I run Tux Paint full-screen and <b>[Alt]</b> + <b>[Tab]</b> out, the window turns black!      </dt>
+        When I run Marx Paint full-screen and <b>[Alt]</b> + <b>[Tab]</b> out, the window turns black!      </dt>
 
       <dd>
         This is apparently a bug in the SDL library. Sorry.      </dd>
 
       <dt>
-        When I run Tux Paint full-screen, it has large borders around it      </dt>
+        When I run Marx Paint full-screen, it has large borders around it      </dt>
 
       <dd>
         <p>
-          Linux users - Your X-Window server is probably not set with the ability to switch to the desired resolution: 800×600. (or whatever resolution you have Tux Paint set to run at.) (This is typically done manually under the X-Window server by pressing <b>[Ctrl]</b> + <b>[Alt]</b> + <b>[Keypad Plus]</b> and <b>[Ctrl]</b> + <b>[Alt]</b> + <b>[Keypad Minus]</b>.)        </p>
+          Linux users - Your X-Window server is probably not set with the ability to switch to the desired resolution: 800×600. (or whatever resolution you have Marx Paint set to run at.) (This is typically done manually under the X-Window server by pressing <b>[Ctrl]</b> + <b>[Alt]</b> + <b>[Keypad Plus]</b> and <b>[Ctrl]</b> + <b>[Alt]</b> + <b>[Keypad Minus]</b>.)        </p>
 
         <p>
           For this to work, your monitor must support that resolution, and you need to have it listed in your X server configuration.        </p>
@@ -533,7 +533,7 @@
           Check the "Display" subsection of the "Screen" section of your XFree86 or X.org configuration file (typically "<code>/etc/X11/XF86Config-4</code>" or "<code>/etc/X11/XF86Config</code>", depending on the version of XFree86 you're using; 3.x or 4.x, respectively, or "<code>/etc/X11/xorg.conf</code>" for X.org).        </p>
 
         <p>
-          Add "<code>800x600</code>" (or whatever resolution(s) you want) to the appropriate "Modes" line. (e.g., in the "Display" subsection that contains 24-bit color depth ("Depth 24"), which is what Tux Paint tries to use.)        </p>
+          Add "<code>800x600</code>" (or whatever resolution(s) you want) to the appropriate "Modes" line. (e.g., in the "Display" subsection that contains 24-bit color depth ("Depth 24"), which is what Marx Paint tries to use.)        </p>
 
         <blockquote>
           <p>
@@ -546,26 +546,26 @@
       </dd>
 
       <dt>
-        Tux Paint keeps running in Full Screen mode - I want it windowed!      </dt>
+        Marx Paint keeps running in Full Screen mode - I want it windowed!      </dt>
 
       <dd>
         <p>
           The "fullscreen" option is set.        </p>
 
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "<code>--fullscreen</code>" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "<code>--fullscreen</code>" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--fullscreen</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--fullscreen</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "<code>--fullscreen</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>fullscreen=yes</code>".        </p>
+          If a "<code>--fullscreen</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>fullscreen=yes</code>".        </p>
 
         <p>
-          Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--windowed</code>", which will override the configuration file's setting.        </p>
+          Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--windowed</code>", which will override the configuration file's setting.        </p>
 
         <p>
-          Or use Tux Paint Config. and make sure "Fullscreen" (under "Video &amp; Sound") is not checked.        </p>
+          Or use Marx Paint Config. and make sure "Fullscreen" (under "Video &amp; Sound") is not checked.        </p>
       </dd>
     </dl>
 
@@ -576,40 +576,40 @@
 
     <dl>
       <dt>
-        Tux Paint won't run      </dt>
+        Marx Paint won't run      </dt>
 
       <dd>
         <p>
-          If Tux Paint aborts with the message: "You're already running a copy of Tux Paint!", this means it has been launched in the last 30 seconds. (On Unix/Linux, this message would appear in a terminal console if you ran Tux Paint from a command-line. On Windows, this message would appear in a file named "<code>stdout.txt</code>" in the same folder where <code>TuxPaint.exe</code> resides (e.g., in "<code>C:\Program Files\TuxPaint</code>").        </p>
+          If Marx Paint aborts with the message: "You're already running a copy of Marx Paint!", this means it has been launched in the last 30 seconds. (On Unix/Linux, this message would appear in a terminal console if you ran Marx Paint from a command-line. On Windows, this message would appear in a file named "<code>stdout.txt</code>" in the same folder where <code>MarxPaint.exe</code> resides (e.g., in "<code>C:\Program Files\MarxPaint</code>").        </p>
 
         <p>
-          A lockfile ("~/.tuxpaint/lockfile.dat" on Linux and Unix, "userdata\lockfile.dat" on Windows) is used to make sure Tux Paint isn't run too many times at once (e.g., due to a child impatiently clicking its icon more than once).        </p>
+          A lockfile ("~/.marxpaint/lockfile.dat" on Linux and Unix, "userdata\lockfile.dat" on Windows) is used to make sure Marx Paint isn't run too many times at once (e.g., due to a child impatiently clicking its icon more than once).        </p>
 
         <p>
-          Even if the lockfile exists, it contains the 'time' Tux Paint was last run. If it's been more than 30 seconds, Tux Paint should run fine, and simply update the lockfile with the current time.        </p>
+          Even if the lockfile exists, it contains the 'time' Marx Paint was last run. If it's been more than 30 seconds, Marx Paint should run fine, and simply update the lockfile with the current time.        </p>
 
         <p>
           If multiple users are sharing the directory where this file is stored (e.g., on a shared network drive), then you'll need to disable this feature.        </p>
 
         <p>
-          To disable the lockfile, add the "<code>--nolockfile</code>" argument to Tux Paint's command-line, or "<code>nolockfile=yes</code>" to the configuration file.        </p>
+          To disable the lockfile, add the "<code>--nolockfile</code>" argument to Marx Paint's command-line, or "<code>nolockfile=yes</code>" to the configuration file.        </p>
       </dd>
 
       <dt>
-        I can't quit Tux Paint      </dt>
+        I can't quit Marx Paint      </dt>
 
       <dd>
         <p>
-          The "no quit" option is set. This disables the "Quit" button in Tux Paint's toolbar (greying it out), and prevents Tux Paint from being exited via the <b>[Escape]</b> key.        </p>
+          The "no quit" option is set. This disables the "Quit" button in Marx Paint's toolbar (greying it out), and prevents Marx Paint from being exited via the <b>[Escape]</b> key.        </p>
 
         <p>
-          If Tux Paint is not in fullscreen mode, simply click the window close button on Tux Paint's title bar. (i.e., the "&#9447;" at the upper right.)        </p>
+          If Marx Paint is not in fullscreen mode, simply click the window close button on Marx Paint's title bar. (i.e., the "&#9447;" at the upper right.)        </p>
 
         <p>
-          If Tux Paint is in fullscreen mode, you will need to use the <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b> sequence on the keyboard to quit Tux Paint.        </p>
+          If Marx Paint is in fullscreen mode, you will need to use the <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b> sequence on the keyboard to quit Marx Paint.        </p>
 
         <p>
-          (Note: with or without "no quit" set, you can always use the <b>[Alt]</b> + <b>[F4]</b> combination on your keyboard to quit Tux Paint.)        </p>
+          (Note: with or without "no quit" set, you can always use the <b>[Alt]</b> + <b>[F4]</b> combination on your keyboard to quit Marx Paint.)        </p>
       </dd>
 
       <dt>
@@ -617,30 +617,30 @@
 
       <dd>
         <p>
-          If you're running Tux Paint from a command-line, make sure you're not giving it a "--noquit" option.        </p>
+          If you're running Marx Paint from a command-line, make sure you're not giving it a "--noquit" option.        </p>
 
         <p>
-          If you're running Tux Paint by double-clicking an icon, check the properties of the icon to see if "<code>--noquit</code>" is listed as a command-line argument.        </p>
+          If you're running Marx Paint by double-clicking an icon, check the properties of the icon to see if "<code>--noquit</code>" is listed as a command-line argument.        </p>
 
         <p>
-          If a "<code>--noquit</code>" option isn't being sent on the command line, check Tux Paint's configuration file for a line reading: "<code>noquit=yes</code>".        </p>
+          If a "<code>--noquit</code>" option isn't being sent on the command line, check Marx Paint's configuration file for a line reading: "<code>noquit=yes</code>".        </p>
 
         <p>
-          Either remove that line, or simply run Tux Paint with the command-line argument: "<code>--quit</code>", which will override the configuration file's setting.        </p>
+          Either remove that line, or simply run Marx Paint with the command-line argument: "<code>--quit</code>", which will override the configuration file's setting.        </p>
 
         <p>
-          Or use Tux Paint Config. and make sure "Disable Quit Button and [Escape] Key" (under "Simplification") is not checked.        </p>
+          Or use Marx Paint Config. and make sure "Disable Quit Button and [Escape] Key" (under "Simplification") is not checked.        </p>
       </dd>
 
       <dt>
-        Tux Paint keeps writing weird messages to the screen / to a text file      </dt>
+        Marx Paint keeps writing weird messages to the screen / to a text file      </dt>
 
       <dd>
         <p>
-          A few messages are normal, but if Tux Paint is being extremely verbose (like listing the name of every rubber-stamp image it finds while loading them), then it was probably compiled with debugging output turned on.        </p>
+          A few messages are normal, but if Marx Paint is being extremely verbose (like listing the name of every rubber-stamp image it finds while loading them), then it was probably compiled with debugging output turned on.        </p>
 
         <p>
-          To change this, you must rebuild Tux Paint from source. Be sure to remove or comment out any line that says:        </p>
+          To change this, you must rebuild Marx Paint from source. Be sure to remove or comment out any line that says:        </p>
 
         <blockquote>
           <p>
@@ -649,15 +649,15 @@
         </blockquote>
 
         <p>
-          in the "tuxpaint.c" file in the "src" directory.        </p>
+          in the "marxpaint.c" file in the "src" directory.        </p>
       </dd>
 
       <dt>
-        Tux Paint is using options I didn't specify!      </dt>
+        Marx Paint is using options I didn't specify!      </dt>
 
       <dd>
         <p>
-          By default, Tux Paint first looks at configuration files for options.        </p>
+          By default, Marx Paint first looks at configuration files for options.        </p>
 
         <ul>
           <li>
@@ -667,7 +667,7 @@
 
             <blockquote>
               <p>
-                <code>/etc/tuxpaint/tuxpaint.conf</code>
+                <code>/etc/marxpaint/marxpaint.conf</code>
               </p>
             </blockquote>
 
@@ -676,7 +676,7 @@
 
             <blockquote>
               <p>
-                <code>~/.tuxpaintrc</code>
+                <code>~/.marxpaintrc</code>
               </p>
             </blockquote>
 
@@ -687,11 +687,11 @@
           <li>
             <i>Windows</i>
             <p>
-              Under Windows, Tux Paint first examines the configuration file:            </p>
+              Under Windows, Marx Paint first examines the configuration file:            </p>
 
             <blockquote>
               <p>
-                <code>tuxpaint.cfg</code>
+                <code>marxpaint.cfg</code>
               </p>
             </blockquote>
 
@@ -704,7 +704,7 @@
           This means that if anything is set in a configuration file that you don't want set, you'll need to either change the config. file (if you can), or override the option on the command-line.        </p>
 
         <p>
-          For example, on Linux and Unix, if "/etc/tuxpaint/tuxpaint.conf" includes this option to disable sound...        </p>
+          For example, on Linux and Unix, if "/etc/marxpaint/marxpaint.conf" includes this option to disable sound...        </p>
 
         <blockquote>
           <p>
@@ -713,7 +713,7 @@
         </blockquote>
 
         <p>
-          ...then you can reenable sound by either adding this option to your own ".tuxpaintrc" file:        </p>
+          ...then you can reenable sound by either adding this option to your own ".marxpaintrc" file:        </p>
 
         <blockquote>
           <p>
@@ -740,7 +740,7 @@
         </blockquote>
 
         <p>
-          Tux Paint will then only look at "~/.tuxpaintrc" and command-line arguments to determine what options should be set.        </p>
+          Marx Paint will then only look at "~/.marxpaintrc" and command-line arguments to determine what options should be set.        </p>
       </dd>
     </dl>
 
@@ -750,11 +750,11 @@
       Help / Contact    </h2>
 
     <p>
-      Any questions you don't see answered? Please let us know! You can subscribe and post to our "tuxpaint-users" mailing list:    </p>
+      Any questions you don't see answered? Please let us know! You can subscribe and post to our "marxpaint-users" mailing list:    </p>
 
     <blockquote>
       <p>
-        <a href="http://www.tuxpaint.org/lists/">http://www.tuxpaint.org/lists/</a>
+        <a href="http://www.marxpaint.org/lists/">http://www.marxpaint.org/lists/</a>
       </p>
     </blockquote>
 

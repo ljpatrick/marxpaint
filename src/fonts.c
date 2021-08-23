@@ -2,7 +2,7 @@
   fonts.c
 
   Copyright (c) 2009-2020
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -144,7 +144,7 @@ volatile long waiting_for_fonts;
 static int font_scanner_pid;
 int font_socket_fd;
 
-TuxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
+MarxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
 
 family_info **user_font_families;
 int num_font_families;
@@ -165,9 +165,9 @@ static void reliable_read(int fd, void *buf, size_t count);
 
 
 #ifdef NO_SDLPANGO
-TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
+MarxPaint_Font *load_locale_font(MarxPaint_Font * fallback, int size)
 {
-  TuxPaint_Font *ret = NULL;
+  MarxPaint_Font *ret = NULL;
 
   if (!need_own_font)
     {
@@ -179,25 +179,25 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 
       snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf", DATA_PREFIX, lang_prefix);
 
-      ret = TuxPaint_Font_OpenFont("", str, size);
+      ret = MarxPaint_Font_OpenFont("", str, size);
 
 #ifdef __APPLE__
       if (!ret)
         {
           snprintf(str, sizeof(str), "%sfonts/%s.ttf", DATA_PREFIX, lang_prefix);
-          ret = TuxPaint_Font_OpenFont("", str, size);
+          ret = MarxPaint_Font_OpenFont("", str, size);
         }
 
       if (!ret)
         {
           snprintf(str, sizeof(str), "/Library/Fonts/%s.ttf", lang_prefix);
-          ret = TuxPaint_Font_OpenFont("", str, size);
+          ret = MarxPaint_Font_OpenFont("", str, size);
         }
 
       if (!ret)
         {
           snprintf(str, sizeof(str), "%s/%s.ttf", apple_fontsPath(), lang_prefix);
-          ret = TuxPaint_Font_OpenFont("", str, size);
+          ret = MarxPaint_Font_OpenFont("", str, size);
         }
 #endif
 
@@ -226,17 +226,17 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 }
 #endif
 
-void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
+void MarxPaint_Font_CloseFont(MarxPaint_Font * tpf)
 {
 #ifdef DEBUG
-  printf("TuxPaint_Font_CloseFont step 1 (%p)\n", tpf); //EP
+  printf("MarxPaint_Font_CloseFont step 1 (%p)\n", tpf); //EP
 #endif
   if (!tpf)
     return;                     //EP
 
 #ifndef NO_SDLPANGO
 #ifdef DEBUG
-  printf("TuxPaint_Font_CloseFont step 2 (%p, %d)\n", tpf->pango_context, tpf->typ);    //EP
+  printf("MarxPaint_Font_CloseFont step 2 (%p, %d)\n", tpf->pango_context, tpf->typ);    //EP
 #endif
   if (tpf->typ == FONT_TYPE_PANGO)
     if (tpf->pango_context)     //EP
@@ -249,7 +249,7 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 #endif
 
 #ifdef DEBUG
-  printf("TuxPaint_Font_CloseFont step 3 (%p, %d)\n", tpf->ttf_font, tpf->typ); //EP
+  printf("MarxPaint_Font_CloseFont step 3 (%p, %d)\n", tpf->ttf_font, tpf->typ); //EP
   fflush(stdout);
 #endif
   if (tpf->typ == FONT_TYPE_TTF)
@@ -268,9 +268,9 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
   free(tpf);
 }
 
-TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size)
+MarxPaint_Font *MarxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size)
 {
-  TuxPaint_Font *tpf = NULL;
+  MarxPaint_Font *tpf = NULL;
   int i;
 
 #ifndef NO_SDLPANGO
@@ -285,7 +285,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
 
   if (pangodesc != NULL && pangodesc[0] != '\0')
     {
-      tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
+      tpf = (MarxPaint_Font *) malloc(sizeof(MarxPaint_Font));
       tpf->typ = FONT_TYPE_PANGO;
       snprintf(desc, sizeof(desc), "%s %d", pangodesc, (size * 3) / 4);
       tpf->desc = strdup(desc);
@@ -307,7 +307,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         tpf->height = size;     /* FIXME: Is this accurate!? -bjk 2007.07.12 */
 
 #ifdef DEBUG
-      printf("TuxPaint_Font_OpenFont() done\n");
+      printf("MarxPaint_Font_OpenFont() done\n");
       fflush(stdout);
 #endif
 
@@ -336,7 +336,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
             return NULL;        /* bail on known problematic font types that cause TTF_OpenFont to crash */
         }
 
-      tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
+      tpf = (MarxPaint_Font *) malloc(sizeof(MarxPaint_Font));
       tpf->typ = FONT_TYPE_TTF;
       tpf->ttf_font = TTF_OpenFont(ttffilename, size);
       tpf->desc = strdup(ttffilename);
@@ -364,7 +364,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
     }
 
 #ifdef DEBUG
-  printf("TuxPaint_Font_OpenFont() done\n");
+  printf("MarxPaint_Font_OpenFont() done\n");
   fflush(stdout);
 #endif
 
@@ -1285,7 +1285,7 @@ void receive_some_font_info(SDL_Surface * screen)
 
 
 
-TuxPaint_Font *getfonthandle(int desire)
+MarxPaint_Font *getfonthandle(int desire)
 {
   int missing = 0;
   family_info *fi = user_font_families[desire];
@@ -1400,7 +1400,7 @@ TuxPaint_Font *getfonthandle(int desire)
     strcpy(description, "");
   }
 
-  fi->handle = TuxPaint_Font_OpenFont(description, pathname, text_sizes[text_size]);
+  fi->handle = MarxPaint_Font_OpenFont(description, pathname, text_sizes[text_size]);
   // if the font doesn't load, we die -- it did load OK before though
 
   if (fi->handle == NULL)
@@ -1506,7 +1506,7 @@ static int surfcmp(const void *s1, const void *s2)
 }
 
 // check if the characters will render distinctly
-int charset_works(TuxPaint_Font * font, const char *s)
+int charset_works(MarxPaint_Font * font, const char *s)
 {
   SDL_Color black = { 0, 0, 0, 0 };
 #ifndef NO_SDLPANGO
@@ -1571,12 +1571,12 @@ out:
   return ret;
 }
 
-int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf)
+int MarxPaint_Font_FontHeight(MarxPaint_Font * tpf)
 {
   if (tpf == NULL)
     {
 #ifdef DEBUG
-      printf("TuxPaint_Font_FontHeight() received NULL\n");
+      printf("MarxPaint_Font_FontHeight() received NULL\n");
       fflush(stdout);
 #endif
       return (1);
@@ -1585,12 +1585,12 @@ int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf)
   return (tpf->height);
 }
 
-const char *TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf)
+const char *MarxPaint_Font_FontFaceFamilyName(MarxPaint_Font * tpf)
 {
   if (tpf == NULL)
     {
 #ifdef DEBUG
-      printf("TuxPaint_Font_FontFaceFamilyName() received NULL\n");
+      printf("MarxPaint_Font_FontFaceFamilyName() received NULL\n");
       fflush(stdout);
 #endif
       return ("");
@@ -1610,18 +1610,18 @@ const char *TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf)
     return (TTF_FontFaceFamilyName(tpf->ttf_font));
 
 #ifdef DEBUG
-  printf("TuxPaint_Font_FontFaceFamilyName() is confused\n");
+  printf("MarxPaint_Font_FontFaceFamilyName() is confused\n");
 #endif
 
   return ("");
 }
 
-const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf)
+const char *MarxPaint_Font_FontFaceStyleName(MarxPaint_Font * tpf)
 {
   if (tpf == NULL)
     {
 #ifdef DEBUG
-      printf("TuxPaint_Font_FontFaceStyleName() received NULL\n");
+      printf("MarxPaint_Font_FontFaceStyleName() received NULL\n");
       fflush(stdout);
 #endif
       return ("");
@@ -1641,7 +1641,7 @@ const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf)
     return (TTF_FontFaceStyleName(tpf->ttf_font));
 
 #ifdef DEBUG
-  printf("TuxPaint_Font_FontFaceStyleName() is confused\n");
+  printf("MarxPaint_Font_FontFaceStyleName() is confused\n");
 #endif
 
   return ("");

@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Shift
+                         Marx Paint "Magic" Tool: Shift
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

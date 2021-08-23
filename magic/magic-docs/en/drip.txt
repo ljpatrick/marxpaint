@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Drip
+                          Marx Paint "Magic" Tool: Drip
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

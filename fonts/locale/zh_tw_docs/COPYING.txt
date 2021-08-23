@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-zh_tw"
-Traditional Chinese TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-zh_tw"
+Traditional Chinese TrueType Font (TTF) for Marx Paint
 
 The "zh_tw.ttf" font file is a subset of "wp010-05.ttf" TrueType font.
 

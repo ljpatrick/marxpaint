@@ -1,4 +1,4 @@
-			Tux Paint 
+			Marx Paint 
                                  wersja 0.9.14 
 
                              Dokumentacja Opcji
@@ -7,235 +7,235 @@
                                New Breed Software 
 
                            bill@newbreedsoftware.com 
-                   http://www.newbreedsoftware.com/tuxpaint/ 
+                   http://www.newbreedsoftware.com/marxpaint/ 
 
-                               24 wrzesieñ 2004 
+                               24 wrzesieï¿½ 2004 
 
    --------------------------------------------------------------------------- 
 
-                               Konfiguracja Tux Paint
+                               Konfiguracja Marx Paint
 
-     Pocz¹wszy od wersji 0.9.14, dostêpne jest graficzne narzêdzie, które  
-     pozwala zmieniaæ zachowanie Tux Paint. Jednak¿e, jeœli nie chcia³byœ
-     instalowaæ i u¿ywaæ tego narzêdzia lub chcia³byœ lepiej poznaæ 
-     mo¿liwe opcje, proszê kontynuuj czytanie.
+     Poczï¿½wszy od wersji 0.9.14, dostï¿½pne jest graficzne narzï¿½dzie, ktï¿½re  
+     pozwala zmieniaï¿½ zachowanie Marx Paint. Jednakï¿½e, jeï¿½li nie chciaï¿½byï¿½
+     instalowaï¿½ i uï¿½ywaï¿½ tego narzï¿½dzia lub chciaï¿½byï¿½ lepiej poznaï¿½ 
+     moï¿½liwe opcje, proszï¿½ kontynuuj czytanie.
 
    --------------------------------------------------------------------------- 
 
                                Plik konfiguracyjny 
 
-     Mo¿esz utworzyæ prosty plik konfiguracyjny dla Tux Paint, który bêdzie 
-     czytany za ka¿dym razem, gdy uruchomisz program.
+     Moï¿½esz utworzyï¿½ prosty plik konfiguracyjny dla Marx Paint, ktï¿½ry bï¿½dzie 
+     czytany za kaï¿½dym razem, gdy uruchomisz program.
 
-     Plik jest po prostu zwyk³ym plikiem tekstowym zawieraj¹cym opcje, które chcesz
-     w³¹czyæ:
+     Plik jest po prostu zwykï¿½ym plikiem tekstowym zawierajï¿½cym opcje, ktï¿½re chcesz
+     wï¿½ï¿½czyï¿½:
 
-U¿ytkownicy Linuksa, Uniksa i systemu Mac OS X
+Uï¿½ytkownicy Linuksa, Uniksa i systemu Mac OS X
 
-       Plik, który powinieneœ utworzyæ powinien posiadaæ rozszerzenie ".tuxpaintrc" i powinien siê
-       znajdowaæ w Twoim katalogu g³ównym. ("~/.tuxpaintrc" albo
-       "$HOME/.tuxpaintrc")
+       Plik, ktï¿½ry powinieneï¿½ utworzyï¿½ powinien posiadaï¿½ rozszerzenie ".marxpaintrc" i powinien siï¿½
+       znajdowaï¿½ w Twoim katalogu gï¿½ï¿½wnym. ("~/.marxpaintrc" albo
+       "$HOME/.marxpaintrc")
 
   Systemowy plik konfiguracyjny (Linux i Unix)
 
          Zanim ten plik jest czytany, czytany jest systemowy plik konfiguracyjny.
-         (Domyœlnie, konfiguracja ta nie w³¹cza ¿adnych ustawieñ). Znajduje siê
+         (Domyï¿½lnie, konfiguracja ta nie wï¿½ï¿½cza ï¿½adnych ustawieï¿½). Znajduje siï¿½
          w pliku:
 
-           /etc/tuxpaint/tuxpaint.conf 
+           /etc/marxpaint/marxpaint.conf 
 
-         Mo¿esz wy³¹czyæ czytanie tego pliku, pozostawiaj¹c
-         domyœlne ustawienia (które mog¹ byæ nadpisane przez Twój
-         plik ".tuxpaintrc" i/lub przez polecenie z wiersza poleceñ) lub u¿ywaj¹c
+         Moï¿½esz wyï¿½ï¿½czyï¿½ czytanie tego pliku, pozostawiajï¿½c
+         domyï¿½lne ustawienia (ktï¿½re mogï¿½ byï¿½ nadpisane przez Twï¿½j
+         plik ".marxpaintrc" i/lub przez polecenie z wiersza poleceï¿½) lub uï¿½ywajï¿½c
          polecenia:
 
            --nosysconfig 
 
-U¿ytkownicy systemu Windows
+Uï¿½ytkownicy systemu Windows
 
-       Plik, który powinieneœ utworzyæ powinien nazywaæ siê "tuxpaint.cfg" i powinien
-       znajdowaæ siê w folderze Tux Paint.
+       Plik, ktï¿½ry powinieneï¿½ utworzyï¿½ powinien nazywaï¿½ siï¿½ "marxpaint.cfg" i powinien
+       znajdowaï¿½ siï¿½ w folderze Marx Paint.
 
-       Mo¿esz u¿yæ program NotePad lub WordPad, by utworzyæ ten plik. Upewnij siê, ¿e zapisujesz go
-       jako czysty tekst i nazwa pliku nie koñczy siê na ".txt"
+       Moï¿½esz uï¿½yï¿½ program NotePad lub WordPad, by utworzyï¿½ ten plik. Upewnij siï¿½, ï¿½e zapisujesz go
+       jako czysty tekst i nazwa pliku nie koï¿½czy siï¿½ na ".txt"
 
    --------------------------------------------------------------------------- 
 
-                               Dostêpne opcje 
+                               Dostï¿½pne opcje 
 
-     Poni¿sze ustawienia mog¹ zostaæ ustawione w pliku konfiguracyjnym.
-     (Opcje ustawione za pomoc¹ wiersza poleceñ nadpisz¹ je. Dalsze informacje w sekcji "Opcje
-     wiersza poleceñ" poni¿ej).
+     Poniï¿½sze ustawienia mogï¿½ zostaï¿½ ustawione w pliku konfiguracyjnym.
+     (Opcje ustawione za pomocï¿½ wiersza poleceï¿½ nadpiszï¿½ je. Dalsze informacje w sekcji "Opcje
+     wiersza poleceï¿½" poniï¿½ej).
 
      fullscreen=yes 
-             Uruchamia program w trybie pe³noekranowym.
+             Uruchamia program w trybie peï¿½noekranowym.
 
      800x600=yes
-             Uruchamia program w roŸdzielczoœci 800x600 (DOŒWIADCZALNYM) zamiast
+             Uruchamia program w roï¿½dzielczoï¿½ci 800x600 (DOï¿½WIADCZALNYM) zamiast
              mniejszej 640x480.
 
      nosound=yes
-             Dezaktywuje efekty dŸwiêkowe.
+             Dezaktywuje efekty dï¿½wiï¿½kowe.
 
      noquit=yes
              Dezaktywuje przycisk "Quit" na ekranie. (Klawisz [Escape]
-             lub klikniêcie przycisku zamykania okna nadal dzia³a).
+             lub klikniï¿½cie przycisku zamykania okna nadal dziaï¿½a).
 
      noprint=yes 
-             Dezaktywuje mo¿liwoœæ drukowania.
+             Dezaktywuje moï¿½liwoï¿½ï¿½ drukowania.
 
      printdelay=SEKUND 
-             Ogranicz drukowanie, aby mog³o nast¹piæ tylko raz na 
+             Ogranicz drukowanie, aby mogï¿½o nastï¿½piï¿½ tylko raz na 
              SEKUND sekund.
 
      printcommand=ROZKAZ 
 
              (tylko Linux i Unix)
 
-             U¿yj polecenia ROZKAZ, by wydrukowaæ plik PNG. Je¿eli nie ustawione,
-             domyœlnym poleceniem jest:
+             Uï¿½yj polecenia ROZKAZ, by wydrukowaï¿½ plik PNG. Jeï¿½eli nie ustawione,
+             domyï¿½lnym poleceniem jest:
 
                pngtopnm | pnmtops | lpr 
 
-             które konwertuje PNG do 'portable anymap' NetPBM, po czym
-             ponownie konwertuje do pliku PostScript i w koñcu wysy³a to 
-             do drukarki, u¿ywaj¹c polecenia "lpr".
+             ktï¿½re konwertuje PNG do 'portable anymap' NetPBM, po czym
+             ponownie konwertuje do pliku PostScript i w koï¿½cu wysyï¿½a to 
+             do drukarki, uï¿½ywajï¿½c polecenia "lpr".
 
      printcfg=yes
 
              (tylko system Windows)
 
-             Tux Paint u¿yje pliku konfiguracyjnego drukarki kiedy bêdzie drukowa³.
-             Naciœnij klawisz [ALT] podczas klikania przycisku 'Drukuj' w
-             Tux Paint, by spowodowaæ pojawienie siê okna opcji drukowania Windows.
+             Marx Paint uï¿½yje pliku konfiguracyjnego drukarki kiedy bï¿½dzie drukowaï¿½.
+             Naciï¿½nij klawisz [ALT] podczas klikania przycisku 'Drukuj' w
+             Marx Paint, by spowodowaï¿½ pojawienie siï¿½ okna opcji drukowania Windows.
 
-             (Zauwa¿: To dzia³a tylko gdy Tux Paint nie jest uruchomiony w trybie pe³noekranowym).
-             Jakiekolwiek zmiany w konfiguracji dokonane w tym oknie bêd¹
-             zapamiêtane do pliku "userdata/print.cfg" i u¿ywane ponownie, tak d³ugo
-             jak opcja "printcfg" bêdzie ustawiona.
+             (Zauwaï¿½: To dziaï¿½a tylko gdy Marx Paint nie jest uruchomiony w trybie peï¿½noekranowym).
+             Jakiekolwiek zmiany w konfiguracji dokonane w tym oknie bï¿½dï¿½
+             zapamiï¿½tane do pliku "userdata/print.cfg" i uï¿½ywane ponownie, tak dï¿½ugo
+             jak opcja "printcfg" bï¿½dzie ustawiona.
 
      simpleshapes=yes
-             Dezaktywuje mo¿liwoœæ rotacji narzêdzia Shape. Kliknij, przeci¹gnij i 
-             upuœæ to wszystko co bêdzie potrzebne, aby narysowaæ kszta³t.
+             Dezaktywuje moï¿½liwoï¿½ï¿½ rotacji narzï¿½dzia Shape. Kliknij, przeciï¿½gnij i 
+             upuï¿½ï¿½ to wszystko co bï¿½dzie potrzebne, aby narysowaï¿½ ksztaï¿½t.
 
      uppercase=yes
-             Ca³y tekst bêdzie wyœwietlany tylko drukowanymi literami (np. "Pêdzel" bêdzie 
-             wyœwietlany jako "PÊDZEL"). Przydatne dla dzieci, które nie pozna³y jeszcze
-             ma³ych liter, a potrafi¹ czytaæ du¿e.
+             Caï¿½y tekst bï¿½dzie wyï¿½wietlany tylko drukowanymi literami (np. "Pï¿½dzel" bï¿½dzie 
+             wyï¿½wietlany jako "Pï¿½DZEL"). Przydatne dla dzieci, ktï¿½re nie poznaï¿½y jeszcze
+             maï¿½ych liter, a potrafiï¿½ czytaï¿½ duï¿½e.
 
      grab=yes
 
-             Tux Paint bêdzie usi³owa³ "przechwyciæ" mysz i klawiaturê, tak wiêc
-             mysz jest przydzielona do okna Tux Paint i prawie ca³a
-             klawiatura jest przesy³ana bezpoœrednio do tego okna.
+             Marx Paint bï¿½dzie usiï¿½owaï¿½ "przechwyciï¿½" mysz i klawiaturï¿½, tak wiï¿½c
+             mysz jest przydzielona do okna Marx Paint i prawie caï¿½a
+             klawiatura jest przesyï¿½ana bezpoï¿½rednio do tego okna.
 
-             To jest przydatne, aby przeszkodziæ systemowi operacyjnemu w dzia³aniach, które
-             u¿ytkownik mog³by wykonaæ poza oknem Tux Paint, takich jak [Alt]-[Tab] przechodzenie
-             miêdzy oknami, [Ctrl]-[Escape], itd. To jest szczególnie przydatne w trybie
-             pe³noekranowym.
+             To jest przydatne, aby przeszkodziï¿½ systemowi operacyjnemu w dziaï¿½aniach, ktï¿½re
+             uï¿½ytkownik mogï¿½by wykonaï¿½ poza oknem Marx Paint, takich jak [Alt]-[Tab] przechodzenie
+             miï¿½dzy oknami, [Ctrl]-[Escape], itd. To jest szczegï¿½lnie przydatne w trybie
+             peï¿½noekranowym.
 
      noshortcuts=yes
 
-             To dezaktywuje skróty klawiatury (np. [Ctrl]-[S] aby zapisaæ,
+             To dezaktywuje skrï¿½ty klawiatury (np. [Ctrl]-[S] aby zapisaï¿½,
              [Ctrl]-[N] dla nowego obrazu, itd.)
 
-             To jest przydatne, aby zapobiec niechcianym dzia³aniom dokonanym 
-             przez dzieci, które nie s¹ przyzwyczajone do pracy z klawiatur¹.
+             To jest przydatne, aby zapobiec niechcianym dziaï¿½aniom dokonanym 
+             przez dzieci, ktï¿½re nie sï¿½ przyzwyczajone do pracy z klawiaturï¿½.
 
      nowheelmouse=yes
-             To dezaktywuje rolkê myszy, je¿eli ta j¹ posiada.
+             To dezaktywuje rolkï¿½ myszy, jeï¿½eli ta jï¿½ posiada.
              (Normalnie rolka przewinie menu umieszczone po prawej
              stronie).
 
      nofancycursors=yes
 
-             To dezaktywuje fantastyczne kszta³ty kursora myszy w Tux Paint i
-             w³¹cza normalny wskaŸnik myszy, taki jak w Twoim systemie.
+             To dezaktywuje fantastyczne ksztaï¿½ty kursora myszy w Marx Paint i
+             wï¿½ï¿½cza normalny wskaï¿½nik myszy, taki jak w Twoim systemie.
 
-             W niektórych systemach specjalne kursory mog¹ powodowaæ problemy. U¿yj tej
-             opcji aby unikn¹æ ich.
+             W niektï¿½rych systemach specjalne kursory mogï¿½ powodowaï¿½ problemy. Uï¿½yj tej
+             opcji aby uniknï¿½ï¿½ ich.
 
      nooutlines=yes
 
-             W tym trybie znacznie proœciej wyœwietlane s¹ linie konturowe
-             narysowane za pomoc¹ narzêdzi Linia, Kszta³ty, Znaczki i Gumka.
+             W tym trybie znacznie proï¿½ciej wyï¿½wietlane sï¿½ linie konturowe
+             narysowane za pomocï¿½ narzï¿½dzi Linia, Ksztaï¿½ty, Znaczki i Gumka.
 
-             To mo¿e pomóc kiedy Tux Paint jest uruchomiony na bardzo powolnych komputerach
-             lub wyœwietlanych na zdalnych pulpitach X-Window.
+             To moï¿½e pomï¿½c kiedy Marx Paint jest uruchomiony na bardzo powolnych komputerach
+             lub wyï¿½wietlanych na zdalnych pulpitach X-Window.
 
      nostamps=yes
 
-             Ta opcja Tux Paint powoduje nie za³adowywanie jakichkolwiek obrazów piecz¹tek,
-             które uniemo¿liwiaj¹ u¿ycie narzêdzia Piecz¹tki.
+             Ta opcja Marx Paint powoduje nie zaï¿½adowywanie jakichkolwiek obrazï¿½w pieczï¿½tek,
+             ktï¿½re uniemoï¿½liwiajï¿½ uï¿½ycie narzï¿½dzia Pieczï¿½tki.
 
-             To mo¿e przyspieszaæ Tux Paint podczas pierwszego uruchomienia i zmniejszenie,
-             zu¿ycia pamiêci podczas pracy. Oczywiœcie, ¿adne piecz¹tki nie bêd¹
-             dostêpne.
+             To moï¿½e przyspieszaï¿½ Marx Paint podczas pierwszego uruchomienia i zmniejszenie,
+             zuï¿½ycia pamiï¿½ci podczas pracy. Oczywiï¿½cie, ï¿½adne pieczï¿½tki nie bï¿½dï¿½
+             dostï¿½pne.
 
      nostampcontrols=yes
-             Niektóre obrazy w narzêdziu Piecz¹tki mog¹ zostaæ lustrzanie odbite, przekrêcone i/lub
-             mo¿na im zmieniæ wymiary. Ta opcja zdezaktywuje to i 
-             dostarczy tylko podstawowe piecz¹tki.
+             Niektï¿½re obrazy w narzï¿½dziu Pieczï¿½tki mogï¿½ zostaï¿½ lustrzanie odbite, przekrï¿½cone i/lub
+             moï¿½na im zmieniï¿½ wymiary. Ta opcja zdezaktywuje to i 
+             dostarczy tylko podstawowe pieczï¿½tki.
 
      mirrorstamps=yes
 
-             Dla piecz¹tek, które mog¹ byæ odbite lustrzanie ta opcja ustawia ich odbity
-             kszta³t jako domyœlny.
+             Dla pieczï¿½tek, ktï¿½re mogï¿½ byï¿½ odbite lustrzanie ta opcja ustawia ich odbity
+             ksztaï¿½t jako domyï¿½lny.
 
-             To mo¿e byæ przydatne dla ludzi, którzy wol¹ rzeczy z prawej do lewej strony,
-             bardziej ni¿ z lewej do prawej strony.
+             To moï¿½e byï¿½ przydatne dla ludzi, ktï¿½rzy wolï¿½ rzeczy z prawej do lewej strony,
+             bardziej niï¿½ z lewej do prawej strony.
 
      keboard=yes
 
-             To pozwala klawiszom kursorów na klawiaturze sterowaæ
-             wskaŸnikiem myszy. (np. w systemach, gdzie nie wystêpuje mysz komputerowa).
+             To pozwala klawiszom kursorï¿½w na klawiaturze sterowaï¿½
+             wskaï¿½nikiem myszy. (np. w systemach, gdzie nie wystï¿½puje mysz komputerowa).
 
-             Klawisze kursorów poruszaj¹ wskaŸnik myszy. Klawisz [Spacja] dzia³a jako
+             Klawisze kursorï¿½w poruszajï¿½ wskaï¿½nik myszy. Klawisz [Spacja] dziaï¿½a jako
              przycisk myszy.
 
      savedir=KATALOG 
 
-             U¿yj tej opcji, by zmieniæ miejsce, gdzie Tux Paint zapisuje obrazy.
-             Domyœlnie jest to katalog "~/.tuxpaint/saved/" pod Linuksem i Uniksem i 
+             Uï¿½yj tej opcji, by zmieniï¿½ miejsce, gdzie Marx Paint zapisuje obrazy.
+             Domyï¿½lnie jest to katalog "~/.marxpaint/saved/" pod Linuksem i Uniksem i 
              katalog "userdata"\ w systemie Windows.
 
-             To mo¿e byæ przydatne w laboratoriach z systemem Windows, gdzie Tux Paint
-             jest zainstalowany na serwerze i dzieci uruchamiaj¹ go na stacjach roboczych.
-             Mo¿esz ustawiæ ten katalog, by by³ folderem w ich katalogu g³ównym.
-             (np. "H:\tuxpaint\")
+             To moï¿½e byï¿½ przydatne w laboratoriach z systemem Windows, gdzie Marx Paint
+             jest zainstalowany na serwerze i dzieci uruchamiajï¿½ go na stacjach roboczych.
+             Moï¿½esz ustawiï¿½ ten katalog, by byï¿½ folderem w ich katalogu gï¿½ï¿½wnym.
+             (np. "H:\marxpaint\")
 
-             Zauwa¿: Kiedy okreœlasz napêd w systemie Windows (np. "H:\"), musisz
-             te¿ okreœliæ podkatalog.
+             Zauwaï¿½: Kiedy okreï¿½lasz napï¿½d w systemie Windows (np. "H:\"), musisz
+             teï¿½ okreï¿½liï¿½ podkatalog.
 
-             Przyk³ad: savedir=Z:\tuxpaint\ 
+             Przykï¿½ad: savedir=Z:\marxpaint\ 
 
      saveover=yes
-             To dezaktywuje zapytanie "Nadpisaæ star¹ wersjê...?" kiedy
-             zapisujesz istniej¹cy plik. Z t¹ opcj¹, starsza wersja
-             zawsze bêdzie zast¹piona przez now¹.
+             To dezaktywuje zapytanie "Nadpisaï¿½ starï¿½ wersjï¿½...?" kiedy
+             zapisujesz istniejï¿½cy plik. Z tï¿½ opcjï¿½, starsza wersja
+             zawsze bï¿½dzie zastï¿½piona przez nowï¿½.
 
      saveover=new 
-             To równie¿ dezaktywuje zapytanie "Nadpisaæ star¹ wersjê...?"
-             podczas zapisywania istniej¹cego pliku. Jednak¿e ta opcja bêdzie zawsze
-             zapisywa³a w nowym pliku, zamiast zapisywaæ star¹ wersjê.
+             To rï¿½wnieï¿½ dezaktywuje zapytanie "Nadpisaï¿½ starï¿½ wersjï¿½...?"
+             podczas zapisywania istniejï¿½cego pliku. Jednakï¿½e ta opcja bï¿½dzie zawsze
+             zapisywaï¿½a w nowym pliku, zamiast zapisywaï¿½ starï¿½ wersjï¿½.
 
      saveover=ask
 
-             (Ta opcja jest zbyteczna, odk¹d jest domyœlna)
+             (Ta opcja jest zbyteczna, odkï¿½d jest domyï¿½lna)
 
-             Podczas zapisywania istniej¹cego rysunku najpierw bêdziesz spytany czy
-             nadpisaæ starsz¹ wersjê lub nie.
+             Podczas zapisywania istniejï¿½cego rysunku najpierw bï¿½dziesz spytany czy
+             nadpisaï¿½ starszï¿½ wersjï¿½ lub nie.
 
      nosave=yes
-             To dezaktywuje mo¿liwoœæ zapisywania plików (i dezktywuje
-             przycisk "Zapisz" na ekranie). To mo¿e zostaæ u¿yte w
-             sytuacjach, gdzie program jest u¿ywany tylko dla zabawy lub w
-             œrodowisko testowym.
+             To dezaktywuje moï¿½liwoï¿½ï¿½ zapisywania plikï¿½w (i dezktywuje
+             przycisk "Zapisz" na ekranie). To moï¿½e zostaï¿½ uï¿½yte w
+             sytuacjach, gdzie program jest uï¿½ywany tylko dla zabawy lub w
+             ï¿½rodowisko testowym.
 
-     lang=JÊZYK 
+     lang=Jï¿½ZYK 
 
-             Uruchom Tux Paint w jednym z mo¿liwych jêzyków. Aktualna wersja
-             pozwala na wybór JÊZYKA spoœród ni¿ej wymienionych:
+             Uruchom Marx Paint w jednym z moï¿½liwych jï¿½zykï¿½w. Aktualna wersja
+             pozwala na wybï¿½r Jï¿½ZYKA spoï¿½rï¿½d niï¿½ej wymienionych:
 
                + ------------------------------------------------- + 
                | english             | american - english  |         | 
@@ -258,7 +258,7 @@ U¿ytkownicy systemu Windows
                | -------------------- + ------------------ + --------- | 
                | catalan             | catala            |         | 
                | -------------------- + ------------------ + --------- | 
-               | chiñski             | uproœci³eœ - chiñski |         | 
+               | chiï¿½ski             | uproï¿½ciï¿½eï¿½ - chiï¿½ski |         | 
                | -------------------- + ------------------ + --------- | 
                | croatian            | hrvatski          |         | 
                | -------------------- + ------------------ + --------- | 
@@ -266,33 +266,33 @@ U¿ytkownicy systemu Windows
                | -------------------- + ------------------ + --------- | 
                | danish              | dansk             |         | 
                | -------------------- + ------------------ + --------- | 
-               | ¿ona               | nederlands        |         | 
+               | ï¿½ona               | nederlands        |         | 
                | -------------------- + ------------------ + --------- | 
-               | fiñski             | suomi             |         | 
+               | fiï¿½ski             | suomi             |         | 
                | -------------------- + ------------------ + --------- | 
-               | jêzyk francuski              | francais          |         | 
+               | jï¿½zyk francuski              | francais          |         | 
                | -------------------- + ------------------ + --------- | 
                | rodzony              | deutsch           |         | 
                | -------------------- + ------------------ + --------- | 
                | grecki               |                  |         | 
                | -------------------- + ------------------ + --------- | 
-               | ¯yd              |                  |         | 
+               | ï¿½yd              |                  |         | 
                | -------------------- + ------------------ + --------- | 
                | hindi               |                  |         | 
                | -------------------- + ------------------ + --------- | 
-               | Wêgier           | magyar            |         | 
+               | Wï¿½gier           | magyar            |         | 
                | -------------------- + ------------------ + --------- | 
                | icelandic           | islenska          |         | 
                | -------------------- + ------------------ + --------- | 
                | indonesian          | bahasa - indonesia  |         | 
                | -------------------- + ------------------ + --------- | 
-               | w³oski             | italiano          |         | 
+               | wï¿½oski             | italiano          |         | 
                | -------------------- + ------------------ + --------- | 
                | japanese            |                  |         | 
                | -------------------- + ------------------ + --------- | 
                | klingon             | tlhIngan          |         | 
                | -------------------- + ------------------ + --------- | 
-               | koreañski              |                  |         | 
+               | koreaï¿½ski              |                  |         | 
                | -------------------- + ------------------ + --------- | 
                | lithuanian          | lietuviu          |         | 
                | -------------------- + ------------------ + --------- | 
@@ -300,7 +300,7 @@ U¿ytkownicy systemu Windows
                | -------------------- + ------------------ + --------- | 
                | Norweg           | nynorsk           |         | 
                | -------------------- + ------------------ + --------- | 
-               | nabierz po³ysku              | polski            |         | 
+               | nabierz poï¿½ysku              | polski            |         | 
                | -------------------- + ------------------ + --------- | 
                | Portugalczyk          | portugues         |         | 
                | -------------------- + ------------------ + --------- | 
@@ -320,7 +320,7 @@ U¿ytkownicy systemu Windows
                | -------------------- + ------------------ + --------- | 
                | tamil               |                  |         | 
                | -------------------- + ------------------ + --------- | 
-               | Tradycyjny - chiñski |                  |         | 
+               | Tradycyjny - chiï¿½ski |                  |         | 
                | -------------------- + ------------------ + --------- | 
                | turecki             |                  |         | 
                | -------------------- + ------------------ + --------- | 
@@ -333,30 +333,30 @@ U¿ytkownicy systemu Windows
 
    --------------------------------------------------------------------------- 
 
-              Nadpisywanie ustawieñ systemowych u¿ywaj¹c .tuxpaintrc 
+              Nadpisywanie ustawieï¿½ systemowych uï¿½ywajï¿½c .marxpaintrc 
 
-     (Dla u¿ytkowników Linuksa i Uniksa)
+     (Dla uï¿½ytkownikï¿½w Linuksa i Uniksa)
 
-     Je¿eli jakaœ z powy¿szych opcji jest ustawiona w pliku "/etc/tuxpaint/tuxpaint.config",
-     mo¿esz nadpisaæ j¹ w Twoim w³asnym pliku "~/.tuxpaintrc".
+     Jeï¿½eli jakaï¿½ z powyï¿½szych opcji jest ustawiona w pliku "/etc/marxpaint/marxpaint.config",
+     moï¿½esz nadpisaï¿½ jï¿½ w Twoim wï¿½asnym pliku "~/.marxpaintrc".
 
-     Dla opcji typu prawda/fa³sz, jak "noprint" i "grab", mo¿esz po prostu powiedzieæ,
-     ¿e one równaj¹ siê "no" w Twoim pliku "~/.tuxpaintrc":
+     Dla opcji typu prawda/faï¿½sz, jak "noprint" i "grab", moï¿½esz po prostu powiedzieï¿½,
+     ï¿½e one rï¿½wnajï¿½ siï¿½ "no" w Twoim pliku "~/.marxpaintrc":
 
        noprint=no
        uppercase=no
 
-     Lub mo¿esz u¿yæ opcji podobnych do poleceñ z wiersza poleceñ opisanych
-     poni¿ej. Na przyk³ad:
+     Lub moï¿½esz uï¿½yï¿½ opcji podobnych do poleceï¿½ z wiersza poleceï¿½ opisanych
+     poniï¿½ej. Na przykï¿½ad:
 
        print=yes 
        mixedcase=yes
 
    --------------------------------------------------------------------------- 
 
-                              Opcje wiersza poleceñ
+                              Opcje wiersza poleceï¿½
 
-     Opcje mog¹ te¿ zostaæ wydane z wiersza poleceñ kiedy uruchamiasz Tux Paint.
+     Opcje mogï¿½ teï¿½ zostaï¿½ wydane z wiersza poleceï¿½ kiedy uruchamiasz Marx Paint.
 
        --fullscreen
        --800x600
@@ -380,9 +380,9 @@ U¿ytkownicy systemu Windows
        --saveover
        --saveovernew
        --nosave
-       --lang JÊZYK
-               Te opcje odpowiadaj¹ opcjom pliku konfiguracyjnego 
-               opisanym powy¿ej.
+       --lang Jï¿½ZYK
+               Te opcje odpowiadajï¿½ opcjom pliku konfiguracyjnego 
+               opisanym powyï¿½ej.
 
                      ------------------------------------- 
 
@@ -406,88 +406,88 @@ U¿ytkownicy systemu Windows
        --mouse
        --saveoverask
        --save
-               Te opcje mog¹ zostaæ u¿yte, by nadpisaæ jakieœ ustawienia zrobione w
-               pliku konfiguracyjnym. (Je¿eli jakaœ opcja nie jest ustawiona
+               Te opcje mogï¿½ zostaï¿½ uï¿½yte, by nadpisaï¿½ jakieï¿½ ustawienia zrobione w
+               pliku konfiguracyjnym. (Jeï¿½eli jakaï¿½ opcja nie jest ustawiona
                w pliku(ach) konfiguracyjnym, nie jest konieczne nadpisywanie opcji).
 
                      ------------------------------------- 
 
        -- locale locale
 
-               Uruchom Tux Paint w jednym z dostêpnych jêzyków. Zobacz 
-               sekcjê "Wybór innego jêzyka" poni¿ej dla dok³adniejszych informacji
-               na temat u¿ywanych ³añcuchów (np. "de_DE@euro" dla jêzyka niemieckiego).
+               Uruchom Marx Paint w jednym z dostï¿½pnych jï¿½zykï¿½w. Zobacz 
+               sekcjï¿½ "Wybï¿½r innego jï¿½zyka" poniï¿½ej dla dokï¿½adniejszych informacji
+               na temat uï¿½ywanych ï¿½aï¿½cuchï¿½w (np. "de_DE@euro" dla jï¿½zyka niemieckiego).
 
-               (Je¿eli Twoja lokalizacja jest ju¿ ustawiona, np. poprzez zmienn¹
-               œrodowiskow¹ "$LANG" ta opcja nie jest konieczna, od czasu gdy
-               Tux Paint honoruje ustawienia Twojego systemu).
+               (Jeï¿½eli Twoja lokalizacja jest juï¿½ ustawiona, np. poprzez zmiennï¿½
+               ï¿½rodowiskowï¿½ "$LANG" ta opcja nie jest konieczna, od czasu gdy
+               Marx Paint honoruje ustawienia Twojego systemu).
 
        --nosysconfig 
 
                Pod Linuksem i Uniksem zapobiega to czytaniu pliku konfiguracyjnego
-               "/etc/tuxpaint/tuxpaint.conf"
+               "/etc/marxpaint/marxpaint.conf"
 
-               Tylko Twój w³asny plik konfiguracyjny "~/.tuxpaintrc" bêdzie u¿yty,
-               je¿eli istnieje.
+               Tylko Twï¿½j wï¿½asny plik konfiguracyjny "~/.marxpaintrc" bï¿½dzie uï¿½yty,
+               jeï¿½eli istnieje.
 
        --nolockfile 
 
-               Domyœlnie, Tux Paint u¿ywa czegoœ w rodzaju 'pliku zabezpieczenia' ('lockfile')
-               by zapobiegaæ uruchamianiu czêœciej ni¿ raz na 30 sekund.
-               (To jest po to aby unikn¹æ przypadkowego wielokrotnego uruchamiania kopii;
-               na przyk³ad, poprzez podwójne klikniêcie na pojedynczym odpalaczu lub przez
-               wielokrotne klikanie na ikonê).
+               Domyï¿½lnie, Marx Paint uï¿½ywa czegoï¿½ w rodzaju 'pliku zabezpieczenia' ('lockfile')
+               by zapobiegaï¿½ uruchamianiu czï¿½ciej niï¿½ raz na 30 sekund.
+               (To jest po to aby uniknï¿½ï¿½ przypadkowego wielokrotnego uruchamiania kopii;
+               na przykï¿½ad, poprzez podwï¿½jne klikniï¿½cie na pojedynczym odpalaczu lub przez
+               wielokrotne klikanie na ikonï¿½).
 
-               Aby Tux Paint ignorowa³ ten plik, pozwalaj¹c uruchomiæ siê ponownie,
-               nawet jeœli nie up³ynê³o 30 sekund od poprzedniego uruchomienia,
-               uruchom Tux Paint z opcj¹ '--nolockfile' w wierszu polecenia.
+               Aby Marx Paint ignorowaï¿½ ten plik, pozwalajï¿½c uruchomiï¿½ siï¿½ ponownie,
+               nawet jeï¿½li nie upï¿½ynï¿½o 30 sekund od poprzedniego uruchomienia,
+               uruchom Marx Paint z opcjï¿½ '--nolockfile' w wierszu polecenia.
 
-               Domyœlnie, 'plik zabezpieczenia' ('lockfile') jest przechowywany w katalogu 
-               "~/.tuxpaint/" pod Linuksem/Uniksem i w katalogu "userdata\" pod
+               Domyï¿½lnie, 'plik zabezpieczenia' ('lockfile') jest przechowywany w katalogu 
+               "~/.marxpaint/" pod Linuksem/Uniksem i w katalogu "userdata\" pod
                systemem Windows.
 
    --------------------------------------------------------------------------- 
 
-Opcje informacyjne wiersza poleceñ
+Opcje informacyjne wiersza poleceï¿½
 
-       Poni¿sze opcje pokazuj¹ pewne informacyjne treœci na ekranie.
+       Poniï¿½sze opcje pokazujï¿½ pewne informacyjne treï¿½ci na ekranie.
 
          --version 
-                 Wyœwietla numer wersji i datê kopii Tux Paint,
-                 którego uruchomi³eœ. To równie¿ pokazuje listê jakie, je¿eli jakieœ opcje
-                 zosta³y ustawione podczas kompilacji. (Zobacz INSTALL.txt i FAQ.txt).
+                 Wyï¿½wietla numer wersji i datï¿½ kopii Marx Paint,
+                 ktï¿½rego uruchomiï¿½eï¿½. To rï¿½wnieï¿½ pokazuje listï¿½ jakie, jeï¿½eli jakieï¿½ opcje
+                 zostaï¿½y ustawione podczas kompilacji. (Zobacz INSTALL.txt i FAQ.txt).
 
          --copying
-                 Wyœwietla krótk¹ informacjê o licencji i kopiowaniu Tux Paint.
+                 Wyï¿½wietla krï¿½tkï¿½ informacjï¿½ o licencji i kopiowaniu Marx Paint.
 
          --usage 
-                 Wyœwietla listê dostêpnych opcji z wiersza poleceñ.
+                 Wyï¿½wietla listï¿½ dostï¿½pnych opcji z wiersza poleceï¿½.
 
          --help
-                 Wyœwietla krótk¹ pomoc na temat u¿ywania Tux Paint.
+                 Wyï¿½wietla krï¿½tkï¿½ pomoc na temat uï¿½ywania Marx Paint.
 
          --lang help 
-                 Wyœwietla listê dostêpnych jêzyków w Tux Paint.
+                 Wyï¿½wietla listï¿½ dostï¿½pnych jï¿½zykï¿½w w Marx Paint.
 
    --------------------------------------------------------------------------- 
 
-                         Wybór innego jêzyka
+                         Wybï¿½r innego jï¿½zyka
 
-     Tux Paint zosta³ przet³umaczony na kilka jêzyków. Aby uzyskaæ dostêp do 
-     t³umaczenia mo¿esz u¿yæ opcji "--lang" w wierszu poleceñ by ustawiæ
-     jêzyk (np. "--lang spanish") lub wykorzystaj ustawienie "lang=" w
+     Marx Paint zostaï¿½ przetï¿½umaczony na kilka jï¿½zykï¿½w. Aby uzyskaï¿½ dostï¿½p do 
+     tï¿½umaczenia moï¿½esz uï¿½yï¿½ opcji "--lang" w wierszu poleceï¿½ by ustawiï¿½
+     jï¿½zyk (np. "--lang spanish") lub wykorzystaj ustawienie "lang=" w
      pliku konfiguracyjnym (np. "lang=spanish").
 
-     Tux Paint równie¿ honoruje aktualn¹ lokalizacjê Twojego systemu. (Mo¿esz
-     nadpisaæ j¹ u¿ywaj¹c wiersza poleceñ i opcji "--locale"; zobacz powy¿ej).
+     Marx Paint rï¿½wnieï¿½ honoruje aktualnï¿½ lokalizacjï¿½ Twojego systemu. (Moï¿½esz
+     nadpisaï¿½ jï¿½ uï¿½ywajï¿½c wiersza poleceï¿½ i opcji "--locale"; zobacz powyï¿½ej).
 
-     U¿yj opcji "--lang help" by sporz¹dziæ listê dostêpnych opcji jêzykowych.
+     Uï¿½yj opcji "--lang help" by sporzï¿½dziï¿½ listï¿½ dostï¿½pnych opcji jï¿½zykowych.
 
-Dostêpne jêzyki
+Dostï¿½pne jï¿½zyki
 
        + --------------------------------------------------------- + 
        | Code  Locale  |     Language      |      Language       | 
-       |               |   (rodzime imiê)   |   (angielskie imiê)    | 
+       |               |   (rodzime imiï¿½)   |   (angielskie imiï¿½)    | 
        | --------------- + ------------------- + --------------------- | 
        | C              |                   | angielski              | 
        | --------------- + ------------------- + --------------------- | 
@@ -495,17 +495,17 @@ Dostêpne jêzyki
        | --------------- + ------------------- + --------------------- | 
        | be_BY          | Bielaruskaja       | Belarusian           | 
        | --------------- + ------------------- + --------------------- | 
-       | bg_BG          |                   | bu³garski            | 
+       | bg_BG          |                   | buï¿½garski            | 
        | --------------- + ------------------- + --------------------- | 
-       | br_FR          | Brezhoneg          | bretoñski               | 
+       | br_FR          | Brezhoneg          | bretoï¿½ski               | 
        | --------------- + ------------------- + --------------------- | 
-       | ca_ES          | Catal`            | kataloñski              | 
+       | ca_ES          | Catal`            | kataloï¿½ski              | 
        | --------------- + ------------------- + --------------------- | 
        | cs_CZ          | Cesky              | czeski                | 
        | --------------- + ------------------- + --------------------- | 
        | cy_GB          | Cymraeg            | walijski                | 
        | --------------- + ------------------- + --------------------- | 
-       | da_DK          | Dansk              | duñski               | 
+       | da_DK          | Dansk              | duï¿½ski               | 
        | --------------- + ------------------- + --------------------- | 
        | de_DE @ euro     | Deutsch            | niemiecki               | 
        | --------------- + ------------------- + --------------------- | 
@@ -513,11 +513,11 @@ Dostêpne jêzyki
        | --------------- + ------------------- + --------------------- | 
        | en_GB          |                   | brytyjski Angielski      | 
        | --------------- + ------------------- + --------------------- | 
-       | es_ES @ euro     | Espanol            | hiszpañski              | 
+       | es_ES @ euro     | Espanol            | hiszpaï¿½ski              | 
        | --------------- + ------------------- + --------------------- | 
        | eu_ES          | Euskara            | baskijski               | 
        | --------------- + ------------------- + --------------------- | 
-       | fi_FI @ euro     | Suomi              | fiñski              | 
+       | fi_FI @ euro     | Suomi              | fiï¿½ski              | 
        | --------------- + ------------------- + --------------------- | 
        | fr_FR @ euro     | Franc,ais          | francuski               | 
        | --------------- + ------------------- + --------------------- | 
@@ -527,17 +527,17 @@ Dostêpne jêzyki
        | --------------- + ------------------- + --------------------- | 
        | hr_HR          | Hrvatski           | Croatian             | 
        | --------------- + ------------------- + --------------------- | 
-       | hu_HU          | wêgierski             | wêgierski            | 
+       | hu_HU          | wï¿½gierski             | wï¿½gierski            | 
        | --------------- + ------------------- + --------------------- | 
        | id_ID          | Indonezja Bahasa   | indonezyjski           | 
        | --------------- + ------------------- + --------------------- | 
        | is_IS          | Islenska           | islandzki            | 
        | --------------- + ------------------- + --------------------- | 
-       | it_IT @ euro     | Italiano           | w³oski              | 
+       | it_IT @ euro     | Italiano           | wï¿½oski              | 
        | --------------- + ------------------- + --------------------- | 
-       | ja_JP.UTF -8 (*)|                   | japoñski             | 
+       | ja_JP.UTF -8 (*)|                   | japoï¿½ski             | 
        | --------------- + ------------------- + --------------------- | 
-       | ko_KR.UTF -8 (*)|                   | koreañski               | 
+       | ko_KR.UTF -8 (*)|                   | koreaï¿½ski               | 
        | --------------- + ------------------- + --------------------- | 
        | lt_LT.UTF -8    | Lietuviu           | litewski           | 
        | --------------- + ------------------- + --------------------- | 
@@ -555,13 +555,13 @@ Dostêpne jêzyki
        | --------------- + ------------------- + --------------------- | 
        | pt_PT          | Portuges           | portugalski           | 
        | --------------- + ------------------- + --------------------- | 
-       | ro_RO          |                   | rumuñski             | 
+       | ro_RO          |                   | rumuï¿½ski             | 
        | --------------- + ------------------- + --------------------- | 
        | ru_RU          |                   | rosyjski              | 
        | --------------- + ------------------- + --------------------- | 
-       | sk_SK          |                   | s³owacki               | 
+       | sk_SK          |                   | sï¿½owacki               | 
        | --------------- + ------------------- + --------------------- | 
-       | sl_SI          |                   | s³oweñski            | 
+       | sl_SI          |                   | sï¿½oweï¿½ski            | 
        | --------------- + ------------------- + --------------------- | 
        | sr_YU          |                   | serbski              | 
        | --------------- + ------------------- + --------------------- | 
@@ -577,116 +577,116 @@ Dostêpne jêzyki
        | --------------- + ------------------- + --------------------- | 
        | wa_BE @ euro     |                   | Walloon              | 
        | --------------- + ------------------- + --------------------- | 
-       | zh_CN (*)      |                   | chiñski (uproszczony     | 
+       | zh_CN (*)      |                   | chiï¿½ski (uproszczony     | 
        | --------------- + ------------------- + --------------------- | 
-       | zh_TW (*)      |                   | Chiñski (tradycyjny)     | 
+       | zh_TW (*)      |                   | Chiï¿½ski (tradycyjny)     | 
        + --------------------------------------------------------- + 
 
-       (*) - Te jêzyki wymagaj¹ w³asnych czcionek, poniewa¿ nie s¹
-       reprezentowane przez ³aciñski zestaw znaków tak jak inne. Zobacz
-       sekcjê "Czcionki specjalne", która znajdujê siê poni¿ej.
+       (*) - Te jï¿½zyki wymagajï¿½ wï¿½asnych czcionek, poniewaï¿½ nie sï¿½
+       reprezentowane przez ï¿½aciï¿½ski zestaw znakï¿½w tak jak inne. Zobacz
+       sekcjï¿½ "Czcionki specjalne", ktï¿½ra znajdujï¿½ siï¿½ poniï¿½ej.
 
 Ustawienia lokalizacji systemu
 
-       Zmiana Twojej lokalizacji mo¿e znacznie oddzia³aæ na system.
+       Zmiana Twojej lokalizacji moï¿½e znacznie oddziaï¿½aï¿½ na system.
 
-       Jak podano wy¿ej, wraz z pozwoleniem wyboru jêzyka za pomoc¹
-       opcji wiersza poleceñ ("--lang" i "--locale"), Tux Paint
-       honoruje globaln¹ lokalizacjê ustawion¹ w Twoim systemie.
+       Jak podano wyï¿½ej, wraz z pozwoleniem wyboru jï¿½zyka za pomocï¿½
+       opcji wiersza poleceï¿½ ("--lang" i "--locale"), Marx Paint
+       honoruje globalnï¿½ lokalizacjï¿½ ustawionï¿½ w Twoim systemie.
 
-       Je¿eli jeszcze nie ustawi³eœ lokalizacji Twojego systemu, poni¿ej
-       krótko wyjaœniê jak to zrobiæ:
+       Jeï¿½eli jeszcze nie ustawiï¿½eï¿½ lokalizacji Twojego systemu, poniï¿½ej
+       krï¿½tko wyjaï¿½niï¿½ jak to zrobiï¿½:
 
-  U¿ytkownicy Linuksa/Uniksa
+  Uï¿½ytkownicy Linuksa/Uniksa
 
-         Po pierwsze, upewnij siê czy lokalizacja, któr¹ chcesz u¿yæ jest aktywna poprzez
-         edycjê pliku "/etc/locale.gen" w Twoim systemie i wtedy uruchom program
-         "locale-gen" jako u¿ytkownik "root".
+         Po pierwsze, upewnij siï¿½ czy lokalizacja, ktï¿½rï¿½ chcesz uï¿½yï¿½ jest aktywna poprzez
+         edycjï¿½ pliku "/etc/locale.gen" w Twoim systemie i wtedy uruchom program
+         "locale-gen" jako uï¿½ytkownik "root".
 
-         Zauwa¿: U¿ytkownicy systemu Debian mog¹ u¿yæ polecenia
+         Zauwaï¿½: Uï¿½ytkownicy systemu Debian mogï¿½ uï¿½yï¿½ polecenia
          "dpkg-reconfigure locales".
 
-         Nastêpnie, przed uruchomieniem Tux Paint, ustaw zmienn¹ œrodowiskow¹ "$LANG"
-         na jedn¹ z lokalizacji podanych powy¿ej. (Je¿eli chcesz, aby wszystkie
-         programy, zosta³y przet³umaczone mo¿esz umieœciæ j¹ w jednym
-         ze skryptów logowania; np. ~/.profil, ~/.bashrc,
+         Nastï¿½pnie, przed uruchomieniem Marx Paint, ustaw zmiennï¿½ ï¿½rodowiskowï¿½ "$LANG"
+         na jednï¿½ z lokalizacji podanych powyï¿½ej. (Jeï¿½eli chcesz, aby wszystkie
+         programy, zostaï¿½y przetï¿½umaczone moï¿½esz umieï¿½ciï¿½ jï¿½ w jednym
+         ze skryptï¿½w logowania; np. ~/.profil, ~/.bashrc,
          ~/.cshrc, itd.)
 
-         Na przyk³ad, w shellu Bourna (jak Bashu):
+         Na przykï¿½ad, w shellu Bourna (jak Bashu):
 
            export LANG=pl_PL@euro ; \ 
-           tuxpaint 
+           marxpaint 
 
          i w shellu C (jak TCSH):
 
            setnv LANG  pl_PL@euro ; \ 
-           tuxpaint 
+           marxpaint 
 
    --------------------------------------------------------------------------- 
 
-  U¿ytkownicy systemu Windows
+  Uï¿½ytkownicy systemu Windows
 
-         Tux Paint rozpozna aktualn¹ lokalizacjê i u¿yje odpowiednich
-         plików domyœlnie. Wiêc ta sekcja jest tylko dla osób u¿ywaj¹cych
-         innych jêzyków ni¿ jêzyk systemowy.
+         Marx Paint rozpozna aktualnï¿½ lokalizacjï¿½ i uï¿½yje odpowiednich
+         plikï¿½w domyï¿½lnie. Wiï¿½c ta sekcja jest tylko dla osï¿½b uï¿½ywajï¿½cych
+         innych jï¿½zykï¿½w niï¿½ jï¿½zyk systemowy.
 
-         Najprostsz¹ rzecz¹ by to zrobiæ jest u¿ycie opcji "--lang"
-         w skrócie (zobacz "INSTALL.txt"). Jednak¿e przy u¿yciu okna MSDOS 
-         równie¿ jest to mo¿liwe, przez polecenie:
+         Najprostszï¿½ rzeczï¿½ by to zrobiï¿½ jest uï¿½ycie opcji "--lang"
+         w skrï¿½cie (zobacz "INSTALL.txt"). Jednakï¿½e przy uï¿½yciu okna MSDOS 
+         rï¿½wnieï¿½ jest to moï¿½liwe, przez polecenie:
 
            set LANG=pl_PL@euro 
 
-         ...który na zawsze ustawi jêzyk dla okna systemu DOS.
+         ...ktï¿½ry na zawsze ustawi jï¿½zyk dla okna systemu DOS.
 
-         Dla czegoœ bardziej trwa³ego, spróbuj edytowaæ Twój plik
-         'autoexec.bat' u¿ywaj¹c narzêdzia systemu Windows "sysedit":
+         Dla czegoï¿½ bardziej trwaï¿½ego, sprï¿½buj edytowaï¿½ Twï¿½j plik
+         'autoexec.bat' uï¿½ywajï¿½c narzï¿½dzia systemu Windows "sysedit":
 
         Windows 95/98 
 
           1. Kliknij na przycisk Start i wybierz 'Uruchom...'.
-          2. Napisz "sysedit" w polu 'Otwórz:'.
+          2. Napisz "sysedit" w polu 'Otwï¿½rz:'.
           3. Kliknij "OK".
-          4. Zlokalizuj okno AUTOEXEC.BAT w Edytorze Ustawieñ Systemowych.
-          5. Dodaj nastêpuj¹cy wpis na koñcu pliku:
+          4. Zlokalizuj okno AUTOEXEC.BAT w Edytorze Ustawieï¿½ Systemowych.
+          5. Dodaj nastï¿½pujï¿½cy wpis na koï¿½cu pliku:
 
                set LANG=pl_PL@euro 
 
-          6. Zamknij Edytor Ustawieñ Systemowych odpowiadaj¹c tak by zapisaæ
+          6. Zamknij Edytor Ustawieï¿½ Systemowych odpowiadajï¿½c tak by zapisaï¿½
              zmiany.
           7. Ponownie uruchom komputer.
 
-           Aby oddzia³aæ na ca³¹ maszynê i wszystkie aplikacje, jest mo¿liwe 
-           u¿ycie "Ustawieñ regionalnych" z Panelu sterowania:
+           Aby oddziaï¿½aï¿½ na caï¿½ï¿½ maszynï¿½ i wszystkie aplikacje, jest moï¿½liwe 
+           uï¿½ycie "Ustawieï¿½ regionalnych" z Panelu sterowania:
 
           1. Kliknij na przycisk Start i wybierz 
              'Ustawienia | Panel sterowania'.
-          2. Podwójnie kliknij na ikonê "Ustawienia regionalne".
-          3. Wybierz jêzyk/region z podanej listy.
+          2. Podwï¿½jnie kliknij na ikonï¿½ "Ustawienia regionalne".
+          3. Wybierz jï¿½zyk/region z podanej listy.
           4. Kliknij "OK".
           5. Uruchom ponownie komputer kiedy otrzymasz komunikat.
 
   Specjalne czcionki
 
-       Niektóre jêzyki wymagaj¹ zainstalowania specjalnych czcionek. Te pliki czcionek
-       (które s¹ w formacie TrueType (TTF)), s¹ zbyt du¿e by zawrzeæ je
-       wraz z g³ównym programem Tux Paint i s¹ dostêpne oddzielnie. (Zobacz
-       tabelê powy¿ej, w sekcji "Wybór innego jêzyka").
+       Niektï¿½re jï¿½zyki wymagajï¿½ zainstalowania specjalnych czcionek. Te pliki czcionek
+       (ktï¿½re sï¿½ w formacie TrueType (TTF)), sï¿½ zbyt duï¿½e by zawrzeï¿½ je
+       wraz z gï¿½ï¿½wnym programem Marx Paint i sï¿½ dostï¿½pne oddzielnie. (Zobacz
+       tabelï¿½ powyï¿½ej, w sekcji "Wybï¿½r innego jï¿½zyka").
 
-       Kiedy uruchomisz Tux Paint w jêzyku, który wymaga w³asnej czcionki,
-       Tux Paint spróbuje za³adowaæ plik czcionki ze œcie¿ki czcionek systemowych
+       Kiedy uruchomisz Marx Paint w jï¿½zyku, ktï¿½ry wymaga wï¿½asnej czcionki,
+       Marx Paint sprï¿½buje zaï¿½adowaï¿½ plik czcionki ze ï¿½cieï¿½ki czcionek systemowych
        (w podkatalogu "locale"). Nazwa pliku odpowiada
-       pierwszym dwóm literom z kodu lokalizacji jêzyka
-       (np. "ko" dla koreañskiego, "ja" dla japoñskiego, "zh" dla chiñskiego).
+       pierwszym dwï¿½m literom z kodu lokalizacji jï¿½zyka
+       (np. "ko" dla koreaï¿½skiego, "ja" dla japoï¿½skiego, "zh" dla chiï¿½skiego).
 
-       Na przyk³ad, pod Linuksem lub Uniksem, kiedy Tux Paint jest uruchomiony
-       w jêzyku koreañskim (np. z opcj¹ "--lang korean"), Tux Paint bêdzie usi³owa³ 
-       za³adowaæ nastêpuj¹cy plik z czcionk¹:
+       Na przykï¿½ad, pod Linuksem lub Uniksem, kiedy Marx Paint jest uruchomiony
+       w jï¿½zyku koreaï¿½skim (np. z opcjï¿½ "--lang korean"), Marx Paint bï¿½dzie usiï¿½owaï¿½ 
+       zaï¿½adowaï¿½ nastï¿½pujï¿½cy plik z czcionkï¿½:
 
-         /usr/share/tuxpaint/fonts/locale/ko.ttf 
+         /usr/share/marxpaint/fonts/locale/ko.ttf 
 
-       Mo¿esz pobraæ czcionki jêzykowe ze strony internetowej Tux Paint 
-       http://www.newbreedsoftware.com/tuxpaint/. (Zobacz w 
+       Moï¿½esz pobraï¿½ czcionki jï¿½zykowe ze strony internetowej Marx Paint 
+       http://www.newbreedsoftware.com/marxpaint/. (Zobacz w 
        sekcji 'Fonts' pod 'Download').
 
-       Pod Uniksem i Linuksem mo¿esz u¿yæ pliku Makefile, który pochodzi od
-       czcionki, aby zainstalowaæ czcionkê w odpowiednim miejscu.
+       Pod Uniksem i Linuksem moï¿½esz uï¿½yï¿½ pliku Makefile, ktï¿½ry pochodzi od
+       czcionki, aby zainstalowaï¿½ czcionkï¿½ w odpowiednim miejscu.

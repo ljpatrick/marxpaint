@@ -1,52 +1,52 @@
-PNG.txt dla Tux Paint
+PNG.txt dla Marx Paint
 
-Tux Paint - Prosty program do rysowania dla dzieci.
+Marx Paint - Prosty program do rysowania dla dzieci.
 
 Copyright 2005 by Bill Kendrick i inni
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 27 czerwca 2002 - 9 marca 2005
 
 O PNG
 ----------
-  PNG to (ang. Portable Network Graphics) to format plików graficznych.
-  To otwarty standard, nie obci¹¿ony przez prawo patentowe (jak np. GIF).
-  To format o du¿ej kompresji (chocia¿ nie jest to kompresja stratna jak
-  np. JPEG - dziêki stratnej kompresji pliki s¹ du¿o mniejsze, ale tak 
-  zapisany obraz ma "artefakty") i obs³uguje 24-bitow¹ g³êbie kolorów 
-  (16,7 milionów kolorów) oraz tzw. "kana³ alfa" - dziêki temu ka¿dy piksel
-  mo¿e mieæ ro¿ny stopieñ przezroczystoœci.
+  PNG to (ang. Portable Network Graphics) to format plikï¿½w graficznych.
+  To otwarty standard, nie obciï¿½ï¿½ony przez prawo patentowe (jak np. GIF).
+  To format o duï¿½ej kompresji (chociaï¿½ nie jest to kompresja stratna jak
+  np. JPEG - dziï¿½ki stratnej kompresji pliki sï¿½ duï¿½o mniejsze, ale tak 
+  zapisany obraz ma "artefakty") i obsï¿½uguje 24-bitowï¿½ gï¿½ï¿½bie kolorï¿½w 
+  (16,7 milionï¿½w kolorï¿½w) oraz tzw. "kanaï¿½ alfa" - dziï¿½ki temu kaï¿½dy piksel
+  moï¿½e mieï¿½ roï¿½ny stopieï¿½ przezroczystoï¿½ci.
 
-  Aby dowiedzieæ siê wiêcej, odwiedŸ:  http://www.libpng.org/  
+  Aby dowiedzieï¿½ siï¿½ wiï¿½cej, odwiedï¿½:  http://www.libpng.org/  
 
-  Te cechy (otwartoœæ standardu, brak utraty jakoœci obrazu, kompresja,
-  przezroczystoœæ) spowodowa³y, ¿e to najlepszy wybór dla Tux Paint. 
-  (Obs³uga formatu PNG w Tux Paint opiera siê na bibliotece Open Source
-  SDL_Image, która to z kolei opiera siê na bibliotece libPNG).
+  Te cechy (otwartoï¿½ï¿½ standardu, brak utraty jakoï¿½ci obrazu, kompresja,
+  przezroczystoï¿½ï¿½) spowodowaï¿½y, ï¿½e to najlepszy wybï¿½r dla Marx Paint. 
+  (Obsï¿½uga formatu PNG w Marx Paint opiera siï¿½ na bibliotece Open Source
+  SDL_Image, ktï¿½ra to z kolei opiera siï¿½ na bibliotece libPNG).
 
-  Wsparcie dla wielu kolorów zachowuje fotograficzn¹ jakoœæ "pieczêtowanych"
-  obrazów które maj¹ byæ u¿yte w Tux Paint, a przezroczystoœæ zachowuje
-  wysokiej jakoœci "poci¹gniecia pêdzlem".
+  Wsparcie dla wielu kolorï¿½w zachowuje fotograficznï¿½ jakoï¿½ï¿½ "pieczï¿½towanych"
+  obrazï¿½w ktï¿½re majï¿½ byï¿½ uï¿½yte w Marx Paint, a przezroczystoï¿½ï¿½ zachowuje
+  wysokiej jakoï¿½ci "pociï¿½gniecia pï¿½dzlem".
 
 
 
-Jak stworzyæ PNG
+Jak stworzyï¿½ PNG
 -----------------
-  Poni¿ej jest bardzo _krótki_ opis sposobów stworzenia PNG lub
-  konwersji instniej¹cych obrazów do formatu PNG.
+  Poniï¿½ej jest bardzo _krï¿½tki_ opis sposobï¿½w stworzenia PNG lub
+  konwersji instniejï¿½cych obrazï¿½w do formatu PNG.
 
-  U¿ytkownicy Linux/Unix
+  Uï¿½ytkownicy Linux/Unix
   ----------------------
     GIMP
     ----
-    GIMP (skrót od ang. "GNU Image Manipulation Program") to najlepsze narzêdzie, 
-    którym mo¿na stworzyæ obraz PNG, aby u¿yæ go w Tux Paint. To wysokiej 
-    jakoœci program open source do tworzenia i edycji obrazu.
+    GIMP (skrï¿½t od ang. "GNU Image Manipulation Program") to najlepsze narzï¿½dzie, 
+    ktï¿½rym moï¿½na stworzyï¿½ obraz PNG, aby uï¿½yï¿½ go w Marx Paint. To wysokiej 
+    jakoï¿½ci program open source do tworzenia i edycji obrazu.
 
-    Prawdopodobnie jest ju¿ zainstalowany w twoim systemie Linux. Jeœli nie,
-    prawie zawsze znajduje siê na instalacyjnym CD lub w internecie, na stronie
-    twojej dystrybucji. Jeœli nie, odwiedŸ:
+    Prawdopodobnie jest juï¿½ zainstalowany w twoim systemie Linux. Jeï¿½li nie,
+    prawie zawsze znajduje siï¿½ na instalacyjnym CD lub w internecie, na stronie
+    twojej dystrybucji. Jeï¿½li nie, odwiedï¿½:
 
         http://www.gimp.org/
 
@@ -59,18 +59,18 @@ Jak stworzyæ PNG
 
     NetPBM
     ------
-      Narzêdzia Portable Bitmap (znane pod wspóln¹ nazw¹ jako "NetPBM") to 
-      zbiór narzêdzi open source, wywo³ywanych z lini poleceñ, które konwertuj¹ z i na
-      ró¿ne formaty, w³¹czaj¹c GIF, TIFF, BMP, PNG i wiele innych.
+      Narzï¿½dzia Portable Bitmap (znane pod wspï¿½lnï¿½ nazwï¿½ jako "NetPBM") to 
+      zbiï¿½r narzï¿½dzi open source, wywoï¿½ywanych z lini poleceï¿½, ktï¿½re konwertujï¿½ z i na
+      rï¿½ne formaty, wï¿½ï¿½czajï¿½c GIF, TIFF, BMP, PNG i wiele innych.
 	
       UWAGA:Formaty NetPBM (Portable Bitmap: PBM,Portable Greymap: PGM,
-      Portable Pixmap: PPM,  Portable Any Map: PNM) nie obs³uguj¹ kana³u alfa,
-      wiêc jakiekolwiek dane o przezroczystoœci (np.w pliku GIF) zostan¹ utracone!
-      U¿yj GIMPa!
+      Portable Pixmap: PPM,  Portable Any Map: PNM) nie obsï¿½ugujï¿½ kanaï¿½u alfa,
+      wiï¿½c jakiekolwiek dane o przezroczystoï¿½ci (np.w pliku GIF) zostanï¿½ utracone!
+      Uï¿½yj GIMPa!
 
-      Prawdopodobnie jest ju¿ zainstalowany w twoim systemie Linux. Jeœli nie,
-      prawie zawsze znajduje siê na instalacyjnym CD lub w internecie, na stronie
-      twojej dystrybucji. Jeœli nie, odwiedŸ:
+      Prawdopodobnie jest juï¿½ zainstalowany w twoim systemie Linux. Jeï¿½li nie,
+      prawie zawsze znajduje siï¿½ na instalacyjnym CD lub w internecie, na stronie
+      twojej dystrybucji. Jeï¿½li nie, odwiedï¿½:
 
        
         http://netpbm.sourceforge.net/
@@ -78,19 +78,19 @@ Jak stworzyæ PNG
 
     cjpeg/djpeg
     -----------
-      Program wywo³ywany z lini poleceñ: "cjpeg" i "djpeg" konwertuje pomiêdzy
+      Program wywoï¿½ywany z lini poleceï¿½: "cjpeg" i "djpeg" konwertuje pomiï¿½dzy
       formatem NetPBM Portable Any Map (PNM) i JPEG.
 
       
-      Prawdopodobnie jest ju¿ zainstalowany w twoim systemie Linux. 
-      (W Debianie jest on dostêpny w pakiecie "libjpeg-progs".)Jeœli nie,
-      prawie zawsze znajduje siê na instalacyjnym CD lub w internecie, na stronie
-      twojej dystrybucji. Jeœli nie, odwiedŸ:
+      Prawdopodobnie jest juï¿½ zainstalowany w twoim systemie Linux. 
+      (W Debianie jest on dostï¿½pny w pakiecie "libjpeg-progs".)Jeï¿½li nie,
+      prawie zawsze znajduje siï¿½ na instalacyjnym CD lub w internecie, na stronie
+      twojej dystrybucji. Jeï¿½li nie, odwiedï¿½:
 
          ftp://ftp.uu.net/graphics/jpeg/
 
 
-  U¿ytkownicy Windows
+  Uï¿½ytkownicy Windows
   -------------
     The Gimp
       http://www.gimp.org/~tml/gimp/win32/
@@ -117,7 +117,7 @@ Jak stworzyæ PNG
       http://bluefive.pair.com/pixresizer.htm
 
 
-  U¿ytkownicy Macintosh`a
+  Uï¿½ytkownicy Macintosh`a
   ---------------
     Canvas (Deneba)
       http://www.deneba.com/products/canvas8/default2.html
@@ -138,10 +138,10 @@ Jak stworzyæ PNG
       http://www.adobe.com/products/photoshop/main.html
 
 
-Wiêcej informacji:
+Wiï¿½cej informacji:
 ----------
-  Na stronie libPNG jest spis edytorów obrazów, 
-  które obs³uguj¹ format PNG :
+  Na stronie libPNG jest spis edytorï¿½w obrazï¿½w, 
+  ktï¿½re obsï¿½ugujï¿½ format PNG :
 
     http://www.libpng.org/pub/png/pngaped.html
     http://www.libpng.org/pub/png/pngapcv.html

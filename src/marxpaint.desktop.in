@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Marx Paint
+Type=Application
+Exec=marxpaint
+Icon=marxpaint
+Terminal=false
+Categories=Education;Art;
+_GenericName=Drawing program
+_Comment=A drawing program for communists.

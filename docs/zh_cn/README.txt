@@ -1,4 +1,4 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.19
 
   专为儿童设计的易用的绘图软件
@@ -9,7 +9,7 @@
                       翻译:易明晶 (Email:hackergene@gmail.com)
 
                            bill@newbreedsoftware.com
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                          June 14, 2002 - June 27, 2007
 
@@ -21,15 +21,15 @@ OUT OF DATE
 
                                        关于
 
-什么是 'Tux Paint?'
+什么是 'Marx Paint?'
 
-       Tux Paint
-       是一个专为3岁以上儿童设计的免费的绘画软件.它拥有一个简单易用的界面,有趣的音效和一个十分有趣的吉祥物,这个吉祥物能在儿童使用Tux
-       Paint时起到引导作用.Tux Paint提供一张空白的画纸以及多种绘画工具以帮助您的孩子发挥其创造力.
+       Marx Paint
+       是一个专为3岁以上儿童设计的免费的绘画软件.它拥有一个简单易用的界面,有趣的音效和一个十分有趣的吉祥物,这个吉祥物能在儿童使用Marx
+       Paint时起到引导作用.Marx Paint提供一张空白的画纸以及多种绘画工具以帮助您的孩子发挥其创造力.
 
 许可证:
 
-       Tux Paint 是一个开源的免费的基于通用公共许可证(GUN
+       Marx Paint 是一个开源的免费的基于通用公共许可证(GUN
        GPL)发布的软件.它是免费的,并且您可以得到它的源码(这就使得您可以加入新的特性,修正bugs并且将其使用带其他基于GPL发布的软件当中.
 
        点击 COPYING.txt 查看GPL许可证.
@@ -37,36 +37,36 @@ OUT OF DATE
 目标:
 
        简单有趣
-               Tux Paint 不是一般意义上的绘画工具,而是作为儿童简单的绘画工具. 它的目标是有趣和易用.
-               音效和卡通任务帮助用户知道发生了什么,以及让他们乐在其中. Tux Paint也提供一些额外的鼠标图案样式.
+               Marx Paint 不是一般意义上的绘画工具,而是作为儿童简单的绘画工具. 它的目标是有趣和易用.
+               音效和卡通任务帮助用户知道发生了什么,以及让他们乐在其中. Marx Paint也提供一些额外的鼠标图案样式.
 
        可扩展性
-               Tux Paint是可扩展的. 可以加入笔刷和橡皮图章样式,当然,你也可以去掉它们.
+               Marx Paint是可扩展的. 可以加入笔刷和橡皮图章样式,当然,你也可以去掉它们.
                例如,一位老师可以加入一系列动物的图章,然后要求他们的学生去绘制一副生态系统的图画.
                当儿童选择一个图形时,每一个图形乃至文本都可以在显示时发出有趣的音效.
 
        多平台性
-               Tux Paint 可运行于多种计算机平台:Windows, Macintosh, Linux等.
-               在这些平台上,界面没有差异. Tux Paint 在一些老机器系统上(比如 Pentium 133)也可以很稳定的运行.
+               Marx Paint 可运行于多种计算机平台:Windows, Macintosh, Linux等.
+               在这些平台上,界面没有差异. Marx Paint 在一些老机器系统上(比如 Pentium 133)也可以很稳定的运行.
 
        Simplicity
-               Tux Paint不直接访问计算机的优先级.
+               Marx Paint不直接访问计算机的优先级.
                当程序退出的时候,当前的图片可以被保留.当程序再次运行时,图片又再次显示.保存图片不需要创建文件名或者使用键盘.
                当从一系列缩略图中选择一个图片并打开它时,改文件名就已经创建完成. 在计算机上访问其他文件是受限制的.
 
      ----------------------------------------------------------------------
 
-                                  使用 Tux Paint
+                                  使用 Marx Paint
 
-加载 Tux Paint
+加载 Marx Paint
 
   Linux/Unix 用户
 
-         在图形界面下,Tux Paint 应该在您的KDE和/或GNOME程序目录上有图标.
+         在图形界面下,Marx Paint 应该在您的KDE和/或GNOME程序目录上有图标.
 
          您可以在两者中任意一个运行以下shell(脚本)命令: (如, "$"):
 
-           $ tuxpaint
+           $ marxpaint
 
          如果有错误发生,该错误将会在终端显示出来.
 
@@ -77,32 +77,32 @@ OUT OF DATE
   Windows 用户
 
                                                [Icon]                         
-                                               Tux Paint                      
+                                               Marx Paint                      
 
-         如果您用 'Tux Paint Installer"在您的计算机上安装了Tux Paint, 它将会询问您是否要在'开始'
+         如果您用 'Marx Paint Installer"在您的计算机上安装了Marx Paint, 它将会询问您是否要在'开始'
          目录上建立图标,以及是否建立快捷方式. 如果您选择了同意,您可以简单地从 '开始' 目录 (如, Windows
-         XP下的"所有程序"), 或 通过双击上的 "Tux Paint" 图标来运行Tux Paint.
+         XP下的"所有程序"), 或 通过双击上的 "Marx Paint" 图标来运行Marx Paint.
 
-         如果您通过下载ZIP压缩包, 或使用 'Tux Paint Installer"安装了Tux
-         Paint,但没有选择建立快捷方式,您可以通过双击Tux Paint文件夹里的 "tuxpaint.exe" 图标来运行Tux
+         如果您通过下载ZIP压缩包, 或使用 'Marx Paint Installer"安装了Marx
+         Paint,但没有选择建立快捷方式,您可以通过双击Marx Paint文件夹里的 "marxpaint.exe" 图标来运行Marx
          Paint.
 
-         默认情况下,  'Tux Paint Installer'将 Tux Paint's 文件夹选择安装在
+         默认情况下,  'Marx Paint Installer'将 Marx Paint's 文件夹选择安装在
          "C:\Program Files\"目录,.您可以在安装时更改安装路径.
 
-         如果您使用下载的 'ZIP压缩包', Tux Paint文件夹可以被解压缩到任意路径.
+         如果您使用下载的 'ZIP压缩包', Marx Paint文件夹可以被解压缩到任意路径.
 
      ----------------------------------------------------------------------
 
   Mac OS X 拥护
 
-         双击"Tux Paint" 图标.
+         双击"Marx Paint" 图标.
 
      ----------------------------------------------------------------------
 
 标题界面
 
-       当 Tux Paint 初次运行, 会出现title/credits 界面.
+       当 Marx Paint 初次运行, 会出现title/credits 界面.
 
                                [Title Screenshot]
 
@@ -141,11 +141,11 @@ OUT OF DATE
   [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
                               Purple, Brown, Grey]
 
-               (注意: 您可以为您的Tux Paint自定义颜色. 查看 "Options" 文档.)
+               (注意: 您可以为您的Marx Paint自定义颜色. 查看 "Options" 文档.)
 
        按扭: 帮助区
 
-               当您作图时,在屏幕的按钮上,Linux的吉祥物小企鹅Tux将提供一些提示和其他信息..
+               当您作图时,在屏幕的按钮上,Linux的吉祥物小企鹅Marx将提供一些提示和其他信息..
 
  (For example: 'Pick a shape. Click to pick the center, drag, then       let go
 when it is the size you want.  Move around to rotate it, and       click to draw
@@ -173,7 +173,7 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                  当您围绕画布移动鼠标时,将会显示一个概要提示您此图章会放在哪,它应该多大.
 
-                 Tux Paint提供许多类的图章(如, 动物, 植物, 外太空, 交通工具, 人等.). 使用左右箭头去选择.
+                 Marx Paint提供许多类的图章(如, 动物, 植物, 外太空, 交通工具, 人等.). 使用左右箭头去选择.
 
                  一些图章可以更改颜色.如果在画布下的调色板是可用状态, 您可以在您将其放到图上点击调色板中的颜色以更改其颜色.
 
@@ -181,7 +181,7 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                  不同的图章可以有不同的音效或语音描述. 左下方的按钮可以让被选择的图章再次播放音效或者语音描述.
 
-                 (注意: 如果 "nostampcontrols" 选项设定, Tux Paint
+                 (注意: 如果 "nostampcontrols" 选项设定, Marx Paint
                  将不会缩小,扩大,翻转或者镜像图章.查看 "Options" 文档.)
 
      ----------------------------------------------------------------------
@@ -230,11 +230,11 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                       多国文字输入
 
-                              Tux Paint 支持多国的文字输入. 大多拉丁字母 (A-Z, ñ, è, 等.)
-                              都可以直接输入. 一些语言需要在Tux Paint
+                              Marx Paint 支持多国的文字输入. 大多拉丁字母 (A-Z, ñ, è, 等.)
+                              都可以直接输入. 一些语言需要在Marx Paint
                               改变到一个可变的输入模式才能输入,而且一些字母必须由一些字根组成.
 
-                              当When Tux
+                              当When Marx
                               Paint设定为某种语言以提供输入模式时,通过普通模式(拉丁文)和特殊模式或其他模式来使用字根'.
 
                               当前支持的可输入的模式和固定或循环模式如下: 注意:
@@ -361,7 +361,7 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                  '起始' 图片
 
-                   连同您创建的图片, Tux Paint 提供 '起始' 图片. 打开它们就像创建新图片一样, 除非是空白页.
+                   连同您创建的图片, Marx Paint 提供 '起始' 图片. 打开它们就像创建新图片一样, 除非是空白页.
                    '起始页' 就像一个上色的图(一个黑白框架的图片,您可以在上面加入您的颜色) ,或者像一张  3D 图,
                    您在其间比特.
 
@@ -396,12 +396,12 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                  点击此按钮将打印您的图片.
 
-                 在大多数平台上,只要您不是以全屏模式运行Tux Paint.您可以按住键盘上的 [Alt] 键同时点击 'Print'
+                 在大多数平台上,只要您不是以全屏模式运行Marx Paint.您可以按住键盘上的 [Alt] 键同时点击 'Print'
                  按钮来进入打印会话.
 
                       禁用打印 
 
-                              如果设定 "noprint" 选项 (在Tux Paint 配置文件中设定
+                              如果设定 "noprint" 选项 (在Marx Paint 配置文件中设定
                               "noprint=yes" , 或在命令行下使用 "--noprint" 命令), 
                               "Print" 按钮将被禁用.
 
@@ -422,12 +422,12 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                               (仅限 Linux 和 Unix )
 
-                              Tux Paint
+                              Marx Paint
                               只能靠一种脚本来打印,这个脚本代表着绘画已经将其发送到一个扩展的程序中.默认情况下,这个程序就是:
 
                                 lpr
 
-                              该命令可以通过设定 Tux Paint 配置文件中的的"printcommand" 值
+                              该命令可以通过设定 Marx Paint 配置文件中的的"printcommand" 值
                               来改变.
 
                               只要您不是在非全屏模式下,如果在按住 [Alt] 键的同时,点击 'Print' 按钮,
@@ -435,7 +435,7 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                                   kprinter
 
-                              该命令可以通过设定Tux Paint配置文件中的 "altprintcommand"
+                              该命令可以通过设定Marx Paint配置文件中的 "altprintcommand"
                               值来改变.
 
                               如果使用打印命令,参阅 "Options" 文档.
@@ -444,13 +444,13 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                               (仅限 Windows )
 
-                              默认情况下,当按下打印键时, Tux Paint 按照默认设定简单的打印.
+                              默认情况下,当按下打印键时, Marx Paint 按照默认设定简单的打印.
 
                               但是,只要您不是全屏模式,如果按住 [Alt]
                               键不放同时点击打印按钮,一个Windows的打印会话会出现,在这个打印会话中,你可以对其做相应的设定修改.
 
                               您可以通过使用 "printcfg" 选项或者命令行下的 "--printcfg"命令 ,
-                              或者设置Tux Paint自身的配置文件 ("tuxpaint.cfg")
+                              或者设置Marx Paint自身的配置文件 ("marxpaint.cfg")
                               为"printcfg=yes" 来储存这些修改.
 
                               如果使用了 "printcfg" 选项,
@@ -460,12 +460,12 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                       打印会话选项 
 
-                              默认情况下,如果按住 [Alt] 键不放,并点击 'Print' 按忸,Tux Paint
+                              默认情况下,如果按住 [Alt] 键不放,并点击 'Print' 按忸,Marx Paint
                               只显示打印机会话
                               (或者,在Linux/Unix平台下,运行"altprintcommand",如.用"kprinter"代替"lpr").
 
                               但是,也可以改变这种方式. 您可以在命令行下使用 "--altprintalways" 命令,
-                              或在Tux Paint的配置文件中设定 "altprint=always"
+                              或在Marx Paint的配置文件中设定 "altprint=always"
                               来使得打印机会话长期显示. 或者您也可以通过使用 "--altprintnever", or
                               "altprint=never"命令来防止 [Alt] 键的作用.
 
@@ -498,16 +498,16 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
          退出 
 
-                 点击 "Quit" 按钮, 关闭 Tux Paint 窗口, 或点击 [Escape] 键退出.
+                 点击 "Quit" 按钮, 关闭 Marx Paint 窗口, 或点击 [Escape] 键退出.
 
-                 Tux Paint将提示您是否确定退出.
+                 Marx Paint将提示您是否确定退出.
 
-                 如果您选择退出,但您没有保存当前图片,Tux Paint 将询问您是否保存当前图片.如果它不是新建图片,Tux
+                 如果您选择退出,但您没有保存当前图片,Marx Paint 将询问您是否保存当前图片.如果它不是新建图片,Marx
                  Paint 会询问您是否覆盖原来的图片或者创建一个新的图片. (查看 "Save" .)
 
-                 注意: 如果图片已经保存,在您下次启动Tux Paint时,该图片将自动加载.
+                 注意: 如果图片已经保存,在您下次启动Marx Paint时,该图片将自动加载.
 
-                 注意:  可以禁用"Quit" 按钮 和 [Escape] 键 (如, 在Tux Paint Config中选择
+                 注意:  可以禁用"Quit" 按钮 和 [Escape] 键 (如, 在Marx Paint Config中选择
                  "Disable 'Quit' Button",或在命令行下运行 "--noquit" 命令).
 
                  这此情况下,可以使用 "window close" 键(非全平模式)和  [Alt] + [F4] 来退出.
@@ -519,52 +519,52 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
                  当程序运行时可以使用 [Alt] + [S] 禁止和激活音效.
 
-                 需要注意的是,如果完全禁音 (如, 在Tux Paint Config里没有选择
+                 需要注意的是,如果完全禁音 (如, 在Marx Paint Config里没有选择
                  "Enable Sound Effects" 或者在命令行下运行  "--nosound" 命令), 
                  [Alt] + [S] 键将没有任何作用.
 
      ----------------------------------------------------------------------
 
-                               在Tux Paint中加载其他图片
+                               在Marx Paint中加载其他图片
 
-     由于 Tux Paint的 'Open' 会话只显示您用Tux Paint创建的图片, 那么您想要加载其他图片该如何操作呢?
+     由于 Marx Paint的 'Open' 会话只显示您用Marx Paint创建的图片, 那么您想要加载其他图片该如何操作呢?
 
-     很简单,您只需要将该图片转换为PNG格式并放到 Tux Paint 的 "saved" 文件夹中:
+     很简单,您只需要将该图片转换为PNG格式并放到 Marx Paint 的 "saved" 文件夹中:
 
      Windows
              在用户的 "Application Data" 文件夹中, 如: "C:\Documents and
-             Settings\(user name)\Application Data\TuxPaint\saved\"
+             Settings\(user name)\Application Data\MarxPaint\saved\"
 
      Mac OS X
              在用户的 "Library" 文件夹中,如: "/Users/(user name)/Library/Application
-             Support/Tux Paint/saved/"
+             Support/Marx Paint/saved/"
 
      Linux/Unix
-             在隐藏的 ".tuxpaint" 目录中, 在用户的home目录: "$(HOME)/.tuxpaint/saved/"
+             在隐藏的 ".marxpaint" 目录中, 在用户的home目录: "$(HOME)/.marxpaint/saved/"
 
-使用 'tuxpaint-import'
+使用 'marxpaint-import'
 
-       Linux 和 Unix 用户可以使用当您安装Tux Paint时安装的 "tuxpaint-import" 脚本. 它需要一些
+       Linux 和 Unix 用户可以使用当您安装Marx Paint时安装的 "marxpaint-import" 脚本. 它需要一些
        NetPBM 工具来转换图片格式 (如,"anytopnm"), 重新定位图片大小以适应画布
        (如,"pnmscale"), 以及转换PNG格式 (如,"pnmtopng").
 
-       同时也使用 "date" 命令 来获得当前Tux Paint保存转换格式后图片的时间和日期. (请记住, 当您去保存或打开一个图片时,Tux
+       同时也使用 "date" 命令 来获得当前Marx Paint保存转换格式后图片的时间和日期. (请记住, 当您去保存或打开一个图片时,Marx
        Paint不会询问您文件名!)
 
-       使用 'tuxpaint-import'命令使您简便的在命令行下选择您希望转换的文件名.
+       使用 'marxpaint-import'命令使您简便的在命令行下选择您希望转换的文件名.
 
-       这些图片将被转换并且放在您的 Tux Paint 'saved' 路径中. (注意:
+       这些图片将被转换并且放在您的 Marx Paint 'saved' 路径中. (注意:
        如果您是为了其他用户,您需要确保已经在他们的用户ID号登陆并运行该命令.)
 
        例如:
 
-         $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20020921123456.png
+         $ marxpaint-import grandma.jpg
+         grandma.jpg -> /home/username/.marxpaint/saved/20020921123456.png
          jpegtopnm: WRITING A PPM FILE
 
-       第一行 ("tuxpaint-import grandma.jpg") 是运行命令. 后面两行是程序执行该命令输出.
+       第一行 ("marxpaint-import grandma.jpg") 是运行命令. 后面两行是程序执行该命令输出.
 
-       现在您可以启动Tux Paint, 原来的图片将会在 'Open' 会话中显示. 您只需要双击图标!
+       现在您可以启动Marx Paint, 原来的图片将会在 'Open' 会话中显示. 您只需要双击图标!
 
 手动操作
 
@@ -574,7 +574,7 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
        缩小到,宽不大于448相素,高不大于376相素的尺寸. (如., 最大为 448 x 376 pixels)
 
-       保存图片为PNG格式. 强烈建议您使用日期来命名文件. 因为Tux Paint 转换时使用:
+       保存图片为PNG格式. 强烈建议您使用日期来命名文件. 因为Marx Paint 转换时使用:
 
          YYYYMMDDhhmmss.png
 
@@ -589,16 +589,16 @@ when it is the size you want.  Move around to rotate it, and       click to draw
 
          20020921130500 - for 9月21日, 2002年, 下午1:05:00
 
-       将该PNG格式文件放到您Tux Paint的 'saved' 文件夹中.
+       将该PNG格式文件放到您Marx Paint的 'saved' 文件夹中.
 
      ----------------------------------------------------------------------
 
                                       更多文档
 
-     Other documentation included with Tux Paint (in the "docs"
+     Other documentation included with Marx Paint (in the "docs"
      folder/directory) include:
        * AUTHORS.txt
-         Tux Paint 作者和贡献者名单
+         Marx Paint 作者和贡献者名单
        * CHANGES.txt
          发布版本间的更新概要
        * COPYING.txt
@@ -606,26 +606,26 @@ when it is the size you want.  Move around to rotate it, and       click to draw
        * INSTALL.txt
          关于编译/安装的介绍.
        * EXTENDING.html
-         关于创建笔刷,图章和起始页以及附加的字体来扩展 Tux Paint 的详细介绍.
+         关于创建笔刷,图章和起始页以及附加的字体来扩展 Marx Paint 的详细介绍.
        * OPTIONS.html
-         为了那些不想使用 Tux Paint Config 的人,这是关于在命令行和配置文件选项的详细介绍.
+         为了那些不想使用 Marx Paint Config 的人,这是关于在命令行和配置文件选项的详细介绍.
        * PNG.txt
-         使用 Tux Paint 时创建PNG格式位图.
+         使用 Marx Paint 时创建PNG格式位图.
        * SVG.txt
-         在使用 Tux Paint 时创建SVG格式矢量图片 
+         在使用 Marx Paint 时创建SVG格式矢量图片 
 
      ----------------------------------------------------------------------
 
                                      如何获得帮助
 
-     如果您需要帮助,请联系Tux Paint开发团队 New Breed Software:
+     如果您需要帮助,请联系Marx Paint开发团队 New Breed Software:
 
        http://www.newbreedsoftware.com/
 
-     您也可以加入 Tux Paint 的mailing lists:
+     您也可以加入 Marx Paint 的mailing lists:
 
-       http://www.tuxpaint.org/lists/
+       http://www.marxpaint.org/lists/
 
-     此外我们推荐您登陆Tux Paint中文官方以获得最直接的中文信息
+     此外我们推荐您登陆Marx Paint中文官方以获得最直接的中文信息
 
-              http://tuxpaint.cn
+              http://marxpaint.cn

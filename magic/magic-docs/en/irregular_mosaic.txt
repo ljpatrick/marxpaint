@@ -1,4 +1,4 @@
-                    Tux Paint "Magic" Tool: Irregular Mosaic
+                    Marx Paint "Magic" Tool: Irregular Mosaic
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

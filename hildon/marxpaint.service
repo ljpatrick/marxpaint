@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.nokia.marxpaint
+Exec=/usr/bin/marxpaint

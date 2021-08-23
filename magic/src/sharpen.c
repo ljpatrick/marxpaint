@@ -2,13 +2,13 @@
   sharpen.c
 
   Sharpen, Trace Contour and Silhouette Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -333,7 +333,7 @@ void sharpen_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     }
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void sharpen_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
                        Uint8 b ATTRIBUTE_UNUSED)
 {

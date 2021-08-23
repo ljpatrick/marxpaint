@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Color Shift
+                      Marx Paint "Magic" Tool: Color Shift
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

@@ -1,14 +1,14 @@
 /*
   postscript_print.c
 
-  For Tux Paint
+  For Marx Paint
   PostScript(r) printing routine.
   (for non-Windows, non-BeOS platforms, e.g. Linux and macOS)
-  (moved from tuxpaint.c in 0.9.17)
+  (moved from marxpaint.c in 0.9.17)
 
   Copyright (c) 2009 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -194,7 +194,7 @@ int do_ps_save(FILE * fi,
   tlate_y = (ppr_h - printed_img_h) / 2;
 
 
-  /* Based off of output from "pnmtops", Tux Paint 0.9.15 thru
+  /* Based off of output from "pnmtops", Marx Paint 0.9.15 thru
      0.9.17 CVS as of June 2007, and Adobe Systems Incorporated's
      'PostScript(r) Language Reference, 3rd Ed.' */
 
@@ -207,7 +207,7 @@ int do_ps_save(FILE * fi,
   strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
   fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
 
-  fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION ", " VER_DATE ")\n");
+  fprintf(fi, "%%%%Creator: (Marx Paint " VER_VERSION ", " VER_DATE ")\n");
 
   fprintf(fi, "%%%%Pages: 1\n");
 
@@ -298,7 +298,7 @@ int do_ps_save(FILE * fi,
       int status;
 
 #ifdef __APPLE__
-      /* macOS does not always reset errno so Tux Paint thinks print never
+      /* macOS does not always reset errno so Marx Paint thinks print never
        * succeeds - let's reset before calling pclose() on macOS */
       errno = 0;
 #endif

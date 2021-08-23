@@ -1,4 +1,4 @@
-                  Tux Paint "Magic" Tool: Symmetry Left/Right
+                  Marx Paint "Magic" Tool: Symmetry Left/Right
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

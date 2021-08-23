@@ -1,19 +1,19 @@
 #!/bin/sh
 
 ##############################################################################
-# Script to generate TuxPaint.dmg from TuxPaint.app.
+# Script to generate MarxPaint.dmg from MarxPaint.app.
 #
 # Generating a pretty DMG file programmatically is a bit of an art.  Many
 # thanks to the appdmg project for showing how:
 # (https://github.com/LinusU/node-appdmg)
 #
 
-BUNDLE=TuxPaint.app
+BUNDLE=MarxPaint.app
 TEMP_DMG=temp.dmg
 TEMP_DMG_SIZE=`expr \`du -sm "$BUNDLE" | cut -f1\` \* 15 / 10`m
-FINAL_DMG=TuxPaint.dmg
-VOLNAME="Tux Paint"
-ICON="macos/tuxpaint.icns"
+FINAL_DMG=MarxPaint.dmg
+VOLNAME="Marx Paint"
+ICON="macos/marxpaint.icns"
 BACKGROUND="macos/background.png"
 
 

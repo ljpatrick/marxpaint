@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Mirror
+                         Marx Paint "Magic" Tool: Mirror
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -5,12 +5,12 @@
 
 gtk-update-icon-cache -f /usr/share/icons/hicolor
 
-if [ ! -d /media/mmc1/tuxpaint ]
+if [ ! -d /media/mmc1/marxpaint ]
 then
-   mkdir /media/mmc1/tuxpaint
+   mkdir /media/mmc1/marxpaint
 fi
 
 echo " Lets ask about the location"
-maemo-select-menu-location tuxpaint.desktop tana_fi_games
+maemo-select-menu-location marxpaint.desktop tana_fi_games
 
 exit 0

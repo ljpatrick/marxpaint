@@ -1,25 +1,25 @@
-                                   Tux Paint
+                                   Marx Paint
                                  versión 0.9.27
                             Documentación de sinais
 
     Copyright © 2019-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                9 de Marzo de 2021
 
      ----------------------------------------------------------------------
 
-   Tux Paint responde aos seguintes sinais (que poden enviarse ao proceso do
+   Marx Paint responde aos seguintes sinais (que poden enviarse ao proceso do
    programa a través de «kill» ou «killall», por exemplo).
 
-   SIGTERM (tamén, [Ctrl] + [C] dende un terminal executando «tuxpaint»)
+   SIGTERM (tamén, [Ctrl] + [C] dende un terminal executando «marxpaint»)
 
-           Tux Paint responde coma se se premese o botón «Saír» ou se lle
-           dixera ao contorno de escritorio que peche Tux Paint (por exemplo,
+           Marx Paint responde coma se se premese o botón «Saír» ou se lle
+           dixera ao contorno de escritorio que peche Marx Paint (por exemplo,
            premendo nun botón de peche da xanela ou premendo [Alt] + [F4] na
            maioría dos sistemas).
 
-           Dende a interface principal, Tux Paint preguntará se quere ou non
+           Dende a interface principal, Marx Paint preguntará se quere ou non
            saír e (a non ser que sexa anulado pol a opción de gardado
            automático, p. ex.: «--autosavex) se quere gardar o debuxo actual
            (se non está gardado) , e se é así, e é unha versión modificada
@@ -32,26 +32,26 @@
            Nota: Dende outras partes da interface, o sinal interprétase
            actualmente como unha solicitude de retroceso (por exemplo, dende
            o diálogo «Novo» de volta á interface principal), coma se se
-           premera un botón «Atrás» en Tux Paint ou se premera a tecla [Esc].
+           premera un botón «Atrás» en Marx Paint ou se premera a tecla [Esc].
 
-           Exemplo: killall tuxpaint
+           Exemplo: killall marxpaint
 
    SIGUSR1 & SIGUSR2
 
-           Tux Paint responde axustando a súa opción de gardar
+           Marx Paint responde axustando a súa opción de gardar
            automaticamente (coma se fora publicada con «--autosave»), así
            como a opción de gardar sempre novas imaxes (coma se se publicase
            con «--saveovernew») no caso de recibir un sinal de SIGUSR1 ou de
            gardar sempre sobre a imaxe existente (coma se se publicase con
-           «--saveover») no caso de recibir SIGUSR2. Entón Tux Paint envíase
+           «--saveover») no caso de recibir SIGUSR2. Entón Marx Paint envíase
            a sí mesmo un sinal de SIGTERM, nun intento de saír. (Ver arriba.)
 
-           Así, dende a interface principal, Tux Paint debería saír case de
+           Así, dende a interface principal, Marx Paint debería saír case de
            inmediato, sen facer preguntas.
 
-           Nota: Dende outras partes da interface, por desgraza, Tux Paint
+           Nota: Dende outras partes da interface, por desgraza, Marx Paint
            retrocederá un nivel na interface. Polo tanto, neste momento pode
-           que sexa necesario enviar este sinal a Tux Paint unhas cantas
+           que sexa necesario enviar este sinal a Marx Paint unhas cantas
            veces para que saia completamente.
 
-           Exemplo: killall -s SIGUSR1 tuxpaint
+           Exemplo: killall -s SIGUSR1 marxpaint

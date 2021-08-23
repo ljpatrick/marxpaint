@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Rainbow
+                        Marx Paint "Magic" Tool: Rainbow
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

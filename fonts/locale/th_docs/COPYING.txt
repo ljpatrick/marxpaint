@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-thai"
-Thai TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-thai"
+Thai TrueType Font (TTF) for Marx Paint
 
 The "th.ttf" font file is a copy of a "Garuda, Bold" TrueType font,
 (Garub.ttf).

@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Negative
+                        Marx Paint "Magic" Tool: Negative
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

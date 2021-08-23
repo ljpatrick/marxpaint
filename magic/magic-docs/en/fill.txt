@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Fill
+                          Marx Paint "Magic" Tool: Fill
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

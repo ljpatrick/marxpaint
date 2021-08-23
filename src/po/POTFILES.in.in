@@ -8,5 +8,5 @@ im.c
 shapes.h
 titles.h
 tools.h
-tuxpaint.c
-tuxpaint.desktop.in
+marxpaint.c
+marxpaint.desktop.in

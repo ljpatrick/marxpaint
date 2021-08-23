@@ -2,11 +2,11 @@
   distortion.c
 
   Distortion Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <string.h>             // For "strdup()"
 
-#include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
+#include "tp_magic_api.h"       // Marx Paint "Magic" tool API header
 #include "SDL_image.h"          // For IMG_Load(), to load our PNG icon
 #include "SDL_mixer.h"          // For Mix_LoadWAV(), to load our sound effects
 
@@ -121,7 +121,7 @@ SDL_Surface *distortion_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
   snprintf(fname, sizeof(fname), "%s/images/magic/distortion.png", api->data_directory);
 
 
-  // Try to load the image, and return the results to Tux Paint:
+  // Try to load the image, and return the results to Marx Paint:
 
   return (IMG_Load(fname));
 }
@@ -159,7 +159,7 @@ void distortion_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 
-/* Functions that respond to events in Tux Paint: */
+/* Functions that respond to events in Marx Paint: */
 /* ---------------------------------------------- */
 
 // Affect the canvas on click:
@@ -232,7 +232,7 @@ static void distortion_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
 
   // This function handles both of our tools, so we need to check which
   // is being used right now.  We compare the 'which' argument that
-  // Tux Paint sends to us with the values we enumerated above.
+  // Marx Paint sends to us with the values we enumerated above.
 
   for (yy = -8; yy < 8; yy++)
     {

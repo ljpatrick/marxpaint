@@ -2,7 +2,7 @@
   fonts.h
 
   Copyright (c) 2009-2017
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@
 #include "SDL_mutex.h"
 #else
 /* This shouldn't really be here :-)
- * Move into 'fonts.c' and the code in 'tuxpaint.c' 
+ * Move into 'fonts.c' and the code in 'marxpaint.c' 
  * that uses this lot should be put into 'fonts.c' as well.
  */
 
@@ -99,7 +99,7 @@ enum
   FONT_TYPE_TTF
 };
 
-typedef struct TuxPaint_Font_s
+typedef struct MarxPaint_Font_s
 {
 #ifndef NO_SDLPANGO
   SDLPango_Context *pango_context;
@@ -108,9 +108,9 @@ typedef struct TuxPaint_Font_s
   TTF_Font *ttf_font;
   int height;
   char *desc;
-} TuxPaint_Font;
+} MarxPaint_Font;
 
-int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
+int MarxPaint_Font_FontHeight(MarxPaint_Font * tpf);
 
 
 #ifdef FORKED_FONTS
@@ -165,11 +165,11 @@ typedef struct family_info
   char *directory;
   char *family;
   char *filename[4];
-  TuxPaint_Font *handle;
+  MarxPaint_Font *handle;
   int score;
 } family_info;
 
-extern TuxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
+extern MarxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
 
 extern family_info **user_font_families;
 extern int num_font_families;
@@ -180,17 +180,17 @@ extern int num_font_styles_max;
 
 extern int button_label_y_nudge;
 
-TuxPaint_Font *getfonthandle(int desire);
+MarxPaint_Font *getfonthandle(int desire);
 
-int charset_works(TuxPaint_Font * font, const char *s);
+int charset_works(MarxPaint_Font * font, const char *s);
 
-TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size);
-void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf);
-const char *TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf);
-const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf);
+MarxPaint_Font *MarxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size);
+void MarxPaint_Font_CloseFont(MarxPaint_Font * tpf);
+const char *MarxPaint_Font_FontFaceFamilyName(MarxPaint_Font * tpf);
+const char *MarxPaint_Font_FontFaceStyleName(MarxPaint_Font * tpf);
 
 #ifdef NO_SDLPANGO
-TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
+MarxPaint_Font *load_locale_font(MarxPaint_Font * fallback, int size);
 #else
 void sdl_color_to_pango_color(SDL_Color sdl_color, SDLPango_Matrix * pango_color);
 #endif

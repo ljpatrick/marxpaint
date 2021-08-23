@@ -2,7 +2,7 @@
   dirwalk.h
 
   Copyright (c) 2009
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

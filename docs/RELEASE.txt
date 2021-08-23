@@ -1,13 +1,13 @@
-Release checklist for Tux Paint
+Release checklist for Marx Paint
 Last updated 2021-02-05 -bjk
 
 During development
 ------------------
 
 Make sure any new options are documented in the "OPTIONS" docs
-(now maintained in the "tuxpaint-docs" repository; see below),
+(now maintained in the "marxpaint-docs" repository; see below),
 the manpage (see below), and listed in the shell completion file
-(src/tuxpaint-completion.bash), as appropriate.
+(src/marxpaint-completion.bash), as appropriate.
 
 
 Preparing
@@ -24,7 +24,7 @@ a .tar.gz source tarball, and making the tarball available for download.
    * Makefile
 
    * Build description files:
-     * tuxpaint.spec (Linux RPM package)
+     * marxpaint.spec (Linux RPM package)
      * macos/Info.plist (macOS build)
      * win32/resources.rc (Windows mingw/msys build)
 
@@ -33,10 +33,10 @@ a .tar.gz source tarball, and making the tarball available for download.
 
    * Other Documentation
 
-     NOTE: As of Tux Paint 0.9.26, most of the documentation
+     NOTE: As of Marx Paint 0.9.26, most of the documentation
      is now maintained in a separate source-code repository,
-     "tuxpaint-docs".  Updates should be made there, and
-     then copied over to the "tuxpaint" repository.
+     "marxpaint-docs".  Updates should be made there, and
+     then copied over to the "marxpaint" repository.
 
      Here, be sure to run "make" in "docs/", to produce plaintext
      alternatives of the HTML files.
@@ -48,9 +48,9 @@ a .tar.gz source tarball, and making the tarball available for download.
      * docs/en/html/ADVANCED-STAMPS-HOWTO.html
 
    * Manual page (manpage)
-     * src/manpage/tuxpaint.1
+     * src/manpage/marxpaint.1
 
- * Rebuild 'tuxpaint.desktop' by running "update-po.sh" in "src/po/"
+ * Rebuild 'marxpaint.desktop' by running "update-po.sh" in "src/po/"
 
  * Don't forget to commit the changes!  (git add ... / git commit / git push)
 
@@ -62,29 +62,29 @@ Time to release:
 
    $ git pull
    $ make clean
-   $ git tag tuxpaint-0_9_25-2020-12-27
-   $ git push origin tuxpaint-0_9_25-2020-12-27 # or --tags
+   $ git tag marxpaint-0_9_25-2020-12-27
+   $ git push origin marxpaint-0_9_25-2020-12-27 # or --tags
    $ make release
 
  * Upload each project's ".tar.gz" file from their "build/" subdirs
-   to ftp.tuxpaint.org.
+   to ftp.marxpaint.org.
 
  * Place them in the appropriate subdirectories (source/, config/,
-   and stamps/) under "unix/x/tuxpaint/".
+   and stamps/) under "unix/x/marxpaint/".
 
  * Copy "docs/CHANGES.txt" from each project onto the FTP site
-   (Tux Paint's goes in the toplevel, the others go in config/ and
+   (Marx Paint's goes in the toplevel, the others go in config/ and
    stamps/).
 
- * Create a new PAD file (e.g. `pads/tuxpaint-0.9.25.xml`) on the
+ * Create a new PAD file (e.g. `pads/marxpaint-0.9.25.xml`) on the
    FTP site.
 
- * Replace the "pads/tuxpaint-LATEST.xml" symlink on the FTP site with
+ * Replace the "pads/marxpaint-LATEST.xml" symlink on the FTP site with
    a new one that points to the new PAD file.
 
  * At SourceForge, go to "Files" and use "Add Folder" under each project
    to create new release file subdirectories.  (e.g., "0.9.25" under
-   https://sourceforge.net/projects/tuxpaint/files/tuxpaint/)
+   https://sourceforge.net/projects/marxpaint/files/marxpaint/)
 
  * Upload the files!  Either from local copies, via a web browser,
    or by SCP, Rsync, or SFTP (see
@@ -93,39 +93,39 @@ Time to release:
    e.g.:
 
      $ sftp wkendrick@frs.sourceforge.net
-     sftp> cd /home/frs/project/tuxpaint/
+     sftp> cd /home/frs/project/marxpaint/
 
-     sftp> cd tuxpaint/0.9.25/
+     sftp> cd marxpaint/0.9.25/
      sftp> lcd source
-     sftp> put tuxpaint-0.9.25.tar.gz
+     sftp> put marxpaint-0.9.25.tar.gz
 
      sftp> cd ../..
      sftp> lcd ..
 
-   [repeat for tuxpaint-config and tuxpaint-stamps]
+   [repeat for marxpaint-config and marxpaint-stamps]
 
- * Copy latest release's documentation to the tuxpaint.org website.
+ * Copy latest release's documentation to the marxpaint.org website.
 
 Website updates
 ---------------
- * List new features on http://www.tuxpaint.org/features/
+ * List new features on http://www.marxpaint.org/features/
 
- * Add any new requirements to http://www.tuxpaint.org/requirements/
+ * Add any new requirements to http://www.marxpaint.org/requirements/
 
 Announcements
 -------------
- * Managed by Tux Paint
+ * Managed by Marx Paint
 
-   + Tux Paint website
-     - Site: http://www.tuxpaint.org/
+   + Marx Paint website
+     - Site: http://www.marxpaint.org/
      - Submissions: [add announcement to /latest/]
 
-   + Tux Paint on Facebook
-     - Site: https://www.facebook.com/TuxPaint
+   + Marx Paint on Facebook
+     - Site: https://www.facebook.com/MarxPaint
      - Submissions: [currently managed by Bill K.]
 
-   + Tux Paint on Twitter
-     - Site: https://www.facebook.com/TuxPaint
+   + Marx Paint on Twitter
+     - Site: https://www.facebook.com/MarxPaint
      - Submissions: [currently managed by Bill K.]
 
  * News sites & magazines

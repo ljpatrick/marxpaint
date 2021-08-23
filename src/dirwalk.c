@@ -2,7 +2,7 @@
   dirwalk.c
 
   Copyright (c) 2009-2014
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -113,7 +113,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
       if (loadable)
         {
           char fname[512];
-          TuxPaint_Font *font;
+          MarxPaint_Font *font;
 
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
 #ifdef DEBUG
@@ -129,18 +129,18 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
               printf("checking \"%s\" vs \"%s\"\n", fname_check, fname);        //EP
 #endif
               if (strcmp(fname, fname_check) == 0)
-                font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
+                font = MarxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
               else
                 font = NULL;
             }
           else
             {
-              font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
+              font = MarxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
             }
           if (font)
             {
-              const char *restrict const family = TuxPaint_Font_FontFaceFamilyName(font);
-              const char *restrict const style = TuxPaint_Font_FontFaceStyleName(font);
+              const char *restrict const family = MarxPaint_Font_FontFaceFamilyName(font);
+              const char *restrict const style = MarxPaint_Font_FontFaceStyleName(font);
 
 
 #ifdef DEBUG
@@ -152,10 +152,10 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
               printf("success: tpf: 0x%x tpf->ttf_font: 0x%x\n", (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->ttf_font);       //EP added (intptr_t) to avoid warning on x64
 #endif
 
-              // These fonts crash Tux Paint via a library bug.
+              // These fonts crash Marx Paint via a library bug.
               int blacklisted = !strcmp("Zapfino", family) || !strcmp("Elvish Ring NFI", family);
 
-              // First, the blacklist. We list font families that can crash Tux Paint
+              // First, the blacklist. We list font families that can crash Marx Paint
               // via bugs in the SDL_ttf library. We also test fonts to be sure that
               // they have both uppercase and lowercase letters. Note that we do not
               // test for "Aa", because it is OK if uppercase and lowercase are the
@@ -243,7 +243,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
                   printf("Font is too defective: %s, %s, %s\n", files[i].str, family, style);
 #endif
                 }
-              TuxPaint_Font_CloseFont(font);
+              MarxPaint_Font_CloseFont(font);
             }
           else
             {

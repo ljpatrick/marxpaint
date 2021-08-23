@@ -6,7 +6,7 @@ Thukkaram Gopalrao, USA ( http://www.thinnai.com/ )
 Opentype tables were added by T. Vaseeharan <t_vasee@yahoo.com>.
 Mon Dec  9 19:29:07 CST 2002
 
-Packaged for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+Packaged for Marx Paint by Bill Kendrick <bill@newbreedsoftware.com>
 2003.12.26
 
 

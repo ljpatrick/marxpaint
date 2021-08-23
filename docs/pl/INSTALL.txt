@@ -1,295 +1,295 @@
-INSTALL.txt dla Tux Paint 
+INSTALL.txt dla Marx Paint 
 
-Paint Tux - prosty program do rysowania dla dzieci.
+Paint Marx - prosty program do rysowania dla dzieci.
 
 Prawo autorskie Bill Kendrick 2002
 bill@newbreedsoftware.com 
-http://www.newbreedsoftware.com/tuxpaint/ 
+http://www.newbreedsoftware.com/marxpaint/ 
 
 27 czerwiec 2002 - 5 listopad 2002 
 
 
 Wymagania:
 ------------- 
-  U¿ytkownicy systemu Windows:
+  Uï¿½ytkownicy systemu Windows:
   -------------- 
-    Wersja Tux Paint dla systemu Windows jest spakowana z koniecznym
-    zestawem prekompilowanych bibliotek (w formie plików ".DLL"), wiêc dodatkowe 
-    pobieranie innych plików jest niepotrzebne.
+    Wersja Marx Paint dla systemu Windows jest spakowana z koniecznym
+    zestawem prekompilowanych bibliotek (w formie plikï¿½w ".DLL"), wiï¿½c dodatkowe 
+    pobieranie innych plikï¿½w jest niepotrzebne.
     
   libSDL 
   ------ 
-    Paint Tux wymaga Simple Library Layer DirectMedia (libSDL), biblioteki
-    Open Source u¿ywanej podczas programowania multimediów dostêpnej na licencji 
+    Paint Marx wymaga Simple Library Layer DirectMedia (libSDL), biblioteki
+    Open Source uï¿½ywanej podczas programowania multimediï¿½w dostï¿½pnej na licencji 
     GNU Lesser General Public License (LGPL).
 
-    Wraz z libSDL, Tux Paint zale¿y od kilku innych pomocniczych bibliotek SDL:
-    SDL_Image (dla plików grafiki), SDL_TTF (dla czcionek TTF)
-    i opcjonalnie, SDL_Mixer (dla efektów dŸwiêkowych).
+    Wraz z libSDL, Marx Paint zaleï¿½y od kilku innych pomocniczych bibliotek SDL:
+    SDL_Image (dla plikï¿½w grafiki), SDL_TTF (dla czcionek TTF)
+    i opcjonalnie, SDL_Mixer (dla efektï¿½w dï¿½wiï¿½kowych).
 
     Uzytkownicy Linuksa / Uniksa:
     ----------------- 
-      Biblioteki SDL s¹ dostêpne zarówno jako kod Ÿród³owy, jak i pakiety RPM lub Deb 
-      dla ró¿nych dystrybucji Linuksa. Mo¿na je pobraæ z:
+      Biblioteki SDL sï¿½ dostï¿½pne zarï¿½wno jako kod ï¿½rï¿½dï¿½owy, jak i pakiety RPM lub Deb 
+      dla rï¿½nych dystrybucji Linuksa. Moï¿½na je pobraï¿½ z:
 
         libSDL:      http://www.libsdl.org/ 
         SDL_Image:   http://www.libsdl.org/projects/SDL_image/ 
         SDL_TTF:     http://www.libsdl.org/projects/SDL_ttf/ 
         SDL_Mixer:   http://www.libsdl.org/projects/SDL_mixer/   [OPCJONALNIE]
 
-      S¹ one równie¿ dostêpne wraz z Twoj¹ dystrybucj¹ Linux 
-      (np. na instalacyjnych CD lub dostêpne przez program do update'u 
+      Sï¿½ one rï¿½wnieï¿½ dostï¿½pne wraz z Twojï¿½ dystrybucjï¿½ Linux 
+      (np. na instalacyjnych CD lub dostï¿½pne przez program do update'u 
       oprogramowania taki jak np. "apt-get").
 
-      ZAUWA¯: Kiedy instalujesz program z pakietów, zainstaluj RÓWNIE¯
-      wersje "-devel" pakietów.  (Na przyk³ad, zainstaluj oba pakiety 
+      ZAUWAï¿½: Kiedy instalujesz program z pakietï¿½w, zainstaluj Rï¿½WNIEï¿½
+      wersje "-devel" pakietï¿½w.  (Na przykï¿½ad, zainstaluj oba pakiety 
       "SDL -1.2.4. rpm" i "SDL -1.2.4 - devel.rpm")
 
   Inne biblioteki:
   ---------------- 
-    Tux Paint korzysta te¿ z kilku innych 
+    Marx Paint korzysta teï¿½ z kilku innych 
     darmowych, bibliotek LGPL. Pod Linuksem, tak jak SDL, powinny 
-    albo ju¿ byæ zainstalowane, albo gotowe do instalacji 
-    jako czêœæ Twojej dystrybucji Linuksa.
+    albo juï¿½ byï¿½ zainstalowane, albo gotowe do instalacji 
+    jako czï¿½ï¿½ Twojej dystrybucji Linuksa.
     
     libPNG 
     ------ 
-      Tux Paint u¿ywa PNG (Portable Graphics Network) - formatu dla jego 
-      plików danych. SDL_image bêdzie wymaga³ zainstalowanej biblioteki libPNG.
+      Marx Paint uï¿½ywa PNG (Portable Graphics Network) - formatu dla jego 
+      plikï¿½w danych. SDL_image bï¿½dzie wymagaï¿½ zainstalowanej biblioteki libPNG.
 
         http://www.libpng.org/pub/png/libpng.html 
 
     FreeType2 
     --------- 
-      Tux Paint u¿ywa TTF (True Type Font) - czcionek do rysowania tekstu.
-      SDL_ttf bêdzie wymaga³ biblioteki FreeType2.
+      Marx Paint uï¿½ywa TTF (True Type Font) - czcionek do rysowania tekstu.
+      SDL_ttf bï¿½dzie wymagaï¿½ biblioteki FreeType2.
 
         http://www.freetype.org/ 
 
     gettext 
     ------- 
-      Tux Paint u¿ywa ustawieñ regionalnych Twojego systemu wraz z 
-      bibliotek¹ "gettext", by wspieraæ ró¿ne jêzyki (np. hiszpañski).
-      Bêdziesz potrzebowa³ zainstalowanej biblioteki gettext.
+      Marx Paint uï¿½ywa ustawieï¿½ regionalnych Twojego systemu wraz z 
+      bibliotekï¿½ "gettext", by wspieraï¿½ rï¿½ne jï¿½zyki (np. hiszpaï¿½ski).
+      Bï¿½dziesz potrzebowaï¿½ zainstalowanej biblioteki gettext.
 
         http://www.gnu.org/software/gettext/ 
 
     Tools NetPBM  [OPCJONALNIE]
     ------------------------ 
-      Pod Linuksem i Uniksem, narzêdzia NetPBM s¹ aktualnie 
-      u¿yte do drukowania.  ( PNG jest generowany przez TuxPaint i konwertowany 
-      do PostScript u¿ywaj¹c narzêdzi NetPBM 'pngtopnm' i 'pnmtops'.)
+      Pod Linuksem i Uniksem, narzï¿½dzia NetPBM sï¿½ aktualnie 
+      uï¿½yte do drukowania.  ( PNG jest generowany przez MarxPaint i konwertowany 
+      do PostScript uï¿½ywajï¿½c narzï¿½dzi NetPBM 'pngtopnm' i 'pnmtops'.)
 
         http://netpbm.sourceforge.net/ 
 	
 
 Kompilowanie i instalacja:
 --------------------------- 
-  Tux Paint jest udostêpniony pod licencj¹ GNU General Public License (GPL)
-  (zobacz "COPYING.txt" dla szczegó³ów) i dlatego 'kod Ÿród³owy'
+  Marx Paint jest udostï¿½pniony pod licencjï¿½ GNU General Public License (GPL)
+  (zobacz "COPYING.txt" dla szczegï¿½ï¿½w) i dlatego 'kod ï¿½rï¿½dï¿½owy'
   programu jest zawarty razem z nim.
 
-  U¿ytkownicy systemu Windows:
+  Uï¿½ytkownicy systemu Windows:
   -------------- 
     Kompilacja:
     ---------- 
-      Tux Paint dla systemu Windows jest ju¿ skompilowany, wiêc ¿adna kompilacja nie jest 
+      Marx Paint dla systemu Windows jest juï¿½ skompilowany, wiï¿½c ï¿½adna kompilacja nie jest 
       konieczna.  [Ostatecznie, informacja o przekompilowywaniu dla Windows 
-      bêdzie umieszczony tutaj.  Tymczasem, jesteœ skazany tylko na siebie.  Przepraszam!]
+      bï¿½dzie umieszczony tutaj.  Tymczasem, jesteï¿½ skazany tylko na siebie.  Przepraszam!]
 
     Instalator:
     ---------- 
-      Kliknij podwójnie na instalator Tux Paint (plik wykonywalny .EXE) i 
+      Kliknij podwï¿½jnie na instalator Marx Paint (plik wykonywalny .EXE) i 
       wykonuj polecenia instalatora.
 
-      Najpierw bêdziesz poproszony o zgodê co do licencji.
-      (Jest to licencja GNU General Public License (GPL), która jest te¿ 
-      dostêpna w "COPYING.txt".)
+      Najpierw bï¿½dziesz poproszony o zgodï¿½ co do licencji.
+      (Jest to licencja GNU General Public License (GPL), ktï¿½ra jest teï¿½ 
+      dostï¿½pna w "COPYING.txt".)
 
-      Nastêpnie bêdziesz spytany, czy chcesz zainstalowaæ skróty 
-      do Tux Paint w Twoim Menu Start Windows i na Twoim Pulpicie Windows.
-      (Obie opcje s¹ ustawione domyœlnie.)
+      Nastï¿½pnie bï¿½dziesz spytany, czy chcesz zainstalowaï¿½ skrï¿½ty 
+      do Marx Paint w Twoim Menu Start Windows i na Twoim Pulpicie Windows.
+      (Obie opcje sï¿½ ustawione domyï¿½lnie.)
 
-      Potem bêdziesz spytany, gdzie ¿yczysz sobie zainstalowaæ Tux Paint.
-      Domyœlne miejsce powinno byæ odpowiednie, o ile dostêpna bêdzie odpowiednia iloœæ przestrzeni dyskowej.
-      Je¿eli nie, wybierz inne miejsce.
+      Potem bï¿½dziesz spytany, gdzie ï¿½yczysz sobie zainstalowaï¿½ Marx Paint.
+      Domyï¿½lne miejsce powinno byï¿½ odpowiednie, o ile dostï¿½pna bï¿½dzie odpowiednia iloï¿½ï¿½ przestrzeni dyskowej.
+      Jeï¿½eli nie, wybierz inne miejsce.
 
-      W tym momencie, mo¿esz klikn¹æ Install, by zainstalowaæ Tux Paint!
+      W tym momencie, moï¿½esz kliknï¿½ï¿½ Install, by zainstalowaï¿½ Marx Paint!
 
-    Zmiana Ustawieñ przy u¿yciu Skrótu:
+    Zmiana Ustawieï¿½ przy uï¿½yciu Skrï¿½tu:
     ----------------------------------------- 
-      Aby zmieniæ ustawienia programu, kliknij prawym klawiszem myszy na skrót TuxPaint 
-      i wybierz 'W³aœciwoœci' (na dole).
+      Aby zmieniï¿½ ustawienia programu, kliknij prawym klawiszem myszy na skrï¿½t MarxPaint 
+      i wybierz 'Wï¿½aï¿½ciwoï¿½ci' (na dole).
        
-      Upewnij siê, czy jest wybrana zak³adka Skrót w oknie, które 
-      siê ukaza³o i sprawdŸ pole 'Element docelowy'.  Powinieneœ zobaczyæ 
-      coœ podobnego do tego:
+      Upewnij siï¿½, czy jest wybrana zakï¿½adka Skrï¿½t w oknie, ktï¿½re 
+      siï¿½ ukazaï¿½o i sprawdï¿½ pole 'Element docelowy'.  Powinieneï¿½ zobaczyï¿½ 
+      coï¿½ podobnego do tego:
 
-        "C:\Program Files\TuxPaint\TuxPaint.exe"
+        "C:\Program Files\MarxPaint\MarxPaint.exe"
 
-      Mo¿esz teraz dodaæ opcje wiersza poleceñ, które bêd¹ wykonane kiedy 
-      klikniesz podwójnie na ikonê.
+      Moï¿½esz teraz dodaï¿½ opcje wiersza poleceï¿½, ktï¿½re bï¿½dï¿½ wykonane kiedy 
+      klikniesz podwï¿½jnie na ikonï¿½.
        
-      Na przyk³ad, aby ustawiæ uruchomianie gry w trybie pe³noekranowym,
-      z prostymi kszta³tami (bez opcji rotacji) i w jêzyku francuskim,
-      dodaj opcje (po 'TuxPaint.exe'), takie jak:
+      Na przykï¿½ad, aby ustawiï¿½ uruchomianie gry w trybie peï¿½noekranowym,
+      z prostymi ksztaï¿½tami (bez opcji rotacji) i w jï¿½zyku francuskim,
+      dodaj opcje (po 'MarxPaint.exe'), takie jak:
 
-        "C:\Program Files\TuxPaint\TuxPaint.exe" -f -s --lang french 
+        "C:\Program Files\MarxPaint\MarxPaint.exe" -f -s --lang french 
 
-      (Zobacz plik "README.txt", gdzie znajduje siê pe³na lista opcji wiersza poleceñ.)
+      (Zobacz plik "README.txt", gdzie znajduje siï¿½ peï¿½na lista opcji wiersza poleceï¿½.)
        
-      Je¿eli pomylisz siê albo wszystko zniknie, u¿yj kombinacji klawiszy Ctrl-Z, aby cofn¹æ lub
-      naciœnij klawisz [ESC] i okno zamknie siê bez ¿adnych zmian 
-      (chyba, ¿e nacisn¹³eœ przycisk "Zastosuj"!).
+      Jeï¿½eli pomylisz siï¿½ albo wszystko zniknie, uï¿½yj kombinacji klawiszy Ctrl-Z, aby cofnï¿½ï¿½ lub
+      naciï¿½nij klawisz [ESC] i okno zamknie siï¿½ bez ï¿½adnych zmian 
+      (chyba, ï¿½e nacisnï¿½ï¿½eï¿½ przycisk "Zastosuj"!).
        
-      Kiedy skoñczysz, kliknij "OK".
+      Kiedy skoï¿½czysz, kliknij "OK".
 
-    Je¿eli coœ pójdzie nie tak 
+    Jeï¿½eli coï¿½ pï¿½jdzie nie tak 
     ----------------------- 
-      Je¿eli, kiedy podwójnie klikasz na skrót, by uruchomiæ grê,
-      nic siê nie dzieje, to jest prawdopodobne, ¿e niektóre z tych opcji wiersza 
-      poleceñ s¹ niew³aœciwe. Otwórz Eksploratora jak przedtem i poszukaj pliku 
-      nazwanego 'stderr.txt' w folderze TuxPaint.
+      Jeï¿½eli, kiedy podwï¿½jnie klikasz na skrï¿½t, by uruchomiï¿½ grï¿½,
+      nic siï¿½ nie dzieje, to jest prawdopodobne, ï¿½e niektï¿½re z tych opcji wiersza 
+      poleceï¿½ sï¿½ niewï¿½aï¿½ciwe. Otwï¿½rz Eksploratora jak przedtem i poszukaj pliku 
+      nazwanego 'stderr.txt' w folderze MarxPaint.
 	
-      Plik ten zawiera opis co by³o nieprawid³owe. Zwykle jest to 
-      spowodowane przez niepoprawn¹ wielkoœæ litery (du¿a litera 'Z' zamiast 
-      ma³ej 'z') albo brak (lub dodatkowy) znak '-' (minus, pozioma kreska).
+      Plik ten zawiera opis co byï¿½o nieprawidï¿½owe. Zwykle jest to 
+      spowodowane przez niepoprawnï¿½ wielkoï¿½ï¿½ litery (duï¿½a litera 'Z' zamiast 
+      maï¿½ej 'z') albo brak (lub dodatkowy) znak '-' (minus, pozioma kreska).
   
   
-  U¿ytkownicy Linuksa / Uniksa:
+  Uï¿½ytkownicy Linuksa / Uniksa:
   ----------------- 
     Kompilacja:
     ---------- 
-      Zauwa¿: Aktualnie, Tux Paint nie u¿ywa autoconf/automake, tak wiêc
-      nie ma ¿adnego skryptu "./configure".  (Przykro mi!)  Kompilacja powiniena byæ 
-      prosta - zak³adaj¹c, ¿e wszystko co Tux Paint potrzebuje jest zainstalowane.
+      Zauwaï¿½: Aktualnie, Marx Paint nie uï¿½ywa autoconf/automake, tak wiï¿½c
+      nie ma ï¿½adnego skryptu "./configure".  (Przykro mi!)  Kompilacja powiniena byï¿½ 
+      prosta - zakï¿½adajï¿½c, ï¿½e wszystko co Marx Paint potrzebuje jest zainstalowane.
 
-      Aby skompilowaæ program ze Ÿród³a, po prostu uruchom nastêpuj¹ce polecenie
+      Aby skompilowaï¿½ program ze ï¿½rï¿½dï¿½a, po prostu uruchom nastï¿½pujï¿½ce polecenie
       z poziomu shell'a (np. "$"):
 
         $ make
 
-    Wy³¹czanie dŸwiêku na czas kompilacji:
+    Wyï¿½ï¿½czanie dï¿½wiï¿½ku na czas kompilacji:
     -------------------------------- 
-      Alternatywnie, je¿eli nie masz karty dŸwiêkowej lub wolisz skompilowaæ 
-      program bez wsparcia dŸwiêku (do tego SDL_mixer nie musi byæ 
-      zainstalowany), mo¿esz uruchomiæ polecenie "make" z "nosound":
+      Alternatywnie, jeï¿½eli nie masz karty dï¿½wiï¿½kowej lub wolisz skompilowaï¿½ 
+      program bez wsparcia dï¿½wiï¿½ku (do tego SDL_mixer nie musi byï¿½ 
+      zainstalowany), moï¿½esz uruchomiï¿½ polecenie "make" z "nosound":
 
         $ make nosound 
 
 
-    Je¿eli otrzymasz b³êdy:
+    Jeï¿½eli otrzymasz bï¿½ï¿½dy:
     ------------------ 
-      Je¿eli otrzymujesz jakieœ b³êdy podczas kompilacji - upewnij siê, ¿e masz zainstalowane
-      odpowiednie biblioteki (zobacz powy¿ej). Je¿eli u¿ywasz spakowanych 
+      Jeï¿½eli otrzymujesz jakieï¿½ bï¿½ï¿½dy podczas kompilacji - upewnij siï¿½, ï¿½e masz zainstalowane
+      odpowiednie biblioteki (zobacz powyï¿½ej). Jeï¿½eli uï¿½ywasz spakowanych 
       wersji bibliotek (np. RPM w systemie RedHat albo DEB w systemie Debian),
-      upewnij siê, czy masz równie¿ odpowiednie pakiety "-dev" lub "-devel",
-      inaczej nie bêdziesz w stanie skompilowaæ Tux Paint (i innych programów)
-      ze Ÿród³a!
+      upewnij siï¿½, czy masz rï¿½wnieï¿½ odpowiednie pakiety "-dev" lub "-devel",
+      inaczej nie bï¿½dziesz w stanie skompilowaï¿½ Marx Paint (i innych programï¿½w)
+      ze ï¿½rï¿½dï¿½a!
 
 
     Instalowanie:
     ----------- 
-      Zak³adaj¹c, ¿e ¿adne b³êdy krytyczne nie wyst¹pi³y, mo¿esz teraz zainstalowaæ program, 
-      po to aby móg³ byæ uruchamiany przez u¿ytkowników. Domyœlnie, to musi 
-      zostaæ zrobione przez u¿ytkownika "root" ('superuser'). Prze³¹cz siê na u¿ytkownika "root" 
-      pisz¹c polecenie:
+      Zakï¿½adajï¿½c, ï¿½e ï¿½adne bï¿½ï¿½dy krytyczne nie wystï¿½piï¿½y, moï¿½esz teraz zainstalowaï¿½ program, 
+      po to aby mï¿½gï¿½ byï¿½ uruchamiany przez uï¿½ytkownikï¿½w. Domyï¿½lnie, to musi 
+      zostaï¿½ zrobione przez uï¿½ytkownika "root" ('superuser'). Przeï¿½ï¿½cz siï¿½ na uï¿½ytkownika "root" 
+      piszï¿½c polecenie:
 
         $ su 
 
-      Wpisz  has³o u¿ytkownika "root".  Powinieneœ teraz byæ u¿ytkownikiem "root"
-      (ze znakiem "#").  Aby zainstalowaæ program i jego pliki danych, napisz:
+      Wpisz  hasï¿½o uï¿½ytkownika "root".  Powinieneï¿½ teraz byï¿½ uï¿½ytkownikiem "root"
+      (ze znakiem "#").  Aby zainstalowaï¿½ program i jego pliki danych, napisz:
 
         # make install
 
-      Na koñcu mo¿esz prze³¹czyæ siê z powrotem do Twojego regularnego u¿ytkownika przez wyjœcie
-      z trybu superu¿ytkownika:
+      Na koï¿½cu moï¿½esz przeï¿½ï¿½czyï¿½ siï¿½ z powrotem do Twojego regularnego uï¿½ytkownika przez wyjï¿½cie
+      z trybu superuï¿½ytkownika:
 
         # exit
 
 
-      ZAUWA¯: Domyœlnie, wykonywalny program "tuxpaint" jest 
-      umieszczony w katalogu "/usr/local/bin/". Pliki danych (obrazy, dŸwiêki, itd.)
-      s¹ umieszczone w katalogu "/usr/local/share/tuxpaint/".
+      ZAUWAï¿½: Domyï¿½lnie, wykonywalny program "marxpaint" jest 
+      umieszczony w katalogu "/usr/local/bin/". Pliki danych (obrazy, dï¿½wiï¿½ki, itd.)
+      sï¿½ umieszczone w katalogu "/usr/local/share/marxpaint/".
 
 
-      Zmiana miejsca zapisu plików
+      Zmiana miejsca zapisu plikï¿½w
       ------------------------ 
-        Mo¿esz zmieniæ miejsce zapisu plików u¿ywaj¹c zmiennej 'prefix'
+        Moï¿½esz zmieniï¿½ miejsce zapisu plikï¿½w uï¿½ywajï¿½c zmiennej 'prefix'
         w pliku Makefile. "PREFIX" wskazuje, gdzie wszystkie inne 
-        pliki bêd¹ zapisane, domyœlnie jest ustawione na katalog "/usr/local".
+        pliki bï¿½dï¿½ zapisane, domyï¿½lnie jest ustawione na katalog "/usr/local".
 
         Inne zmienne to:
           BIN_PREFIX 
-	    Gdzie binaria "tuxpaint" bêd¹ zainstalowane.
-	    (Ustawione domyœlnie na "$(PREFIX)/bin" - np. "/usr/local/bin")
+	    Gdzie binaria "marxpaint" bï¿½dï¿½ zainstalowane.
+	    (Ustawione domyï¿½lnie na "$(PREFIX)/bin" - np. "/usr/local/bin")
 	  
 	  DATA_PREFIX 
-	    Gdzie pliki danych (dŸwiêk, grafika, pêdzle, piecz¹tki, czcionki)
- 	    bêd¹ zapisane i gdzie Tux Paint bêdzie ich szuka³ kiedy bêdzie uruchomiony.
-	    (Ustwawione na "$(PREFIX)/share/tuxpaint")
+	    Gdzie pliki danych (dï¿½wiï¿½k, grafika, pï¿½dzle, pieczï¿½tki, czcionki)
+ 	    bï¿½dï¿½ zapisane i gdzie Marx Paint bï¿½dzie ich szukaï¿½ kiedy bï¿½dzie uruchomiony.
+	    (Ustwawione na "$(PREFIX)/share/marxpaint")
 	
 	  DOC_PREFIX 
-	    Gdzie pliki dokumentacji ( katalog "docs") bêd¹ zapisane.
-	    (Ustawione na "$(PREFIX)/share/doc/tuxpaint")
+	    Gdzie pliki dokumentacji ( katalog "docs") bï¿½dï¿½ zapisane.
+	    (Ustawione na "$(PREFIX)/share/doc/marxpaint")
 	
 	  MAN_PREFIX 
-	    Gdzie pliki pomocy (manual) Tux Paint bêd¹ zapisane.
+	    Gdzie pliki pomocy (manual) Marx Paint bï¿½dï¿½ zapisane.
 	    (Ustawione na "$(PREFIX)/share/man")
 	
 	  ICON_PREFIX                      $(PREFIX)/share/pixmaps 
 	  X11_ICON_PREFIX                  $(PREFI)/X11R6/include/X11/pixmaps 
 	  GNOME_PREFIX                     $(PREFIX)/share/gnome/apps/Graphics 
 	  KDE_PREFIX                       $(PREFIX)/share/applnk/Graphics 
-	    Gdzie ikony i odpalacze (dla GNOME i KDE) bêd¹ zapisane.
+	    Gdzie ikony i odpalacze (dla GNOME i KDE) bï¿½dï¿½ zapisane.
 	
 	  LOCALE_PREFIX 
-	    Gdzie pliki z t³umaczeniem dla Tux Paint bêd¹ zapisane i gdzie 
-	    Tux Paint bêdzie ich szuka³.
+	    Gdzie pliki z tï¿½umaczeniem dla Marx Paint bï¿½dï¿½ zapisane i gdzie 
+	    Marx Paint bï¿½dzie ich szukaï¿½.
 	    (Ustawione na "$(PREFIX)/share/locale/")
-	    (Ostateczne miejsce pliku z t³umaczeniem bêdzie 
-	    w katalogu odpowiednim dla jêzyka (np. "es" dla jêzyka hiszpañskiego),
+	    (Ostateczne miejsce pliku z tï¿½umaczeniem bï¿½dzie 
+	    w katalogu odpowiednim dla jï¿½zyka (np. "es" dla jï¿½zyka hiszpaï¿½skiego),
 	    w podkatalogu "LC_MESSAGES".)
 	
 	
-Odinstalowywanie Tux Paint:
+Odinstalowywanie Marx Paint:
 ----------------------- 
   System Windows 
   ------- 
-    U¿ywaj¹c programu odinstalowuj¹cego
+    Uï¿½ywajï¿½c programu odinstalowujï¿½cego
     --------------------- 
-      Je¿eli zainstalowa³eœ skróty w Menu Start (domyœlnie), przejdŸ do 
-      folderu TuxPaint i wybierz "Uninstall". Pojawi siê okienko z potwierdzeniem,
-      czy napewno chcesz odinstalowaæ Tux Paint, je¿eli jesteœ pewny 
-      ¿e chcesz trwale usun¹æ Tux Paint, kliknij na przycisk Uninstall. 
+      Jeï¿½eli zainstalowaï¿½eï¿½ skrï¿½ty w Menu Start (domyï¿½lnie), przejdï¿½ do 
+      folderu MarxPaint i wybierz "Uninstall". Pojawi siï¿½ okienko z potwierdzeniem,
+      czy napewno chcesz odinstalowaï¿½ Marx Paint, jeï¿½eli jesteï¿½ pewny 
+      ï¿½e chcesz trwale usunï¿½ï¿½ Marx Paint, kliknij na przycisk Uninstall. 
 
-      Kiedy wszystko siê skoñczy, kliknij na przycisk zamkniêcia.
+      Kiedy wszystko siï¿½ skoï¿½czy, kliknij na przycisk zamkniï¿½cia.
 
-      Jest równie¿ mo¿liwe, by u¿yæ wpisu "TuxPaint (remove only)" w 
-      Panelu Sterowania w sekcji Dodaj/Usuñ programy.
+      Jest rï¿½wnieï¿½ moï¿½liwe, by uï¿½yï¿½ wpisu "MarxPaint (remove only)" w 
+      Panelu Sterowania w sekcji Dodaj/Usuï¿½ programy.
 
-      ZAUWA¯: z powodu obrazków, które s¹ tworzone i zapisywane wewn¹trz folderu Tux Paint,
-      ten folder i folder 'userdata' wewn¹trz niego NIE BÊDZIE usuniêty.
+      ZAUWAï¿½: z powodu obrazkï¿½w, ktï¿½re sï¿½ tworzone i zapisywane wewnï¿½trz folderu Marx Paint,
+      ten folder i folder 'userdata' wewnï¿½trz niego NIE Bï¿½DZIE usuniï¿½ty.
 
 
   Linux 
   ----- 
-    W katalogu, gdzie znajduj¹ siê Ÿród³a Tux Paint (gdzie kompilowa³eœ Tux Paint),
-    mo¿esz u¿yæ 'Makefile', by go odinstalowaæ.
-    Domyœlnie, musi to zostaæ zrobione przez u¿ytkownika "root" (superu¿ytkownik).
+    W katalogu, gdzie znajdujï¿½ siï¿½ ï¿½rï¿½dï¿½a Marx Paint (gdzie kompilowaï¿½eï¿½ Marx Paint),
+    moï¿½esz uï¿½yï¿½ 'Makefile', by go odinstalowaï¿½.
+    Domyï¿½lnie, musi to zostaï¿½ zrobione przez uï¿½ytkownika "root" (superuï¿½ytkownik).
     (Zobacz instrukcje instalacji dla dalszych informacji.)
 
-    Prze³¹cz siê na u¿ytkownika "root" przez wpisanie polecenia:
+    Przeï¿½ï¿½cz siï¿½ na uï¿½ytkownika "root" przez wpisanie polecenia:
 
       $ su 
 
-    Wpisz has³o u¿ytkownika "root". Powinieneœ teraz byæ u¿ytkownikiem "root".
-    Aby odinstalowaæ program i jego pliki danych 
-    (domyœlna gumka, piecz¹tka i obrazy, je¿eli jakieœ s¹, te¿ bêd¹ usuniête), napisz:
+    Wpisz hasï¿½o uï¿½ytkownika "root". Powinieneï¿½ teraz byï¿½ uï¿½ytkownikiem "root".
+    Aby odinstalowaï¿½ program i jego pliki danych 
+    (domyï¿½lna gumka, pieczï¿½tka i obrazy, jeï¿½eli jakieï¿½ sï¿½, teï¿½ bï¿½dï¿½ usuniï¿½te), napisz:
 
       # make uninstall 
 
-    W koñcu, mo¿esz prze³¹czyæ z powrotem do Twojego regularnego u¿ytkownika przez wyjœcie
-    z trybu superu¿ytkownika:
+    W koï¿½cu, moï¿½esz przeï¿½ï¿½czyï¿½ z powrotem do Twojego regularnego uï¿½ytkownika przez wyjï¿½cie
+    z trybu superuï¿½ytkownika:
 
       # exit

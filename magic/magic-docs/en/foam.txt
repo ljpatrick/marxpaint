@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Foam
+                          Marx Paint "Magic" Tool: Foam
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -37,7 +37,7 @@ struct cfg
 #define NEGBOOL(x) (void*)(offsetof(struct cfginfo,x)|NEG)
 #define IMM(x)     imm_##x
 
-/* Prototypes of what's in tuxpaint.c: */
+/* Prototypes of what's in marxpaint.c: */
 void show_version(int details);
 void show_usage(int exitcode);
 

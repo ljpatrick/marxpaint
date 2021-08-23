@@ -1,10 +1,10 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.27
 
   Un programme simple pour les enfants
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                   août 8, 2021
 
@@ -13,15 +13,15 @@
    +-----------------------------------------------+
    |Table des matières                             |
    |-----------------------------------------------|
-   |  * À propos de Tux Paint                      |
-   |  * Utiliser Tux Paint                         |
-   |       * Lancement de Tux Paint                |
+   |  * À propos de Marx Paint                      |
+   |  * Utiliser Marx Paint                         |
+   |       * Lancement de Marx Paint                |
    |       * Écran titre                           |
    |       * Écran principal                       |
    |       * Outils disponibles                    |
    |            * Outils de dessin                 |
    |            * Autres contrôles                 |
-   |  * Chargement d'autres images dans Tux Paint  |
+   |  * Chargement d'autres images dans Marx Paint  |
    |  * Lectures complémentaires                   |
    |  * Comment obtenir de l'aide                  |
    |  * Comment participer                         |
@@ -29,11 +29,11 @@
 
      ----------------------------------------------------------------------
 
-                             À propos de Tux Paint
+                             À propos de Marx Paint
 
-Qu'est-ce que "Tux Paint" ?
+Qu'est-ce que "Marx Paint" ?
 
-       Tux Paint est un programme de dessin gratuit conçu pour les jeunes
+       Marx Paint est un programme de dessin gratuit conçu pour les jeunes
        enfants (enfants de 3 ans et plus). Il possède une interface simple et
        facile à utiliser, des effets sonores amusants et une mascotte de
        dessin animé pour encourager et guider les enfants lorsqu'ils
@@ -42,7 +42,7 @@ Qu'est-ce que "Tux Paint" ?
 
 Licence :
 
-       Tux Paint est un projet Open Source, un logiciel libre publié sous la
+       Marx Paint est un projet Open Source, un logiciel libre publié sous la
        licence publique générale GNU (GPL). Il est gratuit et le «code
        source» du programme est disponible. (Cela permet à d'autres d'ajouter
        des fonctionnalités, de corriger des bogues et d'utiliser des parties
@@ -53,7 +53,7 @@ Licence :
 Objectifs :
 
        Facile et amusant
-               Tux Paint se veut un simple programme de dessin pour les
+               Marx Paint se veut un simple programme de dessin pour les
                jeunes enfants. Il ne s'agit pas d'un programme de dessin à
                usage général. Il se veut amusant et facile à utiliser. Les
                effets sonores et un personnage de dessin animé permettent à
@@ -62,7 +62,7 @@ Objectifs :
                style dessin animé, extra-larges.
 
        Flexibilité
-               Tux Paint est extensible. Les brosses et les formes de "tampon
+               Marx Paint est extensible. Les brosses et les formes de "tampon
                en caoutchouc" peuvent être déposées et retirées. Par exemple,
                un enseignant peut apporter une collection de formes animales
                et demander à ses élèves de dessiner un écosystème. Chaque
@@ -70,9 +70,9 @@ Objectifs :
                affiché lorsque l'enfant sélectionne la forme.
 
        Portabilité
-               Tux Paint est portable sur diverses plates-formes
+               Marx Paint est portable sur diverses plates-formes
                informatiques: Windows, Macintosh, Linux, etc. L'interface est
-               la même sur toutes. Tux Paint fonctionne correctement sur les
+               la même sur toutes. Marx Paint fonctionne correctement sur les
                systèmes plus anciens (comme un Pentium 133), et peut être
                modifié pour mieux fonctionner sur des systèmes lents.
 
@@ -88,19 +88,19 @@ Objectifs :
 
      ----------------------------------------------------------------------
 
-                               Utiliser Tux Paint
+                               Utiliser Marx Paint
 
-Lancement de Tux Paint
+Lancement de Marx Paint
 
   Utilisateurs de Linux/Unix
 
-         Tux Paint devrait avoir mis une icône de lanceur dans vos menus KDE
+         Marx Paint devrait avoir mis une icône de lanceur dans vos menus KDE
          et / ou GNOME, sous «Graphiques».
 
          Autrement, vous pouvez exécuter la commande suivante à une invite du
          shell (par exemple, "$") :
 
-           $ tuxpaint
+           $ marxpaint
 
          Si des erreurs se produisent, elles seront affichées sur le terminal
          ("stderr").
@@ -109,42 +109,42 @@ Lancement de Tux Paint
 
   Utilisateurs de Windows
 
-                                                      [Icône pour Tux Paint]  
-                                                            Tux Paint         
+                                                      [Icône pour Marx Paint]  
+                                                            Marx Paint         
 
-         Si vous avez installé Tux Paint sur votre ordinateur en utilisant le
-         'Tux Paint Installer', il vous aura demandé si vous vouliez un
+         Si vous avez installé Marx Paint sur votre ordinateur en utilisant le
+         'Marx Paint Installer', il vous aura demandé si vous vouliez un
          raccourci de menu 'Démarrer' et / ou un raccourci sur le bureau. Si
-         vous avez accepté, vous pouvez simplement exécuter Tux Paint à
-         partir de la section 'Tux Paint' de votre menu 'Démarrer' (par
+         vous avez accepté, vous pouvez simplement exécuter Marx Paint à
+         partir de la section 'Marx Paint' de votre menu 'Démarrer' (par
          exemple, sous «Tous les programmes» sous Windows XP), ou en
-         double-cliquant sur l'icône «Tux Paint» sur votre bureau .
+         double-cliquant sur l'icône «Marx Paint» sur votre bureau .
 
-         Si vous avez installé Tux Paint en utilisant le téléchargement
-         'ZIP-file', ou si vous avez utilisé 'Tux Paint Installer', mais que
+         Si vous avez installé Marx Paint en utilisant le téléchargement
+         'ZIP-file', ou si vous avez utilisé 'Marx Paint Installer', mais que
          vous avez choisi de ne pas installer de raccourcis, vous devrez
-         double-cliquer sur l'icône "tuxpaint.exe" dans le dossier "Tux
+         double-cliquer sur l'icône "marxpaint.exe" dans le dossier "Marx
          Paint" de votre ordinateur.
 
-         Par défaut, le 'Tux Paint Installer' mettra le dossier de Tux Paint
+         Par défaut, le 'Marx Paint Installer' mettra le dossier de Marx Paint
          dans "C:\Program Files\",ou bien vous avez pu changer cela lors de
          l'exécution du programme d'installation.
 
          Si vous avez utilisé le téléchargement de 'ZIP-file', le dossier de
-         Tux Paint sera là où vous l'avez placé lorsque vous avez décompressé
+         Marx Paint sera là où vous l'avez placé lorsque vous avez décompressé
          le fichier ZIP.
 
      ----------------------------------------------------------------------
 
   Utilisateurs de macOS
 
-         Double-cliquez simplement sur l'icône "Tux Paint".
+         Double-cliquez simplement sur l'icône "Marx Paint".
 
      ----------------------------------------------------------------------
 
 Écran titre
 
-       Lors du premier chargement de Tux Paint, un écran avec titre et
+       Lors du premier chargement de Marx Paint, un écran avec titre et
        crédits apparaîtra.
 
                                  [Écran-titre]
@@ -175,8 +175,8 @@ Lancement de Tux Paint
                                     [Toile]
 
                Remarque: la taille de la toile de dessin dépend de la taille
-               de Tux Paint. Vous pouvez modifier la taille de Tux Paint à
-               l'aide de l'outil de configuration tuxpaint-config, ou par
+               de Marx Paint. Vous pouvez modifier la taille de Marx Paint à
+               l'aide de l'outil de configuration marxpaint-config, ou par
                d’autres moyens. Consultez la documentation OPTIONS pour plus
                de détails.
 
@@ -211,7 +211,7 @@ Lancement de Tux Paint
 
        En bas : zone d'aide
 
-               Tout en bas de l'écran, Tux, le pingouin Linux, fournit des
+               Tout en bas de l'écran, Marx, le pingouin Linux, fournit des
                conseils et d'autres informations pendant que vous dessinez.
 
 (Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais glisser
@@ -276,11 +276,11 @@ Outils disponibles
 
                  Les tampons peuvent avoir un effet sonore et / ou une
                  description orale (parlés). Les boutons en bas à gauche
-                 (près de Tux, le pingouin Linux) vous permettent de rejouer
+                 (près de Marx, le pingouin Linux) vous permettent de rejouer
                  les effets sonores et la description du tampon actuellement
                  sélectionné.
 
-                 (REMARQUE: Si l'option "nostampcontrols" est définie, Tux
+                 (REMARQUE: Si l'option "nostampcontrols" est définie, Marx
                  Paint n'affichera pas les commandes Miroir, Retourner,
                  Réduire et Agrandir pour les tampons. Voir la documentation
                  " Options".)
@@ -318,7 +318,7 @@ Outils disponibles
                               La forme se développe à partir de l'endroit où
                               vous avez cliqué initialement et sera centrée
                               autour de cette position (C'était le seul
-                              comportement de Tux Paint jusqu'à la version
+                              comportement de Marx Paint jusqu'à la version
                               0.9.24.)
 
                       Formes à partir d'un coin
@@ -327,7 +327,7 @@ Outils disponibles
                               s'agit de la méthode par défaut de la plupart
                               des autres logiciels de dessin traditionnels.
                               (Cette option a été ajoutée à partir de la
-                              version 0.9.25 de Tux Paint.)
+                              version 0.9.25 de Marx Paint.)
 
                  Remarque : si les contrôles de forme sont désactivés (par
                  exemple, avec l'option "noshapecontrols"), il n'y aura pas
@@ -384,7 +384,7 @@ Outils disponibles
                       "Texte" par rapport à "Étiquette"
 
                               L' outil Texte est l'outil de saisie de texte
-                              original de Tux Paint. Le texte saisi à l'aide
+                              original de Marx Paint. Le texte saisi à l'aide
                               de cet outil ne peut pas être modifié ou
                               déplacé ultérieurement, car il fait partie du
                               dessin. Cependant, comme le texte fait partie
@@ -393,7 +393,7 @@ Outils disponibles
                               exemple, taché, teinté, gaufré, etc.)
 
                               Lors de l'utilisation de l' outil Étiquette
-                              (qui a été ajouté à Tux Paint dans la version
+                              (qui a été ajouté à Marx Paint dans la version
                               0.9.22), le texte `` flotte '' sur l'image, et
                               les détails de l'étiquette (le texte, la
                               position de l'étiquette, le choix de la police
@@ -403,22 +403,22 @@ Outils disponibles
 
                               L' outil Étiquette peut être désactivé (par
                               exemple, en sélectionnant "Désactiver l'outil
-                              'Label'" dans Tux Paint Config ou bien en
-                              exécutant Tux Paint en ligne de commande avec
+                              'Label'" dans Marx Paint Config ou bien en
+                              exécutant Marx Paint en ligne de commande avec
                               l'option "nolabel").
 
                       Saisie de caractères internationaux
 
-                              Tux Paint permet de saisir des caractères dans
+                              Marx Paint permet de saisir des caractères dans
                               différentes langues. La plupart des caractères
                               latins ( A - Z , ñ , è , etc...) peuvent être
                               saisis directement. Certaines langues exigent
-                              que Tux Paint soit commuté dans un mode
+                              que Marx Paint soit commuté dans un mode
                               d'entrée alternatif avant la saisie, et
                               certains caractères doivent être composés en
                               utilisant plusieurs touches.
 
-                              Lorsque les paramètres régionaux de Tux Paint
+                              Lorsque les paramètres régionaux de Marx Paint
                               sont définis sur l'une des langues fournissant
                               des modes de saisie alternatifs, une touche est
                               utilisée pour parcourir le ou les modes soit
@@ -449,7 +449,7 @@ Outils disponibles
                               "Étiquette", qui peut présenter une palette de
                               dispositions et de création de caractères (par
                               ex "a" et "e" pour "æ"). Voir les documents
-                              "Options" et "Extension de Tux Paint" pour plus
+                              "Options" et "Extension de Marx Paint" pour plus
                               d'informations.
 
      ----------------------------------------------------------------------
@@ -468,8 +468,8 @@ Outils disponibles
                       couleur qui s'atténue graduellement, à partir de
                       l'endroit où vous avez cliqué.
 
-                 Remarque: avant Tux Paint 0.9.24, il s'agissait d'un outil
-                 "magique" (voir ci-dessous). Remarque : avant Tux Paint
+                 Remarque: avant Marx Paint 0.9.24, il s'agissait d'un outil
+                 "magique" (voir ci-dessous). Remarque : avant Marx Paint
                  0.9.26, cet outil n'offrait que la méthode 'Solide' pour le
                  remplissage.
 
@@ -603,7 +603,7 @@ Outils disponibles
                       * Cliquez sur le bouton "Exporter" près du coin
                         inférieur droit pour exporter l'image vers votre
                         dossier d'exportation. (par exemple,
-                        "~/Pictures/TuxPaint/")
+                        "~/Pictures/MarxPaint/")
 
                       * Cliquez sur le bouton bleu "Diapositives" (projecteur
                         de diapositives) en bas à gauche pour passer en mode
@@ -659,7 +659,7 @@ Outils disponibles
                  maintenir la touche [Alt] (appelée [Option] sur Mac) tout en
                  cliquant sur le bouton «Imprimer» pour obtenir une boîte de
                  dialogue d'impression. Notez que cela pourrait ne pas
-                 fonctionner si vous exécutez Tux Paint en mode plein écran.
+                 fonctionner si vous exécutez Marx Paint en mode plein écran.
                  Voir ci-dessous.
 
                       Désactivation de l'impression
@@ -677,7 +677,7 @@ Outils disponibles
                               secondes, tel que vous l'avez défini.
 
                               Par exemple, avec "printdelay=60" dans le
-                              fichier de configuration de Tux Paint, vous ne
+                              fichier de configuration de Marx Paint, vous ne
                               pouvez imprimer qu'une fois par minute.
 
                               Voir la documentation sur "Options".
@@ -686,7 +686,7 @@ Outils disponibles
 
                               (Linux et Unix uniquement)
 
-                              Tux Paint imprime en générant une
+                              Marx Paint imprime en générant une
                               représentation PostScript du dessin et en
                               l'envoyant à un programme externe. Par défaut,
                               le programme est :
@@ -695,7 +695,7 @@ Outils disponibles
 
                               Cette commande peut être modifiée en
                               définissant la valeur "printcommand" dans le
-                              fichier de configuration de Tux Paint.
+                              fichier de configuration de Marx Paint.
 
                               Si la touche "[Alt]" du clavier est enfoncée
                               tout en cliquant sur le bouton «Imprimer», et
@@ -708,7 +708,7 @@ Outils disponibles
 
                               Cette commande peut être modifiée en
                               définissant la valeur "altprintcommand" dans le
-                              fichier de configuration de Tux Paint.
+                              fichier de configuration de Marx Paint.
 
                               Voir la documentation sur "Options".
 
@@ -716,7 +716,7 @@ Outils disponibles
 
                               (Windows et macOS)
 
-                              Par défaut, Tux Paint imprime simplement sur
+                              Par défaut, Marx Paint imprime simplement sur
                               l'imprimante par défaut avec les paramètres par
                               défaut lorsque le bouton «Imprimer» est
                               enfoncé.
@@ -730,7 +730,7 @@ Outils disponibles
                               modifier les réglages.
 
                               Vous pouvez stocker les changements de
-                              configuration, entre les sessions de Tux Paint,
+                              configuration, entre les sessions de Marx Paint,
                               en paramétrant l'option "printcfg".
 
                               Si l'option "printcfg" est utilisée, les
@@ -743,7 +743,7 @@ Outils disponibles
 
                       Options de la boîte de dialogue de l'imprimante
 
-                              Par défaut, Tux Paint affiche uniquement la
+                              Par défaut, Marx Paint affiche uniquement la
                               boîte de dialogue de l'imprimante (ou, sous
                               Linux / Unix, exécute "altprintcommand", par
                               exemple, "kprinter" au lieu de "lpr") si la
@@ -755,7 +755,7 @@ Outils disponibles
                               de dialogue de l'imprimante en utilisant
                               "--altprintalways" sur la ligne de commande ou
                               "altprint=always" dans le fichier de
-                              configuration de Tux Paint. Inversement vous
+                              configuration de Marx Paint. Inversement vous
                               pouvez empêcher la touche [Alt] / [Option]
                               d'avoir un effet en utilisant "--altprintnever"
                               ou "altprint=never".
@@ -768,13 +768,13 @@ Outils disponibles
 
                  Le bouton "Diapositives" est disponible dans la boîte de
                  dialogue "Ouvrir". Il peut être utilisé pour lire une simple
-                 animation dans Tux Paint, ou un diaporama. Il peut également
+                 animation dans Marx Paint, ou un diaporama. Il peut également
                  exporter un GIF animé basé sur les images choisies.
 
                       Choisir des images
 
                               Lorsque vous entrez dans la section "Diapos" de
-                              Tux Paint, il affiche une liste de vos fichiers
+                              Marx Paint, il affiche une liste de vos fichiers
                               enregistrés, tout comme la boîte de dialogue
                               "Ouvrir".
 
@@ -797,7 +797,7 @@ Outils disponibles
                               animé, du plus lent au plus rapide. Choisissez
                               le paramètre le plus à gauche pour désactiver
                               l'avancement automatique pendant la lecture
-                              dans Tux Paint - vous devrez appuyer sur une
+                              dans Marx Paint - vous devrez appuyer sur une
                               touche ou cliquer pour passer à la diapositive
                               suivante (voir ci-dessous).
 
@@ -807,9 +807,9 @@ Outils disponibles
                               parcourir manuellement. (Cela ne s'applique pas
                               à un GIF animé exporté.)
 
-                      Lecture dans Tux Paint
+                      Lecture dans Marx Paint
 
-                              Pour lire un diaporama dans Tux Paint, cliquez
+                              Pour lire un diaporama dans Marx Paint, cliquez
                               sur le bouton "Départ". (Remarque : si vous
                               n'avez sélectionné AUCUNE image, TOUTES vos
                               images enregistrées seront lues dans le
@@ -831,14 +831,14 @@ Outils disponibles
                       Exporter un GIF animé
 
                               Cliquez sur le bouton "Exporter GIF" en bas à
-                              droite pour que Tux Paint génère un fichier GIF
+                              droite pour que Marx Paint génère un fichier GIF
                               animé basé sur les images sélectionnées.
 
                               Remarque : On doit sélectionner au moins deux
                               images. (Pour exporter une seule image,
                               utilisez l'option "Exporter" de la boîte de
                               dialogue "Ouvrir".) Si aucune image n'est
-                              sélectionnée, Tux Paint n'essaiera PAS de
+                              sélectionnée, Marx Paint n'essaiera PAS de
                               générer un GIF basé sur toutes les images
                               enregistrées.
 
@@ -853,8 +853,8 @@ Outils disponibles
 
          Commande "Quitter"
 
-                 Cliquez sur le bouton "Quitter", fermez la fenêtre de Tux
-                 Paint ou appuyez sur la touche [Escape] pour quitter Tux
+                 Cliquez sur le bouton "Quitter", fermez la fenêtre de Marx
+                 Paint ou appuyez sur la touche [Escape] pour quitter Marx
                  Paint.
 
                  On vous demandera d'abord si vous voulez vraiment arrêter.
@@ -867,14 +867,14 @@ Outils disponibles
                  entrée. (Voir Sauvegarder ci-dessus.)
 
                  Remarque :: Si l'image est enregistrée, elle sera rechargée
-                 automatiquement la prochaine fois que vous exécuterez Tux
+                 automatiquement la prochaine fois que vous exécuterez Marx
                  Paint -- à moins que l'option"startblank" ait été activée.
 
                  Remarque :: Le bouton "Quitter" et la touche [Escape]
                  peuvent être désactivés par le biais de option "noquit".
 
                  Dans ce cas, le bouton "Fermer la fenêtre" sur la barre de
-                 titre de Tux Paint (si vous n'êtes pas en mode plein écran)
+                 titre de Marx Paint (si vous n'êtes pas en mode plein écran)
                  ou la touche [Alt] + [F4] peut être utilisée pour quitter.
 
                  Si aucune de ces options n'est possible, la séquence de
@@ -900,53 +900,53 @@ Outils disponibles
 
      ----------------------------------------------------------------------
 
-                   Chargement d'autres images dans Tux Paint
+                   Chargement d'autres images dans Marx Paint
 
-     Étant donné que la boîte de dialogue «Ouvrir» de Tux Paint n'affiche que
-     les images que vous avez créées avec Tux Paint, que se passe-t-il si
-     vous souhaitez charger une autre image ou photo dans Tux Paint pour les
+     Étant donné que la boîte de dialogue «Ouvrir» de Marx Paint n'affiche que
+     les images que vous avez créées avec Marx Paint, que se passe-t-il si
+     vous souhaitez charger une autre image ou photo dans Marx Paint pour les
      éditer et dessiner par-dessus ?
 
      Pour ce faire, il vous suffit de convertir l'image dans le format
-     utilisé par Tux Paint, qui est —PNG (Portable Network Graphic), et de la
-     placer dans le répertoire "saved" de Tux Paint. C'est là où on les
+     utilisé par Marx Paint, qui est —PNG (Portable Network Graphic), et de la
+     placer dans le répertoire "saved" de Marx Paint. C'est là où on les
      trouve (par défaut) :
 
      Windows 10, 8, 7, Vista
              Dans le dossier utilisateurs "AppData", par ex. "C:\Users\nom
-             d'utilisateur\AppData\Roaming\TuxPaint\saved\".
+             d'utilisateur\AppData\Roaming\MarxPaint\saved\".
 
      Windows 2000, XP
              Dans le dossier utilisateurs "Application Data", par ex.
              "C:\Documents and Settings\nom d'utilisateur\Application
-             Data\TuxPaint\saved\".
+             Data\MarxPaint\saved\".
 
      macOS
              Dans le dossier utilisateurs "Library", par ex. "/Users/nom
-             d'utilisateur/Library/Application Support/Tux Paint/saved/".
+             d'utilisateur/Library/Application Support/Marx Paint/saved/".
 
      Linux/Unix
-             Dans un répertoire caché ".tuxpaint" qui est dans le répertoire
+             Dans un répertoire caché ".marxpaint" qui est dans le répertoire
              personnel de l'utilisateur ("$HOME"), par ex. "/home/nom
-             d'utilisateur/.tuxpaint/saved/".
+             d'utilisateur/.marxpaint/saved/".
 
      Remarque : C'est également à partir de ce dossier que vous pouvez copier
-     ou ouvrir des images dessinées dans Tux Paint à l'aide d'autres
+     ou ouvrir des images dessinées dans Marx Paint à l'aide d'autres
      applications, ainsi l'option 'Export' de la boîte de dialogue 'Ouvrir'
-     de Tux Paint peut être utilisée pour les copier dans un endroit plus
+     de Marx Paint peut être utilisée pour les copier dans un endroit plus
      facile d'accès plus sûr.
 
-Utilisation du script d'importation "tuxpaint-import"
+Utilisation du script d'importation "marxpaint-import"
 
        Les utilisateurs Linux et Unix peuvent utiliser script shell
-       "tuxpaint-import" qui s'installe lorsque vous installez Tux Paint. Il
+       "marxpaint-import" qui s'installe lorsque vous installez Marx Paint. Il
        utilise certains outils NetPBM pour convertir l'image ("anytopnm"), la
-       redimensionner pour qu'elle tienne dans le canevas de Tux Paint
+       redimensionner pour qu'elle tienne dans le canevas de Marx Paint
        ("pnmscale") et la convertir en PNG ("pnmtopng").
 
        Il utilise également la commande "date" pour obtenir l'heure et la
        date actuelles, qui sont la convention de dénomination des fichiers
-       utilisée par Tux Paint pour les fichiers enregistrés. (N'oubliez pas
+       utilisée par Marx Paint pour les fichiers enregistrés. (N'oubliez pas
        que vous n'êtes jamais invité à entrer un "nom de fichier " lorsque
        vous allez enregistrer ou ouvrir des images !)
 
@@ -954,49 +954,49 @@ Utilisation du script d'importation "tuxpaint-import"
        d'une invite de ligne de commande et indiquez-lui le (s) nom (s) du ou
        des fichiers que vous voulez convertir.
 
-       Ils seront convertis et placés dans votre répertoire "saved" de Tux
+       Ils seront convertis et placés dans votre répertoire "saved" de Marx
        Paint. (Remarque: si vous faites cela pour un autre utilisateur - par
        exemple, votre enfant, vous devrez vous assurer d'exécuter la commande
        sous son compte.)
 
        Exemple :
 
-         $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
+         $ marxpaint-import grandma.jpg
+         grandma.jpg -> /home/username/.marxpaint/saved/20211231012359.png
          jpegtopnm: WRITING A PPM FILE
 
-       La première ligne ("tuxpaint-import grandma.jpg") est la commande à
+       La première ligne ("marxpaint-import grandma.jpg") est la commande à
        exécuter. Les deux lignes suivantes sont les sorties du programme
        pendant qu'il fonctionne.
 
-       Vous pouvez maintenant charger Tux Paint, et une version de cette
+       Vous pouvez maintenant charger Marx Paint, et une version de cette
        image originale sera disponible dans la boîte de dialogue «Ouvrir».
        Double-cliquez simplement sur son icône !
 
 Importer des images manuellement
 
        Les utilisateurs de Windows, macOS et Haiku désirant importer des
-       images dans Tux Paint doivent le faire manuellement.
+       images dans Marx Paint doivent le faire manuellement.
 
        Chargez un programme graphique capable à la fois de charger votre
        image et d'enregistrer un fichier au format PNG. (Voir le fichier de
        documentation "PNG.html" pour une liste des logiciels suggérés et
        d'autres références.)
 
-       Lorsque Tux Paint charge une image qui n'a pas la même taille que son
+       Lorsque Marx Paint charge une image qui n'a pas la même taille que son
        canevas de dessin, il met à l'échelle (et parfois en coloriant les
        bords) l'image pour qu'elle tienne dans le canevas.
 
        Pour éviter que l'image ne soit étirée ou maculée, vous pouvez la
-       redimensionner à la taille de la toile de Tux Paint. Cette taille
-       dépend de la taille de la fenêtre Tux Paint, ou de la résolution à
-       laquelle Tux Paint est exécuté, si il est en plein écran. (Remarque :
+       redimensionner à la taille de la toile de Marx Paint. Cette taille
+       dépend de la taille de la fenêtre Marx Paint, ou de la résolution à
+       laquelle Marx Paint est exécuté, si il est en plein écran. (Remarque :
        la résolution par défaut est de 800x600.) Voir "Calculer les
        dimensions des images" ci-dessous.
 
        Sauvegarder l'image au format PNG. Il est fortement recommandé que
        vous nommiez le fichier en utilisant la date et l'heure courante,
-       puisque c'est ce que Tux Paint utilise :
+       puisque c'est ce que Marx Paint utilise :
 
          YYYYMMDDhhmmss.png
 
@@ -1010,34 +1010,34 @@ Importer des images manuellement
        Exemple: "20210731110500.png",pour le 31 juillet 2021 à 11:05 du
        matin.
 
-       Mettez cd fichier PNG dans votre répertoire Tux Paint "saved". (Voir
+       Mettez cd fichier PNG dans votre répertoire Marx Paint "saved". (Voir
        ci-dessus)
 
   Calculer les dimensions des images
 
          Cette partie de documentation doit être réécrite puisque la nouvelle
          option "buttonsize" a été ajoutée. Pour l'heure, essayer de dessiner
-         et de sauvegarder l'image dans Tux Paint, et ensuite déterminer
+         et de sauvegarder l'image dans Marx Paint, et ensuite déterminer
          quelle taille (largeur et hauteur en pixels) elle possède, et
          essayez de l'adapter lors de la mise à l'échelle en l'important dans
-         Tux Paint.
+         Marx Paint.
 
      ----------------------------------------------------------------------
 
                             Lectures complémentaires
 
-     Les autres documents inclus avec Tux Paint (dans le répertoire "docs")
+     Les autres documents inclus avec Marx Paint (dans le répertoire "docs")
      incluent :
        * Documentation sur l'outil 'Magie' ("magic-docs")
          Documentation pour chacun des outils "Magic" actuellement installés.
        * AUTHORS.txt
          Liste des auteurs et contributeurs.
        * CHANGES.txt
-         Résumé des changements entre chaque version de Tux Paint.
+         Résumé des changements entre chaque version de Marx Paint.
        * COPYING.txt
          Licencd de copie, la GNU General Public License (GPL)
        * INSTALL.html
-         Instructions pour compiler et installer Tux Paint, le cas échéant.
+         Instructions pour compiler et installer Marx Paint, le cas échéant.
        * EXTENDING.html
          Des instructions détaillées sur la création de pinceaux, de tampons,
          d'images de démarrage et de modèles; et l'ajout de polices; et créer
@@ -1045,45 +1045,45 @@ Importer des images manuellement
        * OPTIONS.html
          Instructions détaillées sur les options en ligne de commande et les
          fichiers de configuration, pour ceux qui ne veulent pas utiliser
-         l'outil Tux Paint Config.
+         l'outil Marx Paint Config.
        * PNG.html
          Remarques sur la création d'images bitmap au format PNG à utiliser
-         dans Tux Paint.
+         dans Marx Paint.
        * SVG.html
          Remarques sur la création d'images vectorielles au format SVG à
-         utiliser dans Tux Paint.
+         utiliser dans Marx Paint.
        * SIGNALS.html
-         Informations sur les signaux POSIX auxquels répond Tux Paint.
+         Informations sur les signaux POSIX auxquels répond Marx Paint.
 
      ----------------------------------------------------------------------
 
                            Comment obtenir de l'aide
 
      Si vous avez besoin d'aide, il existe de nombreux moyens d'interagir
-     avec les développeurs de Tux Paint et les autres utilisateurs.
+     avec les développeurs de Marx Paint et les autres utilisateurs.
 
        * Mentionner des bogues, ou demander de nouvelles fonctionnalités via
          le système de suivi des bogues
-       * Participer aux nombreuses listes de diffusion de Tux Paint
+       * Participer aux nombreuses listes de diffusion de Marx Paint
        * Chatter avec les développeurs et d'autres utilisateurs via IRC
        * Contacter les développeurs directement
 
-     Pour en savoir plus, visitez la page "Contact" du site officiel de Tux
-     Paint : http://tuxpaint.org/contact/
+     Pour en savoir plus, visitez la page "Contact" du site officiel de Marx
+     Paint : http://marxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
                                Comment participer
 
-     Tux Paint est un projet mené par des volontaires, et nous serions
+     Marx Paint est un projet mené par des volontaires, et nous serions
      heureux d'accepter votre aide dans des tas de domaines.
 
-       * Traduire Tux Paint dans une autre langue
+       * Traduire Marx Paint dans une autre langue
        * Améliorer les traductions existantes
        * Créer des oeuvres (tampons, images de démarrage, modèles, pinceaux)
        * Ajouter ou améliorer des caractéristiques ou bien des outils "Magie"
        * Créer un programme d'étude en classe
-       * Promouvoir ou aider ceux qui utilisent Tux Paint
+       * Promouvoir ou aider ceux qui utilisent Marx Paint
 
      Pour en savoir plus, visitez la page "Nous aider" du site officiel de
-     Tux Paint : http://tuxpaint.org/help/
+     Marx Paint : http://marxpaint.org/help/

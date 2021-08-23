@@ -1,6 +1,6 @@
 /* BeOS_print.h */
 
-/* printing support for Tux Paint */
+/* printing support for Marx Paint */
 /* Marcin 'Shard' Konicki <shard@beosjournal.org> */
 
 /*

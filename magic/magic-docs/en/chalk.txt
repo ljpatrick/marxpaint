@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Chalk
+                         Marx Paint "Magic" Tool: Chalk
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

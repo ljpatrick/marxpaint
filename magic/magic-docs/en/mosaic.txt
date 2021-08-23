@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Mosaic
+                         Marx Paint "Magic" Tool: Mosaic
 
                       By Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>

@@ -2,13 +2,13 @@
   smudge.c
 
   Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Smudge by Albert Cahalan <albert@users.sf.net>
   Wet Paint addition by Bill Kendrick <bill@newbreedsoftware.com>
 
   Copyright (c) 2002-2011
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -213,7 +213,7 @@ void smudge_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(smudge_snd);
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void smudge_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)
 {
   smudge_r = r;

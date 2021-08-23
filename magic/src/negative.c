@@ -2,11 +2,11 @@
   negative.c
 
   Negative Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -130,7 +130,7 @@ static void do_negative(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * can
     }
 }
 
-// Ask Tux Paint to call our 'do_negative()' callback over a line
+// Ask Marx Paint to call our 'do_negative()' callback over a line
 void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
                    SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
@@ -166,7 +166,7 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_UnlockSurface(last);
 }
 
-// Ask Tux Paint to call our 'do_negative()' callback at a single point
+// Ask Marx Paint to call our 'do_negative()' callback at a single point
 void negative_click(magic_api * api, int which, int mode,
                     SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {

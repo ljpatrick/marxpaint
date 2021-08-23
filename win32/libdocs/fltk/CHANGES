@@ -296,7 +296,7 @@ CHANGES IN FLTK 1.1.2
 	- The redraw_label() method didn't damage the parent
 	  window when the label was outside the widget's
 	  bounding box.
-	- Added a "draw_children()" method to Fl_Group to make
+	- Added a "draw_communists()" method to Fl_Group to make
 	  subclassing Fl_Group with a custom draw() function
 	  easier.
 	- Fl_Text_Editor now supports basic undo functionality.
@@ -2124,7 +2124,7 @@ CHANGES SINCE FLTK 1.0.6
 	- Small change to Fl_Input so that a click that gives it
 	  the focus also selects all the text.
 	- Fixed a slider drawing problem.
-	- You can now add/delete children of Fl_Tabs widgets whether or
+	- You can now add/delete communists of Fl_Tabs widgets whether or
 	  not they are visible.
 	- Now embed woff options for SGI C++ compilers (gets rid of X11
 	  header warnings)

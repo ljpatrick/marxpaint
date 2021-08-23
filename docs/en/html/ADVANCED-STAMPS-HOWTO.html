@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Advanced Stamps 'How-To'    </title>
+      Marx Paint Advanced Stamps 'How-To'    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -13,15 +13,15 @@
         alink="#FF00FF">
     <center>
       <h1>
-        <img src="../../html/images/tuxpaint-title.png"
+        <img src="../../html/images/marxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux Paint"><br>
+            alt="Marx Paint"><br>
         version 0.9.27        Advanced Stamps 'How-To'      </h1>
 
       <p>
         Copyright &copy; 2006-2021 by Albert Cahalan and others; see AUTHORS.<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        <a href="http://www.marxpaint.org/">http://www.marxpaint.org/</a>
       </p>
     </center>
 
@@ -30,7 +30,7 @@
 
     <blockquote>
       <p>
-        This 'How-To' assumes that you want to make an excellent Tux Paint stamp, in PNG bitmapped format, from a JPEG image (e.g., a digital photograph). There are easier and faster methods that produce lower quality.      </p>
+        This 'How-To' assumes that you want to make an excellent Marx Paint stamp, in PNG bitmapped format, from a JPEG image (e.g., a digital photograph). There are easier and faster methods that produce lower quality.      </p>
 
       <p>
         This 'How-To' assumes you are dealing with normal opaque objects. Dealing with semi-transparent objects (fire, moving fan blade, kid's balloon) or light-giving objects (fire, lightbulb, sun) is best done with custom software. Images with perfect solid-color backgrounds are also best done with custom software, but are not troublesome to do as follows.      </p>
@@ -45,7 +45,7 @@
 
       <blockquote>
         <p>
-          If you wish to submit artwork to the Tux Paint developers for consideration for inclusion in the official project, or if you wish to release your own copy of Tux Paint, bundled with your own graphics, you need an image that is compatible with the GNU General Public License used by Tux Paint.        </p>
+          If you wish to submit artwork to the Marx Paint developers for consideration for inclusion in the official project, or if you wish to release your own copy of Marx Paint, bundled with your own graphics, you need an image that is compatible with the GNU General Public License used by Marx Paint.        </p>
 
         <p>
           Images produced by the US government are Public Domain, but be aware that the US government sometimes uses other images on the web. <a href="http://images.google.com/">Google image</a> queries including either <code>site:gov</code> or <code>site:mil</code> will supply many suitable images. (Note: the *.mil sites include non-military content, too!)        </p>
@@ -162,7 +162,7 @@
         Now disable the mask. View and edit the unmasked WIP layer. Using the color picker tool, choose a color that is average for the object. Drag-and-drop this color into the selection, thus removing most of the non-object pixels.      </p>
 
       <p>
-        This solid color will compress well and will help prevent ugly color fringes when Tux Paint scales the image down. If the edge of the object has multiple colors that are very different, you should split up your selection so that you can color the nearby background to be similar.      </p>
+        This solid color will compress well and will help prevent ugly color fringes when Marx Paint scales the image down. If the edge of the object has multiple colors that are very different, you should split up your selection so that you can color the nearby background to be similar.      </p>
 
       <p>
         Now you will paint away the existing edge fringe. Be sure that you are editing and viewing the WIP image. Frequent layer visibility changes will help you to see what you are doing. You are likely to use all of:      </p>
@@ -182,18 +182,18 @@
         Use the clone tool and the brush tool. Vary the opacity as needed. Use small round brushes mostly, perhaps 3x3 or 5x5, fuzzy or not. (It is generally nice to pair up fuzzy brushes with 100% opacity and non-fuzzy brushes with about 70% opacity.) Unusual drawing modes can be helpful with semi-transparent objects.      </p>
 
       <p>
-        The goal is to remove the edge fringe, both inside and outside of the object. The inside fringe, visible when the object is composited over magenta or green, must be removed for obvious reasons. The outside fringe must also be removed because it will become visible when the image is scaled down. As an example, consider a 2x2 region of pixels at the edge of a sharp-edged object. The left half is black and 0% opaque. The right half is white and 100% opaque. That is, we have a white object on a black background. When Tux Paint scales this to 50% (a 1x1 pixel area), the result will be a grey 50% opaque pixel. The correct result would be a white 50% opaque pixel. To get this result, we would paint away the black pixels. They matter, despite being 0% opaque.      </p>
+        The goal is to remove the edge fringe, both inside and outside of the object. The inside fringe, visible when the object is composited over magenta or green, must be removed for obvious reasons. The outside fringe must also be removed because it will become visible when the image is scaled down. As an example, consider a 2x2 region of pixels at the edge of a sharp-edged object. The left half is black and 0% opaque. The right half is white and 100% opaque. That is, we have a white object on a black background. When Marx Paint scales this to 50% (a 1x1 pixel area), the result will be a grey 50% opaque pixel. The correct result would be a white 50% opaque pixel. To get this result, we would paint away the black pixels. They matter, despite being 0% opaque.      </p>
 
       <p>
-        Tux Paint can scale images down by a very large factor, so it is important to extend the edge of your object outward by a great deal. Right at the edge of your object, you should be very accurate about this. As you go outward away from the object, you can get a bit sloppy. It is reasonable to paint outward by a dozen pixels or more. The farther you go, the more Tux Paint can scale down without creating ugly color fringes. For areas that are more than a few pixels away from the object edge, you should use the pencil tool (or sloppy select with drag-and-drop color) to ensure that the result will compress well.      </p>
+        Marx Paint can scale images down by a very large factor, so it is important to extend the edge of your object outward by a great deal. Right at the edge of your object, you should be very accurate about this. As you go outward away from the object, you can get a bit sloppy. It is reasonable to paint outward by a dozen pixels or more. The farther you go, the more Marx Paint can scale down without creating ugly color fringes. For areas that are more than a few pixels away from the object edge, you should use the pencil tool (or sloppy select with drag-and-drop color) to ensure that the result will compress well.      </p>
     </blockquote>
 
     <h2>
-      Save the image for Tux Paint    </h2>
+      Save the image for Marx Paint    </h2>
 
     <blockquote>
       <p>
-        It is very easy to ruin your hard work. Image editors can silently destroy pixels in 0% opaque areas. The conditions under which this happens may vary from version to version. If you are very trusting, you can try saving your image directly as a PNG. Be sure to read it back in again to verify that the 0% opaque areas didn't turn black or white, which would create fringes when Tux Paint scales the image down. If you need to scale your image to save space (and hide your mistakes), you are almost certain to destroy all the 0% opaque areas. So here is a better way...      </p>
+        It is very easy to ruin your hard work. Image editors can silently destroy pixels in 0% opaque areas. The conditions under which this happens may vary from version to version. If you are very trusting, you can try saving your image directly as a PNG. Be sure to read it back in again to verify that the 0% opaque areas didn't turn black or white, which would create fringes when Marx Paint scales the image down. If you need to scale your image to save space (and hide your mistakes), you are almost certain to destroy all the 0% opaque areas. So here is a better way...      </p>
 
       <h3>
         A Safer Way to Save      </h3>

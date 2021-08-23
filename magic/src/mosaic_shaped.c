@@ -2,7 +2,7 @@
   mosaic_shaped.c
 
   mosaic_shaped, Add a mosaic_shaped effect to the image using a combination of other tools.
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Credits:
   * Andrew Corcoran <akanewbie@gmail.com> for the edge step used in hexagon
@@ -13,7 +13,7 @@
 
   Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -336,7 +336,7 @@ void mosaic_shaped_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     }
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void mosaic_shaped_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)
 {
   mosaic_shaped_r = r;

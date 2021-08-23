@@ -1,10 +1,10 @@
-INSTALLERING.txt for Tux Paint
+INSTALLERING.txt for Marx Paint
 
-Tux Paint - eit enkelt teikneprogram for dei yngste.
+Marx Paint - eit enkelt teikneprogram for dei yngste.
 
 Copyright 2002 Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 27. juli 2002 - 5. november 2002
 
@@ -13,55 +13,55 @@ SYSTEMKRAV
 ----------
   Windows
   -------
-    Windows-versjonen av Tux Paint inneheld alle dei nødvendige
-    bibliotekfilene (i «.DLL»-format), så du treng ikkje lasta
+    Windows-versjonen av Marx Paint inneheld alle dei nï¿½dvendige
+    bibliotekfilene (i ï¿½.DLLï¿½-format), sï¿½ du treng ikkje lasta
     ned noko meir.
 
   libSDL
   ------
-    Tux Paint brukar «Simple DirectMedia Layer Library» (libSDL),
+    Marx Paint brukar ï¿½Simple DirectMedia Layer Libraryï¿½ (libSDL),
     som er eit multimedieprogrammeringsbibliotek tilgjengeleg som
-    open kjeldekode under «GNU Lesser General Public License» (LGPL).
+    open kjeldekode under ï¿½GNU Lesser General Public Licenseï¿½ (LGPL).
 
-    Tux Paint treng òg fleire SDL-hjelpebibliotek:
-    SDL_Image (for grafikk), SDL_TTF (for skriftstøtte) og
+    Marx Paint treng ï¿½g fleire SDL-hjelpebibliotek:
+    SDL_Image (for grafikk), SDL_TTF (for skriftstï¿½tte) og
     SDL_Mixer (valfritt - for lydeffektar).
 
     Linux/Unix
     ----------
       Kjeldekoden og RPM- og Debian-pakkar av SDL-biblioteka er tilgjengeleg.
-      Du kan lasta ned alle filene frå:
+      Du kan lasta ned alle filene frï¿½:
 
         libSDL:      http://www.libsdl.org/
         SDL_Image:   http://www.libsdl.org/projects/SDL_image/
         SDL_TTF:     http://www.libsdl.org/projects/SDL_ttf/
         SDL_Mixer:   http://www.libsdl.org/projects/SDL_mixer/ (valfritt)
 
-      Dei følgjer òg ofte med Linux-distribusjonar (enten på
+      Dei fï¿½lgjer ï¿½g ofte med Linux-distribusjonar (enten pï¿½
       installasjons-CD-en eller gjennom pakkehandteringsprogramvare,
-      som «apt-get» i Debian).
+      som ï¿½apt-getï¿½ i Debian).
 
-      Merk: Sørg for å installera «-devel»-utgåvene av pakkane du installerer,
-      i tillegg til standardutgåvene. Installer for eksempel både
-      «SDL-1.2.4.rpm» og «SDL-1.2.4-devel.rpm».
+      Merk: Sï¿½rg for ï¿½ installera ï¿½-develï¿½-utgï¿½vene av pakkane du installerer,
+      i tillegg til standardutgï¿½vene. Installer for eksempel bï¿½de
+      ï¿½SDL-1.2.4.rpmï¿½ og ï¿½SDL-1.2.4-devel.rpmï¿½.
 
   Andre bibliotek
   ---------------
-    Tux Paint brukar òg fleire andre frie LGPL-baserte bibliotek.
+    Marx Paint brukar ï¿½g fleire andre frie LGPL-baserte bibliotek.
     Dei er vanlegvis allereie installert under Linux, eller enkelet
-    tilgjengeleg frå distribusjonen du brukar.
+    tilgjengeleg frï¿½ distribusjonen du brukar.
 
     libPNG
     ------
-      Tux Paint brukar PNG-formatet («Portable Network Graphics») for
-      grafikkfiler. libPNG må vera installert for at SDL_image skal
+      Marx Paint brukar PNG-formatet (ï¿½Portable Network Graphicsï¿½) for
+      grafikkfiler. libPNG mï¿½ vera installert for at SDL_image skal
       fungera.
 
         http://www.libpng.org/pub/png/libpng.html
 
     FreeType2
     ---------
-      Tux Paint brukar skrifter i TTF-format («TrueType») for å
+      Marx Paint brukar skrifter i TTF-format (ï¿½TrueTypeï¿½) for ï¿½
       skriva tekst.
       SDL_ttf treng FreeType2-biblioteket.
 
@@ -69,16 +69,16 @@ SYSTEMKRAV
 
     gettext
     -------
-      Tux Paint brukar lokaleinnstillingane saman med gettext-biblioteket
-      for å visa brukargrensesnittet på fleire språk. Du må ha gettext-
+      Marx Paint brukar lokaleinnstillingane saman med gettext-biblioteket
+      for ï¿½ visa brukargrensesnittet pï¿½ fleire sprï¿½k. Du mï¿½ ha gettext-
       biblioteket installert.
 
         http://www.gnu.org/software/gettext/
 
-    NetPBM-verktøya (valfritt)
+    NetPBM-verktï¿½ya (valfritt)
     --------------------------
-      NetPBM-verktøya blir brukt for utskrift under Linux og Unix.
-      (Tux Paint lagar eit PNG-bilete, som så blir konvertert til
+      NetPBM-verktï¿½ya blir brukt for utskrift under Linux og Unix.
+      (Marx Paint lagar eit PNG-bilete, som sï¿½ blir konvertert til
       PostScript-format ved hjelp av kommandolinjeprogramma pngtopnm
       og pnmtops.)
 
@@ -87,151 +87,151 @@ SYSTEMKRAV
 
 Kompilering og installering
 ---------------------------
-  Då Tux Paint er gjeven ut under «GNU General Public License» (GPL)
-  (sjå «COPYING.txt» for meir informasjon), følgjer kjeldekoden med.
+  Dï¿½ Marx Paint er gjeven ut under ï¿½GNU General Public Licenseï¿½ (GPL)
+  (sjï¿½ ï¿½COPYING.txtï¿½ for meir informasjon), fï¿½lgjer kjeldekoden med.
 
   Windows
   -------
     Kompilering
     -----------
-      Tux Paint kjem ferdigkompliert for Windows, så du slepp å kompilera
-      programmet på eiga hand. [Det vil komma informasjon om kompilering
-      på Windows her - med tid og stunder. I mellomtida får du prøva å
-      klara deg på sjølv.]
+      Marx Paint kjem ferdigkompliert for Windows, sï¿½ du slepp ï¿½ kompilera
+      programmet pï¿½ eiga hand. [Det vil komma informasjon om kompilering
+      pï¿½ Windows her - med tid og stunder. I mellomtida fï¿½r du prï¿½va ï¿½
+      klara deg pï¿½ sjï¿½lv.]
 
     Installering
     ------------
-      Køyr installasjonsfila («.exe»-fila) og følg instruksjonane.
+      Kï¿½yr installasjonsfila (ï¿½.exeï¿½-fila) og fï¿½lg instruksjonane.
 
-      Først må du godta lisensen. (Det er «GNU General Public License» (GPL),
-      som òg er tilgjengeleg i «COPYING.txt».)
+      Fï¿½rst mï¿½ du godta lisensen. (Det er ï¿½GNU General Public Licenseï¿½ (GPL),
+      som ï¿½g er tilgjengeleg i ï¿½COPYING.txtï¿½.)
 
-      Du blir så spurt om du vil installera snarvegar til Tux Paint i
-      Start-menyen og på skrivebordet. (Dette blir gjort som standard.)
+      Du blir sï¿½ spurt om du vil installera snarvegar til Marx Paint i
+      Start-menyen og pï¿½ skrivebordet. (Dette blir gjort som standard.)
 
-      Så må du velja kor du vil leggja Tux Paint. Standardmappa er grei,
-      så lenge du har nok diskplass.
+      Sï¿½ mï¿½ du velja kor du vil leggja Marx Paint. Standardmappa er grei,
+      sï¿½ lenge du har nok diskplass.
 
-      Til slutt trykkjer du berre på «Install» for å installera programmet!
+      Til slutt trykkjer du berre pï¿½ ï¿½Installï¿½ for ï¿½ installera programmet!
 
-      Endra på innstillingane frå snarvegen
+      Endra pï¿½ innstillingane frï¿½ snarvegen
       -------------------------------------
-      Høgreklikk på Tux Paint-snarvegen, og vel «Egenskapar» nedst frå
+      Hï¿½greklikk pï¿½ Marx Paint-snarvegen, og vel ï¿½Egenskaparï¿½ nedst frï¿½
       menyen som dukkar opp.
 
-      Sørg for at «Snarvei»-fanen er valt i dialogvindauget, sjå på
-      «Målmappe»-feltet. Her skal det stå noko liknande:
+      Sï¿½rg for at ï¿½Snarveiï¿½-fanen er valt i dialogvindauget, sjï¿½ pï¿½
+      ï¿½Mï¿½lmappeï¿½-feltet. Her skal det stï¿½ noko liknande:
 
-          C:\Programfiler\TuxPaint\TuxPaint.exe
+          C:\Programfiler\MarxPaint\MarxPaint.exe
 
       Du kan no leggja til kommandolinjeval som blir tatt i
-      bruk når du brukar ikonet.
+      bruk nï¿½r du brukar ikonet.
 
-      Eksempel: Viss du vil køyra programmet i fullskjerm, med enkle
-      figurar (utan rotasjon) og på nynorsk, legg du til vala for dette
-      etter «TuxPaint.exe»:
+      Eksempel: Viss du vil kï¿½yra programmet i fullskjerm, med enkle
+      figurar (utan rotasjon) og pï¿½ nynorsk, legg du til vala for dette
+      etter ï¿½MarxPaint.exeï¿½:
 
-          C:\Programfiler\TuxPaint\TuxPaint.exe -f -s --lang nynorsk
+          C:\Programfiler\MarxPaint\MarxPaint.exe -f -s --lang nynorsk
 
-      (Sjå «LESMEG.txt» for ei oversikt over kommandolinjevala du kan bruka.)
+      (Sjï¿½ ï¿½LESMEG.txtï¿½ for ei oversikt over kommandolinjevala du kan bruka.)
 
       Viss du skrive noko galt, eller all teksten forsvinn, kan du angra
-      med «Ctrl + Z», eller bruka «Escape»-tasten til å lukka dialogvindauget
-      utan å lagra endringane (med mindre du har trykt på «Bruk»-knappen!)
+      med ï¿½Ctrl + Zï¿½, eller bruka ï¿½Escapeï¿½-tasten til ï¿½ lukka dialogvindauget
+      utan ï¿½ lagra endringane (med mindre du har trykt pï¿½ ï¿½Brukï¿½-knappen!)
 
-      Når du er ferdig, trykkjer du «OK».
+      Nï¿½r du er ferdig, trykkjer du ï¿½OKï¿½.
 
-      Viss noko går galt
+      Viss noko gï¿½r galt
       ------------------
-      Viss ingenting skjer når du brukar snarvegen, er det sannsynlegvis
+      Viss ingenting skjer nï¿½r du brukar snarvegen, er det sannsynlegvis
       fordi nokre av kommandolinjevala er feil. Opna eit Utforsker-vindauge
-      som før, og leit etter ei fil som heiter «stderr.txt» i mappa der
-      Tux Paint-programmet ligg.
+      som fï¿½r, og leit etter ei fil som heiter ï¿½stderr.txtï¿½ i mappa der
+      Marx Paint-programmet ligg.
 
       Denne fila inneheld informasjon om kva som gjekk galt. Vanlegvis
-      er berre store bokstavar når du skulle brukt små, eller ein
-      manglande bindestrek («-»).
+      er berre store bokstavar nï¿½r du skulle brukt smï¿½, eller ein
+      manglande bindestrek (ï¿½-ï¿½).
 
 
   Linux/Unix
   ----------
     Kompilering
     -----------
-      Merk: Tux Paint støttar ikkje autoconf/automake, så det finst
-      ingen «./configure»-skript du kan køyra. Men kompileringa skal
-      uansett gå lett, så lenge alle dei nødvendige tilleggsbiblioteka
+      Merk: Marx Paint stï¿½ttar ikkje autoconf/automake, sï¿½ det finst
+      ingen ï¿½./configureï¿½-skript du kan kï¿½yra. Men kompileringa skal
+      uansett gï¿½ lett, sï¿½ lenge alle dei nï¿½dvendige tilleggsbiblioteka
       er installerte.
 
-      Skriv følgjande frå kommandolinja for kompilera programmet:
+      Skriv fï¿½lgjande frï¿½ kommandolinja for kompilera programmet:
 
         $ make
 
-    Slå av lydstøtta ved kompilering
+    Slï¿½ av lydstï¿½tta ved kompilering
     --------------------------------
-      Viss du ikkje har noko lydkort, eller føretrekkjer å bruka programmet
-      utan lyd (og utan SDL-mixer-biblioteket), kan du køyra «make» med
-      målet «nosound»:
+      Viss du ikkje har noko lydkort, eller fï¿½retrekkjer ï¿½ bruka programmet
+      utan lyd (og utan SDL-mixer-biblioteket), kan du kï¿½yra ï¿½makeï¿½ med
+      mï¿½let ï¿½nosoundï¿½:
 
         $ make nosound
 
 
     Ved feil
     --------
-      Viss du opplever feil ved kompileringa, bør du sjekka at du har alle
-      dei nødvendige tilleggsbiblioteka installert. Om du brukar ferdigpakka
+      Viss du opplever feil ved kompileringa, bï¿½r du sjekka at du har alle
+      dei nï¿½dvendige tilleggsbiblioteka installert. Om du brukar ferdigpakka
       versjonar av biblioteka (som RPM-filer under RedHat og DEB-filer
-      under Debian), må du sørgja for å ha tilhørande «-dev»- eller «-devel»-
-      pakkar òg. Elles kan du ikkje kompilera Tux Paint (eller andre program)
-      frå kjeldekoden.
+      under Debian), mï¿½ du sï¿½rgja for ï¿½ ha tilhï¿½rande ï¿½-devï¿½- eller ï¿½-develï¿½-
+      pakkar ï¿½g. Elles kan du ikkje kompilera Marx Paint (eller andre program)
+      frï¿½ kjeldekoden.
 
 
     Installering
     ------------
-      Viss ingen feil har oppstått, kan du no installera programmet på
-      systemet. Som standard må dette gjerast som rotbrukar («superuser»).
+      Viss ingen feil har oppstï¿½tt, kan du no installera programmet pï¿½
+      systemet. Som standard mï¿½ dette gjerast som rotbrukar (ï¿½superuserï¿½).
       Byt til rotbrukar med kommandoen:
 
         $ su
 
-      Skriv så inn passordet. Du er no rotbrukar (med ledeteksten «#»). Du
-      kan så skriva følgjande for å installera programmet og datafilene:
+      Skriv sï¿½ inn passordet. Du er no rotbrukar (med ledeteksten ï¿½#ï¿½). Du
+      kan sï¿½ skriva fï¿½lgjande for ï¿½ installera programmet og datafilene:
 
         # make install
 
-      Til slutt bør du bytta tilbake til vanleg brukar:
+      Til slutt bï¿½r du bytta tilbake til vanleg brukar:
 
         # exit
 
 
-      Merk: Som standard blir køyrefila «tuxpaint» lagt i katalogen
-      «/usr/local/bin/». Datafilene (bilete, lydeffektar og liknande)
-      blir lagt i katalogen «/usr/local/share/tuxpaint/».
+      Merk: Som standard blir kï¿½yrefila ï¿½marxpaintï¿½ lagt i katalogen
+      ï¿½/usr/local/bin/ï¿½. Datafilene (bilete, lydeffektar og liknande)
+      blir lagt i katalogen ï¿½/usr/local/share/marxpaint/ï¿½.
 
 
       Velja filplassering
       -------------------
-        Du kan velja kor filene skal leggjast ved å bruka «PREFIX»-
-        variablane i «Makefile». «PREFIX» er grunnkatalogen som alle
-        filene blir lagt under, og er som standard «/usr/local».
+        Du kan velja kor filene skal leggjast ved ï¿½ bruka ï¿½PREFIXï¿½-
+        variablane i ï¿½Makefileï¿½. ï¿½PREFIXï¿½ er grunnkatalogen som alle
+        filene blir lagt under, og er som standard ï¿½/usr/localï¿½.
 
         Andre variablar
         ---------------
           BIN_PREFIX
-            Katalogen til køyrefila «tuxpaint».
-            (Standard: «$(PREFIX)/bin», altså «/usr/local/bin»)
+            Katalogen til kï¿½yrefila ï¿½marxpaintï¿½.
+            (Standard: ï¿½$(PREFIX)/binï¿½, altsï¿½ ï¿½/usr/local/binï¿½)
 
           DATA_PREFIX
             Katalogen til datafilene (lydeffektar, grafikk, penslar,
             stempel og skrifter).
-            (Standard: «$(PREFIX)/share/tuxpaint»)
+            (Standard: ï¿½$(PREFIX)/share/marxpaintï¿½)
 
           DOC_PREFIX
-            Katalogen til dokumentasjonskatalogen («docs»-katalogen).
-            (Standard: «$(PREFIX)/share/doc/tuxpaint»)
+            Katalogen til dokumentasjonskatalogen (ï¿½docsï¿½-katalogen).
+            (Standard: ï¿½$(PREFIX)/share/doc/marxpaintï¿½)
 
           MAN_PREFIX
-            Katalogen til «man»-sida for Tux Paint.
-            (Standard: «$(PREFIX)/share/man»)
+            Katalogen til ï¿½manï¿½-sida for Marx Paint.
+            (Standard: ï¿½$(PREFIX)/share/manï¿½)
 
           ICON_PREFIX                      $(PREFIX)/share/pixmaps
           X11_ICON_PREFIX                  $(PREFIX)/X11R6/include/X11/pixmaps
@@ -240,10 +240,10 @@ Kompilering og installering
             Katalogen til ikona og programstartarane (for GNOME og KDE).
 
           LOCALE_PREFIX
-            Katalogen til omsetjingsfilene for Tux Paint.
-            (Standard: «$(PREFIX)/share/locale/»)
+            Katalogen til omsetjingsfilene for Marx Paint.
+            (Standard: ï¿½$(PREFIX)/share/locale/ï¿½)
             (Filene blir lagt i eigne katalogar for kvart lokale, i
-            «LC_MESSAGES» under lokalekatalogane, som «nn» for
+            ï¿½LC_MESSAGESï¿½ under lokalekatalogane, som ï¿½nnï¿½ for
             nynorskomsetjinga.)
 
 
@@ -251,38 +251,38 @@ Avinstallering
 --------------
   Windows
   -------
-    Viss du installerte snarvegane i Start-menyen (standard), går du berre
-    til «TuxPaint»-mappa og vel «Uninstall». Det dukkar opp eit dialogvindauge
-    som ber deg stadfesta at du vil avinstallera Tux Paint. Viss du er sikker
-    på at du vil fjerna programmet, trykkjer du på «Uninstall»-knappen.
+    Viss du installerte snarvegane i Start-menyen (standard), gï¿½r du berre
+    til ï¿½MarxPaintï¿½-mappa og vel ï¿½Uninstallï¿½. Det dukkar opp eit dialogvindauge
+    som ber deg stadfesta at du vil avinstallera Marx Paint. Viss du er sikker
+    pï¿½ at du vil fjerna programmet, trykkjer du pï¿½ ï¿½Uninstallï¿½-knappen.
 
-    Når avinstalleringa er fullført, trykkjer du på «Close»-knappen.
+    Nï¿½r avinstalleringa er fullfï¿½rt, trykkjer du pï¿½ ï¿½Closeï¿½-knappen.
 
-    Du kan òg bruka oppføringa «TuxPaint (remove only)» i «Legg til / fjern
-    programmer» i «Kontrollpanel».
+    Du kan ï¿½g bruka oppfï¿½ringa ï¿½MarxPaint (remove only)ï¿½ i ï¿½Legg til / fjern
+    programmerï¿½ i ï¿½Kontrollpanelï¿½.
 
-    Merk: Då teikningar blir lagra i same mappe som Tux Paint-programmet er
-    installert i, blir ikkje denne mappa og «userdata»-undermappa fjerna.
+    Merk: Dï¿½ teikningar blir lagra i same mappe som Marx Paint-programmet er
+    installert i, blir ikkje denne mappa og ï¿½userdataï¿½-undermappa fjerna.
 
 
   Linux
   -----
-    Du kan bruka eit «Makefile»-mål i kjeldefilkatalogen (der du
-    kompilerte Tux Paint) til å avinstallera programmet.
-    Som standard må du gjera dette som rotbrukar («superuser»).
-    (Sjå installasjonshjelpen ovanfor for meir informasjon.)
+    Du kan bruka eit ï¿½Makefileï¿½-mï¿½l i kjeldefilkatalogen (der du
+    kompilerte Marx Paint) til ï¿½ avinstallera programmet.
+    Som standard mï¿½ du gjera dette som rotbrukar (ï¿½superuserï¿½).
+    (Sjï¿½ installasjonshjelpen ovanfor for meir informasjon.)
 
     Byt til rotbrukar med kommandoen:
 
       $ su
 
-    Skriv så inn passordet for rotbrukaren. Du skal no vera logga
-    inn som rotbrukar (med ledeteksten «#»). For å avinstallera
-    programmet med datafilene (standardstempla blir òg fjerna viss
+    Skriv sï¿½ inn passordet for rotbrukaren. Du skal no vera logga
+    inn som rotbrukar (med ledeteksten ï¿½#ï¿½). For ï¿½ avinstallera
+    programmet med datafilene (standardstempla blir ï¿½g fjerna viss
     dei finst), skriv du:
 
       # make uninstall
 
-    Til slutt bør du logga ut og tilbake til vanleg brukar:
+    Til slutt bï¿½r du logga ut og tilbake til vanleg brukar:
 
       # exit

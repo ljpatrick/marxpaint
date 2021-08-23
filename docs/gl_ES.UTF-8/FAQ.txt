@@ -1,8 +1,8 @@
-                                   Tux Paint
+                                   Marx Paint
                     versión 0.9.27 Preguntas máis frecuentes
 
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                2 de Xuño de 2021
 
@@ -10,7 +10,7 @@
 
 Relacionado co debuxo
 
-   Os tipos de letra que engadín a Tux Paint só amosan cadrados
+   Os tipos de letra que engadín a Marx Paint só amosan cadrados
            O tipo de letra TrueType que está a usar pode ter unha
            codificación incorrecta. Se está codificado «personalizado», por
            exemplo, pode tentar executalo a través de FontForge
@@ -20,17 +20,17 @@ Relacionado co debuxo
 
    A ferramenta «Selo de caucho» está gris.
 
-           Isto significa que Tux Paint non atopou ningunha imaxe de selo ou
+           Isto significa que Marx Paint non atopou ningunha imaxe de selo ou
            se lle pediu que non as cargase.
 
-           Se instalou Tux Paint, pero non instalou a colección opcional
-           separada de «Selos», saia de Tux Paint e instálea agora. Debe
+           Se instalou Marx Paint, pero non instalou a colección opcional
+           separada de «Selos», saia de Marx Paint e instálea agora. Debe
            estar dispoñíbel no mesmo lugar no que obtivo o programa principal
-           de Tux Paint. (Nota: A partir da versión 0.9.14, Tux Paint inclúe
+           de Marx Paint. (Nota: A partir da versión 0.9.14, Marx Paint inclúe
            unha pequena colección de selos de exemplo.)
 
            Se non quere instalar a colección predeterminada de selos, pode
-           crear os seu.s Vexa a documentación «Ampliar Tux Paint» para obter
+           crear os seu.s Vexa a documentación «Ampliar Marx Paint» para obter
            máis información sobre como crear ficheiros de imaxe PNG e SVG,
            ficheiros de descrición de texto TXT, ficheiros de son Ogg Vorbis,
            MP3 ou WAV e ficheiros de datos de texto DAT que compoñen os
@@ -38,7 +38,7 @@ Relacionado co debuxo
 
            Finalmente, se instalou selos e pensa que deberían cargarse,
            comprobe que a opción «nostamps» non está configurada. (Ben sexa
-           mediante a opción «--nostamps» na liña de ordes de Tux Paint ou
+           mediante a opción «--nostamps» na liña de ordes de Marx Paint ou
            «nostamps=yes» no ficheiro de configuración.)
 
            Cambie ou elimine a opción «nostamps» ou pode anulala con
@@ -47,30 +47,30 @@ Relacionado co debuxo
 
    A ferramenta «Encher» vese mal
 
-           Tux Paint probabelmente estea a comparar as cores exactas dos
+           Marx Paint probabelmente estea a comparar as cores exactas dos
            píxeles ao encher. Isto é máis rápido, pero ten un aspecto peor.
-           Execute a orde «tuxpaint --verbose-version» dende unha liña de
+           Execute a orde «marxpaint --verbose-version» dende unha liña de
            ordes e debe ver, entre outras saídas: «Low Quality Flood Fill
            enabled».
 
-           Para cambialo, debe volver compilar Tux Paint dende o código
+           Para cambialo, debe volver compilar Marx Paint dende o código
            fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
 
              #define LOW_QUALITY_FLOOD_FILL
 
-           no ficheiro «tuxpaint.c» no directorio «src».
+           no ficheiro «marxpaint.c» no directorio «src».
 
    Os contornos do selo son sempre rectángulos
 
-           Tux Paint foi compilado con contornos de selo de baixa calidade
+           Marx Paint foi compilado con contornos de selo de baixa calidade
            (pero máis rápidos).
 
-           Para cambialo, debe volver compilar Tux Paint dende o código
+           Para cambialo, debe volver compilar Marx Paint dende o código
            fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
 
              #define LOW_QUALITY_STAMP_OUTLINE
 
-           no ficheiro «tuxpaint.c» no directorio «src».
+           no ficheiro «marxpaint.c» no directorio «src».
 
      ----------------------------------------------------------------------
 
@@ -78,18 +78,18 @@ Problemas de interface
 
    As miniaturas dos selos no selector de selos vense mal
 
-           Probabelmente Tux Paint foi compilado co código de miniaturas máis
-           rápidoase de menor calidade activado. Executa a orde «tuxpaint
+           Probabelmente Marx Paint foi compilado co código de miniaturas máis
+           rápidoase de menor calidade activado. Executa a orde «marxpaint
            --verbose-version» dende unha liña de ordes. Se, entre outras
            saídas, ves o texto: «Low Quality Thumbnails enabled», entón é
            isto o que está a suceder.
 
-           Para cambialo, debe volver compilar Tux Paint dende o código
+           Para cambialo, debe volver compilar Marx Paint dende o código
            fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
 
              #define LOW_QUALITY_THUMBNAILS
 
-           no ficheiro «tuxpaint.c» no directorio «src».
+           no ficheiro «marxpaint.c» no directorio «src».
 
    As imaxes do diálogo «Abrir» vense mal
            Probabelmente estea activada a opción «Miniaturas de baixa
@@ -98,18 +98,18 @@ Problemas de interface
 
    Os botóns de selección de cores son cadrados feos, e non botóns bonitos.
 
-           Tux Paint probabelmente compilado desactivando os fermosos botóns
-           de selección de cor. Executa a orde: «tuxpaint --verbose-version»
+           Marx Paint probabelmente compilado desactivando os fermosos botóns
+           de selección de cor. Executa a orde: «marxpaint --verbose-version»
            dende unha liña de ordes. Se, entre outras saídas, ves o texto:
            «Low Quality Color Selector enabled», entón é isto o que está a
            suceder.
 
-           Para cambialo, debe volver compilar Tux Paint dende o código
+           Para cambialo, debe volver compilar Marx Paint dende o código
            fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
 
              #define LOW_QUALITY_COLOR_SELECTOR
 
-           no ficheiro «tuxpaint.c» no directorio «src».
+           no ficheiro «marxpaint.c» no directorio «src».
 
    Todo o texto está en maiúscula.
 
@@ -119,19 +119,19 @@ Problemas de interface
            «--mixedcase» na liña de ordes ou con «uppercase=no» ou
            »mixedcase=yes» nun ficheiro de configuración.
 
-   Tux Paint está noutro idioma
+   Marx Paint está noutro idioma
            Asegúrese de que os seu axuste da configuración local sexa
-           correcto. Vexa «Tux Paint non cambia ao meu idioma», a
+           correcto. Vexa «Marx Paint non cambia ao meu idioma», a
            continuación.
 
-   Tux Paint non cambia ao meu idioma
+   Marx Paint non cambia ao meu idioma
               * Usuarios de Linux e Unix: asegúrese de que a configuración
                 local está dispoñíbel
 
                 Asegúrese de que a configuración local que quere está
                 dispoñíbel. Comprobe o seu ficheiro «/etc/locale.gen». Vexa a
                 «Documentación de opcións» para coñecer as configuracións
-                locais que usa Tux Paint (especialmente cando se usa a opción
+                locais que usa Marx Paint (especialmente cando se usa a opción
                 «--lang»).
 
                 Nota: os usuarios de Debian e derivados (p. ex.: Ubuntu)
@@ -164,32 +164,32 @@ Problemas de interface
                 no lugar adecuado, respectivamente.
 
                 Os tipos de letra axeitados para estas configuracións locais
-                pódense descargar dende o sitio web de Tux Paint:
+                pódense descargar dende o sitio web de Marx Paint:
 
-                  http://www.tuxpaint.org/download/fonts/
+                  http://www.marxpaint.org/download/fonts/
 
      ----------------------------------------------------------------------
 
 Impresión
 
-   Tux Paint non imprime, produce un erro ou imprime lixo (Unix/Linux)
+   Marx Paint non imprime, produce un erro ou imprime lixo (Unix/Linux)
 
-           Tux Paint imprime creando unha representación PostScript da imaxe
+           Marx Paint imprime creando unha representación PostScript da imaxe
            e enviándoa a unha orde externa. De xeito predeterminado, esta
            orde é a ferramenta de impresión «lpr».
 
            Se ese programa non está dispoñíbel (por exemplo, está a usar
            CUPS, o Sistema Común de Impresión Unix e non ten instalado
            «cups-lpr»), terá que especificar unha orde apropiada usando a
-           opción «printcommand» no ficheiro de configuración de Tux Paint.
+           opción «printcommand» no ficheiro de configuración de Marx Paint.
            (Vexa a «Documentación de opcións».)
 
-           Nota: As versións de Tux Paint anteriores ao 0.9.15 usaban unha
+           Nota: As versións de Marx Paint anteriores ao 0.9.15 usaban unha
            orde predeterminada diferente para imprimir, «pngtopnm | pnmtops |
-           lpr», como formato PNG de saída de Tux PaintNG, no canto de
+           lpr», como formato PNG de saída de Marx PaintNG, no canto de
            PostScript.
 
-           Se xa cambiara a súa opción «printcommand» antes de Tux Paint
+           Se xa cambiara a súa opción «printcommand» antes de Marx Paint
            0.9.15, terá que volver atras e modificala para que acepte
            PostScript.
 
@@ -198,22 +198,22 @@ Impresión
            A opción «atraso de impresión» está activada. Só pode imprimir
            unha vez cada X segundos.
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--printdelay=...».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--printdelay=...»
            aparece como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--printdelay=...» na liña de
-           ordes, comprobe o ficheiro de configuración de Tux Paint para ver
+           ordes, comprobe o ficheiro de configuración de Marx Paint para ver
            se hai unha liña que diga: «printdelay=...».
 
            Retire esa liña, configure o valor de atraso en 0 (sen atraso) ou
            diminúa o atraso a o valor que prefira. (Vexa a «Documentación de
            opcións».)
 
-           Ou, simplemente pode executar Tux Paint co argumento da liña de
+           Ou, simplemente pode executar Marx Paint co argumento da liña de
            ordes: «--printdelay=0», que anulará o axuste do ficheiro de
            configuración e permitirá a impresión ilimitada. (Non terás aue
            agardar entre impresións).
@@ -222,108 +222,108 @@ Impresión
 
            A opción «non imprimir» está activada.
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--noprint».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--noprint» aparece
            como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--noprint» na liña de ordes,
-           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           comprobe o ficheiro de configuración de Marx Paint para ver se hai
            unha liña que diga: «noprint=yes».
 
-           Retire esa liña ou simplemente execute Tux Paint co argumento da
+           Retire esa liña ou simplemente execute Marx Paint co argumento da
            liña de ordes «--print», que anulará o axuste do ficheiro de
            configuración.
 
-           Ou use Tux Paint Config. e asegúrese de «Permitir a impresión»
+           Ou use Marx Paint Config. e asegúrese de «Permitir a impresión»
            (baixo «Impresión») está marcado.
 
      ----------------------------------------------------------------------
 
 Gardar
 
-   Onde garda Tux Paint os meus debuxos?
+   Onde garda Marx Paint os meus debuxos?
 
-           A non ser que lle solicite a Tux Paint que garde nun lugar
-           específico (usando a opción «savedir»), Tux Paint garda nun lugar
+           A non ser que lle solicite a Marx Paint que garde nun lugar
+           específico (usando a opción «savedir»), Marx Paint garda nun lugar
            estándar na súa unidade local:
 
                 Windows Vista, Windows 8, Windows 10
                         No cartafol «AppData» do usuario:
                         p. ex.: C:\Users\nome de
-                        usuario\AppData\Roaming\TuxPaint\saved
+                        usuario\AppData\Roaming\MarxPaint\saved
 
                 Windows 95, 98, ME, 2000, XP
                         No cartafol «Datos da aplicación» do usuario:
                         p. ex.: C:\Documents and Settings\nome de
-                        usuario\Application Darta\TuxPaint\ saved
+                        usuario\Application Darta\MarxPaint\ saved
 
                 macOS
                         No cartafol «Asistencia de aplicacións» do usuario::
                         e.g., /Users/nome de usuario/Library/Applicaton
-                        Support/TuxPaint/saved/
+                        Support/MarxPaint/saved/
 
                 Linux / Unix
                         No directorio persoal do usuario («$HOME»), baixo un
-                        subcartafol «.tuxpaint»:
-                        e.g., /home/nome de usuario/.tuxpaint/saved/
+                        subcartafol «.marxpaint»:
+                        e.g., /home/nome de usuario/.marxpaint/saved/
 
            As imaxes almacénanse como mapas de bits PNG, que a maioría dos
            programas modernos deberían poder cargar (editores de imaxes,
            procesadores de texto, navegadores web, etc.)
 
-   Tux Paint sempre garda sobre a miña imaxe antiga
+   Marx Paint sempre garda sobre a miña imaxe antiga
 
            A opción «save over» está activada. (Isto desactiva a pregunta que
            aparecería ao premer en «Gardar»).
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--saveover».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--saveover» aparece
            como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--saveover» na liña de ordes,
-           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           comprobe o ficheiro de configuración de Marx Paint para ver se hai
            unha liña que diga: «saveover=yes».
 
-           Retire esa liña ou simplemente execute Tux Paint co argumento da
+           Retire esa liña ou simplemente execute Marx Paint co argumento da
            liña de ordes «--saveoverask», que anulará o axuste do ficheiro de
            configuración.
 
-           Ou use Tux Paint Config. e asegúrese de «Preguntar antes de
+           Ou use Marx Paint Config. e asegúrese de «Preguntar antes de
            sobrescribir» (baixo «Gardar») está marcado.
 
-           Ademais, vexa «Tux Paint sempre garda unha nova imaxe», a
+           Ademais, vexa «Marx Paint sempre garda unha nova imaxe», a
            continuación.
 
-   Tux Paint sempre garda unha nova imaxe.
+   Marx Paint sempre garda unha nova imaxe.
 
            A opción «never save over» está activada. (Isto desactiva a
            pregunta que aparecería ao premer en «Gardar»).
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--saveovernew».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--saveovernew»
            aparece como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--saveovernew» na liña de ordes,
-           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           comprobe o ficheiro de configuración de Marx Paint para ver se hai
            unha liña que diga: «saveover=new».
 
-           Retire esa liña ou simplemente execute Tux Paint co argumento da
+           Retire esa liña ou simplemente execute Marx Paint co argumento da
            liña de ordes «--saveoverask», que anulará o axuste do ficheiro de
            configuración.
 
-           Ou use Tux Paint Config. e asegúrese de «Preguntar antes de
+           Ou use Marx Paint Config. e asegúrese de «Preguntar antes de
            sobrescribir» (baixo «Gardar») está marcado.
 
-           Also, see "Tux Paint always saves over my old picture!", above.
+           Also, see "Marx Paint always saves over my old picture!", above.
 
      ----------------------------------------------------------------------
 
@@ -337,95 +337,95 @@ Problemas de son
                    * Estás seguro de que está a usar un computador con
                      tarxeta de son?
                    * Existe algún outro programa que use son? (É posíbel que
-                     estea «bloqueando» o acceso de Tux Paint ao seu
+                     estea «bloqueando» o acceso de Marx Paint ao seu
                      dispositivo de son)
                    * (Unix/Linux) Está a usar un sistema de son, como aRts,
                      ESD ou GStreamer? Se é así, tente axustar a variábel de
-                     contorno «SDL_AUDIODRIVER« antes de executar Tux Paint
-                     (p. ex.: «export SDL_AUDIODRIVER=arts»). Ou execute Tux
+                     contorno «SDL_AUDIODRIVER« antes de executar Marx Paint
+                     (p. ex.: «export SDL_AUDIODRIVER=arts»). Ou execute Marx
                      Paint a través do redireccionador do sistema (p. ex.:
-                     execute «artsdsp tuxpaint» ou «esddsp tuxpaint», no
-                     canto de simplemente «tuxpaint»).
-              * Está desactivado o son en Tux Paint?
+                     execute «artsdsp marxpaint» ou «esddsp marxpaint», no
+                     canto de simplemente «marxpaint»).
+              * Está desactivado o son en Marx Paint?
 
                 Se o son parece funcionar doutro xeito (e está seguro de que
                 ningún outro programa «bloquea» o dispositivo de son), é
-                posíbel que Tux Paint estea a executarse coa opción «sen
+                posíbel que Marx Paint estea a executarse coa opción «sen
                 son».
 
-                Se está a executar Tux Paint dende unha liña de ordes,
+                Se está a executar Marx Paint dende unha liña de ordes,
                 asegúrese de que non está a pasarlle a opción «--nosound».
 
-                Se está a executar Tux Paint facendo dobre clic nunha icona,
+                Se está a executar Marx Paint facendo dobre clic nunha icona,
                 comprobe as propiedades da icona para ver se «--nosound»
                 aparece como un argumento da liña de ordes.
 
                 Se non se está a enviar a opción «--nosound» na liña de
-                ordes, comprobe o ficheiro de configuración de Tux Paint para
+                ordes, comprobe o ficheiro de configuración de Marx Paint para
                 ver se hai unha liña que diga: «nosound=yes».
 
-                Retire esa liña ou simplemente execute Tux Paint co argumento
+                Retire esa liña ou simplemente execute Marx Paint co argumento
                 da liña de ordes «--sound», que anulará o axuste do ficheiro
                 de configuración.
 
-                Ou, simplemente pode executar Tux Paint co argumento da liña
+                Ou, simplemente pode executar Marx Paint co argumento da liña
                 de ordes: «Activar os efectos de son», que anulará o axuste
                 do ficheiro de configuración e permitirá a impresión
                 ilimitada. (Non terás aue agardar entre impresións).
 
               * Desactiváronse os sons temporalmente?
 
-                Mesmo se os sons están activados en Tux Paint, é posíbel
+                Mesmo se os sons están activados en Marx Paint, é posíbel
                 desactivalos e reactivalos temporalmente usando a secuencia
                 de teclas [Alt] + [S]. Probe a premer esas teclas para ver se
                 os sons comezan a funcionar de novo.
 
-              * Foi compilado Tux Paint sen compatibilidade con son?
+              * Foi compilado Marx Paint sen compatibilidade con son?
 
-                É posíbel que Tux Paint se compilase coa compatibilidade de
+                É posíbel que Marx Paint se compilase coa compatibilidade de
                 son desactivada. Para comprobar se a compatibilidade de son
-                estaba activada cando se compilou Tux Paint, execute Tux
+                estaba activada cando se compilou Marx Paint, execute Marx
                 Paint dende unha liña de ordes, así:
 
-                  tuxpaint --verbose-version
+                  marxpaint --verbose-version
 
                 Se, entre outra información, ve «Son desactivado», entón a
-                versión de Tux Paint que está a executar ten o son
-                desactivado. Recompile Tux Paint e asegúrese de NON construír
+                versión de Marx Paint que está a executar ten o son
+                desactivado. Recompile Marx Paint e asegúrese de NON construír
                 o obxectivo «nosound». (é dicir, non execute «make nosound»)
                 Asegúrese de que a biblioteca SDL_mixer e as súas cabeceiras
                 de desenvolvemento están dispoñíbeis.
 
-   Tux Paint fai moito ruído. Podo apagalo?
+   Marx Paint fai moito ruído. Podo apagalo?
 
-           Si, hai varias formas de desactivar os sons en Tux Paint:
+           Si, hai varias formas de desactivar os sons en Marx Paint:
 
-              * Prema [Alt] + [S] mentres está en Tux Paint para desactivar
+              * Prema [Alt] + [S] mentres está en Marx Paint para desactivar
                 temporalmente os sons. (Prema de novo esa secuencia de teclas
                 para volver activar os sons.)
-              * Execute Tux Paint coa opción «sen son»:
-                   * Execute «tuxpaint --nosound» dende a liña de ordes,
+              * Execute Marx Paint coa opción «sen son»:
+                   * Execute «marxpaint --nosound» dende a liña de ordes,
                      dende o atallo ou dende a icona do escritorio.
-                   * Edite o ficheiro de configuración de Tux Paint (consulte
+                   * Edite o ficheiro de configuración de Marx Paint (consulte
                      a «Documentación de opcións» para obter máis detalles) e
                      engada unha liña que conteña «nosound=yes».
-                   * Ou use Tux Paint Config. e asegúrese de «Activar os
+                   * Ou use Marx Paint Config. e asegúrese de «Activar os
                      efectos de son» (baixo «Vídeo e son») non está marcado.
-                   * Como alternativa, recompile Tux Paint coa
+                   * Como alternativa, recompile Marx Paint coa
                      compatibilidade de son desactivada. (Vexa máis arriba e
                      a documentación «Instalar».
 
    A panorámica estéreo dos efectos de son é molesta; os efectos de son poden
    ser monofónicos?
 
-           Execute Tux Paint coa opción «sen estéreo»:
+           Execute Marx Paint coa opción «sen estéreo»:
 
-              * Execute «tuxpaint --nostereo» dende a liña de ordes, dende o
+              * Execute «marxpaint --nostereo» dende a liña de ordes, dende o
                 atallo ou dende a icona do escritorio.
-              * Edite o ficheiro de configuración de Tux Paint (consulte a
+              * Edite o ficheiro de configuración de Marx Paint (consulte a
                 «Documentación de opcións» para obter máis detalles) e engada
                 unha liña que conteña «nostereo=yes».
-              * Ou use Tux Paint Config. e asegúrese de «Activar os efectos
+              * Ou use Marx Paint Config. e asegúrese de «Activar os efectos
                 estéreo» (baixo «Vídeo e son») non está marcado.
 
    Os efectos de son soan estraños
@@ -434,23 +434,23 @@ Problemas de son
            SDL_mixer. (O tamaño do búfer escollido.)
 
            Envíenos un correo-e con detalles sobre o seu sistema informático.
-           (Sistema operativo e versión, tarxeta de son, que versión de Tux
-           Paint está a executar (execute «tuxpaint --version» para
+           (Sistema operativo e versión, tarxeta de son, que versión de Marx
+           Paint está a executar (execute «marxpaint --version» para
            verificar), etc.)
 
      ----------------------------------------------------------------------
 
 Problemas no modo de pantalla completa
 
-   Cando executo Tux Paint a pantalla completa e [Alt] + [Tab] está fóra, a
+   Cando executo Marx Paint a pantalla completa e [Alt] + [Tab] está fóra, a
    xanela vólvese negra.
            Aparentemente é un erro na biblioteca SDL. Sentímolo.
 
-   Cando executo Tux Paint a pantalla completa, ten grandes bordos ao redor
+   Cando executo Marx Paint a pantalla completa, ten grandes bordos ao redor
 
            Usuarios de Linux: o seu servidor X-Window probabelmente non estea
            configurado coa capacidade de cambiar á resolución desexada:
-           800×600. (ou a resolución que teña configurada para Tux Paint para
+           800×600. (ou a resolución que teña configurada para Marx Paint para
            que funcione.) (Normalmente faise manualmente no servidor X-Window
            premendo [Ctrl] + [Alt] + [Máis (+) no teclado numérico] e [Ctrl]
            + [Alt] + [Menos (-) no teclado numérico].)
@@ -466,7 +466,7 @@ Problemas no modo de pantalla completa
 
            Engada «800x600» (ou as resolucións que queira) á liña «Modes»
            apropiada. (por exemplo, na subsección «Display» que contén a
-           profundidade de cor de 24 bits («Depth 24»), que é o que Tux Paint
+           profundidade de cor de 24 bits («Depth 24»), que é o que Marx Paint
            tenta usar.)
 
              Modes "1280x1024" "1024x768" "800x600" "640x480"
@@ -476,51 +476,51 @@ Problemas no modo de pantalla completa
            poden executar a orde «dpkg-reconfigure xserver-xfree86» como
            superusuario (root), por exemplo.
 
-   Tux Paint segue a funcionar en modo de pantalla completa e quéroo na
+   Marx Paint segue a funcionar en modo de pantalla completa e quéroo na
    xanela.
 
            A opción «pantalla completa» está estabelecida.
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--fullscreen».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--fullscreen»
            aparece como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--fullscreen» na liña de ordes,
-           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           comprobe o ficheiro de configuración de Marx Paint para ver se hai
            unha liña que diga: «fullscreen=yes».
 
-           Retire esa liña ou simplemente execute Tux Paint co argumento da
+           Retire esa liña ou simplemente execute Marx Paint co argumento da
            liña de ordes «--windowed», que anulará o axuste do ficheiro de
            configuración.
 
-           Ou use Tux Paint Config. e asegúrese de «Pantalla completa» (baixo
+           Ou use Marx Paint Config. e asegúrese de «Pantalla completa» (baixo
            «Vídeo e son») non está marcado.
 
      ----------------------------------------------------------------------
 
 Outros problemas
 
-   Tux Paint non funciona
+   Marx Paint non funciona
 
-           Se Tux Paint se interrómpe coa mensaxe: «You're already running a
-           copy of Tux Paint!», significa que foi iniciado nos últimos 30
+           Se Marx Paint se interrómpe coa mensaxe: «You're already running a
+           copy of Marx Paint!», significa que foi iniciado nos últimos 30
            segundos. (En Unix/Linux, esta mensaxe aparecería nunha consola de
-           terminal se executase Tux Paint desde unha liña de ordes. En
+           terminal se executase Marx Paint desde unha liña de ordes. En
            Windows, esta mensaxe aparecería nun ficheiro chamado «stdout.txt»
-           no mesmo cartafol onde resideTuxPaint. exe (p. ex.: en «C:\Program
-           Files\TuxPaint»).
+           no mesmo cartafol onde resideMarxPaint. exe (p. ex.: en «C:\Program
+           Files\MarxPaint»).
 
-           Un ficheiro de bloqueo («~/.tuxpaint/lockfile.dat» en Linux e
+           Un ficheiro de bloqueo («~/.marxpaint/lockfile.dat» en Linux e
            Unix, «userdata\lockfile.dat» en Windows) úsase para asegurarse de
-           que Tux Paint non se executa demasiadas veces á vez (por exemplo,
+           que Marx Paint non se executa demasiadas veces á vez (por exemplo,
            porque un cativo preme impaciente na súa icona máis dunha vez) .
 
            Mesmo se o ficheiro de bloqueo existe, contén a «hora» na que se
-           executou Tux Paint por última vez. Se pasaron máis de 30 segundos,
-           Tux Paint debería funcionar ben e simplemente actualiza o ficheiro
+           executou Marx Paint por última vez. Se pasaron máis de 30 segundos,
+           Marx Paint debería funcionar ben e simplemente actualiza o ficheiro
            de bloqueo coa hora actual.
 
            Se varios usuarios comparten o directorio onde se almacena este
@@ -528,66 +528,66 @@ Outros problemas
            terá que desactivar esta función.
 
            Para desactivar o ficheiro de bloqueo, engada o argumento
-           «--nolockfile» á liña de ordes de Tux Paint ou «nolockfile=yes» ao
+           «--nolockfile» á liña de ordes de Marx Paint ou «nolockfile=yes» ao
            ficheiro de configuración.
 
-   Non podo saír de Tux Paint
+   Non podo saír de Marx Paint
 
            Está estabelecida a opción «non saír». Isto desactiva o botón
-           «Saír» na barra de ferramentas de Tux Paint (marcándoo) e impide
-           que se poida saír de Tux Paint a través da tecla [Escape].
+           «Saír» na barra de ferramentas de Marx Paint (marcándoo) e impide
+           que se poida saír de Marx Paint a través da tecla [Escape].
 
-           Se Tux Paint non está en modo de pantalla completa, só ten que
-           premer no botón de pechar a xanela na barra de título de Tux
+           Se Marx Paint non está en modo de pantalla completa, só ten que
+           premer no botón de pechar a xanela na barra de título de Marx
            Paint. (é dicir, o «ⓧ» que adoita estar na parte superior
            dereita.)
 
-           Se Tux Paint está en modo de pantalla completa, terá que empregar
+           Se Marx Paint está en modo de pantalla completa, terá que empregar
            a secuencia [Maiúsculas] + [Control] + [Escape] no teclado para
-           saír de Tux Paint.
+           saír de Marx Paint.
 
            (Nota: con ou sen «non saír» estabelecido, sempre pode usar a
-           combinación [Alt] + [F4] no teclado para saír de Tux Paint.)
+           combinación [Alt] + [F4] no teclado para saír de Marx Paint.)
 
    Non quero que se active o modo «non saír».
 
-           Se está a executar Tux Paint dende unha liña de ordes, asegúrese
+           Se está a executar Marx Paint dende unha liña de ordes, asegúrese
            de que non está a pasarlle a opción «--noquit».
 
-           Se está a executar Tux Paint facendo dobre clic nunha icona,
+           Se está a executar Marx Paint facendo dobre clic nunha icona,
            comprobe as propiedades da icona para ver se «--noquit» aparece
            como un argumento da liña de ordes.
 
            Se non se está a enviar a opción «--noquit» na liña de ordes,
-           comprobe o ficheiro de configuración de Tux Paint para ver se hai
+           comprobe o ficheiro de configuración de Marx Paint para ver se hai
            unha liña que diga: «noquit=yes».
 
-           Retire esa liña ou simplemente execute Tux Paint co argumento da
+           Retire esa liña ou simplemente execute Marx Paint co argumento da
            liña de ordes «--quit», que anulará o axuste do ficheiro de
            configuración.
 
-           Ou use Tux Paint Config. e asegúrese de «Desactiva o botón de
+           Ou use Marx Paint Config. e asegúrese de «Desactiva o botón de
            saída e a tecla [Escape]» (baixo «Simplificación») non está
            marcado.
 
-   Tux Paint segue a escribir mensaxes estrañas na pantalla/nun ficheiro de
+   Marx Paint segue a escribir mensaxes estrañas na pantalla/nun ficheiro de
    texto
 
-           Algunhas mensaxes son normais, mais se Tux Paint está a ser
+           Algunhas mensaxes son normais, mais se Marx Paint está a ser
            extremadamente detallado (como enumerar o nome de cada imaxe de
            selo de goma que atopa ao cargalas), entón probabelmente foi
            compilado coa saída de depuración activada.
 
-           Para cambialo, debe volver compilar Tux Paint dende o código
+           Para cambialo, debe volver compilar Marx Paint dende o código
            fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
 
              #define DEBUG
 
-           no ficheiro «tuxpaint.c» no directorio «src».
+           no ficheiro «marxpaint.c» no directorio «src».
 
-   Tux Paint está a usar opcións que non especifiquei.
+   Marx Paint está a usar opcións que non especifiquei.
 
-           De xeito predeterminado, Tux Paint primeiro mira os ficheiros de
+           De xeito predeterminado, Marx Paint primeiro mira os ficheiros de
            configuración para ver as opcións.
 
               * Unix e Linux
@@ -595,22 +595,22 @@ Outros problemas
                 En Unix e Linux, primeiro examine o ficheiro de configuración
                 de todo o sistema, que se atopa aquí:
 
-                  /etc/tuxpaint/tuxpaint.conf
+                  /etc/marxpaint/marxpaint.conf
 
                 A continuación, examina o ficheiro de configuración persoal
                 do usuario:
 
-                  ~/.tuxpaintrc
+                  ~/.marxpaintrc
 
                 Finalmente, úsanse as opcións enviadas como argumentos da
                 liña de ordes.
 
               * Windows
 
-                En Windows, Tux Paint examina primeiro o ficheiro de
+                En Windows, Marx Paint examina primeiro o ficheiro de
                 configuración:
 
-                  tuxpaint.cfg
+                  marxpaint.cfg
 
                 Finalmente, úsanse as opcións enviadas como argumentos da
                 liña de ordes.
@@ -620,13 +620,13 @@ Outros problemas
            ficheiro de configuración (se pode) ou anular a opción na liña de
            ordes.
 
-           Por exemplo, en Linux e Unix, se «/etc/tuxpaint/tuxpaint.conf»
+           Por exemplo, en Linux e Unix, se «/etc/marxpaint/marxpaint.conf»
            inclúe esta opción para desactivar o son...
 
              nosound=yes
 
            ...entón pode volver activar o son engadindo esta opción ao seu
-           propio ficheiro «.tuxpaintrc»:
+           propio ficheiro «.marxpaintrc»:
 
              sound=yes
 
@@ -640,7 +640,7 @@ Outros problemas
 
              --nosysconfig
 
-           Tux Paint só ollará «~/.tuxpaintrc» e os argumentos da liña de
+           Marx Paint só ollará «~/.marxpaintrc» e os argumentos da liña de
            ordes para determinar que opcións se deben estabelecer.
 
      ----------------------------------------------------------------------
@@ -649,9 +649,9 @@ Axuda / Contacto
 
    Hai algunha pregunta que non ve respondida? Agradecémoslle que nolo diga.
    Para elo, pode subscribirse e publicar na nosa lista de correo
-   «tuxpaint-users»:
+   «marxpaint-users»:
 
-     http://www.tuxpaint.org/lists/
+     http://www.marxpaint.org/lists/
 
    Ou ,póñase en contacto directamente co responsábel do desenvolvemento Bill
    Kendrick:

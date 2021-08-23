@@ -1,7 +1,7 @@
-                     Creating Tux Paint Magic Tool Plugins
+                     Creating Marx Paint Magic Tool Plugins
 
           Copyright 2007-2018 by various contributors; see AUTHORS.txt
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                         July 5, 2007 - February 20, 2021
 
@@ -9,13 +9,13 @@
 
 Overview
 
-     Beginning with version 0.9.18, Tux Paint's 'Magic' tools were converted
+     Beginning with version 0.9.18, Marx Paint's 'Magic' tools were converted
      from routines that lived within the application itself, to a set of
-     'plugins' that are loaded when Tux Paint starts up.
+     'plugins' that are loaded when Marx Paint starts up.
 
      This division allows more rapid development of 'Magic' tools, and allows
      programmers to create and test new tools without needing to integrate
-     them within the main Tux Paint source code. (Users of more professional
+     them within the main Marx Paint source code. (Users of more professional
      graphics tools, such as The GIMP, should be familiar with this plugin
      concept.)
 
@@ -30,11 +30,11 @@ Table of Contents
                * Required Plugin Functions
                     * Plugin "housekeeping" functions
                     * Plugin event functions
-          * Tux Paint Functions and Data
+          * Marx Paint Functions and Data
                * Pixel Manipulations
                * Helper Functions
                * Informational
-               * Tux Paint System Calls
+               * Marx Paint System Calls
                * Color Conversions
           * Helper Macros in "tp_magic_api.h"
           * Constant Definitions in "tp_magic_api.h"
@@ -55,7 +55,7 @@ Table of Contents
 
 Prerequisites
 
-     Tux Paint is written in the C programming language, and uses the
+     Marx Paint is written in the C programming language, and uses the
      Simple DirectMedia Layer library ('libSDL', or simply 'SDL'; available
      from http://www.libsdl.org/). Therefore, for the moment at least, one
      must understand the C language and how to compile C-based programs.
@@ -66,28 +66,28 @@ Prerequisites
 
 Interfaces
 
-     Those who create 'Magic' tool plugins for Tux Paint must provide some
-     interfaces (C functions) that Tux Paint may invoke.
+     Those who create 'Magic' tool plugins for Marx Paint must provide some
+     interfaces (C functions) that Marx Paint may invoke.
 
-     Tux Paint utilizes SDL's "SDL_LoadObject()" and "SDL_LoadFunction()"
+     Marx Paint utilizes SDL's "SDL_LoadObject()" and "SDL_LoadFunction()"
      routines to load plugins (shared objects files; e.g., ".so" files on
      Linux or ".dll" files on Windows) and find the functions within.
 
-     In turn, Tux Paint provides a number of helper functions that the plugin
+     In turn, Marx Paint provides a number of helper functions that the plugin
      may (or sometimes is required to) use. This is exposed as a C structure
      (or "struct") which contains pointers to functions and other data inside
-     Tux Paint. A pointer to this structure gets passed along to the plugin's
-     functions as an argument when Tux Paint invokes them.
+     Marx Paint. A pointer to this structure gets passed along to the plugin's
+     functions as an argument when Marx Paint invokes them.
 
      Plugins should #include the C header file "tp_magic_api.h", which
      exposes the 'Magic' tool plugin API. Also, when you run the C compiler
      to build a plugin, you should use the command-line tool
      "tp-magic-config" to get the appropriate compiler flags (such as where
-     the compiler can find the Tux Paint plugin header file, as well as SDL's
+     the compiler can find the Marx Paint plugin header file, as well as SDL's
      header files) for building a plugin. (See "Compiling", below.)
 
      The C header file and command-line tool mentioned above are included
-     with Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
+     with Marx Paint — or in some cases, as part of a "Marx Paint 'Magic' Tool
      Plugin Development package".
 
   'Magic' tool plugin functions
@@ -96,7 +96,7 @@ Interfaces
        avoid 'namespace' collisions, each function's name must start with the
        shared object's filename (e.g., "blur.so" or "blur.dll" would have
        functions whose names begin with "blur_"). This includes private
-       functions (ones not used by Tux Paint directly), unless you declare
+       functions (ones not used by Marx Paint directly), unless you declare
        those as 'static'.
 
     Common arguments to plugin functions:
@@ -104,7 +104,7 @@ Interfaces
        Here is a description of arguments that many of your plugin's
        functions will need to accept.
          * magic_api * api
-           Pointer to a C structure containing pointers to Tux Paint
+           Pointer to a C structure containing pointers to Marx Paint
            functions and other data that the plugin can (and sometimes
            should) use. The contents of this struct are described below.
 
@@ -120,7 +120,7 @@ Interfaces
            always be 0.) See "Creating plugins with multiple effects", below.
 
          * SDL_Surface * snapshot
-           A snapshot of the previous Tux Paint canvas, taken when the the
+           A snapshot of the previous Marx Paint canvas, taken when the the
            mouse was first clicked to activate the current magic tool. If you
            don't continuously affect the image during one hold of the mouse
            button, you should base your effects off the contents of this
@@ -128,12 +128,12 @@ Interfaces
            below.)
 
          * SDL_Surface * canvas
-           The current Tux Paint drawing canvas. Your magical effects should
+           The current Marx Paint drawing canvas. Your magical effects should
            end up here!
 
          * SDL_Rect * update_rect
            A pointer to an SDL 'rectangle' structure that you use to tell
-           Tux Paint what part of the canvas has been updated. If your effect
+           Marx Paint what part of the canvas has been updated. If your effect
            affects a 32x32 area centered around the mouse pointer, you would
            fill the SDL_Rect as follows:
 
@@ -169,36 +169,36 @@ Interfaces
 
            * Uint32 api_version(void)
              The plugin should return an integer value representing the
-             version of the Tux Paint 'Magic' tool plugin API the plugin was
+             version of the Marx Paint 'Magic' tool plugin API the plugin was
              built against. The safest thing to do is return the value of
              TP_MAGIC_API_VERSION, which is defined in "tp_magic_api.h". If
-             Tux Paint deems your plugin to be compatible, it will go ahead
+             Marx Paint deems your plugin to be compatible, it will go ahead
              and use it.
 
-             Note: Called once by Tux Paint, at startup. It is called first.
+             Note: Called once by Marx Paint, at startup. It is called first.
 
            * int init(magic_api * api)
              The plugin should do any initialization here. Return '1' if
-             initialization was successful, or '0' if not (and Tux Paint will
+             initialization was successful, or '0' if not (and Marx Paint will
              not present any 'Magic' tools from the plugin).
 
-             Note: Called once by Tux Paint, at startup. It is called first.
-             It is called after "api_version()", if Tux Paint believes your
+             Note: Called once by Marx Paint, at startup. It is called first.
+             It is called after "api_version()", if Marx Paint believes your
              plugin to be compatible.
 
            * int get_tool_count(magic_api * api)
              This should return the number of Magic tools this plugin
-             provides to Tux Paint.
+             provides to Marx Paint.
 
-             Note: Called once by Tux Paint, at startup. It is called after
+             Note: Called once by Marx Paint, at startup. It is called after
              your "init()", if it succeeded.
 
            * char * get_name(magic_api * api, int which)
              This should return a string containing the name of a magic tool.
              This will appear on the button in the 'Magic' selector within
-             Tux Paint.
+             Marx Paint.
 
-             Tux Paint will free() the string upon exit, so you should wrap
+             Marx Paint will free() the string upon exit, so you should wrap
              it in a C strdup() call.
 
              Note: Called once for each Magic tool your plugin claims to
@@ -208,9 +208,9 @@ Interfaces
              This should return an SDL_Surface containing the icon
              representing the tool. (A greyscale image with alpha, no larger
              than 40x40.) This will appear on the button in the 'Magic'
-             selector within Tux Paint.
+             selector within Marx Paint.
 
-             Tux Paint will free ("SDL_FreeSurface()") the surface upon exit.
+             Marx Paint will free ("SDL_FreeSurface()") the surface upon exit.
 
              Note: Called once for each Magic tool your plugin claims to
              contain (by your "get_tool_count()").
@@ -218,9 +218,9 @@ Interfaces
            * char * get_description(magic_api * api, int which, int mode)
              This should return a string containing the description of how to
              use a particular magic tool. This will appear as a help tip,
-             explained by Tux the Penguin, within Tux Paint.
+             explained by Marx the Penguin, within Marx Paint.
 
-             Tux Paint will free() the string upon exit, so you should wrap
+             Marx Paint will free() the string upon exit, so you should wrap
              it in a C strdup() call.
 
              Note: For each Magic tool your plugin claims to contain
@@ -235,13 +235,13 @@ Interfaces
 
            * int requires_colors(magic_api * api, int which)
              Return a '1' if the 'Magic' tool accepts colors (the 'Colors'
-             palette in Tux Paint will be available), or '0' if not.
+             palette in Marx Paint will be available), or '0' if not.
 
              Note: Called once for each Magic tool your plugin claims to
              contain (by your "get_tool_count()").
 
            * int modes(magic_api * api, int which)
-             This lets you tell Tux Paint what modes your tool can be used
+             This lets you tell Marx Paint what modes your tool can be used
              in; either as a tool the user can paint with, or a tool that
              affects the entire drawing at once.
 
@@ -255,12 +255,12 @@ Interfaces
                   one click
              e.g., if your tool is only one that the user can paint with,
              return "MODE_PAINT". If the user can do both, return
-             "MODE_PAINT | MODE_FULLSCREEN" to tell Tux Paint it can do both.
+             "MODE_PAINT | MODE_FULLSCREEN" to tell Marx Paint it can do both.
 
              Note: Called once for each Magic tool your plugin claims to
              contain (by your "get_tool_count()").
 
-             Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
+             Note: Added to Marx Paint 0.9.21; Magic API version '0x00000002'
 
            * void shutdown(magic_api * api)
              The plugin should do any cleanup here. If you allocated any
@@ -268,7 +268,7 @@ Interfaces
              example, you should free() the allocated memory and
              Mix_FreeChunk() the sounds here.
 
-             Note: This function is called once, when Tux Paint exits.
+             Note: This function is called once, when Marx Paint exits.
 
       Plugin event functions:
 
@@ -309,11 +309,11 @@ Interfaces
              altered in some way when the user first switches to the canvas,
              and then pieces of that copy could be drawn on the canvas when
              they draw with the Magic tool.
-             Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
+             Note: Added to Marx Paint 0.9.21; Magic API version '0x00000002'
 
            * void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)
-             Tux Paint will call this function to inform the plugin of the
-             RGB values of the currently-selected color in Tux Paint's
+             Marx Paint will call this function to inform the plugin of the
+             RGB values of the currently-selected color in Marx Paint's
              'Colors' palette. (It will be called whenever one of the
              plugin's Magic tools that accept colors becomes active, and
              whenever the user picks a new color while such a tool is
@@ -343,10 +343,10 @@ Interfaces
              location of the mouse at the beginning and end of the stroke.
 
              Typically, plugins that let the user "draw" effects onto the
-             canvas utilize Tux Paint's "line()" 'Magic' tool plugin helper
+             canvas utilize Marx Paint's "line()" 'Magic' tool plugin helper
              function to calculate the points of the line between (ox,oy) and
              (x,y), and call another function within the plugin to apply the
-             effect at each point. (See "Tux Paint Functions and Data,"
+             effect at each point. (See "Marx Paint Functions and Data,"
              below).
 
              The plugin should report back what part of the canvas was
@@ -373,9 +373,9 @@ Interfaces
              "click()" function was called), and is still available in the
              'snapshot' canvas.
 
-  Tux Paint Functions and Data
+  Marx Paint Functions and Data
 
-       Tux Paint provides a number of helper functions that plugins may
+       Marx Paint provides a number of helper functions that plugins may
        access via the "magic_api" structure, sent to all of the plugin's
        functions. (See "Required Plugin Functions," above.)
 
@@ -427,13 +427,13 @@ Interfaces
              calls the 'callback' function.
 
              It sends the 'callback' function the (x,y) coordinates on the
-             line, Tux Paint's "magic_api" struct (as a "void *" pointer
+             line, Marx Paint's "magic_api" struct (as a "void *" pointer
              which you need to send to it), a 'which' value, represening
              which of the plugin's 'Magic' tool is being used, and the
              current and snapshot canvases.
 
              Example prototype of a callback function that may be sent to
-             Tux Paint's "line()" 'Magic' tool plugin helper function:
+             Marx Paint's "line()" 'Magic' tool plugin helper function:
 
                void exampleCallBack(void * ptr_to_api, int which_tool,
                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
@@ -447,7 +447,7 @@ Interfaces
            * Uint8 touched(int x, int y)
              This function allows you to avoid re-processing the same pixels
              multiple times when the user drags the mouse across an area of
-             the canvas, thus increasing Tux Paint's response time,
+             the canvas, thus increasing Marx Paint's response time,
              especially with math-heavy effects.
 
              If your effect's "click()", "drag()" and/or "release()"
@@ -465,12 +465,12 @@ Interfaces
              Note: Magic effects that continuously affect the destination
              surface ("canvas") (ignoring the "snapshot surface) have no
              reason to use this function. The "Blur" and "Smudge" tools that
-             ship with Tux Paint are examples of such effects.
+             ship with Marx Paint are examples of such effects.
 
     Informational
 
            * char * tp_version
-             A string containing the version of Tux Paint that's running
+             A string containing the version of Marx Paint that's running
              (e.g., "0.9.18").
 
            * int canvas_w Returns the width of the drawing canvas.
@@ -481,9 +481,9 @@ Interfaces
              A '1' is returned if the mouse button is down; '0' otherwise.
 
            * char * data_directory
-             This string contains the directory where Tux Paint's data files
+             This string contains the directory where Marx Paint's data files
              are stored. For example, on Linux, this may be
-             "/usr/share/tuxpaint/".
+             "/usr/share/marxpaint/".
 
              Magic tools should include an icon (see "get_icon()", above) and
              are encouraged to include sound effects, it's useful for plugins
@@ -491,20 +491,20 @@ Interfaces
 
              When compiling and installing a plugin, the "tp-magic-config"
              command-line tool should be used to determine where such data
-             should be placed for the installed version of Tux Paint to find
+             should be placed for the installed version of Marx Paint to find
              them. (See "Installing," below.)
 
              Note: If your plugin is installed locally (e.g., in your
-             "~/.tuxpaint/plugins/" directory), rather than globally
+             "~/.marxpaint/plugins/" directory), rather than globally
              (system-wide), the "data_directory" value will be different.
-             (e.g., "/home/username/.tuxpaint/plugins/data/").
+             (e.g., "/home/username/.marxpaint/plugins/data/").
 
-    Tux Paint System Calls
+    Marx Paint System Calls
 
            * void update_progress_bar(void)
-             Asks Tux Paint to animate and draw one frame of its progress bar
+             Asks Marx Paint to animate and draw one frame of its progress bar
              (at the bottom of the screen). Useful for routines that may take
-             a long time, to provide feedback to the user that Tux Paint has
+             a long time, to provide feedback to the user that Marx Paint has
              not crashed or frozen.
 
            * void playsound(Mix_Chunk * snd, int pan, int dist)
@@ -528,7 +528,7 @@ Interfaces
              useful to silence effects when the user stops using the tool (in
              your 'release' function).
            * void special_notify(int flag)
-             This function notifies Tux Paint of special events. Various
+             This function notifies Marx Paint of special events. Various
              values defined in "tp_magic_api.h" can be 'or'ed together (using
              C's boolean 'or': "|") and sent to this function.
                 * SPECIAL_FLIP — The contents of the canvas has been flipped
@@ -536,7 +536,7 @@ Interfaces
 
                   If a 'Starter' image was used as the basis of this image,
                   it should be flipped too, and a record of the flip should
-                  be stored as part of Tux Paint's undo buffer stack.
+                  be stored as part of Marx Paint's undo buffer stack.
                   Additionally, the fact that the starter has been flipped
                   (or unflipped) should be recorded on disk when the current
                   drawing is saved.
@@ -603,22 +603,22 @@ Interfaces
        (via "#define") within the 'Magic' tool API header file.
 
          * TP_MAGIC_API_VERSION
-           This integer value represents which version of the Tux Paint
+           This integer value represents which version of the Marx Paint
            'Magic' tool API the header corresponds to.
 
            It should be referenced by your magic tool's "api_version()"
-           function, to inform the running copy of Tux Paint whether or not
+           function, to inform the running copy of Marx Paint whether or not
            your plugin is compatible.
 
-           Note: This version number does not correspond to Tux Paint's own
+           Note: This version number does not correspond to Marx Paint's own
            release number (e.g., "0.9.18"). The API will not change every
-           time a new version of Tux Paint is released, which means plugins
-           compiled for earlier versions of Tux Paint will often run under
+           time a new version of Marx Paint is released, which means plugins
+           compiled for earlier versions of Marx Paint will often run under
            newer versions.
 
          * SPECIAL_MIRROR
            SPECIAL_FLIP
-           These are flags for Tux Paint's "special_notify()" helper
+           These are flags for Marx Paint's "special_notify()" helper
            function. They are described above.
 
      ----------------------------------------------------------------------
@@ -632,7 +632,7 @@ Compiling
        source code.
 
        Use the "tp-magic-config --cflags" command, supplied as part of
-       Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Marx Paint — or in some cases, as part of a "Marx Paint 'Magic' Tool
        Plugin Development package" — to provide additional command-line flags
        to your C compiler that will help it build your plugin.
 
@@ -652,7 +652,7 @@ Compiling
 
     Makefile Example
 
-         A snippet from a Makefile to compile a Tux Paint "Magic" tool plugin
+         A snippet from a Makefile to compile a Marx Paint "Magic" tool plugin
          might look like this:
 
            +------------------------------------------------------+
@@ -727,7 +727,7 @@ Installing
   Linux and other Unix-like Platforms
 
        Use the "tp-magic-config" command-line tool, supplied as part of
-       Tux Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Marx Paint — or in some cases, as part of a "Marx Paint 'Magic' Tool
        Plugin Development package" — to determine where your plugins' files
        should go.
 
@@ -736,11 +736,11 @@ Installing
          Use "tp-magic-config --pluginprefix" to determine where the plugin
          shared object (".so") files should be installed. The value returned
          by this command will be the global location where the installed copy
-         of Tux Paint looks for plugins (e.g., "/usr/lib/tuxpaint/plugins").
+         of Marx Paint looks for plugins (e.g., "/usr/lib/marxpaint/plugins").
 
          Alternatively, you may use "tp-magic-config --localpluginprefix" to
-         find out where Tux Paint expects to find local plugins for the
-         current user (e.g., "/home/username/.tuxpaint/plugins").
+         find out where Marx Paint expects to find local plugins for the
+         current user (e.g., "/home/username/.marxpaint/plugins").
 
          As stand-alone commands, using the BASH shell, for example:
 
@@ -754,11 +754,11 @@ Installing
          Use the "tp-magic-config --plugindocprefix" command to determine
          where documentation for your "Magic" tools should go. The value
          returned by this command will be the location where the
-         documentation to the installed copy of Tux Paint is stored. The main
+         documentation to the installed copy of Marx Paint is stored. The main
          documentation includes a link to a folder where "Magic" tools'
          documentation is expected to be installed
 
-         (e.g., "/usr/share/doc/tuxpaint/magic-docs").
+         (e.g., "/usr/share/doc/marxpaint/magic-docs").
 
          Note: It's best to include both HTML and plain-text versions of your
          documentation. An "html" subdirectory exists within the "magic-docs"
@@ -776,21 +776,21 @@ Installing
     Icons, Sounds and other Data Files
 
          Use the "tp-magic-config --dataprefix" command, supplied as part of
-         Tux Paint, to determine where data files (PNG icon, Ogg Vorbis sound
+         Marx Paint, to determine where data files (PNG icon, Ogg Vorbis sound
          effects, etc.) should be installed. The value returned by this
          command will be the same as the value of the "data_directory" string
          stored within the "magic_api" structure that your plugin's functions
-         receive (e.g., "/usr/share/tuxpaint/").
+         receive (e.g., "/usr/share/marxpaint/").
 
          For locally-installed plugins (for the current user only), use
          "tp-magic-config --localdataprefix". It will return the value of
          "data_directory" string that locally-installed plugins will see
          within their "magic_api" structure (e.g.,
-         "/home/username/.tuxpaint/plugins/data/").
+         "/home/username/.marxpaint/plugins/data/").
 
-         Note: Tux Paint's default Magic tool plugins install their data
-         within "magic" subdirectories of Tux Paint's "images" and "sounds"
-         data directories (e.g., "/usr/share/tuxpaint/images/magic/"). You
+         Note: Marx Paint's default Magic tool plugins install their data
+         within "magic" subdirectories of Marx Paint's "images" and "sounds"
+         data directories (e.g., "/usr/share/marxpaint/images/magic/"). You
          are encouraged to do the same.
 
          As stand-alone commands, using the BASH shell, for example:
@@ -850,12 +850,12 @@ Installing
 
          It then does a similar series of commands to install icon files
          (".png" images) and sound effects (".ogg" files) into subdirectories
-         within Tux Paint's data directory, and to install documentation
-         (".html" and ".txt" files) within Tux Paint's documentation
+         within Marx Paint's data directory, and to install documentation
+         (".html" and ".txt" files) within Marx Paint's documentation
          directory.
 
          Note: The above Makefile example assumes the user will have
-         priveleges to install Tux Paint plugins system-wide.
+         priveleges to install Marx Paint plugins system-wide.
 
   Windows
 
@@ -869,7 +869,7 @@ Installing
 
 Creating plugins with multiple effects
 
-     Plugins for Tux Paint may contain more than one effect. If you have
+     Plugins for Marx Paint may contain more than one effect. If you have
      multiple effects that are similar, it may make sense to place them in
      one plugin file, to reduce overhead and share code.
 
@@ -903,7 +903,7 @@ Creating plugins with multiple effects
            for (i = 0; i < NUM_TOOLS; i++)
            {
              /* Becomes, for example,
-           "/usr/share/tuxpaint/sounds/magic/one.ogg" */
+           "/usr/share/marxpaint/sounds/magic/one.ogg" */
              
              snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
                  api->data_prefix, my_plugin_snd_filenames[i];
@@ -938,13 +938,13 @@ Example Code
 
 Getting Help
 
-     For more information, check the Tux Paint website:
-     http://www.tuxpaint.org/, and the Simple DirectMedia Layer library
+     For more information, check the Marx Paint website:
+     http://www.marxpaint.org/, and the Simple DirectMedia Layer library
      website: http://www.libsdl.org/.
 
-     Additionally, other Tux Paint developers and users can be found on the
-     "tuxpaint-devel" and "tuxpaint-users" mailing lists:
-     http://www.tuxpaint.org/lists/.
+     Additionally, other Marx Paint developers and users can be found on the
+     "marxpaint-devel" and "marxpaint-users" mailing lists:
+     http://www.marxpaint.org/lists/.
 
      ----------------------------------------------------------------------
 
@@ -999,7 +999,7 @@ Glossary
        usually used to 'point' to another variable. Since C functions can
        only return one value as a result, pointers are often sent to
        functions to allow the function to change the values of multiple
-       variables. (For example, Tux Paint's "rgbtohsv()" and "hsvtorgb()".)
+       variables. (For example, Marx Paint's "rgbtohsv()" and "hsvtorgb()".)
      * C structure: A construct in C that allows you to declare a new
        variable 'type' which may contain other types within. For example,
        SDL's "SDL_Rect" contains four integer values, the coordinates of the
@@ -1053,7 +1053,7 @@ Glossary
        ADD(1,2);", that line of code would literally expand to "c = ((1) +
        (2));", or more simply, "c = 1 + 2;".
      * magic_api: A C structure that is passed along to a plugin's functions
-       that exposes data and functions within the running copy of Tux Paint.
+       that exposes data and functions within the running copy of Marx Paint.
      * make: A utility that automatically determines which pieces of a larger
        program need to be recompiled, and issues the commands to recompile
        them. (See also "Makefile")
@@ -1061,7 +1061,7 @@ Glossary
        relationships among files in your program, and the commands for
        updating each file. (For example, to compile a human-readable
        source-code file into a computer-readable executable program file.)
-     * Magic tool: One of a number of effects or drawing tools in Tux Paint,
+     * Magic tool: One of a number of effects or drawing tools in Marx Paint,
        made available via the "Magic" tool button.
      * Mix_Chunk *: (A pointer to) a C structure defined by SDL_mixer that
        contains a sound.
@@ -1075,10 +1075,10 @@ Glossary
      * Plugin: TBD
      * PNG: Portable Network Graphics. An extensible file format for the
        lossless, portable, well-compressed storage of raster images. It's the
-       file format Tux Paint uses to save images, and for its brushes and
+       file format Marx Paint uses to save images, and for its brushes and
        stamps. It's an easy way to store 32bpp RGBA images (24bpp true color
        with full 8bpp alpha transparency), excellent for use in graphics
-       programs like Tux Paint. (See also the "png(5) man page)
+       programs like Marx Paint. (See also the "png(5) man page)
      * pointer: See "C pointer"
      * red: See "RGBA"
      * release: The action of releasing a button on a mouse.
@@ -1090,7 +1090,7 @@ Glossary
        allocated for an SDL surface ("SDL_Surface *"). (See also the
        "SDL_FreeSurface(3)" man page)
      * SDL_GetRGB(): A libSDL function that, given a Uint32 pixel value
-       (e.g., one returned from the Tux Paint's Magic tool API helper
+       (e.g., one returned from the Marx Paint's Magic tool API helper
        function "getpixel()"), the format of the surface the pixel was taken
        from, and pointers to three Uint8 variables, will place the Red, Green
        and Blue (RGB) values of the pixel into the three Uint8 variables.
@@ -1099,7 +1099,7 @@ Glossary
      * SDL_MapRGB(): A libSDL function that, given the format of a surface
        and Uint8 values representing Red, Green and Blue values for a pixel,
        returns a Uint32 pixel value that can be placed in the surface (e.g.,
-       using Tux Paint's Magic tool API helper function "putpixel()").
+       using Marx Paint's Magic tool API helper function "putpixel()").
        (Example: "putpixel(surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
        (See also the "SDL_MapRGB(3)" man page)
      * SDL_image: A library on top of libSDL that can load various kinds of
@@ -1141,10 +1141,10 @@ Glossary
        the new copy. (See also the "strdup(3)" man page)
      * struct: See "C structure"
      * The GIMP: An Open Source image manipulation and paint program.
-     * tp_magic_api.h: A header file that defines Tux Paint's Magic tool API.
+     * tp_magic_api.h: A header file that defines Marx Paint's Magic tool API.
        Plugins must '#include' it.
      * tp-magic-config: A command-line program that provides information
-       about the installed version of Tux Paint to plugin developers (such as
+       about the installed version of Marx Paint to plugin developers (such as
        what C compiler flags they should compile with, and where plugin
        shared objects and data files should be installed). (See also the
        "tp-magic-config(3)" man page.)

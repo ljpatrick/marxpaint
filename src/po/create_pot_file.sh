@@ -20,14 +20,14 @@ do
  echo ${j} | sed 's:^...::' >> POTFILES.new
 done )
 
-intltool-update --pot && mv -f tuxpaint.pot tuxpaint_tmp.pot
-/usr/bin/xgettext --from-code=UTF-8 -o tuxpaint_tmp_C.pot --directory=..  \
+intltool-update --pot && mv -f marxpaint.pot marxpaint_tmp.pot
+/usr/bin/xgettext --from-code=UTF-8 -o marxpaint_tmp_C.pot --directory=..  \
  --add-comments --keyword=I_ --keyword=i18n \
  --keyword=I18N_NOOP \
  --language=C \
  --files-from=./POTFILES.new
-msgcat --use-first tuxpaint_tmp.pot tuxpaint_tmp_C.pot > tuxpaint.pot
+msgcat --use-first marxpaint_tmp.pot marxpaint_tmp_C.pot > marxpaint.pot
 
 ( cd .. ; rm -f `cat po/POTFILES.new` )
-rm -f POTFILES.new tuxpaint_tmp*.pot 
+rm -f POTFILES.new marxpaint_tmp*.pot 
 

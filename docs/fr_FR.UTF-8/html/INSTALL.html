@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Documentation sur l'installation de Tux Paint    </title>
+      Documentation sur l'installation de Marx Paint    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -13,16 +13,16 @@
         alink="#FF00FF">
     <center>
       <h1>
-        <img src="../../html/images/tuxpaint-title.png"
+        <img src="../../html/images/marxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux Paint"><br>
+            alt="Marx Paint"><br>
         version 0.9.27<br/>
         Documentation sur l'installation      </h1>
 
       <p>
         Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        <a href="http://www.marxpaint.org/">http://www.marxpaint.org/</a>
       </p>
 
       <p>
@@ -37,10 +37,10 @@
       <h3>libSDL</h3>
       <blockquote>
         <p>
-          Tux Paint nécessite la bibliothèque de couches DirectMedia simple (libSDL), une bibliothèque de programmation multimédia Open Source disponible sous la Licence publique générale limitée GNU (LGPL).        </p>
+          Marx Paint nécessite la bibliothèque de couches DirectMedia simple (libSDL), une bibliothèque de programmation multimédia Open Source disponible sous la Licence publique générale limitée GNU (LGPL).        </p>
 
         <p>
-          Avec libSDL, Tux Paint dépend d'un certain nombre d'autres bibliothèques SDL : SDL_Image (pour les fichiers graphiques), SDL_TTF et (en option) SDL_Pango (pour la prise en charge des polices True Type) et, éventuellement, SDL_Mixer (pour les effets sonores).        </p>
+          Avec libSDL, Marx Paint dépend d'un certain nombre d'autres bibliothèques SDL : SDL_Image (pour les fichiers graphiques), SDL_TTF et (en option) SDL_Pango (pour la prise en charge des polices True Type) et, éventuellement, SDL_Mixer (pour les effets sonores).        </p>
 
         <h4>Utilisateurs de Linux/Unix :</h4>
         <blockquote>
@@ -65,12 +65,12 @@
       <h3>Autres bibliothèques</h3>
       <blockquote>
         <p>
-          Tux Paint profite également d'un certain nombre d'autres bibliothèques gratuites LGPL. Sous Linux, tout comme SDL, ils devraient être soit déjà installées, soit facilement disponibles avec votre distribution Linux.        </p>
+          Marx Paint profite également d'un certain nombre d'autres bibliothèques gratuites LGPL. Sous Linux, tout comme SDL, ils devraient être soit déjà installées, soit facilement disponibles avec votre distribution Linux.        </p>
 
         <h4>libPNG</h4>
         <blockquote>
           <p>
-            Tux Paint utilise le format PNG (Portable Network Graphics) pour ses fichiers de données. SDL_image nécessitera l'installation de libPNG.          </p>
+            Marx Paint utilise le format PNG (Portable Network Graphics) pour ses fichiers de données. SDL_image nécessitera l'installation de libPNG.          </p>
 
           <p>
             <a href="http://www.libpng.org/pub/png/libpng.html">http://www.libpng.org/pub/png/libpng.html</a>
@@ -80,7 +80,7 @@
         <h4>gettext</h4>
         <blockquote>
           <p>
-            Tux Paint utilise les paramètres régionaux de votre système avec la bibliothèque "gettext" pour prendre en charge plusieurs langues (par exemple, l'espagnol). Vous aurez besoin d'installer  la bibliothèque de gettext.          </p>
+            Marx Paint utilise les paramètres régionaux de votre système avec la bibliothèque "gettext" pour prendre en charge plusieurs langues (par exemple, l'espagnol). Vous aurez besoin d'installer  la bibliothèque de gettext.          </p>
 
           <p>
             <a href="http://www.gnu.org/software/gettext/">http://www.gnu.org/software/gettext/</a>
@@ -90,7 +90,7 @@
         <h4>libpaper (Linux/Unix uniquement)</h4>
         <blockquote>
           <p>
-            Depuis Tux Paint 0.9.17, Tux Paint peut déterminer le format de papier par défaut (par exemple, A4 ou Lettre), ou peut être invité à utiliser un format particulier, ceci grâce à libpaper.          </p>
+            Depuis Marx Paint 0.9.17, Marx Paint peut déterminer le format de papier par défaut (par exemple, A4 ou Lettre), ou peut être invité à utiliser un format particulier, ceci grâce à libpaper.          </p>
 
           <p>
             <a href="https://github.com/naota/libpaper">https://github.com/naota/libpaper</a>
@@ -100,7 +100,7 @@
         <h4>FriBiDi</h4>
         <blockquote>
           <p>
-            Les outils "Texte" et "Étiquette" de Tux Paint  supportent les langues bidirectionnelles, grâce à la bibliothèque "FriBidi".          </p>
+            Les outils "Texte" et "Étiquette" de Marx Paint  supportent les langues bidirectionnelles, grâce à la bibliothèque "FriBidi".          </p>
 
           <p>
             <a href="http://fribidi.org/">http://fribidi.org/</a>
@@ -110,7 +110,7 @@
         <h4>Support des graphismes SVG</h4>
         <blockquote>
           <p>
-            À partir de Tux Paint 0.9.17, Tux Paint peut prendre en charge les images SVG (Scalable Vector Graphics) pour les tampons. Deux ensembles de bibliothèques sont pris en charge et le support SVG peut être complètement désactivé (via "<code>make SVG_LIB:=</code>=")          </p>
+            À partir de Marx Paint 0.9.17, Marx Paint peut prendre en charge les images SVG (Scalable Vector Graphics) pour les tampons. Deux ensembles de bibliothèques sont pris en charge et le support SVG peut être complètement désactivé (via "<code>make SVG_LIB:=</code>=")          </p>
 
           <h5>librsvg-2 &amp; libCairo2 (nouvelles bibliothèques)</h5>
           <ul>
@@ -146,7 +146,7 @@
         <h4>Outils NetPBM (optionnel) Ne sont plus utilisés, par défaut</h4>
         <blockquote>
           <p>
-            Sous Linux et Unix, les anciennes versions de Tux Paint utilisaient les outils NetPBM comme aide à l'impression. (Un PNG est généré par TuxPaint et converti en PostScript en utilisant en ligne de commande les outils NetPBM <code>pngtopnm</code> et <code>pnmtops</code>.)          </p>
+            Sous Linux et Unix, les anciennes versions de Marx Paint utilisaient les outils NetPBM comme aide à l'impression. (Un PNG est généré par MarxPaint et converti en PostScript en utilisant en ligne de commande les outils NetPBM <code>pngtopnm</code> et <code>pnmtops</code>.)          </p>
 
           <p>
             <a href="http://netpbm.sourceforge.net/">http://netpbm.sourceforge.net/</a>
@@ -158,14 +158,14 @@
     <h2>Compilation et installation :</h2>
     <blockquote>
       <p>
-        Tux Paint est publié sous la licence publique générale GNU (GPL) (voir "COPYING.txt" pour plus de détails), et donc le 'code source' du programme est disponible gratuitement.      </p>
+        Marx Paint est publié sous la licence publique générale GNU (GPL) (voir "COPYING.txt" pour plus de détails), et donc le 'code source' du programme est disponible gratuitement.      </p>
 
       <h3>Utilisateurs de Windows :</h3>
       <blockquote>
         <h4>Compilation :</h4>
         <blockquote>
           <p>
-            Depuis février 2005 (à partir de Tux Paint 0.9.15), le "<code>Makefile</code>" inclut la prise en charge de la construction sur un système Windows à l'aide de MinGW/MSYS (<a href="http://www.mingw.org/">http://www.mingw.org/</a>).          </p>
+            Depuis février 2005 (à partir de Marx Paint 0.9.15), le "<code>Makefile</code>" inclut la prise en charge de la construction sur un système Windows à l'aide de MinGW/MSYS (<a href="http://www.mingw.org/">http://www.mingw.org/</a>).          </p>
 
           <p>
             Après avoir configuré l'environnement et construit et installé tous les dépendances, utilisez ces commandes, dans MSYS, pour créer, installer et exécuter :          </p>
@@ -175,7 +175,7 @@
             <code>
               $ make win32<br/>
               $ make install-win32<br/>
-              $ tuxpaint
+              $ marxpaint
             </code>
           </blockquote>
 
@@ -184,7 +184,7 @@
             <code>
               $ make<br/>
               $ make install<br/>
-              $ tuxpaint
+              $ marxpaint
             </code>
           </blockquote>
 
@@ -205,9 +205,9 @@
           </blockquote>
 
           <p>
-            Avant de mettre en oeuvre les opérations ci-dessus, vous devez configurer l'environnement et compilez ou installez les bibliothèques nécessaires pour Tux Paint. John Popplewell a rassemblé quelques instructions ici pour y parvenir :          </p>
+            Avant de mettre en oeuvre les opérations ci-dessus, vous devez configurer l'environnement et compilez ou installez les bibliothèques nécessaires pour Marx Paint. John Popplewell a rassemblé quelques instructions ici pour y parvenir :          </p>
           <p>
-            <a href="http://www.johnnypops.co.uk/tuxpaint/">http://www.johnnypops.co.uk/tuxpaint/</a>
+            <a href="http://www.johnnypops.co.uk/marxpaint/">http://www.johnnypops.co.uk/marxpaint/</a>
           </p>
 
           <p>
@@ -217,31 +217,31 @@
         <h4>Installateur :</h4>
         <blockquote>
           <p>
-            Double-cliquez sur l'exécutable du programme d'installation de Tux Paint (fichier .EXE) et Suivez les instructions.
+            Double-cliquez sur l'exécutable du programme d'installation de Marx Paint (fichier .EXE) et Suivez les instructions.
           <p>
             Tout d'abord, il vous sera demandé d'accepter la licence. (Il s'agit de la licence publique générale GNU (GPL), qui est également disponible en tant que "COPYING.txt".)          </p>
 
           <p>
-            Il vous sera ensuite demandé si vous souhaitez installer des raccourcis à Tux Paint dans votre menu Démarrer de Windows et sur votre bureau Windows.(Les deux options sont définies par défaut.)          </p>
+            Il vous sera ensuite demandé si vous souhaitez installer des raccourcis à Marx Paint dans votre menu Démarrer de Windows et sur votre bureau Windows.(Les deux options sont définies par défaut.)          </p>
 
           <p>
-            Puis, il vous sera demandé où vous souhaitez installer Tux Paint. La valeur par défaut devrait convenir, tant qu'il y a de l'espace disponible. Sinon, choisissez un autre emplacement.          </p>
+            Puis, il vous sera demandé où vous souhaitez installer Marx Paint. La valeur par défaut devrait convenir, tant qu'il y a de l'espace disponible. Sinon, choisissez un autre emplacement.          </p>
 
           <p>
-            À ce stade, vous pouvez cliquer sur «Installer» pour installer Tux Paint !          </p>
+            À ce stade, vous pouvez cliquer sur «Installer» pour installer Marx Paint !          </p>
         </blockquote>
 
         <h4>Modification des paramètres à l'aide du raccourci :</h4>
         <blockquote>
           <p>
-            Pour modifier les paramètres du programme, cliquez avec le bouton droit sur le raccourci TuxPaint et sélectionnez «Propriétés» (en bas).          </p>
+            Pour modifier les paramètres du programme, cliquez avec le bouton droit sur le raccourci MarxPaint et sélectionnez «Propriétés» (en bas).          </p>
 
           <p>
             Assurez-vous que l'onglet "Raccourci" est sélectionné dans la fenêtre qui apparaît et examinez le champ «Cible:». Vous devriez voir quelque chose comme ceci :          </p>
 
           <blockquote>
             <code>
-              "C:\Program Files\TuxPaint\TuxPaint.exe"
+              "C:\Program Files\MarxPaint\MarxPaint.exe"
             </code>
           </blockquote>
 
@@ -249,11 +249,11 @@
             Vous pouvez maintenant ajouter des options de ligne de commande qui seront activées lorsque vous double-cliquez sur l'icône.          </p>
 
           <p>
-            Par exemple, pour faire fonctionner le jeu en mode plein écran, avec des formes simples (pas d'option de rotation) et en français, ajoutez les options (après 'TuxPaint.exe'), comme ceci :          </p>
+            Par exemple, pour faire fonctionner le jeu en mode plein écran, avec des formes simples (pas d'option de rotation) et en français, ajoutez les options (après 'MarxPaint.exe'), comme ceci :          </p>
 
           <blockquote>
             <code>
-              "C:\Program Files\TuxPaint\TuxPaint.exe" -f -s --lang french
+              "C:\Program Files\MarxPaint\MarxPaint.exe" -f -s --lang french
             </code>
           </blockquote>
 
@@ -270,7 +270,7 @@
         <h4>Si quelque chose ne va pas :</h4>
         <blockquote>
           <p>
-            Si, lorsque vous double-cliquez sur le raccourci pour lancer le jeu, rien ne se passe, c'est probablement parce que certaines des options en lignes de commande sont erronées. Ouvrez un explorateur comme avant et recherchez un fichier appelé "<code>stderr.txt</code>" dans le dossier TuxPaint.          </p>
+            Si, lorsque vous double-cliquez sur le raccourci pour lancer le jeu, rien ne se passe, c'est probablement parce que certaines des options en lignes de commande sont erronées. Ouvrez un explorateur comme avant et recherchez un fichier appelé "<code>stderr.txt</code>" dans le dossier MarxPaint.          </p>
 
           <p>
             Il contiendra une description de ce qui n'allait pas. Habituellement, ce sera simplement dû à une casse de caractère incorrecte (majuscule 'Z' à la place de 'z' minuscule) ou un '-' (tiret) manquant (en trop).          </p>
@@ -282,7 +282,7 @@
         <h4>Compilation :</h4>
         <blockquote>
           <p>
-            <b>Remarque :</b>Tux Paint n'utilise pas <code>autoconf</code>/<code>automake</code>, dès lors il n'y a pas de script "<code>./configure</code>" à lancer. La compilation devrait aller cependant aller toute seule, en supposant que Tux Paint ait tout ce dont il a besoin.          </p>
+            <b>Remarque :</b>Marx Paint n'utilise pas <code>autoconf</code>/<code>automake</code>, dès lors il n'y a pas de script "<code>./configure</code>" à lancer. La compilation devrait aller cependant aller toute seule, en supposant que Marx Paint ait tout ce dont il a besoin.          </p>
 
           <p>
             Pour compiler le programme à partir des sources, lancez simplement la commande suivante après une invite shell (par ex. "$") :          </p>
@@ -310,7 +310,7 @@
           Désactivation du support Pango (donc des dépendances Pango, Cairo, etc ...)        </h4>
         <blockquote>
           <p>
-            Avant la version 0.9.18, Tuxpaint utilisait la bibliothèque <code>libSDL_ttf</code> pour gérer les fichiers utilisant les fontes True Type. Depuis la 09.18 <code>libSDL_Pango</code> est utilisée, car il permet un meilleur support pour l'internationalisation. Cependant, si vous voulez désactiver l'utilisation de SDL_Pango, vous pouvez le faire en exécutant "<code>make</code>" avec "<code>SDL_PANGO_LIB=</code>" :          </p>
+            Avant la version 0.9.18, Marxpaint utilisait la bibliothèque <code>libSDL_ttf</code> pour gérer les fichiers utilisant les fontes True Type. Depuis la 09.18 <code>libSDL_Pango</code> est utilisée, car il permet un meilleur support pour l'internationalisation. Cependant, si vous voulez désactiver l'utilisation de SDL_Pango, vous pouvez le faire en exécutant "<code>make</code>" avec "<code>SDL_PANGO_LIB=</code>" :          </p>
           <blockquote>
             <code>
               $ make SDL_PANGO_LIB=
@@ -337,7 +337,7 @@
         <h4>Si vous obtenez des erreurs :</h4>
         <blockquote>
           <p>
-            Si vous avez des erreurs lors de la compilation, assurez-vous d'avoir les bibliothèques adéquates installées (voir ci-dessus). Si vous utilisez les versions issues des paquets des bibliothèques (par exemple, les RPM sous RedHat ou les DEB sous Debian), assurez-vous d'avoir choisi  également les packages "<code>-dev</code>" ou "<code>-devel</code>" correspondants, sinon vous ne pourrez pas compiler Tux Paint (et d'autres programmes) provenant des  sources !          </p>
+            Si vous avez des erreurs lors de la compilation, assurez-vous d'avoir les bibliothèques adéquates installées (voir ci-dessus). Si vous utilisez les versions issues des paquets des bibliothèques (par exemple, les RPM sous RedHat ou les DEB sous Debian), assurez-vous d'avoir choisi  également les packages "<code>-dev</code>" ou "<code>-devel</code>" correspondants, sinon vous ne pourrez pas compiler Marx Paint (et d'autres programmes) provenant des  sources !          </p>
         </blockquote>
 
         <h4>Installation :</h4>
@@ -379,7 +379,7 @@
           </blockquote>
 
           <p>
-            <b>Remarque :</b>Par défaut, "<code>tuxpaint</code>, le programme exécutable, est placé en "<code>/usr/local/bin/</code>". Les données (images, sons, etc ...) sont dans "<code>/usr/local/share/tuxpaint/</code>".          </p>
+            <b>Remarque :</b>Par défaut, "<code>marxpaint</code>, le programme exécutable, est placé en "<code>/usr/local/bin/</code>". Les données (images, sons, etc ...) sont dans "<code>/usr/local/share/marxpaint/</code>".          </p>
 
           <h5>Changer où vont les fichiers</h5>
           <blockquote>
@@ -391,19 +391,19 @@
             <dl>
               <dt><code>BIN_PREFIX</code></dt>
               <dd>
-                Où le binaire "<code>tuxpaint</code>" sera installé. (Par défaut "<code>$(PREFIX)/bin</code>", par ex. "<code>/usr/local/bin</code>")              </dd>
+                Où le binaire "<code>marxpaint</code>" sera installé. (Par défaut "<code>$(PREFIX)/bin</code>", par ex. "<code>/usr/local/bin</code>")              </dd>
 
               <dt><code>DATA_PREFIX</code></dt>
               <dd>
-                Où les fichiers de données (sons, graphiques, pinceaux, tampons, fontes) iront, et où Tux Paint ira les chercher pour tourner (Réglé à "<code>$(PREFIX)/share/tuxpaint</code>")              </dd>
+                Où les fichiers de données (sons, graphiques, pinceaux, tampons, fontes) iront, et où Marx Paint ira les chercher pour tourner (Réglé à "<code>$(PREFIX)/share/marxpaint</code>")              </dd>
 
               <dt><code>DOC_PREFIX</code></dt>
               <dd>
-                Où sera mise la documentation (les répertoires "<code>docs</code>". 'Réglé à "<code>$(PREFIX)/share/doc/tuxpaint</code>")              </dd>
+                Où sera mise la documentation (les répertoires "<code>docs</code>". 'Réglé à "<code>$(PREFIX)/share/doc/marxpaint</code>")              </dd>
 
               <dt><code>MAN_PREFIX</code></dt>
               <dd>
-                Où ira la page de manuel de Tuxpaint (Réglé à "<code>$(PREFIX)/share/man</code>")              </dd>
+                Où ira la page de manuel de Marxpaint (Réglé à "<code>$(PREFIX)/share/man</code>")              </dd>
 
               <dt><code>ICON_PREFIX</code> &mdash; <code>$(PREFIX)/share/pixmaps</code></dt>
               <dt><code>X11_ICON_PREFIX</code>  &mdash; <code>$(PREFIX)/X11R6/include/X11/pixmaps</code></dt>
@@ -414,7 +414,7 @@
 
               <dt><code>LOCALE_PREFIX</code></dt>
               <dd>
-                Où iront les fichiers de traduction, et où Tux Paint ira les chercher. (Réglé à "<code>$(PREFIX)/share/locale/</code>") (la destination finale de la traduction sera dans le répertoire de la locale (par ex "<code>es</code>" pour l'espagnol, dans le sous-répertoire "<code>LC_MESSAGES</code>").              </dd>
+                Où iront les fichiers de traduction, et où Marx Paint ira les chercher. (Réglé à "<code>$(PREFIX)/share/locale/</code>") (la destination finale de la traduction sera dans le répertoire de la locale (par ex "<code>es</code>" pour l'espagnol, dans le sous-répertoire "<code>LC_MESSAGES</code>").              </dd>
             </dl>
 
             <p>
@@ -428,14 +428,14 @@
     <blockquote>
       Le débogage (vers "STDOUT", par exemple le terminal, ou vers un fichier "<code>stdout.txt</code>", sous Windows) peut être activé en définissant "<code>DEBUG</code>" (et, si un mode verbeux est souhaité, "<code>VERBOSE</code>") <code># define</code> dans "<code>src/debug.h</code>.    </blockquote>
 
-    <h2>Désinstallation de Tux Paint :</h2>
+    <h2>Désinstallation de Marx Paint :</h2>
     <blockquote>
       <h3>Windows</h3>
       <blockquote>
         <h4>Utilisation du désinstalleur</h4>
         <blockquote>
           <p>
-            Si vous avez installé les raccourcis du menu Démarrer (par défaut), accédez au dossier TuxPaint et sélectionnez "Désinstaller". Une boîte s'affichera qui confirme que vous êtes sur le point de désinstaller Tux Paint et, si vous en êtes certain et que vous souhaitez supprimer définitivement Tux Paint, cliquez sur le bouton 'Désinstaller'.          </p>
+            Si vous avez installé les raccourcis du menu Démarrer (par défaut), accédez au dossier MarxPaint et sélectionnez "Désinstaller". Une boîte s'affichera qui confirme que vous êtes sur le point de désinstaller Marx Paint et, si vous en êtes certain et que vous souhaitez supprimer définitivement Marx Paint, cliquez sur le bouton 'Désinstaller'.          </p>
 
           <p>
             Quand c'est fini, cliquez sur "Fermer".          </p>
@@ -444,14 +444,14 @@
         <h4>En utilisant le panneau de configuration</h4>
         <blockquote>
           <p>
-            Il est également possible d'utiliser l'entrée "TuxPaint (supprimer uniquement)" dans la Section Ajout / Suppression de programmes du Panneau de configuration.          </p>
+            Il est également possible d'utiliser l'entrée "MarxPaint (supprimer uniquement)" dans la Section Ajout / Suppression de programmes du Panneau de configuration.          </p>
         </blockquote>
       </blockquote>
 
       <h3>Linux</h3>
       <blockquote>
         <p>
-          Dans le répertoire source de Tux Paint (où vous avez compilé Tux Paint), vous pouvez utiliser une cible "<code>make uninstall</code>" pour désinstaller Tux Paint. Par défaut, cela doit être fait par l'utilisateur "root" ("superutilisateur"), mais si vous avez installé Tux Paint à un autre endroit (par ex. en mettant "<code>PREFIX=...</code>" à "<code>make</code>" et "<code>make install</code>", vous ne pourrez pas, et il faudra fournier les mêmes réglages ici. (Voir les instructions d'installation ci-dessus pour plus d'informations.)        </p>
+          Dans le répertoire source de Marx Paint (où vous avez compilé Marx Paint), vous pouvez utiliser une cible "<code>make uninstall</code>" pour désinstaller Marx Paint. Par défaut, cela doit être fait par l'utilisateur "root" ("superutilisateur"), mais si vous avez installé Marx Paint à un autre endroit (par ex. en mettant "<code>PREFIX=...</code>" à "<code>make</code>" et "<code>make install</code>", vous ne pourrez pas, et il faudra fournier les mêmes réglages ici. (Voir les instructions d'installation ci-dessus pour plus d'informations.)        </p>
       </blockquote>
     <blockquote>
   </body>

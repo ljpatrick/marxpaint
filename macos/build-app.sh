@@ -1,7 +1,7 @@
 #!/bin/sh
 
-BUNDLE=TuxPaint.app
-BINARY="$BUNDLE/Contents/MacOS/tuxpaint"
+BUNDLE=MarxPaint.app
+BINARY="$BUNDLE/Contents/MacOS/marxpaint"
 LIBS=`find $BUNDLE/Contents/Resources/lib -type f`
 LIBDIR="$BUNDLE/Contents/lib"
 CONF_FILES="/opt/local/etc/fonts/fonts.conf"
@@ -23,7 +23,7 @@ fi
 install -d -m 755 "$LIBDIR"
 install -d -m 755 "$CONFDIR"
 
-# Copy there any shared libraries referenced by the tuxpaint binary, and any
+# Copy there any shared libraries referenced by the marxpaint binary, and any
 # shared libraries those shared libraries reference, and so on. We do this by
 # first copying over any shared libraries referenced by the binary, then
 # repeatedly copying over the shared libraries referenced by any libraries in
@@ -43,7 +43,7 @@ done
 echo "     -> Copied" $count "files to $LIBDIR"
 
 # We just copied over a bunch of shared libraries into a random folder in our
-# app bundle, but the tuxpaint binary and the shared libraries won't know to
+# app bundle, but the marxpaint binary and the shared libraries won't know to
 # look in that folder unless we tell them. So we tell them.
 echo "   * Fixing Shared Library References..."
 for i in "$BINARY" $LIBS $LIBDIR/*; do

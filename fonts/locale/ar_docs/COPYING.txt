@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-arabic"
-Arabic TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-arabic"
+Arabic TrueType Font (TTF) for Marx Paint
 
 The "ar.ttf" font file is a copy of the "ae_Nice.ttf" font,
 which is distributed under the terms of GNU General Public License

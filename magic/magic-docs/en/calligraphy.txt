@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Calligraphy
+                      Marx Paint "Magic" Tool: Calligraphy
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-# Location of tuxpaint-stamps and tuxpaint-config diredtories
-stamps_directory=../../../tuxpaint-stamps
-tpconfig_directory=../../../tuxpaint-config
+# Location of marxpaint-stamps and marxpaint-config diredtories
+stamps_directory=../../../marxpaint-stamps
+tpconfig_directory=../../../marxpaint-config
 
 
 
@@ -14,7 +14,7 @@ if [ "a$1b" == "a-hb" ] || [ "a$1b" == "a--helpb" ]; then
     exit
 fi
 
-# TODO check inside tuxpaint-config, check inside manpage.1 and docs 
+# TODO check inside marxpaint-config, check inside manpage.1 and docs 
 # check for valid po files and valid po dir
 
 
@@ -39,10 +39,10 @@ if [ -d $tpconfig_directory ];
 then 
     tpconfig_directory_found=1
     NUM_LANGS=0
-    echo -n Checking NUM_LANGS in tuxpaint-config2.cxx...
-    echo -n NUM_LANGS:_`cat $tpconfig_directory/src/tuxpaint-config2.cxx| grep "define NUM_LANGS"|sed 's/.*ANGS //g'`_
+    echo -n Checking NUM_LANGS in marxpaint-config2.cxx...
+    echo -n NUM_LANGS:_`cat $tpconfig_directory/src/marxpaint-config2.cxx| grep "define NUM_LANGS"|sed 's/.*ANGS //g'`_
 
-    for item in `cat $tpconfig_directory/src/tuxpaint-config2.cxx|sed -n '/Use system/,/};/{/NUM_LANGS/d;/};/d;s/.*, "//g;s/"}.*//g;p}'`
+    for item in `cat $tpconfig_directory/src/marxpaint-config2.cxx|sed -n '/Use system/,/};/{/NUM_LANGS/d;/};/d;s/.*, "//g;s/"}.*//g;p}'`
     do
 	((NUM_LANGS++))
     done
@@ -68,9 +68,9 @@ do
 
     if [ $stamps_directory_found -eq 1 ] ;
     then
-	echo -n Checking $stamps_directory/po/tuxpaint-stamps-$i
-	if [ -e $stamps_directory/po/tuxpaint-stamps-$i ]
-	then echo OK  $stamps_directory/po/tuxpaint-stamps-$i
+	echo -n Checking $stamps_directory/po/marxpaint-stamps-$i
+	if [ -e $stamps_directory/po/marxpaint-stamps-$i ]
+	then echo OK  $stamps_directory/po/marxpaint-stamps-$i
 	else echo _WARNING_ No stamps translation found
 	fi
     fi
@@ -80,7 +80,7 @@ do
 	echo -n Checking $tpconfig_directory/src/po/$i
 	if [ -e $tpconfig_directory/src/po/$i ]
 	then echo OK  $tpconfig_directory/src/po/$i
-	else echo _WARNING_ No translation found for tuxpaint-config
+	else echo _WARNING_ No translation found for marxpaint-config
 	fi
     fi
 
@@ -145,22 +145,22 @@ do
 
 	    if [ $tpconfig_directory_found ]
 	    then
-		echo -n Checking $langname in langs in tuxpaint-config2.cxx
+		echo -n Checking $langname in langs in marxpaint-config2.cxx
 		configlang=0
-		for item in `cat $tpconfig_directory/src/tuxpaint-config2.cxx|sed -n '/Use system/,/};/{/american/d;/NUM_LANGS/d;/gettext/d;/};/d;s/.*, "//g;s/"}.*//g;p}'`
+		for item in `cat $tpconfig_directory/src/marxpaint-config2.cxx|sed -n '/Use system/,/};/{/american/d;/NUM_LANGS/d;/gettext/d;/};/d;s/.*, "//g;s/"}.*//g;p}'`
 		do
 		    if [ $item == $langname ]; then echo OK $item; configlang=1; break; fi
 		done
-		if [ $configlang -eq 0 ]; then echo _WARNING_ $langname is missing in lang in tuxpaint-config2.cxx; fi
+		if [ $configlang -eq 0 ]; then echo _WARNING_ $langname is missing in lang in marxpaint-config2.cxx; fi
 	    fi
 
 	    echo -n Checking in the manpage...
 	    manlang=0
-	    for item in `cat ../manpage/tuxpaint.1|sed -n '/american-english/,/.RE/{/RE/d;/TP/d;/^-/d;s/|//g;p}'`
+	    for item in `cat ../manpage/marxpaint.1|sed -n '/american-english/,/.RE/{/RE/d;/TP/d;/^-/d;s/|//g;p}'`
 	    do
 		if [ $item == $langname ]; then echo OK $item; manlang=1; break; fi
 	    done
-	    if [ $manlang -eq 0 ]; then echo _WARNING_ $langname is missing in lang in ../manpage/tuxpaint.1; fi
+	    if [ $manlang -eq 0 ]; then echo _WARNING_ $langname is missing in lang in ../manpage/marxpaint.1; fi
 
 
 	    echo -n Checking LANGUAGE table in OPTIONS.html...

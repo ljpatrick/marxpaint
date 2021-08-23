@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Distortion
+                       Marx Paint "Magic" Tool: Distortion
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

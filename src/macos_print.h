@@ -1,6 +1,6 @@
 //
 //  macosx_print.h
-//  Tux Paint
+//  Marx Paint
 //
 //  Created by Darrell Walisser on Sat Mar 15 2003.
 //  Modified by Martin Fuhrer 2007.

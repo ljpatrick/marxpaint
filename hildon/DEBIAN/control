@@ -1,4 +1,4 @@
-Package: tuxpaint
+Package: marxpaint
 Version: 0.9.19
 Section: user/games
 Priority: optional
@@ -6,14 +6,14 @@ Architecture: armel
 Depends:
 Installed-Size: 2828
 Maintainer: Alessandro Pasotti <apasotti@gmail.com>
-Description: A paint program for young children
- Tux Paint is meant to be a simple drawing program for young
- children.  It is not meant as a general-purpose drawing tool.
+Description: A paint program for young communists
+ Marx Paint is meant to be a simple drawing program for young
+ communists.  It is not meant as a general-purpose drawing tool.
  It IS meant to be fun and easy to use.  Sound effects and a
  cartoon character help let the user know what's going on, and
  keeps them entertained.
  .
- Tux Paint is extensible.  Brushes and "rubber stamp" shapes can be
+ Marx Paint is extensible.  Brushes and "rubber stamp" shapes can be
  dropped in and pulled out.  For example, a teacher can drop in a
  collection of animal shapes and ask their students to draw an
  ecosystem.  Each shape can have a sound which is played, and

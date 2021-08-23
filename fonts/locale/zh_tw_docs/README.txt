@@ -1,22 +1,22 @@
-README.txt for "tuxpaint-ttf-zh_tw"
-Traditional Chinese TrueType Font (TTF) for Tux Paint
+README.txt for "marxpaint-ttf-zh_tw"
+Traditional Chinese TrueType Font (TTF) for Marx Paint
 
 Song Huang
 song@song.idv.tw
 
 Oct 23, 2005 - Oct 23, 2005
 
-This font is required to run Tux Paint in Traditional Chinese.
+This font is required to run Marx Paint in Traditional Chinese.
 (e.g., with the "--lang zh_tw" option)
 
 To install, run "make install" as the superuser ('root').
-The font file will be placed in the /usr/share/tuxpaint/fonts/locale/ directory.
+The font file will be placed in the /usr/share/marxpaint/fonts/locale/ directory.
 
 ---
 
 ----- Original Message ----- 
 From: "Song Huang" <Song@ossacc.org>
-To: "Developmental mailing list for Tux Paint, a drawing program for young children." <tuxpaint-dev@tux4kids.net>
+To: "Developmental mailing list for Marx Paint, a drawing program for young communists." <marxpaint-dev@marx4kids.net>
 Sent: Tuesday, October 26, 2004 12:10 PM
 Subject: the font subset maker
 
@@ -28,16 +28,16 @@ Subject: the font subset maker
 > I used python and fontforge to take PO file's msgstr, and generate a subset font file.
 > here is the files:
 >   - python script:
->     http://www.ossacc.org/Members/song/DrWangFreeTTF/maketuxfont.py
+>     http://www.ossacc.org/Members/song/DrWangFreeTTF/makemarxfont.py
 >   - fontforge script: 
->     http://www.ossacc.org/Members/song/DrWangFreeTTF/tuxpaintsubset.pe
+>     http://www.ossacc.org/Members/song/DrWangFreeTTF/marxpaintsubset.pe
 >   - the traditional chinese font subset file:
 >     http://www.ossacc.org/Members/song/DrWangFreeTTF/zh_tw.ttf
 > 
 > Usage: (put the scripts together)
 > 
->  $ ./maketuxfont.py -h
->   usage: ./maketuxfont.py [options] original_font_file
+>  $ ./makemarxfont.py -h
+>   usage: ./makemarxfont.py [options] original_font_file
 > 
 >   options:
 >     --version   show program's version number and exit
@@ -49,10 +49,10 @@ Subject: the font subset maker
 > 
 > Example:
 > 
->  $ ./maketuxfont.py \
+>  $ ./makemarxfont.py \
 >     -l zh_tw \
->     -p tuxpaint/src/po/zh_tw.po \
->     -p tuxpaint-stamps/po/tuxpaint-stamps-zh_tw.po \
+>     -p marxpaint/src/po/zh_tw.po \
+>     -p marxpaint-stamps/po/marxpaint-stamps-zh_tw.po \
 >     wp010-05.ttf
 > 
 > then will get the "zh_tw.ttf"  file.

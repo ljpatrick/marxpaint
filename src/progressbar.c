@@ -1,12 +1,12 @@
 /*
   progressbar.h
 
-  For Tux Paint
+  For Marx Paint
   Progress bar functions
 
   Copyright (c) 2002-2006 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.newbreedsoftware.com/marxpaint/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

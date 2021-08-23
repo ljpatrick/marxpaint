@@ -1,6 +1,6 @@
 //
 //  macos_print.m
-//  Tux Paint
+//  Marx Paint
 //
 //  Created by Darrell Walisser on Sat Mar 15 2003.
 //  Modified by Martin Fuhrer 2007.
@@ -273,7 +273,7 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
     // check if printers are available
     NSArray* printerNames = [NSPrinter printerNames];
     if( [printerNames count] == 0 && !showDialog)
-        return "No printer is available.  Run Tux Paint in window mode (not fullscreen), and select File > Print... to choose a printer.";
+        return "No printer is available.  Run Marx Paint in window mode (not fullscreen), and select File > Print... to choose a printer.";
     
     // create image for surface
     image = CreateImage( surface );

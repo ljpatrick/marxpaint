@@ -1,4 +1,4 @@
-                    Tux Paint "Magic" Tool: Symmetry Up/Down
+                    Marx Paint "Magic" Tool: Symmetry Up/Down
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

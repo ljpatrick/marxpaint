@@ -1,5 +1,5 @@
 /* win32_print.c */
-/* printing support for Tux Paint */
+/* printing support for Marx Paint */
 
 /* John Popplewell <john@johnnypops.demon.co.uk> */
 
@@ -354,7 +354,7 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg, int showdialo
   EnableWindow(hWnd, FALSE);
 
   di.cbSize = sizeof(DOCINFO);
-  di.lpszDocName = "Tux Paint";
+  di.lpszDocName = "Marx Paint";
   di.lpszOutput = (LPTSTR) NULL;
   di.lpszDatatype = (LPTSTR) NULL;
   di.fwType = 0;

@@ -1,31 +1,31 @@
-CHANGES.txt for Tux Paint
+CHANGES.txt for Marx Paint
 
-Tux Paint - A simple drawing program for children.
+Marx Paint - A simple drawing program for communists.
 
 Copyright (c) 2002-2021
 Various contributors (see below, and AUTHORS.txt)
-http://www.tuxpaint.org/
+http://www.marxpaint.org/
 
 $Id$
 
 2021.August.15 (0.9.27)
   * Documentation updates
     ---------------------
-    * Ensured Tux Paint's built-in help ("tuxpaint --help"),
+    * Ensured Marx Paint's built-in help ("marxpaint --help"),
       Unix manual ("man page"), and command-line option
       tab-completion list, and "OPTIONS" documentation all cover
-      the full set of Tux Paint options.
+      the full set of Marx Paint options.
 
     * Reorganized the "Available Options" section of "OPTIONS"
       documentation (to match the organization found in the UI
-      of "Tux Paint Config.")
+      of "Marx Paint Config.")
 
-    * Reorganized the options listed in Tux Paint's man page,
+    * Reorganized the options listed in Marx Paint's man page,
       to more closely (but not precisely) match the organization
       noted above.
 
-    * tuxpaint(1) manpage is now managed & translatable via the
-      'tuxpaint-docs' project, just like the HTML & plaintext
+    * marxpaint(1) manpage is now managed & translatable via the
+      'marxpaint-docs' project, just like the HTML & plaintext
       documentation files (since 0.9.26).
 
 2021.June.28 (0.9.26)
@@ -35,7 +35,7 @@ $Id$
       Override the ages-old default 48x48 size for UI buttons
       (via a new "buttonsize" option).  Note: If the button size
       would be too large for the required parts of the UI to appear
-      within Tux Paint's window size, the largest possible size will
+      within Marx Paint's window size, the largest possible size will
       be used.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
@@ -67,7 +67,7 @@ $Id$
   * Documentation updates
     ---------------------
     * Documentation is now maintained in a separate source repository,
-      'tuxpaint-docs', which allows for easier and more consisten
+      'marxpaint-docs', which allows for easier and more consisten
       translation of the documentation.  Pulling in initial version of
       these docs, which contain a variety of minor updates (and also a
       few which had previously only been available as plain TXT are now
@@ -83,11 +83,11 @@ $Id$
         TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Adding documentation that covers some of the
-      environment variables that Tux Paint utilizes.
+      environment variables that Marx Paint utilizes.
 
     * Expanded the steps for making and posting releases.
 
-    * Documented how to build Tux Paint using old macOS
+    * Documented how to build Marx Paint using old macOS
       Mark K. Kim <markuskimius@gmail.com>
 
     * Added more credits to manpage.  Avoiding word-wrapping
@@ -103,14 +103,14 @@ $Id$
       from 1ms to 10ms, and only using SDL's Timer subsystem
       when scrolling happens.
       (Details at
-      https://sourceforge.net/p/tuxpaint/tuxpaint/ci/7727b995c53df208596eff89ac1acb954a16098c/)
+      https://sourceforge.net/p/marxpaint/marxpaint/ci/7727b995c53df208596eff89ac1acb954a16098c/)
       Mark K. Kim <markuskimius@gmail.com>
       (h/t @bbugwong on Twitter for reporting the issue)
 
-    * If parent of export directory doesn't exist, Tux Paint will
+    * If parent of export directory doesn't exist, Marx Paint will
       try to create it as well.
       (Only one level up; e.g., with an export location like
-      /path/to/Pictures/TuxPaint/, it will try to create
+      /path/to/Pictures/MarxPaint/, it will try to create
       /path/to/Pictures/ if it doesn't exist, but not its parents).
       h/t Tim Dickson
 
@@ -150,7 +150,7 @@ $Id$
     ------------
     * Export drawings:
       * GIF export option from the Open -> Slideshow dialog.
-        (Closes https://sourceforge.net/p/tuxpaint/feature-requests/191/)
+        (Closes https://sourceforge.net/p/marxpaint/feature-requests/191/)
         * Utilizes "gifenc", public domain by Marcel Rodrigues:
           https://github.com/lecram/gifenc
         * Depends on "libimagequant", from the "pngquant2" project:
@@ -158,19 +158,19 @@ $Id$
           (GPL v3 or later, for Free/Libre Open Source Software)
           (h/t TOYAMA Shin-ichi for adding support for versions < 2.8.0)
       * Single image (PNG) export from the Open dialog.
-        (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
+        (Closes https://sourceforge.net/p/marxpaint/feature-requests/192/)
       * Both utilize XDG user dirs settings, if available, to determine
         where to store them, or "~/Pictures", otherwise.  In those cases,
-        files are stored in a new "TuxPaint" subdirectory.
+        files are stored in a new "MarxPaint" subdirectory.
       * The "--exportdir" option can be used to override the default
-        location (but a "TuxPaint" subdir. will NOT be placed there).
+        location (but a "MarxPaint" subdir. will NOT be placed there).
 
     * Shape controls:
-      * Draw shapes from the center (as in previous versions of Tux Paint)
+      * Draw shapes from the center (as in previous versions of Marx Paint)
         or from a corner (similar to the default mode of most other
         graphics tools).
       * The controls to modify the drawing behavior can be removed,
-        for simplification of Tux Paint's interface (for younger users).
+        for simplification of Marx Paint's interface (for younger users).
 
   * Other Improvements
     ------------------
@@ -184,7 +184,7 @@ $Id$
 
     * On-screen keyboard (visible when the feature is enabled, while
       using the "Text" and "Label" tools) now appears with larger
-      (48x48 pixel, vs 24x24 pixel) buttons, when Tux Paint's window
+      (48x48 pixel, vs 24x24 pixel) buttons, when Marx Paint's window
       (or fullscreen) size is large enough to fit them with the
       chosen layout.
       (h/t Anat & Aviv, who suggested it to help with users of
@@ -230,7 +230,7 @@ $Id$
   * Starter & Template updates
     --------------------------
     * Added margins to elephant, fish_icon and frame_hearts
-      starters, to avoid smearing on edges in Tux Paint.
+      starters, to avoid smearing on edges in Marx Paint.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   * Documentation updates
@@ -341,12 +341,12 @@ $Id$
       looking hung on slower systems or with complicated stamp images.
 
     * Recognize signals (SIGUSR1 and SIGUSR2) on POSIX systems,
-      which causes Tux Paint to quit, first saving the current drawing
+      which causes Marx Paint to quit, first saving the current drawing
       (if unsaved) (like "--autosave"), either saving a new image
       (like "--saveovernew") (via SIGUSR1), or overwritting the current
       drawing (like "--saveover") (via SIGUSR2).
       (Thanks to Flavio Airundo for the idea; closes
-      https://sourceforge.net/p/tuxpaint/feature-requests/188/)
+      https://sourceforge.net/p/marxpaint/feature-requests/188/)
 
     * Updated most parts of the code that were throwing warnings in GCC.
 
@@ -367,9 +367,9 @@ $Id$
     * Mended link to MinGW/MSYS instructions at John Popplewell's website.
       (h/t "sechidis")
 
-    * Improved and expanded usage info (e.g., "tuxpaint --help" output)
+    * Improved and expanded usage info (e.g., "marxpaint --help" output)
 
-    * Documentation on POSIX signals recognized by Tux Paint (e.g.,
+    * Documentation on POSIX signals recognized by Marx Paint (e.g.,
       the new "SIGUSR1" & "SIGUSR2") added to a new doc file,
       "SIGNALS.txt".
 
@@ -387,8 +387,8 @@ $Id$
 
   * Bug Fixes
     ---------
-    * Correct issue that prevented Tux Paint from lauching on Mac OS X 10.7.
-      (See https://sourceforge.net/p/tuxpaint/tuxpaint/ci/d2ef2e17d1962111d0f6f91394dce81e8706d48b/
+    * Correct issue that prevented Marx Paint from lauching on Mac OS X 10.7.
+      (See https://sourceforge.net/p/marxpaint/marxpaint/ci/d2ef2e17d1962111d0f6f91394dce81e8706d48b/
       and https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7)
       Mark K. Kim <mkkim214@gmail.com>
 
@@ -397,13 +397,13 @@ $Id$
       Mark K. Kim <mkkim214@gmail.com>
 
     * Ability to bring up the print dialog from the macOS build was
-      removed in Tux Paint 0.9.23 to support the new build mechanism.
+      removed in Marx Paint 0.9.23 to support the new build mechanism.
       It has been re-added.  To access it, option-click the print icon,
-      or configure Tux Paint to always bring up the dialog upon print.
+      or configure Marx Paint to always bring up the dialog upon print.
       Mark K. Kim <mkkim214@gmail.com>
 
     * Made sure "New" dialog created correct thumbnail subdirectories
-      for personal Starters & Templates (e.g., ~/.tuxpaint/starters/thumbs/)
+      for personal Starters & Templates (e.g., ~/.marxpaint/starters/thumbs/)
 
     * Ensure that similarly-named (but not identically-named) PNG & SVG
       Starters & Templates don't get confused with each other
@@ -436,7 +436,7 @@ $Id$
   * Documentation updates
     ---------------------
     * Made stamp controls (size, flip, mirror) section clearer.
-      Fixes https://sourceforge.net/p/tuxpaint/bugs/182/
+      Fixes https://sourceforge.net/p/marxpaint/bugs/182/
 
     * Cleaned up and reorganized docs subdirectory.
 
@@ -581,7 +581,7 @@ $Id$
       (SF.net Bug #210)
 
     * "Hat" started could not be drawn on.  Mended.
-      https://sourceforge.net/p/tuxpaint/bugs/202/
+      https://sourceforge.net/p/marxpaint/bugs/202/
 
   * Ports & Building
     ----------------
@@ -602,8 +602,8 @@ $Id$
       ("LIBDIRSUFFIX")
       Tim Dickson <dickson.tim@googlemail.com>
 
-    * Install Tux Paint docs into a version-numbered directory
-      (e.g., "/usr/local/share/doc/tuxpaint-0.9.23/")
+    * Install Marx Paint docs into a version-numbered directory
+      (e.g., "/usr/local/share/doc/marxpaint-0.9.23/")
       Tim Dickson <dickson.tim@googlemail.com>
 
     * Launcher icon installation location adjustments:
@@ -658,7 +658,7 @@ $Id$
 
   * Build System Improvements:
     --------------------------
-    * Variety of tweaks to help Tux Paint cross-compile for Windows under Linux
+    * Variety of tweaks to help Marx Paint cross-compile for Windows under Linux
       Volker Grabsch <vog@notjusthosting.com>
 
     * Added support for building under Haiku OS
@@ -668,15 +668,15 @@ $Id$
       into Windows installation scripts (InnoSetup), as an option.
       <http://www.opencandy.com/>
 
-      Note: "tuxpaint.iss" still builds standard, OpenCandy-less
-      Tux Paint installer; "tuxpaint-opencandy.iss", along with a file
+      Note: "marxpaint.iss" still builds standard, OpenCandy-less
+      Marx Paint installer; "marxpaint-opencandy.iss", along with a file
       with secret key info (not included in CVS, of course!), build
       an OpenCandy-enabled version.  The OC account is currently
       maintained by Bill Kendrick <nbs@sonic.net>, lead developer.
 
-      For more info, see http://www.tuxpaint.org/docs/opencandy/
+      For more info, see http://www.marxpaint.org/docs/opencandy/
 
-    * Using $LDFLAGS when linking Magic tool plugins and Tux Paint binary.
+    * Using $LDFLAGS when linking Magic tool plugins and Marx Paint binary.
       Volkov Peter <volkov_peter@users.sourceforge.net> (SF.Net Bug #3389067)
 
   * Collection of Mac OS X Updates:
@@ -703,7 +703,7 @@ $Id$
 
     * Some additional debugging output.
 
-    * Logging stderr & stdout to /tmp/tuxpaint.log
+    * Logging stderr & stdout to /tmp/marxpaint.log
 
   * Accessibility Improvements:
     ---------------------------
@@ -729,7 +729,7 @@ $Id$
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
       * See documentation in OPTIONS for how to use it.
 
-    * Joystick can be used to drive Tux Paint
+    * Joystick can be used to drive Marx Paint
       by Ankit Choudary <ankit.goaldecided@gmail.com> (GSOC 2010)
       with integration and fixes by Pere Pujal i Carabantes
 
@@ -754,7 +754,7 @@ $Id$
           the pointer will move at a time.
             Allowed values from 1 to 7, defaults to 7.
       * Joystick buttons can be assigned used to activate certain commands
-        in Tux Paint (--joystick-btn-COMMAND options)
+        in Marx Paint (--joystick-btn-COMMAND options)
 
   * Magic Tool Improvememnts:
     -------------------------
@@ -776,21 +776,21 @@ $Id$
     * Quicker prompt window pop-up animation.
 
     * Left/Right Stamp navigation buttons are purple, like the other (up/down)
-      scroll buttons found in Tux Paint.
+      scroll buttons found in Marx Paint.
       (SourceForge Bug #2918289)
 
-    * Slightly improved mouse motion handling when Tux Paint is very busy
+    * Slightly improved mouse motion handling when Marx Paint is very busy
       drawing or previewing.  (e.g., when drawing a circle, you could often
       end up with a "D" shape... now, you get more of a regular polygon shape
-      if Tux Paint is taking too long to draw.  It skips some motion events,
+      if Marx Paint is taking too long to draw.  It skips some motion events,
       rather than ignoring all motion events after the first 1/4th second.)
 
-    * Deleting files from Tux Paint's 'Open' dialog now moves them to
+    * Deleting files from Marx Paint's 'Open' dialog now moves them to
       the user's Trash folder.
       FIXME: Only on freedesktop.org systems (e.g., Linux)
       (SourceForge.net Feature #3101084)
 
-    * Tux Paint (in windowed mode) now only centers itself if
+    * Marx Paint (in windowed mode) now only centers itself if
       no specific positioning has been provided via
       the SDL_VIDEO_WINDOW_POS environment variable.
       (SourceForge Bug #3138446)
@@ -800,13 +800,13 @@ $Id$
       (SourceForge Bug #1417849)
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-    * On systems where Pango is used for UI text rendering, Tux Paint now
+    * On systems where Pango is used for UI text rendering, Marx Paint now
       spawns a temporary thread during start-up (at the splash screen) to
       allow "fontconfig" to generate its font cache in the background,
       while showing the "please wait" animation, and responding to the US.
       (Fontconfig takes a long time to generate its cache the first time
       you run a Pango- and hence fontconfig-enabled application
-      (Tux Paint, Gimp, Inkscape, etc.), or after adding lots of new fonts
+      (Marx Paint, Gimp, Inkscape, etc.), or after adding lots of new fonts
       to your system).
       SF.net Bug #2944951
 
@@ -862,7 +862,7 @@ $Id$
       sans glitches.)
       (SF.net bug #2837177)
 
-    * Created a BASH tab-completion file for Tux Paint, so that
+    * Created a BASH tab-completion file for Marx Paint, so that
       command-line options are easier to discover (without necessarily
       needing to consult the man page, 'Options' documentation, or --usage
       output).
@@ -965,7 +965,7 @@ $Id$
 
     * Amharic translation
       Solomon Gizaw <solohavi@yahoo.com>
-      http://pootle.locamotion.org/am/tuxpaint/
+      http://pootle.locamotion.org/am/marxpaint/
 
     * Aragones translation
       Juan Pablo Martinez Cortes <jpmart@unizar.es>
@@ -1248,10 +1248,10 @@ $Id$
       not up or left.
       (SF.net Bug #2834320)
 
-    * tuxpaint-import tool uses BASHisms, so changed shebang to #!/bin/bash
+    * marxpaint-import tool uses BASHisms, so changed shebang to #!/bin/bash
       (instead of #!/bin/sh).
 
-    * Added some missing examples to the default tuxpaint.conf file.
+    * Added some missing examples to the default marxpaint.conf file.
       (Thanks to Aapo Rantalainen <aapo.rantalainen@gmail.com>)
 
     * Default stamp size, in some situations, was very large
@@ -1273,13 +1273,13 @@ $Id$
       or change the shape before finishing to draw it.
       (SF.net Bug #1057311)
 
-    * Example for 'savedir' in tuxpaint.conf suggested you needed /saved
+    * Example for 'savedir' in marxpaint.conf suggested you needed /saved
       at the end, which is not true.  Added note explaining that actual
       image files go under 'saved' subdirectory.
       (Thanks to Marco Menardi)
 
     * Saved images woose path contains non-ascii chars can now be opened on Windows.
-      Fixes http://sourceforge.net/p/tuxpaint/bugs/188/
+      Fixes http://sourceforge.net/p/marxpaint/bugs/188/
 
     * Ignoring ".pfb" (PostScript 'Printer Font Binary') fonts, to
       avoid crashes.
@@ -1308,7 +1308,7 @@ $Id$
       + Rain - Adds rain drops to the image.
       + Toothpaste - Squirts "toothpaste" on to the image.
       By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
-      (Part of Tux4Kids' participation in Google Summer of Code 2008)
+      (Part of Marx4Kids' participation in Google Summer of Code 2008)
 
     * + Confetti - Paints random confetti bits on the canvas.
       + TV - Adds television (CRT) interlacing lines over the image.
@@ -1316,7 +1316,7 @@ $Id$
       + Picasso - Paints at 3 points, in a "Picasso" art style.
       + Wavelets - Waves that go up and down.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
-      (Part of Tux4Kids' participation in Google Summer of Code 2008)
+      (Part of Marx4Kids' participation in Google Summer of Code 2008)
 
     * + Rails - Draws train tracks / rails over the image.
       + Fisheye - Warps part of the picture, as though seen through a fisheye.
@@ -1352,7 +1352,7 @@ $Id$
       their mode changes..
 
     * Added "_modes()" function to Magic tool API, so Magic tool plugins
-      can tell Tux Paint what modes it accepts, 'paint' or 'fullscreen'.
+      can tell Marx Paint what modes it accepts, 'paint' or 'fullscreen'.
 
     * "_click()" function is now given a 'mode' value, corresponding to the
       mode the current tool is in.
@@ -1371,7 +1371,7 @@ $Id$
   * System-Related Improvements:
     ----------------------------
     * 'savedir' and 'datadir' paths given in configuration files
-      (e.g., ~/.tuxpaintrc) now have any environment variables and tildes
+      (e.g., ~/.marxpaintrc) now have any environment variables and tildes
       (e.g., "~" for $HOME, or "~username" for 'username's home directory)
       expanded.
       NOTE: Environment variable expansion via 'wordexp()' -- currently
@@ -1381,7 +1381,7 @@ $Id$
 
     * On systems that use postscript_print (Linux and other Unix-likes),
       errors when attempting to issue a print command (e.g., trying to use
-      "lpr", but that command is not available) should appear in Tux Paint.
+      "lpr", but that command is not available) should appear in Marx Paint.
       (SourceForge bug #2205528)
 
   * Build System Improvements:
@@ -1399,7 +1399,7 @@ $Id$
   * Other Improvements:
     -------------------
     * Starter images no longer need to be created with alpha transparency.
-      Any solid white will be removed automatically by Tux Paint.
+      Any solid white will be removed automatically by Marx Paint.
 
     * White always appears as the first color in the "New" dialog,
       regardless of its position (or even existence) in the color palette.
@@ -1411,7 +1411,7 @@ $Id$
     * Updated to the latest version (2.27) of DejaVu Sans Regular for UI font.
 
     * Only loads locale-specific fonts (e.g., Tibetan's "bo.ttf", which is
-      unusable with any language _except_ Tibetan) when Tux Paint is running
+      unusable with any language _except_ Tibetan) when Marx Paint is running
       in that locale.  (Use "--alllocalefonts" command-line option
       or "alllocalefonts=yes" config. file option, to load all of those fonts,
       regardless of locale setting -- the old behavior.)
@@ -1537,12 +1537,12 @@ $Id$
     * [Ctrl]+[P] keyboard shortcut for printing was not complying with
       option to disable printing capability (e.g., "--noprint")! Fixed.
 
-    * Preventing Tux Paint from dropping out of Fullscreen mode when
+    * Preventing Marx Paint from dropping out of Fullscreen mode when
       pressing either left or right [Windows] keys
       Note: Works on Windows XP, 2000 and Vista only.
-      (If Tux Paint is deliberately switched to the background,
+      (If Marx Paint is deliberately switched to the background,
       e.g. using [Alt]+[Tab], the [Windows] keys function as normal until
-      Tux Paint is the active application again.)
+      Marx Paint is the active application again.)
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Directional brushes used to always begin with middle image;
@@ -1562,12 +1562,12 @@ $Id$
     * Improved support for localized Stamp sound effects (e.g., "en_GB" for
       British English now works; only "en" would have worked before).
 
-    * Fixed minor bug that caused Tux Paint to crash when loading
+    * Fixed minor bug that caused Marx Paint to crash when loading
       many fonts (i.e., with the 'sysfonts' option).
       Pere Pujal i Carabantes <pere@fornol.no-ip.org> and
       Albert Cahalan <albert@users.sf.net>
 
-    * 'tuxpaint-import' script didn't support files with spaces. Fixed.
+    * 'marxpaint-import' script didn't support files with spaces. Fixed.
       James Le Cuirot <jerseychewi@users.sourceforge.net>
 
     * Fixed display bugs and icon positioning in pop-up dialogs when
@@ -1634,14 +1634,14 @@ $Id$
       + Added dependency on SDL_Pango.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-    * Placing Tux Paint launcher icon ("tuxpaint.desktop") in
+    * Placing Marx Paint launcher icon ("marxpaint.desktop") in
       'applications', rather than 'gnome/apps/Graphics', per Freedesktop.org
       standards.
       (SourceForge Bug #1932808, via Ubuntu)
 
-    * Added "Categories" back to the 'tuxpaint.desktop' file
-      ("Education," and "Art").  NOTE: You need to edit 'tuxpaint.desktop.in',
-      otherwise changes will be overwritten the next time 'tuxpaint.desktop'
+    * Added "Categories" back to the 'marxpaint.desktop' file
+      ("Education," and "Art").  NOTE: You need to edit 'marxpaint.desktop.in',
+      otherwise changes will be overwritten the next time 'marxpaint.desktop'
       is generated!
       (SourceForge Bug #1932808, via Ubuntu)
 
@@ -1660,7 +1660,7 @@ $Id$
     * Made sure Makefile works with NetBSD again.
       Thomas Klausner <tk@giga.or.at>
 
-    * Makefile edited so that Tux Paint can be installed in the absence
+    * Makefile edited so that Marx Paint can be installed in the absence
       of gettext in the system.
       Arunodai Vudem <arunvudem@gmail.com>
       Mark K. Kim <mkkim214@gmail.com>
@@ -1688,10 +1688,10 @@ $Id$
 
   * Bug Fixes
     ---------
-    * Legacy Tux Paint images (prior to Tux Paint supporting different
+    * Legacy Marx Paint images (prior to Marx Paint supporting different
       colored backgrounds) would end up with arbitrary Eraser colors.
       Forcing it to always use white, which was the only background color
-      in early versions of Tux Paint.
+      in early versions of Marx Paint.
 
     * Brushes with large spacing wouldn't be spaced properly when drawn
       from bottom-to-top using the line tool.  Fixed.
@@ -1710,7 +1710,7 @@ $Id$
 
     * The variables not declared as extern in SDL_Pango.h have been 
       renamed in dirwalk.c and fonts.c. SDL_Pango.h no longer needs to be
-      shipped along with tuxpaint code. Inclusion error message has been added
+      shipped along with marxpaint code. Inclusion error message has been added
       for missing libpaper.
       Arunodai Vudem <arunvudem@gmail.com>
       Mark K. Kim <mkkim214@gmail.com>
@@ -1764,7 +1764,7 @@ $Id$
 
     * Chinese (Simplified) README and FAQ documentation
       HackerGene <hackergene@gmail.com>
-      http://tuxpaint.cn/
+      http://marxpaint.cn/
 
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
@@ -1795,11 +1795,11 @@ $Id$
 
   * System-Related Improvements:
     ----------------------------
-    * Added "--allowscreensaver" option, which prevents Tux Paint from disabling
+    * Added "--allowscreensaver" option, which prevents Marx Paint from disabling
       the screensaver or monitor power management while running.
       (Requires SDL 1.2.12; can also be done by setting the
       SDL_VIDEO_ALLOW_SCREENSAVER environment variable to '1' before running
-      Tux Paint.)
+      Marx Paint.)
 
     * Removed unfinished, unused record and playback code.
 
@@ -1817,7 +1817,7 @@ $Id$
 
   * Documentation Improvements:
     ---------------------------
-    * Brought documentation on Tux Paint canvas size up-to-date, for
+    * Brought documentation on Marx Paint canvas size up-to-date, for
       importing photos/etc.
 
   * Build System Improvements
@@ -1838,9 +1838,9 @@ $Id$
 
   * Other improvements:
     -------------------
-    * Recreated "Tux Paint" title art using Inkscape (traced original bitmap).
+    * Recreated "Marx Paint" title art using Inkscape (traced original bitmap).
 
-    * Larger "Tux Paint" title art displayed on larger screens.
+    * Larger "Marx Paint" title art displayed on larger screens.
 
 
   * Bug Fixes
@@ -1856,7 +1856,7 @@ $Id$
     * Corrected bug where Shift and Kaleidoscope magic tools would crash
       when sound was disabled.
 
-    * Corrected issues that prevented building Tux Paint without sound
+    * Corrected issues that prevented building Marx Paint without sound
       support (extraneous SDL_mixer library calls).
 
     * Preventing crash when starter images could not be loaded
@@ -1890,7 +1890,7 @@ $Id$
 
     * Windows shows printer configuration dialog even when in fullscreen mode.
       If no 'print.cfg' file is found, the dialog is shown.
-      Clicking "Cancel" in the printer config. dialog cancels Tux Paint's
+      Clicking "Cancel" in the printer config. dialog cancels Marx Paint's
       print attempt.
       John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -1916,7 +1916,7 @@ $Id$
       (on a scale of 0-10, corresponding to their minimum and maximum size,
       which depends on the size of the stamp, and the size of the canvas).
       Use the "--stampsize=..." command-line option or "stampsize=..." config.
-      file setting.  Use "default" to allow Tux Paint to decide (its standard
+      file setting.  Use "default" to allow Marx Paint to decide (its standard
       behavior).
 
   * Documentation Improvements:
@@ -1930,20 +1930,20 @@ $Id$
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
       ('.so' shared objects under Linux, '.dll' libraries under Windows, etc.)
-      Plugins must provide a number of functions that Tux Paint calls,
-      and Tux Paint provides a structure ("magic_api") that includes info.
-      (e.g., the running Tux Paint's version number) and pointers to
+      Plugins must provide a number of functions that Marx Paint calls,
+      and Marx Paint provides a structure ("magic_api") that includes info.
+      (e.g., the running Marx Paint's version number) and pointers to
       useful functions (e.g., getpixel(), putpixel(), etc.)
 
-    * Magic plugin development can be done outside of Tux Paint base
+    * Magic plugin development can be done outside of Marx Paint base
       source-code by using new "tp-magic-config" shell script to query
       for C compiler flags (which points to where "tp_magic_api.h" header
-      file is installed) and directories Tux Paint uses (where plugin '.so'
-      files should be stored, and where Tux Paint's global data files and
+      file is installed) and directories Marx Paint uses (where plugin '.so'
+      files should be stored, and where Marx Paint's global data files and
       documentation go).
 
     * Magic plugin development docs created.  On Linux/Unix, installed into
-      /usr/[local/]share/docs/tuxpaint-dev/ by default.  (HTML and plaintext.)
+      /usr/[local/]share/docs/marxpaint-dev/ by default.  (HTML and plaintext.)
 
     * tp-magic-config man page created.
 
@@ -1958,7 +1958,7 @@ $Id$
 
     * Magic tool documentation now split into separate files, and referenced
       (as a directory) from README, so that users can find docs to any
-      additional tools (ones not included by default with Tux Paint) that are
+      additional tools (ones not included by default with Marx Paint) that are
       installed.
 
     * Began adding support for using SDL_Pango, a wrapper to Pango,
@@ -1967,15 +1967,15 @@ $Id$
       that SDL_ttf doesn't support well; e.g., Arabic and Telegu.)
 
       TTF_Font structs and some functions were replaced by a new
-      TuxPaint_Font struct and function, which wraps around either TTF_Font
+      MarxPaint_Font struct and function, which wraps around either TTF_Font
       or both a TTF_Font and a SDLPango_Context, depending on whether
       SDL_Pango is being used, and how the font was loaded.
 
       Can be disabled (will use older SDL_ttf-based code only) by building with
       "make nopango".  Note: A modified SDL_Pango.h header file is included
-      with Tux Paint, to work around a compile issue with SDL_Pango 0.1.2's.
+      with Marx Paint, to work around a compile issue with SDL_Pango 0.1.2's.
 
-    * Print configuration is now saved between Tux Paint sessions on Mac OS X.
+    * Print configuration is now saved between Marx Paint sessions on Mac OS X.
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
     * Saved-files directory and data directory (brushes, starters, etc.) can
@@ -2020,8 +2020,8 @@ $Id$
     from KDE 3.5.7; http://www.kde.org/ )
     (Metal Paint sound based on sound from Engima;
     http://www.nongnu.org/enigma/ )
-    (Waves sound based on sound from Super Tux;
-    http://supertux.berlios.de/ )
+    (Waves sound based on sound from Super Marx;
+    http://supermarx.berlios.de/ )
     (Kaleidoscope sound based on water in a bathtub, by
     Caroline Ford <caroline.ford.work@googlemail.com>, GFDL)
     (Shift sound based on London Underground train, by
@@ -2061,7 +2061,7 @@ $Id$
 
     * Chinese (Simplified) README documentation
       HackerGene <hackergene@gmail.com>
-      http://tuxpaint.cn/
+      http://marxpaint.cn/
 
     * Chinese (Traditional) README documentation
       Song Huang <songhuang@users.sourceforge.net>
@@ -2131,9 +2131,9 @@ $Id$
     * Removed old Microsoft Visual Studio C++ files (in 'visualc')
 
     * Created a new "win32" folder with things from 'visualc' that are still
-      being used ('libdocs', 'resource.h', 'resources.rc' and 'tuxpaint.iss')
+      being used ('libdocs', 'resource.h', 'resources.rc' and 'marxpaint.iss')
 
-    * Windows build updates for building Tux Paint with Pango-support.
+    * Windows build updates for building Marx Paint with Pango-support.
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Created a separate "win9x" target (for Windows95, Windows98 & WindowsME)
@@ -2146,7 +2146,7 @@ $Id$
       (so, e.g., "N.M" would be "N,M") due to use of printf().  Fixed.
 
     * Windows printing now attempts to use default printer if
-      a "print.cfg" file does not exist.  (Fixes bug where Tux Paint would
+      a "print.cfg" file does not exist.  (Fixes bug where Marx Paint would
       not print until after you've issued an [Alt]+'Print' at least once.
       SourceForge Bug #1748705.)
 
@@ -2165,7 +2165,7 @@ $Id$
       (SourceForge Bug #1787005)
       Thanks to Tomasz Gloc for reporting and investigating this one.
 
-    * Fixed installer 'groupname' bug and missing icon on 'Tux Paint on
+    * Fixed installer 'groupname' bug and missing icon on 'Marx Paint on
       the web' shortcut (on Windows XP).
       John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -2186,13 +2186,13 @@ $Id$
     * Screen size can be rotated using the "--orient=portrait" command-line
       option or "orient=portait" configuration file setting.  This swaps
       the width and height values used for window or screen size.
-      (e.g., "tuxpaint --fullscreen --1024x786 --orient=portrait" will
-      run Tux Paint in 768x1024 mode.)  Useful for tablet PCs.
+      (e.g., "marxpaint --fullscreen --1024x786 --orient=portrait" will
+      run Marx Paint in 768x1024 mode.)  Useful for tablet PCs.
       Note: override previously-set option with "--orient=landscape" or
       "orient=landscape".
 
     * Stamp sound effects and stamp descriptive sounds can be re-played
-      using small buttons that appear over Tux, at the lower lefthand corner.
+      using small buttons that appear over Marx, at the lower lefthand corner.
       (They disappear/reappear when sound is muted/unmuted via [Alt]+[S].)
 
     * "Open" dialog lists saved drawings first, then local starter images,
@@ -2254,7 +2254,7 @@ $Id$
       + 10x10 grid
       + 20x20 grid
 
-      From Wikipedia, prepared for Tux Paint by:
+      From Wikipedia, prepared for Marx Paint by:
       Caroline Ford <caroline.ford.work@googlemail.com>
       + World maps
       + United States of America map
@@ -2266,7 +2266,7 @@ $Id$
 
   * System-related improvements:
     ----------------------------
-    * When running in fullscreen mode, you may now ask Tux Paint to display
+    * When running in fullscreen mode, you may now ask Marx Paint to display
       at the screen's (more precisely, the operating system's) current
       resolution.  Either use both "fullscreen=yes" and "native=yes" in the
       config file, or "--fullscreen --native" on the command-line.
@@ -2288,18 +2288,18 @@ $Id$
 
   * Documentation Improvements:
     ---------------------------
-    * Discussed SVG Stamps in "Extending Tux Paint."
+    * Discussed SVG Stamps in "Extending Marx Paint."
 
     * Created an "SVG.txt" document, covering SVG software.
       Caroline Ford <caroline.ford.work@googlemail.com>
 
     * Mentioned descriptive sounds (e.g., "stamp_desc_ll.ogg") in "Extending..."
 
-    * Listing new www.tuxpaint.org website URL.
+    * Listing new www.marxpaint.org website URL.
 
     * Expanded MinGW/MSYS GCC compilation instructions for building Win32.
 
-    * Example tuxpaint.conf has been updated to include newer options.
+    * Example marxpaint.conf has been updated to include newer options.
 
     * Briefly documented translation (gettext PO catalogs) in "Extending..."
 
@@ -2310,7 +2310,7 @@ $Id$
     
   * Bug Fixes:
     ----------
-    * Tux the Penguin sound effects were not working; fixed.
+    * Marx the Penguin sound effects were not working; fixed.
 
     * Text tool's text would be applied to canvas when clicking any tool
       buttons.  Fixed so that it is not applied when tool changes aren't
@@ -2343,10 +2343,10 @@ $Id$
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
     * Added "New", "Open", "Save", "Print", "Page Setup", "Undo" and "Redo"
-      items to Tux Paint menu on Mac OS X.
+      items to Marx Paint menu on Mac OS X.
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
-    * Using standard Mac OS X arrow cursor, rather than custom Tux Paint
+    * Using standard Mac OS X arrow cursor, rather than custom Marx Paint
       cursor (for UI consistency on OS X).
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
@@ -2361,8 +2361,8 @@ $Id$
       Alessandro Pasotti <apasotti@gmail.com>
 
     * Added more Nokia Maemo-specific files to the "hildon" folder
-      (DEBIAN package files, updated .desktop and Tux Paint configuration
-      files, D-BUS service file), to make packaging a Tux Paint .deb for
+      (DEBIAN package files, updated .desktop and Marx Paint configuration
+      files, D-BUS service file), to make packaging a Marx Paint .deb for
       Nokia 770 and N800 devices easier.  (Note: Makefile needs updating
       and/or a compile-and-package script needs to be created.)
       Alessandro Pasotti <apasotti@gmail.com>
@@ -2487,19 +2487,19 @@ $Id$
       Windows and Linux.)
       John Popplewell <john@johnnypops.demon.co.uk>
 
-    * tuxpaint-import shell script now examines Tux Paint's configuration
-      file (first in /usr/local/etc/tuxpaint, then /etc/tuxpaint, then $HOME)
+    * marxpaint-import shell script now examines Marx Paint's configuration
+      file (first in /usr/local/etc/marxpaint, then /etc/marxpaint, then $HOME)
       for the window size settings and saved-file directory options
       (rather than assuming a 640x480 screen and images saved in
-      $HOME/.tuxpaint/saved/).
+      $HOME/.marxpaint/saved/).
 
       Discovered (or assumed) window size and directory settings are shown
-      when tuxpaint-import is first run (even with no arguments).
+      when marxpaint-import is first run (even with no arguments).
 
-    * "startblank" option added, to cause Tux Paint to always start with
+    * "startblank" option added, to cause Marx Paint to always start with
       a blank canvas (rather than loading the most-recently-edited image).
 
-    * In windowed mode, Tux Paint tries to open its window in the center
+    * In windowed mode, Marx Paint tries to open its window in the center
       of the screen (if supported by the OS or window manager).
 
     * Improved some dialog text, including labels for "Yes/No" buttons.
@@ -2560,7 +2560,7 @@ $Id$
     * Shipwreck
       Jim Trice <jimtrice@linuxmail.org>
 
-    * Tux the farmer
+    * Marx the farmer
       Jim Trice <jimtrice@linuxmail.org>
 
     * Street
@@ -2649,7 +2649,7 @@ $Id$
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-    * Japanese font shipped in Tux Paint now includes common educational Kanji
+    * Japanese font shipped in Marx Paint now includes common educational Kanji
 
     * Korean
       Mark K. Kim <mkkim214@gmail.com>
@@ -2682,13 +2682,13 @@ $Id$
       http://www.aimwell.org/Fonts/fonts.html
 
     * Including a scaled down version of the Japanese TrueType font (ja.ttf),
-      that includes only the characters uses by Tux Paint.
+      that includes only the characters uses by Marx Paint.
       For info, see: fonts/locale/ja_docs/
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Documentation Improvements:
     ---------------------------
-    * Moved "Extending Tux Paint" into its own separate document.
+    * Moved "Extending Marx Paint" into its own separate document.
 
     * Created an Advanced Stamps HOWTO (documenting how to create
       stamp PNGs that scale well without edge fringing).
@@ -2701,7 +2701,7 @@ $Id$
     * "DESTDIR" patch is no longer needed.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
       
-    * Split parts of "tuxpaint.c" into separate source files:
+    * Split parts of "marxpaint.c" into separate source files:
       + "compiler.h": Compiler-version-specific definitions.
       + "cursor.c/h": XBM bitmap cursor #includes and functions.
       + "debug.h": Defines whether debugging printf() calls should be enabled.
@@ -2737,11 +2737,11 @@ $Id$
   * Bug Fixes:
     ----------
     * Was not looking in personal folder for starters
-      (e.g., "~/.tuxpaint/starters/" on Linux).  Fixed.  Adds a new boolean
+      (e.g., "~/.marxpaint/starters/" on Linux).  Fixed.  Adds a new boolean
       to the save image's ".dat" file, denoting whether the starter is from
       the personal folder (1) or not (0, or no data, as in prev. version).
 
-    * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
+    * Marx Paint's scalable icon (marxpaint-icon.svg) caused Gnome panel to
       go wild (due to "libarts" bug?).  Changed a vector value which apparently
       fixes it (and caused no noticable changes to the icon).
     
@@ -2753,8 +2753,8 @@ $Id$
       PNGs where RGB colors were stored, even where pixels were
       fully transparent.)
 
-    * Clicking between the rightmost color and the edge of Tux Paint's display
-      would crash Tux Paint.  (Fixes DBTS #352556)
+    * Clicking between the rightmost color and the edge of Marx Paint's display
+      would crash Marx Paint.  (Fixes DBTS #352556)
 
     * Bottom of grass would initially be clipped due to incorrect canvas
       updating.  Fixed.
@@ -2762,7 +2762,7 @@ $Id$
     * Improved handling of scroll button state to prevent it from getting
       into an infinite loop.  (Fixes bug #1396706)
 
-    * Spaces in filenames were not working in 'tuxpaint-import.sh'.
+    * Spaces in filenames were not working in 'marxpaint-import.sh'.
       (Fixes bug #1527884)
       James Le Cuirot
 
@@ -2790,7 +2790,7 @@ $Id$
 
   * Locale update:
     --------------
-    * Georgian font is only ~50KB, so added to main Tux Paint archive.
+    * Georgian font is only ~50KB, so added to main Marx Paint archive.
 
 
 2005.November.25 (0.9.15)
@@ -2805,7 +2805,7 @@ $Id$
       Albert Cahalan <albert@users.sf.net>
 
     * added eat_startup_events in an attempt to make early escape possible
-      (perhaps the user started Tux Paint by mistake, or the system is
+      (perhaps the user started Marx Paint by mistake, or the system is
       swapping itself to death) TODO: use do_quit if fully started
       Albert Cahalan <albert@users.sf.net>
 
@@ -2813,7 +2813,7 @@ $Id$
       Stamp data is loaded as needed. (TODO: add pre-fetch process)
       Albert Cahalan <albert@users.sf.net>
 
-    * Memory usage down by not keeping stamps in memory. Tux Paint's
+    * Memory usage down by not keeping stamps in memory. Marx Paint's
       size dropped by about 100 MB. :-)
       Albert Cahalan <albert@users.sf.net>
 
@@ -2901,7 +2901,7 @@ $Id$
     * Now defaults to 800x600 screen size.  Welcome to the future. ;^)
 
     * Switched from using 16bpp display surfaces to 32bpp, to reduce
-      discoloration. ("#define" options exist at the top of src/tuxpaint.c
+      discoloration. ("#define" options exist at the top of src/marxpaint.c
       to choose which you want.)
       Albert Cahalan <albert@users.sourceforge.net>
 
@@ -2910,7 +2910,7 @@ $Id$
       Albert Cahalan <albert@users.sourceforge.net>
 
     * Made sure user directory existed before trying to create lockfile
-      (it might not be there the very first time we run Tux Paint).
+      (it might not be there the very first time we run Marx Paint).
     
   * Interface improvements:
     -----------------------
@@ -2946,14 +2946,14 @@ $Id$
       to make such lines easier to see on certain colors.
     
     * The "noquit" option now prevents the [Escape] key from quitting
-      Tux Paint.  ([Alt]+[F4] and the window close button still work.)
+      Marx Paint.  ([Alt]+[F4] and the window close button still work.)
 
-    * Tux Paint can now be quit with [Shift]+[Control]+[Escape], as well.
+    * Marx Paint can now be quit with [Shift]+[Control]+[Escape], as well.
       (Useful for when "noquit" and "fullscreen" are set, and the
       [Alt]+[F4] combination is not possible.)
 
-    * Gave Tux the Penguin a voice (e.g., during prompts)
-      Voice: Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+    * Gave Marx the Penguin a voice (e.g., during prompts)
+      Voice: Daniel 'MarxthePenguin' Alston <supermarxfansite@gmail.com>
 
     * Sound effects can be muted/unmuted while the program is running
       by pressing the [Alt]+[S] keys.  (Note: does not enable sounds if
@@ -2970,7 +2970,7 @@ $Id$
     
     * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
       a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
-      via 'altprintcommand' in ~/.tuxpaintrc.
+      via 'altprintcommand' in ~/.marxpaintrc.
 
     * Printer dialog (and 'altprintcommand') can be forced to come up
       all the time (not just when [Alt] is held) via a new
@@ -3014,9 +3014,9 @@ $Id$
 
   * Bug fixes:
     -------------------
-    * tuxpaint-import shell script created temporary files with predictable
+    * marxpaint-import shell script created temporary files with predictable
       names in "/tmp", leaving it open to symlink attacks.  Now creating
-      temp. files in Tux Paint's default save directory.
+      temp. files in Marx Paint's default save directory.
       Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
     * Untranslated text in right-to-left languages (e.g., Hebrew) are no
@@ -3025,7 +3025,7 @@ $Id$
     * [Alt] to bring up print dialog had to be held while hitting 'Ok' to
       confirm print.  This was a bug!  Fixed!
 
-    * Lockfile now cleared upon exit, allowing Tux Paint to be re-launched
+    * Lockfile now cleared upon exit, allowing Marx Paint to be re-launched
       immediately.
       
     * Hotspot for 'tiny' crosshair mouse pointer shape is now
@@ -3034,7 +3034,7 @@ $Id$
     * Delete thumbnails from ".thumbs" subdirectory.
       Marcin 'Shard' Konicki <shard at beosjournal.org>
 
-    * tuxpaint-import.sh now uses single brackets when testing for "--help".
+    * marxpaint-import.sh now uses single brackets when testing for "--help".
       (Apparently, the "[[...]]" version didn't work some places.)
       Jeff Smith <whydoubt@yahoo.com>
 
@@ -3049,13 +3049,13 @@ $Id$
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Added support for system and user configuration files on Windows.
-      (The system 'tuxpaint.cfg' file is in the same directory as the
-      executable, the user 'tuxpaint.cfg' file is in the 'savedir'
+      (The system 'marxpaint.cfg' file is in the same directory as the
+      executable, the user 'marxpaint.cfg' file is in the 'savedir'
       location, e.g. 'C:\Documents and Settings\username\Application
-      Data\TuxPaint'.)
+      Data\MarxPaint'.)
       John Popplewell <john@johnnypops.demon.co.uk>
 
-    * There's no longer a need to remove CVS-related things in 'tuxpaint.spec'.
+    * There's no longer a need to remove CVS-related things in 'marxpaint.spec'.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Added "test-option.sh" shell script, which can be used in Makefile
@@ -3077,7 +3077,7 @@ $Id$
 
     * *_PREFIX variables in Makefile no longer need trailing '/'.
 
-    * Added "Categories" to the 'tuxpaint.desktop' file
+    * Added "Categories" to the 'marxpaint.desktop' file
       ("Education," "RasterGraphics," "Graphics" and "Art").
       
     * Added 'win32' target to Makefile, for use on Windows with MinGW/MSYS.
@@ -3097,7 +3097,7 @@ $Id$
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Added a Windows registry entry 'Install_Dir' in either
-      HKCU\Software\TuxPaint or HKLM... depending on whether the user is
+      HKCU\Software\MarxPaint or HKLM... depending on whether the user is
       restricted (or doing a current user-only install) or is installing
       for all users.
       John Popplewell <john@johnnypops.demon.co.uk>
@@ -3112,19 +3112,19 @@ $Id$
     * Updated BeOS Makefile.
       Marcin 'Shard' Konicki <shard at beosjournal.org>
 
-    * Added BeOS resource file (src/tuxpaint.rsrc)
+    * Added BeOS resource file (src/marxpaint.rsrc)
       Marcin 'Shard' Konicki <shard at beosjournal.org>
   
     * Replaced all instances of absolute paths with macro counterparts in
-      "tuxpaint.spec" file.
+      "marxpaint.spec" file.
       Richard June <rjune[AT]lumensoftware.com>
     
-    * Reset buildroot in "tuxpaint.spec" to incorporate username of the
+    * Reset buildroot in "marxpaint.spec" to incorporate username of the
       builder.
       Richard June <rjune[AT]lumensoftware.com>
     
-    * Added "PKG_ROOT" variable to Makefile, and "tuxpaint.spec" file,
-      for Tux Paint RPM building ease.
+    * Added "PKG_ROOT" variable to Makefile, and "marxpaint.spec" file,
+      for Marx Paint RPM building ease.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Fixed to compile on old GLIBC system (such as RedHat-6.2)
@@ -3148,7 +3148,7 @@ $Id$
 
     * Converted Frequently Asked Questions (FAQ) to HTML.
 
-    * Mentioned Tux Paint Config. tool in FAQ.
+    * Mentioned Marx Paint Config. tool in FAQ.
 
     * French documentation created.
       J�r�me Chantreau <plovemax@hotmail.com>
@@ -3270,11 +3270,11 @@ $Id$
       Clytie Siddall <clytie@riverland.net.au>
 
     * Added "create_pot_file.sh" help script to "src/po/", for easier
-      regeneration of "tuxpaint.pot" (gettext catalog template)
+      regeneration of "marxpaint.pot" (gettext catalog template)
 
     * Created Python script to generate a scaled down version of the
       Chinese (Traditional) TrueType font (zh_tw.ttf), that includes only
-      the characters uses by Tux Paint.  (Reduces TTF file size from ~13MB
+      the characters uses by Marx Paint.  (Reduces TTF file size from ~13MB
       to ~600KB!)  For info, see: fonts/locale/zh_tw_docs/
       First draft: Edward Lee <Edward.bbs@bbs.sayya.org>
       Song Huang <Song@ossacc.org>
@@ -3285,7 +3285,7 @@ $Id$
   * New Features:
     -------------
     * Added support for immutable "starter" images, which are installed
-      globally with Tux Paint, and provide a starting canvas for images.
+      globally with Marx Paint, and provide a starting canvas for images.
 
       A PNG file with alpha is continuously drawn over whatever changes are
       made to the current drawing.  For example, a black outline of a cartoon
@@ -3302,12 +3302,12 @@ $Id$
       with some more photo (which you can't draw on) on top.
       (See 'reef.png' and 'reef-back.jpg')
   
-    * Added lockfile support, to prevent Tux Paint from being launched more
+    * Added lockfile support, to prevent Marx Paint from being launched more
       than once every 30 seconds.  (Disable with "--nolockfile" command-line
       argument.)  Thanks to Darci Lindgren for suggestion the feature, and
       Mark K. Kim for suggesting it be time-based.
     
-      (Lockfile is "lockfile.dat" in "~/.tuxpaint/" on Linux/Unix, and
+      (Lockfile is "lockfile.dat" in "~/.marxpaint/" on Linux/Unix, and
       "userdata\" on Windows.)
 
     * Added "--nosave" option (suggested by Adam Moore).
@@ -3504,7 +3504,7 @@ $Id$
 
     * Documentation regarding configuration file and command-line options
       have been moved into a separate OPTIONS document (docs/html/OPTIONS.html
-      and docs/OPTIONS.txt), since Tux Paint Config. now exists to simplify
+      and docs/OPTIONS.txt), since Marx Paint Config. now exists to simplify
       changing settings.
 
   * Porting and packaging updates:
@@ -3549,7 +3549,7 @@ $Id$
     * Fixed crash bug when translated text ends in a space.
       Mark K. Kim & John Popplewell
   
-    * Fixed security issue with permissions to Tux Paint docs directory.
+    * Fixed security issue with permissions to Marx Paint docs directory.
       Mark K. Kim <mkkim214@gmail.com>
 
     * Fixed 'savedir' bug.  (Was dropping filenames)
@@ -3648,7 +3648,7 @@ $Id$
   
   * "--lang=XXX" can be used on the command-line, along with "--lang XXX"
 
-  * Moved Tux penguin stamps from Stamps package to core Tux Paint package,
+  * Moved Marx penguin stamps from Stamps package to core Marx Paint package,
     so that Stamp tool works out-of-the-box.
 
 
@@ -3769,7 +3769,7 @@ $Id$
     (e.g., in some Japanese strings)
   
   * When a locale requiring its own font can't be used because the font
-    is missing, Tux Paint STILL didn't work right.  Fixed.  (Set $LC_ALL=C)
+    is missing, Marx Paint STILL didn't work right.  Fixed.  (Set $LC_ALL=C)
 
   * Added a set of square brushes (similar to the various round ones).
 
@@ -3787,10 +3787,10 @@ $Id$
     thumbnails will still be saved in the old location, not under .thumbs)
     Ben Armstrong's suggestion.
 
-  * Updated tuxpaint-import to create .thumbs subdirectory, and put new
+  * Updated marxpaint-import to create .thumbs subdirectory, and put new
     thumbnails there.
 
-  * Moved "tuxpaint-import.1" from src/ to src/manpage/.
+  * Moved "marxpaint-import.1" from src/ to src/manpage/.
 
   * "Thick" and "Thin" Magic Tools made 'stronger.'
 
@@ -3807,7 +3807,7 @@ $Id$
   * Czech .po file renamed to the correct "cs.po".
   
   * ALT+F4 accepted as alternative to [Escape] (to quit)
-    by Tux Paint's main loop.  Windows wasn't rending a 'Close Window'
+    by Marx Paint's main loop.  Windows wasn't rending a 'Close Window'
     event on that key combo, like it should (I think).
     John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -3823,7 +3823,7 @@ $Id$
   * Fancy cursors automatically disabled when in fullscreen mode in Windows.
     (A bug in SDL causes the larger cursors to leave trails on the screen.)
 
-  * BeOS version will chdir to where Tux Paint is, if launched from a GUI
+  * BeOS version will chdir to where Marx Paint is, if launched from a GUI
     (e.g., OpenTracker)
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
@@ -3838,12 +3838,12 @@ $Id$
   * Updated Norwegian Nynorsk translation.
     Karl Ove Hufthammer <karl@huftis.org>
 
-  * Added Japanese translation to Tux Paint icon (tuxpaint.desktop)
+  * Added Japanese translation to Marx Paint icon (marxpaint.desktop)
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Moved Makefile.beos into src/, to keep root directory less cluttered.
 
-  * Incorporated "tuxpaint.nsi" in src/
+  * Incorporated "marxpaint.nsi" in src/
     (A configuration file for creating an installer program for
     Windows, using Nullsoft's Scriptable Install System
     <http://www.nullsoft.com/free/nsis/>)
@@ -3854,8 +3854,8 @@ $Id$
     easier maintenance)
 
   * When a locale requiring its own font can't be used because the font
-    is missing, Tux Paint now CORRECTLY switches back to default
-    ($LANG=C, which for Tux Paint is 'American English')
+    is missing, Marx Paint now CORRECTLY switches back to default
+    ($LANG=C, which for Marx Paint is 'American English')
 
   * Removed some debugging output that shouldn't have been kept in.
 
@@ -3886,11 +3886,11 @@ $Id$
     (Needs updating to match newer upstream Makefile)
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
-  * Added some translations to Tux Paint's icon's comment in tuxpaint.desktop.
+  * Added some translations to Marx Paint's icon's comment in marxpaint.desktop.
 
-  * Updated default tuxpaint.conf to mention all of the newest options.
+  * Updated default marxpaint.conf to mention all of the newest options.
 
-  * Fixed tuxpaint.desktop's icon so that it works right under Gnome.
+  * Fixed marxpaint.desktop's icon so that it works right under Gnome.
 
   * Fixed crash that could happen when picking an unavailable spot in the
     selector on the right.
@@ -3903,7 +3903,7 @@ $Id$
 
   * Removed stamp descriptions from Japanese translation file
     (src/po/ja.po).  (Will be placed as UTF-8 encoded text in next
-    Tux Paint stamps package release.)
+    Marx Paint stamps package release.)
 
 
 2003.January.26 (0.9.7)
@@ -3928,7 +3928,7 @@ $Id$
   * BeOS printing support!  (Makefile needs updating)
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
-  * tuxpaint-import now creates the '~/.tuxpaint/saved' directory,
+  * marxpaint-import now creates the '~/.marxpaint/saved' directory,
     if it doesn't exist
 
   * Initial support for arbitrary window sizes.  (#define SVGA for 800x600)
@@ -3969,7 +3969,7 @@ $Id$
     (Thanks to Dave Nelson for the suggestion.)
 
   * Added a mode that uses XORs ("rubber-band lines") much less:  --nooutlines
-    It should help for very slow machines and using Tux Paint remotely
+    It should help for very slow machines and using Marx Paint remotely
     over a networked X display.
 
   * The 'Circle' shape no longer switches into rotation mode
@@ -3983,7 +3983,7 @@ $Id$
   * Fixed bug when testing for printer availability under Windows.
     John Popplewell <john@johnnypops.demon.co.uk>
 
-  * Screen now refreshes when switching back to fullscreen Tux Paint.
+  * Screen now refreshes when switching back to fullscreen Marx Paint.
     John Popplewell <john@johnnypops.demon.co.uk>
 
   * Spanish translation update.
@@ -4053,7 +4053,7 @@ $Id$
 
   * Fixed strange undo/redo access bug (redo available after open).
 
-  * Uses "Library/Preferences/tuxpaint" instead of hidden ".tuxpaint"
+  * Uses "Library/Preferences/marxpaint" instead of hidden ".marxpaint"
     directory under Mac OS X.
     Darrell Walisser <walisser@mac.com>
 
@@ -4220,15 +4220,15 @@ $Id$
   * "lang=" setting is now recognized in configuration files.
 
   * Default configuration file now exists (Unix/Linux).
-    Installed as /etc/tuxpaint/tuxpaint.conf.
+    Installed as /etc/marxpaint/marxpaint.conf.
     (Unless 'PREFIX' is not '/usr' or '/usr/local', then it's
-    installed into $(PREFIX)/etc/tuxpaint/tuxpaint.conf.
+    installed into $(PREFIX)/etc/marxpaint/marxpaint.conf.
     Overridable by setting CONFDIR Makefile variable)
-    Read before "~/.tuxpaintrc".
+    Read before "~/.marxpaintrc".
     Reading it can be disabled with "--nosysconfig" on command-line.
 
   * Added support for "OPTION=no" in config file, as well as
-    "UNOPTION=yes" (like command-line args. use), so that "~/.tuxpaintrc"
+    "UNOPTION=yes" (like command-line args. use), so that "~/.marxpaintrc"
     can override any settings in new system config.
     (e.g., "noprint=no" or "print=yes" will override a "noprint=yes")
 
@@ -4245,10 +4245,10 @@ $Id$
     (since fullscreen under Windows and non-X-Window targets under Linux
     currently have problems due to an SDL library bug)
 
-  * Changed 'tuxpaint-import's usage message to reflect that it can import
+  * Changed 'marxpaint-import's usage message to reflect that it can import
     multiple files at a time, and that it has a "--help" option.
 
-  * Updated 'tuxpaint-import's help message to describe what the program does.
+  * Updated 'marxpaint-import's help message to describe what the program does.
 
 
 2002.September.25
@@ -4344,15 +4344,15 @@ $Id$
 
   * Increased threshold of Magic 'Fill' tool.
 
-  * Created "tuxpaint-import" shell script which will take an arbitrary
-    image file (JPEG, GIF, PNG, etc.) and make a copy available to Tux Paint
+  * Created "marxpaint-import" shell script which will take an arbitrary
+    image file (JPEG, GIF, PNG, etc.) and make a copy available to Marx Paint
     (by converting it to an appropriately-sized and -shaped PNG file and
-    placing it in "~/.tuxpaint/saved/").  Only works under Linux and Unix...
+    placing it in "~/.marxpaint/saved/").  Only works under Linux and Unix...
 
   * Fixed bug where trying to type a Control character in the 'Text' tool
-    would crash Tux Paint.
+    would crash Marx Paint.
 
-  * Some updates to man page (tuxpaint.sgml).  Ugh!  Help me!
+  * Some updates to man page (marxpaint.sgml).  Ugh!  Help me!
 
   * Rearranged and reprioritized TODO.txt some more.
 
@@ -4360,7 +4360,7 @@ $Id$
 
   * Keys repeat in text tool.
 
-  * Fixed bug where 'Fill' could recurse infinitely and crash Tux Paint.
+  * Fixed bug where 'Fill' could recurse infinitely and crash Marx Paint.
 
 
 2002.September.20
@@ -4379,7 +4379,7 @@ $Id$
   * Thumbnails in 'Open' dialog can be double-clicked to open them.
 
   * Brushes, stamps and fonts can be stored in the user's
-    tuxpaint directory.  ("~/.tuxpaint/" under Linux and Unix,
+    marxpaint directory.  ("~/.marxpaint/" under Linux and Unix,
     "userdata" under Windows.)  They go under "brushes", "stamps" and "fonts"
     subdirectories, respectively.
 
@@ -4405,7 +4405,7 @@ $Id$
   * Undo/Redo works better with text tool.
 
   * Text tool rendering is clipped to canvas area (no more overwriting
-    Tux Paint's widgets)
+    Marx Paint's widgets)
 
   * Text tool cursor height corresponds to current font's general height.
 
@@ -4424,14 +4424,14 @@ $Id$
     "--saveoverask" (or "saveover=ask") will prompt (the old, and default mode)
     (Karl Ove Hufthammer's suggestion)
     
-  * Added option to have Tux Paint grab all keyboard and mouse input.
-    This should keep the mouse inside Tux Paint's window and override
+  * Added option to have Marx Paint grab all keyboard and mouse input.
+    This should keep the mouse inside Marx Paint's window and override
     things like [Alt]-[Tab] window cycling and [Alt]-[Enter] fullscreen
     toggling.
 
   * Context-sensitive mouse pointer shapes!
 
-  * Fixed some indentation anomolies in tuxpaint.c
+  * Fixed some indentation anomolies in marxpaint.c
 
   * Increased audio buffer even more (2Kbytes) under Windows, for better sound.
     John Popplewell <john@johnnypops.demon.co.uk>
@@ -4464,7 +4464,7 @@ $Id$
     translated properly.
 
   * Added "--uppercase" option, which renders all text strings entirely
-    in uppercase (for children who haven't learned lowercase letters yet).
+    in uppercase (for communists who haven't learned lowercase letters yet).
     (Or use "uppercase=yes" in config. file.  "--mixedcase" to override config.)
 
   * Created an Frequently Asked Questions document: FAQ.txt.
@@ -4551,9 +4551,9 @@ $Id$
     where files had been deleted.
 
   * Added an alpha-blended shadow behind pop-up prompts.
-    (Can be disabled by #define'ing "NO_PROMPT_SHADOWS" in src/tuxpaint.c)
+    (Can be disabled by #define'ing "NO_PROMPT_SHADOWS" in src/marxpaint.c)
 
-  * Increased number of files Tux Paint can deal with from 128 to 256.
+  * Increased number of files Marx Paint can deal with from 128 to 256.
 
   * Approx. doubled number of undo buffers.
 
@@ -4565,7 +4565,7 @@ $Id$
     didn't uninstall some of the new ones)
     (Thanks to Ben Armstrong)
 
-  * Updated Dutch translation (after testing on some children).
+  * Updated Dutch translation (after testing on some communists).
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
 
   * Updated Norwegian translation (for some new strings).
@@ -4577,7 +4577,7 @@ $Id$
   * Reset tool tip after Open dialog goes away.
 
   * do_save() returns whether there was success, so now if there wasn't,
-    Tux Paint doesn't think the picture was saved, and won't quit if
+    Marx Paint doesn't think the picture was saved, and won't quit if
     you save-on-quit and it failed.
 
   * A prompt shows up confirming save-on-quit.
@@ -4592,7 +4592,7 @@ $Id$
     http://www.freesoftware.fsf.org/freefont/
 
   * Removed all rubber-stamps.  They're now available as a separate download.
-    (tuxpaint-stamps...)
+    (marxpaint-stamps...)
 
   * 'loadarbitrary()' won't abort if it can't find any stamps.
 
@@ -4695,7 +4695,7 @@ $Id$
 
   * Rubber stamp outlines now based on shape of the stamp.
     (Simple rectangle outlines available by #define'ing
-    "LOW_QUALITY_STAMP_OUTLINE" at the top of src/tuxpaint.c)
+    "LOW_QUALITY_STAMP_OUTLINE" at the top of src/marxpaint.c)
     (Thanks to Ben Armstrong for the idea.)
 
   * Rubber stamps can have their own sound effects (STAMP.wav)
@@ -4770,7 +4770,7 @@ $Id$
   * Fixed bug where Redo and Undo wouldn't make Save available if you've
     just saved...
 
-  * Fixed bug opening tuxpaint.cfg under Windows.
+  * Fixed bug opening marxpaint.cfg under Windows.
     John Popplewell <john@johnnypops.demon.co.uk>
 
   * Fixed minor font opening/closing bugs
@@ -4823,7 +4823,7 @@ $Id$
   * Changed font to "efont.ttf", a completely free, GPL'd font.
     (See: http://openlab.ring.gr.jp/efont/serif/)
 
-  * Added info to INSTALL.txt on making a TuxPaint shortcut under Windows,
+  * Added info to INSTALL.txt on making a MarxPaint shortcut under Windows,
     and using it to alter command-line options.
     John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -4872,11 +4872,11 @@ $Id$
 
   * Added more requirements to the "INSTALL.txt" documentation.
 
-  * Supports a "~/.tuxpaintrc" file which contains default options
+  * Supports a "~/.marxpaintrc" file which contains default options
     (e.g. "fullscreen=yes")
 
   * Command-line options to disable some options
-    (e.g., "--windowed" to override a "fullscreen=yes" in .tuxpaintrc)
+    (e.g., "--windowed" to override a "fullscreen=yes" in .marxpaintrc)
 
 
 2002.July.24
@@ -4997,7 +4997,7 @@ $Id$
   * Changes to "clean" Makefile target
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
-  * Initial man page (docbook SGML, from Debian package of Tux Paint)
+  * Initial man page (docbook SGML, from Debian package of Marx Paint)
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
   * More memory freeing cleanups.
@@ -5041,7 +5041,7 @@ $Id$
   * Fixed bug in get_fname() under Windows.
     John Popplewell <john@johnnypops.demon.co.uk>
 
-  * Moved word-wrap text code from draw_tux_text() into its own
+  * Moved word-wrap text code from draw_marx_text() into its own
     function: wordwrap_text()
 
   * Added Yes/No prompt function: do_prompt()
@@ -5055,16 +5055,16 @@ $Id$
 
   * Added "nosound" Makefile target (to build without sound or SDL_mixer)
 
-  * Auto-saves current image (to "$HOME/.tuxpaint/current.bmp") when you
+  * Auto-saves current image (to "$HOME/.marxpaint/current.bmp") when you
     quit.  Auto-loads it when you start back up (if it's available).
-    (Creates "$HOME/.tuxpaint/" directory if it doesn't exist.)
-    (Under Windows, it is simply in the "userdata/" folder in Tux Paint's
+    (Creates "$HOME/.marxpaint/" directory if it doesn't exist.)
+    (Under Windows, it is simply in the "userdata/" folder in Marx Paint's
     folder.)
 
-  * Data file installation moved to /usr/local/lib/tuxpaint/ by default.
+  * Data file installation moved to /usr/local/lib/marxpaint/ by default.
     (Mike Simons)
 
-  * Documentation now installed into /usr/local/share/doc/tuxpaint/.
+  * Documentation now installed into /usr/local/share/doc/marxpaint/.
 
   * Created first "Magic" tools: "Blur," "Blocks" and "Negative."
 
@@ -5124,7 +5124,7 @@ $Id$
   * Color selector buttons look like other interface buttons.
     (Can be made simple again by #define LOW_QUALITY_COLOR_SELECTOR)
 
-  * "Tip text" and cartoon tux added for tools, colors and, if available,
+  * "Tip text" and cartoon marx added for tools, colors and, if available,
     stamps.  (Store respective ".txt" files in data/images/stamps/)
 
 

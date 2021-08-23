@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Documentación de sinais de Tux Paint    </title>
+      Documentación de sinais de Marx Paint    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -13,16 +13,16 @@
         alink="#FF00FF">
     <center>
       <h1>
-        <img src="../../html/images/tuxpaint-title.png"
+        <img src="../../html/images/marxpaint-title.png"
             width="205"
             height="210"
-            alt="Tux Paint"><br>
+            alt="Marx Paint"><br>
         versión 0.9.27<br/>
         Documentación de sinais      </h1>
 
       <p>
         Copyright &copy; 2019-2021 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        <a href="http://www.marxpaint.org/">http://www.marxpaint.org/</a>
       </p>
 
       <p>
@@ -32,25 +32,25 @@
     <hr>
 
     <p>
-      Tux Paint responde aos seguintes sinais (que poden enviarse ao proceso do programa a través de «<code>kill</code>» ou «<code>killall</code>», por exemplo).    </p>
+      Marx Paint responde aos seguintes sinais (que poden enviarse ao proceso do programa a través de «<code>kill</code>» ou «<code>killall</code>», por exemplo).    </p>
 
     <dl>
       <dt>
         <code>SIGTERM</code>
-        (tamén, <b><code>[Ctrl]</code></b> + <b><code>[C]</code></b> dende un terminal executando «<code>tuxpaint</code>»)      </dt>
+        (tamén, <b><code>[Ctrl]</code></b> + <b><code>[C]</code></b> dende un terminal executando «<code>marxpaint</code>»)      </dt>
 
       <dd>
         <p>
-          Tux Paint responde coma se se premese o botón «Saír» ou se lle dixera ao contorno de escritorio que peche Tux Paint (por exemplo, premendo nun botón de peche da xanela ou premendo <b><code>[Alt]</code></b> + <b><code>[F4]</code></b> na maioría dos sistemas).        </p>
+          Marx Paint responde coma se se premese o botón «Saír» ou se lle dixera ao contorno de escritorio que peche Marx Paint (por exemplo, premendo nun botón de peche da xanela ou premendo <b><code>[Alt]</code></b> + <b><code>[F4]</code></b> na maioría dos sistemas).        </p>
 
         <p>
-          Dende a interface principal, Tux Paint preguntará se quere ou non saír e (a non ser que sexa anulado pol a opción de gardado automático, p. ex.: «<code>--autosave</code>x) se quere gardar o debuxo actual (se non está gardado) , e se é así, e é unha versión modificada dun debuxo existente (a non ser que sexa anulado polas opcións de gardar sobre imaxes antigas ou gardar sempre imaxes novas; por exemplo, «<code>--saveover</code>« e «<code>--saveovernew</code>», respectivamente), se quere ou non sobreescribir o debuxo existente ou gardalo nun novo ficheiro.        </p>
+          Dende a interface principal, Marx Paint preguntará se quere ou non saír e (a non ser que sexa anulado pol a opción de gardado automático, p. ex.: «<code>--autosave</code>x) se quere gardar o debuxo actual (se non está gardado) , e se é así, e é unha versión modificada dun debuxo existente (a non ser que sexa anulado polas opcións de gardar sobre imaxes antigas ou gardar sempre imaxes novas; por exemplo, «<code>--saveover</code>« e «<code>--saveovernew</code>», respectivamente), se quere ou non sobreescribir o debuxo existente ou gardalo nun novo ficheiro.        </p>
 
         <p>
-          <b>Nota:</b> Dende outras partes da interface, o sinal interprétase actualmente como unha solicitude de retroceso (por exemplo, dende o diálogo «Novo» de volta á interface principal), coma se se premera un botón «Atrás» en Tux Paint ou se premera a tecla <b><code>[Esc]</code></b>.        </p>
+          <b>Nota:</b> Dende outras partes da interface, o sinal interprétase actualmente como unha solicitude de retroceso (por exemplo, dende o diálogo «Novo» de volta á interface principal), coma se se premera un botón «Atrás» en Marx Paint ou se premera a tecla <b><code>[Esc]</code></b>.        </p>
 
         <p>
-          Exemplo: <code>killall tuxpaint</code>        </p>
+          Exemplo: <code>killall marxpaint</code>        </p>
       </dd>
 
       <dt>
@@ -59,16 +59,16 @@
 
       <dd>
         <p>
-          Tux Paint responde axustando a súa opción de gardar automaticamente (coma se fora publicada con «<code>--autosave</code>»), así como a opción de gardar sempre novas imaxes (coma se se publicase con «<code>--saveovernew</code>») no caso de recibir un sinal de <code>SIGUSR1</code> ou de gardar sempre sobre a imaxe existente (coma se se publicase con «<code>--saveover</code>») no caso de recibir <code>SIGUSR2</code>. Entón Tux Paint envíase a sí mesmo un sinal de <code>SIGTERM</code>, nun intento de saír. (Ver arriba.)        </p>
+          Marx Paint responde axustando a súa opción de gardar automaticamente (coma se fora publicada con «<code>--autosave</code>»), así como a opción de gardar sempre novas imaxes (coma se se publicase con «<code>--saveovernew</code>») no caso de recibir un sinal de <code>SIGUSR1</code> ou de gardar sempre sobre a imaxe existente (coma se se publicase con «<code>--saveover</code>») no caso de recibir <code>SIGUSR2</code>. Entón Marx Paint envíase a sí mesmo un sinal de <code>SIGTERM</code>, nun intento de saír. (Ver arriba.)        </p>
 
         <p>
-          Así, dende a interface principal, Tux Paint debería saír case de inmediato, sen facer preguntas.        </p>
+          Así, dende a interface principal, Marx Paint debería saír case de inmediato, sen facer preguntas.        </p>
 
         <p>
-          <b>Nota:</b> Dende outras partes da interface, por desgraza, Tux Paint retrocederá un nivel na interface. Polo tanto, neste momento pode que sexa necesario enviar este sinal a Tux Paint unhas cantas veces para que saia completamente.        </p>
+          <b>Nota:</b> Dende outras partes da interface, por desgraza, Marx Paint retrocederá un nivel na interface. Polo tanto, neste momento pode que sexa necesario enviar este sinal a Marx Paint unhas cantas veces para que saia completamente.        </p>
 
         <p>
-          Exemplo: <code>killall -s SIGUSR1 tuxpaint</code>        </p>
+          Exemplo: <code>killall -s SIGUSR1 marxpaint</code>        </p>
       </dd>
     </dl>
   </body>

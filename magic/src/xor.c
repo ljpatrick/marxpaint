@@ -4,11 +4,11 @@
   Draws pixels which color depends on previous hue value
   (in HSV model) and coordinates
    
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
   
   Copyright (c) 2013 by Lukasz Dmitrowski
   

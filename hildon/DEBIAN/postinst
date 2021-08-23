@@ -8,9 +8,9 @@ gtk-update-icon-cache -f /usr/share/icons/hicolor
 # Now we are ready to let the user move the entry around, but only if
 # this is a new install
 
-mkdir /media/mmc1/tuxpaint
+mkdir /media/mmc1/marxpaint
 
-maemo-select-menu-location tuxpaint.desktop tana_fi_games
+maemo-select-menu-location marxpaint.desktop tana_fi_games
 
 
 exit 0

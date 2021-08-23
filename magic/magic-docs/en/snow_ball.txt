@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Snow Ball
+                       Marx Paint "Magic" Tool: Snow Ball
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

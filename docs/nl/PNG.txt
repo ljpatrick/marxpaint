@@ -1,10 +1,10 @@
-PNG.txt voor Tux Paint
+PNG.txt voor Marx Paint
 
-Tux Paint - Een tekenprogramma voor kinderen.
+Marx Paint - Een tekenprogramma voor kinderen.
 
 Copyright 2002 by Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 27 Juni 2002 - 7 november 2002
 
@@ -23,8 +23,8 @@ Over PNG's
   Voor meer informatie kijkt u op:  http://www.libpng.org/
 
   De bovengenoemde functies (open standaard,  kwaliteitsbehoud, compressie en
-  transparantie / alpha) maken dit formaat tot de beste keus voor Tux Paint.
-  (Tux Paint ondersteunt het PNG formaat door het Open Source SDL_Image library,
+  transparantie / alpha) maken dit formaat tot de beste keus voor Marx Paint.
+  (Marx Paint ondersteunt het PNG formaat door het Open Source SDL_Image library,
   welk op zijn beurt weer ondersteund wordt door de libPNG library.)
 
   Ondersteuning voor de vele kleuren maakt fotokwaliteit "stempels" mogelijk.
@@ -42,7 +42,7 @@ Introductie tot het maken van PNG's files.
     De GIMP
     -------
       Het beste gereedschap om PNG afbeeldingen te maken voor gebruik in
-      Tux Paint is het GNU Image Manipulation Program ("De GIMP").
+      Marx Paint is het GNU Image Manipulation Program ("De GIMP").
       Het Open Source alternatief voor afbeelding en fotobewerking.
       (Ook beschikbaar voor Windows)
 

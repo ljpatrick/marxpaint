@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Wet Paint
+                       Marx Paint "Magic" Tool: Wet Paint
 
                     By Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>

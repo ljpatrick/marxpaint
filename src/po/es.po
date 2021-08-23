@@ -1,6 +1,6 @@
-# tuxpaint translation to spanish
+# marxpaint translation to spanish
 # Copyright (C) 2004-2017 Software in the Public Interest
-# This file is distributed under the same license as the tuxpaint package.
+# This file is distributed under the same license as the marxpaint package.
 #
 # Changes:
 # - Initial translation
@@ -27,7 +27,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint\n"
+"Project-Id-Version: marxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 21:06-0700\n"
 "PO-Revision-Date: 2017-12-18 20:31-0300\n"
@@ -123,7 +123,7 @@ msgstr "¡Canela!"
 msgid "Beige!"
 msgstr "¡Beige!"
 
-#. First, the blacklist. We list font families that can crash Tux Paint
+#. First, the blacklist. We list font families that can crash Marx Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
@@ -497,7 +497,7 @@ msgstr "Nuevo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../marxpaint.c:8179
 msgid "Open"
 msgstr "Abrir"
 
@@ -511,7 +511,7 @@ msgstr "Guardar"
 msgid "Print"
 msgstr "Imprimir"
 
-#. Quit/exit Tux Paint application
+#. Quit/exit Marx Paint application
 #: ../tools.h:107
 msgid "Quit"
 msgstr "Salir"
@@ -637,240 +637,240 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Muy bien… ¡vamos a seguir dibujando!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../marxpaint.c:2190
 msgid "Do you really want to quit?"
 msgstr "¿De verdad quieres salir?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../marxpaint.c:2193
 msgid "Yes, I’m done!"
 msgstr "¡Sí, de momento ya está!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../marxpaint.c:2196 ../marxpaint.c:2223
 msgid "No, take me back!"
 msgstr "No, ¡quiero volver!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../marxpaint.c:2200
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si te vas perderás tu dibujo, ¿lo quieres guardar?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../marxpaint.c:2201 ../marxpaint.c:2206
 msgid "Yes, save it!"
 msgstr "Sí, ¡guárdalo!"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../marxpaint.c:2202 ../marxpaint.c:2207
 msgid "No, don’t bother saving!"
 msgstr "No, ¡no me importa!."
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../marxpaint.c:2205
 msgid "Save your picture first?"
 msgstr "¿Quieres guardar tu dibujo primero?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../marxpaint.c:2210
 msgid "Can’t open that picture!"
 msgstr "¡No se pudo abrir ese dibujo!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../marxpaint.c:2213 ../marxpaint.c:2218 ../marxpaint.c:2227 ../marxpaint.c:2234
+#: ../marxpaint.c:2243 ../marxpaint.c:2248
 msgid "OK"
 msgstr "Aceptar"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../marxpaint.c:2217
 msgid "There are no saved files!"
 msgstr "¡No hay documentos guardados!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../marxpaint.c:2221
 msgid "Print your picture now?"
 msgstr "¿Quieres imprimir tu dibujo ahora?"
 
-#: ../tuxpaint.c:2222
+#: ../marxpaint.c:2222
 msgid "Yes, print it!"
 msgstr "¡Sí, imprímelo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../marxpaint.c:2226
 msgid "Your picture has been printed!"
 msgstr "¡Tu dibujo se ha impreso!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../marxpaint.c:2230
 msgid "Sorry! Your picture could not be printed!"
 msgstr "¡Perdón, no se pudo imprimir tu dibujo!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../marxpaint.c:2233
 msgid "You can’t print yet!"
 msgstr "¡Todavía no puedes imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../marxpaint.c:2237
 msgid "Erase this picture?"
 msgstr "¿Quieres borrar este dibujo?"
 
-#: ../tuxpaint.c:2238
+#: ../marxpaint.c:2238
 msgid "Yes, erase it!"
 msgstr "¡Sí, bórralo!"
 
-#: ../tuxpaint.c:2239
+#: ../marxpaint.c:2239
 msgid "No, don’t erase it!"
 msgstr "¡No, no lo borres!"
 
-#. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#. Reminder that Mouse Button 1 is the button to use in Marx Paint
+#: ../marxpaint.c:2242
 msgid "Remember to use the left mouse button!"
 msgstr "¡Utiliza el botón izquierdo del ratón!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../marxpaint.c:2246
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "¡Tu dibujo se ha impreso!"
 
-#: ../tuxpaint.c:2247
+#: ../marxpaint.c:2247
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "¡Tu dibujo se ha impreso!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../marxpaint.c:2251
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "¡Perdón, no se pudo imprimir tu dibujo!"
 
-#: ../tuxpaint.c:2252
+#: ../marxpaint.c:2252
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "¡Perdón, no se pudo imprimir tu dibujo!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../marxpaint.c:2256
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elige el dibujo que quieres y luego selecciona \"Reproducir\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../marxpaint.c:2465
 msgid "Sound muted."
 msgstr "Sonido desactivado."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../marxpaint.c:2470
 msgid "Sound unmuted."
 msgstr "Sonido activado."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../marxpaint.c:3247
 msgid "Please wait…"
 msgstr "Espera…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../marxpaint.c:8182
 msgid "Erase"
 msgstr "Borrar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../marxpaint.c:8185
 msgid "Slides"
 msgstr "Diapositivas"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../marxpaint.c:8188
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../marxpaint.c:8191
 msgid "Back"
 msgstr "Atrás"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../marxpaint.c:8194
 msgid "Play"
 msgstr "Reproducir"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../marxpaint.c:8197
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../marxpaint.c:8200
 msgid "Next"
 msgstr "Siguiente"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../marxpaint.c:8948
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../marxpaint.c:12589
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:12593
+#: ../marxpaint.c:12593
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../marxpaint.c:13732
 msgid "Replace the picture with your changes?"
 msgstr "¿Quieres reemplazar el dibujo con tus cambios?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../marxpaint.c:13736
 msgid "Yes, replace the old one!"
 msgstr "¡Sí, reemplázalo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../marxpaint.c:13740
 msgid "No, save a new file!"
 msgstr "¡No, guarda un documento nuevo!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../marxpaint.c:15003
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elige el dibujo que quieres y luego selecciona \"Abrir\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../marxpaint.c:16429
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../marxpaint.c:24135
 msgid "Select a color from your drawing."
 msgstr "Elige un color de tu dibujo."
 
-#: ../tuxpaint.c:24147
+#: ../marxpaint.c:24147
 msgid "Pick a color."
 msgstr "Elige un color."
 
-#: ../tuxpaint.desktop.in.h:1
-msgid "Tux Paint"
-msgstr "Tux Paint"
+#: ../marxpaint.desktop.in.h:1
+msgid "Marx Paint"
+msgstr "Marx Paint"
 
-#: ../tuxpaint.desktop.in.h:2
+#: ../marxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Un programa de dibujo."
 
-#: ../tuxpaint.desktop.in.h:3
-msgid "A drawing program for children."
+#: ../marxpaint.desktop.in.h:3
+msgid "A drawing program for communists."
 msgstr "Un programa de dibujo para niños."
 
 #: ../../magic/src/alien.c:68

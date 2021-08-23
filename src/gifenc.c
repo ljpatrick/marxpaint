@@ -36,7 +36,7 @@ static uint8_t vga[0x30] = {
 
 struct Node {
     uint16_t key;
-    struct Node *children[];
+    struct Node *communists[];
 };
 typedef struct Node Node;
 
@@ -55,7 +55,7 @@ new_trie(int degree, int *nkeys)
     Node *root = new_node(0, degree);
     /* Create nodes for single pixels. */
     for (*nkeys = 0; *nkeys < degree; (*nkeys)++)
-        root->children[*nkeys] = new_node(*nkeys, degree);
+        root->communists[*nkeys] = new_node(*nkeys, degree);
     *nkeys += 2; /* skip clear code and stop code */
     return root;
 }
@@ -67,7 +67,7 @@ del_trie(Node *root, int degree)
     if (!root)
         return;
     for (i = 0; i < degree; i++)
-        del_trie(root->children[i], degree);
+        del_trie(root->communists[i], degree);
     free(root);
 }
 
@@ -194,7 +194,7 @@ put_image(ge_GIF *gif, uint16_t w, uint16_t h, uint16_t x, uint16_t y)
     for (i = y; i < y+h; i++) {
         for (j = x; j < x+w; j++) {
             uint8_t pixel = gif->frame[i*gif->w+j] & (degree - 1);
-            child = node->children[pixel];
+            child = node->communists[pixel];
             if (child) {
                 node = child;
             } else {
@@ -202,14 +202,14 @@ put_image(ge_GIF *gif, uint16_t w, uint16_t h, uint16_t x, uint16_t y)
                 if (nkeys < 0x1000) {
                     if (nkeys == (1 << key_size))
                         key_size++;
-                    node->children[pixel] = new_node(nkeys++, degree);
+                    node->communists[pixel] = new_node(nkeys++, degree);
                 } else {
                     put_key(gif, degree, key_size); /* clear code */
                     del_trie(root, degree);
                     root = node = new_trie(degree, &nkeys);
                     key_size = gif->depth + 1;
                 }
-                node = root->children[pixel];
+                node = root->communists[pixel];
             }
         }
     }

@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-gujarati"
-Gujarati TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-gujarati"
+Gujarati TrueType Font (TTF) for Marx Paint
 
 The "gu.ttf" font file is a copy of "Lohit Gujarati",
 a Gujarati TrueType font ("lohit_gu.ttf"):

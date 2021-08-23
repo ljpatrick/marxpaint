@@ -4,13 +4,13 @@
   perspective, stretches the plane of the image.
   zoom, zooms in and out the image.
 
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2019 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -497,7 +497,7 @@ void perspective_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     }
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void perspective_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)
 {
   perspective_r = r;

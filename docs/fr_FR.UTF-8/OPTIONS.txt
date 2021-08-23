@@ -1,19 +1,19 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.27
 
 Documentation sur les options
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                   août 8, 2021
 
      ----------------------------------------------------------------------
 
-                          Configuration de Tux Paint.
+                          Configuration de Marx Paint.
 
      Un outil graphique est disponible qui vous permet de changer le
-     comportement de Tux Paint. Cependant, si vous préférez ne pas installer
+     comportement de Marx Paint. Cependant, si vous préférez ne pas installer
      et utiliser cet outil, ou si vous souhaitez mieux comprendre les options
      disponibles, poursuivez la lecture.
 
@@ -21,7 +21,7 @@ Documentation sur les options
 
                             Fichier de configuration
 
-     Vous pouvez créer un fichier de configuration simple pour Tux Paint,
+     Vous pouvez créer un fichier de configuration simple pour Marx Paint,
      qu'il lira à chaque démarrage.
 
      Le fichier est simplement un fichier texte contenant les options que
@@ -29,9 +29,9 @@ Documentation sur les options
 
 Utilisateurs de Linux et Unix
 
-       Le fichier que vous devez créer s'appelle ".tuxpaintrc" et il doit
-       être placé dans votre répertoire personnel. (aka "~/.tuxpaintrc" ou
-       "$HOME/.tuxpaintrc")
+       Le fichier que vous devez créer s'appelle ".marxpaintrc" et il doit
+       être placé dans votre répertoire personnel. (aka "~/.marxpaintrc" ou
+       "$HOME/.marxpaintrc")
 
   Fichier de configuration pour l'ensemble du système
 
@@ -39,20 +39,20 @@ Utilisateurs de Linux et Unix
          l'échelle du système est lu. (Par défaut, cette configuration n'a
          pas de paramètres activés.) Il se trouve ici :
 
-           /etc/tuxpaint/tuxpaint.conf
+           /etc/marxpaint/marxpaint.conf
 
          Vous pouvez désactiver complètement la lecture de ce fichier, en
          laissant les paramètres par défaut (qui peuvent ensuite être
-         remplacés par votre fichier ".tuxpaintrc" et / ou vos arguments de
+         remplacés par votre fichier ".marxpaintrc" et / ou vos arguments de
          ligne de commande) en utilisant l'option de ligne de commande :
 
            --nosysconfig
 
 Utilisateurs de macOS
 
-       Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
+       Le fichier que vous devez créer s'appelle "marxpaint.cfg" et il doit
        être placé dans votre dossier de départ, sous le sous-dossier :
-       Library/Application Support/TuxPaint
+       Library/Application Support/MarxPaint
 
   Fichier de configuration pour l'ensemble du système
 
@@ -60,12 +60,12 @@ Utilisateurs de macOS
          l'échelle du système est lu. (Par défaut, cette configuration n'a
          pas de paramètres activés.) Il se trouve ici :
 
-           /Library/Application Support/TuxPaint/tuxpaint.cfg
+           /Library/Application Support/MarxPaint/marxpaint.cfg
 
 Utilisateurs de Windows
 
-       Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
-       être placé dans dans le dossier de Tux Paint.
+       Le fichier que vous devez créer s'appelle "marxpaint.cfg" et il doit
+       être placé dans dans le dossier de Marx Paint.
 
        Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier.
        Assurez-vous de l'enregistrer en tant que texte brut et assurez-vous
@@ -121,7 +121,7 @@ Video/Sound
 
          orient=portrait
 
-                 Permute les options de largeur / hauteur données à Tux
+                 Permute les options de largeur / hauteur données à Marx
                  Paint, utile pour faire pivoter la fenêtre pour les
                  affichages de portait, comme un écran PC orientée comme une
                  tablette.
@@ -133,14 +133,14 @@ Video/Sound
 
          native=yes
 
-                 Lorsque vous exécutez Tux Paint en mode plein écran, cela
+                 Lorsque vous exécutez Marx Paint en mode plein écran, cela
                  suppose la résolution actuelle de l'écran (remplaçant toute
                  option "windowsize"), est celle définie par le système
                  d'exploitation.
 
          allowscreensaver=yes
 
-                 Par défaut, Tux Paint empêche l'économiseur d'écran de votre
+                 Par défaut, Marx Paint empêche l'économiseur d'écran de votre
                  système de démarrer. Vous pouvez remplacer cela en utilisant
                  l'option "allowscreensaver". Remarque : Cela nécessite la
                  version 1.2.12 ou supérieure de la bibliothèque SDL. (Vous
@@ -183,7 +183,7 @@ Video/Sound
 
          buttonsize=SIZE
 
-                 Règle la taille en pixel des boutons de l'interface de Tux
+                 Règle la taille en pixel des boutons de l'interface de Marx
                  Paint (remplaçant la valeur de "48" par défaut). Utile quand
                  on utilise des affichage de haute densité, ou bien des
                  dispositifs avec entrée peu précise comme ceux avec suivi du
@@ -217,7 +217,7 @@ Mouse/Keyboard
          nofancycursors=yes
 
                  Cela désactive les formes fantaisistes de pointeur de souris
-                 dans Tux Paint et utilise le pointeur de souris normal de
+                 dans Marx Paint et utilise le pointeur de souris normal de
                  votre environnement.
 
                  Dans certains environnements, les curseurs sophistiqués
@@ -232,7 +232,7 @@ Mouse/Keyboard
          hidecursor=yes
 
                  Cela masque complètement les formes du pointeur de la souris
-                 dans Tux Paint.
+                 dans Marx Paint.
 
                  Ceci est utile pour les appareils à écran tactile, tels que
                  les tablettes PC.
@@ -263,14 +263,14 @@ Mouse/Keyboard
 
          grab=yes
 
-                 Tux Paint essaiera de «saisir» la souris et le clavier, en
-                 sorte que la souris reste confinée dans la fenêtre de Tux
+                 Marx Paint essaiera de «saisir» la souris et le clavier, en
+                 sorte que la souris reste confinée dans la fenêtre de Marx
                  Paint et que presque toutes les entrées du clavier lui
                  soient transmises directement.
 
                  Ceci est utile pour désactiver les actions du système
                  d'exploitation qui pourraient faire sortir l'utilisateur de
-                 Tux Paint [Alt]-[Tab] (changement de fenêtre),
+                 Marx Paint [Alt]-[Tab] (changement de fenêtre),
                  [Ctrl]-[Escape], etc. Ceci est particulièrement utile en
                  mode plein écran.
 
@@ -292,7 +292,7 @@ Mouse/Keyboard
 
          nobuttondistinction=yes
 
-                 Avant Tux Paint 0.9.15, les boutons du milieu et de droite
+                 Avant Marx Paint 0.9.15, les boutons du milieu et de droite
                  d'une souris pouvaient également être utilisés pour cliquer.
                  Dans la version 0.9.15, cela a été modifié afin que seul le
                  bouton gauche de la souris fonctionne, pour de ne pas
@@ -300,7 +300,7 @@ Mouse/Keyboard
 
                  Cependant, pour les enfants qui ont des problèmes avec la
                  souris, cette distinction entre les deux ou trois boutons
-                 d'une souris peut être désactivée (ramenant Tux Paint à son
+                 d'une souris peut être désactivée (ramenant Marx Paint à son
                  ancien comportement) grâce à cette option.
 
                  Note: If used in a system-wide configuration file, may be
@@ -332,7 +332,7 @@ Simplification
                  lignes «élastiques» sont affichés lors de l'utilisation des
                  outils Ligne , Forme , Tampon et Gomme .
 
-                 Cela peut aider lorsque Tux Paint est exécuté sur des
+                 Cela peut aider lorsque Marx Paint est exécuté sur des
                  ordinateurs très lents ou affiché sur un écran X-Window
                  distant.
 
@@ -357,14 +357,14 @@ Simplification
 
          stampsize=SIZE
 
-                 Utilisez cette option pour forcer Tux Paint à définir la
+                 Utilisez cette option pour forcer Marx Paint à définir la
                  taille de départ de tous les tampons. La valeur SIZE doit
                  être comprise entre 0 (le plus petit) et 10 (le plus grand).
                  La taille est relative aux tailles disponibles du tampon,
                  qui dépendent du tampon lui-même, et de la taille actuelle
-                 de la toile de Tux Paint.
+                 de la toile de Marx Paint.
 
-                 Spécifiez "default" pour laisser Tux Paint décider (c'est un
+                 Spécifiez "default" pour laisser Marx Paint décider (c'est un
                  comportement standard).
 
   Control Simplification
@@ -372,12 +372,12 @@ Simplification
          noquit=yes
 
                  Désactive le bouton "Quitter" à l'écran et empêche la touche
-                 [Escape] de quitter Tux Paint .
+                 [Escape] de quitter Marx Paint .
 
                  Utiliser la combinaison de touches [Alt] + [F4] ou cliquer
                  sur le bouton de fermeture de la fenêtre (en supposant que
                  vous n'êtes pas en mode plein écran) fonctionne toujours
-                 pour quitter Tux Paint .
+                 pour quitter Marx Paint .
 
                  Vous pouvez également utiliser la combinaison de touches
                  suivante pour quitter : [Shift] + [Control] + [Escape].
@@ -389,11 +389,11 @@ Simplification
 
          nostamps=yes
 
-                 Cette option indique à Tux Paint de ne charger aucune image
+                 Cette option indique à Marx Paint de ne charger aucune image
                  de tampon en caoutchouc, ce qui entraîne la désactivation de
                  l' outil Tampons .
 
-                 Cela peut accélérer Tux Paint au démarrage et réduire
+                 Cela peut accélérer Marx Paint au démarrage et réduire
                  l'utilisation de la mémoire pendant son exécution. Bien
                  entendu, aucun timbre ne sera disponible.
 
@@ -460,7 +460,7 @@ Languages
 
          lang=LANGUAGE
 
-                 Exécutez Tux Paint dans l'une des langues prises en charge.
+                 Exécutez Marx Paint dans l'une des langues prises en charge.
                  Les choix possibles pour la LANGUE comprennent actuellement
                  :
 
@@ -722,14 +722,14 @@ Languages
 
          --locale LOCALE
 
-                 Exécutez Tux Paint dans l'une des langues supportées.
+                 Exécutez Marx Paint dans l'une des langues supportées.
                  Consultez la section Choisir une autre langue" ci-dessous
                  pour les chaînes de paramètres régionaux (par exemple,
                  «de_DE» pour l'allemand) à utiliser.
 
                  Si votre locale est déjà définie, par exemple avec la
                  variable d'environnement "$LANG", cette option n'est pas
-                 nécessaire, car Tux Paint respecte les paramètres de votre
+                 nécessaire, car Marx Paint respecte les paramètres de votre
                  environnement, si possible.)
 
          mirrorstamps=yes
@@ -750,10 +750,10 @@ Languages
 
          sysfonts=yes
 
-                 Cette option oblige Tux Paint à essayer de charger des
+                 Cette option oblige Marx Paint à essayer de charger des
                  polices (à utiliser dans l'outil Texte ) à partir de votre
-                 système d'exploitation. Normalement, Tux Paint ne chargera
-                 que ceux fournis avec Tux Paint.
+                 système d'exploitation. Normalement, Marx Paint ne chargera
+                 que ceux fournis avec Marx Paint.
 
                  Note: If used in a system-wide configuration file, may be
                  overridden by the user's configuration file using
@@ -762,14 +762,14 @@ Languages
 
          alllocalefonts=yes
 
-                 Avant la version 0.9.21, Tux Paint chargeait toutes les
+                 Avant la version 0.9.21, Marx Paint chargeait toutes les
                  polices depuis son propre répertoire de polices, y compris
                  celles spécifiques à la locale (par exemple, celle pour le
                  tibétain, qui n'avait pas de caractères latins). Depuis la
                  version 0.9.21, la seule police chargée à partir du
                  sous-répertoire spécifique aux paramètres régionaux, si elle
                  existe, correspond à la police locale sur laquelle s'exécute
-                 Tux Paint.
+                 Marx Paint.
 
                  Pour charger toutes les polices spécifiques aux paramètres
                  régionaux (l'ancien comportement), utilisez cette option.
@@ -804,7 +804,7 @@ Impression
 
          altprint=always
 
-                 Cela fait que Tux Paint affiche toujours la boîte de
+                 Cela fait que Marx Paint affiche toujours la boîte de
                  dialogue de l'imprimante (ou, sous Linux / Unix, lance la
                  "commande altprint") lorsque le bouton "Imprimer" est
                  cliqué. En d'autres termes, c'est comme cliquer sur
@@ -813,7 +813,7 @@ Impression
 
          altprint=never
 
-                 Cela empêche Tux Paint de ne jamais montrer la boîte de
+                 Cela empêche Marx Paint de ne jamais montrer la boîte de
                  dialogue de l' imprimante (ou, sous Linux / Unix, exécuter «
                  altprintcommand ») lorsque le bouton « Imprimer » est
                  cliqué. En d'autres termes, cela rend la touche [Alt] sans
@@ -821,7 +821,7 @@ Impression
 
          altprint=mod
 
-                 C'est le comportement par défaut. Tux Paint affiche une
+                 C'est le comportement par défaut. Marx Paint affiche une
                  boîte de dialogue d'imprimante (ou, sous Linux / Unix,
                  exécute la commande "altprint"), lorsque la touche [Alt] est
                  enfoncée tandis que le bouton "Imprimer" est cliqué. Cliquer
@@ -834,13 +834,13 @@ Impression
 
                  (Windows et macOS uniquement)
 
-                 Tux Paint utilisera un fichier de configuration d'imprimante
+                 Marx Paint utilisera un fichier de configuration d'imprimante
                  lors de l'impression. Appuyez sur la touche [Alt] tout en
-                 cliquant sur le bouton «Imprimer» dans Tux Paint pour faire
+                 cliquant sur le bouton «Imprimer» dans Marx Paint pour faire
                  apparaître une fenêtre de dialogue d'impression Windows.
 
                  (Remarque : cela ne fonctionne que si vous n'exécutez pas
-                 Tux Paint en mode plein écran.) Toutes les modifications de
+                 Marx Paint en mode plein écran.) Toutes les modifications de
                  configuration apportées dans cette boîte de dialogue seront
                  enregistrées dans le fichier "userdata/print.cfg", et
                  réutilisées, tant que l'option "printcfg" reste définie.
@@ -863,7 +863,7 @@ Impression
 
                    lpr
 
-                 Remarque : les versions de Tux Paint antérieures à 0.9.15
+                 Remarque : les versions de Marx Paint antérieures à 0.9.15
                  envoyaient des données au format PNG à la commande
                  d'impression (qui par défaut était "pngtopnm | pnmtops |
                  lpr").
@@ -894,10 +894,10 @@ Impression
          papersize=PAPERSIZE
 
                  (Plates-formes qui utilisent le générateur PostScript
-                 interne de Tux Paint - pas Windows, macOS, BeOS ou Haiku.)
+                 interne de Marx Paint - pas Windows, macOS, BeOS ou Haiku.)
 
-                 Dit à Tux Paint quelle taille PostScript doit générer. Si
-                 aucun n'est spécifié, Tux Paint vérifie d'abord votre
+                 Dit à Marx Paint quelle taille PostScript doit générer. Si
+                 aucun n'est spécifié, Marx Paint vérifie d'abord votre
                  variable d'environnement $PAPER, puis le fichier
                  /etc/papersize, puis utilise le format de papier par défaut
                  de la bibliothèque 'libpaper'.
@@ -940,7 +940,7 @@ Sauvegarde
 
          startblank=yes
 
-                 Ceci oblige Tux Paint à afficher une toile vide au
+                 Ceci oblige Marx Paint à afficher une toile vide au
                  démarrage, plutôt que la dernière image qui a été éditée.
 
                  Note: If used in a system-wide configuration file, may be
@@ -965,40 +965,40 @@ Sauvegarde
          savedir=DIRECTORY
 
                  Utilisez cette option pour changer l'emplacement du
-                 répertoire / dossier "saved" de Tux Paint , qui est
-                 l'endroit où Tux Paint enregistre et ouvre les images.
+                 répertoire / dossier "saved" de Marx Paint , qui est
+                 l'endroit où Marx Paint enregistre et ouvre les images.
 
                  Si vous ne le changez pas, l' emplacement par défaut est :
 
                     * Linux & Unix - Sous un répertoire caché nommé
-                      ".tuxpaint" dans votre répertoire personnel (aka "~" ou
+                      ".marxpaint" dans votre répertoire personnel (aka "~" ou
                       "$HOME")
-                      Exemple: /home/username/.tuxpaint/saved/
-                    * Windows - Dans un dossier nommé "TuxPaint" dans votre
+                      Exemple: /home/username/.marxpaint/saved/
+                    * Windows - Dans un dossier nommé "MarxPaint" dans votre
                       dossier "Application Data".
                       Exemple: C:\Documents and Settings\Username\Application
-                      Data\TuxPaint\saved\
-                    * macOS - Dans un dossier nommé "TuxPaint" dans votre
+                      Data\MarxPaint\saved\
+                    * macOS - Dans un dossier nommé "MarxPaint" dans votre
                       dossier "Application Support".
                       Exemple: /Users/Username/Library/Application
-                      Support/TuxPaint/saved/
+                      Support/MarxPaint/saved/
 
                  Remarque : lorsque vous spécifiez un lecteur Windows (par
                  ex. "H:\"), vous devez également spécifier un
                  sous-répertoire.
 
-                 Remarque : Avant la version 0.9.18, Tux Paint utilisait
+                 Remarque : Avant la version 0.9.18, Marx Paint utilisait
                  également le réglage "savedir" comme emplacement pour
                  rechercher des fichiers de données personnelles (pinceaux,
                  tampons, images de démarrages et polices). À partir de la
                  version 0.9.18, ils peuvent être spécifiés séparément (voir
                  l'option "datadir" ci-dessous).
 
-                 Exemple: savedir=Z:\tuxpaint\
+                 Exemple: savedir=Z:\marxpaint\
 
          exportdir=DIRECTORY
 
-                 Utilisez cette option pour modifier l'endroit où Tux Paint
+                 Utilisez cette option pour modifier l'endroit où Marx Paint
                  exporte les fichiers - images uniques ou diaporamas GIF
                  animés - en vue d'un usage externe.
 
@@ -1012,7 +1012,7 @@ Sauvegarde
                       Typiquement (dans un environnement local anglais), ce
                       sera "Images" dans votre répertoire personnel
                       (c'est-à-dire "$HOME/Images" aka "~/Images").
-                      Tux Paint utilisera ce répertoire typique, si aucune
+                      Marx Paint utilisera ce répertoire typique, si aucune
                       configuration XDG ne peut être lue, ou rien n'est
                       défini pour "XDG_PICTURES_DIR".
                     * Windows - "Mes images" répertoire de chaque utilisateur
@@ -1026,26 +1026,26 @@ Sauvegarde
                     * macOS — TBD!
 
                  Remarque :Quand les réglages par défaut sont utilisés, un
-                 nouveau sous-répertoire "TuxPaint" sera créé puis
-                 utilisé(par ex "~/Images/TuxPaint"). Quand l'option
+                 nouveau sous-répertoire "MarxPaint" sera créé puis
+                 utilisé(par ex "~/Images/MarxPaint"). Quand l'option
                  "--exportdir" est utilisée, le chemin exact qui a été
-                 spécifié sera utilisé (pas sous-répertoire "TuxPaint" créé).
+                 spécifié sera utilisé (pas sous-répertoire "MarxPaint" créé).
 
-                 Le répertoire lui-même (par ex. "~/Images/TuxPaint") sera
+                 Le répertoire lui-même (par ex. "~/Images/MarxPaint") sera
                  créé, s'il n'existe pas.
 
-                 Si le répertoire parent (par ex "~/Images/TuxPaint")
-                 n'existe pas non plus, Tux Paint essayera aussi de le créer
+                 Si le répertoire parent (par ex "~/Images/MarxPaint")
+                 n'existe pas non plus, Marx Paint essayera aussi de le créer
                  (mais de répertoire plus haut que celui-là).
 
-                 Exemple: exportdir=/home/penguin/TuxPaintExports
+                 Exemple: exportdir=/home/penguin/MarxPaintExports
 
   More Saving Options
 
          nosave=yes
 
                  Ceci désactive la possibilité de sauvegarder les fichiers
-                 par Tux Paint (et par conséquent ôte le bouton "Sauvegarder"
+                 par Marx Paint (et par conséquent ôte le bouton "Sauvegarder"
                  sur l'écran). On peut l'utiliser dans le cas où le programme
                  est utilisé juste pour le fun, ou dans un environnement de
                  tests.
@@ -1057,7 +1057,7 @@ Sauvegarde
 
          autosave=yes
 
-                 Ceci empêche Tux Paint de vous demander si vous voulez
+                 Ceci empêche Marx Paint de vous demander si vous voulez
                  sauvegarder l'image quand vous quittez, et suppose que vous
                  le faites.
 
@@ -1074,7 +1074,7 @@ Data
 
          nolockfile=yes
 
-                 Par défaut, Tux Paint utilise ce qu'on appelle un «fichier
+                 Par défaut, Marx Paint utilise ce qu'on appelle un «fichier
                  de verrouillage» pour éviter qu'il ne soit lancé plus d'une
                  fois toutes les 30 secondes. (Ceci permet d'éviter
                  d'exécuter accidentellement plusieurs copies; par exemple,
@@ -1082,14 +1082,14 @@ Data
                  clic, ou en cliquant simplement avec impatience plusieurs
                  fois sur l'icône.)
 
-                 Pour que Tux Paint ignore le fichier de verrouillage, lui
+                 Pour que Marx Paint ignore le fichier de verrouillage, lui
                  permettant de s'exécuter à nouveau, même s'il vient d'être
                  lancé il y a moins de 30 secondes, activez ce paramètre dans
-                 le fichier de configuration ou exécutez Tux Paint avec
+                 le fichier de configuration ou exécutez Marx Paint avec
                  l'option '--nolockfile ' en ligne de commande.
 
                  Par défaut, le fichier de verrouillage est stocké dans
-                 "~/.tuxpaint/" sous Linux et Unix, et "userdata\" sous
+                 "~/.marxpaint/" sous Linux et Unix, et "userdata\" sous
                  Windows.
 
                  Note: If used in a system-wide configuration file, may be
@@ -1101,31 +1101,31 @@ Data
 
          datadir=DIRECTORY
 
-                 Utilisez cette option pour changer l'endroit où Tux Paint
+                 Utilisez cette option pour changer l'endroit où Marx Paint
                  ira rechercher les fichiers de données personnelles
                  (pinceaux, tampons, images de démarrage, modèles et fontes
                  spécifiques pour l'utilisateur actuel).
 
-                 Tux Paint va chercher des sous-répertoires nommés "brushes",
+                 Marx Paint va chercher des sous-répertoires nommés "brushes",
                  "stamps", "starters", "templates", et "fonts" sous le
                  répertoire spécifié.
 
                  Si vous ne le changez pas, l' emplacement par défaut est :
 
                     * Linux & Unix - Sous un répertoire caché nommé
-                      ".tuxpaint" dans votre répertoire personnel (aka "~" ou
+                      ".marxpaint" dans votre répertoire personnel (aka "~" ou
                       "$HOME")
-                      Exemple: /home/username/.tuxpaint/brushes/
-                    * Windows - Dans un dossier nommé "TuxPaint" dans votre
+                      Exemple: /home/username/.marxpaint/brushes/
+                    * Windows - Dans un dossier nommé "MarxPaint" dans votre
                       dossier "Application Data".
                       Exemple: C:\Documents and Settings\Username\Application
-                      Data\TuxPaint\brushes\
-                    * macOS - Dans un dossier nommé "TuxPaint" dans votre
+                      Data\MarxPaint\brushes\
+                    * macOS - Dans un dossier nommé "MarxPaint" dans votre
                       dossier "Application Support".
                       Exemple: /Users/Username/Library/Application
-                      Support/TuxPaint/brushes/
+                      Support/MarxPaint/brushes/
 
-                 Remarque :Avant la version 0.9.18, Tux Paint utlisait les
+                 Remarque :Avant la version 0.9.18, Marx Paint utlisait les
                  mêmes réglages que "savedir" pour chercher les fichiers de
                  données. Depuis la version 0.9.18, ils peuvent être
                  spécifiés séparément.
@@ -1134,14 +1134,14 @@ Data
                  ex. "H:\"), vous devez également spécifier un
                  sous-répertoire.
 
-                 Exemple: datadir=/home/johnny/tuxpaint-data/
+                 Exemple: datadir=/home/johnny/marxpaint-data/
 
   Color Palette File
 
          colorfile=FILENAME
 
                  Vous pouvez remplacer la palette de couleurs par défaut de
-                 Tux Paint en créant un fichier texte ASCII simple qui décrit
+                 Marx Paint en créant un fichier texte ASCII simple qui décrit
                  les couleurs souhaitées et en pointant vers ce fichier à
                  l'aide de l'option "colorfile".
 
@@ -1157,12 +1157,12 @@ Data
                  "#F48").
 
                  Après la définition de la couleur (sur la même ligne), vous
-                 pouvez saisir du texte pour décrire la couleur. Tux
+                 pouvez saisir du texte pour décrire la couleur. Marx
                  affichera ce texte lorsque la couleur sera cliquée. (Par
                  exemple, "#FFF Blanc comme neige.")
 
                  A titre d'exemple, vous pouvez voir les couleurs par défaut
-                 actuellement utilisées dans Tux Paint dans :
+                 actuellement utilisées dans Marx Paint dans :
                  "default_colors.txt".
 
                  REMARQUES : Vous devez séparer les valeurs décimales par des
@@ -1274,7 +1274,7 @@ Joystick
          joystick-dev=N
 
                  Spécifie quel périphérique joystick doit être utilisé par
-                 Tux Paint. La valeur par défaut est 0 (le premier joystick).
+                 Marx Paint. La valeur par défaut est 0 (le premier joystick).
 
          joystick-slowness=SPEED
 
@@ -1422,12 +1422,12 @@ Joystick
      (Pour les utilisateurs Linux et Unix)
 
      Si l'une des options ci-dessus est définie dans "
-     /etc/tuxpaint/tuxpaint.config", vous pouvez la remplacer dans votre
-     propre fichier "~/.tuxpaintrc ".
+     /etc/marxpaint/marxpaint.config", vous pouvez la remplacer dans votre
+     propre fichier "~/.marxpaintrc ".
 
      Pour les options vrai / faux, comme "noprint" et "grab", vous pouvez
      simplement dire qu'elles sont égales à "no" dans votre fichier
-     "~/.tuxpaintrc" :
+     "~/.marxpaintrc" :
 
        noprint=no
        uppercase=no
@@ -1443,7 +1443,7 @@ Joystick
                           Options de ligne de commande
 
      Des options peuvent également être émises sur la ligne de commande
-     lorsque vous démarrez Tux Paint.
+     lorsque vous démarrez Marx Paint.
 
        --fullscreen
        --WIDTHxHEIGHT
@@ -1575,9 +1575,9 @@ Joystick
        --nosysconfig
 
                Sous Linux et Unix, cela empêche la lecture du fichier de
-               configuration système "/etc/tuxpaint/tuxpaint.conf".
+               configuration système "/etc/marxpaint/marxpaint.conf".
 
-               Seul votre propre fichier de configuration, "~/.tuxpaintrc",
+               Seul votre propre fichier de configuration, "~/.marxpaintrc",
                s'il existe, sera utilisé.
 
      ----------------------------------------------------------------------
@@ -1585,12 +1585,12 @@ Joystick
 Options d'information en ligne de commande
 
        Les options suivantes affichent des informations sur l'écran.
-       Cependant, Tux Paint ne démarrera pas et ne s'exécutera pas.
+       Cependant, Marx Paint ne démarrera pas et ne s'exécutera pas.
 
          --version
          --verbose-version
 
-                 Affiche le numéro de version et la date de la copie de Tux
+                 Affiche le numéro de version et la date de la copie de Marx
                  Paint que vous utilisez. La "--verbose-version" répertorie
                  également les options de compilation définies. (Voir INSTALL
                  et FAQ.
@@ -1598,7 +1598,7 @@ Options d'information en ligne de commande
          --copying
 
                  Afficher de brèves informations de licence au sujet de la
-                 copie de Tux Paint.
+                 copie de Marx Paint.
 
          --usage
 
@@ -1607,28 +1607,28 @@ Options d'information en ligne de commande
 
          --help
 
-                 Affiche une aide sommaire sur l'utilisation de Tux Paint.
+                 Affiche une aide sommaire sur l'utilisation de Marx Paint.
 
          --lang help
 
-                 Affiche une liste des langues disponibles dans Tux Paint.
+                 Affiche une liste des langues disponibles dans Marx Paint.
 
          --joystick-dev list
 
                  Afficher la liste des joysticks branchés qui sont
-                 disponibles pour Tux Paint.
+                 disponibles pour Marx Paint.
 
      ----------------------------------------------------------------------
 
                             Choisir une autre langue
 
-     Tux Paint a été traduit en plusieurs langues. Pour accéder aux
+     Marx Paint a été traduit en plusieurs langues. Pour accéder aux
      traductions, vous pouvez utiliser l'option "--lang " sur la ligne de
      commande pour définir la langue (par exemple "--lang spanish") ou
      utiliser le paramètre "lang=" dans le fichier de configuration (par ex.
      "lang=spanish").
 
-     Tux Paint respecte également les paramètres régionaux actuels de votre
+     Marx Paint respecte également les paramètres régionaux actuels de votre
      environnement. (Vous pouvez les remplacer en ligne de commande en
      utilisant l'option "--locale"; voir ci - dessus)
 
@@ -1921,7 +1921,7 @@ Langues disponibles
        pas représentées à l'aide d'un jeu de caractères latins, comme les
        autres. Consultez la section "Polices spéciales " ci-dessous.
 
-       Remarque : Tux Paint fournit une méthode de saisie alternative pour
+       Remarque : Marx Paint fournit une méthode de saisie alternative pour
        saisir des caractères avec l' outil Texte avec certaines langues. Les
        combinaisons de touches répertoriées peuvent être utilisées pour
        parcourir les méthodes de saisie prises en charge lorsque l' outil
@@ -1934,7 +1934,7 @@ Définition des paramètres régionaux de votre environnement
 
        Comme indiqué ci-dessus, en plus de vous permettre de choisir la
        langue au moment de l'exécution en utilisant les options de ligne de
-       commande ("--lang" et "--locale"), Tux Paint respecte les paramètres
+       commande ("--lang" et "--locale"), Marx Paint respecte les paramètres
        régionaux globaux de votre environnement.
 
        Si vous n'avez pas encore défini les paramètres régionaux de votre
@@ -1957,7 +1957,7 @@ Définition des paramètres régionaux de votre environnement
          paramètres régionaux qu'ils veulent, à partir de la liste trouvée
          dans "/usr/share/i18n/SUPPORTED"
 
-         Ensuite, avant d'exécuter Tux Paint, définissez votre variable
+         Ensuite, avant d'exécuter Marx Paint, définissez votre variable
          d'environnement "$LANG" sur l'un des paramètres régionaux
          répertoriés ci-dessus. (Si vous voulez que tous les programmes qui
          peuvent être traduits le soient, vous voudrez peut - être placer les
@@ -1967,18 +1967,18 @@ Définition des paramètres régionaux de votre environnement
          Par exemple, pour un Bourne Shell (tel que BASH) :
 
            export LANG=es_ES ; \
-           tuxpaint
+           marxpaint
 
          Et un C Shell (tel que TCSH) :
 
            setenv LANG es_ES ; \
-           tuxpaint
+           marxpaint
 
      ----------------------------------------------------------------------
 
   Utilisateurs de Windows
 
-         Tux Paint reconnaîtra les paramètres régionaux en cours et utilisera
+         Marx Paint reconnaîtra les paramètres régionaux en cours et utilisera
          les fichiers appropriés par défaut. Cette section est donc réservée
          aux personnes essayant différentes langues.
 
@@ -2009,32 +2009,32 @@ Définition des paramètres régionaux de votre environnement
 
        Certaines langues nécessitent l'installation de polices spéciales. Ces
        fichiers de polices (qui sont au format TrueType (TTF)), sont beaucoup
-       trop volumineux pour être inclus avec le téléchargement de Tux Paint
+       trop volumineux pour être inclus avec le téléchargement de Marx Paint
        et sont disponibles séparément. (Voir le tableau ci-dessus, dans la
        section « Choisir une autre langue ».)
 
-       Remarque: Depuis la version 0.9.18, Tux Paint utilise la bibliothèque
+       Remarque: Depuis la version 0.9.18, Marx Paint utilise la bibliothèque
        "SDL_Pango", qui utilise la bibliothèque "Pango" pour afficher le
        texte dans l'interface utilisateur, plutôt que d'utiliser directement
-       "SDL_ttf". À moins que votre copie de Tux Paint n'ait été construite
+       "SDL_ttf". À moins que votre copie de Marx Paint n'ait été construite
        sans le support de Pango, les polices spéciales ne devraient plus être
        nécessaires .
 
-       Lors de l'exécution de Tux Paint dans une langue nécessitant sa propre
-       police, Tux Paint essaiera de charger le fichier de police à partir de
+       Lors de l'exécution de Marx Paint dans une langue nécessitant sa propre
+       police, Marx Paint essaiera de charger le fichier de police à partir de
        son répertoire système "fonts" (sous un sous- répertoire "locale"). Le
        nom du fichier correspond aux deux premières lettres du code 'locale'
        de la langue (par exemple, "ko" pour le coréen, "ja" pour le japonais,
        "zh_tw" pour le chinois traditionnel).
 
-       Par exemple, sous Linux ou Unix, lorsque Tux Paint est exécuté en
-       coréen (par exemple, avec l'option "--lang korean"), Tux Paint tentera
+       Par exemple, sous Linux ou Unix, lorsque Marx Paint est exécuté en
+       coréen (par exemple, avec l'option "--lang korean"), Marx Paint tentera
        de charger le fichier de police suivant :
 
-         /usr/share/tuxpaint/fonts/locale/ko.ttf
+         /usr/share/marxpaint/fonts/locale/ko.ttf
 
        Vous pouvez télécharger des polices pour les langues prises en charge
-       sur le site Web de Tux Paint, http://www.tuxpaint.org/ . (Regardez
+       sur le site Web de Marx Paint, http://www.marxpaint.org/ . (Regardez
        dans la section "Polices" sous "Télécharger".)
 
        Sous Unix et Linux, vous pouvez utiliser le Makefile qui est fourni

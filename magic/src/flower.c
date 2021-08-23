@@ -2,11 +2,11 @@
   flower.c
 
   Flower Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -473,7 +473,7 @@ void flower_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     SDL_FreeSurface(flower_petals_colorized);
 }
 
-// Record the color from Tux Paint:
+// Record the color from Marx Paint:
 void flower_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
   flower_r = r;

@@ -2,7 +2,7 @@
   onscreen_keyboard.c
 
   Copyright (c) 2020
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -1135,7 +1135,7 @@ static void apply_surface(int x, int y, SDL_Surface * source, SDL_Surface * dest
 }
 
 
-/* /\* NOTE: This is a duplicate of wcstou16 in tuxpaint.c */
+/* /\* NOTE: This is a duplicate of wcstou16 in marxpaint.c */
 
 /*    This conversion is required on platforms where Uint16 doesn't match wchar_t. */
 /*    On Windows, wchar_t is 16-bit, elsewhere it is 32-bit. */
@@ -1539,7 +1539,7 @@ static char *find_keysym(osk_key key, on_screen_keyboard * keyboard)
   return (keysym);
 }
 
-/* We lose the SDL ModState by leaving and entering the tuxpaint window, so using a custom state */
+/* We lose the SDL ModState by leaving and entering the marxpaint window, so using a custom state */
 static int handle_keymods(char *keysym, osk_key * key, on_screen_keyboard * keyboard)
 {
   SDLMod mod;

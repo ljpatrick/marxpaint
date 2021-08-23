@@ -1,7 +1,7 @@
 /*
   tools.h
 
-  For Tux Paint
+  For Marx Paint
   List of available tools.
 
   This program is free software; you can redistribute it and/or modify
@@ -21,14 +21,14 @@
 
   Copyright (c) 2002-2020 by Bill Kendrick
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   June 14, 2002 - August 15, 2020
   $Id$
 */
 
 
-#include "tip_tux.h"
+#include "tip_marx.h"
 
 
 /* What tools are available: */
@@ -103,7 +103,7 @@ const char *const tool_names[NUM_TOOLS] = {
   // Print the current picture
   gettext_noop("Print"),
 
-  // Quit/exit Tux Paint application
+  // Quit/exit Marx Paint application
   gettext_noop("Quit")
 };
 
@@ -198,9 +198,9 @@ const char *const tool_img_fnames[NUM_TOOLS] = {
 };
 
 
-/* Tux icons to use: */
+/* Marx icons to use: */
 
-const int tool_tux[NUM_TOOLS] = {
+const int tool_marx[NUM_TOOLS] = {
   TUX_DEFAULT,
   TUX_DEFAULT,
   TUX_DEFAULT,

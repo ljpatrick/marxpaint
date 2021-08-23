@@ -10,7 +10,7 @@ NOTE: The PDF documentation ("Tsamkey_manual.pdf") is not included in this
 distribution.
 
 
-Packaged for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+Packaged for Marx Paint by Bill Kendrick <bill@newbreedsoftware.com>
 2006.03.29
 
 

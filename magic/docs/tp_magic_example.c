@@ -1,6 +1,6 @@
 /* tp_magic_example.c
 
-   An example of a "Magic" tool plugin for Tux Paint
+   An example of a "Magic" tool plugin for Marx Paint
    Last modified: 2008.07.10
 */
 
@@ -12,7 +12,7 @@
 #include <string.h>             // For "strdup()"
 #include <libintl.h>            // For "gettext()"
 
-#include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
+#include "tp_magic_api.h"       // Marx Paint "Magic" tool API header
 #include "SDL_image.h"          // For IMG_Load(), to load our PNG icon
 #include "SDL_mixer.h"          // For Mix_LoadWAV(), to load our sound effects
 
@@ -71,7 +71,7 @@ const char *descs[NUM_TOOLS] = {
 /* Sound effects: */
 Mix_Chunk *snd_effect[NUM_TOOLS];
 
-/* The current color (an "RGB" value) the user has selected in Tux Paint: */
+/* The current color (an "RGB" value) the user has selected in Marx Paint: */
 Uint8 example_r, example_g, example_b;
 
 
@@ -94,8 +94,8 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
 
 // API Version check
 // 
-// The running copy of Tux Paint that has loaded us first asks us what
-// version of the Tux Paint "Magic" tool plugin API we were built against.
+// The running copy of Marx Paint that has loaded us first asks us what
+// version of the Marx Paint "Magic" tool plugin API we were built against.
 // If it deems us compatible, we'll be used!
 //
 // All we need to do here is return "TP_MAGIC_API_VERSION",
@@ -109,7 +109,7 @@ Uint32 example_api_version(void)
 
 // Initialization
 //
-// This happens once, when Tux Paint starts up and is loading all of the
+// This happens once, when Marx Paint starts up and is loading all of the
 // "Magic" tool plugins.  (Assuming what we returned from api_version() was
 // acceptable!)
 // 
@@ -118,7 +118,7 @@ Uint32 example_api_version(void)
 // when the user is using our Magic tools.
 // 
 // The memory we allocate here to store the sounds will be
-// freed (aka released, aka deallocated) when the user quits Tux Paint,
+// freed (aka released, aka deallocated) when the user quits Marx Paint,
 // when our shutdown() function is called.
 
 int example_init(magic_api * api)
@@ -150,11 +150,11 @@ int example_init(magic_api * api)
 
 // Report our tool count
 // 
-// Tux Paint needs to know how many "Magic" tools we'll be providing.
+// Marx Paint needs to know how many "Magic" tools we'll be providing.
 // Return that number here.  (We simply grab the value of "NUM_TOOLS"
 // from our 'enum' above!)
 // 
-// When Tux Paint is starting up and loading plugins, it will call
+// When Marx Paint is starting up and loading plugins, it will call
 // some of the following setup functions once for each tool we report.
 
 int example_get_tool_count(magic_api * api)
@@ -165,7 +165,7 @@ int example_get_tool_count(magic_api * api)
 
 // Load icons
 //
-// When Tux Paint is starting up and loading plugins, it asks us to
+// When Marx Paint is starting up and loading plugins, it asks us to
 // provide icons for the "Magic" tool buttons.
 
 SDL_Surface *example_get_icon(magic_api * api, int which)
@@ -179,13 +179,13 @@ SDL_Surface *example_get_icon(magic_api * api, int which)
   // (The "tp-magic-config --dataprefix" command would have told us when
   // we installed our plugin and its data.)
   //
-  // We use 'which' (which of our tools Tux Paint is asking about)
+  // We use 'which' (which of our tools Marx Paint is asking about)
   // as an index into the array.
 
   snprintf(fname, sizeof(fname), "%s/images/magic/%s.png", api->data_directory, icon_filenames[which]);
 
 
-  // Try to load the image, and return the results to Tux Paint:
+  // Try to load the image, and return the results to Marx Paint:
 
   return (IMG_Load(fname));
 }
@@ -193,7 +193,7 @@ SDL_Surface *example_get_icon(magic_api * api, int which)
 
 // Report our "Magic" tool names
 //
-// When Tux Paint is starting up and loading plugins, it asks us to
+// When Marx Paint is starting up and loading plugins, it asks us to
 // provide names (labels) for the "Magic" tool buttons.
 
 char *example_get_name(magic_api * api, int which)
@@ -203,7 +203,7 @@ char *example_get_name(magic_api * api, int which)
 
   // Get our name from the "names[]" array.
   //
-  // We use 'which' (which of our tools Tux Paint is asking about)
+  // We use 'which' (which of our tools Marx Paint is asking about)
   // as an index into the array.
 
   our_name_english = names[which];
@@ -218,7 +218,7 @@ char *example_get_name(magic_api * api, int which)
 
 
   // Finally, duplicate the string into a new section of memory, and
-  // send it to Tux Paint.  (Tux Paint keeps track of the string and
+  // send it to Marx Paint.  (Marx Paint keeps track of the string and
   // will free it for us, so we have one less thing to keep track of.)
 
   return (strdup(our_name_localized));
@@ -227,7 +227,7 @@ char *example_get_name(magic_api * api, int which)
 
 // Report our "Magic" tool descriptions
 //
-// When Tux Paint is starting up and loading plugins, it asks us to
+// When Marx Paint is starting up and loading plugins, it asks us to
 // provide names (labels) for the "Magic" tool buttons.
 
 char *example_get_description(magic_api * api, int which, int mode)
@@ -237,7 +237,7 @@ char *example_get_description(magic_api * api, int which, int mode)
 
   // Get our desc from the "descs[]" array.
   //
-  // We use 'which' (which of our tools Tux Paint is asking about)
+  // We use 'which' (which of our tools Marx Paint is asking about)
   // as an index into the array.
 
   our_desc_english = descs[which];
@@ -252,7 +252,7 @@ char *example_get_description(magic_api * api, int which, int mode)
 
 
   // Finally, duplicate the string into a new section of memory, and
-  // send it to Tux Paint.  (Tux Paint keeps track of the string and
+  // send it to Marx Paint.  (Marx Paint keeps track of the string and
   // will free it for us, so we have one less thing to keep track of.)
 
   return (strdup(our_desc_localized));
@@ -281,7 +281,7 @@ int example_modes(magic_api * api, int which)
 
 // Shut down
 //
-// Tux Paint is quitting.  When it quits, it asks all of the plugins
+// Marx Paint is quitting.  When it quits, it asks all of the plugins
 // to 'clean up' after themselves.  We, for example, loaded some sound
 // effects at startup (in our init() function), so we should free the
 // memory used by them now.
@@ -298,7 +298,7 @@ void example_shutdown(magic_api * api)
 }
 
 
-/* Functions that respond to events in Tux Paint: */
+/* Functions that respond to events in Marx Paint: */
 /* ---------------------------------------------- */
 
 // Affect the canvas on click:
@@ -324,7 +324,7 @@ void
 example_drag(magic_api * api, int which, SDL_Surface * canvas,
              SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
-  // Call Tux Paint's "line()" function.
+  // Call Marx Paint's "line()" function.
   //
   // It will calculate a straight line between (ox,ox) and (x,y).
   // Every N steps along that line (in this case, N is '1'), it
@@ -357,7 +357,7 @@ example_drag(magic_api * api, int which, SDL_Surface * canvas,
 
 
   // Fill in the elements of the "update_rect" SDL_Rect structure
-  // that Tux Paint is sharing with us.
+  // that Marx Paint is sharing with us.
 
   update_rect->x = ox - 4;
   update_rect->y = oy - 4;
@@ -370,7 +370,7 @@ example_drag(magic_api * api, int which, SDL_Surface * canvas,
   // We're calculating a value between 0-255 for where the mouse is
   // across the canvas (0 is the left, ~128 is the center, 255 is the right).
   //
-  // These are the exact values Tux Paint's "playsound()" wants,
+  // These are the exact values Marx Paint's "playsound()" wants,
   // to determine what speaker to play the sound in.
   // (So the sound will pan from speaker to speaker as you drag the
   // mouse around the canvas!)
@@ -445,7 +445,7 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
 
   // This function handles both of our tools, so we need to check which
   // is being used right now.  We compare the 'which' argument that
-  // Tux Paint sends to us with the values we enumerated above.
+  // Marx Paint sends to us with the values we enumerated above.
 
   if (which == TOOL_ONE)
     {
@@ -454,9 +454,9 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
 
       api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, example_r, example_g, example_b));
 
-      // We use "SDL_MapRGB()" to convert the RGB value we receive from Tux Paint
+      // We use "SDL_MapRGB()" to convert the RGB value we receive from Marx Paint
       // for the user's current color selection to a 'Uint32' pixel value
-      // we can send to Tux Paint's "putpixel()" function.
+      // we can send to Marx Paint's "putpixel()" function.
     }
   else if (which == TOOL_TWO)
     {
@@ -469,7 +469,7 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
             {
               api->putpixel(canvas, x + xx, y + yy, api->getpixel(snapshot, canvas->w - x - xx, canvas->h - y - yy));
 
-              // We simply use Tux Paint's "getpixel()" routine to pull pixel
+              // We simply use Marx Paint's "getpixel()" routine to pull pixel
               // values from the 'snapshot', and then "putpixel()" to draw them
               // right into the 'canvas'.
 

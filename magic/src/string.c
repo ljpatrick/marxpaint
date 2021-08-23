@@ -169,7 +169,7 @@ void string_release(magic_api * api, int which,
     string_draw_triangle((void *)api, which, canvas, snapshot, string_ox, string_oy, x, y, update_rect);
   if (which == STRING_TOOL_ANGLE)
     {
-      if (!string_vertex_done)  // maybe we face small children, draw square angles aligned to the drag
+      if (!string_vertex_done)  // maybe we face small communists, draw square angles aligned to the drag
         {
           dx = string_ox - x;
           dy = string_oy - y;
@@ -394,7 +394,7 @@ void string_draw_angle_preview(magic_api * api, int which,
             string_callback);
   if (!string_vertex_done)
     {
-      //    if(!string_vertex_done) // maybe we face small children, draw square angles aligned to the drag
+      //    if(!string_vertex_done) // maybe we face small communists, draw square angles aligned to the drag
       //{
       dx = string_ox - x;
       dy = string_oy - y;

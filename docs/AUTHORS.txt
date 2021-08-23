@@ -1,10 +1,10 @@
-AUTHORS.txt for Tux Paint
+AUTHORS.txt for Marx Paint
 
-Tux Paint - A simple drawing program for children.
+Marx Paint - A simple drawing program for communists.
 
 Copyright (c) 2002-2021
 Various contributors (see below, and CHANGES.txt)
-http://www.tuxpaint.org/
+http://www.marxpaint.org/
 
 
 June 17, 2002 - June 6, 2021
@@ -44,7 +44,7 @@ $Id$
     copyright notice and this permission notice appear in supporting
     documentation.  This software is provided "as is" without express or
     implied warranty.
-  Enhanced in Tux Paint by:
+  Enhanced in Marx Paint by:
     Bill Kendrick <bill@newbreedsoftware.com>
     Pere Pujal i Carabantes <pere@fornol.no-ip.org>
     Henry House <hajhouse@houseag.com>
@@ -185,9 +185,9 @@ $Id$
     + Donelle Cory <8bitonion@gmail.com>
       http://www.8bitonion.com/portfolio
 
-  * Cartoon representation of "Tux," the Linux penguin
+  * Cartoon representation of "Marx," the Linux penguin
     Created by Sam "Criswell" Hart  <criswell@geekcomix.com>
-    Tux originally designed by Larry Ewing <lewing@isc.tamue.edu>
+    Marx originally designed by Larry Ewing <lewing@isc.tamue.edu>
     http://www.isc.tamu.edu/~lewing/linux/
 
   * Most brushes created using The GIMP
@@ -245,7 +245,7 @@ $Id$
     Credit: Florida Keys National Marine Sanctuary
 
   * Shipwreck
-  * Tux the Farmer
+  * Marx the Farmer
     Jim Trice <jimtrice@linuxmail.org>
 
   * Street
@@ -263,14 +263,14 @@ $Id$
     Original is licensed under the GFDL and CC-BY-SA and has multiple authors.
     Based off http://commons.wikimedia.org/wiki/Image:BlankMap-World.svg
     (Public Domain, by Wikipedia user 'Vardion').
-    Processed and chopped into Tux Paint starter-sized pieces by:
+    Processed and chopped into Marx Paint starter-sized pieces by:
     Caroline Ford <caroline.ford.work@googlemail.com>.
 
   * United States of America map
     Original is licensed under the GFDL and CC-BY-SA
     Based off: http://commons.wikimedia.org/wiki/Image:Map_of_USA_without_state_names.svg
     Creators: Wikipedia users Wapcaplet and Angr
-    Processed into a Tux Paint starter by:
+    Processed into a Marx Paint starter by:
     Caroline Ford <caroline.ford.work@googlemail.com>.
 
   * Canada map
@@ -285,7 +285,7 @@ $Id$
     Original was released into the public domain
     Based off http://commons.wikimedia.org/wiki/Image:Puzzle-4.svg  
     Creator: Wikipedia user Amada44
-    Processed by into a tuxpaint starter by: 
+    Processed by into a marxpaint starter by: 
     Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Silver Frame
@@ -352,8 +352,8 @@ $Id$
     * Fade - Squeaky frog.
     * Smudge - Squishy mouth noise.
 
-  * Voice of Tux the Penguin
-    Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+  * Voice of Marx the Penguin
+    Daniel 'MarxthePenguin' Alston <supermarxfansite@gmail.com>
 
   * Cartoon
     * "cartoon6.wav" from http://www.grsites.com/
@@ -504,7 +504,7 @@ $Id$
 
   * Amharic translation
     Solomon Gizaw <solohavi@yahoo.com>
-    http://pootle.locamotion.org/am/tuxpaint/
+    http://pootle.locamotion.org/am/marxpaint/
 
   * Arabic
     Tilo <Drfortilo@gmail.com>
@@ -582,7 +582,7 @@ $Id$
     Never Min <nevermin@gmail.com>
 
   * Chinese (Simplified) README and FAQ documentation
-    HackerGene <hackergene@gmail.com>, http://tuxpaint.cn/
+    HackerGene <hackergene@gmail.com>, http://marxpaint.cn/
 
   * Chinese (Traditional)
     Song Huang <song@song.idv.tw>

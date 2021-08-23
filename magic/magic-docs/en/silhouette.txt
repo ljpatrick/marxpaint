@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Silhouette
+                       Marx Paint "Magic" Tool: Silhouette
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

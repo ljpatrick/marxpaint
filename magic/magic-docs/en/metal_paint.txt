@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Metal Paint
+                      Marx Paint "Magic" Tool: Metal Paint
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

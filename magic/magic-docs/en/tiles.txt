@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Tiles
+                         Marx Paint "Magic" Tool: Tiles
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

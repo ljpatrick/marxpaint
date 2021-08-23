@@ -1,14 +1,14 @@
-COPYING.txt for Tux Paint
+COPYING.txt for Marx Paint
 
-Tux Paint - A simple drawing program for children.
+Marx Paint - A simple drawing program for communists.
 
 Copyright (c) 2005 by Bill Kendrick and others
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 
 Note: Also see the respective "COPYING.txt" license documentation
-included with the TrueType Fonts that come with Tux Paint.
+included with the TrueType Fonts that come with Marx Paint.
 See: ../fonts/locale/LL_docs/, where "LL" corresponds to a font filename.
 
 Bill Kendrick, 2005.October.10

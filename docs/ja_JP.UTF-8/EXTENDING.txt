@@ -1,9 +1,9 @@
                                    Extending
-                                   Tux Paint
+                                   Marx Paint
                                   バージョン 0.9.27
 
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                    2021年5月31日
 
@@ -37,10 +37,10 @@
      ----------------------------------------------------------------------
 
    If you wish to add or change things like Brushes, Starters, Rubber Stamps,
-   and other content used by Tux Paint, you can do so fairly easily by simply
-   adding, changing, or removing files where Tux Paint looks for them.
+   and other content used by Marx Paint, you can do so fairly easily by simply
+   adding, changing, or removing files where Marx Paint looks for them.
 
-   Note: You'll need to re-launch Tux Paint for the changes to take effect.
+   Note: You'll need to re-launch Marx Paint for the changes to take effect.
 
      ----------------------------------------------------------------------
 
@@ -48,39 +48,39 @@ Where Files Go
 
   Standard Files
 
-       Tux Paint looks for its various data files in its 'data' directory.
+       Marx Paint looks for its various data files in its 'data' directory.
 
     Linux and Unix
 
          Where this directory goes depends on what value was set for
-         "DATA_PREFIX" when Tux Paint was built. See 'Install documentation'
+         "DATA_PREFIX" when Marx Paint was built. See 'Install documentation'
          for details.
 
          By default, though, the directory is:
 
-           /usr/local/share/tuxpaint/
+           /usr/local/share/marxpaint/
 
          If you installed from a package, it is more likely to be:
 
-           /usr/share/tuxpaint/
+           /usr/share/marxpaint/
 
     Windows
 
-         Tux Paint looks for a directory called 'data' in the same directory
+         Marx Paint looks for a directory called 'data' in the same directory
          as the executable. This is the directory that the installer used
-         when installing Tux Paint e.g.:
+         when installing Marx Paint e.g.:
 
-           C:\Program Files\TuxPaint\data
+           C:\Program Files\MarxPaint\data
 
     macOS
 
-         Tux Paint stores its data files inside the "Tux Paint" application
+         Marx Paint stores its data files inside the "Marx Paint" application
          icon (which is actually a special kind of folder on macOS & Mac OS X
          before it). The following steps explain how to get to the folders
          within it:
 
           1. Bring up a 'context' menu by holding the [Control] key and
-             clicking the Tux Paint icon the in Finder. (If you have a mouse
+             clicking the Marx Paint icon the in Finder. (If you have a mouse
              with more than one button, you can simply right-click the icon.)
           2. Select "Show Contents" from the menu that appears. A new Finder
              window will appear with a folder inside called "Contents".
@@ -89,67 +89,67 @@ Where Files Go
           4. There, you will find various sub-folders, such as "starters",
              "stamps", "brushes", etc. Adding new content to these folders
              will make the content available to any user that launches this
-             copy (icon) of Tux Paint.
+             copy (icon) of Marx Paint.
 
-         Note: If you install a newer version of Tux Paint and replace or
+         Note: If you install a newer version of Marx Paint and replace or
          discard the old version, you will lose changes made by following the
          instructions above, so keep backups of your new content (stamps,
          brushes, etc.).
 
-         Tux Paint also looks for files in a "TuxPaint" folder that you can
+         Marx Paint also looks for files in a "MarxPaint" folder that you can
          place in your system's "Application Support" folder (found under
          "Library" at the root of your filesystem):
 
-           /Library/Application Support/TuxPaint/
+           /Library/Application Support/MarxPaint/
 
-         When you upgrade to a newer version of Tux Paint, the contents of
-         this "TuxPaint" folder will stay the same, and remain accessible by
-         all users of Tux Paint.
+         When you upgrade to a newer version of Marx Paint, the contents of
+         this "MarxPaint" folder will stay the same, and remain accessible by
+         all users of Marx Paint.
 
      ----------------------------------------------------------------------
 
   Personal Files
 
        You can also create brushes, stamps, 'starters', templates, and fonts
-       in your own user account directory (folder) for Tux Paint to find.
+       in your own user account directory (folder) for Marx Paint to find.
 
     Windows
 
-         Your personal Tux Paint folder is stored in your personal
+         Your personal Marx Paint folder is stored in your personal
          "Application Data". For example, on newer Windows:
 
-           C:\Documents and Settings\(username)\Application Data\TuxPaint\
+           C:\Documents and Settings\(username)\Application Data\MarxPaint\
 
     macOS
 
-         Your personal Tux Paint folder is stored in your personal
+         Your personal Marx Paint folder is stored in your personal
          "Application Support" folder:
 
-           /Users/(username)/Library/Application Support/TuxPaint/
+           /Users/(username)/Library/Application Support/MarxPaint/
 
     Linux and Unix
 
-         Your personal Tux Paint files go into a 'hidden directory' found in
-         your account's home directory: "$(HOME)/.tuxpaint/" (also known as
-         "~/.tuxpaint/").
+         Your personal Marx Paint files go into a 'hidden directory' found in
+         your account's home directory: "$(HOME)/.marxpaint/" (also known as
+         "~/.marxpaint/").
 
-         That is, if your home directory is "/home/tux", then your personal
-         Tux Paint files go in "/home/tux/.tuxpaint/".
+         That is, if your home directory is "/home/marx", then your personal
+         Marx Paint files go in "/home/marx/.marxpaint/".
 
-         Don't forget the period (".") before the "tuxpaint"!
+         Don't forget the period (".") before the "marxpaint"!
 
        To add your own brushes, stamps, 'starters,' templates, and fonts,
-       create subdirectories under your personal Tux Paint directory named
+       create subdirectories under your personal Marx Paint directory named
        "brushes", "stamps", "starters", "templates", "fonts", respectively.
 
        (For example, if you created a brush named "flower.png", you would put
-       it in "~/.tuxpaint/brushes/" under Linux or Unix.)
+       it in "~/.marxpaint/brushes/" under Linux or Unix.)
 
      ----------------------------------------------------------------------
 
 Brushes
 
-     The brushes used for drawing with the 'Brush' and 'Lines' tools in Tux
+     The brushes used for drawing with the 'Brush' and 'Lines' tools in Marx
      Paint are simply PNG image files.
 
      The alpha (transparency) of the PNG image is used to determine the shape
@@ -157,7 +157,7 @@ Brushes
      partially-transparent!
 
      Greyscale pixels in the brush PNG will be drawn using the
-     currently-selected color in Tux Paint. Color pixels will be tinted.
+     currently-selected color in Marx Paint. Color pixels will be tinted.
 
   Brush Options
 
@@ -174,7 +174,7 @@ Brushes
 
     Brush Spacing
 
-         As of Tux Paint version 0.9.16, you can now specify the spacing for
+         As of Marx Paint version 0.9.16, you can now specify the spacing for
          brushes (that is, how often they are drawn). By default, the spacing
          will be the brush's height, divided by 4.
 
@@ -184,7 +184,7 @@ Brushes
 
     Animated Brushes
 
-         As of Tux Paint version 0.9.16, you may now create animated brushes.
+         As of Marx Paint version 0.9.16, you may now create animated brushes.
          As the brush is used, each frame of the animation is drawn.
 
          Lay each frame out across a wide PNG image. For example, if your
@@ -199,7 +199,7 @@ Brushes
 
     Directional Brushes
 
-         As of Tux Paint version 0.9.16, you may now create directional
+         As of Marx Paint version 0.9.16, you may now create directional
          brushes. As the brush is used, different shapes are drawn, depending
          on the direction the brush is going.
 
@@ -229,7 +229,7 @@ Brushes
 
      Note: If your new brushes all come out as solid squares or rectangles,
      it's because you forgot to use alpha transparency! See the 'PNG
-     documentation' in Tux Paint for more information and tips.
+     documentation' in Marx Paint for more information and tips.
 
      ----------------------------------------------------------------------
 
@@ -242,42 +242,42 @@ Stamps
 
   Stamp Images
 
-       Rubber Stamps in Tux Paint can be made up of a number of separate
+       Rubber Stamps in Marx Paint can be made up of a number of separate
        files. The one file that is required is, of course, the picture
        itself.
 
-       As of Tux Paint version 0.9.17, Stamps may be either PNG bitmap images
+       As of Marx Paint version 0.9.17, Stamps may be either PNG bitmap images
        or SVG vector images. They can be full-color or greyscale. The alpha
        (transparency) channel of PNGs is used to determine the actual shape
        of the picture (otherwise you'll stamp a large rectangle on your
        drawings).
 
-       PNGs can be any size, and Tux Paint (by default) provides a set of
+       PNGs can be any size, and Marx Paint (by default) provides a set of
        sizing buttons to let the user scale the stamp up (larger) and down
        (smaller).
 
        SVGs are vector-based, and will be scaled appropriately for the canvas
-       size being used in Tux Paint.
+       size being used in Marx Paint.
 
        Note: If your new PNG-based stamps all come out as solid squares or
        rectangles, it's because you forgot to use alpha transparency! See the
-       'PNG documentation' in Tux Paint for more information and tips.
+       'PNG documentation' in Marx Paint for more information and tips.
 
        Note: If your new SVG stamps seem to have a lot of whitespace, make
        sure the SVG 'document' is no larger than the shape(s) within. If they
        are being clipped, make sure the 'document' is large enough to contain
-       the shape(s). See the 'SVG documentation' in Tux Paint for more
+       the shape(s). See the 'SVG documentation' in Marx Paint for more
        information and tips.
 
        Advanced Users: The 'Advanced Stamps How-To' document describes, in
        detail, how to make PNG images which will scale perfectly when used as
-       stamps in Tux Paint.
+       stamps in Marx Paint.
 
      ----------------------------------------------------------------------
 
   Stamp Descriptive Text
 
-       Tux Paint will display descriptive text when a stamp is selected.
+       Marx Paint will display descriptive text when a stamp is selected.
        These are placed in plain text files with the same name as the PNG or
        SVG, but with a ".txt" filename extension. (e.g., "stamp.png"'s
        description is stored in "stamp.txt" in the same directory.)
@@ -288,7 +288,7 @@ Stamps
     Localization Support
 
          Additional lines can be added to the text file to provide
-         translations of the description, to be displayed when Tux Paint is
+         translations of the description, to be displayed when Marx Paint is
          running in a different locale (like French or Spanish).
 
          The beginning of the line should correspond to the language code of
@@ -296,12 +296,12 @@ Stamps
          Traditional Chinese), followed by ".utf8=" and the translated
          description (Unicode, encoded in UTF-8).
 
-         For Tux Paint developers: There are scripts in the "po" directory
+         For Marx Paint developers: There are scripts in the "po" directory
          for converting the text files to PO format (and back) for easy
          translation to different languages. Therefore you should never add
          or change translations in the ".txt" files directly.
 
-         If no translation is available for the language Tux Paint is
+         If no translation is available for the language Marx Paint is
          currently running in, the US English text is used.
 
     Windows のユーザー
@@ -314,7 +314,7 @@ Stamps
 
   Stamp Sound Effects
 
-       Tux Paint can play a sound effect when a stamp is selected. For
+       Marx Paint can play a sound effect when a stamp is selected. For
        example, the sound of a duck quaking when selecting a duck, or a brief
        piece of music when a musical instrument is chosen. Files may be in
        "WAVE (".wav")" or "OGG Vorbis (".ogg")" formats, and are given same
@@ -328,11 +328,11 @@ Stamps
          also create WAV or OGG files with the locale's label in the
          filename, in the form: "stamp_LOCALE.EXT"
 
-         "stamp.png"'s sound effect, when Tux Paint is run in Spanish mode,
+         "stamp.png"'s sound effect, when Marx Paint is run in Spanish mode,
          would be "stamp.png". In French mode, "stamp_es.wav". In Brazilian
          Portuguese mode, "stamp_fr.wav". And so on...
 
-         If no localized sound effect can be loaded, Tux Paint will attempt
+         If no localized sound effect can be loaded, Marx Paint will attempt
          to load the 'default' sound file. (e.g., "stamp.wav")
 
        Note: For descriptive sounds (not sound effects, like a bang or a bird
@@ -343,7 +343,7 @@ Stamps
 
   Stamp Descriptive Sound
 
-       Tux Paint can also play a descriptive sound when a stamp is selected.
+       Marx Paint can also play a descriptive sound when a stamp is selected.
        For example, the sound of someone saying the word "duck" when
        selecting a duck, or the name of a musical instrument when one is
        chosen. Files may be in "WAVE (".wav")" or "OGG Vorbis (".ogg")"
@@ -357,12 +357,12 @@ Stamps
          files with both "_desc" and the locale's label in the filename, in
          the form: "stamp_desc_LOCALE.EXT"
 
-         "stamp.png"'s descriptive sound, when Tux Paint is run in Spanish
+         "stamp.png"'s descriptive sound, when Marx Paint is run in Spanish
          mode, would be "stamp_desc_es.wav". In French mode,
          "stamp_desc_fr.wav". In Brazilian Portuguese mode,
          "stamp_desc_pt_BR.wav". And so on...
 
-         If no localized descriptive sound can be loaded, Tux Paint will
+         If no localized descriptive sound can be loaded, Marx Paint will
          attempt to load the 'default' sound file. (e.g., "stamp_desc.wav")
 
      ----------------------------------------------------------------------
@@ -410,7 +410,7 @@ Stamps
         Tinting Options:
 
              Depending on the contents of your stamp, you might want to have
-             Tux Paint use one of a number of methods when tinting it. Add
+             Marx Paint use one of a number of methods when tinting it. Add
              one of the following lines to the stamp's data file:
 
              Normal tinter — "tinter=normal" (the default)
@@ -432,7 +432,7 @@ Stamps
 
          By default, a stamp can be flipped upside down, shown as a mirror
          image, or both. This is done using the control buttons below the
-         stamp selector, at the lower right side of the screen in Tux Paint.
+         stamp selector, at the lower right side of the screen in Marx Paint.
 
          Sometimes, it doesn't make sense for a stamp to be flippable or
          mirrored; for example, stamps of letters or numbers. Sometimes
@@ -447,9 +447,9 @@ Stamps
 
     Initial Stamp Size
 
-         By default, Tux Paint assumes that your stamp is sized appropriately
-         for unscaled display on a 608x472 canvas. This was the original Tux
-         Paint canvas size, provided by a 640x480 screen. Tux Paint will then
+         By default, Marx Paint assumes that your stamp is sized appropriately
+         for unscaled display on a 608x472 canvas. This was the original Marx
+         Paint canvas size, provided by a 640x480 screen. Marx Paint will then
          adjust the stamp according to the current canvas size and, if
          enabled, the user's stamp size controls.
 
@@ -478,7 +478,7 @@ Stamps
        written across the side. You probably do not want that text to appear
        backwards when the image is flipped!
 
-       To create a mirrored version of a stamp that you want Tux Paint to
+       To create a mirrored version of a stamp that you want Marx Paint to
        use, rather than mirroring one on its own, simply create a second
        ".png" or ".svg" graphics file with the same name, except with
        "_mirror" before the filename extension.
@@ -487,7 +487,7 @@ Stamps
        named "stamp_mirror.png", which will be used when the stamp is
        mirrored (rather than using a backwards version of "stamp.png").
 
-       As of Tux Paint 0.9.18, you may similarly provide a pre-flipped image
+       As of Marx Paint 0.9.18, you may similarly provide a pre-flipped image
        with "_flip" in the name, and/or an image that is both mirrored and
        flipped, by naming it "_mirror_flip".
 
@@ -499,9 +499,9 @@ Stamps
 
 Fonts
 
-     The fonts used by Tux Paint are TrueType Fonts (TTF).
+     The fonts used by Marx Paint are TrueType Fonts (TTF).
 
-     Simply place them in the "fonts" directory. Tux Paint will load the font
+     Simply place them in the "fonts" directory. Marx Paint will load the font
      and provide four different sizes in the 'Letters' selector when using
      the 'Text' and 'Label' tools.
 
@@ -520,7 +520,7 @@ Fonts
 
        The most basic kind of 'starter' is similar to a picture in a coloring
        book. It's an outline of a shape which you can then color in and add
-       details to. In Tux Paint, as you draw, type text, or stamp stamps, the
+       details to. In Marx Paint, as you draw, type text, or stamp stamps, the
        outline remains 'above' what you draw. You can erase the parts of the
        drawing you made, but you can't erase the outline.
 
@@ -528,7 +528,7 @@ Fonts
        black and white picture in a paint program, and save it as a raster
        PNG file, or vector SVG. If saving as a PNG, you may optionally render
        the image as black-and-transparent, rather than black-and-white, but
-       (as of Tux Paint 0.9.21) this is not required.
+       (as of Marx Paint 0.9.21) this is not required.
 
   Scene-Style Starters
 
@@ -556,20 +556,20 @@ Fonts
        corresponds to the overlay, or foreground.)
 
      For best results, 'starter' images should be at least the same size as
-     Tux Paint's drawing canvas. (See the "Loading Other Pictures into Tux
-     Paint" section of Tux Paint's main documentation (README) for details on
+     Marx Paint's drawing canvas. (See the "Loading Other Pictures into Marx
+     Paint" section of Marx Paint's main documentation (README) for details on
      sizing.) If they are not, they will be stretched or scaled. This is done
      without affecting the shape ("aspect ratio"); however some smudging may
      be applied to the edges.
 
      Place them in the "starters" directory. When the 'New' dialog is
-     accessed in Tux Paint, the 'starter' images will appear in the screen
+     accessed in Marx Paint, the 'starter' images will appear in the screen
      that appears, after the various solid color choices.
 
      Note: 'Starters' are 'attached' to saved pictures, via a small text file
      that has the same name as the saved file, but with ".dat" as the
      extension. This allows it to continue to affect the drawing even after
-     Tux Paint has been quit, or another picture is loaded or a new image is
+     Marx Paint has been quit, or another picture is loaded or a new image is
      created. (In other words, if you base a drawing on a 'starter' image, it
      will always be affected by it.)
 
@@ -578,10 +578,10 @@ Fonts
 'Templates'
 
      'Template' images also appear in the 'New' dialog, along with solid
-     color background choices and 'Starters'. (Note: Tux Paint prior to
+     color background choices and 'Starters'. (Note: Marx Paint prior to
      version 0.9.22 did not have the 'Template' feature.)
 
-     Unlike pictures drawn in Tux Paint by users and then opened later,
+     Unlike pictures drawn in Marx Paint by users and then opened later,
      opening a 'template' creates a new drawing. When you save, the
      'template' image is not overwritten. Unlike 'starters', there is no
      immutable 'layer' above the canvas. You may draw over any part of it.
@@ -595,20 +595,20 @@ Fonts
      format). No preparation or conversion should be required.
 
      For best results, 'template' images should be at least the same size as
-     Tux Paint's drawing canvas. (See the "Loading Other Pictures into Tux
-     Paint" section of Tux Paint's main documentation (README) for details on
+     Marx Paint's drawing canvas. (See the "Loading Other Pictures into Marx
+     Paint" section of Marx Paint's main documentation (README) for details on
      sizing.) If they are not, they will be stretched or scaled. This is done
      without affecting the shape ("aspect ratio"); however some smudging may
      be applied to the edges.
 
      Place them in the "templates" directory. When the 'New' dialog is
-     accessed in Tux Paint, the 'template' images will appear in the screen
+     accessed in Marx Paint, the 'template' images will appear in the screen
      that appears, after the various solid color choices.
 
      Note: 'Templates' are 'attached' to saved pictures, via a small text
      file that has the same name as the saved file, but with ".dat" as the
      extension. This allows it to continue to affect the drawing even after
-     Tux Paint has been quit, or another picture is loaded or a new image is
+     Marx Paint has been quit, or another picture is loaded or a new image is
      created. (In other words, if you base a drawing on a 'template' image,
      it will always be affected by it.)
 
@@ -616,12 +616,12 @@ Fonts
 
 Translations
 
-     Tux Paint supports numerous languages, thanks to use of the "gettext"
+     Marx Paint supports numerous languages, thanks to use of the "gettext"
      localization library. (See "Options documentation" for how to change
-     locales in Tux Paint.)
+     locales in Marx Paint.)
 
-     To translate Tux Paint to a new language, copy the translation template
-     file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
+     To translate Marx Paint to a new language, copy the translation template
+     file, "marxpaint.pot" (found in Marx Paint's source code, in the folder
      "src/po/"). Rename the copy as a ".po" file, with an appropriate name
      for the locale you're translating to (e.g., "es.po" for Spanish; or
      "pt_BR.po" for Brazilian Portuguese, versus "pt.po" or "pt_PT.po" for
@@ -629,7 +629,7 @@ Translations
 
      Open the newly-created ".po" file — you can edit in a plain text edtior,
      such as Emacs, Pico or VI on Linux, or NotePad on Windows. The original
-     English text used in Tux Paint is listed in lines starting with "msgid".
+     English text used in Marx Paint is listed in lines starting with "msgid".
      Enter your translations of each of these pieces of text in the empty
      "msgstr" lines directly below the corresponding "msgid" lines. (Note: Do
      not remove the quotes.)
@@ -650,26 +650,26 @@ Translations
        * Virtraal
        * Lokalize
 
-     Note: It is best to always work off of the latest Tux Paint text catalog
-     template ("tuxpaint.pot"), since new text is added, and old text is
+     Note: It is best to always work off of the latest Marx Paint text catalog
+     template ("marxpaint.pot"), since new text is added, and old text is
      occasionally changed. The text catalog for the upcoming, unreleased
-     version of Tux Paint can be found in Tux Paint's Git repository (see:
-     http://www.tuxpaint.org/download/source/git/), and on the Tux Paint
-     website at http://www.tuxpaint.org/help/po/.
+     version of Marx Paint can be found in Marx Paint's Git repository (see:
+     http://www.marxpaint.org/download/source/git/), and on the Marx Paint
+     website at http://www.marxpaint.org/help/po/.
 
      To edit an existing translation, download the latest ".po" file for that
      language, and edit it as described above.
 
      You may send new or edited translation files to Bill Kendrick, lead
-     developer of Tux Paint, at: bill@newbreedsoftware.com, or post them to
-     the "tuxpaint-i18n" mailing list (see: http://www.tuxpaint.org/lists/).
+     developer of Marx Paint, at: bill@newbreedsoftware.com, or post them to
+     the "marxpaint-i18n" mailing list (see: http://www.marxpaint.org/lists/).
 
      Alternatively, if you have an account with SourceForge.net, you can
-     request to be added to the "tuxpaint" project and receive write-access
+     request to be added to the "marxpaint" project and receive write-access
      to the Git source code repository so that you may commit your changes
      directly.
 
-     Note: Support for new locales requires making additions to Tux Paint's
+     Note: Support for new locales requires making additions to Marx Paint's
      source code ("/src/i18n.h" and "/src/i18n.c"), and requires updates to
      the Makefile, to ensure the ".po" files are compiled into ".mo" files,
      and available for use at runtime.
@@ -678,8 +678,8 @@ Translations
 
 Alternative Input Methods
 
-     Tux Paint's 'Text' and 'Label' tools can provide alternative input
-     methods for some languages. For example, when Tux Paint is running with
+     Marx Paint's 'Text' and 'Label' tools can provide alternative input
+     methods for some languages. For example, when Marx Paint is running with
      a Japanese locale, the right [Alt] key can be pressed to cycle between
      Latin, Romanized Hiragana and Romanized Katakana modes. This allows
      native characters and words to be entered into the 'Text' and 'Label'
@@ -734,7 +734,7 @@ Alternative Input Methods
      used in Korean to handle Batchim, which may carry over to the next
      character.
 
-     Note: Support for new input methods requires making additions to Tux
+     Note: Support for new input methods requires making additions to Marx
      Paint's source code ("/src/im.c"), and requires updates to the Makefile,
      to ensure the ".im" files are available for use at runtime.
 
@@ -742,10 +742,10 @@ Alternative Input Methods
 
 On-screen Keyboard
 
-     As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present
+     As of version 0.9.22, Marx Paint's 'Text' and 'Label' tools can present
      an on-screen keyboard that allows the pointer (via a mouse, eye-tracking
      systems, etc.) to be used to input characters. Files that describe the
-     layout and available keys are stored in Tux Paint "osk" directory. Each
+     layout and available keys are stored in Marx Paint "osk" directory. Each
      keyboard layout is defined by a number of files (some of which may be
      shared by different layouts).
 
@@ -837,7 +837,7 @@ On-screen Keyboard
 
        This file defines which numeric keycodes (seen in the keyboard layout
        files, such as "qwerty.h_layout" described above) should be mapped to
-       which actual characters that an application such as Tux Paint expects
+       which actual characters that an application such as Marx Paint expects
        to receive when keys (e.g., on a real keyboard) are pressed.
 
        If you're using an operating system such as Linux, which runs X-Window
@@ -881,7 +881,7 @@ On-screen Keyboard
        inputs. For example, "[Compose]" followed by "[A]" and "[E]" can be
        used to create the "æ" character.
 
-       The file that comes with Tux Paint is based on the US English UTF-8
+       The file that comes with Marx Paint is based on the US English UTF-8
        (Unicode) composemap that comes with X.Org's X Window system. The
        current version from the Xlib library has a web located page at
        https://www.x.org/releases/current/doc/libX11/i18n/compose/en_US.UTF-8.html.
@@ -893,7 +893,7 @@ On-screen Keyboard
        (e.g., "XK_equal" corresponds to "U+003D", for the character "="
        ("EQUALS SIGN").
 
-       Note: This file is not compiled into Tux Paint, but is read and parsed
+       Note: This file is not compiled into Marx Paint, but is read and parsed
        at runtime.
 
        It is unlikely that any modification will be required of this file.

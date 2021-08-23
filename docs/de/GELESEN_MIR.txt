@@ -1,129 +1,129 @@
-GELESEN_MIR.txt für Tux Paint
-[ Übersetzt, "GOOGLE.COM" Sprachwerkzeuge verwendend. ]
+GELESEN_MIR.txt fï¿½r Marx Paint
+[ ï¿½bersetzt, "GOOGLE.COM" Sprachwerkzeuge verwendend. ]
 
 
-Tux Paint - ein einfaches zeichnendes Programm für Kinder.  
+Marx Paint - ein einfaches zeichnendes Programm fï¿½r Kinder.  
 
 Copyright 2002 durch Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 Juni 14, 2002 - September 23, 2002
 
-Über:
+ï¿½ber:
 -----
-  Tux Paint ist ein zeichnendes Programm für junge Kinder.
-  (Sagen, 3-10 Jahre alt.)  Sie wird hauptsächlich entwickelt,
-  um eine educational-/edutainmentnotwendigkeit am geöffneten
-  Betriebssystem Quell"Linux" zu füllen, aber ist- mit vielen anderen
-  Plattformen, einschließlich Windows, MacOS, BeOS, anderer Unixvarianten,
+  Marx Paint ist ein zeichnendes Programm fï¿½r junge Kinder.
+  (Sagen, 3-10 Jahre alt.)  Sie wird hauptsï¿½chlich entwickelt,
+  um eine educational-/edutainmentnotwendigkeit am geï¿½ffneten
+  Betriebssystem Quell"Linux" zu fï¿½llen, aber ist- mit vielen anderen
+  Plattformen, einschlieï¿½lich Windows, MacOS, BeOS, anderer Unixvarianten,
   usw. kompatibel.  
 
 
 Lizenz:
 -------
-  Tux Paint ein geöffnetes Quellprojekt, freigegeben unter der
-  GNU-Öffentlichkeit Lizenz (GPL).  Er ist frei und das ' Quellenprogramm '
-  hinter dem Programm ist vorhanden.  (dieses läßt andere Eigenschaften
+  Marx Paint ein geï¿½ffnetes Quellprojekt, freigegeben unter der
+  GNU-ï¿½ffentlichkeit Lizenz (GPL).  Er ist frei und das ' Quellenprogramm '
+  hinter dem Programm ist vorhanden.  (dieses lï¿½ï¿½t andere Eigenschaften
   addieren, Wanzen zu reparieren, und Teile des Programms in ihrem eigenen
-  GPL'd zu benutzen öffnen Sie Quell-Software.)
+  GPL'd zu benutzen ï¿½ffnen Sie Quell-Software.)
 
-  Sehen Sie KOPIE.txt für das Ganztext der GPL-Lizenz.  
+  Sehen Sie KOPIE.txt fï¿½r das Ganztext der GPL-Lizenz.  
 
 Zielsetzungen:
 --------------
-  Einfach und Spaß
+  Einfach und Spaï¿½
   ----------------
-    Tux Paint wird bedeutet, um ein einfaches zeichnendes Programm für junge
+    Marx Paint wird bedeutet, um ein einfaches zeichnendes Programm fï¿½r junge
     Kinder zu sein.  Es wird nicht da ein universelles zeichnendes Werkzeug
-    bedeutet.  Zu verwenden WIRD bedeutet, um Spaß und einfach zu sein.
+    bedeutet.  Zu verwenden WIRD bedeutet, um Spaï¿½ und einfach zu sein.
     Stichhaltige Effekte und eine Karikaturbuchstabenhilfe informieren den
     Benutzer was weitergeht, und halten sie unterhalten.  Es gibt auch
-    extra-large Karikatur-Artmäusezeigerformen.  
+    extra-large Karikatur-Artmï¿½usezeigerformen.  
 
   Dehnbarkeit
   -----------
-    Tux Paint ist ausdehnbar.  Bürsten und "Gummistempel" Formen können
+    Marx Paint ist ausdehnbar.  Bï¿½rsten und "Gummistempel" Formen kï¿½nnen
     innen fallengelassen werden und ausgezogen werden.  Z.B. kann ein Lehrer
     in eine Ansammlung Tierformen fallen und ihre Kursteilnehmer bitten, ein
     Oekosystem zu zeichnen.  Jede Form kann einen Ton, der gespielt wird,
     und Texttatsachen haben, die angezeigt werden, wenn das Kind die Form
-    vorwählt.  
+    vorwï¿½hlt.  
 
   Beweglichkeit
   -------------
-    Tux Paint ist unter verschiedenen Computerplattformen beweglich:
+    Marx Paint ist unter verschiedenen Computerplattformen beweglich:
     Windows, Macintosh, Linux, usw..  Die Schnittstelle schaut dasselbe
-    unter ihnen alle.  Tux Paint läuft passend gut auf ältere Systeme
+    unter ihnen alle.  Marx Paint lï¿½uft passend gut auf ï¿½ltere Systeme
     (wie ein Pentium 133) und kann errichtet werden, um auf langsame
     Systeme besser zu laufen.  
 
   Einfachheit
   -----------
     Es gibt keinen direkten Zugriff zu den zugrundeliegenden Verwicklungen
-    des Computers.  Das gegenwärtige Bild wird gehalten, wenn das Programm
+    des Computers.  Das gegenwï¿½rtige Bild wird gehalten, wenn das Programm
     beendigt, und wieder erscheint, wenn es wiederbegonnen wird.
     Das Speichern von Bildern erfordert keine Notwendigkeit, Dateinamen
-    zu verursachen oder die Tastatur zu benutzen.  Das Öffnen eines Bildes
-    wird getan, indem man es von einer Ansammlung thumbnails vorwählt.  
+    zu verursachen oder die Tastatur zu benutzen.  Das ï¿½ffnen eines Bildes
+    wird getan, indem man es von einer Ansammlung thumbnails vorwï¿½hlt.  
 
   Andere Unterlagen
   -----------------
-    Andere Unterlagen, die mit Tux Paint umfaßt werden (in den "docs"
+    Andere Unterlagen, die mit Marx Paint umfaï¿½t werden (in den "docs"
     folder/directory) umfassen:  
 
     AUTHORS.txt         - Liste der Autoren und der Mitwirkenden
-    CHANGES.txt         - Zusammenfassung von geändert zwischen Freigaben
+    CHANGES.txt         - Zusammenfassung von geï¿½ndert zwischen Freigaben
     KOPIE.txt           - kopierenlizenz (der GPL)
-    ANBRINGEN.txt       - Anweisungen für compiling/installing, wenn anwendbares
-    PNG.txt             - Anmerkungen über das Verursachen der
-                          PNG-Formatbilder für Gebrauch in Tux malen Sie
+    ANBRINGEN.txt       - Anweisungen fï¿½r compiling/installing, wenn anwendbares
+    PNG.txt             - Anmerkungen ï¿½ber das Verursachen der
+                          PNG-Formatbilder fï¿½r Gebrauch in Marx malen Sie
     GELESEN_MIR.txt     - (diese Akte)
     TODO.txt            - eine Liste der schwebenden Eigenschaften oder
-                          des Wanzenbenötigens geregelt
+                          des Wanzenbenï¿½tigens geregelt
 
 
-Verwenden Der Tux Paint
+Verwenden Der Marx Paint
 -----------------------
-  Gebäude Tux Paint
+  Gebï¿½ude Marx Paint
   ------------------
-    Um Tux Paint von der Quelle zu kompilieren, beziehen Sie bitte sich auf
+    Um Marx Paint von der Quelle zu kompilieren, beziehen Sie bitte sich auf
     ANBRINGEN.txt.  
 
-  Laden Tux Paint
+  Laden Marx Paint
   ---------------
     Linux-/UnixcBenutzer
     --------------------
       Lassen Sie den folgenden Befehl an einer Oberteilaufforderung laufen
       (z.B., "$"):
 
-        $ tuxpaint
+        $ marxpaint
 
-      Es ist auch möglich, eine Abschußrampe knöpfen zu lassen oder Ikone
+      Es ist auch mï¿½glich, eine Abschuï¿½rampe knï¿½pfen zu lassen oder Ikone
       (z.B. in GNOME oder in KDE).  Sehen Sie Unterlagen Ihres desktop Klimas
-      für Details...
+      fï¿½r Details...
 
-      Wenn irgendwelche Störungen auftreten, werden sie auf dem Anschluß
+      Wenn irgendwelche Stï¿½rungen auftreten, werden sie auf dem Anschluï¿½
       angezeigt ("stderr").  
 
     WindowscBenutzer
     ----------------
-      Einfach Doppeltklicken die "tuxpaint.exe-" Ikone im heft Tux Paint.
+      Einfach Doppeltklicken die "marxpaint.exe-" Ikone im heft Marx Paint.
 
-      Wenn irgendwelche Störungen auftreten, werden sie in einer Akte
-      gespeichert, die "stderr.txt" im heft Tux Paint genannt wird.  
+      Wenn irgendwelche Stï¿½rungen auftreten, werden sie in einer Akte
+      gespeichert, die "stderr.txt" im heft Marx Paint genannt wird.  
 
-      Sehen Sie "ANBRINGEN.txt" für Details über das Bilden eine
-      ' Kürzung' Ikone zur Tux Paint, die Sie leicht Befehl-Linienwahlen
-      einstellen läßt.  
+      Sehen Sie "ANBRINGEN.txt" fï¿½r Details ï¿½ber das Bilden eine
+      ' Kï¿½rzung' Ikone zur Marx Paint, die Sie leicht Befehl-Linienwahlen
+      einstellen lï¿½ï¿½t.  
 
-      Um Tux laufen zu lassen malen Sie und stellen Sie Befehl-Linienwahlen
-      direkt, Sie muß "tuxpaint.exe" von einem sofortigen Fenster MSDOS
-      laufen lassen zur Verfügung.  (sehen Sie "ANBRINGEN.txt" für Details.)
+      Um Marx laufen zu lassen malen Sie und stellen Sie Befehl-Linienwahlen
+      direkt, Sie muï¿½ "marxpaint.exe" von einem sofortigen Fenster MSDOS
+      laufen lassen zur Verfï¿½gung.  (sehen Sie "ANBRINGEN.txt" fï¿½r Details.)
 
     MacintoshcBenutzer
     ------------------
-      Einfach Doppeltklicken die Farben"Ikone" Tux im Farbenheft Tux.
+      Einfach Doppeltklicken die Farben"Ikone" Marx im Farbenheft Marx.
 
       [ wie man Comamndlinienwahlen unter MacOS herausgibt?
         Wahl-doppelt-Klicken?  ]
@@ -133,11 +133,11 @@ Verwenden Der Tux Paint
   ------
     KonfigurationscAkte
     -------------------
-      Sie können eine einfache Konfigurationsakte für Tux Paint herstellen, 
+      Sie kï¿½nnen eine einfache Konfigurationsakte fï¿½r Marx Paint herstellen, 
       der sie jede Zeit liest, die, Sie sie oben beginnen.  
 
-      Die Akte ist einfach eine normale Textakte, welche die Wahlen enthält,
-      die Sie ermöglicht wünschen:  
+      Die Akte ist einfach eine normale Textakte, welche die Wahlen enthï¿½lt,
+      die Sie ermï¿½glicht wï¿½nschen:  
 
         fullscreen=yes
         --------------
@@ -151,7 +151,7 @@ Verwenden Der Tux Paint
         noquit=yes
         ----------
 	  Sperren Sie die "beendigte" Taste des Aufschirmes.
-	  (das Betätigen des "Schlüssel Entweichens" oder das Anklicken der
+	  (das Betï¿½tigen des "Schlï¿½ssel Entweichens" oder das Anklicken der
 	  Fensterendentaste arbeitet noch.)
 
         noprint=yes
@@ -160,18 +160,18 @@ Verwenden Der Tux Paint
 
         printdelay=SEKUNDEN
         -------------------
-	  Schränken Sie den Druck ein, damit der Druck nur einmal auftreten
+	  Schrï¿½nken Sie den Druck ein, damit der Druck nur einmal auftreten
 	  kann jedes SEKUNDEN-Sekunden.  
 
         printcommand=BEFEHLSFOLGE 
         -------------------------
 	  Verwenden Sie den BefehlscBefehl, eine PNG-Akte zu drucken.
-	  Wenn er nicht eingestellt wird, ist der Rückstellungsbefehl:  
+	  Wenn er nicht eingestellt wird, ist der Rï¿½ckstellungsbefehl:  
 
             pngtopnm | pnmtops | lpr
 
           Welchen Bekehrten das PNG zu einem NetPBM ' bewegliches anymap ',
-	  dann das in eine Postskriptumakte umwandelt und schließlich das zum
+	  dann das in eine Postskriptumakte umwandelt und schlieï¿½lich das zum
 	  Drucker schickt mit dem "lpr" Befehl.  
 
         simpleshapes=yes
@@ -182,61 +182,61 @@ Verwenden Der Tux Paint
 
         uppercase=yes
         -------------
-          Aller Text wird nur in Versalien übertragen (z.B., "Bürste" ist
-	  "BÜRSTE").  Nützlich für Kinder, die lesen können, aber wer nur
+          Aller Text wird nur in Versalien ï¿½bertragen (z.B., "Bï¿½rste" ist
+	  "Bï¿½RSTE").  Nï¿½tzlich fï¿½r Kinder, die lesen kï¿½nnen, aber wer nur
 	  Versalienbuchstaben bis jetzt erlernt haben.  
 
         grab=yes
         --------
-	  Tux Paint versucht, die Maus ' zu ergreifen ' und Tastatur,
-	  damit die Maus zum Fenster der Tux Paint begrenzt wird, und fast
-	  alle Tastatureingabe wird direkt zu ihm geführt.  Dieses ist
-	  nützlich, Betriebssystemtätigkeiten zu sperren, die den Benutzer
-	  aus dem einen Kreislauf durchmachenden Fenster der Tux Paint
+	  Marx Paint versucht, die Maus ' zu ergreifen ' und Tastatur,
+	  damit die Maus zum Fenster der Marx Paint begrenzt wird, und fast
+	  alle Tastatureingabe wird direkt zu ihm gefï¿½hrt.  Dieses ist
+	  nï¿½tzlich, Betriebssystemtï¿½tigkeiten zu sperren, die den Benutzer
+	  aus dem einen Kreislauf durchmachenden Fenster der Marx Paint
 	  herausbekommen konnten [ Alt]-[Tab ], [ Ctrl]-[Escape ], usw..
-	  Besonders nützlich fullscreen innen Modus.  
+	  Besonders nï¿½tzlich fullscreen innen Modus.  
 
 	nowheelmouse=yes
 	----------------
-	  Dieses sperrt Unterstützung für das Rad auf Mäusen, die es haben.
-	  (Normalerweise, scroll das Rad das Wählmenü auf dem Recht.)
+	  Dieses sperrt Unterstï¿½tzung fï¿½r das Rad auf Mï¿½usen, die es haben.
+	  (Normalerweise, scroll das Rad das Wï¿½hlmenï¿½ auf dem Recht.)
 
         saveover=yes
         ------------
-	  Dieses sperrt die "außer über der alten Version...?"
+	  Dieses sperrt die "auï¿½er ï¿½ber der alten Version...?"
 	  Aufforderung, wenn es eine vorhandene Akte speichert.
-	  Mit dieser Wahl wird die ältere Version immer durch die neue
+	  Mit dieser Wahl wird die ï¿½ltere Version immer durch die neue
 	  Version, automatisch ersetzt.  
 
         saveover=new
         ------------
-	  Dieses sperrt auch die "außer über der alten Version...?"
+	  Dieses sperrt auch die "auï¿½er ï¿½ber der alten Version...?"
 	  Aufforderung, wenn es eine vorhandene Akte speichert.
 	  Diese Wahl jedoch speichert immer eine neue Akte, anstatt
-	  überschreibt die ältere Version.  
+	  ï¿½berschreibt die ï¿½ltere Version.  
 
         saveover=ask
         ------------
-	  (diese Wahl ist überflüssig, da dieses die Rückstellung. ist.)
+	  (diese Wahl ist ï¿½berflï¿½ssig, da dieses die Rï¿½ckstellung. ist.)
 	  Wenn man ein bestehendes Zeichnen speichert, werden Sie zuerst
-	  gefragt, ob man über der älteren Version oder nicht speichert.  
+	  gefragt, ob man ï¿½ber der ï¿½lteren Version oder nicht speichert.  
 
 
       Benutzer Linux
       --------------
-        Die Akte, die Sie herstellen sollten, wird ".tuxpaintrc" genannt
+        Die Akte, die Sie herstellen sollten, wird ".marxpaintrc" genannt
 	und sie sollte in Ihr Hauptverzeichnis gelegt werden.
-	(a.k.a. "~/.tuxpaintrc" oder "$$HOME/.tuxpaintrc")
+	(a.k.a. "~/.marxpaintrc" oder "$$HOME/.marxpaintrc")
 
       WindowscBenutzer
       ----------------
-        Die Akte, die Sie herstellen sollten, wird "tuxpaint.cfg" genannt
-	und sie sollte in Heft der Tux Paint gelegt werden.
+        Die Akte, die Sie herstellen sollten, wird "marxpaint.cfg" genannt
+	und sie sollte in Heft der Marx Paint gelegt werden.
 
     Befehl-LiniencWahlen
     --------------------
-      Wahlen können auf der Befehl-Linie auch herausgegeben werden,
-      wenn Sie Tux Paint beginnen.  
+      Wahlen kï¿½nnen auf der Befehl-Linie auch herausgegeben werden,
+      wenn Sie Marx Paint beginnen.  
 
         --fullscreen
         --nosound
@@ -250,7 +250,7 @@ Verwenden Der Tux Paint
         --saveover
         --saveovernew
         -------------
-	  Diese ermöglichen den Wahlen, die oben beschrieben werden.  
+	  Diese ermï¿½glichen den Wahlen, die oben beschrieben werden.  
 
         --windowed
         --sound
@@ -263,15 +263,15 @@ Verwenden Der Tux Paint
 	--wheelmouse
         --saveoverask
         -------------
-	  Diese Wahlen können verwendet werden, um irgendwelche
-	  Einstellungen überzulaufen, die in der Konfigurationsakte
+	  Diese Wahlen kï¿½nnen verwendet werden, um irgendwelche
+	  Einstellungen ï¿½berzulaufen, die in der Konfigurationsakte
 	  gebildet werden.  (wenn die Wahl nicht in die Konfigurationsakte
-	  eingestellt wird, ist keine überlaufende Wahl. notwendig),  
+	  eingestellt wird, ist keine ï¿½berlaufende Wahl. notwendig),  
 
 
         --lang sprache 
         --------------
-	  Lassen Sie Tux Paint in einer der gestützten Sprachen laufen.
+	  Lassen Sie Marx Paint in einer der gestï¿½tzten Sprachen laufen.
 	  Die Wahlen, die umfassen vorhanden sind z.Z.:  
 
           english
@@ -289,28 +289,28 @@ Verwenden Der Tux Paint
 
         --locale locale
         ---------------
-	  Lassen Sie Tux Paint in einer der Stützsprachen laufen.
-	  Sehen Sie "eine andere Sprache unten beschließen" für die
-	  localezeichenketten (z.B., "de_DE@euro" für Deutschen) um zu
+	  Lassen Sie Marx Paint in einer der Stï¿½tzsprachen laufen.
+	  Sehen Sie "eine andere Sprache unten beschlieï¿½en" fï¿½r die
+	  localezeichenketten (z.B., "de_DE@euro" fï¿½r Deutschen) um zu
 	  verwenden.  
 
           (wenn Ihr locale bereits eingestellt wird, z.B. mit der "LANG-"
-	  Klimavariable, ist diese Wahl nicht, seit Tux Paint ehrt Einstellung
-	  Ihres Klimas notwendig, wenn möglich.)  
+	  Klimavariable, ist diese Wahl nicht, seit Marx Paint ehrt Einstellung
+	  Ihres Klimas notwendig, wenn mï¿½glich.)  
 
   Befehl-LiniencInfo.  Wahlen
   ---------------------------
     Die folgenden Wahlen zeigen etwas informativen Text auf dem Schirm an.
-    Tux Paint nicht wirklich beginnt oben und läuft danach, jedoch.
+    Marx Paint nicht wirklich beginnt oben und lï¿½uft danach, jedoch.
 
       --version
       ---------
-        Zeigen Sie die Versionsnummer und das Datum der Kopie der Tux Paint an,
+        Zeigen Sie die Versionsnummer und das Datum der Kopie der Marx Paint an,
 	die Sie laufen lassen.  
 
       --copying
       ---------
-        Zeigen Sie kurze Lizenzinformationen über die Kopie der Tux Paint.  
+        Zeigen Sie kurze Lizenzinformationen ï¿½ber die Kopie der Marx Paint.  
 
       --usage
       -------
@@ -318,20 +318,20 @@ Verwenden Der Tux Paint
 
       --help
       ------
-        Anzeigenschriftsatzhilfe auf dem Verwenden der Tux Paint.  
+        Anzeigenschriftsatzhilfe auf dem Verwenden der Marx Paint.  
 
 
-  Wählen einer anderen Sprache
+  Wï¿½hlen einer anderen Sprache
   ----------------------------
-    Tux Paint ist in eine Anzahl von Sprachen übersetzt worden.
-    um die Übersetzungen zugänglich zu machen, können Sie die "--lang"
+    Marx Paint ist in eine Anzahl von Sprachen ï¿½bersetzt worden.
+    um die ï¿½bersetzungen zugï¿½nglich zu machen, kï¿½nnen Sie die "--lang"
     Wahl auf der Befehl-Linie verwenden, um die Sprache (z.B. "--lang spanish")
     einzustellen.  
 
-    Tux Paint ehrt auch gegenwärtiges locale Ihres Klimas.  (Sie können sie
-    auf der Befehl-Linie mit der "--locale" Wahl überlaufen (sehen Sie oben))
+    Marx Paint ehrt auch gegenwï¿½rtiges locale Ihres Klimas.  (Sie kï¿½nnen sie
+    auf der Befehl-Linie mit der "--locale" Wahl ï¿½berlaufen (sehen Sie oben))
 
-    Die folgenden wird gestützt:
+    Die folgenden wird gestï¿½tzt:
 
       de_DE@euro - Deutsch         / German
       es_ES@euro - Espanol         / Spanish
@@ -348,92 +348,92 @@ Verwenden Der Tux Paint
 
     Einstellung Von Locale Ihres Klimas
     -----------------------------------
-      Das Ändern Ihres locale beeinflußt viel Ihres Klimas.  
+      Das ï¿½ndern Ihres locale beeinfluï¿½t viel Ihres Klimas.  
 
-      Wie oben angeführt zusammen mit dem Lassen Sie die Sprache an der
-      Laufzeit mit Befehl-Linienwahlen wählen ("--lang" und "--locale"),
-      ehrt Tux Paint das globale locale, das in Ihr Klima einstellt.  
+      Wie oben angefï¿½hrt zusammen mit dem Lassen Sie die Sprache an der
+      Laufzeit mit Befehl-Linienwahlen wï¿½hlen ("--lang" und "--locale"),
+      ehrt Marx Paint das globale locale, das in Ihr Klima einstellt.  
 
-      Wenn Sie nicht bereits locale Ihres Klimas eingestellt haben, erklären
+      Wenn Sie nicht bereits locale Ihres Klimas eingestellt haben, erklï¿½ren
       der folgende Wille kurz, wie:  
 
       Linux-/UnixcBenutzer
       --------------------
-        Zuerst seien Sie sicher, daß das locale, das Sie benutzen möchten,
-	ermöglicht wird, indem man Akten "/etc/locale.gen" auf Ihrem System
-	redigiert und dann das Programm "locale-gen" als Wurzel laufen läßt.
+        Zuerst seien Sie sicher, daï¿½ das locale, das Sie benutzen mï¿½chten,
+	ermï¿½glicht wird, indem man Akten "/etc/locale.gen" auf Ihrem System
+	redigiert und dann das Programm "locale-gen" als Wurzel laufen lï¿½ï¿½t.
 
-        Anmerkung:  Benutzer Debian können in der LageSEIN, den Befehl
+        Anmerkung:  Benutzer Debian kï¿½nnen in der LageSEIN, den Befehl
 	einfach laufen zu lassen "dpkg-reconfigure locales".  
 
-        Dann bevor Sie Tux Paint laufen lassen, stellen Sie Ihre "LANG-"
+        Dann bevor Sie Marx Paint laufen lassen, stellen Sie Ihre "LANG-"
 	Klimavariable bis eins der locales ein, die oben verzeichnet werden.
-	(wenn Sie alle Programme wünschen, die übersetzt werden können, um
-	zu sein, können Sie möchten das folgende in Ihren LOGON-Index legen;
+	(wenn Sie alle Programme wï¿½nschen, die ï¿½bersetzt werden kï¿½nnen, um
+	zu sein, kï¿½nnen Sie mï¿½chten das folgende in Ihren LOGON-Index legen;
 	z.B. ~/.profile, ~/.bashrc, ~/.cshrc, usw..)  
 
 
         Z.B. in einem Bourne-Shell (wie HEFTIGER SCHLAG):  
 
-          export LANG=es_ES@euro;  tuxpaint
+          export LANG=es_ES@euro;  marxpaint
 
 
         Und in einem c-Oberteil (wie TCSH):
 
-          setenv LANG es_ES@euro;  tuxpaint
+          setenv LANG es_ES@euro;  marxpaint
 
 
       WindowscBenutzer
       ----------------
-        Recoginse TuxPaint Willensdas gegenwärtige locale und benutzen die
-	passenden Akten durch Rückstellung.  So ist dieser Abschnitt nur für
+        Recoginse MarxPaint Willensdas gegenwï¿½rtige locale und benutzen die
+	passenden Akten durch Rï¿½ckstellung.  So ist dieser Abschnitt nur fï¿½r
 	die Leute, die unterschiedliche Sprachen versuchen.  
 
         Die einfachste Sache zum Tun ist, den '--lang' Schalter in der
-	Kürzung zu benutzen (sehen Sie "ANBRINGEN.txt").  Jedoch indem man
-	ein sofortiges Fenster MSDOS verwendet, ist es auch möglich, einen
+	Kï¿½rzung zu benutzen (sehen Sie "ANBRINGEN.txt").  Jedoch indem man
+	ein sofortiges Fenster MSDOS verwendet, ist es auch mï¿½glich, einen
 	Befehl so herauszugeben:  
 
           set LANG=es_ES@euro
 
-        ...das die Sprache für die Lebenszeit dieses DOS-Fensters einstellt.
+        ...das die Sprache fï¿½r die Lebenszeit dieses DOS-Fensters einstellt.
 
-        Für dauerhafteres etwas, versuchen Sie, 'autoexec.bat' Akte Ihres
+        Fï¿½r dauerhafteres etwas, versuchen Sie, 'autoexec.bat' Akte Ihres
 	Computers mit Windows "sysedit" Werkzeug zu redigieren:
 
         Windows 95/98:
 	--------------
 	  1) klicken an die 'Anfangs' ('Start') Taste und
-	     wählen 'Durchlauf...' ('Run')
-	  2) schreiben "sysedit" in 'sich öffnen:' ('Open') Kasten
-	     (mit oder ohne Anführungsstriche).
+	     wï¿½hlen 'Durchlauf...' ('Run')
+	  2) schreiben "sysedit" in 'sich ï¿½ffnen:' ('Open') Kasten
+	     (mit oder ohne Anfï¿½hrungsstriche).
 	  3) Klicken 'OKAY' ('OK').
 	  4) lokalisieren das AUTOEXEC.BAT-Fenster im
 	     Anlagenkonfigurationsherausgeber.
-	  5) fügen das folgende an der Unterseite der Akte hinzu:
+	  5) fï¿½gen das folgende an der Unterseite der Akte hinzu:
 	     set LANG=es_ES@euro
 	  6) der Anlagenkonfigurationsherausgeber ein und ja antworten,
-	     um die Änderungen zu speichern.
+	     um die ï¿½nderungen zu speichern.
 	  7) beginnen Ihre Maschine wieder.  
 
         um die GESAMTE MASCHINE und ALLE ANWENDUNGEN zu beeinflussen, ist
-	es möglich, die verkleidung "der regionalen Einstellungen"
+	es mï¿½glich, die verkleidung "der regionalen Einstellungen"
 	("Regional Settings") zu benutzen Steuer:  
 
-          1) klicken an die 'Anfangs' ('Start') Taste und wählen
+          1) klicken an die 'Anfangs' ('Start') Taste und wï¿½hlen
 	     'Verkleidung Settings|Control' ('Settings|Control Panel') vor.
 	  2) doppelt klicken Sie an die Kugel "der regionalen Einstellungen"
 	     ("Regional Settings").
-	  3) wählen ein language/region vom Tropfen verzeichnen unten vor.
+	  3) wï¿½hlen ein language/region vom Tropfen verzeichnen unten vor.
 	  4) Klicken 'OKAY'. ('OK')
 	  5) beginnen Ihre Maschine wieder, wenn es aufgefordert wird.  
 
 
   TitelcSchirm
   ------------
-    Wenn erste Lasten der Tux Paint, ein title-/creditsschirm erscheinen.
+    Wenn erste Lasten der Marx Paint, ein title-/creditsschirm erscheinen.
 
-    Sobald Laden komplett ist, betätigen Sie einen Schlüssel oder klicken
+    Sobald Laden komplett ist, betï¿½tigen Sie einen Schlï¿½ssel oder klicken
     Sie an die Maus, um fortzufahren.  
 
 
@@ -443,22 +443,22 @@ Verwenden Der Tux Paint
 
     Linke Seite:  Toolbar
     ---------------------
-      Das toolbar enthält die zeichnenden und redigierenden Kontrollen.  
+      Das toolbar enthï¿½lt die zeichnenden und redigierenden Kontrollen.  
 
 
     Mitte:  Zeichnendes Segeltuch
     -----------------------------
-      Das größte Teil des Schirmes, in der Mitte, ist das zeichnende
+      Das grï¿½ï¿½te Teil des Schirmes, in der Mitte, ist das zeichnende
       Segeltuch.  Dieses ist offensichtlich wo Sie zeichnen!  
 
 
     Rechte Seite:  Vorwahl
     ----------------------
-      Abhängig von dem gegenwärtigen Werkzeug zeigt der Vorwahl
-      unterschiedliche Sachen.  z.B. wenn die Farbenbürste vorgewählt wird,
-      er zeigt die verschiedenen vorhandenen Bürsten.  Wenn der Gummistempel
-      vorgewählt wird, zeigt er die unterschiedlichen Formen, die Sie
-      verwenden können.  
+      Abhï¿½ngig von dem gegenwï¿½rtigen Werkzeug zeigt der Vorwahl
+      unterschiedliche Sachen.  z.B. wenn die Farbenbï¿½rste vorgewï¿½hlt wird,
+      er zeigt die verschiedenen vorhandenen Bï¿½rsten.  Wenn der Gummistempel
+      vorgewï¿½hlt wird, zeigt er die unterschiedlichen Formen, die Sie
+      verwenden kï¿½nnen.  
 
 
     Niedriger:  Farben
@@ -469,88 +469,88 @@ Verwenden Der Tux Paint
 
     Unterseite:  HilfencBereich
     ---------------------------
-      Am unteren Bildschirmrand, stellt Tux, der Penguin Linux, Spitzen und
-      andere Informationen zur Verfügung, während Sie zeichnen.  
+      Am unteren Bildschirmrand, stellt Marx, der Penguin Linux, Spitzen und
+      andere Informationen zur Verfï¿½gung, wï¿½hrend Sie zeichnen.  
 
 
   Vorhandene Werkzeuge
   --------------------
     Zeichnende Werkzeuge
     --------------------
-      Malen Sie Bürste
+      Malen Sie Bï¿½rste
       ----------------
-        Das Farbenbürstenwerkzeug läßt Sie freihändig zeichnen mit den
-	verschiedenen Bürsten (gewählt im Vorwahl auf dem Recht) und den
-	Farben (gewählt in der Farbenpalette in Richtung zur Unterseite).
+        Das Farbenbï¿½rstenwerkzeug lï¿½ï¿½t Sie freihï¿½ndig zeichnen mit den
+	verschiedenen Bï¿½rsten (gewï¿½hlt im Vorwahl auf dem Recht) und den
+	Farben (gewï¿½hlt in der Farbenpalette in Richtung zur Unterseite).
 
         Wenn Sie die Maustaste nach unten halten und die Maus verschieben,
 	zeichnet sie, wie Sie umziehen.
 
-        Während Sie zeichnen, wird ein Ton gespielt.  Das grösser die Bürste,
+        Wï¿½hrend Sie zeichnen, wird ein Ton gespielt.  Das grï¿½sser die Bï¿½rste,
 	das niedriger der Taktabstand.  
 
       Stempel (Gummistempel)
       ----------------------
-        ist das Stempelwerkzeug wie ein Gummistempel oder Aufkleber.  Es läßt
+        ist das Stempelwerkzeug wie ein Gummistempel oder Aufkleber.  Es lï¿½ï¿½t
 	Sie vor-gezeichnete Bilder (wie eine Abbildung eines Pferds oder ein
 	Baum oder der Mond) in Ihrer Abbildung kleben.  
 
-        Da Sie die Maus herum verschieben, folgt eine rechteckige umreiß der
+        Da Sie die Maus herum verschieben, folgt eine rechteckige umreiï¿½ der
 	Maus und zeigt, wohin der Stempel gesetzt wird.  
 
-        unterschiedliche Stempel können unterschiedliche stichhaltige Effekte
+        unterschiedliche Stempel kï¿½nnen unterschiedliche stichhaltige Effekte
 	haben.  
 
       Linien
       ------
-        Dieses Werkzeug läßt Sie gerade Geraden mit den verschiedenen
-	Bürsten und den Farben zeichnen, die Sie normalerweise mit der
-	Farbenbürste verwenden.  
+        Dieses Werkzeug lï¿½ï¿½t Sie gerade Geraden mit den verschiedenen
+	Bï¿½rsten und den Farben zeichnen, die Sie normalerweise mit der
+	Farbenbï¿½rste verwenden.  
 
         Klicken Sie die Maus an und halten Sie sie, um den Ausgangspunkt der
-	Linie zu wählen.  Da Sie die Maus herum verschieben, zeigt eine dünne
+	Linie zu wï¿½hlen.  Da Sie die Maus herum verschieben, zeigt eine dï¿½nne
 	'Gummi-Band' Linie, wohin die Linie gezeichnet wird.  
 
-        Gelassen gehen Sie von der Maus, die Linie durchzuführen.  Ein
+        Gelassen gehen Sie von der Maus, die Linie durchzufï¿½hren.  Ein
 	"Sproing!",  Ton spielt.  
 
       Formen
       ------
-        Dieses Werkzeug läßt Sie etwas einfache gefüllte und ungefüllte
+        Dieses Werkzeug lï¿½ï¿½t Sie etwas einfache gefï¿½llte und ungefï¿½llte
 	Formen zeichnen.  
 
-        Wählen Sie eine Form vom Vorwahl auf dem Recht vor (Kreis, Quadrat,
+        Wï¿½hlen Sie eine Form vom Vorwahl auf dem Recht vor (Kreis, Quadrat,
 	Oval, etc.).  
 
         Im Segeltuch klicken Sie die Maus und halten Sie sie, um auszudehnen
-	die Form heraus von, wo Sie klickten.  Etwas Formen können Anteil
-	(z.B., Viereck und Oval), andere ändern können nicht (z.B., Quadrat
+	die Form heraus von, wo Sie klickten.  Etwas Formen kï¿½nnen Anteil
+	(z.B., Viereck und Oval), andere ï¿½ndern kï¿½nnen nicht (z.B., Quadrat
 	und Kreis).  
 
         Gelassen gehen Sie von der Maus, wenn Sie erfolgtes Ausdehnen sind.  
 
         Normaler Modus
         --------------
-          Jetzt können Sie die Maus um das Segeltuch verschieben,
+          Jetzt kï¿½nnen Sie die Maus um das Segeltuch verschieben,
           um die Form zu drehen.
 
           Klicken Sie die Maustaste wieder und die Form wird in die
-	  gegenwärtige Farbe gezeichnet.  
+	  gegenwï¿½rtige Farbe gezeichnet.  
 
         Einfacher FormcModus
         --------------------
-	  Wenn einfache Formen ermöglicht werden ("--simpleshapes" Wahl),
+	  Wenn einfache Formen ermï¿½glicht werden ("--simpleshapes" Wahl),
 	  wird die Form auf das Segeltuch gezeichnet, wenn Sie von der
 	  Maustaste gehen lassen.  (es gibt keinen Umdrehungsschritt.),  
 
 
       Text
       ----
-        Wählen Sie einen Schriftkegel und eine Farbe.  Klicken Sie an
+        Wï¿½hlen Sie einen Schriftkegel und eine Farbe.  Klicken Sie an
 	den Schirm und ein Cursor erscheint.  Arttext und -er stellen
 	oben auf dem Schirm dar.  
 
-        Drücken Sie [Enter], oder [Return] und der Text wird auf die
+        Drï¿½cken Sie [Enter], oder [Return] und der Text wird auf die
 	Abbildung gezeichnet und der Cursor bewegt nach unten eine Linie.  
 
         Klicken anderwohin in der Abbildung und im Text bewegt dort.  
@@ -559,26 +559,26 @@ Verwenden Der Tux Paint
       Magie (spezielle Effekte)
       -------------------------
         ist das magische Werkzeug wirklich ein Satz Spezialwerkzeuge.
-	Wählen Sie einen der "magischen" Effekte vom Vorwahl auf dem Recht,
+	Wï¿½hlen Sie einen der "magischen" Effekte vom Vorwahl auf dem Recht,
 	vor und dann klicken Sie und schleppen Sie um die Abbildung, um den
 	Effekt anzuwenden.  
 
         Spiegel
         -------
-	  Wenn Sie die Maus in Ihrer Abbildung mit dem magischen vorgewählten
+	  Wenn Sie die Maus in Ihrer Abbildung mit dem magischen vorgewï¿½hlten
 	  Effekt "des Spiegels" anklicken, wird das gesamte Bild aufgehoben
 	  und macht ihn zu ein Spiegelbild.  
 
         Leichter Schlag
         ---------------
-	  Ähnlich "Spiegel.",  Klicken und das gesamte Bild werden
+	  ï¿½hnlich "Spiegel.",  Klicken und das gesamte Bild werden
 	  upside-down gedreht.
 
-        Unschärfe
+        Unschï¿½rfe
         ---------
 	  Dieses bildet die Abbildung flockig, wohin Sie die Maus schleppen.
 
-        Blöcke
+        Blï¿½cke
         ------
 	  Dieses bildet die Abbildung das blocky Schauen ("pixelated"), wohin
 	  Sie die Maus schleppen.  
@@ -586,57 +586,57 @@ Verwenden Der Tux Paint
         Negativ
         -------
 	  Dieses kehrt die Farben um, wohin Sie die Maus schleppen.
-	  (z.B., Weiß wird und umgekehrt. schwarz),  
+	  (z.B., Weiï¿½ wird und umgekehrt. schwarz),  
 
         Verblassen Sie
         --------------
-	  Dieses verbläßt die Farben, wohin Sie die Maus schleppen.  (tun
-	  Sie es zum gleichen Punkt viele Male, und er wird schließlich. weiß)
+	  Dieses verblï¿½ï¿½t die Farben, wohin Sie die Maus schleppen.  (tun
+	  Sie es zum gleichen Punkt viele Male, und er wird schlieï¿½lich. weiï¿½)
 
         Regenbogen
         ----------
-	  Dieses ist der Farbenbürste ähnlich, aber, da Sie die Maus herum
-	  verschieben, läuft es alle Farben im Regenbogen durch.  
+	  Dieses ist der Farbenbï¿½rste ï¿½hnlich, aber, da Sie die Maus herum
+	  verschieben, lï¿½uft es alle Farben im Regenbogen durch.  
 
         Funkelt
         -------
-	  Dieses zeichnet das Glühen gelb funkelt auf der Abbildung.  
+	  Dieses zeichnet das Glï¿½hen gelb funkelt auf der Abbildung.  
 
         Kreide
         ------
-	  Dieses läßt Teile von der Abbildung (wo Sie die Maus verschieben),
+	  Dieses lï¿½ï¿½t Teile von der Abbildung (wo Sie die Maus verschieben),
 	  wie eine Kreidezeichnung aussehen.  
 
-        Tropfenfänger
+        Tropfenfï¿½nger
         -------------
-	  Dieses läßt die Farbe "tropfen", wohin Sie die Maus verschieben.
+	  Dieses lï¿½ï¿½t die Farbe "tropfen", wohin Sie die Maus verschieben.
 
         Dick
         ----
 	  Dieses bildet die dunkleren Farben in der Abbildung werden dick,
 	  wohin Sie die Maus schleppen.  
 
-        Dünn
+        Dï¿½nn
         ----
-	  Ähnlich "dick,", ausgenommen dunkle Farben dünner werden
+	  ï¿½hnlich "dick,", ausgenommen dunkle Farben dï¿½nner werden
 	  (helle Farben werden dick).
 
-        Fülle
+        Fï¿½lle
         -----
-	  Dieses überschwemmt die Abbildung mit einer Farbe.  Es läßt Sie
-	  schnell Teile der Abbildung füllen, als ob es ein Farbtonbuch war.
+	  Dieses ï¿½berschwemmt die Abbildung mit einer Farbe.  Es lï¿½ï¿½t Sie
+	  schnell Teile der Abbildung fï¿½llen, als ob es ein Farbtonbuch war.
 
 
       Radiergummi
       -----------
-        Dieses Werkzeug ist der Farbenbürste ähnlich.  Wohin Sie (oder Klicken
-	und Gegenkraft) klicken, wird die Abbildung zum Weiß gelöscht.
+        Dieses Werkzeug ist der Farbenbï¿½rste ï¿½hnlich.  Wohin Sie (oder Klicken
+	und Gegenkraft) klicken, wird die Abbildung zum Weiï¿½ gelï¿½scht.
 
-        Da Sie die Maus herum verschieben, folgt eine sehr große quadratische
-	umreiß dem Zeiger und zeigt, was Teil der Abbildung zum Weiß gelöscht
+        Da Sie die Maus herum verschieben, folgt eine sehr groï¿½e quadratische
+	umreiï¿½ dem Zeiger und zeigt, was Teil der Abbildung zum Weiï¿½ gelï¿½scht
 	wird.  
 
-        Während Sie löschen, wird ein "quietschender sauberer"
+        Wï¿½hrend Sie lï¿½schen, wird ein "quietschender sauberer"
 	eraser-/wipington gespielt.  
 
 
@@ -644,78 +644,78 @@ Verwenden Der Tux Paint
     -----------------
       Undo
       ----
-        Das Anklicken dieses Werkzeugs undo die letzte zeichnende Tätigkeit.
-	Sie können undo mehr als einmal.  
+        Das Anklicken dieses Werkzeugs undo die letzte zeichnende Tï¿½tigkeit.
+	Sie kï¿½nnen undo mehr als einmal.  
 
-        Anmerkung:  Sie können [Control]-[Z] auf der Tastatur auch sich
-	betätigen.  
+        Anmerkung:  Sie kï¿½nnen [Control]-[Z] auf der Tastatur auch sich
+	betï¿½tigen.  
 
       Machen Sie nochmals
       -------------------
-        Dieses Werkzeug anklickend, macht die zeichnende Tätigkeit nochmals,
+        Dieses Werkzeug anklickend, macht die zeichnende Tï¿½tigkeit nochmals,
 	die Sie gerade "undid.",  So lang, wie Sie nicht wieder zeichnen,
-	können Sie so viele Male nochmals machen, Sie "undone.",  
+	kï¿½nnen Sie so viele Male nochmals machen, Sie "undone.",  
 
-        Anmerkung:  Sie können [Control]-[R] auf der Tastatur auch sich
-	betätigen.  
+        Anmerkung:  Sie kï¿½nnen [Control]-[R] auf der Tastatur auch sich
+	betï¿½tigen.  
 
       Neu
       ---
         Das Anklicken der "neuen" Taste beginnt eine neue Zeichnung.
-	Sie werden zuerst gefragt, ob Sie wirklich dies tun möchten.
+	Sie werden zuerst gefragt, ob Sie wirklich dies tun mï¿½chten.
 
-        Anmerkung:  Sie können [ Control]-[N ] auf dem ke auch sich
-	betätigenyboard.
+        Anmerkung:  Sie kï¿½nnen [ Control]-[N ] auf dem ke auch sich
+	betï¿½tigenyboard.
 
-      Geöffnet
+      Geï¿½ffnet
       --------
         Dieses zeigt Ihnen eine Liste von allen Abbildungen, die Sie
 	gespeichert haben.  Wenn es mehr gibt, als auf dem Schirm passen
 	kann, verwenden Sie "herauf" und "unten" Pfeile an der Oberseite
 	und an der Unterseite der Liste scroll durch die Liste der Abbildungen.
 
-        Klicken Sie eine Abbildung an, um sie vorzuwählen, dann...,  
+        Klicken Sie eine Abbildung an, um sie vorzuwï¿½hlen, dann...,  
 
-          * Klicken Sie das Grüne "öffnen" Taste am untereren Linke der
-	    Liste, um die vorgewählte Abbildung zu laden an.  
+          * Klicken Sie das Grï¿½ne "ï¿½ffnen" Taste am untereren Linke der
+	    Liste, um die vorgewï¿½hlte Abbildung zu laden an.  
 
-            Wechselweise können Sie Doppeltklicken die Ikone der
+            Wechselweise kï¿½nnen Sie Doppeltklicken die Ikone der
 	    Abbildung (innerhalb 1 zweiten) es laden.  
 
-          * Klicken Sie das Braun "löschen" (Abfalldosen) Taste am
-	    niedrigeren Recht der Liste, die vorgewählte Abbildung zu
-	    löschen an.  (Sie werden gebeten zu bestätigen.)
+          * Klicken Sie das Braun "lï¿½schen" (Abfalldosen) Taste am
+	    niedrigeren Recht der Liste, die vorgewï¿½hlte Abbildung zu
+	    lï¿½schen an.  (Sie werden gebeten zu bestï¿½tigen.)
 
-          * Oder klicken Sie die "rückseitige" Pfeiltaste des Rotes am
-	    niedrigeren Recht der Liste zu annullieren und der Rückkehr
+          * Oder klicken Sie die "rï¿½ckseitige" Pfeiltaste des Rotes am
+	    niedrigeren Recht der Liste zu annullieren und der Rï¿½ckkehr
 	    zur Abbildung, die Sie zeichneten.
 
-        Wenn beschließen Sie, eine Abbildung zu öffnen und Ihre gegenwärtige
+        Wenn beschlieï¿½en Sie, eine Abbildung zu ï¿½ffnen und Ihre gegenwï¿½rtige
 	Zeichnung nicht gespeichert worden ist, werden Sie aufgefordert, ob
-	Sie sie speichern möchten oder nicht.  (sehen Sie "außer," unten.)
+	Sie sie speichern mï¿½chten oder nicht.  (sehen Sie "auï¿½er," unten.)
 
-        Anmerkung:  Sie können [Control]-[O] auf der Tastatur auch sich
-	betätigen, um zu erhalten 'öffnen' Dialog.
+        Anmerkung:  Sie kï¿½nnen [Control]-[O] auf der Tastatur auch sich
+	betï¿½tigen, um zu erhalten 'ï¿½ffnen' Dialog.
 
-      Außer
+      Auï¿½er
       -----
-        Dieses speichert Ihre gegenwärtige Abbildung.
+        Dieses speichert Ihre gegenwï¿½rtige Abbildung.
 	
 	Wenn Sie es nicht vor gespeichert haben, verursacht es eine neue
 	Eintragung in der Liste der gespeicherten Bilder.  (d.h., es stellt
         eine neue Akte her)
 
-        Anmerkung:  Sie nicht fragt Sie nichts (z.B., für einen Dateinamen).
+        Anmerkung:  Sie nicht fragt Sie nichts (z.B., fï¿½r einen Dateinamen).
 	Sie speichert einfach die Abbildung und spielt einen stichhaltigen
 	Effekt "des Kamerablendenverschlusses".  
 
         Wenn Sie die Abbildung vor gespeichert HABEN oder dieses eine
-	Abbildung ist, die Sie gerade mit dem "geöffneten" Befehl luden,
-	werden Sie zuerst, ob Sie über der alten Version speichern möchten,
+	Abbildung ist, die Sie gerade mit dem "geï¿½ffneten" Befehl luden,
+	werden Sie zuerst, ob Sie ï¿½ber der alten Version speichern mï¿½chten,
 	oder verursachen eine neue Eintragung gefragt (eine neue Akte).
 
-        Anmerkung:  Sie können [Control]-[S] auf der Tastatur auch sich
-	betätigen.  
+        Anmerkung:  Sie kï¿½nnen [Control]-[S] auf der Tastatur auch sich
+	betï¿½tigen.  
 
       Druck
       -----
@@ -729,18 +729,18 @@ Verwenden Der Tux Paint
         SperrencDruck
         -------------
 	  Wenn der "noprint" Wahl eingestellt wurde (entweder "noprint=yes"
-	  in der Konfigurationsakte mit der Tux Paint oder im Verwenden
+	  in der Konfigurationsakte mit der Marx Paint oder im Verwenden
 	  "--noprint" auf der Befehl-Linie), ist die" Druck"Taste untauglich.  
 
         Sehen Sie den "Wahl" Abschnitt oben.  
 
 
-        Einschränkender Druck
+        Einschrï¿½nkender Druck
         ---------------------
 	  Wenn die "printdelay" Wahl verwendet wurde (entweder mit
 	  "printdelay=SEKUNDEN" in der Konfigurationsakte oder im
 	  Verwenden von "--printdelay=SEKUNDEN" auf der Befehl-Linie),
-	  können Sie nur einmal drucken jedes SEKUNDEN-Sekunden.  
+	  kï¿½nnen Sie nur einmal drucken jedes SEKUNDEN-Sekunden.  
 
           Z.B. wenn "printdelay=60", Sie nur eine Minute einmal drucken kann.  
 
@@ -755,117 +755,117 @@ Verwenden Der Tux Paint
             pngtopnm | pnmtops | lpr
 
           Dieser Befehl kann durch die Einstellung des "printcommand" Wertes
-	  in der Konfigurationsakte der Tux Paint geändert werden.  
+	  in der Konfigurationsakte der Marx Paint geï¿½ndert werden.  
 
           Sehen Sie den "Wahl" Abschnitt oben.
 
 
       Beendigen Sie
       -------------
-        Den "beendigte" Taste, das Farbenfenster Tux schließend oder drückend
-	"Escape" Schlüssel, anklickend beendigt Tux Paint.
+        Den "beendigte" Taste, das Farbenfenster Marx schlieï¿½end oder drï¿½ckend
+	"Escape" Schlï¿½ssel, anklickend beendigt Marx Paint.
 
         ANMERKUNG:  Der "beendigte" Taste kann untauglich sein (mit der
-	"--noquit" Befehl-Linienwahl), aber "Escape" Schlüssel wird ruhige
+	"--noquit" Befehl-Linienwahl), aber "Escape" Schlï¿½ssel wird ruhige
 	Arbeit.  
 
-        Sie werden zuerst aufgefordert, ob Sie wirklich beendigen möchten.
+        Sie werden zuerst aufgefordert, ob Sie wirklich beendigen mï¿½chten.
 
-        Wenn Sie beschließen zu beendigen und Sie nicht die gegenwärtige
+        Wenn Sie beschlieï¿½en zu beendigen und Sie nicht die gegenwï¿½rtige
 	Abbildung gespeichert haben, werden Sie zuerst wenn Wunsch gebeten,
 	ihn zu speichern.  Wenn es nicht ein neues Bild ist, werden Sie dann,
-	wenn Sie über der alten Version speichern möchten, oder verursachen
-	eine neue Eintragung gefragt.  (sehen Sie "außer" oben.)
+	wenn Sie ï¿½ber der alten Version speichern mï¿½chten, oder verursachen
+	eine neue Eintragung gefragt.  (sehen Sie "auï¿½er" oben.)
 
         ANMERKUNG:  Wenn das Bild gespeichert wird, wird es automatisch neu
-	geladen, naechstes Mal wenn Sie Tux Paint laufen lassen!  
+	geladen, naechstes Mal wenn Sie Marx Paint laufen lassen!  
 
 
-Laden anderer Abbildungen in Tux Paint
+Laden anderer Abbildungen in Marx Paint
 --------------------------------------
-  Da geöffneter 'Dialog der Tux Paint' nur Abbildungen anzeigt, die Sie
-  mit Tux Paint verursachten, was, wenn Sie irgendeine andere Abbildung oder
-  Fotographie in Tux Paint laden möchten, um zu redigieren?  
+  Da geï¿½ffneter 'Dialog der Marx Paint' nur Abbildungen anzeigt, die Sie
+  mit Marx Paint verursachten, was, wenn Sie irgendeine andere Abbildung oder
+  Fotographie in Marx Paint laden mï¿½chten, um zu redigieren?  
 
-  um so zu tun, müssen Sie einfach die Abbildung in eine Bildakte PNG
+  um so zu tun, mï¿½ssen Sie einfach die Abbildung in eine Bildakte PNG
   (bewegliche Netzgraphik - 'Portable Network Graphic') umwandeln und
-  legen sie in gespeichertes "Verzeichnis der Tux Paint".
-  ("~/.tuxpaint/saved/"unter Linux und Unix, "userdata\saved\" unter Windows.)
+  legen sie in gespeichertes "Verzeichnis der Marx Paint".
+  ("~/.marxpaint/saved/"unter Linux und Unix, "userdata\saved\" unter Windows.)
   
-  Das Verwenden 'tuxpaint-import'
+  Das Verwenden 'marxpaint-import'
   -------------------------------
-    können Benutzer Linux und Unix verwenden "tuxpaint-import" Oberteilindex,
-    der angebracht erhält, wann Sie Tux Paint anbringen.  Sie benutzt einige
-    Werkzeuge NetPBM, um das Bild ("anytopnm") umzuwandeln, die Größe neu
-    bestimmt es, damit sie in Segeltuch der Tux Paint ("pnmscale") paßt,
+    kï¿½nnen Benutzer Linux und Unix verwenden "marxpaint-import" Oberteilindex,
+    der angebracht erhï¿½lt, wann Sie Marx Paint anbringen.  Sie benutzt einige
+    Werkzeuge NetPBM, um das Bild ("anytopnm") umzuwandeln, die Grï¿½ï¿½e neu
+    bestimmt es, damit sie in Segeltuch der Marx Paint ("pnmscale") paï¿½t,
     und umwandelt es in ein PNG ("pnmtopng").  
 
     Sie benutzt auch "Datum", um die aktuelle Uhrzeit und das Datum zu 
-    erhalten, das der filenaming Farbengebrauch VersammlungTux für
+    erhalten, das der filenaming Farbengebrauch VersammlungMarx fï¿½r
     gespeicherte Akten ist.  (erinnern Sie sich, werden Sie nie um einen
     'Dateinamen' gebeten, wenn Sie gehen, Abbildungen zu speichern oder zu
-    öffnen!)
+    ï¿½ffnen!)
 
-    um zu verwenden 'tuxpaint-import' Sie, lassen Sie einfach den
+    um zu verwenden 'marxpaint-import' Sie, lassen Sie einfach den
     Befehl von einer Befehl-Linienaufforderung laufen und stellen Sie ihn
-    das name(s) des file(s) zur Verfügung, das Sie umwandeln möchten.  
+    das name(s) des file(s) zur Verfï¿½gung, das Sie umwandeln mï¿½chten.  
 
-    Sie werden in Ihre Farbe 'saved' Verzeichnis Tux umgewandelt und gelegt.
-    (Anmerkung:  Wenn Sie dies für einen anderen Benutzer tun - z.B.
-    Ihr Kind, müssen Sie überprüfen, den Befehl unter ihr Konto laufen zu
+    Sie werden in Ihre Farbe 'saved' Verzeichnis Marx umgewandelt und gelegt.
+    (Anmerkung:  Wenn Sie dies fï¿½r einen anderen Benutzer tun - z.B.
+    Ihr Kind, mï¿½ssen Sie ï¿½berprï¿½fen, den Befehl unter ihr Konto laufen zu
     lassen.)
 
     Beispiel:  
 
-      $ tuxpaint-import grandma.jpg
-      grandma.jpg -> /home/username/.tuxpaint/saved/20020921123456.png
+      $ marxpaint-import grandma.jpg
+      grandma.jpg -> /home/username/.marxpaint/saved/20020921123456.png
       jpegtopnm:  SCHREIBEN Einer PPMCAkte
 
-      Die erste Linie ("tuxpaint-import grandma.jpg"), ist der Befehl zu
+      Die erste Linie ("marxpaint-import grandma.jpg"), ist der Befehl zu
       laufen.  Die folgenden zwei Linien werden vom Programm ausgegeben,
-      während es funktioniert.  
+      wï¿½hrend es funktioniert.  
 
 
-      Jetzt können Sie Tux Paint laden, und eine Version dieser ursprünglichen
-      Abbildung ist unter 'öffnen' Dialog vorhanden.  Gerades Doppeltklicken
+      Jetzt kï¿½nnen Sie Marx Paint laden, und eine Version dieser ursprï¿½nglichen
+      Abbildung ist unter 'ï¿½ffnen' Dialog vorhanden.  Gerades Doppeltklicken
       seine Ikone!  
 
 
   Sie manuell tun
   ---------------
-    Windowsbenutzermuß tut z.Z. die Umwandlung manuell.
+    Windowsbenutzermuï¿½ tut z.Z. die Umwandlung manuell.
 
     Laden Sie ein Graphikprogramm, das zum Laden Ihrer Abbildung und zum
-    Speichern einer PNG-Formatakte fähig ist.  (sehen Sie "PNG.txt" für
+    Speichern einer PNG-Formatakte fï¿½hig ist.  (sehen Sie "PNG.txt" fï¿½r
     eine Liste der vorgeschlagenen Software.)
 
-    Verringern Sie die Größe des Bildes auf nicht weit als 448 Pixeln herüber
-    und nicht höher als 376 hohe Pixel.  (z.B., ist maximale Größe
+    Verringern Sie die Grï¿½ï¿½e des Bildes auf nicht weit als 448 Pixeln herï¿½ber
+    und nicht hï¿½her als 376 hohe Pixel.  (z.B., ist maximale Grï¿½ï¿½e
     448 x 376 Pixel)
 
-    Außer der Abbildung im PNG-Format.  Es wird IN HOHEM GRADE, daß Sie den
+    Auï¿½er der Abbildung im PNG-Format.  Es wird IN HOHEM GRADE, daï¿½ Sie den
     Dateinamen mit dem Tagesdatum nennen und Zeit festsetzen, seit dem das
-    ist der Farbengebrauch VersammlungTux empfohlen:
+    ist der Farbengebrauch VersammlungMarx empfohlen:
 
       YYYYMMDDhhmmss
 
     z.B.:  
 
-      20020921130500 - für September 21, 2002, 1:05:00pm
+      20020921130500 - fï¿½r September 21, 2002, 1:05:00pm
 
-    Legen Sie diese PNG-Akte in Ihre Farbe 'gespeichertes' Verzeichnis Tux.
+    Legen Sie diese PNG-Akte in Ihre Farbe 'gespeichertes' Verzeichnis Marx.
     (sehen Sie oben.),  
 
     Unter Windows ist dieses im "userdata" Heft.
 
 
-Verlängernde Tux Paint
+Verlï¿½ngernde Marx Paint
 ----------------------
-  Wenn Sie Sachen wie Bürsten und die Gummistempel hinzufügen oder ändern,
-  die möchten von Tux Paint benutzt werden, können Sie sie ziemlich leicht
+  Wenn Sie Sachen wie Bï¿½rsten und die Gummistempel hinzufï¿½gen oder ï¿½ndern,
+  die mï¿½chten von Marx Paint benutzt werden, kï¿½nnen Sie sie ziemlich leicht
   tun, indem Sie einfach Akten auf Ihrer Festplatte setzen oder entfernen.
 
-  Anmerkung:  Sie müssen Tux Paint für die Änderungen am Nehmeneffekt
+  Anmerkung:  Sie mï¿½ssen Marx Paint fï¿½r die ï¿½nderungen am Nehmeneffekt
   wiederbeginnen.  
 
 
@@ -873,64 +873,64 @@ Verlängernde Tux Paint
   --------------
     StandardcAkten
     --------------
-      Tux Paint sucht nach seinen verschiedenen Dateien in seinem
+      Marx Paint sucht nach seinen verschiedenen Dateien in seinem
       Datenverzeichnis.
 
       Linux und Unix
       --------------
-        Wo dieses Verzeichnis geht, hängt von ab, was Wert für "DATA_PREFIX"
-	eingestellt wurde, als Tux Paint errichtet wurde.
-	Sehen Sie ANBRINGEN.txt für Details.  
+        Wo dieses Verzeichnis geht, hï¿½ngt von ab, was Wert fï¿½r "DATA_PREFIX"
+	eingestellt wurde, als Marx Paint errichtet wurde.
+	Sehen Sie ANBRINGEN.txt fï¿½r Details.  
 
-        Durch Rückstellung obwohl, das Verzeichnis ist:  
+        Durch Rï¿½ckstellung obwohl, das Verzeichnis ist:  
 
       Windows
       -------
-        Wo dieses Verzeichnis geht, hängt von ab, was Heft Sie dem Installateur
-	erklärten, einzusetzen Tux Paint.
+        Wo dieses Verzeichnis geht, hï¿½ngt von ab, was Heft Sie dem Installateur
+	erklï¿½rten, einzusetzen Marx Paint.
 
-        [ was die Rückstellung ist?  ]
+        [ was die Rï¿½ckstellung ist?  ]
 
 
-    Persönliche Akten
+    Persï¿½nliche Akten
     -----------------
-      Sie können Bürsten, Stempel und Schriftkegel in Ihrem eigenen
-      Verzeichnis auch herstellen, damit Tux Paint findet.  
+      Sie kï¿½nnen Bï¿½rsten, Stempel und Schriftkegel in Ihrem eigenen
+      Verzeichnis auch herstellen, damit Marx Paint findet.  
 
       Linux und Unix
       --------------
-        Ihr persönliches Farbenverzeichnis Tux ist "~/.tuxpaint/".
+        Ihr persï¿½nliches Farbenverzeichnis Marx ist "~/.marxpaint/".
 
-        Das heißt, wenn Ihr Hauptverzeichnis "/home/karl" ist, dann Ihr
-	Farbenverzeichnis Tux ist "/home/karl/.tuxpaint/".
+        Das heiï¿½t, wenn Ihr Hauptverzeichnis "/home/karl" ist, dann Ihr
+	Farbenverzeichnis Marx ist "/home/karl/.marxpaint/".
 
-        Vergessen Sie die Periode (".") nicht vor dem Wort 'tuxpaint'!  
+        Vergessen Sie die Periode (".") nicht vor dem Wort 'marxpaint'!  
 
       Windows
       -------
-        Ihr persönliches Farbenverzeichnis Tux wird "userdata" genannt.  
+        Ihr persï¿½nliches Farbenverzeichnis Marx wird "userdata" genannt.  
 
         [ wo es jetzt ist?  ]
 
 
-      um Bürsten zu addieren, stellen Stempel und Schriftkegel,
-      Unterverzeichnisse unter Ihren persönliches genannten "Bürsten" der
-      Tux Paint Verzeichnis, "Stempel" und "Schriftkegel", beziehungsweise her.  
+      um Bï¿½rsten zu addieren, stellen Stempel und Schriftkegel,
+      Unterverzeichnisse unter Ihren persï¿½nliches genannten "Bï¿½rsten" der
+      Marx Paint Verzeichnis, "Stempel" und "Schriftkegel", beziehungsweise her.  
 
-      (zum Beispiel, wenn Sie eine Bürste herstellten, die "flower.png"
-      genannt wurde, Sie würden es in "~/.tuxpaint/brushes/" unter Linux
+      (zum Beispiel, wenn Sie eine Bï¿½rste herstellten, die "flower.png"
+      genannt wurde, Sie wï¿½rden es in "~/.marxpaint/brushes/" unter Linux
       oder Unix. setzen),  
 
-  Bürsten ("Brushes")
+  Bï¿½rsten ("Brushes")
   -------------------
-    Die Bürsten, die für das Zeichnen mit den Bürsten- und Linienwerkzeugen
-    in der Tux Paint benutzt werden, sind einfach greyscale PNG-Bilder.
+    Die Bï¿½rsten, die fï¿½r das Zeichnen mit den Bï¿½rsten- und Linienwerkzeugen
+    in der Marx Paint benutzt werden, sind einfach greyscale PNG-Bilder.
 
     Das Alpha (Transparent) des PNG-Bildes wird benutzt, um die Form der
-    Bürste festzustellen, die bedeutet, daß die Form sein kann 'anti-aliased'
+    Bï¿½rste festzustellen, die bedeutet, daï¿½ die Form sein kann 'anti-aliased'
     und sogar teilweis-transparent!  
 
-    Bürstenbilder sollten sein nicht weit als 40 Pixel herüber und nicht höher
+    Bï¿½rstenbilder sollten sein nicht weit als 40 Pixel herï¿½ber und nicht hï¿½her
     als 40 hohe Pixel.  
 
     Gerade legen Sie sie in "brushes" Verzeichnis.  
@@ -938,24 +938,24 @@ Verlängernde Tux Paint
   Stempel ("Stamps")
   ------------------
     Alle stempeln-in Verbindung stehenden Akten gehen in "stamps" Verzeichnis.
-    Es ist nützlich, Unterverzeichnisse und Vor-Unterverzeichnisse dort
-    herzustellen, um die Stempel zu organisieren.  (zum Beispiel, können Sie
+    Es ist nï¿½tzlich, Unterverzeichnisse und Vor-Unterverzeichnisse dort
+    herzustellen, um die Stempel zu organisieren.  (zum Beispiel, kï¿½nnen Sie
     ein "feiertag" Heft mit "halloween" und "weihnachts" subfolders haben.)
 
     Bilder
     ------
-      Gummistempel in der Tux Paint können eine Anzahl von unterschiedlichen
+      Gummistempel in der Marx Paint kï¿½nnen eine Anzahl von unterschiedlichen
       Akten bestehen.  Die eine Akte, die angefordert wird, ist
-      selbstverständlich die Abbildung selbst.  
+      selbstverstï¿½ndlich die Abbildung selbst.  
 
-      Die Stempel, die von Tux Paint benutzt werden, sind PNG-Abbildungen.
-      Sie können Vollfarbe oder greyscale sein.  Das Alpha (Transparent) des
-      PNG wird benutzt, um die tatsächliche Form der Abbildung (anders stempeln
-      Sie ein großes Viereck auf Ihren Zeichnungen) festzustellen.
+      Die Stempel, die von Marx Paint benutzt werden, sind PNG-Abbildungen.
+      Sie kï¿½nnen Vollfarbe oder greyscale sein.  Das Alpha (Transparent) des
+      PNG wird benutzt, um die tatsï¿½chliche Form der Abbildung (anders stempeln
+      Sie ein groï¿½es Viereck auf Ihren Zeichnungen) festzustellen.
 
-      Das PNGs kann jede mögliche Größe sein, aber in der Praxis, ist
-      100 Pixel weit durch 100 hohe Pixel (100x100) für Tux Paint ziemlich
-      groß.  
+      Das PNGs kann jede mï¿½gliche Grï¿½ï¿½e sein, aber in der Praxis, ist
+      100 Pixel weit durch 100 hohe Pixel (100x100) fï¿½r Marx Paint ziemlich
+      groï¿½.  
 
 
     BeschreibungscText
@@ -964,12 +964,12 @@ Verlängernde Tux Paint
       (z.B., "picture.png"'s-Beschreibung wird in "picture.txt" im gleichen
       Verzeichnis. gespeichert),  
 
-      Zeichnet den Beginn mit "xx=" (wo "xx" eine der gestützten Sprachen ist;
-      z.B. "de" für Deutschen, "fr" für Franzosen, usw..)  wird unter den
-      verschiedenen gestützten locales verwendet.  
+      Zeichnet den Beginn mit "xx=" (wo "xx" eine der gestï¿½tzten Sprachen ist;
+      z.B. "de" fï¿½r Deutschen, "fr" fï¿½r Franzosen, usw..)  wird unter den
+      verschiedenen gestï¿½tzten locales verwendet.  
 
-      Wenn keine Übersetzung für das locale des Benutzers vorhanden ist,
-      wird die Rückstellungszeichenkette (die erste Linie, die auf englisch
+      Wenn keine ï¿½bersetzung fï¿½r das locale des Benutzers vorhanden ist,
+      wird die Rï¿½ckstellungszeichenkette (die erste Linie, die auf englisch
       sein sollte), benutzt.  
 
 
@@ -979,65 +979,65 @@ Verlängernde Tux Paint
       (z.B., stichhaltiger Effekt "picture.png"'s ist der Ton "picture.wav"
       im gleichen Verzeichnis.)
 
-      Für Töne für unterschiedliche locales (z.B., wenn der Ton jemand ist,
-      der ein Wort sagt, und Sie wünschen übersetzte Versionen des Wortes
+      Fï¿½r Tï¿½ne fï¿½r unterschiedliche locales (z.B., wenn der Ton jemand ist,
+      der ein Wort sagt, und Sie wï¿½nschen ï¿½bersetzte Versionen des Wortes
       sagten), stellen Sie auch WAV-Akten mit dem Aufkleber der locales im
       Dateinamen, in der Form her:  "STAMP_LOCALE.wav."
       
-      stichhaltiger Effekt "picture.png"'s, wenn Tux Paint in spanischen
-      Modus gelaufen wird, würde "picture_es.wav" sein.  Im französischen
+      stichhaltiger Effekt "picture.png"'s, wenn Marx Paint in spanischen
+      Modus gelaufen wird, wï¿½rde "picture_es.wav" sein.  Im franzï¿½sischen
       Modus "picture_fr.wav".  Und so weiter.
 
-      Wenn kein beschränkter stichhaltiger Effekt geladen werden kann,
-      versucht Tux Paint, die stichhaltige Akte 'der Rückstellung' zu laden.
+      Wenn kein beschrï¿½nkter stichhaltiger Effekt geladen werden kann,
+      versucht Marx Paint, die stichhaltige Akte 'der Rï¿½ckstellung' zu laden.
       (z.B., "picture.wav")
 
 
     StempelcWahlen
     --------------
       Neben einer graphischen Form, einer Textbeschreibung und einem
-      stichhaltigen Effekt können Stempel andere Attribute auch gegeben
-      werden.  um dies zu tun, müssen Sie eine '.dat' für den Stempel
+      stichhaltigen Effekt kï¿½nnen Stempel andere Attribute auch gegeben
+      werden.  um dies zu tun, mï¿½ssen Sie eine '.dat' fï¿½r den Stempel
       herstellen.  
 
-      Eine Stempeldatei ist einfach eine Textakte, welche die Wahlen enthält.
+      Eine Stempeldatei ist einfach eine Textakte, welche die Wahlen enthï¿½lt.
 
       Die Akte hat den gleichen Namen wie das PNG-Bild, aber eine ".dat"
-      Verlängerung.  (z.B., "picture.png"'s-Datei ist die Textakte
+      Verlï¿½ngerung.  (z.B., "picture.png"'s-Datei ist die Textakte
       "picture.dat" im gleichen Verzeichnis.)
 
       Farbige Stempel
       ---------------
-        Stempel können gebildet werden, um 'colorable' oder 'tintable' zu
+        Stempel kï¿½nnen gebildet werden, um 'colorable' oder 'tintable' zu
 	sein entweder.
 
         Colorable
         ---------
-	  Stempel "Colorable", die sie ganz wie Bürsten - Sie Auswahl der
-	  Stempel zum Erhalten der Form bearbeiten und wählen dann die Farbe
-	  aus Sie sie sein wünschen.  (Symbolstempel, wie die mathematischen
+	  Stempel "Colorable", die sie ganz wie Bï¿½rsten - Sie Auswahl der
+	  Stempel zum Erhalten der Form bearbeiten und wï¿½hlen dann die Farbe
+	  aus Sie sie sein wï¿½nschen.  (Symbolstempel, wie die mathematischen
 	  und musikalischen, sind ein Beispiel.)
 
-          Nichts über das ursprüngliche Bild wird ausgenommen das Transparent
-	  verwendet ("Alpha"Führung).  Die Farbe des Stempels kommt aus Körper.
+          Nichts ï¿½ber das ursprï¿½ngliche Bild wird ausgenommen das Transparent
+	  verwendet ("Alpha"Fï¿½hrung).  Die Farbe des Stempels kommt aus Kï¿½rper.
 
-          Fügen Sie das "colorable" Wort der Datei des Stempels hinzu.  
+          Fï¿½gen Sie das "colorable" Wort der Datei des Stempels hinzu.  
 
-        Abgetönt ("Tintable")
+        Abgetï¿½nt ("Tintable")
         ---------------------
-	  "tönte" Stempel sind die ähnliche "colorable" ab, ausgenommen die
-	  Details des ursprünglichen Bildes gehalten werden.  (es techically
-	  zu setzen, wird das ursprüngliche Bild verwendet, aber seine Farbe
-	  wird geändert, gegründet auf der gegenwärtig-vorgewählten Farbe.)
+	  "tï¿½nte" Stempel sind die ï¿½hnliche "colorable" ab, ausgenommen die
+	  Details des ursprï¿½nglichen Bildes gehalten werden.  (es techically
+	  zu setzen, wird das ursprï¿½ngliche Bild verwendet, aber seine Farbe
+	  wird geï¿½ndert, gegrï¿½ndet auf der gegenwï¿½rtig-vorgewï¿½hlten Farbe.)
 
-          Fügen Sie das "tintable" Wort der Datei des Stempels hinzu.  
+          Fï¿½gen Sie das "tintable" Wort der Datei des Stempels hinzu.  
 
 
   Schriftkegel
   ------------
-    Die Schriftkegel, die von Tux Paint benutzt werden, sind Schriftkegel
+    Die Schriftkegel, die von Marx Paint benutzt werden, sind Schriftkegel
     TrueType (TTF).  
 
-    Legen Sie sie einfach in das "Schriftkegel" Verzeichnis.  Tux Paint
-    lädt den Schriftkegel und liefert vier unterschiedliche Größen im
+    Legen Sie sie einfach in das "Schriftkegel" Verzeichnis.  Marx Paint
+    lï¿½dt den Schriftkegel und liefert vier unterschiedliche Grï¿½ï¿½en im
     'Schriftkegelvorwahl', wenn sie 'Text' Werkzeug verwendet.

@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Pattern
+                        Marx Paint "Magic" Tool: Pattern
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

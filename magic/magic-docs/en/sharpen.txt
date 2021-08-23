@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Sharpen
+                        Marx Paint "Magic" Tool: Sharpen
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

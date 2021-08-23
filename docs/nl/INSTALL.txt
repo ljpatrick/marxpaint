@@ -1,10 +1,10 @@
-INSTALL.txt voor Tux Paint
+INSTALL.txt voor Marx Paint
 
-Tux Paint - Een tekenprogramma voor kinderen.
+Marx Paint - Een tekenprogramma voor kinderen.
 
 Copyright 2002, Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 27 Juni 2002 - 5 november 2002
 
@@ -15,16 +15,16 @@ Nodig:
 ------
   Windows gebruikers:
   -------------------
-    De Windows versie van Tux Paint wordt geleverd als een executable file.
+    De Windows versie van Marx Paint wordt geleverd als een executable file.
     Hierin zitten alle libraries (in ".DLL" vorm).
 
   libSDL
   ------
-    Tux Paint benodigt de Simple DirectMedia Layer Library (libSDL),
+    Marx Paint benodigt de Simple DirectMedia Layer Library (libSDL),
     een Open Source multimedia programming library beschikbaar onder de
     GNU Lesser General Public License (LGPL).
 
-    Samen met libSDL heeft Tux Paint een aantal andere 'hulp' libraries nodig:
+    Samen met libSDL heeft Marx Paint een aantal andere 'hulp' libraries nodig:
     SDL_Image (voor grafische files), SDL_TTF (voor True Type Fonts
     ondersteuning) en optioneel de SDL_Mixer (voor geluidseffecten).
 
@@ -47,27 +47,27 @@ Nodig:
 
   Andere Libraries:
   -----------------
-    Tux Paint maakt ook nog gebruik van een aantal andere LGPL libraries.
-    Onder Linux moeten deze geïnstalleerd worden. Ze zullen meestal al op uw
+    Marx Paint maakt ook nog gebruik van een aantal andere LGPL libraries.
+    Onder Linux moeten deze geï¿½nstalleerd worden. Ze zullen meestal al op uw
     systeem aanwezig zijn of zijn beschikbaar op de CD van uw Linux distributie.
 
     libPNG
     ------
-      Tux Paint gebruikt het PNG (Portable Network Graphics) formaat voor de
+      Marx Paint gebruikt het PNG (Portable Network Graphics) formaat voor de
       data files.  SDL_image heeft hiervoor libPNG nodig.
 
         http://www.libpng.org/pub/png/libpng.html
 
     FreeType2
     ---------
-      Tux Paint gebruikt de TTF (True Type Font) fonts voor tekst.
+      Marx Paint gebruikt de TTF (True Type Font) fonts voor tekst.
       SDL_ttf heeft hiervoor de FreeType2 library nodig.
 
         http://www.freetype.org/
 
     gettext
     -------
-      Tux Paint gebruikt uw locale settings van uw systeem samen met de 
+      Marx Paint gebruikt uw locale settings van uw systeem samen met de 
       "gettext" library om de verschillende talen te ondersteunen (bijvoorbeeld
       Spaans).  Hiervoor moet u de gettext library installeren.
 
@@ -76,7 +76,7 @@ Nodig:
     NetPBM Tools  [OPTIONEEL]
     ------------------------
       Onder Linux en Unix worden de NetPBM gereedschappen veel gebruikt om te
-      printen (Een PNG file wordt gegenereerd door TuxPaint en weer
+      printen (Een PNG file wordt gegenereerd door MarxPaint en weer
       geconverteerd naar een PostScript formaat door gebruik te maken van de
       'pngtopnm' and 'pnmtops' NetPBM commando-regel gereedschappen.)
 
@@ -85,7 +85,7 @@ Nodig:
 
 Compileren en Installatie:
 --------------------------
-  Tux Paint wordt uitgegeven onder de GNU General Public License (GPL)
+  Marx Paint wordt uitgegeven onder de GNU General Public License (GPL)
   (zie "COPYING.txt" voor meer details), daarom is de 'source code' van het
   programma bijgevoegd.
 
@@ -93,14 +93,14 @@ Compileren en Installatie:
   -------------------
     Compileren:
     -----------
-      Tux Paint wordt geleverd als een voor-gecompileerd pakket voor Windows.
+      Marx Paint wordt geleverd als een voor-gecompileerd pakket voor Windows.
       [Eventuele informatie over het hercompileren voor Windows zal
       in de toekomst hier verschijnen. Tot die tijd moet u het op eigen kracht 
       doen.]
 
     Installeren:
     ------------
-      Dubbel-klik op het Tux Paint installatie programma (.EXE file) en
+      Dubbel-klik op het Marx Paint installatie programma (.EXE file) en
       volg de instructies.
 
       Eerst wordt u gevraagd om in te stemmen met de GPL licentie.
@@ -108,34 +108,34 @@ Compileren en Installatie:
       hiervoor de "COPYING.txt".)
 
       Het programma vraagt u of snelkoppelingen in het Windows Start Menu en op
-      de desktop naar Tux Paint wilt. Beide opties zijn standaard aangevinkt.
+      de desktop naar Marx Paint wilt. Beide opties zijn standaard aangevinkt.
 
-      Vervolgens wordt u gevraagd op welke plaats u Tux Paint wilt installeren.
+      Vervolgens wordt u gevraagd op welke plaats u Marx Paint wilt installeren.
       Indien er voldoende plaats aanwezig is zou de standaard map goed moeten
       zijn. Is dit niet het geval, kiest u dan een andere plaats.
 
       Na deze vraag hoeft u alleen nog maar op 'installeren' te klikken.
-      Tux Paint doet de rest!
+      Marx Paint doet de rest!
 
     Het veranderen van de eigenschappen van de snelkoppeling.
     ---------------------------------------------------------
       Om de programma instellingen te veranderen klikt u met de rechter 
-      muis-toets op de TuxPaint snelkoppeling en kiest u 'Eigenschappen'
+      muis-toets op de MarxPaint snelkoppeling en kiest u 'Eigenschappen'
       uit het menu.
 
       Controleer of de 'snelkoppeling' tab is geselecteerd en bekijk het doel
       van de snelkoppeling. Hier staat bijvoorbeeld:
       
-        "C:\Program Files\TuxPaint\TuxPaint.exe"
+        "C:\Program Files\MarxPaint\MarxPaint.exe"
 
       U kunt nu commando-regel opties toevoegen, welke uitgevoerd worden
       als u op het icoontje klikt.
 
-      Om bijvoorbeeld Tux Paint in de 'fullscreen' mode te laten starten,
+      Om bijvoorbeeld Marx Paint in de 'fullscreen' mode te laten starten,
       met eenvoudige vormen ( geen roteer optie) en in het Nederlands voegt
       u de volgende opties toe:
 
-        "C:\Program Files\TuxPaint\TuxPaint.exe" -f -s --lang dutch
+        "C:\Program Files\MarxPaint\MarxPaint.exe" -f -s --lang dutch
 
       (Zie de "README.txt" voor een volledige lijst van commando-regel opties.)
 
@@ -148,10 +148,10 @@ Compileren en Installatie:
 
     Als er iets fout gaat
     ---------------------
-      Als u op het icoontje klikt om TuxPaint te starten en er gebeurt niets
+      Als u op het icoontje klikt om MarxPaint te starten en er gebeurt niets
       dan zijn de commando-regel opties waarschijnlijk fout. Bekijk dan met een
       eenvoudige tekstverwerker (Notepad o.i.d.) de file 'stderr.txt' in de 
-      TuxPaint map.
+      MarxPaint map.
             
       Deze file bevat een omschrijving van wat er fout is gegaan. In de meeste
       gevallen zal dit iets zijn in de stijl van een hoofdletter waar er geen
@@ -162,9 +162,9 @@ Compileren en Installatie:
   ----------------------
     Compileren:
     -----------
-      NB: Op dit moment ondersteunt Tux Paint niet autoconf/automake dus is er
+      NB: Op dit moment ondersteunt Marx Paint niet autoconf/automake dus is er
       geen "./configure" script.  (Sorry!)  Compileren zou echter eenvoudig
-      moeten zijn, vooropgesteld dat TuxPaint al de nodige libraries kan vinden.
+      moeten zijn, vooropgesteld dat MarxPaint al de nodige libraries kan vinden.
 
       Om het programma van de source-code te compileren typt u eenvoudig
       het volgende commando:
@@ -187,13 +187,13 @@ Compileren en Installatie:
       genoemde libraries op uw systeem aanwezig zijn. Gebruikt u
       voor-gecompileerde pakketten zoals de RPM's bij RedHat en de DEBs bij
       Debian installeer dan ook de corresponderende  "-dev" of "-devel"
-      pakketten. Anders kunt u Tux Paint (en andere programma's) niet
+      pakketten. Anders kunt u Marx Paint (en andere programma's) niet
       compileren.
 
     Installeren:
     ------------
       Vooropgesteld dat er geen fouten zijn opgetreden bij het compileren, kunt 
-      u nu Tux Paint installeren. Onder Linux moet dit gebeuren door de 'root'
+      u nu Marx Paint installeren. Onder Linux moet dit gebeuren door de 'root'
       gebruiker (superuser).  U kunt naar "root" overschakelen door:
 
         $ su te typen
@@ -209,9 +209,9 @@ Compileren en Installatie:
         # exit te typen.
 
 
-      NB: Standaard plaatst TuxPaint de  "tuxpaint", executable in 
+      NB: Standaard plaatst MarxPaint de  "marxpaint", executable in 
       "/usr/local/bin/".  De data files (afbeeldingen, geluiden etc.)
-      komen in "/usr/local/share/tuxpaint/".
+      komen in "/usr/local/share/marxpaint/".
 
 
       Waar gaan de bestanden naar toe
@@ -222,17 +222,17 @@ Compileren en Installatie:
 
         Andere variabelen zijn:
           BIN_PREFIX
-	    Waar het bestand "tuxpaint" terecht komt.
+	    Waar het bestand "marxpaint" terecht komt.
 	    (Standaard is "$(PREFIX)/bin" bijvoorbeeld: "/usr/local/bin")
 
 	  DATA_PREFIX
 	    Waar de data files (geluid, afbeeldingen, borstels, stempels etc.)
-	    terecht komen en waar TuxPaint bij het opstarten zal zoeken.
-	    (Standaard ingesteld op "$(PREFIX)/share/tuxpaint")
+	    terecht komen en waar MarxPaint bij het opstarten zal zoeken.
+	    (Standaard ingesteld op "$(PREFIX)/share/marxpaint")
 
 	  DOC_PREFIX
 	    Waar de documentatie files geplaatst worden (de "docs" directory).
-	    (Standaard "$(PREFIX)/share/doc/tuxpaint")
+	    (Standaard "$(PREFIX)/share/doc/marxpaint")
 
 	  MAN_PREFIX
 	    Waar de 'man pages' terecht komen. (De standaard is:
@@ -245,38 +245,38 @@ Compileren en Installatie:
 	    Waar de iconen voor KDE en GNOME terecht komen.
 
 	  LOCALE_PREFIX
-	    Waar de vertaalde pagina's van Tux Paint naar toe gaan.
+	    Waar de vertaalde pagina's van Marx Paint naar toe gaan.
 	    (Standaard ingesteld op "$(PREFIX)/share/locale/")
 	    (Uiteindelijk komen deze bestanden in de  locale's directory 
 	    (bijvoorbeeld, "es" voor Spaans), binnen de "LC_MESSAGES"
 	    subdirectory.)
 
 
-Tux Paint verwijderen:
+Marx Paint verwijderen:
 ----------------------
   Windows
   -------
     Gebruik makend van de Uninstaller
     ---------------------------------
-      Als u de snelkoppeling in het Start Menu geïnstalleerd heeft dan kunt u
-      "Uninstall" kiezen in de Tuxpaint folder. Er opent zich een venster
+      Als u de snelkoppeling in het Start Menu geï¿½nstalleerd heeft dan kunt u
+      "Uninstall" kiezen in de Marxpaint folder. Er opent zich een venster
       waarin u om bevestiging gevraagd wordt. Weet u het zeker, klik dan op
       de 'Uninstall' knop.
 
       Wanneer de bestanden verwijderd zijn klikt u eenvoudig op de 'sluiten'
       knop.
 
-      U kunt TuxPaint ook verwijderen in het de 'software' afdeling van het
+      U kunt MarxPaint ook verwijderen in het de 'software' afdeling van het
       configuratie scherm.
 
-      NB: Omdat de afbeeldingen gemaakt met Tux Paint opgeslagen worden in de
+      NB: Omdat de afbeeldingen gemaakt met Marx Paint opgeslagen worden in de
       map 'userdata' wordt deze map niet verwijderd.
 
 
   Linux
   -----
-    In de source file directory van TuxPaint (de map waarin u Tux Paint
-    compileerde), kunt u de 'Makefile' gebruiken om Tux Paint te verwijderen.
+    In de source file directory van MarxPaint (de map waarin u Marx Paint
+    compileerde), kunt u de 'Makefile' gebruiken om Marx Paint te verwijderen.
     Standaard kan dit alleen gebeuren door de  "root" gebruiker ('superuser').
     (Zie ook de installatieprocedure voor meer informatie.)
 

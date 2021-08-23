@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-vietnamese"
-Vietnamese TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-vietnamese"
+Vietnamese TrueType Font (TTF) for Marx Paint
 
 The "vi.ttf" font file is ...
 

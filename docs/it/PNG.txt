@@ -1,38 +1,38 @@
-PNG.it.txt di Tux Paint
+PNG.it.txt di Marx Paint
 
-Tux Paint - Un semplice programma di disegno per bambini.
+Marx Paint - Un semplice programma di disegno per bambini.
 
 Copyright 2002 by Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 27 giugno, 2002 - 7 novembre, 2002
 
 
 A proposito di PNG
 ------------------
-  PNG è il formato Portable Network Graphic. È uno standard aperto, non 
-  coperto da brevetti (come il GIF). È un formato fortemente compresso
+  PNG ï¿½ il formato Portable Network Graphic. ï¿½ uno standard aperto, non 
+  coperto da brevetti (come il GIF). ï¿½ un formato fortemente compresso
   (ma allo stesso tempo non "a perdita" come il JPEG - la perdita permette
-  di ottenere file più piccoli, ma introduce degli errori nell'immagine
+  di ottenere file piï¿½ piccoli, ma introduce degli errori nell'immagine
   quando viene salvata), con colori a 24 bit (16,7 milioni di colori) e 
-  "canale alpha" - ciò significa che ogni pixel può avere diversi gradi
+  "canale alpha" - ciï¿½ significa che ogni pixel puï¿½ avere diversi gradi
   di trasparenza.
 
   Per maggiori informazioni, visita:  http://www.libpng.org/
 
   Queste caratteristiche (standard aperto, assenza di perdita, compressione
-  trasparenza/alpha) ne fanno la scelta migliore per Tux Paint (il supporto
-  di Tux Paint al formato PNG deriva dalla libreria open source SDL_Image,
+  trasparenza/alpha) ne fanno la scelta migliore per Marx Paint (il supporto
+  di Marx Paint al formato PNG deriva dalla libreria open source SDL_Image,
   che a sua volta lo ricava dalla libreria libPNG).
 
-  La presenza di molti colori permette di usare "Timbri" di alta qualità in
-  Tux Paint e la trasparenza alpha l'uso di "Pennelli" di alta qualità.
+  La presenza di molti colori permette di usare "Timbri" di alta qualitï¿½ in
+  Marx Paint e la trasparenza alpha l'uso di "Pennelli" di alta qualitï¿½.
 
 
 Come creare PNG
 ---------------
-  Qaunto segue è una _sintetica_ lista di modi per creare PNG o convertire
+  Qaunto segue ï¿½ una _sintetica_ lista di modi per creare PNG o convertire
   file esistenti in PNG.
 
 
@@ -40,12 +40,12 @@ Come creare PNG
   ---------------------
     The GIMP
     --------
-      Il miglior strumento con cui è possibile creare immagini PNG da usare
-      in Tux Paint è lo GNU Image Manupulation Program ("The GIMP"), un
-      programma open source di alta qualità per il disegno e il fotoritocco.
+      Il miglior strumento con cui ï¿½ possibile creare immagini PNG da usare
+      in Marx Paint ï¿½ lo GNU Image Manupulation Program ("The GIMP"), un
+      programma open source di alta qualitï¿½ per il disegno e il fotoritocco.
 
-      Probabilmente è già installato nel Vostro sistema GNU Linux. Se non è
-      così, quasi sicuramente è disponibile all'interno dei CD di installazione.
+      Probabilmente ï¿½ giï¿½ installato nel Vostro sistema GNU Linux. Se non ï¿½
+      cosï¿½, quasi sicuramente ï¿½ disponibile all'interno dei CD di installazione.
       Altrimenti:
 
         http://www.gimp.org/
@@ -53,25 +53,25 @@ Come creare PNG
 
     Krita
     -----
-      Krita è un'applicazione di disegno e fotoritocco contenuta in KOffice.
+      Krita ï¿½ un'applicazione di disegno e fotoritocco contenuta in KOffice.
 
         http://koffice.kde.org/krita/
 
 
     NetPBM
     ------
-      Il Portable Bitmap tools (comunemente chiamato "NetPBM") è un insieme
-      di strumenti open source da riga di comando con i quali è possibile
+      Il Portable Bitmap tools (comunemente chiamato "NetPBM") ï¿½ un insieme
+      di strumenti open source da riga di comando con i quali ï¿½ possibile
       convertire file da e verso molti formati, compresi GIF, TIFF, BMP, PNG,
       e molti altri.
 
       NOTA: i formati NetPBM (Portable Bitmap: PBM, Portable Greymap: PGM,
       Portable Pixmap: PPM, e l'universale Portable Any Map: PNM) non hanno
       il supporto al canale alpha, quindi ogni informazione sulla trasparenza
-      dell'immagine (ad esempio da una GIF) verrà persa! Usa GIMP!
+      dell'immagine (ad esempio da una GIF) verrï¿½ persa! Usa GIMP!
 
-      Probabilmente è già installato nel Vostro sistema GNU Linux. Se non è
-      così, quasi sicuramente è disponibile all'interno dei CD di installazione.
+      Probabilmente ï¿½ giï¿½ installato nel Vostro sistema GNU Linux. Se non ï¿½
+      cosï¿½, quasi sicuramente ï¿½ disponibile all'interno dei CD di installazione.
       Altrimenti:
 
         http://netpbm.sourceforge.net/
@@ -82,9 +82,9 @@ Come creare PNG
       I programmi da riga di comando "cjpeg" e "djpeg" convertono immagini dai
       formati NetPBM Portable Any Map (PNM) e JPEG.
 
-      Probabilmente è già installato nel Vostro sistema GNU Linux. (In Debian,
-      si trova nel pacchetto "libjpeg-progs"). Se non è così, quasi sicuramente
-      è disponibile all'interno dei CD di installazione. Altrimenti:
+      Probabilmente ï¿½ giï¿½ installato nel Vostro sistema GNU Linux. (In Debian,
+      si trova nel pacchetto "libjpeg-progs"). Se non ï¿½ cosï¿½, quasi sicuramente
+      ï¿½ disponibile all'interno dei CD di installazione. Altrimenti:
 
         ftp://ftp.uu.net/graphics/jpeg/
 

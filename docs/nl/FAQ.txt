@@ -1,10 +1,10 @@
-FAQ.txt voor Tux Paint
+FAQ.txt voor Marx Paint
 
-Tux Paint - Een tekenprogramma voor kinderen.
+Marx Paint - Een tekenprogramma voor kinderen.
 
 Copyright 2002 Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 14 september 2002 - 28 september 2002
 
@@ -26,18 +26,18 @@ Veel gestelde vragen (FAQ):
   ------------------------------
     De "Caps Lock" toets staat aan.
 
-    Heeft u Tux Paint van de commando-regel gestart vergewis u dan dat u niet de
+    Heeft u Marx Paint van de commando-regel gestart vergewis u dan dat u niet de
     "--uppercase" optie heeft meegegeven.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De "--uppercase" optie kan ook op
     deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met:  "uppercase=yes".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met:  "uppercase=yes".
 
-    Verwijder eenvoudig deze regel of start Tux Paint van de commando-regel met
+    Verwijder eenvoudig deze regel of start Marx Paint van de commando-regel met
     de extensie: "--mixedcase", dit zal dan de oudere instellingen
     overschrijven.
 
@@ -46,20 +46,20 @@ Veel gestelde vragen (FAQ):
   ------------------------------------------------------------------
     De "print delay" optie staat aan.  U kunt alleen elke X seconden printen.
 
-    Heeft U Tux Paint van de commando-regel gestart, vergewis u dan dat u niet
+    Heeft U Marx Paint van de commando-regel gestart, vergewis u dan dat u niet
     de "--printdelay=..." optie heeft meegegeven.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De "--printdelay=..." optie kan
     ook op deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met:  "printdelay=...".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met:  "printdelay=...".
 
     Verwijder eenvoudig deze regel of stel de 'delay value' op 0 (geen
     wachttijd), of verklein de ingestelde waarde.  (Voor meer informatie zie
-    de README.txt).  U kunt Tux Paint ook starten met de commando-regel optie:
+    de README.txt).  U kunt Marx Paint ook starten met de commando-regel optie:
     "--printdelay=0", dit zal dan de oudere instellingen overschrijven.
     U hoeft dan niet meer te wachten tussen de verschillende prints.
 
@@ -68,29 +68,29 @@ Veel gestelde vragen (FAQ):
   ---------------------------------------------
     De "no print" optie staat aan.
 
-    Heeft U Tux Paint van de commando-regel gestart, vergewis u dan dat u niet
+    Heeft U Marx Paint van de commando-regel gestart, vergewis u dan dat u niet
     de "--noprint" optie heeft meegegeven.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De  "--noprint" optie kan ook op
     deze wijze ingeschakeld staan.
 
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met: "noprint=yes".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met: "noprint=yes".
 
-    Verwijder eenvoudig deze regel of start Tux Paint met de optie: "--print",
+    Verwijder eenvoudig deze regel of start Marx Paint met de optie: "--print",
     Dit overschrijft de eerdere instellingen.
 
 
-  Als Tux Paint in full-screen mode werkt en ik druk ALT-TAB, gaat het venster
+  Als Marx Paint in full-screen mode werkt en ik druk ALT-TAB, gaat het venster
   op zwart!
   ----------------------------------------------------------------------------
     Helaas is dit een fout in de SDL library.  Sorry.
 
 
-  Als Tux Paint in full-screen mode werkt heeft het grote randen eromheen.
+  Als Marx Paint in full-screen mode werkt heeft het grote randen eromheen.
   ------------------------------------------------------------------------
     Linux gebruikers - De X-Window server is niet ingesteld om met een
     schermresolutie van 640 x 480 te werken.
@@ -107,7 +107,7 @@ Veel gestelde vragen (FAQ):
 
     Voeg "640x480" toe bij de "Modes" regel.
     (Bijvoorbeeld de "Display" subsectie die de 16-bit kleur diepte bevat
-    ("Depth 16"), dit is wat Tux Paint tracht te gebruiken.)
+    ("Depth 16"), dit is wat Marx Paint tracht te gebruiken.)
 
     Bijvoorbeeld:
 
@@ -127,34 +127,34 @@ Veel gestelde vragen (FAQ):
       * Het volume staat hard genoeg?
       * Staat het volume in de geluidsmixer goed?
       * Zijn er andere programma's die geluid gebruiken? (Deze
-        kunnen het geluid van Tux Paint blokkeren)
+        kunnen het geluid van Marx Paint blokkeren)
 
-    Is aan alle bovenstaande eisen voldaan dan is Tux Paint mogelijk gestart met
+    Is aan alle bovenstaande eisen voldaan dan is Marx Paint mogelijk gestart met
     de "no sound" optie of misschien zelfs gecompileerd zonder
     geluidsondersteuning.
 
     Om dit te controleren typt u op de commando-regel:
 
-      tuxpaint --version
+      marxpaint --version
 
     Als u dan, temidden van alle andere informatie, ziet staan "Sound disabled"
-    dan betekent dit dat deze versie van Tux Paint geen geluid heeft. Compileer
-    Tux Paint opnieuw en verzeker u ervan dat de "nosound" optie niet
+    dan betekent dit dat deze versie van Marx Paint geen geluid heeft. Compileer
+    Marx Paint opnieuw en verzeker u ervan dat de "nosound" optie niet
     ingeschakeld is.  (met andere woorden NIET "make nosound")  Zorg dat de
     SDL_mixer library beschikbaar is!
 
-    Heeft U Tux Paint van de commando-regel gestart, vergewis u dan dat u niet
+    Heeft U Marx Paint van de commando-regel gestart, vergewis u dan dat u niet
     de "--nosound" optie heeft meegegeven.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De  "--nosound" optie kan ook op
     deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met: "nosound=yes".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met: "nosound=yes".
 
-    Verwijder eenvoudig deze regel of start Tux Paint met de optie: "--sound",
+    Verwijder eenvoudig deze regel of start Marx Paint met de optie: "--sound",
     Dit overschrijft de eerdere instellingen.
 
 
@@ -164,40 +164,40 @@ Veel gestelde vragen (FAQ):
     name welke buffer groottes gekozen werden.
 
     Stuur in dat geval een e-mail naar mij met de details van uw computer.
-    (Operating systeem en versie, soundkaart, welke versie van Tux Paint etc.
-    Dit kunt u te weten komen door "tuxpaint --version op de commando-regel te
+    (Operating systeem en versie, soundkaart, welke versie van Marx Paint etc.
+    Dit kunt u te weten komen door "marxpaint --version op de commando-regel te
     typen.
 
 
   Stempel thumbnails in het stempel keuzeblok zien minder goed uit.
   -----------------------------------------------------------------
-    Tux Paint werd waarschijnlijk gecompileerd met de snellere, lage kwaliteit
-    thumbnail code ingeschakeld. Het commando:  "tuxpaint --version" kan hier
+    Marx Paint werd waarschijnlijk gecompileerd met de snellere, lage kwaliteit
+    thumbnail code ingeschakeld. Het commando:  "marxpaint --version" kan hier
     uitkomst bieden. Ziet u de tekst: "Low Quality Thumbnails enabled",
     dan is dit het geval.
 
-    Het opnieuw compileren van Tux Paint biedt hier uitkomst. Verwijder de
+    Het opnieuw compileren van Marx Paint biedt hier uitkomst. Verwijder de
     regel:
 
       #define LOW_QUALITY_THUMBNAILS
 
-    uit de "tuxpaint.c" file in de "src" directory.
+    uit de "marxpaint.c" file in de "src" directory.
 
 
   Het Magic "Fill" gereedschap ziet er minder goed uit.
   -----------------------------------------------------
-    Tux Paint vergelijkt waarschijnlijk de precieze pixel kleuren bij het
+    Marx Paint vergelijkt waarschijnlijk de precieze pixel kleuren bij het
     vullen.  Dit gaat sneller maar ziet er niet zo goed uit.
-    Het commando:  "tuxpaint --version" kan hier
+    Het commando:  "marxpaint --version" kan hier
     uitkomst bieden. Ziet u de tekst: "Low Quality Flood Fill enabled",
     dan is dit het geval.
 
-    Het opnieuw compileren van Tux Paint biedt hier uitkomst. Verwijder de
+    Het opnieuw compileren van Marx Paint biedt hier uitkomst. Verwijder de
     regel:
 
       #define LOW_QUALITY_FLOOD_FILL
 
-    uit de "tuxpaint.c" file in de "src" directory.
+    uit de "marxpaint.c" file in de "src" directory.
 
 
   De tekeningen in het 'Open' dialoog venster zien er minder goed uit
@@ -208,42 +208,42 @@ Veel gestelde vragen (FAQ):
 
   De kleur-keuze knoppen zien er minder goed uit, het zijn geen mooie knoppen!
   ----------------------------------------------------------------------------
-    Tux Paint werd waarschijnlijk gecompileerd met de lage kwaliteit
-    knoppen code ingeschakeld. Het commando:  "tuxpaint --version" kan hier
+    Marx Paint werd waarschijnlijk gecompileerd met de lage kwaliteit
+    knoppen code ingeschakeld. Het commando:  "marxpaint --version" kan hier
     uitkomst bieden. Ziet u de tekst: "Low Quality Color Selector enabled",
     dan is dit het geval.
 
 
-    Het opnieuw compileren van Tux Paint biedt hier uitkomst. Verwijder de
+    Het opnieuw compileren van Marx Paint biedt hier uitkomst. Verwijder de
     regel:
 
       #define LOW_QUALITY_COLOR_SELECTOR
 
-    uit de "tuxpaint.c" file in de "src" directory.
+    uit de "marxpaint.c" file in de "src" directory.
 
 
-  Tux Paint draait in Full Screen mode - Ik wil Tux Paint binnen een venster!
+  Marx Paint draait in Full Screen mode - Ik wil Marx Paint binnen een venster!
   ---------------------------------------------------------------------------
     De "fullscreen" optie is ingeschakeld.
 
-    Start u Tux Paint van de commando-regel, verzeker u dan dat de
+    Start u Marx Paint van de commando-regel, verzeker u dan dat de
     "--fullscreen" optie niet meegegeven werd.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De  "--fullscreen" optie kan ook
     op deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met: "fullscreen=yes".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met: "fullscreen=yes".
 
-    Verwijder eenvoudig deze regel of start Tux Paint met de optie:
+    Verwijder eenvoudig deze regel of start Marx Paint met de optie:
     "--windowed", Dit overschrijft de eerdere instellingen.
 
 
-  Tux Paint produceert rare tekst op het scherm of in een tekst file
+  Marx Paint produceert rare tekst op het scherm of in een tekst file
   -------------------------------------------------------------------
-    Sommige boodschappen zijn normaal maar als Tux Paint een veelvoud van
+    Sommige boodschappen zijn normaal maar als Marx Paint een veelvoud van
     meldingen geeft (bijvoorbeeld een lijst van alle namen van elke stempel
     afbeelding), dan is het programma waarschijnlijk gecompileerd met de debug
     optie ingeschakeld.
@@ -252,34 +252,34 @@ Veel gestelde vragen (FAQ):
 
       #define DEBUG
 
-    uit de "tuxpaint.c" file in de "src" directory.
+    uit de "marxpaint.c" file in de "src" directory.
 
 
   Stempels zien er uit als rechthoeken
   ------------------------------------
-    Tux Paint werd gecompileerd met de lage kwaliteit stempel vormen.
+    Marx Paint werd gecompileerd met de lage kwaliteit stempel vormen.
 
-    Compileer Tux Paint opnieuw en verwijder de regel:
+    Compileer Marx Paint opnieuw en verwijder de regel:
 
 
       #define LOW_QUALITY_STAMP_OUTLINE
 
-    uit de "tuxpaint.c" file in de "src" directory.
+    uit de "marxpaint.c" file in de "src" directory.
 
 
-  Tux Paint verschijnt in een vreemde taal!
+  Marx Paint verschijnt in een vreemde taal!
   -----------------------------------------
     Zorg ervoor dat de locale setting correct is.
-    Zie ook het hoofdstuk "Tux Paint schakelt niet naar de juiste taal.
+    Zie ook het hoofdstuk "Marx Paint schakelt niet naar de juiste taal.
 
 
-  Tux Paint schakelt niet naar de juiste taal.
+  Marx Paint schakelt niet naar de juiste taal.
   -------------------------------------
 
     Linux en Unix gebruikers: Verzeker u dat de locale beschikbaar is
     -----------------------------------------------------------------
       Controleer de "/etc/locale.gen" file.  Kijk in de README.txt file voor
-      de locales die Tux Paint gebruikt (in het bijzonder als u de "--lang"
+      de locales die Marx Paint gebruikt (in het bijzonder als u de "--lang"
       optie gebruikt).
 
       NB: Debian gebruikers kunnen het commando "dpkg-reconfigure locales"
@@ -300,71 +300,71 @@ Veel gestelde vragen (FAQ):
       Werkt dit niet e-mail mij dan uw bevindingen.
 
 
-  Tux Paint overschrijft altijd mijn oude tekening!
+  Marx Paint overschrijft altijd mijn oude tekening!
   -------------------------------------------------
     De "save over" optie is ingeschakeld.  (Dit schakelt het dialoogvenster
     uit dat normaal zou verschijnen als u op 'Save' klikt)
 
-    Start u Tux Paint van de commando-regel, Verzeker u dan dat u niet de
+    Start u Marx Paint van de commando-regel, Verzeker u dan dat u niet de
     "--saveover" optie meegeeft.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De  "--saveover" optie kan ook op
     deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met: "saveover=yes".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met: "saveover=yes".
 
-    Verwijder eenvoudig deze regel of start Tux Paint met de optie:
+    Verwijder eenvoudig deze regel of start Marx Paint met de optie:
     "--saveoverask", Dit overschrijft de eerdere instellingen.
 
-   Zie ook het hoofdstuk "Tux Paint bewaart altijd een nieuwe tekening!".
+   Zie ook het hoofdstuk "Marx Paint bewaart altijd een nieuwe tekening!".
 
 
-  Tux Paint bewaart altijd een nieuwe tekening!
+  Marx Paint bewaart altijd een nieuwe tekening!
   ---------------------------------------------
     De "nooit overschrijven" optie is ingeschakeld. (Dit schakelt het
     dialoogvenster uit dat zou verschijnen als u op 'Save' klikt uit.)
 
-    Start u Tux Paint van de commando-regel, Verzeker u dan dat u niet de
+    Start u Marx Paint van de commando-regel, Verzeker u dan dat u niet de
     "--saveovernew" optie meegeeft.
 
-    Heeft u Tux Paint gestart door te dubbel klikken op een icoon, controleer
+    Heeft u Marx Paint gestart door te dubbel klikken op een icoon, controleer
     dan de eigenschappen van het icoon zelf. De  "--saveovernew" optie kan ook
     op deze wijze ingeschakeld staan.
 
-    Is het bovenstaande niet het geval controleer dan de Tux Paint's
-    configuratie file ("~/.tuxpaintrc" onder Linux en Unix,
-    ("tuxpaint.cfg" onder Windows) voor de regel met:  "saveover=new".
+    Is het bovenstaande niet het geval controleer dan de Marx Paint's
+    configuratie file ("~/.marxpaintrc" onder Linux en Unix,
+    ("marxpaint.cfg" onder Windows) voor de regel met:  "saveover=new".
 
-    Verwijder eenvoudig deze regel of start Tux Paint met de optie:
+    Verwijder eenvoudig deze regel of start Marx Paint met de optie:
     "--saveoverask", Dit overschrijft de eerdere instellingen.
 
-    Zie ook het hoofdstuk Tux Paint overschrijft altijd mijn oude tekening!
+    Zie ook het hoofdstuk Marx Paint overschrijft altijd mijn oude tekening!
 
-  Tux Paint gebruikt opties die ik niet opgegeven heb.!
+  Marx Paint gebruikt opties die ik niet opgegeven heb.!
   -----------------------------------------------------
-    Tux Paint kijkt altijd eerst naar de configuratie files voor opties.
+    Marx Paint kijkt altijd eerst naar de configuratie files voor opties.
 
     Unix en Linux
     -------------
       Onder Unix en Linux kijkt het programma eerst naar de systeem
       configuratie file:
 
-        /etc/tuxpaint/tuxpaint.conf
+        /etc/marxpaint/marxpaint.conf
 
       Dan pas kijkt het programma naar de persoonlijke configuratie file:
 
-        ~/.tuxpaintrc
+        ~/.marxpaintrc
 
       Als allerlaatste wordt pas gekeken naar commando-regel opties.
 
     Windows
     -------
-      Onder Windows kijkt Tux Paint eerst naar de configuratie file:
+      Onder Windows kijkt Marx Paint eerst naar de configuratie file:
 
-        tuxpaint.cfg
+        marxpaint.cfg
 
       Dan pas naar opties die op de commando-regel worden meegegeven.
 
@@ -372,12 +372,12 @@ Veel gestelde vragen (FAQ):
     Dit betekent dat instellingen, gemaakt in de configuratie files
     overschreven kunnen worden door opdrachten op de commando-regel.
 
-    Bijvoorbeeld als "/etc/tuxpaint/tuxpaint.conf" het geluid uitschakelt:
+    Bijvoorbeeld als "/etc/marxpaint/marxpaint.conf" het geluid uitschakelt:
 
       nosound=yes
 
     Dan kunt u het geluid weer inschakelen door deze optie toe te voegen aan de
-    ".tuxpainrc" file:
+    ".marxpainrc" file:
 
       sound=yes
 
@@ -391,7 +391,7 @@ Veel gestelde vragen (FAQ):
 
       --nosysconfig mee te geven.
 
-    Tux Paint kijkt dan alleen naar de  "~/.tuxpaintrc" file en de
+    Marx Paint kijkt dan alleen naar de  "~/.marxpaintrc" file en de
     commando-regel opties.
 
 
@@ -416,7 +416,7 @@ Help / Contact
 
     bill@newbreedsoftware.com
 
-  of stuur een e-mail naar de 'tuxpaint-dev' mailing lijst:
+  of stuur een e-mail naar de 'marxpaint-dev' mailing lijst:
 
-    http://www.newbreedsoftware.com/tuxpaint/lists/
+    http://www.newbreedsoftware.com/marxpaint/lists/
 

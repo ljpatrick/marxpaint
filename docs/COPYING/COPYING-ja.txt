@@ -1,13 +1,13 @@
-﻿COPYING-ja.txt for Tux Paint
+﻿COPYING-ja.txt for Marx Paint
 
-Tux Paint - 子供向けのシンプルなお絵かきプログラム
+Marx Paint - 子供向けのシンプルなお絵かきプログラム
 
 Copyright (c) 2005 by Bill Kendrick and others
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 
-注: この文書に加えて、Tux Paint に同梱されている TrueType フォントに
+注: この文書に加えて、Marx Paint に同梱されている TrueType フォントに
 ついても、関連する著作権情報を確認してください。
 
 参照: ../fonts/locale/LL_docs/, （"LL" はフォントファイル名と対応）

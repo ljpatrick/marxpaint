@@ -2,11 +2,11 @@
   fill.h
 
   Fill tool
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   Flood fill code based on Wikipedia example:
   http://www.wikipedia.org/wiki/Flood_fill/C_example

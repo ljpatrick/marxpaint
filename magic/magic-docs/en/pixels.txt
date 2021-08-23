@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Pixels
+                         Marx Paint "Magic" Tool: Pixels
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

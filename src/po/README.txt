@@ -1,4 +1,4 @@
-About Tux Paint's src/po/ folder
+About Marx Paint's src/po/ folder
 
 Bill Kendrick
 bill@newbreedsoftware.com

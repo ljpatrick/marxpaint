@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Light
+                         Marx Paint "Magic" Tool: Light
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

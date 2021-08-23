@@ -1,12 +1,12 @@
 /*
   cursor.c
 
-  For Tux Paint
+  For Marx Paint
   Bitmapped mouse pointer (cursor)
 
   Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ int no_fancy_cursors;
 void do_setcursor(SDL_Cursor * c)
 {
   /* Shut GCC up over the fact that the XBMs are #included within cursor.h
-     but used in tuxpaint.c (and not cursor.c) */
+     but used in marxpaint.c (and not cursor.c) */
 
   UNUSED(watch_bits);
   UNUSED(watch_mask_bits);

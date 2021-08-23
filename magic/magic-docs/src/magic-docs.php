@@ -1,6 +1,6 @@
 <?php
 /* This PHP file contains all the documentation for the various Magic Tools
-that are shipped with Tux Paint, as well as code and templates to generate
+that are shipped with Marx Paint, as well as code and templates to generate
 individual HTML files for each of them, and an index.html that links to
 them all. */
 
@@ -432,11 +432,11 @@ fclose($fiidx);
 function page_header($title)
 {
   return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n".
-    "<body><html><head><title>Tux Paint \"Magic\" Tool: ".$title."</title>\n".
+    "<body><html><head><title>Marx Paint \"Magic\" Tool: ".$title."</title>\n".
     "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=us-ascii\">\n".
     "</head>\n".
     "<body bgcolor=\"#FFFFFF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#FF0000\" alink=\"#FF00FF\">\n".
-    "<h1 align=\"center\">Tux Paint \"Magic\" Tool: ".$title."</h1>\n";
+    "<h1 align=\"center\">Marx Paint \"Magic\" Tool: ".$title."</h1>\n";
 }
 
 function page_footer()

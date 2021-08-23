@@ -72,14 +72,14 @@
 
 
 typedef struct magic_api_t {
-  /* A string containing the current version of Tux Paint (e.g., "0.9.18") */
+  /* A string containing the current version of Marx Paint (e.g., "0.9.18") */
   char * tp_version;
 
-  /* A string containing Tux Paint's data directory
-     (e.g., "/usr/local/share/tuxpaint/") */
+  /* A string containing Marx Paint's data directory
+     (e.g., "/usr/local/share/marxpaint/") */
   char * data_directory;
 
-  /* Call to have Tux Paint draw (and animate) its progress bar */
+  /* Call to have Marx Paint draw (and animate) its progress bar */
   void (*update_progress_bar)(void);
 
   /* Call to request special events; see "SPECIAL_..." flags, above */
@@ -113,16 +113,16 @@ typedef struct magic_api_t {
   /* XOR's the pixel at (x,y) location of the surface. */
   Uint32 (*xorpixel)(SDL_Surface *, int, int);
 
-  /* Asks Tux Paint to play a sound (one loaded via SDL_mixer library);
+  /* Asks Marx Paint to play a sound (one loaded via SDL_mixer library);
      the first value is for left/right panning (0 is left, 128 is center,
      255 is right); the second value is for total volume (0 is off, 255 is
      loudest) */
   void (*playsound)(Mix_Chunk *, int, int);
 
-  /* Asks Tux Paint to stop playing the sound played by 'playsound()' */
+  /* Asks Marx Paint to stop playing the sound played by 'playsound()' */
   void (*stopsound)(void);
 
-  /* Asks Tux Paint to calculate a line between (x1,y1) and (x2,y2);
+  /* Asks Marx Paint to calculate a line between (x1,y1) and (x2,y2);
      every 'step' iterations, it will call your callback function
      (which must accept a 'magic_api *' Magic API pointer and 'which' integer
      for which tool is being used, the 'last' and current ('canvas')
@@ -138,7 +138,7 @@ typedef struct magic_api_t {
   /* Converts HSV floats into RGB bytes */
   void (*hsvtorgb)(float, float, float, Uint8 *, Uint8 *, Uint8 *);
 
-  /* Holds Tux Paint's canvas dimensions */
+  /* Holds Marx Paint's canvas dimensions */
   int canvas_w;
   int canvas_h;
 
@@ -157,9 +157,9 @@ typedef struct magic_api_t {
 } magic_api;
 
 
-/* The version of the Tux Paint Magic tool API you are being compiled
+/* The version of the Marx Paint Magic tool API you are being compiled
    against.  Your 'XYZ_api_version()' should return this value.
-   If Tux Paint deems you compatible, it will call your 'XYZ_init()' (etc.)
+   If Marx Paint deems you compatible, it will call your 'XYZ_init()' (etc.)
    and you will be active. */
 
 #define TP_MAGIC_API_VERSION __APIVERSION__

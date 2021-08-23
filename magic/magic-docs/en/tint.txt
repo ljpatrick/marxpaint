@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Tint
+                          Marx Paint "Magic" Tool: Tint
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

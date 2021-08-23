@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Builds tuxpaint for MAEMO NOKIA DEVICES
+# Builds marxpaint for MAEMO NOKIA DEVICES
 # Sample debian/rules that uses debhelper.
 # This file was originally written by Joey Hess and Craig Small.
 # As a special exception, when this file is copied by dh-make into a
@@ -35,8 +35,8 @@ build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE) nokia770 DESTDIR=$(CURDIR)/debian/tuxpaint PREFIX=/usr
-	#docbook-to-man debian/tuxpaint.sgml > tuxpaint.1
+	$(MAKE) nokia770 DESTDIR=$(CURDIR)/debian/marxpaint PREFIX=/usr
+	#docbook-to-man debian/marxpaint.sgml > marxpaint.1
 
 	touch build-stamp
 
@@ -56,9 +56,9 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	# Add here commands to install the package into debian/tuxpaint.
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tuxpaint PREFIX=/usr
-	$(MAKE) install-nokia770 DESTDIR=$(CURDIR)/debian/tuxpaint NOKIA770_PREFIX=/usr
+	# Add here commands to install the package into debian/marxpaint.
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/marxpaint PREFIX=/usr
+	$(MAKE) install-nokia770 DESTDIR=$(CURDIR)/debian/marxpaint NOKIA770_PREFIX=/usr
 
 
 # Build architecture-independent files here.

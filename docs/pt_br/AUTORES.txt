@@ -1,49 +1,49 @@
-AUTORES.txt do Tux Paint
+AUTORES.txt do Marx Paint
 
-Tux Paint - Um programa de desenho para crianças, fácil de usar.
+Marx Paint - Um programa de desenho para crianï¿½as, fï¿½cil de usar.
 
 Copyright (c) 2002 por Bill Kendrick
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 
 17 de junho de 2002 - 25 de setembro de 2002
 
 
-* Projeto e programação:
+* Projeto e programaï¿½ï¿½o:
 
   Bill Kendrick <bill@newbreedsoftware.com>
   New Breed Software
   http://www.newbreedsoftware.com/
 
   Algoritmo de preenchimento de imagens baseado
-  na descrição do livro "Computer Graphics: C Version,"
+  na descriï¿½ï¿½o do livro "Computer Graphics: C Version,"
   (c) Prentice Hall 1997 de Donald Hearn e M. Pauline Baker.
-  [ NOTA: Atualmente não utilizado. ]
+  [ NOTA: Atualmente nï¿½o utilizado. ]
 
-  Código de preenchimento "Flood fill" baseado no exemplo da Wikipedia:
+  Cï¿½digo de preenchimento "Flood fill" baseado no exemplo da Wikipedia:
   http://www.wikipedia.org/wiki/Flood_fill/C_example
   de Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
 
 
-* Gráficos
+* Grï¿½ficos
 
-  * Botões da Interface - Criados com o script "AquaPro", utilizando o GIMP
+  * Botï¿½es da Interface - Criados com o script "AquaPro", utilizando o GIMP
     Copyright (C) 2001 Denis Bodor <b.bodor@calixo.net>
 
-  * Ícones da Interface - Criados por Bill Kendrick utilizando o GIMP
+  * ï¿½cones da Interface - Criados por Bill Kendrick utilizando o GIMP
 
-  * Desenho animado do "Tux," o pinguim do Linuxi criado por
+  * Desenho animado do "Marx," o pinguim do Linuxi criado por
     Sam "Criswell" Hart  <criswell@geekcomix.com>
-    O Tux foi originalmente criado por Larry Ewing <lewing@isc.tamue.edu>
+    O Marx foi originalmente criado por Larry Ewing <lewing@isc.tamue.edu>
     http://www.isc.tamu.edu/~lewing/linux/
 
-  * Pincéis criados utilizando o GIMP
+  * Pincï¿½is criados utilizando o GIMP
     http://www.gimp.org/
 
   * Carimbos
     * Bill Kendrick <bill@newbreedsoftware.com>
-      Símbolos musicais e matemáticos
+      Sï¿½mbolos musicais e matemï¿½ticos
       
       Algumas frutas e vegetais
 
@@ -71,7 +71,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     http://openlab.ring.gr.jp/efont/serif/
     GPL'd, Copyright 2000-2001 Kazuhiko <kazuhiko@ring.gr.jp>
 
-  * "default_font.ttf" é "FreeSans.ttf" do Free UCS Outline Fonts.
+  * "default_font.ttf" ï¿½ "FreeSans.ttf" do Free UCS Outline Fonts.
     http://www.freesoftware.fsf.org/freefont/
     GPL'd, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
     et al
@@ -79,13 +79,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 * Sons
 
-  * Vários gravados por Bill Kendrick
+  * Vï¿½rios gravados por Bill Kendrick
     * Ladrilhos - Cartuchos de jogos de Nintendo sendo empilhados.
     * Borrando - Raspando o microfone sobre a almofada de mouse.
     * Giz - Raspando o microfone  sobre o peruca.
     * Escurecendo - Sapo cantando.
     
-  * Muitos outros foram obtidos de várias fontes na internet.
+  * Muitos outros foram obtidos de vï¿½rias fontes na internet.
 
   * Editados com o SOX
     http://sox.sourceforge.net/
@@ -94,43 +94,43 @@ http://www.newbreedsoftware.com/tuxpaint/
     http://www.audacity.org/
 
 
-* Traduções
+* Traduï¿½ï¿½es
 
-  * Alemão
+  * Alemï¿½o
     Fabian Franz <FabianFranz@gmx.de>
 
-  * Dinamarquês
+  * Dinamarquï¿½s
     Rasmus Erik Voel Jensen <i18n@solsort.dk>
 
   * Espanhol
     Gabriel Gazzan <ggabriel@internet.com.uy>
 
-  * Finlandês
+  * Finlandï¿½s
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
 
-  * Francês
+  * Francï¿½s
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal <vidalc@club-internet.fr>
 
-  * Holandês
+  * Holandï¿½s
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
     Geert Stams <geertstams@wanadoo.nl>
  
-  * Islandês
+  * Islandï¿½s
     Pjetur G. Hjaltason <pjetur@pjetur.net>
 
   * Italiano
     Marco Milanesi <kpanic@pavia.linux.it>
 
-  * Norueguês
+  * Norueguï¿½s
     Karl Ove Hufthammer <karl@huftis.org>
 
-  * Polonês (breve)
+  * Polonï¿½s (breve)
     Jacek Poplawski <jpopl@interia.pl>
   
-  * Português Brasileiro
-    Daniel José Viana <danjovic@vespanet.com.br>
-    Dedicado à minha amada filha Scarlet
+  * Portuguï¿½s Brasileiro
+    Daniel Josï¿½ Viana <danjovic@vespanet.com.br>
+    Dedicado ï¿½ minha amada filha Scarlet
  
   * Sueco
     Daniel Andersson <daniel@septum.org>
@@ -139,9 +139,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     Doruk Fisek <dfisek@fisek.com.tr>
     
 
-* Portagem e Criação de Pacotes
+* Portagem e Criaï¿½ï¿½o de Pacotes
 
-  * Versão Windows 32-bits
+  * Versï¿½o Windows 32-bits
     John Popplewell <john@johnnypops.demon.co.uk>
 
   * Pacote Debian
@@ -150,9 +150,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 * Suporte / Testes
 
-  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
-  Muitos outros na comunidade!  (Testes, correção de bugs, comentários, kudos)
+  Marx4Kids.org, Sam Hart  (Marx4Kids project manager)
+  Muitos outros na comunidade!  (Testes, correï¿½ï¿½o de bugs, comentï¿½rios, kudos)
 
 
-Veja ainda:  MUDANÇAS.txt
+Veja ainda:  MUDANï¿½AS.txt
 

@@ -1,4 +1,4 @@
-                                   Tux Paint
+                                   Marx Paint
 
                         Een tekenprogramma voor kinderen
 
@@ -6,7 +6,7 @@
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                   http://www.newbreedsoftware.com/marxpaint/
 
                         14 Juni 2002 - 16 november 2002
 
@@ -18,13 +18,13 @@ OUT OF DATE
 
                                       Over
 
-     "Tux Paint" is een tekenprogramma voor kinderen. het is eenvoudig te
+     "Marx Paint" is een tekenprogramma voor kinderen. het is eenvoudig te
      bedienen en heeft een vaste venster grootte. Het programma geeft toegang
      tot eerder gemaakte tekeningen d.m.v. een 'thumbnail browser' en hiermee
      geen toegang tot het onderliggende bestandssysteem.
 
      In vergelijking met populaire tekenprogramma's als "De GIMP," heeft
-     TuxPaint een beperkt aantal mogelijkheden. Het is echter veel
+     MarxPaint een beperkt aantal mogelijkheden. Het is echter veel
      eenvoudiger te bedienen en heeft kind-vriendelijke features als leuke
      geluidseffecten.
 
@@ -32,7 +32,7 @@ OUT OF DATE
 
                                    Licentie:
 
-     Tux Paint is een Open Source project, Vrije Software uitgegeven onder de
+     Marx Paint is een Open Source project, Vrije Software uitgegeven onder de
      GNU General Public License (GPL). De software is vrij en de broncode van
      het programma is vrij beschikbaar. (Dit maakt het voor andere gebruikers
      mogelijk om het programma aan hun wensen aan te passen, fouten eruit te
@@ -46,9 +46,9 @@ OUT OF DATE
 
                                     Doelen:
 
-   TuxPaint moet een gemakkelijk en vooral leuk tekenprogramma voor kinderen
+   MarxPaint moet een gemakkelijk en vooral leuk tekenprogramma voor kinderen
    zijn.
-           Tux Paint is een eenvoudig tekenprogramma voor kinderen. De
+           Marx Paint is een eenvoudig tekenprogramma voor kinderen. De
            achterliggende gedachte is niet om een algemeen tekenprogramma te
            maken. Het moet vooral leuk en gemakkelijk te bedienen zijn.
            Geluidseffecten en een 'stripfiguur' helpen de gebruiker en zorgen
@@ -56,7 +56,7 @@ OUT OF DATE
            aantal grappige muis-aanwijzers.
 
    Uitbreidbaarheid
-           Tux Paint is uitbreidbaar. Kwasten en stempels kunnen naar
+           Marx Paint is uitbreidbaar. Kwasten en stempels kunnen naar
            believen toegevoegd, maar ook verwijderd, worden Zo zou een leraar
            een verzameling afbeeldingen van dieren kunnen invoegen om de
            kinderen hiermee een tekening te laten maken als ondersteuning bij
@@ -65,13 +65,13 @@ OUT OF DATE
            kiest.
 
    Andere operating systemen
-           Tux Paint is beschikbaar op een veelvoud van operating systemen:
+           Marx Paint is beschikbaar op een veelvoud van operating systemen:
            Windows, Linux, etc. Het gebruikersinterface blijft hetzelfde.
-           Tux Paint werkt ook op oudere computers (zoals een Pentium 133) en
+           Marx Paint werkt ook op oudere computers (zoals een Pentium 133) en
            kan aangepast worden om te werken op oudere systemen.
 
    Eenvoud
-           Tuxpaint geeft alleen toegang tot de tekeningen gemaakt met het
+           Marxpaint geeft alleen toegang tot de tekeningen gemaakt met het
            programma zelf. Men hoeft zich dus geen zorgen te maken dat
            bestanden gewist worden of kwijt raken. De gemaakte tekening wordt
            automatisch opgeslagen als het programma afgesloten wordt, en
@@ -84,7 +84,7 @@ OUT OF DATE
 
                               Andere documentatie
 
-     Andere documentatie bij Tux Paint (in de "docs" map/directory):
+     Andere documentatie bij Marx Paint (in de "docs" map/directory):
 
      *   AUTHORS.txt
          Een lijst van de auteurs en medewerkers.
@@ -97,7 +97,7 @@ OUT OF DATE
          De licentievoorwaarden (GPL).
 
      *   INSTALL.txt
-         Instructie voor het installeren / compileren van Tux Paint, zover
+         Instructie voor het installeren / compileren van Marx Paint, zover
          beschikbaar.
 
      *   PNG.txt
@@ -111,23 +111,23 @@ OUT OF DATE
 
      ----------------------------------------------------------------------
 
-                           Het gebruik van Tux Paint
+                           Het gebruik van Marx Paint
 
-Tux Paint installeren
+Marx Paint installeren
 
      Voor aanwijzingen zie de INSTALL.txt file.
 
      ----------------------------------------------------------------------
 
-Tux Paint starten
+Marx Paint starten
 
   Linux/Unix gebruikers
 
      Typ het volgende op de commando-regel ( "$"):
 
-     $ tuxpaint
+     $ marxpaint
 
-     Men kan Tux Paint ook toevoegen aan het menu of een icoon op het
+     Men kan Marx Paint ook toevoegen aan het menu of een icoon op het
      bureaublad plaatsen (bijvoorbeeld in GNOME of KDE). Kijk hiervoor in de
      documentatie van uw desktop...
 
@@ -139,26 +139,26 @@ Tux Paint starten
   Windows gebruikers
 
                                                            [Icon]             
-                                                          Tux Paint           
+                                                          Marx Paint           
 
-     Klik op het "Tux Paint" icoon op de desktop of dubbel-klik op het
-     "tuxpaint.exe" icoon in de 'Tux Paint' map op uw computer.
+     Klik op het "Marx Paint" icoon op de desktop of dubbel-klik op het
+     "marxpaint.exe" icoon in de 'Marx Paint' map op uw computer.
 
      Mochten er fouten optreden dan worden deze opgeslagen in het bestand
-     "stderr.txt" in de Tux Paint map.
+     "stderr.txt" in de Marx Paint map.
 
      Zie "INSTALL.txt" voor meer details hoe u de eigenschappen van het icoon
-     kunt aanpassen. In Tux Paint, kunt u opties hieraan toe voegen. (d.m.v
+     kunt aanpassen. In Marx Paint, kunt u opties hieraan toe voegen. (d.m.v
      de commando-regel).
 
-     Om Tux Paint extra opties mee te geven moet u "tuxpaint.exe" vanuit een
+     Om Marx Paint extra opties mee te geven moet u "marxpaint.exe" vanuit een
      MSDOS Prompt venster starten. (Zie "INSTALL.txt" voor meer details.)
 
 Opties
 
   Configuratie File
 
-     Op eenvoudige wijze kunt u een configuratie file maken voor Tux Paint,
+     Op eenvoudige wijze kunt u een configuratie file maken voor Marx Paint,
      deze file wordt elke keer bij het opstarten gelezen.
 
      Dit bestand is een eenvoudig tekstbestand welke de opties bevat die u
@@ -166,16 +166,16 @@ Opties
 
     Linux gebruikers
 
-     Het bestand dat u moet aanmaken heeft de naam ".tuxpaintrc" en moet
-     geplaatst worden in uw home directory. (bijvoorbeeld "~/.tuxpaintrc" of
-     "$HOME/.tuxpaintrc")
+     Het bestand dat u moet aanmaken heeft de naam ".marxpaintrc" en moet
+     geplaatst worden in uw home directory. (bijvoorbeeld "~/.marxpaintrc" of
+     "$HOME/.marxpaintrc")
 
-     De instellingen in de .tuxpaintrc overschrijven de instellingen gemaakt
+     De instellingen in de .marxpaintrc overschrijven de instellingen gemaakt
      in de systeem-wijde configuratie file. In de systeem configuratie file
      worden standaard geen instellingen gedaan. Deze file is te vinden in de
      volgende map:
 
-     /etc/tuxpaint/tuxpaint.conf
+     /etc/marxpaint/marxpaint.conf
 
      De instellingen die gedaan worden in beide files kunnen op hun beurt
      weer overschreven worden door opties mee te geven op de commando-regel.
@@ -185,8 +185,8 @@ Opties
 
     Windows gebruikers
 
-     De file die u moet aanmaken heeft de naam "tuxpaint.cfg" en moet
-     geplaatst zijn in de Tux Paint's map.
+     De file die u moet aanmaken heeft de naam "marxpaint.cfg" en moet
+     geplaatst zijn in de Marx Paint's map.
 
      Om deze file aan te maken kunt u gebruik maken van NotePad of WordPad. U
      moet het bestand dan opslaan als gewone tekst maar de naam van de file
@@ -235,8 +235,8 @@ Opties
            pas hebben leren lezen.
 
    grab=yes
-           Tux Paint zal proberen alle muis en keyboard acties te beperken
-           Hiermee worden acties beperkt die de gebruiker buiten Tux Paint
+           Marx Paint zal proberen alle muis en keyboard acties te beperken
+           Hiermee worden acties beperkt die de gebruiker buiten Marx Paint
            zouden kunnen brengen ( bijvoorbeeld: met [Alt]-[Tab] door de
            verschillende vensters 'lopen', [Ctrl]-[Escape], enz.)
 
@@ -260,7 +260,7 @@ Opties
            oude bestand overschreven mag worden.
 
    lang=LANGUAGE
-           Start Tux Paint op in een van de ondersteunde talen. U kunt uw
+           Start Marx Paint op in een van de ondersteunde talen. U kunt uw
            keuze maken uit de volgende talen:
 
                         +------------------------------------------------------+
@@ -301,14 +301,14 @@ Opties
 
        -----------------------------------------------------------------
 
-    De systeem instellingen teniet doen door middel van de .tuxpaintrc
+    De systeem instellingen teniet doen door middel van de .marxpaintrc
 
      Als een van de bovengenoemde opties ingesteld zijn in
-     "/etc/tuxpaint/tuxpaint.config", kunt u deze ongedaan maken in uw eigen
-     "~/.tuxpaintrc" file.
+     "/etc/marxpaint/marxpaint.config", kunt u deze ongedaan maken in uw eigen
+     "~/.marxpaintrc" file.
 
      Voor true/false opties, zoals "noprint" en "grab", kunt u deze eenvoudig
-     gelijk stellen aan 'no' in uw "~/.tuxpaintrc" file:
+     gelijk stellen aan 'no' in uw "~/.marxpaintrc" file:
 
      noprint=no
      uppercase=no
@@ -324,7 +324,7 @@ Opties
   Commando-regel opties
 
      Opties kunnen ook op de commando-regel meegegeven worden bij het
-     opstarten van Tux Paint. Enkele voorbeelden:
+     opstarten van Marx Paint. Enkele voorbeelden:
 
    --fullscreen
    --nosound
@@ -356,53 +356,53 @@ Opties
            natuurlijk onnodig.)
 
    --locale locale
-           Om Tux Paint in een van de ondersteunde talen te starten kijkt u
+           Om Marx Paint in een van de ondersteunde talen te starten kijkt u
            het beste in het hoofdstuk "Een andere taal kiezen" Hier kunt u de
            instellingen van de locale strings (bijvoorbeeld, "de_DE@euro"
            voor Duits) vinden.
            (Is uw locale al ingesteld, bijvoorbeeld met "$LANG" omgeving
-           (shell) variabele, dan is deze optie onnodig, omdat Tux Paint uw
+           (shell) variabele, dan is deze optie onnodig, omdat Marx Paint uw
            omgevingsvariabele herkent.
 
    --nosysconfig
            Onder Linux en Unix zorgt deze optie ervoor dat de systeem
-           configuratie file "/etc/tuxpaint/tuxpaint.conf", niet gelezen
+           configuratie file "/etc/marxpaint/marxpaint.conf", niet gelezen
            wordt.
-           Alleen uw eigen configuratie bestand, "~/.tuxpaintrc", zal gelezen
+           Alleen uw eigen configuratie bestand, "~/.marxpaintrc", zal gelezen
            worden (mits deze bestaat).
 
      ----------------------------------------------------------------------
 
   Commando-regel informatie opties
 
-     De volgende opties geven informatie op het scherm echter Tux Paint zal
+     De volgende opties geven informatie op het scherm echter Marx Paint zal
      hiermee niet opstarten.
 
    --version
-           Geeft de versie en de datum van uw Tux Paint programma. Deze optie
+           Geeft de versie en de datum van uw Marx Paint programma. Deze optie
            geeft ook aan welke opties ten tijde van het compileren werden
            meegegeven. Voor meer informatie zie (INSTALL.txt en FAQ.txt).
 
    --copying
-           Geeft korte informatie over de licentie waaronder Tux Paint wordt
+           Geeft korte informatie over de licentie waaronder Marx Paint wordt
            uitgebracht.
 
    --usage
            Geeft een overzicht van alle beschikbare commando-regel opties.
 
    --help
-           Geeft korte help informatie over Tux Paint.
+           Geeft korte help informatie over Marx Paint.
 
      ----------------------------------------------------------------------
 
   Een andere taal kiezen.
 
-     Tux Paint is vertaald in een aantal talen. Om een taal te kiezen kunt u
+     Marx Paint is vertaald in een aantal talen. Om een taal te kiezen kunt u
      de code "--lang" als optie meegeven op de commando-regel( bijvoorbeeld:
      "--lang spanish") ook kunt u gebruik maken van "lang=" instelling in de
      configuratie file (bijvoorbeeld: "lang=spanish").
 
-     Tux Paint leest ook de variabelen ingesteld in uw omgevings locale.
+     Marx Paint leest ook de variabelen ingesteld in uw omgevings locale.
      (Deze instelling kunt u teniet doen door op de commando-regel de code
      "--locale" optie mee te geven (zie boven)).
 
@@ -455,7 +455,7 @@ Opties
      systeem!
 
      Zoals aangegeven hierboven kunt u uw taal kiezen door een optie mee te
-     geven op de commando-regel.("--lang" en "--locale"), Tux Paint zal de
+     geven op de commando-regel.("--lang" en "--locale"), Marx Paint zal de
      locale setting van uw omgeving overnemen.
 
      Het volgende geeft uitleg hoe u omgevings locale kunt instellen:
@@ -470,7 +470,7 @@ Opties
      NB: Debian gebruikers kunnen het commando "dpkg-reconfigure locales". 
      uitvoeren
 
-     Voordat u Tux Paint start, stelt u uw "$LANG"  omgevingsvariabele in op
+     Voordat u Marx Paint start, stelt u uw "$LANG"  omgevingsvariabele in op
      een van de locales zoals hierboven aangegeven. (Wilt u dat alle
      programma's die meertalige ondersteuning bieden vertaald worden dan kunt
      u het volgende in uw login script plaatsen:  ~/.profile, ~/.bashrc,
@@ -479,18 +479,18 @@ Opties
      Bijvoorbeeld in de Bourne Shell (BASH):
 
      export LANG=es_ES@euro ; \
-     tuxpaint
+     marxpaint
 
      En in de C Shell (TCSH):
 
      setenv LANG es_ES@euro ; \
-     tuxpaint
+     marxpaint
 
      ----------------------------------------------------------------------
 
     Windows gebruikers
 
-     Tux Paint zal de locale instellingen herkennen en de betreffende
+     Marx Paint zal de locale instellingen herkennen en de betreffende
      bestanden automatisch gebruiken. Het onderstaande is dan ook alleen maar
      voor mensen die andere talen willen uitproberen.
 
@@ -545,7 +545,7 @@ Opties
 
 Titel scherm
 
-     Als Tux Paint voor het eerst opstart verschijnt er een titelpagina.
+     Als Marx Paint voor het eerst opstart verschijnt er een titelpagina.
 
      [Title Screenshot]
 
@@ -595,7 +595,7 @@ Hoofd scherm
                      Onderaan: Help
 
                         Helemaal aan de onderkant van het scherm verschijnt
-                        Tux de Pinguïn met handige tips en andere informatie.
+                        Marx de Pinguïn met handige tips en andere informatie.
 
            (Bijvoorbeed: 'Kies een vorm. Beweeg de muis om te draaien,      
            klik om te tekenen etc.)
@@ -869,7 +869,7 @@ Andere gereedschappen
                              Afdrukken uitschakelen
 
                         Heeft u de "noprint" optie ingesteld (met
-                        "noprint=yes" in de Tux Paint configuratie file) of u
+                        "noprint=yes" in de Marx Paint configuratie file) of u
                         heeft bij het opstarten de optie "--noprint"
                         meegegeven dan zal de "Afdrukken / Print" knop niet
                         werken.
@@ -898,15 +898,15 @@ Andere gereedschappen
      pngtopnm | pnmtops |lpr
 
                 Dit commando kan verandert worden door de "printcommand"
-                waarde in Tux Paint's configuratie bestand te wijzigen.
+                waarde in Marx Paint's configuratie bestand te wijzigen.
                 Voor meer informatie ziet u weer het "Opties" hoofdstuk.
 
    --------------------------------------------------------------------------
 
                      Stoppen
 
-                        U kunt Tux Paint op een aantal manieren afsluiten,
-                        door op de "Stop" knop te klikken, door het Tux Paint
+                        U kunt Marx Paint op een aantal manieren afsluiten,
+                        door op de "Stop" knop te klikken, door het Marx Paint
                         venster te sluiten of door op de "Escape" toets te
                         drukken.
                         (NB: De "Stop" knop kan uitgeschakeld
@@ -924,52 +924,52 @@ Andere gereedschappen
                         te overschrijven of het werk als een nieuwe tekeing
                         op te slaan.(Zie ook het hoofdstuk "Opslaan". )
                         NB: De laatst opgeslagen tekening zal automatisch
-                        geladen worden bij het opstarten van Tux Paint!
+                        geladen worden bij het opstarten van Marx Paint!
 
    --------------------------------------------------------------------------
 
-Andere afbeeldingen in Tux Paint laden
+Andere afbeeldingen in Marx Paint laden
 
-     Het dialoogvenster van Tux Paint laat u alleen met Tux Paint programma
+     Het dialoogvenster van Marx Paint laat u alleen met Marx Paint programma
      gemaakte tekeningen zien. Toch is het mogelijk om ander afbeeldingen of
      foto's in te laden.
 
      Hiervoor is het nodig om de afbeeldingen naar het PNG (Portable Network
      Graphic) formaat om te zetten. Daarna plaatst u de afbeelding in de
-     werkdirectory van Tux Paint. ("~/.tuxpaint/saved/" onder Linux en Unix,
+     werkdirectory van Marx Paint. ("~/.marxpaint/saved/" onder Linux en Unix,
      "userdata\saved\" onder Windows.)
 
-De 'tuxpaint-import' gebruiken
+De 'marxpaint-import' gebruiken
 
-     Linux en Unix gebruikers kunnen de "tuxpaint-import" shell-script
-     toepassen. Deze wordt meegeinstalleerd bij de installatie van Tux Paint.
+     Linux en Unix gebruikers kunnen de "marxpaint-import" shell-script
+     toepassen. Deze wordt meegeinstalleerd bij de installatie van Marx Paint.
      Het maakt gebruik van de NetPBM gereedschappen om de afbeelding om te
      zetten.("anytopnm"), Het formaat van de afbeelding zal worden aangepast
-     zodat het binnen het Tux Paint's venster past ("pnmscale"), vervolgens
+     zodat het binnen het Marx Paint's venster past ("pnmscale"), vervolgens
      wordt de afbeelding omgezet naar een PNG formaat ("pnmtopng").
 
-     Tux Paint maakt ook gebruik van het "date" commando om de huidige datum
-     en tijd te lezen. Dit is immers hoe Tux Paint namen geeft aan de
-     gemaakte tekeningen. (Tux Paint vraagt geen bestandsnamen wanneer u een
+     Marx Paint maakt ook gebruik van het "date" commando om de huidige datum
+     en tijd te lezen. Dit is immers hoe Marx Paint namen geeft aan de
+     gemaakte tekeningen. (Marx Paint vraagt geen bestandsnamen wanneer u een
      bestand wilt openen, weet u nog?)
 
-     Om de 'tuxpaint-import' te gebruiken typt u het eenvoudig op he
+     Om de 'marxpaint-import' te gebruiken typt u het eenvoudig op he
      commando-regel en geeft u de om-te-zetten bestandsnaam op.
 
-     De afbeeldingen worden omgezet en in de betreffende Tux Paint map
+     De afbeeldingen worden omgezet en in de betreffende Marx Paint map
      geplaatst. NB: Doet u dit voor bijvoorbeeld u zoon of dochter dan moet u
      het commando uitvoeren onder hun inlognaam.
 
      Een voorbeeld:
 
-     $ tuxpaint-import grandma.jpg
-     grandma.jpg -> /home/username/.tuxpaint/saved/20020921123456.png
+     $ marxpaint-import grandma.jpg
+     grandma.jpg -> /home/username/.marxpaint/saved/20020921123456.png
      jpegtopnm: WRITING A PPM FILE
 
-     De eerste regel ("tuxpaint-import grandma.jpg") is het uit te voeren
+     De eerste regel ("marxpaint-import grandma.jpg") is het uit te voeren
      commando. De volgende twee regels zijn output van het programma.
 
-     Start u vervolgens Tux Paint dan zult u zien dat de betreffende
+     Start u vervolgens Marx Paint dan zult u zien dat de betreffende
      afbeelding beschikbaar is bij de 'open' optie. U hoeft alleen nog maar
      te dubbel-klikken op de 'thumbnail'.
 
@@ -985,7 +985,7 @@ Met de hand omzetten....
      376 pixels.
 
      Sla de afbeelding op in het PNG formaat waarbij u de afbeelding de voor
-     Tux Paint gebruikelijke naam geeft:
+     Marx Paint gebruikelijke naam geeft:
 
      YYYYMMDDhhmmss.png
 
@@ -1007,49 +1007,49 @@ Met de hand omzetten....
 
      - voor September 21, 2002, 13:05:00
 
-     De afbeelding dient u te plaatsen in de betreffende Tux Paint directory.
+     De afbeelding dient u te plaatsen in de betreffende Marx Paint directory.
      (Zie boven.)
 
      Voor Windows is dit de "userdata" map.
 
      ----------------------------------------------------------------------
 
-                              Tux Paint uitbreiden
+                              Marx Paint uitbreiden
 
-     Tux Paint is eenvoudig uit te breiden. Dit kunt u doen door bestanden
+     Marx Paint is eenvoudig uit te breiden. Dit kunt u doen door bestanden
      (zoals kwasten en / of stempels) op w harde schijf te plaatsen.
 
-     NB: Om Tux Paint bekend te maken met de veranderingen moet u het
+     NB: Om Marx Paint bekend te maken met de veranderingen moet u het
      programma opnieuw opstarten.
 
 Waar moeten deze bestanden komen?
 
   Standaard files:
 
-     Tux Paint zoekt naar de verschillende data-bestanden in de 'data'
+     Marx Paint zoekt naar de verschillende data-bestanden in de 'data'
      directory.
 
     Linux en Unix
 
      Onder dit besturingssysteem is een en ander afhankelijk van de
-     ingestelde waarde bij de compilatie van Tux Paint. "DATA_PREFIX" Voor
+     ingestelde waarde bij de compilatie van Marx Paint. "DATA_PREFIX" Voor
      meer informatie bekijkt u het bestand INSTALL.txt.
 
      Standaard is echter de volgende directory in gebruik:
 
-     /usr/local/share/tuxpaint/
+     /usr/local/share/marxpaint/
 
      Heeft u het programma als een RPM pakket verkregen dan is waarschijnlijk
      de volgende map in gebruik:
 
-     /usr/share/tuxpaint/
+     /usr/share/marxpaint/
 
     Windows
 
-     Tux Paint zoekt naar een directory genaamd 'data'. Dit is de map die het
-     installatieprogramma gebruikte om Tux Paint te installeren:
+     Marx Paint zoekt naar een directory genaamd 'data'. Dit is de map die het
+     installatieprogramma gebruikte om Marx Paint te installeren:
 
-     C:\Program Files\TuxPaint\data
+     C:\Program Files\MarxPaint\data
 
      ----------------------------------------------------------------------
 
@@ -1060,32 +1060,32 @@ Waar moeten deze bestanden komen?
 
     Linux en Unix
 
-     Uw persoonlijke Tux Paint directory is "~/.tuxpaint/".
+     Uw persoonlijke Marx Paint directory is "~/.marxpaint/".
 
-     Bijvoorbeeld uw home directory is "/home/karl", dan is uw Tux Paint
-     directory "/home/karl/.tuxpaint/".
+     Bijvoorbeeld uw home directory is "/home/karl", dan is uw Marx Paint
+     directory "/home/karl/.marxpaint/".
 
-     Vergeet u de punt (".") niet voor de 'tuxpaint'!
+     Vergeet u de punt (".") niet voor de 'marxpaint'!
 
     Windows
 
-     Uw persoonlijke Tux Paint map is hier "userdata" genoemd en bevindt zich
+     Uw persoonlijke Marx Paint map is hier "userdata" genoemd en bevindt zich
      in dezelfde map als de executable file:
 
-     C:\Program Files\TuxPaint\userdata
+     C:\Program Files\MarxPaint\userdata
 
      Om kwasten, stempels en lettertypes toe te voegen kunt u het beste
-     subdirectories aanmaken onder uw persoonlijke Tux Paint directory met de
+     subdirectories aanmaken onder uw persoonlijke Marx Paint directory met de
      namen "kwasten", "stempels" en "fonts".
 
      Bijvoorbeeld u heeft een kwast gemaakt met de naam "bloem.png", deze
-     plaatst u dan in "~/.tuxpaint/kwasten/" onder Linux of Unix.)
+     plaatst u dan in "~/.marxpaint/kwasten/" onder Linux of Unix.)
 
      ----------------------------------------------------------------------
 
 Kwasten
 
-     De kwasten en lijnen die u in Tux Paint gebruikt zijn gewoon zwart-wit
+     De kwasten en lijnen die u in Marx Paint gebruikt zijn gewoon zwart-wit
      PNG afbeeldingen.
 
      De transparantie van de PNG afbeelding wordt gebruikt voor de vorm van
@@ -1112,17 +1112,17 @@ Stempels
 
   Afbeeldingen
 
-     Rubber Stempels in Tux Paint kunnen bestaan uit een aantal files. Het
+     Rubber Stempels in Marx Paint kunnen bestaan uit een aantal files. Het
      bestand dat nodig is, is natuurlijk de afbeelding zelf.
 
-     De stempels, zoals ze door Tux Paint gebruikt worden, zijn PNG
+     De stempels, zoals ze door Marx Paint gebruikt worden, zijn PNG
      afbeeldingen. Ze kunnen zwart-wit of in kleur zijn. De alpha
      transparantie van de PNG afbeelding bepaalt de eigenlijke vorm. Anders
      zouden al u stempels rechthoeken zijn.
 
      Deze PNG's kunnen elke afmeting hebben echter in de praktijk lijkt
      100 pixels bij 100 pixels (100 x 100) groot genoeg te zijn voor
-     Tux Paint.
+     Marx Paint.
 
      NB: Zien al uw stempels er uit als rechthoeken of vierkanten, dan is dat
      omdat u vergeten bent alpha transparantie te gebruiken! Zie voor meer
@@ -1166,11 +1166,11 @@ Stempels
      hiervoor maakt u WAV files aan met de naam van de locale in de filenaam:
      "STAMP_LOCALE.wav"
 
-     Het geluidseffect behorend bij "picture.png", als Tux Paint gestart
+     Het geluidseffect behorend bij "picture.png", als Marx Paint gestart
      wordt in het Spaans, is dan "picture_es.wav". In het Frans:
      "picture_fr.wav".
 
-     Kan er geen aangepast geluidseffect geladen worden dan zal Tux Paint
+     Kan er geen aangepast geluidseffect geladen worden dan zal Marx Paint
      proberen om het standaard geluid te gebruiken. (bijvoorbeeld:
      "picture.wav")
 
@@ -1222,9 +1222,9 @@ Stempels
 
 Lettertypes / fonts
 
-     De door Tux Paint gebruikte fonts zijn TrueType Fonts (TTF).
+     De door Marx Paint gebruikte fonts zijn TrueType Fonts (TTF).
 
-     Deze kunt u eenvoudig in de "fonts" directory plaatsen. Tux Paint zal
+     Deze kunt u eenvoudig in de "fonts" directory plaatsen. Marx Paint zal
      bij het opstarten het lettertype laden. De fonts zijn dan beschikbaar in
      vier groottes.
 
@@ -1233,12 +1233,12 @@ Lettertypes / fonts
                                 Meer Informatie
 
      Voor meer informatie leest u eerst de documentatie die geleverd wordt
-     bij Tux Paint.
+     bij Marx Paint.
 
      Heeft u hulp nodig, neemt u dan contact op met New Breed Software:
 
      http://www.newbreedsoftware.com/
 
-     Ook u kunt deelnemen in de diversen Tux Paint mailing lists:
+     Ook u kunt deelnemen in de diversen Marx Paint mailing lists:
 
-     http://www.newbreedsoftware.com/tuxpaint/lists/
+     http://www.newbreedsoftware.com/marxpaint/lists/

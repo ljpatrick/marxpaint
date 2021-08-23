@@ -2,13 +2,13 @@
   checkeroard.c
 
   "Checkerboard" Magic Tools Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   By Bill Kendrick
   Based on `blind.c` by Pere Pujal Carabantes
 
   Copyright (c) 2021
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

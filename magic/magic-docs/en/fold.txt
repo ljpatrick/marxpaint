@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Fold
+                          Marx Paint "Magic" Tool: Fold
 
                       By Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>

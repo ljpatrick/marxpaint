@@ -1,12 +1,12 @@
 /*
   cursor.h
 
-  For Tux Paint
+  For Marx Paint
   Bitmapped mouse pointer (cursor)
 
   Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

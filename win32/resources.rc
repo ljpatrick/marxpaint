@@ -44,14 +44,14 @@ BEGIN
         BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "New Breed Software\0"
-            VALUE "FileDescription", "Tux Paint - Interactive Paint Program.\0"
+            VALUE "FileDescription", "Marx Paint - Interactive Paint Program.\0"
             VALUE "FileVersion", "0.9.26\0"
-            VALUE "InternalName", "Tux Paint\0"
+            VALUE "InternalName", "Marx Paint\0"
             VALUE "LegalCopyright", "Copyright (C) 2008-2021 by Bill Kendrick, et al\0"
             VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "TuxPaint.exe\0"
+            VALUE "OriginalFilename", "MarxPaint.exe\0"
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Tux Paint\0"
+            VALUE "ProductName", "Marx Paint\0"
             VALUE "ProductVersion", "0.9.26\0"
             VALUE "SpecialBuild", "win32 build by TOYAMA Shin-ichi\0"
         END

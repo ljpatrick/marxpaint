@@ -1,6 +1,6 @@
-sazanami-educational-gothic.ttf (Custumized for TuxPaint)
+sazanami-educational-gothic.ttf (Custumized for MarxPaint)
 
-This is a custumized subset of Sazanami-Gothic.ttf for TuxPaint.
+This is a custumized subset of Sazanami-Gothic.ttf for MarxPaint.
 Difference between original are, 
 
   a) Bitmap data which prevent correct rendering (due to SDL_ttf

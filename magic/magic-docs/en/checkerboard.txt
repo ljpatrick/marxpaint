@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Checkerboard
+                      Marx Paint "Magic" Tool: Checkerboard
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -2,7 +2,7 @@
   get_fname.c
 
   Copyright (c) 2009 - 2021
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@
 #include "compiler.h"
 
 /*
-  See tuxpaint.c for the OS-specific defaults.
+  See marxpaint.c for the OS-specific defaults.
 
   * DIR_SAVE: Where does the user's drawings get saved?
 
@@ -46,11 +46,11 @@
 
     This is where local (user-specific) fonts, brushes, stamps,
     starter images, etc., can be found.  End users only put things
-    here if they wish to extend their Tux Paint experience.
+    here if they wish to extend their Marx Paint experience.
 
     The defaults may be overridden with the "--datadir" option.
 
-  * DIR_EXPORT: Where does Tux Paint export drawings / animations?
+  * DIR_EXPORT: Where does Marx Paint export drawings / animations?
 
     This is where single images, or animated GIF slideshows,
     will be exported.  It is expected that this is an obvious,
@@ -59,7 +59,7 @@
     The defaults may be overridden with the "--exportdir" option.
 
   * DIR_EXPORT_PARENT: The parent of the directory
-    specified by DIR_EXPORT.  (e.g., if /home/username/Pictures/TuxPaint/
+    specified by DIR_EXPORT.  (e.g., if /home/username/Pictures/MarxPaint/
     is our export dir., we may need to make .../Pictures first,
     the first time we export something.)
 */
@@ -73,7 +73,7 @@ const char *exportdir;
 //        There should be distinct functions for each directory.
 //        There should be distinct functions for each thread,
 //        for caller-provided space, and maybe callee strdup.
-//        That's at most 4 functions per Tux Paint thread.
+//        That's at most 4 functions per Marx Paint thread.
 
 /**
  * Construct a filepath, given a filename, and what kind of file

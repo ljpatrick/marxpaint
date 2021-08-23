@@ -1,4 +1,4 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.18
 
 ¿ï¶µ
@@ -7,16 +7,16 @@
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
                      Â½Ä¶¡G¶À±ÓªQ <songhuang.tw@gmail.com>
 
                                10 ¤ë 26 ¤é, 2007
 
      ----------------------------------------------------------------------
 
-                               Tux Paint Config.
+                               Marx Paint Config.
 
-     ±q Tux Paint ª©¥» 0.9.14 ¶}©l§ÚÌ´£¨Ñ¤@Ó¹Ï§Î¤¶±ªº¤u¨ã¡A ¥i¥H¨Ó§ïÅÜ Tux
+     ±q Marx Paint ª©¥» 0.9.14 ¶}©l§ÚÌ´£¨Ñ¤@Ó¹Ï§Î¤¶±ªº¤u¨ã¡A ¥i¥H¨Ó§ïÅÜ Marx
      Paint ªº³]©w¡C¦ý¬O¦pªG§A¨S¦³¦w¸Ë©Î¨Ï¥Î³oÓ¤u¨ã¡A
      ©ÎªÌ·Qn§ó¤F¸Ñ¦³þ¨Ç¿ï¶µ¥i¥H¨Ï¥Î¡A½ÐÄ~Äò¬Ý¤U¥h¡C
 
@@ -24,30 +24,30 @@
 
                                      ³W¹ºÀÉ
 
-     §A¥i¥H¬° Tux Paint «Ø¥ß¤@Ó¦b¨C¦¸°õ¦æ®É³£·|¥hÅª¨úªºÂ²³æªº³W¹ºÀÉ¡C
+     §A¥i¥H¬° Marx Paint «Ø¥ß¤@Ó¦b¨C¦¸°õ¦æ®É³£·|¥hÅª¨úªºÂ²³æªº³W¹ºÀÉ¡C
 
      ³oÓÀÉ®×¬O¯Â¤å¦rÀÉ¡A¸Ì±©ñªº¬O§A·Qn¶}±Òªº¿ï¶µ¡G
 
 Linux, Unix ©M³Áª÷¶ð OS X ªº¨Ï¥ÎªÌ
 
-       ³oÓÀÉ®×¥²¶·©ñ¦b§Aªº®a¥Ø¿ý¤¤¡A¦W¬° ".tuxpaintrc"¡C (´N¬O¦b
-       "~/.tuxpaintrc" ©Î "$HOME/.tuxpaintrc")
+       ³oÓÀÉ®×¥²¶·©ñ¦b§Aªº®a¥Ø¿ý¤¤¡A¦W¬° ".marxpaintrc"¡C (´N¬O¦b
+       "~/.marxpaintrc" ©Î "$HOME/.marxpaintrc")
 
   ¨t²Î¼h¯Åªº³W¹ºÀÉ
 
          ¦b³oÓÀÉ®×³QÅª¨ú¤§«e¡A¤@Ó¨t²Î¼h¯Åªº³W¹ºÀÉ·|¥ý³QÅª¨ú
          (¹w³]¤¤³o¸Ì¨S¦³¥ô¦óªº³]©w)¡C¥Lªº¸ô®|¬O¡G
 
-           /etc/tuxpaint/tuxpaint.conf
+           /etc/marxpaint/marxpaint.conf
 
          §A¥i¥H¥Î©R¥O¦C°Ñ¼Æ«ü©w¤£n¦P®ÉÅª¨ú³oÓÀÉ®×¡A¹w³]¬O¨S¦³ªº (³o¥i¥H¨Ï§Aªº
-         ".tuxpaintrc" ©M©R¥O¦C°Ñ¼Æ¥¢®Ä)¡G
+         ".marxpaintrc" ©M©R¥O¦C°Ñ¼Æ¥¢®Ä)¡G
 
            --nosysconfig
 
 Windows ªº¨Ï¥ÎªÌ
 
-           ³oÓÀÉ®×¥²¶·©ñ¦b Tux Paint ªº¥Ø¿ý¤¤¡A¦W¬° "tuxpaint.cfg"¡C
+           ³oÓÀÉ®×¥²¶·©ñ¦b Marx Paint ªº¥Ø¿ý¤¤¡A¦W¬° "marxpaint.cfg"¡C
 
            §A¥i¥H¨Ï¥Î°O¨Æ¥»(NotePad)©Î¬O WordPad
            ¨Ó«Ø¥ß³oÓÀÉ®×¡AÀx¦s®Én½T©w¿ï¥Î¯Â¤å¦r®æ¦¡¡A ÁÙ¦³°ÆÀÉ¦Wn½T©w¤£¬O¨Ï¥Î
@@ -82,12 +82,12 @@ Windows ªº¨Ï¥ÎªÌ
 
          orient=portrait
 
-                 ±N Tux Paint ªº¼e/°ª°Ñ¼Æ¹ï´«¡A¥i¥H¥Î¦b¹³ tablet PC
+                 ±N Marx Paint ªº¼e/°ª°Ñ¼Æ¹ï´«¡A¥i¥H¥Î¦b¹³ tablet PC
                  ±ÛÂà¿Ã¹õ¦¨·Ó¤ù®iµøªº®ÉÔ¡C
 
          native=yes
 
-                 ·í§A°õ¦æ Tux Paint
+                 ·í§A°õ¦æ Marx Paint
                  ¦b¥þ¿Ã¹õ¼Ò¦¡®É¡A³o·|¨Ì·Ó§@·~¨t²Î¥Ø«eªº¿Ã¹õ¸ÑªR«×¨Ó§e²{¡C
                  (¤£ºÞ "windowsize" ªº°Ñ¼ÆÈ)
 
@@ -97,10 +97,10 @@ Windows ªº¨Ï¥ÎªÌ
          noquit=yes
 
                  ¨ú®ø¿Ã¹õ¤W¡uÂ÷¶}¡vªº«öÁä¨Ã¹w¨¾¥Î [Escape] Áä¨ÓÂ÷¶}
-                 Tux Paint¡C
+                 Marx Paint¡C
 
                  ¨Ï¥Î [Alt] + [F4] ²Õ¦XÁä©Î«ö¤Uµøµ¡¥k¤W¨¤ªºÃö³¬«ö¶s
-                 (¦pªG§A¤£¬O¦b¥þ¿Ã¹õ¼Ò¦¡) ¤@¼Ë¥i¥HÂ÷¶} Tux Paint¡C
+                 (¦pªG§A¤£¬O¦b¥þ¿Ã¹õ¼Ò¦¡) ¤@¼Ë¥i¥HÂ÷¶} Marx Paint¡C
 
                  §A¤]¥i¥H¨Ï¥Î³oÓ²Õ¦XÁä¨ÓÂ÷¶}¡G
                  [Shift] + [Control] + [Escape]¡C
@@ -124,7 +124,7 @@ Windows ªº¨Ï¥ÎªÌ
                  ³o¬O±N PNG Âà´«¦¨ NetPBM (¥i²¾´Ó¨ì¥ô¦ó¹Ï¹³ªº®æ¦¡)¡A¦AÂà´«¦¨
                  PostScript ®æ¦¡¡A µM«á "lpr" ©R¥O§â¥L°e¨ì¦Lªí¾÷¥h¦C¦L¡C
 
-                 Note: Tux Paint 0.9.15 ¤§«eªºª©¥»¶Ç°e PNG
+                 Note: Marx Paint 0.9.15 ¤§«eªºª©¥»¶Ç°e PNG
                  ®æ¦¡ªº¸ê®Æµ¹¦C¦Lªº«ü¥O ( ¹w³]¬Oµ¹
                  "pngtopnm | pnmtops | lpr")¡C
 
@@ -149,17 +149,17 @@ Windows ªº¨Ï¥ÎªÌ
 
                  (¥u©ó Windows ©M Max OS X)
 
-                 Tux Paint ·|¦b¦C¦L®É¨Ï¥Î¦Lªí¾÷ªº³W¹ºÀÉ¡C·í«ö¤U [Alt]
-                 Áä¦P®É«ö¤U¡u¦C¦L¡v«ö¶s®É¡A Tux Paint
+                 Marx Paint ·|¦b¦C¦L®É¨Ï¥Î¦Lªí¾÷ªº³W¹ºÀÉ¡C·í«ö¤U [Alt]
+                 Áä¦P®É«ö¤U¡u¦C¦L¡v«ö¶s®É¡A Marx Paint
                  ·|¥ý¶}±Ò¦Lªí¾÷ªº³]©wµøµ¡¡C
 
-                 (µù¡G³o¥u¯à¦b Tux Paint ¤£¬O¨Ï¥Î¥þ¿Ã¹õ¼Ò¦¡®É¦³§@¥Î¡C)
+                 (µù¡G³o¥u¯à¦b Marx Paint ¤£¬O¨Ï¥Î¥þ¿Ã¹õ¼Ò¦¡®É¦³§@¥Î¡C)
                  ¦b³]©wµøµ¡¤¤ªº¥ô¦óÅÜ°Ê³£·|Àx¦s¦b "userdata/print.cfg"
                  ÀÉ®×¤¤¡A ·í "printcfg" ¿ï¶µ³Q³]©w®É³£·|³Q«½Æ¨Ï¥Î¡C
 
          altprint=always
 
-                 ³o·|¨Ï±o Tux Paint
+                 ³o·|¨Ï±o Marx Paint
                  ¦b¡u¦C¦L¡v¶s³Q«ö¤U®É¡AÁ`¬O©I¥s¥X¦C¦L¥æ½Í®Ø (©ÎªÌ¦b
                  Linux/Unix ·|°õ¦æ
                  "altprintcommand")¡C´«¥y¸Ü»¡¡A³o´N¹³¦P®É«ö¤U¡u¦C¦L¡v¶s¤Î
@@ -167,24 +167,24 @@ Windows ªº¨Ï¥ÎªÌ
 
          altprint=never
 
-                 ³o·|¨¾¤î Tux Paint ¦b«ö¤U¡u¦C¦L¡v¶s®É Á`¬O
+                 ³o·|¨¾¤î Marx Paint ¦b«ö¤U¡u¦C¦L¡v¶s®É Á`¬O
                  ©I¥s¥X¦C¦L¥æ½Í®Ø¡C ´«¥y¸Ü»¡¡A³o·|¨Ï±o [Alt]
                  ¦b¡u¦C¦L¡v¶s³Q«ö¤U®É¥¢¥h§@¥Î¡C
 
          altprint=mod
 
                  ³o¬O¥¿±`¹w³]ªºª¬ªp¡C·í¦P®É«ö¤U¡u¦C¦L¡v¶s¤Î [Alt] Áä®É¡A
-                 Tux Paint ·|©I¥s¥X¦C¦L¥æ½Í®Ø(©ÎªÌ¦b Linux/Unix ·|°õ¦æ
+                 Marx Paint ·|©I¥s¥X¦C¦L¥æ½Í®Ø(©ÎªÌ¦b Linux/Unix ·|°õ¦æ
                  "altprintcommand")¡C ¥u«ö¤U¡u¦C¦L¡v¶s¤£«öµÛ [Alt]
                  ªº¸Ü´N¥u·|¦C¦L¦Ó¤£·|©I¥s¥X¥æ½Í®Ø¡C
 
          papersize=PAPERSIZE
 
-                 (³o¸Ì«üªº¬O¨Ï¥Î Tux Paint ªº§@·~¥¥x¸Ìªº PostScript ²£¥Í¾¹ —
+                 (³o¸Ì«üªº¬O¨Ï¥Î Marx Paint ªº§@·~¥¥x¸Ìªº PostScript ²£¥Í¾¹ —
                  ¦Ó¤£¬O Windows, Mac OS X ©Î¬O BeOS.)
 
-                 §i¶D Tux Paint »¡ PostScript ±N·|¨Ï¥Îþ¤@ºØªº¯È±i¡A
-                 ¦pªG¨S¦³«ü©wªº¸Ü¡A Tux Paint ·|¥ýÀË¬d§Aªº $PAPER Àô¹ÒÅÜ¼Æ¡A
+                 §i¶D Marx Paint »¡ PostScript ±N·|¨Ï¥Îþ¤@ºØªº¯È±i¡A
+                 ¦pªG¨S¦³«ü©wªº¸Ü¡A Marx Paint ·|¥ýÀË¬d§Aªº $PAPER Àô¹ÒÅÜ¼Æ¡A
                  µM«á¬O /etc/papersize ÀÉ®×¡A³Ì«á¬O¨Ï¥Î¨ç¦¡®w 'libpaper'
                  ¹w³]ªº¯È±i¡C
 
@@ -197,17 +197,17 @@ Windows ªº¨Ï¥ÎªÌ
 
          nolockfile=yes
 
-                 Tux Paint ¹w³]·|¨Ï¥Î 'lockfile' ¨Ó¹w¨¾¦b¤T¤Q¬í¤º³Q«ÂÐ±Ò°Ê¡C
+                 Marx Paint ¹w³]·|¨Ï¥Î 'lockfile' ¨Ó¹w¨¾¦b¤T¤Q¬í¤º³Q«ÂÐ±Ò°Ê¡C
                  (
                  ³o¬O¥Î¨Ó¨¾¤î·N¥~ªº«ÂÐ±Ò°Ê¡A¨Ò¦p¦b¤@ÓÂI¤@¤U´N±Ò°Êªº¹Ï¥Ü¤WÂI¤G¤U¡A
                  ©ÎªÌ¬O¤@Ó¤£@·Ðªº°Ê§@«ÂÐÂIÀ»¹Ï¥Ü )
 
-                 nÅý Tux Paint ©¿²¤ lockfile¡A®e³\¥L¦b¤T¤Q¬í¤º«ÂÐ±Ò°Êªº¸Ü¡A
-                 ´Nn¦b³W¹ºÀÉ¸Ì±Ò¥Î³oÓ°Ñ¼Æ³]©w¡A©Î¬O¦b©R¥O¦C°õ¦æ Tux Paint
+                 nÅý Marx Paint ©¿²¤ lockfile¡A®e³\¥L¦b¤T¤Q¬í¤º«ÂÐ±Ò°Êªº¸Ü¡A
+                 ´Nn¦b³W¹ºÀÉ¸Ì±Ò¥Î³oÓ°Ñ¼Æ³]©w¡A©Î¬O¦b©R¥O¦C°õ¦æ Marx Paint
                  ®É¨Ï¥Î '--nolockfile' °Ñ¼Æ¡C
 
                  ¹ï Linux ©M Unix ¦Ó¨¥¡Alockfile ¹w³]¬OÀx¦s¦b
-                 "~/.tuxpaint/"¡A ¹ï Windows «h¬O¦b "userdata\"¡C
+                 "~/.marxpaint/"¡A ¹ï Windows «h¬O¦b "userdata\"¡C
 
          simpleshapes=yes
                  Ãö³¬§Îª¬¤u¨ãªº±ÛÂà¨BÆJ¡C¥u»ÝnÂI¿ï¤¤¤ß¦ì¸m¡A©ì©Ô¦Ü¾A·í¤j¤pµM«á©ñ¶}·Æ¹««öÁä¡A
@@ -219,8 +219,8 @@ Windows ªº¨Ï¥ÎªÌ
 
          grab=yes
 
-                 Tux Paint ·|¸ÕµÛ¦û¦í·Æ¹«¤ÎÁä½L¡A©Ò¥H·Æ¹«´å¼Ð·|³QÂê¦b
-                 Tux Paint ªºµøµ¡¤¤¡A¤j³¡¥÷ªºÁä½L¿é¤J¤]³£ª½±µ¾É¦V¥L¡C
+                 Marx Paint ·|¸ÕµÛ¦û¦í·Æ¹«¤ÎÁä½L¡A©Ò¥H·Æ¹«´å¼Ð·|³QÂê¦b
+                 Marx Paint ªºµøµ¡¤¤¡A¤j³¡¥÷ªºÁä½L¿é¤J¤]³£ª½±µ¾É¦V¥L¡C
 
                  ³o¥i¥H¥Î¦b¨Ï [Alt]-[Tab] µøµ¡¤Á´«ªº¨t²Î°Ê§@¥¢®Ä¡A ©M¨Ï
                  [Ctrl]-[Escape] ¥¢®Äµ¥¡C¯S§O¬O¦b¥þ¿Ã¹õ¼Ò¦¡®É«D±`¦³À°§U¡C
@@ -238,7 +238,7 @@ Windows ªº¨Ï¥ÎªÌ
 
          nobuttondistinction=yes
 
-                 ¦b Tux Paint 0.9.15
+                 ¦b Marx Paint 0.9.15
                  ¤§«eªºª©¥»¡A·Æ¹«ªº¤¤Áä¤Î¥kÁä³£¥i¥H¥Î¨Ó«ö¡C ¦b 0.9.15
                  ³oÓª©¥»¡AÅÜ¦¨ ¥u¦³
                  ·Æ¹«¥ªÁä¦³§@¥Î¡A³o¼Ë´N¥i¥H°V½m¤pªB¤Í¤£n¨Ï¥Î¿ù»~ªº¹«Áä¡C
@@ -247,13 +247,13 @@ Windows ªº¨Ï¥ÎªÌ
 
          nofancycursors=yes
 
-                 ³o·|¨Ï Tux Paint ªá«Nªº·Æ¹«´å¼Ð¥¢®Ä¡A¦Ó¨Ï¥Î¨t²Î¥¿±`ªº´å¼Ð¡C
+                 ³o·|¨Ï Marx Paint ªá«Nªº·Æ¹«´å¼Ð¥¢®Ä¡A¦Ó¨Ï¥Î¨t²Î¥¿±`ªº´å¼Ð¡C
 
                  ¦b¬Y¨ÇÀô¹Ò¤¤ªá«Nªº´å¼Ð·|¦³¨Ç°ÝÃD¡A¥i¥H¥Î³oÓ¿ï¶µ¨ÓÁ×¶}³oÓ°ÝÃD¡C
 
          hidecursor=yes
 
-                 ³o·|¦b Tux Paint ¤¤§¹¥þªºÁôÂÃ·Æ¹«ªº´å¼Ð¡C
+                 ³o·|¦b Marx Paint ¤¤§¹¥þªºÁôÂÃ·Æ¹«ªº´å¼Ð¡C
 
                  ³o¥Î¦b¹³¥ªO¹q¸£ªºÄ²±±¿Ã¹õ¤W·|«Ü¦³¥Î¡C
 
@@ -262,21 +262,21 @@ Windows ªº¨Ï¥ÎªÌ
                  ³oÓ¼Ò¦¡¥i¥HÂ²¤Æ¹º½u¡A§Îª¬¡A¹Ï³¹©M¾ó¥ÖÀ¿
                  ¤u¨ãªº¥~®Ø½u¤Î¼u©Ê½u¡C
 
-                 ³o¹ï©ó¦b«ÜºCªº¹q¸£¤W°õ¦æ Tux Paint ©Î¬O¦b»·ºÝªº X-Window
+                 ³o¹ï©ó¦b«ÜºCªº¹q¸£¤W°õ¦æ Marx Paint ©Î¬O¦b»·ºÝªº X-Window
                  Åã¥Ü¤W«Ü¦³À°§U¡C
 
          sysfonts=yes
 
-                 ³oÓ°Ñ¼Æ·|Åý Tux Paint ¸ÕµÛ¥h¸ü¤J§@·~¨t²Îªº¦r«¬ÀÉ (¥Î¦b ¦r¥À
-                 ¤u¨ã¤W)¡C ¥¿±`¨ÓÁ¿ Tux Paint ¥u·|¸ü¤J Tux Paint
+                 ³oÓ°Ñ¼Æ·|Åý Marx Paint ¸ÕµÛ¥h¸ü¤J§@·~¨t²Îªº¦r«¬ÀÉ (¥Î¦b ¦r¥À
+                 ¤u¨ã¤W)¡C ¥¿±`¨ÓÁ¿ Marx Paint ¥u·|¸ü¤J Marx Paint
                  ¥]¸Ë¦b¤@°_ªº¦r«¬¡C
 
          nostamps=yes
 
-                 ³oÓ¿ï¶µ¬O§i¶D Tux Paint ¤£n¸ü¤J¥ô¦óªº¹Ï³¹¹Ï¼Ë¡A
+                 ³oÓ¿ï¶µ¬O§i¶D Marx Paint ¤£n¸ü¤J¥ô¦óªº¹Ï³¹¹Ï¼Ë¡A
                  ¥Î¨ÓÃö³¬¾ó¥Ö¹Ï³¹¤u¨ã¥Îªº¡C
 
-                 ³o¥i¥H¥[§Ö Tux Paint
+                 ³o¥i¥H¥[§Ö Marx Paint
                  ²Ä¤@¦¸¸ü¤J®Éªº³t«×¡A¤]¥i¥H´î¤Ö°O¾ÐÅéªº¨Ï¥Î¶q¡A
                  ·íµM³o¤]·|³y¦¨¨S¦³¹Ï³¹¥i¥H¨Ï¥Îªº±¡ªp¡C
 
@@ -292,11 +292,11 @@ Windows ªº¨Ï¥ÎªÌ
 
          stampsize=SIZE
 
-                 ¨Ï¥Î³oÓ¿ï¶µ¥i¥H±j¨î Tux Paint ³]©w©Ò¦³¹Ï³¹ªº°_©l¤j¤p¡A SIZE
+                 ¨Ï¥Î³oÓ¿ï¶µ¥i¥H±j¨î Marx Paint ³]©w©Ò¦³¹Ï³¹ªº°_©l¤j¤p¡A SIZE
                  ªºÈ¥²¶·¤¶©ó 0 ¨ì 10 ¤§¶¡¡C³oÓÈ·|Ãö«Y¨ì¹Ï³¹¥»¨ªº¤j¤p¡A ¥H¤Î
-                 Tux Paint ¥Ø«eµe¥¬ªº¤j¤p©Ò¼vÅT¡C
+                 Marx Paint ¥Ø«eµe¥¬ªº¤j¤p©Ò¼vÅT¡C
 
-                 «ü©w¬° "default" ªº¸Ü¡A´N¬OÅý Tux Paint ¨Ó¨M©w¡C
+                 «ü©w¬° "default" ªº¸Ü¡A´N¬OÅý Marx Paint ¨Ó¨M©w¡C
                  (³o¬O¼Ð·Çªº¼Ò¦¡)
 
          keyboard=yes
@@ -308,63 +308,63 @@ Windows ªº¨Ï¥ÎªÌ
 
          savedir=DIRECTORY
 
-                 ³o¥i¥H§ïÅÜ Tux Paint Àx¦s©M¶}±Ò¹Ï§Î®Éªº¥Ø¿ý¡C
+                 ³o¥i¥H§ïÅÜ Marx Paint Àx¦s©M¶}±Ò¹Ï§Î®Éªº¥Ø¿ý¡C
 
                  ¦pªG§A¨S¦³×§ï¥L¡A¹w³]¸ô®|¬O¡G
                     * Linux & Unix — ¦b§Aªº®a¥Ø¿ý(´N¬O "~" ©Î
-                      "$HOME")¤¤ªºÁôÂÃ¥Ø¿ý ".tuxpaint"¡C
-                      Example: "/home/username/.tuxpaint/saved/"
+                      "$HOME")¤¤ªºÁôÂÃ¥Ø¿ý ".marxpaint"¡C
+                      Example: "/home/username/.marxpaint/saved/"
 
-                    * Windows — ¦b§Aªº "Application Data" ¥Ø¿ý¤¤ªº "TuxPaint"
+                    * Windows — ¦b§Aªº "Application Data" ¥Ø¿ý¤¤ªº "MarxPaint"
                       ¥Ø¿ý¸Ì¡C
                       Example:
-                      "C:\Documents and Settings\Username\Application Data\TuxPaint\saved\"
+                      "C:\Documents and Settings\Username\Application Data\MarxPaint\saved\"
 
                     * Mac OS X — ¦b§Aªº "Application Support" ¥Ø¿ý¤¤ªº
-                      "TuxPaint" ¥Ø¿ý¸Ì¡C
+                      "MarxPaint" ¥Ø¿ý¸Ì¡C
                       Example:
-                      "/Users/Username/Library/Application Support/TuxPaint/saved/"
+                      "/Users/Username/Library/Application Support/MarxPaint/saved/"
 
                  µù¡G ·í«ü©w¤@Ó Windows ªººÏºÐ¸Ë¸m®É (¦p¡G"H:\")¡A
                  §A¤]¥²¶·«ü©w¤@Ó¤l¥Ø¿ý¡C
 
-                 µù¡G ¦b¦©óª©¥» 0.9.18 ¤§«e¡A Tux Paint ¦P¼Ë¨Ï¥Î "savedir"
+                 µù¡G ¦b¦©óª©¥» 0.9.18 ¤§«e¡A Marx Paint ¦P¼Ë¨Ï¥Î "savedir"
                  ¥Î¨Ó·j´MÓ¤Hªº¸ê®ÆÀÉ®×(µ§¹º¡A¹Ï³¹¡A°_©l©³½Z©M¦r«¬)¡C±qª©¥»
                  0.9.18 ¶}©l¡A³o¨Ç·|¿W¥ß¶}¨Ó (½Ð¨£©³¤Uªº "datadir" ¿ï¶µ)¡C
 
-                 ¨Ò¦p¡G savedir=Z:\tuxpaint\
+                 ¨Ò¦p¡G savedir=Z:\marxpaint\
 
          datadir=DIRECTORY
 
-                 ³oÓ¿ï¶µ¥Î¨Ó§ïÅÜ Tux Paint
+                 ³oÓ¿ï¶µ¥Î¨Ó§ïÅÜ Marx Paint
                  ´M§äÓ¤H¸ê®ÆÀÉ®×(¥Ø«e¨Ï¥ÎªÌªºµ§¹º¡A¹Ï³¹¡A°_©l©³½Z©M¦r«¬ÀÉ)
 
-                 Tux Paint ·|·j´M¸ê®Æ¥Ø¿ý©³¤Uªº¤l¥Ø¿ý¦WºÙ¬° "brushes",
+                 Marx Paint ·|·j´M¸ê®Æ¥Ø¿ý©³¤Uªº¤l¥Ø¿ý¦WºÙ¬° "brushes",
                  "stamps", "starters" ©M "fonts"¡C
 
                  ¦pªG§A¨S¦³§ïÅÜ¥L¡A¹w³]ªº¸ô®|¬O¡G
                     * Linux & Unix — ¦b§Aªº®a¥Ø¿ý(´N¬O "~" ©Î
-                      "$HOME")¤¤ªºÁôÂÃ¥Ø¿ý ".tuxpaint"¡C
-                      Example: "/home/username/.tuxpaint/brushes/"
+                      "$HOME")¤¤ªºÁôÂÃ¥Ø¿ý ".marxpaint"¡C
+                      Example: "/home/username/.marxpaint/brushes/"
 
-                    * Windows — ¦b§Aªº "Application Data" ¥Ø¿ý¤¤ªº "TuxPaint"
+                    * Windows — ¦b§Aªº "Application Data" ¥Ø¿ý¤¤ªº "MarxPaint"
                       ¥Ø¿ý¸Ì¡C
                       > Example:
-                      "C:\Documents and Settings\Username\Application Data\TuxPaint\brushes\"
+                      "C:\Documents and Settings\Username\Application Data\MarxPaint\brushes\"
 
                     * Mac OS X — ¦b§Aªº "Application Support" ¥Ø¿ý¤¤ªº
-                      "TuxPaint" ¥Ø¿ý¸Ì¡C
+                      "MarxPaint" ¥Ø¿ý¸Ì¡C
                       Example:
-                      "/Users/Username/Library/Application Support/TuxPaint/brushes/"
+                      "/Users/Username/Library/Application Support/MarxPaint/brushes/"
 
-                 µù¡G ¦b¦©óª©¥» 0.9.18 ¤§«e¡A Tux Paint ¦P¼Ë¨Ï¥Î "savedir"
+                 µù¡G ¦b¦©óª©¥» 0.9.18 ¤§«e¡A Marx Paint ¦P¼Ë¨Ï¥Î "savedir"
                  ¥Î¨Ó·j´MÓ¤Hªº¸ê®ÆÀÉ®×(µ§¹º¡A¹Ï³¹¡A°_©l©³½Z©M¦r«¬)¡C±qª©¥»
                  0.9.18 ¶}©l¡A³o¨Ç·|¿W¥ß¶}¨Ó¡C
 
                  µù¡G ·í«ü©w¤@Ó Windows ªººÏºÐ¸Ë¸m®É (¦p¡G"H:\")¡A
                  §A¤]¥²¶·«ü©w¤@Ó¤l¥Ø¿ý¡C
 
-                 Example: datadir=/home/johnny/tuxpaint-data/
+                 Example: datadir=/home/johnny/marxpaint-data/
 
          saveover=yes
                  ³o·|Ãö³¬¦bÀx¦s®É¥X²{¡u Àx¦s³o±i¹ÏµeÂÐ»\±¼ÂÂªºª©¥»¡H
@@ -382,20 +382,20 @@ Windows ªº¨Ï¥ÎªÌ
                  ·ínÀx¦s¤@±i¤w¸g¦s¹LÀÉªº¹Ïµe®É¡A§A·|¥ý³Q°T°Ý¬O§_nÂÐ»\±¼ÂÂªºª©¥»¡C
 
          nosave=yes
-                 ³o·|Ãö³¬ Tux Paint ªº¦sÀÉ¥\¯à(¤]·|¨Ï±o¡uÀx¦s¡vªº«öÁä¥¢®Ä)¡C
+                 ³o·|Ãö³¬ Marx Paint ªº¦sÀÉ¥\¯à(¤]·|¨Ï±o¡uÀx¦s¡vªº«öÁä¥¢®Ä)¡C
                  ³o¥i¥H¥Î¦b¥u¬O¶}±Ò¨Óª±ªº±¡ªp¡A©Î¬O´ú¸ÕªºÀô¹Ò¡C
 
          autosave=yes
-                 ³o·|Á×§K Tux Paint ¦bÂ÷¶}®É°Ý§An¤£n¦sÀÉ¡A¥L¹w³]§An¦sÀÉ¡C
+                 ³o·|Á×§K Marx Paint ¦bÂ÷¶}®É°Ý§An¤£n¦sÀÉ¡A¥L¹w³]§An¦sÀÉ¡C
 
          startblank=yes
-                 ³o·|Åý Tux Paint
+                 ³o·|Åý Marx Paint
                  ¦b±Ò°Ê®ÉÅã¥ÜªÅ¥Õªºµe¥¬¡A¦Ó¤£¬O¸ü¤J³Ì«á½s¿èªº¹Ïµe¡C
 
          colorfile=FILENAME
 
                  §A¥i¥H«Ø¥ß¤@Ó´yz§A·QnªºÃC¦âªº¯Â¤å¦rÀÉ¡A¨Ã§â³]©w¦b colorfile
-                 ªº¿ï¶µ¤¤¨Ó§ïÅÜ Tux Paint ªº¹w³]½Õ¦â½L¡C
+                 ªº¿ï¶µ¤¤¨Ó§ïÅÜ Marx Paint ªº¹w³]½Õ¦â½L¡C
 
                  ³oÓÀÉ®×¥²¶·n¤@¦æ«ü©w¤@ÓÃC¦â¡A³oÓÃC¦â¬O¨Ï¥Î¬õ¡Bºñ¡BÂÅªºÈ©Ò²Õ¦¨ªº¡A
                  ¨CÓÈ¬O¤¶©ó 0 ¨ì 255 (©ú«G«×)¡C(§ó¦hªº¸ê°T½Ð°Ñ¦Ò Wikipedia's
@@ -405,10 +405,10 @@ Windows ªº¨Ï¥ÎªÌ
                  ©Î¬O¤TÓ³s¦b¤@°_ªº¤T©Î¤»ªø«×ªº¤Q¤»¶i¦ì¼Æ¦r (¦p¡G "#ff4488" ©Î
                  "#F48")¡C
 
-                 ¦bÃC¦âªº«á±(¦P¤@¦æ)§An¿é¤J¤@¥y»¡©ú¤å¦r¡ATux
+                 ¦bÃC¦âªº«á±(¦P¤@¦æ)§An¿é¤J¤@¥y»¡©ú¤å¦r¡AMarx
                  ·|¦bÃC¦â³QÂI¿ï®ÉÅã¥Ü³o¥y¤å¦r¡C (¨Ò¦p¡G "#FFF ³·¥Õ")
 
-                 §A¥i¥H±N¥Ø«e Tux Paint ¹w³]ªºÃC¦â·í§@½d¨Ò¡AÀÉ®×¦b¡G
+                 §A¥i¥H±N¥Ø«e Marx Paint ¹w³]ªºÃC¦â·í§@½d¨Ò¡AÀÉ®×¦b¡G
                  "default_colors.txt"¡C
 
                  µù¡G§A¥²¶·¥ÎªÅ¥Õ¹j¶}¤Q¶i¦ìªº¼Æ¦r¡A¨Ã¥B¦b¤Q¤»¶i¦ìªº¼Æ¦r«e©ñ¤@Ó«ü¥Ü½X
@@ -417,7 +417,7 @@ Windows ªº¨Ï¥ÎªÌ
 
          lang=LANGUAGE
 
-                 ¥i¥H¿ï¾Ü¤@Ó¤w¸g¤ä´©ªº»y¤åª©¥»¨Ó±Ò°Ê Tux Paint¡A ¥Ø«e¥]¬A¦³¡G
+                 ¥i¥H¿ï¾Ü¤@Ó¤w¸g¤ä´©ªº»y¤åª©¥»¨Ó±Ò°Ê Marx Paint¡A ¥Ø«e¥]¬A¦³¡G
 
                    +--------------------------------------------------------+
                    | english                    | ¬ü¦¡^¤å          |        |
@@ -557,15 +557,15 @@ Windows ªº¨Ï¥ÎªÌ
 
      ----------------------------------------------------------------------
 
-                   ¨Ï¥Î .tuxpaintrc ÂÐ»\¨t²Î³W¹ºÀÉªº¿ï¶µ³]©w
+                   ¨Ï¥Î .marxpaintrc ÂÐ»\¨t²Î³W¹ºÀÉªº¿ï¶µ³]©w
 
          (For Linux and Unix users)
 
-         §A¥i¥H¦b§A¦Û¤wªº "~/.tuxpaintrc" ÀÉ®×¤¤³]©wÂÐ»\±¼¦b
-         "/etc/tuxpaint/tuxpaint.config" ¨t²Î³W¹ºÀÉ¤¤³]©wªº¿ï¶µ¡C
+         §A¥i¥H¦b§A¦Û¤wªº "~/.marxpaintrc" ÀÉ®×¤¤³]©wÂÐ»\±¼¦b
+         "/etc/marxpaint/marxpaint.config" ¨t²Î³W¹ºÀÉ¤¤³]©wªº¿ï¶µ¡C
 
          ¹³ "noprint" ¤Î "grab" ³oÃþ°T°Ý¬O©Î§_ªº¿ï¶µ¡A §A¥i¥Hª½±µ¦b§Aªº
-         "~/.tuxpaintrc" ¤¤³]©w¥LÌ¬° 'no'¡A¹³³o¼Ë¤l¡G
+         "~/.marxpaintrc" ¤¤³]©w¥LÌ¬° 'no'¡A¹³³o¼Ë¤l¡G
 
            noprint=no
            uppercase=no
@@ -579,7 +579,7 @@ Windows ªº¨Ï¥ÎªÌ
 
                                    ©R¥O¦C°Ñ¼Æ
 
-         ·í§A±Ò°Ê Tux Paint ®É¥i¥H¨Ï¥Î©R¥O¦C¨Ó¤U¹F°Ñ¼Æ¡C
+         ·í§A±Ò°Ê Marx Paint ®É¥i¥H¨Ï¥Î©R¥O¦C¨Ó¤U¹F°Ñ¼Æ¡C
 
            --fullscreen
            --WIDTHxHEIGHT
@@ -657,55 +657,55 @@ Windows ªº¨Ï¥ÎªÌ
 
            --locale LOCALE
 
-                   °õ¦æ¬Y¤@Ó Tux Paint ¤ä´©ªº»y¤åª©¥»¡Clocale
+                   °õ¦æ¬Y¤@Ó Marx Paint ¤ä´©ªº»y¤åª©¥»¡Clocale
                    ¦r¦ê(¦p¡G"de_DE" ¬O¼w¤å) ½Ð¨£µy«á "¿ï¾Ü¤£¦Pªº»y¤å"
                    ³o¤@Ó³¹¸`¡C
 
                    (¦pªG§Aªº locale ¤w¸g¨Ï¥Î¨t²ÎÅÜ¼Æ "$LANG" ¨Ó«ü©w¡A
-                   ´N¤£»Ýn³oÓ°Ñ¼Æ¤F¡CTux Paint ¤w¸g¥i¥HÅª¨ú¨t²ÎªºÀô¹ÒÅÜ¼Æ¡C)
+                   ´N¤£»Ýn³oÓ°Ñ¼Æ¤F¡CMarx Paint ¤w¸g¥i¥HÅª¨ú¨t²ÎªºÀô¹ÒÅÜ¼Æ¡C)
 
            --nosysconfig
 
                    ¦b Linux ©M Unix ¥¥x¡A¥i¥H¨ú®øÅª¨ú³oÓ
-                   "/etc/tuxpaint/tuxpaint.conf" ¨t²Î¼h¯Åªº³W¹ºÀÉ¡C
+                   "/etc/marxpaint/marxpaint.conf" ¨t²Î¼h¯Åªº³W¹ºÀÉ¡C
 
-                   ¥u¦³·í§A¦Û¤wªº³W¹ºÀÉ "~/.tuxpaintrc" ¦s¦b®É¥i¥H³o¼Ë§@¡C
+                   ¥u¦³·í§A¦Û¤wªº³W¹ºÀÉ "~/.marxpaintrc" ¦s¦b®É¥i¥H³o¼Ë§@¡C
 
      ----------------------------------------------------------------------
 
 ©R¥O¦Cªº°T®§°Ñ¼Æ
 
-           ¥H¤Uªº°Ñ¼Æ·|Åã¥Ü¤@¨Ç°T®§¨ì¿Ã¹õ¤W¡C·í§A¨Ï¥Î³o¨Ç°Ñ¼Æ«á Tux Paint
+           ¥H¤Uªº°Ñ¼Æ·|Åã¥Ü¤@¨Ç°T®§¨ì¿Ã¹õ¤W¡C·í§A¨Ï¥Î³o¨Ç°Ñ¼Æ«á Marx Paint
            ¨Ã¤£·|¯uªº±Ò°Ê¡C
 
              --version
              --verbose-version
-                     Åã¥Ü§A©Ò°õ¦æªº Tux Paint ª©¥»½s¸¹¤Î¤é´Á¡C
+                     Åã¥Ü§A©Ò°õ¦æªº Marx Paint ª©¥»½s¸¹¤Î¤é´Á¡C
                      --verbose-version
                      ·|Åã¥Ü¥X§A¦b½sÄ¶®É©Ò«ü©wªº¥ô¦ó¬ÛÃöªº°Ñ¼Æ (½Ð°Ñ¾\
                      INSTALL.txt ©M FAQ.txt)¡C
 
              --copying
-                     Åã¥Ü¥XÃö©ó½Æ»s Tux Paint ªºÂ²µu±ÂÅv°T®§¡C
+                     Åã¥Ü¥XÃö©ó½Æ»s Marx Paint ªºÂ²µu±ÂÅv°T®§¡C
 
              --usage
                      Åã¥Ü¥X¦³®Äªº©R¥O¦C°Ñ¼Æ²M³æ¡C
 
              --help
-                     Åã¥Ü¥XÂ²µuªº Tux Paint ¨Ï¥Î»¡©ú¡C
+                     Åã¥Ü¥XÂ²µuªº Marx Paint ¨Ï¥Î»¡©ú¡C
 
              --lang help
-                     Åã¥Ü¥X Tux Paint ¦³®Äªº»y¤åª©¥»ªº²M³æ¡C
+                     Åã¥Ü¥X Marx Paint ¦³®Äªº»y¤åª©¥»ªº²M³æ¡C
 
      ----------------------------------------------------------------------
 
                                  ¿ï¾Ü¤£¦Pªº»y¤å
 
-         Tux Paint ¤w¸gÂ½Ä¶¦¨³\¦hºØªº»y¤å¡A§A¥i¥H¦b©R¥O¦C¨Ï¥Î "--lang"
+         Marx Paint ¤w¸gÂ½Ä¶¦¨³\¦hºØªº»y¤å¡A§A¥i¥H¦b©R¥O¦C¨Ï¥Î "--lang"
          °Ñ¼Æ¨Ón³]©w¨Ï¥Î»y¤åÄ¶¥» (¦p¡G "--lang spanish")¡C©Î¬O¦b³W¹ºÀÉ¤¤³]©w
          "lang=" ªº¿ï¶µ (¦p¡G "lang=spanish")¡C
 
-         Tux Paint ¤]¥i¥Hª¾¹D§A¨t²Î¥Ø«eªº locale ³]©w (§A¥i¥H¥Î©R¥O¦C°Ñ¼Æ
+         Marx Paint ¤]¥i¥Hª¾¹D§A¨t²Î¥Ø«eªº locale ³]©w (§A¥i¥H¥Î©R¥O¦C°Ñ¼Æ
          "--locale" ¨ÓÂÐ»\¹L¨t²Îªº³]©w¡C)
 
 ¤w¸g¤ä´©ªº»y¤å
@@ -860,7 +860,7 @@ Windows ªº¨Ï¥ÎªÌ
            (*) - ªí¥Ü³o¨Ç»y¤å¤£¬O¨Ï¥Î©Ô¤B¦r¶°¡A»Ýn¦w¸Ë¦Û¤wªº¦r«¬ÀÉ¡C
            ½Ð°Ñ¾\µy«á ¯S®í¦r«¬ ªº³¹¸`¡C
 
-           µù¡G Tux Paint ªº¤å¦r¤u¨ã´£¨Ñ³¡¥÷¦a°Ï¥i´À´«ªº¤å¦r¿é¤J¤è¦¡¡C
+           µù¡G Marx Paint ªº¤å¦r¤u¨ã´£¨Ñ³¡¥÷¦a°Ï¥i´À´«ªº¤å¦r¿é¤J¤è¦¡¡C
            ¦b¨Ï¥Î¤å¦r¤u¨ã®É¥i¥H¨Ï¥Î²Õ¦XÁä¨Ó¤Á´«¿é¤Jªº¤è¦¡¡C
 
            µù¡G ¨Ï¥ÎÁcÅé¤¤¤å¿é¤J®É¡A¥i¥H¥Î¥ªÃä©Î¥kÃäªº [ALT]Áä¨Ó¤Á´«¡A
@@ -875,7 +875,7 @@ Windows ªº¨Ï¥ÎªÌ
            §ïÅÜ§Aªº locale ³]©w·|¹ï§AªºÀô¹Ò¼vÅT«D±`ªº¤j¡C
 
            §A¥i¥H¨Ï¥Î©R¥O¦C°Ñ¼Æ ("--lang" ©M "--locale")
-           ¨Ó¿ï¾Ü»y¤åª©¥»¡ATux Paint ¤]·|¨Ì´`§A¨t²ÎÀô¹Ò¹ï locale ªº³]©w¡C
+           ¨Ó¿ï¾Ü»y¤åª©¥»¡AMarx Paint ¤]·|¨Ì´`§A¨t²ÎÀô¹Ò¹ï locale ªº³]©w¡C
 
            ¦pªG§A©|¥¼³]©w§A¨t²ÎÀô¹Òªº locale ªº¸Ü¡A¥H¤U¬O¤@ÓÂ²µuªº»¡©ú¡G
 
@@ -887,7 +887,7 @@ Windows ªº¨Ï¥ÎªÌ
              µù¡GDebian ªº¨Ï¥ÎªÌ¥i¥H»´©öªº¥Î "dpkg-reconfigure locales"
              ¨Ó§¹¦¨¡C
 
-             ±µ¤U¨Ó¦b±Ò°Ê Tux Paint ¤§«e¥ý³]©w "$LANG" Àô¹ÒÅÜ¼Æ¦¨§Aªº locale
+             ±µ¤U¨Ó¦b±Ò°Ê Marx Paint ¤§«e¥ý³]©w "$LANG" Àô¹ÒÅÜ¼Æ¦¨§Aªº locale
              ¡C(¦pªG§A§Æ±æ©Ò¦³¥i¥HÂà´«»y¤åªºµ{¦¡³£¯àµo¥Í§@¥Î¡A
              §AÀ³¸Ó±N³oÓ°Ê§@¼g¤J¨ì§Aµn¤J®É·|¨Ï¥Î¨ìªº©R¥OÀÉ¡A¦p ~/.profile,
              ~/.bashrc, ~/.cshrc, µ¥µ¥¡C)
@@ -895,18 +895,18 @@ Windows ªº¨Ï¥ÎªÌ
              ¨Ò¦p¦b Bourne Shell (BASH) ¤¤¡G
 
                export LANG=zh_TW.UTF-8 ; \
-               tuxpaint
+               marxpaint
 
              ¦b C Shell (TCSH) ¤¤¡G
 
                setenv LANG zh_TW.UTF-8 ; \
-               tuxpaint
+               marxpaint
 
      ----------------------------------------------------------------------
 
   Windows ªº¨Ï¥ÎªÌ
 
-             Tux Paint ¥i¥H¿ëÃÑ¥X¥Ø«eªº locale ¨Ã¿ï¥Î¾A·íªºÀÉ®×¡C
+             Marx Paint ¥i¥H¿ëÃÑ¥X¥Ø«eªº locale ¨Ã¿ï¥Î¾A·íªºÀÉ®×¡C
              ©Ò¥H³oÓ³¹¸`¬Oµ¹·Qn´ú¸Õ¤£¦P»y¤åª©¥»ªº¤H¡C
 
              ³ÌÂ²³æªº¤è¦¡¬O¦b±¶®|¤¤¨Ï¥Î '--lang' ¨Ó¤Á´« (½Ð¨£
@@ -945,26 +945,26 @@ Windows ªº¨Ï¥ÎªÌ
   ¯S®í¦r«¬
 
            ¬Y¨Ç»y¤å»Ýn¦w¸Ë¯S®í¦r«¬ÀÉ¡C³o¨Ç«D±`¤jªº¦r«¬ÀÉ(TrueType format,
-           TTF)¥i¥H¦b Tux Paint
+           TTF)¥i¥H¦b Marx Paint
            ºô¯¸¤U¸ü¡A¥LÌ¬O¿W¥ßªºÀÉ®×¡C(½Ð¨£«e±¡u¿ï¾Ü¤£¦Pªº»y¤å¡v¤@¸`¤¤ªºªí®æ¡C)
 
-           µù¡G ±qª©¥» 0.9.18 ¶}©l¡A Tux Paint ¨Ï¥Î "SDL_Pango"
+           µù¡G ±qª©¥» 0.9.18 ¶}©l¡A Marx Paint ¨Ï¥Î "SDL_Pango"
            ¨ç¦¡®w±N¤å¦r§e²{¦b¨Ï¥ÎªÌ¤¶±¡A ¦Ó¤£¬Oª½±µ¨Ï¥Î
            "SDL_ttf"¡C°£«D§A½Æ»s¤@¥÷¤£¤ä´© Pango ªº
-           Tux Paint¡A§_«h¯S®í¦r«¬±N¤£¦A»Ýn¡C
+           Marx Paint¡A§_«h¯S®í¦r«¬±N¤£¦A»Ýn¡C
 
-           ·í°õ¦æ»Ýn¯S®í¦r«¬ªº»y¤åª©¥»®É¡ATux Paint ·|¸ÕµÛ¥Ñ¨t²Îªº "fonts"
+           ·í°õ¦æ»Ýn¯S®í¦r«¬ªº»y¤åª©¥»®É¡AMarx Paint ·|¸ÕµÛ¥Ñ¨t²Îªº "fonts"
            ¥Ø¿ý¤¤¸ü¤J¦r«¬ ("locale" ªº¤l¥Ø¿ý)¡C¦r«¬ÀÉªº¦WºÙ¬Û¹ï©ó 'locale'
            ¥N½Xªº«e¤GÓ¦r¥À(¨Ò¦p¡G"ko" ¬OÁú¤å¡A"ja" ¬O¤é¤å¡A"zh_tw"
            ¬OÁcÅé¤¤¤å)¡C
 
-           Á|¨Ò¨Ó»¡¡A¦b Linux ©Î Unix ¤W¡A·í Tux Paint nÅã¥ÜÁú¤åªº°T®§
-           (¦p¡G¨Ï¥Î°Ñ¼Æ "--lang korean")¡ATux Paint ±N·|¸ü¤J³oÓ¦r«¬ÀÉ¡G
+           Á|¨Ò¨Ó»¡¡A¦b Linux ©Î Unix ¤W¡A·í Marx Paint nÅã¥ÜÁú¤åªº°T®§
+           (¦p¡G¨Ï¥Î°Ñ¼Æ "--lang korean")¡AMarx Paint ±N·|¸ü¤J³oÓ¦r«¬ÀÉ¡G
 
-             /usr/share/tuxpaint/fonts/locale/ko.ttf
+             /usr/share/marxpaint/fonts/locale/ko.ttf
 
-           §A¥i¥H¥Ñ Tux Paint ªººô¯¸¤U¸ü¤ä´©»y¤åªº¦r«¬ÀÉ¡A
-           http://www.tuxpaint.org/.
+           §A¥i¥H¥Ñ Marx Paint ªººô¯¸¤U¸ü¤ä´©»y¤åªº¦r«¬ÀÉ¡A
+           http://www.marxpaint.org/.
            (½Ð¨£¡u¤U¸ü¡v³sµ²¤¤³Ì«áªº¡u¦r«¬ÀÉ¡v³o¤@Ó³¡¥÷¡C)
 
            ¦b Linux ©M Unix ¤W§A¥i¥H¨Ï¥Î Makefile

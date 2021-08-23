@@ -2,11 +2,11 @@
   fade_darken.c
 
   Fade and Darken Magic Tools Plugin
-  Tux Paint - A simple drawing program for children.
+  Marx Paint - A simple drawing program for communists.
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -180,7 +180,7 @@ static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas, SDL
     }
 }
 
-// Ask Tux Paint to call our 'do_fade_darken_paint()' callback over a line
+// Ask Marx Paint to call our 'do_fade_darken_paint()' callback over a line
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
                       SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
@@ -215,7 +215,7 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->h = (y + 16) - update_rect->y;
 }
 
-// Ask Tux Paint to call our 'do_fade_darken_paint()' callback at a single point,
+// Ask Marx Paint to call our 'do_fade_darken_paint()' callback at a single point,
 // or 'do_fade_darken()' on the entire image
 void fade_darken_click(magic_api * api, int which, int mode,
                        SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)

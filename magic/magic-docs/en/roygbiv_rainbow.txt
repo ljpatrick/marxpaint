@@ -1,4 +1,4 @@
-                    Tux Paint "Magic" Tool: ROYGBIV Rainbow
+                    Marx Paint "Magic" Tool: ROYGBIV Rainbow
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

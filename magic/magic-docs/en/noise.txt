@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Noise
+                         Marx Paint "Magic" Tool: Noise
 
                     By Andrew Corcoran <akanewbie@gmail.com>
 

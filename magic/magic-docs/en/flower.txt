@@ -1,4 +1,4 @@
-                         Tux Paint "Magic" Tool: Flower
+                         Marx Paint "Magic" Tool: Flower
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

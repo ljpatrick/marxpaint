@@ -1,4 +1,4 @@
-                       Tux Paint "Magic" Tool: Xor Colors
+                       Marx Paint "Magic" Tool: Xor Colors
 
                By Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
 

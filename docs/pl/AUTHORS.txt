@@ -1,10 +1,10 @@
-PNG.txt dla Tux Paint
+PNG.txt dla Marx Paint
 
-Tux Paint - Prosty program do rysowania dla dzieci.
+Marx Paint - Prosty program do rysowania dla dzieci.
 
 Copyright (c) 2005 by Bill Kendrick i inni 
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.newbreedsoftware.com/marxpaint/
 
 
 17 czerwca 2002 - 20 listopada 2005
@@ -17,31 +17,31 @@ http://www.newbreedsoftware.com/tuxpaint/
   New Breed Software
   http://www.newbreedsoftware.com/
 
-  Kodowanie wype³niania oparte na przyk³adzie w Wikipedii
+  Kodowanie wypeï¿½niania oparte na przykï¿½adzie w Wikipedii
   http://www.wikipedia.org/wiki/Flood_fill/C_example
   by Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
 
-  £ata do obs³ugi rozdzielczoœci 800x600
+  ï¿½ata do obsï¿½ugi rozdzielczoï¿½ci 800x600
   TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-  Obs³uga rozdzielczoœci, smudge magic tool, grass magic tool,
+  Obsï¿½uga rozdzielczoï¿½ci, smudge magic tool, grass magic tool,
   brick magic tools, improved stamp tinter, and other i inne.
   Albert Cahalan <albert@users.sf.net>
 
 
 * Grafika
 
-  * Przyciski (UI) - stworzone przy u¿yciu skryptu "AquaPro" w  GIMPie
+  * Przyciski (UI) - stworzone przy uï¿½yciu skryptu "AquaPro" w  GIMPie
     Copyright (C) 2001 Denis Bodor <b.bodor@calixo.net>
 
-  * Ikony (UI) - Bill Kendrick przy u¿yciu GIMPa
+  * Ikony (UI) - Bill Kendrick przy uï¿½yciu GIMPa
 
-  * Kreskówka "Tux" , pingiwn Linux
+  * Kreskï¿½wka "Marx" , pingiwn Linux
     Stworzony przez Sama "Criswell" Hart`a  <criswell@geekcomix.com>
-    Tux pierwotnie zaprojektowany przez Larry`ego  Ewing`a <lewing@isc.tamue.edu>
+    Marx pierwotnie zaprojektowany przez Larry`ego  Ewing`a <lewing@isc.tamue.edu>
     http://www.isc.tamu.edu/~lewing/linux/
 
-  * Pêdzle stworzone przy u¿yciu GIMPa
+  * Pï¿½dzle stworzone przy uï¿½yciu GIMPa
     http://www.gimp.org/
 
 
@@ -53,31 +53,31 @@ http://www.newbreedsoftware.com/tuxpaint/
     et al
 
 
-* DŸwiêk
+* Dï¿½wiï¿½k
 
   * Wiele nagrane przez Billa Kendrick`a
-    * Bloki - Stos pude³ek po Nintendo uderzaj¹cych o siebie.
-    * Rozma¿ - mikrofonem po podk³adce na mysz.
-    * Kreda - mikrofonem po w³osach.
-    * Blakniêcie - skrzecz¹ca ¿aba.
-    * Smuga - dzwiêk wydany œæiœniêtymi ustami.
+    * Bloki - Stos pudeï¿½ek po Nintendo uderzajï¿½cych o siebie.
+    * Rozmaï¿½ - mikrofonem po podkï¿½adce na mysz.
+    * Kreda - mikrofonem po wï¿½osach.
+    * Blakniï¿½cie - skrzeczï¿½ca ï¿½aba.
+    * Smuga - dzwiï¿½k wydany ï¿½ï¿½iï¿½niï¿½tymi ustami.
 
-  * G³os pingwina Tuxa
-    Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+  * Gï¿½os pingwina Marxa
+    Daniel 'MarxthePenguin' Alston <supermarxfansite@gmail.com>
   
-  * Kreskówka
+  * Kreskï¿½wka
     * "cartoon6.wav" from http://www.grsites.com/
     
-  * Wiele innych wziêtych z ró¿nych Ÿrode³ w sieci.
+  * Wiele innych wziï¿½tych z rï¿½nych ï¿½rodeï¿½ w sieci.
 
-  * Edytowane przy u¿yciu SOX
+  * Edytowane przy uï¿½yciu SOX
     http://sox.sourceforge.net/
 
-  * Edytowane przy u¿yciu Audacity
+  * Edytowane przy uï¿½yciu Audacity
     http://www.audacity.org/
 
 
-* T³umaczenie
+* Tï¿½umaczenie
 
   * Afrikaans
     Petri Jooste <rkwjpj@puk.ac.za>
@@ -93,7 +93,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Eugene Zelenko <greendeath@mail.ru>
   
   * Breton
-    Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
+    Korvigelloï¿½ An Drouizi (Philippe) <drouizig@drouizig.org>
 
   * British English
     Gareth Owen <gowen72@yahoo.com>
@@ -121,7 +121,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
-    Mogens Jæger <mogensjaeger@get2net.dk> [current maintainer]
+    Mogens Jï¿½ger <mogensjaeger@get2net.dk> [current maintainer]
 
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
@@ -137,7 +137,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal
-    Jérôme Chantreau <plovemax@hotmail.com> [documentation]
+    Jï¿½rï¿½me Chantreau <plovemax@hotmail.com> [documentation]
 
   * Gaelic
     Kevin Patrick Scannell <scannell@SLU.EDU>
@@ -152,7 +152,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Fabian Franz <FabianFranz@gmx.de>
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
-    Burkhard Lück <lueck@hube-lueck.de>
+    Burkhard Lï¿½ck <lueck@hube-lueck.de>
 
   * Gronings
     J.F.M. Lange <jfm.lange@hky.de>
@@ -164,7 +164,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Ankit Malik <ankitmalik@gmail.com>
 
   * Hungarian
-    Török Gábor <gabo@linuxportal.hu>
+    Tï¿½rï¿½k Gï¿½bor <gabo@linuxportal.hu>
 
   * Hebrew
     Dovix <dovix2003@yahoo.com>
@@ -198,7 +198,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+    Mark K. Kim <marxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
@@ -224,7 +224,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Pawel Polak <sf_paul@users.sourceforge.net>
 
   * Portuguese (Brazilian)
-    Daniel José Viana <danjovic@vespanet.com.br>
+    Daniel Josï¿½ Viana <danjovic@vespanet.com.br>
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
  
@@ -256,14 +256,14 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Spanish (Mexico)
     Ignacio Tike <ignaciotike@spymac.com>
     Daniel Illingworth <webmaster@intermagen.net>
-    Luis C. Suárez <luiscsuarez@gmail.com>
+    Luis C. Suï¿½rez <luiscsuarez@gmail.com>
 
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>
     Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
-    Tomas Skäre <tomas@nocrew.org>
+    Tomas Skï¿½re <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
 
@@ -314,8 +314,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 * Wsparice / Testerzy
 
-  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
-  I wielu innych w spo³ecznoœci! (testowanie, ³atanie, komentarze, presti¿)
+  Marx4Kids.org, Sam Hart  (Marx4Kids project manager)
+  I wielu innych w spoï¿½ecznoï¿½ci! (testowanie, ï¿½atanie, komentarze, prestiï¿½)
 
   
-Zobacz tak¿e:  CHANGES.txt
+Zobacz takï¿½e:  CHANGES.txt

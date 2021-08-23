@@ -1,8 +1,8 @@
-# Tux Paint - A simple drawing program for children.
+# Marx Paint - A simple drawing program for communists.
 
 # Copyright (c) 2002-2021
 # Various contributors (see AUTHORS.txt)
-# http://www.tuxpaint.org/
+# http://www.marxpaint.org/
 
 # June 14, 2002 - August 14, 2021
 
@@ -103,6 +103,11 @@ ifdef HOST
     MINVER:=9.0
     MINVEROPT:=-mios-simulator-version-min=$(MINVER)
     SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
+  else ifeq ($(HOST),windows)
+    OS:=windows
+    CC:=x86_64-w64-mingw32-gcc
+		GPERF:=/usr/bin/gperf
+		MINGW_DIR:=$(HOSTROOT)
   else
     $(error Invalid HOST: $(HOST))
   endif
@@ -138,13 +143,13 @@ comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $
 		echo "$(1)"; \
 	fi ;)
 
-beos_RSRC_CMD:=rc haiku/tuxpaint.rdef && xres -o tuxpaint haiku/tuxpaint.rsrc
+beos_RSRC_CMD:=rc haiku/marxpaint.rdef && xres -o marxpaint haiku/marxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
-beos_MIMESET_CMD:=mimeset -f tuxpaint
+beos_MIMESET_CMD:=mimeset -f marxpaint
 MIMESET_CMD:=$($(OS)_MIMESET_CMD)
 
-macos_RAD_CMD:=[[ ! -d Resources/share ]] && mkdir -p Resources/share && ln -s ../../data Resources/share/tuxpaint || :
+macos_RAD_CMD:=[[ ! -d Resources/share ]] && mkdir -p Resources/share && ln -s ../../data Resources/share/marxpaint || :
 RAD_CMD:=$($(OS)_RAD_CMD)
 
 windows_SO_TYPE:=dll
@@ -160,8 +165,8 @@ LIBMINGW:=$($(OS)_LIBMINGW)
 windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
-macos_BUNDLE:=./TuxPaint.app
-ios_BUNDLE:=./TuxPaint-$(SDK).app
+macos_BUNDLE:=./MarxPaint.app
+ios_BUNDLE:=./MarxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
@@ -217,13 +222,13 @@ PREFIX:=$($(OS)_PREFIX)
 # Root directory to place files when creating packages.
 # PKG_ROOT is the old name for this, and should be undefined.
 # macOS and iOS are set up as bundles, with all files under the bundle.
-# "TuxPaint-1" is the OLPC XO name. Installing to ./ is bad!
+# "MarxPaint-1" is the OLPC XO name. Installing to ./ is bad!
 ifeq ($(OS),macos)
   DESTDIR:=$(BUNDLE)/Contents/
 else ifeq ($(OS),ios)
   DESTDIR:=$(BUNDLE)/
 else ifeq ($(PREFIX),./)
-  DESTDIR:=TuxPaint-1
+  DESTDIR:=MarxPaint-1
 else
   DESTDIR:=$(PKG_ROOT)
 endif
@@ -232,24 +237,24 @@ endif
 BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
 
 # Data:
-DATA_PREFIX:=$(DESTDIR)$(PREFIX)/share/tuxpaint
+DATA_PREFIX:=$(DESTDIR)$(PREFIX)/share/marxpaint
 
 # Locale files
 LOCALE_PREFIX=$(DESTDIR)$(PREFIX)/share/locale
 
 # IM files
-IM_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint/im
+IM_PREFIX=$(DESTDIR)$(PREFIX)/share/marxpaint/im
 
 # Libraries
 LIBDIR=$(PREFIX)
 
 # Magic Tool plug-ins
 INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
-MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
+MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/marxpaint/plugins
 
 # Docs and man page:
-DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)
-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)/tuxpaint-dev
+DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/marxpaint-$(VER_VERSION)
+DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/marxpaint-$(VER_VERSION)/marxpaint-dev
 MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
@@ -258,13 +263,13 @@ COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
 
 # 'System-wide' Config file:
 ifeq ($(PREFIX),/usr)
-  CONFDIR:=$(DESTDIR)/etc/tuxpaint
+  CONFDIR:=$(DESTDIR)/etc/marxpaint
 else
-  CONFDIR:=$(DESTDIR)$(PREFIX)/etc/tuxpaint
+  CONFDIR:=$(DESTDIR)$(PREFIX)/etc/marxpaint
 endif
 
 ifeq ($(SYSNAME),Haiku)
-  CONFDIR:=$(shell finddir B_USER_SETTINGS_DIRECTORY)/TuxPaint
+  CONFDIR:=$(shell finddir B_USER_SETTINGS_DIRECTORY)/MarxPaint
 endif
 
 # Icons and launchers:
@@ -374,14 +379,14 @@ CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !264x160 -background w
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters thumb-templates
+all:	marxpaint translations magic-plugins tp-magic-config thumb-starters thumb-templates
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
 	@echo "Done compiling."
 	@echo
 	@echo "Now run 'make install' with any options you ran 'make' with."
-	@echo "to install Tux Paint."
+	@echo "to install Marx Paint."
 	@echo
 	@echo "You may need superuser ('root') privileges, depending on"
 	@echo "where you're installing."
@@ -394,21 +399,21 @@ releaseclean:
 	@echo
 	@echo "Cleaning release directory"
 	@echo
-	@rm -rf "build/tuxpaint-$(VER_VERSION)" "build/tuxpaint-$(VER_VERSION).tar.gz"
+	@rm -rf "build/marxpaint-$(VER_VERSION)" "build/marxpaint-$(VER_VERSION).tar.gz"
 	@-if [ -d build ] ; then rmdir build ; fi
 
 .PHONY: releasedir
-releasedir: build/tuxpaint-$(VER_VERSION)
+releasedir: build/marxpaint-$(VER_VERSION)
 
 
-build/tuxpaint-$(VER_VERSION):
+build/marxpaint-$(VER_VERSION):
 	@echo
 	@echo "Creating release directory"
 	@echo
-	@mkdir -p build/tuxpaint-$(VER_VERSION)
+	@mkdir -p build/marxpaint-$(VER_VERSION)
 	@find . -follow \
 	     \( -wholename '*/.git' -o -name .gitignore -o -name .thumbs -o -name .cvsignore -o -name 'dummy.o' -o -name 'build' -o -name '.#*' \) \
-	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
+	     -prune -o -type f -exec cp --parents -vdp \{\} build/marxpaint-$(VER_VERSION)/ \;
 
 .PHONY: release
 release: releasedir
@@ -416,7 +421,7 @@ release: releasedir
 	@echo "Creating release tarball"
 	@echo
 	@cd build ; \
-	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
+	    tar -czvf marxpaint-$(VER_VERSION).tar.gz marxpaint-$(VER_VERSION)
 
 # "make olpc" builds the program for an OLPC XO:
 MAGIC_GOOD:=blur blocks_chalk_drip bricks calligraphy fade_darken\
@@ -432,40 +437,40 @@ olpc:
 .PHONY: nokia770
 nokia770:
 	make \
-		DATA_PREFIX:=/usr/share/tuxpaint \
+		DATA_PREFIX:=/usr/share/marxpaint \
 		MAEMOFLAG:=-DNOKIA_770 \
 		LOCALE_PREFIX:=$(PREFIX)/share/locale \
-		CONFDIR:=/etc/tuxpaint
+		CONFDIR:=/etc/marxpaint
 
 ##### i18n stuff
 
 POFILES:=$(wildcard src/po/*.po)
 MOFILES:=$(patsubst src/po/%.po,trans/%.mo,$(POFILES))
-INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
+INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/marxpaint.mo,$(MOFILES))
 INSTALLED_MODIRS:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES,$(MOFILES))
 
 $(INSTALLED_MODIRS): $(LOCALE_PREFIX)/%/LC_MESSAGES: trans/%.mo
 	install -d -m 755 $@
-$(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
+$(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/marxpaint.mo: trans/%.mo
 	install -m 644 $< $@
 
 .PHONY: uninstall-i18n
 uninstall-i18n:
-	-rm $(LOCALE_PREFIX)/*/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/*/LC_MESSAGES/marxpaint.mo
 	-rm $(IM_PREFIX)/ja.im
 	-rm $(IM_PREFIX)/ko.im
 	-rm $(IM_PREFIX)/th.im
 	-rm $(IM_PREFIX)/zh_tw.im
 
-##### i18n stuff for Tux Paint Config bundling
-TPCONF_PATH:=../tuxpaint-config
+##### i18n stuff for Marx Paint Config bundling
+TPCONF_PATH:=../marxpaint-config
 TPCPOFILES:=$(wildcard $(TPCONF_PATH)/src/po/*.po)
 TPCMOFILES:=$(patsubst $(TPCONF_PATH)/src/po/%.po,$(TPCONF_PATH)/trans/%.mo,$(TPCPOFILES))
-TPCINSTALLED_MOFILES:=$(patsubst $(TPCONF_PATH)/trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo,$(TPCMOFILES))
+TPCINSTALLED_MOFILES:=$(patsubst $(TPCONF_PATH)/trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/marxpaint-config.mo,$(TPCMOFILES))
 
-$(TPCINSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo: $(TPCONF_PATH)/trans/%.mo
+$(TPCINSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/marxpaint-config.mo: $(TPCONF_PATH)/trans/%.mo
 	@echo
-	@echo "...Installing Tux Paint Config i18n..."
+	@echo "...Installing Marx Paint Config i18n..."
 	install -D -m 644 $< $@
 
 install-tpconf-i18n: $(TPCINSTALLED_MOFILES)
@@ -476,7 +481,7 @@ install-tpconf-i18n: $(TPCINSTALLED_MOFILES)
 # *.po files if we have the converter program, msgfmt, installed in the
 # system.  So we test for both and install them if either case is found
 # to be true.  If neither case is found to be true, we'll just install
-# Tux Paint without the translation files.
+# Marx Paint without the translation files.
 .PHONY: install-gettext
 ifeq "$(wildcard trans/*.mo)$(shell msgfmt -h)" ""
 install-gettext:
@@ -484,7 +489,7 @@ install-gettext:
 	@echo "--------------------------------------------------------------"
 	@echo "Cannot install translation files because no translation files"
 	@echo "were found (trans/*.mo) and the 'msgfmt' program is not installed."
-	@echo "You will not be able to run Tux Paint in non-U.S. English modes."
+	@echo "You will not be able to run Marx Paint in non-U.S. English modes."
 	@echo "--------------------------------------------------------------"
 else
 install-gettextdirs: $(INSTALLED_MODIRS)
@@ -525,7 +530,7 @@ endif
 
 # Build the translation files for gettext
 
-$(MOFILES): trans/%.mo: src/po/%.po  
+$(MOFILES): trans/%.mo: src/po/%.po
 	msgfmt -o $@ $<
 
 .PHONY: translations
@@ -534,7 +539,7 @@ translations: trans
 	@echo "--------------------------------------------------------------"
 	@echo "Cannot find program 'msgfmt'!"
 	@echo "No translation files will be prepared."
-	@echo "Install gettext to run Tux Paint in non-U.S. English modes."
+	@echo "Install gettext to run Marx Paint in non-U.S. English modes."
 	@echo "--------------------------------------------------------------"
 else
 translations: trans $(MOFILES)
@@ -548,7 +553,7 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=
-macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
+macos_ARCH_INSTALL:=install-macbundle MarxPaint.dmg
 ios_ARCH_INSTALL:=install-iosbundle
 linux_ARCH_INSTALL:=install-xdg
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
@@ -572,22 +577,22 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 	@if [ "x$(OS)" = "xmacos" ]; then \
 		echo "All done! Now you can double click $(BUNDLE) to run the"; \
-		echo "program!!! TuxPaint.dmg has also been created for"; \
+		echo "program!!! MarxPaint.dmg has also been created for"; \
 		echo "distribution."; \
 		echo; \
 		echo "For more information, see $(DOC_PREFIX)/README.txt"; \
 	else \
 		echo "All done! Now (preferably NOT as 'root' superuser),"; \
-		echo "you can type the command 'tuxpaint' to run the program!!!"; \
+		echo "you can type the command 'marxpaint' to run the program!!!"; \
 		echo; \
-		echo "For more information, see the 'tuxpaint' man page,"; \
-		echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)/README.txt"; \
+		echo "For more information, see the 'marxpaint' man page,"; \
+		echo "run 'marxpaint --usage' or see $(DOC_PREFIX)/README.txt"; \
 	fi
 	@echo
-	@echo "Visit Tux Paint's home page for more information, updates"
+	@echo "Visit Marx Paint's home page for more information, updates"
 	@echo "and to learn how you can help out!"
 	@echo
-	@echo "  http://www.tuxpaint.org/"
+	@echo "  http://www.marxpaint.org/"
 	@echo
 	@echo "Enjoy!"
 	@echo
@@ -613,21 +618,21 @@ install-magic-plugin-dev:	src/tp_magic_api.h
 	@echo "...Installing Magic Tool plug-in development files and docs..."
 	@cp tp-magic-config $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tp-magic-config
-	@install -d $(INCLUDE_PREFIX)/tuxpaint
-	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
-	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
+	@install -d $(INCLUDE_PREFIX)/marxpaint
+	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/marxpaint
+	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/marxpaint/tp_magic_api.h
 	@install -d $(DEVDOC_PREFIX)
 	@cp -R magic/docs/* $(DEVDOC_PREFIX)
 	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
-# "make bdist-win32" recompiles Tux Paint to work with executable-relative
+# "make bdist-win32" recompiles Marx Paint to work with executable-relative
 # data, docs and locale directories. Also copies all files, including DLLs,
 # into a 'bdist' output directory ready for processing by an installer script.
 .PHONY: bdist-win32
 bdist-win32:
-	@-rm -f tuxpaint.exe
+	@-rm -f marxpaint.exe
 	@-rm -f obj/*.o
 	make \
 		PREFIX:=./win32/bdist \
@@ -639,7 +644,7 @@ bdist-win32:
 		COMPLETIONDIR:=. \
 		INCLUDE_PREFIX:=plugins/include \
 		MAGIC_PREFIX:=plugins
-	strip -s tuxpaint.exe
+	strip -s marxpaint.exe
 	make install \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=./win32/bdist \
@@ -668,7 +673,7 @@ clean:
 	@echo
 	@echo "Cleaning up the build directory! ($(PWD))"
 	@-rm -f magic/*.$(SO_TYPE)
-	@-rm -f tuxpaint
+	@-rm -f marxpaint
 	@-rm -f obj/*.o
 	@-rm -f obj/parse.c obj/parse_step1.c
 	@-rm -f dummy.o
@@ -682,7 +687,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
-	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
+	@-rm -f MarxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -690,41 +695,41 @@ clean:
 # are the same as they were when you installed, of course!!!
 .PHONY: uninstall
 uninstall:	uninstall-i18n
-	-rm /usr/share/applications/tuxpaint.desktop
-	-rm /usr/share/pixmaps/tuxpaint.png
-	-rm $(ICON_PREFIX)/tuxpaint.png
-	-rm $(X11_ICON_PREFIX)/tuxpaint.xpm
-	-rm $(BIN_PREFIX)/tuxpaint
-	-rm $(BIN_PREFIX)/tuxpaint-import
+	-rm /usr/share/applications/marxpaint.desktop
+	-rm /usr/share/pixmaps/marxpaint.png
+	-rm $(ICON_PREFIX)/marxpaint.png
+	-rm $(X11_ICON_PREFIX)/marxpaint.xpm
+	-rm $(BIN_PREFIX)/marxpaint
+	-rm $(BIN_PREFIX)/marxpaint-import
 	-rm -r $(DATA_PREFIX)
 	-rm -r $(DOC_PREFIX)
-	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
-	-rm $(MAN_PREFIX)/*/man1/tuxpaint.1.gz
-	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
-	-rm $(MAN_PREFIX)/*/man1/tuxpaint-import.1.gz
+	-rm $(MAN_PREFIX)/man1/marxpaint.1.gz
+	-rm $(MAN_PREFIX)/*/man1/marxpaint.1.gz
+	-rm $(MAN_PREFIX)/man1/marxpaint-import.1.gz
+	-rm $(MAN_PREFIX)/*/man1/marxpaint-import.1.gz
 	-rm $(MAN_PREFIX)/man1/tp-magic-config.1.gz
 	-rm $(MAN_PREFIX)/*/man1/tp-magic-config.1.gz
 	-rm -f -r $(CONFDIR)
-	-rm $(COMPLETIONDIR)/tuxpaint-completion.bash
+	-rm $(COMPLETIONDIR)/marxpaint-completion.bash
 	-rm -r $(MAGIC_PREFIX)
-	-rm -r $(INCLUDE_PREFIX)/tuxpaint
+	-rm -r $(INCLUDE_PREFIX)/marxpaint
 	-rm $(BIN_PREFIX)/tp-magic-config
 	-rm -r $(DEVDOC_PREFIX)
 	-if [ "x$(BUNDLE)" != "x" ]; then \
 	  rm -rf $(BUNDLE); \
 	fi
 	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
-	  xdg-icon-resource uninstall --size 192 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 128 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 96 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 64 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 48 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 32 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 22 tux4kids-tuxpaint ; \
-	  xdg-icon-resource uninstall --size 16 tux4kids-tuxpaint ; \
+	  xdg-icon-resource uninstall --size 192 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 128 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 96 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 64 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 48 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 32 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 22 marx4kids-marxpaint ; \
+	  xdg-icon-resource uninstall --size 16 marx4kids-marxpaint ; \
 	fi
 	@if [ "x$(shell which xdg-desktop-menu)" != "x" ]; then \
-	  xdg-desktop-menu uninstall tux4kids-tuxpaint.desktop ; \
+	  xdg-desktop-menu uninstall marx4kids-marxpaint.desktop ; \
 	fi
 	-if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 	  update-desktop-database; \
@@ -736,8 +741,8 @@ install-default-config:
 	@echo
 	@echo "...Installing default config file..."
 	@install -d $(CONFDIR)
-	@cp src/tuxpaint.conf $(CONFDIR)
-	@chmod 644 $(CONFDIR)/tuxpaint.conf
+	@cp src/marxpaint.conf $(CONFDIR)
+	@chmod 644 $(CONFDIR)/marxpaint.conf
 
 # Install BASH completion file:
 .PHONY: install-bash-completion
@@ -745,8 +750,8 @@ install-bash-completion:
 	@echo
 	@echo "...Installing BASH completion file..."
 	@install -d $(COMPLETIONDIR)
-	@cp src/tuxpaint-completion.bash $(COMPLETIONDIR)
-	@chmod 644 $(COMPLETIONDIR)/tuxpaint-completion.bash
+	@cp src/marxpaint-completion.bash $(COMPLETIONDIR)
+	@chmod 644 $(COMPLETIONDIR)/marxpaint-completion.bash
 
 
 # Install example stamps
@@ -886,16 +891,16 @@ install-nokia770:
 	@echo "...Installing launcher icon into the Nokia 770..."
 	@if [ "x$(NOKIA770_PREFIX)" != "x" ]; then \
 	 install -d $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 cp hildon/tuxpaint.xpm $(DESTDIR)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
-	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
+	 cp data/images/icon.png $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/marxpaint.png; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/marxpaint.png; \
+	 cp hildon/marxpaint.xpm $(DESTDIR)/$(NOKIA770_PREFIX)/share/pixmaps/marxpaint.xpm; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/marxpaint.xpm; \
 	 install -d $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon; \
-	 cp hildon/tuxpaint.desktop $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/; \
-	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/tuxpaint.desktop; \
-	 install -d $(DESTDIR)/etc/tuxpaint; \
-	 cp hildon/tuxpaint.conf $(DESTDIR)/etc/tuxpaint; \
-	 chmod 644 $(DESTDIR)/etc/tuxpaint/tuxpaint.conf; \
+	 cp hildon/marxpaint.desktop $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/marxpaint.desktop; \
+	 install -d $(DESTDIR)/etc/marxpaint; \
+	 cp hildon/marxpaint.conf $(DESTDIR)/etc/marxpaint; \
+	 chmod 644 $(DESTDIR)/etc/marxpaint/marxpaint.conf; \
 	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/X11R6; \
 	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/share/doc; \
 	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/share/man; \
@@ -912,19 +917,19 @@ install-xdg:
 	@echo
 	@echo "...Installing launcher icon into desktop environment..."
 	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
-	  xdg-icon-resource install --size 192 data/images/icon192x192.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 128 data/images/icon128x128.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 96 data/images/icon96x96.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 64 data/images/icon64x64.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 48 data/images/icon48x48.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 32 data/images/icon32x32.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 22 data/images/icon22x22.png tux4kids-tuxpaint ; \
-	  xdg-icon-resource install --size 16 data/images/icon16x16.png tux4kids-tuxpaint ; \
+	  xdg-icon-resource install --size 192 data/images/icon192x192.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 128 data/images/icon128x128.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 96 data/images/icon96x96.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 64 data/images/icon64x64.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 48 data/images/icon48x48.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 32 data/images/icon32x32.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 22 data/images/icon22x22.png marx4kids-marxpaint ; \
+	  xdg-icon-resource install --size 16 data/images/icon16x16.png marx4kids-marxpaint ; \
 	fi
 	@if [ "x$(shell which xdg-desktop-menu)" != "x" ]; then \
-	  cp src/tuxpaint.desktop ./tux4kids-tuxpaint.desktop ; \
-	  xdg-desktop-menu install tux4kids-tuxpaint.desktop ; \
-	  rm ./tux4kids-tuxpaint.desktop ; \
+	  cp src/marxpaint.desktop ./marx4kids-marxpaint.desktop ; \
+	  xdg-desktop-menu install marx4kids-marxpaint.desktop ; \
+	  rm ./marx4kids-marxpaint.desktop ; \
 	fi
 	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 	  update-desktop-database ; \
@@ -937,11 +942,11 @@ install-icon:
 	@echo
 	@echo "...Installing launcher icon graphics..."
 	@install -d $(ICON_PREFIX)
-	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
-	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
+	@cp data/images/icon.png $(ICON_PREFIX)/marxpaint.png
+	@chmod 644 $(ICON_PREFIX)/marxpaint.png
 	@install -d $(X11_ICON_PREFIX)
-	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm
-	@chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm
+	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/marxpaint.xpm
+	@chmod 644 $(X11_ICON_PREFIX)/marxpaint.xpm
 
 
 # Install the program:
@@ -950,16 +955,16 @@ install-bin:
 	@echo
 	@echo "...Installing program itself..."
 	@install -d $(BIN_PREFIX)
-	@cp tuxpaint$(EXE_EXT) $(BIN_PREFIX)
-	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
+	@cp marxpaint$(EXE_EXT) $(BIN_PREFIX)
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/marxpaint$(EXE_EXT)
 
-# Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
+# Install marxpaint-config and required Windows DLLs into the 'bdist' directory
 .PHONY: install-dlls
 install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
-	@cp $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX)
+	@cp $(TPCONF_PATH)/marxpaint-config.exe $(BIN_PREFIX)
 	@if [ "x$(BDIST_2KXP)" = "xTrue" ]; then \
 	  cp $(MINGW_DIR)/bin/libintl-8.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/libiconv-2.dll $(BIN_PREFIX); \
@@ -1002,7 +1007,7 @@ install-dlls:
 	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
 	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
 	else \
-	  src/install-dlls.sh tuxpaint.exe $(TPCONF_PATH)/tuxpaint-config.exe $(BIN_PREFIX); \
+	  src/install-dlls.sh marxpaint.exe $(TPCONF_PATH)/marxpaint-config.exe $(BIN_PREFIX); \
 	fi
 	@strip -s $(BIN_PREFIX)/*.dll
 	@echo
@@ -1018,16 +1023,16 @@ install-dlls:
 .PHONY: install-haiku
 install-haiku:
 	@echo
-	@echo "...Installing symlink in apps/TuxPaint to tuxpaint executable file..."
-	@ln -sf $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/bin/tuxpaint $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/TuxPaint/tuxpaint
+	@echo "...Installing symlink in apps/MarxPaint to marxpaint executable file..."
+	@ln -sf $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/MarxPaint/bin/marxpaint $(DESTDIR)$(shell finddir B_APPS_DIRECTORY)/MarxPaint/marxpaint
 
 # Install the import script:
 .PHONY: install-importscript
 install-importscript:
 	@echo
-	@echo "...Installing 'tuxpaint-import' script..."
-	@cp src/tuxpaint-import.sh $(BIN_PREFIX)/tuxpaint-import
-	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint-import
+	@echo "...Installing 'marxpaint-import' script..."
+	@cp src/marxpaint-import.sh $(BIN_PREFIX)/marxpaint-import
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/marxpaint-import
 
 
 # Install the data (sound, graphics, fonts):
@@ -1075,14 +1080,14 @@ install-man:
 	@echo "...Installing English man pages..."
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1
-	@# tuxpaint.1
-	@cp man/en/tuxpaint.1 $(MAN_PREFIX)/man1/
-	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
-	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
-	@# tuxpaint-import.1
-	@cp man/en/tuxpaint-import.1 $(MAN_PREFIX)/man1/
-	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+	@# marxpaint.1
+	@cp man/en/marxpaint.1 $(MAN_PREFIX)/man1/
+	@gzip -f $(MAN_PREFIX)/man1/marxpaint.1
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/marxpaint.1.gz
+	@# marxpaint-import.1
+	@cp man/en/marxpaint-import.1 $(MAN_PREFIX)/man1/
+	@gzip -f $(MAN_PREFIX)/man1/marxpaint-import.1
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/marxpaint-import.1.gz
 	@# tp-magic-config.1
 	@cp man/en/tp-magic-config.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tp-magic-config.1
@@ -1092,9 +1097,9 @@ install-man:
 		DEST=$(MAN_PREFIX)/$$l/man1 ; \
 		echo "...Installing $$l man pages into $$DEST..." ; \
 		install -d $$DEST ; \
-		cp man/$$l/tuxpaint.1 $$DEST ; \
-		gzip -f $$DEST/tuxpaint.1 ; \
-		chmod a+rx,g-w,o-w $$DEST/tuxpaint.1.gz ; \
+		cp man/$$l/marxpaint.1 $$DEST ; \
+		gzip -f $$DEST/marxpaint.1 ; \
+		chmod a+rx,g-w,o-w $$DEST/marxpaint.1.gz ; \
 	done
 	@# FIXME: The other man pages aren't localizable yet -bjk 2021.08.14
 
@@ -1106,10 +1111,10 @@ install-macbundle:
 	@install -d -m 755 $(BUNDLE)/Contents/MacOS
 	@install -d -m 755 $(BUNDLE)/Contents/Resources
 	@install -d -m 755 $(BUNDLE)/Contents/lib
-	@install -m 755 tuxpaint $(BUNDLE)/Contents/MacOS
+	@install -m 755 marxpaint $(BUNDLE)/Contents/MacOS
 	@install -m 644 macos/PkgInfo $(BUNDLE)/Contents
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
-	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
+	@install -m 644 macos/marxpaint.icns $(BUNDLE)/Contents/Resources
 	@macos/build-app.sh
 
 # Install the support files for iOS application bundle
@@ -1117,17 +1122,17 @@ install-macbundle:
 install-iosbundle:
 	@echo
 	@echo "...Installing iOS App Bundle Support Files..."
-	install -m 755 tuxpaint $(BUNDLE)
+	install -m 755 marxpaint $(BUNDLE)
 	install -m 644 ios/PkgInfo $(BUNDLE)
 	install -m 644 ios/Info.plist $(BUNDLE)
-	install -m 644 ios/tuxpaint.icns $(BUNDLE)
-	install -m 644 ios/tuxpaint.cfg $(BUNDLE)
+	install -m 644 ios/marxpaint.icns $(BUNDLE)
+	install -m 644 ios/marxpaint.cfg $(BUNDLE)
 	install -m 644 ios/Splash.png $(BUNDLE)
 	ibtool --compile $(BUNDLE)/Splash.storyboardc ios/Splash.storyboard
 
 
 # Create DMG for macOS
-TuxPaint.dmg:
+MarxPaint.dmg:
 	@echo
 	@echo "...Creating DMG Distribution File..."
 	@macos/build-dmg.sh
@@ -1135,15 +1140,15 @@ TuxPaint.dmg:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
+marxpaint:	obj/marxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o obj/fill.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
 		obj/gifenc.o \
 		$(ARCH_LIBS)
 	@echo
-	@echo "...Linking Tux Paint..."
+	@echo "...Linking Marx Paint..."
 	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
-		-o tuxpaint $^ \
+		-o marxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RAD_CMD)
 	@$(RSRC_CMD)
@@ -1152,14 +1157,14 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 
 # Build the object for the program!
 
-obj/tuxpaint.o:	src/tuxpaint.c \
+obj/marxpaint.o:	src/marxpaint.c \
 		src/i18n.h src/im.h src/cursor.h src/pixels.h \
 		src/rgblinear.h src/playsound.h src/fonts.h \
 		src/fill.h src/fill_tools.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
-		src/sounds.h src/tip_tux.h src/great.h \
+		src/sounds.h src/tip_marx.h src/great.h \
 		src/tp_magic_api.h src/parse.h src/onscreen_keyboard.h \
 		src/gifenc.h src/platform.h \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
@@ -1177,16 +1182,16 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/$(MOUSEDIR)/down.xbm src/$(MOUSEDIR)/down-mask.xbm \
 		$(ARCH_HEADERS)
 	@echo
-	@echo "...Compiling Tux Paint from source..."
+	@echo "...Compiling Marx Paint from source..."
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
-		-c src/tuxpaint.c -o obj/tuxpaint.o
+		-c src/marxpaint.c -o obj/marxpaint.o
 
 # Broke gperf|sed up into two steps so that it will fail properly if gperf is not installed; there's probably a more elegant solution -bjk 2009.11.20
 obj/parse.c:	obj/parse_step1.c
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 2)..."
 	@sed -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' obj/parse_step1.c > obj/parse.c
-	
+
 obj/parse_step1.c:	src/parse.gperf
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 1)..."
@@ -1336,7 +1341,7 @@ tp-magic-config:	src/tp-magic-config.sh.in
 	@echo "...Generating 'Magic' tool API configuration script..."
 	@sed -e s/__VERSION__/$(VER_VERSION)/ \
 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
-		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
+		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/marxpaint= \
 		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
 		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
 		-e s=__PLUGINDOCPREFIX__=$(DOC_PREFIX)/magic-docs= \
@@ -1381,7 +1386,7 @@ SHARED_FLAGS:=-shared -fpic -lm
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
 
-$(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c  
+$(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c
 	$(CC) $(MAGIC_CFLAGS) $(LDFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
 # Probably should separate the various flags like the following:
 #	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)

@@ -1,15 +1,15 @@
-                                   Tux Paint
+                                   Marx Paint
                                  version 0.9.27
                 Documentation sur les variables d'environnement
 
       Copyright &copie; 2021-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                            http://www.marxpaint.org/
 
                                   août 8, 2021
 
      ----------------------------------------------------------------------
 
-   Tux Paint interprète plusieurs variables d'environnement, soit
+   Marx Paint interprète plusieurs variables d'environnement, soit
    directement, soit indirectement par le biais des bibliothèques qu'il
    utilise.
 
@@ -23,13 +23,13 @@ Variables d'environnement relatives au stockage
            variables d'environnement (autre part dans cette documentation)
            n'ont pas été positionnées. Parfois, l'endroit à utiliser peut
            être changer par des options fournies en ligne de commande ou via
-           le fichier de configuration de Tux Paint. Voir le document
+           le fichier de configuration de Marx Paint. Voir le document
            "OPTIONS" pour les détails.
 
            Quelques exemples où "$HOME" est utilisé incluent :
 
-              * L'emplacement du fichier de configuration de Tux Paint
-              * La base où Tux Paint sauvegarde et lit les dessins des
+              * L'emplacement du fichier de configuration de Marx Paint
+              * La base où Marx Paint sauvegarde et lit les dessins des
                 utilisateurs
               * L'endroit où se situent les fichiers privés d'un utilisateur
                 (— tampons, pinceaux, etc, —) (par opposition aux fichiers
@@ -42,23 +42,23 @@ Variables d'environnement relatives au stockage
            Specifically, where to find "user-dirs.dirs", where the
            "XDG_PICTURES_DIR" might be defined. It is used for exporting
            drawings and animated GIFs. Generally it's set to something like
-           "$HOME/Pictures/". If not specified, Tux Paint checks in the
+           "$HOME/Pictures/". If not specified, Marx Paint checks in the
            directory "$HOME/.config/". If the configuration cannot be found,
-           Tux Paint simply exports drawings and GIFs to "$HOME".
+           Marx Paint simply exports drawings and GIFs to "$HOME".
 
    XDG_DATA_HOME
 
            On Linux and other platforms where the X Desktop Group standards
            are used, the location of the user's data directories.
            Specifically, where to find the "Trash" directory. It is used when
-           deleting images from Tux Paint's "Open" dialog. If not set, the
+           deleting images from Marx Paint's "Open" dialog. If not set, the
            location "$HOME/.local/share/Trash/" is used, if available. If
            not, images are simply deleted, rather than moved anywhere.
 
    TEMP
 
            Spécifie l'endroit où les fichiers temporaires peuvent être créés.
-           Tux Paint l'utilise seulement sous Microsoft Windows. Utilise
+           Marx Paint l'utilise seulement sous Microsoft Windows. Utilise
            "userdata" si non spécifié.
 
 Variables d'environnement relatives aux langues
@@ -71,7 +71,7 @@ Variables d'environnement relatives aux langues
 
    LC_MESSAGES
 
-           Specify the language Tux Paint should utilize in its user
+           Specify the language Marx Paint should utilize in its user
            interface. Overridde by the "--lang" and "--locale" command-line
            options or their configuration file counterparts. The "LANGUAGE"
            environment variable is used, if set. If not, "LC_ALL" is used as
@@ -80,20 +80,20 @@ Variables d'environnement relatives aux langues
 Variables d'environnement en rapport avec l'affichage
 
    Ce qui suit donne quelques variables d'environnement supportées par Simple
-   DirectMedia Layer (libSD) — que Tux Paint utilise pour l'affichage des
+   DirectMedia Layer (libSD) — que Marx Paint utilise pour l'affichage des
    dessins, pour jouer des sons et traiter les saisies de la souris, du
    clavier et du joystick — et qui peuvent être utiles aux utilisateurs de
-   Tux Paint.
+   Marx Paint.
 
    SDL_VIDEO_ALLOW_SCREENSAVER
 
-           Spécifie si Tux Paint autorise l'utilisation d'un économiseur
-           d'écran. Peut être mis à '1' (vrai) par Tux Paint lui-même avec
+           Spécifie si Marx Paint autorise l'utilisation d'un économiseur
+           d'écran. Peut être mis à '1' (vrai) par Marx Paint lui-même avec
            l'option en ligne de commande "--allowscreensaver" ou dans son
            fichier de configuration.
 
    SDL_VIDEO_WINDOW_POS
 
-           Requests where to position Tux Paint's window. Normally set to
-           "center" by Tux Paint itself, unless the environment variable is
+           Requests where to position Marx Paint's window. Normally set to
+           "center" by Marx Paint itself, unless the environment variable is
            already set (e.g., to "nopref", meaning "no preference").

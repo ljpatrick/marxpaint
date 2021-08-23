@@ -1,5 +1,5 @@
-COPYING.txt for "tuxpaint-ttf-greek"
-Greek TrueType Font (TTF) for Tux Paint
+COPYING.txt for "marxpaint-ttf-greek"
+Greek TrueType Font (TTF) for Marx Paint
 
 The "el.ttf" font file is a copy of the "Thryomanes" fonts,
 Copyright (c) 2000-2001 Herman Miller (hmiller) at io.com

@@ -1,12 +1,12 @@
 /*
   i18n.c
 
-  For Tux Paint
+  For Marx Paint
   Language-related functions
 
   Copyright (c) 2002-2020 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  http://www.marxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -450,7 +450,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 static void show_lang_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
-  const char *const prg = "tuxpaint";
+  const char *const prg = "marxpaint";
 
   /* FIXME: All this should REALLY be array-based!!! */
   fprintf(f, "\n" "Usage: %s [--lang LANGUAGE]\n" "\n" "LANGUAGE may be one of:\n"
@@ -593,7 +593,7 @@ static void show_lang_usage(int exitcode)
  * Show available locales as a "usage" output
  *
  * @param f File descriptor to write to (e.g., STDOUT or STDERR)
- * @param prg Program name (e.g., "tuxpaint" or "tuxpaint.exe")
+ * @param prg Program name (e.g., "marxpaint" or "marxpaint.exe")
  */
 static void show_locale_usage(FILE * f, const char *const prg)
 {
@@ -978,7 +978,7 @@ static void mysetenv(const char *name, const char *value)
 
 
 /**
- * Attempt to set Tux Paint's UI language.
+ * Attempt to set Marx Paint's UI language.
  *
  * @param loc Locale
  * @return The Y-nudge value for font rendering in the language.
@@ -1058,12 +1058,12 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
   DEBUG_PRINTF("Locale AFTER is: %s\n", setlocale(LC_ALL, NULL));     //EP
 
-  bindtextdomain("tuxpaint", LOCALEDIR);
+  bindtextdomain("marxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
 #if defined(_WIN32) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2) || __GLIBC__ > 2 || defined(__NetBSD__) || __APPLE__
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
+  bind_textdomain_codeset("marxpaint", "UTF-8");
 #endif
-  textdomain("tuxpaint");
+  textdomain("marxpaint");
 
 #ifdef _WIN32
   if (!*loc)
@@ -1088,10 +1088,10 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
          You can confuse gettext() into mostly behaving. For example, a
          user could pick a random UTF-8 locale and change the messages.
-         In that case, Tux Paint thinks it's in the other locale but the
+         In that case, Marx Paint thinks it's in the other locale but the
          messages come out right. Like so: LANGUAGE=zam LC_ALL=fr_FR.UTF-8
          It doesn't work to leave LC_ALL unset, set it to "zam", set it to "C",
-         or set it to random nonsense. Yeah, Tux Paint will think it's in
+         or set it to random nonsense. Yeah, Marx Paint will think it's in
          a French locale, but the messages will be Zapotec nonetheless.
 
          Maybe it's time to give up on gettext().
@@ -1178,7 +1178,7 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
 /**
  * Given a locale (e.g., "de_DE.UTF-8" or a language name (e.g., "german"),
- * attempt to set Tux Paint's UI language.  Show help, and exit,
+ * attempt to set Marx Paint's UI language.  Show help, and exit,
  * if asked (either 'locale' or 'lang' are "help"), or if the
  * given input is not recognized.
  *
@@ -1196,7 +1196,7 @@ int setup_i18n(const char *restrict lang, const char *restrict locale, int * num
     {
       if (!strcmp(locale, "help"))
         {
-          show_locale_usage(stdout, "tuxpaint");
+          show_locale_usage(stdout, "marxpaint");
           exit(0);
         }
     }

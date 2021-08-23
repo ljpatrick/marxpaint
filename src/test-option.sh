@@ -5,7 +5,7 @@
 # Tests the GCC compiler for a particular option and returns that option,
 # if successful
 #
-# for Tux Paint
+# for Marx Paint
 # by TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 #  
 #  This program is free software; you can redistribute it and/or modify

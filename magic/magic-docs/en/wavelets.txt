@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Wavelets
+                        Marx Paint "Magic" Tool: Wavelets
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
                         Adam Rakowski <foo-script@o2.pl>
